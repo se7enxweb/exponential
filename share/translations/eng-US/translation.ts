@@ -64012,6 +64012,134 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes</source>
         <translation>yes</translation>
     </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rows point at this item through %column (%kind)</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rows where %field is %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rows.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done statements</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>All %count rows</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>All rows</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Apply</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Change columns and indexes that differ</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Create the table</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before "Apply"; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before "Apply"; columns and indexes are dropped or changed only when you tick it.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Done</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Drop columns and indexes the schema does not have</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>From the definition of a class</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>No row of a data table points at this item.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Not done unless ticked above: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Not everything could be done</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>On the connection</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Or from the schema file of an extension</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rows of %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rows of data tables that point at this item</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Show what would be done</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>The connection %id is read only.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>The extension %name has no share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>The install SQL of every engine</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>There is no connection %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>There is no persistent class %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Upgrade the table</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>What would be done on %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>create</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>up to date</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>upgrade</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -74809,6 +74937,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Make a PDF document of a folder and its items, to print or to send.</source>
         <translation>Make a PDF document of a folder and its items, to print or to send.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Data tables</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Create or upgrade a table on a database connection…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Browse the tables of the persistent classes…</translation>
     </message>
 </context>
 </TS>

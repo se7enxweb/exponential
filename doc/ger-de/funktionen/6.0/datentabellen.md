@@ -10,10 +10,10 @@ im [Geheimnisspeicher](geheimnisspeicher.md).
 | | |
 |---|---|
 | Was eine Datentabelle ist | Die Tabelle einer persistenten Klasse: eine PHP-Klasse, die `eZPersistentObject` erweitert und ihre Tabelle in `definition()` beschreibt (Felder, Schlüssel, Tabellenname). Der Kernel hat Hunderte davon, die meisten Extensions bringen eigene mit. |
-| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. |
+| Was 6.0.15 hinzufügt | Einen Katalog aller dieser Klassen mit Tabelle, Feldern, Schlüsseln und Beziehungen zu Inhalten; eine Beschreibung jeder Tabelle, wie ihre Datenbank sie führt, und wo sie von der Definition abweicht; benannte Datenbankverbindungen (eine SQLite-Datei, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, lokal oder entfernt); und persistente Klassen, die auf einer solchen Verbindung lesen und schreiben statt in der Datenbank der Installation. Dazu: das Schema einer Tabelle auf jeder Verbindung aus der Administration anlegen oder aktualisieren, ihre Zeilen ansehen, die Zeilen, die auf ein Objekt verweisen, in der Inhaltsansicht zeigen, ein Schreiber für jedes Werkzeug, das Zeilen in eine Tabelle bringt, und Fetch-Funktionen für Templates. |
 | Wo | **Setup > Datentabellen** (Modul `datatable`): Datentabellen, Verbindungen. **Setup > Geheimnisse** (Modul `secrets`) für ihre Passwörter. |
 | Kein Befehl nötig | Die Kernel-Tabellen werden auf der Seite Datentabellen angelegt, der Katalog entsteht beim ersten Aufruf der Seite, Verbindungen werden im Browser angelegt und getestet. |
-| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expPDODB`; `eZPersistentObject::dbFor()` |
+| Klassen | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()` |
 | Einstellungen | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<klasse>_<spalte>]`) |
 
 ## Der Katalog
@@ -60,7 +60,7 @@ dieser Reihenfolge (die erste für eine Spalte gilt):
 | Der Schlüssel `relations` der Definition | `'relations' => array( 'node_id' => array( 'class' => 'eZContentObjectTreeNode', 'field' => 'node_id' ) )`; optional `'kind'` (`object`, `node`, `class`, `user`, `section`, `table`) | die Definition |
 | Der Fremdschlüssel eines Felds | `'foreign_class' => 'eZUser', 'foreign_attribute' => 'contentobject_id'` im Feld | ein Fremdschlüssel eines Felds |
 | `datatable.ini` | ein Block `[Relation_<klasse>_<spalte>]` mit `Kind=`, `Class=` und `Field=` | datatable.ini |
-| Der Name der Spalte | `contentobject_id`, `object_id`, `*_object_id` (Objekt); `node_id`, `main_node_id`, `parent_node_id`, `*_node_id` (Knoten); `contentclass_id`, `class_id` (Klasse); `user_id`, `creator_id`, `owner_id`, `modifier_id` (Benutzer); `section_id` (Sektion) | aus dem Namen erschlossen |
+| Der Name der Spalte | `contentobject_id`, `object_id`, `*_object_id` (Objekt); `node_id`, `main_node_id`, `parent_node_id`, `*_node_id` (Knoten); `contentclass_id`, `class_id` (Klasse); `user_id`, `creator_id`, `owner_id`, `modifier_id`, und `creator_`, `modifier_`, `owner_`, `author_` oder `editor_` gefolgt von `contentobject_id` oder `object_id` (Benutzer); `section_id` (Sektion) | aus dem Namen erschlossen |
 
 Die Art ergibt sich aus der Zielklasse: `eZContentObject` ist ein Objekt, `eZContentObjectTreeNode` ein Knoten,
 `eZContentClass` eine Klasse, `eZUser` ein Benutzer, `eZSection` eine Sektion, jede andere Klasse eine Tabelle. Der
@@ -231,6 +231,149 @@ sie nichts.
 Die Einstellungen in `[ClassSettings]` werden einmal je Prozess gelesen. Unter Velocity erreicht eine Änderung die
 Worker mit dem nächsten Neustart.
 
+## Schema: Tabellen auf einer Verbindung anlegen und aktualisieren
+
+`expDataTableSchema` bringt ein Schema auf eine Verbindung. Das Schema stammt aus:
+
+- der `definition()` einer persistenten Klasse (`expDataTableSchema::fromDefinition()`): `integer` wird `int(11)`,
+  `float` eine Gleitkommazahl, `text` ein langer Text, alles andere `varchar(255)` (andere Längen über das zweite
+  Argument); der hochgezählte Schlüssel wird eine Auto-Increment-Spalte, die Schlüssel der Primärschlüssel, jede
+  Beziehungsspalte bekommt einen Index (die Inhaltsansicht fragt „welche Zeilen verweisen auf dieses Objekt"), und das
+  optionale `'unique' => array( '<index>' => array( spalten ) )` der Definition ergibt eindeutige Indizes. Indexnamen
+  haben höchstens 30 Zeichen (die Grenze von Oracle);
+- der `share/db_schema.dba` einer Extension (`expKernelTableSchema::read()`).
+
+`plan()` sagt Tabelle für Tabelle, was das Anwenden des Schemas täte, mit dem SQL, und führt nichts aus:
+
+| Aktion | Wann |
+|---|---|
+| `create` | die Tabelle fehlt |
+| `upgrade` | Spalten oder Indizes fehlen (sie werden ergänzt) |
+| `none` | die Tabelle entspricht dem Schema, oder weicht nur in Zurückgehaltenem ab |
+| `unknown` | die Verbindung zeigt diesem Benutzer ihre Tabellen nicht |
+
+Eine Spalte oder einen Index löschen, die das Schema nicht hat, und eine abweichende Spalte oder einen abweichenden
+Index ändern, wird **zurückgehalten**: aufgelistet, aber nicht ausgeführt, außer auf Wunsch (`'drop' => true`,
+`'alter' => true`; die beiden Kästchen der Seite). `apply()` führt den Plan aus und hält bei einer Tabelle an der
+ersten Anweisung an, die scheitert.
+
+```php
+$schema = expDataTableSchema::fromDefinition( myArchiveRow::definition() );
+$db = expDataConnections::db( 'archive' );
+$plan = expDataTableSchema::plan( $schema, $db );             // action, statements, held, notes je Tabelle
+$result = expDataTableSchema::apply( $schema, $db );          // ok, tables => action, ok, done, errors
+$sql = expDataTableSchema::installSql( $schema );             // System => SQL, für sql/<system>/schema.sql
+```
+
+| System | Anlegen | Aktualisieren |
+|---|---|---|
+| MySQL/MariaDB, PostgreSQL, SQLite | die Schema-Handler des Kernels (`eZMysqlSchema`, `eZPgsqlSchema`, `eZSQLiteSchema`) | `eZDbSchemaChecker::diff()` gegen die bestehende Tabelle und das Upgrade-SQL des Handlers |
+| Oracle | der Schema-Handler von ezoracle, wenn die Extension aktiv ist; sonst (PDO oci) die Anweisungen von `oracleCreate()`: `VARCHAR2(n CHAR)`, `CLOB`, `BINARY_DOUBLE`, und für den hochgezählten Schlüssel eine Sequenz mit einem `BEFORE INSERT`-Trigger, benannt, wie `expPDODB::oracleSequence()` sie liest | über ezoracle wie oben; über PDO werden die fehlenden Spalten ergänzt |
+| SQL Server | `sqlServerCreate()`: `INT IDENTITY(1,1)`, `NVARCHAR(n)`, `NVARCHAR(MAX)`, Namen in eckigen Klammern | die fehlenden Spalten werden ergänzt |
+| MongoDB | die Collection entsteht beim ersten Schreiben; die Indizes legt der Schema-Handler an (`expMongoSchema`) | fehlende Indizes werden neu angelegt; Dokumente brauchen keine Spalten |
+
+Die Seite **Setup > Datentabellen > Schema** (`datatable/schema`, Richtlinie `datatable/manage`) nimmt eine Klasse
+(einer Extension) oder die Schemadatei einer Extension und eine Verbindung (vorgegeben die der Klasse; eine
+schreibgeschützte Verbindung ist nicht wählbar). **Anzeigen, was ausgeführt würde** listet den Plan mit seinem SQL;
+**Ausführen** führt ihn aus und meldet jede Tabelle. Darunter steht das Installations-SQL jedes Systems (MySQL,
+PostgreSQL, SQLite, Oracle, SQL Server), zum Übernehmen in `sql/<system>/schema.sql` einer Extension. Die Seite einer
+Klasse verlinkt dorthin als **Tabelle anlegen** oder **Tabelle aktualisieren**.
+
+## Zeilen
+
+`datatable/rows/<klasse>` (Richtlinie `datatable/read`) listet die Zeilen der Tabelle einer Klasse, 25 je Seite, auf der
+Verbindung der Klasse. `/(<feld>)/<wert>` behält die Zeilen, in denen ein Feld einen Wert hat (dorthin verlinkt der
+Reiter der Inhaltsansicht). Ein Wert einer Beziehungsspalte verlinkt auf das, worauf er verweist: die Seite des Knotens
+oder Objekts, die Klasse, die Sektion oder die Zeilen der anderen Tabelle. Spalten, deren Name ein Geheimnis vermuten
+lässt (`password`, `hash`, `token`, `secret`, `salt`, `ciphertext`, `private_key`, `api_key`, `key`), werden
+weggelassen, hier und in den ersten Zeilen auf der Seite einer Klasse. Die Seite liest nur.
+
+## Beziehungen in der Inhaltsansicht
+
+Die Knotenansicht der Administration hat einen Reiter **Datentabellen** (`admininterface.ini
+[AdditionalTab_datatable]`) für Benutzer mit `datatable/read`, nur sichtbar, wenn eine Zeile auf den Knoten oder sein
+Objekt verweist. Er listet je Tabelle und Spalte, wie viele Zeilen dorthin verweisen, und die ersten zehn, mit einem
+Link auf alle (`expDataTableRelation::pointingAt()`, die Fetch-Funktion `pointing_at`).
+
+Gefragt werden nur die Tabellen von Extensions und benannten Verbindungen: die eigenen Tabellen des Kernels beziehen
+sich überall auf Inhalte, und auch die Klasse einer Extension über einer Kernel-Tabelle bleibt außen vor. Gefragt werden
+nur erklärte Beziehungen (`relations` der Definition, `foreign_class` eines Felds, ein Block `[Relation_*]`), eine
+Zählung je Beziehung und Knotenansicht; `datatable.ini [DataTableSettings] ContentTabInferred=enabled` fragt auch die
+aus Spaltennamen erschlossenen.
+
+`expDataTableRelation::target( $relation, $value )` liefert, worauf ein Wert verweist (ein `eZContentObject`,
+`eZContentObjectTreeNode`, `eZContentClass`, `eZUser`, `eZSection` oder die Zeile der anderen Tabelle), und `url()`
+dessen Adresse in der Administration.
+
+## Zeilen schreiben
+
+Jedes Werkzeug, das Zeilen in eine Datentabelle bringt (ein Import, die Synchronisation, ein eigenes Modul), geht über
+`expDataTableWriter`, nie über rohes SQL: er prüft die Zeilen gegen die Definition der Klasse und schreibt auf der
+Verbindung der Klasse.
+
+```php
+$writer = new expDataTableWriter( 'myArchiveRow', array( 'keys' => array( 'remote_id' ), 'mode' => 'upsert' ) );
+$result = $writer->write( array(
+    array( 'remote_id' => 'a-1', 'title' => 'Erste', 'node_id' => '@node:4f9c2e…' ),
+    array( 'remote_id' => 'a-2', 'title' => 'Zweite', 'contentobject_id' => '@path:news/zweite' ),
+) );
+// inserted, updated, unchanged, skipped, failed, errors (Liste), ids (Zeilennummer => Schlüssel)
+```
+
+| Option | Bedeutung |
+|---|---|
+| `keys` | die Felder, über die eine Zeile gefunden wird; ohne Angabe die Schlüssel der Klasse (bei mehreren ohne den hochgezählten) |
+| `mode` | `insert` (nur neue Zeilen), `update` (nur vorhandene), `upsert` (beides, die Vorgabe), `replace` (eine vorhandene Zeile wird entfernt und neu geschrieben) |
+| `dry_run` | prüfen und zählen, nichts schreiben |
+| `chunk` | Zeilen je Transaktion (Vorgabe 200) |
+| `unknown` | `refuse` (ein unbekanntes Feld lässt die Zeile scheitern, die Vorgabe) oder `ignore` |
+
+Die Werte werden nach der Definition typisiert (`integer`, `float`; ein Datum in einem Ganzzahlfeld wird ein
+Zeitstempel; ein Array in einem Textfeld wird JSON). Eine Zeile, die nichts ändert, zählt als unverändert und wird nicht
+geschrieben. Eine Beziehungsspalte darf statt einer ID einen Verweis enthalten: `@object:<remote id>`,
+`@node:<remote id>` oder `@path:<url-alias>`; ein Verweis, den nichts hat, lässt die Zeile scheitern. Jeder Block ist
+eine Transaktion; lehnt die Datenbank eine Zeile ab, wird der Block zurückgerollt und Zeile für Zeile neu geschrieben,
+jede in einer eigenen Transaktion, sodass die fehlerhafte Zeile allein scheitert und die anderen geschrieben werden.
+Ein Fehler nennt die Nummer der Zeile und das Feld, nie einen Wert.
+
+Auf SQLite schreibt `eZPersistentObject` eine neue Zeile mit `INSERT OR REPLACE`: eine Zeile, deren eindeutige Spalte
+schon eine andere Zeile hat, ersetzt diese, statt zu scheitern (MySQL und PostgreSQL lehnen sie ab). Über die eindeutige
+Spalte zuordnen (`keys`), um stattdessen die vorhandene Zeile zu ändern.
+
+Eine Klasse, die der Katalog noch nicht kennt (nach dem Erstellen des Katalogs angelegt), wird aus ihrer eigenen
+Definition gelesen.
+
+## In Templates
+
+Das Modul `datatable` hat fünf Fetch-Funktionen (`kernel/datatable/function_definition.php`,
+`expDataTableFunctionCollection`):
+
+```
+{def $rows = fetch( 'datatable', 'list', hash( 'class', 'myArchiveRow',
+                                             'conditions', hash( 'state', 'open' ),
+                                             'sort', array( 'created', false() ),
+                                             'offset', 0, 'limit', 20 ) )}
+{fetch( 'datatable', 'count', hash( 'class', 'myArchiveRow', 'conditions', hash( 'state', 'open' ) ) )}
+{def $row = fetch( 'datatable', 'row', hash( 'class', 'myArchiveRow', 'key', hash( 'id', 42 ) ) )}
+{def $found = fetch( 'datatable', 'pointing_at', hash( 'object_id', $node.contentobject_id, 'node_id', $node.node_id ) )}
+{if fetch( 'datatable', 'can', hash( 'function', 'read' ) )}…{/if}
+```
+
+`list`, `count` und `row` lesen die Klassen von Extensions und benannten Verbindungen für jeden, der das Template sehen
+darf; eine Klasse der eigenen Datenbank des Kernels nur für Benutzer mit `datatable/read`. Bedingungen sind Gleichheit
+auf Feldern der Klasse (andere Schlüssel werden übergangen), `sort` ist ein Feld und aufsteigend (`true()`) oder
+absteigend, `limit` liegt zwischen 1 und 500. Bei `row` muss jeder übergebene Schlüssel ein Feld sein. `pointing_at`
+braucht `datatable/read`; `can` antwortet für `read`, `manage`, `connections` und `sync`.
+
+## Im Register
+
+Die Datentabellen sind ein Werkzeug des Transfer-Registers ([transfer-register.md](transfer-register.md)):
+`[Service_transfer.datatable]` in `kernelservices.ini`, genannt **Data tables** (Datentabellen), Richtung beide,
+Bereiche Daten, Klasse und Unterbaum, Einstiegsseite `datatable/dashboard` (Richtlinie `datatable/read`), mit dem
+Modul `secrets`, zwei Einträgen im Setup („Eine Tabelle auf einer Datenbankverbindung anlegen oder aktualisieren …" mit
+`datatable/manage`, „Die Tabellen der persistenten Klassen ansehen …") und 7x SQLI Import als Partner für Hin- und
+Rückweg, sodass jedes im Kasten „Suchen Sie …?" des anderen erscheint.
+
 ## Die Administration
 
 | Seite | Adresse | Richtlinie |
@@ -239,12 +382,14 @@ Worker mit dem nächsten Neustart.
 | Eine Klasse: Definition, Verbindung, Tabelle, Abweichungen, Beziehungen, erste Zeilen | `datatable/table/<klasse>` | `datatable/read` |
 | Verbindungen und die Datenbanksysteme dieses Servers | `datatable/connections` | `datatable/connections` |
 | Eine Verbindung: neu, ändern, testen, entfernen | `datatable/connection/<bezeichner>` (`new` für eine neue) | `datatable/connections` |
+| Die Zeilen einer Tabelle, 25 je Seite, nach einem Feld gefiltert | `datatable/rows/<klasse>`, `datatable/rows/<klasse>/(<feld>)/<wert>` | `datatable/read` |
+| Tabellen auf einer Verbindung anlegen oder aktualisieren | `datatable/schema`, `datatable/schema/(class)/<klasse>`, `datatable/schema/(extension)/<name>` | `datatable/manage` |
 | Geheimnisse | `secrets/list` | `secrets/manage` |
 
 | Richtlinie | Erlaubt |
 |---|---|
-| `datatable/read` | den Katalog und die Seite jeder Klasse |
-| `datatable/manage` | die Kernel-Tabellen anlegen, den Katalog neu erstellen |
+| `datatable/read` | den Katalog, die Seite und die Zeilen jeder Klasse, den Reiter **Datentabellen** der Inhaltsansicht, die Fetch-Funktionen auf den Tabellen des Kernels |
+| `datatable/manage` | die Kernel-Tabellen anlegen, den Katalog neu erstellen, Tabellen auf einer Verbindung anlegen und aktualisieren |
 | `datatable/connections` | Verbindungen anlegen, ändern, testen und entfernen |
 | `datatable/sync` | die Synchronisation zwischen Tabellen und Inhalten (siehe „Als Nächstes") |
 
@@ -300,9 +445,6 @@ expKernelTableSchema::tables( $db );                   // alle Tabellen einer Ve
 
 Die nächsten Schritte der Datentabellen bauen auf dieser Schicht auf:
 
-- das Schema einer Tabelle aus einer `.dba`-Datei auf jeder Verbindung aus der Administration anlegen und
-  aktualisieren, mit dem SQL je System vorab angezeigt;
-- die Beziehungen in der Inhaltsansicht: die Zeilen jeder Datentabelle, die auf das gezeigte Objekt verweisen;
 - ein RAD-Assistent, der eine neue Modultabelle erstellt (die persistente Klasse, ihr Schema je System, die Seiten der
   Administration mit ihren Richtlinien, Fetch-Funktionen und einen JSON-Endpunkt), aus einer Feldliste, einer
   Inhaltsklasse oder den Feldern einer Importquelle;
@@ -317,4 +459,8 @@ In `tests/tests/kernel/classes/datatable/` (Testsuite kernel-classes, ohne Insta
 und ihre Abweichungen, die Verbindungen (Werte, Prüfungen, Pläne, Data-Source-Names, der Test auf SQLite), persistente
 Klassen auf einer SQLite-Verbindung (speichern, lesen, ändern, entfernen, Maskierung), und die beiden Kernel-Tabellen,
 die in `share/db_schema.dba`, den persistenten Klassen, den drei Kernel-Schemas und den drei Update-Dateien gleich sein
-müssen. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.
+müssen. Ebenda geprüft: das Schema (Definitionen als `.dba`, das SQL jedes Systems, Plan und Ausführung auf SQLite:
+anlegen, eine Spalte ergänzen, zurückgehaltenes Löschen), der Schreiber (Typen, Modi, Probelauf, eine abgelehnte Zeile
+scheitert allein, Verweise, die Klassenzuordnung), die Beziehungen und die Fetch-Funktionen, sowie der Eintrag im
+Register mit dem Reiter der Inhaltsansicht, auf einer SQLite-Verbindung mit einer SQLite-Datenbank im Speicher als
+Datenbank der Site. `tests/tests/lib/ezdb/expPDODBTest.php` prüft den PDO-Treiber auf pdo_sqlite und das SQL der anderen Dialekte.

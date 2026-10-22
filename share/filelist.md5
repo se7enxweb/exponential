@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-7c090e7568bb256a163dbee09580c7c4  autoload/ezp_kernel.php
+fe6165bfbea6afcfca5b052bf163b8d8  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -512,8 +512,10 @@ d15376799ac95a2f3c136d58a8e19ad6  design/admin/templates/contentfinder/reason.tp
 5c7af3c96616feaad45a8fb0ee726359  design/admin/templates/dashboard/maintenance.tpl
 2826e482c65ffdc3e255078729572061  design/admin/templates/datatable/connection.tpl
 b3959647fb9dc7132c79e52b8ffecc76  design/admin/templates/datatable/connections.tpl
-7e287c49f906edf3f198094a1ed52536  design/admin/templates/datatable/dashboard.tpl
-da731f961977469793022161c201d7eb  design/admin/templates/datatable/table.tpl
+ce6e50a0391050f8428b64e767db0e6e  design/admin/templates/datatable/dashboard.tpl
+bd0733b116ea78bb5001ee1c38153521  design/admin/templates/datatable/rows.tpl
+e1cdaf49f01566911bee68376a52de93  design/admin/templates/datatable/schema.tpl
+f7b5ba7f130bff83b79a5abef891a152  design/admin/templates/datatable/table.tpl
 49c6fe304e603e648cd750a7c74e48ca  design/admin/templates/details.tpl
 a421b586c89014c6a06cedce3b588a94  design/admin/templates/error/kernel/1.tpl
 3fe66dddcfcaf8f3a4c869e6a11dff5f  design/admin/templates/error/kernel/2.tpl
@@ -783,6 +785,8 @@ d0bc4b1c44e55844101d53c119bc46d4  design/admin/templates/state/edit.tpl
 edede8652539e66630156b6a18f97644  design/admin/templates/state/view.tpl
 afe77d6ca1128176cf8b6899858c0049  design/admin/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin/templates/tabs/audit/node_header.tpl
+7a876f3f2b1412793f8013b659ac497c  design/admin/templates/tabs/datatable/node.tpl
+d7d4c185fd8ef6486470f3e391a076c7  design/admin/templates/tabs/datatable/node_header.tpl
 530387aa991e1e7dad99ddd32095f604  design/admin/templates/tabs/user/policies.tpl
 445920c068563275e48552d4bf839276  design/admin/templates/tabs/user/policies_header.tpl
 6929c141fc2d6bd43532ae27d17a7707  design/admin/templates/tabs/user/roles.tpl
@@ -1277,8 +1281,10 @@ c2f2279dc4eb09341fade0cba9889a20  design/admin4/templates/dashboard/audit.tpl
 5c7af3c96616feaad45a8fb0ee726359  design/admin4/templates/dashboard/maintenance.tpl
 2826e482c65ffdc3e255078729572061  design/admin4/templates/datatable/connection.tpl
 b3959647fb9dc7132c79e52b8ffecc76  design/admin4/templates/datatable/connections.tpl
-7e287c49f906edf3f198094a1ed52536  design/admin4/templates/datatable/dashboard.tpl
-da731f961977469793022161c201d7eb  design/admin4/templates/datatable/table.tpl
+ce6e50a0391050f8428b64e767db0e6e  design/admin4/templates/datatable/dashboard.tpl
+bd0733b116ea78bb5001ee1c38153521  design/admin4/templates/datatable/rows.tpl
+e1cdaf49f01566911bee68376a52de93  design/admin4/templates/datatable/schema.tpl
+f7b5ba7f130bff83b79a5abef891a152  design/admin4/templates/datatable/table.tpl
 71774485f8c0b23da86ebce89f30064d  design/admin4/templates/details.tpl
 e21d87d653b584807136c9b2cb0c19ef  design/admin4/templates/error/kernel/1.tpl
 909eb0b6486adcde8a59ff626ecda0b0  design/admin4/templates/error/kernel/2.tpl
@@ -1571,6 +1577,8 @@ b17b7a3420f3d00eda0ab7e67906a09b  design/admin4/templates/state/group.tpl
 8f8592d4f19c0c1a3432803c8cb871bb  design/admin4/templates/state/view.tpl
 242e73b25fef0e05cbc075c78c692e72  design/admin4/templates/tabs/audit/node.tpl
 a28d02058dcaceb3f0bd665a92aff6b9  design/admin4/templates/tabs/audit/node_header.tpl
+7a876f3f2b1412793f8013b659ac497c  design/admin4/templates/tabs/datatable/node.tpl
+d7d4c185fd8ef6486470f3e391a076c7  design/admin4/templates/tabs/datatable/node_header.tpl
 3ef5dcced09671a2c30a9e5955f6674c  design/admin4/templates/tabs/user/policies.tpl
 445920c068563275e48552d4bf839276  design/admin4/templates/tabs/user/policies_header.tpl
 065060c807c55296f3490724ec191c44  design/admin4/templates/tabs/user/roles.tpl
@@ -3224,7 +3232,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-569d2690c97e8017b178bc06565e94ac  doc/changelogs/6.0/6.0.15.md
+9d24ce90b4377fe270deec4c8a6983a7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6190,7 +6198,7 @@ e37ff9e9d23c49c89dc1a5bdb3f64abb  doc/eng-us/features/6.0/country-groups.md
 96a6e64d47c01adcbcc938f8a2fe8971  doc/eng-us/features/6.0/cronjob-pause.md
 f58ef44439a83c0f3bd4e9ede1173901  doc/eng-us/features/6.0/cronjobs-console.md
 49183904218a17f119fbc88d9bbf6ccb  doc/eng-us/features/6.0/custom-items-per-page.md
-7f47a10dbdafb38657a29fd4e86b13b3  doc/eng-us/features/6.0/data-tables.md
+f43db3d182730849469c7774bd7c52c5  doc/eng-us/features/6.0/data-tables.md
 038ad003cc7c482d85ba9496eb507bf6  doc/eng-us/features/6.0/debug-output-improvements.md
 2ede246757068e064cab00fcf3fb1795  doc/eng-us/features/6.0/default-extension-distribution.md
 8bb25377c53c0d863e0b1ad669e226da  doc/eng-us/features/6.0/environment-settings.md
@@ -9864,7 +9872,7 @@ baf66aa17d127641f5998381cf0a59c3  doc/eng-us/help/images/update-cli-a5-check.web
 2ee3c65057ea308d18a427bc3e0450a3  doc/eng-us/help/images/update-maintenance.webp
 1f80a35c16fb4004febb83c4a11c98e2  doc/eng-us/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/eng-us/help/images/versions.webp
-0c5f5df168d2bc6da47f5e02556ec25d  doc/eng-us/help/import-export-tools.md
+d585eeca49819910ff0af0c2dac2d618  doc/eng-us/help/import-export-tools.md
 3f1fd52ae8ba44cde8a744607256f9d8  doc/eng-us/help/individuals/blogs/README.md
 6f49f66fc0315af888a25f434845d86f  doc/eng-us/help/individuals/blogs/comments-on-your-blog.md
 ab5a57b3c773d891ac7b4daf2ad7b868  doc/eng-us/help/individuals/blogs/moving-from-another-blog-platform.md
@@ -15010,7 +15018,7 @@ c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-pol
 1242ab657fedf66ac0d81c8127d723ad  doc/ger-de/funktionen/6.0/cronjobs-in-der-konsole.md
 792de119377b83087fa9175b15ce5c4a  doc/ger-de/funktionen/6.0/cronjobs-pausieren.md
 9a18c784488620d01443a220aeb513b0  doc/ger-de/funktionen/6.0/dateikonsistenzpruefung.md
-bbfab1993e3f7ffeb41a3b9117d4c432  doc/ger-de/funktionen/6.0/datentabellen.md
+fec4d3ed063ffc87604a4666f165cbc0  doc/ger-de/funktionen/6.0/datentabellen.md
 9fa97c0f8e47e189f172c2cfdabd9d20  doc/ger-de/funktionen/6.0/durch-deployment-verwaltet.md
 b3e456d2f10a16a5331ce2c08d501420  doc/ger-de/funktionen/6.0/e-mail-einstellungen.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
@@ -16951,7 +16959,7 @@ a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheit
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
 b7007a5a1e0ad8960cadd403d87caa73  doc/ger-de/hilfe/hosting/sicherheit/zweistufige-anmeldung.md
-84be7c1ff50cd671be05484e23ab7448  doc/ger-de/hilfe/import-oder-export-werkzeug.md
+36280e4d4042af636877286705a6da62  doc/ger-de/hilfe/import-oder-export-werkzeug.md
 94bdd42e822a3953ce31051f080ee6a1  doc/ger-de/hilfe/inhalte-bearbeiten.md
 0530058a847a325a95b5520e3d6f2f9f  doc/ger-de/hilfe/integratoren/anbindung-einer-suchmaschine.md
 47264559aec7552a1f459da8390c37c1  doc/ger-de/hilfe/integratoren/arbeitsblatt-zur-bestandsaufnahme-einer-integration.md
@@ -21360,7 +21368,11 @@ d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.ph
 e5bf4833e3b0cc2a8725e0fd0b362dd0  kernel/classes/datatable/expdataconnections.php
 bc4a968b92a941fb58185301aa45a2f3  kernel/classes/datatable/expdatatablecatalogue.php
 9de865061e822631e1dab4f63bea9d22  kernel/classes/datatable/expdatatabledescriber.php
-9a2b92da3b36bafbd8e5a84022f83069  kernel/classes/datatable/expkerneltableschema.php
+07ca39c2c94fa44ccf69f2bdde3d7998  kernel/classes/datatable/expdatatablefunctioncollection.php
+0f61b5f86625d0a1229a64fd8c257933  kernel/classes/datatable/expdatatablerelation.php
+220f5502a162eb2c2c2fca8e8d8139df  kernel/classes/datatable/expdatatableschema.php
+c114c6851b1f2f1382f91fec1f35e468  kernel/classes/datatable/expdatatablewriter.php
+99eb9f01a072a56e226436a3c45e8acc  kernel/classes/datatable/expkerneltableschema.php
 b87309023dcf0632588ba95e277c245b  kernel/classes/datatypes/ezauthor/ezauthor.php
 947a63267a510aeeb225845c19aed101  kernel/classes/datatypes/ezauthor/ezauthortype.php
 fb75d46b05bf6f49f29fafd0d7c71fe5  kernel/classes/datatypes/ezbinaryfile/ezbinaryfile.php
@@ -22026,7 +22038,10 @@ df4dada9be41854ea0e88d808ced77ba  kernel/csp/module.php
 92ee8c56717bd8e7a1761108a9aad74c  kernel/datatable/connection.php
 a55269cd08614be0a97414c4aff57dea  kernel/datatable/connections.php
 16b899794a5e6d8bd2b71cda63308cab  kernel/datatable/dashboard.php
-25d240743c9938210532a52a63bdeff1  kernel/datatable/module.php
+a27d27ae7bcb5d590ff4b7785ca833b0  kernel/datatable/function_definition.php
+48a1e34bf79104d268bbad40e9f7fffc  kernel/datatable/module.php
+1c2d81fdc7e016dfa84a9d2055c2de6d  kernel/datatable/rows.php
+7282d41b3ec8b76dcc50e55db3244f05  kernel/datatable/schema.php
 cb239c9f77826f4a47266c9af18ef3bc  kernel/datatable/table.php
 26769ecf1f69fca7a10592eea1b17135  kernel/error/module.php
 49c653b7029afbd4ec85651acc7eba62  kernel/error/view.php
@@ -22412,7 +22427,9 @@ e4b995714fc77e6c60e912df4e05c29c  kernel/private/classes/views/contentcheck/unre
 b5e229c98097ccae8d7f1dcf8a5e1704  kernel/private/classes/views/datatable/connection.php
 e0ee4961f4f854ea1bee74612347b719  kernel/private/classes/views/datatable/connections.php
 51464d8e33de4613acbd7fe7e05b35c8  kernel/private/classes/views/datatable/dashboard.php
-0b1976b364f8d1ec4955ed19d30a594e  kernel/private/classes/views/datatable/table.php
+557b792e4032a774321597a71145699b  kernel/private/classes/views/datatable/rows.php
+27ba58c2883a05f923259dc2e3cb89c3  kernel/private/classes/views/datatable/schema.php
+b1606fd898f6e478fdcd946397240d26  kernel/private/classes/views/datatable/table.php
 6d71c9b30560afbeb8dca1a0955f6c00  kernel/private/classes/views/error/view.php
 359f0dcfd7c0719d31fa53665cf0972b  kernel/private/classes/views/exphelp/asset.php
 3e05eb609d86ceb23a37a47aa6a92576  kernel/private/classes/views/exphelp/audience.php
@@ -23219,7 +23236,7 @@ d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
-109d06d245aeb8a6a5d6264287e9a778  settings/admininterface.ini
+384d863a64ec6bf359da051874b0d222  settings/admininterface.ini
 c57ac42398668ba082d6eaa09b8ed7d9  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
@@ -23234,7 +23251,7 @@ bbef6be3b98786e0ac5391c2f9993b6f  settings/country.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
 3cca6b28e6d0ccdfa2a69414c4daf88d  settings/cronjob.ini
 dc72e22f5c98f3c85457b235dc87073b  settings/dashboard.ini
-99e2e7968716216ef3f3b0c580fe1e8b  settings/datatable.ini
+1dc1ef94d1fa90f311786af722de75af  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 9197ab21aa5e2f4e44eb3950d1753461  settings/dbschema.ini
@@ -23252,7 +23269,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 1f9f8117c0d4eb89b6644d8f1fe4d46d  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
-7009a7dc8435532d75d1e0104811d5d4  settings/kernelservices.ini
+84963915c9c37378e037c332dc8f57f3  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
@@ -24117,7 +24134,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-e360cf1ed9fdba90e7ad48f37a85fe8f  share/translations/eng-US/translation.ts
+561c9c6dceb2c745feb86452d6140cb1  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24125,7 +24142,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-d46be713591085acab7b373ae1325f77  share/translations/ger-DE/translation.ts
+75374dd6d1b22e286793daf4b78ccb3f  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24145,7 +24162,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-175f4f7babcac311b76fa122de5d0aa5  share/translations/untranslated/translation.ts
+ba7a0ef94183a6dab75b2602ef06815b  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24604,7 +24621,12 @@ b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expCon
 0321349fed5a1463c9cdb4127fc3a42d  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
 8c572ff076224149c2cb091cc2ab20f4  tests/tests/kernel/classes/datatable/expDataTableCatalogueTest.php
 0f6630e9a1f8a3a05137e05fdeb7a07c  tests/tests/kernel/classes/datatable/expDataTableDescriberTest.php
-2a9da4c34e8ca80401a216b953ac7f78  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
+0d747488869b15b077892ed097695493  tests/tests/kernel/classes/datatable/expDataTableRegistryEntryTest.php
+5cc7fce967620f3fbb3872085ff3d7f4  tests/tests/kernel/classes/datatable/expDataTableRelationTest.php
+c789a8b6f4d91c2a7c1f34ffdf2ed317  tests/tests/kernel/classes/datatable/expDataTableSchemaTest.php
+3d2ab50aaf748b6f77d9e7f6b0e45701  tests/tests/kernel/classes/datatable/expDataTableSqliteFixture.php
+7abc84618341876b1b3405e5166b26ea  tests/tests/kernel/classes/datatable/expDataTableTestLoader.php
+1681c4da70c4c1d5acae57b694c09d72  tests/tests/kernel/classes/datatable/expDataTableWriterTest.php
 1ead794e5c8967248a03d1e47035c1e3  tests/tests/kernel/classes/datatable/expKernelSecretAndConnectionTablesTest.php
 715cb611b342593215299954601754f6  tests/tests/kernel/classes/datatable/expPersistentObjectOnConnectionTest.php
 0f7d6b3a3845de6e9fb082f635076e4f  tests/tests/kernel/classes/datatypes/eZChoiceDatatypesTest.php
@@ -24730,7 +24752,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
-5f052aef6baf71fdb2b5831ba4bbd2d9  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
+18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php
 8e2cf124d80d40e3228e49c616a36389  tests/tests/kernel/classes/expLoveStackFixture.php

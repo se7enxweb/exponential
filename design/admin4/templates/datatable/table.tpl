@@ -10,6 +10,10 @@
         <h1 class="a4-pagehead-title context-title">{$entry.class|wash}</h1>
         <p class="a4-pagehead-sub"><code class="a4-code">{$entry.table|wash}</code> &middot; {if eq( $entry.origin, 'kernel' )}{'Kernel'|i18n( 'design/admin/datatable' )}{else}{'Extension %name'|i18n( 'design/admin/datatable',, hash( '%name', $entry.origin ) )|wash}{/if} &middot; <code class="a4-code">{$entry.file|wash}</code></p>
     </div>
+    <div class="a4-pagehead-actions a4-actions">
+        {if $description.exists}<a class="a4-btn" href={concat( 'datatable/rows/', $entry.class )|ezurl}>{'Rows'|i18n( 'design/admin/datatable' )}</a>{/if}
+        {if and( $can_manage, $entry.error|not )}<a class="a4-btn" href={concat( 'datatable/schema/(class)/', $entry.class )|ezurl}>{if $description.exists}{'Upgrade the table'|i18n( 'design/admin/datatable' )}{else}{'Create the table'|i18n( 'design/admin/datatable' )}{/if}</a>{/if}
+    </div>
 </div>
 
 {if $entry.error}

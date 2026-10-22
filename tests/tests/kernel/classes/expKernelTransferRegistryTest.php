@@ -94,7 +94,7 @@ class expKernelTransferRegistryTest extends PHPUnit\Framework\TestCase
         $this->assertArrayHasKey( 'transfer.registry', $read['definitions'] );
 
         $ids = isset( $read['tags']['transfer.tool'] ) ? $read['tags']['transfer.tool'] : array();
-        foreach ( array( 'transfer.package', 'transfer.rss_import', 'transfer.rss_export', 'transfer.infocollector', 'transfer.audit', 'transfer.pdf' ) as $id )
+        foreach ( array( 'transfer.package', 'transfer.rss_import', 'transfer.rss_export', 'transfer.infocollector', 'transfer.audit', 'transfer.pdf', 'transfer.datatable' ) as $id )
             $this->assertContains( $id, $ids );
 
         foreach ( expKernelServiceCompiler::validate( $read ) as $problem )
@@ -260,7 +260,7 @@ class expKernelTransferRegistryTest extends PHPUnit\Framework\TestCase
             foreach ( $tool->get( 'round_trip' ) as $partner )
             {
                 // a partner may be an extension's tool, not declared here; a kernel id must exist
-                if ( in_array( $partner, array( 'transfer.package', 'transfer.rss_import', 'transfer.rss_export', 'transfer.infocollector', 'transfer.audit', 'transfer.pdf' ), true ) )
+                if ( in_array( $partner, array( 'transfer.package', 'transfer.rss_import', 'transfer.rss_export', 'transfer.infocollector', 'transfer.audit', 'transfer.pdf', 'transfer.datatable' ), true ) )
                     $this->assertNotNull( $registry->tool( $partner ), "$id: RoundTrip[]=$partner" );
             }
         }

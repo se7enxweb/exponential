@@ -9,10 +9,10 @@ installation talks to. The passwords of those databases live in the [secret stor
 | | |
 |---|---|
 | What a data table is | The table of a persistent class: a PHP class that extends `eZPersistentObject` and describes its table in `definition()` (fields, keys, the table name). The kernel has hundreds of them; most extensions add their own. |
-| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. |
+| What 6.0.15 adds | A catalogue of every such class with its table, fields, keys and relations to content; a description of each table as its database has it, and where it differs from the definition; named database connections (a SQLite file, MySQL/MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB, here or remote); and persistent classes that read and write on such a connection instead of the installation's database. Then: a table's schema created or upgraded on any connection from the administration, its rows browsed, the rows that point at an item shown in the content view, one writer for every tool that puts rows into a table, and fetch functions for templates. |
 | Where | **Setup > Data tables** (module `datatable`): Data tables, Connections. **Setup > Secrets** (module `secrets`) for their passwords. |
 | No command needed | The kernel tables are created from the Data tables page, the catalogue is made when the page is first opened, connections are made and tested in the browser. |
-| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expPDODB`; `eZPersistentObject::dbFor()` |
+| Classes | `expDataTableCatalogue`, `expDataTableDescriber`, `expDataConnections`, `expDataConnection`, `expKernelTableSchema`, `expDataTableSchema`, `expDataTableWriter`, `expDataTableRelation`, `expDataTableFunctionCollection`, `expPDODB`; `eZPersistentObject::dbFor()` |
 | Settings | `datatable.ini` (`[DataTableSettings]`, `[ConnectionSettings]`, `[Connection_<id>]`, `[ClassSettings]`, `[Relation_<class>_<column>]`) |
 
 ## The catalogue
@@ -56,7 +56,7 @@ section, or a row of another table. They are taken from, in this order (the firs
 | The definition's `relations` key | `'relations' => array( 'node_id' => array( 'class' => 'eZContentObjectTreeNode', 'field' => 'node_id' ) )`; an optional `'kind'` (`object`, `node`, `class`, `user`, `section`, `table`) | the definition |
 | A field's foreign key | `'foreign_class' => 'eZUser', 'foreign_attribute' => 'contentobject_id'` in the field | a foreign key of a field |
 | `datatable.ini` | a block `[Relation_<class>_<column>]` with `Kind=`, `Class=` and `Field=` | datatable.ini |
-| The column's name | `contentobject_id`, `object_id`, `*_object_id` (object); `node_id`, `main_node_id`, `parent_node_id`, `*_node_id` (node); `contentclass_id`, `class_id` (class); `user_id`, `creator_id`, `owner_id`, `modifier_id` (user); `section_id` (section) | inferred from the name |
+| The column's name | `contentobject_id`, `object_id`, `*_object_id` (object); `node_id`, `main_node_id`, `parent_node_id`, `*_node_id` (node); `contentclass_id`, `class_id` (class); `user_id`, `creator_id`, `owner_id`, `modifier_id`, and `creator_`, `modifier_`, `owner_`, `author_` or `editor_` followed by `contentobject_id` or `object_id` (user); `section_id` (section) | inferred from the name |
 
 The kind follows from the target class: `eZContentObject` is an object, `eZContentObjectTreeNode` a node,
 `eZContentClass` a class, `eZUser` a user, `eZSection` a section, any other class a table. A table's own counted-up
@@ -220,6 +220,143 @@ A class without a connection costs two `isset()` checks and one lookup more than
 The settings of `[ClassSettings]` are read once per process. On Velocity a change of them reaches the workers with
 the next restart.
 
+## Schema: creating and upgrading tables on a connection
+
+`expDataTableSchema` puts a schema on a connection. The schema comes from:
+
+- a persistent class's `definition()` (`expDataTableSchema::fromDefinition()`): `integer` becomes `int(11)`, `float`
+  a float, `text` a long text, anything else a `varchar(255)` (other lengths through the second argument); the
+  counted-up key is an auto-increment column, the keys are the primary key, each relation column gets an index (the
+  content view asks "which rows point at this item"), and the optional `'unique' => array( '<index>' => array( columns ) )`
+  of the definition gives unique indexes. Index names are at most 30 characters (Oracle's limit);
+- an extension's `share/db_schema.dba` (`expKernelTableSchema::read()`).
+
+`plan()` says, table by table, what applying the schema would do, with the SQL, and runs nothing:
+
+| Action | When |
+|---|---|
+| `create` | the table is not there |
+| `upgrade` | columns or indexes are missing (they are added) |
+| `none` | the table is as the schema says, or only differs in what is held |
+| `unknown` | the connection does not list its tables to this user |
+
+Dropping a column or an index the schema does not have, and changing a column or an index that differs, are **held**:
+listed, not done, unless asked (`'drop' => true`, `'alter' => true`; the two boxes of the page). `apply()` runs the
+plan and stops a table at its first failing statement.
+
+```php
+$schema = expDataTableSchema::fromDefinition( myArchiveRow::definition() );
+$db = expDataConnections::db( 'archive' );
+$plan = expDataTableSchema::plan( $schema, $db );             // action, statements, held, notes per table
+$result = expDataTableSchema::apply( $schema, $db );          // ok, tables => action, ok, done, errors
+$sql = expDataTableSchema::installSql( $schema );             // engine => SQL, for sql/<engine>/schema.sql
+```
+
+| Engine | Create | Upgrade |
+|---|---|---|
+| MySQL/MariaDB, PostgreSQL, SQLite | the kernel's schema handlers (`eZMysqlSchema`, `eZPgsqlSchema`, `eZSQLiteSchema`) | `eZDbSchemaChecker::diff()` against the live table and the handler's upgrade SQL |
+| Oracle | ezoracle's schema handler when the extension is active; otherwise (PDO oci) the statements of `oracleCreate()`: `VARCHAR2(n CHAR)`, `CLOB`, `BINARY_DOUBLE`, and a sequence with a `BEFORE INSERT` trigger for the counted-up key, named as `expPDODB::oracleSequence()` reads it | through ezoracle as above; through PDO the missing columns are added |
+| SQL Server | `sqlServerCreate()`: `INT IDENTITY(1,1)`, `NVARCHAR(n)`, `NVARCHAR(MAX)`, bracketed names | the missing columns are added |
+| MongoDB | the collection is made by its first write; the indexes by the schema handler (`expMongoSchema`) | the indexes are made again when missing; documents need no column |
+
+The page **Setup > Data tables > Schema** (`datatable/schema`, policy `datatable/manage`) takes a class (of an
+extension) or an extension's schema file, and a connection (the class's own by default; a read-only connection cannot
+be chosen). **Show what would be done** lists the plan with its SQL; **Apply** runs it and reports each table. The
+install SQL of every engine (MySQL, PostgreSQL, SQLite, Oracle, SQL Server) is shown below, to copy into an extension's
+`sql/<engine>/schema.sql`. A class's page links to it as **Create the table** or **Upgrade the table**.
+
+## Rows
+
+`datatable/rows/<class>` (policy `datatable/read`) lists the rows of a class's table, 25 a page, on the class's
+connection. `/(<field>)/<value>` keeps the rows where one field has one value (the content view's tab links there).
+A value of a relation column links to what it points at: the node's or the object's page, the class, the section, or
+the rows of the other table. Columns whose names say they hold a secret (`password`, `hash`, `token`, `secret`, `salt`,
+`ciphertext`, `private_key`, `api_key`, `key`) are left out, here and in the first rows of a class's page. The page
+only reads.
+
+## Relations in the content view
+
+The node view of the administration has a tab **Data tables** (`admininterface.ini [AdditionalTab_datatable]`) for a
+user with `datatable/read`, shown only when some row points at the node or its object. It lists, per table and
+column, how many rows point there and the first ten, with a link to all of them
+(`expDataTableRelation::pointingAt()`, the fetch function `pointing_at`).
+
+Only the tables of extensions and of named connections are asked: the kernel's own tables relate to content
+everywhere, and a class of an extension over a kernel table is left out too. Only declared relations are asked (the
+definition's `relations`, a field's `foreign_class`, a `[Relation_*]` block), one count per relation and node view;
+`datatable.ini [DataTableSettings] ContentTabInferred=enabled` also asks the relations inferred from column names.
+
+`expDataTableRelation::target( $relation, $value )` gives what a value points at (an `eZContentObject`,
+`eZContentObjectTreeNode`, `eZContentClass`, `eZUser`, `eZSection`, or the row of the other table) and `url()` its
+address in the administration.
+
+## Writing rows
+
+Every tool that puts rows into a data table (an import, the synchronisation, a module of its own) goes through
+`expDataTableWriter`, never raw SQL: it checks the rows against the class's definition and writes on the class's
+connection.
+
+```php
+$writer = new expDataTableWriter( 'myArchiveRow', array( 'keys' => array( 'remote_id' ), 'mode' => 'upsert' ) );
+$result = $writer->write( array(
+    array( 'remote_id' => 'a-1', 'title' => 'First', 'node_id' => '@node:4f9c2e…' ),
+    array( 'remote_id' => 'a-2', 'title' => 'Second', 'contentobject_id' => '@path:news/second' ),
+) );
+// inserted, updated, unchanged, skipped, failed, errors (list), ids (row number => key)
+```
+
+| Option | Meaning |
+|---|---|
+| `keys` | the fields a row is matched by; the class's keys when none are given (the counted-up key is left out of several) |
+| `mode` | `insert` (only new rows), `update` (only existing ones), `upsert` (both, the default), `replace` (an existing row is removed and written again) |
+| `dry_run` | check and count, write nothing |
+| `chunk` | rows per transaction (default 200) |
+| `unknown` | `refuse` (an unknown field fails the row, the default) or `ignore` |
+
+Values are typed by the definition (`integer`, `float`; a date in an integer field becomes a timestamp; an array in a
+text field becomes JSON). A row that does not change anything is counted as unchanged and not written. A relation
+column may hold a reference instead of an id: `@object:<remote id>`, `@node:<remote id>` or `@path:<url alias>`; a
+reference nothing has fails the row. Each chunk is one transaction; when the database refuses a row, the chunk is
+rolled back and written again row by row, each in a transaction of its own, so that bad row fails alone and the others
+are written. An error names the row's number and the field, never a value.
+
+On SQLite, `eZPersistentObject` writes a new row with `INSERT OR REPLACE`: a row whose unique column another row has
+already replaces that row instead of failing (MySQL and PostgreSQL refuse it). Match by the unique column (`keys`) to
+update the existing row instead.
+
+A class the catalogue does not list yet (made after the catalogue was built) is read from its own definition.
+
+## In templates
+
+The module `datatable` has five fetch functions (`kernel/datatable/function_definition.php`,
+`expDataTableFunctionCollection`):
+
+```
+{def $rows = fetch( 'datatable', 'list', hash( 'class', 'myArchiveRow',
+                                             'conditions', hash( 'state', 'open' ),
+                                             'sort', array( 'created', false() ),
+                                             'offset', 0, 'limit', 20 ) )}
+{fetch( 'datatable', 'count', hash( 'class', 'myArchiveRow', 'conditions', hash( 'state', 'open' ) ) )}
+{def $row = fetch( 'datatable', 'row', hash( 'class', 'myArchiveRow', 'key', hash( 'id', 42 ) ) )}
+{def $found = fetch( 'datatable', 'pointing_at', hash( 'object_id', $node.contentobject_id, 'node_id', $node.node_id ) )}
+{if fetch( 'datatable', 'can', hash( 'function', 'read' ) )}…{/if}
+```
+
+`list`, `count` and `row` read the classes of extensions and of named connections for anyone who may see the
+template; a class of the kernel's own database only for a user with `datatable/read`. Conditions are equality on
+fields of the class (other keys are ignored), `sort` is a field and ascending (`true()`) or descending, `limit` is
+between 1 and 500. `row` needs every key it is given to be a field. `pointing_at` needs `datatable/read`; `can` answers
+for `read`, `manage`, `connections` and `sync`.
+
+## In the registry
+
+The data tables are a tool of the transfer registry ([transfer-registry.md](transfer-registry.md)):
+`[Service_transfer.datatable]` in `kernelservices.ini`, named **Data tables**, direction both, scopes data, class and
+subtree, entry page `datatable/dashboard` (policy `datatable/read`), the `secrets` module belonging to it, two Setup
+entries ("Create or upgrade a table on a database connection…" with `datatable/manage`, "Browse the tables of the
+persistent classes…"), and 7x SQLI Import as its round-trip partner, so each appears in the other's **Looking for…?**
+box.
+
 ## The administration
 
 | Page | Address | Policy |
@@ -228,12 +365,14 @@ the next restart.
 | One class: definition, connection, table, differences, relations, first rows | `datatable/table/<class>` | `datatable/read` |
 | Connections, and the engines of this server | `datatable/connections` | `datatable/connections` |
 | One connection: new, change, test, remove | `datatable/connection/<identifier>` (`new` for a new one) | `datatable/connections` |
+| The rows of one table, 25 a page, filtered by one field | `datatable/rows/<class>`, `datatable/rows/<class>/(<field>)/<value>` | `datatable/read` |
+| Create or upgrade tables on a connection | `datatable/schema`, `datatable/schema/(class)/<class>`, `datatable/schema/(extension)/<name>` | `datatable/manage` |
 | Secrets | `secrets/list` | `secrets/manage` |
 
 | Policy | Allows |
 |---|---|
-| `datatable/read` | the catalogue and the page of each class |
-| `datatable/manage` | creating the kernel tables, making the catalogue again |
+| `datatable/read` | the catalogue, the page and the rows of each class, the **Data tables** tab of the content view, the fetch functions on the kernel's tables |
+| `datatable/manage` | creating the kernel tables, making the catalogue again, creating and upgrading tables on a connection |
 | `datatable/connections` | making, changing, testing and removing connections |
 | `datatable/sync` | the synchronisation between tables and content (see "Coming next") |
 
@@ -289,9 +428,6 @@ expKernelTableSchema::tables( $db );                   // every table of a conne
 
 The next steps of the data tables build on this layer:
 
-- installing and upgrading a table's schema from a `.dba` file on any connection from the administration, with the SQL
-  shown first, per engine;
-- the relations in the content view: the rows of every data table that point at the item shown;
 - a RAD wizard that makes a new module table (the persistent class, its schema per engine, the administration pages
   with their policies, fetch functions and a JSON endpoint) from a list of fields, a content class or the fields of an
   import source;
@@ -305,4 +441,8 @@ In `tests/tests/kernel/classes/datatable/` (testsuite kernel-classes, no install
 description and its differences, the connections (values, checks, plans, data source names, testing on SQLite),
 persistent classes on a SQLite connection (store, fetch, update, remove, escaping), and the two kernel tables, which
 must be the same in `share/db_schema.dba`, the persistent classes, the three kernel schemas and the three update files.
+The schema (definitions to `.dba`, the SQL of every engine, plan and apply on SQLite: create, add a column, held drops),
+the writer (types, modes, dry run, a refused row failing alone, references, the class map), the relations and the
+fetch functions, and the registry entry with the content view's tab are tested there too, on a SQLite connection with
+a SQLite database in memory as the site's.
 `tests/tests/lib/ezdb/expPDODBTest.php` tests the PDO driver on pdo_sqlite and the SQL of the other dialects.

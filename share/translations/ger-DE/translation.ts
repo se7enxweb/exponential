@@ -72719,6 +72719,134 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>yes</source>
         <translation>ja</translation>
     </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count Zeilen verweisen über %column (%kind) auf dieses Objekt</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count Zeilen, in denen %field gleich %value ist.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count Zeilen.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done Anweisungen</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Alle %count Zeilen</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Alle Zeilen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Ausführen</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Abweichende Spalten und Indizes ändern</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabelle anlegen</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before "Apply"; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Die Tabellen einer Klasse oder einer Erweiterung auf einer Verbindung anlegen oder auf den neuesten Stand bringen. Vor „Ausführen“ läuft nichts; Spalten und Indizes werden nur gelöscht oder geändert, wenn Sie es ankreuzen.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Erledigt</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Spalten und Indizes löschen, die das Schema nicht hat</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Aus der Definition einer Klasse</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Keine Zeile einer Datentabelle verweist auf dieses Objekt.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Nur ausgeführt, wenn oben angekreuzt: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Nicht alles konnte ausgeführt werden</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Auf der Verbindung</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Oder aus der Schemadatei einer Erweiterung</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Zeilen von %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Zeilen von Datentabellen, die auf dieses Objekt verweisen</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Anzeigen, was ausgeführt würde</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Die Verbindung %id ist schreibgeschützt.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Die Erweiterung %name hat keine share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Das Installations-SQL jeder Datenbank</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Es gibt keine Verbindung %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Es gibt keine persistente Klasse %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Tabelle aktualisieren</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Was auf %connection (%engine) ausgeführt würde</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>anlegen</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>aktuell</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>aktualisieren</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/job</name>
@@ -81777,6 +81905,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Make a PDF document of a folder and its items, to print or to send.</source>
         <translation>Ein PDF-Dokument aus einem Ordner und seinen Objekten machen, zum Drucken oder Verschicken.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datentabellen</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Die Tabellen der persistenten Klassen und die benannten Datenbankverbindungen: Tabellen auf jeder Verbindung beschreiben, anlegen und aktualisieren, ihre Zeilen ansehen und sehen, was auf Inhalte verweist.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Eine Tabelle auf einer Datenbankverbindung anlegen oder aktualisieren …</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Die Tabellen der persistenten Klassen ansehen …</translation>
     </message>
 </context>
 </TS>

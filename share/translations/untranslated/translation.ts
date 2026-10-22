@@ -64720,6 +64720,134 @@ You will need to change the class of the node by using the swap functionality.</
         <source>yes</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before "Apply"; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -74628,6 +74756,22 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

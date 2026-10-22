@@ -243,7 +243,7 @@ class expKernelTableSchema
      */
     public static function sql( array $schema, $type )
     {
-        $handler = eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? 'mongo' : $type, 'instance' => null, 'schema' => $schema ) );
+        $handler = eZDbSchema::instance( array( 'type' => $type === 'mongodb' ? 'mongo' : $type, 'instance' => new eZNullDB( array() ), 'schema' => $schema ) );
         if ( !$handler )
             return '';
         $options = array( 'schema' => true, 'data' => false, 'allow_multi_insert' => false, 'diff_friendly' => false,

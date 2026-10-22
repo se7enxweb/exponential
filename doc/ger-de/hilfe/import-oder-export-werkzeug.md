@@ -33,6 +33,7 @@ fragen Sie Ihren Administrator.
 | Eine Word- oder OpenDocument-Datei zu einem Objekt machen, oder ein Objekt als Dokument herunterladen | **Word and OpenDocument** | beide | einem Objekt | DOCX, DOC, ODT | **Import/Export > Word- oder OpenDocument-Datei importieren …** an einem Ordner |
 | Einen Ordner drucken oder als Dokument verschicken | **PDF export** | Export | einem Ordner | PDF | **Setup > PDF-Export** |
 | Den Audit-Trail einem Prüfer übergeben | **Audit export** | Export | Audit-Einträge | CSV, JSON Lines, JSON | **Audit > Export** |
+| Die Tabelle eines Moduls auf einer anderen Datenbank anlegen oder aktualisieren, ihre Zeilen ansehen, eine Verbindung zu einer externen Datenbank einrichten | **Data tables** (Datentabellen) | beide | Datentabellen, Klassen | SQL, .dba | **Setup > Datentabellen** |
 
 ## Hin- und Rückwege: was liest was
 

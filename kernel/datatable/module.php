@@ -31,6 +31,20 @@ $ViewList['table'] = array(
     'functions' => array( 'read' ),
     'params' => array( 'ClassName' ) );
 
+$ViewList['rows'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'rows.php',
+    'functions' => array( 'read' ),
+    'params' => array( 'ClassName' ),
+    'unordered_params' => array( 'offset' => 'Offset' ) );
+
+$ViewList['schema'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'schema.php',
+    'functions' => array( 'manage' ),
+    'params' => array(),
+    'unordered_params' => array( 'class' => 'ClassName', 'extension' => 'Extension', 'connection' => 'Connection' ) );
+
 $ViewList['connections'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'connections.php',

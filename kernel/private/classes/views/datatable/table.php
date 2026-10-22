@@ -67,6 +67,7 @@ class Table extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'sample_limit', self::SAMPLE );
         $tpl->setVariable( 'hidden_columns', $hidden );
         $tpl->setVariable( 'connection', \expDataConnections::get( $entry['connection'] ) );
+        $tpl->setVariable( 'can_manage', Dashboard::may( 'manage' ) );
 
         $Result = array();
         $Result['content'] = $tpl->fetch( 'design:datatable/table.tpl' );
