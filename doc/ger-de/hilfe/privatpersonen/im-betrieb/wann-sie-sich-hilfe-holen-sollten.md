@@ -99,7 +99,7 @@ Wenn Sie selbst die Person werden möchten, die andere beauftragen, siehe
 - [Allein betreiben](README.md)
 - [Was Sie Ihren Partner fragen sollten](../../kunden/gesund-halten/was-sie-ihren-partner-fragen-sollten.md)
 - [Partner: hier beginnen](../../partner/partner-hier-beginnen.md)
-- [Lokale Unternehmen: hier beginnen](../../../../eng-us/help/local-businesses/local-businesses-start-here.md)
+- [Lokale Unternehmen: hier beginnen](../../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

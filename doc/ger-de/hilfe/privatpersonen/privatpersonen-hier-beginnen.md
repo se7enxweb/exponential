@@ -69,7 +69,7 @@ Lizenzgebühr ([Lizenzierung für Käufer](../geschaeft/lizenzen-fuer-kaeufer.md
 
 Ein eingetragener gemeinnütziger Verein oder eine Organisation mit Angestellten findet seine Bedürfnisse eher unter
 [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md), und ein Laden oder ein Handwerksbetrieb
-gehört zu [Lokale Unternehmen](../../../eng-us/help/local-businesses/local-businesses-start-here.md). Wenn Sie mit technischen Begriffen
+gehört zu [Lokale Unternehmen](../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md). Wenn Sie mit technischen Begriffen
 gar nicht vertraut sind, lesen Sie [Nicht-technische Menschen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md)
 zusätzlich zu diesem Bereich.
 
@@ -138,7 +138,7 @@ Die vollständige Lesereihenfolge ist der [Lesepfad](lesepfad-fuer-privatpersone
 | [Kunden](../kunden/kunden-hier-beginnen.md) | Inhaber einer Website, die jemand anderes gebaut hat und betreibt |
 | [Blogs (Kunden)](../kunden/typen/blogs-hier-beginnen.md) | Die Sicht des Inhabers auf ein Blog |
 | [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md) | Wohltätige Organisationen und Vereine |
-| [Lokale Unternehmen](../../../eng-us/help/local-businesses/local-businesses-start-here.md) | Läden, Handwerk und Dienstleistungen |
+| [Lokale Unternehmen](../lokale-unternehmen/lokale-unternehmen-hier-beginnen.md) | Läden, Handwerk und Dienstleistungen |
 | [Nicht-technische Menschen](../../../eng-us/help/non-technical-people/non-technical-people-start-here.md) | Hilfe in einfacher Sprache für alle |
 
 ## Verwandte Seiten

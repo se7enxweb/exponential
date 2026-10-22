@@ -115,7 +115,7 @@ Die vollständige Reihenfolge, Seite für Seite, ist der [Lesepfad für Bündler
 - [Hosting-Firmen: hier beginnen](../hosting/hosting-anbieter-hier-beginnen.md)
 - [Seitenpakete: hier beginnen](../seitenpakete/README.md)
 - [Wiederverkäufer: hier beginnen](../../../eng-us/help/resellers/resellers-start-here.md)
-- [Integratoren: hier beginnen](../../../eng-us/help/integrators/integrators-start-here.md)
+- [Integratoren: hier beginnen](../integratoren/integratoren-hier-beginnen.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->
