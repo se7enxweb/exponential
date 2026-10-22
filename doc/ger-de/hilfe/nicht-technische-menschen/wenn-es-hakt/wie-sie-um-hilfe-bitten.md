@@ -66,7 +66,8 @@ Sie nie private Daten an einem öffentlichen Ort.
 ## Bezahlter Support
 
 Wenn Sie nicht warten können, empfiehlt die Support-Seite des Projekts bezahlten Support von 7x, dem Unternehmen, das
-Exponential pflegt, und auch Partner bieten Support an ([Unterstützung erhalten](../../projekt/unterstuetzung-erhalten.md)).
+Exponential pflegt, und auch Partner bieten Support an ([Unterstützung erhalten](../../projekt/unterstuetzung-erhalten.md),
+[Partner: hier beginnen](../../partner/partner-hier-beginnen.md)).
 
 ## Wenn das Problem in der Software selbst liegt
 
