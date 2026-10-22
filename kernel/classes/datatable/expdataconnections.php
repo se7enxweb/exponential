@@ -931,7 +931,7 @@ class expDataConnections
     protected static function realDirectory( $dir, $create = false )
     {
         if ( !is_dir( $dir ) && $create )
-            @mkdir( $dir, 0775, true );
+            @mkdir( $dir, eZDir::dirMode( 0775 ), true );
         $real = realpath( $dir );
         return $real === false ? null : rtrim( $real, '/' );
     }

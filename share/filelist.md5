@@ -21357,8 +21357,8 @@ d9add8b8d3ad7b5888d56f75e0f67d49  kernel/classes/contentjob/expcontentjobtransfe
 d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.php
 130779b1aed31be7b3468442ebbb7e98  kernel/classes/contentjob/expcontentjobworker.php
 1d8b832eecfb80dc796a06810788b7b9  kernel/classes/datatable/expdataconnection.php
-5b11291bfe982e0d2732ff82d8827435  kernel/classes/datatable/expdataconnections.php
-858a243bd410577c511b675d9f1069fe  kernel/classes/datatable/expdatatablecatalogue.php
+e5bf4833e3b0cc2a8725e0fd0b362dd0  kernel/classes/datatable/expdataconnections.php
+bc4a968b92a941fb58185301aa45a2f3  kernel/classes/datatable/expdatatablecatalogue.php
 9de865061e822631e1dab4f63bea9d22  kernel/classes/datatable/expdatatabledescriber.php
 9a2b92da3b36bafbd8e5a84022f83069  kernel/classes/datatable/expkerneltableschema.php
 b87309023dcf0632588ba95e277c245b  kernel/classes/datatypes/ezauthor/ezauthor.php
@@ -21830,7 +21830,7 @@ eb78def01da4fef4c8d3826bef26752c  kernel/classes/role/exprolegrantcheck.php
 71ecdf5f28d06bb754e0dee6dab697fc  kernel/classes/role/exprolepage.php
 dc665737a69c0b50fbeee0f5a53f2582  kernel/classes/role/exprolepolicysentence.php
 f3e1e7f1cee12005376e69f9e9c3b046  kernel/classes/secrets/expsecret.php
-e3c4697b80509b8fb5ff1d8143095ee9  kernel/classes/secrets/expsecretkey.php
+b3c2585a78b36a34c4d25349bbe8732d  kernel/classes/secrets/expsecretkey.php
 faf04259679ee99949096af74ab67d5b  kernel/classes/secrets/expsecrets.php
 7151991c9e4cebc0c6a794031bf4363b  kernel/classes/shopaccounthandlers/bcusausershopaccounthandler.php
 53b261c599de9de6ed8d524eddabdcd2  kernel/classes/shopaccounthandlers/ezdefaultshopaccounthandler.php
@@ -25532,7 +25532,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
 6ee181559997dfd7ba7d9d4c67838349  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-fc3228f534937797e48299bc85bc2ba0  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+d5a62e63083ba937f306039a395dd848  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg

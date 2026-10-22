@@ -297,18 +297,18 @@ class expSecretKey
     protected static function writeFile( $file, $key, $exclusive = false )
     {
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0700, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0700 ), true ) )
             return false;
         // a web request for the directory gets nothing, whatever the server's rules
         if ( !is_file( $dir . '/.htaccess' ) )
             @file_put_contents( $dir . '/.htaccess', "Require all denied\n" );
         $temp = $file . '.' . getmypid() . '.tmp';
-        $old = umask( 0077 );
+        $old = umask( eZFile::creationUmask( 0077 ) );
         $ok = @file_put_contents( $temp, base64_encode( $key ) . "\n", LOCK_EX ) !== false;
         umask( $old );
         if ( !$ok )
             return false;
-        @chmod( $temp, 0600 );
+        @chmod( $temp, eZFile::fileMode( 0600 ) );
         if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
         {
             // written as root (Velocity, a command): the web server's user must still read it

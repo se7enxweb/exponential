@@ -32,7 +32,7 @@
 class expDataTableCatalogue
 {
     /** The format of the cache file */
-    const CACHE_VERSION = 1;
+    const CACHE_VERSION = 2;
 
     /** The kinds of relation target */
     const KINDS = array( 'object', 'node', 'class', 'user', 'section', 'table' );
@@ -74,7 +74,7 @@ class expDataTableCatalogue
         }
         $entries = self::discover( $arrays );
         $dir = dirname( $file );
-        if ( is_dir( $dir ) || @mkdir( $dir, 0775, true ) )
+        if ( is_dir( $dir ) || @mkdir( $dir, eZDir::dirMode( 0775 ), true ) )
         {
             $temp = $file . '.' . getmypid() . '.tmp';
             if ( @file_put_contents( $temp, json_encode( array( 'version' => self::CACHE_VERSION, 'stamp' => $stamp, 'entries' => $entries ),
@@ -88,6 +88,29 @@ class expDataTableCatalogue
     public static function reset()
     {
         self::$instance = null;
+    }
+
+    /**
+     * Tests: a catalogue of the given entries for this process (null forgets it).
+     *
+     * @param expDataTableCatalogue|null $catalogue
+     */
+    public static function setInstance( $catalogue )
+    {
+        self::$instance = $catalogue instanceof self ? $catalogue : null;
+    }
+
+    /**
+     * The catalogue with one more entry (a class made after the catalogue was built), for this process.
+     *
+     * @param array $entry
+     * @return expDataTableCatalogue
+     */
+    public function with( array $entry )
+    {
+        $entries = $this->entries;
+        $entries[$entry['class']] = $entry;
+        return new self( $entries );
     }
 
     /** @return array class => entry */
@@ -267,6 +290,7 @@ class expDataTableCatalogue
     {
         $column = strtolower( (string)$column );
         $rules = array(
+            '/^(creator|modifier|owner|author|editor)_(contentobject_id|object_id)$/' => array( 'user', 'eZUser', 'contentobject_id' ),
             '/^(contentobject_id|content_object_id|object_id|from_contentobject_id|to_contentobject_id|.+_object_id|.+_contentobject_id)$/' => array( 'object', 'eZContentObject', 'id' ),
             '/^(node_id|main_node_id|parent_node_id|.+_node_id)$/' => array( 'node', 'eZContentObjectTreeNode', 'node_id' ),
             '/^(contentclass_id|content_class_id|class_id)$/' => array( 'class', 'eZContentClass', 'id' ),

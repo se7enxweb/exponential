@@ -26,6 +26,9 @@
         "%emphasize_start": "replaced although the emphasized text follows without a space"
     },
     "*": {
+        "datatable.ini": "file name, kept as code",
+        "secrets.ini": "file name, kept as code",
+        "site.ini": "file name, kept as code",
         "Exponential": "product name",
         "Exponential Intelligence": "product name (extension expai), kept in every language",
         "Exponential Velocity": "product name",
@@ -1700,6 +1703,8 @@
         "xmlUrl": "OPML attribute name, code identifier"
     },
     "ger-DE": {
+        "Schema": "the same word in German (a database schema)",
+        "Socket": "the same word in German (a database socket)",
         "#level1 - #level2": "only placeholders, units or tokens; nothing to translate",
         "#levelIndex1:#levelIndex2": "only placeholders, units or tokens; nothing to translate",
         "%count SQL": "only placeholders, units or tokens; nothing to translate",
