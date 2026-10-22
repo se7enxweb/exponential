@@ -164,6 +164,15 @@ class expHelpContentEbooks
     protected function buildOne( expHelpContentRepository $repository, array $manual, $format, eZContentObjectTreeNode $folderNode )
     {
         $remoteId = self::remoteId( $manual['remote_id'], $format, $this->language );
+        $manualObject = eZContentObject::fetch( (int)$manual['object_id'] );
+        $available = $manualObject instanceof eZContentObject ? (array)$manualObject->availableLanguages() : array();
+        if ( !self::hasEdition( $available, $this->language, $this->storeLanguage ) )
+        {
+            // the help would fall back to the default language: the "translation" would be a copy of the default book
+            $this->change( 'skip', "$remoteId: the manual has no translation in {$this->language}" );
+            $this->removeStale( $remoteId );
+            return false;
+        }
         $public = self::isPublicManual( $manual );
         $export = new expHelpContentExport( new expHelpContentEditionProvider( $repository, $public ), $manual );
         if ( !$export->topics() )
@@ -232,6 +241,35 @@ class expHelpContentEbooks
         }
         $this->cleanUp( $result['file'], $dir );
         return $stores;
+    }
+
+    /**
+     * Whether a manual has an edition in a language: the default language always, any other only when the manual is
+     * translated into it. Without the translation the help reads the default language, and the book would be a copy of
+     * the default edition under a translated remote_id.
+     *
+     * @param string[] $availableLanguages the manual object's languages
+     * @param string $language the language of the edition
+     * @param string $defaultLanguage the default content language
+     * @return bool
+     */
+    public static function hasEdition( array $availableLanguages, $language, $defaultLanguage )
+    {
+        $language = strtolower( (string)$language );
+        return $language === strtolower( (string)$defaultLanguage ) || in_array( $language, array_map( 'strtolower', array_map( 'strval', $availableLanguages ) ), true );
+    }
+
+    /**
+     * A book stored for an edition the manual does not have (from a build before hasEdition()) goes to the trash
+     */
+    protected function removeStale( $remoteId )
+    {
+        $object = eZContentObject::fetchByRemoteID( $remoteId );
+        if ( !$object instanceof eZContentObject || (int)$object->attribute( 'main_node_id' ) <= 0 )
+            return;
+        $this->change( 'remove', "$remoteId: stored for a translation the manual does not have (to the trash)" );
+        if ( !$this->dryRun )
+            eZContentObjectTreeNode::removeSubtrees( array( (int)$object->attribute( 'main_node_id' ) ), true );
     }
 
     protected function cleanUp( $file, $dir )
