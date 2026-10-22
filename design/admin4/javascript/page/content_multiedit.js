@@ -105,6 +105,10 @@
 
         data.append( 'MultiStoreButton', '1' );
 
+        // The state is captured now: anything typed while the request is in
+        // flight sets this again and goes out with the next save.
+        dirty = false;
+
         fetch( form.getAttribute( 'action' ), {
             method: 'POST',
             body: data,
@@ -113,12 +117,11 @@
             saving = false;
             if ( !response.ok )
                 throw new Error( response.status );
-            // Only now: anything typed while the request was in flight has
-            // set this again, and must not be thrown away.
-            dirty = false;
             say( 'success', texts.saved.replace( '%time', stamp() ) );
         } ).catch( function () {
             saving = false;
+            // Not saved: the next tick tries again.
+            dirty = true;
             say( 'error', texts.error );
         } );
     }
