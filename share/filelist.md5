@@ -12317,7 +12317,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 d8ec17ec6fcc8d49b62f81830d2d61b8  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-d1e159346c7c317c0534b82adc0ed53e  doc/ger-de/.paths.json
+cf498534c0f9d54762efe1d652838d0f  doc/ger-de/.paths.json
 cda223dc1e4d14ac9943e964893cf0ea  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -15888,6 +15888,7 @@ cb288d2de7c22a66cb4e4b4ff25a70b9  doc/ger-de/hilfe/ersteller/website-ersteller/d
 7eb8e9c20c8d62cd47f483792907d800  doc/ger-de/hilfe/ersteller/website-ersteller/die-medienbibliothek-organisieren.md
 0380f3b1542142fa2d980864763f75af  doc/ger-de/hilfe/ersteller/website-ersteller/die-website-an-die-redaktion-uebergeben.md
 02d5617932a9480912c83a4444bd3b71  doc/ger-de/hilfe/ersteller/website-ersteller/ein-design-oder-theme-waehlen.md
+a8decd45bdb20cb0668a439701e6e22f  doc/ger-de/hilfe/ersteller/website-ersteller/ein-geburtsdatum-speichern.md
 b0dd97530b87ccfe1e6e67a37bfc1119  doc/ger-de/hilfe/ersteller/website-ersteller/ein-kontaktformular-bauen.md
 e1ca2922cc09b67d3ed5c21c3e75b395  doc/ger-de/hilfe/ersteller/website-ersteller/eine-installationsmethode-waehlen.md
 0d618bbf44071a82442c645684b1a4b7  doc/ger-de/hilfe/ersteller/website-ersteller/faq-fuer-website-ersteller.md
