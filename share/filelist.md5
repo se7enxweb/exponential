@@ -10028,6 +10028,7 @@ b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 90c576b3e72c30a505c0e99bb4a7d7ed  doc/eng-us/help/manual/how-do-i-add-a-content-language.md
 6574f4c33807b183d6c6a805b383cb8e  doc/eng-us/help/manual/how-do-i-add-a-currency.md
 ec5d32f7cdf2fb46474c189f9096a84e  doc/eng-us/help/manual/how-do-i-add-a-link-in-the-online-editor.md
+f236bb065077cd7aa3c644e3be6cb195  doc/eng-us/help/manual/how-do-i-add-an-anchor-in-the-online-editor.md
 82e4ac9e252487df109ca401a8df0b00  doc/eng-us/help/manual/how-do-i-approve-or-reject-content.md
 f137c728c366f0e2016f2a44618e7b30  doc/eng-us/help/manual/how-do-i-archive-finished-orders.md
 6f3c792e66cf9ad448ce2936be9ac394  doc/eng-us/help/manual/how-do-i-build-a-page-with-layouts.md
@@ -10055,6 +10056,7 @@ d3fac64e27d8473427ff753fbc1b7d51  doc/eng-us/help/manual/how-do-i-give-an-extern
 b36c121bc572f5243e73092b3d7976ab  doc/eng-us/help/manual/how-do-i-go-back-to-an-earlier-version.md
 74f0de8a0763907ddb4f9d0079489b8a  doc/eng-us/help/manual/how-do-i-hide-an-item.md
 1f176d2ddb40457da45f9369c1117bf9  doc/eng-us/help/manual/how-do-i-import-an-rss-feed.md
+1e32fb38a5466598230a1317fcef9be0  doc/eng-us/help/manual/how-do-i-insert-a-custom-tag.md
 2382ab26db6e5c82a18062fef6bf19f0  doc/eng-us/help/manual/how-do-i-insert-a-table-in-the-online-editor.md
 c8e2c9980894582709149a5f8b3e030d  doc/eng-us/help/manual/how-do-i-insert-an-image-in-the-online-editor.md
 9b04eda87ed19596dae2b82a482adfef  doc/eng-us/help/manual/how-do-i-keep-the-tag-tree-tidy.md
@@ -10083,6 +10085,7 @@ c8757116de5815f5b524b2e8c7c9ad1f  doc/eng-us/help/manual/how-do-i-switch-the-adm
 2ed410fc66e48ca843e8ab0dca3748a9  doc/eng-us/help/manual/how-do-i-translate-content.md
 d4d57c89c925425d456bc6869507dfc6  doc/eng-us/help/manual/how-do-i-turn-on-two-step-sign-in.md
 10c91cd7e7caa6a5292bc360e9be7abb  doc/eng-us/help/manual/how-do-i-use-the-ai-assistant-in-the-editor.md
+827ad14660cd2bab031bce319f5291fd  doc/eng-us/help/manual/how-do-i-write-rich-text-without-the-online-editor.md
 98e08fb19c072cefd133921d8a0ccd64  doc/eng-us/help/manual/images/advanced-search.webp
 014abd5beb8855abd737098beb3fb97a  doc/eng-us/help/manual/images/audit-console.webp
 f25e04438fadf7cd24b6ff7e05cb8dff  doc/eng-us/help/manual/images/broken-relations.webp
