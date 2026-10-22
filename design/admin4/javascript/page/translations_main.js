@@ -3,13 +3,26 @@
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
-(function( $ )
+(function()
 {
-    $('#tab-translations-list input.main-translation-radio').on('change', function()
+    var radios = document.querySelectorAll('#tab-translations-list input.main-translation-radio');
+    for ( var i = 0; i < radios.length; i++ )
     {
-        if ( this.className === 'main-translation-radio' )
-            $('#tab-translations-list-set-main').removeClass('button').addClass('defaultbutton');
-        else
-            $('#tab-translations-list-set-main').removeClass('defaultbutton').addClass('button');
-    });
-})( jQuery );
+        radios[i].addEventListener('change', function()
+        {
+            var btn = document.getElementById('tab-translations-list-set-main');
+            if ( !btn )
+                return;
+            if ( this.className === 'main-translation-radio' )
+            {
+                btn.classList.remove('button');
+                btn.classList.add('defaultbutton');
+            }
+            else
+            {
+                btn.classList.remove('defaultbutton');
+                btn.classList.add('button');
+            }
+        });
+    }
+})();

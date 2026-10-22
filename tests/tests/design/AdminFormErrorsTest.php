@@ -72,13 +72,13 @@ class AdminFormErrorsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "{ezscript( array( 'page/content_edit_attribute.js' ) )}",
                                            self::read( 'design/admin4/templates/content/edit_attribute.tpl' ) );
         $tpl = self::read( 'design/admin4/javascript/page/content_edit_attribute.js' );
-        foreach ( array( "attr( 'aria-required', 'true' )", "setAttribute( 'aria-invalid', 'true' )", "setAttribute( 'aria-describedby'",
-                         "not('.original *, .a4-no-field-mark, .a4-no-field-mark *')", ':not([type=reset]):not([type=file])',
-                         '/delete|remove|selection/i', "$('#a4-error-summary').trigger('focus')", '.a4-content-attr.is-invalid',
-                         "$('#a4-error-summary a[href^=\"#ezcca-attr-\"]')" ) as $needle )
+        foreach ( array( "setAttribute( 'aria-required', 'true' )", "setAttribute( 'aria-invalid', 'true' )", "setAttribute( 'aria-describedby'",
+                         "matches('.original *, .a4-no-field-mark, .a4-no-field-mark *')", ':not([type=reset]):not([type=file])',
+                         '/delete|remove|selection/i', "document.getElementById('a4-error-summary')", 'summary.focus()',
+                         '.a4-content-attr.is-invalid', "querySelectorAll('#a4-error-summary a[href^=\"#ezcca-attr-\"]')" ) as $needle )
             $this->assertStringContainsString( $needle, $tpl );
         // the summary's targets are marked before the groups collapse, so a named attribute's group stays open
-        $this->assertLessThan( strpos( $tpl, "$('fieldset.ezcca-collapsible').each" ), strpos( $tpl, "$('#a4-error-summary a[href^=" ) );
+        $this->assertLessThan( strpos( $tpl, "querySelectorAll('fieldset.ezcca-collapsible')" ), strpos( $tpl, "querySelectorAll('#a4-error-summary a[href^=" ) );
     }
 
     public function testTheSummaryIsAnAlertWithLinksToTheFields()

@@ -10,8 +10,8 @@
     Exp.ready(function ($) {
         if (!$.fn.expAjaxUploader) { return; }
         // the texts of the dialog: data-text-* of the first button (each button carries the same)
-        var button = $('.relation-upload-new').first();
-        var text = function (name) { return button.attr('data-text-' + name) || ''; };
+        var button = document.querySelector('.relation-upload-new');
+        var text = function (name) { return (button && button.getAttribute('data-text-' + name)) || ''; };
         $('.relation-upload-new').expAjaxUploader({
             open: {
                 action: 'ezajaxuploader::uploadform::ezobjectrelationlist'
@@ -31,39 +31,56 @@
 
                 // this is the uploader: the object just created is added to the relation list
                 callback: function () {
-                    var box = $('#ezobjectrelationlist_browse_' + this.conf.target.ObjectRelationsAttributeId),
-                        table = box.find('table.list').first(),
-                        tbody = table.find('tbody').first(),
-                        last = tbody.children().last(),
-                        tr, tds, priority,
+                    var box = document.getElementById('ezobjectrelationlist_browse_' + this.conf.target.ObjectRelationsAttributeId),
+                        table = box && box.querySelector('table.list'),
+                        tbody = table && table.querySelector('tbody'),
+                        last = tbody && tbody.lastElementChild,
+                        tr, tds, priority, button,
                         result = this.lastMetaData;
+                    // as jQuery's text(): undefined sets nothing
+                    var setText = function (td, value) { if (td && value !== undefined) { td.textContent = value; } };
 
-                    if ( !table.hasClass('hide') ) {
+                    if (table && !table.classList.contains('hide')) {
                         // table is visible, clone the last line
-                        tr = last.clone();
-                        tbody.append(tr);
-                        if ( last.hasClass('bgdark') ) {
-                            tr.removeClass('bgdark').addClass('bglight');
-                        } else {
-                            tr.removeClass('bglight').addClass('bgdark');
+                        if (last) {
+                            tr = last.cloneNode(true);
+                            tbody.appendChild(tr);
+                            if ( last.classList.contains('bgdark') ) {
+                                tr.classList.remove('bgdark');
+                                tr.classList.add('bglight');
+                            } else {
+                                tr.classList.remove('bglight');
+                                tr.classList.add('bgdark');
+                            }
                         }
-                    } else {
+                    } else if (table) {
                         // table is hidden, no related object yet
                         // the only line in the table is the "template line"
                         tr = last;
-                        table.removeClass('hide');
+                        table.classList.remove('hide');
                     }
-                    tds = tr.children();
-                    tds.eq(0).find('input').val(result.object_info.id);
-                    tds.eq(1).text(result.object_info.name);
-                    tds.eq(2).text(result.object_info.class_name);
-                    tds.eq(3).text(result.object_info.section_name);
-                    tds.eq(4).text(result.object_info.published);
-                    priority = tds.eq(5).find('input').first();
-                    priority.val(parseInt(priority.val(), 10) + 1);
+                    tds = tr ? tr.children : [];
+                    if (tds[0]) {
+                        Array.prototype.forEach.call(tds[0].querySelectorAll('input'), function (input) { input.value = result.object_info.id == null ? '' : result.object_info.id; });
+                    }
+                    setText(tds[1], result.object_info.name);
+                    setText(tds[2], result.object_info.class_name);
+                    setText(tds[3], result.object_info.section_name);
+                    setText(tds[4], result.object_info.published);
+                    priority = tds[5] && tds[5].querySelector('input');
+                    if (priority) {
+                        priority.value = parseInt(priority.value, 10) + 1;
+                    }
 
-                    box.find('.ezobject-relation-remove-button').first().removeClass('button-disabled').addClass('button').prop('disabled', false);
-                    box.find('.ezobject-relation-no-relation').addClass('hide');
+                    button = box && box.querySelector('.ezobject-relation-remove-button');
+                    if (button) {
+                        button.classList.remove('button-disabled');
+                        button.classList.add('button');
+                        button.disabled = false;
+                    }
+                    if (box) {
+                        Array.prototype.forEach.call(box.querySelectorAll('.ezobject-relation-no-relation'), function (el) { el.classList.add('hide'); });
+                    }
 
                     this.close();
                 }
