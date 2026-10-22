@@ -19,12 +19,14 @@ type: help
 
 ## Importe
 
-Ein Import legt fest, woher die Daten kommen (eine Quelle für CSV, XML, RSS/Atom oder JSON, oder ein Handler von
-1.x, der seine Daten selbst liest), was sie verarbeitet (die Zuordnung ohne Programmierung oder ein Handler), wohin
-neue Inhalte kommen und wie bestehende Inhalte behandelt werden (aktualisieren, nur anlegen oder nur aktualisieren).
+Ein Import legt fest, woher die Daten kommen (eine Quelle für CSV, XML, RSS/Atom, JSON oder Tabellen, oder ein
+Handler von 1.x, der seine Daten selbst liest), was sie verarbeitet (die Zuordnung ohne Programmierung oder ein
+Handler), wohin neue Inhalte kommen und wie bestehende Inhalte behandelt werden (aktualisieren, nur anlegen oder nur
+aktualisieren).
 
-In 2.0.0-alpha.1 entstehen Importe durch die Migration von 1.x, aus den Handlern von 1.x in `sqliimport.ini` oder
-in PHP. Der Import-Editor der Administration kommt mit 2.0.0-beta.1.
+Importe werden im Import-Editor der Administration angelegt und geändert
+([Der Import-Editor](der-import-editor.md)). Auch die Migration von 1.x legt Importe an, und ein Skript kann sie in
+PHP anlegen.
 
 ## Läufe
 
@@ -62,17 +64,27 @@ pro Datensatz, welche Felder sich ändern würden, mit aktuellem und neuem Wert.
 
 - Kennzahlen: Importe, Läufe heute, laufende oder wartende Läufe, in den letzten 24 Stunden fehlgeschlagene Läufe,
   den nächsten geplanten Lauf;
-- eine Leiste **Run now** (jetzt ausführen);
-- die Importe mit letztem und nächstem Lauf und **Run now** und **Dry run** (Probelauf) pro Import;
+- eine Leiste **Run now** (jetzt ausführen) und die Schaltfläche **New import**;
+- die Importe mit letztem und nächstem Lauf. **Run now** und **Dry run** (Probelauf) sehen Benutzer mit Run imports
+  oder Manage imports; **Edit** und unter **More** die Aktionen **Duplicate**, **Enable** oder **Disable** und
+  **Delete** sehen Benutzer mit Manage imports;
 - die Läufe, gefiltert nach Status (alle, laufend, fehlgeschlagen, abgeschlossen, abgebrochen).
 
-Das linke Menü verlinkt außerdem die Seiten von 1.x (Importaufträge, geplante Importe, ein neuer Auftrag für 1.x)
-und die Job-Warteschlange.
+Das linke Menü verlinkt außerdem die Seiten Schedules, Catalogue und Settings, die Seiten von 1.x (Importaufträge,
+geplante Importe, ein neuer Auftrag für 1.x) und die Job-Warteschlange. Das Dashboard der Administration hat einen
+Block **Imports** mit den letzten Läufen und einem Hinweis, wenn in den letzten 24 Stunden Läufe fehlgeschlagen
+sind.
 
 ## Die Seite eines Laufs
 
 `sqliimport/run/<id>` zeigt den Fortschritt, die Ergebnisse als Kennzahlen (jede filtert die Datensätze), die
-Datensätze mit Objekt, Version und Meldung und das Protokoll des Laufs. Zwei Schaltflächen wirken auf den Lauf:
+Datensätze mit Objekt, Version und Meldung und das Protokoll des Laufs.
+
+Solange ein Lauf wartet oder läuft, verfolgt die Seite ihn live: Alle zwei Sekunden zeigt sie den neuen Status,
+den Fortschritt, die Zähler und die Protokollzeilen, ohne die Seite neu zu laden, und wenn der Lauf endet, lädt sie
+noch einmal mit den endgültigen Datensätzen. **Refresh** lädt die Seite von Hand neu.
+
+Zwei Schaltflächen wirken auf den Lauf (sie brauchen Run imports oder Manage imports):
 
 - **Cancel** (abbrechen) hält einen Lauf an, der noch nicht beendet ist. Bereits verarbeitete Datensätze bleiben,
   wie sie sind.

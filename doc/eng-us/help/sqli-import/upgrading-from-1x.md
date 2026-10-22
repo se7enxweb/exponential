@@ -35,7 +35,8 @@ Release 2 keeps every 1.x handler, setting, table, policy and page working. Noth
    ./console ext:sqliimport:migrate-1x
    ```
 
-5. Migrate. Add `--roles` to give the roles with 1.x policies the matching 2.x policies:
+5. Migrate. Add `--roles` to give every role with `sqliimport/manageimports` the policy `sqliimport/manage`
+   (Manage imports) with the same handler limitation:
 
    ```bash
    ./console ext:sqliimport:migrate-1x --apply --roles
@@ -51,13 +52,17 @@ Release 2 keeps every 1.x handler, setting, table, policy and page working. Noth
 | Handlers | Each 1.x handler becomes an import with the identifier `legacy-<handler>` |
 | Scheduled imports | Each becomes an import with its options and a schedule of the same frequency. The 1.x scheduled import is switched off, not removed. |
 | History | Past 1.x import requests become read-only runs (status, time, user) |
-| Roles (`--roles`) | Roles with `listimports` or `manageimports` get `view`; roles with `manageimports` also get `edit` and `run` with the same handler limitation |
+| Roles (`--roles`) | Roles with `manageimports` get `manage` (Manage imports) with the same handler limitation. Roles with only `listimports` need nothing new: `listimports` still lets them look at the Imports tab. Roles with `sqliimport/*` are left alone. |
 
 The migration can be run again; what was migrated before is left alone. Pending 1.x import requests are started as
 real runs by the cron part `sqliimport`.
 
 ## What changes
 
+- Imports are edited in the import editor ([The import editor](the-import-editor.md)). A migrated import of a 1.x
+  handler has the steps source, processing, schedule and review.
+- Two policies control access: Manage imports (`manage`) and Run imports (`run`). `manageimports` still counts as
+  Manage imports, and `listimports` lets a user look ([Getting started](getting-started.md#the-imports-tab)).
 - 1.x handlers run untouched on the job queue. Their records have the outcome "processed", and their progression
   notes go to the run's log. Retrying only failed rows is not available for them.
 - `sqliimport/list` is now the 2.x dashboard. The 1.x list of import requests moved to `sqliimport/items`. The other

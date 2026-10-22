@@ -152,7 +152,7 @@ class expHelpManualBuilderTest extends PHPUnit\Framework\TestCase
         preg_match_all( '/^Manuals\[\]=(.+)$/m', $m[1], $lines );
         $parsed = expHelpManualBuilder::manualsFromSettings( $lines[1] );
         $this->assertSame( array(), $parsed['errors'] );
-        $this->assertCount( 52, $parsed['manuals'], 'the scope the owner approved: 45 help folders, Getting started, 6 reference manuals' );
+        $this->assertCount( 53, $parsed['manuals'], 'the scope the owner approved: 46 help folders (with 7x SQLI Import), Getting started, 6 reference manuals' );
         $help = 0;
         foreach ( $parsed['manuals'] as $manual )
         {
@@ -160,7 +160,7 @@ class expHelpManualBuilderTest extends PHPUnit\Framework\TestCase
             if ( strpos( $manual['folder'], 'help/' ) === 0 )
                 $help++;
         }
-        $this->assertSame( 45, $help );
+        $this->assertSame( 46, $help );
         // every help folder with pages has its manual
         $folders = array();
         foreach ( glob( self::root() . '/doc/eng-us/help/*', GLOB_ONLYDIR ) as $dir )

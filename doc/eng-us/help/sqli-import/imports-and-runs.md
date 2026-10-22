@@ -19,12 +19,12 @@ type: help
 
 ## Imports
 
-An import says where the data comes from (a CSV, XML, RSS/Atom or JSON source, or a 1.x handler that reads its own
-data), what processes it (the no-code mapping or a handler), where new content goes, and how existing content is
-treated (update it, only create, or only update).
+An import says where the data comes from (a CSV, XML, RSS/Atom, JSON or spreadsheet source, or a 1.x handler that
+reads its own data), what processes it (the no-code mapping or a handler), where new content goes, and how existing
+content is treated (update it, only create, or only update).
 
-In 2.0.0-alpha.1 imports are created by the migration from 1.x, from the 1.x handlers in `sqliimport.ini`, or in PHP.
-The import editor of the administration comes with 2.0.0-beta.1.
+Imports are created and changed in the import editor of the administration ([The import editor](the-import-editor.md)).
+The migration from 1.x also creates imports, and a script can create them in PHP.
 
 ## Runs
 
@@ -58,16 +58,26 @@ which fields would change, with the current and the new value.
 **Imports** (`sqliimport/list`) shows:
 
 - key figures: imports, runs today, runs running or queued, runs failed in the last 24 hours, the next scheduled run;
-- a **Run now** toolbar;
-- the imports with their last and next run, and **Run now** and **Dry run** per import;
+- a **Run now** toolbar and the button **New import**;
+- the imports with their last and next run. **Run now** and **Dry run** are shown to users with Run imports or
+  Manage imports; **Edit** and, under **More**, **Duplicate**, **Enable** or **Disable** and **Delete** to users
+  with Manage imports;
 - the runs, filtered by status (all, running, failed, completed, cancelled).
 
-The left menu also links the 1.x pages (import requests, scheduled imports, a new 1.x request) and the job queue.
+The left menu also links the Schedules, Catalogue and Settings pages, the 1.x pages (import requests, scheduled
+imports, a new 1.x request) and the job queue. The admin dashboard has a block **Imports** with the latest runs and
+a warning when runs failed in the last 24 hours.
 
 ## The run page
 
 `sqliimport/run/<id>` shows the progress, the outcomes as figures (each one filters the records), the records with
-their object, version and message, and the run's log. Two buttons act on the run:
+their object, version and message, and the run's log.
+
+While a run is queued or running, the page follows it live: every two seconds it shows the new status, progress,
+counters and log lines without loading the page again, and when the run ends it loads once more with the final
+records. **Refresh** loads the page by hand.
+
+Two buttons act on the run (they need Run imports or Manage imports):
 
 - **Cancel** stops a run that has not ended. Records already processed stay as they are.
 - **Retry failed rows** starts a new run that processes only the failed records of an ended run. It is not available

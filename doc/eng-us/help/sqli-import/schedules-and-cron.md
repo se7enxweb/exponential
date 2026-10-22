@@ -4,7 +4,7 @@ audience: admin, integrator, developer
 category: integration
 order: 30
 summary: How 7x SQLI Import starts imports by itself - the schedule kinds from once to cron expressions, time zones and daylight saving time, missed runs, failure e-mails, and the cron parts sqliimport and expqueue that must run every minute.
-keywords: sqliimport, schedule, cron, cron expression, interval, hourly, daily, weekly, monthly, time zone, daylight saving time, catch up, notify, runcronjobs, sqliimport_run, sqliimport_cleanup, tick
+keywords: sqliimport, schedule, Schedules page, sqliimport/schedules, pause, resume, cron, cron expression, interval, hourly, daily, weekly, monthly, time zone, daylight saving time, catch up, notify, runcronjobs, sqliimport_run, sqliimport_cleanup, tick
 type: help
 ---
 # Schedules and cron in 7x SQLI Import
@@ -12,13 +12,15 @@ type: help
 ## Contents
 
 1. [Schedule kinds](#schedule-kinds)
-2. [Time zones](#time-zones)
-3. [Missed runs and e-mails](#missed-runs-and-e-mails)
-4. [The cron parts](#the-cron-parts)
+2. [The Schedules page](#the-schedules-page)
+3. [Time zones](#time-zones)
+4. [Missed runs and e-mails](#missed-runs-and-e-mails)
+5. [The cron parts](#the-cron-parts)
 
 ## Schedule kinds
 
-An import can have several schedules:
+A schedule is set in the schedule step of the import editor ([The import editor](the-import-editor.md)), which
+keeps one schedule per import and shows its next five run times. The kinds:
 
 | Kind | Runs |
 |---|---|
@@ -33,8 +35,21 @@ An import can have several schedules:
 Cron expressions support lists, ranges, steps, the names of months and days, and the shortcuts `@hourly`, `@daily`,
 `@weekly`, `@monthly` and `@yearly`.
 
-In 2.0.0-alpha.1 schedules come from the migration of 1.x scheduled imports, or are created in PHP. The schedule
-editor comes with the import editor in 2.0.0-beta.1.
+The migration of 1.x scheduled imports also creates schedules, and a script can create them in PHP.
+
+## The Schedules page
+
+**Schedules** in the left menu of the Imports tab (`sqliimport/schedules`) lists every schedule with its import, the
+schedule in words, whether it is active or paused, the next three run times and the last run. Users with Manage
+imports also get these actions:
+
+- **Pause** switches the schedule off and keeps it;
+- **Resume** switches it on again and computes its next run from now;
+- **Edit** opens the schedule step of the import in the editor;
+- **Delete** removes the schedule after a confirmation; the import stays.
+
+A disabled import keeps its schedule, but its scheduled runs are skipped until it is enabled again. When 1.x
+scheduled imports have not been migrated yet, the page says how many there are.
 
 ## Time zones
 

@@ -5716,6 +5716,7 @@
     "hilfe/sprachen.md": "help/languages.md",
     "hilfe/sqli-import/README.md": "help/sqli-import/README.md",
     "hilfe/sqli-import/aktualisierung-von-1x.md": "help/sqli-import/upgrading-from-1x.md",
+    "hilfe/sqli-import/der-import-editor.md": "help/sqli-import/the-import-editor.md",
     "hilfe/sqli-import/erste-schritte.md": "help/sqli-import/getting-started.md",
     "hilfe/sqli-import/importe-und-laeufe.md": "help/sqli-import/imports-and-runs.md",
     "hilfe/sqli-import/zeitplaene-und-cron.md": "help/sqli-import/schedules-and-cron.md",

@@ -36,7 +36,8 @@ Version 2 lässt jeden Handler, jede Einstellung, Tabelle, Richtlinie und Seite 
    ./console ext:sqliimport:migrate-1x
    ```
 
-5. Migrieren Sie. Mit `--roles` bekommen die Rollen mit Richtlinien von 1.x die passenden Richtlinien von 2.x:
+5. Migrieren Sie. Mit `--roles` bekommt jede Rolle mit `sqliimport/manageimports` die Richtlinie
+   `sqliimport/manage` (Manage imports) mit derselben Handler-Einschränkung:
 
    ```bash
    ./console ext:sqliimport:migrate-1x --apply --roles
@@ -52,13 +53,17 @@ Version 2 lässt jeden Handler, jede Einstellung, Tabelle, Richtlinie und Seite 
 | Handler | Jeder Handler von 1.x wird ein Import mit dem Bezeichner `legacy-<handler>` |
 | Geplante Importe | Jeder wird ein Import mit seinen Optionen und einem Zeitplan mit derselben Häufigkeit. Der geplante Import von 1.x wird abgeschaltet, nicht entfernt. |
 | Verlauf | Vergangene Importaufträge von 1.x werden schreibgeschützte Läufe (Status, Zeit, Benutzer) |
-| Rollen (`--roles`) | Rollen mit `listimports` oder `manageimports` bekommen `view`; Rollen mit `manageimports` bekommen außerdem `edit` und `run` mit derselben Handler-Einschränkung |
+| Rollen (`--roles`) | Rollen mit `manageimports` bekommen `manage` (Manage imports) mit derselben Handler-Einschränkung. Rollen nur mit `listimports` brauchen nichts Neues: `listimports` lässt sie weiterhin den Reiter Importe ansehen. Rollen mit `sqliimport/*` bleiben unverändert. |
 
 Die Migration lässt sich erneut ausführen; bereits Migriertes bleibt unangetastet. Offene Importaufträge von 1.x
 startet der Cron-Teil `sqliimport` als echte Läufe.
 
 ## Was sich ändert
 
+- Importe werden im Import-Editor bearbeitet ([Der Import-Editor](der-import-editor.md)). Ein migrierter Import
+  eines Handlers von 1.x hat die Schritte Quelle, Verarbeitung, Zeitplan und Prüfung.
+- Zwei Richtlinien regeln den Zugriff: Manage imports (`manage`) und Run imports (`run`). `manageimports` zählt
+  weiter als Manage imports, `listimports` erlaubt das Ansehen ([Erste Schritte](erste-schritte.md#der-reiter-importe)).
 - Handler von 1.x laufen unverändert über die Job-Warteschlange. Ihre Datensätze haben das Ergebnis „verarbeitet“,
   ihre Fortschrittsnotizen gehen in das Protokoll des Laufs. Nur fehlgeschlagene Zeilen zu wiederholen ist für sie
   nicht möglich.
