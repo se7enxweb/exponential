@@ -54,7 +54,8 @@ class expContentJob
         'JobTypes' => array( 'remove' => 'expContentJobRemoveSubtree', 'copy' => 'expContentJobCopySubtree', 'move' => 'expContentJobMoveSubtree',
                              'hide' => 'expContentJobHideSubtree', 'reveal' => 'expContentJobRevealSubtree', 'section' => 'expContentJobSectionSubtree',
                              'state' => 'expContentJobStateSubtree', 'addlocation' => 'expContentJobAddLocation', 'removelocation' => 'expContentJobRemoveLocation',
-                             'packageinstall' => 'expContentJobPackageInstall', 'auditexport' => 'expContentJobAuditExport' ),
+                             'packageinstall' => 'expContentJobPackageInstall', 'auditexport' => 'expContentJobAuditExport',
+                             'helpmanuals' => 'expContentJobHelpManuals' ),
     );
 
     /** @var array the job's data, as stored */
@@ -808,6 +809,11 @@ class expContentJob
         $argv = array( $php, 'bin/php/expcontentjob.php', 'run', (string) $id, '-q' );
         if ( $siteaccess !== '' )
             array_push( $argv, '-s', $siteaccess );
+        // started by root: the worker becomes the owner of var/ first (expContentJobWorker::dropPrivileges()); when
+        // the whole installation belongs to root there is no one else to be, and the worker runs as root as its
+        // starter does, instead of refusing to start
+        if ( function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 )
+            $argv[] = '--allow-root-user';
         return $argv;
     }
 
