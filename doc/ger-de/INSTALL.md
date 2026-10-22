@@ -733,7 +733,13 @@ Mehr dazu: [SQLite-Datenbankunterstützung](funktionen/6.0/sqlite-datenbank.md),
    `php bin/php/ezpgenerateautoloads.php -e` (`-k` für den Kernel).
 6. **Sichern Sie** die Datenbank sowie `var/storage`, `settings/override`, `settings/siteaccess`
    ([Eine Website betreiben](anleitungen/betrieb-einer-website.md#6-sichern-und-wiederherstellen)).
-7. **Optional: die Job-Warteschlange und Exponential Intelligence.** `composer.json` bringt die Job-Warteschlange
+7. **Die Handbücher der Hilfe.** Der Kickstarter und `exp:install` haben die Hilfe als Inhalt und ihre Handbücher aus
+   der Markdown-Hilfe bereits angelegt (die letzten Zeilen ihrer Ausgabe). Führen Sie nach dem Setup-Assistenten, oder
+   wenn dieser Schritt ein Problem gemeldet hat, `./console exp:help:content install -s admin` aus, dann
+   `./console exp:help:content build-manuals -s admin --release` (ein erster Aufbau dauert einige Minuten). Führen Sie
+   `build-manuals` nach jeder Aktualisierung erneut aus
+   ([Handbücher aus der Markdown-Hilfe](funktionen/6.0/hilfeinhalte.md#handbücher-aus-der-markdown-hilfe)).
+8. **Optional: die Job-Warteschlange und Exponential Intelligence.** `composer.json` bringt die Job-Warteschlange
    `expqueue` und den Schreibassistenten `expai` nach `extension/`, beide inaktiv. Um sie zu verwenden:
 
    ```ini

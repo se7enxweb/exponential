@@ -706,7 +706,13 @@ More: [SQLite database support](features/6.0/sqlite-database.md),
    `php bin/php/ezpgenerateautoloads.php -e` (`-k` for the kernel).
 6. **Back up** the database and `var/storage`, `settings/override`, `settings/siteaccess`
    ([Operating a site](guides/operating-a-site.md#6-back-up-and-restore)).
-7. **Optional: the job queue and Exponential Intelligence.** `composer.json` brings the job queue `expqueue` and
+7. **The help's manuals.** The kickstarter and `exp:install` have already made the help as content and its manuals
+   from the Markdown help (the last lines of their output). After the setup wizard, or when that step reported a
+   problem, run `./console exp:help:content install -s admin`, then
+   `./console exp:help:content build-manuals -s admin --release` (a first build takes some minutes). Run
+   `build-manuals` again after each upgrade
+   ([Manuals from the Markdown help](features/6.0/help-content.md#manuals-from-the-markdown-help)).
+8. **Optional: the job queue and Exponential Intelligence.** `composer.json` brings the job queue `expqueue` and
    the writing assistant `expai` into `extension/`, both inactive. To use them:
 
    ```ini

@@ -167,7 +167,11 @@ class expKickstarter
         if ( !empty( $this->options['dry-run'] ) )
             expSetupLog::finish( 'dry run complete (stopped after ' . self::DRY_RUN_STOP . ')' );
         elseif ( $createSitesIndex !== false && $startIndex <= $createSitesIndex && $stopIndex >= $createSitesIndex )
+        {
             expSetupLog::finish( 'installed', true );
+            // still in maintenance: the help's content classes and the manuals made from the Markdown help
+            $this->installHelpManuals();
+        }
         else
             expSetupLog::finish( 'stopped after ' . $this->stopStep . ' (nothing installed)' );
         // Installed and checked (or nothing changed): the site answers again
@@ -761,6 +765,53 @@ class expKickstarter
         if ( is_dir( $dryRunPath ) )
         {
             eZPackage::removeFiles( $dryRunPath );
+        }
+    }
+
+    /**
+     * After an installation: help maintained as content and its manuals (doc/eng-us/features/6.0/help-content.md,
+     * "Manuals from the Markdown help"), as "./console exp:help:content install -s admin" and "build-manuals -s admin
+     * --release" would make them, each in a process of its own on the new site's settings. exphelp.ini [ManualSettings]
+     * BuildOnInstall=disabled leaves both out (the commands can be run later). A step that fails is reported and never
+     * fails the installation: the site works without them.
+     */
+    private function installHelpManuals()
+    {
+        $ini = eZINI::instance( 'exphelp.ini' );
+        if ( $ini->hasVariable( 'ManualSettings', 'BuildOnInstall' ) && $ini->variable( 'ManualSettings', 'BuildOnInstall' ) === 'disabled' )
+            return;
+        $script = getcwd() . '/bin/php/exphelpcontent.php';
+        if ( !is_file( $script ) || !function_exists( 'proc_open' ) )
+        {
+            $this->cli->output( 'Help manuals: not built here (run ./console exp:help:content install -s admin, then build-manuals -s admin --release)' );
+            return;
+        }
+        $rootUser = function_exists( 'posix_geteuid' ) && posix_geteuid() === 0 ? array( '--allow-root-user' ) : array();
+        foreach ( array( array( 'install' ), array( 'build-manuals', '--release' ) ) as $arguments )
+        {
+            $this->cli->output( 'Help manuals: exp:help:content ' . implode( ' ', $arguments ) . ' -s admin' );
+            $command = array_merge( array( PHP_BINARY, $script ), $arguments, array( '-s', 'admin' ), $rootUser );
+            $process = proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'pipe', 'w' ), 2 => array( 'redirect', 1 ) ), $pipes, getcwd() );
+            if ( !is_resource( $process ) )
+            {
+                $this->cli->output( 'Help manuals: could not be started; run the command above later' );
+                return;
+            }
+            $last = '';
+            while ( ( $line = fgets( $pipes[1] ) ) !== false )
+            {
+                // the summary and progress lines; every created object is in the setup log's output only
+                if ( preg_match( '/^(PASS|FAIL|\s+\d+ of \d+ objects)/', $line ) )
+                    $this->cli->output( '  ' . rtrim( $line ) );
+                $last = rtrim( $line );
+            }
+            fclose( $pipes[1] );
+            $code = proc_close( $process );
+            if ( $code !== 0 )
+            {
+                $this->cli->output( "Help manuals: exp:help:content {$arguments[0]} ended with $code ($last); the site works without them, run it again later" );
+                return;
+            }
         }
     }
 
