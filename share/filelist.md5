@@ -7792,6 +7792,7 @@ e075fe044a85fbf3282aaf5718f5b0f4  doc/eng-us/help/designers/sales/warranty-and-l
 d01a5b4511950e7aec612af9a755784e  doc/eng-us/help/designers/sales/what-you-can-sell.md
 205ff68925d4e401f2da67d64029cd7c  doc/eng-us/help/designers/sales/where-themes-are-found.md
 b61e75b88d577bc9ec2dda137b5ef8d5  doc/eng-us/help/designers/sales/working-with-agencies-and-partners.md
+f6b898992e78c0edef00abaa024eca64  doc/eng-us/help/designers/templates/alternate-layouts.md
 23de0376b459f05bb76fd0a29060f021  doc/eng-us/help/designers/templates/array-operators.md
 1c0c58bcd8e31ab2206585ba8e9ab6da  doc/eng-us/help/designers/templates/attribute-view-gui.md
 6da6e25f1714fbd53b398a9a318c37a8  doc/eng-us/help/designers/templates/attributes-and-dot-notation.md
@@ -7801,11 +7802,13 @@ d8bad4bb4ca3f61bf434e087779981dd  doc/eng-us/help/designers/templates/comments.m
 89bb5a198a7b854bf2566611a650ca67  doc/eng-us/help/designers/templates/common-template-mistakes.md
 fc333cf448d9b813aee12b2b1be6fd06  doc/eng-us/help/designers/templates/cond-and-first-set.md
 5171ba409423b60c5915d819481ffbd6  doc/eng-us/help/designers/templates/content-view-gui.md
+6dabc6a755eab4b33abd229dc82fe978  doc/eng-us/help/designers/templates/custom-edit-templates.md
 bbcc4c61f99e10c006b9f2099cff892a  doc/eng-us/help/designers/templates/custom-tags-templates.md
 6dccfe962bb2d9bc138c67f1d4c09444  doc/eng-us/help/designers/templates/custom-view-modes.md
 4e7fa6769bbb0c2a71ce65cf45bc5b8f  doc/eng-us/help/designers/templates/datatype-edit-templates.md
 6b92467156efba71f3d138ed94a2a6f2  doc/eng-us/help/designers/templates/datatype-view-templates.md
 a2b599d8dd4183741305d46ad4b0e92e  doc/eng-us/help/designers/templates/dates-numbers-and-l10n.md
+c16357edb66e921ce4f886ca2bdfbd60  doc/eng-us/help/designers/templates/edit-remove-and-create-buttons.md
 123464fb3f77e181d14beb16f2faf364  doc/eng-us/help/designers/templates/embed-inline-view.md
 1f95a56bbad7462dcb7c160185c6851e  doc/eng-us/help/designers/templates/embed-view.md
 7a21789fa1f1811fa088dd77378766b5  doc/eng-us/help/designers/templates/error-templates.md
