@@ -3484,15 +3484,20 @@ class eZContentObjectTreeNode extends eZPersistentObject
     /*!
      Will assign a section to the current node and all child objects.
      Only main node assignments will be updated.
+     $oldSectionID: only objects in that section change. $scope (eZSection::SCOPE_*): which objects below the node
+     change at all, see sectionAssignmentObjectIDs(); with SCOPE_INHERITED, $oldSectionID is also the section it
+     follows (false: the section the node's object has).
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    static function assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID = false, $updateSearchIndexes = true )
+    static function assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID = false, $updateSearchIndexes = true, $scope = eZSection::SCOPE_SUBTREE )
     {
         $db = eZDB::instance();
         $node = eZContentObjectTreeNode::fetch( $nodeID );
+        if ( !$node instanceof eZContentObjectTreeNode )
+            return;
 
-        $objectSimpleIDArray = eZContentObjectTreeNode::getObjectIdsInNodeSubTree($node);
+        $objectSimpleIDArray = eZContentObjectTreeNode::sectionAssignmentObjectIDs( $node, $scope, $oldSectionID );
         if ( !$objectSimpleIDArray )
             return;
 
@@ -3500,13 +3505,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         // Who assigns which section at which node (doc/eng-us/bc/6.0/audit.md, content.node.section)
         if ( class_exists( 'expAuditHook' ) )
-            expAuditHook::emit( 'content.node.section', function () use ( $node, $sectionID, $oldSectionID, $objectSimpleIDArray ) {
+            expAuditHook::emit( 'content.node.section', function () use ( $node, $sectionID, $oldSectionID, $objectSimpleIDArray, $scope ) {
                 $object = $node->object();
                 return array( 'object' => expAuditHook::node( $node ),
                               'target' => expAuditHook::section( $sectionID ),
                               'before' => array( 'section' => $object ? (int)$object->attribute( 'section_id' ) : null,
                                                  'only_section' => $oldSectionID !== false ? (int)$oldSectionID : null ),
-                              'after' => array( 'section' => (int)$sectionID, 'objects' => count( $objectSimpleIDArray ) ) );
+                              'after' => array( 'section' => (int)$sectionID, 'objects' => count( $objectSimpleIDArray ), 'scope' => $scope ) );
             } );
 
         $filterPart = '';
@@ -7781,6 +7786,104 @@ class eZContentObjectTreeNode extends eZPersistentObject
         }
 
         return $objectSimpleIDArray;
+    }
+
+    /**
+     * The objects a section assignment at $node changes, by scope (eZSection::SCOPE_*):
+     *  - SCOPE_SUBTREE: the objects whose main location is in the subtree of $node (getObjectIdsInNodeSubTree());
+     *  - SCOPE_OBJECT: the object of $node;
+     *  - SCOPE_INHERITED: as SCOPE_SUBTREE, without the locations below $node whose object is not in $oldSectionID
+     *    (false: the section of the object of $node) and without everything below them.
+     *
+     * @param eZContentObjectTreeNode $node
+     * @param string $scope
+     * @param int|false $oldSectionID
+     * @return int[]|null the object IDs, null when there is none or $scope is not known
+     */
+    static function sectionAssignmentObjectIDs( $node, $scope = eZSection::SCOPE_SUBTREE, $oldSectionID = false )
+    {
+        switch ( $scope )
+        {
+            case eZSection::SCOPE_SUBTREE:
+                return eZContentObjectTreeNode::getObjectIdsInNodeSubTree( $node );
+
+            case eZSection::SCOPE_OBJECT:
+                return array( (int)$node->attribute( 'contentobject_id' ) );
+
+            case eZSection::SCOPE_INHERITED:
+                $db = eZDB::instance();
+                $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
+                $boundaries = eZContentObjectTreeNode::sectionBoundaryPaths( $node, $oldSectionID );
+                $objectIDArray = array();
+                foreach ( $db->arrayQuery( "SELECT ezcontentobject_tree.path_string, ezcontentobject.id
+                                            FROM ezcontentobject_tree, ezcontentobject
+                                            WHERE ezcontentobject_tree.path_string LIKE '$nodePath%' AND
+                                                  ezcontentobject_tree.contentobject_id=ezcontentobject.id AND
+                                                  ezcontentobject_tree.main_node_id=ezcontentobject_tree.node_id" ) as $row )
+                {
+                    if ( !eZContentObjectTreeNode::pathIsInAny( $row['path_string'], $boundaries ) )
+                        $objectIDArray[] = (int)$row['id'];
+                }
+                return $objectIDArray ? $objectIDArray : null;
+        }
+
+        eZDebug::writeError( "Unknown section assignment scope <" . ( is_scalar( $scope ) ? $scope : gettype( $scope ) ) . ">.", __METHOD__ );
+        return null;
+    }
+
+    /**
+     * The top-most locations below $node whose object is not in $sectionID: where a section assignment with
+     * eZSection::SCOPE_INHERITED stops.
+     *
+     * @param eZContentObjectTreeNode $node
+     * @param int|false $sectionID false: the section of the object of $node
+     * @return array path strings as keys (values true), for pathIsInAny()
+     */
+    static function sectionBoundaryPaths( $node, $sectionID = false )
+    {
+        if ( $sectionID === false )
+        {
+            $object = $node->object();
+            $sectionID = $object ? $object->attribute( 'section_id' ) : 0;
+        }
+        $sectionID = (int)$sectionID;
+        $nodeID = (int)$node->attribute( 'node_id' );
+        $db = eZDB::instance();
+        $nodePath = $db->escapeString( $node->attribute( 'path_string' ) );
+
+        // by depth: a location's parents come before it, so only the top-most of each branch is kept
+        $boundaries = array();
+        foreach ( $db->arrayQuery( "SELECT ezcontentobject_tree.path_string
+                                    FROM ezcontentobject_tree, ezcontentobject
+                                    WHERE ezcontentobject_tree.path_string LIKE '$nodePath%' AND
+                                          ezcontentobject_tree.node_id <> $nodeID AND
+                                          ezcontentobject_tree.contentobject_id=ezcontentobject.id AND
+                                          ezcontentobject.section_id <> $sectionID
+                                    ORDER BY ezcontentobject_tree.depth" ) as $row )
+        {
+            if ( !eZContentObjectTreeNode::pathIsInAny( $row['path_string'], $boundaries ) )
+                $boundaries[$row['path_string']] = true;
+        }
+        return $boundaries;
+    }
+
+    /**
+     * @param string $pathString a location's path string, e.g. "/1/2/42/"
+     * @param array $pathStrings path strings as keys
+     * @return bool true when the location is one of $pathStrings or below one of them
+     */
+    static function pathIsInAny( $pathString, array $pathStrings )
+    {
+        if ( !$pathStrings )
+            return false;
+        $prefix = '/';
+        foreach ( explode( '/', trim( $pathString, '/' ) ) as $id )
+        {
+            $prefix .= $id . '/';
+            if ( isset( $pathStrings[$prefix] ) )
+                return true;
+        }
+        return false;
     }
 
     /**

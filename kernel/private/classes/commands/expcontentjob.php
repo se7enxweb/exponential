@@ -10,7 +10,7 @@
  *   cancel <id>                     stops a job after its current batch
  *   remove <node id>[,<node id>...] [--trash|--delete] [--background]
  *   copy <src node> <dest parent> [--all-versions] [--keep-creator] [--keep-time] [--background]
- *   move <node> <new parent>, hide <node>, reveal <node>, section <node> <section id>, state <node> <state id>,
+ *   move <node> <new parent>, hide <node>, reveal <node>, section <node> <section id> [--scope=...], state <node> <state id>,
  *   addlocation <target node> <node>[,...], removelocation <node>[,...]       (all with [--background])
  *
  * remove and copy create the job as the user given with --login, else site.ini [UserSettings] UserCreatorID,
@@ -43,13 +43,13 @@ class Expcontentjob extends \Exponential\Runnable\Command
                                                          "  cancel <id>                          stop a job after its current batch\n" .
                                                          "  remove <node id>[,...] [--trash|--delete] [--background]\n" .
                                                          "  copy <src node> <dest parent> [--all-versions] [--keep-creator] [--keep-time] [--background]\n" .
-                                                         "  move <node> <new parent> | hide <node> | reveal <node> | section <node> <section id> | state <node> <state id>\n" .
+                                                         "  move <node> <new parent> | hide <node> | reveal <node> | section <node> <section id> [--scope=...] | state <node> <state id>\n" .
                                                          "  addlocation <target node> <node>[,...] | removelocation <node>[,...]        (all: [--background])\n",
                                         'use-session' => false,
                                         'use-modules' => true,
                                         'use-extensions' => true,
                                         'user' => true ) );
-        $options = $this->startup( '[all][json][background][trash][delete][all-versions][keep-creator][keep-time]', '',
+        $options = $this->startup( '[all][json][background][trash][delete][all-versions][keep-creator][keep-time][scope:]', '',
                                    array( 'all' => 'list: every job, not only the active and failed ones',
                                           'json' => 'show: the job as JSON',
                                           'background' => 'remove, copy, resume: start a detached worker and return',
@@ -57,7 +57,8 @@ class Expcontentjob extends \Exponential\Runnable\Command
                                           'delete' => 'remove: delete the objects permanently',
                                           'all-versions' => 'copy: copy all versions of each object, not only the current one',
                                           'keep-creator' => 'copy: keep the owner and creator of the copied objects',
-                                          'keep-time' => 'copy: keep the creation and modification times' ),
+                                          'keep-time' => 'copy: keep the creation and modification times',
+                                          'scope' => 'section: which objects below the node get the section: subtree (the default, all of them), inherited (those that have the section of the node\'s object, not branches in another section) or object (none)' ),
                                    false, array( 'user' => true ) );
         if ( $dropError !== null )
         {
@@ -113,7 +114,10 @@ class Expcontentjob extends \Exponential\Runnable\Command
                     $this->shutdown( 1 );
                 }
                 $key = array( 'move' => 'new_parent_node_id', 'section' => 'section_id', 'state' => 'state_id' );
-                $this->shutdown( $this->createJob( $sub, array( 'node_id' => (int) $args[0], $key[$sub] => (int) $args[1] ), !empty( $options['background'] ) ) );
+                $params = array( 'node_id' => (int) $args[0], $key[$sub] => (int) $args[1] );
+                if ( $sub === 'section' && !empty( $options['scope'] ) )
+                    $params['scope'] = $options['scope'];
+                $this->shutdown( $this->createJob( $sub, $params, !empty( $options['background'] ) ) );
             case 'hide':
             case 'reveal':
                 $this->shutdown( $this->createJob( $sub, array( 'node_id' => $args ? (int) $args[0] : 0 ), !empty( $options['background'] ) ) );

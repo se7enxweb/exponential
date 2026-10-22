@@ -10967,6 +10967,22 @@
         <source>Editorial</source>
         <translation>Editorial</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Apply to</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Whole subtree</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Subtree, except branches in another section</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>This object only</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -19904,6 +19920,22 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Note that the section assignment of the sub items will also be changed.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Which objects get the section</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>The chosen item and every object below it</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>The chosen item and the objects below it that have its section; branches in another section keep theirs</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>The chosen item only</translation>
     </message>
 </context>
 <context>
@@ -63916,6 +63948,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>The status could not be shown. Reload the page to follow the job.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</translation>
     </message>
 </context>
 <context>

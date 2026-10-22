@@ -2281,8 +2281,8 @@ Sections and what is in them; create, change, remove; assign an object or a subt
 | `expsection::create` | section/edit | POST | Creates a section. POST: name, identifier, navigation_part |
 | `expsection::update::<section_id>` | section/edit | POST | Changes a section (same POST fields) |
 | `expsection::remove::<section_id>` | section/edit | POST | Removes an unused section |
-| `expsection::assign::<object_id>::<section_id>` | section/assign | POST | Assigns an object to a section |
-| `expsection::assignSubtree::<node_id>::<section_id>` | section/assign | POST | Assigns a node and its subtree to a section. POST: mode |
+| `expsection::assign::<object_id>::<section_id>` | section/assign | POST | Assigns an object to a section, with the objects below it. POST: scope (subtree, inherited or object) |
+| `expsection::assignSubtree::<node_id>::<section_id>` | section/assign | POST | Assigns a node and its subtree to a section. POST: mode, scope (subtree, inherited or object) |
 
 #### Object states (`expstate`, 23 services, 9 writes)
 

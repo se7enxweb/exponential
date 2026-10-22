@@ -28,8 +28,8 @@ class expSectionServices extends expContentServiceBase
         'create' => array( 'summary' => 'Creates a section. POST: name, identifier, navigation_part', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array(), 'returns' => 'section' ),
         'update' => array( 'summary' => 'Changes a section (same POST fields)', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array( 'section_id' => 'int' ), 'returns' => 'section' ),
         'remove' => array( 'summary' => 'Removes an unused section', 'access' => array( 'section', 'edit' ), 'write' => true, 'args' => array( 'section_id' => 'int' ), 'returns' => '{removed}' ),
-        'assign' => array( 'summary' => 'Assigns an object to a section', 'access' => array( 'section', 'assign' ), 'write' => true, 'args' => array( 'object_id' => 'int', 'section_id' => 'int' ), 'returns' => 'object' ),
-        'assignSubtree' => array( 'summary' => 'Assigns a node and its subtree to a section. POST: mode', 'access' => array( 'section', 'assign' ), 'write' => true, 'args' => array( 'node_id' => 'int', 'section_id' => 'int' ), 'returns' => '{changed} or job' ),
+        'assign' => array( 'summary' => 'Assigns an object to a section, with the objects below it. POST: scope (subtree, inherited or object)', 'access' => array( 'section', 'assign' ), 'write' => true, 'args' => array( 'object_id' => 'int', 'section_id' => 'int' ), 'returns' => 'object' ),
+        'assignSubtree' => array( 'summary' => 'Assigns a node and its subtree to a section. POST: mode, scope (subtree, inherited or object)', 'access' => array( 'section', 'assign' ), 'write' => true, 'args' => array( 'node_id' => 'int', 'section_id' => 'int' ), 'returns' => '{changed} or job' ),
     );
 
     /** Forgets the kernel's per-process section cache, so a read after a write sees the write. */
@@ -229,9 +229,10 @@ class expSectionServices extends expContentServiceBase
         $s = self::section( self::arg( $args, 1, 'int' ) );
         if ( !eZUser::currentUser()->canAssignSectionToObject( (int)$s->attribute( 'id' ), $o ) )
             throw new expServiceException( 'You cannot assign this section to this object', 403 );
+        $scope = self::scope();
         if ( (int)$o->attribute( 'section_id' ) === (int)$s->attribute( 'id' ) )
             throw new expServiceException( 'The object is in that section already', 409 );
-        $s->applyTo( $o );
+        $s->applyTo( $o, $scope );
         eZContentObject::clearCache();
         $fresh = eZContentObject::fetch( $o->attribute( 'id' ) );
         if ( (int)$fresh->attribute( 'section_id' ) !== (int)$s->attribute( 'id' ) )
@@ -249,11 +250,22 @@ class expSectionServices extends expContentServiceBase
             throw new expServiceException( 'You cannot assign this section here', 403 );
         $nid = (int)$node->attribute( 'node_id' );
         $sid = (int)$s->attribute( 'id' );
-        return self::runOrJob( 'section', array( 'node_id' => $nid, 'section_id' => $sid ), function () use ( $nid, $sid ) {
+        $scope = self::scope();
+        $old = $scope === eZSection::SCOPE_INHERITED ? (int)$node->object()->attribute( 'section_id' ) : false;
+        return self::runOrJob( 'section', array( 'node_id' => $nid, 'section_id' => $sid, 'scope' => $scope ), function () use ( $nid, $sid, $scope, $old ) {
             self::notLocked( array( $nid ) );
-            self::operation( 'updatesection', array( 'node_id' => $nid, 'selected_section_id' => $sid ),
-                             function () use ( $nid, $sid ) { return eZContentOperationCollection::updateSection( $nid, $sid, false ); } );
-            return array( 'changed' => $nid, 'section_id' => $sid );
+            self::operation( 'updatesection', array( 'node_id' => $nid, 'selected_section_id' => $sid, 'scope' => $scope, 'old_section_id' => $old ),
+                             function () use ( $nid, $sid, $scope, $old ) { return eZContentOperationCollection::updateSection( $nid, $sid, false, $scope, $old ); } );
+            return array( 'changed' => $nid, 'section_id' => $sid, 'scope' => $scope );
         } );
+    }
+
+    /** The POST field scope of assign and assignSubtree (eZSection::SCOPE_*), subtree when it is not sent. */
+    protected static function scope()
+    {
+        $scope = self::post( 'scope', 'string', eZSection::SCOPE_SUBTREE );
+        if ( !eZSection::isValidScope( $scope ) )
+            throw new expServiceException( 'Unknown scope, use one of: ' . implode( ', ', eZSection::scopes() ), 400 );
+        return $scope;
     }
 }

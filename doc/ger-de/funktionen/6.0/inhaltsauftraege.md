@@ -42,7 +42,9 @@ Am selben Tag kamen zwei weitere Operationen hinzu:
 ```
 
 Derselbe Befehl legt Aufträge an: `remove`, `copy`, `move`, `hide`, `reveal`, `section`, `state`, `addlocation`,
-`removelocation`, im Vordergrund oder mit `--background`. `php bin/php/expcontentjob.php` ist dasselbe Skript.
+`removelocation`, im Vordergrund oder mit `--background`. `section` nimmt `--scope=subtree|inherited|object`, welche
+Objekte unterhalb des Knotens die Sektion erhalten ([Sektionen](../../anleitungen/sektionen.md#85-welche-objekte-darunter-die-sektion-erhalten)).
+`php bin/php/expcontentjob.php` ist dasselbe Skript.
 
 Der Cronjob-Teil `contentjobs` (Gruppe `frequent`) startet einen Worker neu, dessen Prozess gestorben ist, startet einen
 eingereihten Auftrag, den niemand gestartet hat, und entfernt fertige Aufträge nach `KeepDays`.

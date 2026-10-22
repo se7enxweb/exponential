@@ -56,6 +56,13 @@ class Assign extends \Exponential\Runnable\ModuleView
                     {   // Assign section to subtree of node
 
                         $selectedNodeIDArray = \eZContentBrowse::result( 'AssignSection' );
+                        // which objects below each chosen item change (eZSection::SCOPE_*), chosen above the browser
+                        $sectionScope = \eZSection::scopeFromHTTP( $http );
+                        if ( $sectionScope === false )
+                        {
+                            \eZDebug::writeError( 'Unknown section assignment scope.', 'section/assign' );
+                            $selectedNodeIDArray = array();
+                        }
                         if ( is_array( $selectedNodeIDArray ) and count( $selectedNodeIDArray ) > 0 )
                         {
                             $nodeList = \eZContentObjectTreeNode::fetch( $selectedNodeIDArray );
@@ -82,7 +89,7 @@ class Assign extends \Exponential\Runnable\ModuleView
 
                             // Content jobs (doc/eng-us/bc/6.0/content-jobs.md): one large subtree (or the user's last
                             // choice) gets a confirmation with the now-or-background choice; small ones as before
-                            if ( count( $allowedNodeIDList ) === 1 && !$deniedNodeIDList
+                            if ( count( $allowedNodeIDList ) === 1 && !$deniedNodeIDList && $sectionScope !== \eZSection::SCOPE_OBJECT
                                  && class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
                             {
                                 try
@@ -90,12 +97,14 @@ class Assign extends \Exponential\Runnable\ModuleView
                                     $jobNodeID = (int) $allowedNodeIDList[0];
                                     $jobNode = \eZContentObjectTreeNode::fetch( $jobNodeID );
                                     $jobResult = \Exponential\View\Kernel\Content\Job::interstitial( $Module, 'section', 'section',
-                                        array( 'node_id' => $jobNodeID, 'section_id' => (int) $SectionID ),
+                                        array( 'node_id' => $jobNodeID, 'section_id' => (int) $SectionID, 'scope' => $sectionScope ),
                                         '/section/assign/' . (int) $SectionID . '/', '/content/view/full/' . $jobNodeID,
                                         \ezpI18n::tr( 'design/admin/content/job', 'Assign the section %section to %name', null,
                                                       array( '%section' => $section->attribute( 'name' ), '%name' => $jobNode ? $jobNode->attribute( 'name' ) : $jobNodeID ) ),
-                                        \ezpI18n::tr( 'design/admin/content/job', 'Every object in the subtree gets the section; objects you may not assign it to are skipped.' ),
-                                        array( 'BrowseActionName' => 'AssignSection', 'SelectedNodeIDArray[]' => $jobNodeID ), $jobNodeID );
+                                        $sectionScope === \eZSection::SCOPE_INHERITED
+                                        ? \ezpI18n::tr( 'design/admin/content/job', 'The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.' )
+                                        : \ezpI18n::tr( 'design/admin/content/job', 'Every object in the subtree gets the section; objects you may not assign it to are skipped.' ),
+                                        array( 'BrowseActionName' => 'AssignSection', 'SelectedNodeIDArray[]' => $jobNodeID, 'SectionScope' => $sectionScope ), $jobNodeID );
                                     if ( $jobResult )
                                         return $this->viewResult( null, $jobResult );
                                 }
@@ -111,7 +120,7 @@ class Assign extends \Exponential\Runnable\ModuleView
                                 $db->begin();
                                 foreach ( $allowedNodeIDList as $nodeID )
                                 {
-                                    \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID );
+                                    \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope );
                                 }
                                 $db->commit();
 

@@ -681,7 +681,8 @@
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
     ],
     "kernel/content/operation_definition.php": [
-      "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
+      "tests/tests/kernel/content/eZPendingIndexActionsTest.php",
+      "tests/tests/kernel/classes/eZSectionScopeTest.php"
     ],
     "kernel/shop/operation_definition.php": [
       "tests/tests/kernel/content/eZPendingIndexActionsTest.php"
@@ -1984,6 +1985,34 @@
     ],
     "extension/*/design/*/templates/user/password.tpl": [
       "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "design/*/templates/details.tpl": [
+      "tests/tests/design/AdminSectionScopeTest.php"
+    ],
+    "design/*/templates/content/parts/edit_sections.tpl": [
+      "tests/tests/design/AdminSectionScopeTest.php"
+    ],
+    "design/*/templates/section/browse_assign.tpl": [
+      "tests/tests/design/AdminSectionScopeTest.php"
+    ],
+    "design/*/templates/content/browse.tpl": [
+      "tests/tests/design/AdminSectionScopeTest.php"
+    ],
+    "design/admin4/javascript/page/node_details.js": [
+      "tests/tests/design/AdminSectionScopeTest.php"
+    ],
+    "kernel/private/classes/views/section/assign.php": [
+      "tests/tests/design/AdminSectionScopeTest.php",
+      "tests/tests/kernel/classes/eZSectionScopeTest.php"
+    ],
+    "kernel/content/section_edit.php": [
+      "tests/tests/kernel/classes/eZSectionScopeTest.php"
+    ],
+    "kernel/private/classes/views/content/edit.php": [
+      "tests/tests/kernel/classes/eZSectionScopeTest.php"
+    ],
+    "kernel/private/classes/commands/expcontentjob.php": [
+      "tests/tests/kernel/classes/eZSectionScopeTest.php"
     ]
   },
   "generated": {
