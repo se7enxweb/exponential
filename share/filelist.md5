@@ -973,7 +973,7 @@ bac30bec66631791ce7970d4a26f98d5  design/admin4/javascript/ezadmin_menubar.js
 53ab31746762e3b5074d6d7811f1ba54  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 8f9d7c6892b25636b9a789f6e8d831c7  design/admin4/javascript/node_tabs.js
 f564e0bfe2ea3f300b638d4ab5f7a6c5  design/admin4/javascript/page/children_detailed.js
-b1cb289153ae2a835ea120a96272a231  design/admin4/javascript/page/class_edit.js
+99ed42cca2ade7dd7927422d405e2530  design/admin4/javascript/page/class_edit.js
 9d6d176d5a0c4504cd75ac86eee951b3  design/admin4/javascript/page/content_bookmark.js
 142c1652878ecaec9117255cced64962  design/admin4/javascript/page/content_datepicker.js
 7235f7e5a97b3c2e324f3259695dfb91  design/admin4/javascript/page/content_draft.js
@@ -20719,7 +20719,7 @@ a14c5e4099e2e4cbc6339eb54d3ec8f9  extension/ezoe/design/standard/javascript/clas
 b6775a0e19bd839625b4dfb6b92a9688  extension/ezoe/design/standard/javascript/classes/Popup.js
 276955286b65fba55ee60833ca2d6671  extension/ezoe/design/standard/javascript/classes/UndoManager.js
 794c3d88226e8b62eac09eeeef283c3b  extension/ezoe/design/standard/javascript/classes/WindowManager.js
-a5eea8e2826d7b0929291aa7a927ec29  extension/ezoe/design/standard/javascript/classes/adapter/jquery/adapter.js
+84afe150667391ddc942f946946a6493  extension/ezoe/design/standard/javascript/classes/adapter/jquery/adapter.js
 f2f319f369a84757b8976c2d66872933  extension/ezoe/design/standard/javascript/classes/adapter/jquery/jquery.tinymce.js
 37d84615944f028635f68d05b889c5c2  extension/ezoe/design/standard/javascript/classes/adapter/prototype/adapter.js
 bb9a7c2b19ad2433c85984cb8511e085  extension/ezoe/design/standard/javascript/classes/dom/DOMUtils.js
@@ -21053,7 +21053,7 @@ f0ec0273462e01b81e1dfd292f64451e  extension/ezoe/design/standard/javascript/them
 08f028902841db193a6a2f3a563ce08b  extension/ezoe/design/standard/javascript/tiny_mce.js
 3a3819b032736635cc608076a02b3dbe  extension/ezoe/design/standard/javascript/tiny_mce_dev.js
 f738a6e4f4a42aea6b694225aee720e0  extension/ezoe/design/standard/javascript/tiny_mce_jquery.js
-e333c93200a8c06d662a1e3844f920d0  extension/ezoe/design/standard/javascript/tiny_mce_jquery_src.js
+df80ccdb64f9a1e1b4c89d038d9493b0  extension/ezoe/design/standard/javascript/tiny_mce_jquery_src.js
 5a318277fedf491a0301e177a9ef10b3  extension/ezoe/design/standard/javascript/tiny_mce_popup.js
 8cf439bdb4e837c0d7f7690a118090e7  extension/ezoe/design/standard/javascript/tiny_mce_prototype.js
 41bb304c59da236489a896e46a919c94  extension/ezoe/design/standard/javascript/tiny_mce_prototype_src.js
@@ -21104,7 +21104,7 @@ c9805f55c3a5cd7d22a78af37abe96df  extension/ezoe/design/standard/templates/ezoe/
 ce2543bbccbb9f5a5cad56445c8064e3  extension/ezoe/design/standard/templates/ezoe/customattributes/hidden.tpl
 fd87158e7438d18221697934bc33532e  extension/ezoe/design/standard/templates/ezoe/customattributes/htmlsize.tpl
 82357263326bf20e44592dd8d2f49674  extension/ezoe/design/standard/templates/ezoe/customattributes/int.tpl
-8c0ee771b66931ab420caf7bb322f8ad  extension/ezoe/design/standard/templates/ezoe/customattributes/link.tpl
+5cde839d9c9d229c17fe89757fa8b9f6  extension/ezoe/design/standard/templates/ezoe/customattributes/link.tpl
 09eefcb273e37babdac79ae9109095c4  extension/ezoe/design/standard/templates/ezoe/customattributes/number.tpl
 dfa391814d13abb4d6e955d848891365  extension/ezoe/design/standard/templates/ezoe/customattributes/select.tpl
 42b5cbc9704e072c3375568df8c9d403  extension/ezoe/design/standard/templates/ezoe/customattributes/text.tpl
@@ -24183,6 +24183,7 @@ c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.p
 4a5fcc0b1d057a2dda804741118daea8  tests/tests/design/AdminHelpViewParametersOnlyTest.php
 8df6b3e23c1da3aea5c7d5b745158627  tests/tests/design/AdminI18nStringTagsTest.php
 9e471e6d5c672f60a74d65b48a683e94  tests/tests/design/AdminIconsTest.php
+a521629dd943dfd2d64fe8b3ce016f69  tests/tests/design/AdminJQuery4RemovedApisTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 b5f411ebc5ba7f9db7e43e6c9495e152  tests/tests/design/AdminKernelDesignTemplatesTest.php
 9760143adaf77eef2b5fda732765688c  tests/tests/design/AdminKeyboardTest.php
@@ -24203,7 +24204,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 91fc8ff0be7f6a3bdbe8de38be0a5d5a  tests/tests/design/AdminOauthadminPagesTest.php
 544fce0fbf9c7b3c979ffe0bb02d73ce  tests/tests/design/AdminPackageWizardTest.php
 88c2ef84c8ada8a15807fcfba2033272  tests/tests/design/AdminPageHeaderTest.php
-d3d8c3cae25c361ad03a42b0f613f49b  tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
+3ac134cdec78f1d964b2a5833fece6a2  tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
 f4a2f3b04d9c1aa4183cabca6121fccd  tests/tests/design/AdminPhoneMenuTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 09bc63dcafdd65f3f5e0deac447bf043  tests/tests/design/AdminPrePaintGuardsTest.php

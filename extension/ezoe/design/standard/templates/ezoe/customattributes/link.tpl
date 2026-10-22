@@ -101,7 +101,7 @@ eZOEPopupUtils.settings.onInitDoneArray.push( function( editorElement )
         ezoeLinkAttribute.id = ezoeLinkAttribute.lid( this.id, tagName[tagNameKey] );
         jQuery('div.panel, div.link-dialog').hide();
         jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) ).show();
-        jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) + ' input[type=text]:first').trigger('focus');
+        jQuery('#' + ezoeLinkAttribute.box( this.id, tagName[tagNameKey] ) + ' input[type=text]').first().trigger('focus');
     });
     jQuery( '#embed_search_go_back_link, #embed_browse_go_back_link, #embed_bookmark_go_back_link' ).on( 'click', ezoeLinkAttribute.toggleBack );
 });
@@ -210,7 +210,7 @@ var ezoeLinkAttribute = {
         ezoeLinkAttribute.id = null;
         jQuery('div.panel').hide();
         jQuery('div.link-dialog').show();
-        jQuery('div.link-dialog input[type=text]:first').trigger('focus');
+        jQuery('div.link-dialog input[type=text]').first().trigger('focus');
         jQuery('div.panel.current').show();
     }
 };

@@ -284,9 +284,9 @@
 					o.ready(cb, s);
 				} else {
 					if (s) {
-						o.bind(n, s, cb);
+						o.on(n, null, s, cb);
 					} else {
-						o.bind(n, cb);
+						o.on(n, cb);
 					}
 				}
 
@@ -306,7 +306,7 @@
 				if (is(o, 'array') && is(o[0], 'string'))
 					o = o.join(',#');
 
-				$(is(o, 'string') ? '#' + o : o).unbind(n,f);
+				$(is(o, 'string') ? '#' + o : o).off(n, f);
 
 				return true;
 			}
