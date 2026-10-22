@@ -10051,6 +10051,7 @@ c9fc6704afbbfa442a1f4afd0795e49d  doc/eng-us/help/manual/how-do-i-find-out-who-c
 ca76f4e0acb03cd4b72b1cd1e752c162  doc/eng-us/help/manual/how-do-i-follow-a-part-of-the-site.md
 fec7a3babd14a94e622fc133fad4e540  doc/eng-us/help/manual/how-do-i-give-a-group-edit-rights-on-one-section.md
 99d193f3914ed8d82312b2de30bbd42d  doc/eng-us/help/manual/how-do-i-give-a-page-an-extra-address.md
+4b59490018081343ebb1d21bb10f4318  doc/eng-us/help/manual/how-do-i-give-a-product-options.md
 d3fac64e27d8473427ff753fbc1b7d51  doc/eng-us/help/manual/how-do-i-give-an-external-application-access.md
 031c64979f74e27f52c44048f7000641  doc/eng-us/help/manual/how-do-i-give-customers-a-discount.md
 b36c121bc572f5243e73092b3d7976ab  doc/eng-us/help/manual/how-do-i-go-back-to-an-earlier-version.md
@@ -10073,10 +10074,12 @@ cc9c2197f40434d3ef0ab4889bad5f10  doc/eng-us/help/manual/how-do-i-remove-an-item
 5e95492a175128c880fc2a859c5afc42  doc/eng-us/help/manual/how-do-i-reuse-an-image-or-file.md
 b58125781c06715625a71b5db62546a6  doc/eng-us/help/manual/how-do-i-see-active-extensions-and-system-information.md
 f8872687aae28406db7c08149f12fee6  doc/eng-us/help/manual/how-do-i-see-all-products-and-prices.md
+94edb8f14a07f6993439426f9e108984  doc/eng-us/help/manual/how-do-i-see-customers-and-product-statistics.md
 f9b70f16458b909a02057b62bbdecb7a  doc/eng-us/help/manual/how-do-i-see-form-submissions.md
 4701a7402c9f6ba876e200b62ec1c679  doc/eng-us/help/manual/how-do-i-see-what-visitors-search-for.md
 27f7f1c5227d42176f6f28f0ee9a53c4  doc/eng-us/help/manual/how-do-i-send-a-newsletter.md
 a22266b884b22f2b0ea67ad51ef5b98a  doc/eng-us/help/manual/how-do-i-send-content-for-approval.md
+cb2519208dfb17656146fdc9f478598e  doc/eng-us/help/manual/how-do-i-set-a-product-price-per-currency.md
 2a7b1f8ceeb42cd10292a1a3903e64ef  doc/eng-us/help/manual/how-do-i-set-the-seo-title-and-description.md
 4f145b69d6cf6013db0847c4e2373e04  doc/eng-us/help/manual/how-do-i-set-up-vat.md
 74a8ced4798965b7ce67b37a95940d8d  doc/eng-us/help/manual/how-do-i-show-an-item-in-more-than-one-place.md
