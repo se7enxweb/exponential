@@ -29,6 +29,9 @@ Die Anleitungen und Funktionsseiten erklären die Hintergründe; diese Seiten si
 | [Wie richte ich die USt für meine Produkte ein?](wie-richte-ich-die-ust-ein.md) | Shop |
 | [Wie gebe ich einer Kundengruppe einen Rabatt?](wie-gebe-ich-kunden-einen-rabatt.md) | Shop |
 | [Wie füge ich dem Shop eine Währung hinzu?](wie-fuege-ich-eine-waehrung-hinzu.md) | Shop |
+| [Wie gebe ich einem Produkt Optionen wie Größe oder Farbe?](wie-gebe-ich-einem-produkt-optionen.md) | Inhaltsstruktur |
+| [Wie lege ich den Preis eines Produkts in jeder Währung fest?](wie-lege-ich-den-preis-eines-produkts-pro-waehrung-fest.md) | Inhaltsstruktur |
+| [Wie sehe ich meine Kunden und was sich am besten verkauft hat?](wie-sehe-ich-kunden-und-produkt-statistiken.md) | Shop |
 | [Was kann ich im Tab Design ändern?](was-kann-ich-im-design-tab-aendern.md) | Design |
 | [Was steht in der Setup-Übersicht, und warum sehe ich nicht jede Kachel?](was-steht-in-der-setup-uebersicht.md) | Setup |
 | [Wie finde ich heraus, wer was wann geändert hat?](wie-finde-ich-heraus-wer-was-geaendert-hat.md) | Audit |
@@ -67,6 +70,25 @@ Die Anleitungen und Funktionsseiten erklären die Hintergründe; diese Seiten si
 | [Wie baue ich eine Seite mit Layouts?](wie-baue-ich-eine-seite-mit-layouts.md) | Redakteure |
 | [Wie versende ich einen Newsletter?](wie-versende-ich-einen-newsletter.md) | Redakteure |
 | [Wie nutze ich den KI-Assistenten im Editor?](wie-nutze-ich-den-ki-assistenten-im-editor.md) | Redakteure |
+| [Wie verschiebe oder kopiere ich ein Element?](wie-verschiebe-oder-kopiere-ich-ein-element.md) | Redakteure |
+| [Wie zeige ich ein Element an mehr als einer Stelle?](wie-zeige-ich-ein-element-an-mehr-als-einer-stelle.md) | Redakteure |
+| [Wie verstecke ich ein Element, ohne es zu entfernen?](wie-verstecke-ich-ein-element.md) | Redakteure |
+| [Wie tausche ich zwei Elemente im Baum?](wie-tausche-ich-zwei-elemente-im-baum.md) | Redakteure |
+| [Wie entferne ich ein Element?](wie-entferne-ich-ein-element.md) | Redakteure |
+| [Wie kehre ich zu einer früheren Version zurück?](wie-kehre-ich-zu-einer-frueheren-version-zurueck.md) | Redakteure |
+| [Wie sehe ich mir einen Entwurf vor dem Veröffentlichen in der Vorschau an?](wie-sehe-ich-mir-einen-entwurf-in-der-vorschau-an.md) | Redakteure |
+| [Was tue ich bei einem „Möglichen Bearbeitungs-Konflikt“?](was-tue-ich-bei-einem-moeglichen-bearbeitungskonflikt.md) | Redakteure |
+| [Wie verknüpfe ich andere Elemente mit dem, das ich gerade bearbeite?](wie-verknuepfe-ich-beim-bearbeiten-andere-elemente.md) | Redakteure |
+| [Wie verwende ich ein Bild oder eine Datei aus der Medienbibliothek wieder?](wie-verwende-ich-ein-bild-oder-eine-datei-wieder.md) | Redakteure |
+| [Wie bearbeite ich Inhalte direkt auf der Website?](wie-bearbeite-ich-inhalte-direkt-auf-der-website.md) | Redakteure |
+| [Wie entferne ich eine Übersetzung oder ändere die Hauptsprache?](wie-entferne-ich-eine-uebersetzung-oder-aendere-die-hauptsprache.md) | Redakteure |
+| [Wie zeige ich ein Element in Sprachen, in die es nicht übersetzt ist?](wie-zeige-ich-ein-element-in-nicht-uebersetzten-sprachen.md) | Redakteure |
+| [Wie setze ich im Online-Editor einen Anker und verlinke darauf?](wie-setze-ich-im-online-editor-einen-anker.md) | Redakteure |
+| [Wie füge ich ein benutzerdefiniertes Tag wie einen Infokasten oder ein Zitat ein?](wie-fuege-ich-ein-benutzerdefiniertes-tag-ein.md) | Redakteure |
+| [Wie schreibe ich Rich Text ohne den Online-Editor?](wie-schreibe-ich-rich-text-ohne-den-online-editor.md) | Redakteure |
+| [Warum findet die Suche ein Element nicht, von dem ich weiß, dass es existiert?](warum-findet-die-suche-ein-element-nicht.md) | Redakteure |
+| [Wie importiere oder exportiere ich ein Textverarbeitungsdokument?](wie-importiere-oder-exportiere-ich-ein-textdokument.md) | Redakteure |
+| [Wie arbeite ich über WebDAV mit Inhalten als Dateien?](wie-arbeite-ich-ueber-webdav-mit-inhalten.md) | Redakteure |
 
 ## Administratoren und Website-Verantwortliche
 
@@ -81,12 +103,24 @@ Die Anleitungen und Funktionsseiten erklären die Hintergründe; diese Seiten si
 | [Wie gebe ich einer Seite eine zusätzliche Adresse (URL-Alias)?](wie-gebe-ich-einer-seite-eine-zusaetzliche-adresse.md) |
 | [Wie leite ich eine Gruppe alter Adressen um (URL-Platzhalter)?](wie-leite-ich-alte-adressen-um.md) |
 | [Wie füge ich eine Inhaltssprache hinzu?](wie-fuege-ich-eine-inhaltssprache-hinzu.md) |
+| [Wie lasse ich einen Übersetzer nur in einer Sprache arbeiten?](wie-lasse-ich-einen-uebersetzer-nur-in-einer-sprache-arbeiten.md) |
+| [Wie sehe ich, wonach Besucher suchen?](wie-sehe-ich-wonach-besucher-suchen.md) |
 | [Wie lese ich die Logdateien?](wie-lese-ich-die-logdateien.md) |
 | [Was findet die Inhaltsprüfung, und was tue ich dagegen?](was-findet-die-inhaltspruefung.md) |
 | [Wie sehe ich die aktiven Erweiterungen und die Systeminformationen?](wie-sehe-ich-aktive-erweiterungen-und-systeminformationen.md) |
 | [Wie veröffentliche ich einen RSS-Feed meiner Inhalte?](wie-veroeffentliche-ich-einen-rss-feed.md) |
 | [Wie importiere ich einen RSS-Feed von einer anderen Website?](wie-importiere-ich-einen-rss-feed.md) |
 | [Wie gebe ich einer externen Anwendung einen API-Schlüssel?](wie-gebe-ich-einer-externen-anwendung-zugriff.md) |
+| [Wie lege ich eine Sektion an und ordne ihr Inhalte zu?](wie-lege-ich-eine-sektion-an-und-ordne-ihr-inhalte-zu.md) |
+| [Wie richte ich einen Bereich nur für Mitglieder ein?](wie-richte-ich-einen-bereich-nur-fuer-mitglieder-ein.md) |
+| [Wie lege ich einen Benutzer oder eine Benutzergruppe an?](wie-lege-ich-einen-benutzer-oder-eine-benutzergruppe-an.md) |
+| [Wie verschiebe ich einen Benutzer in eine andere Gruppe oder nehme ihn in zwei Gruppen auf?](wie-verschiebe-ich-einen-benutzer-in-eine-andere-gruppe.md) |
+| [Wie sehe ich, was ein Benutzer tun darf?](wie-sehe-ich-was-ein-benutzer-tun-darf.md) |
+| [Wie veröffentliche ich Inhalte zu einem späteren Zeitpunkt?](wie-veroeffentliche-ich-inhalte-zu-einem-spaeteren-zeitpunkt.md) |
+| [Wie richte ich eine Freigabe vor dem Veröffentlichen ein?](wie-richte-ich-eine-freigabe-vor-dem-veroeffentlichen-ein.md) |
+| [Wie füge ich einer Inhaltsklasse ein Attribut hinzu?](wie-fuege-ich-einer-inhaltsklasse-ein-attribut-hinzu.md) |
+| [Wie ändere ich, wie viele Versionen eines Objekts aufbewahrt werden?](wie-aendere-ich-wie-viele-versionen-aufbewahrt-werden.md) |
+| [Wie schalte ich eine Erweiterung ein oder aus?](wie-schalte-ich-eine-erweiterung-ein-oder-aus.md) |
 
 ## Exponential Intelligence
 
