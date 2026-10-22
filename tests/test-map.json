@@ -1984,6 +1984,10 @@
     ],
     "extension/*/design/*/templates/user/password.tpl": [
       "tests/tests/design/DemoModeUserTemplatesTest.php"
+    ],
+    "extension/expimageeditor/*": [
+      "extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php",
+      "extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php"
     ]
   },
   "generated": {
