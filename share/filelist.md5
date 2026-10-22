@@ -10056,6 +10056,7 @@ d3fac64e27d8473427ff753fbc1b7d51  doc/eng-us/help/manual/how-do-i-give-an-extern
 b36c121bc572f5243e73092b3d7976ab  doc/eng-us/help/manual/how-do-i-go-back-to-an-earlier-version.md
 74f0de8a0763907ddb4f9d0079489b8a  doc/eng-us/help/manual/how-do-i-hide-an-item.md
 1f176d2ddb40457da45f9369c1117bf9  doc/eng-us/help/manual/how-do-i-import-an-rss-feed.md
+01222dd55290b5de0c783ef506a29384  doc/eng-us/help/manual/how-do-i-import-or-export-a-text-document.md
 1e32fb38a5466598230a1317fcef9be0  doc/eng-us/help/manual/how-do-i-insert-a-custom-tag.md
 2382ab26db6e5c82a18062fef6bf19f0  doc/eng-us/help/manual/how-do-i-insert-a-table-in-the-online-editor.md
 c8e2c9980894582709149a5f8b3e030d  doc/eng-us/help/manual/how-do-i-insert-an-image-in-the-online-editor.md
@@ -10073,6 +10074,7 @@ cc9c2197f40434d3ef0ab4889bad5f10  doc/eng-us/help/manual/how-do-i-remove-an-item
 b58125781c06715625a71b5db62546a6  doc/eng-us/help/manual/how-do-i-see-active-extensions-and-system-information.md
 f8872687aae28406db7c08149f12fee6  doc/eng-us/help/manual/how-do-i-see-all-products-and-prices.md
 f9b70f16458b909a02057b62bbdecb7a  doc/eng-us/help/manual/how-do-i-see-form-submissions.md
+4701a7402c9f6ba876e200b62ec1c679  doc/eng-us/help/manual/how-do-i-see-what-visitors-search-for.md
 27f7f1c5227d42176f6f28f0ee9a53c4  doc/eng-us/help/manual/how-do-i-send-a-newsletter.md
 a22266b884b22f2b0ea67ad51ef5b98a  doc/eng-us/help/manual/how-do-i-send-content-for-approval.md
 2a7b1f8ceeb42cd10292a1a3903e64ef  doc/eng-us/help/manual/how-do-i-set-the-seo-title-and-description.md
@@ -10085,6 +10087,7 @@ c8757116de5815f5b524b2e8c7c9ad1f  doc/eng-us/help/manual/how-do-i-switch-the-adm
 2ed410fc66e48ca843e8ab0dca3748a9  doc/eng-us/help/manual/how-do-i-translate-content.md
 d4d57c89c925425d456bc6869507dfc6  doc/eng-us/help/manual/how-do-i-turn-on-two-step-sign-in.md
 10c91cd7e7caa6a5292bc360e9be7abb  doc/eng-us/help/manual/how-do-i-use-the-ai-assistant-in-the-editor.md
+75bda0ba082aa600425b03ab7e38681f  doc/eng-us/help/manual/how-do-i-work-with-content-over-webdav.md
 827ad14660cd2bab031bce319f5291fd  doc/eng-us/help/manual/how-do-i-write-rich-text-without-the-online-editor.md
 98e08fb19c072cefd133921d8a0ccd64  doc/eng-us/help/manual/images/advanced-search.webp
 014abd5beb8855abd737098beb3fb97a  doc/eng-us/help/manual/images/audit-console.webp
@@ -10119,6 +10122,7 @@ e9abc4c0e8b925072d88ac49201c35f0  doc/eng-us/help/manual/what-is-on-my-account-p
 657dc408190acf1fb452f446a1d682d9  doc/eng-us/help/manual/what-is-on-the-setup-overview.md
 bb2c62e602eaf652c3de2e1fc55ce6a3  doc/eng-us/help/manual/where-do-i-see-my-pending-items.md
 e6cdbd205e096f3fa39d20f244750a42  doc/eng-us/help/manual/which-cache-do-i-clear.md
+5d3832d7488d0a0d33a369e193b859eb  doc/eng-us/help/manual/why-does-search-not-find-an-item.md
 952892ed18e07a289ad3932936a86799  doc/eng-us/help/media-and-uploads.md
 000adbe890d78c166cf82b3bdf8a9957  doc/eng-us/help/mobile-app-developers/auth/README.md
 736a37eb467caff750ab8ae0dd266169  doc/eng-us/help/mobile-app-developers/auth/a-backend-for-your-app.md
