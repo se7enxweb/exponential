@@ -20184,7 +20184,7 @@ abe3acce6caa2e41c7583d94be5bc607  kernel/classes/expdemomode.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
 6a26dd8312653231ab2187eea9655b65  kernel/classes/expjsonschemavalidator.php
 933bd2dd795e196483af744989fda260  kernel/classes/expkernelextensionoverridelist.php
-a07d28763822146949ee6db4c4f9c99d  kernel/classes/expkernelservicecompiler.php
+649f98db5a269520471fd566ae8db93d  kernel/classes/expkernelservicecompiler.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
 2c972d6cb57e5557335a061521870369  kernel/classes/expkernelservicescope.php

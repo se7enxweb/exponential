@@ -297,7 +297,8 @@ class expKernelServiceCompiler
             @unlink( $tmp );
             return false;
         }
-        @chmod( $tmp, 0644 );
+        // as the INI cache files: PHP that is included, never writable by others (within EZP_FILE_MODE_MAX)
+        @chmod( $tmp, eZFile::fileMode( 0644 ) );
         @touch( $tmp, $stamp );
         self::giveToSiteOwner( $tmp );
         if ( !@rename( $tmp, $file ) )
