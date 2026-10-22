@@ -6,7 +6,7 @@
 {foreach $content_attributes_grouped_data_map as $attribute_group => $content_attributes_grouped}
 {if $attribute_group|ne( $attribute_default_category )}
     <fieldset class="ezcca-collapsible ezcca-attributes-group-{$attribute_group|wash}">
-    <legend><a>{$attribute_categorys[$attribute_group]}</a></legend>
+    <legend><a>{$attribute_categorys[$attribute_group]|wash}</a></legend>
     <div class="ezcca-collapsible-fieldset-content">
 {/if}
 {foreach $content_attributes_grouped as $attribute_identifier => $attribute}

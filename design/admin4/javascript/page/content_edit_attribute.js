@@ -9,6 +9,13 @@
 {
     var each = function( list, fn ){ Array.prototype.forEach.call( list, function( el ){ fn.call( el, el ); } ); };
 
+    // The toggle link of a group tells a screen reader whether the group is open
+    function expanded( group, open )
+    {
+        var link = group.querySelector('legend a');
+        if ( link ) link.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
+    }
+
     // shown and hidden as jQuery's show() and hide() did: hidden is display none, shown is the stylesheet's display
     // (or block when the stylesheet hides it)
     function show( el )
@@ -81,10 +88,12 @@
                 if ( container.classList.contains('ezcca-collapsed') )
                 {
                     container.classList.remove('ezcca-collapsed');
+                    expanded( container, true );
                     each( inner, function(){ slide( this, true ); } );
                 }
                 else
                 {
+                    expanded( container, false );
                     each( inner, function(){
                         slide( this, false, function(){
                             this.parentNode.classList.add('ezcca-collapsed');
@@ -100,6 +109,7 @@
                 this.classList.add('ezcca-collapsed');
                 each( this.querySelectorAll('div.ezcca-collapsible-fieldset-content'), hide );
             }
+            expanded( this, !this.classList.contains('ezcca-collapsed') );
         } );
 
         // A link to an attribute (the list of fields above the form, the error summary) opens the collapsed group the
@@ -113,6 +123,7 @@
             {
                 if ( !group.matches('fieldset.ezcca-collapsible.ezcca-collapsed') ) continue;
                 group.classList.remove('ezcca-collapsed');
+                expanded( group, true );
                 var inner = group.querySelector('div.ezcca-collapsible-fieldset-content');
                 if ( inner ) show( inner );
             }

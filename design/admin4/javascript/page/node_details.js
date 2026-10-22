@@ -9,7 +9,7 @@
     function highlight( id )
     {
         var btn = document.getElementById( id );
-        if ( btn && !btn.getAttribute('disabled') )
+        if ( btn && !btn.disabled )
         {
             btn.classList.remove('button');
             btn.classList.add('defaultbutton');
