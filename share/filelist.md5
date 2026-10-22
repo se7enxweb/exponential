@@ -7190,6 +7190,7 @@ eac710891ec446c14acec9e1d27b8426  doc/eng-us/help/businesses/templates/roi-works
 650935738878fa3c486c5f262cb57df6  doc/eng-us/help/change-the-admin-password.md
 32b4a33172034277fee4c8b12b0041a6  doc/eng-us/help/cms-developers/accessibility.md
 7f5546d922d4bf73cf2ce46f4ac15ce1  doc/eng-us/help/cms-developers/caching-for-cms-developers.md
+227110c9a9a69e8dea9acd57d0b7702c  doc/eng-us/help/cms-developers/choosing-a-ready-made-content-class.md
 fe1afeff5ed82e2e135ab485493da3c5  doc/eng-us/help/cms-developers/choosing-datatypes.md
 54bb4cad6bebb01a2520c9a81d388669  doc/eng-us/help/cms-developers/cms-developer-faq.md
 f97894f39371c02b2bd717834db9ee70  doc/eng-us/help/cms-developers/cms-developers-start-here.md
@@ -7208,6 +7209,7 @@ bfe09bf5ad24658c75525bb8d911bad5  doc/eng-us/help/cms-developers/designing-a-con
 5e4676ada1fa1b5c25cf979067bfb984  doc/eng-us/help/cms-developers/exponential-for-cms-developers.md
 4965b089f0fffd1684a60800ba0fe782  doc/eng-us/help/cms-developers/extensions-you-will-write.md
 e043e3e1c22d5976f78fbf1cf8273d63  doc/eng-us/help/cms-developers/fetching-content-in-templates.md
+f4af86a602be231434694be5c9e232e4  doc/eng-us/help/cms-developers/fixed-ids-and-numeric-codes.md
 a4f9c2304c01d14a765e99f9ee236d4c  doc/eng-us/help/cms-developers/forms-and-information-collection.md
 164e580175700601e261e067c77e6752  doc/eng-us/help/cms-developers/glossary-for-cms-developers.md
 adfc88868b1c47e846877f98efdfb464  doc/eng-us/help/cms-developers/headless-delivery.md
@@ -10029,9 +10031,11 @@ b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 6574f4c33807b183d6c6a805b383cb8e  doc/eng-us/help/manual/how-do-i-add-a-currency.md
 ec5d32f7cdf2fb46474c189f9096a84e  doc/eng-us/help/manual/how-do-i-add-a-link-in-the-online-editor.md
 f236bb065077cd7aa3c644e3be6cb195  doc/eng-us/help/manual/how-do-i-add-an-anchor-in-the-online-editor.md
+f0b32da6dd13fe644d9f8072649751cd  doc/eng-us/help/manual/how-do-i-add-an-attribute-to-a-content-class.md
 82e4ac9e252487df109ca401a8df0b00  doc/eng-us/help/manual/how-do-i-approve-or-reject-content.md
 f137c728c366f0e2016f2a44618e7b30  doc/eng-us/help/manual/how-do-i-archive-finished-orders.md
 6f3c792e66cf9ad448ce2936be9ac394  doc/eng-us/help/manual/how-do-i-build-a-page-with-layouts.md
+e4c2e485a99883a23fa531b56fca1a11  doc/eng-us/help/manual/how-do-i-change-how-many-versions-are-kept.md
 1ea61016580f2c9e7d2fe0276aa3b3fa  doc/eng-us/help/manual/how-do-i-change-the-content-class-of-an-object.md
 c97b42168b2fa0594c582169492c3631  doc/eng-us/help/manual/how-do-i-change-the-order-of-sub-items.md
 aad5aa549d6d4a47ca7ee559b871624d  doc/eng-us/help/manual/how-do-i-change-the-owner-of-an-object.md
@@ -10039,6 +10043,7 @@ a720c6ff19f6827a308bec0b698a26ca  doc/eng-us/help/manual/how-do-i-change-the-sta
 0dc164c2cfffb7a9f6293f4978fc53f7  doc/eng-us/help/manual/how-do-i-change-the-status-of-an-order.md
 9a96bf2788e67085795fa783acab7201  doc/eng-us/help/manual/how-do-i-choose-which-notifications-i-get.md
 47187f254ca6cf5caa97ee44e4a24e19  doc/eng-us/help/manual/how-do-i-control-the-sitemap.md
+0831ebd86d573d016c28254c4068608a  doc/eng-us/help/manual/how-do-i-create-a-section-and-assign-content.md
 e1e789f1fbbe5dbd2a3e528258cf0843  doc/eng-us/help/manual/how-do-i-disable-or-unlock-a-user-account.md
 ddf1a19d776a6d2059662d572ed8e182  doc/eng-us/help/manual/how-do-i-edit-from-the-website.md
 cd571475da4ba9747e888912ba5fe69f  doc/eng-us/help/manual/how-do-i-embed-another-object.md
