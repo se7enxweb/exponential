@@ -466,9 +466,10 @@ A link can open the wizard with a source already chosen: `setup/moduletable/(sou
 it for an import's fields.
 
 An extension offers its own source as a kernel service tagged `datatable.field_source`, a class implementing
-`expDataTableFieldSource`: `dataTableSourceName()`, `dataTableReferences()` (a list to choose from, or none),
-`dataTableFields( array( 'ref' => ... ) )` (the fields as above: name, label, type, length, required, unique) and
-`dataTableSourceLabel()`. The id of the source is the service id without `datatable.field_source.`.
+`expDataTableFieldSource`: `dataTableFields( array( 'ref' => ... ) )` (the fields as above: name, label, type, length,
+required, unique) and `dataTableSourceLabel()`; it may also have `dataTableSourceName()` (the name in the wizard's list
+of sources; the id when it has none) and `dataTableReferences()` (a list to choose from; none: the user types the
+reference). The id of the source is the service id without `datatable.field_source.`.
 
 ```ini
 [Service_datatable.field_source.myimport]

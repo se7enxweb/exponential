@@ -21,25 +21,17 @@
  * The wizard asks it with the reference the user typed or chose (array( 'ref' => ... ), plus whatever the link to the
  * wizard carried) and turns the fields into columns.
  *
+ * Two more methods are optional (the wizard asks for them with method_exists(), so a provider written against the
+ * first form of this interface keeps working):
+ *
+ *   public function dataTableSourceName()     the name in the wizard's choice of sources ("An import of my tool")
+ *   public function dataTableReferences()     ref => label the wizard offers in a list (empty: the user types one)
+ *
  * @since 6.0.15
  * @package kernel
  */
 interface expDataTableFieldSource
 {
-    /**
-     * A name for the wizard's choice of source ("A content class", "An import of 7x SQLI Import").
-     *
-     * @return string
-     */
-    public function dataTableSourceName();
-
-    /**
-     * The references the wizard offers in a list (ref => label); empty to let the user type one.
-     *
-     * @return array
-     */
-    public function dataTableReferences();
-
     /**
      * The fields.
      *

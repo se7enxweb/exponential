@@ -136,7 +136,7 @@ class Moduletable extends \Exponential\Runnable\ModuleView
         {
             try
             {
-                $refs = $source->dataTableReferences();
+                $refs = method_exists( $source, 'dataTableReferences' ) ? (array)$source->dataTableReferences() : array();
             }
             catch ( \Throwable $e )
             {
@@ -145,7 +145,7 @@ class Moduletable extends \Exponential\Runnable\ModuleView
             $list = array();
             foreach ( $refs as $ref => $label )
                 $list[] = array( 'ref' => (string)$ref, 'label' => (string)$label );
-            $sources[] = array( 'id' => $id, 'name' => $source->dataTableSourceName(), 'refs' => $list );
+            $sources[] = array( 'id' => $id, 'name' => method_exists( $source, 'dataTableSourceName' ) ? (string)$source->dataTableSourceName() : $id, 'refs' => $list );
         }
         $connection = \expDataConnections::get( $settings['connection'] );
         $tableExists = null;

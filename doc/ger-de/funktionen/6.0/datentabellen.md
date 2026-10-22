@@ -486,9 +486,10 @@ oder `setup/moduletable/(class)/<klassenbezeichner>` für eine Inhaltsklasse. So
 7x SQLI Import für die Felder eines Imports.
 
 Eine Extension bietet eine eigene Quelle als Kernel-Dienst mit dem Tag `datatable.field_source` an, eine Klasse, die
-`expDataTableFieldSource` implementiert: `dataTableSourceName()`, `dataTableReferences()` (eine Liste zur Auswahl oder
-keine), `dataTableFields( array( 'ref' => ... ) )` (die Felder wie oben: name, label, type, length, required, unique)
-und `dataTableSourceLabel()`. Die ID der Quelle ist die Dienst-ID ohne `datatable.field_source.`.
+`expDataTableFieldSource` implementiert: `dataTableFields( array( 'ref' => ... ) )` (die Felder wie oben: name, label,
+type, length, required, unique) und `dataTableSourceLabel()`; dazu kann sie `dataTableSourceName()` (der Name in der
+Liste der Quellen des Assistenten; ohne die Methode die ID) und `dataTableReferences()` (eine Liste zur Auswahl; ohne
+sie tippt man die Referenz ein) haben. Die ID der Quelle ist die Dienst-ID ohne `datatable.field_source.`.
 
 ```ini
 [Service_datatable.field_source.myimport]
