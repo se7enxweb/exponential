@@ -65,6 +65,9 @@ class expHelpContextRegistry
     /** @var array the Help menu's settings: featured (page ids), links (key => target), topics (int) */
     protected $menu = array( 'featured' => array(), 'links' => array(), 'topics' => 6 );
 
+    /** @var callable|false|null module => page ids the transfer registry adds to its Help menu; false: none; null: the registry's */
+    protected $transferTopics = null;
+
     /** The page suffixes an entry may name (the index decides the rest) */
     const PAGE_PATTERN = '#\.(md|markdown|txt)$#i';
 
@@ -111,6 +114,27 @@ class expHelpContextRegistry
                 $this->providers[] = $provider;
         }
         $this->pageInfo = is_callable( $pageInfo ) ? $pageInfo : null;
+        if ( isset( $menu['transfer'] ) && ( is_callable( $menu['transfer'] ) || $menu['transfer'] === false ) )
+            $this->transferTopics = $menu['transfer'];
+    }
+
+    /**
+     * The help topics the transfer registry adds to a module's Help menu (expKernelTransferRegistry::helpTopicsForModule()):
+     * nothing for a module that is no import or export tool's.
+     *
+     * @param string $module
+     * @return array page ids
+     */
+    protected function transferTopics( $module )
+    {
+        if ( $this->transferTopics === false )
+            return array();
+        if ( is_callable( $this->transferTopics ) )
+            return (array)call_user_func( $this->transferTopics, $module );
+        // a Velocity worker started before the registry existed has no such class: no topics, no error
+        if ( !class_exists( 'expKernelTransferRegistry' ) )
+            return array();
+        return expKernelTransferRegistry::instance()->helpTopicsForModule( $module );
     }
 
     /**
@@ -312,6 +336,14 @@ class expHelpContextRegistry
             {
                 if ( $key !== null && isset( $this->entries[$key] ) )
                     $add( $this->entries[$key] );
+            }
+            // the page of an import or export tool: "Which import or export tool do I need?" and the tool's own
+            // help (the transfer registry, doc/eng-us/features/6.0/transfer-registry.md)
+            foreach ( $this->transferTopics( $module ) as $id )
+            {
+                $target = self::parseTarget( $id );
+                if ( $target !== null )
+                    $add( $target );
             }
         }
         foreach ( $this->menu['featured'] as $id )

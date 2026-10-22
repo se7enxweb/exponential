@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-040d31d7189956916f74396673d7a4b0  autoload/ezp_kernel.php
+37cbbea9d9b1bfcee9c077c913988363  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -6312,6 +6312,7 @@ ad0cbcb7b00ee64e8f462a1f8f672b7e  doc/eng-us/features/6.0/subitems-table-options
 dd6ffd0934859a25b68301e43d20d3b0  doc/eng-us/features/6.0/template-editor-overrides.md
 7b608591724a5589bf96bf7a2cc4d09e  doc/eng-us/features/6.0/template-override-ordering.md
 bfe652712727cd6ca24daa78a9ddc1f3  doc/eng-us/features/6.0/template-path-comments.md
+84d2bc7e5047606ba62b0358307f2594  doc/eng-us/features/6.0/transfer-registry.md
 57c4106059d194a44e5f1db41823a12d  doc/eng-us/features/6.0/translations-and-languages.md
 52655ccd8d99de4f991040e3be60a92a  doc/eng-us/features/6.0/trash-who-and-where.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
@@ -9846,6 +9847,7 @@ baf66aa17d127641f5998381cf0a59c3  doc/eng-us/help/images/update-cli-a5-check.web
 2ee3c65057ea308d18a427bc3e0450a3  doc/eng-us/help/images/update-maintenance.webp
 1f80a35c16fb4004febb83c4a11c98e2  doc/eng-us/help/images/update-upgrade-check.webp
 f7310491d28b2e21502fa6ba5b206888  doc/eng-us/help/images/versions.webp
+9114b91eff9b7bba33f02f3d7f157e87  doc/eng-us/help/import-export-tools.md
 3f1fd52ae8ba44cde8a744607256f9d8  doc/eng-us/help/individuals/blogs/README.md
 6f49f66fc0315af888a25f434845d86f  doc/eng-us/help/individuals/blogs/comments-on-your-blog.md
 ab5a57b3c773d891ac7b4daf2ad7b868  doc/eng-us/help/individuals/blogs/moving-from-another-blog-platform.md
@@ -12323,7 +12325,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-a7a10294b66bc24c3ae5f4f15bdd9e27  doc/ger-de/.paths.json
+6ddc7dd4378f87a6ab8f1c93924e780c  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -15125,6 +15127,7 @@ fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-uebe
 e74cdba13351e2357f5d44752cfb4e3e  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
 13be67ed0258c4ebe40353d3ef07dafd  doc/ger-de/funktionen/6.0/template-operatoren-fuer-zeichenketten.md
 0caf6f8a83e6258e50740659d8b5ea4c  doc/ger-de/funktionen/6.0/template-pfad-kommentare.md
+f4a95e2557c57dc2914714367f4f664f  doc/ger-de/funktionen/6.0/transfer-register.md
 d8811a6943bde3813b7afe286f9d2629  doc/ger-de/funktionen/6.0/uebersetzungen-und-sprachen.md
 de3819d9e1d4985d7a1647e5e065add1  doc/ger-de/funktionen/6.0/ui-umschalter-design.md
 31d14e5c1b5fad8438595b66c4a6b54e  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
@@ -16928,6 +16931,7 @@ a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheit
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
 b7007a5a1e0ad8960cadd403d87caa73  doc/ger-de/hilfe/hosting/sicherheit/zweistufige-anmeldung.md
+6641b4ef55a931f0c0e009e54a32536e  doc/ger-de/hilfe/import-oder-export-werkzeug.md
 94bdd42e822a3953ce31051f080ee6a1  doc/ger-de/hilfe/inhalte-bearbeiten.md
 0530058a847a325a95b5520e3d6f2f9f  doc/ger-de/hilfe/integratoren/anbindung-einer-suchmaschine.md
 47264559aec7552a1f459da8390c37c1  doc/ger-de/hilfe/integratoren/arbeitsblatt-zur-bestandsaufnahme-einer-integration.md
@@ -21653,7 +21657,7 @@ c5df49a0b81ad45f4aba981c8377c592  kernel/classes/help/content/exphelpmanualsync.
 b9abbada4676605e209c224dfdede8a2  kernel/classes/help/exphelpcommitfeed.php
 3809783acca335c300694021e8139ead  kernel/classes/help/exphelpcontextpageinterface.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
-25b08aa3ec37bc6d75cf65326d1a9e49  kernel/classes/help/exphelpcontextregistry.php
+b17ef905d0c43e86aa71cd3decc3d67f  kernel/classes/help/exphelpcontextregistry.php
 c7a21d5f72fa0a60277c0806e25fcdea  kernel/classes/help/exphelpdocumentindex.php
 0776ecdb29ca13a41bb6b72c3cabee52  kernel/classes/help/exphelpexamplesgenerator.php
 3e79654e800bcb6b79ad95a0b8b736b5  kernel/classes/help/exphelpexamplestranslation.php
@@ -21851,6 +21855,8 @@ c80009e7c21251cb23badd3d86a3594b  kernel/classes/syscard/providers/expsyscardsit
 18c292805ab8c84882aed37ef370e51a  kernel/classes/syscard/providers/expsyscardsiteprovider.php
 987feb8ad7ad2f5437adc41bb3470581  kernel/classes/syscard/providers/expsyscardvelocityprovider.php
 7aa52fe706a3bd37ef0520b3f0493e51  kernel/classes/syscard/providers/expsyscardwebserverprovider.php
+b26bdd352a18ee7576b21adae64fa0e0  kernel/classes/transfer/expkerneltransferregistry.php
+3c4c045a772df28bd34c7a55827a8dbd  kernel/classes/transfer/expkerneltransfertool.php
 df88021792b0b11ae5e52e4fb8714679  kernel/classes/uiswitch/expuiswitch.php
 cd54fa40fed2f285f3992b4a8a4634aa  kernel/classes/uiswitch/expuiswitchdesignprovider.php
 2eaf46fffb8bf8a2ef20e950ec19528c  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
@@ -21886,6 +21892,7 @@ e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
 b8369d01fe310ba84d33228f874acefe  kernel/common/expcontentsecuritypolicyoperator.php
 6ba2796946a6ba9f694effe95e6c3558  kernel/common/expdemomodeoperator.php
 83b9bd0b40804f348548707386c287a8  kernel/common/expenvironmentoperator.php
+0c537e8f8de63844d187172f21b127c0  kernel/common/expkerneltransferoperator.php
 550907f82cbeaf5b2b75b0fde7242b5e  kernel/common/expviewparameteroperator.php
 6b1ab582228ad8b1a974afd05782f76e  kernel/common/ezalphabetoperator.php
 1d5dbf2bba242879e3056e3933e4d10a  kernel/common/ezautolinkoperator.php
@@ -21901,7 +21908,7 @@ ce9600aa8d2d9a4d05280d8739b41630  kernel/common/ezpi18n.php
 9daf325c493906c07b4054d04b32d0a4  kernel/common/ezpsiteaccessmenuoperator.php
 f96a90033dfa982c5532d6e86250f804  kernel/common/ezpsiteaccessurloperator.php
 017b674d3da82376774e263117ee3ce8  kernel/common/ezsimpletagsoperator.php
-7d8a5a3184eadfd4d955dc09d8bcf50f  kernel/common/eztemplateautoload.php
+ad308266dddccbf004a6a749d3231b2a  kernel/common/eztemplateautoload.php
 9ceb4c9f830f1adb379fb9ebcd1aad62  kernel/common/eztemplatedesignresource.php
 9a8a326aaf46c622ad345e92a192ab41  kernel/common/eztemplatesstatisticsreporter.php
 b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
@@ -23194,7 +23201,7 @@ d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 1f9f8117c0d4eb89b6644d8f1fe4d46d  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
-d96380c893b8a852ab6e42630fd9f996  settings/kernelservices.ini
+7009a7dc8435532d75d1e0104811d5d4  settings/kernelservices.ini
 ba31587f56f91488816b2dcd90470594  settings/layout.ini
 ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 4a2de424bb5015cf1e0c6ba66ba53ab6  settings/logfile.ini
@@ -24664,6 +24671,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
+5f052aef6baf71fdb2b5831ba4bbd2d9  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php
 8e2cf124d80d40e3228e49c616a36389  tests/tests/kernel/classes/expLoveStackFixture.php
