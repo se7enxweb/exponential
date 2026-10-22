@@ -219,12 +219,14 @@ class AdminTreeMenuEscapingTest extends PHPUnit\Framework\TestCase
                                                             "$path: a value only JS-escaped in an attribute is decoded by the browser first" );
             }
         }
-        $full = self::file( 'design/admin/templates/node/view/full.tpl' );
-        $this->assertStringContainsString( "'{\$node.class_name|wash(javascript)|wash}'", $full );
-        $this->assertStringContainsString( "'%languages%', {\$js_class_languages|wash} )", $full );
-        $a4 = self::file( 'design/admin4/templates/node/view/a4_full_body.tpl' );
-        $this->assertStringContainsString( 'data-menu-title="{$node.class_name|wash}"', $a4 );
-        $this->assertStringContainsString( 'data-menu-languages="{$js_class_languages|wash}"', $a4 );
+        foreach ( array( 'design/admin/templates/node/view/full.tpl', 'design/admin4/templates/node/view/a4_full_body.tpl' ) as $path )
+        {
+            $full = self::file( $path );
+            $this->assertStringNotContainsString( 'ezpopmenu_showTopLevel', $full, $path );
+            $this->assertStringContainsString( 'data-menu-title="{$node.class_name|wash}"', $full, $path );
+            $this->assertStringContainsString( 'data-menu-languages="{$js_class_languages|wash}"', $full, $path );
+            $this->assertMatchesRegularExpression( '/data-menu-values="\{json_encode\( hash\( [^"]*\) \)\|wash\}"/', $full, $path );
+        }
         $this->assertStringContainsString( 'data-menu-title="{$node.name|shorten(18)|wash}"', self::file( 'design/standard/templates/content/bookmark_tree.tpl' ) );
     }
 

@@ -19,13 +19,13 @@
 {* DESIGN: Header START *}<div class="box-header">
 
 {def $js_class_languages = '[]'
-     $disable_another_language = '-1'
-     $disabled_sub_menu = "['class-createnodefeed', 'class-removenodefeed']"
+     $disable_another_language = ''
+     $disabled_sub_menu = '["class-createnodefeed","class-removenodefeed"]'
      $hide_status = ''
      $has_content_class = eq( $node.object.content_class|not, false )}
 {if $has_content_class}
     {if eq( 0, count( $node.object.content_class.can_create_languages ) )}
-        {set $disable_another_language = "'edit-class-another-language'"}
+        {set $disable_another_language = 'edit-class-another-language'}
     {/if}
     {if is_set( $node.object.content_class.prioritized_languages_js_array )}
         {set $js_class_languages = $node.object.content_class.prioritized_languages_js_array}
@@ -44,16 +44,16 @@
     {def $create_rss_access = fetch( 'user', 'has_access_to', hash( 'module', 'rss', 'function', 'edit' ) )}
     {if $create_rss_access}
         {if fetch( 'rss', 'has_export_by_node', hash( 'node_id', $node.node_id ) )}
-            {set $disabled_sub_menu = "'class-createnodefeed'"}
+            {set $disabled_sub_menu = '"class-createnodefeed"'}
         {else}
-            {set $disabled_sub_menu = "'class-removenodefeed'"}
+            {set $disabled_sub_menu = '"class-removenodefeed"'}
         {/if}
     {/if}
 {/if}
 
 {* the language the name is shown in: its current language when the object has it, else unknown (nothing marked) *}{def $exp_title_language = cond( $node.object.available_languages|contains( $node.object.current_language ), $node.object.current_language, '' )}
 {if ne( $node.contentobject_id, 0 )}
-<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} onclick="ezpopmenu_showTopLevel( event, 'ClassMenu', ez_createAArray( new Array( '%classID%', {$node.object.contentclass_id}, '%objectID%', {$node.contentobject_id}, '%nodeID%', {$node.node_id}, '%currentURL%', '{$node.url|wash( javascript )|wash}', '%languages%', {$js_class_languages|wash} ) ), '{$node.class_name|wash(javascript)|wash}', {$disabled_sub_menu}, {$disable_another_language} ); return false;">{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{set-block variable=exp_name_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}{/set-block}{if $exp_name_attrs|ne( '' )}<bdi{$exp_name_attrs}>{$node.name|wash}</bdi>{else}<bdi>{$node.name|wash}</bdi>{/if}{undef $exp_name_attrs}&nbsp;[<bdi>{$node.class_name|wash}</bdi>]&nbsp;{$hide_status}</h1>
+<h1 class="context-title"><a href={concat( '/class/view/', $node.object.contentclass_id )|ezurl} aria-haspopup="menu" aria-expanded="false" data-menu-open="ClassMenu" data-menu-values="{json_encode( hash( '%classID%', $node.object.contentclass_id, '%objectID%', $node.contentobject_id, '%nodeID%', $node.node_id, '%currentURL%', $node.url ) )|wash}" data-menu-languages="{$js_class_languages|wash}" data-menu-title="{$node.class_name|wash}" data-menu-disable="{$disabled_sub_menu|wash}"{if $disable_another_language} data-menu-disable-item="{$disable_another_language|wash}"{/if}>{$node.class_identifier|class_icon( normal, $node.class_name )}</a>&nbsp;{set-block variable=exp_name_attrs}{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}{/set-block}{if $exp_name_attrs|ne( '' )}<bdi{$exp_name_attrs}>{$node.name|wash}</bdi>{else}<bdi>{$node.name|wash}</bdi>{/if}{undef $exp_name_attrs}&nbsp;[<bdi>{$node.class_name|wash}</bdi>]&nbsp;{$hide_status}</h1>
 {else}
 <h1 class="context-title"{include uri='design:parts/exp_content_direction.tpl' exp_locale_code=$exp_title_language}><bdi>{$node.name|wash}</bdi></h1>
 {/if}{undef $exp_title_language}

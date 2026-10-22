@@ -176,6 +176,9 @@ class expHelpRemoteImages
     public static function references( $markdown )
     {
         $markdown = (string)$markdown;
+        // Image syntax shown as an example in a code block or code span is not an image of the page
+        $markdown = preg_replace( '/^ {0,3}(`{3,}|~{3,})[^\n]*\n.*?(?:^ {0,3}\1[`~]*[ \t]*$|\z)/ms', '', $markdown );
+        $markdown = preg_replace( '/(`+)(?!`).+?(?<!`)\1(?!`)/s', '', $markdown );
         $found = array();
         if ( preg_match_all( '/!\[[^\]]*\]\(\s*<?([^\s)>]+)/', $markdown, $m ) )
             $found = array_merge( $found, $m[1] );

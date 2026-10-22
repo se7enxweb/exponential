@@ -70,6 +70,7 @@ Then follow a path in [Reading paths for CMS developers](reading-paths.md).
 - [Relations and embeds](relations-and-embeds.md), [Rich text](rich-text.md), [Images and image aliases](images-and-image-aliases.md)
 - [Versions, drafts and publishing](versions-drafts-and-publishing.md), [Translations and languages](translations-and-languages.md)
 - [Sections, roles and policies](sections-roles-and-policies.md), [Users and registration](users-and-registration.md)
+- [Choosing a ready-made content class](choosing-a-ready-made-content-class.md), [Fixed IDs and numeric codes](fixed-ids-and-numeric-codes.md)
 
 ### Building the site
 

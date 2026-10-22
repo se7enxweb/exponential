@@ -26,6 +26,13 @@ Editors who may edit the object. Adding a tag that is not in the tree yet needs 
 4. To take a tag off, click **Remove tag** next to it.
 5. Click **Send for publishing**.
 
+### A plain keywords field
+
+Some classes have a simple keywords field instead of a tag tree, for example **Tags** of the standard **Product**
+class. It is a text line: type the keywords separated by commas, such as `garden, tools, spring`. Items that share a
+keyword are linked by it, independently of the tree, and the site can list them together. Spell each keyword the same
+way every time; *garden* and *gardens* count as two different keywords.
+
 ## What can go wrong
 
 - **The tag you need does not exist and cannot be added.** The field only allows tags from the tree, or your role lacks

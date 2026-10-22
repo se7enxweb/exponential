@@ -28,6 +28,18 @@ Users whose role has `shop/administrate`. Decide the rates with your accountant 
 6. Choose the **Country/region**, the **Product categories** (or **Any**) and the **VAT type**, then click **Create**.
 7. Edit a product, choose the VAT type in its price field and publish it.
 
+### Rates that depend on the country or the kind of product
+
+Rules by country and product category work only when the site is set up for them: the VAT handler `ezdefault` in
+`shop.ini [VATSettings]`, a country field in the user class (`UserCountryAttribute`) and a product category field in
+the product class (`ProductCategoryAttribute`). Ask an administrator. Then:
+
+1. Click **Store**, then **Product categories**, click **New product category**, name it (for example "Gift cards") and
+   click **Apply changes**.
+2. Edit each product and choose its category in the product category field.
+3. In the product's price field choose the VAT type *Determined by VAT charging rules*, so the rules decide.
+4. Add the rules as in steps 5 and 6, with one rule for **Any** country and **Any** category as the fallback.
+
 ![The VAT types list with Name and Percentage, and the buttons Remove selected, New VAT type and Apply changes](images/store-vat-types.webp)
 
 ## What can go wrong
