@@ -70,6 +70,7 @@ sources say so themselves; treat them as examples of what to measure, not as pro
 | [Static cache](static-cache.md) | Pages generated as files; why it ships off and when to use it |
 | [Cache clearing and warming](cache-clearing-and-warming.md) | Which cache to clear for which change, in which order, and how to warm |
 | [Benchmarking a hosted site](benchmarking-a-hosted-site.md) | `exp:benchmark` for hosts: fair comparisons, deploy checks, plan limits |
+| [The compiled kernel container](compiled-kernel-container.md) | What `var/cache/kernelservices/` is, when it is rebuilt, how to check it and what it saves per request |
 
 ## What hosts get wrong most often
 

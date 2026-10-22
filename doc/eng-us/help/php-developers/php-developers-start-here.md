@@ -134,6 +134,7 @@ The whole section in order is [The PHP developer's reading path](php-developer-r
 | Page | What it helps you do |
 |---|---|
 | [Velocity persistent workers for PHP developers](velocity-persistent-workers-for-php-developers.md), [Static state traps](static-state-traps.md) | Write code that is correct under persistent workers |
+| [The kernel service container](the-kernel-service-container.md) | Ask the kernel for shared objects by name, define your own, choose their scope |
 | [FrankenPHP for PHP developers](frankenphp-for-php-developers.md) | Run and test under FrankenPHP |
 | [The engine archive (phar) for PHP developers](the-engine-phar-for-php-developers.md) | Keep paths right when the kernel runs from an archive |
 

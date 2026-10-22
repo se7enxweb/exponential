@@ -3365,6 +3365,7 @@ c096765a30ac8ef624ea0dee89dec81c  doc/eng-us/bc/6.0/help-content-dita-ebooks-rev
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 26385728e213f79942873fc7ea3fabc4  doc/eng-us/bc/6.0/httpcache.md
 b4b2d3cf7a13a38b86ae1add01523e49  doc/eng-us/bc/6.0/ini-save-file-permissions.md
+10189eced2db4da71ce7f5f88fbe6a5d  doc/eng-us/bc/6.0/kernel-services.md
 0ec2cae64cd60f8b29b5ccf7554c856d  doc/eng-us/bc/6.0/kickstartercli.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
 55e1c907228e8d0b48be0e9f4da11b39  doc/eng-us/bc/6.0/love/API.md
@@ -9306,6 +9307,7 @@ cfb2ccb3750352982141be1a72f28821  doc/eng-us/help/hosting/performance/README.md
 4454a3fee80e1d2754b4631aaab02dad  doc/eng-us/help/hosting/performance/cache-clearing-and-warming.md
 40d5b4c8a488bb7b1d41606ae56e48cb  doc/eng-us/help/hosting/performance/caching-layers.md
 0b3b16320bab0924c8d44d5869beb311  doc/eng-us/help/hosting/performance/cdn.md
+1c717e1b6237b95671fec34f498821ab  doc/eng-us/help/hosting/performance/compiled-kernel-container.md
 de99e06ba59d8f4bc6a90ebff2ea40e3  doc/eng-us/help/hosting/performance/http-cache-headers.md
 bbc2e47e4c6eeda9e2a8032bcb88e3c5  doc/eng-us/help/hosting/performance/opcache.md
 2a4310e39dd7a2f94e2451320313b527  doc/eng-us/help/hosting/performance/php-fpm-tuning.md
@@ -10379,6 +10381,7 @@ c8b13b92e9b90ab579eadedea6635aa5  doc/eng-us/help/php-developers/security-in-php
 dfe1719906a2ed1eb8f50b52c2164f07  doc/eng-us/help/php-developers/the-coding-standard.md
 08d33b1972bfabd46d142d660685fba4  doc/eng-us/help/php-developers/the-debug-bar-for-php-developers.md
 3e66706cbebac52faa1cdafe347d712d  doc/eng-us/help/php-developers/the-engine-phar-for-php-developers.md
+d54b61f35504722feae6c3e9e3781c4a  doc/eng-us/help/php-developers/the-kernel-service-container.md
 19fb72bae7189bbcdb0508f883646789  doc/eng-us/help/php-developers/validating-input-and-casting.md
 c9f6d3f7a2ce49caf3588ebaf4f620f0  doc/eng-us/help/php-developers/velocity-persistent-workers-for-php-developers.md
 6236b21084f4e775c672d2c8d36b16f5  doc/eng-us/help/php-developers/why-no-type-declarations.md
