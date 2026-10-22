@@ -32,7 +32,7 @@
 
         <div class="searchscope-menu-container">
             <div class="searchscope-pane" id="searchscope-pane">
-                <a href="javascript:;" class="close" id="searchscope-pane-close" title="{'Close'|i18n( 'design/admin/pagelayout' )}"><span class="mini-icon mini-icon-remove-close"></span><span class="a4-sr-only">{'Close'|i18n( 'design/admin/pagelayout' )}</span></a>
+                <a href="#searchscope-pane" class="close" id="searchscope-pane-close" role="button" title="{'Close'|i18n( 'design/admin/pagelayout' )}"><span class="mini-icon mini-icon-remove-close"></span><span class="a4-sr-only">{'Close'|i18n( 'design/admin/pagelayout' )}</span></a>
                 <div class="searchscope-title">{'Search scope'|i18n( 'design/admin/pagelayout' )}</div>
                 <div class="searchscope-body">
                     {def $disabled = false()
@@ -96,7 +96,8 @@
     $('#searchscope').on('click', function(){
         $('#searchscope-pane').addClass('active');
     });
-    $('#searchscope-pane-close').on('click', function(){
+    $('#searchscope-pane-close').on('click', function( e ){
+        e.preventDefault();
         $('#searchscope-pane').removeClass('active');
     });
     $('input:radio[name=SubTreeArray]').on( 'change', function() {

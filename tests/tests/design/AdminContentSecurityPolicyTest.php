@@ -33,10 +33,12 @@
  *   through JSON_ESCAPE, and that chain, rendered by eZTemplate, leaves no < or > of a value in the block.
  * - CSP-07: the TinyMCE 8 editor (ezoe) starts from ezoe8_start.js: the edit template writes its settings as JSON
  *   data blocks and each textarea's toolbar in data-ezoe8-* attributes; run in node (js/csp_tinymce8.js).
- * - CSP-10: the classic administration designs (design/admin, design/admin3 and the admin* designs of the shipped
- *   extensions), which run no policy, still carry no on...= attribute in their templates beyond
- *   CLASSIC_HANDLER_ALLOWLIST (only shrinks): their small actions use the data-a4-* attributes of a4_actions.js, which
- *   their page_head_script.tpl loads (design/admin/javascript/a4_actions.js, the same file as admin4's).
+ * - CSP-10: no template of any administration design (design/admin, admin3, admin4, admin4l and the admin* designs of
+ *   the shipped extensions, rendered or not) carries an on...= attribute or a javascript: URL, read over the whole
+ *   template so a handler whose code holds a < is found too. The classic designs, which run no policy, use the data-a4-*
+ *   attributes of a4_actions.js, which their page_head_script.tpl loads (design/admin/javascript/a4_actions.js, the same
+ *   file as admin4's), the data-menu-* attributes of ezpopupmenu.js for the context menus, and the page scripts they
+ *   share with admin4 byte for byte (CLASSIC_PAGE_SCRIPTS: the date picker, the package file viewer, the register form).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
  *
@@ -86,19 +88,14 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     );
 
     /**
-     * CSP-10: event handler attributes still left in the classic administration designs, path => count. Each needs
-     * more than a4_actions.js offers (the context menus, the date picker, the register buttons).
-     * This list only shrinks.
+     * CSP-10: the page scripts the classic administration (design/admin) shares with admin4, byte for byte: the
+     * template of each loads it with ezscript() instead of an on...= attribute
      */
-    const CLASSIC_HANDLER_ALLOWLIST = array(
-        'design/admin/templates/content/datatype/edit/ezdate.tpl' => 1,
-        'design/admin/templates/content/datatype/edit/ezdatetime.tpl' => 1,
-        'design/admin/templates/content/view/versionview.tpl' => 1,
-        'design/admin/templates/node/view/full.tpl' => 1,
-        'design/admin/templates/node/view/line.tpl' => 1,
-        'design/admin/templates/node/view/thumbnail.tpl' => 1,
-        'design/admin/templates/user/register.tpl' => 4,
-        'design/admin3/templates/content/view/versionview.tpl' => 1,
+    const CLASSIC_PAGE_SCRIPTS = array(
+        'page/content_datepicker.js' => array( 'design/admin/templates/content/datatype/edit/ezdate.tpl',
+                                               'design/admin/templates/content/datatype/edit/ezdatetime.tpl' ),
+        'page/package_view_full.js' => array( 'design/admin/templates/package/view/full.tpl' ),
+        'page/user_register.js' => array( 'design/admin/templates/user/register.tpl' ),
     );
 
     /** The extensions this repository ships (share/filelist.md5): checked always; an allowlisted one missing fails under CI=1 */
@@ -428,6 +425,27 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         return array_filter( $found );
     }
 
+    /**
+     * CSP-10: the event handler attributes and javascript: URLs of a template, each as found. Read over the whole
+     * template (comments left out), not tag by tag, so a handler whose code holds a < or > is found too.
+     */
+    public static function inlineHandlers( $template )
+    {
+        $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', $template );
+        $found = array();
+        if ( preg_match_all( '/\son[a-z]+\s*=\s*["\'{]/i', $code, $handlers ) )
+        {
+            foreach ( $handlers[0] as $handler )
+                $found[] = trim( $handler );
+        }
+        if ( preg_match_all( '/\b(?:href|action|src|formaction)\s*=\s*["\']?\s*javascript:/i', $code, $urls ) )
+        {
+            foreach ( $urls[0] as $url )
+                $found[] = $url;
+        }
+        return $found;
+    }
+
     private static function excepted( $path )
     {
         foreach ( array_keys( self::EXCEPTIONS ) as $prefix )
@@ -501,6 +519,17 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
                                            . "<a href=\"javascript:void(0)\" onclick=\"x()\" onmouseover='y()'>a</a>"
                                            . "<div style=\"color: red\" onclick={concat( 'a' )}></div>" ) );
         $this->assertSame( array( 'styleblock' => 1 ), self::findings( '<style>a { color: red; }</style>' ) );
+    }
+
+    /** CSP-10: what counts as an inline handler, also one whose code holds a < (the tag reading of findings() misses it) */
+    public function testTheInlineHandlersAreFound()
+    {
+        $this->assertSame( array(), self::inlineHandlers( '<a href="#x" data-onclick="y" class="onclick" data-menu-open="M">on="x"</a>'
+                                                          . '{* <a onclick="y" href="javascript:;"> *}' ) );
+        $this->assertSame( array( 'onclick="', "onchange='", 'onsubmit={', 'href="javascript:', "href=JavaScript:" ),
+                           self::inlineHandlers( "<button onclick=\"for(var i=0;i<p.length;i++){ldelim}{rdelim}\">x</button>"
+                                                 . "<select\n onchange='go()'></select><form onsubmit={concat( 'a' )}></form>"
+                                                 . "<a href=\"javascript:;\">a</a><a href=JavaScript:void(0)>b</a>" ) );
     }
 
     /** CSP-01: the chain the templates are read from */
@@ -625,37 +654,51 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
     public function testTheClassicAdministrationTemplatesCarryNoInlineHandlers()
     {
         $root = self::root();
-        $bases = array( 'design/admin', 'design/admin3' );
+        // every administration design, admin4 and admin4l too (CSP-01 reads only what they render)
+        $bases = array( 'design/admin', 'design/admin3', 'design/admin4', 'design/admin4l' );
         foreach ( self::SHIPPED_EXTENSIONS as $extension )
         {
             foreach ( glob( "$root/extension/$extension/design/admin*", GLOB_ONLYDIR ) ?: array() as $dir )
-            {
-                if ( !preg_match( '#/design/admin4l?$#', $dir ) )
-                    $bases[] = substr( $dir, strlen( $root ) + 1 );
-            }
+                $bases[] = substr( $dir, strlen( $root ) + 1 );
         }
         $unexpected = array();
-        $fewer = array();
         $seen = 0;
         foreach ( $bases as $base )
         {
             foreach ( self::baseTemplates( $base ) as $path )
             {
                 $seen++;
-                $found = self::findings( (string)file_get_contents( "$root/$path" ) );
-                $now = isset( $found['handler'] ) ? $found['handler'] : 0;
-                $listed = isset( self::CLASSIC_HANDLER_ALLOWLIST[$path] ) ? self::CLASSIC_HANDLER_ALLOWLIST[$path] : 0;
-                if ( $now > $listed )
-                    $unexpected[] = "$path: $now handler (allowed: $listed)";
-                else if ( $now < $listed )
-                    $fewer[] = "$path: $now handler, listed with $listed - lower or remove its CLASSIC_HANDLER_ALLOWLIST entry";
+                $found = self::inlineHandlers( (string)file_get_contents( "$root/$path" ) );
+                if ( $found )
+                    $unexpected[] = "$path: " . implode( ', ', $found );
             }
         }
-        $this->assertGreaterThan( 400, $seen, 'the classic administration templates were not read' );
+        $this->assertGreaterThan( 1000, $seen, 'the administration templates were not read' );
         $this->assertSame( array(), $unexpected,
-            'An on...= attribute in a classic administration template: use the data-a4-* actions of a4_actions.js '
-            . '(data-a4-submit-on-change, data-a4-confirm, data-a4-toggle-checkboxes, ...)' );
-        $this->assertSame( array(), $fewer );
+            'An on...= attribute or a javascript: URL in an administration template: use the data-a4-* actions of '
+            . 'a4_actions.js (data-a4-submit-on-change, data-a4-confirm, data-a4-toggle-checkboxes, ...), the data-menu-* '
+            . 'attributes of ezpopupmenu.js or a page script loaded with ezscript(), and href="#..." with a listener' );
+
+        // the classic templates load the page scripts they share with admin4
+        foreach ( self::CLASSIC_PAGE_SCRIPTS as $script => $templates )
+        {
+            $this->assertFileEquals( "$root/design/admin4/javascript/$script", "$root/design/admin/javascript/$script",
+                "the classic administration loads the same $script as admin4" );
+            foreach ( $templates as $template )
+            {
+                $code = (string)preg_replace( '/\{\*.*?\*\}/s', '', (string)file_get_contents( "$root/$template" ) );
+                $this->assertStringContainsString( "{ezscript( array( '$script' ) )}", $code, "$template loads $script" );
+            }
+        }
+        // the context menus of the classic administration are declared in data-menu-* attributes
+        foreach ( array( 'design/admin/templates/node/view/full.tpl' => 'ClassMenu',
+                         'design/admin/templates/node/view/line.tpl' => 'SubitemsContextMenu',
+                         'design/admin/templates/node/view/thumbnail.tpl' => 'SubitemsContextMenu',
+                         'design/admin/templates/content/view/versionview.tpl' => 'ClassMenu',
+                         'design/admin3/templates/content/view/versionview.tpl' => 'ClassMenu' ) as $template => $menu )
+        {
+            $this->assertStringContainsString( "data-menu-open=\"$menu\"", (string)file_get_contents( "$root/$template" ), "$template opens $menu" );
+        }
 
         $this->assertFileEquals( "$root/design/admin4/javascript/a4_actions.js", "$root/design/admin/javascript/a4_actions.js",
             'the classic administration loads the same a4_actions.js as admin4' );

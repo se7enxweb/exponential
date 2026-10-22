@@ -343,7 +343,7 @@
                     {if $viewed.format|eq( 'json' )}<a class="pvf-link-button" data-as="xml" href={$ContentsBrowser.url_as_xml|ezurl}>{'View as XML'|i18n('design/admin/package')}</a>
                     {else}<a class="pvf-link-button" data-as="json" href={$ContentsBrowser.url_as_json|ezurl}>{'View as JSON'|i18n('design/admin/package')}</a>{/if}
                     {/if}
-                    {if $ContentsBrowser.viewed_content}<button type="button" class="pvf-link-button" data-wrap-toggle="1" aria-pressed="false" onclick="var b=this,p=b.closest('.pvf-viewer').querySelectorAll('pre.pvf-code'),on=b.getAttribute('aria-pressed')!=='true';for(var i=0;i<p.length;i++){ldelim}p[i].classList.toggle('pvf-nowrap',on);{rdelim}b.setAttribute('aria-pressed',on?'true':'false');">{'No wrap'|i18n('design/admin/package')}</button>{/if}
+                    {if $ContentsBrowser.viewed_content}<button type="button" class="pvf-link-button" data-wrap-toggle="1" aria-pressed="false">{'No wrap'|i18n('design/admin/package')}</button>{/if}
                     <a class="pvf-link-button" href={concat( 'package/viewfile/', $package.name, '/', $viewed.index, $repo_suffix )|ezurl} target="_blank" rel="noopener">{'Download'|i18n('design/admin/package')}</a>
                     <a class="pvf-link-button" href={$ContentsBrowser.url_close|ezurl}>{'Close'|i18n('design/admin/package')}</a>
                 </div>
@@ -444,6 +444,8 @@
 </div>
 
 </div>
+{* "No wrap" (data-wrap-toggle) works through page/package_view_full.js, the same file as admin4's *}
+{ezscript( array( 'page/package_view_full.js' ) )}
 {undef $kindLabels $kindShortLabels $card $carries $repo $repo_suffix $reason_labels}
 
 {/let}

@@ -1,6 +1,6 @@
 {* Warning *}
 {section show=$validation.processed}
-<div class="message-warning">
+<div class="message-warning" role="alert">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The information could not be stored...'|i18n( 'design/admin/user/register' )}</h2>
 <p>{'The following information is either incorrect or missing'|i18n( 'design/admin/user/register' )}:</p>
 <ul>
@@ -34,22 +34,22 @@
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
     <div class="block">
-        <input class="defaultbutton" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
-        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
+        <input class="defaultbutton" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" />
+        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Cancel'|i18n( 'design/admin/user/register' )}" />
     </div>
 {* DESIGN: Control bar END *}</div></div>
 </div>
 
 {else}
 {* Warning *}
-<div class="message-warning">
+<div class="message-warning" role="alert">
 <h2>{'Unable to register new user'|i18n( 'design/admin/user/register' )}</h2>
 </div>
 <div class="controlbar">
 {* DESIGN: Control bar START *}<div class="box-bc"><div class="box-ml">
     <div class="block">
-        <input class="button button-disabled" disabled="disabled" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
-        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Back'|i18n( 'design/admin/user/register' )}" onclick="window.setTimeout( disableButtons, 1 ); return true;" />
+        <input class="button button-disabled" disabled="disabled" type="submit" id="PublishButton" name="PublishButton" value="{'OK'|i18n( 'design/admin/user/register' )}" />
+        <input class="button" type="submit" id="CancelButton" name="CancelButton" value="{'Back'|i18n( 'design/admin/user/register' )}" />
     </div>
 {* DESIGN: Control bar END *}</div></div>
 </div>
@@ -62,27 +62,4 @@
 
 
 
-{literal}
-<script type="text/javascript">
-jQuery(function( $ )//called on document.ready
-{
-    with( document.registerform )
-    {
-        for( var i = 0, l = elements.length; i < l; i++ )
-        {
-            if( elements[i].type == 'text' )
-            {
-                elements[i].focus();
-                return;
-            }
-        }
-    }
-});
-
-function disableButtons()
-{
-    document.getElementById( 'PublishButton' ).disabled = true;
-    document.getElementById( 'CancelButton' ).disabled = true;
-}
-</script>
-{/literal}
+{ezscript( array( 'page/user_register.js' ) )}
