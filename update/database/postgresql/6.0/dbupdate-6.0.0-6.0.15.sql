@@ -559,6 +559,58 @@ BEGIN
 END
 $$;
 
+-- The run history of the import and export tools (doc/eng-us/features/6.0/transfer-runs.md).
+--
+-- One row per run of a tool of the transfer registry (Export, CIE, Imports ...): tool is the registry id
+-- (transfer.xrowextract), direction import or export, kind export, import, dry_run, retry or undo, state queued,
+-- running, done, failed or cancelled; the counts, the duration in seconds, the engine that ran it (expqueue,
+-- contentjob, process) with its job (job_ref), the tool's own job or run (tool_ref), a file reference relative to
+-- the tool (never a path) and the link to the tool's own page of the run. Created only when the table is missing
+-- (a DO block, PostgreSQL 9.0 or newer), so running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exp_transfer_run' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exp_transfer_run_id_seq' ) THEN
+            CREATE SEQUENCE exp_transfer_run_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exp_transfer_run (
+          bytes bigint DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          detail text,
+          detail_url character varying(255) DEFAULT ''::character varying NOT NULL,
+          direction character varying(10) DEFAULT ''::character varying NOT NULL,
+          duration integer DEFAULT 0 NOT NULL,
+          engine character varying(16) DEFAULT ''::character varying NOT NULL,
+          error character varying(255) DEFAULT ''::character varying NOT NULL,
+          file_ref character varying(255) DEFAULT ''::character varying NOT NULL,
+          finished integer DEFAULT 0 NOT NULL,
+          format character varying(32) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('exp_transfer_run_id_seq'::text) NOT NULL,
+          job_ref character varying(64) DEFAULT ''::character varying NOT NULL,
+          kind character varying(20) DEFAULT ''::character varying NOT NULL,
+          modified integer DEFAULT 0 NOT NULL,
+          rows_done integer DEFAULT 0 NOT NULL,
+          rows_failed integer DEFAULT 0 NOT NULL,
+          rows_total integer DEFAULT 0 NOT NULL,
+          scope character varying(20) DEFAULT ''::character varying NOT NULL,
+          scope_ref character varying(255) DEFAULT ''::character varying NOT NULL,
+          siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+          started integer DEFAULT 0 NOT NULL,
+          state character varying(16) DEFAULT ''::character varying NOT NULL,
+          title character varying(255) DEFAULT ''::character varying NOT NULL,
+          tool character varying(64) DEFAULT ''::character varying NOT NULL,
+          tool_ref character varying(64) DEFAULT ''::character varying NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exp_transfer_run ADD CONSTRAINT exp_transfer_run_pkey PRIMARY KEY ( id );
+        CREATE INDEX exp_transfer_run_started ON exp_transfer_run USING btree ( started );
+        CREATE INDEX exp_transfer_run_tool ON exp_transfer_run USING btree ( tool, started );
+        CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run USING btree ( tool, tool_ref );
+        CREATE INDEX exp_transfer_run_user ON exp_transfer_run USING btree ( user_id );
+    END IF;
+END
+$$;
+
 --
 -- ezuser.login: one account per login.
 --

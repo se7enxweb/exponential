@@ -30,6 +30,12 @@
  *   Keywords[]=copy to another site task words for the admin search and the "which tool" page
  *   Actions[]=container|export|Export this subtree as a package…|package/create/(creator)/ezcontentobject/(node)/%nodeID%/(subtree)/1
  *   Weight=10                       the order in lists (lower first, then the name)
+ *   Engine=auto                     how its background runs go (expKernelTransferRunner): auto, expqueue, contentjob,
+ *                                   process
+ *   QueueJobType=xrowextract.export the expqueue job type of its runs, a [JobType_<type>] the tool declares in its
+ *                                   expqueue.ini with Handler=expKernelTransferQueueHandler
+ *   HistoryAllPermission=xrowextract/all_jobs   who sees every user's runs of the tool in the run history
+ *                                   (expKernelTransferHistory); everybody else sees their own
  *
  * An action is context|direction|label|URL[|module/function]: context is node (any published item), container (an
  * item below which the user may create content), class (a class page), setup (the Setup pages); the URL may hold
@@ -85,6 +91,11 @@ class expKernelTransferTool
             'keywords' => self::listOf( isset( $data['keywords'] ) ? $data['keywords'] : array() ),
             'actions' => self::actionList( isset( $data['actions'] ) ? $data['actions'] : array() ),
             'weight' => isset( $data['weight'] ) && is_numeric( $data['weight'] ) ? (int)$data['weight'] : 100,
+            'engine' => isset( $data['engine'] ) && in_array( strtolower( trim( (string)$data['engine'] ) ), array( 'auto', 'expqueue', 'contentjob', 'process' ), true )
+                        ? strtolower( trim( (string)$data['engine'] ) ) : 'auto',
+            'queue_job_type' => isset( $data['queue_job_type'] ) && preg_match( '/^[A-Za-z0-9_.-]{1,64}$/', trim( (string)$data['queue_job_type'] ) )
+                                ? trim( (string)$data['queue_job_type'] ) : '',
+            'history_all_permissions' => self::permissionList( isset( $data['history_all_permissions'] ) ? $data['history_all_permissions'] : array() ),
         );
     }
 
@@ -130,6 +141,9 @@ class expKernelTransferTool
             'keywords' => $value( 'Keywords', array() ),
             'actions' => $value( 'Actions', array() ),
             'weight' => $value( 'Weight', 100 ),
+            'engine' => $value( 'Engine', 'auto' ),
+            'queue_job_type' => $value( 'QueueJobType' ),
+            'history_all_permissions' => $value( 'HistoryAllPermission', array() ),
         ) );
     }
 
@@ -278,6 +292,20 @@ class expKernelTransferTool
                 return true;
         }
         return false;
+    }
+
+    /**
+     * Whether the user sees every user's runs of the tool in the run history: one of its HistoryAllPermission
+     * permissions is not refused. Without that setting everybody sees only their own runs.
+     *
+     * @param callable|null $access (module, function) => bool; the current user's policies when null
+     * @return bool
+     */
+    public function mayReadAllRuns( $access = null )
+    {
+        if ( !$this->data['history_all_permissions'] )
+            return false;
+        return $this->isAllowed( $access, $this->data['history_all_permissions'] );
     }
 
     /**

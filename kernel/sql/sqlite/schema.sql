@@ -720,6 +720,35 @@ CREATE TABLE `expapikey` (
 ,  `secret_hash` varchar(128) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `exp_transfer_run` (
+  `bytes` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `detail` longtext
+,  `detail_url` varchar(255) NOT NULL DEFAULT ''
+,  `direction` varchar(10) NOT NULL DEFAULT ''
+,  `duration` integer NOT NULL DEFAULT '0'
+,  `engine` varchar(16) NOT NULL DEFAULT ''
+,  `error` varchar(255) NOT NULL DEFAULT ''
+,  `file_ref` varchar(255) NOT NULL DEFAULT ''
+,  `finished` integer NOT NULL DEFAULT '0'
+,  `format` varchar(32) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `job_ref` varchar(64) NOT NULL DEFAULT ''
+,  `kind` varchar(20) NOT NULL DEFAULT ''
+,  `modified` integer NOT NULL DEFAULT '0'
+,  `rows_done` integer NOT NULL DEFAULT '0'
+,  `rows_failed` integer NOT NULL DEFAULT '0'
+,  `rows_total` integer NOT NULL DEFAULT '0'
+,  `scope` varchar(20) NOT NULL DEFAULT ''
+,  `scope_ref` varchar(255) NOT NULL DEFAULT ''
+,  `siteaccess` varchar(64) NOT NULL DEFAULT ''
+,  `started` integer NOT NULL DEFAULT '0'
+,  `state` varchar(16) NOT NULL DEFAULT ''
+,  `title` varchar(255) NOT NULL DEFAULT ''
+,  `tool` varchar(64) NOT NULL DEFAULT ''
+,  `tool_ref` varchar(64) NOT NULL DEFAULT ''
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1231,6 +1260,10 @@ CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_l
 CREATE INDEX "idx_ezprest_token_token_client_id" ON "ezprest_token" (`client_id`);
 CREATE UNIQUE INDEX expapikey_prefix ON expapikey ( key_prefix );
 CREATE INDEX expapikey_user ON expapikey ( user_id );
+CREATE INDEX exp_transfer_run_started ON exp_transfer_run ( started );
+CREATE INDEX exp_transfer_run_tool ON exp_transfer_run ( tool, started );
+CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );
+CREATE INDEX exp_transfer_run_user ON exp_transfer_run ( user_id );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);

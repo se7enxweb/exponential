@@ -16332,6 +16332,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
 <context>
     <name>design/admin/pagelayout</name>
     <message>
+        <source>Nothing new</source>
+        <translation>Nichts Neues</translation>
+    </message>
+    <message>
         <source>Environment</source>
         <translation>Umgebung</translation>
     </message>
@@ -80912,6 +80916,30 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
 </context>
 <context>
     <name>kernel/transfer</name>
+    <message>
+        <source>The transfer run cannot be started: %1.</source>
+        <translation>Der Lauf kann nicht gestartet werden: %1.</translation>
+    </message>
+    <message>
+        <source>The tool %1 is not declared in the transfer registry.</source>
+        <translation>Das Werkzeug %1 ist im Transfer-Register nicht angemeldet.</translation>
+    </message>
+    <message>
+        <source>You may not use %1.</source>
+        <translation>Sie dürfen %1 nicht verwenden.</translation>
+    </message>
+    <message>
+        <source>%1: %2</source>
+        <translation>%1: %2</translation>
+    </message>
+    <message>
+        <source>A run of %1</source>
+        <translation>Ein Lauf von %1</translation>
+    </message>
+    <message>
+        <source>%1 done</source>
+        <translation>%1 erledigt</translation>
+    </message>
     <message>
         <source>Packages</source>
         <translation>Pakete</translation>

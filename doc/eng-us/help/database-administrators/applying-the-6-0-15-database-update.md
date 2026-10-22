@@ -84,6 +84,11 @@ the schema handler of any engine and leaves an existing table alone. The SQL upd
 SQLite create the same table; on Oracle and MongoDB run the script (`--dry-run` first)
 ([API keys](../../guides/api-keys.md#10-the-data-model-and-the-upgrade)).
 
+`createtransferruntable.php` does the same for the run history of the import and export tools (`exp_transfer_run`):
+the SQL update files create it on MySQL, MariaDB, PostgreSQL and SQLite, the script on any engine. Until the table
+exists the tools run as before and write no history
+([Transfer runs](../../features/6.0/transfer-runs.md#the-table-and-the-upgrade)).
+
 ## Step 4: the trash records
 
 Until `trashed_by` and `trashed_via` exist, the kernel writes who trashed an object to `<VarDir>/trash/trashed.json`.

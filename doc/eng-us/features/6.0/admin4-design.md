@@ -1076,6 +1076,40 @@ Community". A template can also set `$show_community_links`.
 - The logo's name in the header carries the release only for signed-in users; the anonymous pages of the admin
   (the 401 page, `user/register`, `user/forgotpassword`) say "Exponential".
 
+## Header items
+
+An extension can add a tool of its own to the header, after Help and before the user menu: a round 36px button with
+a count on its corner and a panel of entries, such as the notification bell of 7x SQLI Import. The header is drawn
+from a cache block kept per user, so the count is not drawn with the page: the item names a JSON feed, and
+`admin4.js` loads it when the page is drawn and each time the panel opens.
+
+1. A template in the extension's `design/admin4/templates/` (or `design/standard/templates/`) that includes the
+   kernel's markup:
+
+   ```
+   {include uri='design:parts/a4_header_item.tpl'
+            item_id='myext' item_label='Notifications'|i18n( 'extension/myext' ) item_icon='bell'
+            item_url='myext/notices' item_all='All notifications'|i18n( 'extension/myext' )
+            item_feed=concat( 'ezjscore/call/myext::notices'|ezurl( 'no' ), '?ContentType=json' )}
+   ```
+
+2. The template's name in the extension's `settings/design.ini.append.php`:
+
+   ```
+   [AdminHeaderSettings]
+   HeaderItems[]=myext/header_bell.tpl
+   ```
+
+3. The feed answers `{ "count": 3, "label": "Notifications: 3 new", "items": [ { "text": "...", "url": "...",
+   "meta": "..." } ] }`, or the same in `content`, as an ezjscore call answers. It checks the user's access itself.
+
+Without the script the item is a link to `item_url`. With it, a disclosure button takes the link's place:
+`aria-expanded` and `aria-controls`, the Arrow keys, Home, End and Escape as in the site and Help menus. The count is
+part of the button's name ("Notifications: 3 new"), the badge itself is `aria-hidden`. The entries are made with
+`textContent`, never as HTML. The badge takes the accent's tokens (`--a4-accent-strong`, `--a4-on-accent`, at least 4.5:1), so it follows
+light and dark mode; in forced colors it draws in system colours. admin4 and admin4l include the same part,
+`parts/a4_header_items.tpl`. Checked by `AdminHeaderTest::testExtensionsAddHeaderItemsAfterHelp`.
+
 ## For developers
 
 - **Styling rules: [Styling the administration](../../bc/6.0/admin4-styling.md).** No `<style>` block or `style=""`

@@ -114,6 +114,13 @@ Informationen), `transfer.audit` (Audit-Export), `transfer.pdf` (PDF-Export). Ex
 `transfer.xrowextract`, `transfer.bccie`, `transfer.sqliimport`, `transfer.syndication`, `transfer.newsletter`
 (cjw_newsletter), `transfer.ezodf`.
 
+## Hintergrund-Läufe und die Lauf-Historie
+
+Ein Werkzeug führt seine Hintergrund-Arbeit über `expKernelTransferRunner` aus (die Job-Warteschlange, sonst die
+Inhalts-Jobs des Kernels, sonst den eigenen Prozess) und hält jeden Lauf in `exp_transfer_run` fest; drei weitere
+Schlüssel seines Blocks sagen wie: `Engine=`, `QueueJobType=` und `HistoryAllPermission=`. Siehe
+[Transfer-Läufe](transfer-laeufe.md).
+
 ## Tests
 
 `tests/tests/kernel/classes/expKernelTransferRegistryTest.php` (ohne Datenbank, Testsuite kernel-classes).

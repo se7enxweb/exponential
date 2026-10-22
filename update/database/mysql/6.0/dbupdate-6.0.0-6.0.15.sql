@@ -429,6 +429,50 @@ CREATE TABLE IF NOT EXISTS expapikey (
 ) ENGINE=InnoDB;
 
 --
+-- The run history of the import and export tools (doc/eng-us/features/6.0/transfer-runs.md).
+--
+-- One row per run of a tool of the transfer registry (Export, CIE, Imports ...): tool is the registry id
+-- (transfer.xrowextract), direction import or export, kind export, import, dry_run, retry or undo, state queued,
+-- running, done, failed or cancelled; the counts, the duration in seconds, the engine that ran it (expqueue,
+-- contentjob, process) with its job (job_ref), the tool's own job or run (tool_ref), a file reference relative to
+-- the tool (never a path) and the link to the tool's own page of the run. Written with IF NOT EXISTS, so running
+-- this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS exp_transfer_run (
+  bytes bigint(20) NOT NULL DEFAULT '0',
+  created int(11) NOT NULL DEFAULT '0',
+  detail longtext,
+  detail_url varchar(255) NOT NULL DEFAULT '',
+  direction varchar(10) NOT NULL DEFAULT '',
+  duration int(11) NOT NULL DEFAULT '0',
+  engine varchar(16) NOT NULL DEFAULT '',
+  error varchar(255) NOT NULL DEFAULT '',
+  file_ref varchar(255) NOT NULL DEFAULT '',
+  finished int(11) NOT NULL DEFAULT '0',
+  format varchar(32) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  job_ref varchar(64) NOT NULL DEFAULT '',
+  kind varchar(20) NOT NULL DEFAULT '',
+  modified int(11) NOT NULL DEFAULT '0',
+  rows_done int(11) NOT NULL DEFAULT '0',
+  rows_failed int(11) NOT NULL DEFAULT '0',
+  rows_total int(11) NOT NULL DEFAULT '0',
+  scope varchar(20) NOT NULL DEFAULT '',
+  scope_ref varchar(255) NOT NULL DEFAULT '',
+  siteaccess varchar(64) NOT NULL DEFAULT '',
+  started int(11) NOT NULL DEFAULT '0',
+  state varchar(16) NOT NULL DEFAULT '',
+  title varchar(255) NOT NULL DEFAULT '',
+  tool varchar(64) NOT NULL DEFAULT '',
+  tool_ref varchar(64) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  KEY exp_transfer_run_started ( started ),
+  KEY exp_transfer_run_tool ( tool, started ),
+  KEY exp_transfer_run_toolref ( tool, tool_ref ),
+  KEY exp_transfer_run_user ( user_id )
+) ENGINE=InnoDB;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

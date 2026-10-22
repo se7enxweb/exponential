@@ -3,7 +3,8 @@
  * The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a
  * worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job
  * nobody started within content.ini [ContentJobSettings] QueuedGrace seconds (the spawn from the web request
- * failed) — and removes finished jobs older than KeepDays.
+ * failed) — and removes finished jobs older than KeepDays, and the runs of the import and export tools'
+ * run history older than transfer.ini [TransferSettings] KeepDays (expKernelTransferHistory::purge()).
  *
  * The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job
  * never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and
@@ -30,6 +31,10 @@ class Contentjobs extends \Exponential\Runnable\CronjobPart
         $purged = \expContentJob::purgeFinished();
         if ( !$quiet && ( $started || $purged ) )
             $cli->output( "Content jobs: $started started, $purged old jobs removed" );
+        // the run history of the import and export tools keeps transfer.ini [TransferSettings] KeepDays days
+        $runs = class_exists( '\expKernelTransferHistory' ) ? \expKernelTransferHistory::purge() : 0;
+        if ( !$quiet && $runs > 0 )
+            $cli->output( "Transfer runs: $runs old runs removed" );
         return $started;
     }
 

@@ -1237,6 +1237,45 @@ CREATE TABLE expapikey (
 
 
 
+CREATE TABLE exp_transfer_run (
+  bytes bigint(20) NOT NULL default '0',
+  created int(11) NOT NULL default '0',
+  detail longtext,
+  detail_url varchar(255) NOT NULL default '',
+  direction varchar(10) NOT NULL default '',
+  duration int(11) NOT NULL default '0',
+  engine varchar(16) NOT NULL default '',
+  error varchar(255) NOT NULL default '',
+  file_ref varchar(255) NOT NULL default '',
+  finished int(11) NOT NULL default '0',
+  format varchar(32) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  job_ref varchar(64) NOT NULL default '',
+  kind varchar(20) NOT NULL default '',
+  modified int(11) NOT NULL default '0',
+  rows_done int(11) NOT NULL default '0',
+  rows_failed int(11) NOT NULL default '0',
+  rows_total int(11) NOT NULL default '0',
+  scope varchar(20) NOT NULL default '',
+  scope_ref varchar(255) NOT NULL default '',
+  siteaccess varchar(64) NOT NULL default '',
+  started int(11) NOT NULL default '0',
+  state varchar(16) NOT NULL default '',
+  title varchar(255) NOT NULL default '',
+  tool varchar(64) NOT NULL default '',
+  tool_ref varchar(64) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  KEY exp_transfer_run_started (started),
+  KEY exp_transfer_run_tool (tool,started),
+  KEY exp_transfer_run_toolref (tool,tool_ref),
+  KEY exp_transfer_run_user (user_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezproductcategory (
   id int(11) NOT NULL auto_increment,
   name varchar(255) NOT NULL default '',

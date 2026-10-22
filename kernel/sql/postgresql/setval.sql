@@ -9,6 +9,7 @@ SELECT setval('ezcollab_simple_message_id_seq',max(id)+1) FROM ezcollab_simple_m
 SELECT setval('ezcontentbrowsebookmark_id_seq',max(id)+1) FROM ezcontentbrowsebookmark;
 SELECT setval('expbookmark_folder_id_seq',max(id)+1) FROM expbookmark_folder;
 SELECT setval('expapikey_id_seq',max(id)+1) FROM expapikey;
+SELECT setval('exp_transfer_run_id_seq',max(id)+1) FROM exp_transfer_run;
 SELECT setval('ezcontentbrowserecent_id_seq',max(id)+1) FROM ezcontentbrowserecent;
 SELECT setval('ezcontentclass_attribute_id_seq',max(id)+1) FROM ezcontentclass_attribute;
 SELECT setval('ezcontentclassgroup_id_seq',max(id)+1) FROM ezcontentclassgroup;
