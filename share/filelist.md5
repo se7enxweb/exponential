@@ -303,7 +303,7 @@ dbbd43d0d364cdb3beab653832ce813b  design/admin/javascript/exphelp.js
 c8843ddf550376326f1f449d3f1f6043  design/admin/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin/javascript/ezajaxsubitems_expdatatable.js
 f8ed2fb594b5741b9c856eb9b1b493d0  design/admin/javascript/leftmenu_widthcontrol.js
-3bf7784133b92bb2e2338cdae349dcbc  design/admin/javascript/node_tabs.js
+b5ebc67d101750165d132ede1ed5e24a  design/admin/javascript/node_tabs.js
 142c1652878ecaec9117255cced64962  design/admin/javascript/page/content_datepicker.js
 78959ee2bdb421c29666296439e9ea3f  design/admin/javascript/page/package_create_info.js
 98f0c38d119788d70470143a52ee840d  design/admin/javascript/page/package_view_full.js
@@ -975,7 +975,7 @@ bc1f590f32f5d71f9bfdf7781f2135fc  design/admin4/images/url_translator.png
 ac084a07607e6d6c5a845da15423854f  design/admin4/images/view-fullscreen.png
 f8432aa870359774108e8df134437550  design/admin4/javascript/a4_actions.js
 1c1a8bb116e5e640cf1b3e79cf5c04f8  design/admin4/javascript/a4_dom.js
-a1fa637f329246a1e5f8acc012291d83  design/admin4/javascript/a4_head.js
+53c0e366816c6be502a801133bd79780  design/admin4/javascript/a4_head.js
 01ea871f6ca6124d661784a91fd73c98  design/admin4/javascript/a4_mega_menu.js
 c500ef710f1fcf31270ce339c169589c  design/admin4/javascript/a4_url.js
 b3a875f17040b76bfa11ad635da86aeb  design/admin4/javascript/admin4.js
@@ -987,7 +987,7 @@ dbbd43d0d364cdb3beab653832ce813b  design/admin4/javascript/exphelp.js
 16a43b2509a3b08eace145a605e79c92  design/admin4/javascript/ezadmin_menubar.js
 c8843ddf550376326f1f449d3f1f6043  design/admin4/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin4/javascript/ezajaxsubitems_expdatatable.js
-b71be6460b8302c2c5594d48b23d5720  design/admin4/javascript/node_tabs.js
+d7450cfa1a62c61d0f232725c028a708  design/admin4/javascript/node_tabs.js
 af8d4ff55776cb2c9fd39cc1449c7025  design/admin4/javascript/page/children_detailed.js
 6415d8ada144587876e18eaccafea5c0  design/admin4/javascript/page/class_edit.js
 9d6d176d5a0c4504cd75ac86eee951b3  design/admin4/javascript/page/content_bookmark.js
@@ -3249,7 +3249,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-8ae896e40b6de927df4949a25f60ac56  doc/changelogs/6.0/6.0.15.md
+a8b8feff0fbe4053949c4de0848d582e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24409,7 +24409,7 @@ c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.p
 a521629dd943dfd2d64fe8b3ce016f69  tests/tests/design/AdminJQuery4RemovedApisTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 b5f411ebc5ba7f9db7e43e6c9495e152  tests/tests/design/AdminKernelDesignTemplatesTest.php
-f3191198977ce4f7d024600d39701dc9  tests/tests/design/AdminKeyboardTest.php
+ec772ea8d9d137c4bbc2582cfeff24c1  tests/tests/design/AdminKeyboardTest.php
 b8a095816c4adb83244dce76e6d2690b  tests/tests/design/AdminLandmarksTest.php
 b6d6afb887a7aa995c0135bfef804f04  tests/tests/design/AdminLanguageBadgeTest.php
 581d3c8caa19bd6c79a01747c228b43e  tests/tests/design/AdminLanguageStatesTest.php

@@ -12,7 +12,8 @@
    without the preference takes it along). set( name, '' ) forgets a choice: the preference is set empty ("-") and
    the browser's copy removed. A value equal to the one already on <html> is not sent again (a page that only
    restores a stored state writes nothing). set( name, value, legacyKey, share ): with share, a saved value is also
-   written to the browser's copy, so other open tabs hear it through the storage event. */
+   written to the browser's copy, so other open tabs hear it through the storage event. set( ..., done ): done( saved )
+   once the choice is settled (the node view's Tabs switch loads the page again from it). */
 (function () {
     var root = document.documentElement, url = root.getAttribute('data-a4-pref-url');
     // html.a4-js: the frame's scripts run. Set before the first paint, so the stylesheets draw a part the scripts
@@ -27,8 +28,8 @@
         } catch (e) { /* blocked storage: the choice lasts for this page */ }
         return null;
     }
-    function send(name, value, failed, saved) {
-        var fail = function () { if (failed) failed(); };
+    function send(name, value, failed, saved, settled) {
+        var fail = function () { if (failed) failed(); if (settled) settled(false); };
         var go = function () {
             var t = document.getElementById('ezxform_token_js'), token = t ? t.getAttribute('title') : '';
             if (!window.fetch) { fail(); return; }
@@ -50,19 +51,23 @@
             if (old) window.a4Pref.set(name, old, legacyKey);
             return old;
         },
-        set: function (name, value, legacyKey, share) {
+        // done (optional): called once the choice is settled, with true when the server has it (saved, or nothing to
+        // save) and false when only this browser keeps it; for a choice the page must be loaded again to show
+        set: function (name, value, legacyKey, share, done) {
+            var settle = function (ok) { if (done) done(ok); };
             value = String(value);
             var key = legacyKey || 'exp-a4-' + name;
+            if (!url && done) done(false);
             if (!url) { if (local(key) !== value) local(key, value); return; }
             var shown = value === '' ? '-' : value;
             // unchanged: nothing to save (a stored state put back on load is not a choice)
-            if (root.getAttribute(attr(name)) === shown) return;
+            if (root.getAttribute(attr(name)) === shown) { settle(true); return; }
             root.setAttribute(attr(name), shown);
             if (value === '') local(key, '');
             // not saved: this browser keeps it, unless a later choice has replaced it meanwhile; saved and shared:
             // the browser's copy follows, which tells the other open tabs
             send(name, value, function () { if (root.getAttribute(attr(name)) === shown) local(key, value); },
-                 share ? function () { if (root.getAttribute(attr(name)) === shown) local(key, value); } : null);
+                 function () { if (share && root.getAttribute(attr(name)) === shown) local(key, value); settle(true); }, settle);
         }
     };
 })();

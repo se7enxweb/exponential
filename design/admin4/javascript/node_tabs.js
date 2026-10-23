@@ -74,7 +74,7 @@
             {
                 each( ul, function( el ){ el.classList.remove('disabled'); } );
                 each( div, function( el ){ el.classList.remove('disabled'); } );
-                NodeTab.saveTabState( 1 );
+                NodeTab.saveTabState( 1, link );
                 link.innerHTML = '&nbsp;';
                 link.id = 'maincontent-hide';
                 NodeTab.toggleState( link, true );
@@ -83,7 +83,7 @@
             {
                 each( ul, function( el ){ el.classList.add('disabled'); } );
                 each( div, function( el ){ el.classList.add('disabled'); } );
-                NodeTab.saveTabState( 0 );
+                NodeTab.saveTabState( 0, link );
                 link.innerHTML = '&nbsp;';
                 link.id = 'maincontent-show';
                 NodeTab.toggleState( link, false );
@@ -205,17 +205,26 @@
             }
         },
 
-        // save tab state: the preference admin_navigation_content through window.a4Pref (the head script), like the
-        // frame's other remembered choices (a state the server does not take is kept in this browser); where it is
-        // missing a form POST with the page's form token (URL-encoded, a space as +) and the CSRF header (a4Dom.post)
-        saveTabState : function( intBool )
+        // save tab state and show it: the preference admin_navigation_content as a form POST with the page's form token
+        // and the CSRF header (a4Dom.post), then the page again. The server draws the two states with different
+        // markup (with tabs: one panel per tab; without: every block in a row), so the classes alone cannot show the
+        // other state. If the POST fails, the switch's own link (a GET that sets the preference and comes back) does it.
+        saveTabState : function( intBool, link )
         {
+            var fallback = link && link.getAttribute( 'href' );
+            var reload = function(){ window.location.reload(); };
+            // through window.a4Pref (the head script), like the frame's other remembered choices
             if ( window.a4Pref )
             {
-                window.a4Pref.set( 'admin_navigation_content', String( intBool ) );
+                window.a4Pref.set( 'admin_navigation_content', String( intBool ), undefined, false, function( saved )
+                {
+                    if ( saved || !fallback ) reload(); else window.location.href = fallback;
+                } );
                 return;
             }
-            window.a4Dom.post( rootUrl() + 'user/preferences/set_and_exit/admin_navigation_content/' + intBool ).catch( function(){} );
+            window.a4Dom.post( rootUrl() + 'user/preferences/set_and_exit/admin_navigation_content/' + intBool ).then(
+                function( response ){ if ( response && response.ok ) reload(); else if ( fallback ) window.location.href = fallback; else reload(); },
+                function(){ if ( fallback ) window.location.href = fallback; else reload(); } );
         },
 
         // save open tab (using cookie)

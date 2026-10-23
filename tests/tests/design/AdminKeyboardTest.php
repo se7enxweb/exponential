@@ -46,6 +46,23 @@ class AdminKeyboardTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( "setAttribute( 'aria-label'", $js );
     }
 
+    /**
+     * The switch shows the state it saved: the server draws "with tabs" and "without tabs" with different markup, so
+     * after saving the preference the page is loaded again (as the switch's link, a GET, always did); classes alone
+     * left an empty view until a manual reload
+     */
+    public function testTheShowHideTabsToggleShowsTheSavedState()
+    {
+        $js = self::file( 'design/admin4/javascript/node_tabs.js' );
+        $this->assertStringContainsString( "NodeTab.saveTabState( 1, link );", $js );
+        $this->assertStringContainsString( "NodeTab.saveTabState( 0, link );", $js );
+        $this->assertStringContainsString( "window.a4Pref.set( 'admin_navigation_content', String( intBool ), undefined, false, function( saved )", $js );
+        $this->assertMatchesRegularExpression( '/saveTabState : function\( intBool, link \)[\s\S]{0,900}window\.location\.reload\(\)/', $js );
+        $this->assertMatchesRegularExpression( '/saveTabState : function\( intBool, link \)[\s\S]{0,900}window\.location\.href = fallback/', $js );
+        $classic = self::file( 'design/admin/javascript/node_tabs.js' );
+        $this->assertMatchesRegularExpression( '/saveTabState : function\( intBool \)[\s\S]{0,600}\.always\( function\(\)\{ window\.location\.reload\(\); \} \)/', $classic );
+    }
+
     /** With no selected tab the first tab is the Tab stop: the list never drops out of the Tab order */
     public function testATabListWithoutSelectionKeepsATabStop()
     {

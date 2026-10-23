@@ -82,7 +82,8 @@ jQuery(function( $ )
             var url = $.ez.url.replace( 'ezjscore/', 'user/preferences/set_and_exit/admin_navigation_content/' ) + intBool;
             var _token = '', _tokenNode = document.getElementById('ezxform_token_js');
             if ( _tokenNode ) _token = 'ezxform_token=' + encodeURIComponent( _tokenNode.getAttribute('title') );
-            $.post( url, _token, function(){} );
+            // the server draws the two states with different markup: show the saved state, as the link (a GET) did
+            $.post( url, _token ).always( function(){ window.location.reload(); } );
         },
 
         // save open tab (using cookie)
