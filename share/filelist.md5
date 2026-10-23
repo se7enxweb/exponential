@@ -21706,7 +21706,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 31424373e7979ffc5f7adbcb6c2c7893  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-93d39165d305fcd56a6e0b4d97447b8e  kernel/classes/ezcontentobject.php
+80627f5e486a83c0c1a94831c8068aae  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -24844,6 +24844,7 @@ c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEvent
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
 4ed429eb6333847aea87608bdc25fc50  tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php
 2393c1f4d60f50c867e7fdbe54c1d089  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
+7f30cac712c14a27f670b805d1f6bcb9  tests/tests/kernel/classes/eZContentObjectAttributeListConditionsTest.php
 749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
 94154626b5390fd506ce342b50dadb8e  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
 8bb07645c2018bb5fdcbed07ccff375d  tests/tests/kernel/classes/eZContentObjectEditAccessListTest.php

@@ -2734,6 +2734,48 @@ class eZContentObject extends eZPersistentObject
     }
 
     /**
+     * The WHERE conditions that select the attributes of the given objects, each in its given version and language,
+     * as few SQL fragments as the engines allow. The objects are grouped by (version, language) with their ids in
+     * IN lists of at most $idsPerList ids (Oracle refuses more than 1000), and at most $groupsPerQuery groups are
+     * joined with OR in one fragment, so the expression stays far below SQLite's depth limit of 1000 however many
+     * objects are passed. Every object is in exactly one fragment; run one query per fragment.
+     *
+     * @param array $keys list of array( 'id' => int, 'version' => int, 'language' => string )
+     * @param eZDBInterface|null $db escapes the language codes; null quotes them without a database
+     * @param int $groupsPerQuery
+     * @param int $idsPerList
+     * @return string[]
+     */
+    static function attributeListConditions( array $keys, $db = null, $groupsPerQuery = 100, $idsPerList = 500 )
+    {
+        $groups = array();
+        foreach ( $keys as $key )
+        {
+            $groups[(int) $key['version'] . '|' . $key['language']][(int) $key['id']] = (int) $key['id'];
+        }
+
+        $conditions = array();
+        foreach ( $groups as $groupKey => $ids )
+        {
+            list( $version, $language ) = explode( '|', $groupKey, 2 );
+            $language = $db ? $db->escapeString( $language ) : str_replace( "'", "''", $language );
+            foreach ( array_chunk( array_values( $ids ), max( 1, (int) $idsPerList ) ) as $idChunk )
+            {
+                $conditions[] = "( ezcontentobject_attribute.version = $version AND " .
+                    "ezcontentobject_attribute.language_code = '$language' AND " .
+                    "ezcontentobject_attribute.contentobject_id IN ( " . implode( ', ', $idChunk ) . " ) )";
+            }
+        }
+
+        $fragments = array();
+        foreach ( array_chunk( $conditions, max( 1, (int) $groupsPerQuery ) ) as $chunk )
+        {
+            $fragments[] = implode( ' OR ', $chunk );
+        }
+        return $fragments;
+    }
+
+    /**
      * Fetches the attributes for an array of objects or nodes
      *
      * @param eZContentObject[]|eZContentObjectTreeNode[] $objList
@@ -2745,11 +2787,8 @@ class eZContentObject extends eZPersistentObject
 
         if ( count( $objList ) > 0 )
         {
-            $objectArray = array();
             $tmpLanguageObjectList = array();
-            $whereSQL = '';
-            $count = count( $objList );
-            $i = 0;
+            $attributeKeys = array();
             foreach ( $objList as $obj )
             {
                 if ( $obj instanceOf eZContentObject )
@@ -2759,27 +2798,10 @@ class eZContentObject extends eZPersistentObject
 
                 $language = $object->currentLanguage();
                 $tmpLanguageObjectList[$object->attribute( 'id' )] = $language;
-                $objectArray = array( 'id' => $object->attribute( 'id' ),
-                                      'language' => $language,
-                                      'version' => $object->attribute( 'current_version' ) );
-
-                $whereSQL .= "( ezcontentobject_attribute.version = '" . $object->attribute( 'current_version' ) . "' AND
-                    ezcontentobject_attribute.contentobject_id = '" . $object->attribute( 'id' ) . "' AND
-                    ezcontentobject_attribute.language_code = '" . $language . "' ) ";
-
-                $i++;
-                if ( $i < $count )
-                    $whereSQL .= ' OR ';
+                $attributeKeys[] = array( 'id' => $object->attribute( 'id' ),
+                                          'version' => $object->attribute( 'current_version' ),
+                                          'language' => $language );
             }
-
-            $query = "SELECT ezcontentobject_attribute.*, ezcontentclass_attribute.identifier as identifier FROM
-                    ezcontentobject_attribute, ezcontentclass_attribute
-                  WHERE
-                    ezcontentclass_attribute.version = '0' AND
-                    ezcontentclass_attribute.id = ezcontentobject_attribute.contentclassattribute_id AND
-                    ( $whereSQL )
-                  ORDER BY
-                    ezcontentobject_attribute.contentobject_id, ezcontentclass_attribute.placement ASC";
 
             // --- MongoDB native path -----------------------------------------
             if ( $db->databaseName() === 'mongo' )
@@ -2847,8 +2869,21 @@ class eZContentObject extends eZPersistentObject
             }
             else
             {
-            // --- SQL path (MySQL) ----------------------------------------
-            $attributeArray = $db->arrayQuery( $query );
+            // --- SQL path: one query per chunk of conditions ------------
+            $attributeArray = array();
+            foreach ( self::attributeListConditions( $attributeKeys, $db ) as $whereSQL )
+            {
+                $rows = $db->arrayQuery( "SELECT ezcontentobject_attribute.*, ezcontentclass_attribute.identifier as identifier FROM
+                        ezcontentobject_attribute, ezcontentclass_attribute
+                      WHERE
+                        ezcontentclass_attribute.version = '0' AND
+                        ezcontentclass_attribute.id = ezcontentobject_attribute.contentclassattribute_id AND
+                        ( $whereSQL )
+                      ORDER BY
+                        ezcontentobject_attribute.contentobject_id, ezcontentclass_attribute.placement ASC" );
+                if ( is_array( $rows ) )
+                    $attributeArray = array_merge( $attributeArray, $rows );
+            }
             } // end SQL path
 
             $tmpAttributeObjectList = array();
