@@ -1,18 +1,18 @@
 /*
  * The upload dialog of the object relation field (content/datatype/edit/ezobjectrelation_ajaxuploader.tpl):
- * Exponential UI's expAjaxUploader on the .simple-relation-upload-new buttons; the object just created goes into the
- * relation. The texts are data-text-* attributes of the button.
+ * expajaxuploader.js (Exponential UI, no jQuery) on the .simple-relation-upload-new buttons; the object just created
+ * goes into the relation. The texts are data-text-* attributes of the button.
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function () {
     if (!window.Exp || !window.Exp.ready) { return; }
-    Exp.ready(function ($) {
-        if (!$.fn.expAjaxUploader) { return; }
+    Exp.ready(function () {
+        if (!window.expAjaxUploader) { return; }
         // the texts of the dialog: data-text-* of the first button (each button carries the same)
         var button = document.querySelector('.simple-relation-upload-new');
         var text = function (name) { return (button && button.getAttribute('data-text-' + name)) || ''; };
-        $('.simple-relation-upload-new').expAjaxUploader({
+        window.expAjaxUploader(document.querySelectorAll('.simple-relation-upload-new'), {
             open: {
                 action: 'ezajaxuploader::uploadform::ezobjectrelation'
             },

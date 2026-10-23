@@ -123,7 +123,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "if (typeof json.html !== 'string') {", $uploader );
         $this->assertStringContainsString( 'try { html = decodeURIComponent(json.html); } catch (e) {', $uploader );
         $this->assertSame( 1, substr_count( $uploader, 'decodeURIComponent(' ) );
-        $this->assertStringContainsString( "\$hiddenPlace.find('input[data-exp-uploader-field]').remove();", $uploader );
+        $this->assertStringContainsString( "each(all(hiddenPlace, 'input[data-exp-uploader-field]'), function (input) { input.parentNode.removeChild(input); });", $uploader );
 
         foreach ( self::COPIES as $file )
             $this->assertFileEquals( self::root() . "/design/admin4/javascript/$file", self::root() . "/design/admin/javascript/$file",

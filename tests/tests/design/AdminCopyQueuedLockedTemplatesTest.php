@@ -161,7 +161,7 @@ class AdminCopyQueuedLockedTemplatesTest extends PHPUnit\Framework\TestCase
 
         foreach ( array( 'ezap-error', 'ezap-message-publishing', 'ezap-message-finished', 'ezap-message-deferred', 'ezap-contentview-uri', 'ezap-versionview-uri' ) as $id )
         {
-            $this->assertStringContainsString( "#$id", $script );
+            $this->assertMatchesRegularExpression( "/'#$id'|getElementById\\('$id'\\)/", $script, "the script looks for #$id" );
             $this->assertMatchesRegularExpression( '/\bid="' . $id . '"/', $source, "#$id is on the page" );
         }
         foreach ( array( 'ezap-message-publishing', 'ezap-message-finished', 'ezap-message-deferred' ) as $id )
@@ -176,7 +176,8 @@ class AdminCopyQueuedLockedTemplatesTest extends PHPUnit\Framework\TestCase
         $this->assertNotEmpty( $read[1] );
         foreach ( $read[1] as $attribute )
             $this->assertStringContainsString( $attribute . '="', $source, "content_queued.js reads $attribute" );
-        $this->assertStringContainsString( "ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )", $source );
+        // the script runs on Exponential UI's plain JavaScript: no jQuery
+        $this->assertStringContainsString( "ezscript_require( array( 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )", $source );
         // through the packer (ezjscPackerNoVersionQueryTest PC-04: no plain script or stylesheet tag in admin4)
         $this->assertStringContainsString( "{ezscript( array( 'content_queued.js' ) )}", $source );
         $this->assertStringContainsString( "{ezcss_require( 'content_queued.css' )}", $source );

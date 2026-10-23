@@ -67,7 +67,8 @@
 
     function moveButtons()
     {
-        return list.querySelectorAll( 'div.listbutton input[name^=Move]' );
+        // admin4's buttons (name="MoveUp", value=the attribute id) and the classic inputs (name="MoveUp_<id>")
+        return list.querySelectorAll( 'div.listbutton input[name^=Move], div.listbutton button[name^=Move]' );
     }
 
     function buttons( on )
@@ -96,7 +97,8 @@
         {
             e.preventDefault();
             e.stopPropagation();
-            var tr = this.closest( 'tr.ezcca-edit-list-item' ), param = this.name.split( '_' ), action = param[0];
+            var pressed = this, tr = this.closest( 'tr.ezcca-edit-list-item' ), param = this.name.split( '_' ), action = param[0];
+            var id = param.length > 1 ? param[1] : this.value;
             var all = rows(), from = all.indexOf( tr ), last = all.length - 1;
             var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
             if ( from === -1 || to === undefined || to < 0 || to > last || to === from )
@@ -116,15 +118,16 @@
 
             var data = new URLSearchParams(), token = document.getElementById( 'ezxform_token_js' );
             var meta = document.querySelector( 'meta[name="csrf-token"]' ), form = document.getElementById( 'ClassEdit' );
-            var headers = { 'X-Requested-With': 'XMLHttpRequest' };
+            // the Content-Type as jQuery's $.ajax() wrote it
+            var headers = { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 'X-Requested-With': 'XMLHttpRequest' };
             data.append( 'ContentClassHasInput', '0' );
-            data.append( action, param[1] );
+            data.append( action, id );
             if ( token ) data.append( 'ezxform_token', token.getAttribute( 'title' ) );
             if ( meta ) headers['X-CSRF-Token'] = meta.getAttribute( 'content' );
 
             fetch( ( form && form.getAttribute( 'action' ) ) || window.location.href, {
                 method: 'POST',
-                body: data,
+                body: data.toString(),
                 headers: headers,
                 credentials: 'same-origin'
             } ).then( function( response )
@@ -148,6 +151,8 @@
             } ).then( function()
             {
                 buttons( true );
+                // disabling the pressed button took the focus away; a keyboard user goes on from the same button
+                pressed.focus();
             } );
         } );
     } );
