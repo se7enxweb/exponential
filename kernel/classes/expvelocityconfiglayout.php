@@ -598,10 +598,54 @@ class expVelocityConfigLayout
      */
     public function exportable( $dir )
     {
+        if ( $dir === null )
+            return array();
+        return array_diff_key( $this->exportableFrom( "$dir/envvars" ), array_flip( self::SITE_ONLY_ENV ) );
+    }
+
+    /**
+     * Names only an installation's own site envvars sets, never the shared envvars of the configuration directory:
+     * every installation on the host whose Velocity reads that directory would get them. EXP_DEMO_MODE (expDemoMode),
+     * which a Velocity worker also refuses itself when the engine took it from a shared file.
+     */
+    const SITE_ONLY_ENV = array( 'EXP_DEMO_MODE' );
+
+    /**
+     * This installation's own envvars file: sites-available/<site>.envvars beside its site file, read by exp:velocity
+     * start only for this installation's server. Null when the tree is turned off.
+     *
+     * @return string|null
+     */
+    public function siteEnvvarsFile()
+    {
+        $dir = $this->confDir();
+        return $dir === null ? null : $dir . '/sites-available/' . $this->siteName() . '.envvars';
+    }
+
+    /**
+     * What this installation's site envvars (siteEnvvarsFile()) puts into the environment of its own server when
+     * exp:velocity starts it: the same rules as exportable(), and it may set the names of SITE_ONLY_ENV.
+     *
+     * @return array name => value
+     */
+    public function siteExportable()
+    {
+        $file = $this->siteEnvvarsFile();
+        return $file === null ? array() : $this->exportableFrom( $file );
+    }
+
+    /**
+     * The exportable lines of one envvars file (exportable(), siteExportable()).
+     *
+     * @param string $file
+     * @return array name => value
+     */
+    protected function exportableFrom( $file )
+    {
         $vars = array();
-        if ( $dir === null || !is_file( "$dir/envvars" ) )
+        if ( !is_file( $file ) )
             return $vars;
-        foreach ( file( "$dir/envvars", FILE_IGNORE_NEW_LINES ) ?: array() as $line )
+        foreach ( file( $file, FILE_IGNORE_NEW_LINES ) ?: array() as $line )
         {
             $line = trim( $line );
             if ( $line === '' || $line[0] === '#' )
@@ -670,6 +714,7 @@ class expVelocityConfigLayout
             'site'     => $this->siteName(),
             'pairs'    => $pairs,
             'envvars'  => array_keys( $this->envvars( $dir ) ),
+            'siteEnvvars' => array_keys( $this->siteExportable() ),
             'assets'   => $this->velocity->assets(),
         );
     }

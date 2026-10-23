@@ -327,10 +327,34 @@ class expVelocityConfigLayoutTest extends PHPUnit\Framework\TestCase
         file_put_contents( "$dir/envvars", "export EXP_DEMO_MODE=1\nEXP_A=\"two words\"\nEXP_B='\$literal'\nEXP_C=1 # comment\n"
             . "EXP_D=\$HOME/x\nEXP_E=\"`id`\"\nEXP_F=two words\nexport PATH=/x\nLD_PRELOAD=/x.so\nld_library_path=/x\n"
             . "HTTP_PROXY=http://x\nPHPRC=/x\nHOME=/x\nMALLOC_CHECK_=3\n" );
-        $this->assertSame( array( 'EXP_DEMO_MODE' => '1', 'EXP_A' => 'two words', 'EXP_B' => '$literal', 'EXP_C' => '1' ),
+        // EXP_DEMO_MODE never leaves the shared file: every installation on the host reads it (expDemoMode)
+        $this->assertSame( array( 'EXP_A' => 'two words', 'EXP_B' => '$literal', 'EXP_C' => '1' ),
                            $this->layout->exportable( $dir ) );
         $this->assertNull( $this->layout->envRefusal( 'EXP_DEMO_MODE', '1', '' ) );
         $this->assertNotNull( $this->layout->envRefusal( 'DYLD_INSERT_LIBRARIES', '/x', "'" ) );
+    }
+
+    public function testSiteEnvvarsAreThisInstallationsOwnAndMaySetDemoMode()
+    {
+        $dir = $this->tree();
+        $this->assertSame( "$dir/sites-available/k1.example.invalid.envvars", $this->layout->siteEnvvarsFile() );
+        $this->assertSame( array(), $this->layout->siteExportable() );
+        file_put_contents( "$dir/envvars", "export EXP_DEMO_MODE=1\nEXP_A=shared\n" );
+        file_put_contents( "$dir/sites-available/k1.example.invalid.envvars", "# k1 only\nexport EXP_DEMO_MODE=1\nEXP_A=site\nLD_PRELOAD=/x.so\nPATH=/x\n" );
+        // a site file of another installation is never read for this one
+        file_put_contents( "$dir/sites-available/other.example.invalid.envvars", "EXP_OTHER=1\n" );
+        $this->assertSame( array( 'EXP_DEMO_MODE' => '1', 'EXP_A' => 'site' ), $this->layout->siteExportable() );
+        $this->assertSame( array( 'EXP_A' => 'shared' ), $this->layout->exportable( $dir ) );
+        // exp:velocity start merges them in this order, so the site's own value wins
+        $this->assertSame( array( 'EXP_A' => 'site', 'EXP_DEMO_MODE' => '1' ),
+                           array_merge( $this->layout->exportable( $dir ), $this->layout->siteExportable() ) );
+        $this->assertSame( array( 'EXP_DEMO_MODE', 'EXP_A' ), $this->layout->describe()['siteEnvvars'] );
+        // never a site file the engine would load (it loads *.conf)
+        $this->assertSame( array(), glob( "$dir/sites-available/*.envvars.conf" ) );
+        $this->velocity->settings['ConfDir'] = 'disabled';
+        $this->assertNull( $this->layout->siteEnvvarsFile() );
+        $this->assertSame( array(), $this->layout->siteExportable() );
+        $this->assertStringContainsString( '$layout->siteExportable()', file_get_contents( 'kernel/classes/expvelocity.php' ) );
     }
 
     public function testDescribe()

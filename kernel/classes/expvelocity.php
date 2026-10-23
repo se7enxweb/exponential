@@ -2654,6 +2654,10 @@ class expVelocity
                 $serverArgs = array( '--conf-dir=' . $applied['confDir'], '--config=' . $applied['siteFile'] );
                 $layoutEnv = $layout->exportable( $applied['confDir'] );
             }
+            // This installation's own envvars (sites-available/<site>.envvars): for its server only, after the
+            // shared file, so it wins. The only file that may set EXP_DEMO_MODE (expDemoMode): the shared envvars
+            // is read by the server of every installation on the host.
+            $layoutEnv = array_merge( $layoutEnv, $layout->siteExportable() );
             $this->layoutNote = $applied['message'];
 
             // Insert immediately after the server script, wherever that is.

@@ -828,6 +828,7 @@ class Velocity extends \Exponential\Runnable\Command
                               return in_array( $f, $lists['enabled'], true ) ? $f . ' (enabled)' : $f; }, $lists['available'] ) )
                         : 'none' ) );
                 $cli->output( '  envvars       : ' . ( $info['envvars'] ? implode( ', ', $info['envvars'] ) : 'none' ) );
+                $cli->output( '  site envvars  : ' . ( $info['siteEnvvars'] ? implode( ', ', $info['siteEnvvars'] ) : 'none' ) );
                 $cli->output( '  keep globals  : ' . implode( ', ', $velocity->keepGlobals() ) );
                 $cli->output( '' );
                 $cli->output( '  Files the server uses:' );

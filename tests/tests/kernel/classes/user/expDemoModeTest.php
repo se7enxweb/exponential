@@ -17,8 +17,9 @@
  *         (setup wizard, kickstarter and exp:install share the check)
  *  DM-07  announce() records once per process, and nothing when the mode is off
  *  DM-08  The template operator exp_demo_mode() follows the environment and is registered
- *  DM-09  The banner: one partial in design/admin and design/admin4 (admin4l falls back to admin4), the shared
- *         .a4-notice.is-warn, no inline CSS, included outside every cache-block of the admin, admin4 and admin4l
+ *  DM-09  The banner: one partial in design/admin and design/admin4 (admin4l falls back to admin4, admin3 run as its
+ *         own design draws it in its main area), the shared .a4-notice.is-warn, no inline CSS, included outside every
+ *         cache-block of the admin, admin3, admin4 and admin4l
  *         pagelayouts
  *  DM-10  Every password path asks demo mode: user/password, forgot-password (request and link), the user account
  *         form, exp:resetuserpassword, the web services, the password operations and eZUser::store(); the
@@ -27,6 +28,8 @@
  *         length rule only while the installation sets its administrator password; an empty one never
  *  DM-11  The audit knows system.demo.mode (always on), and the refusal and banner texts are in every complete
  *         kernel catalogue
+ *  DM-13  Under Velocity a value the engine took from a shared envvars file (/etc/vc) is not taken; one from a tree
+ *         inside the installation, the start environment or the site envvars is
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -383,9 +386,18 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
         $main = self::file( 'design/admin4/templates/page_mainarea.tpl' );
         $this->assertLessThan( strpos( $main, '{$module_result.content}' ), strpos( $main, "{include uri='design:parts/exp_demo_mode_banner.tpl'}" ) );
         $this->assertStringNotContainsString( 'cache-block', $main );
+        // admin3 run as its own design: its own main area (above the content), so the banner shows once whatever the
+        // order of the designs (admin4 first: admin4's main area; admin3 first: this one)
+        $main3 = self::file( 'design/admin3/templates/page_mainarea.tpl' );
+        $this->assertSame( 1, substr_count( $main3, "{include uri='design:parts/exp_demo_mode_banner.tpl'}" ) );
+        $this->assertLessThan( strpos( $main3, '{$module_result.content}' ), strpos( $main3, "{include uri='design:parts/exp_demo_mode_banner.tpl'}" ) );
+        $this->assertStringContainsString( '{include uri="design:page_warning.tpl"}', $main3, 'what design/standard draws stays' );
+        $this->assertStringNotContainsString( 'cache-block', $main3 );
+        $this->assertStringNotContainsString( 'exp_demo_mode_banner', self::file( 'design/admin3/templates/pagelayout.tpl' ) );
         // where each pagelayout draws the banner (directly, or through the main area): never inside a cache-block
         $needles = array(
             'design/admin' => array( "{include uri='design:parts/exp_demo_mode_banner.tpl'}" ),
+            'design/admin3' => array( "{include uri='design:page_mainarea.tpl'}" ),
             'design/admin4' => array( "{include uri='design:page_mainarea.tpl'}" ),
             'design/admin4l' => array( "{include uri='design:page_mainarea.tpl'}" ),
         );
@@ -476,6 +488,53 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
             $catalogues++;
         }
         $this->assertSame( 11, $catalogues );
+    }
+
+    // ------------------------------------------------------------------ DM-13
+
+    public function testAVelocityValueFromASharedEnvvarsFileIsNotTaken()
+    {
+        $root = dirname( __DIR__, 5 );
+        $inside = $root . '/var/tmp/phpunit-dm13-' . getmypid();
+        @mkdir( "$inside/var/vc/qbix/etc", 0755, true );
+        try
+        {
+            $exported = array( expDemoMode::ENV => '1', 'OTHER' => 'x' );
+            // the engine took it from /etc/vc/envvars (or /etc/qbix with the vc overlay): every installation reads it
+            $this->assertTrue( expDemoMode::isSharedEnvvarsValue( $exported, array( '/etc/vc' ), $inside, '1' ) );
+            $this->assertTrue( expDemoMode::isSharedEnvvarsValue( $exported, array( '/etc/qbix', "$inside/var/vc/qbix/etc" ), $inside, '1' ) );
+            // directories unknown (an engine that does not say which it read): shared, so not taken
+            $this->assertTrue( expDemoMode::isSharedEnvvarsValue( $exported, array(), $inside, '1' ) );
+            $this->assertTrue( expDemoMode::isSharedEnvvarsValue( $exported, array( '/etc/vc' ), '', '1' ) );
+            // a tree inside the installation (an account without root) is this installation's own
+            $this->assertFalse( expDemoMode::isSharedEnvvarsValue( $exported, array( "$inside/var/vc/qbix/etc" ), $inside, '1' ) );
+            $this->assertFalse( expDemoMode::isSharedEnvvarsValue( $exported, array( "$inside/var/vc/qbix/etc/" ), "$inside/", ' 1 ' ) );
+            // a sibling whose name starts like the installation's is not inside it
+            $this->assertTrue( expDemoMode::isSharedEnvvarsValue( $exported, array( "{$inside}-other/etc" ), $inside, '1' ) );
+            // not exported by the engine (the environment that started the server, the site envvars passed by
+            // exp:velocity start, PHP-FPM, Apache, the console): taken as before
+            $this->assertFalse( expDemoMode::isSharedEnvvarsValue( array( 'OTHER' => 'x' ), array( '/etc/vc' ), $inside, '1' ) );
+            $this->assertFalse( expDemoMode::isSharedEnvvarsValue( array(), array(), $inside, '1' ) );
+            // the value in force is not the exported one (set again after the start): not the shared file's
+            $this->assertFalse( expDemoMode::isSharedEnvvarsValue( array( expDemoMode::ENV => '0' ), array( '/etc/vc' ), $inside, '1' ) );
+        }
+        finally
+        {
+            @rmdir( "$inside/var/vc/qbix/etc" );
+            @rmdir( "$inside/var/vc/qbix" );
+            @rmdir( "$inside/var/vc" );
+            @rmdir( "$inside/var" );
+            @rmdir( $inside );
+        }
+        // outside Velocity nothing changes: the engine's classes are not loaded, the value is taken
+        $this->assertFalse( class_exists( 'Q_WebServer_Layout', false ) );
+        self::setMode( '1' );
+        $this->assertTrue( expDemoMode::enabled() );
+        // value() asks on every call, after reading the value, and the engine's own record of what it exported
+        $source = self::file( 'kernel/classes/expdemomode.php' );
+        $this->assertStringContainsString( 'self::fromSharedVelocityEnvvars( $value )', $source );
+        $this->assertStringContainsString( 'Q_WebServer_Layout::$exported', $source );
+        $this->assertStringContainsString( "Q_Config::get( 'Q', 'webserver', 'confDirs', array() )", $source );
     }
 }
 ?>

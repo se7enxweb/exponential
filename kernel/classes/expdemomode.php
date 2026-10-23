@@ -26,7 +26,9 @@
  * for PHP (Apache SetEnv, a PHP-FPM pool's env[], the environment Exponential Velocity is started with). There is no
  * INI setting and no request parameter for it, and only the exact value "1" counts: "0", "true", "yes" and an empty
  * value leave it off. Nothing is cached between calls, so a persistent worker (Velocity, FrankenPHP) always answers
- * for the environment it has now. Guide: doc/eng-us/bc/6.0/demo-mode.md.
+ * for the environment it has now. Under Exponential Velocity a value the engine took from an envvars file that other
+ * installations share (/etc/vc/envvars) is not taken: it is set per installation (isSharedEnvvarsValue()).
+ * Guide: doc/eng-us/bc/6.0/demo-mode.md.
  *
  * An administrator is an account with unlimited access to every function of every module (a policy for all modules
  * and all functions without a limitation, as the role Administrator has); see isAdministrator().
@@ -50,6 +52,9 @@ class expDemoMode
     /** @var string|null the process (pid) whose start was recorded by announce() */
     protected static $announcedFor = null;
 
+    /** @var string|null the process (pid) that recorded a refused shared envvars value (noteSharedVelocityEnvvars()) */
+    protected static $sharedNotedFor = null;
+
     /**
      * The raw value: getenv() first (the process environment, and under PHP-FPM the FastCGI parameters), then
      * $_SERVER (Apache SetEnv with mod_php and the like). Never $_GET, $_POST, $_COOKIE or an INI file.
@@ -60,10 +65,91 @@ class expDemoMode
     {
         $value = getenv( self::ENV );
         if ( is_string( $value ) && trim( $value ) !== '' )
-            return trim( $value );
-        if ( isset( $_SERVER[self::ENV] ) && is_scalar( $_SERVER[self::ENV] ) )
-            return trim( (string)$_SERVER[self::ENV] );
-        return '';
+            $value = trim( $value );
+        else if ( isset( $_SERVER[self::ENV] ) && is_scalar( $_SERVER[self::ENV] ) )
+            $value = trim( (string)$_SERVER[self::ENV] );
+        else
+            return '';
+        if ( $value !== '' && self::fromSharedVelocityEnvvars( $value ) )
+        {
+            self::noteSharedVelocityEnvvars();
+            return '';
+        }
+        return $value;
+    }
+
+    /**
+     * Whether the value in this Exponential Velocity worker came from an envvars file the engine read at start-up
+     * that other installations share (/etc/vc/envvars, /etc/qbix/envvars): such a value is not taken, so a demo can
+     * never switch demo mode on for every installation the host serves with Velocity. The per-installation places
+     * are the environment that starts this installation's server and its site envvars file
+     * (sites-available/<site>.envvars, passed by exp:velocity start; expVelocityConfigLayout::siteExportable()).
+     * Outside Velocity (PHP-FPM, mod_php, the console) this is always false.
+     *
+     * @param string $value the value in force
+     * @return bool
+     */
+    protected static function fromSharedVelocityEnvvars( $value )
+    {
+        if ( !class_exists( 'Q_WebServer_Layout', false ) || !isset( Q_WebServer_Layout::$exported ) )
+            return false;
+        $confDirs = class_exists( 'Q_Config', false ) ? (array)Q_Config::get( 'Q', 'webserver', 'confDirs', array() ) : array();
+        return self::isSharedEnvvarsValue( (array)Q_WebServer_Layout::$exported, $confDirs, (string)getcwd(), $value );
+    }
+
+    /**
+     * The decision of fromSharedVelocityEnvvars(), pure for the tests. A value counts as shared when the engine
+     * exported it from an envvars file (it is in $exported with the value in force) and one of the configuration
+     * directories it read is outside the installation (or the directories are unknown). A tree inside the
+     * installation (var/vc/qbix/etc, used by an account without root) belongs to this installation alone.
+     *
+     * @param array $exported Q_WebServer_Layout::$exported: name => value the engine put into the environment
+     * @param array $confDirs the configuration directories the engine read (Q_Config Q/webserver/confDirs)
+     * @param string $root the installation directory
+     * @param string $value the value in force
+     * @return bool
+     */
+    public static function isSharedEnvvarsValue( array $exported, array $confDirs, $root, $value )
+    {
+        if ( !isset( $exported[self::ENV] ) || trim( (string)$exported[self::ENV] ) !== trim( (string)$value ) )
+            return false;
+        $confDirs = array_values( array_filter( array_map( 'strval', $confDirs ), 'strlen' ) );
+        if ( !$confDirs || (string)$root === '' )
+            return true;
+        $rootReal = realpath( (string)$root );
+        $rootPrefix = rtrim( $rootReal !== false ? $rootReal : (string)$root, '/' ) . '/';
+        foreach ( $confDirs as $dir )
+        {
+            $real = realpath( $dir );
+            $path = rtrim( $real !== false ? $real : $dir, '/' ) . '/';
+            if ( strpos( $path, $rootPrefix ) !== 0 )
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * Records once per process that a shared envvars value was not taken: a warning in the debug output and a line in
+     * var/log/security.log (demo/refused ...), so whoever wonders why demo mode is off under Velocity finds the reason.
+     */
+    protected static function noteSharedVelocityEnvvars()
+    {
+        $process = (string)getmypid();
+        if ( self::$sharedNotedFor === $process )
+            return;
+        self::$sharedNotedFor = $process;
+        $line = 'demo/refused pid=' . preg_replace( '/[^0-9]/', '', $process ) . ' ' . self::ENV
+              . '=1 came from an envvars file other installations share (the Velocity configuration directory), so demo mode'
+              . ' stays off; set it per installation: sites-available/<site>.envvars or the environment that starts this server';
+        if ( class_exists( 'eZDebug' ) )
+            eZDebug::writeWarning( $line, __METHOD__ );
+        try
+        {
+            self::writeSecurityLine( $line );
+        }
+        catch ( Throwable $e )
+        {
+        }
     }
 
     /**
@@ -348,6 +434,7 @@ class expDemoMode
     public static function resetAnnounced()
     {
         self::$announcedFor = null;
+        self::$sharedNotedFor = null;
     }
 }
 ?>

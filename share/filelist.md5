@@ -933,6 +933,7 @@ f70df903531a946fefd30da629ca09f9  design/admin3/templates/page_head_script.tpl
 b2eb690cdc87ce43c243e5d764bddd39  design/admin3/templates/page_head_style.tpl
 cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 0cc20dc6c8574f20b41e26a7833d57bf  design/admin3/templates/page_leftmenu.tpl
+a2a20dedcfe27e7a8a70574ef000afe6  design/admin3/templates/page_mainarea.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
@@ -21616,7 +21617,7 @@ c1ae6737ac9b0ef9e74d5e4e1c2a4670  kernel/classes/expcontentdraftlist.php
 afba64859f8efa10835453902c32e626  kernel/classes/expcontentlanguagestates.php
 cf9939957167c71adbb8488217528eaf  kernel/classes/expcontentpendinglist.php
 3883f366ebecfccb5323bdae8da93a31  kernel/classes/expcronjobpause.php
-abe3acce6caa2e41c7583d94be5bc607  kernel/classes/expdemomode.php
+d2c2da30e14148f8dbf6939eb4973020  kernel/classes/expdemomode.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 9c40fee608343760c047cc95aa0b3a8f  kernel/classes/expextensioncatalogue.php
 95932f51d7d355d00e9b99257b1f6425  kernel/classes/expextensionchangeplan.php
@@ -21658,9 +21659,9 @@ dbf729b5e4373a73ea096e996a48b931  kernel/classes/expsystemreport.php
 d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 69e945b04dd9717d0446cf7306528fe7  kernel/classes/exptestlanguage.php
 0d6cdbe8ebbcc04f5b3df35ad85cd7e0  kernel/classes/expuserloginintegrity.php
-207f92b0c8117dd5ace2d9eddac07e34  kernel/classes/expvelocity.php
+15691fbe304ca3cc927317d6be8a9e41  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
-61f3e1980b4093057ceac49b80ec6fd6  kernel/classes/expvelocityconfiglayout.php
+046ae550b5ef2b208448e9407174c875  kernel/classes/expvelocityconfiglayout.php
 5ae615730949619c3e5c0c0413c157c5  kernel/classes/expvelocitydeploy.php
 ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
@@ -22374,7 +22375,7 @@ bb15b3247ce0fdc1054094583bb9fdfa  kernel/private/classes/commands/updatesearchin
 2015ac6318bd4a4d4add811741d4505f  kernel/private/classes/commands/userlogincheck.php
 8f95645ff99a22bccb7cc98e67d72dac  kernel/private/classes/commands/velocity-router.php
 e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
-9d79e55583d3f56d3401d2b6d9931574  kernel/private/classes/commands/velocity.php
+d41915dffeadc6f1b5dbbe4905855619  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 6a0c8e5fc57c47766d9b3a7f38d1b3c6  kernel/private/classes/commands/warm.php
 5377f1078d101f3938f16ea91381652c  kernel/private/classes/commands/webserver.php
@@ -25275,7 +25276,7 @@ fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAlias
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 57f51350ebeed6595fdf7dc68bf7d310  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
-aceea8937b659cd09dffcf776f0fc6d1  tests/tests/kernel/classes/user/expDemoModeTest.php
+34dbdeb17b4b4ee7ed020310147d024f  tests/tests/kernel/classes/user/expDemoModeTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 c7a5edf71b5db67fed879faef8e98286  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
 f673ec91908450c171ed3372b6fe86b5  tests/tests/kernel/classes/user/expRegistrationAdminActionTest.php
@@ -25288,7 +25289,7 @@ dff03a58accdae7a511ca92c6c1eaf06  tests/tests/kernel/classes/user/expUserDeactiv
 05107fa6d170a0d872336e09c9cc3ae9  tests/tests/kernel/classes/user/expUserHygieneTest.php
 b853b2bf2eee7b3ea1f66c6cb8f66c3f  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
 60b9f5237265384bd9159e210ee0a177  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
-6f024eddaed75e9d5a68e1845e669812  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
+4a8a6b5ce8e426358b96a89368e789f2  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
 84ad8f4e328c5f376b3003c95eeb8b12  tests/tests/kernel/classes/velocitylayout/expVelocityConfigTest.php
 0ac61d5e64e5552a1cf34e2f052523b3  tests/tests/kernel/classes/workflowevents/eZWorkflowEventTypesTest.php
 00800605c5f972a1b7b4a21e99503ea6  tests/tests/kernel/classes/workflowevents/fixtures/k1workflowtesthttp.php
