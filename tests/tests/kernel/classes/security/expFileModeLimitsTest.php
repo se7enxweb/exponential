@@ -19,6 +19,9 @@
  *          (BYPASSES is empty; a new call that bypasses them fails)
  *  FM-07 - Executables keep their execute bits within the directory limit; expAuditWriter::ownLikeParent() limits a
  *          directory as a directory and a file as a file
+ *  FM-09 - An image variation gets image.ini ImagePermissions, and with that empty (the shipped value) the mode of
+ *          every other stored file, site.ini StorageFilePermissions: an installation that narrows only that one no
+ *          longer writes its variations 0666
  *  FM-08 - The code that runs before the autoloader (the HTTP cache early exit, the repair queue) has the limits
  *          itself; the HTTP cache contract does not load eZFile or eZDir (Velocity's parent loads it before its source
  *          transform, and an eZFile compiled there sent every download without its headers) and limits a mode as they do
@@ -427,6 +430,33 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
         clearstatcache();
         $this->assertSame( 01664, fileperms( $image ) & 07777 );
+    }
+
+    /** FM-09: an empty ImagePermissions takes StorageFilePermissions; a value of its own wins */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testAnImageFollowsTheStorageFileModeUnlessItHasItsOwn()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        $this->assertSame( '', trim( (string)eZINI::instance( 'image.ini' )->variable( 'FileSettings', 'ImagePermissions' ) ),
+            'settings/image.ini ships ImagePermissions empty' );
+
+        $image = $this->dir . '/x.png';
+        file_put_contents( $image, 'x' );
+        chmod( $image, 0666 );
+        ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'StorageFilePermissions', '0644' );
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '' );
+        $this->assertSame( '0644', eZImageHandler::imagePermissions() );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
+        $this->assertSame( 0644, $this->mode( $image ), 'a variation is not world-writable where the stored files are not' );
+
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '0640' );
+        $this->assertSame( '0640', eZImageHandler::imagePermissions() );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
+        $this->assertSame( 0640, $this->mode( $image ), 'a value of its own still wins' );
     }
 
     /** FM-02 */

@@ -85,7 +85,8 @@ find var -type f -exec chmod 0640 {} +
 `eZDebug`, `eZINI` (cache directory, cache files, saved settings files), `eZPHPCreator`, `eZFileHandler` and the
 autoload generator use them.
 
-Uploads (`eZHTTPFile`), image variations (`eZImageHandler`, `image.ini ImagePermissions`), the file system and DFS
+Uploads (`eZHTTPFile`), image variations (`eZImageHandler`, `image.ini ImagePermissions`, empty: `site.ini
+StorageFilePermissions`), the file system and DFS
 cluster handlers and the static cache set the modes of `site.ini [FileSettings]` and `image.ini` through
 `eZFile::fileMode()` as well.
 

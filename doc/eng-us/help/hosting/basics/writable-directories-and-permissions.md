@@ -116,8 +116,11 @@ find var -type d -exec chmod 2770 {} +
 find var -type f -exec chmod 0660 {} +
 ```
 
-`settings/image.ini [FileSettings]` has its own `DirPermissions` and `ImagePermissions` (shipped `0777` and `0666`)
-for image directories and files; set them the same way. `config.php` can cap every mode with `EZP_DIR_MODE_MAX` and
+New images and their variations take `settings/image.ini [FileSettings] ImagePermissions`, shipped empty: then
+they get the same mode as every other stored file (`StorageFilePermissions`), so the settings above cover them. Set
+`ImagePermissions` only for a mode of their own (until 6.0.15 it shipped as `0666`, and variations were written
+world-writable wherever only `StorageFilePermissions` was narrowed). Image directories are made with
+`StorageDirPermissions`; `image.ini DirPermissions` is not read. `config.php` can cap every mode with `EZP_DIR_MODE_MAX` and
 `EZP_FILE_MODE_MAX` ([file modes](../../../bc/6.0/file-modes.md)).
 
 > **Warning**
