@@ -412,26 +412,7 @@ class Edit extends \Exponential\Runnable\ModuleView
 
         if ( $http->hasPostVariable( 'ChangeSectionOnly' ) )
         {
-            if ( $http->hasPostVariable( 'SelectedSectionId' ) )
-            {
-                $section = \eZSection::fetch( (int)$http->postVariable( 'SelectedSectionId' ) );
-                $scope = \eZSection::scopeFromHTTP( $http );
-                if ( $section instanceof \eZSection && $scope !== false )
-                {
-                    // a subtree above content.ini NowLimit nodes: a content job, and its progress page
-                    $result = $section->applyToOrStartJob( $obj, $scope );
-                    if ( $result instanceof \expContentJob )
-                    {
-                        $Module->redirectTo( '/content/job/' . $result->id() );
-                        return $this->viewResult( isset( $Result ) ? $Result : null, \eZModule::HOOK_STATUS_CANCEL_RUN );
-                    }
-                }
-            }
-            $Module->redirectTo(
-                $Module->hasActionParameter( 'RedirectRelativeURI' )
-                ? $Module->actionParameter( 'RedirectRelativeURI' )
-                : '/'
-            );
+            $Module->redirectTo( $this->changeSectionOnly( $http, $obj, $Module ) );
             return $this->viewResult( isset( $Result ) ? $Result : null,  \eZModule::HOOK_STATUS_CANCEL_RUN );
         }
 
@@ -564,6 +545,32 @@ class Edit extends \Exponential\Runnable\ModuleView
      *
      * @return mixed what run() returns, or $this when run() goes on
      */
+    /**
+     * "Set section" from the edit form (ChangeSectionOnly): assigns the chosen section in the chosen scope and returns
+     * where to go next: the content job's progress page when a subtree above content.ini NowLimit nodes became a
+     * job, else the form's RedirectRelativeURI (or the site's root).
+     *
+     * @param \eZHTTPTool $http
+     * @param \eZContentObject $obj
+     * @param \eZModule $Module
+     * @return string
+     */
+    protected function changeSectionOnly( $http, $obj, $Module )
+    {
+        if ( $http->hasPostVariable( 'SelectedSectionId' ) )
+        {
+            $section = \eZSection::fetch( (int)$http->postVariable( 'SelectedSectionId' ) );
+            $scope = \eZSection::scopeFromHTTP( $http );
+            if ( $section instanceof \eZSection && $scope !== false )
+            {
+                $result = $section->applyToOrStartJob( $obj, $scope );
+                if ( $result instanceof \expContentJob )
+                    return '/content/job/' . $result->id();
+            }
+        }
+        return $Module->hasActionParameter( 'RedirectRelativeURI' ) ? $Module->actionParameter( 'RedirectRelativeURI' ) : '/';
+    }
+
     protected function cancelDraft( &$http, &$obj, &$Result, &$Module )
     {
         if( $http->hasPostVariable( 'CancelDraftButton' ) )
