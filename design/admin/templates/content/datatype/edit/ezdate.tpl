@@ -1,5 +1,5 @@
-{* The calendar of the icon below is Exponential UI's exp::datepicker (loaded on every admin page by
-   design.ini [JavaScriptSettings] BackendJavaScriptList[]=exp::datepicker), which defines showDatePicker(). *}
+{* The calendar of the icon below is Exponential UI's exp::datepicker (which expui loads on every page
+   of this design), which defines showDatePicker(). *}
 {default attribute_base=ContentObjectAttribute}
 <div class="block">
 <div class="date">

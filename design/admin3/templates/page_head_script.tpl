@@ -9,8 +9,10 @@
 {* a4SafeURL() (javascript/a4_url.js), the check before a script follows an address from data, loads right after jQuery
    in the same list: a separate ezscript_load before jQuery wrote out the page's queued scripts ahead of jQuery *}
 
+{* ClassicBackendJavaScriptList follows BackendJavaScriptList: the scripts this design still expects on every page
+   (jQuery plugins, Exponential UI's exp:: modules), which admin4 leaves to the templates that use them *}
 {if $load_javascript_list}
- {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
+ {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|merge( ezini( 'JavaScriptSettings', 'ClassicBackendJavaScriptList', 'design.ini' ) )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 {else}
  {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' ) )}
 {/if}

@@ -201,6 +201,10 @@
 
 
 
+{* exp::sticky keeps #controlbar-top in view over #editform. Exponential UI is not loaded on every page, so it is
+   requested here, without jQuery; the attribute templates request what their own scripts need. *}
+{ezscript_require( array( 'exp::core::shared', 'exp::sticky' ) )}
+
 {* The Discard buttons confirm with data-a4-discard-confirm (a4_actions.js): it sets DiscardConfirm to 0, which
    bypasses the reload-based (plain HTML) confirmation interface, and asks the user. *}
 {* The object information menu does not collapse in admin3 (switched off on purpose). To switch it on, remove this

@@ -63,7 +63,15 @@
     {include uri='design:page_head.tpl' title_prefix=cond( $env_badge.title, concat( '[', $env_badge.name|upcase, '] ' ), '' )}
 
     {include uri='design:page_head_style.tpl'}
+    {/cache-block}
+
+    {* The head's scripts outside the cache-block: they print the scripts the module's templates requested
+       (ezscript_require: jQuery and Exponential UI only where a page uses them), which can differ between two
+       renderings of one address, and only an ezscript_load that has run lets a request made later in the page
+       print its scripts there *}
     {include uri='design:page_head_script.tpl'}
+
+    {cache-block keys=array( $uri_cache_key, $user_hash, $current_user.contentobject_id, $admin_theme, $admin_left_size, $access_type, first_set( $module_result.navigation_part, $navigation_part.identifier ), $search_hash, siteaccess_url(), siteaccess_menu_key(), $env_badge.key, $main_wrapped, $a4_columns ) ignore_content_expiry}
 
 
 </head>

@@ -144,8 +144,9 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'disclosure(document.getElementById(\'a4-user-toggle\'), document.getElementById(\'a4-user-menu\'));', self::file( 'design/admin4/javascript/admin4.js' ) );
 
         // the user's name and links are the user's own: the header's cache blocks are keyed by the user's object id
+        // (three: the page's block is split around the head's scripts, which are not cached)
         foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
-            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^)]*\$user_hash, \$current_user\.contentobject_id, /', self::file( $path ) ), $path );
+            $this->assertSame( 3, preg_match_all( '/\{cache-block keys=array\( [^)]*\$user_hash, \$current_user\.contentobject_id, /', self::file( $path ) ), $path );
 
         // 36px round targets with a focus ring
         $rules = AdminBaseStylesheetsTest::rules( self::css( 'admin4.css' ) );
@@ -318,9 +319,10 @@ class AdminHeaderTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( strpos( $tools, '<div id="header-theme"' ), strpos( $tools, $include ) );
         $this->assertStringNotContainsString( 'siteaccess_url()', self::file( 'design/admin4l/templates/explayouts/block/admin_logo.tpl' ) );
 
-        // the header's cache blocks keep siteaccess_url() in their keys, and the site menu's key after it
+        // the header's cache blocks keep siteaccess_url() in their keys, and the site menu's key after it (three: the
+        // page's block is split around the head's scripts, which are not cached)
         foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
-            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\), siteaccess_menu_key\(\)/', self::file( $path ) ), $path );
+            $this->assertSame( 3, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\), siteaccess_menu_key\(\)/', self::file( $path ) ), $path );
 
         $css = self::css( 'admin4.css' );
         $tablet = AdminBaseStylesheetsTest::rules( self::media( $css, 'screen and (min-width: 576px)' ) );

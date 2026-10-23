@@ -2119,16 +2119,19 @@
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/javascript/ezajaxsubitems_expdatatable.js": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
+      "tests/tests/design/AdminLanguageStatesTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/stylesheets/components.css": [
       "tests/tests/design/AdminLanguageStatesTest.php"
     ],
     "design/admin4/templates/children_detailed.tpl": [
-      "tests/tests/design/AdminLanguageStatesTest.php"
+      "tests/tests/design/AdminLanguageStatesTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/templates/content/edit.tpl": [
-      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php"
+      "tests/tests/kernel/content/eZPublishWithoutNotificationTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/templates/content/edit_conflict.tpl": [
       "tests/tests/kernel/private/expAdminViewsDebugCleanTest.php"
@@ -2155,7 +2158,8 @@
     "design/admin4/templates/pagelayout.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/design/AdminSiteAccessMenuTest.php",
-      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/templates/parts/a4_environment_badge.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php"
@@ -2184,7 +2188,8 @@
     "design/admin4l/templates/pagelayout.tpl": [
       "tests/tests/design/AdminEnvironmentBadgeTest.php",
       "tests/tests/extension/explayouts_admin/expLayoutsAdminLayoutsTest.php",
-      "tests/tests/design/AdminSiteAccessMenuTest.php"
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/standard/javascript/expdebugbar.js": [
       "tests/tests/kernel/classes/debugbar/expDebugBarSettingsTest.php",
@@ -2748,7 +2753,8 @@
       "tests/tests/kernel/classes/debugbar/RadSurveyDebugBarTest.php"
     ],
     "settings/design.ini": [
-      "tests/tests/kernel/classes/expSettingsPageTest.php"
+      "tests/tests/kernel/classes/expSettingsPageTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "settings/error.ini": [
       "tests/tests/kernel/classes/expShippedFeatureDefaultsTest.php"
@@ -2875,7 +2881,8 @@
       "tests/tests/design/AdminSiteAccessMenuTest.php"
     ],
     "design/admin4/javascript/admin4.js": [
-      "tests/tests/design/AdminSiteAccessMenuTest.php"
+      "tests/tests/design/AdminSiteAccessMenuTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/templates/parts/a4_header_site.tpl": [
       "tests/tests/design/AdminSiteAccessMenuTest.php"
@@ -2902,7 +2909,8 @@
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
     ],
     "design/admin4/templates/page_head_script.tpl": [
-      "tests/tests/design/AdminContentSecurityPolicyTest.php"
+      "tests/tests/design/AdminContentSecurityPolicyTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/admin4/templates/page_head_style.tpl": [
       "tests/tests/design/AdminContentSecurityPolicyTest.php"
@@ -2938,10 +2946,12 @@
       "tests/tests/extension/ezoe/expOEEmbedViewTest.php"
     ],
     "design/standard/javascript/content_queued.js": [
-      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/standard/javascript/ezasynchronouspublishing.js": [
-      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+      "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php",
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ],
     "design/standard/stylesheets/content_queued.css": [
       "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
@@ -2960,6 +2970,75 @@
     ],
     "kernel/private/classes/views/content/queued.php": [
       "tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php"
+    ],
+    "design/admin/templates/page_head_script.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin3/templates/page_head_script.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/expajaxuploader.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/ezajaxrelations_jquery.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/node_tabs.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/page/children_detailed.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/page/class_edit.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/page/content_datepicker.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/page/content_ezobjectrelation_ajaxuploader.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/page/content_ezobjectrelationlist_ajaxuploader.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/javascript/subitems_priority_drag.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/children.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/class/edit.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezdate.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezdatetime.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/content/queued.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/node/top_node_full.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/admin4/templates/window_controls.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/standard/javascript/dashboard_community_activity.js": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
+    ],
+    "design/standard/templates/dashboard/community_activity.tpl": [
+      "tests/tests/design/AdminJQueryOnDemandTest.php"
     ]
   }
 }

@@ -5,7 +5,8 @@
  * to admin4).
  *
  * - each page that requests one of these scripts also gets the exp:: packs it needs, in its own ezscript_require or
- *   through BackendJavaScriptList, which the design's page_head_script.tpl loads in the head;
+ *   through the lists the design's page_head_script.tpl loads in the head: BackendJavaScriptList, and for the admin
+ *   design also ClassicBackendJavaScriptList (admin4 and admin4l do not read that one);
  * - the installed Exponential UI defines every member the scripts call (Exp.util.extend, Exp.util.request,
  *   Exp.dialog.create, Exp.upload.create, Exp.datatable.create, ...). Exp.util and the create() functions came with
  *   expui's plain JavaScript modules; with an older expui the packs load and each script stops with
@@ -62,14 +63,19 @@ class AdminPlainScriptsExpUIPacksTest extends PHPUnit\Framework\TestCase
         return $dir;
     }
 
-    /** The BackendJavaScriptList entries of the installation: settings/design.ini and the extensions' appends */
-    private static function backendList()
+    /**
+     * The entries of the installation's script lists that a design's head loads on every page: settings/design.ini and
+     * the extensions' appends. BackendJavaScriptList for every admin design, ClassicBackendJavaScriptList too for the
+     * admin design (admin4 and admin4l do not read it).
+     */
+    private static function backendList( $design )
     {
         $list = array();
+        $keys = $design === 'admin' ? 'BackendJavaScriptList|ClassicBackendJavaScriptList' : 'BackendJavaScriptList';
         $files = array_merge( array( self::root() . '/settings/design.ini' ), glob( self::root() . '/extension/*/settings/design.ini.append.php' ) ?: array() );
         foreach ( $files as $file )
         {
-            if ( preg_match_all( '/^BackendJavaScriptList\[\]=(\S+)\s*$/m', AdminFiles::read( $file ), $m ) )
+            if ( preg_match_all( '/^(?:' . $keys . ')\[\]=(\S+)\s*$/m', AdminFiles::read( $file ), $m ) )
                 $list = array_merge( $list, $m[1] );
         }
         return $list;
@@ -122,7 +128,6 @@ class AdminPlainScriptsExpUIPacksTest extends PHPUnit\Framework\TestCase
 
     public function testEachPageRequestingAScriptGetsItsPacks()
     {
-        $backend = self::packs( self::backendList() );
         $checked = 0;
         foreach ( self::SCRIPTS as $script => $members )
         {
@@ -139,11 +144,12 @@ class AdminPlainScriptsExpUIPacksTest extends PHPUnit\Framework\TestCase
                         continue;
                     preg_match_all( '/[\'"]([^\'"]+)[\'"]/', $call[1], $m );
                     $own = self::packs( $m[1] );
+                    $backend = self::packs( self::backendList( $design ) );
                     foreach ( $members as $member )
                     {
                         $pack = self::MEMBERS[$member][0];
                         $this->assertTrue( in_array( $pack, $own, true ) || in_array( $pack, $backend, true ),
-                            "$design: $tpl requests $script, which calls $member, but neither it nor BackendJavaScriptList requests $pack" );
+                            "$design: $tpl requests $script, which calls $member, but neither it nor the head's script lists request $pack" );
                         $checked++;
                     }
                 }

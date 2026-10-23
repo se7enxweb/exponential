@@ -252,6 +252,7 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
      * a4_url.js, so its menu links became '#', redirects were refused and the log selection did nothing. Every
      * head template that loads BackendJavaScriptList loads a4_url.js before it, in the same
      * ezscript_load as jQuery and right after it (a call of its own before jQuery broke content/edit: jQuery is not defined).
+     * A head that loads no jQuery (admin4) puts a4_url.js first in that ezscript_load.
      */
     public function testEveryPageHeadScriptLoadsTheUrlCheckBeforeTheScriptList()
     {
@@ -266,8 +267,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
             ++$checked;
             // a4_url.js loads in the same ezscript_load as jQuery, right after it: a separate ezscript_load before jQuery
             // wrote out the page's queued scripts (node_tabs.js, expajaxuploader.js ...) ahead of jQuery
-            $load = strpos( $tpl, "'ezjsc::jqueryio', 'a4_url.js'" );
-            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js right after jQuery (outside a comment)" );
+            $load = strpos( $tpl, 'ezjsc::jquery' ) === false ? strpos( $tpl, "|prepend( 'a4_url.js'" ) : strpos( $tpl, "'ezjsc::jqueryio', 'a4_url.js'" );
+            $this->assertNotFalse( $load, "$template loads BackendJavaScriptList but not a4_url.js right after jQuery, or first where it loads no jQuery (outside a comment)" );
             $this->assertFalse( strpos( $tpl, "ezscript_load( array( 'a4_url.js' ) )" ), "$template loads a4_url.js in a call of its own, which writes the queued page scripts out before jQuery" );
             $this->assertLessThan( strpos( $tpl, 'BackendJavaScriptList' ) + 200, $load, "$template loads a4_url.js after the script list" );
         }

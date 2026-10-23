@@ -6,15 +6,20 @@
 
 {include uri='design:page_head_exp.tpl'}
 
-{* a4SafeURL() (javascript/a4_url.js), the check before a script follows an address from data, loads right after jQuery
-   in the same list: a separate ezscript_load before jQuery wrote out the page's queued scripts ahead of jQuery.
-   a4Dom (javascript/a4_dom.js), the helpers the scripts on plain JavaScript share (ready, delegated listeners, the
-   form token and CSRF header, a form POST, a JSON GET), follows it, before every script that calls it. *}
+{* a4SafeURL() (javascript/a4_url.js), the check before a script follows an address from data, and a4Dom
+   (javascript/a4_dom.js), the helpers the scripts on plain JavaScript share (ready, delegated listeners, the form token
+   and CSRF header, a form POST, a JSON GET), come first in the head's first ezscript_load, which then prints the
+   scripts the page's templates requested: they come after both.
+   No jQuery on every page: BackendJavaScriptList names only scripts that run without jQuery and without Exponential
+   UI. A template whose scripts need jQuery or an exp:: module requests them itself, outside every cache-block, e.g.
+   {ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'my_script.js' ) )} or
+   {ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable' ) )}
+   (doc/eng-us/features/6.0/jquery4-and-yui-removal.md). *}
 
 {if $load_javascript_list}
- {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js', 'a4_dom.js' ) )}
+ {ezscript_load( ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|prepend( 'a4_url.js', 'a4_dom.js' ) )}
 {else}
- {ezscript_load( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js', 'a4_dom.js' ) )}
+ {ezscript_load( array( 'a4_url.js', 'a4_dom.js' ) )}
 {/if}
 {* admin4: keeps the page clear of the fixed header, whose menu wraps onto more lines on narrower windows. Loaded
    through ezscript_load so its URL carries the file's time: the plain file was served with a one-year cache

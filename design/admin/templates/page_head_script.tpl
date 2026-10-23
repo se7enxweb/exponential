@@ -11,9 +11,11 @@
 
 {if $load_javascript_list}
  {* BackendJavaScriptList names ezadmin_menubar.js, the sidebar toggle of the admin3 and admin4 designs; this
-    design (and admin2, which uses it) has no such file and no sidebar, so it is left out instead of being looked for *}
+    design (and admin2, which uses it) has no such file and no sidebar, so it is left out instead of being looked for.
+    ClassicBackendJavaScriptList follows it: the scripts this design still expects on every page (jQuery plugins,
+    Exponential UI's exp:: modules), which admin4 leaves to the templates that use them *}
  {def $admin_backend_script_list = array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'a4_url.js' )}
- {foreach ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' ) as $admin_backend_script}
+ {foreach ezini( 'JavaScriptSettings', 'BackendJavaScriptList', 'design.ini' )|merge( ezini( 'JavaScriptSettings', 'ClassicBackendJavaScriptList', 'design.ini' ) ) as $admin_backend_script}
   {if $admin_backend_script|ne( 'ezadmin_menubar.js' )}
    {set $admin_backend_script_list = $admin_backend_script_list|append( $admin_backend_script )}
   {/if}

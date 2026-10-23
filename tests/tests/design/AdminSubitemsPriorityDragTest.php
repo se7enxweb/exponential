@@ -140,7 +140,7 @@ class AdminSubitemsPriorityDragTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "\$priority    = and( eq( \$node.sort_array[0][0], 'priority' ), \$node.can_edit, \$children_count )", $children );
         $this->assertStringContainsString( "'priorityDrag', and( eq( \$node.sort_array[0][0], 'priority' ), \$node.can_edit ),", $detailed );
         $this->assertStringContainsString( "'parentObjectID', \$node.contentobject_id|int(),", $detailed );
-        $this->assertStringContainsString( "{ezscript_require( array( 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}", $children );
+        $this->assertStringContainsString( "{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable', 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}", $children );
 
         $this->assertFileEquals( self::root() . '/design/admin4/javascript/ezajaxsubitems_expdatatable.js',
                                  self::root() . '/design/admin/javascript/ezajaxsubitems_expdatatable.js' );
