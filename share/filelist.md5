@@ -3249,7 +3249,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a8b8feff0fbe4053949c4de0848d582e  doc/changelogs/6.0/6.0.15.md
+6ed667a42df4aa31c22c28b2cb814a21  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5023,7 +5023,7 @@ d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteData
 7a3660bb04b5f3752b6c03a79c051b3b  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
 6923dbcc08a6b096908508291722e55b  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
-b67ea9c59c86876ab4042883844451db  doc/eng-us/examples/ini-settings/site/URLTranslator.md
+79013d607c265d5f841acddc0eaf32ca  doc/eng-us/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/eng-us/examples/ini-settings/site/UnitSettings.md
 235745de29002f93c9874c9c09352cce  doc/eng-us/examples/ini-settings/site/UserSettings.md
 f242aaf0d866300b0ad778b33a97d64d  doc/eng-us/examples/ini-settings/site/eZINISettings.md
@@ -6451,7 +6451,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
-1278a8090d45ed8a6c5a9ca73e8c1a5e  doc/eng-us/guides/urls-and-aliases.md
+5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
 eb5ffb754935beeff276d04045aadd44  doc/eng-us/help/README.md
 c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
@@ -7473,7 +7473,7 @@ cbc473ab53fb11c057416267d81786ee  doc/eng-us/help/creators/website-creators/temp
 f7711a22c5b2dcc52106dea498afa5c6  doc/eng-us/help/creators/website-creators/testing-accessibility.md
 1ca7dd5209e92b0ea92a7341dbb2947c  doc/eng-us/help/creators/website-creators/the-pagelayout.md
 5f565ee696138754eba8f39a65f61bf8  doc/eng-us/help/creators/website-creators/updates-and-upgrades.md
-dccbc18eaceecd38a68fa7751050d3c7  doc/eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md
+905b338a01ad653cdb8080fcf4e4d0a1  doc/eng-us/help/creators/website-creators/url-aliases-and-nice-urls.md
 95347dc9776c827c0f18b9fe8c1b92be  doc/eng-us/help/creators/website-creators/url-wildcards.md
 3d4244e053d20386527c2dd037c56eb2  doc/eng-us/help/creators/website-creators/view-cache-and-cache-blocks.md
 02a4634892ff5d6a83f51f8b58debb20  doc/eng-us/help/creators/website-creators/visitor-permissions.md
@@ -12106,7 +12106,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-631d4261a44ca78b36bca0116c36d2c0  doc/eng-us/languages.md
+3f132997650674bd6dad6d37974c97be  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -12382,7 +12382,7 @@ e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-setti
 abcfa2c79b753427744d3e5a2ae440f5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 fdfcaf4b6961630006ea21f669da4aef  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
-2454d0022c677d9245e5e1322e5ee6b5  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
+1b2ccad9ad3fbcd19b01464cb3e90707  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
@@ -12436,7 +12436,7 @@ a97c60afb83f5c63ee51ebd8a180b52b  doc/ger-de/anleitungen/testsprache-lorem-ipsum
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 ffa5deef9e8de58e10a80de529bb2e0e  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
-af344021ce13593e4d29b8ea29272ba3  doc/ger-de/anleitungen/urls-und-aliase.md
+8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
 b0bee01776ac8b58abb8d76e3cdf6b0d  doc/ger-de/anleitungen/wartungsmodus.md
 703b24385f53a5a3d0a9e7476ee2656d  doc/ger-de/anleitungen/workflows.md
 68323cda239834600eb321ea6e30da67  doc/ger-de/anleitungen/zwei-faktor-anmeldung.md
@@ -14072,7 +14072,7 @@ b4a28114bd62011bf3194722d3e8e1ba  doc/ger-de/beispiele/ini-einstellungen/site/Si
 c76a3312c4e1df1e637f7e6cdc9a1859  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
 bd2cdec549f737c40f2e666e9bb56eb8  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
 20b486bb370d31a7d01543c720859c7d  doc/ger-de/beispiele/ini-einstellungen/site/TipAFriend.md
-dd2999040640044542a9e0354a6605cc  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
+fa3c91c1d428a3a3de6c3d51dad9cb4a  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
 46e156bc589500349c2054c9ac53788d  doc/ger-de/beispiele/ini-einstellungen/site/UnitSettings.md
 c730cc713b5adc30a94f83ff6a163712  doc/ger-de/beispiele/ini-einstellungen/site/UserSettings.md
 ae98c2ede86b405800078d7f2bcd3eaa  doc/ger-de/beispiele/ini-einstellungen/site/eZINISettings.md
@@ -16361,7 +16361,7 @@ ce3b195124ee90cd8f6887a39589a805  doc/ger-de/hilfe/ersteller/website-ersteller/s
 aeb6078a5f761ad5c1022debe863608f  doc/ger-de/hilfe/ersteller/website-ersteller/svg-und-bildformate.md
 76898ad3beae8af177be8b27c6662cc0  doc/ger-de/hilfe/ersteller/website-ersteller/template-overrides.md
 0eeccf76a01c1bc864790d51b7753761  doc/ger-de/hilfe/ersteller/website-ersteller/updates-und-aktualisierungen.md
-d7591f71619f81c85f33d449db0caa8b  doc/ger-de/hilfe/ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md
+0c8a9700545e0251ae00db55b0c9e6e1  doc/ger-de/hilfe/ersteller/website-ersteller/url-aliasse-und-sprechende-urls.md
 39f3fee4ee7ba2c9b18c1b14b701665d  doc/ger-de/hilfe/ersteller/website-ersteller/url-platzhalter.md
 6fe3336871d669dfa1fa163fc8fe99c6  doc/ger-de/hilfe/ersteller/website-ersteller/verschlagworten-mit-eztags.md
 0af13b9eb1ad859b884061c507d2ba2a  doc/ger-de/hilfe/ersteller/website-ersteller/view-cache-und-cache-bloecke.md
@@ -20343,7 +20343,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-b2225c1b2406f8c1101b4573f27c43bb  doc/ger-de/sprachen.md
+69e6f4445efa76902f2943f955c3c7d5  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 3bbe24a9e587469ea526adca93a99a10  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -21787,7 +21787,7 @@ d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
 fc7fa34174c5cee8bc17b62a30b96e92  kernel/classes/eztipafriendrequest.php
 7abfc577ecaacc5617a7347c072b040d  kernel/classes/eztrigger.php
 1df62bdfdc3b3a179e8f4921852d9da9  kernel/classes/ezurlaliasfilter.php
-e0442a03f1b5c7807d1e6643fcdcbabe  kernel/classes/ezurlaliasml.php
+c00f4766451094c53cf3c49020812cef  kernel/classes/ezurlaliasml.php
 9f512d42b59c1b80477a480600b3c506  kernel/classes/ezurlaliasquery.php
 d39772a202a0a6b5ee8dd80f7b9a3262  kernel/classes/ezurlwildcard.php
 600d29d9cf5862c89a4a6f4acdf683e4  kernel/classes/ezuserdiscountrule.php
@@ -23435,7 +23435,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-8c85062d440e3cbd5c8576ecdc27ab76  settings/site.ini
+df74d651cc3f3a92ca3396f62e8a9ee5  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -24871,7 +24871,7 @@ aec17c87e108b370bb8d629a55864026  tests/tests/kernel/classes/eZSiteDataTest.php
 d046fb97bcc75a96538b30760c09dde6  tests/tests/kernel/classes/eZSiteInstallerTest.php
 68681a05404f6b77f50d54c68586e050  tests/tests/kernel/classes/eZSiteLogReadersTest.php
 568f1e1165db3e325a038c64e9b911aa  tests/tests/kernel/classes/eZSubtreeNotificationRuleTest.php
-d46ed3e78e608bc03a8d009b6250ba0c  tests/tests/kernel/classes/eZURLAliasMLTest.php
+f7e8b28f3a8bf019f93a5be37750cdae  tests/tests/kernel/classes/eZURLAliasMLTest.php
 07e4d742b9a39fc8ca9703c00b24e325  tests/tests/kernel/classes/eZURLExactPickTest.php
 6973784664bf562be21fa5d53ceed81b  tests/tests/kernel/classes/eZURLTest.php
 b80a0b72065201d4e81e9dbd79ed9ec0  tests/tests/kernel/classes/eZURLWildcardTest.php
@@ -25240,6 +25240,7 @@ cec5fbb54ca85b64799fb51a87f5d380  tests/tests/kernel/classes/updatesql/UpdateSql
 c18a432021e5a648ddcaaffb8177b9bb  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
 fd13f368d0002af718e950c81b7708d1  tests/tests/kernel/classes/urlalias/eZURLAliasMLNameGenerationTest.php
 98c5bdcbff593649bc7a2d1e0ae1d598  tests/tests/kernel/classes/urlalias/eZURLAliasMLPathPrefixTest.php
+127845064b37ef96d39a94915d6f7cc7  tests/tests/kernel/classes/urlalias/eZURLAliasMLScriptFallbackTest.php
 240835728a1cf1cde742aa54c504dff7  tests/tests/kernel/classes/urlalias/eZURLWildcardPatternTest.php
 bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regression.php
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php

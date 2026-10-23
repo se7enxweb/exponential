@@ -47,6 +47,7 @@ unter [Quellen](#quellen) aufgeführt.
 - [7. Wenn sich etwas nicht wie erwartet verhält](#7-wenn-sich-etwas-nicht-wie-erwartet-verhält)
 - [8. Adressen dekodieren und bereinigen: zwei optionale Einstellungen](#8-adressen-dekodieren-und-bereinigen-zwei-optionale-einstellungen)
 - [9. View-Parameter: wie ein Wert in der Adresse reist](#9-view-parameter-wie-ein-wert-in-der-adresse-reist)
+- [10. Titel in Schriften ohne Transliterationstabelle](#10-titel-in-schriften-ohne-transliterationstabelle)
 - [Für Entwickler](#für-entwickler)
 - [Quellen](#quellen)
 
@@ -391,6 +392,55 @@ dieselbe Kodierung, und Paketliste, Paketvergleich und Paketbrowser lesen ihre z
   Kernel ihn übergab). Getestet in `tests/tests/kernel/classes/expViewParametersTest.php` und
   `tests/tests/design/AdminViewParametersOnlyTest.php` (VP-05, VP-06).
 
+## 10. Titel in Schriften ohne Transliterationstabelle
+
+Die ausgelieferte Transformation `urlalias` schreibt Aliase in ASCII. Lateinische, kyrillische, griechische und
+hebräische Buchstaben werden transliteriert (`Руководство пользователя` wird zu `rukovodstvo-pol-zovatelya`,
+`מדריך למשתמש` zu `mdryk-lmstms`), aber eine Schrift ohne Transliterationstabelle verlor jeden Buchstaben: Ein
+arabischer, persischer, paschtunischer, chinesischer, japanischer, koreanischer, thailändischer, Devanagari-,
+bengalischer, georgischer oder armenischer Titel ergab einen leeren Alias, und der Knoten hieß dann
+`node_<Knoten-ID>` (ein eigener Alias `noname1`, jedes andere Element `_1`).
+
+Ein solcher Titel wird jetzt stattdessen mit der IRI-Transformation umgewandelt, derjenigen, die
+`TransformationGroup=urlalias_iri` für jeden Alias verwendet: `دليل المستخدم` wird zu `دليل-المستخدم`, `用户手册`
+bleibt `用户手册`. Die Einstellung ist `site.ini [URLTranslator] ScriptFallbackTransformationGroup`, ausgeliefert
+mit `urlalias_iri`; leer schaltet sie aus.
+
+```ini
+# settings/override/site.ini.append.php
+[URLTranslator]
+# keep the old node_<id> aliases for titles in such scripts
+ScriptFallbackTransformationGroup=
+```
+
+Die Regel ist bewusst eng gefasst: **Der Rückfall greift nur, wenn die eingestellte Transformation von einem Titel,
+der Buchstaben hat, keinen einzigen Buchstaben übrig lässt.**
+
+- Ein Titel, der einen Buchstaben behält, bekommt genau den Alias, den er bisher bekam. Kein lateinischer,
+  kyrillischer, griechischer oder hebräischer Alias ändert sich, und ein gemischter Titel behält, was `urlalias`
+  übrig lässt: `Exponential دليل` bleibt `exponential`. Ein Rückfall, sobald irgendwelche Buchstaben verloren gehen,
+  hätte den Alias jedes solchen gemischten Titels bei seiner nächsten Veröffentlichung geändert.
+- Ziffern sind keine Buchstaben: `دليل 2024` ergab `2024` und ergibt jetzt `دليل-2024`.
+- Ein Titel ganz ohne Buchstaben (Satzzeichen, Emoji) bekommt weiterhin `node_<Knoten-ID>`, `noname1` oder `_1`.
+- Der Rückfall wird nicht verwendet, wenn er die eingestellte Transformation selbst nennt (`urlalias_iri`). Mit
+  `TransformationGroup=urlalias_compat` greift er ebenso. Der `path_identification_string` eines Knotens (immer
+  `urlalias_compat`) und Bezeichner (`identifier`) sind nicht betroffen.
+- Er greift überall, wo der Kernel aus einem Namen ein Alias-Element macht: Knoten-Aliase, eigene und globale
+  URL-Aliase aus der Administration, `bin/php/updateniceurls.php` und die Dateinamen hochgeladener Bilder, die auf
+  dieselbe Weise aus dem Objektnamen entstehen. Muster von Platzhaltern werden so gespeichert, wie sie eingegeben
+  werden, und nicht umgewandelt.
+- Bestehende Aliase bleiben, wie sie sind. Ein Knoten bekommt den neuen Alias, wenn er erneut veröffentlicht oder die
+  Aliase neu aufgebaut werden, und der alte Alias `node_<Knoten-ID>` bleibt dann als Weiterleitung auf den neuen
+  bestehen, wie bei jedem umbenannten Objekt.
+- Vor dem Rückfall werden Steuer- und Formatzeichen (NUL, die Richtungsumkehr U+202E, das Leerzeichen ohne Breite
+  U+200B, U+FEFF) entfernt und `` < > " { } | \ ^ ` `` zum Worttrenner, weil die IRI-Transformation sie durchließe; der
+  Nicht-Verbinder U+200C und der Verbinder U+200D bleiben, Persisch braucht sie.
+- Dateinamen von Bildern, die aus einem solchen Titel entstehen, tragen jetzt dessen Schrift (`دليل-المستخدم.jpg`
+  statt `_1.jpg`). Eine Site, deren Speicher oder Werkzeuge ASCII-Dateinamen erwarten, setzt
+  `ScriptFallbackTransformationGroup=` leer.
+
+Ohne Datenbank getestet in `tests/tests/kernel/classes/urlalias/eZURLAliasMLScriptFallbackTest.php`.
+
 ## Für Entwickler
 
 - Ein Link innerhalb der Site in einem Aufruf: `eZURI::build( '/content/view/full/2' )` liefert den Pfad, den der
@@ -440,6 +490,7 @@ dieselbe Kodierung, und Paketliste, Paketvergleich und Paketbrowser lesen ihre z
   `fetchFilteredList()`), `kernel/classes/ezurlaliasquery.php` (`search`, `redirects`)
 - `design/admin4/templates/url/list.tpl`, `search/stats.tpl`, `content/urlalias_global.tpl`,
   `content/urlalias_wildcard.tpl` und ihre Kopien in `design/admin`
+- `kernel/classes/ezurlaliasml.php` (`convertToAlias()`), `settings/site.ini [URLTranslator] ScriptFallbackTransformationGroup`
 - `settings/site.ini [SearchSettings] LogSearchStats`, `settings/admininterface.ini [PaginationSettings]`
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#6-october-2026-links-url-aliases-wildcards-and-search-statistics)
 

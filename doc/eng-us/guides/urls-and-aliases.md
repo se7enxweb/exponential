@@ -44,6 +44,7 @@ rule below was checked against the code of this repository on 6 October 2026; th
 - [7. When something does not behave as expected](#7-when-something-does-not-behave-as-expected)
 - [8. Decoding and cleaning addresses: two optional settings](#8-decoding-and-cleaning-addresses-two-optional-settings)
 - [9. View parameters: how a value travels in an address](#9-view-parameters-how-a-value-travels-in-an-address)
+- [10. Titles in scripts without a transliteration table](#10-titles-in-scripts-without-a-transliteration-table)
 - [For developers](#for-developers)
 - [References](#references)
 
@@ -370,6 +371,50 @@ list, comparison and browser still read their search encoded twice (`demo%2520co
   twice) and `tests/tests/design/AdminViewParametersOnlyTest.php` (VP-05, VP-06: the views, templates and scripts
   use it, and the script writes exactly what PHP writes).
 
+## 10. Titles in scripts without a transliteration table
+
+The shipped transformation `urlalias` writes aliases in ASCII. Latin, Cyrillic, Greek and Hebrew letters are
+transliterated (`Руководство пользователя` becomes `rukovodstvo-pol-zovatelya`, `מדריך למשתמש` becomes
+`mdryk-lmstms`), but a script without a transliteration table lost every letter: an Arabic, Persian, Pashto,
+Chinese, Japanese, Korean, Thai, Devanagari, Bengali, Georgian or Armenian title gave an empty alias, and the node
+was then called `node_<node id>` (a custom alias `noname1`, any other element `_1`).
+
+Such a title is now converted with the IRI transformation instead, the one `TransformationGroup=urlalias_iri` uses
+for every alias: `دليل المستخدم` becomes `دليل-المستخدم`, `用户手册` stays `用户手册`. The setting is
+`site.ini [URLTranslator] ScriptFallbackTransformationGroup`, shipped as `urlalias_iri`; leave it empty to turn it
+off.
+
+```ini
+# settings/override/site.ini.append.php
+[URLTranslator]
+# keep the old node_<id> aliases for titles in such scripts
+ScriptFallbackTransformationGroup=
+```
+
+The rule is deliberately narrow: **the fallback applies only when the configured transformation leaves no letter of
+a title that has letters.**
+
+- A title that keeps a letter gets exactly the alias it got before, so no Latin, Cyrillic, Greek or Hebrew alias
+  changes, and a mixed title keeps what `urlalias` leaves: `Exponential دليل` is still `exponential`. Falling back
+  as soon as some letters are lost would have changed the alias of every such mixed title on its next publication.
+- Digits are not letters: `دليل 2024` gave `2024` and now gives `دليل-2024`.
+- A title without any letter (punctuation, emoji) still gets `node_<node id>`, `noname1` or `_1`.
+- The fallback is not used when it names the configured transformation itself (`urlalias_iri`). With
+  `TransformationGroup=urlalias_compat` it applies in the same way. The `path_identification_string` of a node
+  (`urlalias_compat`, always) and identifiers (`identifier`) are not affected.
+- It applies wherever the kernel makes an alias element from a name: node aliases, custom and global URL aliases
+  entered in the administration, `bin/php/updateniceurls.php`, and the file names of uploaded images, which are made
+  from the object name the same way. Wildcard patterns are stored as they are typed and are not converted.
+- Existing aliases stay as they are. A node gets the new alias when it is published again or the aliases are rebuilt,
+  and the old `node_<node id>` alias then stays as a redirect to the new one, as with any renamed object.
+- Before the fallback, control and format characters (NUL, the direction override U+202E, the zero-width space
+  U+200B, U+FEFF) are removed and `` < > " { } | \ ^ ` `` become a word separator, because the IRI transformation would
+  let them through; the zero-width non-joiner U+200C and joiner U+200D stay, Persian needs them.
+- Image file names made from such a title now carry its script (`دليل-المستخدم.jpg` instead of `_1.jpg`). A site
+  whose storage or tools expect ASCII file names sets `ScriptFallbackTransformationGroup=` empty.
+
+Tested without a database in `tests/tests/kernel/classes/urlalias/eZURLAliasMLScriptFallbackTest.php`.
+
 ## For developers
 
 - A link within the site in one call: `eZURI::build( '/content/view/full/2' )` gives the path the `ezurl` template
@@ -417,6 +462,7 @@ list, comparison and browser still read their search encoded twice (`demo%2520co
   `kernel/classes/ezurlaliasquery.php` (`search`, `redirects`)
 - `design/admin4/templates/url/list.tpl`, `search/stats.tpl`, `content/urlalias_global.tpl`,
   `content/urlalias_wildcard.tpl` and their copies in `design/admin`
+- `kernel/classes/ezurlaliasml.php` (`convertToAlias()`), `settings/site.ini [URLTranslator] ScriptFallbackTransformationGroup`
 - `settings/site.ini [SearchSettings] LogSearchStats`, `settings/admininterface.ini [PaginationSettings]`
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#6-october-2026-links-url-aliases-wildcards-and-search-statistics)
 

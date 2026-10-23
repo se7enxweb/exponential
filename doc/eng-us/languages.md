@@ -804,6 +804,12 @@ one). Templates reach them as `$locale.text_direction` and `$locale.is_right_to_
 siteaccess locale, for the `dir` attribute of `<html>`. Content in a right-to-left language is shown with
 `dir="rtl"`, also on a left-to-right page, so a Hebrew translation reads correctly inside an English site.
 
+**Addresses.** The shipped URL alias transformation `urlalias` has no transliteration table for Arabic script, so
+an Arabic, Persian, Pashto or Urdu title is converted with `urlalias_iri` instead (`دليل المستخدم` becomes
+`دليل-المستخدم`, not `node_<id>`); Hebrew is transliterated as before. The rule and the setting
+`[URLTranslator] ScriptFallbackTransformationGroup` are in
+[Titles in scripts without a transliteration table](guides/urls-and-aliases.md#10-titles-in-scripts-without-a-transliteration-table).
+
 **The administration.** The admin page layouts set `dir="rtl"` when the interface language is right to left, and
 their layout skeleton (header, left menu, content, right toolbar) is direction-safe: the browser mirrors it instead
 of it being placed by left and right. The details, the CSS rules and what still needs checking are in
