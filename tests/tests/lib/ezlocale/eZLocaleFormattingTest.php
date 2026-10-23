@@ -172,8 +172,8 @@ class eZLocaleFormattingTest extends PHPUnit\Framework\TestCase
             'gb negative'      => array( 'eng-GB', -1.5, '-1.50' ),
             'gb zero'          => array( 'eng-GB', 0, '0.00' ),
             'de thousands'     => array( 'ger-DE', 1234567.891, '1.234.567,89' ),
-            'no thousands'     => array( 'nor-NO', 1234.5, '1.234,50' ),
-            'se thousands'     => array( 'swe-SE', 1234.5, '1.234,50' ),
+            'no thousands'     => array( 'nor-NO', 1234.5, '1 234,50' ),
+            'se thousands'     => array( 'swe-SE', 1234.5, '1 234,50' ),
         );
     }
 
