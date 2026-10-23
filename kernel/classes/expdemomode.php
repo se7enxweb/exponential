@@ -439,7 +439,7 @@ class expDemoMode
         if ( is_file( $marker ) )
             return false;
         if ( !is_dir( dirname( $marker ) ) )
-            @mkdir( dirname( $marker ), 0770, true );
+            @mkdir( dirname( $marker ), eZDir::dirMode( 0770 ), true );
         @touch( $marker );
         return true;
     }
