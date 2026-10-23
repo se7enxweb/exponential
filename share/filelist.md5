@@ -12106,7 +12106,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-9332cffac2af0e4fc789bd365233d2ee  doc/eng-us/languages.md
+e563352441e7d65c93539469a15d374a  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -20343,7 +20343,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-f905f11d02136ae1f62191f652d82bd8  doc/ger-de/sprachen.md
+e09ff4e94766dfb82f31a7defcf21887  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 3bbe24a9e587469ea526adca93a99a10  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -24051,7 +24051,7 @@ b0fbc5d20e640a9a13bb217b05aa4d6f  share/locale/eng-IN.ini
 b267a1fbfa8d1f2c01db9169c292bdd7  share/locale/eng-PH.ini
 0b93920af6911020356009d2f14017ce  share/locale/eng-PK.ini
 ea7fde6b7c43aa315b2e6c4b6909e1b1  share/locale/eng-SG.ini
-fceb65003511e433470deedb12dd60c1  share/locale/eng-US.ini
+1710cdcd35c9cc36278cd1c439aea920  share/locale/eng-US.ini
 f2dd7213ffe1b3c3a76ec2e908f00d8c  share/locale/eng-ZA.ini
 ed39dfe1142407e346878f303c09cd7d  share/locale/epo-EO.ini
 9090027615267056f20136a2fbcbff8f  share/locale/esl-AR.ini
@@ -24062,11 +24062,11 @@ dfbed86e875ecfad72bd76c3d0af4043  share/locale/esl-CR.ini
 3c56def3f7f02e505519b8aaa1916c17  share/locale/esl-CU.ini
 6446518e338c756aacbe794d1bd687f4  share/locale/esl-DO.ini
 42764066a99c48b589ce179cf9321edd  share/locale/esl-EC.ini
-c57b293fac011227c90be89ba8279a21  share/locale/esl-ES.ini
+f1f76817027995395960d83993c48cd9  share/locale/esl-ES.ini
 5c5d465e264b7ee627b325a3f03da688  share/locale/esl-GQ.ini
 b28c9cf33cbde8ce9ae4e288598c900d  share/locale/esl-GT.ini
 c838f8db6095203ee1782faa6eb9c8a6  share/locale/esl-HN.ini
-eccc770415cd23bb8775925e49f88b56  share/locale/esl-MX.ini
+6ea167f99f9d981bc34bd434b2400684  share/locale/esl-MX.ini
 407391bfb5dd49b6455af30e465788f1  share/locale/esl-NI.ini
 6091e70f608eee420c99d9eca2aedcce  share/locale/esl-PA.ini
 78b0a1f0e4ed8694b0e0f35bc07586ee  share/locale/esl-PE.ini
@@ -24236,7 +24236,7 @@ c8979ab0625e75452a47a9e979b9de6d  share/locale/tha-TH.ini
 a1727fee0e16927292dca4cabad0aacf  share/locale/tuk-TM.ini
 c101fe1b103e543f43536f0459348ae5  share/locale/tur-TR.ini
 76daf75064dbe3dee5d8a0c7269355e0  share/locale/uig-CN.ini
-4ad5f042e86f8439280e20b537887cea  share/locale/ukr-UA.ini
+7ba62033522082537a4a04f1e0af6e51  share/locale/ukr-UA.ini
 50da2e3726122cc7ae74216eb90617e9  share/locale/urd-IN.ini
 5a0265a46c81827bf80045ff3540381b  share/locale/urd-PK.ini
 5da7aa4e97ab177e3b430d4de5040ac3  share/locale/uzb-UZ.ini
