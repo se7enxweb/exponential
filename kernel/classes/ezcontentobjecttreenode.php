@@ -3487,10 +3487,13 @@ class eZContentObjectTreeNode extends eZPersistentObject
      $oldSectionID: only objects in that section change. $scope (eZSection::SCOPE_*): which objects below the node
      change at all, see sectionAssignmentObjectIDs(); with SCOPE_INHERITED, $oldSectionID is also the section it
      follows (false: the section the node's object has).
+     $checkAccess: true leaves out the objects below the node the current user may not assign the section to
+     (section/assign with its Class, Section, Owner and Subtree limitations), as the content job does; false (the
+     default, for the kernel's own calls such as a new main location) changes them all.
      \note Transaction unsafe. If you call several transaction unsafe methods you must enclose
      the calls within a db transaction; thus within db->begin and db->commit.
     */
-    static function assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID = false, $updateSearchIndexes = true, $scope = eZSection::SCOPE_SUBTREE )
+    static function assignSectionToSubTree( $nodeID, $sectionID, $oldSectionID = false, $updateSearchIndexes = true, $scope = eZSection::SCOPE_SUBTREE, $checkAccess = false )
     {
         $db = eZDB::instance();
         $node = eZContentObjectTreeNode::fetch( $nodeID );
@@ -3498,6 +3501,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             return;
 
         $objectSimpleIDArray = eZContentObjectTreeNode::sectionAssignmentObjectIDs( $node, $scope, $oldSectionID );
+        if ( $objectSimpleIDArray && $checkAccess )
+            $objectSimpleIDArray = eZContentObjectTreeNode::sectionAssignableObjectIDs( $objectSimpleIDArray, $sectionID );
         if ( !$objectSimpleIDArray )
             return;
 
@@ -3534,6 +3539,42 @@ class eZContentObjectTreeNode extends eZPersistentObject
 
         // clear caches for updated objects
         eZContentObject::clearCache( $objectSimpleIDArray );
+    }
+
+    /**
+     * The objects of $objectIDs the user may assign the section $sectionID to (eZUser::canAssignSectionToObject()).
+     * A user whose section/assign is unlimited gets them all without fetching one; otherwise the objects are read
+     * in pages of 100.
+     *
+     * @param int[] $objectIDs
+     * @param int $sectionID
+     * @param eZUser|null $user null: the current user
+     * @return int[]
+     */
+    static function sectionAssignableObjectIDs( array $objectIDs, $sectionID, $user = null )
+    {
+        if ( !$user instanceof eZUser )
+            $user = eZUser::currentUser();
+        $access = $user->hasAccessTo( 'section', 'assign' );
+        if ( $access['accessWord'] === 'yes' )
+            return array_values( array_map( 'intval', $objectIDs ) );
+        if ( $access['accessWord'] !== 'limited' )
+            return array();
+
+        $allowed = array();
+        foreach ( array_chunk( array_values( $objectIDs ), 100 ) as $pagedObjectIDs )
+        {
+            $objects = eZContentObject::fetchIDArray( $pagedObjectIDs );
+            foreach ( $pagedObjectIDs as $objectID )
+            {
+                $objectID = (int)$objectID;
+                if ( isset( $objects[$objectID] ) && $objects[$objectID]->mainNode() &&
+                     $user->canAssignSectionToObject( $sectionID, $objects[$objectID] ) )
+                    $allowed[] = $objectID;
+            }
+            eZContentObject::clearCache( $pagedObjectIDs );
+        }
+        return $allowed;
     }
 
     /*!

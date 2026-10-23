@@ -16,8 +16,15 @@
  *  SC-08 - assignSectionToSubTree() and the operation take the scope; without it they change the whole subtree
  *  SC-09 - the content job: SCOPE_INHERITED leaves the branches in another section out of the work list it builds
  *          when it starts, SCOPE_OBJECT works on one node, an unknown scope is refused when the job is created
+ *  SC-10 - sectionAssignableObjectIDs(): a user without limitations may assign every object (none is fetched), one
+ *          without section/assign none
+ *  SC-11 - with limitations, the objects the user may not assign the section to are left out; assignSectionToSubTree()
+ *          checks them only when asked (section/assign and applyTo() ask, a new main location does not)
+ *  SC-12 - the audit event content.node.section names the scope and the number of objects that change
+ *  SC-13 - applyToOrStartJob() (the edit form, the section menu of the node page): in the request up to
+ *          content.ini NowLimit nodes, a content job above it, never for the object alone
  *
- * SC-01 to SC-03 need no database. SC-04 to SC-09 run on the installation the tests run on: each test builds a
+ * SC-01 to SC-03 and SC-10 need no database. SC-04 to SC-09 and SC-11 to SC-13 run on the installation the tests run on: each test builds a
  * folder tree below node 2 and three sections of its own and removes all of them in tearDown(), also when the test
  * fails; where there is no installation (CI) they are skipped.
  *
@@ -81,17 +88,136 @@ class eZSectionScopeTest extends PHPUnit\Framework\TestCase
         $OperationList = array();
         include self::root() . '/kernel/content/operation_definition.php';
         $parameters = $OperationList['updatesection']['parameters'];
-        $this->assertSame( array( 'node_id', 'selected_section_id', 'update_search_indexes', 'scope', 'old_section_id' ),
+        $this->assertSame( array( 'node_id', 'selected_section_id', 'update_search_indexes', 'scope', 'old_section_id', 'check_access' ),
                            array_column( $parameters, 'name' ) );
         $this->assertTrue( $parameters[0]['required'] && $parameters[1]['required'] );
         $this->assertSame( array( false, true ), array( $parameters[2]['required'], $parameters[2]['default'] ) );
         $this->assertSame( array( false, 'subtree' ), array( $parameters[3]['required'], $parameters[3]['default'] ) );
         $this->assertSame( array( false, false ), array( $parameters[4]['required'], $parameters[4]['default'] ) );
+        $this->assertSame( array( false, false ), array( $parameters[5]['required'], $parameters[5]['default'] ), 'no check unless asked' );
         $this->assertSame( array( 'node_id', 'selected_section_id' ), $OperationList['updatesection']['keys'] );
 
         $method = new ReflectionMethod( 'eZContentOperationCollection', 'updateSection' );
-        $this->assertSame( array( 'nodeID', 'selectedSectionID', 'updateSearchIndexes', 'scope', 'oldSectionID' ),
+        $this->assertSame( array( 'nodeID', 'selectedSectionID', 'updateSearchIndexes', 'scope', 'oldSectionID', 'checkAccess' ),
                            array_map( function ( $p ) { return $p->getName(); }, $method->getParameters() ) );
+        $method = new ReflectionMethod( 'eZContentObjectTreeNode', 'assignSectionToSubTree' );
+        $this->assertSame( array( 'nodeID', 'sectionID', 'oldSectionID', 'updateSearchIndexes', 'scope', 'checkAccess' ),
+                           array_map( function ( $p ) { return $p->getName(); }, $method->getParameters() ) );
+        $this->assertFalse( $method->getParameters()[5]->getDefaultValue(), 'the kernel\'s own calls (a new main location) are not checked' );
+    }
+
+    /** SC-10 */
+    public function testAUserWithoutLimitationsMayAssignEveryObjectAndOneWithoutAccessNone()
+    {
+        $user = $this->createStub( 'eZUser' );
+        $user->method( 'hasAccessTo' )->willReturn( array( 'accessWord' => 'yes' ) );
+        $this->assertSame( array( 3, 5, 8 ), eZContentObjectTreeNode::sectionAssignableObjectIDs( array( '3', 5, 8 ), 1, $user ) );
+
+        $user = $this->createStub( 'eZUser' );
+        $user->method( 'hasAccessTo' )->willReturn( array( 'accessWord' => 'no' ) );
+        $this->assertSame( array(), eZContentObjectTreeNode::sectionAssignableObjectIDs( array( 3, 5, 8 ), 1, $user ) );
+    }
+
+    /** SC-11 */
+    public function testLimitationsLeaveObjectsOut()
+    {
+        $this->tree();
+        $y = $this->id( 'Y' );
+        $c1 = (int)$this->object( 'c1' )->attribute( 'id' );
+        $user = $this->createStub( 'eZUser' );
+        $user->method( 'hasAccessTo' )->willReturn( array( 'accessWord' => 'limited', 'policies' => array() ) );
+        $user->method( 'canAssignSectionToObject' )->willReturnCallback( function ( $sectionID, $object ) use ( $c1, $y ) {
+            return (int)$sectionID === $y && (int)$object->attribute( 'id' ) !== $c1;
+        } );
+        $ids = eZContentObjectTreeNode::sectionAssignmentObjectIDs( eZContentObjectTreeNode::fetch( $this->nodes['top'] ) );
+        $this->assertCount( 6, $ids );
+        $allowed = eZContentObjectTreeNode::sectionAssignableObjectIDs( $ids, $y, $user );
+        $this->assertCount( 5, $allowed );
+        $this->assertNotContains( $c1, $allowed );
+
+        // the administrator has no limitation: with the check, assignSectionToSubTree() still changes them all
+        eZContentObjectTreeNode::assignSectionToSubTree( $this->nodes['top'], $y, false, true, eZSection::SCOPE_SUBTREE, true );
+        $this->assertSame( array_fill_keys( array_keys( $this->nodes ), $y ), $this->sections() );
+    }
+
+    /** SC-12 */
+    public function testTheAuditEventNamesTheScope()
+    {
+        $this->tree();
+        if ( !class_exists( 'expAuditHook' ) || !class_exists( 'expAudit' ) )
+            $this->markTestSkipped( 'no audit' );
+        require_once self::root() . '/tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php';
+        $dir = expAuditTestFixtures::setUp( 'section-scope', array( 'AuditEventSettings/Enabled' => array( 'content.*' ) ) );
+        try
+        {
+            $this->sections['Y']->applyTo( $this->object( 'top' ), eZSection::SCOPE_INHERITED );
+            expAudit::flush();
+            $events = array_values( array_filter( expAuditTestFixtures::records( $dir, 'content' ), function ( $r ) {
+                return $r['name'] === 'content.node.section';
+            } ) );
+        }
+        finally
+        {
+            expAuditHook::reset();
+            expAuditTestFixtures::tearDown();
+        }
+        $this->assertCount( 1, $events, 'one event for the one location' );
+        $this->assertSame( eZSection::SCOPE_INHERITED, $events[0]['data']['after']['scope'] ?? $events[0]['after']['scope'] ?? null );
+        $this->assertSame( 4, $events[0]['data']['after']['objects'] ?? $events[0]['after']['objects'] ?? null, 'b and b1 keep their sections' );
+    }
+
+    /** SC-13 */
+    public function testALargeSubtreeFromTheEditFormBecomesAContentJob()
+    {
+        $s0 = $this->tree();
+        $y = $this->id( 'Y' );
+        if ( !class_exists( 'expContentJob' ) || !class_exists( 'Exponential\\View\\Kernel\\Content\\Job' ) )
+            $this->markTestSkipped( 'no content jobs' );
+
+        // within NowLimit (1000 nodes): in the request, as applyTo()
+        $this->assertNotInstanceOf( 'expContentJob', $this->sections['Y']->applyToOrStartJob( $this->object( 'top' ), eZSection::SCOPE_INHERITED ) );
+        $this->assertSame( array( 'top' => $y, 'a' => $y, 'b' => $this->id( 'X' ), 'b1' => $s0, 'c' => $y, 'c1' => $y ), $this->sections() );
+
+        // the object alone is never a job
+        ezpINIHelper::setINISetting( 'content.ini', 'ContentJobSettings', 'NowLimit', '2' );
+        try
+        {
+            $this->assertNotInstanceOf( 'expContentJob', $this->sections['Z']->applyToOrStartJob( $this->object( 'top' ), eZSection::SCOPE_OBJECT ) );
+            $this->assertSame( array( $this->id( 'Z' ), $y ), array( $this->section( 'top' ), $this->section( 'a' ) ) );
+
+            // above it: a content job
+            $job = $this->sections['Y']->applyToOrStartJob( $this->object( 'top' ), eZSection::SCOPE_SUBTREE );
+            $this->assertInstanceOf( 'expContentJob', $job );
+            $this->assertSame( array( 'node_id' => $this->nodes['top'], 'section_id' => $y, 'scope' => eZSection::SCOPE_SUBTREE ),
+                               array_intersect_key( $job->params(), array_flip( array( 'node_id', 'section_id', 'scope' ) ) ) );
+            $this->waitForJob( $job );
+            $this->assertSame( array_fill_keys( array_keys( $this->nodes ), $y ), $this->sections() );
+        }
+        finally
+        {
+            ezpINIHelper::restoreINISettings();
+        }
+    }
+
+    /** The worker the job started, or this process when none started within a few seconds */
+    private function waitForJob( expContentJob $job )
+    {
+        for ( $i = 0; $i < 300; $i++ )
+        {
+            $now = expContentJob::fetch( $job->id() );
+            if ( !$now->isActive() )
+                break;
+            if ( $i === 50 && $now->state() === expContentJob::STATE_QUEUED && !$now->workerAlive() )
+            {
+                ( new expContentJobWorker() )->run( $job->id() );
+                break;
+            }
+            usleep( 100000 );
+        }
+        $done = expContentJob::fetch( $job->id() );
+        $this->assertSame( expContentJob::STATE_DONE, $done->state(), 'the job finished' );
+        eZContentObject::clearCache();
+        return $done;
     }
 
     // ---- on the installation -----------------------------------------------------------------------------------

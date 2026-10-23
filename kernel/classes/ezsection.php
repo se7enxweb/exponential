@@ -267,6 +267,45 @@ class eZSection extends eZPersistentObject
     }
 
     /**
+     * applyTo(), except for a subtree too large to change in the request: when $object has one location and the
+     * subtree below it has more nodes than content.ini [ContentJobSettings] NowLimit, the content job 'section' does
+     * the work in the background, in batches, and this returns the job (the caller redirects to /content/job/<id>).
+     * Without the content jobs engine, for SCOPE_OBJECT, for an object with several locations, or when the job is
+     * refused (a lock, no permission: logged), it is applyTo() as before.
+     *
+     * @param eZContentObject $object
+     * @param string $scope SCOPE_*
+     * @return expContentJob|false|null the job that was started, else what applyTo() returned
+     */
+    public function applyToOrStartJob( eZContentObject $object, $scope = self::SCOPE_SUBTREE )
+    {
+        $jobView = 'Exponential\\View\\Kernel\\Content\\Job';
+        $nodes = $scope !== self::SCOPE_OBJECT && self::isValidScope( $scope ) ? $object->attribute( 'assigned_nodes' ) : array();
+        if ( count( $nodes ) === 1 && class_exists( $jobView ) && $jobView::engineReady() )
+        {
+            $node = reset( $nodes );
+            $params = array( 'node_id' => (int)$node->attribute( 'node_id' ), 'section_id' => (int)$this->attribute( 'id' ), 'scope' => $scope );
+            try
+            {
+                if ( !expContentJob::nowAllowed( 'section', $params ) )
+                {
+                    $error = '';
+                    $job = $jobView::createJob( 'section', $params, (int)$node->attribute( 'node_id' ), $error );
+                    if ( $job )
+                        return $job;
+                    eZDebug::writeWarning( 'The section is assigned in the request, the content job was refused: ' . $error, __METHOD__ );
+                }
+            }
+            catch ( Exception $e )
+            {
+                // the engine failing must not break the assignment: it is done as before
+                eZDebug::writeError( 'Content jobs: ' . $e->getMessage(), __METHOD__ );
+            }
+        }
+        return $this->applyTo( $object, $scope );
+    }
+
+    /**
      * Assigns this section to $object, when the current user may (section/assign), at each of its locations with
      * the objects below it that $scope names (SCOPE_*; the default SCOPE_SUBTREE is what this method always did).
      * With SCOPE_OBJECT the object alone changes, whatever its locations.
@@ -304,11 +343,13 @@ class eZSection extends eZPersistentObject
         // SCOPE_INHERITED follows the section the object has now, also at its second location, when the first one has
         // changed it already
         $oldSectionID = $scope === self::SCOPE_INHERITED ? (int)$object->attribute( "section_id" ) : false;
-        // The objects that change, found before anything changes, for the search index below
+        // The objects that change, found before anything changes, for the search index below: as the content job does,
+        // without those below the object the user may not assign the section to (section/assign limitations)
         $objectIDArrays = array();
         foreach ( $assignedNodes as $node )
         {
-            $objectIDArrays[] = eZContentObjectTreeNode::sectionAssignmentObjectIDs( $node, $scope, $oldSectionID );
+            $objectIDArray = eZContentObjectTreeNode::sectionAssignmentObjectIDs( $node, $scope, $oldSectionID );
+            $objectIDArrays[] = $objectIDArray ? eZContentObjectTreeNode::sectionAssignableObjectIDs( $objectIDArray, $sectionID, $currentUser ) : $objectIDArray;
         }
 
         $db = eZDB::instance();
@@ -325,8 +366,10 @@ class eZSection extends eZPersistentObject
                         array(
                             "node_id" => $node->attribute( "node_id" ),
                             "selected_section_id" => $sectionID,
+                            "update_search_indexes" => false,
                             "scope" => $scope,
-                            "old_section_id" => $oldSectionID
+                            "old_section_id" => $oldSectionID,
+                            "check_access" => true
                         ),
                         null,
                         true
@@ -337,7 +380,7 @@ class eZSection extends eZPersistentObject
             {
                 foreach ( $assignedNodes as $node )
                 {
-                    eZContentOperationCollection::updateSection( $node->attribute( "node_id" ), $sectionID, false, $scope, $oldSectionID );
+                    eZContentOperationCollection::updateSection( $node->attribute( "node_id" ), $sectionID, false, $scope, $oldSectionID, true );
                 }
             }
         }

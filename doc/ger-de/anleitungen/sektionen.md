@@ -366,6 +366,20 @@ Was es nicht ändert: Neue Inhalte darunter übernehmen weiterhin die Sektion ih
 8.1), und das Verschieben folgt weiter Abschnitt 8.2. Eine Sektion bleibt eine Eigenschaft des Objekts; `object` gibt
 nicht einem einzelnen Ort eine eigene Sektion.
 
+Wer auch zuweist, bei jeder Wahl gilt:
+
+- **Nur Objekte, denen Sie die Sektion zuweisen dürfen, ändern sich.** Das gilt für das gewählte Element und für jedes
+  Objekt darunter: Ein Objekt, das Ihre Richtlinie section/assign ausschließt (ihre Einschränkung nach Klasse, Sektion,
+  Besitzer oder Teilbaum), behält seine Sektion, ob sofort, als Inhaltsauftrag oder über den Reiter Details. Ein
+  Administrator ohne Einschränkungen ändert alle. Die eigenen Änderungen des Kernels (ein neuer Hauptort übernimmt die
+  Sektion seines übergeordneten Elements) werden nicht geprüft.
+- **Ein sehr großer Teilbaum läuft im Hintergrund.** Über den Reiter Details und das Bearbeitungsformular wird ein
+  Teilbaum mit mehr Knoten als `content.ini [ContentJobSettings] NowLimit` (Standard 1000) vom Inhaltsauftrag `section`
+  in Stapeln zugewiesen: Über den Reiter Details öffnet sich seine Fortschrittsseite, im Bearbeitungsformular bleibt
+  der Entwurf offen, während er läuft. **Nur dieses Objekt** geschieht immer sofort.
+- Jede Zuweisung schreibt das Audit-Ereignis `content.node.section` mit der Wahl (`after.scope`) und der Zahl der
+  Objekte, die sich ändern; der Suchindex und die Ansichts-Caches der geänderten Objekte werden aktualisiert.
+
 ## 9. Sektionen in Rollen und Richtlinien
 
 Sektionen sind in erster Linie ein Werkzeug für Berechtigungen. Es gibt drei Arten, wie eine Rolle eine Sektion

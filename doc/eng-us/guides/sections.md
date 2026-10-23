@@ -347,6 +347,19 @@ What it does not change: new content below still takes the section of its parent
 follows section 8.2. A section stays a property of the object; `object` does not give one location a section of its
 own.
 
+Whoever assigns, with every choice:
+
+- **Only objects you may assign the section to change.** The chosen item needs it, and so does every object below it:
+  an object your section/assign policy excludes (its Class, Section, Owner or Subtree limitation) keeps its section,
+  whether it is done at once, as a content job or from the Details tab. An administrator without limitations changes
+  them all. The kernel's own changes (a new main location takes its parent's section) are not checked.
+- **A very large subtree goes to the background.** From the Details tab and the edit form, a subtree with more nodes
+  than `content.ini [ContentJobSettings] NowLimit` (1000 by default) is assigned by the content job `section`, in
+  batches: from the Details tab its progress page opens, from the edit form the draft stays open while it runs.
+  **This object only** is always done at once.
+- Each assignment writes the audit event `content.node.section` with the choice (`after.scope`) and the number of
+  objects it changes; the search index and the view caches of the changed objects are updated.
+
 ## 9. Sections in roles and policies
 
 Sections are first of all a permission tool. There are three ways a role can use one.

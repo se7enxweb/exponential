@@ -120,7 +120,8 @@ class Assign extends \Exponential\Runnable\ModuleView
                                 $db->begin();
                                 foreach ( $allowedNodeIDList as $nodeID )
                                 {
-                                    \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope );
+                                    // as the content job: objects below the item the user may not assign the section to keep theirs
+                                    \eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $SectionID, false, true, $sectionScope, true );
                                 }
                                 $db->commit();
 

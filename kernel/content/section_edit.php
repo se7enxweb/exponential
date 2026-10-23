@@ -37,7 +37,8 @@ function sectionEditActionCheck( $module, $class, $object, $version, $contentObj
     if ( $scope === false )
         return;
 
-    $selectedSection->applyTo( $object, $scope );
+    // a subtree above content.ini NowLimit nodes is done by a content job; the edit form stays open meanwhile
+    $selectedSection->applyToOrStartJob( $object, $scope );
                     eZContentCacheManager::clearContentCacheIfNeeded( $object->attribute( 'id' ) );
     $module->redirectToView( 'edit', array( $object->attribute( 'id' ), $editVersion, $editLanguage, $fromLanguage ) );
 }

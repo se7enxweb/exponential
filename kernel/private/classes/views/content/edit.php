@@ -417,7 +417,15 @@ class Edit extends \Exponential\Runnable\ModuleView
                 $section = \eZSection::fetch( (int)$http->postVariable( 'SelectedSectionId' ) );
                 $scope = \eZSection::scopeFromHTTP( $http );
                 if ( $section instanceof \eZSection && $scope !== false )
-                    $section->applyTo( $obj, $scope );
+                {
+                    // a subtree above content.ini NowLimit nodes: a content job, and its progress page
+                    $result = $section->applyToOrStartJob( $obj, $scope );
+                    if ( $result instanceof \expContentJob )
+                    {
+                        $Module->redirectTo( '/content/job/' . $result->id() );
+                        return $this->viewResult( isset( $Result ) ? $Result : null, \eZModule::HOOK_STATUS_CANCEL_RUN );
+                    }
+                }
             }
             $Module->redirectTo(
                 $Module->hasActionParameter( 'RedirectRelativeURI' )

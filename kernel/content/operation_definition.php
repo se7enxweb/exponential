@@ -471,6 +471,11 @@ $OperationList['updatesection'] = array( 'name' => 'updatesection',
                                                                array( 'name' => 'old_section_id',
                                                                       'type' => 'integer',
                                                                       'required' => false,
+                                                                      'default' => false ),
+                                                               // true: objects the current user may not assign the section to are left out
+                                                               array( 'name' => 'check_access',
+                                                                      'type' => 'boolean',
+                                                                      'required' => false,
                                                                       'default' => false ) ),
 
                                         'keys' => array( 'node_id', 'selected_section_id', ),

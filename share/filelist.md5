@@ -6437,7 +6437,7 @@ a18d1933d4f72ad93e278381d78e827f  doc/eng-us/guides/remote-services-and-apps.md
 ddc6c4fbe3bd9236974b19bc53884ee6  doc/eng-us/guides/rest-api-v1-and-v2.md
 73b431620545776f5b07f75bbb73a1fa  doc/eng-us/guides/roles-and-policies.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
-51f17555e1742cce8a2ddb006b59371e  doc/eng-us/guides/sections.md
+95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
 be8c054654ee7b03031313c38fbaa43c  doc/eng-us/guides/security-and-audit.md
 c9d69c18641eb389f494cab5998489b5  doc/eng-us/guides/sessions.md
 ee611ae868bab0755ccaf719a285f4d3  doc/eng-us/guides/settings-page.md
@@ -12404,7 +12404,7 @@ e284dbffe107486bd07fb059fa282962  doc/ger-de/anleitungen/pakete.md
 3a7b4029ca75ca7490d355d1869927f4  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 b7e5959e0be69985584f9459039a77e6  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
-17f589689693738d8819f7800e71461c  doc/ger-de/anleitungen/sektionen.md
+6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 67a9c0e56a52d0eb3f6b3c34999635cb  doc/ger-de/anleitungen/sicherheit-und-audit.md
 eaf0cb7d1ae999a66835b89232128a60  doc/ger-de/anleitungen/sitzungen.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
@@ -21687,7 +21687,7 @@ e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
 b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 06d8358599723d258d5c8246b2333ff1  kernel/classes/ezcontentobjecttranslation.php
 e3bb8168c289a73ea00fe69b91fab66b  kernel/classes/ezcontentobjecttrashnode.php
-c785ab210b0d2cd24c420c743fb08a7f  kernel/classes/ezcontentobjecttreenode.php
+b4ace6f449a0f29d9382e8a7caba16cb  kernel/classes/ezcontentobjecttreenode.php
 eb03c6d6dfbd43ec77d0262bb67f0c97  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
 01331d4eaa61e9c8e51519380dcb9b0d  kernel/classes/ezcontentupload.php
@@ -21748,7 +21748,7 @@ e34677c3d8d81178afda3c41ad2fc4f8  kernel/classes/ezruncronjobs.php
 9e9ce779890663d9cbc7ec621146f912  kernel/classes/ezscript.php
 101e697256e937ea550fc850939ad824  kernel/classes/ezsearch.php
 59fe9c1b44af855290c3a2c585bd2693  kernel/classes/ezsearchlog.php
-a92d354a88a92bed962a2380eff0fed5  kernel/classes/ezsection.php
+f305bb4e3607dc4a202b51a847db9af1  kernel/classes/ezsection.php
 fdfd9b8f7952710061316b8c7d7c4d4c  kernel/classes/ezserializedobjectnamelist.php
 c4f1f1ebaf9e2c9a9d64c5d90b6adcc4  kernel/classes/ezshippingmanager.php
 fbbe18daf7682e22bd63b2771e0710e0  kernel/classes/ezshopaccounthandler.php
@@ -22089,7 +22089,7 @@ b7959d6a47645a1610274283d404c746  kernel/content/download.php
 3f03566dd39083dfddaa39a51a78ee37  kernel/content/draft.php
 753c6fb6e051f80440937bda433446df  kernel/content/edit.php
 7242a2aa8933416bead5698c501827b4  kernel/content/ezcontentfunctioncollection.php
-baa43c0f9b08062cf486b7b5cf312e07  kernel/content/ezcontentoperationcollection.php
+d388c3ec7a186f734f34ee2c1d0da4a4  kernel/content/ezcontentoperationcollection.php
 6547d1af2360fb0c8cd643815945d308  kernel/content/ezcontentpublishingbehaviour.php
 074f32b8316642dec7fb5994f0fe42b8  kernel/content/function_definition.php
 bd08bbab6c3e91e233d973d4656c56c9  kernel/content/hide.php
@@ -22103,7 +22103,7 @@ f58b3f356b8f96b903278574f96973c7  kernel/content/move.php
 a428275a337ca0f65ddd7004a5206277  kernel/content/multiedit_functions.php
 99dc0c21059915887c3ee52f2d4f8503  kernel/content/newcontent.php
 b0e94efe4e763a06e067e5137d7f8ad1  kernel/content/node_edit.php
-077704e70f886b42814f42c4334f2cd8  kernel/content/operation_definition.php
+b59a0163ae48679a768b1bc8360ff107  kernel/content/operation_definition.php
 f64ec1e3937367aded4247679c879a6a  kernel/content/pdf.php
 281ebfd81cb62d8b2cc014c95739ff4a  kernel/content/pendinglist.php
 6e95dc799d24a1ec14ac030e9513a569  kernel/content/queued.php
@@ -22115,7 +22115,7 @@ d2615f905df8c9f2c2ed8ce14f95581b  kernel/content/removeobject.php
 09ece0061eb1ea8e4e467b93c4cc5f01  kernel/content/restore.php
 1772b71f70c012c43d27eea87f2ad587  kernel/content/reverserelatedlist.php
 a223a20daab560d8512ee94ee8860f53  kernel/content/search.php
-a805813c29477113b2863218462cf2a8  kernel/content/section_edit.php
+96559cdd62437d5f798d34384a9cddd6  kernel/content/section_edit.php
 25e1ce8e3fd48843e274b64da85374b7  kernel/content/state_edit.php
 7b2b4d1f139eea6d5054d31d4c7f09ea  kernel/content/subitemsexport.php
 9af4a077b5e8c09d4433e9030d834510  kernel/content/tipafriend.php
@@ -22495,7 +22495,7 @@ eb7a495581ffb464450988d3c8d288e2  kernel/private/classes/views/content/copy.php
 5033bd5e1a2a8c4452ba5cd3a9c11fee  kernel/private/classes/views/content/dashboard.php
 5e881d3d7bdbcd1c7584643633909d7e  kernel/private/classes/views/content/download.php
 00226173cf70ad95fb8faf07a5a9043d  kernel/private/classes/views/content/draft.php
-617ae7b366ff5188204ead815f0676ad  kernel/private/classes/views/content/edit.php
+eef832edd5901b35842d6325bf192e44  kernel/private/classes/views/content/edit.php
 b0694f25dce9a7d6f463fdca3c199b05  kernel/private/classes/views/content/hide.php
 3488097e7300ec1e3dfb107ee2a855d6  kernel/private/classes/views/content/history.php
 ee13ffb2baa7b9add8e3af5e543cf89a  kernel/private/classes/views/content/job.php
@@ -22603,7 +22603,7 @@ a8030849a6e4f72c3ddb4c34a40b54c2  kernel/private/classes/views/rss/edit_export.p
 2a463ec56671997cff3538550205a8a1  kernel/private/classes/views/rss/list.php
 94bbabb2c40ad43d8823f6a132fa6eed  kernel/private/classes/views/search/stats.php
 24b2d1a970be473e0b6393e4ccfee094  kernel/private/classes/views/secrets/list.php
-36fac6f2c2f6ca27398a72e3e4fd9376  kernel/private/classes/views/section/assign.php
+adb7fb397bc7e9a6356e4ba6125b7594  kernel/private/classes/views/section/assign.php
 c4070bfd53591451aab08268c53ad29b  kernel/private/classes/views/section/edit.php
 5b9b58c996b0f202cc6c2db817773c1b  kernel/private/classes/views/section/list.php
 fc3318084f95081eb84ad4f12ed1689f  kernel/private/classes/views/section/view.php
@@ -24833,7 +24833,7 @@ a63064e47b622565a9525d6f40914936  tests/tests/kernel/classes/eZRoleAssignmentPag
 be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSortTest.php
 2d3854eee9fdd39d64f775b25ee439ae  tests/tests/kernel/classes/eZRoleTest.php
 b3726da0cf9d0921445aa33e1c1c1991  tests/tests/kernel/classes/eZSectionFetchWithoutIdTest.php
-707ed1a2a882a4a1035051e0376910e5  tests/tests/kernel/classes/eZSectionScopeTest.php
+a367fbbef1190936509970cd036a7c3a  tests/tests/kernel/classes/eZSectionScopeTest.php
 f54782a8f10898bc22d75eaf1c33d2de  tests/tests/kernel/classes/eZSectionTest.php
 4191385b59cae3b5ac73a6da4acbf405  tests/tests/kernel/classes/eZShopCustomerOrderViewEmailTest.php
 e3cae9e3155eb2630b26d1e4b63fadfb  tests/tests/kernel/classes/eZSiteAccessGetIniAndFindPathTest.php

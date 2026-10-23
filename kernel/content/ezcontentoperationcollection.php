@@ -1693,12 +1693,14 @@ class eZContentOperationCollection
      * @param bool $updateSearchIndexes
      * @param string $scope eZSection::SCOPE_*: which objects below the node get the section
      * @param int|false $oldSectionID only objects in this section change (SCOPE_INHERITED: also the section it follows)
+     * @param bool $checkAccess true: the objects below the node the current user may not assign the section to keep
+     *                          theirs (eZSection::applyTo() passes it)
      *
      * @return void
      */
-    static public function updateSection( $nodeID, $selectedSectionID, $updateSearchIndexes = true, $scope = eZSection::SCOPE_SUBTREE, $oldSectionID = false )
+    static public function updateSection( $nodeID, $selectedSectionID, $updateSearchIndexes = true, $scope = eZSection::SCOPE_SUBTREE, $oldSectionID = false, $checkAccess = false )
     {
-        eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $selectedSectionID, $oldSectionID, $updateSearchIndexes, $scope );
+        eZContentObjectTreeNode::assignSectionToSubTree( $nodeID, $selectedSectionID, $oldSectionID, $updateSearchIndexes, $scope, (bool)$checkAccess );
     }
 
     /**
