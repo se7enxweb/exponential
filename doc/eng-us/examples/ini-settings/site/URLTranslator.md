@@ -2,14 +2,14 @@
 title: site.ini [URLTranslator]
 audience: developer, admin
 category: examples
-summary: "The settings of [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, DecodeOnce, TrailingCleanup ..."
-keywords: site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
+summary: "The settings of [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce ..."
+keywords: site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [URLTranslator]
 
-The block `[URLTranslator]` of `settings/site.ini`, with 12 setting(s).
+The block `[URLTranslator]` of `settings/site.ini`, with 13 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -112,6 +112,28 @@ Default: `255`.
 # settings/override/site.ini.append.php
 [URLTranslator]
 UrlAliasNameLimit=255
+*/ ?>
+```
+
+## ScriptFallbackTransformationGroup
+
+> Transformation group for a title that TransformationGroup leaves without a single letter,  
+> though the title has letters: a script without a transliteration table, such as Arabic,  
+> Persian, Chinese, Japanese, Korean, Thai or Devanagari, gives an empty alias with urlalias  
+> (and then node\_<id>, noname1 or \_1). With urlalias\_iri such a title keeps its letters,  
+> "دليل المستخدم" becomes "دليل-المستخدم". Only that title is converted with this group;  
+> a title that keeps a letter, also a mixed one like "Exponential دليل" ("exponential"),  
+> gives the same alias as before. Not used when it names TransformationGroup itself.  
+> Existing aliases stay as they are until their object is published again.  
+> Leave it empty to turn it off.  
+
+Default: `urlalias_iri`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[URLTranslator]
+ScriptFallbackTransformationGroup=urlalias_iri
 */ ?>
 ```
 

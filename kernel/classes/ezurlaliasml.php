@@ -3133,7 +3133,23 @@ class eZURLAliasML extends eZPersistentObject
         $ini = eZINI::instance();
         $group = $ini->variable( 'URLTranslator', 'TransformationGroup' );
 
+        $text = $urlElement;
         $urlElement = $trans->transformByGroup( $urlElement, $group );
+        // #16650: under TransformationGroup=urlalias a title in a script without a transliteration table lost all
+        // its letters, measured: Arabic 'دليل المستخدم', Chinese '用户手册', Thai, Devanagari, Georgian gave '',
+        // so the alias became node_<id>, noname1 or _1. When the configured group leaves no letter of a title
+        // that has letters, that title alone is converted with [URLTranslator] ScriptFallbackTransformationGroup.
+        // Titles that keep a letter (Latin, Cyrillic, Greek, Hebrew, mixed titles) give the same alias as before.
+        // The IRI group lets control and format characters (NUL, U+202E, U+200B, U+FEFF) and < > " { } | \ ^ `
+        // through, so they are removed first; the zero-width (non-)joiner U+200C/U+200D stays, Persian needs it.
+        $fallbackGroup = $ini->hasVariable( 'URLTranslator', 'ScriptFallbackTransformationGroup' )
+            ? trim( (string)$ini->variable( 'URLTranslator', 'ScriptFallbackTransformationGroup' ) ) : '';
+        if ( $fallbackGroup !== '' && $fallbackGroup !== $group
+             && preg_match( '/\p{L}/u', $urlElement ) !== 1 && preg_match( '/\p{L}/u', $text ) === 1 )
+        {
+            $text = preg_replace( array( '/(?![\x{200C}\x{200D}])[\p{Cc}\p{Cf}]/u', '/[<>"{}|\\\\^`]/' ), array( '', ' ' ), $text );
+            $urlElement = $trans->transformByGroup( $text, $fallbackGroup );
+        }
         if ( strlen( $urlElement ) == 0 )
         {
             if ( $defaultValue === false )

@@ -41,6 +41,7 @@ Links erscheinen.
 | `Translation` | `enabled` | Adressen werden über Aliasse aufgelöst |
 | `WordSeparator` | `dash` | `dash`, `underscore` oder `space` |
 | `TransformationGroup` | `urlalias` | `urlalias` (ASCII), `urlalias_iri` (behält Akzente und andere Buchstaben), `urlalias_compat` (alter Stil) |
+| `ScriptFallbackTransformationGroup` | `urlalias_iri` | für einen Titel, dem die Transformation keinen Buchstaben lässt (Arabisch, Chinesisch, Thai und andere Schriften ohne Transliterationstabelle unter `urlalias`); leer schaltet sie ab ([10. Titel in Schriften ohne Transliterationstabelle](../../../anleitungen/urls-und-aliase.md#10-titel-in-schriften-ohne-transliterationstabelle)) |
 | `UrlAliasNameLimit` | `255` | die Begrenzung je Pfadelement; `0` schaltet sie ab |
 | `LoadOnPartialAliasPath` | `/` | was ein unvollständiger Alias-Pfad lädt |
 | `DecodeOnce`, `TrailingCleanup` | `disabled` | zwei optionale Bereinigungen von Adressen ([8. Adressen dekodieren und bereinigen](../../../anleitungen/urls-und-aliase.md#8-adressen-dekodieren-und-bereinigen-zwei-optionale-einstellungen)) |

@@ -2,14 +2,14 @@
 title: site.ini [URLTranslator]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, DecodeOnce, TrailingCleanup ..."
-keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
+summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce ..."
+keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [URLTranslator]
 
-Der Block `[URLTranslator]` von `settings/site.ini`, mit 12 Einstellung(en).
+Der Block `[URLTranslator]` von `settings/site.ini`, mit 13 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -112,6 +112,28 @@ Standard: `255`.
 # settings/override/site.ini.append.php
 [URLTranslator]
 UrlAliasNameLimit=255
+*/ ?>
+```
+
+## ScriptFallbackTransformationGroup
+
+> Transformationsgruppe für einen Titel, dem TransformationGroup keinen einzigen Buchstaben lässt,  
+> obwohl der Titel Buchstaben hat: Eine Schrift ohne Transliterationstabelle, etwa Arabisch,  
+> Persisch, Chinesisch, Japanisch, Koreanisch, Thai oder Devanagari, ergibt mit urlalias einen leeren  
+> Alias (und dann node\_<id>, noname1 oder \_1). Mit urlalias\_iri behält ein solcher Titel seine Buchstaben,  
+> "دليل المستخدم" wird zu "دليل-المستخدم". Nur dieser Titel wird mit dieser Gruppe umgewandelt;  
+> ein Titel, der einen Buchstaben behält, auch ein gemischter wie "Exponential دليل" ("exponential"),  
+> ergibt denselben Alias wie bisher. Nicht verwendet, wenn sie TransformationGroup selbst nennt.  
+> Bestehende Aliase bleiben, wie sie sind, bis ihr Objekt erneut veröffentlicht wird.  
+> Leer lassen, um sie abzuschalten.  
+
+Standard: `urlalias_iri`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[URLTranslator]
+ScriptFallbackTransformationGroup=urlalias_iri
 */ ?>
 ```
 

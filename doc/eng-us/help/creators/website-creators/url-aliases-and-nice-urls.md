@@ -40,6 +40,7 @@ of its path: the article "Opening hours" in the folder "About us" is at `/About-
 | `Translation` | `enabled` | addresses are resolved by aliases |
 | `WordSeparator` | `dash` | `dash`, `underscore` or `space` |
 | `TransformationGroup` | `urlalias` | `urlalias` (ASCII), `urlalias_iri` (keeps accents and other letters), `urlalias_compat` (old style) |
+| `ScriptFallbackTransformationGroup` | `urlalias_iri` | for a title the transformation leaves without a letter (Arabic, Chinese, Thai and other scripts without a transliteration table under `urlalias`); empty turns it off ([10. Titles in scripts without a transliteration table](../../../guides/urls-and-aliases.md#10-titles-in-scripts-without-a-transliteration-table)) |
 | `UrlAliasNameLimit` | `255` | the limit per path element; `0` disables it |
 | `LoadOnPartialAliasPath` | `/` | what an incomplete alias path loads |
 | `DecodeOnce`, `TrailingCleanup` | `disabled` | two optional address cleanups ([8. Decoding and cleaning addresses](../../../guides/urls-and-aliases.md#8-decoding-and-cleaning-addresses-two-optional-settings)) |

@@ -360,6 +360,9 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
         // overriden in somewhere in the test installation.
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'WordSeparator', 'dash' );
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'TransformationGroup', 'urlalias' );
+        // The group alone, without the fallback for titles that lose all their letters (#16650,
+        // tests/tests/kernel/classes/urlalias/eZURLAliasMLScriptFallbackTest.php)
+        ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'ScriptFallbackTransformationGroup', '' );
 
         // ---------------------------------------------------------------- //
         // Not safe characters, all of these should be removed.
@@ -395,6 +398,9 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
         // overriden in somewhere in the test installation.
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'WordSeparator', 'underscore' );
         ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'TransformationGroup', 'urlalias_compat' );
+        // The group alone, without the fallback for titles that lose all their letters (#16650,
+        // tests/tests/kernel/classes/urlalias/eZURLAliasMLScriptFallbackTest.php)
+        ezpINIHelper::setINISetting( 'site.ini', 'URLTranslator', 'ScriptFallbackTransformationGroup', '' );
 
         // ---------------------------------------------------------------- //
         // Not safe characters, all of these should be removed.
