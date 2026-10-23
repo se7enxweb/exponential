@@ -11,9 +11,10 @@
             title="{'Upload a file to create a new object and add it to the relation'|i18n( 'design/admin/content/datatype' )}" />
 
     {run-once}
-    {* The upload dialog: Exponential UI (exp::io, exp::dialog, exp::upload, which expui loads on every page of this design) runs the steps
+    {* The upload dialog: Exponential UI (exp::core, exp::io, exp::dialog, exp::upload, requested here: a page loads them
+       once even where expui also puts them on every page of this design) runs the steps
        and server calls on jQuery 4 (expajaxuploader.js). *}
-    {ezscript_require( 'expajaxuploader.js' )}
+    {ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::dialog', 'exp::upload', 'expajaxuploader.js' ) )}
     <script type="text/javascript">
     {literal}
     (function () {

@@ -377,7 +377,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin/templates/audit/reauth.tpl
 d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
-f7be1f801db4c00267f7b1e9bad939c8  design/admin/templates/children.tpl
+b3243dc13f620b2234fd244784a62866  design/admin/templates/children.tpl
 46ec2e9cdb4f1348387240388bba7ec5  design/admin/templates/children_detailed.tpl
 a568d2812c3cb4b8fa1e847e9cd263c2  design/admin/templates/class/classlist.tpl
 c776b1b3be862fe04c3f70c459dde834  design/admin/templates/class/copy_confirm.tpl
@@ -432,9 +432,9 @@ e2e649ee6b2df9e8bc5c261cabee5b36  design/admin/templates/content/create_language
 ac31521e1d3e3362c34b594c91a035dd  design/admin/templates/content/dashboard.tpl
 bfafec6f1534648435eea78c170530df  design/admin/templates/content/datatype/edit/ezdate.tpl
 26655344716d7dbcf4513a4ef6f99400  design/admin/templates/content/datatype/edit/ezdatetime.tpl
-6cace2819d4428a6c0450f0bfec4abb1  design/admin/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
-93d7ded9436b47210525734bc4096745  design/admin/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
-ba1d4d544ccb1e95d82c3765672b3102  design/admin/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
+1c8ad15a529130c734723ed52c26cf5d  design/admin/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
+bb2cca52bf64529651c9536ffd43a0c9  design/admin/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
+66c43c2a7168b45225de1d1f95b8d7e4  design/admin/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 9da33d1967da5abff9e5e93122d26540  design/admin/templates/content/datatype/view/ezxmltags/literal.tpl
 22a66fa41f03bdf6e15550dfba9021f1  design/admin/templates/content/draft.tpl
 81b8d9930b59ef9e8e158f438e1c6b89  design/admin/templates/content/edit.tpl

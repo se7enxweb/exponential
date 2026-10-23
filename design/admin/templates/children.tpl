@@ -94,7 +94,7 @@
 </div>
 
 {* Load the sub-items table (Exponential UI's exp::datatable) even if the node has no children (cache blocks do not vary by this) *}
-{ezscript_require( array( 'ezajaxsubitems_expdatatable.js' ) )}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable', 'ezajaxsubitems_expdatatable.js' ) )}
 
 <!-- Children END -->
 
