@@ -164,7 +164,7 @@
     </message>
     <message>
         <source>Editor</source>
-        <translation>Uređivanje</translation>
+        <translation>Uređivač</translation>
     </message>
     <message>
         <source>Status</source>

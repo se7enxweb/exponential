@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>جارٍ تحميل أحدث مشاركات المنتدى...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>تعذّر تحميل أحدث مشاركات المنتدى.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10708,6 +10712,22 @@
         <source>Not saved: %error</source>
         <translation>لم يُحفظ: %error</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>التطبيق على</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>الشجرة الفرعية كاملة</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>الشجرة الفرعية، باستثناء الفروع الموجودة في قسم آخر</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>هذا الكائن فقط</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13296,7 +13316,7 @@ You can also remove the package without uninstalling it from the package list.</
         <source>Are you sure you want to remove the following packages?
 The packages will be lost forever.
 Note: The packages will not be uninstalled.</source>
-        <translation>هل أنت متأكد من أنك تريد إزالة الحزم التالية؟
+        <translation>هل تريد بالتأكيد إزالة الحزم التالية؟
 ستُفقد الحزم إلى الأبد.
 ملاحظة: لن يُلغى تثبيت الحزم.</translation>
     </message>
@@ -14234,6 +14254,10 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>هذا التثبيت عرض توضيحي عام: قد يعرف أي شخص كلمة مرور المسؤول، ولا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها. لا تُدخل هنا أي شيء خاص.</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>لا جديد</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14948,6 +14972,38 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>أدلة وبحث وكيفية الإبلاغ عن خطأ.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>الاتصالات</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جداول البيانات</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>قواعد بيانات مسمّاة: ملفات SQLite، MySQL، PostgreSQL، Oracle، SQL Server، MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>كلمات المرور والمفاتيح الخاصة بالأدوات، مخزّنة مشفّرة، وتُعرض بأسمائها فقط.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>الأسرار</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>جداول الأصناف الدائمة وحقولها وعلاقاتها ومكان تخزينها.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>المحتوى وجداول البيانات متزامنة: مرة واحدة، أو وفق جدول زمني، أو مباشرةً.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>المزامنات</translation>
     </message>
 </context>
 <context>
@@ -19504,7 +19560,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Search now</source>
-        <translation>ابحث الآن</translation>
+        <translation>البحث الآن</translation>
     </message>
     <message>
         <source>Per page</source>
@@ -19579,6 +19635,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>لاحظ أن تعيين القسم للعناصر الفرعية سيتغير أيضًا.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>الكائنات التي تحصل على القسم</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>العنصر المختار وكل كائن تحته</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>العنصر المختار والكائنات التي تحته ولها قسمه؛ تحتفظ الفروع الموجودة في قسم آخر بقسمها</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>العنصر المختار فقط</translation>
     </message>
 </context>
 <context>
@@ -27711,6 +27783,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Find</source>
         <translation>بحث</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>جدول بيانات جديد مع صنفه ومخططه وإدارته وسياساته ودوال الجلب ونقطة نهاية JSON، من قائمة حقول أو فئة محتوى أو مصدر استيراد.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>جدول وحدة</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject، على قاعدة بيانات الموقع أو على اتصال مسمّى</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/ و modules/&lt;module&gt;/ و share/db_schema.dba و sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -28838,7 +28926,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>JavaScript</source>
-        <translation>جافاسكربت</translation>
+        <translation>ملفات JavaScript</translation>
     </message>
     <message>
         <source>Images directory</source>
@@ -35553,6 +35641,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>قواعد احتساب ضريبة القيمة المضافة (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>لا تُطبَّق قواعد ضريبة القيمة المضافة هذه.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>لم يُعيَّن معالج لضريبة القيمة المضافة، لذا يُحمَّل كل منتج نوع ضريبة القيمة المضافة المعيّن عليه ولا تُقرأ هذه القواعد أبدًا. لتطبيقها، عيّن Handler=ezdefault في المقطع [VATSettings] من shop.ini (في settings/override/shop.ini.append.php) وأعطِ المنتجات نوع ضريبة القيمة المضافة &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>لا يمكن تحميل معالج ضريبة القيمة المضافة &quot;%handler&quot; المعيّن في المقطع [VATSettings] من shop.ini، لذا لا تُقرأ هذه القواعد أبدًا. تحقق من اسم المعالج ومن المجلدات التي يُبحث فيها عن معالجات ضريبة القيمة المضافة (RepositoryDirectories و ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -45713,7 +45813,7 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>Some of the locations you tried to remove has children, are you really sure you want to remove those locations?
 If you do all the children will be removed as well.</source>
-        <translation>بعض المواقع التي حاولت إزالتها لها عناصر فرعية، هل أنت متأكد حقًا من أنك تريد إزالة تلك المواقع؟
+        <translation>بعض المواقع التي حاولت إزالتها لها عناصر فرعية، هل تريد بالتأكيد إزالة تلك المواقع؟
 إذا فعلت ذلك فستُزال جميع العناصر الفرعية أيضًا.</translation>
     </message>
     <message>
@@ -46573,7 +46673,7 @@ When you are done with adding images click Next without choosing an image.</sour
         <source>Are you sure you want to remove the following packages?
 The packages will be lost forever.
 Note: The packages will not be uninstalled.</source>
-        <translation>هل أنت متأكد من أنك تريد إزالة الحزم التالية؟
+        <translation>هل تريد بالتأكيد إزالة الحزم التالية؟
 ستُفقد الحزم إلى الأبد.
 ملاحظة: لن يُلغى تثبيت الحزم.</translation>
     </message>
@@ -57955,6 +58055,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>حدث سير عمل تبديل eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>النسخ المتزامن إلى جداول البيانات</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -64792,6 +64896,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>تعذر عرض الحالة. أعد تحميل الصفحة لمتابعة المهمة.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>تحصل الكائنات في الشجرة الفرعية التي لها قسم هذا العنصر على القسم؛ وتحتفظ الفروع الموجودة في قسم آخر بقسمها، وتُتخطّى الكائنات التي لا يُسمح لك بتعيينه لها.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -69332,7 +69440,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Send me the link</source>
-        <translation>أرسل لي الرابط</translation>
+        <translation>إرسال الرابط إليّ</translation>
     </message>
     <message>
         <source>Have an account? Sign in and open your e-mail preferences directly.</source>
@@ -69380,7 +69488,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Send me a new link</source>
-        <translation>أرسل لي رابطًا جديدًا</translation>
+        <translation>إرسال رابط جديد إليّ</translation>
     </message>
     <message>
         <source>You are unsubscribed.</source>
@@ -69571,7 +69679,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Send me a link</source>
-        <translation>أرسل لي رابطًا</translation>
+        <translation>إرسال رابط إليّ</translation>
     </message>
     <message>
         <source>My e-mail preferences</source>
@@ -71638,7 +71746,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Look for an existing report</source>
-        <translation>ابحث عن بلاغ موجود</translation>
+        <translation>البحث عن بلاغ موجود</translation>
     </message>
     <message>
         <source>Missing a page? Tell us</source>
@@ -72026,7 +72134,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Install with Git</source>
-        <translation>ثبّت باستخدام Git</translation>
+        <translation>التثبيت باستخدام Git</translation>
     </message>
     <message>
         <source>The kernel and every extension as clones with history.</source>
@@ -72590,7 +72698,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Update with Git</source>
-        <translation>حدّث باستخدام Git</translation>
+        <translation>التحديث باستخدام Git</translation>
     </message>
     <message>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
@@ -73640,6 +73748,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>جماهير أخرى</translation>
     </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>لا يُسمح لك بإنشاء محتوى (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>يجري بناء الأدلة بالفعل.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>لا يوجد دليل %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>بناء دليل المساعدة %1 من مساعدة Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>بناء أدلة المساعدة من مساعدة Markdown</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -73865,6 +73993,1566 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
         <translation>هذا التثبيت عرض توضيحي عام: لا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>عدد الأسرار المشفّرة بمفتاح غير المفتاح الحالي: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>أُعيد تشفيرها بالمفتاح الحالي: %done، وكانت مشفّرة به أصلًا: %current، وتعذّرت قراءتها: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(يُنشأ عند تخزين أول سر)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>لا تكفي نسخة احتياطية من قاعدة البيانات وحدها لفك تشفير الأسرار</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>يتكوّن الاسم من حروف وأرقام و _ . : - (128 حرفًا على الأكثر)، ولا يبدأ بـ env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>يُنشأ مفتاح جديد، ويُعاد تشفير كل سر به، ويُحتفظ بالمفتاح القديم في الملف .previous. انسخ ملف المفتاح الجديد احتياطيًا بعد ذلك.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>اسم جديد، أو اسم سر موجود لاستبدال قيمته. القيمة الفارغة: يتغيّر الوصف فقط.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>عُدّل</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>المصدر</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>إنشاء الجدول</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>الوصف</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>إعادة تشفير كل الأسرار بالمفتاح الحالي</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>التشفير</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>يرجى إدخال القيمة.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>معرّف المفتاح</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>الأسماء</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>لا توجد أسرار بعد.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>للأداة %scope فقط.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>كلمات المرور والرموز المميزة ومفاتيح API الخاصة بالأدوات: اتصالات قواعد البيانات ومصادر الاستيراد والخوادم البعيدة. تحتفظ الأداة باسم السر؛ أما القيمة فتُخزَّن هنا مشفّرة ولا تُعرض مرة أخرى أبدًا.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>المفتاح السابق</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>تدوير</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>تدوير المفتاح</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>الأسرار</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>تعيين سر</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>تغيّر وصف %name؛ وبقيت قيمته كما هي.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>تعذّر تدوير المفتاح (يُدوَّر المفتاح القادم من EXP_SECRET_KEY بتعيين مفتاح جديد فيه وتعيين القديم في EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>المفتاح ليس في قاعدة البيانات. احتفظ بنسخة من ملف المفتاح (أو من EXP_SECRET_KEY) مع كل نسخة احتياطية، في مكان آمن خاص بها. بدونه لا يمكن قراءة أسرار قاعدة بيانات مستعادة، ويجب تعيينها من جديد.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>دُوِّر المفتاح: أُعيد تشفير الأسرار: %done، وتعذّرت قراءة: %bad. انسخ ملف المفتاح الجديد احتياطيًا الآن.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>أُزيل السر %name.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>خُزِّن السر %name مشفّرًا. لن تُعرض قيمته مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>تعذّر تخزين السر: راجع المفتاح أعلاه.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>الجدول exp_secret غير موجود</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>اسم الأداة حروف صغيرة وأرقام و _ . - (64 حرفًا على الأكثر).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>ضع علامة على &quot;نعم، تدوير المفتاح&quot; أولًا.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>ضع علامة في المربع بجانب السر لإزالته. تفشل الأداة التي تسمّيه إلى أن يُعيَّن من جديد.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>لتدوير مفتاح من البيئة: عيّن المفتاح الجديد في EXP_SECRET_KEY والقديم في EXP_SECRET_KEY_PREVIOUS، ثم أعد تشفير كل الأسرار هنا.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>الأداة</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>إلى أن يُنشأ، لا يمكن استخدام إلا أسرار secrets.ini ومتغيرات البيئة (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>القيمة</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>من يستخدمه، مثلًا datatable و sqliimport و ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>نعم، إزالة %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>نعم، تدوير المفتاح</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>لا يمكن فك تشفيره هنا</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>مشفّر</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>الملف secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>الملف .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>متغير البيئة EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>ملف المفتاح %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count صنف</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count إلى المحتوى</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>المعروض: %shown من أصل %all صنف.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>اسم مضيف أو عنوان؛ فارغ لـ SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>سر من الإعداد &gt; الأسرار، أو env:VARIABLE لمتغير بيئة.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>الكل (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>متاح</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>رجوع إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>مجموعة الأحرف</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>الصنف</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>الصنف أو الجدول أو الحقل</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>الأصناف على هذا الاتصال: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>العمود</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>العمود في قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>تم الاتصال عبر %via في %ms ms: %version، عدد الجداول: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>الاتصال</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>الاتصالات</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>الاتصالات (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>فئة المحتوى</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>كائن المحتوى</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>إنشاء الجداول</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جداول البيانات</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>قواعد البيانات التي يمكن لجداول البيانات وأدوات الاستيراد والتصدير استخدامها إلى جانب قاعدة بيانات هذا التثبيت: ملف SQLite، أو خادم MySQL أو MariaDB أو PostgreSQL أو Oracle أو SQL Server أو MongoDB، هنا أو عن بُعد. كلمة المرور هي اسم سر، وليست قيمته أبدًا.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>معرَّف في datatable.ini [Connection_%id] عبر الإعدادات أو عبر امتداد: غيّره هناك. يمكن اختباره هنا.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>الافتراضي</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>الوصف</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>الاختلافات</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>المشغّل</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>فارغ للمنفذ المعتاد للمحرك.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>المحرك</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>المحركات على هذا الخادم</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>الامتداد %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>الحقل</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>حقل الهدف</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>الحقول</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>تصفية</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>لـ SQL Server: sqlsrv أو dblib أو odbc (أول ما يتوفر على هذا الخادم إذا تُرك فارغًا).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>لـ SQLite الملف، مثلًا %example (في %dirs). لـ Oracle اسم الخدمة.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>سمات الدوال: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>المعرّف</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>نواة النظام</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>المفتاح: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>معروف من</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>أُنشئ في</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>إعادة إنشاء الكتالوج</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>المزيد</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>تحتاج الاتصالات المسمّاة إلى الجدول exp_data_connection، ويحتاج مخزن الأسرار إلى الجدول exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>اتصال جديد</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>لا يوجد صنف دائم مطابق.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>لا توجد علاقة معروفة.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>لا توجد صفوف.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>العقدة</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>غير معروض: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>فقط لمحرك يُوصَل إليه عبر PDO، عندما لا يكفي الخادم والمنفذ وقاعدة البيانات. ليس كلمة مرور أبدًا.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>اسم مصدر بيانات PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>مشغّل PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>كلمة المرور نفسها</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>كلمة المرور: اسم سر</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>يشير إلى</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>المنفذ</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>للقراءة فقط: لا تكتب فيه المزامنة أبدًا</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>العلاقات</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>إزالة هذا الاتصال</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>مطلوب</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>الصفوف</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>يمكن أن توجد ملفات SQLite في: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>الأسرار</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>القسم</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>الخادم</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>الخادم وقاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>المقبس</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>يمكن لمن لديه السياسة datatable/manage إنشاؤها هنا.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>تخزينها في مخزن الأسرار عند الحفظ</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>يتطلب تخزين كلمة مرور السياسةَ secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>الجدول</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>اختبار</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>اختبار الاتصال</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>يُنشأ الكتالوج من مصفوفات autoload ويُحتفظ به إلى أن تتغيّر.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>أُعيد إنشاء الكتالوج: %count صنف.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>العمود %column (%type) غير موجود في التعريف.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>فشل الاتصال بعد %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>لم يُحفظ الاتصال</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>حُفظ الاتصال.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>تعذّرت قراءة تعريف هذا الصنف</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>الحقل %column (%type) ليس له عمود.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>الحقل %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>أول %count صف</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>تعذّر تخزين كلمة المرور في مخزن الأسرار (توضح صفحة الإعداد &gt; الأسرار السبب).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>الجدول %table غير موجود في قاعدة البيانات.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>الجدول exp_data_connection غير موجود: يمكن اختبار الاتصال لكن لا يمكن حفظه إلى أن يُنشأ الجدول في صفحة جداول البيانات.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>الجدول exp_data_connection غير موجود: أنشئه في صفحة &lt;a href=&quot;%url&quot;&gt;جداول البيانات&lt;/a&gt;. حتى ذلك الحين لا تُسرد إلا الاتصالات المعرَّفة في datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>الجدول exp_data_connection غير موجود: أنشئه في صفحة جداول البيانات أولًا.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>جداول ميزة جداول البيانات لم تُثبَّت بعد</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>جداول الأصناف الدائمة في هذا التثبيت، كما تصفها تعريفاتها، ومكان تخزين كل منها.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>تُنشأ على قاعدة البيانات هذه بالزر أدناه؛ ولا يتغيّر شيء آخر.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>قاعدة البيانات الخاصة بهذا التثبيت، من site.ini. يمكن اختبارها هنا.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>هذا السر غير معيّن.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>ضع علامة على &quot;نعم، إزالته&quot; لإزالة الاتصال. تفشل الأصناف والأدوات التي تسمّيه حينها إلى أن يُنشأ من جديد.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>ضع علامة في المربع أدناه لتخزينها مشفّرة بوصفها السر المسمّى أعلاه (datatable. والمعرّف عندما يكون الاسم فارغًا).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>تُستخدم للاختبار فقط ولا تُعرض مرة أخرى أبدًا.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>المستخدم</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>الاسم الذي تشير به الأصناف والأدوات إليه: حروف صغيرة وأرقام و _. لا يمكن تغييره لاحقًا.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>مصدر الأصناف</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>مواضع اختلاف الجدول عن التعريف</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>نعم، إزالته</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>مفتاح خارجي لحقل</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>تزايدي: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>الملف datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>تفشل definition()</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>مستنتج من الاسم</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>مفتاح</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>مفقود</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>غير متاح هنا</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>غير معيّن</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>للقراءة فقط</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>معيّن</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>الموقع</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>الملف site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>الإدارة</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>التعريف</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>غير معروف</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>لم يُختبر هنا</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>عدد الصفوف التي تشير إلى هذا العنصر عبر %column (%kind): %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>عدد الصفوف التي فيها %field يساوي %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>عدد الصفوف: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>العبارات: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>كل الصفوف (%count)</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>كل الصفوف</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>تطبيق</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>تغيير الأعمدة والفهارس المختلفة</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>إنشاء الجدول</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>إنشاء جداول صنف أو امتداد على اتصال، أو تحديثها. لا يُنفَّذ شيء قبل &quot;تطبيق&quot;؛ ولا تُحذف الأعمدة والفهارس أو تُغيَّر إلا عندما تضع علامة على ذلك.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تم</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>حذف الأعمدة والفهارس غير الموجودة في المخطط</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>من تعريف صنف</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>لا يشير أي صف من جداول البيانات إلى هذا العنصر.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>لم يُنفَّذ لعدم وضع علامة عليه أعلاه: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>تعذّر تنفيذ كل شيء</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>على الاتصال</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>أو من ملف مخطط امتداد</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>صفوف %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>صفوف جداول البيانات التي تشير إلى هذا العنصر</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>المخطط</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>عرض ما سيُنفَّذ</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>الاتصال %id للقراءة فقط.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>لا يحتوي الامتداد %name على share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>SQL التثبيت لكل محرك</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>لا يوجد اتصال %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>لا يوجد صنف دائم %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>ترقية الجدول</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>ما سيُنفَّذ على %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>إنشاء</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>محدَّث</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>ترقية</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>الأسطر: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>فئة محتوى</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>معرّف فئة محتوى، أو connection:table، أو ما يطلبه المصدر. غير مطلوب للقائمة.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>كائن محتوى (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>رابط في مجموعة جداول البيانات في قائمة الإعداد، للمستخدمين الذين لديهم السياسة read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>قائمة حقول تُكتب هنا</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>جدول بيانات جديد مع كل ما يحيط به: الصنف الدائم، والمخطط و SQL التثبيت لكل محرك، ووحدة فيها السرد والتحرير والإزالة ونقطة نهاية JSON، وسياساتها، وصفحات الإدارة، ودوال الجلب للقوالب. تأتي الحقول من قائمة، أو فئة محتوى، أو جدول موجود، أو مصدر استيراد. لا يُكتب شيء إلى أن تطلب ذلك، ويُثبَّت الجدول من هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>اسم جديد، أو امتداد موجود لإضافة الجدول إليه.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>عقدة (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>تفعيل الامتداد</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>إضافة created و modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>إضافة إلى الامتداد</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>قوالب الإدارة</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>جدول موجود (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>المؤلف</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>كلاهما</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>تحديث الجدول</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>نسخ حقوله إلى القائمة</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>تنزيل كملف zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>يحصل كل جدول أيضًا على id، وهو مفتاح تعدّه قاعدة البيانات تصاعديًا.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>الامتداد</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>الحقول، حقل في كل سطر: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>التسمية</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>تُرك كما هو: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>الترخيص</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>الوحدة</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>معالج جداول الوحدات</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>فتح الوحدة</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>صنف PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>الأجزاء والترخيص والمؤلف</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>الصنف الدائم</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>التطوير السريع للتطبيقات</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>التحديث: autoloads وذاكرة التخزين المؤقت</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>المخطط و SQL التثبيت</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>مدخل في قائمة الإعداد</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>عرض الملفات</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>دوال الجلب للقوالب</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>صنف eZPersistentObject الخاص بالجدول، مع حقوله واتصاله وعلاقاته.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>الامتداد والجدول</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>الامتداد موجود: يضيف المعالج الملفات غير الموجودة فيه ويُلحق إعداداته؛ ولا يُكتب فوق أي شيء هناك.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>الامتداد نشط.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>كُتب الامتداد لكنه غير نشط.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>الحقول</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>حقول %source موجودة في القائمة الآن: غيّرها حسب حاجتك.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>الملفات (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>نص الترخيص (لامتداد جديد فقط).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>صفحات الوحدة في الإدارة (مكوّنات admin4، بلا أنماط مضمّنة).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>الجدول غير موجود بعد.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>الجدول موجود.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>ربط كل صف بالمحتوى</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>لتثبيت الامتداد كحزمة (لامتداد جديد فقط).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>الأنواع: %types. الأنواع object و node و user علاقات بالمحتوى: يعرض عرض المحتوى الصفوف التي تشير إلى عنصر.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>فريد</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>الإصدار</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>ما تعرضه صفحة &quot;حول&quot; (لامتداد جديد فقط).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>ما أُنشئ، وكيفية تثبيته واستخدامه.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>مصدر الحقول</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>أيّها</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>كتابة الامتداد</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>موجود، تُرك كما هو</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php و extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>الدوال fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list و edit و remove ونقطة نهاية REST/JSON المسمّاة json، مع السياستين read و edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba و sql/&lt;engine&gt;/schema.sql لـ MySQL و PostgreSQL و SQLite و Oracle و SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>كُتب</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>التعارضات: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>شُغّل %name: الصفوف المكتوبة: %rows، الكائنات المكتوبة: %objects، دون تغيير: %same، التعارضات: %conflicts، الفاشلة: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>بدأ تشغيل %name في الخلفية (%engine)؛ ويظهر في سجل التشغيلات.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>اقتُرحت خريطة ربط: راجعها ثم احفظ.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>المصدر هو معرّف سمة في فئة المحتوى، أو أحد ما يلي: %list. لا يُكتب إلى المحتوى إلا السمات.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>السؤال: تعارض يجب حله</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>تغيّر كل من المحتوى والصف منذ آخر تشغيل لمزامنة ثنائية الاتجاه تطرح السؤال. اختر جانبًا؛ ويُكتب فوق الآخر.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>في الاتجاهين</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>التعارضات</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>التعارضات (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>المحتوى</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>المحتوى والجدول</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>نسخ المحتوى إلى جدول بيانات، أو نسخ جدول إلى المحتوى، أو إبقاء الاثنين متزامنين: مرة واحدة، أو وفق جدول زمني، أو مباشرةً عند كل نشر ونقل وإزالة.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>المحتوى إلى الجدول</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>الأولوية للمحتوى</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>جدول بيانات (صنف دائم)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>الاتجاه</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطأ</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>الفاصل (بالثواني)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>فشل</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>عُثر عليه %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>عمود (أعمدة) المفتاح</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخر تشغيل</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>مباشرةً، ووفق جدول زمني</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>مباشرةً: يُكتب كل نشر ونقل وإزالة لكائن من الفئة تحت العقدة إلى الجدول فورًا.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>خريطة الربط: سطر لكل عمود، column = source</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>مزامنة جديدة</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>لا يطابق أي عمود من الصنف سمةً أو مصدرًا معروفًا: اكتب خريطة الربط بنفسك.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>لا يوجد تعارض مفتوح.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>لا توجد مزامنة بعد.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>وفق جدول زمني</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>اقتراح خريطة الربط</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>إزالة صف الكائن الذي يُزال أو يغادر الشجرة الفرعية</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>إزالة هذه المزامنة</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>التشغيل الآن</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>التشغيلات</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>الحفظ والتشغيل الآن</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>وقت البدء</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>متوقفة (بلا تشغيلات مجدولة أو مباشرة)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>المزامنات</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>اعتماد المحتوى</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>اعتماد الجدول</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>تعذّر حل التعارض؛ ويبقى مفتوحًا.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>كُتبت قيم المحتوى في الجدول.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>آخر التشغيلات</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>العمود (الأعمدة) المربوطة التي يُطابَق بها الصف، مثلًا contentobject_id أو remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>الأولوية للتغيير الأحدث</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>تبقى الصفوف والمحتوى؛ ولا يُزال إلا الربط والتعارضات المفتوحة.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>الشجرة الفرعية التي تُقرأ للجدول، والأصل للكائنات المُنشأة من الصفوف.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>لم تُحفظ المزامنة</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>حُفظت المزامنة.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>مزامنات فئة الكائن المنشور</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>الجدول إلى المحتوى</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>الأولوية للجدول</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>نُشرت قيم الجدول في المحتوى.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>جداول المزامنة لم تُثبَّت بعد</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>لا توجد مزامنة لجداول البيانات بعد (الإعداد &gt; جداول البيانات &gt; المزامنات).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>عندما يتغيّر الجانبان</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>عند البدء</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>إذا لم يُحدَّد أي منها، يُكتب الكائن إلى كل مزامنة لفئته تحتويه شجرتها الفرعية.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>في الاتجاهين</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>المحتوى إلى الجدول</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>كل %minutes دقيقة</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>تُنشأ exp_data_sync و exp_data_sync_link و exp_data_sync_conflict على قاعدة البيانات هذه بالزر؛ ولا يتغيّر شيء آخر.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>مباشر</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>الكائن %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>متوقف</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>الجدول إلى المحتوى</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>عند البدء</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>هل تبحث عن استيراد أو تصدير آخر؟</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>استيراد</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>تصدير</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>الاستيراد والتصدير</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>يعمل مع هذه الأداة</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>ما أداة الاستيراد أو التصدير التي أحتاجها؟</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>ما الأداة التي أحتاجها؟</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>أدوات الاستيراد والتصدير لهذه المهمة</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>الحزم</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>نقل المحتوى مع فئاته، أو الفئات والامتدادات والتصاميم، إلى تثبيت آخر كملف حزمة.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>تصدير الفئات كحزمة…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>رفع حزمة وتثبيتها…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>استيراد RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>إنشاء محتوى من موجز RSS أو Atom لموقع آخر، مرارًا وتكرارًا عبر مهمة cron rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>تصدير RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>نشر أحدث عناصر مجلد كموجز RSS أو Atom، أو قائمة موجزات بصيغة OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>المعلومات المجمعة</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>تنزيل ما جمعه نموذج واحد كملف CSV، من قائمة المعلومات المجمعة.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>تصدير التدقيق</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>تنزيل سجلات سجل التدقيق، مصفّاة كما في وحدة التحكم، بصيغة CSV أو JSON lines أو JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>تصدير PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>إنشاء مستند PDF من مجلد وعناصره، للطباعة أو للإرسال.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جداول البيانات</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>جداول الأصناف الدائمة واتصالات قواعد البيانات المسمّاة: وصف الجداول وإنشاؤها وترقيتها على أي اتصال، واستعراض صفوفها، ومعرفة ما يشير منها إلى المحتوى.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>إنشاء جدول أو ترقيته على اتصال قاعدة بيانات…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>استعراض جداول الأصناف الدائمة…</translation>
     </message>
 </context>
 </TS>

@@ -7580,6 +7580,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>De nieuwste forumberichten worden geladen...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>De nieuwste forumberichten konden niet worden geladen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -11087,6 +11091,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Niet opgeslagen: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Toepassen op</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Hele substructuur</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Substructuur, behalve takken in een andere sectie</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Alleen dit object</translation>
     </message>
 </context>
 <context>
@@ -14662,6 +14682,18 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Help center</source>
         <translation>Helpcentrum</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Niets nieuws</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demomodus</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Deze installatie is een openbare demo: iedereen kan het beheerderswachtwoord kennen, en beheerderswachtwoorden kunnen niet worden gewijzigd of teruggezet. Voer hier niets persoonlijks in.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15376,6 +15408,38 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Handleidingen, zoeken en hoe je een fout meldt.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Verbindingen</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabellen</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Benoemde databases: SQLite-bestanden, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Wachtwoorden en sleutels van de tools, versleuteld opgeslagen, alleen op naam getoond.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimen</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>De tabellen van de persistente klassen, hun velden, relaties en opslag.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Inhoud en datatabellen gelijk gehouden: eenmalig, volgens schema of direct.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisaties</translation>
     </message>
 </context>
 <context>
@@ -19569,6 +19633,22 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Let op: ook de sectietoewijzing van de subitems wordt gewijzigd.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Welke objecten de sectie krijgen</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Het gekozen item en elk object daaronder</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Het gekozen item en de objecten daaronder die dezelfde sectie hebben; takken in een andere sectie houden de hunne</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Alleen het gekozen item</translation>
     </message>
 </context>
 <context>
@@ -26061,6 +26141,22 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <source>Find</source>
         <translation>Zoeken</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Een nieuwe datatabel met klasse, schema, beheer, beleidsregels, fetch-functies en JSON-endpoint, uit een lijst met velden, een inhoudsklasse of een importbron.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Moduletabel</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, op de database van de site of een benoemde verbinding</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba en sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/datatype</name>
@@ -28886,6 +28982,18 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>Btw-regels (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Deze btw-regels worden niet toegepast.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Er is geen btw-handler ingesteld, dus voor elk product wordt het btw-type gerekend dat erbij is ingesteld, en deze regels worden nooit gelezen. Om ze toe te passen, stel je Handler=ezdefault in onder [VATSettings] in shop.ini (in settings/override/shop.ini.append.php) en geef je de producten het btw-type &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>De btw-handler &quot;%handler&quot; die onder [VATSettings] in shop.ini is ingesteld, kan niet worden geladen, dus deze regels worden nooit gelezen. Controleer de naam van de handler en de mappen waarin naar btw-handlers wordt gezocht (RepositoryDirectories en ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -43704,6 +43812,14 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Dit wachtwoord is bekend of te gangbaar, dus iedereen kan het raden. Kies een ander wachtwoord.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demomodus</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>De omgevingsvariabele EXP_DEMO_MODE=1 markeert deze installatie als openbare demo: een algemeen bekend beheerderswachtwoord wordt geaccepteerd, en beheerderswachtwoorden kunnen later niet worden gewijzigd of teruggezet. Gebruik de demomodus nooit voor een productiesite.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -44731,7 +44847,7 @@ Daarvoor moet je de %chown-opdrachten onder Alternatieve shellopdrachten wijzige
     </message>
     <message>
         <source>Order</source>
-        <translation>Volgorde</translation>
+        <translation>Bestelling</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -50791,6 +50907,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Workflowgebeurtenis voor wisselen van eZ Page</translation>
+    </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Spiegelen naar datatabellen</translation>
     </message>
 </context>
 <context>
@@ -58988,7 +59108,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Volgorde</translation>
+        <translation>Bestelling</translation>
     </message>
     <message>
         <source>Date</source>
@@ -60503,7 +60623,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Volgorde</translation>
+        <translation>Bestelling</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -65995,6 +66115,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>De status kon niet worden getoond. Laad de pagina opnieuw om de taak te volgen.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>De objecten in de substructuur die de sectie van dit item hebben, krijgen de sectie; takken in een andere sectie houden de hunne, en objecten waaraan je de sectie niet mag toewijzen, worden overgeslagen.</translation>
     </message>
 </context>
 <context>
@@ -74284,7 +74408,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Your sponsorship pays for:</source>
-        <translation>Uw sponsoring betaalt:</translation>
+        <translation>Je sponsoring betaalt:</translation>
     </message>
     <message>
         <source>About %name</source>
@@ -74368,7 +74492,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Write and talk about Exponential: the facts, the history, the people, quotes, images and who to contact.</source>
-        <translation>Schrijf en praat over Exponential: de feiten, de geschiedenis, de mensen, citaten, beelden en wie u kunt benaderen.</translation>
+        <translation>Schrijf en praat over Exponential: de feiten, de geschiedenis, de mensen, citaten, beelden en wie je kunt benaderen.</translation>
     </message>
     <message>
         <source>Training</source>
@@ -74388,11 +74512,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Contribute extensions back</source>
-        <translation>Deel uw extensies</translation>
+        <translation>Je extensies delen</translation>
     </message>
     <message>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
-        <translation>Deel de extensies die u verspreidt, zoals de GPL vereist, zodat iedereen er baat bij heeft.</translation>
+        <translation>Deel de extensies die je verspreidt, zoals de GPL vereist, zodat iedereen er baat bij heeft.</translation>
     </message>
     <message>
         <source>The Exponential project</source>
@@ -74400,7 +74524,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The Exponential project: what it is, its licenses, roadmap, support, community channels, and how to contribute and give.</source>
-        <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe u bijdraagt en geeft.</translation>
+        <translation>Het Exponential-project: wat het is, de licenties, de roadmap, ondersteuning, kanalen van de gemeenschap en hoe je bijdraagt en geeft.</translation>
     </message>
     <message>
         <source>Two ways to build</source>
@@ -75069,6 +75193,1593 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>More audiences</source>
         <translation>Meer doelgroepen</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Je mag geen inhoud aanmaken (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>De handleidingen worden al gebouwd.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Er is geen handleiding %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>De helphandleiding %1 bouwen uit de Markdown-help</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>De helphandleidingen bouwen uit de Markdown-help</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count geheimen zijn versleuteld met een andere sleutel dan de huidige.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done geheimen opnieuw versleuteld met de huidige sleutel, %current waren dat al, %bad konden niet worden gelezen.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(wordt aangemaakt wanneer het eerste geheim wordt opgeslagen)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Een back-up van alleen de database kan de geheimen niet ontsleutelen</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Een naam bestaat uit letters, cijfers en _ . : - (maximaal 128) en begint niet met env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Er wordt een nieuwe sleutel aangemaakt, elk geheim wordt daarmee opnieuw versleuteld, en de oude sleutel wordt bewaard als het .previous-bestand. Maak daarna een back-up van het nieuwe sleutelbestand.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Een nieuwe naam, of de naam van een bestaand geheim om de waarde ervan te vervangen. Lege waarde: alleen de beschrijving verandert.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Gewijzigd</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Afkomstig uit</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabel aanmaken</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Elk geheim opnieuw versleutelen met de huidige sleutel</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Versleuteling</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Geef de waarde op.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Sleutel-ID</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namen</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Nog geen geheim.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Alleen de tool %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Wachtwoorden, tokens en API-sleutels van de tools: databaseverbindingen, importbronnen, externe servers. Een tool bewaart de naam van een geheim; de waarde wordt hier versleuteld opgeslagen en nooit meer getoond.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Vorige sleutel</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Roteren</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Sleutel roteren</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimen</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Geheim instellen</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>De beschrijving van %name is gewijzigd; de waarde is behouden.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>De sleutel</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>De sleutel kon niet worden geroteerd (een sleutel uit EXP_SECRET_KEY roteer je door een nieuwe in te stellen en de oude als EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>De sleutel staat niet in de database. Bewaar bij elke back-up een kopie van het sleutelbestand (of van EXP_SECRET_KEY) op een eigen, veilige plek. Zonder die kopie kunnen de geheimen van een herstelde database niet worden gelezen en moeten ze opnieuw worden ingesteld.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>De sleutel is geroteerd: %done geheimen opnieuw versleuteld, %bad konden niet worden gelezen. Maak nu een back-up van het nieuwe sleutelbestand.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Het geheim %name is verwijderd.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Het geheim %name is versleuteld opgeslagen. De waarde wordt niet meer getoond.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Het geheim kon niet worden opgeslagen: zie de sleutel hierboven.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>De tabel exp_secret ontbreekt</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>De tool bestaat uit kleine letters, cijfers en _ . - (maximaal 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Vink eerst &quot;Ja, sleutel roteren&quot; aan.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Vink het vakje naast het geheim aan om het te verwijderen. Een tool die het noemt, mislukt totdat het opnieuw is ingesteld.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Een sleutel uit de omgeving roteren: stel de nieuwe sleutel in als EXP_SECRET_KEY en de oude als EXP_SECRET_KEY_PREVIOUS, en versleutel daarna hier elk geheim opnieuw.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Tool</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Totdat die is aangemaakt, kunnen alleen de geheimen uit secrets.ini en omgevingsvariabelen (env:NAME) worden gebruikt.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Wie het gebruikt, bijv. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ja, %name verwijderen</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ja, sleutel roteren</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>kan hier niet worden ontsleuteld</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>versleuteld</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>het bestand secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>het .previous-bestand</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>de omgevingsvariabele EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>het sleutelbestand %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count klassen</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count naar inhoud</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown van %all klassen getoond.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Een hostnaam of adres; leeg voor SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Een geheim uit Setup &gt; Geheimen, of env:VARIABLE voor een omgevingsvariabele.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alle (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Beschikbaar</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Terug naar de lijst</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Tekenset</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klasse, tabel of veld</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klassen op deze verbinding: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolom</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Kolom in de database</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Verbonden via %via in %ms ms: %version, %tables tabellen.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Verbinding</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Verbindingen</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Verbindingen (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Inhoudsklasse</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Inhoudsobject</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Tabellen aanmaken</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabellen</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Databases die de datatabellen en de import- en exporttools naast de eigen database van deze installatie kunnen gebruiken: een SQLite-bestand, of een MySQL-, MariaDB-, PostgreSQL-, Oracle-, SQL Server- of MongoDB-server, lokaal of extern. Een wachtwoord is de naam van een geheim, nooit de waarde ervan.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Vastgelegd in datatable.ini [Connection_%id] door de instellingen of een extensie: wijzig het daar. Hier kan de verbinding worden getest.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standaard</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Verschillen</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Stuurprogramma</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Leeg voor de gebruikelijke poort van het databasesysteem.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Databasesysteem</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Databasesystemen op deze server</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensie %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Veld</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Veld van het doel</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Velden</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Voor SQL Server: sqlsrv, dblib of odbc (leeg: de eerste die deze server heeft).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Voor SQLite het bestand, bijv. %example (in %dirs). Voor Oracle de servicenaam.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Functieattributen: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificatie</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Sleutel</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Sleutel: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Bekend uit</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Aangemaakt in</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Catalogus opnieuw opbouwen</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Meer</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Benoemde verbindingen hebben de tabel exp_data_connection nodig, de geheimenopslag de tabel exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Nieuwe verbinding</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Geen persistente klasse komt overeen.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Er is geen relatie bekend.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Geen rijen.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Node</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Niet getoond: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Alleen voor een databasesysteem dat via PDO wordt bereikt, als server, poort en database niet volstaan. Nooit een wachtwoord.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Naam van de PDO-gegevensbron (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO-stuurprogramma</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Het wachtwoord zelf</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Wachtwoord: de naam van een geheim</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Verwijst naar</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Poort</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Alleen lezen: de synchronisatie schrijft er nooit naar</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relaties</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Deze verbinding verwijderen</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Verplicht</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rijen</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite-bestanden mogen staan in: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Geheimen</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectie</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server en database</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Unix-socket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Iemand met de beleidsregel datatable/manage kan ze hier aanmaken.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Bij het opslaan in de geheimenopslag bewaren</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Om een wachtwoord op te slaan is de beleidsregel secrets/manage nodig.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabel</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testen</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Verbinding testen</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>De catalogus wordt opgebouwd uit de autoload-arrays en bewaard totdat die veranderen.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>De catalogus is opnieuw opgebouwd: %count klassen.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>De kolom %column (%type) staat niet in de definitie.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>De verbinding is na %ms ms mislukt: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>De verbinding is niet opgeslagen</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>De verbinding is opgeslagen.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>De definitie van deze klasse kan niet worden gelezen</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Het veld %column (%type) heeft geen kolom.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Het veld %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>De eerste %count rijen</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Het wachtwoord kon niet in de geheimenopslag worden opgeslagen (Setup &gt; Geheimen geeft de reden).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>De tabel %table staat niet in de database.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>De tabel exp_data_connection ontbreekt: een verbinding kan worden getest, maar pas worden opgeslagen als de tabel op de pagina Datatabellen is aangemaakt.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>De tabel exp_data_connection ontbreekt: maak deze aan op de pagina &lt;a href=&quot;%url&quot;&gt;Datatabellen&lt;/a&gt;. Tot die tijd worden alleen de verbindingen uit datatable.ini getoond.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>De tabel exp_data_connection ontbreekt: maak deze eerst aan op de pagina Datatabellen.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>De tabellen van de datatabellen zijn nog niet geïnstalleerd</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>De tabellen van de persistente klassen van deze installatie, zoals hun definities ze beschrijven, en waar elke tabel is opgeslagen.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Ze worden met de knop hieronder in deze database aangemaakt; verder verandert er niets.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>De eigen database van deze installatie, uit site.ini. Hier kan de verbinding worden getest.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Dit geheim is niet ingesteld.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Vink &quot;Ja, verwijderen&quot; aan om de verbinding te verwijderen. Klassen en tools die haar noemen, mislukken daarna totdat ze opnieuw is aangemaakt.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Vink het vakje hieronder aan om het versleuteld op te slaan als het hierboven genoemde geheim (datatable. en de identificatie als de naam leeg is).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Wordt alleen voor een test gebruikt en nooit meer getoond.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Gebruiker</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>De naam waarmee klassen en tools haar noemen: kleine letters, cijfers en _. Deze kan later niet worden gewijzigd.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Waar de klassen vandaan komen</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Waar de tabel afwijkt van de definitie</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ja, verwijderen</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>een vreemde sleutel van een veld</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>automatisch opgehoogd: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>het bestand datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() mislukt</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>bestaat</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>afgeleid uit de naam</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>sleutel</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>ontbreekt</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>hier niet beschikbaar</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>niet ingesteld</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>alleen lezen</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>ingesteld</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>website</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>het bestand site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>het beheer</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>de definitie</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>hier niet getest</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rijen verwijzen via %column (%kind) naar dit item</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rijen waarin %field gelijk is aan %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rijen.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done instructies</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Alle %count rijen</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Alle rijen</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Toepassen</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Afwijkende kolommen en indexen wijzigen</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabel aanmaken</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Maak de tabellen van een klasse of een extensie aan op een verbinding, of werk ze bij. Er wordt niets uitgevoerd vóór &quot;Toepassen&quot;; kolommen en indexen worden alleen verwijderd of gewijzigd als je dat aanvinkt.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Klaar</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Kolommen en indexen verwijderen die het schema niet heeft</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Uit de definitie van een klasse</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Geen rij van een datatabel verwijst naar dit item.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Alleen uitgevoerd als hierboven aangevinkt: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Niet alles kon worden uitgevoerd</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Op de verbinding</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Of uit het schemabestand van een extensie</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rijen van %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rijen van datatabellen die naar dit item verwijzen</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Databaseschema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Tonen wat er zou worden uitgevoerd</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>De verbinding %id is alleen-lezen.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>De extensie %name heeft geen share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>De installatie-SQL van elk databasesysteem</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Er is geen verbinding %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Er is geen persistente klasse %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Tabel bijwerken</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Wat er zou worden uitgevoerd op %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>aanmaken</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>actueel</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>bijwerken</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines regels</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Een inhoudsklasse</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Een identificatie van een inhoudsklasse, verbinding:tabel, of wat de bron vraagt. Niet nodig voor een lijst.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Een inhoudsobject (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Een link in de groep Datatabellen van het menu Setup, voor gebruikers met de beleidsregel read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Een hier ingevoerde lijst met velden</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Een nieuwe datatabel met alles eromheen: de persistente klasse, het schema en de installatie-SQL van elk databasesysteem, een module met list, edit, remove en een JSON-endpoint, de beleidsregels ervan, de beheerpagina&apos;s en de fetch-functies voor templates. De velden komen uit een lijst, een inhoudsklasse, een bestaande tabel of een importbron. Er wordt niets geschreven totdat je erom vraagt, en de tabel wordt vanaf deze pagina geïnstalleerd.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Een nieuwe naam, of een bestaande extensie waaraan de tabel wordt toegevoegd.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Een node (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Extensie activeren</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>created en modified toevoegen</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Aan de extensie toevoegen</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Beheertemplates</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Een bestaande tabel (verbinding:tabel)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Auteur</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Tabel actualiseren</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>De velden ervan naar de lijst kopiëren</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Downloaden als zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Elke tabel krijgt ook id, een sleutel die de database automatisch ophoogt.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensie</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Velden, één per regel: naam type[(lengte)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Label</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Ongewijzigd gelaten: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licentie</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Module</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Wizard voor moduletabellen</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Module openen</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasse</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Onderdelen, licentie en auteur</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Persistente klasse</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Snelle applicatieontwikkeling</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Vernieuwen: autoloads en caches</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Schema en installatie-SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Item in het menu Setup</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Bestanden tonen</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Fetch-functies voor templates</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>De eZPersistentObject-klasse van de tabel, met haar velden, verbinding en relaties.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>De extensie en de tabel</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>De extensie bestaat: de wizard voegt de bestanden toe die ze nog niet heeft en vult de instellingen aan; er wordt niets overschreven.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>De extensie is actief.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>De extensie is geschreven, maar niet actief.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>De velden</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>De velden van %source staan nu in de lijst: pas ze aan zoals je nodig hebt.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>De bestanden (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>De licentietekst (alleen bij een nieuwe extensie).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>De pagina&apos;s van de module in het beheer (admin4-componenten, geen inline stijlen).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>De tabel bestaat nog niet.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>De tabel bestaat.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Elke rij aan inhoud koppelen</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Om de extensie als pakket te installeren (alleen bij een nieuwe extensie).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Typen: %types. object, node en user zijn relaties met inhoud: de inhoudsweergave toont de rijen die naar een item verwijzen.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Uniek</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versie</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Wat de infopagina toont (alleen bij een nieuwe extensie).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Wat er is gemaakt, en hoe je het installeert en gebruikt.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Waar de velden vandaan komen</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Welke</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Extensie schrijven</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>bestaat, ongewijzigd gelaten</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php en extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>De functies fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove en het REST/JSON-endpoint json, met de beleidsregels read en edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba en sql/&lt;engine&gt;/schema.sql voor MySQL, PostgreSQL, SQLite, Oracle en SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>geschreven</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count conflicten</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name is uitgevoerd: %rows rijen en %objects objecten geschreven, %same ongewijzigd, %conflicts conflicten, %failed mislukt.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name is op de achtergrond gestart (%engine); de geschiedenis van de uitvoeringen toont het.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Er is een toewijzing voorgesteld: controleer deze en sla daarna op.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Een bron is een attribuutidentificatie van de inhoudsklasse, of een van: %list. Alleen attributen worden naar inhoud geschreven.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Vragen: een conflict om op te lossen</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Zowel de inhoud als de rij is gewijzigd sinds de laatste uitvoering van een tweerichtingssynchronisatie die vraagt. Kies een kant; de andere wordt overschreven.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>In beide richtingen</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Conflicten</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Conflicten (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Inhoud</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Inhoud en tabel</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Inhoud gekopieerd naar een datatabel, een tabel gekopieerd naar inhoud, of beide gelijk gehouden: eenmalig, volgens schema, of direct bij elke publicatie, verplaatsing en verwijdering.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Inhoud naar de tabel</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Inhoud wint</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datatabel (persistente klasse)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Richting</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Interval (seconden)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Gevonden %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Sleutelkolom(men)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Laatste uitvoering</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Direct en volgens schema</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Direct: elke publicatie, verplaatsing en verwijdering van een object van de klasse onder de node wordt meteen naar de tabel geschreven.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Toewijzing: één regel per kolom, kolom = bron</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Nieuwe synchronisatie</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Geen kolom van de klasse komt overeen met een attribuut of een bekende bron: schrijf de toewijzing zelf.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Geen open conflict.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Nog geen synchronisatie.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Volgens schema</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Toewijzing voorstellen</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>De rij verwijderen van een object dat wordt verwijderd of de substructuur verlaat</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Deze synchronisatie verwijderen</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Nu uitvoeren</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Uitvoeringen</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Opslaan en nu uitvoeren</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestart</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Uitgeschakeld (geen geplande of directe uitvoeringen)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronisaties</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>De inhoud overnemen</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>De tabel overnemen</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Het conflict kon niet worden opgelost; het blijft open.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>De waarden van de inhoud zijn naar de tabel geschreven.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>De laatste uitvoeringen</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>De toegewezen kolom(men) waarmee een rij wordt gevonden, bijv. contentobject_id of remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>De nieuwere wijziging wint</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>De rijen en de inhoud blijven; alleen de koppeling en de open conflicten verdwijnen.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>De substructuur die voor de tabel wordt gelezen, en het bovenliggende item van objecten die uit rijen worden gemaakt.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>De synchronisatie is niet opgeslagen</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>De synchronisatie is opgeslagen.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>De synchronisaties van de klasse van het gepubliceerde object</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>De tabel naar inhoud</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>De tabel wint</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>De waarden van de tabel zijn in de inhoud gepubliceerd.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>De tabellen van de synchronisatie zijn nog niet geïnstalleerd</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Er is nog geen synchronisatie van datatabellen (Setup &gt; Datatabellen &gt; Synchronisaties).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Als beide kanten zijn gewijzigd</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Bij het starten</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Als er niets is aangevinkt, wordt het object geschreven naar elke synchronisatie van zijn klasse waarvan de substructuur het bevat.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>in beide richtingen</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>inhoud naar tabel</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>elke %minutes minuten</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link en exp_data_sync_conflict worden met de knop in deze database aangemaakt; verder verandert er niets.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>direct</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>object %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>uit</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabel naar inhoud</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>bij het starten</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Deze installatie is een openbare demo: de wachtwoorden van beheerders kunnen niet worden gewijzigd of teruggezet.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Op zoek naar een andere import of export?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importeren</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exporteren</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Importeren en exporteren</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Werkt met deze tool</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Welke import- of exporttool heb ik nodig?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Welke tool heb ik nodig?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import- en exporttools voor deze taak</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pakketten</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Inhoud met de klassen ervan, of klassen, extensies en designs, als pakketbestand naar een andere installatie verplaatsen.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Klassen als pakket exporteren…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Een pakket uploaden en installeren…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS-import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Inhoud aanmaken uit een RSS- of Atom-feed van een andere website, steeds opnieuw via de cronjob rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS-export</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>De nieuwste items van een map publiceren als RSS- of Atom-feed, of een lijst met feeds als OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Verzamelde informatie</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Downloaden wat één formulier heeft verzameld als CSV-bestand, vanuit de lijst met verzamelde informatie.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Auditexport</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>De records van de audittrail downloaden, gefilterd zoals in de console, als CSV, JSON Lines of JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF-export</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Een PDF-document maken van een map en de items erin, om af te drukken of te versturen.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabellen</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>De tabellen van de persistente klassen en de benoemde databaseverbindingen: tabellen op elke verbinding beschrijven, aanmaken en bijwerken, door hun rijen bladeren en zien wat naar inhoud verwijst.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Een tabel op een databaseverbinding aanmaken of bijwerken…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Door de tabellen van de persistente klassen bladeren…</translation>
     </message>
 </context>
 </TS>

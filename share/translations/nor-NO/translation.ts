@@ -7810,6 +7810,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Laster inn de nyeste foruminnleggene ...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>De nyeste foruminnleggene kunne ikke lastes inn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -11332,6 +11336,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Ikke lagret: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Bruk på</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Hele undertreet</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Undertre, unntatt grener i en annen seksjon</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Bare dette objektet</translation>
     </message>
 </context>
 <context>
@@ -14915,6 +14935,18 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Help center</source>
         <translation>Hjelpesenter</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Ingenting nytt</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demomodus</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Denne installasjonen er en offentlig demo: hvem som helst kan kjenne administratorpassordet, og administratorpassord kan ikke endres eller nullstilles. Ikke skriv inn noe privat her.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15661,6 +15693,38 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Veiledninger, søk og hvordan du rapporterer en feil.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Tilkoblinger</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Navngitte databaser: SQLite-filer, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Passord og nøkler til verktøyene, lagret kryptert, vist bare med navn.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabellene til de persistente klassene, feltene deres, relasjoner og lagring.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Innhold og datatabeller holdt i takt: én gang, etter tidsplan eller i sanntid.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringer</translation>
     </message>
 </context>
 <context>
@@ -20352,6 +20416,22 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Merk at seksjonstilordningen for underelementene også blir endret.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Hvilke objekter som får seksjonen</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Det valgte elementet og alle objekter under det</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Det valgte elementet og objektene under det som har seksjonen til elementet; grener i en annen seksjon beholder sin</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Bare det valgte elementet</translation>
     </message>
 </context>
 <context>
@@ -28517,6 +28597,22 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Find</source>
         <translation>Finn</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>En ny datatabell med klasse, skjema, administrasjon, tilgangsregler, hentefunksjoner og JSON-endepunkt, ut fra en liste over felter, en innholdsklasse eller en importkilde.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Modultabell</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, på databasen til nettstedet eller en navngitt tilkobling</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba og sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -36416,6 +36512,18 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>VAT charging rules (%rules)</source>
         <translation>Mva-regler (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Disse mva.-reglene brukes ikke.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Ingen mva.-behandler er angitt, så hvert produkt belastes med mva.-typen som er angitt på det, og disse reglene leses aldri. For å bruke dem må du angi Handler=ezdefault i seksjonen [VATSettings] i shop.ini (i settings/override/shop.ini.append.php) og gi produktene mva.-typen &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Mva.-behandleren &quot;%handler&quot; som er angitt i seksjonen [VATSettings] i shop.ini, kan ikke lastes inn, så disse reglene leses aldri. Kontroller navnet på behandleren og katalogene det søkes etter mva.-behandlere i (RepositoryDirectories og ExtensionDirectories).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -43526,7 +43634,7 @@ kontoen din.</translation>
     </message>
     <message>
         <source>Override</source>
-        <translation>Overstyr</translation>
+        <translation>Overstyring</translation>
     </message>
     <message>
         <source>Source template</source>
@@ -48987,7 +49095,7 @@ menyen øverst.</translation>
     </message>
     <message>
         <source>Override</source>
-        <translation>Overstyr</translation>
+        <translation>Overstyring</translation>
     </message>
     <message>
         <source>File</source>
@@ -51851,6 +51959,14 @@ Se siden med krav for mer informasjon.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Dette passordet er velkjent eller for vanlig, så hvem som helst kan gjette det. Velg et annet.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demomodus</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Miljøvariabelen EXP_DEMO_MODE=1 merker denne installasjonen som en offentlig demo: et velkjent administratorpassord godtas, og administratorpassord kan ikke endres eller nullstilles senere. Bruk aldri demomodus for et produksjonsnettsted.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -52862,7 +52978,7 @@ For å gjøre dette må du endre %chown-kommandoene under Alternative skallkomma
     </message>
     <message>
         <source>Order</source>
-        <translation>Rekkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Wish list</source>
@@ -53465,7 +53581,7 @@ For å gjøre dette må du endre %chown-kommandoene under Alternative skallkomma
     </message>
     <message>
         <source>Order</source>
-        <translation>Rekkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Date</source>
@@ -59192,6 +59308,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>eZ Page swap workflow event</source>
         <translation>Arbeidsflythendelse for bytte av eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Speil til datatabeller</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -60536,7 +60656,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Rekkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -64749,7 +64869,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>Event</source>
-        <translation>Arrangement</translation>
+        <translation>Hendelse</translation>
     </message>
     <message>
         <source>Event name</source>
@@ -66028,6 +66148,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Statusen kunne ikke vises. Last inn siden på nytt for å følge jobben.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Objektene i undertreet som har seksjonen til dette elementet, får seksjonen; grener i en annen seksjon beholder sin, og objekter du ikke har lov til å tilordne den til, hoppes over.</translation>
     </message>
 </context>
 <context>
@@ -72730,7 +72854,7 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Språkinnstilling</translation>
+        <translation>Stedsinformasjon</translation>
     </message>
     <message>
         <source>Language</source>
@@ -75102,6 +75226,1593 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>More audiences</source>
         <translation>Flere målgrupper</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Du har ikke lov til å opprette innhold (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Håndbøkene bygges allerede.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Det finnes ingen håndbok %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Bygg hjelpehåndboken %1 fra Markdown-hjelpen</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Bygg hjelpehåndbøkene fra Markdown-hjelpen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count hemmeligheter er kryptert med en annen nøkkel enn den gjeldende.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done hemmeligheter kryptert på nytt med den gjeldende nøkkelen, %current var det allerede, %bad kunne ikke leses.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(opprettes når den første hemmeligheten lagres)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>En sikkerhetskopi av databasen alene kan ikke dekryptere hemmelighetene</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Et navn består av bokstaver, sifre og _ . : - (høyst 128) og begynner ikke med env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>En ny nøkkel lages, hver hemmelighet krypteres på nytt med den, og den gamle nøkkelen beholdes som .previous-filen. Ta en sikkerhetskopi av den nye nøkkelfilen etterpå.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Et nytt navn, eller navnet på en eksisterende hemmelighet for å erstatte verdien. Tom verdi: bare beskrivelsen endres.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Endret</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Kommer fra</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Opprett tabellen</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivelse</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Krypter alle hemmeligheter på nytt med den gjeldende nøkkelen</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Kryptering</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Angi verdien.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Nøkkel-ID</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Ingen hemmeligheter ennå.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Bare verktøyet %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Passord, tokener og API-nøkler til verktøyene: databasetilkoblinger, importkilder, eksterne servere. Et verktøy tar vare på navnet på en hemmelighet; verdien lagres her, kryptert, og vises aldri igjen.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Forrige nøkkel</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Bytt</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Bytt nøkkelen</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Angi en hemmelighet</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Beskrivelsen av %name ble endret; verdien ble beholdt.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Nøkkelen</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Nøkkelen kunne ikke byttes (en nøkkel fra EXP_SECRET_KEY byttes ved å angi en ny og den gamle som EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Nøkkelen ligger ikke i databasen. Ta vare på en kopi av nøkkelfilen (eller av EXP_SECRET_KEY) sammen med hver sikkerhetskopi, på et eget trygt sted. Uten den kan hemmelighetene i en gjenopprettet database ikke leses og må angis på nytt.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Nøkkelen ble byttet: %done hemmeligheter kryptert på nytt, %bad kunne ikke leses. Ta en sikkerhetskopi av den nye nøkkelfilen nå.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Hemmeligheten %name ble fjernet.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Hemmeligheten %name ble lagret, kryptert. Verdien vises ikke igjen.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Hemmeligheten kunne ikke lagres: se nøkkelen ovenfor.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Tabellen exp_secret mangler</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Verktøyet består av små bokstaver, sifre og _ . - (høyst 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Kryss først av for &quot;Ja, bytt nøkkelen&quot;.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Kryss av i boksen ved siden av hemmeligheten for å fjerne den. Et verktøy som viser til den, feiler til den angis på nytt.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Slik bytter du en nøkkel fra miljøet: angi den nye nøkkelen som EXP_SECRET_KEY og den gamle som EXP_SECRET_KEY_PREVIOUS, og krypter deretter alle hemmeligheter på nytt her.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Verktøy</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Til den er opprettet, kan bare hemmelighetene fra secrets.ini og miljøvariabler (env:NAME) brukes.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Verdi</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Hvem som bruker den, f.eks. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ja, fjern %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ja, bytt nøkkelen</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>kan ikke dekrypteres her</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>kryptert</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>filen secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>.previous-filen</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>miljøvariabelen EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>nøkkelfilen %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count klasser</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count til innhold</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown av %all klasser vises.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Et vertsnavn eller en adresse; tomt for SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>En hemmelighet fra Oppsett &gt; Hemmeligheter, eller env:VARIABLE for en miljøvariabel.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alle (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Tilgjengelig</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tilbake til listen</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Tegnsett</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klasse, tabell eller felt</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klasser på denne tilkoblingen: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonne</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Kolonne i databasen</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Koblet til via %via på %ms ms: %version, %tables tabeller.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Tilkobling</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Tilkoblinger</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Tilkoblinger (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Innholdsklasse</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Innholdsobjekt</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Opprett tabellene</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Databaser som datatabellene og import- og eksportverktøyene kan bruke i tillegg til installasjonens egen: en SQLite-fil, eller en MySQL-, MariaDB-, PostgreSQL-, Oracle-, SQL Server- eller MongoDB-server, her eller eksternt. Et passord er navnet på en hemmelighet, aldri verdien.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Angitt i datatable.ini [Connection_%id] av innstillingene eller en utvidelse: endre den der. Den kan testes her.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivelse</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Avvik</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Driver</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Tomt for den vanlige porten til databasesystemet.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Databasesystem</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Databasesystemer på denne serveren</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Utvidelsen %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Felt</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Felt i målet</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Felter</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>For SQL Server: sqlsrv, dblib eller odbc (den første denne serveren har når feltet er tomt).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>For SQLite filen, f.eks. %example (i %dirs). For Oracle tjenestenavnet.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Funksjonsattributter: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kjerne</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nøkkel</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Nøkkel: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Kjent fra</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Opprettet i</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Lag katalogen på nytt</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Mer</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Navngitte tilkoblinger trenger tabellen exp_data_connection, hemmelighetslageret tabellen exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Ny tilkobling</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Ingen persistent klasse samsvarer.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Ingen relasjon er kjent.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Ingen rader.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Node</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Ikke vist: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Bare for et databasesystem som nås via PDO, når server, port og database ikke er nok. Aldri et passord.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO-datakildenavn (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO-driver</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passord</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Selve passordet</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Passord: navnet på en hemmelighet</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Peker på</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Skrivebeskyttet: synkroniseringen skriver aldri til den</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relasjoner</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Fjern denne tilkoblingen</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Påkrevet</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rader</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite-filer kan ligge i: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheter</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksjon</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server og database</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Socket-sti</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>En bruker med tilgangsregelen datatable/manage kan opprette dem her.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Lagre det i hemmelighetslageret ved lagring</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Å lagre et passord krever tilgangsregelen secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabell</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Test tilkoblingen</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalogen lages ut fra autoload-arrayene og beholdes til de endres.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalogen ble laget på nytt: %count klasser.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Kolonnen %column (%type) finnes ikke i definisjonen.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Tilkoblingen mislyktes etter %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Tilkoblingen ble ikke lagret</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Tilkoblingen ble lagret.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definisjonen av denne klassen kan ikke leses</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Feltet %column (%type) har ingen kolonne.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Feltet %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>De første %count radene</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Passordet kunne ikke lagres i hemmelighetslageret (Oppsett &gt; Hemmeligheter sier hvorfor).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabellen %table finnes ikke i databasen.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Tabellen exp_data_connection mangler: en tilkobling kan testes, men ikke lagres før tabellen er opprettet på siden Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Tabellen exp_data_connection mangler: opprett den på siden &lt;a href=&quot;%url&quot;&gt;Datatabeller&lt;/a&gt;. Inntil da vises bare tilkoblingene som er angitt i datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Tabellen exp_data_connection mangler: opprett den først på siden Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Tabellene til datatabellene er ikke installert ennå</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabellene til de persistente klassene i denne installasjonen, slik definisjonene deres beskriver dem, og hvor hver av dem er lagret.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>De opprettes i denne databasen med knappen nedenfor; ingenting annet endres.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Installasjonens egen database, fra site.ini. Den kan testes her.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Denne hemmeligheten er ikke angitt.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Kryss av for &quot;Ja, fjern den&quot; for å fjerne tilkoblingen. Klasser og verktøy som viser til den, feiler da til den opprettes på nytt.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Kryss av i boksen nedenfor for å lagre det, kryptert, som hemmeligheten med navnet ovenfor (datatable. og identifikatoren når navnet er tomt).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Brukes bare til en test og vises aldri igjen.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruker</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Navnet klasser og verktøy viser til den med: små bokstaver, sifre og _. Det kan ikke endres senere.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Hvor klassene kommer fra</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Hvor tabellen avviker fra definisjonen</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ja, fjern den</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>en fremmednøkkel i et felt</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>telt opp: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>filen datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() feiler</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>finnes</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>utledet av navnet</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>nøkkel</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mangler</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>ikke tilgjengelig her</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ikke angitt</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>skrivebeskyttet</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>angitt</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>nettsted</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>filen site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administrasjonen</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definisjonen</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukjent</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>ikke testet her</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rader peker på dette elementet via %column (%kind)</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rader der %field er %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rader.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done SQL-setninger</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Alle %count rader</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Alle rader</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Bruk</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Endre kolonner og indekser som avviker</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Opprett tabellen</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Opprett tabellene til en klasse eller en utvidelse på en tilkobling, eller oppdater dem. Ingenting kjøres før &quot;Bruk&quot;; kolonner og indekser slettes eller endres bare når du krysser av for det.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ferdig</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Slett kolonner og indekser som skjemaet ikke har</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Fra definisjonen av en klasse</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Ingen rad i en datatabell peker på dette elementet.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Utføres bare hvis det er krysset av ovenfor: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Ikke alt kunne utføres</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>På tilkoblingen</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Eller fra skjemafilen til en utvidelse</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rader i %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rader i datatabeller som peker på dette elementet</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skjema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Vis hva som ville blitt utført</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Tilkoblingen %id er skrivebeskyttet.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Utvidelsen %name har ingen share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Installasjons-SQL for hvert databasesystem</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Det finnes ingen tilkobling %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Det finnes ingen persistent klasse %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Oppgrader tabellen</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Hva som ville blitt utført på %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>opprett</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>oppdatert</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>oppgrader</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines linjer</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>En innholdsklasse</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>En identifikator for en innholdsklasse, tilkobling:tabell eller det kilden ber om. Ikke nødvendig for en liste.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Et innholdsobjekt (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>En lenke i gruppen Datatabeller i Oppsett-menyen, for brukere med tilgangsregelen read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>En liste over felter skrevet inn her</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>En ny datatabell med alt som hører til: den persistente klassen, skjemaet og installasjons-SQL for hvert databasesystem, en modul med list, edit, remove og et JSON-endepunkt, tilgangsreglene, administrasjonssidene og hentefunksjonene for maler. Feltene kommer fra en liste, en innholdsklasse, en eksisterende tabell eller en importkilde. Ingenting skrives før du ber om det, og tabellen installeres fra denne siden.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Et nytt navn, eller en eksisterende utvidelse som tabellen skal legges til i.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>En node (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Aktiver utvidelsen</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Legg til created og modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Legg til i utvidelsen</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Administrasjonsmaler</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>En eksisterende tabell (tilkobling:tabell)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Forfatter</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Begge</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Oppdater tabellen</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Kopier feltene til listen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Last ned som zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Hver tabell får også id, en nøkkel som databasen teller opp.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Utvidelse</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Felter, ett per linje: navn type[(lengde)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etikett</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Latt være som de er: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lisens</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Veiviser for modultabeller</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Åpne modulen</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasse</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Deler, lisens og forfatter</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Persistent klasse</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Rask programutvikling</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Oppdater: autoloads og cacher</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Skjema og installasjons-SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Oppføring i Oppsett-menyen</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Vis filene</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Hentefunksjoner for maler</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>eZPersistentObject-klassen til tabellen, med feltene, tilkoblingen og relasjonene.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Utvidelsen og tabellen</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Utvidelsen finnes: veiviseren legger til filene den mangler og føyer til innstillingene sine; ingenting der overskrives.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Utvidelsen er aktiv.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Utvidelsen er skrevet, men ikke aktiv.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Feltene</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Feltene fra %source står nå i listen: endre dem etter behov.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Filene (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Lisensteksten (bare for en ny utvidelse).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Sidene til modulen i administrasjonen (admin4-komponenter, ingen innebygde stiler).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tabellen finnes ikke ennå.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tabellen finnes.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Knytt hver rad til innhold</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Tittel</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>For å installere utvidelsen som en pakke (bare for en ny utvidelse).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Typer: %types. object, node og user er relasjoner til innhold: innholdsvisningen viser radene som peker på et element.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Unik</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versjon</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Hva Om-siden viser (bare for en ny utvidelse).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Hva som ble laget, og hvordan det installeres og brukes.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Hvor feltene kommer fra</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Hvilken</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Skriv utvidelsen</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>finnes, latt være som den er</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php og extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Funksjonene fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove og REST/JSON-endepunktet json, med tilgangsreglene read og edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba og sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle og SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>skrevet</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count konflikter</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name er kjørt: %rows rader og %objects objekter skrevet, %same uendret, %conflicts konflikter, %failed mislyktes.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name ble startet i bakgrunnen (%engine); kjøringshistorikken viser den.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>En tilordning ble foreslått: kontroller den, og lagre deretter.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>En kilde er en attributtidentifikator fra innholdsklassen, eller en av: %list. Bare attributter skrives til innhold.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Spør: en konflikt som må løses</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Både innholdet og raden er endret siden siste kjøring av en toveis synkronisering som spør. Velg én side; den andre overskrives.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Begge veier</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Konflikter</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Konflikter (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Innhold</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Innhold og tabell</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Innhold kopiert til en datatabell, en tabell kopiert til innhold, eller begge holdt i takt: én gang, etter tidsplan, eller i sanntid ved hver publisering, flytting og fjerning.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Innhold til tabellen</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Innholdet vinner</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datatabell (persistent klasse)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Retning</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Feil</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Intervall (sekunder)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislyktes</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Funnet %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Nøkkelkolonne(r)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Siste kjøring</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>I sanntid og etter tidsplan</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Sanntid: hver publisering, flytting og fjerning av et objekt av klassen under noden skrives straks til tabellen.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Tilordning: én linje per kolonne, kolonne = kilde</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Ny synkronisering</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Ingen kolonne i klassen samsvarer med et attributt eller en kjent kilde: skriv tilordningen selv.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Ingen åpne konflikter.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Ingen synkroniseringer ennå.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Etter tidsplan</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Foreslå tilordningen</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Fjern raden til et objekt som fjernes eller forlater undertreet</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Fjern denne synkroniseringen</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Kjør nå</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Kjører</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Lagre og kjør nå</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Slått av (ingen planlagte kjøringer eller kjøringer i sanntid)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringer</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Bruk innholdet</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Bruk tabellen</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Konflikten kunne ikke løses; den forblir åpen.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Verdiene fra innholdet ble skrevet til tabellen.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>De siste kjøringene</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Den eller de tilordnede kolonnene en rad matches etter, f.eks. contentobject_id eller remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Den nyeste endringen vinner</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Radene og innholdet blir værende; bare sammenkoblingen og de åpne konfliktene forsvinner.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Undertreet som leses for tabellen, og den overordnede noden for objekter som lages fra rader.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Synkroniseringen ble ikke lagret</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Synkroniseringen ble lagret.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Synkroniseringene for klassen til det publiserte objektet</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tabellen til innhold</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tabellen vinner</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Verdiene fra tabellen ble publisert til innholdet.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Tabellene til synkroniseringen er ikke installert ennå</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Det finnes ingen synkronisering av datatabeller ennå (Oppsett &gt; Datatabeller &gt; Synkroniseringer).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Når begge sider er endret</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Når den startes</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Hvis ingen er krysset av, skrives objektet til hver synkronisering av klassen sin som har det i undertreet.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>begge veier</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>innhold til tabell</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>hvert %minutes. minutt</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link og exp_data_sync_conflict opprettes i denne databasen med knappen; ingenting annet endres.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>sanntid</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabell til innhold</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>når den startes</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Denne installasjonen er en offentlig demo: passordene til administratorer kan ikke endres eller nullstilles.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Ser du etter en annen import eller eksport?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importer</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksporter</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import og eksport</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Fungerer sammen med dette verktøyet</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Hvilket import- eller eksportverktøy trenger jeg?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Hvilket verktøy trenger jeg?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import- og eksportverktøy for denne oppgaven</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pakker</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Flytt innhold med klassene sine, eller klasser, utvidelser og design, til en annen installasjon som en pakkefil.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Eksporter klasser som en pakke…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Last opp og installer en pakke…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS-import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Opprett innhold fra en RSS- eller Atom-feed fra et annet nettsted, igjen og igjen via cronjobben rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS-eksport</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publiser de nyeste elementene i en mappe som en RSS- eller Atom-feed, eller en liste over feeder som OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Innhentet informasjon</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Last ned det et skjema har samlet inn, som en CSV-fil, fra listen over innhentet informasjon.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Revisjonseksport</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Last ned postene i revisjonssporet, filtrert som i konsollen, som CSV, JSON lines eller JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF-eksport</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Lag et PDF-dokument av en mappe og elementene i den, for utskrift eller utsending.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabellene til de persistente klassene og de navngitte databasetilkoblingene: beskriv, opprett og oppgrader tabeller på hvilken som helst tilkobling, bla igjennom radene og se hva som peker på innhold.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Opprett eller oppgrader en tabell på en databasetilkobling…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Bla igjennom tabellene til de persistente klassene…</translation>
     </message>
 </context>
 </TS>

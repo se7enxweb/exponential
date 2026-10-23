@@ -7388,6 +7388,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>ja&apos;chuqmeH yoS QInmey chu&apos;qu&apos; Suqlu&apos;taH...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>ja&apos;chuqmeH yoS QInmey chu&apos;qu&apos; Suqlu&apos;laHbe&apos;pu&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10710,6 +10714,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>polbe&apos;lu&apos;: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>lo&apos;meH Dochmey</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>SorHom naQ</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>SorHom, latlh &apos;ay&apos; ghajbogh SorHommey Hutlh</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Dochvam neH</translation>
     </message>
 </context>
 <context>
@@ -14237,6 +14257,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>ghojmoHmeH Daq 'oH Daqvam'e': loHwI' mu' pegh Sovlaw' Hoch, 'ej loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'. naDev pegh yIghItlhQo'.</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>chu&apos; pagh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14951,6 +14975,38 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>nav, nej &apos;ej chay&apos; Qagh ja&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>rarghachmey</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>De&apos; tetlhmey</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>pong ghajbogh De&apos; pa&apos;mey: SQLite ghItlhmey, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>janmey pegh mu&apos;mey ngaQHa&apos;moHwI&apos;mey je; peghmoHlu&apos;DI&apos; pollu&apos;, pongchaj neH &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>peghmey</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>reH taHbogh buvmey tetlhmey, tlheghmeychaj, rarghachmeychaj, polmeH Daqchaj je.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>De&apos; De&apos; tetlhmey je rapmoHlu&apos;: wa&apos;logh, poH nab tlhejtaHvIS, SIbI&apos; joq.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>rapmoHghachmey</translation>
     </message>
 </context>
 <context>
@@ -19583,6 +19639,22 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>yIqaw: puq Dochmey &apos;ay&apos; nobghach je choHlu&apos;.</translation>
     </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>&apos;ay&apos; Suqbogh Dochmey</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>wIvlu&apos;ta&apos;bogh Doch, bIngDaq Doch Hoch je</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>wIvlu&apos;ta&apos;bogh Doch, bIngDaq &apos;ay&apos;Daj ghajbogh Dochmey je; latlh &apos;ay&apos; ghajbogh SorHommey &apos;ay&apos;chaj pol</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>wIvlu&apos;ta&apos;bogh Doch neH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/confirmremove</name>
@@ -24176,7 +24248,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>%count worker processes</source>
-        <translation>%count vangwI&apos;</translation>
+        <translation>%count vumwI&apos;</translation>
     </message>
     <message>
         <source>one request at a time</source>
@@ -24572,15 +24644,15 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>persistent workers: one process answers many requests and keeps its classes and caches between them</source>
-        <translation>reH QaptaHbogh vangwI&apos;pu&apos;: tlhobghachmey law&apos; jang wa&apos; vangwI&apos;, &apos;ej tlhobghachmey jojDaq buvmeyDaj De&apos; polwI&apos;meyDaj je pol</translation>
+        <translation>reH QaptaHbogh vumwI&apos;mey: tlhobghachmey law&apos; jang wa&apos; vumwI&apos;, &apos;ej tlhobghachmey jojDaq buvmeyDaj De&apos; polwI&apos;meyDaj je pol</translation>
     </message>
     <message>
         <source>worker mode: the script stays in memory between requests</source>
-        <translation>vangwI&apos; Segh: tlhobghachmey jojDaq qawHaqDaq ratlh ngoq ghItlh</translation>
+        <translation>vumwI&apos; Segh: tlhobghachmey jojDaq qawHaqDaq ratlh ngoq ghItlh</translation>
     </message>
     <message>
         <source>a fresh worker forked for every request</source>
-        <translation>Hoch tlhobghachvaD vangwI&apos; chu&apos; boqlu&apos;</translation>
+        <translation>Hoch tlhobghachvaD vumwI&apos; chu&apos; boqlu&apos;</translation>
     </message>
     <message>
         <source>a pool of PHP processes, a clean state for every request</source>
@@ -24704,7 +24776,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>A persistent worker never caches a file written less than that many seconds before the request started, so recently deployed files are compiled on every request.</source>
-        <translation>tlhobghach taghpa&apos; lupmeyvetlh law&apos; puS ghItlhlu&apos;bogh ghItlh pol not reH QaptaHbogh vangwI&apos;, vaj lanlu&apos;pu&apos;bogh ghItlhmey chu&apos; Hoch tlhobghachDaq boqlu&apos;.</translation>
+        <translation>tlhobghach taghpa&apos; lupmeyvetlh law&apos; puS ghItlhlu&apos;bogh ghItlh pol not reH QaptaHbogh vumwI&apos;, vaj lanlu&apos;pu&apos;bogh ghItlhmey chu&apos; Hoch tlhobghachDaq boqlu&apos;.</translation>
     </message>
     <message>
         <source>Set IniOptions[]=opcache.file_update_protection=0 in [PHPSettings] of velocity.ini, then restart Velocity.</source>
@@ -24972,7 +25044,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>Worker model</source>
-        <translation>vangwI&apos; Segh</translation>
+        <translation>vumwI&apos; Segh</translation>
     </message>
     <message>
         <source>PHP-FPM pool</source>
@@ -24992,7 +25064,7 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     </message>
     <message>
         <source>Workers</source>
-        <translation>vangwI&apos;mey</translation>
+        <translation>vumwI&apos;mey</translation>
     </message>
     <message>
         <source>%n configured, %spare spare</source>
@@ -27713,6 +27785,22 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>Find</source>
         <translation>yInej</translation>
+    </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>De&apos; tetlh chu&apos;: buvDaj, qach nabDaj, loHghachDaj, chaw&apos; chutmeyDaj, fetch vangghachmeyDaj, JSON ghochDaj je; tlheghmey tetlhvo&apos;, De&apos; buvvo&apos;, qemmeH Halvo&apos; joq chenmoHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>ngoq &apos;ay&apos; tetlh</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, yoS De&apos; pa&apos;Daq pong ghajbogh rarghachDaq joq</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba, sql/ je</translation>
     </message>
 </context>
 <context>
@@ -35556,6 +35644,18 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>VAT DIlmeH chutmey (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>VAT chutmeyvam lo&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>VAT ta&apos;wI&apos; lanlu&apos;be&apos;; vaj ngevlu&apos;bogh Doch HochvaD lanlu&apos;bogh VAT Segh lo&apos;lu&apos;, &apos;ej not chutmeyvam laDlu&apos;. chutmey Dalo&apos;meH, shop.ini ghItlh [VATSettings] &apos;ay&apos;Daq Handler=ezdefault yIlan (settings/override/shop.ini.append.php ghItlhDaq), &apos;ej ngevlu&apos;bogh DochmeyvaD &quot;%dynamic&quot; VAT Segh yInob.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>shop.ini ghItlh [VATSettings] &apos;ay&apos;Daq lanlu&apos;bogh &quot;%handler&quot; VAT ta&apos;wI&apos; Suqlu&apos;laHbe&apos;; vaj not chutmeyvam laDlu&apos;. ta&apos;wI&apos; pong yInuD, VAT ta&apos;wI&apos;mey nejlu&apos;meH ghItlh pa&apos;mey je yInuD (RepositoryDirectories, ExtensionDirectories je).</translation>
     </message>
 </context>
 <context>
@@ -50647,6 +50747,38 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>EXP_DEMO_MODE=1 Dotlh mu' ghojmoHmeH Daq 'oHmoH Daqvam: loHwI' mu' pegh Sovbogh Hoch laj, 'ej tugh loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'. Qapmeh Daq ghojmoHmeH lo' yIlo'Qo'.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>yoSvam jomlu&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>yoS chu&apos;Daq Exponential jom SeHlaw DevwI&apos;. jomlu&apos;pu&apos;bogh yoSDaq Qapbe&apos;, &apos;ej poSmoHlu&apos;DI&apos; pagh choHlu&apos;: yoS QaptaH.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>jomqa&apos;meH kickstarter yIlo&apos; (%file, ghIq php bin/php/kickstarter.php), pagh jomghach chu&apos; yIlo&apos;.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>yoSvam Dajomqa&apos;qang&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>yoSvam jomlu&apos;pu&apos;. jomlu&apos;pu&apos;bogh yoSmeyvaD SeHlaw DevwI&apos; chu&apos;lu&apos;ta&apos; (AllowWizardOnInstalledSite); chenmoHghachvaD neH &apos;oH.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>DevwI&apos; taghlu&apos;DI&apos;, tI&apos;ghach SeghDaq yoS naQ lanlu&apos;: DevwI&apos; rInpa&apos;, pagh 15 tup lonlu&apos;pa&apos;, tI&apos;ghach nav Suq latlh Such&apos;wI&apos; Hoch.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>SeHlaw DevwI&apos; yItagh</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -51650,7 +51782,7 @@ jabwI&apos; lo&apos;wI&apos; ghom je DaSovchugh, labmeH ghItlh pa&apos; ghajghac
     </message>
     <message>
         <source>Order</source>
-        <translation>tetlh mIw</translation>
+        <translation>je&apos;meH ghItlh</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52257,7 +52389,7 @@ jabwI&apos; lo&apos;wI&apos; ghom je DaSovchugh, labmeH ghItlh pa&apos; ghajghac
     </message>
     <message>
         <source>Order</source>
-        <translation>tetlh mIw</translation>
+        <translation>je&apos;meH ghItlh</translation>
     </message>
     <message>
         <source>Date</source>
@@ -57926,6 +58058,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page tammeH Qu&apos; mIw wanI&apos;</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>De&apos; tetlhmeyDaq qonqa&apos;ghach</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59270,7 +59406,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>tetlh mIw</translation>
+        <translation>je&apos;meH ghItlh</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -64762,6 +64898,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Dotlh &apos;anglu&apos;laHbe&apos;ta&apos;. Qu&apos; DatlhejmeH nav yIHevqa&apos;.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Dochvam &apos;ay&apos; ghajbogh SorHom Dochmey &apos;ay&apos; Suq; latlh &apos;ay&apos; ghajbogh SorHommey &apos;ay&apos;chaj pol, &apos;ej &apos;ay&apos; DanoblaHbe&apos;bogh Dochmey buSHa&apos;lu&apos;.</translation>
     </message>
 </context>
 <context>
@@ -73611,6 +73751,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>More audiences</source>
         <translation>latlh ghotpu' Segh</translation>
     </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>De&apos; DachenmoH &apos;e&apos; chaw&apos;be&apos;lu&apos; (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>QaH paqmey chenmoHlu&apos;taH.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>%1 paq tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Markdown QaHvo&apos; %1 QaH paq yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Markdown QaHvo&apos; QaH paqmey tIchenmoH</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -73836,6 +73996,1566 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
         <translation>ghojmoHmeH Daq 'oH Daqvam'e': loHwI' mu'mey pegh choHlaHbe' 'ej taghqa'laHbe'.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count pegh peghmoHmeH latlh ngaQHa&apos;moHwI&apos; lo&apos;lu&apos;ta&apos;; DaH ngaQHa&apos;moHwI&apos; lo&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>DaH ngaQHa&apos;moHwI&apos; lo&apos;taHvIS %done pegh peghmoHqa&apos;lu&apos;ta&apos;; %current pegh peghmoHlu&apos;pu&apos;; %bad pegh laDlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(wa&apos;DIch pegh pollu&apos;DI&apos; chenmoHlu&apos;)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>De&apos; pa&apos; qonqa&apos;ghach neH lo&apos;lu&apos;chugh, peghmey peghHa&apos;moHlu&apos;laHbe&apos;</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>pong: ngutlhmey, mI&apos;mey, _ . : - je (128 law&apos;be&apos;); env: lo&apos;taHvIS taghlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>ngaQHa&apos;moHwI&apos; chu&apos; chenmoHlu&apos;, &apos;ej lo&apos;taHvIS pegh Hoch peghmoHqa&apos;lu&apos;, &apos;ej .previous ghItlhDaq ngaQHa&apos;moHwI&apos; ngo&apos; pollu&apos;. ghIq ngaQHa&apos;moHwI&apos; ghItlh chu&apos; yIqonqa&apos;.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>pong chu&apos;, pagh tu&apos;lu&apos;bogh pegh pong, ngoDDaj DatammeH. ngoD chIm: Delghach neH choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Hal</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>tetlh yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Delghach</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>DaH ngaQHa&apos;moHwI&apos; lo&apos;taHvIS pegh Hoch yIpeghmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>pegh ngoq</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>ngoD yInob.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ngaQHa&apos;moHwI&apos; ngu&apos;meH mI&apos;</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>pongmey</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>wej pegh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>%scope jan neH.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>janmey pegh mu&apos;mey, ngoqmey, API ngaQHa&apos;moHwI&apos;mey je: De&apos; pa&apos; rarghachmey, qemmeH Halmey, Hop jabwI&apos;mey. pegh pong pol jan; naDev ngoD pollu&apos;, peghmoHlu&apos;, &apos;ej not &apos;anglu&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>ngaQHa&apos;moHwI&apos; ngo&apos;</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>yItam</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>ngaQHa&apos;moHwI&apos; yItam</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>peghmey</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>pegh yIlan</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>%name Delghach choHlu&apos;ta&apos;; ngoDDaj pollu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ngaQHa&apos;moHwI&apos;</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>ngaQHa&apos;moHwI&apos; tamlu&apos;laHbe&apos;pu&apos; (EXP_SECRET_KEY ngaQHa&apos;moHwI&apos; DatammeH, chu&apos; yIlan, &apos;ej EXP_SECRET_KEY_PREVIOUS DuHDaq ngo&apos; yIlan).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>De&apos; pa&apos;Daq ngaQHa&apos;moHwI&apos; tu&apos;lu&apos;be&apos;. qonqa&apos;ghach Hoch tlhej ngaQHa&apos;moHwI&apos; ghItlh (EXP_SECRET_KEY joq) qonqa&apos;ghach yIpol, QaDbogh latlh DaqDaq. &apos;oHbe&apos;chugh, cheghmoHlu&apos;bogh De&apos; pa&apos; peghmey laDlu&apos;laHbe&apos;, &apos;ej lanqa&apos;nISlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>ngaQHa&apos;moHwI&apos; tamlu&apos;ta&apos;: %done pegh peghmoHqa&apos;lu&apos;ta&apos;, %bad pegh laDlu&apos;laHbe&apos;. DaH ngaQHa&apos;moHwI&apos; ghItlh chu&apos; yIqonqa&apos;.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>%name pegh teqlu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>%name pegh pollu&apos;ta&apos;, peghmoHlu&apos;ta&apos;. ngoDDaj not &apos;anglu&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>pegh pollu&apos;laHbe&apos;pu&apos;: Dung ngaQHa&apos;moHwI&apos; yIlegh.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>exp_secret tetlh Hutlh</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>jan: ngutlhmey mach, mI&apos;mey, _ . - je (64 law&apos;be&apos;).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>wa&apos;DIch &quot;HISlaH, ngaQHa&apos;moHwI&apos; yItam&quot; yIwIv.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>pegh DateqmeH, retlhDaq wIvmeH leQ yIwIv. pegh pongbogh jan Qapbe&apos; pegh lanqa&apos;lu&apos;pa&apos;.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Dotlh DuHvo&apos; ngaQHa&apos;moHwI&apos; DatammeH: EXP_SECRET_KEY DuHDaq ngaQHa&apos;moHwI&apos; chu&apos; yIlan, EXP_SECRET_KEY_PREVIOUS DuHDaq ngo&apos; yIlan, ghIq naDev pegh Hoch yIpeghmoHqa&apos;.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>chenmoHlu&apos;pa&apos;, secrets.ini peghmey Dotlh DuHmey je (env:NAME) neH lo&apos;lu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ngoD</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>&apos;Iv lo&apos;? ghu&apos;: datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>HISlaH, %name yIteq</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>HISlaH, ngaQHa&apos;moHwI&apos; yItam</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>naDev peghHa&apos;moHlu&apos;laHbe&apos;</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>peghmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>secrets.ini ghItlh</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>.previous ghItlh</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>EXP_SECRET_KEY Dotlh DuH</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>ngaQHa&apos;moHwI&apos; ghItlh %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count buv</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>De&apos;Daq: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%all buvvo&apos; %shown buv &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>jabwI&apos; pong pagh Daq; SQLitevaD chIm.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>SeHlaw &gt; peghmey pegh, pagh Dotlh DuHvaD env:VARIABLE.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Hoch (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>lo&apos;laH</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>tetlhDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>ngutlh ghom</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>buv</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>buv, tetlh, tlhegh joq</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>rarghachvam buvmey: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>tut</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>De&apos; pa&apos; tut</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>%via lo&apos;taHvIS %ms ms poHDaq rarlu&apos;ta&apos;: %version, %tables tetlh.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>rarghach</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>rarghachmey</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>rarghachmey (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>De&apos; buv</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>De&apos; Doch</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>tetlhmey tIchenmoH</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>De&apos; tetlhmey</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>De&apos; pa&apos;</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>jomghachvam De&apos; pa&apos;Daj latlh lo&apos;laHbogh De&apos; pa&apos;mey, De&apos; tetlhmey qemmeH lelmeH janmey je: SQLite ghItlh, pagh MySQL, MariaDB, PostgreSQL, Oracle, SQL Server, MongoDB jabwI&apos; joq, naDev Hop joq. pegh mu&apos; &apos;oH pegh pong&apos;e&apos;, not ngoDDaj.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>datatable.ini [Connection_%id] Daq DuHmey chelwI&apos; joq lanlu&apos;ta&apos;: pa&apos; yIchoH. naDev nuDlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>motlh</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Delghach</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>pImghachmey</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>ngoq rarwI&apos;</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>QuQ lojmIt mI&apos; motlh DaneHchugh, chIm yIlon.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>QuQ</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>jabwI&apos;vam QuQmey</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name chelwI&apos;</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>tlhegh</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>ghoch tlhegh</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>tlheghmey</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>yISay&apos;moH</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>SQL ServervaD: sqlsrv, dblib, odbc joq (chImchugh, jabwI&apos;vam ghajbogh wa&apos;DIch).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>SQLitevaD ghItlh, ghu&apos;: %example (%dirs Daq). OraclevaD jabghach pong.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>vangghach buv tlheghmey: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>ngu&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ngoq botlh</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ngaQHa&apos;moHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>ngaQHa&apos;moHwI&apos;: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Sovlu&apos;meH Hal</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>chenmoHlu&apos;meH Daq</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>pagh tetlh yIchenmoHqa&apos;</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>latlh</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>exp_data_connection tetlh poQ pong ghajbogh rarghachmey; exp_secret tetlh poQ pegh polmeH pa&apos;.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>rarghach chu&apos;</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>rapbogh reH taHbogh buv tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>rarghach Sovlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>tetlh tlheghmey tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Sor Daq</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>&apos;anglu&apos;be&apos;bogh: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>PDO lo&apos;taHvIS ghoSlu&apos;bogh QuQvaD neH, jabwI&apos;, lojmIt mI&apos;, De&apos; pa&apos; je yapbe&apos;chugh. not pegh mu&apos;.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO De&apos; Hal pong</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO ngoq rarwI&apos;</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>pegh mu&apos;</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>pegh mu&apos; &apos;oH</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>pegh mu&apos;: pegh pong</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>ghoch</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>lojmIt mI&apos;</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>laD neH: not &apos;oHDaq ghItlh rapmoHghach</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>rarghachmey</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>rarghachvam yIteq</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>poQlu&apos;</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>tetlh tlheghmey</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite ghItlhmey ngaSlaH: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>peghmey</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>&apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>jabwI&apos;</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>jabwI&apos; De&apos; pa&apos; je</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>rarmeH lojmIt</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>datatable/manage chaw&apos; chut ghajbogh vay&apos; naDev chenmoHlaH.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>pollu&apos;DI&apos;, pegh polmeH pa&apos;Daq yIpol</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>pegh mu&apos; DapolmeH secrets/manage chaw&apos; chut DaghajnIS.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>tetlh</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>yInuD</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>rarghach yInuD</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>autoload tetlhmeyvo&apos; pagh tetlh chenmoHlu&apos;, &apos;ej choHlu&apos;pa&apos; pollu&apos;.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>pagh tetlh chenmoHqa&apos;lu&apos;ta&apos;: %count buv.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>%column tut (%type) Delghach tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>%ms ms poH ret rarghach Qapbe&apos;pu&apos;: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>rarghach pollu&apos;be&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>rarghach pollu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>buvvam Delghach laDlu&apos;laHbe&apos;</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>%column tlhegh (%type) tut ghajbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>%column tlhegh: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>wa&apos;DIch tetlh tlheghmey: %count</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>pegh polmeH pa&apos;Daq pegh mu&apos; pollu&apos;laHbe&apos;pu&apos; (meq ja&apos; SeHlaw &gt; peghmey).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>De&apos; pa&apos;Daq %table tetlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>exp_data_connection tetlh Hutlh: rarghach nuDlu&apos;laH, &apos;ach De&apos; tetlhmey navDaq tetlh chenmoHlu&apos;pa&apos; pollu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>exp_data_connection tetlh Hutlh: &lt;a href=&quot;%url&quot;&gt;De&apos; tetlhmey&lt;/a&gt; navDaq yIchenmoH. vaj datatable.ini Daq lanlu&apos;bogh rarghachmey neH &apos;anglu&apos;.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>exp_data_connection tetlh Hutlh: wa&apos;DIch De&apos; tetlhmey navDaq yIchenmoH.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>wej De&apos; tetlhmey tetlhmey jomlu&apos;</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>jomghachvam reH taHbogh buvmey tetlhmey, Delghachmeychaj Del rur, &apos;ej Hoch tetlh polmeH Daq.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>bIng leQ lo&apos;lu&apos;DI&apos;, De&apos; pa&apos;vamDaq chenmoHlu&apos;; pagh latlh choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>jomghachvam De&apos; pa&apos;Daj, site.ini ghItlhvo&apos;. naDev nuDlu&apos;laH.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>peghvam lanlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>rarghach DateqmeH &quot;HISlaH, yIteq&quot; yIwIv. ghIq rarghach pongbogh buvmey janmey je Qapbe&apos; chenmoHqa&apos;lu&apos;pa&apos;.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>pollu&apos;meH, peghmoHlu&apos;meH, Dung pongbogh pegh moj, bIng wIvmeH leQ yIwIv (pong chImchugh, datatable. ngu&apos;wI&apos; je).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>nuDmeH neH lo&apos;lu&apos;, &apos;ej not &apos;anglu&apos;qa&apos;.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>lo&apos;wI&apos;</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>buvmey janmey je pongmeH lo&apos;lu&apos;bogh: ngutlhmey mach, mI&apos;mey, _ je. ghIq choHlu&apos;laHbe&apos;.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>buvmey Hal</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>tetlh Delghach rapbe&apos;meH Daqmey</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>HISlaH, yIteq</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>tlhegh Hop ngaQHa&apos;moHwI&apos;</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>toghlu&apos;taH: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>datatable.ini ghItlh</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>tu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>pongvo&apos; Sovlu&apos;</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>ngaQHa&apos;moHwI&apos;</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>Hutlh</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>naDev lo&apos;laHbe&apos;</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>lanlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>laD neH</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>lanlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>yoS</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>site.ini ghItlh</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>loHghach</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>Delghach</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>Sovlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>naDev nuDlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%column (%kind) lo&apos;taHvIS Dochvam ghoch %count tetlh tlhegh</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%field %value &apos;oHbogh tetlh tlheghmey: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>tetlh tlheghmey: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>ra&apos;ghachmey: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>tetlh tlhegh Hoch: %count</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>tetlh tlhegh Hoch</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>pImbogh tutmey SammeH tetlhmey je tIchoH</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>tetlh yIchenmoH</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>chelwI&apos; buv joq tetlhmey rarghachDaq tIchenmoH, pagh tIchu&apos;moH. &quot;yIlo&apos;&quot; Dalo&apos;pa&apos; pagh Qaplu&apos;. DawIvchugh neH, tutmey SammeH tetlhmey je Qaw&apos;lu&apos; choHlu&apos; joq.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>rIn</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>qach nab ghajbe&apos;bogh tutmey SammeH tetlhmey je tIQaw&apos;</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>buv Delghachvo&apos;</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Dochvam ghochbogh De&apos; tetlh tlhegh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Dung DawIvbe&apos;chugh, Qaplu&apos;be&apos;: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Hoch Qaplu&apos;laHbe&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>rarghachDaq</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>pagh chelwI&apos; qach nab ghItlhvo&apos;</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>%table tetlh tlheghmey</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Dochvam ghochbogh De&apos; tetlh tlheghmey</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>qach nab</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Qaplu&apos;meH Dochmey tI&apos;ang</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>%id rarghach laDlu&apos; neH.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>share/db_schema.dba ghajbe&apos; %name chelwI&apos;.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>QuQ Hoch jommeH SQL</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>%id rarghach tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>%class reH taHbogh buv tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>tetlh yIDub</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>%connection (%engine) Daq Qaplu&apos;meH Dochmey</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>yIchenmoH</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>chu&apos;taH</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>yIDub</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines tlhegh</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>De&apos; buv</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>De&apos; buv ngu&apos;wI&apos;, connection:table, Hal poQbogh Doch joq. tetlhvaD poQlu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>De&apos; Doch (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>SeHlaw HIDjolev De&apos; tetlhmey ghomDaq rarwI&apos;, read chaw&apos; chut ghajbogh lo&apos;wI&apos;pu&apos;vaD.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>naDev ghItlhlu&apos;bogh tlheghmey tetlh</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>De&apos; tetlh chu&apos;, Hoch Doch tlhejbogh: reH taHbogh buv, QuQ Hoch qach nab jommeH SQL je, list, edit, remove, JSON ghoch je ghajbogh ngoq &apos;ay&apos;, chaw&apos; chutmeyDaj, loHmeH navmey, mIw &apos;echlet fetch vangghachmey je. tlheghmey tetlhvo&apos;, De&apos; buvvo&apos;, tu&apos;lu&apos;bogh tetlhvo&apos;, qemmeH Halvo&apos; joq tlheghmey Suqlu&apos;. bItlhobpa&apos; pagh ghItlhlu&apos;, &apos;ej navvamvo&apos; tetlh jomlu&apos;.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>pong chu&apos;, pagh tetlh chelmeH tu&apos;lu&apos;bogh chelwI&apos;.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Sor Daq (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>chelwI&apos; yIchu&apos;</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>chenmoHlu&apos;ta&apos; choHlu&apos;ta&apos; je tIchel</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>chelwI&apos;Daq yIchel</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>loHmeH mIw &apos;echletmey</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>tu&apos;lu&apos;bogh tetlh (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>ghItlhwI&apos;</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>cha&apos;</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>tetlh yIchu&apos;moH</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>tlheghmeyDaj tetlhDaq tIqonqa&apos;</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>zip ghItlh yIHev</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Hoch tetlh Suq id je, De&apos; pa&apos; toghbogh ngaQHa&apos;moHwI&apos;.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>chelwI&apos;</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>tlheghmey, wa&apos; tlhegh &apos;oH Hoch tlhegh&apos;e&apos;: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>tlhegh pong</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>choHlu&apos;be&apos;bogh: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>chaw&apos; ghItlh</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>ngoq &apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>ngoq &apos;ay&apos; tetlh DevwI&apos;</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe&apos;</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>ngoq &apos;ay&apos; yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP buv</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>&apos;ay&apos;mey, chaw&apos; ghItlh, ghItlhwI&apos; je</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>reH taHbogh buv</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>ghunghach chenmoHghach nom</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>tIchu&apos;moH: autoloads De&apos; polwI&apos;mey je</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>qach nab jommeH SQL je</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>SeHlaw HIDjolev Doch</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>ghItlhmey tI&apos;ang</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>mIw &apos;echlet fetch vangghachmey</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>tetlh eZPersistentObject buv, tlheghmeyDaj, rarghachDaj, rarghachmeyDaj je.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>chelwI&apos; tetlh je</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>chelwI&apos; tu&apos;lu&apos;: ghajbe&apos;bogh ghItlhmey chel DevwI&apos;, &apos;ej DuHmeyDaj chel; pa&apos; pagh ghItlhqa&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>chelwI&apos; chu&apos;lu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>chelwI&apos; ghItlhlu&apos;ta&apos;, &apos;ach chu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>tlheghmey</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>DaH tetlhDaq %source tlheghmey tu&apos;lu&apos;: DaneHbogh rur tIchoH.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>ghItlhmey (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>chaw&apos; ghItlh mu&apos;mey (chelwI&apos; chu&apos;vaD neH).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>loHghachDaq ngoq &apos;ay&apos; navmey (admin4 &apos;ay&apos;mey, Ha&apos;quj ghItlh nav Hutlh).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>wej tetlh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>tetlh tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>De&apos;Daq tetlh tlhegh Hoch yIrar</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>&apos;aplo&apos; rur chelwI&apos; DajommeH (chelwI&apos; chu&apos;vaD neH).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Seghmey: %types. De&apos; rarghachmey: object, node, user. Doch ghochbogh tetlh tlheghmey &apos;ang De&apos; leghghach.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>pImbogh</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>chovnatlh</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>chelwI&apos; QIjmeH nav &apos;angbogh Dochmey (chelwI&apos; chu&apos;vaD neH).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>chenmoHlu&apos;pu&apos;bogh, &apos;ej jommeH lo&apos;meH mIw je.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>tlheghmey Hal</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>wIvlu&apos;bogh Doch</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>chelwI&apos; yIghItlh</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>tu&apos;lu&apos;, choHlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php extension.xml je</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>ghu&apos;: fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove, REST/JSON ghoch json je, read edit je chaw&apos; chutmey tlhej.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>MySQL, PostgreSQL, SQLite, Oracle, SQL Server je QuQmeyvaD: share/db_schema.dba, sql/&lt;engine&gt;/schema.sql je.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>ghItlhlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count ghoHghach</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name Qap: %rows tetlh tlhegh %objects Doch je ghItlhlu&apos;ta&apos;, %same choHlu&apos;be&apos;, %conflicts ghoHghach, %failed Qapbe&apos;.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>&apos;emDaq %name taghlu&apos;ta&apos; (%engine); &apos;oH &apos;ang QapmoHghach qun.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>rarmeH tetlh chup: yInuD, ghIq yIpol.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Hal &apos;oH De&apos; buv tlhegh ngu&apos;wI&apos;&apos;e&apos;, pagh %list wa&apos;. De&apos;Daq buv tlheghmey neH ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>yItlhob: ghoHghach Dape&apos;nISbogh</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>tlhobbogh cha&apos; He rapmoHghach Qav QapmoHghach ret De&apos; tetlh tlhegh je choHlu&apos;pu&apos;. wa&apos; Dop yIwIv; latlh ghItlhqa&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>cha&apos; He</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>ghoHghachmey</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>ghoHghachmey (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>De&apos;</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>De&apos; tetlh je</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>De&apos; tetlhDaq De&apos; qonqa&apos;lu&apos;, pagh De&apos;Daq tetlh qonqa&apos;lu&apos;, pagh cha&apos; rapmoHlu&apos;: wa&apos;logh, poH nab tlhejtaHvIS, pagh SIbI&apos;, &apos;anghach, vIHmoHghach, teqghach je Hoch tlhej.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>De&apos; tetlhDaq</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>De&apos; Qap</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>De&apos; tetlh (reH taHbogh buv)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>He</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Qagh</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Hoch (lup)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>%time tu&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>ngaQHa&apos;moHwI&apos; tut(mey)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Qav QapmoHghach</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>SIbI&apos;, poH nab tlhejtaHvIS je</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>SIbI&apos;: Sor Daq bIngDaq buv Doch Hoch &apos;anghach, vIHmoHghach, teqghach je SIbI&apos; tetlhDaq ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>rarmeH tetlh: Hoch tutvaD wa&apos; tlhegh, tut = Hal</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>rapmoHghach chu&apos;</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>buv tlhegh Sovlu&apos;bogh Hal joq rapbogh buv tut tu&apos;lu&apos;be&apos;: rarmeH tetlh yIghItlh.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>poSbogh ghoHghach tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>wej rapmoHghach tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>poH nab tlhejtaHvIS</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>rarmeH tetlh yIchup</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>teqlu&apos;bogh pagh SorHom mejbogh Doch tetlh tlhegh yIteq</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>rapmoHghachvam yIteq</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>DaH yIQapmoH</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>QapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>yIpol &apos;ej DaH yIQapmoH</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>taghlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>chu&apos;Ha&apos;lu&apos;ta&apos; (poH nab QapmoHghach SIbI&apos; QapmoHghach je tu&apos;lu&apos;be&apos;)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>rapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>De&apos; yIwIv</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>tetlh yIwIv</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>ghoHghach pe&apos;lu&apos;laHbe&apos;pu&apos;; poStaH.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>tetlhDaq De&apos; ngoDmey ghItlhlu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Qav QapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>tetlh tlhegh Samlu&apos;meH lo&apos;lu&apos;bogh rarlu&apos;ta&apos;bogh tut(mey), ghu&apos;: contentobject_id, remote_id joq.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>choHghach chu&apos;qu&apos; Qap</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>tetlh tlheghmey De&apos; je ratlh; rarghach poSbogh ghoHghachmey je neH teqlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>tetlhvaD laDlu&apos;bogh SorHom, tetlh tlheghmeyvo&apos; chenmoHlu&apos;bogh Dochmey vav je.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>rapmoHghach pollu&apos;be&apos;pu&apos;</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>rapmoHghach pollu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>&apos;anglu&apos;ta&apos;bogh Doch buv rapmoHghachmey</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>De&apos;Daq tetlh</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>tetlh Qap</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>De&apos;Daq tetlh ngoDmey &apos;anglu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>wej rapmoHghach tetlhmey jomlu&apos;</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>wej De&apos; tetlh rapmoHghach tu&apos;lu&apos; (SeHlaw &gt; De&apos; tetlhmey &gt; rapmoHghachmey).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>cha&apos; Dop choHlu&apos;DI&apos;</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>taghlu&apos;DI&apos;</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>pagh wIvlu&apos;chugh, Doch ngaSbogh SorHom ghajbogh buvDaj rapmoHghach HochDaq Doch ghItlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>cha&apos; He</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>De&apos; tetlhDaq</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>Hoch %minutes tup</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>leQ lo&apos;lu&apos;DI&apos;, De&apos; pa&apos;vamDaq exp_data_sync, exp_data_sync_link, exp_data_sync_conflict je chenmoHlu&apos;; pagh latlh choHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>SIbI&apos;</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>Doch %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>chu&apos;Ha&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>De&apos;Daq tetlh</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>taghlu&apos;DI&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>latlh qemghach lelghach joq Danej&apos;a&apos;?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>qemghach</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>lelghach</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>qemghach lelghach je</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>janvam tlhej Qap</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>nuq &apos;oH qemmeH lelmeH joq jan vIpoQbogh&apos;e&apos;?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>nuq &apos;oH jan vIpoQbogh&apos;e&apos;?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Qu&apos;vamvaD qemmeH lelmeH janmey je</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>&apos;aplo&apos;mey</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>latlh jomghachDaq &apos;aplo&apos; ghItlh rur De&apos; buvmeyDaj je, pagh buvmey, chelwI&apos;mey, mIllogh nabmey je tIngeH.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>&apos;aplo&apos; rur buvmey tIlel…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>&apos;aplo&apos; yIlab &apos;ej yIjom…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS qemghach</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>latlh yoS RSS Atom joq QIn tlheghvo&apos; De&apos; yIchenmoH, rssimport poH Qu&apos; lo&apos;taHvIS, pIj.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS lelghach</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>RSS Atom joq QIn tlhegh rur ghItlh pa&apos; Dochmey chu&apos;qu&apos; tI&apos;ang, pagh OPML rur QIn tlheghmey tetlh.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>boSlu&apos;ta&apos;bogh De&apos;</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>wa&apos; ghItlh boSbogh De&apos; CSV ghItlh rur yIHev, boSlu&apos;ta&apos;bogh De&apos; tetlhvo&apos;.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>&apos;olghach lelghach</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>&apos;olghach He ghItlhmey tIHev, SeHlaw jIHDaq rur Say&apos;moHlu&apos;ta&apos;, CSV, JSON lines, JSON joq rur.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF lelghach</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>ghItlh pa&apos; DochmeyDaj je PDF ghItlh yIchenmoH, ghItlhmoHmeH ngeHmeH joq.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>De&apos; tetlhmey</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>reH taHbogh buvmey tetlhmey pong ghajbogh De&apos; pa&apos; rarghachmey je: rarghach HochDaq tetlhmey tIDel, tIchenmoH, tIDub; tetlh tlheghmeychaj tIleng; De&apos; ghochbogh Dochmey tIlegh.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>De&apos; pa&apos; rarghachDaq tetlh yIchenmoH pagh yIDub…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>reH taHbogh buvmey tetlhmey tIleng…</translation>
     </message>
 </context>
 </TS>

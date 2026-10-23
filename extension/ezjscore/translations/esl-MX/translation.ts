@@ -5,7 +5,7 @@
     <name>design/standard/content/datatype</name>
     <message>
         <source>Yes</source>
-        <translation>Si</translation>
+        <translation>Sí</translation>
     </message>
 </context>
 <context>

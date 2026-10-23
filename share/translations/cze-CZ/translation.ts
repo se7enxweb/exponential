@@ -7583,6 +7583,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Načítání nejnovějších příspěvků z fóra...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Nejnovější příspěvky z fóra se nepodařilo načíst.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -11062,6 +11066,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Neuloženo: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Použít na</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Celý podstrom</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Podstrom kromě větví v jiné sekci</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Pouze tento objekt</translation>
     </message>
 </context>
 <context>
@@ -14641,6 +14661,18 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
         <source>Help center</source>
         <translation>Centrum nápovědy</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Nic nového</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Ukázkový režim</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Tato instalace je veřejná ukázka: heslo správce může znát kdokoli a hesla správců nelze změnit ani obnovit. Nezadávejte sem nic soukromého.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15367,6 +15399,38 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Návody, vyhledávání a jak nahlásit chybu.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Připojení</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datové tabulky</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Pojmenované databáze: soubory SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Hesla a klíče nástrojů, uložené šifrovaně a zobrazené pouze podle názvu.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajné údaje</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabulky perzistentních tříd, jejich pole, vazby a úložiště.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Obsah a datové tabulky udržované ve shodě: jednorázově, podle plánu nebo průběžně.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronizace</translation>
     </message>
 </context>
 <context>
@@ -19568,6 +19632,22 @@ Poznámka: Balíčky nebudou odinstalovány.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Změní se také přiřazení sekce u podřízených položek.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Které objekty sekci dostanou</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Vybraná položka a všechny objekty pod ní</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Vybraná položka a objekty pod ní, které mají její sekci; větve v jiné sekci si ponechají svou</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Pouze vybraná položka</translation>
     </message>
 </context>
 <context>
@@ -26074,6 +26154,22 @@ Exponential verze</translation>
         <source>Find</source>
         <translation>Najít</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Nová datová tabulka s třídou, schématem, administrací, zásadami, funkcemi fetch a koncovým bodem JSON, ze seznamu polí, třídy obsahu nebo zdroje importu.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Tabulka modulu</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, v databázi webu nebo v pojmenovaném připojení</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba a sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/datatype</name>
@@ -28919,6 +29015,18 @@ Exponential verze</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>Pravidla účtování DPH (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Tato pravidla DPH se nepoužívají.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Není nastavena žádná obsluha DPH, proto se u každého produktu účtuje typ DPH, který je u něj nastaven, a tato pravidla se nikdy nečtou. Chcete-li je použít, nastavte Handler=ezdefault v sekci [VATSettings] souboru shop.ini (v settings/override/shop.ini.append.php) a přiřaďte produktům typ DPH &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Obsluhu DPH &quot;%handler&quot; nastavenou v sekci [VATSettings] souboru shop.ini nelze načíst, proto se tato pravidla nikdy nečtou. Zkontrolujte název obsluhy a adresáře, ve kterých se obsluhy DPH hledají (RepositoryDirectories a ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -43761,6 +43869,14 @@ Další informace najdete na stránce požadavků.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Toto heslo je známé nebo příliš běžné, takže jej může kdokoli uhodnout. Zvolte jiné.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Ukázkový režim</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Proměnná prostředí EXP_DEMO_MODE=1 označuje tuto instalaci jako veřejnou ukázku: přijímá se všeobecně známé heslo správce a hesla správců nelze později změnit ani obnovit. Ukázkový režim nikdy nepoužívejte pro produkční web.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -44788,7 +44904,7 @@ K tomu je třeba změnit příkazy %chown v části Alternativní příkazy shel
     </message>
     <message>
         <source>Order</source>
-        <translation>Pořadí</translation>
+        <translation>Objednávka</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -50848,6 +50964,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Událost pracovního postupu pro záměnu eZ Page</translation>
+    </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Zrcadlit do datových tabulek</translation>
     </message>
 </context>
 <context>
@@ -59045,7 +59165,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pořadí</translation>
+        <translation>Objednávka</translation>
     </message>
     <message>
         <source>Date</source>
@@ -60560,7 +60680,7 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pořadí</translation>
+        <translation>Objednávka</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -66053,6 +66173,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Stav nelze zobrazit. Chcete-li sledovat úlohu, obnovte stránku.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Objekty v podstromu, které mají sekci této položky, dostanou novou sekci; větve v jiné sekci si ponechají svou a objekty, kterým ji nesmíte přiřadit, se přeskočí.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -70972,6 +71096,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
         <translation>Schránka pro nedoručitelné zprávy nebyla nikdy přečtena: běží část úlohy cron mailbounces?</translation>
     </message>
+    <message>
+        <source>The postal address of the mail footer is empty: enter it under &quot;Sender details&quot; on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation>Poštovní adresa v zápatí e-mailů je prázdná: zadejte ji v části „Údaje o odesílateli“ na této stránce (mailpreferences/admin/status). Zákon vyžaduje v každém nepovinném e-mailu organizaci a její poštovní adresu; do té doby se e-maily odesílají bez ní.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences/categories</name>
@@ -75126,6 +75254,1593 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>More audiences</source>
         <translation>Další cílové skupiny</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Nemáte oprávnění vytvářet obsah (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Příručky se již sestavují.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Příručka %1 neexistuje.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Sestavit příručku nápovědy %1 z nápovědy ve formátu Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Sestavit příručky nápovědy z nápovědy ve formátu Markdown</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>Tajné údaje šifrované jiným klíčem než aktuálním: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>Znovu zašifrováno aktuálním klíčem: %done, již dříve: %current, nečitelné: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(vytvoří se při uložení prvního tajného údaje)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Samotná záloha databáze tajné údaje dešifrovat nedokáže</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Název tvoří písmena, číslice a _ . : - (nejvýše 128) a nesmí začínat na env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Vytvoří se nový klíč, všechny tajné údaje se jím znovu zašifrují a starý klíč se uchová jako soubor .previous. Poté nový soubor s klíčem zálohujte.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Nový název, nebo název existujícího tajného údaje, jehož hodnota se má nahradit. Prázdná hodnota: změní se pouze popis.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vše</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Změněno</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Původ</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Vytvořit tabulku</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Znovu zašifrovat všechny tajné údaje aktuálním klíčem</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Šifrování</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Zadejte hodnotu.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ID klíče</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Názvy</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Zatím žádný tajný údaj.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Pouze nástroj %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Hesla, tokeny a klíče API nástrojů: databázová připojení, zdroje importu, vzdálené servery. Nástroj si uchovává název tajného údaje; hodnota se ukládá zde, šifrovaně, a už se nikdy nezobrazí.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Předchozí klíč</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Rotovat</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Provést rotaci klíče</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajné údaje</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Nastavit tajný údaj</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Popis tajného údaje %name byl změněn; jeho hodnota zůstala zachována.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Klíč</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Rotaci klíče se nepodařilo provést (u klíče z EXP_SECRET_KEY se rotace provádí nastavením nového klíče a starého jako EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Klíč není uložen v databázi. S každou zálohou uchovávejte kopii souboru s klíčem (nebo EXP_SECRET_KEY) na samostatném bezpečném místě. Bez ní nelze tajné údaje obnovené databáze přečíst a musí se nastavit znovu.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Rotace klíče byla provedena: znovu zašifrováno %done, nečitelné %bad. Nyní nový soubor s klíčem zálohujte.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Tajný údaj %name byl odstraněn.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Tajný údaj %name byl šifrovaně uložen. Jeho hodnota se už znovu nezobrazí.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Tajný údaj se nepodařilo uložit: viz klíč výše.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Chybí tabulka exp_secret</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Nástroj tvoří malá písmena, číslice a _ . - (nejvýše 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Nejprve zaškrtněte „Ano, provést rotaci klíče“.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Tajný údaj odstraníte zaškrtnutím políčka vedle něj. Nástroj, který na něj odkazuje, selže, dokud nebude znovu nastaven.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Rotace klíče z prostředí: nastavte nový klíč jako EXP_SECRET_KEY a starý jako EXP_SECRET_KEY_PREVIOUS a poté zde všechny tajné údaje znovu zašifrujte.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Nástroj</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Dokud nebude vytvořena, lze používat pouze tajné údaje ze souboru secrets.ini a proměnné prostředí (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Kdo ho používá, např. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ano, odstranit %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ano, provést rotaci klíče</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>zde nelze dešifrovat</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>šifrováno</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>soubor secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>soubor .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>proměnná prostředí EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>soubor s klíčem %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>Třídy: %count</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>Do obsahu: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>Zobrazeno tříd: %shown z %all.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Název hostitele nebo adresa; pro SQLite prázdné.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Tajný údaj z Nastavení &gt; Tajné údaje, nebo env:VARIABLE pro proměnnou prostředí.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Vše (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>K dispozici</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zpět na seznam</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Znaková sada</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Třída</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Třída, tabulka nebo pole</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Třídy v tomto připojení: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Sloupec</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Sloupec v databázi</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Připojeno přes %via za %ms ms: %version, tabulky: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Připojení</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Připojení</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Připojení (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Třída obsahu</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Objekt obsahu</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Vytvořit tabulky</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datové tabulky</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databáze</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Databáze, které mohou datové tabulky a nástroje pro import a export používat vedle vlastní databáze této instalace: soubor SQLite nebo server MySQL, MariaDB, PostgreSQL, Oracle, SQL Server či MongoDB, místní nebo vzdálený. Heslo je název tajného údaje, nikdy jeho hodnota.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Deklarováno v datatable.ini [Connection_%id] nastavením nebo rozšířením: změňte ho tam. Zde ho lze otestovat.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Výchozí</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Rozdíly</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Ovladač</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Prázdné pro obvyklý port databázového stroje.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Databázový stroj</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Databázové stroje na tomto serveru</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Rozšíření %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Pole cíle</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtr</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Pro SQL Server: sqlsrv, dblib nebo odbc (když je prázdné, první, který tento server má).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Pro SQLite soubor, např. %example (v %dirs). Pro Oracle název služby.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Atributy funkcí: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikátor</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Jádro</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Klíč</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Klíč: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Známo z</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Vytvořeno v</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Znovu vytvořit katalog</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Více</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Pojmenovaná připojení potřebují tabulku exp_data_connection, úložiště tajných údajů tabulku exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Nové připojení</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Žádná perzistentní třída neodpovídá.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Není známa žádná vazba.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Žádné řádky.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Uzel</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Nezobrazeno: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Pouze pro databázový stroj připojený přes PDO, když server, port a databáze nestačí. Nikdy heslo.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Zdroj dat PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>Ovladač PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Heslo</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Samotné heslo</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Heslo: název tajného údaje</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Odkazuje na</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Pouze pro čtení: synchronizace do něj nikdy nezapisuje</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Vazby</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Odstranit toto připojení</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Povinné</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Řádky</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>Soubory SQLite mohou být v: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajné údaje</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekce</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server a databáze</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Soket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Vytvořit je zde může někdo se zásadou datatable/manage.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Při ukládání ho uložit do úložiště tajných údajů</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>K uložení hesla je potřeba zásada secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabulka</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Otestovat</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Otestovat připojení</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalog se vytváří z polí automatického načítání (autoload) a uchovává se, dokud se nezmění.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalog byl znovu vytvořen. Třídy: %count.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Sloupec %column (%type) není v definici.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Připojení selhalo po %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Připojení nebylo uloženo</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Připojení bylo uloženo.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definici této třídy nelze přečíst</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Pole %column (%type) nemá sloupec.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Pole %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>Prvních řádků: %count</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Heslo se nepodařilo uložit do úložiště tajných údajů (důvod uvádí Nastavení &gt; Tajné údaje).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabulka %table v databázi není.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Chybí tabulka exp_data_connection: připojení lze otestovat, ale ne uložit, dokud nebude vytvořena na stránce Datové tabulky.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Chybí tabulka exp_data_connection: vytvořte ji na stránce &lt;a href=&quot;%url&quot;&gt;Datové tabulky&lt;/a&gt;. Do té doby se zobrazují pouze připojení deklarovaná v datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Chybí tabulka exp_data_connection: nejprve ji vytvořte na stránce Datové tabulky.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Tabulky datových tabulek ještě nejsou nainstalovány</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabulky perzistentních tříd této instalace tak, jak je popisují jejich definice, a místo, kde je každá z nich uložena.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Vytvoří se v této databázi tlačítkem níže; nic jiného se nezmění.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Vlastní databáze této instalace, ze souboru site.ini. Zde ji lze otestovat.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Tento tajný údaj není nastaven.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Připojení odstraníte zaškrtnutím „Ano, odstranit“. Třídy a nástroje, které na něj odkazují, pak selžou, dokud nebude znovu vytvořeno.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Zaškrtnutím políčka níže ho uložíte, šifrovaně, jako tajný údaj s výše uvedeným názvem (datatable. a identifikátor, když je název prázdný).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Použije se pouze pro test a už se nikdy nezobrazí.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Uživatel</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Název, pod kterým na něj třídy a nástroje odkazují: malá písmena, číslice a _. Později ho nelze změnit.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Odkud třídy pocházejí</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Kde se tabulka liší od definice</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ano, odstranit</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>cizí klíč pole</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>automaticky číslováno: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>soubor datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() selhává</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>existuje</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>odvozeno z názvu</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>klíč</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>chybí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>zde není k dispozici</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nenastaveno</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>pouze pro čtení</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>nastaveno</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>web</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>soubor site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administrace</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definice</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>neznámé</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>zde neotestováno</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ano</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>Řádky odkazující na tuto položku přes %column (%kind): %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>Řádky, kde %field je %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>Řádky: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>Příkazy: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Všechny řádky (%count)</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Všechny řádky</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Použít</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Změnit sloupce a indexy, které se liší</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Vytvořit tabulku</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Vytvořte tabulky třídy nebo rozšíření v připojení nebo je aktualizujte. Před „Použít“ se nic nespustí; sloupce a indexy se odstraní nebo změní pouze tehdy, když to zaškrtnete.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotovo</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Odstranit sloupce a indexy, které schéma nemá</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Z definice třídy</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Na tuto položku neodkazuje žádný řádek datové tabulky.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Neprovede se, pokud to výše není zaškrtnuto: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Nepodařilo se provést vše</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>V připojení</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Nebo ze souboru schématu rozšíření</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Řádky tabulky %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Řádky datových tabulek, které odkazují na tuto položku</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schéma</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Zobrazit, co by se provedlo</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Připojení %id je pouze pro čtení.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Rozšíření %name nemá share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Instalační SQL každého databázového stroje</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Připojení %id neexistuje.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Perzistentní třída %class neexistuje.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Aktualizovat tabulku</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Co by se provedlo v %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>vytvořit</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>aktuální</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>aktualizovat</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>Řádky: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Třída obsahu</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Identifikátor třídy obsahu, připojení:tabulka nebo to, co zdroj vyžaduje. Pro seznam není potřeba.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Objekt obsahu (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Odkaz ve skupině Datové tabulky nabídky Nastavení pro uživatele se zásadou read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Seznam polí zadaný zde</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Nová datová tabulka se vším, co k ní patří: perzistentní třída, schéma a instalační SQL každého databázového stroje, modul se seznamem, úpravami, odstraňováním a koncovým bodem JSON, jeho zásady, stránky administrace a funkce fetch pro šablony. Pole pocházejí ze seznamu, třídy obsahu, existující tabulky nebo zdroje importu. Nic se nezapíše, dokud o to nepožádáte, a tabulka se instaluje z této stránky.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Nový název, nebo existující rozšíření, do kterého se má tabulka přidat.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Uzel (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Aktivovat rozšíření</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Přidat datum vytvoření a změny</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Přidat do rozšíření</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Šablony administrace</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Existující tabulka (připojení:tabulka)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Aktualizovat tabulku</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Zkopírovat její pole do seznamu</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Stáhnout jako zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Každá tabulka navíc dostane id, klíč automaticky číslovaný databází.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Rozšíření</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Pole, jedno na řádek: název typ[(délka)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Popisek</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Ponecháno beze změny: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licence</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Průvodce tabulkou modulu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Otevřít modul</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Třída PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Části, licence a autor</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Perzistentní třída</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Rychlý vývoj aplikací</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Obnovit: automatické načítání a mezipaměti</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Schéma a instalační SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Položka nabídky Nastavení</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Zobrazit soubory</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Funkce fetch pro šablony</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Třída eZPersistentObject tabulky s jejími poli, připojením a vazbami.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Rozšíření a tabulka</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Rozšíření existuje: průvodce přidá soubory, které nemá, a připojí svá nastavení; nic stávajícího se nepřepíše.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Rozšíření je aktivní.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Rozšíření je zapsáno, ale není aktivní.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Pole z %source jsou nyní v seznamu: upravte je podle potřeby.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Soubory (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Text licence (pouze u nového rozšíření).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Stránky modulu v administraci (komponenty admin4, bez vložených stylů).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tabulka zatím neexistuje.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tabulka existuje.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Svázat každý řádek s obsahem</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>K instalaci rozšíření jako balíčku (pouze u nového rozšíření).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Typy: %types. object, node a user jsou vazby na obsah: zobrazení obsahu ukazuje řádky, které na položku odkazují.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Jedinečné</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Verze</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Co zobrazuje stránka O rozšíření (pouze u nového rozšíření).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Co bylo vytvořeno a jak to nainstalovat a používat.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Odkud pole pocházejí</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Který</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Zapsat rozšíření</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>existuje, ponecháno beze změny</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php a extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Volání fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove a koncový bod REST/JSON json se zásadami read a edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba a sql/&lt;engine&gt;/schema.sql pro MySQL, PostgreSQL, SQLite, Oracle a SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>zapsáno</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>Konflikty: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name proběhla: řádky zapsány: %rows, objekty zapsány: %objects, beze změny: %same, konflikty: %conflicts, selhalo: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name byla spuštěna na pozadí (%engine); ukazuje to historie běhů.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Bylo navrženo mapování: zkontrolujte ho a pak uložte.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Zdrojem je identifikátor atributu třídy obsahu nebo jedna z hodnot: %list. Do obsahu se zapisují pouze atributy.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Zeptat se: konflikt k vyřešení</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Od posledního běhu obousměrné synchronizace, která se ptá, se změnil obsah i řádek. Zvolte jednu stranu; druhá bude přepsána.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Obousměrně</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Konflikty</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Konflikty (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Obsah</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Obsah a tabulka</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Obsah zkopírovaný do datové tabulky, tabulka zkopírovaná do obsahu, nebo obojí udržované ve shodě: jednorázově, podle plánu nebo průběžně při každém publikování, přesunu a odstranění.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Obsah do tabulky</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Vyhrává obsah</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datová tabulka (perzistentní třída)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Směr</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Každých (sekund)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Selhalo</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Nalezeno %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Klíčové sloupce</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Poslední běh</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Průběžně a podle plánu</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Průběžně: každé publikování, přesun a odstranění objektu dané třídy pod uzlem se okamžitě zapíše do tabulky.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Mapování: jeden řádek na sloupec, sloupec = zdroj</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Nová synchronizace</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Žádný sloupec třídy neodpovídá atributu ani známému zdroji: zapište mapování sami.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Žádný otevřený konflikt.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Zatím žádná synchronizace.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Podle plánu</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Navrhnout mapování</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Odstranit řádek objektu, který je odstraněn nebo opustí podstrom</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Odstranit tuto synchronizaci</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Spustit nyní</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Běhy</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Uložit a spustit nyní</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Zahájeno</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Vypnuto (žádné plánované ani průběžné běhy)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronizace</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Převzít obsah</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Převzít tabulku</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Konflikt se nepodařilo vyřešit; zůstává otevřený.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Hodnoty obsahu byly zapsány do tabulky.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Poslední běhy</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Mapované sloupce, podle kterých se řádek páruje, např. contentobject_id nebo remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Vyhrává novější změna</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Řádky i obsah zůstanou; odstraní se pouze párování a otevřené konflikty.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Podstrom, který se čte pro tabulku, a nadřazená položka objektů vytvořených z řádků.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Synchronizace nebyla uložena</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Synchronizace byla uložena.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Synchronizace třídy publikovaného objektu</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tabulka do obsahu</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Vyhrává tabulka</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Hodnoty tabulky byly publikovány do obsahu.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Tabulky synchronizace ještě nejsou nainstalovány</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Zatím neexistuje žádná synchronizace datových tabulek (Nastavení &gt; Datové tabulky &gt; Synchronizace).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Když se změnily obě strany</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Při spuštění</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Pokud není nic zaškrtnuto, objekt se zapíše do každé synchronizace své třídy, jejíž podstrom ho obsahuje.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>obousměrně</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>obsah do tabulky</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>každých %minutes min</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>Tabulky exp_data_sync, exp_data_sync_link a exp_data_sync_conflict se vytvoří v této databázi tlačítkem; nic jiného se nezmění.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>průběžně</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuto</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabulka do obsahu</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>při spuštění</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Tato instalace je veřejná ukázka: hesla správců nelze změnit ani obnovit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Hledáte jiný import nebo export?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Import dat</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Export dat</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import a export</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Funguje s tímto nástrojem</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Jaký nástroj pro import nebo export potřebuji?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Jaký nástroj potřebuji?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Nástroje pro import a export pro tento úkol</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Balíčky</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Přenést obsah s jeho třídami nebo třídy, rozšíření a vzhledy do jiné instalace jako soubor balíčku.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Exportovat třídy jako balíček…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Nahrát a nainstalovat balíček…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>Import RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Vytvářet obsah z kanálu RSS nebo Atom jiného webu, opakovaně pomocí úlohy cron rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>Export RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publikovat nejnovější položky složky jako kanál RSS nebo Atom, nebo seznam kanálů jako OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Shromážděné informace</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Stáhnout, co shromáždil jeden formulář, jako soubor CSV ze seznamu shromážděných informací.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Export auditu</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Stáhnout záznamy auditní stopy, filtrované jako v konzoli, jako CSV, řádky JSON nebo JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Export PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Vytvořit dokument PDF ze složky a jejích položek, k tisku nebo k odeslání.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datové tabulky</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabulky perzistentních tříd a pojmenovaná databázová připojení: popis, vytváření a aktualizace tabulek v libovolném připojení, procházení jejich řádků a zobrazení toho, co odkazuje na obsah.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Vytvořit nebo aktualizovat tabulku v databázovém připojení…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Procházet tabulky perzistentních tříd…</translation>
     </message>
 </context>
 </TS>

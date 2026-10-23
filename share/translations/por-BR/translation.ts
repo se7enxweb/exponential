@@ -556,7 +556,7 @@
     </message>
     <message>
         <source>Discard all changes and exit from edit mode.</source>
-        <translation>Rejeitar todas as modificações e sair do modo de edição.</translation>
+        <translation>Descartar todas as modificações e sair do modo de edição.</translation>
     </message>
     <message>
         <source>The class definition contains the following errors:</source>
@@ -704,7 +704,7 @@
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>The fields of every object of this class. The arrows and the position numbers set the order; tick attributes and press Remove selected attributes to remove them with their content in every object when the class is stored.</source>
@@ -2116,7 +2116,7 @@
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Your order</source>
@@ -3171,7 +3171,7 @@
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Last modified</source>
@@ -3726,7 +3726,7 @@
     </message>
     <message>
         <source>Publish the contents of the draft that is being edited. The draft will become the published version of the object.</source>
-        <translation>Publicar o conteúdo do rascunho que está a sendo editado. O rascunho irá se tornar a versão publicada do objeto.</translation>
+        <translation>Publicar o conteúdo do rascunho que está sendo editado. O rascunho irá se tornar a versão publicada do objeto.</translation>
     </message>
     <message>
         <source>Class identifier</source>
@@ -4662,7 +4662,7 @@
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Newest first</source>
@@ -5076,7 +5076,7 @@
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Newest first</source>
@@ -5384,7 +5384,7 @@
     </message>
     <message>
         <source>Restore at original location (unavailable).</source>
-        <translation>Restaurar no local original (não disponivel).</translation>
+        <translation>Restaurar no local original (não disponível).</translation>
     </message>
     <message>
         <source>OK</source>
@@ -8379,6 +8379,10 @@ Apelidos de URL definidos globalmente [%alias_count]</translation>
         <source>Loading the latest forum posts...</source>
         <translation>Carregando as postagens mais recentes do fórum...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Não foi possível carregar as publicações mais recentes do fórum.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -8543,7 +8547,7 @@ Apelidos de URL definidos globalmente [%alias_count]</translation>
     </message>
     <message>
         <source>You do not have permission to edit &lt;%item_name&gt;.</source>
-        <translation>Você não tem permição para editar &lt;%item_name&gt;.</translation>
+        <translation>Você não tem permissão para editar &lt;%item_name&gt;.</translation>
     </message>
 </context>
 <context>
@@ -8901,7 +8905,7 @@ Apelidos de URL definidos globalmente [%alias_count]</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Original authors and third-party software</source>
@@ -11873,7 +11877,7 @@ Apelidos de URL definidos globalmente [%alias_count]</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Move %name</source>
@@ -11910,6 +11914,22 @@ Apelidos de URL definidos globalmente [%alias_count]</translation>
     <message>
         <source>Yes</source>
         <translation>Sim</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Aplicar a</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Subárvore inteira</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Subárvore, exceto ramos em outra seção</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Somente este objeto</translation>
     </message>
 </context>
 <context>
@@ -15493,6 +15513,18 @@ Nota: Os pacotes não serão desinstalados.</translation>
         <source>Help center</source>
         <translation>Central de ajuda</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Nada de novo</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modo de demonstração</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Esta instalação é uma demonstração pública: qualquer pessoa pode saber a senha do administrador, e as senhas de administradores não podem ser alteradas nem redefinidas. Não digite nada privado aqui.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -16235,6 +16267,38 @@ Nota: Os pacotes não serão desinstalados.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Guias, pesquisa e como relatar um erro.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Conexões</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabelas de dados</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Bancos de dados nomeados: arquivos SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Senhas e chaves das ferramentas, armazenadas criptografadas, exibidas somente pelo nome.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Segredos</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>As tabelas das classes persistentes, seus campos, relações e armazenamento.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Conteúdo e tabelas de dados mantidos em sincronia: uma vez, por agendamento ou ao vivo.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Sincronizações</translation>
     </message>
 </context>
 <context>
@@ -17319,7 +17383,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Previsão</translation>
+        <translation>Pré-visualizar</translation>
     </message>
     <message>
         <source>Upload multiple files</source>
@@ -18020,7 +18084,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>ID %id</source>
@@ -18326,7 +18390,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Policies</source>
@@ -19702,7 +19766,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Type</source>
@@ -20803,7 +20867,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Most searched</source>
@@ -20930,6 +20994,22 @@ Nota: Os pacotes não serão desinstalados.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Observe que ao atribuir a seção, os subitens também serão alterados.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Quais objetos recebem a seção</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>O item escolhido e todos os objetos abaixo dele</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>O item escolhido e os objetos abaixo dele que têm a seção dele; ramos em outra seção mantêm a sua</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Somente o item escolhido</translation>
     </message>
 </context>
 <context>
@@ -21059,7 +21139,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Section edit error</source>
-        <translation>Erro de ediçao da seção</translation>
+        <translation>Erro de edição da seção</translation>
     </message>
     <message>
         <source>Identifier</source>
@@ -24596,7 +24676,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Active for siteaccesses (ActiveAccessExtensions)</source>
@@ -29095,6 +29175,22 @@ Nota: Os pacotes não serão desinstalados.</translation>
     <message>
         <source>Find</source>
         <translation>Localizar</translation>
+    </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Uma nova tabela de dados com sua classe, esquema, administração, políticas, funções de fetch e endpoint JSON, a partir de uma lista de campos, uma classe de conteúdo ou uma fonte de importação.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Tabela de módulo</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, no banco de dados do site ou em uma conexão nomeada</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba e sql/</translation>
     </message>
 </context>
 <context>
@@ -36995,6 +37091,18 @@ Nota: Os pacotes não serão desinstalados.</translation>
         <source>VAT charging rules (%rules)</source>
         <translation>Regras de tarifação de impostos (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Estas regras de imposto não são aplicadas.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Nenhum manipulador de imposto está definido, então cada produto é cobrado com o tipo de imposto definido nele e estas regras nunca são lidas. Para aplicá-las, defina Handler=ezdefault na seção [VATSettings] do shop.ini (em settings/override/shop.ini.append.php) e atribua aos produtos o tipo de imposto &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>O manipulador de imposto &quot;%handler&quot; definido na seção [VATSettings] do shop.ini não pode ser carregado, então estas regras nunca são lidas. Verifique o nome do manipulador e os diretórios em que os manipuladores de imposto são procurados (RepositoryDirectories e ExtensionDirectories).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -38450,7 +38558,7 @@ Nota: Os pacotes não serão desinstalados.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Address A to Z</source>
@@ -39507,7 +39615,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Reverse the order</source>
@@ -40369,7 +40477,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Class</source>
-        <translation>Classes</translation>
+        <translation>Classe</translation>
     </message>
     <message>
         <source>All classes</source>
@@ -43824,7 +43932,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>Are you sure you want to remove these classes?</source>
@@ -44223,7 +44331,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Do you approve of the content object being published?</source>
-        <translation>Aprova o objeto que está a ser publicado?</translation>
+        <translation>Você aprova a publicação do objeto?</translation>
     </message>
     <message>
         <source>The content object %1 was not accepted but will be available as a draft for the author.</source>
@@ -44716,7 +44824,7 @@ Se quiser enviar comentários ao aprovador ou ver o status do processo, use a UR
     </message>
     <message>
         <source>Remove object</source>
-        <translation>Eliminar o objeto</translation>
+        <translation>Remover o objeto</translation>
     </message>
     <message>
         <source>Options</source>
@@ -45208,7 +45316,7 @@ Se quiser enviar comentários ao aprovador ou ver o status do processo, use a UR
     </message>
     <message>
         <source>Order</source>
-        <translation>Pedido</translation>
+        <translation>Ordem</translation>
     </message>
     <message>
         <source>Published</source>
@@ -45616,7 +45724,7 @@ Se quiser enviar comentários ao aprovador ou ver o status do processo, use a UR
     <message>
         <source>This object is already being edited by you.
         You can either continue editing one of your drafts or you can create a new draft.</source>
-        <translation>Este objeto já está a sendo editado por você.
+        <translation>Este objeto já está sendo editado por você.
    Você pode continuar a edição de um dos seus rascunhos ou pode criar um novo rascunho.</translation>
     </message>
     <message>
@@ -46446,7 +46554,7 @@ Você pode continuar editando um de seus rascunhos ou pode criar um novo rascunh
     <name>design/standard/content/view</name>
     <message>
         <source>My bookmarks</source>
-        <translation>Os meus favoritos</translation>
+        <translation>Meus favoritos</translation>
     </message>
     <message>
         <source>Add bookmarks</source>
@@ -46482,7 +46590,7 @@ Você pode continuar editando um de seus rascunhos ou pode criar um novo rascunh
     </message>
     <message>
         <source>My drafts</source>
-        <translation>Os meus rascunhos</translation>
+        <translation>Meus rascunhos</translation>
     </message>
     <message>
         <source>Version</source>
@@ -46740,7 +46848,7 @@ Você pode editar estes rascunhos ou removê-los se não precisar mais deles.</t
     Select the node then click the %buttonname button.
     Using the recent and bookmark items for quick placement is also possible.
     Click on placement names to change the browse listing.</source>
-        <translation>Please choose which node you want to exchange %objectname with.
+        <translation>Escolha com qual nó você deseja trocar %objectname.
 
      Selecione o nó desejado, em seguida clique no botão %buttonname.
      Usar os itens recentes e os favoritos para um posicionamento rápido também é possível. 
@@ -46804,7 +46912,7 @@ Você pode editar estes rascunhos ou removê-los se não precisar mais deles.</t
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
 </context>
 <context>
@@ -47404,7 +47512,7 @@ Você pode editar estes rascunhos ou removê-los se não precisar mais deles.</t
     </message>
     <message>
         <source>Redirect</source>
-        <translation>Redireccionar</translation>
+        <translation>Redirecionar</translation>
     </message>
     <message>
         <source>Module load failed</source>
@@ -48786,7 +48894,7 @@ menu do topo.</translation>
     </message>
     <message>
         <source>Discard changes</source>
-        <translation>Rejeitar as alterações</translation>
+        <translation>Descartar as alterações</translation>
     </message>
     <message>
         <source>Role list</source>
@@ -48826,7 +48934,7 @@ menu do topo.</translation>
     </message>
     <message>
         <source>Role</source>
-        <translation>Tarefa</translation>
+        <translation>Papel</translation>
     </message>
     <message>
         <source>Role policies</source>
@@ -50064,7 +50172,7 @@ Usando o %operatorname você pode ...</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>Toolbar management</source>
@@ -51763,7 +51871,7 @@ It is possible to change these settings at a later time.</source>
     </message>
     <message>
         <source>&apos;User path&apos; and &apos;Admin path&apos; should only contain letters (&apos;a-zA-Z&apos;), digits (&apos;0-9&apos;) and underscores (&apos;_&apos;). The access values must not be named &apos;admin&apos; or &apos;user&apos; and each value must be unique. Please change invalid values on site indicated by *</source>
-        <translation>&quot;Caminho do usuário&quot; e &quot;Caminho do admin&quot; deverão conter apenas letras ( &apos;a-zA-Z&apos;), dígitos (&apos;0 -9 &apos;) e sublinhados (&apos;_&apos;). O valores do acesso não devem ser nomeados como &quot;admin&quot; ou &quot;usuario&quot; e cada valor deve ser único. Altere os valores inválidos no local indicado pelo *</translation>
+        <translation>&quot;Caminho do usuário&quot; e &quot;Caminho do admin&quot; deverão conter apenas letras (&apos;a-zA-Z&apos;), dígitos (&apos;0-9&apos;) e sublinhados (&apos;_&apos;). Os valores do acesso não devem ser nomeados como &quot;admin&quot; ou &quot;user&quot; e cada valor deve ser único. Altere os valores inválidos no local indicado pelo *</translation>
     </message>
     <message>
         <source>&apos;User port&apos; and &apos;Admin port&apos; should only contain digits (&apos;0-9&apos;). Please change invalid values on site indicated by *</source>
@@ -52117,7 +52225,7 @@ Esta funcionalidade também está disponível após a configuração inicial na 
     </message>
     <message>
         <source>Information about how to set up Exponential manually is available %1.</source>
-        <translation>Informaçoes sobre como configurar o Exponential manualmente está disponível %1.</translation>
+        <translation>Informações sobre como configurar o Exponential manualmente estão disponíveis %1.</translation>
     </message>
     <message>
         <source>The setup will not do an upgrade from older Exponential versions (such as 2.2.7) if you leave the data as it is. This is only meant for people who have existing data that they don&apos;t want to lose. If you have existing Exponential 4.0 data (such as from an RC release) you should skip DB initialization, however you will then need to do a manual upgrade.</source>
@@ -52499,6 +52607,14 @@ Consulte a página de requisitos para obter mais informações.</translation>
     <message>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Esta senha é muito conhecida ou comum demais, então qualquer pessoa poderia adivinhá-la. Escolha outra.</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Modo de demonstração</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>A variável de ambiente EXP_DEMO_MODE=1 marca esta instalação como demonstração pública: uma senha de administrador conhecida é aceita, e as senhas de administradores não podem ser alteradas nem redefinidas depois. Nunca use o modo de demonstração em um site de produção.</translation>
     </message>
 </context>
 <context>
@@ -53538,7 +53654,7 @@ Para fazer isso, você pode usar o comando %chown embaixo dos comandos do shell 
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>Group view</source>
@@ -54169,11 +54285,11 @@ Para fazer isso, você pode usar o comando %chown embaixo dos comandos do shell 
     </message>
     <message>
         <source>VAT</source>
-        <translation>ICMS</translation>
+        <translation>Imposto</translation>
     </message>
     <message>
         <source>Price inc. VAT</source>
-        <translation>Preço com ICMS</translation>
+        <translation>Preço com imposto</translation>
     </message>
     <message>
         <source>Discount</source>
@@ -54181,11 +54297,11 @@ Para fazer isso, você pode usar o comando %chown embaixo dos comandos do shell 
     </message>
     <message>
         <source>Total ex. VAT</source>
-        <translation>Total sem ICMS</translation>
+        <translation>Total sem imposto</translation>
     </message>
     <message>
         <source>Total inc. VAT</source>
-        <translation>Total com ICMS</translation>
+        <translation>Total com imposto</translation>
     </message>
     <message>
         <source>Summary</source>
@@ -54824,7 +54940,7 @@ Para fazer isso, você pode usar o comando %chown embaixo dos comandos do shell 
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>User setting</source>
@@ -55579,7 +55695,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Remove selected</source>
-        <translation>Remover selecionado</translation>
+        <translation>Remover selecionados</translation>
     </message>
     <message>
         <source>Remove selected template overrides.</source>
@@ -55757,7 +55873,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Rejeitar</translation>
+        <translation>Descartar</translation>
     </message>
     <message>
         <source>Workflow groups</source>
@@ -55845,7 +55961,7 @@ sua conta.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Repor</translation>
+        <translation>Redefinir</translation>
     </message>
     <message>
         <source>Next step</source>
@@ -57505,7 +57621,7 @@ este erro. Não tente reenviar o pagamento.</translation>
     </message>
     <message>
         <source>My bookmarks</source>
-        <translation>Os meus favoritos</translation>
+        <translation>Meus favoritos</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -57513,7 +57629,7 @@ este erro. Não tente reenviar o pagamento.</translation>
     </message>
     <message>
         <source>My drafts</source>
-        <translation>Os meus rascunhos</translation>
+        <translation>Meus rascunhos</translation>
     </message>
     <message>
         <source>Remove editing version</source>
@@ -59514,7 +59630,7 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>Default rule for any country already exists.</source>
-        <translation>A regra padrão para qualquer país ja existe.</translation>
+        <translation>A regra padrão para qualquer país já existe.</translation>
     </message>
 </context>
 <context>
@@ -59910,6 +60026,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Evento de workflow eZ Page swap</translation>
+    </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Espelhar em tabelas de dados</translation>
     </message>
 </context>
 <context>
@@ -61602,7 +61722,7 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     </message>
     <message>
         <source>VAT</source>
-        <translation>ICMS</translation>
+        <translation>Imposto</translation>
     </message>
     <message>
         <source>Dynamic VAT is on: products whose price uses &quot;%dynamic&quot; get the VAT rule for the customer country and product category.</source>
@@ -66763,6 +66883,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Não foi possível mostrar o status. Recarregue a página para acompanhar a tarefa.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Os objetos da subárvore que têm a seção deste item recebem a seção; ramos em outra seção mantêm a sua, e os objetos aos quais você não pode atribuí-la são ignorados.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -71682,6 +71806,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
         <translation>A caixa de devoluções nunca foi lida: a parte de cronjob mailbounces está em execução?</translation>
     </message>
+    <message>
+        <source>The postal address of the mail footer is empty: enter it under &quot;Sender details&quot; on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation>O endereço postal do rodapé dos e-mails está vazio: informe-o em &quot;Dados do remetente&quot; nesta página (mailpreferences/admin/status). A lei exige a organização e seu endereço postal em todo e-mail opcional; até lá, os e-mails são enviados sem ele.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences/categories</name>
@@ -75836,6 +75964,1593 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>More audiences</source>
         <translation>Mais públicos</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Você não tem permissão para criar conteúdo (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Os manuais já estão sendo gerados.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Não existe o manual %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Gerar o manual de ajuda %1 a partir da ajuda em Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Gerar os manuais de ajuda a partir da ajuda em Markdown</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>Segredos criptografados com outra chave que não a atual: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>Criptografados novamente com a chave atual: %done; já estavam: %current; não puderam ser lidos: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(criada quando o primeiro segredo é armazenado)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Um backup apenas do banco de dados não consegue descriptografar os segredos</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Um nome tem letras, dígitos e _ . : - (no máximo 128) e não começa com env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Uma nova chave é criada, cada segredo é criptografado novamente com ela e a chave antiga é mantida como o arquivo .previous. Depois, faça backup do novo arquivo de chave.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Um novo nome, ou o nome de um segredo existente para substituir o valor dele. Valor vazio: só a descrição muda.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Todos</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Alterado</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Origem</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Criar a tabela</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrição</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Criptografar novamente cada segredo com a chave atual</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Criptografia</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Informe o valor.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ID da chave</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomes</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Nenhum segredo ainda.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Somente a ferramenta %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Senhas, tokens e chaves de API das ferramentas: conexões de banco de dados, fontes de importação, servidores remotos. Uma ferramenta guarda o nome de um segredo; o valor é armazenado aqui, criptografado, e nunca mais é exibido.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Chave anterior</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remover</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Trocar</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Trocar a chave</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Segredos</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Definir um segredo</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>A descrição de %name foi alterada; o valor foi mantido.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>A chave</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Não foi possível trocar a chave (uma chave de EXP_SECRET_KEY é trocada definindo uma nova e a antiga como EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>A chave não está no banco de dados. Guarde uma cópia do arquivo de chave (ou de EXP_SECRET_KEY) com cada backup, em um lugar seguro separado. Sem ela, os segredos de um banco de dados restaurado não podem ser lidos e precisam ser definidos novamente.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>A chave foi trocada: segredos criptografados novamente: %done; não puderam ser lidos: %bad. Faça backup do novo arquivo de chave agora.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>O segredo %name foi removido.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>O segredo %name foi armazenado, criptografado. O valor dele não será exibido novamente.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Não foi possível armazenar o segredo: veja a chave acima.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>A tabela exp_secret está faltando</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>A ferramenta tem letras minúsculas, dígitos e _ . - (no máximo 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Marque &quot;Sim, trocar a chave&quot; primeiro.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Marque a caixa ao lado do segredo para removê-lo. Uma ferramenta que o usa falhará até que ele seja definido novamente.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Para trocar uma chave do ambiente: defina a nova chave como EXP_SECRET_KEY e a antiga como EXP_SECRET_KEY_PREVIOUS e, em seguida, criptografe novamente cada segredo aqui.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Ferramenta</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Até que ela seja criada, só podem ser usados os segredos do secrets.ini e as variáveis de ambiente (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Quem o usa, por exemplo, datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Sim, remover %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Sim, trocar a chave</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>não pode ser descriptografado aqui</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>criptografado</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>arquivo secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>o arquivo .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>a variável de ambiente EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>o arquivo de chave %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>Classes: %count</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>Para o conteúdo: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>Classes exibidas: %shown de %all.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Um nome de host ou endereço; vazio para SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Um segredo de Configuração &gt; Segredos, ou env:VARIABLE para uma variável de ambiente.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ações</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Todos (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Disponível</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Voltar à lista</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Conjunto de caracteres</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classe</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Classe, tabela ou campo</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Classes nesta conexão: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Coluna</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Coluna no banco de dados</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Conectado via %via em %ms ms: %version, tabelas: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Conexão</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Conexões</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Conexões (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Classe de conteúdo</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Objeto de conteúdo</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Criar as tabelas</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabelas de dados</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Banco de dados</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Bancos de dados que as tabelas de dados e as ferramentas de importação e exportação podem usar além do próprio desta instalação: um arquivo SQLite ou um servidor MySQL, MariaDB, PostgreSQL, Oracle, SQL Server ou MongoDB, local ou remoto. Uma senha é o nome de um segredo, nunca o valor dele.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Declarada em datatable.ini [Connection_%id] pelas configurações ou por uma extensão: altere-a lá. Ela pode ser testada aqui.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Padrão</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrição</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Diferenças</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Driver</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Vazio para a porta usual do sistema de banco de dados.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Sistema de banco de dados</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Sistemas de banco de dados neste servidor</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensão %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campo</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Campo do destino</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Campos</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Para SQL Server: sqlsrv, dblib ou odbc (o primeiro que este servidor tiver, quando vazio).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Para SQLite, o arquivo, por exemplo, %example (em %dirs). Para Oracle, o nome do serviço.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Atributos de função: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificador</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>kernel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Chave</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Chave: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Conhecido por</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Criado em</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Gerar o catálogo novamente</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Mais</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>As conexões nomeadas precisam da tabela exp_data_connection, e o cofre de segredos, da tabela exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Nova conexão</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Nenhuma classe persistente corresponde.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Nenhuma relação é conhecida.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Nenhuma linha.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Nó</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Não exibidos: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Somente para um sistema de banco de dados acessado via PDO, quando servidor, porta e banco de dados não bastam. Nunca uma senha.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Nome da fonte de dados PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>Driver PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Senha</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>A própria senha</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Senha: o nome de um segredo</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Aponta para</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Porta</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Somente leitura: a sincronização nunca grava nela</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relações</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remover</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Remover esta conexão</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obrigatório</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Linhas</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>Os arquivos SQLite podem estar em: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvar</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Segredos</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seção</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Servidor</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Servidor e banco de dados</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Caminho do socket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Quem tem a política datatable/manage pode criá-las aqui.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Armazenar no cofre de segredos ao salvar</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Armazenar uma senha requer a política secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabela</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testar</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Testar a conexão</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>O catálogo é gerado a partir dos arrays de autoload e mantido até que eles mudem.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>O catálogo foi gerado novamente: classes: %count.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>A coluna %column (%type) não está na definição.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>A conexão falhou após %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>A conexão não foi salva</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>A conexão foi salva com sucesso.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Não é possível ler a definição desta classe</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>O campo %column (%type) não tem coluna.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>O campo %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>As primeiras linhas (%count)</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Não foi possível armazenar a senha no cofre de segredos (Configuração &gt; Segredos informa o motivo).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>A tabela %table não está no banco de dados.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>A tabela exp_data_connection está faltando: uma conexão pode ser testada, mas não salva, até que a tabela seja criada na página Tabelas de dados.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>A tabela exp_data_connection está faltando: crie-a na página &lt;a href=&quot;%url&quot;&gt;Tabelas de dados&lt;/a&gt;. Até lá, só são listadas as conexões declaradas em datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>A tabela exp_data_connection está faltando: crie-a primeiro na página Tabelas de dados.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>As tabelas das tabelas de dados ainda não estão instaladas</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>As tabelas das classes persistentes desta instalação, como suas definições as descrevem, e onde cada uma é armazenada.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Elas são criadas neste banco de dados com o botão abaixo; nada mais muda.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>O próprio banco de dados desta instalação, do site.ini. Ele pode ser testado aqui.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Este segredo não está definido.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Marque &quot;Sim, remover&quot; para remover a conexão. As classes e ferramentas que a usam falharão até que ela seja criada novamente.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Marque a caixa abaixo para armazená-la, criptografada, como o segredo nomeado acima (datatable. e o identificador quando o nome estiver vazio).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tipo</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Usada somente para um teste e nunca mais exibida.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usuário</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>O nome pelo qual classes e ferramentas a chamam: letras minúsculas, dígitos e _. Não pode ser alterado depois.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>De onde vêm as classes</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Onde a tabela difere da definição</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Sim, remover</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>uma chave estrangeira de um campo</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>autoincremento: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>arquivo datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() falha</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>existe</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>deduzido do nome</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>chave</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>faltando</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>não</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>não disponível aqui</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>não definido</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>somente leitura</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>definido</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>o site</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>arquivo site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>a administração</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>a definição</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>desconhecido</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>não testado aqui</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sim</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>Linhas que apontam para este item por meio de %column (%kind): %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>Linhas em que %field é %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>Linhas: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>Instruções: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Todas as linhas (%count)</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Todas as linhas</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Aplicar</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Alterar colunas e índices que diferem</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Criar a tabela</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Crie as tabelas de uma classe ou de uma extensão em uma conexão, ou atualize-as. Nada é executado antes de &quot;Aplicar&quot;; colunas e índices só são excluídos ou alterados quando você marcar essa opção.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Concluído</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Excluir colunas e índices que o esquema não tem</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>A partir da definição de uma classe</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Nenhuma linha de uma tabela de dados aponta para este item.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Não executado a menos que marcado acima: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Nem tudo pôde ser executado</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Na conexão</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Ou a partir do arquivo de esquema de uma extensão</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Linhas de %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Linhas de tabelas de dados que apontam para este item</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Esquema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Mostrar o que seria feito</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>A conexão %id é somente leitura.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>A extensão %name não tem share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>O SQL de instalação de cada sistema de banco de dados</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Não existe a conexão %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Não existe a classe persistente %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Atualizar a tabela</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>O que seria feito em %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>criar</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>atualizada</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>atualizar</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>Linhas: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Uma classe de conteúdo</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Um identificador de classe de conteúdo, conexão:tabela, ou o que a fonte pedir. Não é necessário para uma lista.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Um objeto de conteúdo (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Um link no grupo Tabelas de dados do menu Configuração, para usuários com a política read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Uma lista de campos digitada aqui</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Uma nova tabela de dados com tudo o que a acompanha: a classe persistente, o esquema e o SQL de instalação de cada sistema de banco de dados, um módulo com listagem, edição, remoção e um endpoint JSON, suas políticas, as páginas de administração e as funções de fetch para templates. Os campos vêm de uma lista, de uma classe de conteúdo, de uma tabela existente ou de uma fonte de importação. Nada é gravado até que você peça, e a tabela é instalada a partir desta página.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Um novo nome, ou uma extensão existente à qual adicionar a tabela.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Um nó (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Ativar a extensão</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Adicionar criado e modificado</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Adicionar à extensão</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Templates de administração</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Uma tabela existente (conexão:tabela)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambos</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Atualizar a tabela</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Copiar os campos dela para a lista</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Baixar como zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Cada tabela também recebe id, uma chave incrementada pelo banco de dados.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensão</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Campos, um por linha: nome tipo[(tamanho)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>Arquivo LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Rótulo</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Mantidos como estão: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licença</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Módulo</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Assistente de tabela de módulo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Abrir o módulo</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classe PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Partes, licença e autor</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Classe persistente</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>Arquivo README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Desenvolvimento rápido de aplicações</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Atualizar: autoloads e caches</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Esquema e SQL de instalação</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Entrada no menu Configuração</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Mostrar os arquivos</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Funções de fetch para templates</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>A classe eZPersistentObject da tabela, com seus campos, conexão e relações.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>A extensão e a tabela</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>A extensão existe: o assistente adiciona os arquivos que ela não tem e acrescenta suas configurações; nada lá é sobrescrito.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>A extensão está ativa.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>A extensão foi gravada, mas não está ativa.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Os campos</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Os campos de %source estão agora na lista: altere-os como precisar.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Os arquivos (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>O texto da licença (somente para uma nova extensão).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>As páginas do módulo na administração (componentes do admin4, sem estilos inline).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>A tabela ainda não existe.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>A tabela existe.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Vincular cada linha a um conteúdo</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Título</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Para instalar a extensão como pacote (somente para uma nova extensão).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Tipos: %types. object, node e user são relações com o conteúdo: a visualização do conteúdo mostra as linhas que apontam para um item.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Único</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versão</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>O que a página Sobre mostra (somente para uma nova extensão).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>O que foi gerado e como instalar e usar.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>De onde vêm os campos</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Qual</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Gravar a extensão</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>Arquivo composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>existe, mantido como está</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php e extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Via fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove e o endpoint REST/JSON json, com as políticas read e edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba e sql/&lt;engine&gt;/schema.sql para MySQL, PostgreSQL, SQLite, Oracle e SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>gravado</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>Conflitos: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name executada: linhas gravadas: %rows, objetos gravados: %objects, inalterados: %same, conflitos: %conflicts, com falha: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name foi iniciada em segundo plano (%engine); o histórico de execuções a mostra.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Um mapeamento foi proposto: verifique-o e depois salve.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Uma fonte é um identificador de atributo da classe de conteúdo, ou um destes: %list. Somente atributos são gravados no conteúdo.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Perguntar: um conflito a resolver</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Tanto o conteúdo quanto a linha mudaram desde a última execução de uma sincronização bidirecional que pergunta. Escolha um lado; o outro é sobrescrito.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Nos dois sentidos</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Conflitos</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Conflitos (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Conteúdo</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Conteúdo e tabela</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Conteúdo copiado para uma tabela de dados, uma tabela copiada para o conteúdo, ou ambos mantidos em sincronia: uma vez, por agendamento ou ao vivo a cada publicação, movimentação e remoção.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Do conteúdo para a tabela</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>O conteúdo prevalece</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Tabela de dados (classe persistente)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Sentido</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erro</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>A cada (segundos)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Com falha</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Encontrados %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Colunas-chave</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Última execução</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Ao vivo e por agendamento</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Ao vivo: cada publicação, movimentação e remoção de um objeto da classe abaixo do nó é gravada na tabela imediatamente.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Mapeamento: uma linha por coluna, coluna = fonte</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Nova sincronização</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Nenhuma coluna da classe corresponde a um atributo ou a uma fonte conhecida: escreva o mapeamento você mesmo.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Nenhum conflito em aberto.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Nenhuma sincronização ainda.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Por agendamento</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Propor o mapeamento</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Remover a linha de um objeto que é removido ou sai da subárvore</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Remover esta sincronização</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Executar agora</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Execuções</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Salvar e executar agora</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Iniciada</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Desligada (sem execuções agendadas ou ao vivo)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Sincronizações</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Ficar com o conteúdo</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Ficar com a tabela</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Não foi possível resolver o conflito; ele continua em aberto.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Os valores do conteúdo foram gravados na tabela.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>As últimas execuções</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>As colunas mapeadas pelas quais uma linha é identificada, por exemplo, contentobject_id ou remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>A alteração mais recente prevalece</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>As linhas e o conteúdo permanecem; somente o pareamento e os conflitos em aberto são removidos.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>A subárvore lida para a tabela e o pai dos objetos criados a partir das linhas.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>A sincronização não foi salva</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>A sincronização foi salva com sucesso.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>As sincronizações da classe do objeto publicado</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Da tabela para o conteúdo</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>A tabela prevalece</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Os valores da tabela foram publicados no conteúdo.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>As tabelas da sincronização ainda não estão instaladas</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Ainda não há nenhuma sincronização de tabela de dados (Configuração &gt; Tabelas de dados &gt; Sincronizações).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Quando os dois lados mudaram</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Quando iniciada manualmente</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Sem nenhuma marcada, o objeto é gravado em todas as sincronizações da classe dele cuja subárvore o contém.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>nos dois sentidos</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>do conteúdo para a tabela</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>a cada %minutes minutos</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link e exp_data_sync_conflict são criadas neste banco de dados com o botão; nada mais muda.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>ao vivo</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objeto %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desligada</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>da tabela para o conteúdo</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>quando iniciada manualmente</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Esta instalação é uma demonstração pública: as senhas de administradores não podem ser alteradas nem redefinidas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Procurando outra importação ou exportação?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importar</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportar</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Importação e exportação</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Funciona com esta ferramenta</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>De qual ferramenta de importação ou exportação eu preciso?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>De qual ferramenta eu preciso?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Ferramentas de importação e exportação para esta tarefa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pacotes</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Mova conteúdo com suas classes, ou classes, extensões e designs, para outra instalação como arquivo de pacote.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Exportar classes como pacote…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Carregar e instalar um pacote…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>Importação RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Crie conteúdo a partir de um feed RSS ou Atom de outro site, repetidamente, pelo cronjob rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>Exportação RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publique os itens mais recentes de uma pasta como feed RSS ou Atom, ou uma lista de feeds como OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Informações coletadas</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Baixe o que um formulário coletou como arquivo CSV, a partir da lista de informações coletadas.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Exportação da auditoria</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Baixe os registros da trilha de auditoria, filtrados como no console, como CSV, JSON lines ou JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Exportação PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Gere um documento PDF de uma pasta e seus itens, para imprimir ou enviar.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabelas de dados</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>As tabelas das classes persistentes e as conexões de banco de dados nomeadas: descreva, crie e atualize tabelas em qualquer conexão, navegue pelas linhas delas e veja o que aponta para o conteúdo.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Criar ou atualizar uma tabela em uma conexão de banco de dados…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Navegar pelas tabelas das classes persistentes…</translation>
     </message>
 </context>
 </TS>

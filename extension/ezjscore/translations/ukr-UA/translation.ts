@@ -76,7 +76,7 @@
     </message>
     <message>
         <source>The default parent location for uploads cannot be retrieved! Check user permissions and correctness of settings.</source>
-        <translation>Не вдалося отримати батьківське розташування за замовчуванням для завантажень! Перевірте права користувача й правильність налаштувань.</translation>
+        <translation>Не вдалося отримати типове батьківське розташування для завантажень! Перевірте права користувача й правильність налаштувань.</translation>
     </message>
 </context>
 </TS>

@@ -7387,6 +7387,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>טוען את הפוסטים האחרונים בפורום...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>לא ניתן היה לטעון את ההודעות האחרונות בפורום.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -9712,7 +9716,7 @@
     </message>
     <message>
         <source>Minutes a reader needs for the main text (see Word count), at WordsPerMinute words a minute. Reads the data map.</source>
-        <translation>הדקות שקורא צריך לטקסט הראשי (ראו מספר מילים), בקצב של WordsPerMinute מילים לדקה. קורא את מפת הנתונים.</translation>
+        <translation>הדקות שקורא צריך לטקסט הראשי (יש לעיין ב&quot;מספר מילים&quot;), בקצב של WordsPerMinute מילים לדקה. קורא את מפת הנתונים.</translation>
     </message>
     <message>
         <source>Name length</source>
@@ -10709,6 +10713,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>לא נשמר: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>החלה על</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>כל תת־העץ</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>תת־העץ, למעט ענפים במדור אחר</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>אובייקט זה בלבד</translation>
     </message>
 </context>
 <context>
@@ -14236,6 +14256,10 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>התקנה זו היא הדגמה ציבורית: כל אחד עשוי לדעת את סיסמת מנהל המערכת שלה, ולא ניתן לשנות או לאפס סיסמאות של מנהלי מערכת. אין להזין כאן שום מידע פרטי.</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>אין חדש</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14950,6 +14974,38 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>מדריכים, חיפוש ואיך מדווחים על שגיאה.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>חיבורים</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>טבלאות נתונים</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>מסדי נתונים בעלי שם: קובצי SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>סיסמאות ומפתחות של הכלים, מאוחסנים מוצפנים ומוצגים לפי שם בלבד.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>סודות</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>הטבלאות של המחלקות המתמידות, השדות שלהן, הקשרים ומקום האחסון.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>תוכן וטבלאות נתונים מסונכרנים: פעם אחת, לפי תזמון או בזמן אמת.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>סנכרונים</translation>
     </message>
 </context>
 <context>
@@ -19581,6 +19637,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>נא לשים לב שגם הקצאת המדור של פריטי המשנה תשתנה.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>אילו אובייקטים מקבלים את המדור</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>הפריט הנבחר וכל אובייקט שמתחתיו</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>הפריט הנבחר והאובייקטים שמתחתיו שיש להם את המדור שלו; ענפים במדור אחר שומרים על המדור שלהם</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>הפריט הנבחר בלבד</translation>
     </message>
 </context>
 <context>
@@ -27713,6 +27785,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Find</source>
         <translation>חיפוש</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>טבלת נתונים חדשה עם המחלקה, הסכמה, הניהול, המדיניות, פונקציות השליפה ונקודת קצה JSON שלה, מתוך רשימת שדות, מחלקת תוכן או מקור ייבוא.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>טבלת מודול</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, במסד הנתונים של האתר או בחיבור בעל שם</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba ו־sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -35555,6 +35643,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>כללי חיוב מע&quot;מ (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>כללי מע&quot;מ אלה אינם מוחלים.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>לא הוגדר מטפל מע&quot;מ, ולכן כל מוצר מחויב בסוג המע&quot;מ שהוגדר עליו, וכללים אלה לעולם אינם נקראים. כדי להחיל אותם, יש להגדיר Handler=ezdefault במקטע [VATSettings] של shop.ini (בקובץ settings/override/shop.ini.append.php) ולתת למוצרים את סוג המע&quot;מ &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>לא ניתן לטעון את מטפל המע&quot;מ &quot;%handler&quot; שהוגדר במקטע [VATSettings] של shop.ini, ולכן כללים אלה לעולם אינם נקראים. יש לבדוק את שם המטפל ואת התיקיות שבהן מחפשים מטפלי מע&quot;מ (RepositoryDirectories ו־ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -57957,6 +58057,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>אירוע זרימת עבודה להחלפת eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>שיקוף לטבלאות נתונים</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -64794,6 +64898,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>לא ניתן היה להציג את המצב. יש לטעון מחדש את העמוד כדי לעקוב אחר המשימה.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>האובייקטים בתת־העץ שיש להם את המדור של פריט זה מקבלים את המדור; ענפים במדור אחר שומרים על המדור שלהם, ואובייקטים שאין הרשאה להקצות להם אותו מדולגים.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -64907,7 +65015,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You cannot continue while other objects use the items (see the list above).</source>
-        <translation>לא ניתן להמשיך כל עוד אובייקטים אחרים משתמשים בפריטים (ראו את הרשימה למעלה).</translation>
+        <translation>לא ניתן להמשיך כל עוד אובייקטים אחרים משתמשים בפריטים (יש לעיין ברשימה שלמעלה).</translation>
     </message>
     <message>
         <source>Hide the selected items</source>
@@ -68266,7 +68374,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run failed or stopped. See the lines above.</source>
-        <translation>ההרצה נכשלה או נעצרה. ראו את השורות שלמעלה.</translation>
+        <translation>ההרצה נכשלה או נעצרה. יש לעיין בשורות שלמעלה.</translation>
     </message>
     <message>
         <source>Type</source>
@@ -71412,7 +71520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Build on it: extensions, templates, settings, the APIs, the command line and upgrades.</source>
-        <translation>לבנות על גבי המערכת: הרחבות, תבניות, הגדרות, ממשקי ה-API, שורת הפקודה ושדרוגים.</translation>
+        <translation>לבנות על גבי המערכת: הרחבות, תבניות, הגדרות, ממשקי ה־API, שורת הפקודה ושדרוגים.</translation>
     </message>
     <message>
         <source>Create, edit, translate and publish content: media, layouts, search and the editor.</source>
@@ -71460,7 +71568,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>(new issue on GitHub, opens in a new window)</source>
-        <translation>(דיווח חדש ב-GitHub, נפתח בחלון חדש)</translation>
+        <translation>(דיווח חדש ב־GitHub, נפתח בחלון חדש)</translation>
     </message>
     <message>
         <source>(opens in a new window)</source>
@@ -71480,7 +71588,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A security issue? Report it privately, not in a public issue.</source>
-        <translation>בעיית אבטחה? דווחו עליה באופן פרטי, לא בדיווח ציבורי.</translation>
+        <translation>בעיית אבטחה? יש לדווח עליה באופן פרטי, לא בדיווח ציבורי.</translation>
     </message>
     <message>
         <source>A title that names the error</source>
@@ -71512,11 +71620,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Ask an administrator of this site for the matching lines of the error digest (Setup, Logs). The message and the time it happened are what a maintainer needs most.</source>
-        <translation>בקשו ממנהל של אתר זה את השורות המתאימות מתקציר השגיאות (הגדרות, יומנים). ההודעה והזמן שבו היא התרחשה הם מה שמתחזק צריך יותר מכל.</translation>
+        <translation>יש לבקש ממנהל של אתר זה את השורות המתאימות מתקציר השגיאות (הגדרות, יומנים). ההודעה והזמן שבו היא התרחשה הם מה שמתחזק צריך יותר מכל.</translation>
     </message>
     <message>
         <source>Ask the community first: questions about how something works, ideas and experiences belong there.</source>
-        <translation>שאלו קודם את הקהילה: שאלות על אופן הפעולה, רעיונות וחוויות שייכים לשם.</translation>
+        <translation>כדאי לשאול קודם את הקהילה: שאלות על אופן הפעולה, רעיונות וחוויות שייכים לשם.</translation>
     </message>
     <message>
         <source>Before you report</source>
@@ -71560,11 +71668,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Each part of Exponential has its own public tracker on GitHub. You need a GitHub account to open an issue.</source>
-        <translation>לכל חלק של Exponential יש מעקב ציבורי משלו ב-GitHub. כדי לפתוח דיווח צריך חשבון GitHub.</translation>
+        <translation>לכל חלק של Exponential יש מעקב ציבורי משלו ב־GitHub. כדי לפתוח דיווח צריך חשבון GitHub.</translation>
     </message>
     <message>
         <source>Edit on GitHub</source>
-        <translation>עריכה ב-GitHub</translation>
+        <translation>עריכה ב־GitHub</translation>
     </message>
     <message>
         <source>Everyone</source>
@@ -71584,7 +71692,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Fill in what you know; the form prepares the issue with the diagnostics of this installation. Nothing is sent to GitHub until you open the issue there and submit it yourself.</source>
-        <translation>מלאו את מה שאתם יודעים; הטופס מכין את הדיווח עם נתוני האבחון של התקנה זו. דבר אינו נשלח ל-GitHub עד שתפתחו שם את הדיווח ותשלחו אותו בעצמכם.</translation>
+        <translation>יש למלא את מה שידוע; הטופס מכין את הדיווח עם נתוני האבחון של התקנה זו. דבר אינו נשלח ל־GitHub עד שהדיווח נפתח שם ונשלח באופן ידני.</translation>
     </message>
     <message>
         <source>For</source>
@@ -71596,11 +71704,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Found a security problem?</source>
-        <translation>מצאתם בעיית אבטחה?</translation>
+        <translation>נמצאה בעיית אבטחה?</translation>
     </message>
     <message>
         <source>Found an error?</source>
-        <translation>מצאתם שגיאה?</translation>
+        <translation>נמצאה שגיאה?</translation>
     </message>
     <message>
         <source>Help center</source>
@@ -71616,11 +71724,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Include the version, the PHP version and the engine (the diagnostics above), what an attacker can do and the steps to reproduce it. Leave out passwords, secrets and personal data. You get a first answer within one business day.</source>
-        <translation>ציינו את הגרסה, את גרסת PHP ואת המנוע (נתוני האבחון למעלה), מה תוקף יכול לעשות ואת הצעדים לשחזור. השמיטו סיסמאות, סודות ומידע אישי. תשובה ראשונה תתקבל בתוך יום עסקים אחד.</translation>
+        <translation>יש לציין את הגרסה, את גרסת PHP ואת המנוע (נתוני האבחון למעלה), מה תוקף יכול לעשות ואת הצעדים לשחזור. יש להשמיט סיסמאות, סודות ומידע אישי. תשובה ראשונה תתקבל בתוך יום עסקים אחד.</translation>
     </message>
     <message>
         <source>It opens on GitHub with your text and the diagnostics filled in; check it there and submit it.</source>
-        <translation>הוא נפתח ב-GitHub עם הטקסט שלכם ונתוני האבחון; בדקו אותו שם ושלחו.</translation>
+        <translation>הוא נפתח ב־GitHub עם הטקסט ונתוני האבחון; יש לבדוק אותו שם ולשלוח.</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
@@ -71632,23 +71740,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Leave out anything private</source>
-        <translation>השמיטו כל דבר פרטי</translation>
+        <translation>השמטת כל מידע פרטי</translation>
     </message>
     <message>
         <source>Look at the logs</source>
-        <translation>בדקו את היומנים</translation>
+        <translation>בדיקת היומנים</translation>
     </message>
     <message>
         <source>Look for an existing report</source>
-        <translation>חפשו דיווח קיים</translation>
+        <translation>חיפוש דיווח קיים</translation>
     </message>
     <message>
         <source>Missing a page? Tell us</source>
-        <translation>חסר דף? ספרו לנו</translation>
+        <translation>חסר דף? דיווח עליו</translation>
     </message>
     <message>
         <source>Never report it in a public issue tracker or forum. Use the private path described under</source>
-        <translation>לעולם אל תדווחו על כך במעקב ציבורי או בפורום. השתמשו בדרך הפרטית המתוארת תחת</translation>
+        <translation>אין לדווח על כך במעקב ציבורי או בפורום. יש להשתמש בדרך הפרטית המתוארת תחת</translation>
     </message>
     <message>
         <source>New issue</source>
@@ -71696,7 +71804,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Open the issue in %tracker</source>
-        <translation>פתיחת הדיווח ב-%tracker</translation>
+        <translation>פתיחת הדיווח ב־%tracker</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -71704,7 +71812,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Pick your role to see the pages written for it.</source>
-        <translation>בחרו את התפקיד שלכם כדי לראות את הדפים שנכתבו עבורו.</translation>
+        <translation>יש לבחור תפקיד כדי לראות את הדפים שנכתבו עבורו.</translation>
     </message>
     <message>
         <source>Popular pages for %audience</source>
@@ -71732,11 +71840,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Repeat what you did. Note whether it fails every time, only for one user or one page, and whether clearing the caches changes anything.</source>
-        <translation>חזרו על מה שעשיתם. ציינו אם זה נכשל בכל פעם, רק אצל משתמש אחד או בדף אחד, והאם ניקוי המטמונים משנה משהו.</translation>
+        <translation>יש לחזור על הפעולות שבוצעו. יש לציין אם זה נכשל בכל פעם, רק אצל משתמש אחד או בדף אחד, והאם ניקוי המטמונים משנה משהו.</translation>
     </message>
     <message>
         <source>Report a vulnerability privately on GitHub</source>
-        <translation>דיווח פרטי על פגיעות ב-GitHub</translation>
+        <translation>דיווח פרטי על פגיעות ב־GitHub</translation>
     </message>
     <message>
         <source>Report to</source>
@@ -71756,7 +71864,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
-        <translation>חפשו בדיווחים הפתוחים של המעקב שלהלן. אם השגיאה שלכם שם, הוסיפו לה את מה שאתם יודעים במקום לפתוח חדש.</translation>
+        <translation>יש לחפש בדיווחים הפתוחים של המעקב שלהלן. אם השגיאה כבר מופיעה שם, יש להוסיף לה את מה שידוע במקום לפתוח דיווח חדש.</translation>
     </message>
     <message>
         <source>Security issues</source>
@@ -71764,7 +71872,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Something wrong on this page? Report an error</source>
-        <translation>משהו לא תקין בדף זה? דווחו על שגיאה</translation>
+        <translation>משהו לא תקין בדף זה? דיווח על שגיאה</translation>
     </message>
     <message>
         <source>Source file:</source>
@@ -71772,7 +71880,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Start where you are</source>
-        <translation>התחילו מכאן</translation>
+        <translation>התחלה מהמקום הנוכחי</translation>
     </message>
     <message>
         <source>Steps to reproduce</source>
@@ -71780,7 +71888,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
-        <translation>ספרו לנו ב-GitHub: המדריך מראה איזה מעקב מתאים, מה לכלול ואילו פרטי מערכת להעתיק, בלי סודות.</translation>
+        <translation>דיווח ב־GitHub: המדריך מראה איזה מעקב מתאים, מה לכלול ואילו פרטי מערכת להעתיק, בלי סודות.</translation>
     </message>
     <message>
         <source>The answer may already be documented, including the known limits of a feature.</source>
@@ -71808,11 +71916,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Try fewer or other words, or another audience or topic.</source>
-        <translation>נסו פחות מילים או מילים אחרות, או קהל או נושא אחר.</translation>
+        <translation>כדאי לנסות פחות מילים או מילים אחרות, או קהל או נושא אחר.</translation>
     </message>
     <message>
         <source>Try it again</source>
-        <translation>נסו שוב</translation>
+        <translation>ניסיון חוזר</translation>
     </message>
     <message>
         <source>Type</source>
@@ -71836,11 +71944,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What you did, and what went wrong. Quote the error message exactly.</source>
-        <translation>מה עשיתם ומה השתבש. צטטו את הודעת השגיאה במדויק.</translation>
+        <translation>מה נעשה ומה השתבש. יש לצטט את הודעת השגיאה במדויק.</translation>
     </message>
     <message>
         <source>What you expected</source>
-        <translation>מה ציפיתם</translation>
+        <translation>מה היה צפוי</translation>
     </message>
     <message>
         <source>Where to report</source>
@@ -71852,7 +71960,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Your issue is ready.</source>
-        <translation>הדיווח שלכם מוכן.</translation>
+        <translation>הדיווח מוכן.</translation>
     </message>
     <message>
         <source>audiences</source>
@@ -71984,19 +72092,19 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Exponential is free software with its full history on GitHub. Install it as Git clones, the recommended way to build websites, and you can follow every change, try fixes before they are released and send your own improvements back.</source>
-        <translation>Exponential היא תוכנה חופשית שכל ההיסטוריה שלה ב-GitHub. התקינו אותה כשכפולי Git, הדרך המומלצת לבניית אתרים, ותוכלו לעקוב אחר כל שינוי, לנסות תיקונים לפני שהם יוצאים ולשלוח בחזרה שיפורים משלכם.</translation>
+        <translation>Exponential היא תוכנה חופשית שכל ההיסטוריה שלה ב־GitHub. התקנה כשכפולי Git, הדרך המומלצת לבניית אתרים, מאפשרת לעקוב אחר כל שינוי, לנסות תיקונים לפני שהם יוצאים ולשלוח בחזרה שיפורים עצמיים.</translation>
     </message>
     <message>
         <source>Use the administration</source>
-        <translation>השתמשו בממשק הניהול</translation>
+        <translation>שימוש בממשק הניהול</translation>
     </message>
     <message>
         <source>Sign in, edit and publish.</source>
-        <translation>התחברו, ערכו ופרסמו.</translation>
+        <translation>התחברות, עריכה ופרסום.</translation>
     </message>
     <message>
         <source>Install with Git</source>
-        <translation>התקינו עם Git</translation>
+        <translation>התקנה עם Git</translation>
     </message>
     <message>
         <source>The kernel and every extension as clones with history.</source>
@@ -72004,11 +72112,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Contribute back</source>
-        <translation>תרמו בחזרה</translation>
+        <translation>תרומה בחזרה</translation>
     </message>
     <message>
         <source>Fork, fix and open a pull request.</source>
-        <translation>צרו fork, תקנו ופתחו pull request.</translation>
+        <translation>יצירת fork, תיקון ופתיחת pull request.</translation>
     </message>
     <message>
         <source>Develop with Git</source>
@@ -72100,15 +72208,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
-        <translation>תיעוד חופשי: השתמשו בו כדי לעזור לעצמכם ולאחרים</translation>
+        <translation>תיעוד חופשי: מותר להשתמש בו כדי לעזור לעצמך ולאחרים</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version or later. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version או מאוחר יותר. מותר להשתמש בה, לשתף אותה ולשפר אותה:</translation>
     </message>
     <message>
         <source>This help is free documentation, licensed under the %license %version. You may use it, share it and improve it:</source>
-        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר לכם להשתמש בה, לשתף אותה ולשפר אותה:</translation>
+        <translation>עזרה זו היא תיעוד חופשי, ברישיון %license %version. מותר להשתמש בה, לשתף אותה ולשפר אותה:</translation>
     </message>
     <message>
         <source>Study it</source>
@@ -72116,7 +72224,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Read any page as often as you like, for any purpose.</source>
-        <translation>קראו כל דף כמה פעמים שתרצו, לכל מטרה.</translation>
+        <translation>מותר לקרוא כל דף בכל תדירות ולכל מטרה.</translation>
     </message>
     <message>
         <source>Copy it and share it</source>
@@ -72124,7 +72232,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Give pages to other users, on paper or as files. Keep the copyright notice, the license notice and a copy of the license with every copy.</source>
-        <translation>תנו דפים למשתמשים אחרים, על נייר או כקבצים. השאירו עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
+        <translation>מותר למסור דפים למשתמשים אחרים, על נייר או כקבצים. יש להשאיר עם כל עותק את הודעת זכויות היוצרים, את הודעת הרישיון ועותק של הרישיון.</translation>
     </message>
     <message>
         <source>Translate, adapt and improve it</source>
@@ -72132,7 +72240,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Share your version under the same license, with the original notices and a note of what you changed.</source>
-        <translation>שתפו את הגרסה שלכם תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששיניתם.</translation>
+        <translation>יש לשתף גרסה משופרת תחת אותו רישיון, עם ההודעות המקוריות והערה על מה ששונה.</translation>
     </message>
     <message>
         <source>Cite it</source>
@@ -72140,7 +72248,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Refer to a page by its title and its address in the help, or its file in the doc directory.</source>
-        <translation>הפנו לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
+        <translation>יש להפנות לדף לפי הכותרת והכתובת שלו בעזרה, או לפי הקובץ שלו בתיקיית doc.</translation>
     </message>
     <message>
         <source>Contribute fixes back</source>
@@ -72148,7 +72256,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>השתמשו ב„עריכה ב-GitHub” בכל דף. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
+        <translation>בכל דף ניתן להשתמש ב„עריכה ב־GitHub”. שינויים מתקבלים באותו רישיון, כך שהם נשארים חופשיים לכולם.</translation>
     </message>
     <message>
         <source>Apply filters</source>
@@ -72168,7 +72276,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose another audience, topic or type.</source>
-        <translation>בחרו קהל, נושא או סוג אחר.</translation>
+        <translation>יש לבחור קהל, נושא או סוג אחר.</translation>
     </message>
     <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
@@ -72224,7 +72332,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Templates, extensions, the API and the code behind it.</source>
-        <translation>תבניות, הרחבות, ה-API והקוד שמאחוריהם.</translation>
+        <translation>תבניות, הרחבות, ה־API והקוד שמאחוריהם.</translation>
     </message>
     <message>
         <source>Topics</source>
@@ -72252,7 +72360,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
-        <translation>%count דפים בתיקיות התיעוד. פתחו תיקייה, או סננו לפי מילה מהכותרת.</translation>
+        <translation>%count דפים בתיקיות התיעוד. ניתן לפתוח תיקייה או לסנן לפי מילה מהכותרת.</translation>
     </message>
     <message>
         <source>About this documentation</source>
@@ -72316,7 +72424,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Download as PDF</source>
-        <translation>הורדה כ-PDF</translation>
+        <translation>הורדה כ־PDF</translation>
     </message>
     <message>
         <source>Print or download this page</source>
@@ -72380,7 +72488,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%count entries, %first to %last</source>
-        <translation>%count רשומות, מ-%first עד %last</translation>
+        <translation>%count רשומות, מ־%first עד %last</translation>
     </message>
     <message>
         <source>1 entry, %first</source>
@@ -72424,7 +72532,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The older records come from the original SVN repository.</source>
-        <translation>הרשומות הישנות יותר מגיעות ממאגר ה-SVN המקורי.</translation>
+        <translation>הרשומות הישנות יותר מגיעות ממאגר ה־SVN המקורי.</translation>
     </message>
     <message>
         <source>Version</source>
@@ -72432,7 +72540,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>from the original SVN</source>
-        <translation>מה-SVN המקורי</translation>
+        <translation>מה־SVN המקורי</translation>
     </message>
     <message>
         <source>historical (no longer online)</source>
@@ -72452,7 +72560,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Exponential is free software with a history of nearly thirty years. Meet the company that leads it and the nonprofit foundation that operates the open source project.</source>
-        <translation>Exponential היא תוכנה חופשית עם היסטוריה של כמעט שלושים שנה. הכירו את החברה שמובילה אותה ואת הקרן ללא מטרות רווח שמפעילה את פרויקט הקוד הפתוח.</translation>
+        <translation>Exponential היא תוכנה חופשית עם היסטוריה של כמעט שלושים שנה. היכרות עם החברה שמובילה אותה ועם הקרן ללא מטרות רווח שמפעילה את פרויקט הקוד הפתוח.</translation>
     </message>
     <message>
         <source>Who is 7x?</source>
@@ -72536,11 +72644,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There are no manuals you can read yet.</source>
-        <translation>עדיין אין מדריכים שאתם יכולים לקרוא.</translation>
+        <translation>עדיין אין מדריכים שניתן לקרוא.</translation>
     </message>
     <message>
         <source>This manual has no topics you can read yet.</source>
-        <translation>במדריך זה עדיין אין נושאים שאתם יכולים לקרוא.</translation>
+        <translation>במדריך זה עדיין אין נושאים שניתן לקרוא.</translation>
     </message>
     <message>
         <source>Topic type:</source>
@@ -72564,15 +72672,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Plan and lead projects: phases and roles, hosting choices, scoping, checklists, quality gates, releases and risks.</source>
-        <translation>תכננו והובילו פרויקטים: שלבים ותפקידים, בחירת אחסון, הגדרת היקף, רשימות תיוג, שערי איכות, גרסאות וסיכונים.</translation>
+        <translation>תכנון והובלה של פרויקטים: שלבים ותפקידים, בחירת אחסון, הגדרת היקף, רשימות תיוג, שערי איכות, גרסאות וסיכונים.</translation>
     </message>
     <message>
         <source>Present and promote Exponential: positioning, feature highlights, demos, objections, licensing, brand and community.</source>
-        <translation>הציגו וקדמו את Exponential: מיצוב, תכונות בולטות, הדגמות, התנגדויות, רישוי, מותג וקהילה.</translation>
+        <translation>הצגה וקידום של Exponential: מיצוב, תכונות בולטות, הדגמות, התנגדויות, רישוי, מותג וקהילה.</translation>
     </message>
     <message>
         <source>Start here</source>
-        <translation>התחילו כאן</translation>
+        <translation>התחלה כאן</translation>
     </message>
     <message>
         <source>Project leadership</source>
@@ -72584,7 +72692,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Planning, running and growing Exponential projects: phases, roles, checklists, risks and working with the community.</source>
-        <translation>תכנון, ניהול והרחבה של פרויקטים ב-Exponential: שלבים, תפקידים, רשימות תיוג, סיכונים ועבודה עם הקהילה.</translation>
+        <translation>תכנון, ניהול והרחבה של פרויקטים ב־Exponential: שלבים, תפקידים, רשימות תיוג, סיכונים ועבודה עם הקהילה.</translation>
     </message>
     <message>
         <source>Presenting and promoting Exponential: positioning, demos, objections, licensing, brand and growing the community.</source>
@@ -72596,7 +72704,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Get updates as they are pushed to GitHub, then update Composer to match: hourly, daily, weekly, monthly or only at each release.</source>
-        <translation>קבלו עדכונים ברגע שהם נדחפים ל-GitHub, ואז עדכנו את Composer בהתאם: כל שעה, כל יום, כל שבוע, כל חודש או רק בכל גרסה.</translation>
+        <translation>קבלת עדכונים ברגע שהם נדחפים ל־GitHub, ואז עדכון Composer בהתאם: כל שעה, כל יום, כל שבוע, כל חודש או רק בכל גרסה.</translation>
     </message>
     <message>
         <source>Partners</source>
@@ -72648,7 +72756,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Build applications on Exponential: content models, modules and views, the APIs, extensions and testing.</source>
-        <translation>לבנות יישומים על Exponential: מודלי תוכן, מודולים ותצוגות, ממשקי ה-API, הרחבות ובדיקות.</translation>
+        <translation>לבנות יישומים על Exponential: מודלי תוכן, מודולים ותצוגות, ממשקי ה־API, הרחבות ובדיקות.</translation>
     </message>
     <message>
         <source>Build websites with Exponential: plan the site, content classes, designs, layouts, the launch and its care.</source>
@@ -72656,11 +72764,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Help the project grow: contribute code, documentation, translations and testing, and share what you build.</source>
-        <translation>לעזור לפרויקט לגדול: לתרום קוד, תיעוד, תרגומים ובדיקות, ולשתף את מה שאתם בונים.</translation>
+        <translation>לעזור לפרויקט לגדול: לתרום קוד, תיעוד, תרגומים ובדיקות, ולשתף את מה שנבנה.</translation>
     </message>
     <message>
         <source>Fund the work on Exponential: why sponsorship matters, what it pays for and how to sponsor 7x and the Foundation.</source>
-        <translation>לממן את העבודה על Exponential: למה חסות חשובה, מה היא מממנת ואיך לתת חסות ל-7x ולקרן.</translation>
+        <translation>לממן את העבודה על Exponential: למה חסות חשובה, מה היא מממנת ואיך לתת חסות ל־7x ולקרן.</translation>
     </message>
     <message>
         <source>Partnership</source>
@@ -72712,7 +72820,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Supporting Exponential</source>
-        <translation>תמיכה ב-Exponential</translation>
+        <translation>תמיכה ב־Exponential</translation>
     </message>
     <message>
         <source>Sponsorship</source>
@@ -72728,7 +72836,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Designing themes for Exponential: designs, the override system, styles, assets and accessibility.</source>
-        <translation>עיצוב ערכות נושא ל-Exponential: עיצובים, מערכת הדריסה, סגנונות, משאבים ונגישות.</translation>
+        <translation>עיצוב ערכות נושא ל־Exponential: עיצובים, מערכת הדריסה, סגנונות, משאבים ונגישות.</translation>
     </message>
     <message>
         <source>The template language: variables, operators, functions, fetches, includes and overrides.</source>
@@ -72768,11 +72876,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Helping Exponential grow: contributing code, documentation, translations, testing and word of mouth.</source>
-        <translation>לעזור ל-Exponential לגדול: תרומת קוד, תיעוד, תרגומים, בדיקות והמלצות מפה לאוזן.</translation>
+        <translation>לעזור ל־Exponential לגדול: תרומת קוד, תיעוד, תרגומים, בדיקות והמלצות מפה לאוזן.</translation>
     </message>
     <message>
         <source>Funding Exponential: what sponsorship pays for and how to sponsor 7x and the Exponential Foundation.</source>
-        <translation>מימון Exponential: מה החסות מממנת ואיך לתת חסות ל-7x ולקרן Exponential.</translation>
+        <translation>מימון Exponential: מה החסות מממנת ואיך לתת חסות ל־7x ולקרן Exponential.</translation>
     </message>
     <message>
         <source>Expand all</source>
@@ -72812,7 +72920,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Read these pages in this order.</source>
-        <translation>קראו את הדפים האלה בסדר הזה.</translation>
+        <translation>מומלץ לקרוא את הדפים האלה בסדר הזה.</translation>
     </message>
     <message>
         <source>Good to know</source>
@@ -72836,11 +72944,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Latest commits to Exponential</source>
-        <translation>הקומיטים האחרונים ב-Exponential</translation>
+        <translation>הקומיטים האחרונים ב־Exponential</translation>
     </message>
     <message>
         <source>Full history on GitHub</source>
-        <translation>ההיסטוריה המלאה ב-GitHub</translation>
+        <translation>ההיסטוריה המלאה ב־GitHub</translation>
     </message>
     <message>
         <source>What changed in the source code most recently: the main branch of se7enxweb/exponential, read from its public feed by this server.</source>
@@ -72848,11 +72956,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>GitHub could not be reached just now. These are the commits read on %date.</source>
-        <translation>לא ניתן היה להגיע ל-GitHub כרגע. אלה הקומיטים שנקראו ב-%date.</translation>
+        <translation>לא ניתן היה להגיע ל־GitHub כרגע. אלה הקומיטים שנקראו ב־%date.</translation>
     </message>
     <message>
         <source>The commits could not be read from GitHub. Open the history on GitHub instead.</source>
-        <translation>לא ניתן היה לקרוא את הקומיטים מ-GitHub. פתחו במקום זאת את ההיסטוריה ב-GitHub.</translation>
+        <translation>לא ניתן היה לקרוא את הקומיטים מ־GitHub. במקום זאת ניתן לפתוח את ההיסטוריה ב־GitHub.</translation>
     </message>
     <message>
         <source>Hide merge commits</source>
@@ -72876,7 +72984,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Your sponsorship pays for:</source>
-        <translation>החסות שלכם מממנת:</translation>
+        <translation>החסות מממנת:</translation>
     </message>
     <message>
         <source>About %name</source>
@@ -72892,7 +73000,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Support Exponential</source>
-        <translation>תמכו ב-Exponential</translation>
+        <translation>תמיכה ב־Exponential</translation>
     </message>
     <message>
         <source>Exponential is free software. Every new feature, help page, extension, theme and application is work that somebody pays for with their time. A sustaining monthly sponsorship, of any size, keeps that work going and lets it grow.</source>
@@ -72900,11 +73008,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Sponsor 7x on GitHub</source>
-        <translation>תנו חסות ל-7x ב-GitHub</translation>
+        <translation>מתן חסות ל־7x ב־GitHub</translation>
     </message>
     <message>
         <source>Sponsor the Exponential Foundation on GitHub</source>
-        <translation>תנו חסות לקרן Exponential ב-GitHub</translation>
+        <translation>מתן חסות לקרן Exponential ב־GitHub</translation>
     </message>
     <message>
         <source>The company that leads Exponential and the first sponsor of the project: it develops, supports and hosts it and makes the releases.</source>
@@ -72920,7 +73028,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Security patches to the libraries Exponential builds on, such as Zeta Components</source>
-        <translation>תיקוני אבטחה לספריות ש-Exponential בנויה עליהן, כמו Zeta Components</translation>
+        <translation>תיקוני אבטחה לספריות ש־Exponential בנויה עליהן, כמו Zeta Components</translation>
     </message>
     <message>
         <source>New features given back to the community as open source</source>
@@ -72940,7 +73048,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Integration layers: GraphQL, REST and Solr</source>
-        <translation>שכבות שילוב: GraphQL, ‏REST ו-Solr</translation>
+        <translation>שכבות שילוב: GraphQL, REST ו־Solr</translation>
     </message>
     <message>
         <source>Community infrastructure: chat, mirrors, wikis and developer resources</source>
@@ -72980,11 +73088,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Contribute extensions back</source>
-        <translation>שתפו את ההרחבות בחזרה</translation>
+        <translation>שיתוף ההרחבות בחזרה</translation>
     </message>
     <message>
         <source>Share the extensions you distribute, as the GPL requires, so everyone benefits.</source>
-        <translation>שתפו את ההרחבות שאתם מפיצים, כפי שה-GPL דורש, כדי שכולם ייהנו.</translation>
+        <translation>יש לשתף את ההרחבות המופצות, כפי שה־GPL דורש, כדי שכולם ייהנו.</translation>
     </message>
     <message>
         <source>The Exponential project</source>
@@ -73642,6 +73750,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>קהלים נוספים</translation>
     </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>אין לך הרשאה ליצור תוכן (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>המדריכים כבר נבנים.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>אין מדריך %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>בניית מדריך העזרה %1 מתוך עזרת ה־Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>בניית מדריכי העזרה מתוך עזרת ה־Markdown</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -73867,6 +73995,1566 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
         <translation>התקנה זו היא הדגמה ציבורית: לא ניתן לשנות או לאפס את הסיסמאות של מנהלי המערכת.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>סודות המוצפנים במפתח שאינו המפתח הנוכחי: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>הוצפנו מחדש במפתח הנוכחי: %done, כבר היו מוצפנים בו: %current, לא ניתן היה לקרוא: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(נוצר כאשר הסוד הראשון נשמר)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>גיבוי של מסד הנתונים לבדו אינו מאפשר לפענח את הסודות</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>שם מורכב מאותיות, ספרות ו־_ . : - (לכל היותר 128), ואינו מתחיל ב־env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>נוצר מפתח חדש, כל סוד מוצפן בו מחדש, והמפתח הישן נשמר כקובץ ה־.previous. לאחר מכן יש לגבות את קובץ המפתח החדש.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>שם חדש, או שם של סוד קיים כדי להחליף את ערכו. ערך ריק: רק התיאור משתנה.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>הכול</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>שונה</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>מקור</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>יצירת הטבלה</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>תיאור</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>הצפנה מחדש של כל הסודות במפתח הנוכחי</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>הצפנה</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>נא להזין את הערך.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>מזהה מפתח</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>שמות</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>עדיין אין סודות.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>הכלי %scope בלבד.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>סיסמאות, אסימונים ומפתחות API של הכלים: חיבורי מסד נתונים, מקורות ייבוא, שרתים מרוחקים. כלי שומר את שם הסוד; הערך מאוחסן כאן, מוצפן, ולעולם אינו מוצג שוב.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>המפתח הקודם</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>החלפה</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>החלפת המפתח</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>סודות</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>הגדרת סוד</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>התיאור של %name שונה; ערכו נשמר.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>המפתח</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>לא ניתן היה להחליף את המפתח (מפתח מ־EXP_SECRET_KEY מוחלף על ידי הגדרת מפתח חדש בו והגדרת הישן כ־EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>המפתח אינו נמצא במסד הנתונים. יש לשמור עותק של קובץ המפתח (או של EXP_SECRET_KEY) עם כל גיבוי, במקום בטוח משלו. בלעדיו לא ניתן לקרוא את הסודות של מסד נתונים משוחזר, ויש להגדיר אותם מחדש.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>המפתח הוחלף: הוצפנו מחדש: %done, לא ניתן היה לקרוא: %bad. יש לגבות כעת את קובץ המפתח החדש.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>הסוד %name הוסר.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>הסוד %name נשמר, מוצפן. ערכו לא יוצג שוב.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>לא ניתן היה לשמור את הסוד: יש לעיין במפתח שלמעלה.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>הטבלה exp_secret חסרה</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>שם הכלי מורכב מאותיות קטנות, ספרות ו־_ . - (לכל היותר 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>יש לסמן תחילה &quot;כן, להחליף את המפתח&quot;.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>יש לסמן את התיבה שליד הסוד כדי להסיר אותו. כלי שמפנה אליו ייכשל עד שיוגדר שוב.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>כדי להחליף מפתח מהסביבה: יש להגדיר את המפתח החדש כ־EXP_SECRET_KEY ואת הישן כ־EXP_SECRET_KEY_PREVIOUS, ואז להצפין כאן מחדש את כל הסודות.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>כלי</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>עד שהיא תיווצר, ניתן להשתמש רק בסודות של secrets.ini ובמשתני סביבה (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ערך</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>מי משתמש בו, למשל datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>כן, להסיר את %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>כן, להחליף את המפתח</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>לא ניתן לפענח כאן</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>מוצפן</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>הקובץ secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>קובץ ה־.previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>משתנה הסביבה EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>קובץ המפתח %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count מחלקות</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count אל התוכן</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>מוצגות %shown מתוך %all מחלקות.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>שם מארח או כתובת; ריק עבור SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>סוד מתוך הגדרות &gt; סודות, או env:VARIABLE עבור משתנה סביבה.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>הכול (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>זמין</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>חזרה לרשימה</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>קידוד תווים</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>מחלקה</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>מחלקה, טבלה או שדה</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>מחלקות בחיבור זה: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>עמודה</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>עמודה במסד הנתונים</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>התחבר דרך %via תוך %ms ms: %version, טבלאות: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>חיבור</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>חיבורים</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>חיבורים (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>מחלקת תוכן</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>אובייקט תוכן</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>יצירת הטבלאות</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>טבלאות נתונים</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>מסד נתונים</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>מסדי נתונים שטבלאות הנתונים וכלי הייבוא והייצוא יכולים להשתמש בהם מלבד מסד הנתונים של התקנה זו: קובץ SQLite, או שרת MySQL, MariaDB, PostgreSQL, Oracle, SQL Server או MongoDB, כאן או מרוחק. סיסמה היא שם של סוד, לעולם לא ערכו.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>מוגדר ב־datatable.ini [Connection_%id] על ידי ההגדרות או הרחבה: יש לשנות אותו שם. ניתן לבדוק אותו כאן.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>ברירת מחדל</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>תיאור</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>הבדלים</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>מנהל התקן</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>ריק עבור הפורט הרגיל של המנוע.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>מנוע</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>מנועים בשרת זה</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>הרחבה %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>שדה</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>שדה של היעד</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>שדות</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>סינון</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>עבור SQL Server: sqlsrv, dblib או odbc (הראשון הקיים בשרת זה כאשר ריק).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>עבור SQLite הקובץ, למשל %example (ב־%dirs). עבור Oracle שם השירות.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>מאפייני פונקציה: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>מזהה</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>ליבה</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>מפתח</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>מפתח: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>ידוע מתוך</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>מקום היצירה</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>בניית הקטלוג מחדש</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>עוד</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>חיבורים בעלי שם דורשים את הטבלה exp_data_connection, ומאגר הסודות את הטבלה exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>חיבור חדש</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>אין מחלקה מתמידה תואמת.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>לא ידוע קשר.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>אין שורות.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>צומת</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>לא מוצגות: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>רק עבור מנוע שמגיעים אליו דרך PDO, כאשר שרת, פורט ומסד נתונים אינם מספיקים. לעולם לא סיסמה.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>שם מקור נתונים של PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>מנהל התקן PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>סיסמה</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>הסיסמה עצמה</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>סיסמה: שם של סוד</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>מצביע אל</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>פורט</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>לקריאה בלבד: הסנכרון לעולם אינו כותב אליו</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>קשרים</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>הסרת חיבור זה</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>חובה</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>שורות</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>קובצי SQLite יכולים להימצא ב־%dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>סודות</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>מדור</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>שרת</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>שרת ומסד נתונים</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>שקע</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>מי שיש לו את המדיניות datatable/manage יכול ליצור אותן כאן.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>שמירה במאגר הסודות בעת השמירה</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>שמירת סיסמה דורשת את המדיניות secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>טבלה</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>בדיקה</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>בדיקת החיבור</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>הקטלוג נבנה ממערכי ה־autoload ונשמר עד שהם משתנים.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>הקטלוג נבנה מחדש: %count מחלקות.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>העמודה %column (%type) אינה בהגדרה.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>החיבור נכשל לאחר %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>החיבור לא נשמר</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>החיבור נשמר.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>לא ניתן לקרוא את ההגדרה של מחלקה זו</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>לשדה %column (%type) אין עמודה.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>השדה %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>%count השורות הראשונות</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>לא ניתן היה לשמור את הסיסמה במאגר הסודות (הגדרות &gt; סודות מציין מדוע).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>הטבלה %table אינה במסד הנתונים.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>הטבלה exp_data_connection חסרה: ניתן לבדוק חיבור אך לא לשמור אותו עד שהטבלה תיווצר בעמוד טבלאות הנתונים.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>הטבלה exp_data_connection חסרה: יש ליצור אותה בעמוד &lt;a href=&quot;%url&quot;&gt;טבלאות נתונים&lt;/a&gt;. עד אז מוצגים רק החיבורים שהוגדרו ב־datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>הטבלה exp_data_connection חסרה: יש ליצור אותה תחילה בעמוד טבלאות הנתונים.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>הטבלאות של טבלאות הנתונים עדיין אינן מותקנות</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>הטבלאות של המחלקות המתמידות בהתקנה זו, כפי שההגדרות שלהן מתארות אותן, והיכן כל אחת מאוחסנת.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>הן נוצרות במסד נתונים זה באמצעות הכפתור שלהלן; שום דבר אחר אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>מסד הנתונים של התקנה זו, מתוך site.ini. ניתן לבדוק אותו כאן.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>סוד זה אינו מוגדר.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>יש לסמן &quot;כן, להסיר&quot; כדי להסיר את החיבור. מחלקות וכלים שמפנים אליו ייכשלו אז עד שייווצר מחדש.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>יש לסמן את התיבה שלהלן כדי לשמור אותה, מוצפנת, כסוד ששמו צוין למעלה (datatable. והמזהה כאשר השם ריק).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>משמשת לבדיקה בלבד ולעולם אינה מוצגת שוב.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>משתמש</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>השם שבו מחלקות וכלים מפנים אליו: אותיות קטנות, ספרות ו־_. לא ניתן לשנות אותו מאוחר יותר.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>מאין מגיעות המחלקות</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>היכן הטבלה שונה מההגדרה</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>כן, להסיר</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>מפתח זר של שדה</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>מספור עולה: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>הקובץ datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() נכשלת</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>קיימת</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>הוסק מהשם</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>מפתח</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>חסרה</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>לא זמין כאן</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>לא מוגדר</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>לקריאה בלבד</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>מוגדר</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>אתר</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>הקובץ site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>ממשק הניהול</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>ההגדרה</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>לא ידוע</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>לא נבדק כאן</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count שורות מצביעות על פריט זה דרך %column (%kind)</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count שורות שבהן %field הוא %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count שורות.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done הוראות</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>כל %count השורות</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>כל השורות</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>החלה</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>שינוי עמודות ואינדקסים שונים</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>יצירת הטבלה</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>יצירת הטבלאות של מחלקה או הרחבה בחיבור, או עדכונן. דבר אינו רץ לפני &quot;החלה&quot;; עמודות ואינדקסים נמחקים או משתנים רק כאשר מסמנים זאת.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>בוצע</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>מחיקת עמודות ואינדקסים שאינם בסכמה</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>מתוך ההגדרה של מחלקה</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>אף שורה של טבלת נתונים אינה מצביעה על פריט זה.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>לא בוצע אלא אם סומן למעלה: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>לא ניתן היה לבצע הכול</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>בחיבור</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>או מתוך קובץ הסכמה של הרחבה</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>שורות של %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>שורות של טבלאות נתונים שמצביעות על פריט זה</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>סכמה</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>הצגת מה שיבוצע</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>החיבור %id הוא לקריאה בלבד.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>להרחבה %name אין share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>ה־SQL להתקנה של כל מנוע</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>אין חיבור %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>אין מחלקה מתמידה %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>שדרוג הטבלה</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>מה שיבוצע ב־%connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>יצירה</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>מעודכן</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>שדרוג</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines שורות</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>מחלקת תוכן</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>מזהה של מחלקת תוכן, connection:table, או מה שהמקור מבקש. לא נדרש עבור רשימה.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>אובייקט תוכן (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>קישור בקבוצת טבלאות הנתונים של תפריט ההגדרות, למשתמשים עם המדיניות read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>רשימת שדות שמוקלדת כאן</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>טבלת נתונים חדשה עם כל מה שסביבה: המחלקה המתמידה, הסכמה וה־SQL להתקנה של כל מנוע, מודול עם רשימה, עריכה, הסרה ונקודת קצה JSON, המדיניות שלו, עמודי הניהול ופונקציות השליפה לתבניות. השדות מגיעים מרשימה, ממחלקת תוכן, מטבלה קיימת או ממקור ייבוא. דבר אינו נכתב עד שמבקשים זאת, והטבלה מותקנת מעמוד זה.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>שם חדש, או הרחבה קיימת שאליה תתווסף הטבלה.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>צומת (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>הפעלת ההרחבה</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>הוספת created ו־modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>הוספה להרחבה</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>תבניות ניהול</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>טבלה קיימת (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>מחבר</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>שניהם</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>עדכון הטבלה</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>העתקת השדות שלה לרשימה</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>הורדה כקובץ zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>כל טבלה מקבלת גם id, מפתח שמסד הנתונים ממספר בסדר עולה.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>הרחבה</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>שדות, אחד בכל שורה: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>קובץ LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>תווית</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>נשארו כפי שהם: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>רישיון</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>מודול</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>אשף טבלת מודול</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>פתיחת המודול</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>מחלקת PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>חלקים, רישיון ומחבר</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>מחלקה מתמידה</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>קובץ README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>פיתוח יישומים מהיר</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>רענון: autoloads ומטמונים</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>סכמה ו־SQL להתקנה</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>פריט בתפריט ההגדרות</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>הצגת הקבצים</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>פונקציות שליפה לתבניות</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>מחלקת ה־eZPersistentObject של הטבלה, עם השדות, החיבור והקשרים שלה.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>ההרחבה והטבלה</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>ההרחבה קיימת: האשף מוסיף את הקבצים שאין בה ומצרף את ההגדרות שלו; דבר שם אינו נדרס.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>ההרחבה פעילה.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>ההרחבה נכתבה אך אינה פעילה.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>השדות</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>השדות של %source נמצאים כעת ברשימה: ניתן לשנות אותם לפי הצורך.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>הקבצים (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>טקסט הרישיון (להרחבה חדשה בלבד).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>עמודי המודול בממשק הניהול (רכיבי admin4, ללא סגנונות מוטבעים).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>הטבלה עדיין אינה קיימת.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>הטבלה קיימת.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>קישור כל שורה לתוכן</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>כותרת</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>להתקנת ההרחבה כחבילה (להרחבה חדשה בלבד).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>סוגים: %types. object, node ו־user הם קשרים לתוכן: תצוגת התוכן מציגה את השורות שמצביעות על פריט.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>ייחודי</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>גרסה</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>מה שעמוד האודות מציג (להרחבה חדשה בלבד).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>מה נוצר, וכיצד להתקין ולהשתמש בו.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>מאין מגיעים השדות</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>איזה מהם</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>כתיבת ההרחבה</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>קובץ composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>קיים, נשאר כפי שהוא</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php ו־extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>הפונקציות fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove ונקודת הקצה REST/JSON בשם json, עם המדיניות read ו־edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba ו־sql/&lt;engine&gt;/schema.sql עבור MySQL, PostgreSQL, SQLite, Oracle ו־SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>נכתב</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count התנגשויות</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name רץ: שורות שנכתבו: %rows, אובייקטים שנכתבו: %objects, ללא שינוי: %same, התנגשויות: %conflicts, נכשלו: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name התחיל לרוץ ברקע (%engine); היסטוריית ההרצות מציגה אותו.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>הוצע מיפוי: יש לבדוק אותו ואז לשמור.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>מקור הוא מזהה מאפיין של מחלקת התוכן, או אחד מאלה: %list. רק מאפיינים נכתבים לתוכן.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>שאלה: התנגשות לפתרון</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>גם התוכן וגם השורה השתנו מאז ההרצה האחרונה של סנכרון דו־כיווני ששואל. יש לבחור צד אחד; הצד האחר נדרס.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>בשני הכיוונים</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>התנגשויות</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>התנגשויות (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>תוכן</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>תוכן וטבלה</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>תוכן שמועתק לטבלת נתונים, טבלה שמועתקת לתוכן, או שניהם מסונכרנים: פעם אחת, לפי תזמון, או בזמן אמת בכל פרסום, העברה והסרה.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>מהתוכן לטבלה</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>התוכן גובר</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>טבלת נתונים (מחלקה מתמידה)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>כיוון</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>שגיאה</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>כל (שניות)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>נכשלו</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>נמצא %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>עמודות מפתח</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>הרצה אחרונה</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>בזמן אמת, וגם לפי תזמון</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>בזמן אמת: כל פרסום, העברה והסרה של אובייקט מהמחלקה מתחת לצומת נכתבים לטבלה מיד.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>מיפוי: שורה אחת לכל עמודה, column = source</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>סנכרון חדש</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>אף עמודה של המחלקה אינה תואמת מאפיין או מקור ידוע: יש לכתוב את המיפוי ידנית.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>אין התנגשות פתוחה.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>עדיין אין סנכרון.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>לפי תזמון</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>הצעת מיפוי</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>הסרת השורה של אובייקט שמוסר או שעוזב את תת־העץ</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>הסרת סנכרון זה</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>הרצה כעת</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>הרצות</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>שמירה והרצה כעת</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>זמן התחלה</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>כבוי (ללא הרצות מתוזמנות או בזמן אמת)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>סנכרונים</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>לקיחת התוכן</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>לקיחת הטבלה</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>לא ניתן היה לפתור את ההתנגשות; היא נשארת פתוחה.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>ערכי התוכן נכתבו לטבלה.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>ההרצות האחרונות</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>העמודות הממופות שלפיהן מותאמת שורה, למשל contentobject_id או remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>השינוי החדש יותר גובר</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>השורות והתוכן נשארים; רק הצימוד וההתנגשויות הפתוחות נמחקים.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>תת־העץ שנקרא עבור הטבלה, וההורה של אובייקטים שנוצרים משורות.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>הסנכרון לא נשמר</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>הסנכרון נשמר.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>הסנכרונים של המחלקה של האובייקט שפורסם</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>מהטבלה לתוכן</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>הטבלה גוברת</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>ערכי הטבלה פורסמו לתוכן.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>הטבלאות של הסנכרון עדיין אינן מותקנות</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>עדיין אין סנכרון של טבלאות נתונים (הגדרות &gt; טבלאות נתונים &gt; סנכרונים).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>כאשר שני הצדדים השתנו</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>כאשר מתחילים אותו</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>כאשר אף אחד אינו מסומן, האובייקט נכתב לכל סנכרון של המחלקה שלו שתת־העץ שלו מכיל אותו.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>בשני הכיוונים</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>מהתוכן לטבלה</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>כל %minutes דקות</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link ו־exp_data_sync_conflict נוצרות במסד נתונים זה באמצעות הכפתור; שום דבר אחר אינו משתנה.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>בזמן אמת</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>אובייקט %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>מהטבלה לתוכן</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>כאשר מתחילים אותו</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>מחפשים ייבוא או ייצוא אחר?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>ייבוא</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>ייצוא</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>ייבוא וייצוא</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>עובד עם כלי זה</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>איזה כלי ייבוא או ייצוא נדרש?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>איזה כלי נדרש?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>כלי ייבוא וייצוא למשימה זו</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>חבילות</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>העברת תוכן עם המחלקות שלו, או מחלקות, הרחבות ועיצובים, להתקנה אחרת כקובץ חבילה.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>ייצוא מחלקות כחבילה…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>העלאה והתקנה של חבילה…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>ייבוא RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>יצירת תוכן מפיד RSS או Atom של אתר אחר, שוב ושוב באמצעות המשימה המתוזמנת rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>ייצוא RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>פרסום הפריטים החדשים ביותר של תיקייה כפיד RSS או Atom, או רשימת פידים כ־OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>מידע שנאסף</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>הורדת מה שטופס אחד אסף כקובץ CSV, מתוך רשימת המידע שנאסף.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>ייצוא ביקורת</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>הורדת הרשומות של יומן הביקורת, מסוננות כמו במסוף, כ־CSV, JSON lines או JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>ייצוא PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>יצירת מסמך PDF מתיקייה והפריטים שלה, להדפסה או לשליחה.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>טבלאות נתונים</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>הטבלאות של המחלקות המתמידות וחיבורי מסד הנתונים בעלי שם: תיאור, יצירה ושדרוג של טבלאות בכל חיבור, דפדוף בשורות שלהן וצפייה במה שמצביע על תוכן.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>יצירה או שדרוג של טבלה בחיבור מסד נתונים…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>דפדוף בטבלאות של המחלקות המתמידות…</translation>
     </message>
 </context>
 </TS>

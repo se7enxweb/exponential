@@ -152,7 +152,7 @@
     </message>
     <message>
         <source>Default of this site (%engine)</source>
-        <translation>За замовчуванням для цього сайту (%engine)</translation>
+        <translation>Типовий для цього сайту (%engine)</translation>
     </message>
     <message>
         <source>In use now: %engine. Saved only for your user, the text of your content is the same with every editor.</source>
