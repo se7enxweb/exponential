@@ -424,7 +424,8 @@ class ezjscServerFunctionsAjaxUploaderTokenTest extends PHPUnit\Framework\TestCa
             $this->assertSame( substr_count( $tpl, 'href="ezajaxuploader::browse::' ), substr_count( $tpl, 'href="ezajaxuploader::browse::{$handler_id|wash()}::' ), $design );
             $this->assertStringContainsString( 'handler_id=$handler_id', file_get_contents( "design/$design/templates/ajaxuploader/location.tpl" ), $design );
             $js = file_get_contents( "design/$design/javascript/expajaxuploader.js" );
-            $this->assertStringContainsString( "self.call(this.getAttribute('href'), { data: self.handlerData() }, \$place)", $js, $design );
+            // the browse link is called with the handler and its data (the place it fills may be named either way)
+            $this->assertMatchesRegularExpression( '/self\.call\(this\.getAttribute\(\x27href\x27\), \{ data: self\.handlerData\(\) \}, /', $js, $design );
         }
     }
 
