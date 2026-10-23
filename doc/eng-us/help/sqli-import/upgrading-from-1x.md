@@ -63,12 +63,24 @@ real runs by the cron part `sqliimport`.
   handler has the steps source, processing, schedule and review.
 - Two policies control access: Manage imports (`manage`) and Run imports (`run`). `manageimports` still counts as
   Manage imports, and `listimports` lets a user look ([Getting started](getting-started.md#the-imports-tab)).
-- 1.x handlers run untouched on the job queue. Their records have the outcome "processed", and their progression
-  notes go to the run's log. Retrying only failed rows is not available for them.
-- `sqliimport/list` is now the 2.x dashboard. The 1.x list of import requests moved to `sqliimport/items`. The other
-  1.x pages (scheduled imports, new import request) stay in the left menu under "sqliimport 1.x".
-- The actions of the 1.x pages (cancel, interrupt, remove, purge) are POST forms with a confirmation.
+- 1.x handlers run untouched on the job queue. Their records have the outcome "Processed (1.x)", and their
+  progression notes go to the run's log. Retrying only failed rows and undoing a run are not available for them.
+- The 1.x pages are part of the 2.x pages, and the left menu no longer has a group "sqliimport 1.x":
+
+  | 1.x page | Where it is now |
+  |---|---|
+  | `sqliimport/items` (the import requests) | The dashboard `sqliimport/list`, section "1.x import requests", with **Cancel** and **Interrupt** |
+  | `sqliimport/addimport` (request an import) | The form **Request import** in that section |
+  | `sqliimport/purgelist` | **Purge history** in that section |
+  | `sqliimport/scheduledlist`, `sqliimport/addscheduled` | `sqliimport/schedules`, section "1.x scheduled imports" |
+  | the progress of a request | the run page `sqliimport/run/<id>` |
+
+  The old addresses keep working: they redirect to the new pages, and a POST with the fields of 1.x still does what
+  it did, so scripts that post there need no change. The actions are POST forms with a confirmation.
 - One import no longer blocks the others: 1.x had one global lock, 2.x runs different imports in parallel.
+- New in 2.0 for every import, the migrated ones too: dry runs, the live run page, notifications and statistics
+  ([Imports and runs](imports-and-runs.md)). A 1.x handler that only copies fields from a file into a class can be
+  replaced by a source and a no-code mapping, which also brings undo and the conflict rules.
 
 ## Fixed 1.x bugs
 
@@ -79,5 +91,5 @@ On Exponential 6, release 2 fixes these 1.x bugs:
 - Options serialized with NUL bytes were cut on SQLite.
 - Option text with a line without "=" warned on PHP 8.
 
-The extension manual (page id `ext/sqliimport/index.md`, under Extensions in the help) has the full migration
-page, including how to replace a simple 1.x handler with a no-code mapping.
+The extension manual has the full migration page, including how to replace a simple 1.x handler with a no-code
+mapping: `/exphelp/viewer/ext/sqliimport/migration-1x.md` (German: `/exphelp/viewer/ext/sqliimport/ger-de/migration-1x.md`).

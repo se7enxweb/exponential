@@ -128,8 +128,9 @@ class AdminContentJobScriptsTest extends PHPUnit\Framework\TestCase
         {
             $script = self::read( "design/$design/javascript/ezajaxrelations_jquery.js" );
             $this->assertDoesNotMatchRegularExpression( '/[\'"]ezjsc::search::[\'"]\s*\+/', $script, "$design: the text is not part of the call" );
-            $this->assertStringContainsString( "'SearchStr': text.val()", $script, $design );
-            $this->assertStringContainsString( "$.ez( 'ezjsc::search', params, _searchCallBack );", $script, $design );
+            $this->assertStringContainsString( "'SearchStr': text.value", $script, $design );
+            $this->assertStringContainsString( "params['ezjscServer_function_arguments'] = 'ezjsc::search';", $script, $design );
+            $this->assertStringContainsString( "Exp.util.request( { url: Exp.config.call, method: 'POST', data: params, dataType: 'json' } ).then( _searchCallBack,", $script, $design );
         }
         $server = self::read( 'extension/ezjscore/classes/ezjscserverfunctionsjs.php' );
         $this->assertStringContainsString( "\$http->hasPostVariable( 'SearchStr' )", $server, 'the server reads SearchStr' );

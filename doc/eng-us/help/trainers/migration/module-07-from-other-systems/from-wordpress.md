@@ -69,6 +69,13 @@ each.
 **Can we go the other way later?** Yes: section 5 of the guide describes Exponential to WordPress with xrowextract
 and the WordPress Importer (lesson 8.1).
 
+**Is there an importer that reads WXR directly?** The extension 7x SQLI Import does, where it is installed: its
+format *WordPress export (WXR)* reads posts and pages (with author, date, categories, tags, excerpt and featured
+image), or the media, categories, tags and authors, one kind per import. Import the media first, then the posts. It
+takes the place of the conversion script, shows a dry run first, and for the delta import before the cut-over you run
+it again with the newer export: items it made before are updated, not duplicated
+([7x SQLI Import: start here](../../../sqli-import/README.md)).
+
 ### Pitfalls
 
 - **Forgetting the files.** WXR has attachment URLs, not files; copy the uploads directory.

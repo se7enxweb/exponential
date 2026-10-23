@@ -50,7 +50,7 @@
     if (multiEditURL) { window.eZExpMultiEditURL = multiEditURL; }
 
     // The sub-items table: Exponential UI's exp::datatable (ezajaxsubitems_expdatatable.js)
-    if (window.Exp && Exp.$ && Exp.$.fn.expDataTable && window.eZAjaxSubitemsExpDataTable) {
+    if (window.Exp && Exp.datatable && Exp.datatable.create && window.eZAjaxSubitemsExpDataTable) {
         Exp.ready(function () {
             eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions);
         });

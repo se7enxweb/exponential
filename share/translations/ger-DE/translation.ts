@@ -9191,6 +9191,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Die neuesten Forumsbeiträge werden geladen...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Die neuesten Forumsbeiträge konnten nicht geladen werden.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>

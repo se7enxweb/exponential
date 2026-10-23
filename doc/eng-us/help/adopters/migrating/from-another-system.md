@@ -28,6 +28,12 @@ with redirects" ([Switching to Exponential](../../businesses/choosing/switching-
 
 Then keep the old addresses working ([URLs and redirects when migrating](urls-and-redirects-when-migrating.md)).
 
+For the import step, the extension **7x SQLI Import** reads the export files of many systems (WordPress export
+files, Drupal JSON:API, Joomla, Shopify and WooCommerce CSV, spreadsheets, CSV, JSON, XML) and maps them to your
+content types in the administration, without code. Its dry run shows what would be created before anything is
+published, the same import can run again for the last changes before the switch, and a run can be undone within 30
+days. See [7x SQLI Import: start here](../../sqli-import/README.md).
+
 ## Decide first
 
 - What is not migrated: old news, drafts, unused pages. Less content means a faster, cleaner migration.

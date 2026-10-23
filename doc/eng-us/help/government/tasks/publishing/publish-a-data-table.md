@@ -19,6 +19,7 @@ lets others reuse it. Tables in rich text are made with the online editor's tabl
 2. [Steps](#steps)
 3. [Check the result](#check-the-result)
 4. [Pitfalls](#pitfalls)
+5. [When the figures come every month](#when-the-figures-come-every-month)
 
 ## Before you start
 
@@ -54,6 +55,15 @@ lets others reuse it. Tables in rich text are made with the online editor's tabl
 | Merged cells and nested headers | keep tables simple; split into two tables |
 | Color as the only signal (red for overspend) | add words or symbols |
 | Data without a license note for reuse | state the license you publish data under ([Open Definition](https://opendefinition.org/od/2.1/en/)) |
+| Typing the same figures again every month | let your administrator set up an import (below) |
+
+## When the figures come every month
+
+Figures that another system delivers again and again (a monthly spending file, weekly waiting times) need not be
+typed by hand. With the extension **7x SQLI Import**, an administrator imports the CSV file into content items or a
+data table, checks a dry run first, and lets it run on a schedule; a page of the site can then show the current
+figures. See [7x SQLI Import: start here](../../../sqli-import/README.md) and
+[Data tables](../../../../features/6.0/data-tables.md#importing-rows-with-7x-sqli-import).
 
 ## Related pages
 

@@ -37,10 +37,13 @@ einem Website-Baukasten, und die es zu Exponential umziehen möchten.
 | Der ZIP-Upload von `ezmultiupload` | Bringt viele Bilder auf einmal hinein | [Viele Bilder hochladen](../portfolios/viele-bilder-hochladen.md) |
 | RSS-Import (Kernel) | Liest den Feed einer anderen Website als Inhalte ein, mit einem Cronjob | [RSS-Feeds für Ihre Website](../../ersteller/website-ersteller/rss-feeds-fuer-ihre-website.md#einen-feed-importieren) |
 | Exporte von Website-Baukästen | Manche Baukästen exportieren WordPress-XML | [Website-Baukästen](../../../installation/migration/website-baukaesten.md) |
+| Die Erweiterung 7x SQLI Import | Liest die WordPress-Exportdatei (WXR) selbst: Beiträge und Seiten mit Autor, Datum, Kategorien, Schlagwörtern, Auszug und Beitragsbild, dazu die Medien; Sie ordnen sie in der Administration Ihren Klassen zu und sehen vorher einen Probelauf | [7x SQLI Import: hier beginnen](../../sqli-import/README.md) |
 
-Was es nicht gibt: einen fertigen Konverter von der WordPress-Exportdatei (WXR) zu Exponential-Inhalten, einen
-Import von WordPress-Benutzern samt Passwörtern (Exponential kann WordPress-Passwort-Hashes nicht lesen) oder eine
-automatische Umwandlung von Shortcodes und Page-Builder-Layouts.
+Was es in einer einfachen Installation nicht gibt: einen fertigen Konverter von der WordPress-Exportdatei (WXR) zu
+Exponential-Inhalten. Wo Ihr Hoster oder Ihr Helfer die Erweiterung 7x SQLI Import installiert, ist sie dieser
+Konverter: Importieren Sie zuerst die Medien, dann die Beiträge, damit die Bilder erhalten bleiben. In jedem Fall
+fehlen: ein Import von WordPress-Benutzern samt Passwörtern (Exponential kann WordPress-Passwort-Hashes nicht lesen)
+und eine automatische Umwandlung von Shortcodes und Page-Builder-Layouts.
 
 ## Drei Möglichkeiten für eine Person
 
@@ -52,6 +55,11 @@ automatische Umwandlung von Shortcodes und Page-Builder-Layouts.
 
 Viele kombinieren sie: Archiv per Skript oder RSS-Import übernehmen und dann die zwanzig meistgelesenen Beiträge von
 Hand nachbessern.
+
+Ist die Erweiterung 7x SQLI Import installiert, braucht die skriptgesteuerte Migration kein Skript: Legen Sie einen
+neuen Import im Format *WordPress export (WXR)* an, laden Sie die Datei hoch, ordnen Sie die Beiträge Ihrer
+Artikelklasse zu, sehen Sie sich den Probelauf an und starten Sie ihn dann. Das dauert einen Nachmittag statt eines
+Wochenendes, und ein missglückter Lauf lässt sich rückgängig machen.
 
 Wenn Skripten nichts für Sie ist, ist das eine klar umrissene Aufgabe, die Sie einem Partner übergeben können
 ([Wann Sie sich Hilfe holen sollten](../im-betrieb/wann-sie-sich-hilfe-holen-sollten.md)).

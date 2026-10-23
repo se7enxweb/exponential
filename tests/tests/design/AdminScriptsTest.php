@@ -82,7 +82,9 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         {
             $path = "design/$design/javascript/node_tabs.js";
             $js = self::code( $path );
-            $this->assertStringContainsString( "$('a.show-hide-tabs').on( 'click', NodeTab.toggleClick );", $js, $path );
+            // admin4's script runs without jQuery, the admin design's on it
+            $this->assertStringContainsString( $design === 'admin4' ? "link.addEventListener( 'click', NodeTab.toggleClick );"
+                                                                     : "$('a.show-hide-tabs').on( 'click', NodeTab.toggleClick );", $js, $path );
             $this->assertStringNotContainsString( "$('#maincontent-hide').on( 'click'", $js, $path );
             $this->assertStringContainsString( 'var expireDate = new Date();', $js, $path );
         }
@@ -93,8 +95,8 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $path = 'design/admin4/javascript/ezadmin_menubar.js';
         $js = self::code( $path );
         $this->assertSame( 0, preg_match_all( '/^(function|const|let|var)\s/m', $js ), "$path: a declaration at the top level is a global" );
-        $this->assertMatchesRegularExpression( '/^\(\(\$\) => \{$/m', $js );
-        $this->assertStringEndsWith( "})(jQuery);\n", self::read( $path ) );
+        $this->assertMatchesRegularExpression( '/^\(\(\) => \{$/m', $js );
+        $this->assertStringEndsWith( "})();\n", self::read( $path ) );
         // the header height is admin4.js's, the table wrapper was never called
         $this->assertStringNotContainsString( 'adjustHeaderHeight', $js );
         $this->assertStringNotContainsString( 'wrapTable', $js );
@@ -121,7 +123,7 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "if (typeof json.html !== 'string') {", $uploader );
         $this->assertStringContainsString( 'try { html = decodeURIComponent(json.html); } catch (e) {', $uploader );
         $this->assertSame( 1, substr_count( $uploader, 'decodeURIComponent(' ) );
-        $this->assertStringContainsString( "\$hiddenPlace.find('input[data-exp-uploader-field]').remove();", $uploader );
+        $this->assertStringContainsString( "each(all(hiddenPlace, 'input[data-exp-uploader-field]'), function (input) { input.parentNode.removeChild(input); });", $uploader );
 
         foreach ( self::COPIES as $file )
             $this->assertFileEquals( self::root() . "/design/admin4/javascript/$file", self::root() . "/design/admin/javascript/$file",

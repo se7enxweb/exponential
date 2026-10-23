@@ -64,16 +64,28 @@ startet der Cron-Teil `sqliimport` als echte Läufe.
   eines Handlers von 1.x hat die Schritte Quelle, Verarbeitung, Zeitplan und Prüfung.
 - Zwei Richtlinien regeln den Zugriff: Manage imports (`manage`) und Run imports (`run`). `manageimports` zählt
   weiter als Manage imports, `listimports` erlaubt das Ansehen ([Erste Schritte](erste-schritte.md#der-reiter-importe)).
-- Handler von 1.x laufen unverändert über die Job-Warteschlange. Ihre Datensätze haben das Ergebnis „verarbeitet“,
-  ihre Fortschrittsnotizen gehen in das Protokoll des Laufs. Nur fehlgeschlagene Zeilen zu wiederholen ist für sie
-  nicht möglich.
-- `sqliimport/list` ist jetzt die Übersicht von 2.x. Die Liste der Importaufträge von 1.x ist nach
-  `sqliimport/items` umgezogen. Die anderen Seiten von 1.x (geplante Importe, neuer Importauftrag) bleiben im
-  linken Menü unter „sqliimport 1.x“.
-- Die Aktionen der Seiten von 1.x (abbrechen, unterbrechen, entfernen, bereinigen) sind POST-Formulare mit
+- Handler von 1.x laufen unverändert über die Job-Warteschlange. Ihre Datensätze haben das Ergebnis „Processed
+  (1.x)“ (verarbeitet), ihre Fortschrittsnotizen gehen in das Protokoll des Laufs. Nur fehlgeschlagene Zeilen zu
+  wiederholen und einen Lauf rückgängig zu machen ist für sie nicht möglich.
+- Die Seiten von 1.x sind Teil der Seiten von 2.0, und das linke Menü hat keine Gruppe „sqliimport 1.x“ mehr:
+
+  | Seite von 1.x | Wo sie jetzt ist |
+  |---|---|
+  | `sqliimport/items` (die Importaufträge) | Die Übersicht `sqliimport/list`, Abschnitt „1.x import requests“, mit **Cancel** und **Interrupt** |
+  | `sqliimport/addimport` (einen Import anfordern) | Das Formular **Request import** in diesem Abschnitt |
+  | `sqliimport/purgelist` | **Purge history** in diesem Abschnitt |
+  | `sqliimport/scheduledlist`, `sqliimport/addscheduled` | `sqliimport/schedules`, Abschnitt „1.x scheduled imports“ |
+  | der Fortschritt eines Auftrags | die Seite des Laufs `sqliimport/run/<id>` |
+
+  Die alten Adressen funktionieren weiter: Sie leiten auf die neuen Seiten um, und ein POST mit den Feldern von 1.x
+  tut weiter, was er tat; Skripte, die dorthin senden, brauchen keine Änderung. Die Aktionen sind POST-Formulare mit
   Bestätigung.
 - Ein Import blockiert die anderen nicht mehr: 1.x hatte eine globale Sperre, 2.x führt verschiedene Importe
   parallel aus.
+- Neu in 2.0 für jeden Import, auch die migrierten: Probeläufe, die Live-Seite eines Laufs, Benachrichtigungen und
+  Statistik ([Importe und Läufe](importe-und-laeufe.md)). Ein Handler von 1.x, der nur Felder aus einer Datei in eine
+  Klasse kopiert, lässt sich durch eine Quelle und eine Zuordnung ohne Programmierung ersetzen; das bringt auch das
+  Rückgängigmachen und die Konfliktregeln.
 
 ## Behobene Fehler von 1.x
 
@@ -84,6 +96,5 @@ Unter Exponential 6 behebt Version 2 diese Fehler von 1.x:
 - Mit NUL-Bytes serialisierte Optionen wurden unter SQLite abgeschnitten.
 - Optionstext mit einer Zeile ohne „=“ erzeugte unter PHP 8 eine Warnung.
 
-Das Handbuch der Erweiterung (Seiten-ID `ext/sqliimport/index.md`, in der Hilfe unter Erweiterungen) enthält die
-vollständige Seite zur Migration, auch dazu, wie Sie einen einfachen Handler von 1.x durch eine Zuordnung ohne
-Programmierung ersetzen.
+Das Handbuch der Erweiterung enthält die vollständige Seite zur Migration, auch dazu, wie Sie einen einfachen Handler
+von 1.x durch eine Zuordnung ohne Programmierung ersetzen: `/exphelp/viewer/ext/sqliimport/ger-de/migration-1x.md`.

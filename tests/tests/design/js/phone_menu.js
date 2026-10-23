@@ -1,5 +1,5 @@
-// Runs navbarToggle() of design/admin4/javascript/ezadmin_menubar.js against a small stand-in for the browser (jQuery's
-// few calls, the document's keydown and pointerdown listeners, the phone width query, the header, the menu, its button, a
+// Runs navbarToggle() of design/admin4/javascript/ezadmin_menubar.js against a small stand-in for the browser (the
+// elements' class lists and click and keydown listeners, the document's keydown and pointerdown listeners, the phone width query, the header, the menu, its button, a
 // link, the close button and the search scope popup in the menu, a link outside it) and prints one JSON line per
 // scenario.
 // Usage: node phone_menu.js <path to ezadmin_menubar.js>
@@ -28,16 +28,22 @@ function run(steps) {
         }, extra || {});
     }
     const pane = { hidden: true };
-    const icon = element('icon');
+    const handlers = { icon: {}, close: {} };
+    const listen = (which) => ({ addEventListener(type, fn) { handlers[which][type] = fn; } });
+    const icon = element('icon', listen('icon'));
     const inside = element('menu link');
-    const close = element('close button');
+    const close = element('close button', listen('close'));
     const outside = element('page link');
     const logo = element('logo');
     const site = element('site link');
     // a side column's tab in the header: it has a box but is visibility: hidden while the menu is open
     const sideTab = element('hidden side tab', { hiddenStyle: true });
+    const toggler = (set) => ({
+        contains: (c) => set.has(c),
+        toggle(c, on) { const want = on === undefined ? !set.has(c) : !!on; if (want) { set.add(c); } else { set.delete(c); } return want; },
+    });
     const menu = element('menu', {
-        classList: { contains: (c) => classes.menu.has(c) },
+        classList: toggler(classes.menu),
         contains: (el) => el === inside || el === close,
         querySelector: (sel) => (sel === '.searchscope-pane:not([hidden])' && !pane.hidden ? pane : null),
     });
@@ -47,28 +53,9 @@ function run(steps) {
         contains: (el) => [logo, icon, menu, site].includes(el) || menu.contains(el),
         querySelectorAll: () => [logo, icon, inside, close, site, sideTab],
     });
-    const handlers = { icon: {}, close: {} };
     const phone = { matches: true, change: [], addEventListener(type, fn) { if (type === 'change') { this.change.push(fn); } } };
-    function $(target) {
-        const name = typeof target === 'string' ? target : 'element';
-        return {
-            on(type, fn) {
-                if (name === '.navbar-icon') { handlers.icon[type] = fn; }
-                if (name === '.a4-phone-close-button') { handlers.close[type] = fn; }
-                return this;
-            },
-            toggleClass(c, on) {
-                const set = name === '.navbar-menu' ? classes.menu : classes.body;
-                const want = on === undefined ? !set.has(c) : !!on;
-                if (want) { set.add(c); } else { set.delete(c); }
-                return this;
-            },
-            hasClass(c) { return (name === '.navbar-menu' ? classes.menu : classes.body).has(c); },
-        };
-    }
-    const body = element('body');
+    const body = element('body', { classList: toggler(classes.body) });
     sandbox = {
-        $,
         window: {
             getComputedStyle: (el) => ({ display: 'none', visibility: el && el.hiddenStyle ? 'hidden' : 'visible' }),
             matchMedia: (q) => { if (q !== '(max-width: 575.98px)') { throw new Error('unexpected query ' + q); } return phone; },
@@ -81,9 +68,15 @@ function run(steps) {
             querySelector(sel) {
                 if (sel === '.navbar-icon') { return icon; }
                 if (sel === '.navbar-menu') { return menu; }
+                if (sel === '.navbar-menu.show') { return classes.menu.has('show') ? menu : null; }
                 return null;
             },
-            querySelectorAll() { return []; },
+            querySelectorAll(sel) {
+                if (sel === '.navbar-icon') { return [icon]; }
+                if (sel === '.navbar-menu') { return [menu]; }
+                if (sel === '.a4-phone-close-button') { return [close]; }
+                return [];
+            },
         },
     };
     vm.createContext(sandbox);

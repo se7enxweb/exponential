@@ -1,7 +1,6 @@
-// The admin4 frame's sidebars, phone-width menu and left column grip. Everything stays inside this function, with
-// jQuery as $ from its parameter: nothing is left in the page's global scope. The header's height is kept in step
-// by admin4.js.
-(($) => {
+// The admin4 frame's sidebars, phone-width menu and left column grip, without a library. Everything stays inside
+// this function: nothing is left in the page's global scope. The header's height is kept in step by admin4.js.
+(() => {
     // Sidebar toggling feature
     // A column beside the content (the left one from 1024px, the right one from 1280px, the breakpoints of
     // admin4.css) follows the user's choice, kept through window.a4Pref (the head's first script) as the eZPreferences
@@ -76,15 +75,19 @@
 
         // The tabs on the window edges are named after their column ("Left column"); aria-expanded says whether it shows.
         function show(side, open) {
-            $(".sidebar." + side).toggleClass("show", open);
-            const tab = $(".sidebar-control." + side).toggleClass("rotate", open);
+            document.querySelectorAll(".sidebar." + side).forEach((el) => el.classList.toggle("show", open));
+            const tabs = document.querySelectorAll(".sidebar-control." + side);
+            tabs.forEach((tab) => tab.classList.toggle("rotate", open));
             // A page without that column (content edit, history ...): the tab controls nothing, so it names no target
             // and reports no state
             if (!document.getElementById(side === "left" ? "leftmenu" : "rightmenu")) {
-                tab.removeAttr("aria-controls").removeAttr("aria-expanded");
+                tabs.forEach((tab) => {
+                    tab.removeAttribute("aria-controls");
+                    tab.removeAttribute("aria-expanded");
+                });
                 return;
             }
-            tab.attr("aria-expanded", open ? "true" : "false");
+            tabs.forEach((tab) => tab.setAttribute("aria-expanded", open ? "true" : "false"));
         }
 
         function shown(side) {
@@ -121,8 +124,8 @@
             apply();
         }
 
-        $(".sidebar-control.left").on("click", () => toggle("left"));
-        $(".sidebar-control.right").on("click", () => toggle("right"));
+        document.querySelectorAll(".sidebar-control.left").forEach((tab) => tab.addEventListener("click", () => toggle("left")));
+        document.querySelectorAll(".sidebar-control.right").forEach((tab) => tab.addEventListener("click", () => toggle("right")));
 
         // Escape closes a column open over the page as a drawer and gives the focus back to its tab, when the focus is
         // in that column or on its tab. While a context menu (ezpopupmenu.js) is shown, Escape belongs to the menu: this
@@ -194,11 +197,11 @@
         // scrolling, locked while it is open, comes back.
         const phone = window.matchMedia ? window.matchMedia("(max-width: 575.98px)") : { matches: true };
         function isOpen() {
-            return $(".navbar-menu").hasClass("show");
+            return document.querySelector(".navbar-menu.show") !== null;
         }
         function setOpen( icon, open ) {
-            $(".navbar-menu").toggleClass("show", open);
-            $("body").toggleClass('navbar-open', open);
+            document.querySelectorAll(".navbar-menu").forEach((menu) => menu.classList.toggle("show", open));
+            document.body.classList.toggle('navbar-open', open);
             icon.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
         }
         // what Tab can reach while the phone menu is open: the header's visible controls in their order (the logo,
@@ -217,21 +220,24 @@
             }
             return items;
         }
-        $(".navbar-icon").on('click', function () {
-            setOpen( this, !isOpen() );
-        }).on('keydown', function ( e ) {
-            if ( e.key === 'Enter' || e.key === ' ' ) {
-                e.preventDefault();
+        document.querySelectorAll(".navbar-icon").forEach((icon) => {
+            icon.addEventListener('click', function () {
                 setOpen( this, !isOpen() );
-            }
+            });
+            icon.addEventListener('keydown', function ( e ) {
+                if ( e.key === 'Enter' || e.key === ' ' ) {
+                    e.preventDefault();
+                    setOpen( this, !isOpen() );
+                }
+            });
         });
-        $(".a4-phone-close-button").on('click', function () {
+        document.querySelectorAll(".a4-phone-close-button").forEach((button) => button.addEventListener('click', function () {
             const icon = document.querySelector(".navbar-icon");
             if (icon) {
                 setOpen(icon, false);
                 icon.focus();
             }
-        });
+        }));
 
         // Escape, while the menu is open and the focus is in it, on its button or nowhere in particular. Listened to
         // in the capture phase, so it is seen before the search's own Escape: an open search scope popup in the menu
@@ -459,7 +465,7 @@
         window.requestAnimationFrame(() => window.requestAnimationFrame(done));
     }
 
-    $(function () {
+    function init() {
         // finally: if applying the state throws, the page must not keep a4-preload (no transitions, columns frozen)
         try {
             sidebarToggle();
@@ -468,5 +474,12 @@
         }
         navbarToggle();
         leftMenuResize();
-    });
-})(jQuery);
+    }
+
+    // the script loads in the page head: it starts once the document is parsed
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})();

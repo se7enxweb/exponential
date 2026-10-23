@@ -1,6 +1,6 @@
 <?php
 /**
- * The sub-items table of the node view is drawn by Exponential UI (extension expui, Exp.$.fn.expDataTable). Without
+ * The sub-items table of the node view is drawn by Exponential UI (extension expui, exp::datatable). Without
  * it the table cannot be drawn; the place of the table then says so instead of staying empty.
  *
  *  SX-01 - Both designs (admin, admin4; admin4 from its page script, the text in data-no-table) put a note into #content-sub-items-list when Exponential UI is missing or

@@ -1,6 +1,6 @@
 // Runs design/admin4/javascript/ezajaxsubitems_expdatatable.js (the sub-items table on the column registry) against a
 // small stand-in for Exponential UI: Exp.io answers expsubitems::columns with two columns and expsubitems::savepreference
-// as a scenario says (saved, or refused), Exp.prefs.set the same, $.fn.expDataTable only keeps the options it is given,
+// as a scenario says (saved, or refused), Exp.prefs.set the same, Exp.datatable.create() only keeps the options it is given,
 // window.a4Toast records the toasts. Then it presses what the table options offer: save a preset, delete one, choose
 // the rows per page, change the shown columns (saved 700 ms later). Prints one JSON object, one entry per scenario.
 // Usage: node subitems_save.js <path to ezajaxsubitems_expdatatable.js>
@@ -16,23 +16,12 @@ async function run(scenario) {
     let timers = [];
     const flush = () => new Promise((r) => setImmediate(r));
 
-    function q() {
-        const sel = {
-            length: 1,
-            first: () => sel, find: () => sel, on: () => sel, attr: () => '', append: () => sel, trigger: () => sel, val: () => '',
-            data: () => ({ table: true }),
-            expDataTable(o) { options = o; return sel; },
-        };
-        return sel;
-    }
-    const $ = function () { return q(); };
-    $.extend = function () { return Object.assign.apply(null, Array.prototype.slice.call(arguments).filter((a) => a && typeof a === 'object')); };
-    $.each = (list, fn) => (list || []).forEach((v, i) => fn(i, v));
-    $.fn = { expDataTable() {} };
+    const listElement = { querySelectorAll: () => [] };
 
     const refuse = (what) => Promise.reject({ message: 'You are no longer signed in. (' + what + ')' });
     const Exp = {
-        $,
+        util: { extend() { return Object.assign.apply(null, Array.prototype.slice.call(arguments).filter((a) => a && typeof a === 'object')); } },
+        datatable: { create(el, o) { options = o; return { el: { addEventListener() {} } }; } },
         io: {
             call(fn) {
                 if (fn === 'expsubitems::columns') {
@@ -51,7 +40,7 @@ async function run(scenario) {
     };
     const sandbox = {
         Exp,
-        document: { cookie: '', createElement: () => ({}) },
+        document: { cookie: '', createElement: () => ({}), getElementById: () => listElement, querySelector: () => null, querySelectorAll: () => [] },
         console: { warn() {} },
         setTimeout: (fn, ms) => { const t = { fn, ms }; timers.push(t); return t; },
         clearTimeout: (t) => { timers = timers.filter((x) => x !== t); },
@@ -76,7 +65,7 @@ async function run(scenario) {
     };
     await sandbox.eZAjaxSubitemsExpDataTable.init(conf, labels, [], []);
     const presets = options.tableOptions.presets;
-    const table = { $presets: null, renderPresets() {}, setShown() {} };
+    const table = { presetsFieldset: null, renderPresets() {}, setShown() {} };
     const ids = () => presets.items.call(table, table).map((p) => p.id);
     const out = {};
     let resolved = null;

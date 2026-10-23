@@ -10,15 +10,13 @@ const source = fs.readFileSync(process.argv[2], 'utf8');
 async function run(answer) {
     const shown = [];
     let thrown = null;
-    const $ = function () { return {}; };
-    $.fn = { expUpload() {} };
-    $.extend = function () { return Object.assign.apply(null, Array.prototype.slice.call(arguments).filter((a) => a && typeof a === 'object')); };
-    const Exp = { $, dialog() {}, io: { call: () => Promise.resolve(answer) }, config: {} };
+    const extend = function () { return Object.assign.apply(null, Array.prototype.slice.call(arguments).filter((a) => a && typeof a === 'object')); };
+    const Exp = { util: { extend }, dialog() {}, upload: { create() {} }, io: { call: () => Promise.resolve(answer) }, config: {} };
     const sandbox = { Exp, document: {}, console: { error() {} } };
     sandbox.window = sandbox;
     vm.createContext(sandbox);
     vm.runInContext(source, sandbox);
-    const Uploader = $.fn.expAjaxUploader.AjaxUploader;
+    const Uploader = sandbox.expAjaxUploader.AjaxUploader;
     const up = Object.create(Uploader.prototype);
     up.conf = { parseJSONErrorText: 'Unable to parse the JSON response.' };
     up.dialog = { isOpen: true, busy() {} };

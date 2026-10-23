@@ -36,6 +36,10 @@ chapter fits and what to decide.
 
 The hosting view of the same paths is in [Migrations for hosts](../../hosting/migrations/README.md).
 
+For the content migration from another system, the extension 7x SQLI Import reads the export files of WordPress,
+Drupal, Joomla, Shopify and WooCommerce, spreadsheets and APIs, maps them to your content types without code and
+shows a dry run before anything is published ([7x SQLI Import: start here](../../sqli-import/README.md)).
+
 ## Why switch now
 
 - **Old versions get no security fixes.** "5.x, 4.x, 3.x and older" are not supported; 6.0 is the maintained line

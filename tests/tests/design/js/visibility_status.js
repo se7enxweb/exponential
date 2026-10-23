@@ -1,6 +1,6 @@
 // Draws the status marks of the sub-items table (ezajaxsubitems_expdatatable.js: the Name and Visibility cells) and
 // of the dynamic content tree (contentstructuremenu_dynamic.js: generateEntry) for sample rows, against a small
-// stand-in for the browser and jQuery, and prints one JSON line per sample.
+// stand-in for the browser and Exponential UI, and prints one JSON line per sample.
 // Usage: node visibility_status.js <ezajaxsubitems_expdatatable.js> <contentstructuremenu_dynamic.js>
 'use strict';
 const fs = require('fs');
@@ -26,22 +26,17 @@ function element(tag) {
     });
     return el;
 }
-const document = { cookie: '', createElement: element, addEventListener() {} };
+const document = { cookie: '', createElement: element, addEventListener() {}, getElementById() { return null; } };
 
 // ---- the sub-items table ------------------------------------------------------------------------------------
 function subitems(source) {
     let options = null;
-    function $(target) {
-        return {
-            first() { return this; }, find() { return this; }, on() { return this; }, attr() { return ''; },
-            data() { return options; },
-            expDataTable(o) { options = o; return this; },
-            target,
-        };
-    }
-    $.extend = function () { return Object.assign.apply(null, arguments); };
-    $.each = function (list, fn) { (list || []).forEach((v, i) => fn(i, v)); };
-    const window = { Exp: { $ } };
+    // Exp.datatable.create() only keeps the options it is given
+    const Exp = {
+        util: { extend() { return Object.assign.apply(null, arguments); } },
+        datatable: { create(el, o) { options = o; return {}; } },
+    };
+    const window = { Exp };
     const sandbox = { window, document, console };
     vm.createContext(sandbox);
     vm.runInContext(source + '\nthis.api = eZAjaxSubitemsExpDataTable;', sandbox);
