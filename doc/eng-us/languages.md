@@ -389,8 +389,7 @@ Notes on single locales:
   "Greek (Hellenic)"), `ukr-UA` (`Українська` instead of "Ukrainian"). `kat-GE` lost a capital its generator had
   given it (Georgian has none in running text: `ქართული`).
 - **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia), `ser-SR`
-  and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names), `ukr-UA`
-  has nominative month names in dates ("15 Жовтень" for "15 жовтня"), `chi-CN` and `chi-TW` keep their old date
+  and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names), `chi-CN` and `chi-TW` keep their old date
   patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
 - **Dhivehi** (`div-MV`): ICU 74 has no Dhivehi data. Numbers, the rufiyaa (symbol `Rf`) and date patterns follow
   CLDR `en_MV`; the language name (ދިވެހި, English "Dhivehi", the Maldivian spelling), the currency name and the

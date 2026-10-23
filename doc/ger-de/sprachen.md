@@ -396,8 +396,7 @@ Hinweise zu einzelnen Locales:
   Großbuchstaben, den sein Generator ihm gegeben hatte (Georgisch kennt im fortlaufenden Text keine: `ქართული`).
 - **Noch zu verbessern** in älteren Dateien: `ind-ID` hat nur seinen englischen Namen („Indonesian“; CLDR:
   Indonesia), `ser-SR` und `srp-RS` mischen Englisch und Eigensprache („Serbian (Српски)“, und `srp-RS`
-  schreibt seine Tagesnamen groß), `ukr-UA` hat Monatsnamen im Nominativ in Datumsangaben („15 Жовтень“ statt
-  „15 жовтня“), `chi-CN` und `chi-TW` behalten ihre alten Datumsmuster (`2025年 十月 15日`, lesbar, aber nicht das
+  schreibt seine Tagesnamen groß), `chi-CN` und `chi-TW` behalten ihre alten Datumsmuster (`2025年 十月 15日`, lesbar, aber nicht das
   `2025年10月15日` von CLDR).
 - **Dhivehi** (`div-MV`): ICU 74 hat keine Daten für Dhivehi. Zahlen, die Rufiyaa (Symbol `Rf`) und die Datumsmuster
   folgen CLDR `en_MV`; der Name der Sprache (ދިވެހި, englisch „Dhivehi“, die maledivische Schreibung), der Name der
