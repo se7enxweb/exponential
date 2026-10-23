@@ -34,9 +34,9 @@ Seven operators of `eZTemplateRoleOperator` (`lib/eztemplate/classes/eztemplater
 The piped value is ignored; without a `user_id` parameter the current user is checked.
 
 > **Note**
-> On some installations these operators were not registered with the template engine, so a template using them got
-> the warning "Operator 'has_role' is not registered"; a registration fix is being made for 6.0.15. If an installation reports the operator as
-> unknown, use the fetch functions below, which work everywhere.
+> Before 6.0.15 these operators were not registered with the template engine, so a template using them got the warning
+> "Operator 'has_role' is not registered". 6.0.15 registers all seven. On an older installation that reports the
+> operator as unknown, use the fetch functions below, which work everywhere.
 
 ## The fetch alternatives
 

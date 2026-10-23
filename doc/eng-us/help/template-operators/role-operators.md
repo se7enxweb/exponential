@@ -38,8 +38,8 @@ current user: id 10, roles: 1 Anonymous
 
 ## Two rules before you use them
 
-**The piped input is ignored.** `modify()` reads only the parameters. The comment at the top of the class shows forms
-such as `$current_user|has_role( 'Administrator' )`, but the value before the `|` plays no part: the operator checks
+**The piped input is ignored.** `modify()` reads only the parameters. Many examples write
+`$current_user|has_role( 'Administrator' )`, but the value before the `|` plays no part: the operator checks
 the user named by `user_id`, and without it the **current** user. So `$someone|has_role( ... )` silently answers for
 the visitor, not for `$someone`:
 
@@ -121,7 +121,7 @@ has_any_role( array( 'Anonymous', 'Editor' ), 0, true() ) = false
 ### has_role_by_user
 
 Whether the given user object (an `eZUser`, such as `fetch( 'user', 'current_user' )`) has the role with this id.
-The object must be an `eZUser`: the method reads its `contentobject_id` attribute.
+Anything else (a number, an empty variable) gives false.
 
 | Parameter | Type | Required | Default |
 |---|---|---|---|
@@ -158,9 +158,10 @@ has_role_by_user_id( $me.contentobject_id, 1 ) = true
 
 ### has_policy
 
-Whether any role of the user has a policy for the module and function. When the role class has a `hasPolicy()`
-method it is used; otherwise the policies are compared by module and function name, where `*` in a policy matches
-everything. Limitations are not looked at (see the rules above).
+Whether any role of the user has a policy for the module and function. The policies are compared by module and function
+name, where `*` in a policy matches every module or every function: the Administrator role's `*` policy answers true
+for any question, and a `content/*` policy for every content function. Limitations are not looked at (see the rules
+above).
 
 | Parameter | Type | Required | Default |
 |---|---|---|---|
