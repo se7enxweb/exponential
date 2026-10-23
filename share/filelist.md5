@@ -24338,6 +24338,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 88c2ef84c8ada8a15807fcfba2033272  tests/tests/design/AdminPageHeaderTest.php
 777e93385bcb629a46d7f1e176f5ccce  tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
 1f2f3c2b29989f255143806de86610b4  tests/tests/design/AdminPhoneMenuTest.php
+3bb2833f704d958b4555b7a03dbec262  tests/tests/design/AdminPlainScriptsExpUIPacksTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 09bc63dcafdd65f3f5e0deac447bf043  tests/tests/design/AdminPrePaintGuardsTest.php
 964332e29381bae7173aa9450cd52780  tests/tests/design/AdminPreferencesTest.php
