@@ -1,7 +1,8 @@
 /**
- * The admin's sub-items table on Exponential UI's $.fn.expDataTable (exp::datatable).
+ * The admin's sub-items table on Exponential UI's Exp.datatable.create() (exp::datatable), on plain JavaScript: it
+ * needs no jQuery (admin4's node view loads none), and runs the same on a page that has it.
  *
- * Started by children_detailed.tpl when Exponential UI is there (window.Exp && Exp.$.fn.expDataTable), with the
+ * Started by children_detailed.tpl when Exponential UI is there (window.Exp && Exp.datatable), with the
  * four objects:
  *
  *   eZAjaxSubitemsExpDataTable.init(confObj, labelsObj, createGroups, createOptions)
@@ -72,8 +73,31 @@ var eZAjaxSubitemsExpDataTable = (function () {
     // to the public siteaccess).
     function multiEditURLFor(form) {
         if (typeof window.eZExpMultiEditURL === 'string' && window.eZExpMultiEditURL) { return window.eZExpMultiEditURL; }
-        var action = form.attr('action') || '';
+        var action = form.getAttribute('action') || '';
         return /content\/action(\?.*)?$/.test(action) ? action.replace(/content\/action(\?.*)?$/, 'content/multiedit') : '/content/multiedit';
+    }
+
+    // ---- elements -----------------------------------------------------------------------------------------------
+
+    /** One element from its HTML. */
+    function element(html) {
+        var box = document.createElement('div');
+        box.innerHTML = html;
+        return box.firstElementChild;
+    }
+
+    function setAttributes(el, map) {
+        Object.keys(map).forEach(function (name) { el.setAttribute(name, map[name]); });
+        return el;
+    }
+
+    /** A hidden field of the list form; without a value argument it has no value attribute. */
+    function hiddenField(name, value) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        if (arguments.length > 1) { input.value = value === null || value === undefined ? '' : value; }
+        return input;
     }
 
     // ---- the subitems column registry (expsubitems::columns, ::rows, ::savepreference) ------------------------
@@ -117,13 +141,15 @@ var eZAjaxSubitemsExpDataTable = (function () {
     }
 
     function build(confObj, labelsObj, createGroups, createOptions, meta) {
-        var $ = window.Exp.$;
+        var extend = window.Exp.util.extend;
         var shownColumns = getCookieSubMultiValue(confObj.cookieName, confObj.navigationPart);
         var cookieColumns = shownColumns;
         if (shownColumns === null) { shownColumns = confObj.defaultShownColumns[confObj.navigationPart]; }
         var L = labelsObj.DATA_TABLE_COLS, A = labelsObj.ACTION_BUTTONS, O = labelsObj.TABLE_OPTIONS;
-        var form = function () { return $('form[name=children]').first(); };
-        var selectedCount = function () { return $('form[name=children] input.ezsubitems_delete_checkbox:checked').length; };
+        var form = function () { return document.querySelector('form[name=children]'); };
+        var selectedCount = function () { return document.querySelectorAll('form[name=children] input.ezsubitems_delete_checkbox:checked').length; };
+        // Sends the list form as it was sent before: form.submit(), which fires no submit event
+        var send = function (f) { f.submit(); };
 
         // ---- cell formatters ----------------------------------------------------
         var formatName = function (row) {
@@ -145,15 +171,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
             var createhereMenu = (confObj.classesString != '') ? -1 : 'child-menu-create-here';
             var translationArray = [];
             var name = htmlText(row.name);
-            $.each(row.translations || [], function (i, e) { translationArray.push({ 'locale': e, 'name': confObj.languages[e] }); });
-            var a = $('<a></a>').attr({ href: '#', role: 'button', 'aria-label': name, 'aria-haspopup': 'menu' })
-                .append('<div class="crankfield"></div>');
-            a.on('click', function (e) {
+            (row.translations || []).forEach(function (e) { translationArray.push({ 'locale': e, 'name': confObj.languages[e] }); });
+            var a = setAttributes(document.createElement('a'), { href: '#', role: 'button', 'aria-label': name, 'aria-haspopup': 'menu' });
+            a.appendChild(element('<div class="crankfield"></div>'));
+            a.addEventListener('click', function (e) {
                 e.preventDefault();
-                // The native event: opened with the keyboard it has no position, and ezpopupmenu.js opens the menu
-                // under this link and moves the focus into it.
-                var ev = e.originalEvent || e;
-                window.ezpopmenu_showTopLevel(ev, 'SubitemsContextMenu', {
+                // The event as the browser gives it: opened with the keyboard it has no position, and ezpopupmenu.js
+                // opens the menu under this link and moves the focus into it.
+                window.ezpopmenu_showTopLevel(e, 'SubitemsContextMenu', {
                     '%nodeID%': row.node_id, '%objectID%': row.contentobject_id, '%version%': row.version,
                     '%languages%': translationArray, '%classList%': confObj.classesString
                 }, name, row.node_id, createhereMenu);
@@ -165,13 +190,12 @@ var eZAjaxSubitemsExpDataTable = (function () {
             if (url) {
                 // the image as the box's background, set through the element's style: a style attribute in the
                 // markup is blocked under a Content Security Policy without 'unsafe-inline'
-                var thumb = $('<div></div>').css({
-                    background: 'url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat',
-                    width: row.thumbnail_width + 'px',
-                    height: row.thumbnail_height + 'px'
-                });
-                var view = $('<div class="thumbview"><div class="thumbfield"></div><span></span></div>');
-                view.children('span').append(thumb);
+                var thumb = document.createElement('div');
+                thumb.style.background = 'url(\'' + url.replace(/'/g, "\\'") + '\') no-repeat';
+                thumb.style.width = row.thumbnail_width + 'px';
+                thumb.style.height = row.thumbnail_height + 'px';
+                var view = element('<div class="thumbview"><div class="thumbfield"></div><span></span></div>');
+                view.lastElementChild.appendChild(thumb);
                 return view;
             }
             return '';
@@ -197,7 +221,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 locales = Object.keys(confObj.languages);
                 own.forEach(function (e) { if (locales.indexOf(e) === -1) { locales.push(e); } });
             }
-            $.each(locales, function (i, e) {
+            locales.forEach(function (e) {
                 var state = e === main ? 'main' : (own.indexOf(e) !== -1 ? 'present' : 'missing'),
                     langName = (confObj.languages && confObj.languages[e]) || e,
                     badge = attr((confObj.languageBadges && confObj.languageBadges[e]) || e),
@@ -225,7 +249,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
         // ---- the status marks (components.css .a4-mark) -------------------------
         // labelsObj.STATUS holds the names and the explanations (children_detailed.tpl); without it (an older
         // template) the marks are drawn with the English words.
-        var S = $.extend({
+        var S = extend({
             visible: 'Visible', hidden: 'Hidden', hidden_by_parent: 'Hidden by a parent',
             visible_title: 'Visible: visitors of the site can see it.', hidden_title: 'Hidden: visitors of the site do not see it.',
             hidden_by_parent_title: 'An item above it is hidden, so visitors of the site do not see it.',
@@ -291,14 +315,14 @@ var eZAjaxSubitemsExpDataTable = (function () {
 
         // the server's rows
         var parseRow = function (r) {
-            var row = $.extend({}, r);
+            var row = extend({}, r);
             row.creator = r.creator && r.creator.name ? r.creator.name : '?';
             row.section = r.section && r.section.name ? r.section.name : '?';
             row.translations = r.translations ? r.translations.language_list : undefined;
             return row;
         };
 
-        var $list = $('#content-sub-items-list');
+        var listElement = document.getElementById('content-sub-items-list');
         var sortOptions = { key: confObj.sortKey, dir: confObj.sortOrder === 1 ? 'asc' : 'desc' };
         var rowsPerPage = confObj.rowsPrPage;
         // A choice of the table options that did not reach the server: an error toast (admin4.js), the console
@@ -326,7 +350,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 if (field && byField[field]) {
                     // a built-in: drawn as before from the node JSON, under the registry's key
                     var old = byField[field];
-                    c = $.extend({}, old, { key: m.key, field: field, label: old.label || m.name, group: m.group || '', title: title,
+                    c = extend({}, old, { key: m.key, field: field, label: old.label || m.name, group: m.group || '', title: title,
                                             align: m.align || old.align, hidden: false });
                     if (m.copy) { c.copy = (function (f) { return function (row) { var v = row[f]; return v === null || v === undefined ? '' : v; }; }(field)); }
                 } else if (!field) {
@@ -433,7 +457,7 @@ var eZAjaxSubitemsExpDataTable = (function () {
                     save: function (keys) {
                         state.visible = keys.slice();
                         var p = state.preset ? presetOf(state.preset) : null;
-                        if (p && !sameList(known(p.columns), keys)) { state.preset = null; if (this.$presets) { this.renderPresets(); } }
+                        if (p && !sameList(known(p.columns), keys)) { state.preset = null; if (this.presetsFieldset) { this.renderPresets(); } }
                         queueSave();
                     }
                 },
@@ -488,7 +512,10 @@ var eZAjaxSubitemsExpDataTable = (function () {
             columns.splice(crankAt + 1, 0, drag.column);
         }
 
-        $list.expDataTable({
+        // the sub-items' check boxes, for the Select menu
+        var checkboxes = function () { return listElement ? Array.prototype.slice.call(listElement.querySelectorAll('input[type=checkbox]')) : []; };
+
+        var table = window.Exp.datatable.create(listElement, {
             columns: columns,
             rowKey: 'node_id',
             copy: server ? server.copy : null,
@@ -536,25 +563,31 @@ var eZAjaxSubitemsExpDataTable = (function () {
             actionsContainer: '#action-controls',
             actions: [
                 { id: 'ezbtn-items', label: A.select, menu: [
-                    { id: 'ezopt-menu-check', label: A.select_sav, onSelect: function () { $list.find('input[type=checkbox]').prop('checked', true); this.syncAll(); this.emitSelect(); } },
-                    { id: 'ezopt-menu-uncheck', label: A.select_sn, onSelect: function () { $list.find('input[type=checkbox]').prop('checked', false); this.syncAll(); this.emitSelect(); } },
-                    { id: 'ezopt-menu-toggle', label: A.select_inv, onSelect: function () { $list.find('input[type=checkbox]').each(function () { this.checked = !this.checked; }); this.syncAll(); this.emitSelect(); } }
+                    { id: 'ezopt-menu-check', label: A.select_sav, onSelect: function () { checkboxes().forEach(function (c) { c.checked = true; }); this.syncAll(); this.emitSelect(); } },
+                    { id: 'ezopt-menu-uncheck', label: A.select_sn, onSelect: function () { checkboxes().forEach(function (c) { c.checked = false; }); this.syncAll(); this.emitSelect(); } },
+                    { id: 'ezopt-menu-toggle', label: A.select_inv, onSelect: function () { checkboxes().forEach(function (c) { c.checked = !c.checked; }); this.syncAll(); this.emitSelect(); } }
                 ] },
                 { id: 'ezbtn-new', label: A.create_new, disabled: createGroups.length === 0,
                   menu: createGroups.map(function (g, i) {
                       return { group: g, items: (createOptions[i] || []).map(function (o) { return { label: o.text, value: o.value, html: true }; }) };
                   }),
                   onSelect: function (item) {
-                      form().append($('<input type="hidden" name="ClassID" />').val(item.value)).append($('<input type="hidden" name="NewButton" />')).trigger('submit');
+                      var f = form();
+                      if (!f) { return; }
+                      f.appendChild(hiddenField('ClassID', item.value));
+                      f.appendChild(hiddenField('NewButton'));
+                      send(f);
                   } },
                 { id: 'ezbtn-new-multi', label: A.create_multiple, disabled: createGroups.length === 0,
                   onClick: function () {
                       // the parent is this list's own node; the sub items form carries it as ContentNodeID
-                      var f = form(), parent = f.find('input[name=ContentNodeID]').val();
-                      f.attr('action', multiEditURLFor(f))
-                       .append($('<input type="hidden" name="MultiEditCreateParent" />').val(parent))
-                       .append($('<input type="hidden" name="MultiEditReturnURI" />').val(window.location.pathname))
-                       .trigger('submit');
+                      var f = form();
+                      if (!f) { return; }
+                      var node = f.querySelector('input[name=ContentNodeID]'), parent = node ? node.value : undefined;
+                      f.setAttribute('action', multiEditURLFor(f));
+                      f.appendChild(hiddenField('MultiEditCreateParent', parent));
+                      f.appendChild(hiddenField('MultiEditReturnURI', window.location.pathname));
+                      send(f);
                   } },
                 { id: 'ezbtn-more', label: A.more_actions,
                   menu: function () {
@@ -572,21 +605,23 @@ var eZAjaxSubitemsExpDataTable = (function () {
                   onSelect: function (item) {
                       if (selectedCount() === 0) { return; }
                       var f = form(), v = item.value;
-                      if (v === 0) { f.append($('<input type="hidden" name="RemoveButton" value="1" />')).trigger('submit'); }
-                      else if (v === 2) { f.append($('<input type="hidden" name="CopyButton" value="1" />')).trigger('submit'); }
-                      else if (v === 3) { f.append($('<input type="hidden" name="HideButton" value="1" />')).trigger('submit'); }
-                      else if (v === 4) { f.append($('<input type="hidden" name="UnhideButton" value="1" />')).trigger('submit'); }
-                      else if (v === 6) { f.append($('<input type="hidden" name="AddLocationsButton" value="1" />')).trigger('submit'); }
+                      if (!f) { return; }
+                      var press = function (name) { f.appendChild(hiddenField(name, '1')); send(f); };
+                      if (v === 0) { press('RemoveButton'); }
+                      else if (v === 2) { press('CopyButton'); }
+                      else if (v === 3) { press('HideButton'); }
+                      else if (v === 4) { press('UnhideButton'); }
+                      else if (v === 6) { press('AddLocationsButton'); }
                       else if (v === 5) {
                           // Edit the selection in one form: the DeleteIDArray checkboxes carry node ids, which
                           // content/multiedit resolves; the return uri brings the reader back to this list
-                          f.attr('action', multiEditURLFor(f))
-                           .append($('<input type="hidden" name="MultiEditReturnURI" />').val(window.location.pathname))
-                           .trigger('submit');
-                      } else { f.append($('<input type="hidden" name="MoveButton" value="1" />')).trigger('submit'); }
+                          f.setAttribute('action', multiEditURLFor(f));
+                          f.appendChild(hiddenField('MultiEditReturnURI', window.location.pathname));
+                          send(f);
+                      } else { press('MoveButton'); }
                   } }
             ],
-            tableOptions: $.extend({
+            tableOptions: extend({
                 button: { id: 'ezbtn-options', label: A.table_options },
                 container: '#to-dialog-container',
                 title: O.header,
@@ -603,14 +638,15 @@ var eZAjaxSubitemsExpDataTable = (function () {
                 columns: { legend: O.header_vtc }
             }, server ? server.tableOptions : {})
         });
-        if (server) {
+        if (server && table) {
             // rows per page (a listed number or a custom one) is part of the saved choice
-            $list.on('exp:datatable:page', function (e, d) {
+            table.el.addEventListener('exp:datatable:page', function (e) {
+                var d = e.detail;
                 if (d && d.limit && Number(d.limit) !== rowsPerPage) { rowsPerPage = Number(d.limit); server.limitSaved(rowsPerPage); }
             });
         }
-        if (drag) { drag.attach($list.data('expDataTable')); }
-        return $list.data('expDataTable');
+        if (drag) { drag.attach(table); }
+        return table;
     }
 
     return { init: init, getCookieSubMultiValue: getCookieSubMultiValue, setCookieSubMultiValue: setCookieSubMultiValue };

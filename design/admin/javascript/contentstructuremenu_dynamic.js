@@ -127,7 +127,7 @@ function ContentStructureMenu( params, i18n )
 
         this.isOpen = function( nodeID )
         {
-            return jQuery.inArray( '' + nodeID, this.open ) !== -1;
+            return this.open.indexOf( '' + nodeID ) !== -1;
         };
 
         this.setOpen = function( nodeID )
@@ -143,7 +143,7 @@ function ContentStructureMenu( params, i18n )
 
         this.setClosed = function( nodeID )
         {
-            var openIndex = jQuery.inArray( '' + nodeID, this.open );
+            var openIndex = this.open.indexOf( '' + nodeID );
             if ( openIndex !== -1 )
             {
                 this.open.splice( openIndex, 1 );
@@ -382,76 +382,96 @@ function ContentStructureMenu( params, i18n )
             _toggleState( aElement, 'openclose-busy' );
         }
 
-        var thisThis = this, request = jQuery.ajax({
-            'url': url,
-            'dataType': 'json',
-            'success': function( data, textStatus )
+        // The sub items as JSON, requested as an XMLHttpRequest (the Accept and X-Requested-With headers, the
+        // browser's cache, the session cookie): an answer outside 2xx or one that is not JSON is an error with its
+        // status, a network failure one with status 0.
+        var thisThis = this;
+        var success = function( data )
+        {
+            var html = '<ul>', items = [];
+            // Filter out nodes to hide
+            for ( var i = 0, l = data.children_count; i < l; i++ )
             {
-                var html = '<ul>', items = [];
-                // Filter out nodes to hide
-                for ( var i = 0, l = data.children_count; i < l; i++ )
+                if ( params.hideNodes.indexOf( data.children[i].node_id ) === -1 )
                 {
-                    if ( jQuery.inArray( data.children[i].node_id, params.hideNodes ) === -1 )
-                    {
-                        items.push( data.children[i] );
-                    }
-                }
-                // Generate html content, one level below the opened node
-                var childLevel = ( thisThis.levels[nodeID] || 0 ) + 1;
-                for ( var i = 0, l = items.length; i < l; i++ )
-                {
-                    html += thisThis.generateEntry( items[i], i == l - 1, false, childLevel );
-                }
-                html += '<\/ul>';
-
-                divElement.innerHTML += html;
-                thisThis.decorate( divElement );
-                divElement.className = 'loaded';
-                if ( aElement )
-                {
-                    _toggleState( aElement, 'openclose-close' );
-                }
-
-                thisThis.setOpen( nodeID );
-                thisThis.openUnder( nodeID );
-
-                return;
-            },
-            'error': function( xhr, textStatus, errorThrown )
-            {
-                divElement.className = 'error';
-                if (aElement) _toggleState( aElement, 'openclose-error' );
-
-                function setErrorText( txt )
-                {
-                    if (aElement) aElement.title = txt;
-                    else
-                    {
-                        // an empty span, then the text as text: the message is never parsed as markup
-                        divElement.textContent = '';
-                        divElement.appendChild( document.createElement( 'span' ) );
-                        divElement.appendChild( document.createTextNode( txt ) );
-                    }
-                    if (aElement) _describe( aElement.parentNode, txt );
-                }
-
-                switch( xhr.status )
-                {
-                    case 403:
-                    {
-                      setErrorText( i18n.disabled );
-                    } break;
-                    case 404:
-                    {
-                      setErrorText( i18n.not_exist );
-                    } break;
-                    default:
-                    {
-                      setErrorText( i18n.internal_error );
-                    }
+                    items.push( data.children[i] );
                 }
             }
-        });
+            // Generate html content, one level below the opened node
+            var childLevel = ( thisThis.levels[nodeID] || 0 ) + 1;
+            for ( var i = 0, l = items.length; i < l; i++ )
+            {
+                html += thisThis.generateEntry( items[i], i == l - 1, false, childLevel );
+            }
+            html += '<\/ul>';
+
+            divElement.innerHTML += html;
+            thisThis.decorate( divElement );
+            divElement.className = 'loaded';
+            if ( aElement )
+            {
+                _toggleState( aElement, 'openclose-close' );
+            }
+
+            thisThis.setOpen( nodeID );
+            thisThis.openUnder( nodeID );
+
+            return;
+        };
+        var error = function( status )
+        {
+            divElement.className = 'error';
+            if (aElement) _toggleState( aElement, 'openclose-error' );
+
+            function setErrorText( txt )
+            {
+                if (aElement) aElement.title = txt;
+                else
+                {
+                    // an empty span, then the text as text: the message is never parsed as markup
+                    divElement.textContent = '';
+                    divElement.appendChild( document.createElement( 'span' ) );
+                    divElement.appendChild( document.createTextNode( txt ) );
+                }
+                if (aElement) _describe( aElement.parentNode, txt );
+            }
+
+            switch( status )
+            {
+                case 403:
+                {
+                  setErrorText( i18n.disabled );
+                } break;
+                case 404:
+                {
+                  setErrorText( i18n.not_exist );
+                } break;
+                default:
+                {
+                  setErrorText( i18n.internal_error );
+                }
+            }
+        };
+        fetch( url, {
+            method: 'GET',
+            credentials: 'same-origin',
+            // the wildcard type in two parts: whole, it would read as the start of a comment to tools that strip them
+            headers: { 'Accept': 'application/json, text/javascript, */' + '*; q=0.01', 'X-Requested-With': 'XMLHttpRequest' }
+        } ).then( function( response )
+        {
+            return response.text().then( function( text )
+            {
+                if ( !response.ok )
+                {
+                    throw response.status;
+                }
+                try { return JSON.parse( text ); } catch ( e ) { throw response.status; }
+            } );
+        } ).then( success, function( failure )
+        {
+            // success() is not covered: an exception there is not a failed load
+            error( typeof failure === 'number' ? failure : 0 );
+        } );
 
         return false;
     };
@@ -483,7 +503,7 @@ function ContentStructureMenu( params, i18n )
             var liCandidate = children[i];
             if ( liCandidate.nodeType == 1 && liCandidate.id )
             {
-                var nodeID = liCandidate.id.substr( 1 ), openIndex = jQuery.inArray( nodeID, this.autoOpenPath );
+                var nodeID = liCandidate.id.substr( 1 ), openIndex = this.autoOpenPath.indexOf( nodeID );
                 if ( this.autoOpen && openIndex !== -1 )
                 {
                     this.autoOpenPath.splice( openIndex, 1 );
@@ -695,7 +715,7 @@ function ContentStructureMenu( params, i18n )
         {
             return;
         }
-        var lists = jQuery.makeArray( container.getElementsByTagName( 'ul' ) );
+        var lists = Array.prototype.slice.call( container.getElementsByTagName( 'ul' ) );
         if ( container === ul )
         {
             lists.unshift( ul );
@@ -773,7 +793,7 @@ function ContentStructureMenu( params, i18n )
         // The Tab stop is the current node's item once it is shown (the path to it opens step by step), unless
         // the focus is in the tree already; else the first shown item, else the first item.
         var stop = _tabStop( ul ), current = ul.querySelector( '[role="treeitem"][aria-current="page"]' );
-        if ( current && current !== stop && !( stop && stop.getAttribute( 'aria-current' ) === 'page' ) && !jQuery.contains( ul, document.activeElement ) )
+        if ( current && current !== stop && !( stop && stop.getAttribute( 'aria-current' ) === 'page' ) && !_inside( ul, document.activeElement ) )
         {
             _tabStop( ul, current );
         }
@@ -783,6 +803,12 @@ function ContentStructureMenu( params, i18n )
             if ( first ) _tabStop( ul, first );
         }
     };
+
+    // node lies inside outer (outer itself does not count)
+    function _inside( outer, node )
+    {
+        return !!node && node !== outer && outer.contains( node );
+    }
 
     // The name link of the node li: the tree item
     function _ownItem( li )

@@ -257,8 +257,12 @@
 {/if}
 {undef $ezoe_engine}
 {else}
-    {* Require jQuery even when disabled to make sure user don't get cache issues when they enable editor *}
-    {ezscript_require( 'ezjsc::jquery' )}
+    {* Require jQuery even when disabled to make sure user don't get cache issues when they enable editor; only for the
+       built-in TinyMCE 3 (the engine without a template of its own), the one that runs on jQuery. TinyMCE 8 and
+       Tiptap bring their own scripts and need none. *}
+    {if $input_handler.engine.template|not}
+        {ezscript_require( 'ezjsc::jquery' )}
+    {/if}
     {let aliased_handler=$input_handler.aliased_handler}
     {include uri=concat("design:content/datatype/edit/",$aliased_handler.edit_template_name,".tpl") input_handler=$aliased_handler}
     <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_enable_editor]" value="{'Enable editor'|i18n('design/standard/content/datatype')}" /><br>

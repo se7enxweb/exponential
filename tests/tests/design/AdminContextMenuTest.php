@@ -144,7 +144,8 @@ class AdminContextMenuTest extends PHPUnit\Framework\TestCase
         foreach ( array( "admin4", "admin" ) as $design )
         {
             $text = AdminFiles::read( self::root() . "/design/$design/javascript/ezajaxsubitems_expdatatable.js" );
-            $this->assertStringContainsString( "var ev = e.originalEvent || e;", $text, "design/$design: the sub-items menu button passes the native event" );
+            $this->assertStringContainsString( "window.ezpopmenu_showTopLevel(e, 'SubitemsContextMenu', {", $text, "design/$design: the sub-items menu button passes the native event" );
+            $this->assertStringContainsString( "a.addEventListener('click', function (e) {", $text, "design/$design: the sub-items menu button listens without jQuery" );
             $this->assertStringNotContainsString( "getBoundingClientRect", $text, "design/$design: the sub-items menu button places the menu itself again" );
         }
     }

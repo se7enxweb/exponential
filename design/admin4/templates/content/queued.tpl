@@ -2,13 +2,13 @@
    [PublishingSettings] AsynchronousPublishing). Variables: $contentObjectId, $version, optional $redirect_uri,
    $content_object, $content_object_version, $content_class.
 
-   ezasynchronouspublishing.js asks for the status and shows one of the placeholders; their ids and classes are the
-   ones design/standard/templates/content/queued.tpl documents and must stay: #ezap-error, and .ezap-placeholder
-   #ezap-message-publishing, #ezap-message-finished (with a#ezap-contentview-uri) and #ezap-message-deferred (with
-   a#ezap-versionview-uri). The configuration is read from #ezap-config by javascript/content_queued.js; the hidden
+   ezasynchronouspublishing.js (plain JavaScript on exp::io, no jQuery) asks for the status and shows one of the
+   placeholders; their ids and classes are the ones design/standard/templates/content/queued.tpl documents and must
+   stay: #ezap-error, and .ezap-placeholder #ezap-message-publishing, #ezap-message-finished (with
+   a#ezap-contentview-uri) and #ezap-message-deferred (with a#ezap-versionview-uri). The configuration is read from #ezap-config by javascript/content_queued.js; the hidden
    placeholders (.ezap-hidden) are in stylesheets/content_queued.css; both come from design/standard. *}
 {exp_config()}
-{ezscript_require( array( 'ezjsc::jquery', 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'ezasynchronouspublishing.js' ) )}
 {ezcss_require( 'content_queued.css' )}
 
 <div class="a4-page a4-standalone">

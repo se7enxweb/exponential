@@ -16,7 +16,7 @@
 
     {run-once}
     {* The upload dialog: Exponential UI (exp::io, exp::dialog, exp::upload in BackendJavaScriptList) runs the steps
-       and server calls on jQuery 4 (expajaxuploader.js). *}
+       and server calls in plain JavaScript (expajaxuploader.js, no jQuery). *}
     {ezscript_require( 'expajaxuploader.js' )}
     {ezscript( array( 'page/content_ezobjectrelationlist_ajaxuploader.js' ) )}
     {/run-once}

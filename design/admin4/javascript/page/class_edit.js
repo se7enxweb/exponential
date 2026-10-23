@@ -1,14 +1,19 @@
 /*
  * admin4 class/edit: focuses the error list or the attribute changed last, and moves attributes in place.
- * Plain JavaScript, no jQuery. A file of its own, so the page runs under a Content Security Policy without
- * 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
+ * Plain JavaScript on a4Dom (a4_dom.js, loaded by the page head), no jQuery. A file of its own, so the page runs under
+ * a Content Security Policy without 'unsafe-inline' (doc/eng-us/features/6.0/content-security-policy.md).
  */
 (function( fn )
 {
-    if ( document.readyState !== 'loading' ) fn(); else document.addEventListener( 'DOMContentLoaded', fn );
+    if ( !window.a4Dom )
+    {
+        if ( window.console ) window.console.error( 'class_edit.js: a4_dom.js is not on the page' );
+        return;
+    }
+    window.a4Dom.ready( fn );
 })(function()//called on document.ready
 {
-    var each = function( list, fn ){ Array.prototype.forEach.call( list, fn ); };
+    var each = window.a4Dom.each;
 
     var errors = document.getElementById( 'class-edit-errors' );
     if ( errors ) errors.focus();
@@ -67,7 +72,8 @@
 
     function moveButtons()
     {
-        return list.querySelectorAll( 'div.listbutton input[name^=Move]' );
+        // admin4's buttons (name="MoveUp", value=the attribute id) and the classic inputs (name="MoveUp_<id>")
+        return list.querySelectorAll( 'div.listbutton input[name^=Move], div.listbutton button[name^=Move]' );
     }
 
     function buttons( on )
@@ -89,66 +95,63 @@
     }
 
     // Move up, down, to the top or to the bottom, in place; the server stores it, and a move it did not store is
-    // put back, so the page never shows an order that is not saved.
-    each( moveButtons(), function( button )
+    // put back, so the page never shows an order that is not saved. One listener on the list for every move button
+    // (a4Dom.on); while a move is saved the buttons are disabled and the list is aria-busy.
+    window.a4Dom.on( list, 'click', 'div.listbutton input[name^=Move], div.listbutton button[name^=Move]', function( e )
     {
-        button.addEventListener( 'click', function( e )
+        e.preventDefault();
+        e.stopPropagation();
+        if ( this.disabled )
+            return;
+        var pressed = this, tr = this.closest( 'tr.ezcca-edit-list-item' ), param = this.name.split( '_' ), action = param[0];
+        var id = param.length > 1 ? param[1] : this.value;
+        var all = rows(), from = all.indexOf( tr ), last = all.length - 1;
+        var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
+        if ( from === -1 || to === undefined || to < 0 || to > last || to === from )
+            return;
+        buttons( false );
+        var place = function( index )
         {
-            e.preventDefault();
-            e.stopPropagation();
-            var tr = this.closest( 'tr.ezcca-edit-list-item' ), param = this.name.split( '_' ), action = param[0];
-            var all = rows(), from = all.indexOf( tr ), last = all.length - 1;
-            var to = { MoveUp: from - 1, MoveDown: from + 1, MoveTop: 0, MoveBottom: last }[ action ];
-            if ( from === -1 || to === undefined || to < 0 || to > last || to === from )
-                return;
-            buttons( false );
-            var place = function( index )
-            {
-                var others = rows().filter( function( row ){ return row !== tr; } );
-                if ( index >= others.length )
-                    others[others.length - 1].parentNode.insertBefore( tr, others[others.length - 1].nextSibling );
-                else
-                    others[index].parentNode.insertBefore( tr, others[index] );
-                renumberAttributes();
-                priorities();
-            };
-            place( to );
+            var others = rows().filter( function( row ){ return row !== tr; } );
+            if ( index >= others.length )
+                others[others.length - 1].parentNode.insertBefore( tr, others[others.length - 1].nextSibling );
+            else
+                others[index].parentNode.insertBefore( tr, others[index] );
+            renumberAttributes();
+            priorities();
+        };
+        place( to );
 
-            var data = new URLSearchParams(), token = document.getElementById( 'ezxform_token_js' );
-            var meta = document.querySelector( 'meta[name="csrf-token"]' ), form = document.getElementById( 'ClassEdit' );
-            var headers = { 'X-Requested-With': 'XMLHttpRequest' };
-            data.append( 'ContentClassHasInput', '0' );
-            data.append( action, param[1] );
-            if ( token ) data.append( 'ezxform_token', token.getAttribute( 'title' ) );
-            if ( meta ) headers['X-CSRF-Token'] = meta.getAttribute( 'content' );
+        // a form POST (the Content-Type jQuery's $.ajax() wrote) with the form token, the CSRF header and
+        // X-Requested-With, which the server answers with X-Class-Attribute-Moved instead of the page
+        var form = document.getElementById( 'ClassEdit' ), data = [ [ 'ContentClassHasInput', '0' ] ];
+        data.push( [ action, id ] );
+        list.setAttribute( 'aria-busy', 'true' );
 
-            fetch( ( form && form.getAttribute( 'action' ) ) || window.location.href, {
-                method: 'POST',
-                body: data,
-                headers: headers,
-                credentials: 'same-origin'
-            } ).then( function( response )
-            {
-                if ( !response.ok )
-                {
-                    place( from );
-                    say( failed + ' (HTTP ' + response.status + ')', true );
-                }
-                else if ( response.headers.get( 'X-Class-Attribute-Moved' ) !== '1' )
-                {
-                    place( from );
-                    say( failed, true );
-                }
-                else
-                    say( '', false );
-            }, function()
+        window.a4Dom.post( ( form && form.getAttribute( 'action' ) ) || window.location.href, data ).then( function( response )
+        {
+            if ( !response.ok )
             {
                 place( from );
-                say( failed + ' (HTTP 0)', true );
-            } ).then( function()
+                say( failed + ' (HTTP ' + response.status + ')', true );
+            }
+            else if ( response.headers.get( 'X-Class-Attribute-Moved' ) !== '1' )
             {
-                buttons( true );
-            } );
+                place( from );
+                say( failed, true );
+            }
+            else
+                say( '', false );
+        }, function()
+        {
+            place( from );
+            say( failed + ' (HTTP 0)', true );
+        } ).then( function()
+        {
+            list.removeAttribute( 'aria-busy' );
+            buttons( true );
+            // disabling the pressed button took the focus away; a keyboard user goes on from the same button
+            pressed.focus();
         } );
     } );
 });
