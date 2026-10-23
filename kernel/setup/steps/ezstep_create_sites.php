@@ -2100,6 +2100,15 @@ language_locale='eng-GB'";
             }
         }
 
+        // A new installation takes user/register out of PolicyOmitList[] (PolicyOmitListExclude[], written above), so
+        // visitors can register only with the policy user/register. The base data has it from 6.0.15 on; no site
+        // package grants it itself, so it is checked here after the package's roles, whatever base data was loaded
+        // (doc/eng-us/bc/6.0/anonymous-public-policies.md).
+        if ( class_exists( 'expAnonymousPublicPolicies' ) )
+        {
+            eZDebug::writeNotice( expAnonymousPublicPolicies::ensure(), __METHOD__ );
+        }
+
         // Setup user preferences based on the site chosen and addons
         if ( function_exists( 'eZSitePreferences' ) )
         {
