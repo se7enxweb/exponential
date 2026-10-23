@@ -7,7 +7,7 @@ const fs = require('fs');
 const vm = require('vm');
 const source = fs.readFileSync(process.argv[2], 'utf8');
 const start = source.indexOf('function endPreload()');
-const end = source.indexOf('$(function () {', start);
+const end = source.indexOf('function init() {', start);
 if (start < 0 || end < 0) {
     process.stdout.write(JSON.stringify({ missing: true }) + '\n');
     process.exit(0);
