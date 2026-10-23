@@ -25268,7 +25268,7 @@ f39889af608be04ca56239a1de0a09c6  tests/tests/kernel/content/eZContentFunctionCo
 4399e626b4880c761281bb1f8af5a94c  tests/tests/kernel/content/eZContentVersionviewPlacementTest.php
 ac7874f3a658d9f604008926a802fa10  tests/tests/kernel/content/eZEditLocationsVisibilityTest.php
 e99d66f7224fa24370dafbd1a511cdf6  tests/tests/kernel/content/eZLoginTemplatesRegisterLinkTest.php
-144bcb24979a7e506bcc15f8abe96477  tests/tests/kernel/content/eZPendingIndexActionsTest.php
+c16ea41d68c6aab4a32244af4cb8d9ad  tests/tests/kernel/content/eZPendingIndexActionsTest.php
 9efd6b7105db2a470d402bd70b4005ef  tests/tests/kernel/content/eZPublishRegisterSearchObjectTest.php
 b460bd68c74256811a99815a5fe6b24d  tests/tests/kernel/content/eZPublishWithoutNotificationLiveTest.php
 5e5e8f579e9972bdb3388b9b5f3c5b9c  tests/tests/kernel/content/eZPublishWithoutNotificationTest.php
