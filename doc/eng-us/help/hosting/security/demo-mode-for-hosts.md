@@ -44,18 +44,25 @@ installers accept the published demo password, and the administration shows a **
 | PHP-FPM | in the demo's own pool file: `env[EXP_DEMO_MODE] = 1`, then reload the pool's master |
 | Apache (mod_php, or PHP-FPM through mod_proxy_fcgi) | in the demo's virtual host: `SetEnv EXP_DEMO_MODE 1` |
 | LiteSpeed / OpenLiteSpeed (lsphp) | the demo's virtual host or external application environment: `EXP_DEMO_MODE=1` |
-| Exponential Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars`: the server reads the file at every start and exports what it sets to the workers. The environment of the process that starts the server works too (`Environment=EXP_DEMO_MODE=1` in its systemd unit or a drop-in, `/etc/default/exponential-velocity` for the packaged unit) and wins over the file |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in the demo's site envvars, `/etc/vc/sites-available/<site>.envvars` (`<site>`: `./console exp:velocity layout`): `exp:velocity start` passes it to this installation's server only. The environment of the process that starts the demo's own server works too (`Environment=EXP_DEMO_MODE=1` in its systemd unit or a drop-in). Never the shared `/etc/vc/envvars` |
 | FrankenPHP or another application server | the environment of the server process |
 | Cron | a line `EXP_DEMO_MODE=1` at the top of the demo user's crontab |
 | Console | `export EXP_DEMO_MODE=1` in the demo user's shell profile, or before each command |
 | Containers | `ENV EXP_DEMO_MODE=1` in the demo image, or `-e EXP_DEMO_MODE=1` / `environment:` for the demo service only |
 
-**Velocity restarts.** With `export EXP_DEMO_MODE=1` in `/etc/vc/envvars`, `exp:velocity restart` and
-`exp:velocity deploy` keep demo mode whichever shell runs them: the server reads the file at every start. The file is
-read, never run, and refuses `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `HOME`,
-`USER` and the other loader and shell variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)). It
-applies to every site the Velocity server serves, so use it only on a server that serves nothing but demos. It needs
-an engine with the envvars export (after v0.0.4.53); with an older one `exp:velocity start` passes the values itself.
+**Velocity restarts.** With `export EXP_DEMO_MODE=1` in the demo's site envvars,
+`/etc/vc/sites-available/<site>.envvars`, `exp:velocity restart` and `exp:velocity deploy` keep demo mode whichever
+shell runs them: `exp:velocity start` reads the file at every start of that installation's server, and
+`./console exp:velocity layout` lists it under `site envvars`. The file is read, never run, and refuses `PATH`,
+`LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `HOME`, `USER` and the other loader and shell
+variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)).
+
+**Never in the shared `/etc/vc/envvars`.** The Velocity server of every installation on the host reads it, so demo
+mode there would reach your customers' production sites. Since 6.0.15 a Velocity worker refuses demo mode from a
+shared envvars file, keeps it off and logs `demo/refused ... came from an envvars file other installations share` in
+`var/log/security.log`; `./console exp:info` shows `refused (shared envvars)`. A demo set up there by an earlier
+release loses demo mode at the upgrade's restart: move the line to its site envvars first
+([demo mode](../../../bc/6.0/demo-mode.md#velocity-one-installation-only)).
 
 ## Installing a demo
 

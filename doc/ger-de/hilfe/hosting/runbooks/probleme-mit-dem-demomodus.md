@@ -69,10 +69,13 @@ Hinweis **Demo-Modus**, wenn er an ist. Ohne den Hinweis setzen Sie die Variable
 
 ## Der Demomodus war an und ist nach einem Neustart weg
 
-- **Exponential Velocity:** `exp:velocity restart` und `exp:velocity deploy` starten den neuen Server mit der Umgebung der Shell, in der
-  sie laufen. Setzen Sie die Variable in der systemd-Unit
-  ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)) und starten Sie über die Unit neu, oder
-  `export EXP_DEMO_MODE=1` vor einem Neustart aus einer Shell. Die Datei `/etc/vc/envvars` von Velocity gibt sie den Workern nicht.
+- **Exponential Velocity:** Setzen Sie `export EXP_DEMO_MODE=1` in die Site-envvars der Demo, `/etc/vc/sites-available/<site>.envvars`
+  (`<site>` und die Zeile `site envvars` zeigt `./console exp:velocity layout`); `exp:velocity restart` und `deploy` lesen sie aus jeder
+  Shell. Ein Neustart mit dem eigenen `qbixctl` der Engine liest sie nicht: Der Demomodus ist dann bis zum nächsten
+  `exp:velocity restart` aus. Steht die Zeile noch in der gemeinsamen `/etc/vc/envvars` (frühere Releases), ist der Demomodus seit dem
+  Update aus, und `var/log/security.log` enthält `demo/refused ... came from an envvars file other installations share`: Verschieben Sie
+  die Zeile in die Site-envvars und starten Sie neu
+  ([Velocity: nur eine Installation](../../../bc/6.0/demomodus.md#velocity-nur-eine-installation)).
 - **PHP-FPM:** Eine Pool-Datei, die das Control Panel (Plesk, cPanel) neu schreibt, verliert Zeilen, die es nicht verwaltet. Setzen Sie
   sie über die PHP-Einstellungen des Panels für die Domain, oder nutzen Sie stattdessen `.htaccess` oder den virtuellen Host.
 - **Ein Neuaufbau:** Eine frische `.htaccess` aus `.htaccess_root` hat kein `SetEnv`; der Aufbau muss es jedes Mal anhängen.

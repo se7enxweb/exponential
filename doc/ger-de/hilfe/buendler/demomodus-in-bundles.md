@@ -58,7 +58,7 @@ Jeder Prozess, der die Demo ausliefert oder pflegt, braucht ihn
 |---|---|
 | PHP-FPM | `env[EXP_DEMO_MODE] = 1` im eigenen Pool der Demo |
 | Apache | `SetEnv EXP_DEMO_MODE 1` im virtuellen Host der Demo |
-| Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars` oder in der Umgebung des Prozesses, der den Server startet |
+| Velocity | `export EXP_DEMO_MODE=1` in den Site-envvars der Demo, `/etc/vc/sites-available/<site>.envvars`, oder in der Umgebung des Prozesses, der den Server dieser Installation startet; nie in der gemeinsamen `/etc/vc/envvars`, die ein Worker dafür ablehnt |
 | Cron | `EXP_DEMO_MODE=1` am Anfang der Crontab des Demo-Benutzers |
 | Container | `ENV EXP_DEMO_MODE=1` im Demo-Image oder `-e EXP_DEMO_MODE=1` nur für den Demo-Dienst |
 

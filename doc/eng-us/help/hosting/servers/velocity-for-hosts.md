@@ -257,7 +257,7 @@ From [Chapter 8, Checklist](../../../install/08-serving-the-site.md#89-checklist
 - [ ] The panel password set, `Remote` left disabled, a dashboard token stored in your secrets store.
 - [ ] `var/` and `settings/` writable by the one user that runs PHP; no root-owned files in `var/`.
 
-**Demo mode under Velocity.** Workers inherit the server's environment, and the server exports what `/etc/vc/envvars` sets into it at every start: add `export EXP_DEMO_MODE=1` there, and `exp:velocity restart` or `deploy` from any shell keeps it. The unit's environment ([`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf)) works too and wins over the file. The file cannot set `PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)). [Demo mode for hosts](../security/demo-mode-for-hosts.md).
+**Demo mode under Velocity.** Workers inherit the server's environment. `/etc/vc/envvars` is shared by the server of every installation on the host, so demo mode never goes there (the workers refuse it from that file and log `demo/refused`). Add `export EXP_DEMO_MODE=1` to the demo's own site envvars, `/etc/vc/sites-available/<site>.envvars`: `exp:velocity start` passes it to that installation's server only, and `exp:velocity restart` or `deploy` from any shell keeps it. The demo's own unit environment ([`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf)) works too. The file cannot set `PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([on-disk layout](../../../bc/6.0/velocity-ondisk-layout.md)). [Demo mode for hosts](../security/demo-mode-for-hosts.md).
 
 ## Related pages
 

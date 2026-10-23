@@ -44,16 +44,20 @@ anmelden kann), die Installer akzeptieren das veröffentlichte Demo-Passwort, un
 | PHP-FPM | in der eigenen Pool-Datei der Demo: `env[EXP_DEMO_MODE] = 1`, dann den Master des Pools neu laden |
 | Apache (mod_php oder PHP-FPM über mod_proxy_fcgi) | im virtuellen Host der Demo: `SetEnv EXP_DEMO_MODE 1` |
 | LiteSpeed / OpenLiteSpeed (lsphp) | im virtuellen Host der Demo oder in der Umgebung der externen Anwendung: `EXP_DEMO_MODE=1` |
-| Exponential Velocity | die Umgebung des Prozesses, der den Server startet: `Environment=EXP_DEMO_MODE=1` in seiner systemd-Unit oder einem Drop-in, `/etc/default/exponential-velocity` für die paketierte Unit, oder `export EXP_DEMO_MODE=1` vor `./console exp:velocity start`. Die Worker erben sie |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in den Site-envvars der Demo, `/etc/vc/sites-available/<site>.envvars` (`<site>` zeigt `./console exp:velocity layout`), die `exp:velocity start` nur für den Server dieser Installation liest; oder die Umgebung des Prozesses, der den Server dieser Installation startet: `Environment=EXP_DEMO_MODE=1` in seiner eigenen systemd-Unit oder einem Drop-in. Die Worker erben sie. Nie in der gemeinsamen `/etc/vc/envvars` |
 | FrankenPHP oder ein anderer Anwendungsserver | die Umgebung des Serverprozesses |
 | Cron | eine Zeile `EXP_DEMO_MODE=1` oben in der Crontab des Benutzers der Demo |
 | Konsole | `export EXP_DEMO_MODE=1` im Shell-Profil des Benutzers der Demo oder vor jedem Befehl |
 | Container | `ENV EXP_DEMO_MODE=1` im Image der Demo oder `-e EXP_DEMO_MODE=1` / `environment:` nur für den Dienst der Demo |
 
-**Neustarts von Velocity.** `exp:velocity restart` und `exp:velocity deploy` starten den neuen Server mit der Umgebung der Shell, in der
-sie laufen. Setzen Sie die Variable dort, wo der Dienstmanager sie hält (die Unit), sonst verwirft ein Neustart aus einer anderen Shell
-stillschweigend den Demomodus. Die eigene Datei `/etc/vc/envvars` von Velocity wird für die eigenen Einstellungen des Servers gelesen,
-nicht an die PHP-Worker exportiert; sie ist also nicht der Ort für `EXP_DEMO_MODE`.
+**Neustarts von Velocity.** `exp:velocity restart` und `exp:velocity deploy` lesen die Site-envvars der Demo bei jedem Start, gleich
+aus welcher Shell; die Variable dort überdauert also Neustarts. Ein Neustart mit dem eigenen `qbixctl` der Engine liest sie nicht: Der
+Demomodus ist dann bis zum nächsten `exp:velocity restart` aus. Die gemeinsame `/etc/vc/envvars` liest der Server **jeder** Installation
+auf dem Host, sodass der Demomodus dort auch Produktions-Websites erreichen würde: `exp:velocity start` übergibt `EXP_DEMO_MODE` von dort
+nie, und ein Worker lehnt einen solchen Wert ab und schreibt einmal pro Prozess eine Zeile `demo/refused` in `var/log/security.log`. Eine
+Demo, die die Zeile aus einem früheren Release noch in `/etc/vc/envvars` hat, läuft nach dem Neustart des Updates mit ausgeschaltetem
+Demomodus, bis die Zeile in die Site-envvars verschoben ist
+([Velocity: nur eine Installation](../../../bc/6.0/demomodus.md#velocity-nur-eine-installation)).
 
 ## Eine Demo installieren
 

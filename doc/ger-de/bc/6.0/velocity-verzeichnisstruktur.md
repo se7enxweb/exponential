@@ -40,14 +40,20 @@ enthält Zeilen der Form `export NAME=value`, wie bei Apache.
 
 Der Server liest `envvars` bei jedem Start (zuerst den Basisbaum, wobei `/etc/vc` Vorrang vor `/etc/qbix` hat) und
 exportiert, was darin gesetzt wird, in seine eigene Umgebung, bevor er forkt. So sieht jeder Worker die Werte mit
-`getenv()`, gleich welche Shell `exp:velocity restart` oder `deploy` ausführt. Hier gehören Einstellungen hin, die eine
-Exponential-Installation aus der Umgebung liest, etwa `EXP_DEMO_MODE=1` auf einer öffentlichen Demo
-([Demomodus](demomodus.md)). Die Datei wird gelesen, nie ausgeführt: Werte, die eine Shell
-brauchen (`$X`, Backticks), werden nicht exportiert, und `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`,
-`PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` und die anderen Namen in der `docs/layout.md` der Engine
-("envvars: the server's environment") werden abgelehnt, mit einer Zeile auf der Standardfehlerausgabe beim Start.
-`exp:velocity start` übergibt dieselben gefilterten Werte auch selbst, für ältere Engines
-(`expVelocityConfigLayout::exportable()`, das dieselbe Liste in `ENV_DENIED` und `ENV_DENIED_PREFIXES` führt).
+`getenv()`, gleich welche Shell `exp:velocity restart` oder `deploy` ausführt. Der Server **jeder** Installation auf dem
+Host liest diese gemeinsame Datei; sie ist also der Ort für Einstellungen, die jede Website haben darf. Eine Einstellung
+für eine einzelne Installation gehört in die **Site-envvars** dieser Installation, `sites-available/<site>.envvars`
+neben ihrer Site-Datei, die `exp:velocity start` liest und nur an den Server dieser Installation übergibt (sie hat
+Vorrang vor der gemeinsamen Datei; `exp:velocity layout` führt sie als `site envvars` auf; die Engine lädt dort nur
+`*.conf`, sodass sie nie als Site übernommen wird). `EXP_DEMO_MODE=1` auf einer öffentlichen Demo gehört dorthin und nur
+dorthin: Die gemeinsame Datei übergibt es nie, und ein Worker lehnt einen Wert ab, den die Engine aus gemeinsamen
+envvars übernommen hat ([Demomodus](demomodus.md#velocity-nur-eine-installation)). Beide Dateien werden gelesen, nie
+ausgeführt: Werte, die eine Shell brauchen (`$X`, Backticks), werden nicht exportiert, und `PATH`, `LD_*`, `DYLD_*`,
+`MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` und die anderen Namen in der
+`docs/layout.md` der Engine ("envvars: the server's environment") werden abgelehnt, mit einer Zeile auf der
+Standardfehlerausgabe beim Start. `exp:velocity start` übergibt dieselben gefilterten Werte auch selbst, für ältere
+Engines (`expVelocityConfigLayout::exportable()` und `siteExportable()`, die dieselbe Liste in `ENV_DENIED` und
+`ENV_DENIED_PREFIXES` führen).
 
 ## Aktivieren und deaktivieren (die a2ensite-Familie)
 

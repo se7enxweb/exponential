@@ -65,7 +65,7 @@ der Demo-Modus kommt nur aus der Umgebung.
 | LiteSpeed / OpenLiteSpeed mit `lsphp` | `SetEnv` in `.htaccess` (LiteSpeed liest sie wie Apache) oder die Umgebung des virtuellen Hosts |
 | PHP-FPM | `env[NAME] = value` im Pool der Site, dann den Master dieses Pools neu laden |
 | nginx mit PHP-FPM | `fastcgi_param NAME value;` dort, wo Anfragen an PHP-FPM übergeben werden, oder der Pool |
-| Exponential Velocity | die Umgebung des Prozesses, der `exp:velocity start` ausführt: `Environment=` in seiner systemd-Unit oder einem Drop-in, oder `export` in der Shell. Worker erben sie; ein Neustart aus einer anderen Shell startet mit der Umgebung dieser Shell. `/etc/vc/envvars` wird für die eigenen Einstellungen des Servers gelesen und nicht an die Worker exportiert |
+| Exponential Velocity | die Umgebung des Prozesses, der `exp:velocity start` ausführt: `Environment=` in seiner systemd-Unit oder einem Drop-in, oder `export` in der Shell. Worker erben sie; ein Neustart aus einer anderen Shell startet mit der Umgebung dieser Shell. Für eine einzelne Installation dauerhaft: `export NAME=value` in ihren Site-envvars `/etc/vc/sites-available/<site>.envvars`, die `exp:velocity start` nur für den Server dieser Installation liest (`./console exp:velocity layout` zeigt `<site>`). Die gemeinsame `/etc/vc/envvars` liest der Server jeder Installation auf dem Host; `EXP_DEMO_MODE` wird von dort nie übernommen |
 | Cron | eine Zeile `NAME=value` am Anfang der Crontab |
 | Konsole | `export NAME=value` oder `NAME=value command` für einen einzelnen Befehl |
 | Container | `ENV` im Image, `-e`, `--env-file` oder `environment:` / `env_file:` für einen Dienst |

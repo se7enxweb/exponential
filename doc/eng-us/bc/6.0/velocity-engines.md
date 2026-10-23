@@ -856,10 +856,13 @@ The access rules in "Views and who may open them" above are the ones `exp:veloci
 
 **Demo mode under Velocity.** Velocity's workers inherit the environment of the server process, and the server exports
 what `/etc/vc/envvars` sets into it when it starts, as Apache's `/etc/apache2/envvars` is sourced before `apache2`.
-For a public demo, add `export EXP_DEMO_MODE=1` to `/etc/vc/envvars`; restarts and deploys from any shell keep it. A
-value in the environment that starts the server (the unit's `Environment=`, see
-[`velocity-demo-mode.conf`](../../examples/demo-mode/velocity-demo-mode.conf)) wins over the file. The file cannot set
-`PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([on-disk layout](velocity-ondisk-layout.md)).
+That file is shared by the server of every installation on the host, so demo mode never goes there: a worker refuses
+an `EXP_DEMO_MODE` the engine took from it and logs `demo/refused` in `security.log`. For a public demo, add
+`export EXP_DEMO_MODE=1` to the demo's own site envvars, `/etc/vc/sites-available/<site>.envvars`, which
+`exp:velocity start` reads for this installation's server only; restarts and deploys from any shell keep it, and
+`exp:velocity layout` lists it as `site envvars`. The environment that starts this installation's server (its unit's
+`Environment=`, see [`velocity-demo-mode.conf`](../../examples/demo-mode/velocity-demo-mode.conf)) works too. Neither
+file can set `PATH`, `LD_*`, `PHPRC` and the other loader and shell variables ([on-disk layout](velocity-ondisk-layout.md)).
 [Demo mode](demo-mode.md).
 
 ## Related pages

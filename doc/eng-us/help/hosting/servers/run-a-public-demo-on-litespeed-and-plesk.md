@@ -140,7 +140,7 @@ If one of these is missing: [Demo mode problems](../runbooks/demo-mode-problems.
 |---|---|
 | Apache with PHP-FPM (Plesk's FPM handler) | the same `.htaccess` lines, or `env[EXP_DEMO_MODE] = 1` in the domain's pool ([`php-fpm-pool-demo.conf`](../../../examples/demo-mode/php-fpm-pool-demo.conf)); Plesk writes the pool file, so use its PHP settings for the domain where it offers them |
 | nginx with PHP-FPM | the pool, or `fastcgi_param EXP_DEMO_MODE 1` ([`nginx-fastcgi-demo.conf`](../../../examples/demo-mode/nginx-fastcgi-demo.conf)) |
-| Exponential Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars`: the server reads it at every start and exports it to the workers, so a restart or deploy from any shell keeps it (the unit's environment, [`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf), works too and wins over the file) |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in the demo's site envvars `/etc/vc/sites-available/<site>.envvars`: `exp:velocity start` passes it to this installation's server at every start, so a restart or deploy from any shell keeps it (the demo's own unit environment, [`velocity-demo-mode.conf`](../../../examples/demo-mode/velocity-demo-mode.conf), works too). Never the shared `/etc/vc/envvars`, which every installation's server reads and the workers refuse for demo mode |
 | cPanel | the domain's `.htaccess` (Apache or LiteSpeed), and the variable line in the account's cron jobs |
 | A container | [`docker-demo.env`](../../../examples/demo-mode/docker-demo.env) for the demo service only |
 

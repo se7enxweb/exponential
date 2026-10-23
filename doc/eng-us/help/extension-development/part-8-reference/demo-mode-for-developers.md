@@ -119,6 +119,13 @@ answers for the environment of the process now. In code that may run in a worker
 check `class_exists( 'expDemoMode' )` first, as the kernel does. Do not cache the answer in a static variable or an
 object that lives longer than the request.
 
+Never read `getenv( 'EXP_DEMO_MODE' )` yourself: ask `expDemoMode::enabled()`. Under Velocity the variable can come
+from the shared `/etc/vc/envvars`, which the server of every installation on the host reads; `expDemoMode` refuses a
+value the engine exported from such a file (`expDemoMode::isSharedEnvvarsValue()`, checked against the engine's
+`Q_WebServer_Layout::$exported` and the configuration directories it read), so code that reads the environment
+directly would see demo mode where the kernel does not. The per-installation place is the site envvars,
+`/etc/vc/sites-available/<site>.envvars` ([demo mode](../../../bc/6.0/demo-mode.md#velocity-one-installation-only)).
+
 ## Testing
 
 Set and unset the variable in the test, and restore it afterwards:

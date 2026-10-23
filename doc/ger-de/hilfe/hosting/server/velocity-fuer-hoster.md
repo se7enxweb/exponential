@@ -258,7 +258,7 @@ Aus [Kapitel 8, Checkliste](../../../installation/08-die-website-ausliefern.md#8
 - [ ] Das Passwort des Kontrollzentrums gesetzt, `Remote` ausgeschaltet gelassen, ein Dashboard-Token in Ihrem Geheimnisspeicher abgelegt.
 - [ ] `var/` und `settings/` für den einen Benutzer beschreibbar, der PHP ausführt; keine Dateien in `var/`, die root gehören.
 
-**Demomodus unter Velocity.** Worker erben die Umgebung des Servers: Setzen Sie `EXP_DEMO_MODE=1` in die Unit, die Velocity startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)), und starten Sie über sie neu. `/etc/vc/envvars` wird nicht an die Worker exportiert, und `exp:velocity restart` oder `deploy` aus einer Shell ohne die Variable schaltet den Demomodus aus. [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md).
+**Demomodus unter Velocity.** Setzen Sie `export EXP_DEMO_MODE=1` in die Site-envvars der Demo, `/etc/vc/sites-available/<site>.envvars` (`<site>` zeigt `./console exp:velocity layout`); `exp:velocity start` liest sie nur für den Server dieser Installation, sodass `exp:velocity restart` und `deploy` aus jeder Shell sie behalten. Die eigene Unit, die Velocity für diese Installation startet ([`velocity-demo-mode.conf`](../../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)), funktioniert ebenfalls. Nie in der gemeinsamen `/etc/vc/envvars`: Sie gilt für jede Installation auf dem Host, und ein Worker lehnt den Wert von dort ab (Zeile `demo/refused` in `var/log/security.log`). [Demomodus für Hoster](../sicherheit/demomodus-fuer-hoster.md).
 
 ## Verwandte Seiten
 

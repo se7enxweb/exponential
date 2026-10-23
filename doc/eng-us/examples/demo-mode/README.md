@@ -34,8 +34,8 @@ What demo mode does, and its risks: [Demo mode](../../bc/6.0/demo-mode.md).
 | [`apache-vhost-demo.conf`](apache-vhost-demo.conf) | `SetEnv` in the demo's Apache virtual host (also a Plesk "Additional Apache directives" box) |
 | [`php-fpm-pool-demo.conf`](php-fpm-pool-demo.conf) | `env[EXP_DEMO_MODE] = 1` in the demo's own PHP-FPM pool |
 | [`nginx-fastcgi-demo.conf`](nginx-fastcgi-demo.conf) | `fastcgi_param EXP_DEMO_MODE 1` where nginx passes requests to PHP-FPM |
-| `/etc/vc/envvars` (no file here: one line) | **recommended for Exponential Velocity**: `export EXP_DEMO_MODE=1`; the server reads it at every start and exports it to the workers, so restarts and deploys from any shell keep it ([on-disk layout](../../bc/6.0/velocity-ondisk-layout.md)) |
-| [`velocity-demo-mode.conf`](velocity-demo-mode.conf) | a systemd drop-in with `Environment=EXP_DEMO_MODE=1` for the unit that starts Exponential Velocity (wins over envvars) |
+| `/etc/vc/sites-available/<site>.envvars` (no file here: one line) | **recommended for Exponential Velocity**: `export EXP_DEMO_MODE=1` in the demo's own site envvars; `exp:velocity start` reads it for this installation's server only, so restarts and deploys from any shell keep it. Never the shared `/etc/vc/envvars`: every installation's server reads that, and a worker refuses demo mode from it ([demo mode](../../bc/6.0/demo-mode.md#velocity-one-installation-only)) |
+| [`velocity-demo-mode.conf`](velocity-demo-mode.conf) | a systemd drop-in with `Environment=EXP_DEMO_MODE=1` for the unit that starts the demo's own Exponential Velocity |
 | [`crontab-demo`](crontab-demo) | the demo user's crontab: `EXP_DEMO_MODE=1` for the cronjobs and the scheduled rebuild |
 | [`docker-demo.env`](docker-demo.env) | an environment file for the demo container only (`--env-file`, `env_file:`) |
 | [`install-demo-sqlite.sh`](install-demo-sqlite.sh) | the generic shape of a rebuild script: clone, `composer install`, `exp:install` on SQLite in demo mode, check that the published password went in as given, `SetEnv` in `.htaccess`, swap, warm |
@@ -43,7 +43,7 @@ What demo mode does, and its risks: [Demo mode](../../bc/6.0/demo-mode.md).
 
 ## Which one you need
 
-- **Web requests:** one of `.htaccess`, the virtual host, the PHP-FPM pool, nginx or (for Velocity) `/etc/vc/envvars` or the systemd
+- **Web requests:** one of `.htaccess`, the virtual host, the PHP-FPM pool, nginx or (for Velocity) the site envvars `/etc/vc/sites-available/<site>.envvars` or the systemd
   drop-in, depending on what serves PHP. PHP reads the variable with `getenv()` first, then `$_SERVER`; both the
   FastCGI parameters of PHP-FPM and Apache's `SetEnv` arrive that way.
 - **Cron and the console:** the crontab line, and `export EXP_DEMO_MODE=1` in the shell of anyone who runs commands

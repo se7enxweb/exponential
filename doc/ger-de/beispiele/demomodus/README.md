@@ -35,8 +35,8 @@ Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../bc/6.0/demomodus.
 | [`apache-vhost-demo.conf`](../../../eng-us/examples/demo-mode/apache-vhost-demo.conf) | `SetEnv` im virtuellen Host der Demo unter Apache (auch ein Feld „Zusätzliche Apache-Direktiven“ in Plesk) |
 | [`php-fpm-pool-demo.conf`](../../../eng-us/examples/demo-mode/php-fpm-pool-demo.conf) | `env[EXP_DEMO_MODE] = 1` im eigenen PHP-FPM-Pool der Demo |
 | [`nginx-fastcgi-demo.conf`](../../../eng-us/examples/demo-mode/nginx-fastcgi-demo.conf) | `fastcgi_param EXP_DEMO_MODE 1` dort, wo nginx Anfragen an PHP-FPM weitergibt |
-| `/etc/vc/envvars` (hier keine Datei: eine Zeile) | **empfohlen für Exponential Velocity**: `export EXP_DEMO_MODE=1`; der Server liest die Datei bei jedem Start und exportiert die Variable an die Worker, sodass Neustarts und Deployments aus jeder Shell sie behalten ([Aufbau auf der Festplatte](../../bc/6.0/velocity-verzeichnisstruktur.md)) |
-| [`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf) | ein systemd-Drop-in mit `Environment=EXP_DEMO_MODE=1` für die Unit, die Exponential Velocity startet (hat Vorrang vor envvars) |
+| `/etc/vc/sites-available/<site>.envvars` (hier keine Datei: eine Zeile) | **empfohlen für Exponential Velocity**: `export EXP_DEMO_MODE=1` in den Site-envvars der Demo (`<site>` zeigt `./console exp:velocity layout`); `exp:velocity start` liest die Datei bei jedem Start nur für den Server dieser Installation, sodass Neustarts und Deployments aus jeder Shell sie behalten. Nie in der gemeinsamen `/etc/vc/envvars`, die der Server jeder Installation liest und die ein Worker dafür ablehnt ([Velocity: nur eine Installation](../../bc/6.0/demomodus.md#velocity-nur-eine-installation)) |
+| [`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf) | ein systemd-Drop-in mit `Environment=EXP_DEMO_MODE=1` für die eigene Unit, die Exponential Velocity für diese Installation startet |
 | [`crontab-demo`](../../../eng-us/examples/demo-mode/crontab-demo) | die Crontab des Demo-Benutzers: `EXP_DEMO_MODE=1` für die Cronjobs und den geplanten Neuaufbau |
 | [`docker-demo.env`](../../../eng-us/examples/demo-mode/docker-demo.env) | eine Umgebungsdatei nur für den Container der Demo (`--env-file`, `env_file:`) |
 | [`install-demo-sqlite.sh`](../../../eng-us/examples/demo-mode/install-demo-sqlite.sh) | die allgemeine Form eines Skripts zum Neuaufbau: klonen, `composer install`, `exp:install` auf SQLite im Demomodus, prüfen, dass das veröffentlichte Passwort wie angegeben übernommen wurde, `SetEnv` in `.htaccess`, austauschen, vorwärmen |
@@ -44,7 +44,7 @@ Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../bc/6.0/demomodus.
 ## Welche Sie brauchen
 
 - **Web-Anfragen:** je nachdem, was PHP ausliefert, eine der Varianten `.htaccess`, virtueller Host, PHP-FPM-Pool,
-  nginx oder (für Velocity) `/etc/vc/envvars` bzw. das systemd-Drop-in. PHP liest die Variable zuerst mit `getenv()`,
+  nginx oder (für Velocity) die Site-envvars `/etc/vc/sites-available/<site>.envvars` bzw. das systemd-Drop-in. PHP liest die Variable zuerst mit `getenv()`,
   dann aus `$_SERVER`; sowohl die FastCGI-Parameter von PHP-FPM als auch `SetEnv` von Apache kommen auf diesem Weg an.
 - **Cron und die Konsole:** die Zeile in der Crontab sowie `export EXP_DEMO_MODE=1` in der Shell aller, die Befehle auf
   der Demo ausführen. Ein Prozess ohne die Variable läuft mit ausgeschaltetem Demomodus.

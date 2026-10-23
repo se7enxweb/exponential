@@ -802,13 +802,18 @@ Die Zugriffsregeln unter „Ansichten und wer sie öffnen darf“ oben sind diej
 Konfiguration der Engine schreibt; sie können strenger sein als die eigenen Standardwerte der Engine, die auf der Seite
 zum Control Panel beschrieben sind.
 
-**Demomodus unter Velocity.** Die Worker von Velocity erben die Umgebung des Serverprozesses, und der Server
-exportiert beim Start, was `/etc/vc/envvars` darin setzt, so wie `/etc/apache2/envvars` von Apache vor `apache2`
-eingelesen wird. Für eine öffentliche Demo fügen Sie `export EXP_DEMO_MODE=1` zu `/etc/vc/envvars` hinzu; Neustarts
-und Deploys aus jeder Shell behalten es. Ein Wert in der Umgebung, die den Server startet (das `Environment=` der Unit,
-siehe [`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)), hat Vorrang vor der
-Datei. Die Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Loaders und der Shell nicht setzen
-([Verzeichnisstruktur](velocity-verzeichnisstruktur.md)). [Demomodus](demomodus.md).
+**Demomodus unter Velocity.** Die Worker von Velocity erben die Umgebung des Serverprozesses. Die gemeinsame
+`/etc/vc/envvars` liest jedoch der Server **jeder** Installation auf dem Host, so wie jeder virtuelle Host
+`/etc/apache2/envvars` liest; `EXP_DEMO_MODE` wird von dort nie übernommen, und ein Worker lehnt einen solchen Wert ab
+(eine Zeile `demo/refused` in `var/log/security.log`). Für eine öffentliche Demo fügen Sie `export EXP_DEMO_MODE=1` zu
+den Site-envvars der Demo hinzu, `/etc/vc/sites-available/<site>.envvars` (`<site>` und die Zeile `site envvars` zeigt
+`./console exp:velocity layout`); `exp:velocity start` liest sie nur für den Server dieser Installation, sodass
+Neustarts und Deploys aus jeder Shell es behalten. Die Umgebung, die den Server dieser Installation startet (das
+`Environment=` ihrer eigenen Unit, siehe
+[`velocity-demo-mode.conf`](../../../eng-us/examples/demo-mode/velocity-demo-mode.conf)), funktioniert ebenfalls. Die
+Datei kann `PATH`, `LD_*`, `PHPRC` und die anderen Variablen des Loaders und der Shell nicht setzen
+([Verzeichnisstruktur](velocity-verzeichnisstruktur.md)). Ein Neustart mit dem eigenen `qbixctl` der Engine liest die
+Site-envvars nicht. [Demomodus](demomodus.md#velocity-nur-eine-installation).
 
 ## Verwandte Seiten
 

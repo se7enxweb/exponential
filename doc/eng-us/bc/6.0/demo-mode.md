@@ -48,7 +48,7 @@ While `EXP_DEMO_MODE=1`:
 - **The installers accept the demo password**: a well-known administrator password of any length, such as `publish`
   or `publishing`. Only the administrator password of a new installation is concerned; an empty one is still refused
   ([The installers accept the demo password](#the-installers-accept-the-demo-password)).
-- **The administration shows a banner** on every page (admin4, admin4l and the classic admin): "Demo mode. This
+- **The administration shows a banner** on every page (admin4, admin4l, admin3 and the classic admin): "Demo mode. This
   installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be
   changed or reset. Do not enter anything private here."
 - **Every process records once that demo mode is on**: a line in `var/log/security.log` and the audit event
@@ -138,7 +138,7 @@ the cron jobs and every console command. A process without it runs with demo mod
 |---|---|
 | PHP-FPM | in the pool of the demo: `env[EXP_DEMO_MODE] = 1` (a pool with `clear_env = no` also passes the master's environment) |
 | Apache with mod_php or proxying to PHP-FPM | `SetEnv EXP_DEMO_MODE 1` in the demo's virtual host (with PHP-FPM through `mod_proxy_fcgi` it reaches PHP as a FastCGI parameter) |
-| Exponential Velocity | `export EXP_DEMO_MODE=1` in `/etc/vc/envvars` (the Debian `/etc/apache2/envvars` of Velocity). The server reads the file itself when it starts and exports what it sets to every worker, so a restart or deploy from any shell keeps it. The service manager's environment works too (`Environment=EXP_DEMO_MODE=1` in the systemd unit, or `/etc/default/exponential-velocity` for the packaged unit); a value set in the environment that starts the server wins over the file |
+| Exponential Velocity | `export EXP_DEMO_MODE=1` in the demo's own **site envvars**, `/etc/vc/sites-available/<site>.envvars` (`<site>` is the name `./console exp:velocity layout` prints). `exp:velocity start` reads it for this installation's server only, so restarts and deploys from any shell keep it. The environment of the process that starts this installation's server works too (`Environment=EXP_DEMO_MODE=1` in its own systemd unit or a drop-in). **Never** `/etc/vc/envvars`: the server of every installation on the host reads it, and a Velocity worker refuses a demo mode value that comes from there ([Velocity: one installation only](#velocity-one-installation-only)) |
 | FrankenPHP, RoadRunner | in the environment of the server process |
 | Cron jobs and console commands | in the crontab (`EXP_DEMO_MODE=1` on its own line at the top) and in the shell of whoever runs commands |
 | A container | `ENV EXP_DEMO_MODE=1` in the demo image, or `-e EXP_DEMO_MODE=1` / `environment:` for the demo service only |
@@ -146,22 +146,46 @@ the cron jobs and every console command. A process without it runs with demo mod
 Check it: the banner shows in the administration, and `grep 'demo/mode' var/log/security.log` lists the
 processes that started with it.
 
-**Velocity and restarts.** Put the variable in `/etc/vc/envvars`:
+**Velocity and restarts.** Put the variable in the demo's site envvars, beside its site file:
 
-    # /etc/vc/envvars
+    # /etc/vc/sites-available/<site>.envvars   (<site>: see ./console exp:velocity layout)
     export EXP_DEMO_MODE=1
 
-The server reads that file at every start, so `exp:velocity restart` and `exp:velocity deploy` keep demo mode on
-whichever shell runs them, and a shell that lacks the variable no longer switches it off. A variable already set in the
-environment that starts the server wins over the file (`EXP_DEMO_MODE=0` in that environment switches it off). To end
-demo mode, remove the line and restart Velocity. The file is read, never run: one `NAME=value` per line, and it cannot
-set `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and
-the other loader and shell variables (the engine's `docs/layout.md`, "envvars: the server's environment", lists them;
-the kernel keeps the same list in `expVelocityConfigLayout::ENV_DENIED`). Requires an engine with the envvars export
-(se7enxweb/exponential-velocity after v0.0.4.53); with an older engine `exp:velocity start` passes the file's values
-itself, which also covers restarts made through `exp:velocity`, but not a restart made with the engine's own `qbixctl`.
+`exp:velocity start` reads that file at every start of this installation's server and passes what it sets to that
+server only, so `exp:velocity restart` and `exp:velocity deploy` keep demo mode on whichever shell runs them.
+`./console exp:velocity layout` lists the names it sets on the line `site envvars`. A variable already set in the
+environment that starts the server is overridden by the site file. To end demo mode, remove the line and restart
+Velocity. The file is read, never run, with the same rules as envvars: one `NAME=value` per line, and it cannot set
+`PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`, `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and the
+other loader and shell variables (`expVelocityConfigLayout::ENV_DENIED`, the same list as the engine's). A restart made
+with the engine's own `qbixctl` instead of `exp:velocity` does not read the site file: demo mode is then off until the
+next `exp:velocity restart` (off is the safe direction: the site works, only visitors could change the password).
 
-**Never on a site that is not a demo.** `/etc/vc/envvars` applies to every site the Velocity server serves.
+### Velocity: one installation only
+
+The shared `/etc/vc/envvars` (or `/etc/qbix/envvars`) is read by the Velocity server of **every** installation on the
+host, as `/etc/apache2/envvars` is by every virtual host. Demo mode set there would switch it on for production sites
+too, whose administrators could then no longer change a password. So since this release:
+
+- `exp:velocity start` never passes `EXP_DEMO_MODE` from the shared envvars (`expVelocityConfigLayout::SITE_ONLY_ENV`);
+- a Velocity worker refuses a value the engine itself exported from an envvars file of a configuration directory
+  outside the installation (`expDemoMode::isSharedEnvvarsValue()`, which reads the engine's own record
+  `Q_WebServer_Layout::$exported` and the directories it read). Demo mode stays off, and the worker records once per
+  process, in `var/log/security.log` and as a debug warning:
+  `demo/refused pid=... EXP_DEMO_MODE=1 came from an envvars file other installations share ...`;
+- a configuration tree inside the installation (`var/vc/qbix/etc`, used by an account without root) belongs to this
+  installation alone, and its envvars is taken as before.
+
+An installation started with demo mode on by an earlier release from `/etc/vc/envvars` has it **off** after the
+upgrade's restart until the line moves to the site envvars. Move it before the restart:
+`grep EXP_DEMO_MODE /etc/vc/envvars`, then put it in `/etc/vc/sites-available/<site>.envvars` of the demo only and
+remove it from the shared file.
+
+PHP-FPM, Apache, LiteSpeed, FrankenPHP and the console are not affected: each pool, virtual host or process already
+has its own environment.
+
+**Never on a site that is not a demo.** One site envvars file belongs to one installation; never copy a demo's to
+another site.
 
 **Never set it** in a shared PHP-FPM pool, a server-wide `SetEnv`, a global `/etc/environment`, a base container
 image or a deployment template used for other sites.
@@ -169,9 +193,10 @@ image or a deployment template used for other sites.
 ## The banner and the log
 
 - **Banner:** `design/admin4/templates/parts/exp_demo_mode_banner.tpl` (admin4, and admin4l through its fallback) and
-  the same file in `design/admin` (the classic admin). admin4 draws it at the top of the main area (`page_mainarea.tpl`,
-  below the fixed header), admin4l also in front of the main zone of an admin layout, the classic admin below its
-  header; always outside the cache-blocks, so it follows the environment of each request. It uses the shared component `.a4-notice.is-warn` of `components.css`
+  the same file in `design/admin` (the classic admin, and admin3 through its fallback). admin4 draws it at the top of the
+  main area (`page_mainarea.tpl`, below the fixed header), admin4l also in front of the main zone of an admin layout,
+  admin3 run as its own design at the top of its own main area (`design/admin3/templates/page_mainarea.tpl`), the
+  classic admin below its header; always outside the cache-blocks, so it follows the environment of each request. It uses the shared component `.a4-notice.is-warn` of `components.css`
   (tokens with light and dark values; no CSS of its own). The template operator `exp_demo_mode()` returns whether the
   mode is on; a design of your own can show the banner with
   `{include uri='design:parts/exp_demo_mode_banner.tpl'}`.
@@ -206,6 +231,12 @@ should not have: remove it at once and check who changed the server's environmen
   banner.
 - **Only administrators are protected.** Other published sign-ins (editor, member) can still be changed by whoever
   uses them.
+- **A shared environment reaches every site in it.** A server-wide `SetEnv`, a shared PHP-FPM pool, `/etc/environment`,
+  a base container image or the shell of an operator who exported the variable switches demo mode on for every
+  installation that environment reaches; the administrators of those sites can then no longer change a compromised
+  password. For Velocity the kernel refuses the shared `/etc/vc/envvars` itself
+  ([Velocity: one installation only](#velocity-one-installation-only)); for the others, set it per installation only.
+  Never run `exp:velocity start`, `exp:install` or the kickstarter for another site from a shell that has the variable.
 
 ## The demo installer on the demo host
 
@@ -265,14 +296,24 @@ and [`install-demo-sqlite.sh`](../../examples/demo-mode/install-demo-sqlite.sh).
   `setup/init/site_admin.tpl`.
 - The operations `user/password` and `user/forgotpassword` can return `status => false` with `reason => demo_mode`.
 - The web services can answer HTTP 403 for a password change or reset of an administrator.
+- Exponential Velocity: `EXP_DEMO_MODE` in the shared `/etc/vc/envvars` no longer switches demo mode on (it did for every
+  installation on the host); use the site envvars `/etc/vc/sites-available/<site>.envvars`, read by `exp:velocity
+  start`, or the environment that starts that installation's server. `exp:velocity layout` shows the line
+  `site envvars`.
+- New template `design/admin3/templates/page_mainarea.tpl` (the banner for admin3 run as its own design): clear the
+  template-override cache after updating by copying files.
 
 ## Tests
 
 - `tests/tests/kernel/classes/user/expDemoModeTest.php` (no database): the value rules, getenv before `$_SERVER` and
   never the request, no caching, who is an administrator, the store guard's decision, the `installing()` scope, the
   installers' relaxation and its limits, the once-per-process record, the template operator, the banner (one partial,
-  shared component, no inline CSS, outside every cache-block of the three pagelayouts), every password path, the
-  audit catalogue and the catalogues.
+  shared component, no inline CSS, outside every cache-block of the admin, admin3, admin4 and admin4l pagelayouts),
+  every password path, the audit catalogue and the catalogues, and (DM-13) that a Velocity value from a shared
+  envvars file is not taken while one from a tree inside the installation is.
+- `tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php`: the shared envvars never passes
+  `EXP_DEMO_MODE`; the site envvars of this installation does, wins over the shared file, and the site file of another
+  installation is never read.
 - `expAuditRecordTest` counts the new audit event.
 
 ## Where else demo mode is documented

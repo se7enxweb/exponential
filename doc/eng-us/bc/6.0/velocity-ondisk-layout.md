@@ -28,6 +28,7 @@ everything in the expected place.
 │                             precompress, log, dashboard, brand, ...
 ├── mods-enabled/*.conf       -> ../mods-available/*.conf  symlinks    (mods-enabled)
 ├── sites-available/*.conf    one per installation (host)              (sites-available)
+├── sites-available/<site>.envvars  that installation's own environment (read by exp:velocity start)
 ├── sites-enabled/*.conf      -> ../sites-available/*.conf symlinks    (sites-enabled)
 └── designs/                  the server's own page designs
 
@@ -40,13 +41,18 @@ The files hold JSON objects (the engine's configuration format) under Apache's f
 
 The server reads `envvars` at every start (base tree first, `/etc/vc` winning over `/etc/qbix`) and exports what it
 sets into its own environment before it forks, so every worker sees it with `getenv()`, whichever shell runs
-`exp:velocity restart` or `deploy`. This is the place for settings an Exponential installation reads from the
-environment, such as `EXP_DEMO_MODE=1` on a public demo ([demo mode](demo-mode.md)). The file is read, never executed:
+`exp:velocity restart` or `deploy`. It is shared by the server of **every** installation on the host, so it is the
+place for settings every site may have. A setting for one installation goes in that installation's **site envvars**,
+`sites-available/<site>.envvars` beside its site file, which `exp:velocity start` reads and passes to that
+installation's server only (it wins over the shared file; `exp:velocity layout` lists it as `site envvars`; the engine
+loads only `*.conf` there, so it is never taken for a site). `EXP_DEMO_MODE=1` on a public demo belongs there and
+only there: the shared file never passes it, and a worker refuses one the engine took from a shared envvars
+([demo mode](demo-mode.md#velocity-one-installation-only)). Both files are read, never executed:
 values that need a shell (`$X`, backticks) are not exported, and `PATH`, `LD_*`, `DYLD_*`, `MALLOC_*`, `HTTP_*`,
 `PHPRC`, `PHP_INI_SCAN_DIR`, `GLIBC_TUNABLES`, `HOME`, `USER` and the other names in the engine's `docs/layout.md`
 ("envvars: the server's environment") are refused, with a line on standard error at start-up. `exp:velocity start`
-passes the same filtered values itself too, for older engines (`expVelocityConfigLayout::exportable()`, which keeps the
-same list in `ENV_DENIED` and `ENV_DENIED_PREFIXES`).
+passes the same filtered values itself too, for older engines (`expVelocityConfigLayout::exportable()` and
+`siteExportable()`, which keep the same list in `ENV_DENIED` and `ENV_DENIED_PREFIXES`).
 
 ## Enable and disable (the a2ensite family)
 

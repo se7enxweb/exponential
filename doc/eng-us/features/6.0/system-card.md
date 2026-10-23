@@ -54,7 +54,7 @@ All three are read-only. They print to the terminal in color only when the outpu
 - **PHP**: the version and SAPI, OPcache (with its memory), the JIT, the extensions that matter to Exponential and
   `memory_limit`.
 - **Engine**: Exponential Velocity (version, running or stopped, live and configured workers, ports and TLS, the
-  number of variables in its envvars file, demo mode) and the other web servers on the machine (Apache, nginx,
+  number of variables in its envvars file, demo mode from the installation's site envvars) and the other web servers on the machine (Apache, nginx,
   Caddy, FrankenPHP, PHP-FPM masters and pool workers).
 - **Database**: its type, the server's version and the host (only host and port).
 - **Site**: the siteaccesses and the default one, the active extensions, demo mode, debug output, the mail
@@ -395,7 +395,7 @@ A fact that needs attention is marked and adds a line to the Hints block (and to
 |---|---|
 | host | the load is more than twice the number of cores; memory is 90% used (error at 95%); a disk is 90% full (error at 97%) |
 | php | the PHP branch has no security support any more (error) or loses it within `[Php] WarnDays` (warn); OPcache not loaded or off; a recommended extension is missing (intl, mbstring, curl, gd or imagick, xsl, sodium, apcu); `memory_limit` below 256M |
-| velocity | Velocity runs in demo mode (`EXP_DEMO_MODE=1` in its envvars) |
+| velocity | Velocity runs in demo mode (`EXP_DEMO_MODE=1` in its site envvars, `sites-available/<site>.envvars`); `EXP_DEMO_MODE=1` is in the shared `envvars`, where the workers refuse it (`refused (shared envvars)`) |
 | database | the database does not answer (error) |
 | site | demo mode is on; debug output is on for every visitor |
 | caches | the view cache is off |
