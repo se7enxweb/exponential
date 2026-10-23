@@ -1,5 +1,5 @@
-{* The calendar of the icon below is Exponential UI's exp::datepicker (loaded on every admin page by
-   design.ini [JavaScriptSettings] BackendJavaScriptList[]=exp::datepicker), which defines showDatePicker(). *}
+{* The calendar of the icon below is Exponential UI's exp::datepicker (which expui loads on every page
+   of this design), which defines showDatePicker(). *}
 {default attribute_base=ContentObjectAttribute}
 {if ne( $attribute_base, 'ContentObjectAttribute' )}
     {def $id_base = concat( 'ezcoa-', $attribute_base, '-', $attribute.contentclassattribute_id, '_', $attribute.contentclass_attribute_identifier )}
