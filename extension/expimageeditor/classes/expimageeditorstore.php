@@ -264,7 +264,8 @@ class expImageEditorStore
     {
         clearstatcache();
         $limit = time() - 3600;
-        foreach ( (array)glob( $dir . '/*.{jpg,png,webp,gif}', GLOB_BRACE | GLOB_NOSORT ) as $file )
+        // no GLOB_BRACE: it is missing on some C libraries (musl)
+        foreach ( (array)glob( $dir . '/*', GLOB_NOSORT ) as $file )
         {
             if ( is_string( $file ) && preg_match( '#/[0-9a-f]{32}\.(?:jpg|png|webp|gif)$#', $file ) && @filemtime( $file ) < $limit )
                 @unlink( $file );
