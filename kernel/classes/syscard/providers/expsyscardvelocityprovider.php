@@ -10,7 +10,8 @@
 /**
  * Exponential Velocity, the application server of 6.0.15: its version, whether it runs, the live and configured
  * workers, the ports and TLS, the environment file (the number of variables; exp:info their names, never their
- * values) and demo mode. Read from velocity.ini, the pid file and its .json, /proc and the envvars file; nothing is
+ * values) and demo mode (from the site envvars of the installation's site file; in the shared envvars it is refused).
+ * Read from velocity.ini, the pid file and its .json, /proc and the envvars files; nothing is
  * run and nothing is asked over the network.
  */
 class expSysCardVelocityProvider extends expSysCardBaseProvider
@@ -111,9 +112,20 @@ class expSysCardVelocityProvider extends expSysCardBaseProvider
                                                     ? implode( ', ', $names ) : count( $names ) . ' ' . ( count( $names ) === 1 ? 'variable' : 'variables' ) );
             }
         }
-        if ( $demo !== null )
-            $facts[] = $this->fact( 'demo', 'Demo mode', $demo ? 'on (Velocity)' : 'off (Velocity)', $demo ? expSysCardFact::WARN : expSysCardFact::INFO,
-                                    $demo ? 'Velocity runs in demo mode (EXP_DEMO_MODE=1 in its envvars): administrator passwords cannot be changed. Right for a public demo, wrong for a production site.' : '' );
+        // this installation's own site envvars (sites-available/<site>.envvars of the site file it was started with):
+        // the only Velocity file demo mode is taken from; the shared envvars is read by every installation's server,
+        // so a worker refuses EXP_DEMO_MODE from it (expDemoMode::isSharedEnvvarsValue())
+        $siteDemo = null;
+        if ( $confDir !== '' && isset( $args['config'] ) && preg_match( '#/sites-(?:enabled|available)/([A-Za-z0-9._-]+)\.conf$#', (string)$args['config'], $sm ) )
+            $siteDemo = self::demoValue( $context->file( rtrim( $confDir, '/' ) . '/sites-available/' . $sm[1] . '.envvars', 65536 ) );
+        if ( $siteDemo === true )
+            $facts[] = $this->fact( 'demo', 'Demo mode', 'on (Velocity)', expSysCardFact::WARN,
+                                    'Velocity runs in demo mode (EXP_DEMO_MODE=1 in its site envvars): administrator passwords cannot be changed. Right for a public demo, wrong for a production site.' );
+        else if ( $demo === true )
+            $facts[] = $this->fact( 'demo', 'Demo mode', 'refused (shared envvars)', expSysCardFact::WARN,
+                                    'EXP_DEMO_MODE=1 is in the shared envvars, which the Velocity server of every installation on the host reads; the workers refuse demo mode from it. Remove it there; a public demo sets it in sites-available/<site>.envvars.' );
+        else if ( $demo === false || $siteDemo === false )
+            $facts[] = $this->fact( 'demo', 'Demo mode', 'off (Velocity)', expSysCardFact::INFO, '' );
         if ( $context->mode === expSysCardContext::MODE_INFO )
         {
             if ( $running )
@@ -124,6 +136,21 @@ class expSysCardVelocityProvider extends expSysCardBaseProvider
             $facts[] = $this->fact( 'model', 'Worker model', $fork ? 'fork per request' : 'persistent workers' );
         }
         return $facts;
+    }
+
+    /**
+     * What an envvars file says about demo mode.
+     *
+     * @param string|null $envvars the file's content
+     * @return bool|null true: EXP_DEMO_MODE=1, false: set to anything else, null: not set (or no file)
+     */
+    public static function demoValue( $envvars )
+    {
+        $demo = null;
+        foreach ( explode( "\n", (string)$envvars ) as $line )
+            if ( preg_match( '/^\s*(?:export\s+)?EXP_DEMO_MODE=(.*)$/', $line, $m ) )
+                $demo = trim( $m[1], " \t\r\"'" ) === '1';
+        return $demo;
     }
 
     /**

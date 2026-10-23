@@ -204,8 +204,24 @@ class expSysCardProvidersTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '4 live / 8 configured', $facts['velocity.workers']->value );
         $this->assertSame( '8088 (HTTP), 8080 (HTTPS, TLS)', $facts['velocity.ports']->value );
         $this->assertSame( '2 variables', $facts['velocity.envvars']->value );
-        $this->assertSame( 'on (Velocity)', $facts['velocity.demo']->value );
+        // in the shared envvars demo mode is refused by the workers (every installation's server reads that file)
+        $this->assertSame( 'refused (shared envvars)', $facts['velocity.demo']->value );
         $this->assertSame( expSysCardFact::WARN, $facts['velocity.demo']->severity );
+        // in this installation's own site envvars (beside the site file it was started with) it is on
+        $site = $values;
+        $site['files'][$pidFile . '.json'] = json_encode( array( 'pid' => 1293, 'started' => self::NOW - 7200,
+            'args' => array( '--conf-dir=/etc/vc', '--config=/etc/vc/sites-enabled/k1.example.invalid.conf', '--port=8088' ) ) );
+        $site['files']['/etc/vc/envvars'] = "SECRET_TOKEN=abc123\n";
+        $site['files']['/etc/vc/sites-available/k1.example.invalid.envvars'] = "export EXP_DEMO_MODE=1\n";
+        $site['files']['/etc/vc/sites-available/other.example.invalid.envvars'] = "export EXP_DEMO_MODE=0\n";
+        $siteFacts = $this->byKey( ( new expSysCardVelocityProvider() )->collect( $this->context( $site ) ) );
+        $this->assertSame( 'on (Velocity)', $siteFacts['velocity.demo']->value );
+        $this->assertSame( expSysCardFact::WARN, $siteFacts['velocity.demo']->severity );
+        $site['files']['/etc/vc/sites-available/k1.example.invalid.envvars'] = "# nothing\n";
+        $this->assertArrayNotHasKey( 'velocity.demo', $this->byKey( ( new expSysCardVelocityProvider() )->collect( $this->context( $site ) ) ) );
+        $this->assertNull( expSysCardVelocityProvider::demoValue( null ) );
+        $this->assertFalse( expSysCardVelocityProvider::demoValue( "EXP_DEMO_MODE=true\n" ) );
+        $this->assertTrue( expSysCardVelocityProvider::demoValue( "export EXP_DEMO_MODE='1'\r\n" ) );
         $all = json_encode( array_map( function ( $f ) { return $f->toArray(); }, $facts ) );
         $this->assertStringNotContainsString( 'hunter2', $all );
         $this->assertStringNotContainsString( 'abc123', $all, 'envvar values are never shown' );
