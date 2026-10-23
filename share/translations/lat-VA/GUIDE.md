@@ -9,7 +9,7 @@ classical grammar, words from the classical and ecclesiastical stock, and new te
 software translations form them (versio, fasciculus, nexus, tessera, situs interretialis). Prefer an established
 Latin word with an extended sense over a borrowed English one; where a term is coined, keep it once chosen. No
 other locale falls back to `lat-VA`; Vatican City stands as the country only because Latin has none of its own
-(see `doc/languages.md`, section 3).
+(see `doc/eng-us/languages.md`, section 3).
 
 ## 2. Form of address
 

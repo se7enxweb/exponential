@@ -8,7 +8,7 @@ Klingon (tlhIngan Hol) as described in Marc Okrand's *The Klingon Dictionary* an
 style of the Klingon Language Institute. The vocabulary has no words for most software concepts; newer concepts are
 descriptive compounds and verb-derived nouns built from existing words (`polwI'` "keeper", `nejmeH tetlh` "list for
 searching", `Suy qach` "merchant building"). A coined term, once in the glossary, is used everywhere. No other
-locale falls back to `tlh-QO`; `QO` is a private-use region and claims no country (see `doc/languages.md`,
+locale falls back to `tlh-QO`; `QO` is a private-use region and claims no country (see `doc/eng-us/languages.md`,
 section 3). The translation is offered for fun and as a test of the interface, but it follows the grammar
 seriously.
 
