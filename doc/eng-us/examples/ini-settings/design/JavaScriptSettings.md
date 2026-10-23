@@ -2,14 +2,14 @@
 title: design.ini [JavaScriptSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [JavaScriptSettings] in design.ini: JavaScriptList, FrontendJavaScriptList, BackendJavaScriptList"
-keywords: design.ini, JavaScriptSettings, INI, setting, JavaScriptList, FrontendJavaScriptList, BackendJavaScriptList
+summary: "The settings of [JavaScriptSettings] in design.ini: JavaScriptList, FrontendJavaScriptList, BackendJavaScriptList, ClassicBackendJavaScriptList"
+keywords: design.ini, JavaScriptSettings, INI, setting, JavaScriptList, FrontendJavaScriptList, BackendJavaScriptList, ClassicBackendJavaScriptList
 type: generated
 generated: exp:help:examples
 ---
 # design.ini [JavaScriptSettings]
 
-The block `[JavaScriptSettings]` of `settings/design.ini`, with 3 setting(s).
+The block `[JavaScriptSettings]` of `settings/design.ini`, with 4 setting(s).
 
 Never edit `settings/design.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -51,8 +51,9 @@ FrontendJavaScriptList[]
 
 ## BackendJavaScriptList
 
-> Same as above for backend (admin) designs. The tables, uploads, dialogs, date fields, collapsing menus and  
-> sticky toolbars run on Exponential UI (extension expui adds exp::\* to this list).  
+> Same as above for backend (admin) designs. These scripts are on every admin page and run without jQuery: admin4  
+> and admin4l load no jQuery on every page. A template whose scripts need jQuery or Exponential UI (exp::\*) requests  
+> them itself with ezscript\_require, outside any cache-block (doc/eng-us/features/6.0/jquery4-and-yui-removal.md).  
 > leftmenu\_widthcontrol.js is the column grip of design/admin, whose page\_leftmenu.tpl loads it itself; admin4 has  
 > its own in ezadmin\_menubar.js and does not ship the file. Do not add it here.  
 
@@ -69,6 +70,24 @@ BackendJavaScriptList[]=lib/ezjslibimagepreloader.js
 BackendJavaScriptList[]=popupmenu/ezpopupmenu.js
 BackendJavaScriptList[]=contentstructuremenu_dynamic.js
 BackendJavaScriptList[]=ezadmin_menubar.js
+*/ ?>
+```
+
+## ClassicBackendJavaScriptList
+
+> Scripts the older admin designs (admin, admin3 and adminui, chosen with the UI switch) still expect on every page:  
+> their page\_head\_script.tpl loads them after jQuery and BackendJavaScriptList; admin4 and admin4l do not read this  
+> list. An extension that used to put a jQuery script or an exp:: module into BackendJavaScriptList for those  
+> designs adds it here.  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/design.ini.append.php
+[JavaScriptSettings]
+# an empty "ClassicBackendJavaScriptList[]" first replaces the shipped list; without it the items are added
+ClassicBackendJavaScriptList[]
 */ ?>
 ```
 

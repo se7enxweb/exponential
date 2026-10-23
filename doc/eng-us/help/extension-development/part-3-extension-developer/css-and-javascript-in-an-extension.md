@@ -111,8 +111,12 @@ data attributes, escaped: `data-name="{$name|wash}"`.
 
 ## jQuery and expui
 
-The administration runs jQuery 4 and the `Exp` namespace of the `expui` extension; YUI was removed. Use those rather
-than bringing your own copy of a library; see [The expui JavaScript API](../part-8-reference/expui-javascript-api.md)
+The administration runs jQuery 4 and the `Exp` namespace of the `expui` extension; YUI was removed. admin4 and admin4l
+load neither on every page: a script in `BackendJavaScriptList[]` runs without them, and a template whose script needs
+jQuery or an `exp::` module requests it, outside every cache-block
+(`{ezscript_require( array( 'exp::core::shared', 'exp::io', 'myextension.js' ) )}`); a jQuery plugin the older admin
+designs need on every page goes into `ClassicBackendJavaScriptList[]`. Use those rather than bringing your own copy
+of a library; see [admin4 and admin4l without jQuery](../../../features/6.0/jquery4-and-yui-removal.md#admin4-and-admin4l-without-jquery), [The expui JavaScript API](../part-8-reference/expui-javascript-api.md)
 and [From old jQuery to jQuery 4](../part-4-upgrading/old-jquery-to-jquery-4.md).
 
 ## Styling admin pages

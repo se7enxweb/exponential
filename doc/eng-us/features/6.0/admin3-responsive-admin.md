@@ -68,7 +68,7 @@ In the first release the script was called `main.js` and had to be enabled by ha
 |---|---|---|---|---|
 | `settings/siteaccess/<admin>/site.ini.append.php` | `DesignSettings` | `SiteDesign` (the design used first) | `admin4` in the shipped admin siteaccess | siteaccess |
 | `settings/siteaccess/<admin>/site.ini.append.php` | `DesignSettings` | `AdditionalSiteDesignList[]` (fallback designs, in order) | `admin3`, `admin2`, `admin` | siteaccess |
-| `settings/design.ini` | `JavaScriptSettings` | `BackendJavaScriptList[]` (backend scripts) | includes `ezadmin_menubar.js` | global |
+| `settings/design.ini` | `JavaScriptSettings` | `BackendJavaScriptList[]` (scripts on every admin page; only scripts that run without jQuery, admin3 loads jQuery before them) | includes `ezadmin_menubar.js` | global |
 
 ## Files
 

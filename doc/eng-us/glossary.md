@@ -152,7 +152,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 ## J
 
 - **job queue**: see **expqueue**; for large content operations see **content job**.
-- **jQuery 4**: the JavaScript library of the admin since October 2026. [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
+- **jQuery 4**: the JavaScript library of the admin since October 2026; admin4 and admin4l load it only on the pages that request it (23 October 2026). [jQuery 4 and YUI removal](features/6.0/jquery4-and-yui-removal.md).
 
 ## K
 

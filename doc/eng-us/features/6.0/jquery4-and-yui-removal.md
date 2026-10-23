@@ -1,9 +1,12 @@
-# jQuery 4 in the admin, and YUI gone
+# jQuery 4 in the admin, admin4 without jQuery on every page, and YUI gone
 
 This page is for administrators who upgrade an installation, and for developers whose templates or extensions load
 JavaScript libraries. On 2026-10-01 and 2026-10-02 the administration interface moved to jQuery 4 and Exponential UI
 (`exp::*`), and YUI was removed from the admin designs and from the bundled ezjscore. The admin loads no YUI request
-any more. The installed ezjscore is 1.5.4 (`extension/ezjscore/ezinfo.php`).
+any more. The installed ezjscore is 1.5.4 (`extension/ezjscore/ezinfo.php`). Since 23 October 2026 **admin4 and
+admin4l load jQuery only on the pages that request it**; the kernel's own admin4 pages request none (see
+[admin4 and admin4l without jQuery](#admin4-and-admin4l-without-jquery), which also lists the packages that still
+bring it). The older admin designs and the site designs still load jQuery 4.
 
 If a site or extension of yours still uses YUI, follow the upgrade steps in [YUI removal](../../bc/6.0/yui-removal.md).
 
@@ -62,6 +65,110 @@ To load jQuery 4 alone, leave `LocalScripts[jqueryMigrate]` empty.
   information as an array.
 - The CSS packer turned `a :hover` into `a:hover` (a different selector). The space before a colon is now only removed
   inside declaration blocks.
+
+## admin4 and admin4l without jQuery
+
+**admin4 and admin4l load no jQuery on every page any more** (23 October 2026). `page_head_script.tpl` no longer
+prepends `ezjsc::jquery` and `ezjsc::jqueryio`; its first `ezscript_load` starts with `a4_url.js` and `a4_dom.js`,
+then `BackendJavaScriptList[]`, then the scripts the page's templates requested. A page that needs jQuery or an
+Exponential UI module requests it itself.
+
+### What runs without jQuery in the kernel
+
+- **The scripts on every page**: the menu bar (`ezadmin_menubar.js`), the content structure tree
+  (`contentstructuremenu_dynamic.js`), the context menus (`popupmenu/ezpopupmenu.js`), `a4_url.js`, `a4_dom.js`,
+  `admin4.js` and `a4_actions.js`.
+- **Node view**: the tabs (`node_tabs.js`) and the sub-items table (`ezajaxsubitems_expdatatable.js`,
+  `subitems_priority_drag.js`, `page/children_detailed.js`) on `Exp.datatable.create()`. `children.tpl` and
+  `children_detailed.tpl` request `exp::core::shared`, `exp::io` and `exp::datatable`.
+- **Content edit and class edit**: `content/edit.tpl` and `class/edit.tpl` request `exp::sticky` for the toolbar;
+  the date and date/time fields request `exp::datepicker`; the relation upload requests `exp::io`, `exp::dialog`,
+  `exp::upload` and `expajaxuploader.js` (entry point `window.expAjaxUploader`; `$.fn.expAjaxUploader` remains
+  where jQuery is on the page); the relation search (`ezajaxrelations_jquery.js`, plain JavaScript despite its name)
+  and the asynchronous publishing status (`ezasynchronouspublishing.js`) request `exp::core::shared` and `exp::io`.
+  The page scripts share the helpers of `a4_dom.js`.
+- **Rich text**: TinyMCE 8 brings its own scripts; ezoe requests jQuery only for the built-in TinyMCE 3 engine
+  (`ezxmltext_ezoe.tpl`), and its popups have a page layout of their own that loads it.
+- **Dashboard**: the community activity block (`dashboard_community_activity.js`).
+- **Image editing**: expimageeditor runs without jQuery.
+- Reduced motion also switches jQuery's effects off when a page loads jQuery after `admin4.js`.
+
+Exponential UI 1.0.0.15 (`se7enxweb/expui`) runs without jQuery: `exp::core::shared` boots without it (`Exp.$` stays
+undefined), `exp::io` uses `fetch()`, and every module has a plain JavaScript path with element entry points
+(`Exp.datatable.create()`, `Exp.sticky.start()`, `Exp.dialog`, `Exp.upload.create()`, ...). Only `exp::compat` still
+needs jQuery.
+
+### Requesting jQuery or an Exponential UI module
+
+A template whose scripts need jQuery or an `exp::` module requests them itself, **outside every cache-block**:
+
+```
+{ezscript_require( array( 'ezjsc::jquery', 'ezjsc::jqueryio', 'my_admin_page.js' ) )}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable' ) )}
+```
+
+`pagelayout.tpl` of admin4 and admin4l includes `page_head_script.tpl` outside the head's cache-block, so the head
+prints what the page requested on every request, and a request made later in the page (by the left menu, for
+example) prints its scripts in place. A request inside a `{cache-block}` does not run on a cache hit, and the page
+then loses its scripts.
+
+### Settings
+
+| File | Block | Key | Default | Scope |
+|---|---|---|---|---|
+| `settings/design.ini` | `JavaScriptSettings` | `BackendJavaScriptList[]` | scripts on every admin page; **only scripts that run without jQuery** (no jQuery, no `exp::` module) | installation, siteaccess |
+| `settings/design.ini` | `JavaScriptSettings` | `ClassicBackendJavaScriptList[]` | empty | installation, siteaccess |
+
+`ClassicBackendJavaScriptList[]` is read by the older admin designs a user can switch to (`settings/uiswitch.ini`):
+`admin` (with `admin2`) and `admin3` load jQuery on every page, then `BackendJavaScriptList[]` and
+`ClassicBackendJavaScriptList[]`. admin4 and admin4l do not read it. An extension that put a jQuery script or an
+`exp::` module into `BackendJavaScriptList[]` moves it to `ClassicBackendJavaScriptList[]` for the older designs and
+requests it from its own admin4 templates. The Admin UI design (`adminui`, the package `se7enxweb/exp_adminui`) has
+its own `page_head_script.tpl` and reads the new list once its package does.
+
+### The extensions installed with Composer
+
+The packages of the root `composer.json` are not part of this repository, and each moves on its own release. Until
+then admin4 still loads what they put on every page:
+
+| Package | What still brings jQuery to admin4 | Change |
+|---|---|---|
+| eztags (`~2.4.24`) | `BackendJavaScriptList[]` names `ezjsc::jquery`, `ezjsc::jqueryUI`, jqModal, jsTree and the `jquery.eztags*.js` plugins: jQuery is on every admin4 page while eztags is active | the admin4 scripts without jQuery (eztags PR #3), and the move of the plugins to `ClassicBackendJavaScriptList[]` with requests in the tags templates |
+| expui (`~1.0.0.15`) | `BackendJavaScriptList[]` names the `exp::` modules: no jQuery, but every module on every page | the move of the modules to `ClassicBackendJavaScriptList[]` |
+| xrowmetadata (`~1.4.16`) | `admin-maxlength.js` (every page) calls `jQuery( document ).ready()` | the counter on plain JavaScript |
+| expai (`~0.0.1.17`) | `expai.js` (every page) and the Vector page run on jQuery | expai PR #11 and #12 |
+| ezautosave (`~6.0.15`) | the admin autosave runs on jQuery without requesting it | ezautosave PR #7 |
+| ezmultiupload (`~6.1.12`) | the upload pages request jQuery themselves | ezmultiupload PR #12 |
+| ezstarrating (`~6.0.15`) | `ezsrrating.tpl` requests jQuery itself | ezstarrating PR #8 |
+| explayouts_ui_api (`~1.3.29`) | the layout editor (`app.tpl`) loads jQuery and jQuery UI itself | explayouts_ui_api PR #12 |
+
+While eztags 2.4.24 is active, nothing breaks: jQuery stays on every admin4 page through its list. Once eztags no
+longer lists it, xrowmetadata, expai and ezautosave need their releases without jQuery.
+`AdminJQueryOnDemandTest::testInstalledPackagesRequestTheJQueryTheyNeed` (JQ-13) names what is still pending in its
+skip message, and fails once no every-page list brings jQuery and a package still relies on it.
+
+### What still uses jQuery
+
+Outside admin4 and admin4l jQuery 4 is still loaded:
+
+- ezjscore still ships jQuery 4.0.0, Migrate 4.0.2 and jQuery UI 1.14.2 (`ezjsc::jquery`, `ezjsc::jqueryUI`,
+  `ezjsc::jqueryio`, `$.ez`); `PreferredLibrary=jquery` is unchanged.
+- The older admin designs `admin`, `admin3` and `adminui`, on every page.
+- The site designs and themes, ezoe's TinyMCE 3 and its popups, the expservices portal design `expportal_jquery`,
+  `exp::compat`, and the packages above until their releases.
+
+New code does not need jQuery: plain JavaScript, `a4_dom.js` in admin4, and Exponential UI where a widget or a server
+call is needed.
+
+### Guard tests
+
+- `tests/tests/design/AdminJQueryOnDemandTest.php` (JQ-01 to JQ-13; the file header lists each rule): admin4's head
+  loads no jQuery, `BackendJavaScriptList[]` of the kernel names nothing that needs jQuery or Exponential UI, every
+  admin template that loads a script calling jQuery requests it, no such request sits inside a cache-block, the page
+  layouts print the head's scripts outside the cache-blocks, and the named pages request only what they use.
+- `tests/tests/design/AdminPageScriptsWithoutJQueryTest.php`: the small page scripts of admin4 and `a4_dom.js`.
+- `tests/tests/design/AdminPlainScriptsExpUIPacksTest.php`: every page that loads a script on Exponential UI gets the
+  `exp::` packs it calls, also on the admin design through `ClassicBackendJavaScriptList[]`.
 
 ## How it began: jQuery 3.7.1 in August
 

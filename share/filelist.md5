@@ -3249,7 +3249,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a8b8feff0fbe4053949c4de0848d582e  doc/changelogs/6.0/6.0.15.md
+313606a77055caa6c9f25cbe04ebc780  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3467,7 +3467,7 @@ e37c2dcbaa794657ef0b6ade79057808  doc/eng-us/bc/6.0/velocity-engine-upgrade-note
 bd1cd88ecdff9dd1dba0ce963c6e5b5f  doc/eng-us/bc/6.0/velocity-ondisk-layout.md
 e45848cf4009e8515ef6ed6775a40b07  doc/eng-us/bc/6.0/view_full_security.md
 47fd2bff5c237dc0a50c3deb40ab5f34  doc/eng-us/bc/6.0/weak-passwords-and-reset-key-lifetime.md
-8fd6c3094d810e78dbd152f24c450ec9  doc/eng-us/bc/6.0/yui-removal.md
+67f18c68d2630fcc6c26ac4ee6fe0ab5  doc/eng-us/bc/6.0/yui-removal.md
 d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
@@ -4396,8 +4396,8 @@ a167313a19f4ace5d72cb0f6df665bce  doc/eng-us/examples/ini-settings/debugbar/Sett
 261861405e26cb7d08b860818f1e0809  doc/eng-us/examples/ini-settings/debugbar/Setting_template_show_xhtml_code.md
 6347e81067a135deb0f0347e359ff053  doc/eng-us/examples/ini-settings/design/AdminDesignSettings.md
 aeaa8789f4b7c0334307601785d5b464  doc/eng-us/examples/ini-settings/design/ExtensionSettings.md
-a2a2dee9325e8005f77a6670bb95546e  doc/eng-us/examples/ini-settings/design/JavaScriptSettings.md
-37a06d0c6ceb7cffbd7ec79f582474a1  doc/eng-us/examples/ini-settings/design/README.md
+cfafc63f6245d2f62494494232117229  doc/eng-us/examples/ini-settings/design/JavaScriptSettings.md
+119502ed7d0bdd51f256f202bfbefc27  doc/eng-us/examples/ini-settings/design/README.md
 ca80bc9f7f3588e5a96db2a49823efa3  doc/eng-us/examples/ini-settings/design/StylesheetSettings.md
 bc98cafa5bf61e8c587d94f1df7a1f22  doc/eng-us/examples/ini-settings/error/ErrorSettings-kernel.md
 a36780fe13ae992b963bc3601cd8bb86  doc/eng-us/examples/ini-settings/error/ErrorSettings-shop.md
@@ -6194,7 +6194,7 @@ cbc1fdcd33a3f8e65157975236db8485  doc/eng-us/features/6.0/additional-extension-d
 3e994eec3e5daf7fc65adb7e89d90fd8  doc/eng-us/features/6.0/admin-content-tree-top-node.md
 f591dfeee412831cbf4c9ec450c93dc6  doc/eng-us/features/6.0/admin-links-follow-permissions.md
 730f4bd870741ba72e0b822ed910c9fd  doc/eng-us/features/6.0/admin-list-paging.md
-a47dfcc6efe2e2c9c161f250da461f72  doc/eng-us/features/6.0/admin3-responsive-admin.md
+a20fc339f62ddfac2c3df7da80ebfdfc  doc/eng-us/features/6.0/admin3-responsive-admin.md
 a29a680e52b85935874388c9c6d885bd  doc/eng-us/features/6.0/admin3-sidebar-width-and-font-size.md
 d54c6be1c605fd78c61bddfd9893c137  doc/eng-us/features/6.0/admin4-design.md
 c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
@@ -6247,7 +6247,7 @@ c540e8c6f10ccd632c9c3f31fdaefc1c  doc/eng-us/features/6.0/extensions/ezdemo.md
 e1e75837211e429a05e24892f153a305  doc/eng-us/features/6.0/extensions/ezflow.md
 d957c44444049c8840ba0d01dbd03e47  doc/eng-us/features/6.0/extensions/ezgmaplocation.md
 697e6ad1f24994615d08488651ba7a77  doc/eng-us/features/6.0/extensions/ezie.md
-c616e62ed8eff6082f4b1f4ab2ab2e67  doc/eng-us/features/6.0/extensions/ezjscore.md
+0fcd8d048db15357f4440c6a0fe242b8  doc/eng-us/features/6.0/extensions/ezjscore.md
 bd9887246e537835f690a8d60fbcbba4  doc/eng-us/features/6.0/extensions/ezmbpaex.md
 4d46b7d76fb623165e5e96c71507f17a  doc/eng-us/features/6.0/extensions/ezmultiupload.md
 0cdcd8a8255aabdee03a2418937b5929  doc/eng-us/features/6.0/extensions/ezodf.md
@@ -6289,7 +6289,7 @@ decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
 695c0016c5a385b9902ba21c168a66ce  doc/eng-us/features/6.0/install-in-one-command.md
 1a6c0d26fd13dea1a6e2b109c412530d  doc/eng-us/features/6.0/installation-name-in-pages.md
-758a8d7e8e8ee320a805869cb3dcd627  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
+ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
 a49b5d4d2ceb315448c1f698b6a4aebf  doc/eng-us/features/6.0/kickstarter-cli.md
 9c93a3e0e873692e89435873f8aefe2d  doc/eng-us/features/6.0/legacy-bridge.md
 76557167c8c94c0fa25d975b640af5bf  doc/eng-us/features/6.0/log-rotation.md
@@ -6378,7 +6378,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 772ba7f2425b05709fb0cd77716e96a4  doc/eng-us/features/6.0/web-server-and-solr-commands.md
-0f205f8411ccf82440b38a6a5691bd3d  doc/eng-us/glossary.md
+217e1d27dc05837f7e57391eb935abc4  doc/eng-us/glossary.md
 2a6e3f6d1c33d6562e4c57dc308abe0e  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 999db87a75423e3f7ae175009db335cc  doc/eng-us/guides/benchmarking.md
@@ -7965,7 +7965,7 @@ bb5d7393f7c7680c4803f3a811d002bf  doc/eng-us/help/designers/theme-design/icons-i
 cd09c7f0bb6f278f34b914b404534015  doc/eng-us/help/designers/theme-design/layout-rules.md
 97989a87d5227b17e87b1c668a7866d9  doc/eng-us/help/designers/theme-design/layout-types-and-zones.md
 0cd7abb73b9a60b3d7aedf1c847f04c2  doc/eng-us/help/designers/theme-design/layouts-for-designers.md
-c0feee79e94846a66c540b43f4bcdc42  doc/eng-us/help/designers/theme-design/loading-javascript.md
+c156e53210e53484e1a271d66ba7e21e  doc/eng-us/help/designers/theme-design/loading-javascript.md
 739c4fe5600bef9c638bbcfd4d7ebe67  doc/eng-us/help/designers/theme-design/loading-stylesheets.md
 4383dce6087d04b431945892f9742657  doc/eng-us/help/designers/theme-design/logical-css-properties.md
 f59e4adf79a6de233af0ef35eff215d0  doc/eng-us/help/designers/theme-design/measuring-cls-and-lcp.md
@@ -8210,7 +8210,7 @@ d7d9635b1b908ce7627bcde1ffd2f96e  doc/eng-us/help/extension-development/part-3-e
 4f242e2bfbbb5075843e42a2f9d5e3c6  doc/eng-us/help/extension-development/part-3-extension-developer/composer-json-for-extensions.md
 f7a528922281e230da776b001fa9cd9b  doc/eng-us/help/extension-development/part-3-extension-developer/content-security-policy-for-extensions.md
 4a5aa2c02b0dbd5417e9a082918afb4a  doc/eng-us/help/extension-development/part-3-extension-developer/cronjob-parts.md
-624bb1614aada5ef8be5e32327cb7903  doc/eng-us/help/extension-development/part-3-extension-developer/css-and-javascript-in-an-extension.md
+8777b914184e36419680ec939570b42a  doc/eng-us/help/extension-development/part-3-extension-developer/css-and-javascript-in-an-extension.md
 4ca668d66ff7e4121b2ecbcb018a8a7e  doc/eng-us/help/extension-development/part-3-extension-developer/database-schema-and-dba-files.md
 db6de29d7385007ad882222ba267081b  doc/eng-us/help/extension-development/part-3-extension-developer/datatype-storage-validation-and-templates.md
 eff5a797ab04242b578384923cd895e3  doc/eng-us/help/extension-development/part-3-extension-developer/datatypes.md
