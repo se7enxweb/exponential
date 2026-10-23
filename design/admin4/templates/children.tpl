@@ -94,8 +94,9 @@
 </div>
 
 {* Load the sub-items table (Exponential UI's exp::datatable) even if the node has no children (cache blocks do not vary by this) *}
-{* subitems_priority_drag.js first: the table script picks it up when it builds the table *}
-{ezscript_require( array( 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}
+{* subitems_priority_drag.js first: the table script picks it up when it builds the table. Both run on Exponential UI
+   (exp::io, exp::datatable), which is not loaded on every page and is requested here, without jQuery. *}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable', 'subitems_priority_drag.js', 'ezajaxsubitems_expdatatable.js' ) )}
 
 <!-- Children END -->
 

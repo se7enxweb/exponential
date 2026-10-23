@@ -1,5 +1,6 @@
-{* The calendar of the icon below is Exponential UI's exp::datepicker (loaded on every admin page by
-   design.ini [JavaScriptSettings] BackendJavaScriptList[]=exp::datepicker), which defines showDatePicker(). *}
+{* The calendar of the icon below is Exponential UI's exp::datepicker, which defines showDatePicker(). It is not
+   loaded on every admin page and is requested here; it runs without jQuery. *}
+{ezscript_require( array( 'exp::core::shared', 'exp::datepicker' ) )}
 {default attribute_base=ContentObjectAttribute}
 {* admin4: the parts stand in one row (.a4-content-parts), each label above its field; no colon after a label *}
 <div class="block a4-content-parts">

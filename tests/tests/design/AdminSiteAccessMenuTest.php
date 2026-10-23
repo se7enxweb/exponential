@@ -481,8 +481,9 @@ class AdminSiteAccessMenuTest extends PHPUnit\Framework\TestCase
             $this->assertStringNotContainsString( 'siteaccess_url()', $tpl, "$path: the address is the part's" );
             $this->assertLessThan( strpos( $tpl, '<div id="header-theme"' ), strpos( $tpl, "{include uri='design:parts/a4_header_site.tpl'}" ), "$path: before light/dark" );
         }
+        // three: the page's block is split around the head's scripts, which are not cached
         foreach ( array( 'design/admin4/templates/pagelayout.tpl', 'design/admin4l/templates/pagelayout.tpl' ) as $path )
-            $this->assertSame( 2, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\), siteaccess_menu_key\(\), /', self::file( $path ) ), $path );
+            $this->assertSame( 3, preg_match_all( '/\{cache-block keys=array\( [^\n}]*siteaccess_url\(\), siteaccess_menu_key\(\), /', self::file( $path ) ), $path );
         $this->assertStringContainsString( "'ezpSiteAccessMenuOperator'", self::file( 'autoload/ezp_kernel.php' ) );
         $this->assertStringContainsString( "'operator_names' => array( 'siteaccess_menu', 'siteaccess_menu_key' )", self::file( 'kernel/common/eztemplateautoload.php' ) );
     }

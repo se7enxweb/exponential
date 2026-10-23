@@ -221,6 +221,9 @@
      data-create-options="{json_encode( $subitems_create_options )|wash}"
      data-multiedit-url="{'content/multiedit'|ezurl('no')|wash}"
      data-no-table="{'The sub items cannot be listed: Exponential UI (the extension expui) is not active or not loaded on this siteaccess.'|i18n( 'design/admin/node/view/full' )|wash}"></div>
+{* page/children_detailed.js starts the table on Exponential UI (Exp.ready, exp::datatable): requested here as well
+   as in children.tpl, so the page script never stands without it *}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable' ) )}
 {ezscript( array( 'page/children_detailed.js' ) )}
 {undef $section $visible_columns $locales $subitems_languages $subitems_badges $subitems_badge $subitems_sort_key
        $subitems_create_groups $subitems_create_options $subitems_group_options}

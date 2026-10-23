@@ -252,4 +252,7 @@
 {if and( is_set( $redirect_if_discarded ), $redirect_if_discarded )}<input type="hidden" name="RedirectIfDiscarded" value="{$redirect_if_discarded|wash}" />{/if}
 </form>
 
+{* exp::sticky keeps the toolbar of #ClassEdit in view; Exponential UI is not loaded on every page, so it is requested
+   here, without jQuery *}
+{ezscript_require( array( 'exp::core::shared', 'exp::sticky' ) )}
 {ezscript( array( 'page/class_edit.js' ) )}

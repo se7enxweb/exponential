@@ -132,7 +132,7 @@ class AdminPageScriptsWithoutJQueryTest extends PHPUnit\Framework\TestCase
     {
         $tpl = AdminFiles::read( self::root() . '/design/admin4/templates/page_head_script.tpl' );
         $code = preg_replace( '#\{\*.*?\*\}#s', '', $tpl );
-        $this->assertSame( 2, substr_count( $code, "'ezjsc::jqueryio', 'a4_url.js', 'a4_dom.js'" ), 'both lists of page_head_script.tpl load a4_dom.js after a4_url.js' );
+        $this->assertSame( 2, substr_count( $code, "'a4_url.js', 'a4_dom.js' )" ), 'both lists of page_head_script.tpl load a4_dom.js after a4_url.js' );
         $dom = self::codeOf( 'design/admin4/javascript/a4_dom.js' );
         foreach ( array( 'ready', 'each', 'on', 'formToken', 'headers', 'post', 'getJSON' ) as $name )
             $this->assertMatchesRegularExpression( '/\b' . $name . ':\s*' . $name . '\b/', $dom, "a4Dom.$name" );

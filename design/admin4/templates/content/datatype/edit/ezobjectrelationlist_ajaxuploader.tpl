@@ -15,9 +15,9 @@
             data-text-title="{'Upload a file and add the resulting object in the relation'|i18n( 'design/admin/content/datatype' )|wash}" />
 
     {run-once}
-    {* The upload dialog: Exponential UI (exp::io, exp::dialog, exp::upload in BackendJavaScriptList) runs the steps
-       and server calls in plain JavaScript (expajaxuploader.js, no jQuery). *}
-    {ezscript_require( 'expajaxuploader.js' )}
+    {* The upload dialog: Exponential UI (exp::io, exp::dialog, exp::upload, requested here as they are not loaded on
+       every page) runs the steps and server calls in plain JavaScript (expajaxuploader.js, no jQuery). *}
+    {ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::dialog', 'exp::upload', 'expajaxuploader.js' ) )}
     {ezscript( array( 'page/content_ezobjectrelationlist_ajaxuploader.js' ) )}
     {/run-once}
 {/if}

@@ -511,14 +511,20 @@
 })();
 
 /*
- * Reduced motion reaches jQuery's effects too (slideDown and slideUp of the edit page's attribute groups, fades):
- * the CSS rule in admin4.css cannot stop them, jQuery.fx.off ends each one at once.
+ * Reduced motion reaches jQuery's effects too (slideDown and slideUp, fades of a script that runs on jQuery): the CSS
+ * rule in admin4.css cannot stop them, jQuery.fx.off ends each one at once. jQuery is only on the pages that request
+ * it, and a template further down the page can bring it after this file, so it is checked again once the document
+ * and once the page has loaded.
  */
 (function () {
     'use strict';
-    if (window.jQuery && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.jQuery.fx.off = true;
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function fxOff() {
+        if (window.jQuery && window.jQuery.fx) window.jQuery.fx.off = true;
     }
+    fxOff();
+    document.addEventListener('DOMContentLoaded', fxOff);
+    window.addEventListener('load', fxOff);
 }());
 
 /*
