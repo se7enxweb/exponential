@@ -233,10 +233,32 @@ dialog.expimageeditor::backdrop { background: var(--a4-overlay, rgba(16, 24, 40,
 .expimageeditor-svg-host #canvasBackground > rect { stroke: var(--a4-line, #c8ccd2); }
 .expimageeditor-svg .expimageeditor-field input[type="color"]:disabled { opacity: .4; }
 
+/* Phones: the dialog takes the window. 100dvh where the browser knows it: on iOS 100vh is the height with Safari's
+   bars collapsed, which put the footer (Cancel, Save) under the bottom bar. The toolbar is one row that scrolls
+   sideways (with 44px tools it wrapped into three rows, 150px of a 844px screen), so the image and the options
+   share the rest: the options up to 45% of the window, the image at least 10rem. */
 @media (max-width: 760px) {
-    dialog.expimageeditor { width: 100vw; height: 100vh; border-radius: 0; }
-    .expimageeditor-body { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
-    .expimageeditor-panel { width: auto; max-width: none; max-height: 40vh; border-inline-start: 0; border-top: 1px solid var(--a4-line, #c8ccd2); }
+    dialog.expimageeditor { width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; }
+    .expimageeditor-toolbar { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; }
+    .expimageeditor-toolbar > * { flex: none; }
+    .expimageeditor-body { grid-template-columns: 1fr; grid-template-rows: minmax(10rem, 1fr) auto; }
+    .expimageeditor-panel { width: auto; max-width: none; max-height: 45vh; max-height: 45dvh; border-inline-start: 0; border-top: 1px solid var(--a4-line, #c8ccd2); }
+}
+
+/* Touch screens and phones: 44px targets (Apple's minimum) for the tools, the panel's buttons and the footer, instead
+   of 32px (30px for the panel's small buttons) */
+@media (max-width: 760px), (pointer: coarse) {
+    dialog.expimageeditor { --a4-control-h: 44px; }
+    dialog.expimageeditor .a4-btn,
+    dialog.expimageeditor .a4-btn-small { min-height: 44px; }
+    dialog.expimageeditor .expimageeditor-close { width: 44px; height: 44px; }
+    .expimageeditor-radio { min-height: 44px; }
+}
+
+/* Touch screens: fields with 16px text. Below that a phone's browser zooms in when a field gets the focus; admin4's
+   own rule for this covers #page only, and the dialog is a child of <body>. */
+@media (pointer: coarse) {
+    dialog.expimageeditor :is(input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]), select, textarea) { font-size: var(--a4-text-l, 16px); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
