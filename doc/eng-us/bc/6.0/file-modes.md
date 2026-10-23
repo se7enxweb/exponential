@@ -88,7 +88,8 @@ autoload generator use them.
 Uploads (`eZHTTPFile`), image variations (`eZImageHandler`, `image.ini ImagePermissions`, empty: `site.ini
 StorageFilePermissions`), the file system and DFS
 cluster handlers and the static cache set the modes of `site.ini [FileSettings]` and `image.ini` through
-`eZFile::fileMode()` as well.
+`eZFile::fileMode()` as well. With both image modes empty, or a value that is not an octal mode, a variation gets
+the shipped 0666 (limited as every other mode), never mode 0.
 
 The autoload generator creates `var/autoload` with `EZP_INI_FILE_PERMISSION` where defined, a file mode (0644)
 that leaves the directory without the search bit, and its files 0777. Without the limits this stays exactly as it

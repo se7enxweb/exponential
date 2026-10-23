@@ -3396,7 +3396,7 @@ e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-che
 23ba6b747323a0cbf35ed60ddfa3d4e2  doc/eng-us/bc/6.0/extensions-behaviour-changes.md
 3e618c514bc8d65abe2b013edfbb1e12  doc/eng-us/bc/6.0/ezoe-tinymce8.md
 02f9c4098af6775e9b9fc4a0553bf473  doc/eng-us/bc/6.0/ezpsessionhandlerdb-php8-bugfix-and-tests.md
-716965f8f626af9257de1f47c9df9418  doc/eng-us/bc/6.0/file-modes.md
+74ae96078f19dc86991fa767203d5d86  doc/eng-us/bc/6.0/file-modes.md
 4b54841db2f8a4e700cce6a0884fcb00  doc/eng-us/bc/6.0/frankenphp.md
 f50494600c581d6f79cb3b05c1b6c120  doc/eng-us/bc/6.0/hardening.md
 c096765a30ac8ef624ea0dee89dec81c  doc/eng-us/bc/6.0/help-content-dita-ebooks-reviews.md
@@ -12433,7 +12433,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 7c8fc03f63aca0660cd5253f9b7e96e6  doc/ger-de/bc/6.0/cli-cronjob-und-view-abstraktionen.md
 2318db44688c4209c1afb835dc867d9b  doc/ger-de/bc/6.0/console-exp-ini.md
 3359e5f2f7c679769b1229d71a8a6631  doc/ger-de/bc/6.0/cors-fuer-die-rest-api.md
-af48ad50752604359783708614947eff  doc/ger-de/bc/6.0/dateimodi.md
+c41fa48d0a75c5a9617be07d18294511  doc/ger-de/bc/6.0/dateimodi.md
 85d63574c52a9a89e437d0fe39f629b6  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
 e137fe4e902234cdafca7b2be9179b58  doc/ger-de/bc/6.0/debug-leiste.md
 72027ea5b61576d2b3e610b3b68c15c9  doc/ger-de/bc/6.0/demomodus.md
@@ -23102,7 +23102,7 @@ cccfeb9a4f25c6d0ecedf9a43191bada  lib/ezimage/classes/ezimagefactory.php
 8dbf2655ba0b1013466f4d5776d6644c  lib/ezimage/classes/ezimagefont.php
 1da19e5aa37114f7e514eee5ac58e03e  lib/ezimage/classes/ezimagegdfactory.php
 78e871617ed258f9ac67af59db3369c3  lib/ezimage/classes/ezimagegdhandler.php
-c3d93175f70ed5d81c8bfbe88532408b  lib/ezimage/classes/ezimagehandler.php
+8b180a4ea957c431ef5fe98f98041211  lib/ezimage/classes/ezimagehandler.php
 eca7ef6d30c3b36cc2fc0714b74276b6  lib/ezimage/classes/ezimageinterface.php
 9b531a8abfc397ec1e46d39622af93eb  lib/ezimage/classes/ezimagelayer.php
 10c7e490b777f548eb452d30eba85495  lib/ezimage/classes/ezimagemanager.php
@@ -25047,7 +25047,7 @@ cd0df33127aea30289ff55824df77907  tests/tests/kernel/classes/runnable/fixtures/r
 865c4f5cc903fab2f65c841a2b796112  tests/tests/kernel/classes/secrets/expSecretsTest.php
 8e16d25035367dbc1eac8487aaff5c36  tests/tests/kernel/classes/security/eZRSSSecurityTest.php
 fdb21b66365e5254b9daaa9d4a2dfec1  tests/tests/kernel/classes/security/eZSecurityHardeningTest.php
-1942a88062ebdd53043ebbb42b28e097  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
+0e5af3fe697e0efec0f52ff6c815982e  tests/tests/kernel/classes/security/expFileModeLimitsTest.php
 83e5d0248cb3a7fdd605f728629f8214  tests/tests/kernel/classes/security/expIniPhpWrapperTest.php
 c8f42593fb63a6e7e3de2de5029d8368  tests/tests/kernel/classes/security/fixtures/expfilemodecalls.php
 01cfa4440a2c6387c1d3ba0efb08b7f8  tests/tests/kernel/classes/security/stubs.php

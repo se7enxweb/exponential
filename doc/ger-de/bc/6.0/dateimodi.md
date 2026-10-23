@@ -97,7 +97,8 @@ find var -type f -exec chmod 0640 {} +
 Uploads (`eZHTTPFile`), Bildvarianten (`eZImageHandler`, `image.ini ImagePermissions`, leer: `site.ini
 StorageFilePermissions`), die Cluster-Handler für
 Dateisystem und DFS und der statische Cache setzen die Modi aus `site.ini [FileSettings]` und `image.ini` ebenfalls über
-`eZFile::fileMode()`.
+`eZFile::fileMode()`. Sind beide Bildmodi leer oder ist ein Wert kein oktaler Modus, bekommt eine Variante das
+ausgelieferte 0666 (begrenzt wie jeder andere Modus), nie den Modus 0.
 
 Der Autoload-Generator legt `var/autoload` mit `EZP_INI_FILE_PERMISSION` an, sofern definiert, einem Dateimodus
 (0644), der das Verzeichnis ohne Such-Bit lässt, und seine Dateien mit 0777. Ohne die Grenzen bleibt das genau wie

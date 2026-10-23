@@ -328,6 +328,10 @@ class eZImageHandler
         $perm = $ini->hasVariable( 'FileSettings', 'ImagePermissions' ) ? trim( (string)$ini->variable( 'FileSettings', 'ImagePermissions' ) ) : '';
         if ( $perm === '' )
             $perm = trim( (string)eZINI::instance()->variable( 'FileSettings', 'StorageFilePermissions' ) );
+        // Neither set, or not an octal mode: the shipped StorageFilePermissions, never octdec( '' ) = 0, which would
+        // leave a variation that nobody, not even the web server, can read. eZFile::fileMode() still limits it.
+        if ( !preg_match( '/^0?[0-7]{3,4}$/', $perm ) )
+            $perm = '0666';
         return $perm;
     }
 

@@ -22,6 +22,8 @@
  *  FM-09 - An image variation gets image.ini ImagePermissions, and with that empty (the shipped value) the mode of
  *          every other stored file, site.ini StorageFilePermissions: an installation that narrows only that one no
  *          longer writes its variations 0666
+ *  FM-10 - With neither of the two set, or with a value that is not an octal mode, a variation gets the shipped 0666
+ *          (limited as ever), never chmod 0
  *  FM-08 - The code that runs before the autoloader (the HTTP cache early exit, the repair queue) has the limits
  *          itself; the HTTP cache contract does not load eZFile or eZDir (Velocity's parent loads it before its source
  *          transform, and an eZFile compiled there sent every download without its headers) and limits a mode as they do
@@ -457,6 +459,29 @@ class expFileModeLimitsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( '0640', eZImageHandler::imagePermissions() );
         $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
         $this->assertSame( 0640, $this->mode( $image ), 'a value of its own still wins' );
+    }
+
+    /** FM-10: with neither mode set, or a mode that is not octal, an image gets the shipped 0666, never 0 */
+    #[\PHPUnit\Framework\Attributes\RunInSeparateProcess]
+    #[\PHPUnit\Framework\Attributes\PreserveGlobalState( false )]
+    public function testAnImageWithoutAUsableModeGetsTheShippedOne()
+    {
+        if ( defined( 'EZP_FILE_MODE_MAX' ) || defined( 'EZP_DIR_MODE_MAX' ) )
+        {
+            $this->markTestSkipped( 'config.php of this installation sets the limits' );
+        }
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '' );
+        ezpINIHelper::setINISetting( 'site.ini', 'FileSettings', 'StorageFilePermissions', '' );
+        $this->assertSame( '0666', eZImageHandler::imagePermissions() );
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', 'rw-r--r--' );
+        $this->assertSame( '0666', eZImageHandler::imagePermissions() );
+        ezpINIHelper::setINISetting( 'image.ini', 'FileSettings', 'ImagePermissions', '640' );
+        $this->assertSame( '640', eZImageHandler::imagePermissions(), 'a mode without its leading zero is still a mode' );
+
+        $image = $this->dir . '/y.png';
+        file_put_contents( $image, 'y' );
+        $this->assertTrue( eZImageHandler::changeFilePermissions( $image ) );
+        $this->assertSame( 0640, $this->mode( $image ) );
     }
 
     /** FM-02 */
