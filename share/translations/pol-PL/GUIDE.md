@@ -10,12 +10,13 @@ on buttons and labels.
 
 ## 2. Form of address
 
-- **Buttons, menu items, links and tooltips that name an action** use the imperative: "Zapisz", "Usuń", "Edytuj",
-  "Anuluj", "Utwórz nowy", "Zastosuj zmiany", "Wyślij do publikacji", "Usuń zaznaczone", "Wyczyść pamięć
-  podręczną", "Zaznacz klasę do usunięcia.", "Kliknij, aby skopiować".
+- **Buttons, menu items, links and tooltips that name an action** use the infinitive: "Zapisać", "Usunąć",
+  "Edytować", "Anulować", "Utworzyć nowy", "Zastosować zmiany", "Wysłać do publikacji", "Usunąć zaznaczone",
+  "Wyczyścić pamięć podręczną", "Zaznaczyć klasę do usunięcia.", "Kliknąć, aby skopiować". Not the imperative
+  ("Zapisz", "Usuń").
 - **Titles, column headings and tabs** are nouns: "Struktura treści", "Konta użytkowników", "Typ układu", "Edycja"
-  (a page title, where the button reads "Edytuj").
-- **Confirmation questions** use the infinitive: "Czy na pewno usunąć tę klasę?", "Usunąć ten węzeł?"
+  (a page title, where the button reads "Edytować").
+- **Confirmation questions** use the infinitive: "Czy na pewno usunąć tę klasę?", "Usunąć ten stan?"
 - **Sentences, hints and error messages** are impersonal:
   - "Należy wybrać lokalizację obiektu '%class', który zostanie z niego utworzony."
   - "Proszę wybrać lokalizację" (Please choose a location)
@@ -23,9 +24,11 @@ on buttons and labels.
   - "Ustawienia historii wersji można zmienić w content.ini ..." (You can ...)
   - "Kliknięcie ikony wyświetla menu kontekstowe."
   - Results: "Usunięto wersje robocze: %count.", "Element zostanie usunięty."
+- An instruction inside a sentence is impersonal too, not an infinitive and not an imperative: "Należy wybrać blok,
+  aby zobaczyć jego właściwości."
 - "Your" is dropped or made impersonal: "Your profile" is "Profil".
 - Not allowed: ty and its forms (ty, ci, cię, twój, twoja), the second person singular in a sentence (możesz,
-  chcesz, masz, musisz), and Pan, Pani, Państwo.
+  chcesz, masz, musisz), the imperative on buttons and in sentences (zapisz, usuń, kliknij), and Pan, Pani, Państwo.
 
 ## 3. Script and typography
 
@@ -48,8 +51,8 @@ on buttons and labels.
 | attribute | atrybut | |
 | datatype | typ danych | |
 | version | wersja | |
-| draft | wersja robocza | Store draft: Zapisz wersję roboczą; Discard draft: Odrzuć wersję roboczą |
-| publish / published | opublikuj / opublikowano | Send for publishing: Wyślij do publikacji |
+| draft | wersja robocza | Store draft: Zapisać wersję roboczą; Discard draft: Odrzucić wersję roboczą |
+| publish / published | opublikować / opublikowano | Send for publishing: Wysłać do publikacji |
 | siteaccess | dostęp do witryny | pl. dostępy do witryny |
 | site | witryna | sitemap: mapa witryny |
 | section | sekcja | |
@@ -62,9 +65,9 @@ on buttons and labels.
 | user accounts | konta użytkowników | |
 | owner / creator | właściciel / twórca | |
 | created / modified | utworzono / zmodyfikowano | column headings |
-| cache | pamięć podręczna | Clear cache: Wyczyść pamięć podręczną |
+| cache | pamięć podręczna | Clear cache: Wyczyścić pamięć podręczną |
 | template | szablon | |
-| override | nadpisanie | override template: szablon nadpisujący |
+| override | nadpisanie | override template: szablon nadpisujący; the verb: nadpisać |
 | fallback | tłumaczenie zastępcze | fallback chain: łańcuch tłumaczeń zastępczych |
 | design | projekt graficzny | |
 | workflow | przepływ pracy | |
@@ -80,8 +83,8 @@ on buttons and labels.
 | block / zone | blok / strefa | |
 | extension | rozszerzenie | |
 | package | pakiet | |
-| module / view | moduł / widok | the button "View": Wyświetl |
-| search | wyszukaj | noun: wyszukiwanie; search engine: wyszukiwarka |
+| module / view | moduł / widok | the button "View": Wyświetlić |
+| search | wyszukać | noun: wyszukiwanie; search engine: wyszukiwarka |
 | search index / reindex | indeks wyszukiwania / ponowne indeksowanie | |
 | log / log file | dziennik / plik dziennika | |
 | audit / audit trail | audyt / dziennik audytu | |
@@ -89,23 +92,23 @@ on buttons and labels.
 | worker | proces roboczy | |
 | cronjob | zadanie cron | |
 | preview | podgląd | |
-| upload / download | prześlij / pobierz | |
-| export / import | eksportuj / importuj | the noun: eksport / import |
-| remove / delete | usuń | Remove selected: Usuń zaznaczone |
-| edit | edytuj | page title: Edycja |
-| save / store | zapisz | Store (shop tab): Sklep |
-| discard | odrzuć | |
-| apply | zastosuj | Apply changes: Zastosuj zmiany |
-| cancel | anuluj | |
+| upload / download | przesłać / pobrać | |
+| export / import | wyeksportować / zaimportować | the noun: eksport / import |
+| remove / delete | usunąć | Remove selected: Usunąć zaznaczone |
+| edit | edytować | page title: Edycja |
+| save / store | zapisać | Store (shop tab): Sklep |
+| discard | odrzucić | |
+| apply | zastosować | Apply changes: Zastosować zmiany |
+| cancel | anulować | |
 | OK / yes / no | OK / tak / nie | |
 | back / next / previous | wstecz / następna / poprzednia | a wizard step button: Dalej |
-| create / add | utwórz / dodaj | |
-| select / browse | wybierz / przeglądaj | ticking for an action: zaznacz; Select all: Zaznacz wszystko; Deselect all: Odznacz wszystko |
-| move / copy | przenieś / kopiuj | |
-| hide / reveal | ukryj / odkryj | hidden / visible: ukryty / widoczny |
-| enable / disable | włącz / wyłącz | enabled / disabled: włączone / wyłączone |
-| restore / assign | przywróć / przypisz | |
-| approve / reject / pending | zatwierdź / odrzuć / oczekująca | |
+| create / add | utworzyć / dodać | |
+| select / browse | wybrać / przeglądać | ticking for an action: zaznaczyć; Select all: Zaznaczyć wszystko; Deselect all: Odznaczyć wszystko |
+| move / copy | przenieść / skopiować | |
+| hide / reveal | ukryć / odkryć | hidden / visible: ukryty / widoczny |
+| enable / disable | włączyć / wyłączyć | enabled / disabled: włączone / wyłączone |
+| restore / assign | przywrócić / przypisać | |
+| approve / reject / pending | zatwierdzić / odrzucić / oczekująca | |
 | archive | archiwum | |
 | order (shop) | zamówienie | order status: stan zamówienia |
 | order (sorting) | kolejność | |
@@ -122,7 +125,7 @@ on buttons and labels.
 | notification / collaboration | powiadomienie / współpraca | |
 | identifier / remote ID | identyfikator / zdalne ID | |
 | login (field) / password | login / hasło | username: nazwa użytkownika |
-| log in / log out | zaloguj się / wyloguj | |
+| log in / log out | zalogować się / wylogować się | |
 | e-mail | e-mail | |
 | file / folder / image | plik / folder / obraz | |
 | item | element | |
@@ -131,7 +134,7 @@ on buttons and labels.
 | default / required | domyślny / wymagane | |
 | error / warning | błąd / ostrzeżenie | |
 | filter / details | filtr / szczegóły | |
-| run / refresh / update / reset | uruchom / odśwież / zaktualizuj / wyzeruj | |
+| run / refresh / update / reset | uruchomić / odświeżyć / zaktualizować / wyzerować | |
 | dry run | przebieg próbny | |
 | debug | debugowanie | |
 | editor (software) / editor (person) | edytor / redaktor | template editor: edytor szablonów |
@@ -142,9 +145,11 @@ on buttons and labels.
 
 ## 5. Decisions after the translation
 
-- **Imperative on buttons.** The first complete translation used the infinitive on buttons and menu items
-  ("Zapisać", "Usunąć zaznaczone"). Polish interfaces use the imperative, so buttons, menu items and action
-  tooltips were changed to it ("Zapisz", "Usuń zaznaczone"); confirmation questions keep the infinitive, and the
-  impersonal sentences stay as they are. Several extension catalogues still carry the infinitive and follow the
-  same rule when they are next revised.
-- **Store**: the shop tab of the administration header is "Sklep"; every other "Store" is the verb "Zapisz".
+- **Infinitive on buttons.** Buttons, menu items and action tooltips use the infinitive ("Zapisać", "Usunąć
+  zaznaczone", "Wyczyścić pamięć podręczną"), as the first complete translation did. This is the decision for this
+  catalogue: a later change of the buttons to the imperative ("Zapisz", "Usuń zaznaczone") was taken back, and texts
+  added since then follow the infinitive as well. Confirmation questions keep the infinitive ("Usunąć ten stan?"),
+  and sentences stay impersonal. Every catalogue, the kernel's and each extension's, follows the same rule.
+- **Store**: the shop tab of the administration header is "Sklep"; every other "Store" is the verb "Zapisać".
+- **Order** in the shop (an order, its receipt, the order column of the shop dashboard) is "Zamówienie"; "Kolejność"
+  is only the sort order.
