@@ -5,11 +5,11 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 18. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **33 Übersetzungen
-der Administrationsoberfläche**, neunzehn davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **38 Übersetzungen
+der Administrationsoberfläche**, dreiundzwanzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
 Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
-Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Latein
-und, zum Spaß, Klingonisch).
+Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
+(Kurmandschi), Suaheli, Latein und, zum Spaß, Klingonisch).
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
 ## Inhalt
@@ -57,7 +57,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR` (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Oberfläche teilweise, Inhalt vollständig** | Es gibt eine Übersetzung der Administrationsoberfläche, sie deckt aber 23 bis 37 % der heutigen Texte ab (sie war für ein älteres Release vollständig). Texte ohne Übersetzung erscheinen auf Englisch. Inhalte wie oben. | die 12 älteren Übersetzungen mit Texten, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 170, die in 6.0.15 hinzukamen |
 
@@ -345,8 +345,8 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `sqi-AL` | Albanian | Shqip | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 32 % |
 | `sun-ID` | Sundanese | Basa Sunda | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
+| `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `swa-KE` zurück) |
 | `swe-SE` | Swedish | Svenska | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | — |
 | `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Naher Osten | RTL | Syrisch (`Syrc`) | CLDR 44 | — |
@@ -461,7 +461,7 @@ klingonische Schrift pIqaD wird nie verwendet (siehe Klingonisch oben).
 
 ## 4. Alle Übersetzungen der Administrationsoberfläche
 
-Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages), auf zwei Arten (beide abgerundet):
+Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet):
 
 - **Eigene Datei fertig**: fertige Meldungen der Datei geteilt durch alle ihre Meldungen, veraltete nicht
   mitgerechnet, jede Kombination aus Kontext, Quelle und Kommentar einmal gezählt.
@@ -499,6 +499,7 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `fas-IR` | 100 % (17.834 von 17.834) | 100 % (17.834 von 17.834) |
 | `pus-AF` | 100 % (17.834 von 17.834) | 100 % (17.834 von 17.834) |
 | `kur-TR` | 100 % (17.834 von 17.834) | 100 % (17.834 von 17.834) |
+| `swa-KE` | 100 % (18.404 von 18.404) | 100 % (18.404 von 18.404) |
 | `ger-DE` | 99 % (16.514 von 16.529) | 99 % (16.509 von 16.623) |
 | `cat-ES` | 96 % (6.314 von 6.512) | 37 % (6.314 von 16.623) |
 | `jpn-JP` | 96 % (6.281 von 6.513) | 37 % (6.281 von 16.623) |
@@ -559,6 +560,12 @@ Hinweise:
   Verben. Persisch ist geschriebenes Standardpersisch mit den persischen Buchstaben ی und ک und dem Zero-Width
   Non-Joiner; Dari (`fas-AF`) hat keinen eigenen Katalog und fällt darauf zurück. Für Kurmandschi gibt es noch keinen
   Katalog für andere Länder. Eine Prüfung durch einen Muttersprachler ist willkommen.
+- **Suaheli** (`swa-KE`, neu) ist seit dem 23. Oktober 2026 für alle 18.404 Texte jenes Tages vollständig, auf dieselbe
+  Weise entstanden; die Kataloge von ezoe und ezjscore sind ebenfalls vollständig, die der anderen mitgelieferten
+  Extensions kommen mit deren eigenen Releases. Es ist Standard-Suaheli (Kiswahili sanifu) mit den in Kenia üblichen
+  Begriffen; Tansania (`swa-TZ`) fällt darauf zurück. Suaheli kennt keine Höflichkeitsform der Anrede: Sätze sprechen
+  den Benutzer im Singular an und bitten mit *tafadhali* (bitte), Schaltflächen und Menüeinträge sind kurze Imperative
+  (*Hifadhi*, *Futa*), wie in anderer Suaheli-Software. Eine Prüfung durch einen Muttersprachler ist willkommen.
 - Jede Extension veröffentlicht ihre eigenen Kataloge. Für die zehn Sprachen oben haben ezoe, ezjscore und
   explayouts_ui (der Reiter Layouts) vollständige; die anderen Extensions zeigen ihre Texte in diesen Sprachen auf
   Englisch, bis sie einen bekommen.
@@ -594,7 +601,7 @@ sind auf Millionen gerundet.
 | 16 | Marathi | 99 | `mar-IN` | keine |
 | 17 | Vietnamesisch | 97 | `vie-VN` | keine |
 | 18 | Telugu | 96 | `tel-IN` | keine |
-| 19 | Swahili | 95 | `swa-KE`, `swa-TZ` | keine |
+| 19 | Swahili | 95 | `swa-KE`, `swa-TZ` | `swa-KE` vollständig, `swa-TZ` fällt darauf zurück |
 | 20 | Hausa | 94 | `hau-NG` | keine |
 | 21 | Türkisch | 94 | `tur-TR` | keine |
 | 22 | Westpandschabi | 90 | `pnb-PK` (Shahmukhi-Schrift; `pan-IN` ist Pandschabi in Gurmukhi-Schrift) | keine |
@@ -793,9 +800,10 @@ Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche 
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
 Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa 10.000) sind die nützlichste Arbeit für jede Sprache außer den
-neunzehn vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
-Ukrainisch, Hebräisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
-Schwedisch, Norwegisch, Dänisch, Tschechisch und Kroatisch) bringt am schnellsten etwas.
+dreiundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
+Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
+Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
+schnellsten etwas.
 
 ## 9. Sprachen, die von rechts nach links geschrieben werden
 

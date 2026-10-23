@@ -4,10 +4,10 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 18 October 2026 (Exponential 6.0.15).
 
 In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
-right to left) can be chosen as content languages and siteaccess locales; **33 administration translations**
-exist, nineteen of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic,
-Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Latin
-and, for fun, Klingon).
+right to left) can be chosen as content languages and siteaccess locales; **38 administration translations**
+exist, twenty-three of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic,
+Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Persian,
+Pashto, Kurdish (Kurmanji), Swahili, Latin and, for fun, Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 ## Contents
@@ -55,7 +55,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR` (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Partial interface, full content** | An administration translation exists but covers 23 to 37% of today's strings (it was complete for an older release). Strings without a translation show in English. Content as above. | the 12 older translations with strings, see [section 4](#4-every-administration-translation) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
@@ -339,8 +339,8 @@ The table is generated from the locale files; do not edit it by hand.
 | `sqi-AL` | Albanian | Shqip | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 32% |
 | `sun-ID` | Sundanese | Basa Sunda | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `swa-KE`) |
 | `swe-SE` | Swedish | Svenska | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `syr-IQ` | Syriac (Iraq) | ܣܘܪܝܝܐ (ܥܝܪܩ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
 | `syr-SY` | Syriac (Syria) | ܣܘܪܝܝܐ (ܣܘܪܝܐ) | Middle East | RTL | Syriac (`Syrc`) | CLDR 44 | — |
@@ -448,7 +448,7 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day), in two ways (both rounded down):
+Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day, Swahili, added on 23 October 2026, against the 18,404 strings of that day), in two ways (both rounded down):
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
@@ -486,6 +486,7 @@ source text, and the interface language choice counts English as 100%.
 | `fas-IR` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
 | `pus-AF` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
 | `kur-TR` | 100% (17,834 of 17,834) | 100% (17,834 of 17,834) |
+| `swa-KE` | 100% (18,404 of 18,404) | 100% (18,404 of 18,404) |
 | `ger-DE` | 99% (16,514 of 16,529) | 99% (16,509 of 16,623) |
 | `cat-ES` | 96% (6,314 of 6,512) | 37% (6,314 of 16,623) |
 | `jpn-JP` | 96% (6,281 of 6,513) | 37% (6,281 of 16,623) |
@@ -541,6 +542,12 @@ Notes:
   nouns. Persian is standard written Persian with the Persian letters ی and ک and the zero-width non-joiner; Dari
   (`fas-AF`) has no catalogue of its own and falls back to it. Kurmanji has no catalogue for other countries yet.
   A review by a native speaker is welcome.
+- **Swahili** (`swa-KE`, new) is complete since 23 October 2026 for all 18,404 strings of that day, made the same
+  way; the catalogues of ezoe and ezjscore are complete too, those of the other bundled extensions come with their
+  own releases. It is standard Swahili (Kiswahili sanifu) with the terms used in Kenya; Tanzania (`swa-TZ`) falls
+  back to it. Swahili has no formal pronoun of address: sentences speak to the user in the singular and ask with
+  *tafadhali* (please), buttons and menu items are short imperatives (*Hifadhi*, *Futa*), as in other Swahili
+  software. A review by a native speaker is welcome.
 - Each extension releases its own catalogues. Of the ten languages above, ezoe, ezjscore and explayouts_ui (the
   Layouts tab) carry complete ones; the other extensions show their texts in English in these languages until they
   get one.
@@ -574,7 +581,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 16 | Marathi | 99 | `mar-IN` | none |
 | 17 | Vietnamese | 97 | `vie-VN` | none |
 | 18 | Telugu | 96 | `tel-IN` | none |
-| 19 | Swahili | 95 | `swa-KE`, `swa-TZ` | none |
+| 19 | Swahili | 95 | `swa-KE`, `swa-TZ` | `swa-KE` complete, `swa-TZ` falls back to it |
 | 20 | Hausa | 94 | `hau-NG` | none |
 | 21 | Turkish | 94 | `tur-TR` | none |
 | 22 | Western Punjabi | 90 | `pnb-PK` (Shahmukhi script; `pan-IN` is Punjabi in Gurmukhi script) | none |
@@ -755,9 +762,10 @@ language joins the test's list of languages; the ten languages added on 18 Octob
 ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login, Siteaccess, Extension ...) are in
 the allowlist's `ger-DE` list.
 
-Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the nineteen
-complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Latin, Klingon,
-Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Czech and Croatian) is the quickest win.
+Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the twenty-three
+complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
+Klingon, Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Czech, Croatian, Persian, Pashto,
+Kurdish and Swahili) is the quickest win.
 
 ## 9. Right-to-left languages
 
