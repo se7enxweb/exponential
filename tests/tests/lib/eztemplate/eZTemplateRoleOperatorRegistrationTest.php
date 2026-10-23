@@ -9,7 +9,8 @@
  *
  *  ROP-01  The autoload entry names exactly the operators the class declares
  *  ROP-02  A template engine knows all seven operators after its autoloads
- *  ROP-03  Templates using them render, interpreted and compiled, without an error or warning
+ *  ROP-03  Templates using them render, interpreted and compiled, without an error or warning; a value that is
+ *          no user object gives has_role_by_user and has_policy_by_user false, not a fatal error
  *
  * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -91,6 +92,9 @@ class eZTemplateRoleOperatorRegistrationTest extends PHPUnit\Framework\TestCase
             $out["has_any_role none, $mode"] = array( '{if has_any_role(array(), 14)}y{else}n{/if}', 'n', $compiled );
             $out["has_policy empty, $mode"] = array( "{if has_policy('', '', 14)}y{else}n{/if}", 'n', $compiled );
             $out["has_role_by_user_id 0, $mode"] = array( '{if has_role_by_user_id(0, 1)}y{else}n{/if}', 'n', $compiled );
+            // no user object: false, not "Call to a member function attribute() on int"
+            $out["has_role_by_user no object, $mode"] = array( '{if has_role_by_user(42, 1)}y{else}n{/if}', 'n', $compiled );
+            $out["has_policy_by_user no object, $mode"] = array( "{if has_policy_by_user(42, 'content', 'read')}y{else}n{/if}", 'n', $compiled );
         }
         return $out;
     }

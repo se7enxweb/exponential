@@ -52,13 +52,16 @@ genommen; alles andere als Rollenname.
 {/if}
 
 {* a specific other user, by id *}
-{if 42|has_role_by_user_id(1)}
+{if has_role_by_user_id(42, 1)}
     ...
 {/if}
 ```
 
 (Der Parameter `user_id` ist der zweite von `has_any_role`, daher übergibt das dritte Beispiel `0` für „den aktuellen
-Benutzer“ und setzt `match_all` auf true.)
+Benutzer“ und setzt `match_all` auf true. Das letzte Beispiel fragt nach Benutzer 42 und Rolle 1: `has_role_by_user_id`
+nimmt beide als Parameter; ein vorangestellter Wert wie in `42|has_role_by_user_id(1)` wird wie überall ignoriert, diese
+Form fragt also nach Benutzer 1 und Rolle 0 und ist immer false. `$current_user` setzt das Pagelayout; in anderen
+Templates definieren Sie ihn mit `{def $current_user = fetch( 'user', 'current_user' )}`.)
 
 ## In PHP verwenden
 
@@ -76,10 +79,12 @@ und, wenn `$functionName` angegeben ist, für diese Funktion hat. Mit `false` an
 ## Die Grenzen kennen
 
 - `has_policy` liest die **Richtlinienzeilen** der Rollen. Er sagt „dieser Benutzer hat eine Rolle mit einer Richtlinie
-  content/edit“; er wertet keine Einschränkungen aus (Sektionen, Teilbäume, Eigentümer), und eine als „alle Funktionen“
-  (`*`) gespeicherte Richtlinie antwortet nicht mit true für eine benannte Funktion, wenn die Kernel-Methode
-  `eZRole::hasPolicy()` verwendet wird. Um zu fragen, ob der Benutzer einen bestimmten Knoten bearbeiten darf, verwenden
-  Sie stattdessen das Attribut `can_edit` des Knotens.
+  content/edit“; er wertet keine Einschränkungen aus (Sektionen, Teilbäume, Eigentümer), eine auf eine Sektion
+  eingeschränkte Richtlinie content/edit zählt also. Eine Richtlinie für alle Module (`*`, wie sie die Rolle
+  Administrator hat) oder für alle Funktionen eines Moduls (`content/*`) zählt ebenfalls, wie bei der Zugriffsprüfung des
+  Kernels (vor dem 23. Oktober 2026 nicht, und der Administrator erhielt false). Die PHP-Methode `eZRole::hasPolicy()`
+  vergleicht nur Namen und behandelt `*` nicht so. Um zu fragen, ob der Benutzer einen bestimmten Knoten bearbeiten
+  darf, verwenden Sie stattdessen das Attribut `can_edit` des Knotens.
 - Verlassen Sie sich bei Prüfungen, die etwas Sicherheitsrelevantes schützen, nicht auf das Verbergen eines Links; die
   Modulansicht prüft die Berechtigungen trotzdem, Verbergen ist eine Bequemlichkeit.
 - Operatoren werden bei jeder Verwendung ausgewertet; halten Sie sie aus langen Schleifen heraus und legen Sie die
@@ -97,6 +102,12 @@ Teil eines Releases; wenn Sie ein Beispiel aus einem Entwicklungsstand kopiert h
 Bis zum 18. Oktober 2026 war die Klasse nicht bei der Template-Engine registriert, sodass ein Template, das einen der
 Operatoren verwendete, „unknown operator“ erhielt. Seitdem registriert `lib/eztemplate/classes/eztemplateautoload.php`
 alle sieben; `eZTemplateRoleOperatorRegistrationTest` prüft die Registrierung und gibt jeden Operator aus.
+
+Seit dem 23. Oktober 2026 zählen `has_policy` und `has_policy_by_user` Richtlinien für alle Module oder Funktionen
+(`*`), `has_role_by_user` antwortet false, statt abzubrechen, wenn er kein Benutzerobjekt erhält (wie es
+`has_policy_by_user` schon tat), und eine als Zeichenkette übergebene `user_id` (`'0'`, `$node.object.owner_id`) wird als
+Zahl gelesen. `eZTemplateRoleOperatorLiveTest` gibt jedes Beispiel dieser Seite aus, interpretiert und kompiliert, für
+den anonymen Benutzer, den Benutzer admin und einen Benutzer mit zwei Testrollen.
 
 Die Idee stammt von der Community-Extension `bcmemberofrole`.
 
