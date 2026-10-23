@@ -34,6 +34,13 @@
         {/if}
     {/foreach}
     </select>
+    {* which objects below get the section too (eZSection::SCOPE_*) *}
+    <label for="SectionScope">{'Apply to'|i18n( 'design/admin/node/view/full' )}:</label>
+    <select id="SectionScope" name="SectionScope"{if $object_is_draft|not()} disabled="disabled"{/if}>
+        <option value="subtree" selected="selected">{'Whole subtree'|i18n( 'design/admin/node/view/full' )}</option>
+        <option value="inherited">{'Subtree, except branches in another section'|i18n( 'design/admin/node/view/full' )}</option>
+        <option value="object">{'This object only'|i18n( 'design/admin/node/view/full' )}</option>
+    </select>
 </div>
 
 <div class="block">

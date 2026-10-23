@@ -28,6 +28,13 @@
         {/if}
     {/foreach}
     </select>
+    {* which objects below get the section too (eZSection::SCOPE_*); always offered: children_count leaves out the
+       children the user may not read, which the whole subtree would change all the same *}
+    <select id="selected-section-scope" name="SectionScope" aria-label="{'Apply to'|i18n( 'design/admin/node/view/full' )|wash}">
+        <option value="subtree" selected="selected">{'Whole subtree'|i18n( 'design/admin/node/view/full' )}</option>
+        <option value="inherited">{'Subtree, except branches in another section'|i18n( 'design/admin/node/view/full' )}</option>
+        <option value="object">{'This object only'|i18n( 'design/admin/node/view/full' )}</option>
+    </select>
     <input id="tab-details-set-section" type="submit" value="{'Set'|i18n( 'design/admin/node/view/full' )}" name="SectionEditButton" class="button" />
     </form>
 

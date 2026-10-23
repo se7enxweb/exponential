@@ -394,6 +394,8 @@ class eZPendingIndexActionsTest extends PHPUnit\Framework\TestCase
             'content/translationavailable/translationavailable' => array( 'status<-status' ),
             'content/sort/sort' => array( 'sortingOrder<-sorting_order' ),
             'content/updatepriority/updatepriority' => array( 'priorityArray<-priority', 'priorityIDArray<-priority_id' ),
+            // eZSection::SCOPE_*, doc/eng-us/guides/sections.md section 8.5
+            'content/updatesection/updatesection' => array( 'updateSearchIndexes<-update_search_indexes', 'scope<-scope', 'oldSectionID<-old_section_id' ),
             'user/activation/activation' => array( 'enableUser<-is_enabled' ),
         );
         $found = array();

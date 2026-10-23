@@ -1,6 +1,6 @@
 /*
  * The details tab of the node view (details.tpl): the Set buttons of the states and the section are highlighted
- * once their choice changes.
+ * once their choice changes (for the section: the section or which objects below get it).
  * A file of its own, so the page runs under a Content Security Policy without 'unsafe-inline'
  * (doc/eng-us/features/6.0/content-security-policy.md).
  */
@@ -23,10 +23,10 @@
             highlight('tab-details-set-states');
         });
     }
-    var section = document.getElementById('selected-section-id');
-    if ( section )
+    var sectionFields = document.querySelectorAll('#selected-section-id, #selected-section-scope');
+    for ( var j = 0; j < sectionFields.length; j++ )
     {
-        section.addEventListener('change', function()
+        sectionFields[j].addEventListener('change', function()
         {
             highlight('tab-details-set-section');
         });

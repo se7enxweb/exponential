@@ -10707,6 +10707,22 @@
         <source>Not saved: %error</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -19607,6 +19623,22 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -66160,6 +66192,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

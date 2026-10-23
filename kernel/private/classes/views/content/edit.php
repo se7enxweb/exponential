@@ -415,8 +415,9 @@ class Edit extends \Exponential\Runnable\ModuleView
             if ( $http->hasPostVariable( 'SelectedSectionId' ) )
             {
                 $section = \eZSection::fetch( (int)$http->postVariable( 'SelectedSectionId' ) );
-                if ( $section instanceof \eZSection )
-                    $section->applyTo( $obj );
+                $scope = \eZSection::scopeFromHTTP( $http );
+                if ( $section instanceof \eZSection && $scope !== false )
+                    $section->applyTo( $obj, $scope );
             }
             $Module->redirectTo(
                 $Module->hasActionParameter( 'RedirectRelativeURI' )

@@ -59,7 +59,7 @@
 
 {/if}
 
-<form name="browse" method="post" action={$browse.from_page|ezurl}>
+<form name="browse" id="browse-form" method="post" action={$browse.from_page|ezurl}>
 
 {section show=or(eq($browse.action_name,"SelectLinkNodeID"),eq($browse.action_name,"SelectLinkObjectID"),eq($browse.action_name,"AddRelatedObjectToOE"))}
 <div class="context-block">

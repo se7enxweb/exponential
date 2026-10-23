@@ -27,7 +27,8 @@ the [References](#references) so that each claim can be checked again.
   can be removed. From there you create, view, edit, remove and assign.
 - **New content takes the section of its parent.** Moving a subtree carries the section of the new parent along to
   the objects that still had the old parent's section. To put existing content into a section, use
-  **Assign content**: the chosen item and everything below it get the section.
+  **Assign content** or the Details tab of an object, and choose which objects below it get the section too: all of
+  them (the default), only those in the section the chosen item had, or none (section 8.5).
 - **A section can only be removed when nothing uses it**: no object (drafts and archived objects included), no
   policy with a Section limitation naming it and no role assignment limited to it. Removal asks for confirmation and
   cannot be undone.
@@ -45,6 +46,7 @@ the [References](#references) so that each claim can be checked again.
 - [6. Editing a section, and what a change affects](#6-editing-a-section-and-what-a-change-affects)
 - [7. Removing a section](#7-removing-a-section)
 - [8. Which section content is in: creating, moving and assigning](#8-which-section-content-is-in-creating-moving-and-assigning)
+  ([8.5 Which objects below get the section](#85-which-objects-below-get-the-section))
 - [9. Sections in roles and policies](#9-sections-in-roles-and-policies)
 - [10. Navigation parts](#10-navigation-parts)
 - [11. Templates and designs by section](#11-templates-and-designs-by-section)
@@ -294,16 +296,19 @@ This is the usual way to put existing content into a section.
 
 1. On the section's card or page, **Assign content**. The content browser opens with a note at the top: "Choose
    start location for the <Members area> section".
-2. Navigate with the tabs, the tree and the list, choose the item with its radio button, and press
+2. Above the browser, choose **which objects get the section** (section 8.5): the chosen item and every object below
+   it (preselected), the chosen item and the objects below it that have its section, or the chosen item only.
+3. Navigate with the tabs, the tree and the list, choose the item with its radio button, and press
    **Select**.
-3. For a single item with a large subtree (from `content.ini [ContentJobSettings] SynchronousLimit` items, 50 by
+4. For a single item with a large subtree (from `content.ini [ContentJobSettings] SynchronousLimit` items, 50 by
    default), a confirmation offers to do it **now** or **in the background** as a content job, with a progress page
-   ([Content jobs](../features/6.0/content-jobs.md)). Smaller subtrees are assigned at once.
-4. Done at once, the section list opens again and every content view cache is cleared
+   ([Content jobs](../features/6.0/content-jobs.md)). Smaller subtrees, and "the chosen item only", are assigned at
+   once.
+5. Done at once, the section list opens again and every content view cache is cleared
    (`eZContentCacheManager::clearAllContentCache()`). Done as a job, its progress page opens; the job clears the
    view caches of the objects it changes, batch by batch.
 
-Which objects change:
+Which objects change, with the first choice (with the second, the branches in another section are left out):
 
 - Done at once (`eZContentObjectTreeNode::assignSectionToSubTree()`), the chosen item and every object below it
   **whose main location is in that subtree**. An object that only has a secondary location there keeps its section.
@@ -317,10 +322,30 @@ the page says that instead (section 9.3).
 ### 8.4 One object: the Details tab and the edit form
 
 On an object's page in the administration interface, the **Details** tab has a **Section** selector with the
-sections your role lets you assign to this object, and **Set**. The same choice is in the edit form of a draft.
-Both call `eZSection::applyTo()`, which changes the object **and every object below each of its locations** whose
-main location is there, updates the search index and clears the view caches, the static cache pages included when
-static caching is on.
+sections your role lets you assign to this object, for a node with children a second selector with the three
+choices of section 8.5 (**Whole subtree** preselected), and **Set**. The same choices are in the edit form of a
+draft. Both call `eZSection::applyTo()`, which changes the object, and with **Whole subtree** **every object below
+each of its locations** whose main location is there, updates the search index and clears the view caches, the
+static cache pages included when static caching is on. With **This object only** the object alone changes, whatever
+its locations.
+
+### 8.5 Which objects below get the section
+
+Every place that assigns a section offers the same three choices (`eZSection::SCOPE_*`):
+
+| Choice | Value | What changes |
+|---|---|---|
+| Whole subtree / The chosen item and every object below it | `subtree` | The object and every object below it, as before there was a choice. The default wherever nothing is chosen. |
+| Subtree, except branches in another section / … the objects below it that have its section | `inherited` | The object and the objects below it that are in the section the object had. An object below in another section keeps its section, and so does everything below it, even objects there in the old section. |
+| This object only / The chosen item only | `object` | The object alone, at all its locations. |
+
+An example: a folder in Standard holds `a` (Standard), `b` (Members area) with `b1` (Standard) below it, and `c`
+(Standard). Assigning Intranet with `inherited` changes the folder, `a` and `c`; `b` stays in Members area and `b1`
+in Standard. With `subtree` all five are in Intranet, with `object` the folder only.
+
+What it does not change: new content below still takes the section of its parent (section 8.1), and moving still
+follows section 8.2. A section stays a property of the object; `object` does not give one location a section of its
+own.
 
 ## 9. Sections in roles and policies
 
@@ -474,6 +499,7 @@ There is no dedicated command for creating or removing sections; use the pages, 
 ```bash
 php bin/php/expcontentjob.php section <node ID> <section ID>               # now, with progress
 php bin/php/expcontentjob.php section <node ID> <section ID> --background  # queued for the worker
+php bin/php/expcontentjob.php section <node ID> <section ID> --scope=inherited  # subtree (default), inherited or object
 ./console exp:expcontentjob section 1234 7 --allow-root-user               # the same through the console
 php bin/php/expcontentjob.php list                                         # what is running, what finished
 ```
@@ -484,7 +510,8 @@ permissions apply to every object. The cronjob part `contentjobs` starts queued 
 
 **Remote services** of the expservices extension, under `/ezjscore/call/expsection::<method>`: `list`, `count`, `get`,
 `getByIdentifier`, `objects`, `objectCount`, `usage`, `canRemove`, `assignable`, `navigationParts`, `ofObject`,
-`ofNode`, and the writes `create`, `update`, `remove`, `assign` and `assignSubtree`, each with the policy it needs
+`ofNode`, and the writes `create`, `update`, `remove`, `assign` and `assignSubtree` (both take the POST field `scope`,
+section 8.5), each with the policy it needs
 ([the service list](../bc/6.0/backend_ezjscore_services.md#sections-expsection-17-services-5-writes)).
 
 **PHP**, in an extension or a script started with `php bin/php/ezexec.php <script> --allow-root-user`:
@@ -493,6 +520,8 @@ permissions apply to every object. The cronjob part `contentjobs` starts queued 
 $section = eZSection::fetchByIdentifier( 'members_area' );   // or eZSection::fetch( 7 )
 $object  = eZContentObject::fetch( 1234 );
 $section->applyTo( $object );                                // checks section/assign for the current user
+$section->applyTo( $object, eZSection::SCOPE_INHERITED );    // or SCOPE_OBJECT; SCOPE_SUBTREE is the default
+eZContentObjectTreeNode::assignSectionToSubTree( 1234, 7, false, true, eZSection::SCOPE_INHERITED ); // what section/assign does
 $free    = $section->canBeRemoved();                         // the rule of section 7.1
 ```
 

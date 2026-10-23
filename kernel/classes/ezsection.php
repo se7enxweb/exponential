@@ -17,6 +17,19 @@
 
 class eZSection extends eZPersistentObject
 {
+    /**
+     * Which objects a section assignment at a node changes (applyTo(), section/assign, the content job 'section'):
+     * the node's object and every object below it whose main location is there (the default, as before) ...
+     */
+    const SCOPE_SUBTREE = 'subtree';
+    /** ... the node's object only ... */
+    const SCOPE_OBJECT = 'object';
+    /**
+     * ... or the node's object and the objects below it that have the section it had; an object below with another
+     * section keeps it, and so does everything below that object.
+     */
+    const SCOPE_INHERITED = 'inherited';
+
     public function __construct( $row )
     {
         if ( !isset( $row['id'] ) )
@@ -219,9 +232,58 @@ class eZSection extends eZPersistentObject
         }
     }
 
-    public function applyTo( eZContentObject $object )
+    /**
+     * The scopes a section can be assigned with (SCOPE_*), in the order the administration interface offers them.
+     *
+     * @return string[]
+     */
+    static function scopes()
+    {
+        return array( self::SCOPE_SUBTREE, self::SCOPE_INHERITED, self::SCOPE_OBJECT );
+    }
+
+    /**
+     * @param mixed $scope
+     * @return bool true when $scope is one of the SCOPE_* constants
+     */
+    static function isValidScope( $scope )
+    {
+        return is_string( $scope ) && in_array( $scope, self::scopes(), true );
+    }
+
+    /**
+     * The scope a form of the administration interface sent (the POST variable SectionScope).
+     *
+     * @param eZHTTPTool $http
+     * @return string|false SCOPE_SUBTREE when the form sent none (as before there was a choice), false when the
+     *                      value is not known
+     */
+    static function scopeFromHTTP( eZHTTPTool $http )
+    {
+        if ( !$http->hasPostVariable( 'SectionScope' ) )
+            return self::SCOPE_SUBTREE;
+        $scope = $http->postVariable( 'SectionScope' );
+        return self::isValidScope( $scope ) ? $scope : false;
+    }
+
+    /**
+     * Assigns this section to $object, when the current user may (section/assign), at each of its locations with
+     * the objects below it that $scope names (SCOPE_*; the default SCOPE_SUBTREE is what this method always did).
+     * With SCOPE_OBJECT the object alone changes, whatever its locations.
+     *
+     * @param eZContentObject $object
+     * @param string $scope
+     * @return false|null false when the user may not assign the section or $scope is not known
+     */
+    public function applyTo( eZContentObject $object, $scope = self::SCOPE_SUBTREE )
     {
         $sectionID = $this->attribute( "id" );
+
+        if ( !self::isValidScope( $scope ) )
+        {
+            eZDebug::writeError( "Unknown section assignment scope <" . ( is_scalar( $scope ) ? $scope : gettype( $scope ) ) . ">.", __METHOD__ );
+            return false;
+        }
 
         $currentUser = eZUser::currentUser();
         if ( !$currentUser->canAssignSectionToObject( $sectionID, $object ) )
@@ -232,9 +294,25 @@ class eZSection extends eZPersistentObject
             return false;
         }
 
+        $assignedNodes = $object->attribute( "assigned_nodes" );
+        if ( $scope === self::SCOPE_OBJECT && !empty( $assignedNodes ) )
+        {
+            // one object, one assignment, at its main location
+            $mainNode = $object->attribute( "main_node" );
+            $assignedNodes = array( $mainNode instanceof eZContentObjectTreeNode ? $mainNode : reset( $assignedNodes ) );
+        }
+        // SCOPE_INHERITED follows the section the object has now, also at its second location, when the first one has
+        // changed it already
+        $oldSectionID = $scope === self::SCOPE_INHERITED ? (int)$object->attribute( "section_id" ) : false;
+        // The objects that change, found before anything changes, for the search index below
+        $objectIDArrays = array();
+        foreach ( $assignedNodes as $node )
+        {
+            $objectIDArrays[] = eZContentObjectTreeNode::sectionAssignmentObjectIDs( $node, $scope, $oldSectionID );
+        }
+
         $db = eZDB::instance();
         $db->begin();
-        $assignedNodes = $object->attribute( "assigned_nodes" );
         if ( !empty( $assignedNodes ) )
         {
             if ( eZOperationHandler::operationIsAvailable( "content_updatesection" ) )
@@ -246,7 +324,9 @@ class eZSection extends eZPersistentObject
                         "updatesection",
                         array(
                             "node_id" => $node->attribute( "node_id" ),
-                            "selected_section_id" => $sectionID
+                            "selected_section_id" => $sectionID,
+                            "scope" => $scope,
+                            "old_section_id" => $oldSectionID
                         ),
                         null,
                         true
@@ -257,7 +337,7 @@ class eZSection extends eZPersistentObject
             {
                 foreach ( $assignedNodes as $node )
                 {
-                    eZContentOperationCollection::updateSection( $node->attribute( "node_id" ), $sectionID, false );
+                    eZContentOperationCollection::updateSection( $node->attribute( "node_id" ), $sectionID, false, $scope, $oldSectionID );
                 }
             }
         }
@@ -275,9 +355,7 @@ class eZSection extends eZPersistentObject
         // Update search indexes AFTER transaction is completed, so changes are actually available for Search Engine.
         if ( $commitResult ) {
             if ( !empty( $assignedNodes ) ) {
-                foreach ( $assignedNodes as $node ) {
-                    $objectIDArray = eZContentObjectTreeNode::getObjectIdsInNodeSubTree( $node );
-
+                foreach ( $objectIDArrays as $objectIDArray ) {
                     if ( is_array( $objectIDArray ) )
                     {
                         foreach (array_chunk($objectIDArray, 100) as $pagedObjectIDs) {

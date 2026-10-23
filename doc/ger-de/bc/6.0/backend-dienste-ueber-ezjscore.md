@@ -2400,8 +2400,8 @@ Teilbäume).
 | `expsection::create` | section/edit | POST | Legt eine Sektion an. POST: name, identifier, navigation_part |
 | `expsection::update::<section_id>` | section/edit | POST | Ändert eine Sektion (dieselben POST-Felder) |
 | `expsection::remove::<section_id>` | section/edit | POST | Entfernt eine nicht verwendete Sektion |
-| `expsection::assign::<object_id>::<section_id>` | section/assign | POST | Weist ein Objekt einer Sektion zu |
-| `expsection::assignSubtree::<node_id>::<section_id>` | section/assign | POST | Weist einen Knoten und seinen Teilbaum einer Sektion zu. POST: mode |
+| `expsection::assign::<object_id>::<section_id>` | section/assign | POST | Weist ein Objekt mit den Objekten darunter einer Sektion zu. POST: scope (subtree, inherited oder object) |
+| `expsection::assignSubtree::<node_id>::<section_id>` | section/assign | POST | Weist einen Knoten und seinen Teilbaum einer Sektion zu. POST: mode, scope (subtree, inherited oder object) |
 
 #### Objektzustände (`expstate`, 23 Dienste, 9 Schreibvorgänge)
 

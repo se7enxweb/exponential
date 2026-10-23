@@ -28,8 +28,9 @@ Repositorys geprüft; die Dateinamen stehen unter [Quellen](#quellen), damit sic
   sie entfernt werden kann. Von dort aus legen Sie Sektionen an, zeigen sie an, bearbeiten, entfernen und weisen zu.
 - **Neue Inhalte übernehmen die Sektion ihres übergeordneten Elements.** Das Verschieben eines Teilbaums überträgt die
   Sektion des neuen übergeordneten Elements auf die Objekte, die noch die Sektion des alten übergeordneten Elements
-  hatten. Um vorhandene Inhalte in eine Sektion zu bringen, verwenden Sie **Inhalt zuweisen**: Das gewählte Element und
-  alles darunter erhalten die Sektion.
+  hatten. Um vorhandene Inhalte in eine Sektion zu bringen, verwenden Sie **Inhalt zuweisen** oder den Reiter Details
+  eines Objekts und wählen, welche Objekte darunter die Sektion mit erhalten: alle (die Voreinstellung), nur die in der
+  Sektion, die das gewählte Element hatte, oder keine (Abschnitt 8.5).
 - **Eine Sektion kann nur entfernt werden, wenn nichts sie verwendet**: kein Objekt (Entwürfe und archivierte Objekte
   eingeschlossen), keine Richtlinie mit einer Sektions-Einschränkung, die sie nennt, und keine auf sie eingeschränkte
   Rollenzuweisung. Das Entfernen fragt nach einer Bestätigung und lässt sich nicht rückgängig machen.
@@ -47,6 +48,7 @@ Repositorys geprüft; die Dateinamen stehen unter [Quellen](#quellen), damit sic
 - [6. Eine Sektion bearbeiten und was eine Änderung betrifft](#6-eine-sektion-bearbeiten-und-was-eine-änderung-betrifft)
 - [7. Eine Sektion entfernen](#7-eine-sektion-entfernen)
 - [8. In welcher Sektion Inhalte liegen: anlegen, verschieben und zuweisen](#8-in-welcher-sektion-inhalte-liegen-anlegen-verschieben-und-zuweisen)
+  ([8.5 Welche Objekte darunter die Sektion erhalten](#85-welche-objekte-darunter-die-sektion-erhalten))
 - [9. Sektionen in Rollen und Richtlinien](#9-sektionen-in-rollen-und-richtlinien)
 - [10. Navigationsbereiche](#10-navigationsbereiche)
 - [11. Templates und Designs nach Sektion](#11-templates-und-designs-nach-sektion)
@@ -311,17 +313,20 @@ Das ist der übliche Weg, vorhandene Inhalte in eine Sektion zu bringen.
 
 1. Auf der Karte oder der Seite der Sektion **Inhalt zuweisen**. Der Inhaltsbrowser öffnet sich mit einem Hinweis
    oben: „Wählen Sie einen Startort für die Sektion <Members area>“.
-2. Navigieren Sie mit den Reitern, dem Baum und der Liste, wählen Sie das Element mit seinem Optionsfeld und drücken Sie
+2. Wählen Sie über dem Browser, **welche Objekte die Sektion erhalten** (Abschnitt 8.5): das gewählte Element und jedes
+   Objekt darunter (vorausgewählt), das gewählte Element und die Objekte darunter, die seine Sektion haben, oder nur das
+   gewählte Element.
+3. Navigieren Sie mit den Reitern, dem Baum und der Liste, wählen Sie das Element mit seinem Optionsfeld und drücken Sie
    **Auswählen**.
-3. Für ein einzelnes Element mit einem großen Teilbaum (ab `content.ini [ContentJobSettings] SynchronousLimit`
+4. Für ein einzelnes Element mit einem großen Teilbaum (ab `content.ini [ContentJobSettings] SynchronousLimit`
    Elementen, standardmäßig 50) bietet eine Bestätigung an, es **sofort** oder **im Hintergrund** als Inhaltsjob
-   auszuführen, mit einer Fortschrittsseite ([Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)). Kleinere Teilbäume werden
-   sofort zugewiesen.
-4. Sofort ausgeführt, öffnet sich die Liste der Sektionen wieder, und jeder Inhalts-View-Cache wird geleert
+   auszuführen, mit einer Fortschrittsseite ([Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)). Kleinere Teilbäume und
+   „Nur das gewählte Element“ werden sofort zugewiesen.
+5. Sofort ausgeführt, öffnet sich die Liste der Sektionen wieder, und jeder Inhalts-View-Cache wird geleert
    (`eZContentCacheManager::clearAllContentCache()`). Als Job ausgeführt, öffnet sich seine Fortschrittsseite; der Job
    leert die View-Caches der Objekte, die er ändert, Stapel für Stapel.
 
-Welche Objekte sich ändern:
+Welche Objekte sich bei der ersten Wahl ändern (bei der zweiten fehlen die Zweige mit einer anderen Sektion):
 
 - Sofort ausgeführt (`eZContentObjectTreeNode::assignSectionToSubTree()`): das gewählte Element und jedes Objekt
   darunter, **dessen Hauptort in diesem Teilbaum liegt**. Ein Objekt, das dort nur einen zusätzlichen Ort hat, behält
@@ -336,10 +341,30 @@ Objektklasse, oder erlaubt sie die Sektion überhaupt nicht, sagt die Seite stat
 ### 8.4 Ein Objekt: der Reiter Details und das Bearbeitungsformular
 
 Auf der Seite eines Objekts in der Administrationsoberfläche hat der Reiter **Details** eine Auswahl **Sektion** mit den
-Sektionen, die Ihre Rolle Ihnen für dieses Objekt zuzuweisen erlaubt, und **Setzen**. Dieselbe Auswahl gibt es im
-Bearbeitungsformular eines Entwurfs. Beide rufen `eZSection::applyTo()` auf, das das Objekt **und jedes Objekt
-unterhalb jedes seiner Orte** ändert, dessen Hauptort dort liegt, den Suchindex aktualisiert und die View-Caches
-leert, die Seiten des statischen Caches eingeschlossen, wenn das statische Caching eingeschaltet ist.
+Sektionen, die Ihre Rolle Ihnen für dieses Objekt zuzuweisen erlaubt, bei einem Knoten mit Unterknoten eine zweite
+Auswahl mit den drei Möglichkeiten aus Abschnitt 8.5 (**Ganzer Teilbaum** vorausgewählt), und **Setzen**. Dieselben
+Auswahlen gibt es im Bearbeitungsformular eines Entwurfs. Beide rufen `eZSection::applyTo()` auf, das das Objekt ändert,
+mit **Ganzer Teilbaum** auch **jedes Objekt unterhalb jedes seiner Orte**, dessen Hauptort dort liegt, den Suchindex
+aktualisiert und die View-Caches leert, die Seiten des statischen Caches eingeschlossen, wenn das statische Caching
+eingeschaltet ist. Mit **Nur dieses Objekt** ändert sich nur das Objekt, gleich wie viele Orte es hat.
+
+### 8.5 Welche Objekte darunter die Sektion erhalten
+
+Jede Stelle, die eine Sektion zuweist, bietet dieselben drei Möglichkeiten (`eZSection::SCOPE_*`):
+
+| Wahl | Wert | Was sich ändert |
+|---|---|---|
+| Ganzer Teilbaum / Das gewählte Element und jedes Objekt darunter | `subtree` | Das Objekt und jedes Objekt darunter, wie bevor es eine Wahl gab. Die Voreinstellung überall, wo nichts gewählt wird. |
+| Teilbaum ohne Zweige mit anderer Sektion / … die Objekte darunter, die seine Sektion haben | `inherited` | Das Objekt und die Objekte darunter, die in der Sektion sind, die das Objekt hatte. Ein Objekt darunter mit einer anderen Sektion behält sie, und ebenso alles darunter, auch Objekte dort mit der alten Sektion. |
+| Nur dieses Objekt / Nur das gewählte Element | `object` | Nur das Objekt, an allen seinen Orten. |
+
+Ein Beispiel: Ein Ordner in Standard enthält `a` (Standard), `b` (Members area) mit `b1` (Standard) darunter und `c`
+(Standard). Intranet mit `inherited` zugewiesen ändert den Ordner, `a` und `c`; `b` bleibt in Members area und `b1` in
+Standard. Mit `subtree` sind alle fünf in Intranet, mit `object` nur der Ordner.
+
+Was es nicht ändert: Neue Inhalte darunter übernehmen weiterhin die Sektion ihres übergeordneten Elements (Abschnitt
+8.1), und das Verschieben folgt weiter Abschnitt 8.2. Eine Sektion bleibt eine Eigenschaft des Objekts; `object` gibt
+nicht einem einzelnen Ort eine eigene Sektion.
 
 ## 9. Sektionen in Rollen und Richtlinien
 
@@ -502,6 +527,7 @@ Remote-Dienste unten.
 ```bash
 php bin/php/expcontentjob.php section <node ID> <section ID>               # now, with progress
 php bin/php/expcontentjob.php section <node ID> <section ID> --background  # queued for the worker
+php bin/php/expcontentjob.php section <node ID> <section ID> --scope=inherited  # subtree (default), inherited or object
 ./console exp:expcontentjob section 1234 7 --allow-root-user               # the same through the console
 php bin/php/expcontentjob.php list                                         # what is running, what finished
 ```
@@ -512,7 +538,8 @@ unterbrochene fort ([Inhaltsjobs](../funktionen/6.0/inhaltsauftraege.md)).
 
 **Remote-Dienste** der Extension expservices, unter `/ezjscore/call/expsection::<method>`: `list`, `count`, `get`,
 `getByIdentifier`, `objects`, `objectCount`, `usage`, `canRemove`, `assignable`, `navigationParts`, `ofObject`,
-`ofNode` und die schreibenden `create`, `update`, `remove`, `assign` und `assignSubtree`, jeweils mit der Richtlinie,
+`ofNode` und die schreibenden `create`, `update`, `remove`, `assign` und `assignSubtree` (beide nehmen das POST-Feld
+`scope`, Abschnitt 8.5), jeweils mit der Richtlinie,
 die sie brauchen ([die Liste der Dienste](../bc/6.0/backend-dienste-ueber-ezjscore.md#sektionen-expsection-17-dienste-5-schreibvorgänge)).
 
 **PHP**, in einer Extension oder einem mit `php bin/php/ezexec.php <script> --allow-root-user` gestarteten Skript:
@@ -521,6 +548,8 @@ die sie brauchen ([die Liste der Dienste](../bc/6.0/backend-dienste-ueber-ezjsco
 $section = eZSection::fetchByIdentifier( 'members_area' );   // or eZSection::fetch( 7 )
 $object  = eZContentObject::fetch( 1234 );
 $section->applyTo( $object );                                // checks section/assign for the current user
+$section->applyTo( $object, eZSection::SCOPE_INHERITED );    // or SCOPE_OBJECT; SCOPE_SUBTREE is the default
+eZContentObjectTreeNode::assignSectionToSubTree( 1234, 7, false, true, eZSection::SCOPE_INHERITED ); // what section/assign does
 $free    = $section->canBeRemoved();                         // the rule of section 7.1
 ```
 

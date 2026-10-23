@@ -75,6 +75,37 @@ class expSectionStateServicesTest extends expContentServicesTestCase
         $this->fails( 404, 'expSectionServices', 'get', array( $sid ) );
     }
 
+    public function testSectionAssignScopes()
+    {
+        $sids = array();
+        foreach ( array( 'x', 'y' ) as $n )
+        {
+            $s = $this->ok( 'expSectionServices', 'create', array(), array( 'name' => "Exp scope $n", 'identifier' => 'expscope' . $n . substr( uniqid(), -7 ) ) );
+            $sid = $sids[$n] = $s['id'];
+            $this->cleanup( function () use ( $sid ) { $x = eZSection::fetch( $sid ); if ( $x ) { $x->removeThis(); } } );
+        }
+        $folder = $this->testFolder();
+        $child = $this->createFolder( 'child', $folder );
+        $other = $this->createFolder( 'other', $folder );
+        $below = $this->createFolder( 'below', $other );
+        $original = (int)eZContentObjectTreeNode::fetch( $folder )->object()->attribute( 'section_id' );
+        $sectionOf = function ( $node ) { eZContentObject::clearCache(); return (int)eZContentObjectTreeNode::fetch( $node )->object()->attribute( 'section_id' ); };
+        $this->ok( 'expSectionServices', 'assign', array( $this->objectOf( $other ), $sids['x'] ), array( 'scope' => 'object' ) );
+        $this->assertSame( array( $sids['x'], $original ), array( $sectionOf( $other ), $sectionOf( $below ) ) );
+
+        $back = $this->ok( 'expSectionServices', 'assignSubtree', array( $folder, $sids['y'] ), array( 'mode' => 'now', 'scope' => 'inherited' ) );
+        $this->assertSame( 'inherited', $back['scope'] );
+        $this->assertSame( array( $sids['y'], $sids['y'], $sids['x'], $original ),
+                           array( $sectionOf( $folder ), $sectionOf( $child ), $sectionOf( $other ), $sectionOf( $below ) ), 'the branch in x keeps its sections' );
+
+        $this->fails( 400, 'expSectionServices', 'assignSubtree', array( $folder, $sids['x'] ), array( 'mode' => 'now', 'scope' => 'everything' ) );
+        $this->fails( 400, 'expSectionServices', 'assign', array( $this->objectOf( $folder ), $sids['x'] ), array( 'scope' => 'everything' ) );
+        $this->assertSame( $sids['y'], $sectionOf( $folder ) );
+
+        $this->ok( 'expSectionServices', 'assignSubtree', array( $folder, $original ), array( 'mode' => 'now' ) );
+        $this->assertSame( $original, $sectionOf( $below ), 'without a scope: the whole subtree' );
+    }
+
     public function testSectionWritesNeedPolicy()
     {
         $this->loginAnonymous();

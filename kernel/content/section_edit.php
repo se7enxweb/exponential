@@ -33,8 +33,11 @@ function sectionEditActionCheck( $module, $class, $object, $version, $contentObj
     $selectedSection = eZSection::fetch( (int)$http->postVariable( 'SelectedSectionId' ) );
     if ( !$selectedSection instanceof eZSection )
         return;
+    $scope = eZSection::scopeFromHTTP( $http );
+    if ( $scope === false )
+        return;
 
-    $selectedSection->applyTo( $object );
+    $selectedSection->applyTo( $object, $scope );
                     eZContentCacheManager::clearContentCacheIfNeeded( $object->attribute( 'id' ) );
     $module->redirectToView( 'edit', array( $object->attribute( 'id' ), $editVersion, $editLanguage, $fromLanguage ) );
 }

@@ -36,7 +36,9 @@ Two more operations were added the same day:
 ```
 
 The same command creates jobs: `remove`, `copy`, `move`, `hide`, `reveal`, `section`, `state`, `addlocation`,
-`removelocation`, in the foreground or with `--background`. `php bin/php/expcontentjob.php` is the same script.
+`removelocation`, in the foreground or with `--background`. `section` takes `--scope=subtree|inherited|object`, which
+objects below the node get the section ([Sections](../../guides/sections.md#85-which-objects-below-get-the-section)).
+`php bin/php/expcontentjob.php` is the same script.
 
 The cronjob part `contentjobs` (group `frequent`) restarts a worker whose process died, starts a queued job nobody
 started, and removes finished jobs after `KeepDays`.

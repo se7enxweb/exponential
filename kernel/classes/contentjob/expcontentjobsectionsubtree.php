@@ -15,7 +15,11 @@
  * the top node's object, or it is refused, as section/assign does. Idempotent: an object in the section already
  * is left alone.
  *
- * Parameters: node_id, section_id.
+ * The optional parameter scope (eZSection::SCOPE_*, default SCOPE_SUBTREE) narrows the work list: SCOPE_OBJECT
+ * changes the top node's object only, SCOPE_INHERITED leaves out every location below whose object is not in the
+ * section the top node's object had when the job was created (old_section_id), with everything below it.
+ *
+ * Parameters: node_id, section_id, scope.
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -34,17 +38,66 @@ class expContentJobSectionSubtree extends expContentJobBatchType
         if ( !$user->canAssignSection( $sectionID ) || !$user->canAssignSectionToObject( $sectionID, $node->object() ) )
             throw new expContentJobException( self::tr( 'You do not have permission to assign the section "%1" to node %2.',
                                                         array( $section->attribute( 'name' ), $node->attribute( 'node_id' ) ) ) );
-        return array( 'node_id' => (int) $node->attribute( 'node_id' ), 'section_id' => $sectionID,
-                      'section_name' => $section->attribute( 'name' ), 'path' => $node->attribute( 'path_string' ) );
+        $scope = isset( $params['scope'] ) && $params['scope'] !== '' ? $params['scope'] : eZSection::SCOPE_SUBTREE;
+        if ( !eZSection::isValidScope( $scope ) )
+            throw new expContentJobException( self::tr( 'The scope "%1" is not known; use %2.',
+                                                        array( is_scalar( $scope ) ? $scope : gettype( $scope ), implode( ', ', eZSection::scopes() ) ) ) );
+        $validated = array( 'node_id' => (int) $node->attribute( 'node_id' ), 'section_id' => $sectionID,
+                            'section_name' => $section->attribute( 'name' ), 'path' => $node->attribute( 'path_string' ),
+                            'scope' => $scope );
+        if ( $scope === eZSection::SCOPE_INHERITED )
+            $validated['old_section_id'] = (int) $node->object()->attribute( 'section_id' );
+        return $validated;
     }
 
+    /** SCOPE_OBJECT: one node, whatever the size of its subtree. */
+    public function countNodes( array $params )
+    {
+        if ( isset( $params['scope'] ) && $params['scope'] === eZSection::SCOPE_OBJECT )
+            return 1;
+        return parent::countNodes( $params );
+    }
+
+    protected function buildWorkList( expContentJob $job )
+    {
+        $p = $job->params();
+        $scope = isset( $p['scope'] ) ? $p['scope'] : eZSection::SCOPE_SUBTREE;
+        if ( $scope === eZSection::SCOPE_OBJECT )
+            return array( (int) $p['node_id'] );
+        if ( $scope !== eZSection::SCOPE_INHERITED )
+            return parent::buildWorkList( $job );
+
+        // found once, before anything changes: the branches in another section are left out of the work list
+        $node = eZContentObjectTreeNode::fetch( (int) $p['node_id'] );
+        if ( !$node )
+            return array();
+        $boundaries = eZContentObjectTreeNode::sectionBoundaryPaths( $node, (int) $p['old_section_id'] );
+        $ids = array();
+        foreach ( eZDB::instance()->arrayQuery( 'SELECT node_id, path_string FROM ezcontentobject_tree WHERE '
+                                                . expContentJobRemoveSubtree::pathCondition( array( $node->attribute( 'path_string' ) ) )
+                                                . ' ORDER BY depth ASC, node_id ASC' ) as $r )
+        {
+            if ( !eZContentObjectTreeNode::pathIsInAny( $r['path_string'], $boundaries ) )
+                $ids[] = (int) $r['node_id'];
+        }
+        return $ids;
+    }
+
+    /** SCOPE_OBJECT changes one object: the node is locked, not its subtree. */
     public function locks( array $params )
     {
-        return array( array( 'path' => $params['path'], 'mode' => expContentJobLock::SUBTREE ) );
+        $one = isset( $params['scope'] ) && $params['scope'] === eZSection::SCOPE_OBJECT;
+        return array( array( 'path' => $params['path'], 'mode' => $one ? expContentJobLock::NODE : expContentJobLock::SUBTREE ) );
     }
 
     public function describe( array $params )
     {
+        $scope = isset( $params['scope'] ) ? $params['scope'] : eZSection::SCOPE_SUBTREE;
+        if ( $scope === eZSection::SCOPE_OBJECT )
+            return self::tr( 'Assign the section "%1" to the object of node %2', array( $params['section_name'], $params['node_id'] ) );
+        if ( $scope === eZSection::SCOPE_INHERITED )
+            return self::tr( 'Assign the section "%1" to the subtree of node %2, except branches in another section',
+                             array( $params['section_name'], $params['node_id'] ) );
         return self::tr( 'Assign the section "%1" to the subtree of node %2', array( $params['section_name'], $params['node_id'] ) );
     }
 
@@ -64,7 +117,8 @@ class expContentJobSectionSubtree extends expContentJobBatchType
                     return array( 'object' => expAuditHook::node( $node ) ?: array( 'type' => 'node', 'id' => (int)$p['node_id'] ),
                                   'target' => expAuditHook::section( (int)$p['section_id'] ),
                                   'before' => array( 'section' => $object ? (int)$object->attribute( 'section_id' ) : null ),
-                                  'after' => array( 'section' => (int)$p['section_id'], 'objects' => (int)$job->progress()['total'] ) );
+                                  'after' => array( 'section' => (int)$p['section_id'], 'objects' => (int)$job->progress()['total'],
+                                                    'scope' => isset( $p['scope'] ) ? $p['scope'] : eZSection::SCOPE_SUBTREE ) );
                 } );
         }
     }
@@ -73,6 +127,8 @@ class expContentJobSectionSubtree extends expContentJobBatchType
     {
         $p = $job->params();
         $sectionID = (int) $p['section_id'];
+        // SCOPE_INHERITED: an object that left the old section since the job was created keeps its section
+        $onlySectionID = isset( $p['scope'] ) && $p['scope'] === eZSection::SCOPE_INHERITED ? (int) $p['old_section_id'] : null;
         $user = eZUser::currentUser();
         $db = eZDB::instance();
         $ids = self::objectIDs( $rows );
@@ -82,7 +138,8 @@ class expContentJobSectionSubtree extends expContentJobBatchType
         foreach ( $db->arrayQuery( 'SELECT id, section_id FROM ezcontentobject WHERE ' . $db->generateSQLINStatement( $ids, 'id', false, true, 'int' ) ) as $row )
         {
             $objectID = (int) $row['id'];
-            if ( (int) $row['section_id'] === $sectionID )
+            if ( (int) $row['section_id'] === $sectionID
+                 || ( $onlySectionID !== null && (int) $row['section_id'] !== $onlySectionID ) )
                 continue;
             $object = eZContentObject::fetch( $objectID );
             if ( !$object || !$user->canAssignSectionToObject( $sectionID, $object ) )
