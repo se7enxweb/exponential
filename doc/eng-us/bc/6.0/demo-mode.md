@@ -209,7 +209,10 @@ image or a deployment template used for other sites.
   ```
 
   and records the audit event `system.demo.mode` (severity warning, channel system, always on). A forked worker has
-  its own pid and records it again; a persistent worker records it once. A console command also says
+  its own pid and records it again; a persistent worker records it once. A web process that starts every request
+  afresh (PHP-FPM, mod_php, LiteSpeed, PHP's built-in server) keeps an empty marker file per process in the cache
+  directory (`<cache>/demo-mode/<pid>-<start time>`), so it too records once instead of on every request; clearing
+  the caches lets the running processes record again. A console command also says
   `Demo mode is on (EXP_DEMO_MODE=1) ...` on standard error.
 
 On a production site, a `system.demo.mode` event or a `demo/mode` line means that the variable reached a process it

@@ -415,6 +415,12 @@ class expDemoMode
      * Whether this process still has to record that demo mode is on; the first call of a process (while the mode is
      * on) says yes and claims it, every later one says no.
      *
+     * A web SAPI that starts every request afresh (PHP-FPM, mod_php, LiteSpeed, PHP's built-in server) forgets the
+     * static between requests of the same process, which recorded a line and an audit event for every request. There
+     * the claim is also kept as an empty marker file per process in the cache directory (processMarker()), so each
+     * process records once; clearing the caches lets the running processes record again. The console and the
+     * persistent workers of Velocity and FrankenPHP keep the static and need no file.
+     *
      * @return bool
      */
     public static function claimAnnouncement()
@@ -425,7 +431,49 @@ class expDemoMode
         if ( self::$announcedFor === $process )
             return false;
         self::$announcedFor = $process;
+        if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' )
+            return true;
+        $marker = self::processMarker( $process );
+        if ( $marker === null )
+            return true;
+        if ( is_file( $marker ) )
+            return false;
+        if ( !is_dir( dirname( $marker ) ) )
+            @mkdir( dirname( $marker ), 0770, true );
+        @touch( $marker );
         return true;
+    }
+
+    /**
+     * The marker file of a web process that recorded demo mode (claimAnnouncement()): <cache directory>/demo-mode/
+     * <pid>-<start time>, the start time from /proc so a reused pid is a new process; null when there is no cache
+     * directory yet.
+     *
+     * @param string $process the pid
+     * @return string|null
+     */
+    protected static function processMarker( $process )
+    {
+        if ( !class_exists( 'eZSys' ) )
+            return null;
+        try
+        {
+            $dir = (string)eZSys::cacheDirectory();
+        }
+        catch ( Throwable $e )
+        {
+            return null;
+        }
+        if ( $dir === '' )
+            return null;
+        $start = '';
+        $stat = @file_get_contents( '/proc/self/stat' );
+        if ( is_string( $stat ) && ( $close = strrpos( $stat, ')' ) ) !== false )
+        {
+            $fields = explode( ' ', trim( substr( $stat, $close + 2 ) ) );
+            $start = isset( $fields[19] ) ? preg_replace( '/[^0-9]/', '', $fields[19] ) : '';
+        }
+        return rtrim( $dir, '/' ) . '/demo-mode/' . preg_replace( '/[^0-9]/', '', (string)$process ) . ( $start !== '' ? '-' . $start : '' );
     }
 
     /**

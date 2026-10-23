@@ -346,6 +346,16 @@ class expDemoModeTest extends PHPUnit\Framework\TestCase
         $source = self::file( 'kernel/classes/expdemomode.php' );
         $this->assertStringContainsString( "'security.log'", $source );
         $this->assertStringContainsString( "getmypid()", $source, 'a forked worker records it too' );
+
+        // a web SAPI that forgets the static between requests (PHP-FPM, mod_php, php -S) keeps the claim in a marker
+        // file per process (pid and start time) in the cache directory; the console and Velocity keep the static
+        $marker = new ReflectionMethod( 'expDemoMode', 'processMarker' );
+        $marker->setAccessible( true );
+        $path = $marker->invoke( null, '4711' );
+        $this->assertMatchesRegularExpression( '#/demo-mode/4711(-[0-9]+)?$#', (string)$path );
+        $this->assertStringStartsWith( rtrim( eZSys::cacheDirectory(), '/' ) . '/demo-mode/', (string)$path );
+        $this->assertMatchesRegularExpression( '#/demo-mode/12(-[0-9]+)?$#', (string)$marker->invoke( null, "1/../2" ), 'only digits' );
+        $this->assertStringContainsString( "PHP_SAPI === 'cli'", $source );
     }
 
     // ------------------------------------------------------------------ DM-08
