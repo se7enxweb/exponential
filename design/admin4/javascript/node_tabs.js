@@ -1,11 +1,13 @@
-// the tabs of the node view, in plain JavaScript; set up once the document is parsed (the head loads this file),
-// one turn after DOMContentLoaded as jQuery's ready did
+// the tabs of the node view, in plain JavaScript on a4Dom (a4_dom.js, loaded by the page head); set up once the
+// document is parsed, one turn after DOMContentLoaded as jQuery's ready did
 (function( init )
 {
-    if ( document.readyState === 'loading' )
-        document.addEventListener( 'DOMContentLoaded', function(){ window.setTimeout( init ); } );
-    else
-        window.setTimeout( init );
+    if ( !window.a4Dom )
+    {
+        if ( window.console ) window.console.error( 'node_tabs.js: a4_dom.js is not on the page' );
+        return;
+    }
+    window.a4Dom.ready( function(){ window.setTimeout( init ); } );
 })(function()
 {
     // the element children of el that match the selector (jQuery's children( selector ))
@@ -19,13 +21,9 @@
         return out;
     }
 
-    function each( list, fn )
-    {
-        Array.prototype.forEach.call( list, fn );
-    }
+    var each = window.a4Dom.each;
 
-    // the installation's root: the Exp configuration block of the admin <head>, else ezjscore's $.ez where a page
-    // still loads it
+    // the installation's root: the Exp configuration block of the admin <head>, else the site's root
     function rootUrl()
     {
         var root = '';
@@ -38,8 +36,6 @@
             }
             catch ( e ) {}
         });
-        var jq = window.jQuery;
-        if ( !root && jq && jq.ez && jq.ez.root_url ) root = jq.ez.root_url;
         return root || '/';
     }
 
@@ -211,7 +207,7 @@
 
         // save tab state: the preference admin_navigation_content through window.a4Pref (the head script), like the
         // frame's other remembered choices (a state the server does not take is kept in this browser); where it is
-        // missing a POST as jQuery's $.post() sent it (no Content-Type and no body without a form token)
+        // missing a form POST with the page's form token (URL-encoded, a space as +) and the CSRF header (a4Dom.post)
         saveTabState : function( intBool )
         {
             if ( window.a4Pref )
@@ -219,13 +215,7 @@
                 window.a4Pref.set( 'admin_navigation_content', String( intBool ) );
                 return;
             }
-            var url = rootUrl() + 'user/preferences/set_and_exit/admin_navigation_content/' + intBool;
-            var _token = '', _tokenNode = document.getElementById('ezxform_token_js');
-            // a space as + (jQuery's form encoding of the data); fetch() sends the same Accept as $.post() did on its own
-            if ( _tokenNode ) _token = 'ezxform_token=' + encodeURIComponent( _tokenNode.getAttribute('title') ).replace( /%20/g, '+' );
-            var headers = _token ? { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' } : {};
-            headers['X-Requested-With'] = 'XMLHttpRequest';
-            window.fetch( url, { method: 'POST', credentials: 'same-origin', headers: headers, body: _token || null } ).catch( function(){} );
+            window.a4Dom.post( rootUrl() + 'user/preferences/set_and_exit/admin_navigation_content/' + intBool ).catch( function(){} );
         },
 
         // save open tab (using cookie)

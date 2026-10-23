@@ -204,7 +204,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
 
     public function testTheTabCookieIsNoSelector()
     {
-        $s = $this->harness( 'node_tabs.js', array( 'design/admin4/javascript/node_tabs.js' ) );
+        $s = $this->harness( 'node_tabs.js', array( 'design/admin4/javascript/a4_dom.js', 'design/admin4/javascript/node_tabs.js' ) );
         $this->assertNull( $s['a tab name opens its tab']['error'] );
         $this->assertSame( 'node-tab-details', $s['a tab name opens its tab']['selected'] );
         $this->assertSame( 'node-tab-details-content', $s['a tab name opens its tab']['panel'], 'the panel of the tab block is shown' );
@@ -219,7 +219,7 @@ class AdminScriptsBehaviourTest extends PHPUnit\Framework\TestCase
         $this->assertStringEndsWith( '; path=/; SameSite=Lax; Secure', $s['opening a tab writes the cookie']['written'][0] );
         $this->assertSame( array( 'admin_navigation_content=0' ), $s['the switch saves through a4Pref']['saved'] );
         // without a4Pref the legacy post carries the token URL-encoded (a + or & in it must not split or change the field),
-        // a space as + as jQuery's $.post() sent it
+        // a space as + (a4Dom.post, as jQuery's $.post() sent it)
         $this->assertSame( array( 'post /user/preferences/set_and_exit/admin_navigation_content/0 ezxform_token=a%2Bb%26c%3Dd%25e+f' ),
                            $s['the token is URL-encoded in the legacy post']['saved'] );
     }

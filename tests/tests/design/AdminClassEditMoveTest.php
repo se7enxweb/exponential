@@ -34,7 +34,9 @@ class AdminClassEditMoveTest extends PHPUnit\Framework\TestCase
         $js = AdminFiles::read( self::root() . '/design/admin4/javascript/page/class_edit.js' );
         $this->assertStringContainsString( "div.listbutton button[name^=Move]", $js );
         $this->assertStringContainsString( "var id = param.length > 1 ? param[1] : this.value;", $js );
-        $this->assertStringContainsString( "data.append( action, id );", $js );
+        $this->assertStringContainsString( "data.push( [ action, id ] );", $js );
+        // the form token, the CSRF header and X-Requested-With go with it (a4Dom.post)
+        $this->assertStringContainsString( "window.a4Dom.post(", $js );
     }
 
     public function testTheServerReadsTheIdFromTheButtonsName()
