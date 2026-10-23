@@ -17,7 +17,7 @@ function run(withExp) {
     const inits = [];
     const window = {};
     if (withExp) {
-        window.Exp = { $: { fn: { expDataTable: function () {} } }, ready: (fn) => fn() };
+        window.Exp = { datatable: { create: function () {} }, ready: (fn) => fn() };
         window.eZAjaxSubitemsExpDataTable = { init: () => inits.push(1) };
     }
     window.document = document;

@@ -29,6 +29,8 @@
  * value (the editor keeps the focus and a toast asks to save or cancel it first) or while such a change is being
  * saved; an editor with an unchanged value is closed. While the order is being saved, no cell can be edited.
  *
+ * Plain JavaScript, on Exp.datatable.create()'s table (its parts are elements): no jQuery.
+ *
  * The pure parts (isActive, assign, keyAction, save, undo) are exported for tests/tests/design/js/priority_drag.js.
  */
 (function (root, factory) {
@@ -187,7 +189,6 @@
 
     /** The column and its behaviour for one table; attach(table) once the table is built. */
     function create(conf, labels) {
-        var $ = window.Exp.$;
         labels = labels || {};
         var L = function (key, fallback, params) { return fmt(labels[key] || fallback, params || {}); };
         var dir = Number(conf.sortOrder) === 1 ? 'asc' : 'desc';
@@ -201,24 +202,36 @@
         };
         var active = function () { return !!table && isActive(conf, table.state, table.rowsData.length); };
 
+        var element = function (html) {
+            var box = document.createElement('div');
+            box.innerHTML = html;
+            return box.firstElementChild;
+        };
+        var setAttributes = function (el, map) {
+            Object.keys(map).forEach(function (name) { el.setAttribute(name, map[name]); });
+            return el;
+        };
+
         var column = {
             key: COLUMN, label: '', hidden: true, className: 'a4-content-drag',
             render: function (row) {
                 if (!active()) { return ''; }
-                return $('<button type="button" class="a4-grip a4-content-drag-grip"></button>')
-                    .attr({ 'aria-label': L('grip', 'Move %name', { '%name': htmlText(row.name) }), 'aria-describedby': hintId,
-                            title: L('grip_title', 'Drag to change the order') })
-                    .append('<span class="a4-icon a4-bi-grip-vertical" aria-hidden="true"></span>');
+                var grip = setAttributes(element('<button type="button" class="a4-grip a4-content-drag-grip"></button>'),
+                                         { 'aria-label': L('grip', 'Move %name', { '%name': htmlText(row.name) }), 'aria-describedby': hintId,
+                                           title: L('grip_title', 'Drag to change the order') });
+                grip.appendChild(element('<span class="a4-icon a4-bi-grip-vertical" aria-hidden="true"></span>'));
+                listen(grip);
+                return grip;
             }
         };
 
         // ---- helpers on the rows shown -------------------------------------------------------------------
-        var rowsEls = function () { return table.$body.children('tr').get(); };
+        var rowsEls = function () { return Array.prototype.filter.call(table.body.children, function (tr) { return tr.tagName === 'TR'; }); };
         var keyOf = function (tr) { return tr.getAttribute('data-row-key'); };
-        var rowOf = function (el) { return $(el).closest('tr')[0]; };
-        var gripOf = function (id) { return table.$body.find('tr[data-row-key="' + String(id).replace(/[^0-9a-z_-]/gi, '') + '"] .a4-content-drag-grip')[0]; };
+        var rowOf = function (el) { return el.closest('tr') || undefined; };
+        var gripOf = function (id) { return table.body.querySelector('tr[data-row-key="' + String(id).replace(/[^0-9a-z_-]/gi, '') + '"] .a4-content-drag-grip') || undefined; };
         var position = function (tr) { return table.state.offset + rowsEls().indexOf(tr) + 1; };
-        var nameOf = function (tr) { var r = $.data(tr, 'expRow'); return r ? htmlText(r.name) : ''; };
+        var nameOf = function (tr) { var r = table.rowData(tr); return r ? htmlText(r.name) : ''; };
         var say = function (text) { table.announce(text); };
         var toast = function (text, kind, opener, delay) {
             var t = window.a4Toast ? window.a4Toast(text, kind, opener, delay) : null;
@@ -241,16 +254,20 @@
             table.setColumnHidden(COLUMN, !on);
             // the column's header has a name for screen readers (the datatable draws an empty one for a column
             // without a label, and a label would put the column in Table options)
-            var th = table.$head.find('th[data-key="' + COLUMN + '"]');
-            if (!th.find('.a4-sr-only').length) { th.append($('<span class="a4-sr-only"></span>').text(L('column', 'Order'))); }
-            table.$root.toggleClass('a4-content-drag-on', on);
+            var th = table.head.querySelector('th[data-key="' + COLUMN + '"]');
+            if (th && !th.querySelector('.a4-sr-only')) {
+                var name = element('<span class="a4-sr-only"></span>');
+                name.textContent = L('column', 'Order');
+                th.appendChild(name);
+            }
+            table.root.classList.toggle('a4-content-drag-on', on);
         };
         var setBusy = function (on) {
             busy = on;
-            table.$root.toggleClass('a4-content-drag-saving', on);
-            if (on) { table.$table.attr('aria-busy', 'true'); } else { table.$table.removeAttr('aria-busy'); }
+            table.root.classList.toggle('a4-content-drag-saving', on);
+            if (on) { table.table.setAttribute('aria-busy', 'true'); } else { table.table.removeAttribute('aria-busy'); }
             // no other page, sorting or filter while the order is being saved
-            $().add(table.$pagers).add(table.$compacts).add(table.$head).add(table.$filter).prop('inert', on);
+            table.pagers.concat(table.compacts, [table.head], table.filterInput ? [table.filterInput] : []).forEach(function (el) { el.inert = on; });
         };
 
         /** A move may start: nothing being saved, and no priority being edited with a changed value. */
@@ -260,9 +277,9 @@
             var ed = table.editing;
             if (ed) {
                 var shownValue = ed.old === null || ed.old === undefined ? '' : String(ed.old);
-                if (String(ed.$in.val()) !== shownValue) {
+                if (String(ed.input.value) !== shownValue) {
                     toast(L('unsaved_edit', 'Save the priority you are editing (Enter) or cancel it (Escape) before you move a row.'), 'warn', grip);
-                    ed.$in[0].focus();
+                    ed.input.focus();
                     return false;
                 }
                 table.cancelEdit();
@@ -278,7 +295,7 @@
                 call: function (data) { return window.Exp.io.call('ezjscnode::updatepriority', [], { method: 'POST', data: data }); },
                 // the rows next to the page, asked for fresh (the table's cache is emptied after every save)
                 neighbour: function (offset) {
-                    return table.fetch($.extend(table.stateCopy(), { offset: offset, limit: 1 })).then(function (res) {
+                    return table.fetch(window.Exp.util.extend(table.stateCopy(), { offset: offset, limit: 1 })).then(function (res) {
                         var r = res && res.rows && res.rows[0];
                         return r ? { id: r.node_id, priority: r.priority } : null;
                     });
@@ -370,14 +387,14 @@
             var g = grab;
             if (!g) { return null; }
             grab = null;
-            $(g.tr).removeClass('a4-content-drag-placeholder');
-            $(g.grip).attr('aria-pressed', null);
-            table.$root.removeClass('a4-content-drag-moving');
+            g.tr.classList.remove('a4-content-drag-placeholder');
+            g.grip.removeAttribute('aria-pressed');
+            table.root.classList.remove('a4-content-drag-moving');
             if (cancel) { moveTo(g.tr, g.from); }
             return g;
         };
         var onKey = function (e) {
-            var grip = this, tr = rowOf(grip), action = keyAction(!!grab && grab.tr === tr, e.originalEvent || e);
+            var grip = this, tr = rowOf(grip), action = keyAction(!!grab && grab.tr === tr, e);
             if (!action || drag) { return; }
             e.preventDefault();
             e.stopPropagation();
@@ -386,9 +403,9 @@
                 if (grab) { endGrab(true); }
                 if (!canStart(grip)) { return; }
                 grab = { tr: tr, grip: grip, from: i };
-                $(tr).addClass('a4-content-drag-placeholder');
-                $(grip).attr('aria-pressed', 'true');
-                table.$root.addClass('a4-content-drag-moving');
+                tr.classList.add('a4-content-drag-placeholder');
+                grip.setAttribute('aria-pressed', 'true');
+                table.root.classList.add('a4-content-drag-moving');
                 say(L('picked', 'Picked up %name. Position %position of %count.', { '%name': nameOf(tr), '%position': position(tr), '%count': count }));
             } else if (action === 'stepUp' || action === 'stepDown') {
                 if (!canStart(grip)) { return; }
@@ -410,7 +427,7 @@
         // leaving a picked-up grip (Tab, a click elsewhere) cancels the move
         var onBlur = function (e) {
             if (!grab || grab.grip !== this) { return; }
-            var to = e.relatedTarget || (e.originalEvent && e.originalEvent.relatedTarget);
+            var to = e.relatedTarget;
             if (to === this) { return; }
             var tr = grab.tr;
             endGrab(true);
@@ -452,10 +469,10 @@
             d.frame = window.requestAnimationFrame(autoScroll);
         };
         var startDrag = function () {
-            var d = drag, rect = d.tr.getBoundingClientRect(), tableRect = table.$table[0].getBoundingClientRect();
+            var d = drag, rect = d.tr.getBoundingClientRect(), tableRect = table.table.getBoundingClientRect();
             d.started = true;
             d.grabY = d.y - rect.top;
-            d.scroller = scroller(table.$table[0]);
+            d.scroller = scroller(table.table);
             var ghost = document.createElement('div');
             ghost.className = 'a4-content-drag-ghost';
             ghost.setAttribute('aria-hidden', 'true');
@@ -470,8 +487,8 @@
             ghost.appendChild(name);
             document.body.appendChild(ghost);
             d.ghost = ghost;
-            $(d.tr).addClass('a4-content-drag-placeholder');
-            table.$root.addClass('a4-content-drag-moving');
+            d.tr.classList.add('a4-content-drag-placeholder');
+            table.root.classList.add('a4-content-drag-moving');
             place();
             d.frame = window.requestAnimationFrame(autoScroll);
         };
@@ -485,8 +502,8 @@
             document.removeEventListener('keydown', onEscape, true);
             if (d.frame) { window.cancelAnimationFrame(d.frame); }
             if (d.ghost && d.ghost.parentNode) { d.ghost.parentNode.removeChild(d.ghost); }
-            $(d.tr).removeClass('a4-content-drag-placeholder');
-            table.$root.removeClass('a4-content-drag-moving');
+            d.tr.classList.remove('a4-content-drag-placeholder');
+            table.root.classList.remove('a4-content-drag-moving');
             if (cancel) { moveTo(d.tr, d.from); }
             return d;
         };
@@ -523,18 +540,26 @@
             say(L('cancelled', 'Move canceled. %name is back at position %position of %count.', { '%name': nameOf(d.tr), '%position': position(d.tr), '%count': table.total }));
         };
         var onPointerDown = function (e) {
-            var ev = e.originalEvent || e, grip = this;
-            if (drag || grab || !ev.isPrimary || (ev.pointerType === 'mouse' && ev.button !== 0)) { return; }
+            var grip = this;
+            if (drag || grab || !e.isPrimary || (e.pointerType === 'mouse' && e.button !== 0)) { return; }
             // no text selection, no focus change before the check (an open priority editor keeps the focus)
             e.preventDefault();
             if (!canStart(grip)) { return; }
             grip.focus();
             var tr = rowOf(grip);
-            drag = { tr: tr, grip: grip, from: rowsEls().indexOf(tr), pointerId: ev.pointerId, startY: ev.clientY, y: ev.clientY, started: false };
+            drag = { tr: tr, grip: grip, from: rowsEls().indexOf(tr), pointerId: e.pointerId, startY: e.clientY, y: e.clientY, started: false };
             window.addEventListener('pointermove', onMove, { passive: false });
             window.addEventListener('pointerup', onUp);
             window.addEventListener('pointercancel', onCancel);
             document.addEventListener('keydown', onEscape, true);
+        };
+        // On the grip itself, so its keys are handled (and stopped) before the table's own keys in the rows
+        var listen = function (grip) {
+            grip.addEventListener('pointerdown', onPointerDown);
+            grip.addEventListener('keydown', onKey);
+            grip.addEventListener('focusout', onBlur);
+            // a drag that started on the grip shows the grip as pressed; a plain click does nothing
+            grip.addEventListener('click', function (e) { e.preventDefault(); });
         };
 
         return {
@@ -543,17 +568,15 @@
             attach: function (t) {
                 if (!t) { return; }
                 table = t;
-                table.$root.append($('<p class="a4-sr-only"></p>').attr('id', hintId)
-                    .text(L('hint', 'Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.')));
-                table.$el.on('exp:datatable:load', function () { pendingEdit = false; if (grab) { endGrab(false); } if (drag) { stopDrag(false); } sync(); });
-                table.$el.on('exp:datatable:columns', sync);
-                table.$el.on('exp:datatable:edit', function () { pendingEdit = true; });
-                table.$el.on('exp:datatable:error', function () { pendingEdit = false; });
-                table.$body.on('pointerdown', '.a4-content-drag-grip', onPointerDown);
-                table.$body.on('keydown', '.a4-content-drag-grip', onKey);
-                table.$body.on('focusout', '.a4-content-drag-grip', onBlur);
-                // a drag that started on the grip shows the grip as pressed; a plain click does nothing
-                table.$body.on('click', '.a4-content-drag-grip', function (e) { e.preventDefault(); });
+                var hint = element('<p class="a4-sr-only"></p>');
+                hint.id = hintId;
+                hint.textContent = L('hint', 'Drag the grip to change the order. With the keyboard: Space picks the row up, the arrow keys move it, Space drops it, Escape cancels. Alt+Up and Alt+Down move it by one place at once.');
+                table.root.appendChild(hint);
+                table.el.addEventListener('exp:datatable:load', function () { pendingEdit = false; if (grab) { endGrab(false); } if (drag) { stopDrag(false); } sync(); });
+                table.el.addEventListener('exp:datatable:columns', function () { sync(); });
+                table.el.addEventListener('exp:datatable:edit', function () { pendingEdit = true; });
+                table.el.addEventListener('exp:datatable:error', function () { pendingEdit = false; });
+                // each grip gets its listeners when the column draws it (listen())
                 sync();
             }
         };

@@ -82,7 +82,9 @@ class AdminScriptsTest extends PHPUnit\Framework\TestCase
         {
             $path = "design/$design/javascript/node_tabs.js";
             $js = self::code( $path );
-            $this->assertStringContainsString( "$('a.show-hide-tabs').on( 'click', NodeTab.toggleClick );", $js, $path );
+            // admin4's script runs without jQuery, the admin design's on it
+            $this->assertStringContainsString( $design === 'admin4' ? "link.addEventListener( 'click', NodeTab.toggleClick );"
+                                                                     : "$('a.show-hide-tabs').on( 'click', NodeTab.toggleClick );", $js, $path );
             $this->assertStringNotContainsString( "$('#maincontent-hide').on( 'click'", $js, $path );
             $this->assertStringContainsString( 'var expireDate = new Date();', $js, $path );
         }

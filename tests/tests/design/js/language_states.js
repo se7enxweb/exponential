@@ -1,6 +1,5 @@
 // Runs the Translations column's formatter of design/admin4/javascript/ezajaxsubitems_expdatatable.js (attr,
-// languageState, translationView) with a small stand-in for jQuery's $.each and prints one JSON line per scenario:
-// the HTML it draws for a row.
+// languageState, translationView) and prints one JSON line per scenario: the HTML it draws for a row.
 // Usage: node language_states.js <path to ezajaxsubitems_expdatatable.js>
 'use strict';
 const fs = require('fs');
@@ -19,7 +18,6 @@ function run(name, confObj, row) {
         confObj,
         row,
         result: null,
-        $: { each: (list, fn) => { list.forEach((v, i) => fn(i, v)); } },
     };
     vm.runInNewContext(code, sandbox);
     console.log(JSON.stringify({ name, html: sandbox.result }));
