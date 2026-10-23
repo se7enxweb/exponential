@@ -326,6 +326,56 @@ update the existing row instead.
 
 A class the catalogue does not list yet (made after the catalogue was built) is read from its own definition.
 
+## Importing rows with 7x SQLI Import
+
+The extension 7x SQLI Import (2.0) fills a data table from any of its formats (a CSV file, a spreadsheet, a feed, an
+API, another database), with the same editor, dry run, schedules and run pages as a content import. Its rows go
+through `expDataTableWriter`, as above. The group **Data tables** of its **Catalogue** (`sqliimport/catalogue`) has
+the three ways in:
+
+![The group Data tables of the Imports catalogue: Import into a data table with a New import button, Create a new table from an import with Open the module table wizard, and Content and data tables in sync with the five kinds of synchronisation, a data table and a content class to choose, New synchronisation, Synchronisations and Conflicts](../../help/images/sqli-import/sqli-import-datatable-cards.webp)
+
+**Import into a data table.** Example: three books from a CSV file into the table `datatabledemo_book` of the demo
+module `datatabledemo` (class `datatableDemoBook`):
+
+```text
+title,isbn,price,in_print,summary
+The test garden (second edition),SQ688-0001,12.50,1,An invented book for the check
+Tea for testers,SQ688-0002,9.90,1,Another invented book
+Old test notes,SQ688-0003,4.00,0,Out of print
+```
+
+1. **Imports > New import**, source **CSV and delimited text**, upload the file.
+2. Step **Processing**: choose **Rows of a data table (a persistent class)**, the class `datatableDemoBook`, the mode
+   `upsert` (add new rows, update existing ones) and the key `isbn`. Leave *columns* empty: every field whose name is
+   a column is written. To rename or convert, write one line per column, such as `price = price | number`.
+3. **Dry run**: 3 would be created, nothing is written. **Save and run**: 3 created.
+4. Change one title in the file and run again: 1 updated, 2 unchanged.
+
+![Run 119 of Demo: Books into a data table: Completed, 3 of 3 records, 0 created, 1 updated, 2 unchanged, the log with run started: 3 records, handler datatable](../../help/images/sqli-import/sqli-import-run-datatable.webp)
+
+The rows are then in the table, here on the module's own list page (`datatabledemo/list`) and in
+**Setup > Data tables**, `datatable/rows/datatableDemoBook`:
+
+![The page Data tables demo: books with five rows, among them Old test notes, Tea for testers and The test garden (second edition) with their ISBN SQ688-0001 to SQ688-0003, prices and in_print](../../help/images/sqli-import/sqli-import-datatable-rows.webp)
+
+A relation column (object, node, user) takes a reference instead of an id: `@object:<remote id>`, `@node:<remote id>`
+or `@path:<url alias>`.
+
+**A new table from an import.** On the Imports dashboard, **More > New data table from its fields** (policy
+`setup/setup`) opens [the module table wizard](#the-module-table-wizard) with the source `sqliimport` and the
+import's id. The wizard guesses each column from a sample of the source (name, type, length, required, unique);
+**Copy its fields into the list** turns them into the editable list, where you correct the guesses before the wizard
+writes the class, the table and its pages:
+
+![The fields section of the module table wizard opened from import 76: Where the fields come from sqliimport, Which one 76, Copy its fields into the list, and the guessed fields id, title, isbn, price, in_print and summary with their types, plus created and modified](../../help/images/sqli-import/sqli-import-moduletable-wizard.webp)
+
+**Content and tables in sync.** The third card opens [a synchronisation](#synchronisation) with the data table and the
+content class filled in. Imports copies nothing itself here; the kernel runs the synchronisation.
+
+The extension's own page on all of this, with more examples: `/exphelp/viewer/ext/sqliimport/datatables.md`. How
+imports work in general: [7x SQLI Import: start here](../../help/sqli-import/README.md).
+
 ## In templates
 
 The module `datatable` has five fetch functions (`kernel/datatable/function_definition.php`,

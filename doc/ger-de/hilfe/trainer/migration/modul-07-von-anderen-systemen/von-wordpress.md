@@ -74,6 +74,13 @@ umwandeln oder rendern.
 **Können wir später den umgekehrten Weg gehen?** Ja: Abschnitt 5 der Anleitung beschreibt den Weg von Exponential zu
 WordPress mit xrowextract und dem WordPress Importer (Lektion 8.1).
 
+**Gibt es einen Importer, der WXR direkt liest?** Die Erweiterung 7x SQLI Import, wo sie installiert ist: Ihr Format
+*WordPress export (WXR)* liest Beiträge und Seiten (mit Autor, Datum, Kategorien, Schlagwörtern, Auszug und
+Beitragsbild) oder die Medien, Kategorien, Schlagwörter und Autoren, eine Art pro Import. Importieren Sie zuerst die
+Medien, dann die Beiträge. Sie ersetzt das Umwandlungsskript, zeigt vorher einen Probelauf, und für den Delta-Import
+vor der Umstellung lassen Sie sie mit dem neueren Export noch einmal laufen: Objekte, die sie schon angelegt hat,
+werden aktualisiert, nicht verdoppelt ([7x SQLI Import: hier beginnen](../../../sqli-import/README.md)).
+
 ### Stolperfallen
 
 - **Die Dateien vergessen.** WXR enthält URLs der Anhänge, nicht die Dateien; kopieren Sie das Upload-Verzeichnis.

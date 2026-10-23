@@ -36,6 +36,11 @@ sagt Ihnen, welches Kapitel passt und was Sie entscheiden müssen.
 
 Die Sicht der Hoster auf dieselben Wege steht in [Kunden migrieren: Überblick](../../hosting/migrationen/README.md).
 
+Für die Migration der Inhalte aus einem anderen System liest die Erweiterung 7x SQLI Import die Exportdateien von
+WordPress, Drupal, Joomla, Shopify und WooCommerce, Tabellen und APIs, ordnet sie ohne Programmierung Ihren
+Inhaltstypen zu und zeigt einen Probelauf, bevor etwas veröffentlicht wird
+([7x SQLI Import: hier beginnen](../../sqli-import/README.md)).
+
 ## Warum jetzt wechseln
 
 - **Alte Versionen bekommen keine Sicherheitskorrekturen.** „5.x, 4.x, 3.x and older“ werden nicht unterstützt; 6.0

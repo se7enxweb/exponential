@@ -36,10 +36,13 @@ builder, and who want to move it to Exponential.
 | The ZIP upload of `ezmultiupload` | Brings many images in at once | [Uploading many images](../portfolios/uploading-many-images.md) |
 | RSS import (kernel) | Reads another site's feed into content, with a cronjob | [RSS feeds for your site](../../creators/website-creators/rss-feeds-for-your-site.md#importing-a-feed) |
 | Site builders' exports | Some builders export WordPress XML | [Site builders](../../../install/migration/site-builders.md) |
+| The extension 7x SQLI Import | Reads the WordPress export file (WXR) itself: posts and pages with author, date, categories, tags, excerpt and featured image, and the media; you map them to your classes in the administration and see a dry run first | [7x SQLI Import: start here](../../sqli-import/README.md) |
 
-What does not exist: a ready converter from WordPress's export file (WXR) to Exponential content, an import of
-WordPress users with their passwords (Exponential cannot read WordPress password hashes), or automatic conversion of
-shortcodes and page-builder layouts.
+What does not exist in a plain installation: a ready converter from WordPress's export file (WXR) to Exponential
+content. Where your host or helper installs the extension 7x SQLI Import, it is that converter: import the media
+first, then the posts, so the images are kept. Still missing either way: an import of WordPress users with their
+passwords (Exponential cannot read WordPress password hashes), and automatic conversion of shortcodes and page-builder
+layouts.
 
 ## Three options for one person
 
@@ -48,8 +51,11 @@ shortcodes and page-builder layouts.
 | **Copy by hand** | Recreate posts in the editor, newest or best first | Grows with every post | Up to a few dozen posts; a chance to prune |
 | **RSS import for recent posts** | Point an RSS import at your old blog's feed; it creates objects for the items the feed contains | Short to set up; needs the `rssimport` cronjob | Pulling in the latest posts; a feed carries only the items its publisher puts in it, usually the newest ones |
 | **Scripted migration** | Follow the WordPress guide: export WXR, convert to CSV or JSON with a script, import with `xrowextract` | A weekend or more if you script; a defined job for a helper | Hundreds of posts, or when you want everything |
-
 Many people combine them: script or RSS-import the archive, then fix the twenty most-read posts by hand.
+
+When the extension 7x SQLI Import is installed, the scripted migration needs no script: create a new import of the
+format *WordPress export (WXR)*, upload the file, map the posts to your article class, look at the dry run, then run
+it. It takes an afternoon rather than a weekend, and a run that went wrong can be undone.
 
 If scripting is not for you, this is a well-defined task to hand to a partner
 ([When to hire help](../running-it/when-to-hire-help.md)).

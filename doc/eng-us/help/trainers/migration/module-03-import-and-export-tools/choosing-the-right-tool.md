@@ -50,12 +50,18 @@ and 5.
    - **RSS import**: keeps pulling a feed in during a transition; not a full migration.
    - **exp:layouts**: layouts and rules as a ZIP transfer file between Exponential installations.
    - **REST and expservices**: when the importer runs on another machine.
+   - **7x SQLI Import** (an extension, installed separately): imports defined in the administration, without code,
+     from CSV, spreadsheets, feeds, JSON and REST APIs, databases and the export files of WordPress, Drupal and
+     Joomla; dry run, schedules, undo of a run within 30 days
+     ([7x SQLI Import: start here](../../../sqli-import/README.md)).
 2. **Export tools** (5 minutes). Show the table of section 2: xrowextract CSV and site archive, packages, the CSV
    export of the kernel, layouts export, bccie for form data, the database dump.
 3. **Which tool for which job** (4 minutes). Show section 5. A spreadsheet goes to xrowextract with `--map`; a system
    with a REST API only needs a custom script (lesson 3.3).
-4. **One honest sentence** (3 minutes). No tool reads WordPress, Drupal or Joomla exports directly; the path guides
-   convert them into a format xrowextract reads, or use the script skeleton.
+4. **One honest sentence** (3 minutes). The tools that ship with every installation do not read WordPress, Drupal or
+   Joomla exports directly; the path guides convert them into a format xrowextract reads, or use the script
+   skeleton. Where the extension 7x SQLI Import is installed, it reads those exports itself (a WordPress WXR file,
+   Drupal JSON:API, Joomla), with a dry run first.
 
 ### Common questions
 

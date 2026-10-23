@@ -30,6 +30,13 @@ zuzuordnen und URLs mit Weiterleitungen funktionsfähig zu halten
 
 Halten Sie danach die alten Adressen funktionsfähig ([URLs und Weiterleitungen beim Umzug](urls-und-weiterleitungen-beim-umzug.md)).
 
+Für den Schritt Importieren liest die Erweiterung **7x SQLI Import** die Exportdateien vieler Systeme
+(WordPress-Exportdateien, Drupal JSON:API, Joomla, CSV von Shopify und WooCommerce, Tabellen, CSV, JSON, XML) und
+ordnet sie in der Administration ohne Programmierung Ihren Inhaltstypen zu. Ihr Probelauf zeigt, was angelegt würde,
+bevor etwas veröffentlicht wird, derselbe Import kann für die letzten Änderungen vor der Umstellung noch einmal
+laufen, und ein Lauf lässt sich innerhalb von 30 Tagen rückgängig machen. Siehe
+[7x SQLI Import: hier beginnen](../../sqli-import/README.md).
+
 ## Zuerst entscheiden
 
 - Was nicht migriert wird: alte Nachrichten, Entwürfe, ungenutzte Seiten. Weniger Inhalt bedeutet eine schnellere,

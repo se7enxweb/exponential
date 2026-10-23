@@ -19,6 +19,7 @@ Online-Editors ([Inhaltsmodell und Bearbeitung, 4](../../../../anleitungen/inhal
 2. [Schritte](#schritte)
 3. [Das Ergebnis prüfen](#das-ergebnis-prüfen)
 4. [Fallstricke](#fallstricke)
+5. [Wenn die Zahlen jeden Monat kommen](#wenn-die-zahlen-jeden-monat-kommen)
 
 ## Bevor Sie beginnen
 
@@ -57,6 +58,16 @@ Online-Editors ([Inhaltsmodell und Bearbeitung, 4](../../../../anleitungen/inhal
 | Verbundene Zellen und verschachtelte Kopfzeilen | halten Sie Tabellen einfach; teilen Sie sie in zwei Tabellen |
 | Farbe als einziges Signal (Rot für Überschreitung) | ergänzen Sie Wörter oder Symbole |
 | Daten ohne Lizenzhinweis zur Weiterverwendung | nennen Sie die Lizenz, unter der Sie die Daten veröffentlichen ([Open Definition](https://opendefinition.org/od/2.1/en/)) |
+| Jeden Monat dieselben Zahlen neu abtippen | lassen Sie Ihre Administration einen Import einrichten (unten) |
+
+## Wenn die Zahlen jeden Monat kommen
+
+Zahlen, die ein anderes System immer wieder liefert (eine monatliche Ausgabendatei, wöchentliche Wartezeiten),
+müssen nicht von Hand abgetippt werden. Mit der Erweiterung **7x SQLI Import** importiert die Administration die
+CSV-Datei als Inhaltsobjekte oder in eine Datentabelle, prüft vorher einen Probelauf und lässt den Import nach
+Zeitplan laufen; eine Seite der Website kann dann die aktuellen Zahlen zeigen. Siehe
+[7x SQLI Import: hier beginnen](../../../sqli-import/README.md) und
+[Datentabellen](../../../../funktionen/6.0/datentabellen.md#zeilen-mit-7x-sqli-import-importieren).
 
 ## Verwandte Seiten
 
