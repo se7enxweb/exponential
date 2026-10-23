@@ -392,8 +392,8 @@ Notes on single locales:
 - **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia), `cro-HR`,
   `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names),
   `chi-CN` and `chi-TW` keep their old date patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
-  The short month names of `rus-RU` (`Янв`, `Май`) are neither of CLDR's forms, and `som-SO` names the months in the traditional way (`Bisha Tobnaad`); these files have no stand-alone
-  group for them yet.
+  The short month names of `rus-RU` (`Янв`, `Май`) are neither of CLDR's forms, and `som-SO` names the months in
+  the traditional way (`Bisha Tobnaad`); these files have no stand-alone group for them yet.
 - **Dhivehi** (`div-MV`): ICU 74 has no Dhivehi data. Numbers, the rufiyaa (symbol `Rf`) and date patterns follow
   CLDR `en_MV`; the language name (ދިވެހި, English "Dhivehi", the Maldivian spelling), the currency name and the
   month and day names in Thaana are written by hand and need a native speaker's review. CLDR starts the week on
