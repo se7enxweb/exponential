@@ -219,6 +219,9 @@ Generierte Seite: [month_overview](../../beispiele/template-operatoren/month_ove
 - **Gibt zurück:** einen Hash mit `year`, `month` (lokalisierter Name), `weekdays` (Liste mit `day`-Kurzname und `class`
   `sun`..`sat`, in der Wochenreihenfolge des Locale), `weeks` (Wochennummer => sieben Plätze, `false` oder ein Hash mit `day`,
   `link`, `class`, `highlight`), `current`, `next` und `previous` (jeweils `month`, `year`, `link` oder `false`).
+  Jedes `month` ist der Name, den ein Monat für sich allein trägt (`eZLocale::longMonthNameStandalone()`), nicht die
+  Form innerhalb eines Datums: `październik` auf Polnisch, `октябрь` auf Russisch, wo ein Datum `15 października`,
+  `15 октября` lautet.
 - **Schlüssel von optional:** `link` (Basis der Tageslinks, an die `/(year)/Y/(month)/M/(day)/D` angehängt wird), `current`
   (Zeitstempel eines hervorzuhebenden Tages) sowie `current_class`, `day_class`, `today_class`, `next` und `previous` (Hashes mit
   einem `link`; an die Monatslinks wird `/(year)/Y/(month)/M` angehängt). `year_link`, `month_link` und `day_link` werden gelesen,

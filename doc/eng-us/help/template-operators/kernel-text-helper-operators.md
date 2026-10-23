@@ -219,6 +219,8 @@ Generated page: [month_overview](../../examples/template-operators/month_overvie
 - **Returns:** a hash with `year`, `month` (localized name), `weekdays` (list of `day` short name and `class`
   `sun`..`sat`, in the locale's week order), `weeks` (week number => seven slots, `false` or a hash with `day`,
   `link`, `class`, `highlight`), `current`, `next` and `previous` (each `month`, `year`, `link`, or `false`).
+  Every `month` is the name a month has on its own (`eZLocale::longMonthNameStandalone()`), not the form used inside a
+  date: `październik` in Polish, `октябрь` in Russian, where a date reads `15 października`, `15 октября`.
 - **optional keys:** `link` (base of the day links, which get `/(year)/Y/(month)/M/(day)/D` appended), `current`
   (timestamp of a day to highlight) and `current_class`, `day_class`, `today_class`, `next` and `previous` (hashes
   with a `link`; the month links get `/(year)/Y/(month)/M`). `year_link`, `month_link` and `day_link` are read but not

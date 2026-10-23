@@ -61,7 +61,8 @@ class Orderstatistics extends \Exponential\Runnable\ModuleView
         $monthList = array();
         for ( $monthIndex = 1; $monthIndex <= 12; $monthIndex++ )
         {
-            $monthList[] = array( 'value' => $monthIndex, 'name' => $locale->longMonthName( $monthIndex ) );
+            // #16654: a month list, so the stand-alone name (pol-PL "październik", not the "października" of a date)
+            $monthList[] = array( 'value' => $monthIndex, 'name' => $locale->longMonthNameStandalone( $monthIndex ) );
         }
 
         $tpl = \eZTemplate::factory();

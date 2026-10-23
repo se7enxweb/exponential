@@ -310,6 +310,14 @@ class eZLocale
             $this->ShortMonthNames[$month] = '';
             $this->LongMonthNames[$month] = '';
         }
+        // #16654: the stand-alone month names (CLDR LLLL/LLL) are optional; an empty entry falls back to the name above.
+        $this->ShortMonthNamesStandalone = array();
+        $this->LongMonthNamesStandalone = array();
+        foreach ( $this->MonthNames as $month )
+        {
+            $this->ShortMonthNamesStandalone[$month] = '';
+            $this->LongMonthNamesStandalone[$month] = '';
+        }
 
         $this->ShortWeekDayNames = array();
         $this->LongWeekDayNames = array();
@@ -436,6 +444,23 @@ class eZLocale
                 $this->ShortMonthNames[$day] = $tmpShortMonthNames[$key];
             if ( isset( $tmpLongMonthNames[$key] ) )
                 $this->LongMonthNames[$day] = $tmpLongMonthNames[$key];
+        }
+
+        // #16654: [LongMonthNames] holds the form used inside a date (CLDR MMMM). Inflecting languages name a month
+        // on its own differently: the calendar heading of rus-RU read "октября 2025" instead of "октябрь 2025".
+        // [LongMonthNamesStandalone] and [ShortMonthNamesStandalone] carry that form (CLDR LLLL/LLL).
+        $tmpShortMonthNames = array();
+        if ( $languageINI->hasGroup( 'ShortMonthNamesStandalone' ) )
+            $tmpShortMonthNames = $languageINI->variableMulti( 'ShortMonthNamesStandalone', $this->MonthNames );
+        $tmpLongMonthNames = array();
+        if ( $languageINI->hasGroup( 'LongMonthNamesStandalone' ) )
+            $tmpLongMonthNames = $languageINI->variableMulti( 'LongMonthNamesStandalone', $this->MonthNames );
+        foreach ( $this->MonthNames as $key => $month )
+        {
+            if ( isset( $tmpShortMonthNames[$key] ) )
+                $this->ShortMonthNamesStandalone[$month] = $tmpShortMonthNames[$key];
+            if ( isset( $tmpLongMonthNames[$key] ) )
+                $this->LongMonthNamesStandalone[$month] = $tmpLongMonthNames[$key];
         }
 
 
@@ -608,6 +633,7 @@ class eZLocale
                       'weekday_number_list' => 'weekDays',
                       'month_list' => 'months',
                       'month_name_list' => 'monthsNames',
+                      'month_name_standalone_list' => 'monthsNamesStandalone', // #16654
                       'is_valid' => 'isValid' );
     }
 
@@ -947,6 +973,23 @@ class eZLocale
     function monthsNames()
     {
         return $this->LongMonthNames;
+    }
+
+    /*!
+     #16654: returns the names of months as they read on their own (a calendar heading, a month list), keyed like
+     monthsNames(). Falls back to monthsNames() per month where the locale has no stand-alone name.
+     \sa monthsNames(), longMonthNameStandalone()
+    */
+    function monthsNamesStandalone()
+    {
+        $names = array();
+        foreach ( $this->LongMonthNames as $code => $name )
+        {
+            $names[$code] = ( isset( $this->LongMonthNamesStandalone[$code] ) && $this->LongMonthNamesStandalone[$code] !== '' )
+                ? $this->LongMonthNamesStandalone[$code]
+                : $name;
+        }
+        return $names;
     }
 
     /*!
@@ -1433,6 +1476,40 @@ class eZLocale
     }
 
     /*!
+     #16654: returns the short name of the month number $num as it reads on its own (CLDR LLL), from
+     [ShortMonthNamesStandalone]; shortMonthName() where the locale has none. shortMonthName() is the form used
+     inside a date; in Polish, Russian or Czech the two differ.
+     \sa shortMonthName(), longMonthNameStandalone()
+    */
+    function shortMonthNameStandalone( $num )
+    {
+        if ( $num >= 1 and $num <= 12 )
+        {
+            $code = $this->MonthNames[$num];
+            if ( isset( $this->ShortMonthNamesStandalone[$code] ) && $this->ShortMonthNamesStandalone[$code] !== '' )
+                return $this->ShortMonthNamesStandalone[$code];
+        }
+        return $this->shortMonthName( $num );
+    }
+
+    /*!
+     #16654: returns the long name of the month number $num as it reads on its own (CLDR LLLL), for a calendar
+     heading or a month list, from [LongMonthNamesStandalone]; longMonthName() where the locale has none.
+     longMonthName() is the form used inside a date: Polish "15 października" but "październik" on its own.
+     \sa longMonthName(), shortMonthNameStandalone()
+    */
+    function longMonthNameStandalone( $num )
+    {
+        if ( $num >= 1 and $num <= 12 )
+        {
+            $code = $this->MonthNames[$num];
+            if ( isset( $this->LongMonthNamesStandalone[$code] ) && $this->LongMonthNamesStandalone[$code] !== '' )
+                return $this->LongMonthNamesStandalone[$code];
+        }
+        return $this->longMonthName( $num );
+    }
+
+    /*!
      \static
      \return a list of locale objects which was found in the system.
      \param $asObject If \c true it returns each element as an eZLocale object
@@ -1776,6 +1853,8 @@ class eZLocale
     public $ShortDayNames, $LongDayNames;
     public $MonthNames;
     public $ShortMonthNames, $LongMonthNames;
+    /// #16654: stand-alone month names, empty where the locale has none
+    public $ShortMonthNamesStandalone, $LongMonthNamesStandalone;
     public $WeekDays, $Months;
     public $ShortWeekDayNames, $LongWeekDayNames;
 

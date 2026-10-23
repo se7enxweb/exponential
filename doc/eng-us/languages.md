@@ -386,12 +386,14 @@ Notes on single locales:
   and short day names equal to the long ones.
 - **Fixed by hand** in 6.0.15, the rest of the older file kept: `chi-HK` (its long date printed 月 twice, and it was
   the one file with a byte order mark), `chi-CN` (short Sunday `周日`), `ell-GR` (native name `Ελληνικά` instead of
-  "Greek (Hellenic)"), `ukr-UA` (`Українська` instead of "Ukrainian"). `kat-GE` lost a capital its generator had
-  given it (Georgian has none in running text: `ქართული`).
+  "Greek (Hellenic)"), `ukr-UA` (`Українська` instead of "Ukrainian"; month names in the form used inside a date,
+  `15 жовтня` instead of `15 Жовтень`, with the stand-alone form beside them). `kat-GE` lost a capital its
+  generator had given it (Georgian has none in running text: `ქართული`).
 - **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia), `cro-HR`,
-  `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names), `ukr-UA`
-  has nominative month names in dates ("15 Жовтень" for "15 жовтня"), `chi-CN` and `chi-TW` keep their old date
-  patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
+  `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names),
+  `chi-CN` and `chi-TW` keep their old date patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
+  The short month names of `rus-RU` (`Янв`, `Май`) are neither of CLDR's forms, and `som-SO` names the months in the traditional way (`Bisha Tobnaad`); these files have no stand-alone
+  group for them yet.
 - **Dhivehi** (`div-MV`): ICU 74 has no Dhivehi data. Numbers, the rufiyaa (symbol `Rf`) and date patterns follow
   CLDR `en_MV`; the language name (ދިވެހި, English "Dhivehi", the Maldivian spelling), the currency name and the
   month and day names in Thaana are written by hand and need a native speaker's review. CLDR starts the week on
@@ -650,8 +652,16 @@ groups and keys (`lib/ezlocale/classes/ezlocale.php`, `initCountry()` and `initL
 | `[DateTime]` | `TimeFormat`, `ShortTimeFormat`, `DateFormat`, `ShortDateFormat`, `DateTimeFormat`, `ShortDateTimeFormat` | Formats in PHP `date()` letters behind `%`: `%d`/`%j` day, `%m`/`%n` month, `%Y`/`%y` year, `%H`/`%G` 24-hour, `%h`/`%g` 12-hour, `%i` minutes, `%s` seconds, `%a`/`%A` am/pm; and the locale's names: `%l` long day, `%D` short day, `%F` long month, `%M` short month. Other letters are literal text. |
 | | `MondayFirst` | `yes` when the week starts on Monday, else it starts on Sunday (`eZLocale` knows no Saturday or Friday start). |
 | `[ShortMonthNames]`, `[LongMonthNames]` | `jan` ... `dec` | Month names, in the form used inside a date (genitive in Slavic languages: `января`). |
+| `[ShortMonthNamesStandalone]`, `[LongMonthNamesStandalone]` | `jan` ... `dec` | Optional. Month names as they read on their own, in a calendar heading or a month list (`январь`). `eZLocale::longMonthNameStandalone()`, `shortMonthNameStandalone()` and the template attribute `month_name_standalone_list` read them and fall back, month by month, to the group above. |
 | `[ShortDayNames]`, `[LongDayNames]` | `mon` ... `sun` | Day names. |
 | `[CountryNames]` | `Countries[XX]` | Country names in the language, for the country datatype. Optional. |
+
+CLDR names a month in two forms: the format form (pattern `MMMM`), used inside a date, and the stand-alone form
+(`LLLL`), used where the month stands alone. In English they are the same; in languages that inflect the month
+name they are not (Polish `15 października 2025`, but `październik 2025` above a calendar), and some abbreviations
+differ as well (Austrian German `März` in a date, `Mär` alone). A file then needs the stand-alone groups. Catalan
+puts the preposition into the format form (`d’octubre`, `de març`), so a custom format that prints `%F` alone shows
+it there too; the stand-alone name has no `%` letter, use `month_name_standalone_list` or `longMonthNameStandalone()`.
 
 ### The code
 
@@ -685,6 +695,11 @@ Gregorian calendar and Latin digits, by a generator that takes a list of Exponen
 - a 12-hour clock where CLDR uses one and its marker is `AM`/`am`; where the marker is another word (`ص`,
   `上午`, `a.m.`) the file uses the 24-hour clock, because `eZLocale` only prints `am`/`pm`, and says so in a comment;
 - day and month names in the format context, the first day of the week, and the country names;
+- later, from ICU 78 (CLDR 48), the stand-alone month groups, in every file whose month names are CLDR's format
+  names and where CLDR's stand-alone names differ: Slavic (`pol-PL`, `cze-CZ`, `slk-SK`, `cro-HR`, `rus-RU`,
+  `ukr-UA`, `bel-BY`, `dsb-DE`, `hsb-DE`), Baltic (`lit-LT`), Greek, Finnish, Armenian, Catalan, Asturian, Romansh,
+  Scottish Gaelic, Greenlandic and others (51 files: `grep -l MonthNamesStandalone share/locale/*.ini`). A file
+  whose month names are not CLDR's format names keeps a single form until it is corrected;
 - English names chosen over CLDR's where readers search for another one: `Bengali` (CLDR: Bangla), `Kirundi`
   (Rundi), `Greenlandic` (Kalaallisut), `Simplified Chinese (Singapore)` (to match `chi-CN`), `Western Punjabi
   (Shahmukhi)` and `Dari`;
@@ -718,7 +733,9 @@ days, one-byte separators, the license line and the right-to-left note. For ever
 double-encoded UTF-8; the Latin, Hebrew and Klingon files are checked value by value, and every right-to-left locale
 and every world language added in 6.0.15 must be offered as a content language. `expLocaleTextDirectionTest` covers
 `eZLocale::textDirection()`, `isRightToLeft()`, `textDirectionOf()`, `normalizeTextDirection()` and the template
-attributes. `eZLocaleFormattingTest` checks every file as well.
+attributes. `eZLocaleFormattingTest` checks every file as well. `expLocaleStandaloneMonthNamesTest` checks that
+dates use the format form and `longMonthNameStandalone()` the stand-alone form, the fallback to the format form, and
+that every stand-alone group has twelve names and differs from its format group.
 
 ```bash
 vendor/bin/phpunit tests/tests/lib/ezlocale

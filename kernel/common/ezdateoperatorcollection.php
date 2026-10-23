@@ -72,7 +72,9 @@ class eZDateOperatorCollection
             {
                 $month = array();
                 $month['year'] = $dateInfo['year'];
-                $month['month'] = $locale->longMonthName( $dateInfo['mon'] );
+                // #16654: the month stands on its own here (a heading), not inside a date: the stand-alone name.
+                // With longMonthName() the rus-RU calendar read "октября 2025" instead of "октябрь 2025".
+                $month['month'] = $locale->longMonthNameStandalone( $dateInfo['mon'] );
                 $weekDays = $locale->weekDays();
                 $weekDaysMap = array();
                 $i = 0;
@@ -244,7 +246,7 @@ class eZDateOperatorCollection
                 {
                     $nextTimestamp = mktime( 0, 0, 0, $dateInfo['mon'] + 1, 1, $dateInfo['year'] );
                     $nextInfo = getdate( $nextTimestamp );
-                    $month['next'] = array( 'month' => $locale->longMonthName( $nextInfo['mon'] ),
+                    $month['next'] = array( 'month' => $locale->longMonthNameStandalone( $nextInfo['mon'] ),
                                             'year' => $nextInfo['year'] );
                     $nextLink = $next['link'];
                     $nextLink .= '/(year)/' . $nextInfo['year'];
@@ -254,7 +256,7 @@ class eZDateOperatorCollection
                 else
                     $month['next'] = false;
 
-                $month['current'] = array( 'month' => $locale->longMonthName( $info['mon'] ),
+                $month['current'] = array( 'month' => $locale->longMonthNameStandalone( $info['mon'] ),
                                            'year' => $info['year'] );
                 // The link of the current month is built on the one of the next month, when there is one
                 $currentLink = ( is_array( $next ) && isset( $next['link'] ) ) ? $next['link'] : '';
@@ -271,7 +273,7 @@ class eZDateOperatorCollection
                 {
                     $previousTimestamp = mktime( 0, 0, 0, $dateInfo['mon'] - 1, 1, $dateInfo['year'] );
                     $previousInfo = getdate( $previousTimestamp );
-                    $month['previous'] = array( 'month' => $locale->longMonthName( $previousInfo['mon'] ),
+                    $month['previous'] = array( 'month' => $locale->longMonthNameStandalone( $previousInfo['mon'] ),
                                                 'year' => $previousInfo['year'] );
                     $previousLink = $previous['link'];
                     $previousLink .= '/(year)/' . $previousInfo['year'];
