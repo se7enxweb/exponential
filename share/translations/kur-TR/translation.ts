@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Peyamên herî dawî yên forumê têne barkirin...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Şandiyên dawî yên forûmê nehatin barkirin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10707,6 +10711,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Nehat tomarkirin: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Sepandin li ser</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Tevahiya binedarê</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Binedar, ji bilî şaxên di beşeke din de</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Tenê ev heyber</translation>
     </message>
 </context>
 <context>
@@ -14226,6 +14246,18 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Help center</source>
         <translation>Navenda alîkariyê</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Tiştekî nû tune</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Moda demoyê</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Ev sazkirin demoyeke giştî ye: her kes dikare şîfreya rêveberê wê zanibe, û şîfreyên rêveberan nayên guhertin an ji nû ve danîn. Li vir tiştekî taybet nenivîsin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14940,6 +14972,38 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Rêber, lêgerîn û çawa çewtiyekê ragihînin.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Girêdan</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabloyên daneyan</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Danegehên bi nav: pelên SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Şîfre û miftên amûran, şîfrekirî tên tomarkirin, tenê bi navê xwe tên nîşandan.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Nepenî</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabloyên çînên domdar, qadên wan, têkiliyên wan û embara wan.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Naverok û tabloyên daneyan bi hev re tên hevdemkirin: carekê, li gorî demsaziyê an zindî.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Hevdemkirin</translation>
     </message>
 </context>
 <context>
@@ -19571,6 +19635,22 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Bala xwe bidinê ku veqetandina beşê ya binhêmanan jî dê were guhertin.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Kîjan heyber beşê distînin</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Hêmana hilbijartî û her heybera di bin wê de</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Hêmana hilbijartî û heyberên di bin wê de yên ku beşa wê hene; şaxên di beşeke din de beşa xwe diparêzin</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Tenê hêmana hilbijartî</translation>
     </message>
 </context>
 <context>
@@ -27703,6 +27783,22 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>Find</source>
         <translation>Lêgerîn</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Tabloyeke daneyan a nû bi çîn, şema, rêveberî, polîtîka, fonksiyonên fetch û xala dawiyê ya JSON ya xwe, ji lîsteyeke qadan, çîneke naverokê an çavkaniyeke anînê.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Tabloya modulê</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, li ser danegeha malperê an girêdaneke bi nav</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba û sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -28311,7 +28407,7 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
     </message>
     <message>
         <source>Batch initialisation</source>
-        <translation>Destpêkirina komî</translation>
+        <translation>Destpêkirina bi desteyan</translation>
     </message>
     <message>
         <source>Read what an editor typed, check it, and store it.</source>
@@ -35546,6 +35642,18 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <source>VAT charging rules (%rules)</source>
         <translation>Qaîdeyên girtina BNZ (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Ev qaîdeyên BNZ nayên sepandin.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Tu birêvebirê BNZ nehatiye danîn, ji ber vê yekê ji her berhemê cureyê BNZ yê li ser wê hatî danîn tê sepandin û ev qaîde qet nayên xwendin. Ji bo sepandina wan, di beşa [VATSettings] ya shop.ini de (di settings/override/shop.ini.append.php de) Handler=ezdefault deynin û cureyê BNZ &quot;%dynamic&quot; bidin berheman.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Birêvebirê BNZ &quot;%handler&quot; yê ku di beşa [VATSettings] ya shop.ini de hatiye danîn nayê barkirin, ji ber vê yekê ev qaîde qet nayên xwendin. Navê birêvebir û peldankên ku birêvebirên BNZ tê de tên lêgerîn (RepositoryDirectories û ExtensionDirectories) kontrol bikin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -41086,7 +41194,7 @@ bişopînin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42211,7 +42319,7 @@ bişopînin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -42997,7 +43105,7 @@ Heke hûn dixwazin şîroveyan ji pejirîner re bişînin an rewşê bibînin, U
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45272,7 +45380,7 @@ Heke hûn dixwazin şîroveyan ji pejirîner re bişînin an rewşê bibînin, U
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45789,7 +45897,7 @@ Heke hûn wisa bikin, hemû binhêman jî dê werin rakirin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46038,7 +46146,7 @@ Hûn dikarin hêmanê bi rêya URL ya jêrîn bibînin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -46991,7 +47099,7 @@ menuya li jor têne gihîştin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47309,7 +47417,7 @@ menuya li jor têne gihîştin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47542,7 +47650,7 @@ menuya li jor têne gihîştin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -50660,6 +50768,14 @@ Ji bo bêtir agahiyan li rûpela pêdiviyan binêrin.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Ev şîfre naskirî ye an pir berbelav e, ji ber vê her kes dikare texmîn bike. Yeke din hilbijêrin.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Moda demoyê</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Guherbara jîngehê EXP_DEMO_MODE=1 vê sazkirinê wekî demoyeke giştî nîşan dide: şîfreyeke rêveberê ya naskirî tê qebûlkirin, û şîfreyên rêveberan paşê nayên guhertin an ji nû ve danîn. Moda demoyê qet ji bo malpereke rastîn bikar neynin.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -51540,7 +51656,7 @@ Ji bo vê divê hûn fermanên %chown ên di bin Fermanên shell ên alternatîf
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51579,7 +51695,7 @@ Ji bo vê divê hûn fermanên %chown ên di bin Fermanên shell ên alternatîf
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -52716,7 +52832,7 @@ Ji bo vê divê hûn fermanên %chown ên di bin Fermanên shell ên alternatîf
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52854,7 +52970,7 @@ Ji bo vê divê hûn fermanên %chown ên di bin Fermanên shell ên alternatîf
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53835,7 +53951,7 @@ bişopînin.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Firoşgeh</translation>
+        <translation>Tomarkirin</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -57939,6 +58055,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>eZ Page swap workflow event</source>
         <translation>Bûyera herikîna kar a guhertina cihan a eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Neqilkirin bo tabloyên daneyan</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -60824,7 +60944,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>revoked %date</source>
-        <translation>hate betalkirin: %date</translation>
+        <translation>hate vekişandin: %date</translation>
     </message>
     <message>
         <source>by %name</source>
@@ -60975,7 +61095,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Personal API keys let your own scripts and tools publish and read through the REST interface as you, without your password. Each key has a name, the scopes it may use and an end date, and you can revoke it at any time.</source>
-        <translation>Mifteyên API yên kesane dihêlin ku skrîpt û amûrên we yên taybet bi rêya navrûya REST wekî we biweşînin û bixwînin, bêyî şîfreya we. Her mifte nav, çarçoveyên ku dikare bi kar bîne û dîrokeke dawiyê heye, û hûn dikarin wê her dem betal bikin.</translation>
+        <translation>Mifteyên API yên kesane dihêlin ku skrîpt û amûrên we yên taybet bi rêya navrûya REST wekî we biweşînin û bixwînin, bêyî şîfreya we. Her mifte nav, çarçoveyên ku dikare bi kar bîne û dîrokeke dawiyê heye, û hûn dikarin wê her dem vekişînin.</translation>
     </message>
     <message>
         <source>API keys are switched off on this site: none can be made, and existing keys are not accepted.</source>
@@ -61139,7 +61259,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Give each program its own key, so you can revoke one without stopping the others. Choose only the scopes it needs.</source>
-        <translation>Ji her bernameyê re mifteyeke wê ya taybet bidin, da ku hûn bikarin yekê betal bikin bêyî ku yên din rawestînin. Tenê çarçoveyên ku jê re pêwîst in hilbijêrin.</translation>
+        <translation>Ji her bernameyê re mifteyeke wê ya taybet bidin, da ku hûn bikarin yekê vekişînin bêyî ku yên din rawestînin. Tenê çarçoveyên ku jê re pêwîst in hilbijêrin.</translation>
     </message>
     <message>
         <source>Name</source>
@@ -63472,7 +63592,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Children</source>
-        <translation>Bûyerên jêrîn</translation>
+        <translation>Binhêman</translation>
     </message>
     <message>
         <source>Console</source>
@@ -64775,6 +64895,10 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Rewş nehate nîşandan. Ji bo şopandina karî rûpelê ji nû ve bar bikin.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Heyberên di binedarê de yên ku beşa vê hêmanê hene beşê distînin; şaxên di beşeke din de beşa xwe diparêzin, û heyberên ku hûn nikarin beşê ji wan re veqetînin tên derbaskirin.</translation>
     </message>
 </context>
 <context>
@@ -67291,7 +67415,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Health, activity, security and alerts at a glance.</source>
-        <translation>Tendirustî, çalakî, ewlehî û hişyarî bi nêrînekê.</translation>
+        <translation>Tendirustî, çalakî, ewlehî û alarm bi nêrînekê.</translation>
     </message>
     <message>
         <source>The timeline of events, with filters and search.</source>
@@ -67307,7 +67431,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>The alerts that fired and the rules in use.</source>
-        <translation>Hişyariyên ku derketin û qaîdeyên ku têne bikaranîn.</translation>
+        <translation>Alarmên ku derketin û qaîdeyên ku têne bikaranîn.</translation>
     </message>
     <message>
         <source>The console's filter as CSV or JSON.</source>
@@ -69744,7 +69868,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Password reset, account activation, confirmation of a new e-mail address and security alerts.</source>
-        <translation>Nûkirina şîfreyê, çalakkirina hesabê, piştrastkirina navnîşaneke e-nameyê ya nû û hişyariyên ewlehiyê.</translation>
+        <translation>Nûkirina şîfreyê, çalakkirina hesabê, piştrastkirina navnîşaneke e-nameyê ya nû û alarmên ewlehiyê.</translation>
     </message>
     <message>
         <source>Orders and receipts</source>
@@ -69764,11 +69888,11 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Administration alerts</source>
-        <translation>Hişyariyên rêveberiyê</translation>
+        <translation>Alarmên rêveberiyê</translation>
     </message>
     <message>
         <source>System alerts for the administrators of the site.</source>
-        <translation>Hişyariyên pergalê ji bo rêveberên malperê.</translation>
+        <translation>Alarmên pergalê ji bo rêveberên malperê.</translation>
     </message>
     <message>
         <source>Newsletter statistics</source>
@@ -72369,7 +72493,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
     <message>
         <source>Use &quot;Edit on GitHub&quot; on any page. Changes are accepted under the same license, so they stay free for everyone.</source>
-        <translation>Li ser her rûpelê &quot;Li ser GitHub sererastkirin&quot; bi kar bînin. Guhertin di bin heman lîsansê de têne pejirandin, ji ber vê yekê ew ji bo her kesî azad dimînin.</translation>
+        <translation>Li ser her rûpelê &quot;Li ser GitHub sererastkirin&quot; bi kar bînin. Guhertin di bin heman lîsansê de têne qebûlkirin, ji ber vê yekê ew ji bo her kesî azad dimînin.</translation>
     </message>
     <message>
         <source>Apply filters</source>
@@ -73842,6 +73966,1593 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>More audiences</source>
         <translation>Temaşevanên din</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Hûn nikarin naverokê biafirînin (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Rêbername jixwe tên avakirin.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Rêbernameya %1 tune.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Avakirina rêbernameya alîkariyê %1 ji alîkariya Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Avakirina rêbernameyên alîkariyê ji alîkariya Markdown</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count nepenî bi mifteyeke ji ya heyî cuda hatine şîfrekirin.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done nepenî bi mifteya heyî ji nû ve hatin şîfrekirin, %current berê wisa bûn, %bad nehatin xwendin.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(dema ku nepeniya yekem tê tomarkirin tê çêkirin)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Paşekeftek tenê ya danegehê nikare şîfreya nepeniyan veke</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Nav ji tîpan, reqeman û _ . : - pêk tê (herî zêde 128) û bi env: dest pê nake.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Mifteyeke nû tê çêkirin, her nepenî bi wê ji nû ve tê şîfrekirin, û mifteya kevn wekî pelê .previous tê parastin. Paşê paşekefta pelê mifteya nû çêkin.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Navekî nû, an navê nepeniyeke heyî da ku nirxa wê were guhertin. Nirxa vala: tenê danasîn diguhere.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Dîroka guhertinê</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Çavkanî</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Afirandina tabloyê</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Danasîn</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Ji nû ve şîfrekirina her nepeniyê bi mifteya heyî</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Şîfrekirin</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Nirxê binivîsin.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Nasnameya mifteyê</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Hêj tu nepenî tune.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Tenê amûra %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Şîfre, token û miftên API yên amûran: girêdanên danegehê, çavkaniyên anînê, pêşkêşkarên dûr. Amûrek tenê navê nepeniyekê digire; nirx li vir şîfrekirî tê tomarkirin û êdî qet nayê nîşandan.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Mifteya berê</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rakirin</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Zivirandin</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Zivirandina mifteyê</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Nepenî</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Danîna nepeniyekê</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Tomarkirin</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Danasîna %name hate guhertin; nirxa wê hate parastin.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Mifte</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Mifte nehate zivirandin (mifteyeke ji EXP_SECRET_KEY bi danîna mifteyeke nû wekî EXP_SECRET_KEY û ya kevn wekî EXP_SECRET_KEY_PREVIOUS tê zivirandin).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Mifte ne di danegehê de ye. Bi her paşekeftê re kopiyeke pelê mifteyê (an ya EXP_SECRET_KEY) li cihekî ewle yê cuda biparêzin. Bê wê, nepeniyên danegeheke vegerandî nayên xwendin û divê ji nû ve werin danîn.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Mifte hate zivirandin: %done nepenî ji nû ve hatin şîfrekirin, %bad nehatin xwendin. Niha paşekefta pelê mifteya nû çêkin.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Nepeniya %name hate rakirin.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Nepeniya %name şîfrekirî hate tomarkirin. Nirxa wê êdî nayê nîşandan.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Nepenî nehate tomarkirin: li agahiya mifteyê ya li jor binêrin.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Tabloya exp_secret tune</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Amûr ji tîpên biçûk, reqeman û _ . - pêk tê (herî zêde 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Pêşî &quot;Erê, zivirandina mifteyê&quot; nîşan bikin.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Ji bo rakirina nepeniyê, qutiya li kêleka wê nîşan bikin. Amûreke ku navê wê bikar tîne heta ku ew ji nû ve neyê danîn bi ser nakeve.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Ji bo zivirandina mifteyeke ji jîngehê: mifteya nû wekî EXP_SECRET_KEY û ya kevn wekî EXP_SECRET_KEY_PREVIOUS deynin, paşê li vir her nepeniyê ji nû ve şîfre bikin.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Amûr</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Heta ku ew neyê afirandin, tenê nepeniyên secrets.ini û guherbarên jîngehê (env:NAME) dikarin werin bikaranîn.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nirx</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Kî wê bikar tîne, wek mînak datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Erê, %name rakirin</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Erê, zivirandina mifteyê</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>li vir şîfreya wê nayê vekirin</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>şîfrekirî</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>pelê secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>pelê .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>guherbara jîngehê EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>pelê mifteyê %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count çîn</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count bo naverokê</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown ji %all çînan tên nîşandan.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Navê mêvandarekî an navnîşanek; ji bo SQLite vala.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Nepeniyek ji Sazkirin &gt; Nepenî, an env:VARIABLE ji bo guherbareke jîngehê.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Çalakî</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Hemû (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Berdest</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Vegera lîsteyê</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Koma tîpan</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Çîn</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Çîn, tablo an qad</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Çînên li ser vê girêdanê: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Stûn</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Stûn di danegehê de</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Bi rêya %via di %ms ms de hate girêdan: %version, %tables tablo.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Girêdan</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Girêdan</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Girêdan (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Çîna naverokê</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Heybera naverokê</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Afirandina tabloyan</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabloyên daneyan</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Danegeh</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Danegehên ku tabloyên daneyan û amûrên anîn û derxistinê dikarin ji bilî danegeha vê sazkirinê bikar bînin: pelekî SQLite, an pêşkêşkarekî MySQL, MariaDB, PostgreSQL, Oracle, SQL Server an MongoDB, li vir an dûr. Şîfre navê nepeniyekê ye, qet ne nirxa wê.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Ji aliyê mîhengan an pêvekekê ve di datatable.ini [Connection_%id] de hatiye danasîn: li wir biguherînin. Li vir dikare were ceribandin.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Danasîn</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Cudahî</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Ajokar</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Ji bo porta asayî ya motorê vala bihêlin.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Motor</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Motorên li ser vê pêşkêşkarê</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Pêveka %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Qada armancê</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Fîlter</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Ji bo SQL Server: sqlsrv, dblib an odbc (dema vala be, yê yekem ku ev pêşkêşkar heye).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Ji bo SQLite pel, wek mînak %example (di %dirs de). Ji bo Oracle navê xizmetê.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Taybetmendiyên fonksiyonê: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Nasker</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kernel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Mifte</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Mifte: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Çavkaniya zanînê</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Cihê çêkirinê</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Ji nû ve çêkirina katalogê</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Zêdetir</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Girêdanên bi nav tabloya exp_data_connection, embara nepeniyan jî tabloya exp_secret pêwîst dikin.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Girêdana nû</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Tu çîna domdar li hev nayê.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Tu têkilî nayê zanîn.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Tu rêz tune.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Girêk</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Nayê nîşandan: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Tenê ji bo motoreke ku bi rêya PDO tê gihîştin, dema ku pêşkêşkar, port û danegeh têr nakin. Qet ne şîfre.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Navê çavkaniya daneyan a PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>Ajokarê PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Şîfre</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Şîfre bi xwe</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Şîfre: navê nepeniyekê</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Armanc</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Tenê xwendin: hevdemkirin qet tê de nanivîse</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Têkilî</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rakirin</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Rakirina vê girêdanê</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Pêwîst</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rêz</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>Pelên SQLite dikarin li van cihan bin: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tomarkirin</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Nepenî</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Beş</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Pêşkêşkar</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Pêşkêşkar û danegeh</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Soket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Kesekî bi polîtîkaya datatable/manage dikare wan li vir biafirîne.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Dema tomarkirinê di embara nepeniyan de tomarkirin</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Tomarkirina şîfreyê polîtîkaya secrets/manage pêwîst dike.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tablo</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Ceribandin</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Ceribandina girêdanê</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalog ji arrayên autoload tê çêkirin û heta ku ew biguherin tê parastin.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalog ji nû ve hate çêkirin: %count çîn.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Stûna %column (%type) ne di danasînê de ye.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Girêdan piştî %ms ms bi ser neket: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Girêdan nehate tomarkirin</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Girêdan hate tomarkirin.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Danasîna vê çînê nayê xwendin</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Qada %column (%type) stûneke wê tune.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Qada %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>%count rêzên yekem</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Şîfre di embara nepeniyan de nehate tomarkirin (Sazkirin &gt; Nepenî sedemê dibêje).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabloya %table ne di danegehê de ye.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Tabloya exp_data_connection tune: girêdanek dikare were ceribandin, lê heta ku tablo li ser rûpela Tabloyên daneyan neyê afirandin nayê tomarkirin.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Tabloya exp_data_connection tune: wê li ser rûpela &lt;a href=&quot;%url&quot;&gt;Tabloyên daneyan&lt;/a&gt; biafirînin. Heta wê demê tenê girêdanên ku di datatable.ini de hatine danasîn tên lîstekirin.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Tabloya exp_data_connection tune: pêşî wê li ser rûpela Tabloyên daneyan biafirînin.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Tabloyên tabloyên daneyan hêj nehatine sazkirin</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabloyên çînên domdar ên vê sazkirinê, wekî ku danasînên wan wan şirove dikin, û her yek li ku tê tomarkirin.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Ew bi bişkoka li jêr li ser vê danegehê tên afirandin; tiştekî din naguhere.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Danegeha vê sazkirinê bi xwe, ji site.ini. Li vir dikare were ceribandin.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Ev nepenî nehatiye danîn.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Ji bo rakirina girêdanê &quot;Erê, rakirin&quot; nîşan bikin. Çîn û amûrên ku navê wê bikar tînin heta ku ew ji nû ve neyê çêkirin bi ser nakevin.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Qutiya li jêr nîşan bikin da ku ew şîfrekirî wekî nepeniya ku navê wê li jor e were tomarkirin (dema nav vala be, datatable. û nasker).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Cure</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Tenê ji bo ceribandinê tê bikaranîn û êdî qet nayê nîşandan.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bikarhêner</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Navê ku çîn û amûr pê behsa wê dikin: tîpên biçûk, reqem û _. Paşê nayê guhertin.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Çîn ji ku tên</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Li ku tablo ji danasînê cuda ye</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Erê, rakirin</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>mifteya biyanî ya qadekê</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>bixweber zêde dibe: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>pelê datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() bi ser nakeve</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>heye</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>ji navî hate derxistin</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>mifte</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>tune</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>li vir ne berdest e</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nehatiye danîn</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>tenê xwendin</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>hatiye danîn</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>danegeha malperê</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>pelê site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>panela rêveberiyê</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>danasîn</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nenas</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>li vir nehatiye ceribandin</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>erê</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rêz bi rêya %column (%kind) nîşanî vê hêmanê didin</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rêz ku %field tê de %value e.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rêz.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done ferman</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Hemû %count rêz</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Hemû rêz</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Sepandin</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Guhertina stûn û îndeksên cuda</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Afirandina tabloyê</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Tabloyên çînekê an pêvekekê li ser girêdanekê biafirînin an rojane bikin. Berî &quot;Sepandin&quot; tiştek naxebite; stûn û îndeks tenê dema ku hûn wê nîşan bikin tên rakirin an guhertin.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Qediya</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Rakirina stûn û îndeksên ku di şemayê de tune ne</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Ji danasîna çînekê</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Tu rêzeke tabloyeke daneyan nîşanî vê hêmanê nade.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Ji ber ku li jor nehatiye nîşankirin nehate kirin: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Ne her tişt dikarîbû were kirin</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Li ser girêdanê</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>An ji pelê şemayê yê pêvekekê</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rêzên %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rêzên tabloyên daneyan ku nîşanî vê hêmanê didin</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Şema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Nîşandana tiştên ku dê werin kirin</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Girêdana %id tenê ji bo xwendinê ye.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Di pêveka %name de share/db_schema.dba tune.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>SQL ya sazkirinê ya her motorê</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Girêdana %id tune.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Çîna domdar %class tune.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Nûjenkirina tabloyê</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Tiştên ku dê li ser %connection (%engine) werin kirin</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>afirandin</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>rojane</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>nûjenkirin</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines rêz</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Çîneke naverokê</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Naskerê çîneke naverokê, girêdan:tablo, an tiştê ku çavkanî dixwaze. Ji bo lîsteyekê ne pêwîst e.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Heybereke naverokê (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Girêdanek di koma Tabloyên daneyan a menûya Sazkirinê de, ji bo bikarhênerên bi polîtîkaya read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Lîsteyeke qadan ku li vir tê nivîsandin</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Tabloyeke daneyan a nû bi her tiştê derdora wê: çîna domdar, şema û SQL ya sazkirinê ya her motorê, modulek bi lîste, sererastkirin, rakirin û xaleke dawiyê ya JSON, polîtîkayên wê, rûpelên rêveberiyê û fonksiyonên fetch ên şablonê. Qad ji lîsteyekê, çîneke naverokê, tabloyeke heyî an çavkaniyeke anînê tên. Heta ku hûn nexwazin tiştek nayê nivîsandin, û tablo ji vê rûpelê tê sazkirin.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Navekî nû, an pêvekeke heyî ku tablo lê were zêdekirin.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Girêkek (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Çalakkirina pêvekê</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Lêzêdekirina dîroka afirandinê û guhertinê</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Lêzêdekirin li pêvekê</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Şablonên rêveberiyê</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Tabloyeke heyî (girêdan:tablo)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Nivîskar</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her du</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Rojanekirina tabloyê</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Kopîkirina qadên wê bo lîsteyê</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Daxistin wekî zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Her tablo herwiha id distîne, mifteyeke ku danegeh bixweber zêde dike.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Pêvek</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Qad, her rêzekê yek: nav cure[(dirêjahî)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Wekî xwe hatin hiştin: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lîsans</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Sêrbaza tabloya modulê</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Vekirina modulê</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Çîna PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Parçe, lîsans û nivîskar</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Çîna domdar</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Pêşxistina bilez a sepanan</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Nûkirin: autoload û cache</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Şema û SQL ya sazkirinê</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Têketina menûya Sazkirinê</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Nîşandana pelan</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Fonksiyonên fetch ên şablonê</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Çîna eZPersistentObject ya tabloyê, bi qad, girêdan û têkiliyên wê.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Pêvek û tablo</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Pêvek heye: sêrbaz pelên ku tê de tune ne zêde dike û mîhengên xwe li dawiyê zêde dike; tiştekî li wir nayê ser nivîsandin.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Pêvek çalak e.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Pêvek hate nivîsandin lê ne çalak e.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Qadên %source niha di lîsteyê de ne: li gorî hewcedariyê biguherînin.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Pel (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Nivîsa lîsansê (tenê ji bo pêvekeke nû).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Rûpelên modulê di panela rêveberiyê de (pêkhateyên admin4, bê şêwazên hundirîn).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tablo hêj tune.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tablo heye.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Girêdana her rêzê bi naverokê</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Sernav</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Ji bo sazkirina pêvekê wekî pakêt (tenê ji bo pêvekeke nû).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Cure: %types. object, node û user têkiliyên bi naverokê re ne: dîtina naverokê rêzên ku nîşanî hêmanekê didin nîşan dide.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Yekta</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Guherto</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Tiştê ku rûpela derbarê de nîşan dide (tenê ji bo pêvekeke nû).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Çi hate çêkirin, û çawa were sazkirin û bikaranîn.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Qad ji ku tên</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Kîjan</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Nivîsandina pêvekê</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>heye, wekî xwe hate hiştin</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php û extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>fetch( &lt;module&gt;, list|count|row ) di şablonan de.</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove û xala dawiyê ya REST/JSON json, bi polîtîkayên read û edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba û sql/&lt;engine&gt;/schema.sql ji bo MySQL, PostgreSQL, SQLite, Oracle û SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>hate nivîsandin</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count nakokî</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name xebitî: %rows rêz û %objects heyber hatin nivîsandin, %same neguherîn, %conflicts nakokî, %failed bi ser neketin.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name li paşxanê hate destpêkirin (%engine); dîroka xebitandinan wê nîşan dide.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Tayînkirinek hate pêşniyarkirin: wê kontrol bikin, paşê tomar bikin.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Çavkanî naskerê taybetmendiyeke çîna naverokê ye, an yek ji van e: %list. Tenê taybetmendî di naverokê de tên nivîsandin.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Pirsîn: nakokiyek ku divê were çareserkirin</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Ji xebitandina dawî ya hevdemkirineke dualî ya ku dipirse vir ve hem naverok û hem jî rêz hatine guhertin. Aliyekî hilbijêrin; li ser aliyê din tê nivîsandin.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Dualî</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Nakokî</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Nakokî (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Naverok</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Naverok û tablo</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Naveroka ku bo tabloyeke daneyan tê kopîkirin, tabloyek ku bo naverokê tê kopîkirin, an her du bi hev re tên hevdemkirin: carekê, li gorî demsaziyê, an zindî di her weşandin, livandin û rakirinê de.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Naverok bo tabloyê</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Naverok bi ser dikeve</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Tabloya daneyan (çîna domdar)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Alî</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Çewtî</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Her (çirke)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neket</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Hate dîtin: %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Stûna/stûnên mifteyê</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Xebitandina dawî</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Zindî, û li gorî demsaziyê</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Zindî: her weşandin, livandin û rakirina heyberekê ya çînê di bin girêkê de yekser di tabloyê de tê nivîsandin.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Tayînkirin: ji bo her stûnê rêzek, stûn = çavkanî</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Hevdemkirina nû</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Tu stûneke çînê bi taybetmendiyekê an çavkaniyeke naskirî re li hev nayê: tayînkirinê bi xwe binivîsin.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Tu nakokiya vekirî tune.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Hêj tu hevdemkirin tune.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Li gorî demsaziyê</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Pêşniyarkirina tayînkirinê</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Rakirina rêza heyberekê ku tê rakirin an ji binedarê derdikeve</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Rakirina vê hevdemkirinê</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Niha xebitandin</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Xebitandin</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Tomarkirin û niha xebitandin</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dest pê kir</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Neçalak (bê xebitandinên demsazkirî an zindî)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Hevdemkirin</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Naverokê girtin</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Tabloyê girtin</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Nakokî nehate çareserkirin; vekirî dimîne.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Nirxên naverokê di tabloyê de hatin nivîsandin.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Xebitandinên dawî</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Stûna/stûnên tayînkirî ku rêzek bi wan tê dîtin, wek mînak contentobject_id an remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Guhertina nûtir bi ser dikeve</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Rêz û naverok dimînin; tenê cotkirin û nakokiyên vekirî tên rakirin.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Binedara ku ji bo tabloyê tê xwendin, û hêmana jorîn a heyberên ku ji rêzan tên çêkirin.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Hevdemkirin nehate tomarkirin</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Hevdemkirin hate tomarkirin.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Hevdemkirinên çîna heybera weşandî</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tablo bo naverokê</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tablo bi ser dikeve</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Nirxên tabloyê di naverokê de hatin weşandin.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Tabloyên hevdemkirinê hêj nehatine sazkirin</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Hêj tu hevdemkirina tabloya daneyan tune (Sazkirin &gt; Tabloyên daneyan &gt; Hevdemkirin).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Dema ku her du alî guherîn</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Dema destpêkirinê</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Dema ku tu yek nehatibe nîşankirin, heyber di her hevdemkirina çîna xwe de tê nivîsandin ku binedara wê heyberê dihewîne.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>dualî</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>naverok bo tabloyê</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>her %minutes deqîqe</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link û exp_data_sync_conflict bi bişkokê li ser vê danegehê tên afirandin; tiştekî din naguhere.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>zindî</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>heybera %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>neçalak</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tablo bo naverokê</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>dema destpêkirinê</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Ev sazkirin demoyeke giştî ye: şîfreyên rêveberan nayên guhertin an ji nû ve danîn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Li anîn an derxistineke din digerin?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Anîn</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Derxistin</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Anîn û derxistin</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Bi vê amûrê re dixebite</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Kîjan amûra anînê an derxistinê ji min re pêwîst e?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Kîjan amûr ji min re pêwîst e?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Amûrên anîn û derxistinê ji bo vî karî</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pakêt</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Naverokê bi çînên wê re, an çîn, pêvek û sêwiranan, wekî pelekî pakêtê bigihînin sazkirineke din.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Derxistina çînan wekî pakêt…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Barkirin û sazkirina pakêtekê…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>Anîna RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Ji feedeke RSS an Atom a malpereke din naverokê biafirînin, car bi car bi karê demsazkirî rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>Derxistina RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Hêmanên herî nû yên peldankekê wekî feedeke RSS an Atom, an lîsteyeke feedan wekî OPML biweşînin.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Agahiyên berhevkirî</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Tiştê ku formekê berhev kiriye, ji lîsteya agahiyên berhevkirî, wekî pelekî CSV daxînin.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Derxistina şopa kontrolê</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Tomarên şopa kontrolê, wekî di konsolê de fîlterkirî, wekî CSV, rêzên JSON an JSON daxînin.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Derxistina PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Ji peldankekê û hêmanên wê belgeyeke PDF çêkin, ji bo çapkirin an şandinê.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabloyên daneyan</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabloyên çînên domdar û girêdanên danegehê yên bi nav: li ser her girêdanê tabloyan şirove bikin, biafirînin û nûjen bikin, rêzên wan bigerin û bibînin ka çi nîşanî naverokê dide.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Afirandin an nûjenkirina tabloyekê li ser girêdaneke danegehê…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Gerîna tabloyên çînên domdar…</translation>
     </message>
 </context>
 </TS>

@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>در حال بارگیری تازه‌ترین نوشته‌های انجمن...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>آخرین نوشته‌های انجمن بارگیری نشد.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10707,6 +10711,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>ذخیره نشد: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>اعمال بر</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>کل زیردرخت</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>زیردرخت، به‌جز شاخه‌هایی که در بخش دیگری هستند</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>فقط این شیء</translation>
     </message>
 </context>
 <context>
@@ -14226,6 +14246,18 @@ Note: The packages will not be uninstalled.</source>
         <source>Help center</source>
         <translation>مرکز راهنما</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>مورد تازه‌ای نیست</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>حالت نمایشی</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>این نصب یک نسخهٔ نمایشی عمومی است: هر کسی ممکن است گذرواژهٔ مدیر آن را بداند، و گذرواژه‌های مدیران قابل تغییر یا بازنشانی نیستند. هیچ اطلاعات خصوصی‌ای در اینجا وارد نکنید.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14940,6 +14972,38 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>راهنماها، جستجو و چگونگی گزارش یک خطا.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>اتصال‌ها</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جدول‌های داده</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>پایگاه‌های دادهٔ نام‌دار: فایل‌های SQLite، MySQL، PostgreSQL، Oracle، SQL Server، MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>گذرواژه‌ها و کلیدهای ابزارها، به‌صورت رمزنگاری‌شده ذخیره می‌شوند و فقط با نامشان نمایش داده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>جدول‌های کلاس‌های ماندگار، فیلدها، ارتباط‌ها و محل ذخیره‌سازی آن‌ها.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>محتوا و جدول‌های داده همگام نگه داشته می‌شوند: یک بار، طبق زمان‌بندی یا به‌صورت آنی.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>همگام‌سازی‌ها</translation>
     </message>
 </context>
 <context>
@@ -19571,6 +19635,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>توجه داشته باشید که تخصیص بخش زیرموردها نیز تغییر خواهد کرد.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>کدام اشیا این بخش را می‌گیرند</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>مورد انتخاب‌شده و همهٔ اشیای زیر آن</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>مورد انتخاب‌شده و اشیای زیر آن که بخش آن را دارند؛ شاخه‌هایی که در بخش دیگری هستند بخش خود را نگه می‌دارند</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>فقط مورد انتخاب‌شده</translation>
     </message>
 </context>
 <context>
@@ -27703,6 +27783,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Find</source>
         <translation>یافتن</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>یک جدول دادهٔ جدید با کلاس، طرح‌واره، صفحه‌های مدیریت، خط‌مشی‌ها، توابع fetch و نقطهٔ پایانی JSON آن، از روی فهرستی از فیلدها، یک کلاس محتوا یا یک منبع درون‌ریزی.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>جدول ماژول</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject، روی پایگاه دادهٔ سایت یا یک اتصال نام‌دار</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/، modules/&lt;module&gt;/، share/db_schema.dba و sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -35546,6 +35642,18 @@ Note: The packages will not be uninstalled.</source>
         <source>VAT charging rules (%rules)</source>
         <translation>قواعد محاسبهٔ مالیات بر ارزش افزوده (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>این قاعده‌های مالیات بر ارزش افزوده اعمال نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>هیچ گردانندهٔ مالیات بر ارزش افزوده‌ای تنظیم نشده است، بنابراین برای هر محصول همان نوع مالیات بر ارزش افزوده‌ای که روی آن تنظیم شده محاسبه می‌شود و این قاعده‌ها هرگز خوانده نمی‌شوند. برای اعمال آن‌ها، Handler=ezdefault را در بخش [VATSettings] فایل shop.ini (در settings/override/shop.ini.append.php) تنظیم کنید و نوع مالیات بر ارزش افزودهٔ «%dynamic» را به محصولات بدهید.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>گردانندهٔ مالیات بر ارزش افزودهٔ «%handler» که در بخش [VATSettings] فایل shop.ini تنظیم شده است بارگیری نمی‌شود، بنابراین این قاعده‌ها هرگز خوانده نمی‌شوند. نام گرداننده و پوشه‌هایی را که گرداننده‌های مالیات بر ارزش افزوده در آن‌ها جستجو می‌شوند (RepositoryDirectories و ExtensionDirectories) بررسی کنید.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -41086,7 +41194,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42211,7 +42319,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -42997,7 +43105,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45272,7 +45380,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45789,7 +45897,7 @@ If you do all the children will be removed as well.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46038,7 +46146,7 @@ The item can viewed by using the URL below.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -46991,7 +47099,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47309,7 +47417,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47542,7 +47650,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -50660,6 +50768,14 @@ See the requirements page for more information.</source>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>این گذرواژه شناخته‌شده یا بسیار رایج است و هر کسی می‌تواند آن را حدس بزند. گذرواژهٔ دیگری انتخاب کنید.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>حالت نمایشی</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>متغیر محیطی EXP_DEMO_MODE=1 این نصب را به‌عنوان نسخهٔ نمایشی عمومی علامت‌گذاری می‌کند: یک گذرواژهٔ شناخته‌شدهٔ مدیر پذیرفته می‌شود، و گذرواژه‌های مدیران بعداً قابل تغییر یا بازنشانی نیستند. هرگز از حالت نمایشی برای سایت تولید استفاده نکنید.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -51540,7 +51656,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51579,7 +51695,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -51663,7 +51779,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>سفارش</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52270,7 +52386,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>سفارش</translation>
     </message>
     <message>
         <source>Date</source>
@@ -52716,7 +52832,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52854,7 +52970,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53835,7 +53951,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>فروشگاه</translation>
+        <translation>ذخیره</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -57939,6 +58055,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>رویداد گردش کار جابه‌جایی صفحهٔ eZ</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>بازتاب در جدول‌های داده</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59283,7 +59403,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>سفارش</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -64775,6 +64895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>وضعیت نمایش داده نشد. برای دنبال کردن کار، صفحه را دوباره بارگیری کنید.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>اشیای زیردرخت که بخش این مورد را دارند، این بخش را می‌گیرند؛ شاخه‌هایی که در بخش دیگری هستند بخش خود را نگه می‌دارند، و اشیایی که شما اجازهٔ تخصیص بخش به آن‌ها را ندارید نادیده گرفته می‌شوند.</translation>
     </message>
 </context>
 <context>
@@ -72305,11 +72429,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Read the license</source>
-        <translation>خواندن مجوز</translation>
+        <translation>خواندن مجوز نشر</translation>
     </message>
     <message>
         <source>The license on the web</source>
-        <translation>مجوز در وب</translation>
+        <translation>مجوز نشر در وب</translation>
     </message>
     <message>
         <source>What you can do with free documentation</source>
@@ -72317,7 +72441,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Copyright and license notice</source>
-        <translation>اطلاعیهٔ حق نشر و مجوز</translation>
+        <translation>اطلاعیهٔ حق نشر و مجوز نشر</translation>
     </message>
     <message>
         <source>Free documentation: use it to help yourself and others</source>
@@ -73842,6 +73966,1593 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>More audiences</source>
         <translation>مخاطبان بیشتر</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>شما اجازهٔ ایجاد محتوا (content/create) را ندارید.</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>راهنماها هم‌اکنون در حال ساخته شدن هستند.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>راهنمایی با نام %1 وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>ساخت راهنمای %1 از راهنمای Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>ساخت راهنماها از راهنمای Markdown</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count مقدار محرمانه با کلیدی غیر از کلید فعلی رمزنگاری شده‌اند.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done مقدار محرمانه دوباره با کلید فعلی رمزنگاری شد، %current مورد از قبل چنین بودند، %bad مورد خوانده نشد.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(هنگام ذخیرهٔ نخستین مقدار محرمانه ساخته می‌شود)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>پشتیبانِ تنها پایگاه داده نمی‌تواند مقادیر محرمانه را رمزگشایی کند</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>نام از حروف، ارقام و _ . : - تشکیل می‌شود (حداکثر 128) و با env: آغاز نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>یک کلید جدید ساخته می‌شود، همهٔ مقادیر محرمانه دوباره با آن رمزنگاری می‌شوند و کلید قدیمی به‌صورت فایل .previous نگه داشته می‌شود. پس از آن از فایل کلید جدید نسخهٔ پشتیبان تهیه کنید.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>یک نام جدید، یا نام یک مقدار محرمانهٔ موجود برای جایگزینی مقدار آن. مقدار خالی: فقط توضیحات تغییر می‌کند.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>تغییر کرده</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>منشأ</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>ایجاد جدول</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>توضیحات</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>رمزنگاری دوبارهٔ همهٔ مقادیر محرمانه با کلید فعلی</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>رمزنگاری</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>مقدار را وارد کنید.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>شناسهٔ کلید</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>نام‌ها</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>هنوز هیچ مقدار محرمانه‌ای وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>فقط ابزار %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>گذرواژه‌ها، توکن‌ها و کلیدهای API ابزارها: اتصال‌های پایگاه داده، منابع درون‌ریزی، سرورهای راه دور. ابزار فقط نام مقدار محرمانه را نگه می‌دارد؛ خود مقدار در اینجا به‌صورت رمزنگاری‌شده ذخیره می‌شود و دیگر هرگز نمایش داده نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>کلید قبلی</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>برداشتن</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>تعویض</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>تعویض کلید</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>تنظیم مقدار محرمانه</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>توضیحات %name تغییر کرد؛ مقدار آن حفظ شد.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>کلید تعویض نشد (کلیدی که از EXP_SECRET_KEY می‌آید با تنظیم یک کلید جدید و قرار دادن کلید قدیمی در EXP_SECRET_KEY_PREVIOUS تعویض می‌شود).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>کلید در پایگاه داده نیست. همراه هر نسخهٔ پشتیبان، یک نسخه از فایل کلید (یا از EXP_SECRET_KEY) را در جای امن جداگانه‌ای نگه دارید. بدون آن، مقادیر محرمانهٔ پایگاه دادهٔ بازیابی‌شده خوانده نمی‌شوند و باید دوباره تنظیم شوند.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>کلید تعویض شد: %done مقدار محرمانه دوباره رمزنگاری شد، %bad مورد خوانده نشد. اکنون از فایل کلید جدید نسخهٔ پشتیبان تهیه کنید.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>مقدار محرمانهٔ %name برداشته شد.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>مقدار محرمانهٔ %name به‌صورت رمزنگاری‌شده ذخیره شد. مقدار آن دیگر نمایش داده نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>مقدار محرمانه ذخیره نشد: کلید بالا را ببینید.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>جدول exp_secret وجود ندارد</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>نام ابزار از حروف کوچک، ارقام و _ . - تشکیل می‌شود (حداکثر 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>ابتدا «بله، کلید تعویض شود» را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>برای برداشتن مقدار محرمانه، کادر کنار آن را علامت بزنید. ابزاری که به آن ارجاع می‌دهد تا تنظیم دوبارهٔ آن با خطا روبه‌رو می‌شود.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>برای تعویض کلیدی که از محیط می‌آید: کلید جدید را در EXP_SECRET_KEY و کلید قدیمی را در EXP_SECRET_KEY_PREVIOUS تنظیم کنید، سپس همهٔ مقادیر محرمانه را در اینجا دوباره رمزنگاری کنید.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>ابزار</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>تا زمانی که ایجاد نشده است، فقط مقادیر محرمانهٔ secrets.ini و متغیرهای محیطی (env:NAME) قابل استفاده‌اند.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>مقدار</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>چه کسی از آن استفاده می‌کند، مثلاً datatable، sqliimport، ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>بله، %name برداشته شود</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>بله، کلید تعویض شود</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>در اینجا قابل رمزگشایی نیست</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>رمزنگاری‌شده</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>فایل secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>فایل .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>متغیر محیطی EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>فایل کلید %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count کلاس</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count به محتوا</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown از %all کلاس نمایش داده شده است.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>نام میزبان یا نشانی؛ برای SQLite خالی.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>یک مقدار محرمانه از راه‌اندازی &gt; مقادیر محرمانه، یا env:VARIABLE برای یک متغیر محیطی.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>عملیات</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>همه (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>در دسترس</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>بازگشت به فهرست</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>مجموعهٔ نویسه</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>کلاس، جدول یا فیلد</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>کلاس‌های روی این اتصال: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ستون</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>ستون در پایگاه داده</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>از طریق %via در %ms میلی‌ثانیه متصل شد: %version، %tables جدول.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>اتصال</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>اتصال‌ها</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>اتصال‌ها (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>کلاس محتوا</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>شیء محتوا</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>ایجاد جدول‌ها</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جدول‌های داده</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>پایگاه داده</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>پایگاه‌های داده‌ای که جدول‌های داده و ابزارهای درون‌ریزی و برون‌بری علاوه بر پایگاه دادهٔ خود این نصب می‌توانند از آن‌ها استفاده کنند: یک فایل SQLite، یا یک سرور MySQL، MariaDB، PostgreSQL، Oracle، SQL Server یا MongoDB، محلی یا راه دور. گذرواژه نام یک مقدار محرمانه است، هرگز خود مقدار آن.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>در datatable.ini [Connection_%id] توسط تنظیمات یا یک افزونه تعریف شده است: آن را همان‌جا تغییر دهید. در اینجا می‌توان آن را آزمود.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>پیش‌فرض</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>توضیحات</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>تفاوت‌ها</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>درایور</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>برای درگاه معمول موتور خالی بگذارید.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>موتور</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>موتورهای روی این سرور</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>افزونهٔ %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>فیلد</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>فیلد مقصد</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>فیلدها</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>پالایش</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>برای SQL Server: sqlsrv، dblib یا odbc (اگر خالی باشد، نخستین موردی که این سرور دارد).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>برای SQLite فایل، مثلاً %example (در %dirs). برای Oracle نام سرویس.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>ویژگی‌های تابع: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>شناسه</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>هسته</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>کلید: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>شناخته‌شده از</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>ساخته‌شده در</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>ساخت دوبارهٔ کاتالوگ</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>بیشتر</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>اتصال‌های نام‌دار به جدول exp_data_connection نیاز دارند و انبارهٔ مقادیر محرمانه به جدول exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>اتصال جدید</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>هیچ کلاس ماندگاری منطبق نیست.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>هیچ ارتباطی شناخته نشده است.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>هیچ ردیفی وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>گره</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>نمایش داده نشده: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>فقط برای موتوری که از طریق PDO به آن دسترسی پیدا می‌شود، وقتی سرور، درگاه و پایگاه داده کافی نیستند. هرگز گذرواژه نیست.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>نام منبع دادهٔ PDO (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>درایور PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>گذرواژه</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>خود گذرواژه</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>گذرواژه: نام یک مقدار محرمانه</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>اشاره به</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>درگاه (port)</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>فقط خواندنی: همگام‌سازی هرگز در آن نمی‌نویسد</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>ارتباط‌ها</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>برداشتن</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>برداشتن این اتصال</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>الزامی</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>ردیف‌ها</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>فایل‌های SQLite می‌توانند در این مسیرها باشند: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>مقادیر محرمانه</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بخش</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>سرور</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>سرور و پایگاه داده</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>سوکت</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>کسی که خط‌مشی datatable/manage را دارد می‌تواند آن‌ها را در اینجا ایجاد کند.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>هنگام ذخیره، در انبارهٔ مقادیر محرمانه نگه داشته شود</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>ذخیرهٔ گذرواژه به خط‌مشی secrets/manage نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>جدول</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>آزمایش</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>آزمایش اتصال</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>کاتالوگ از آرایه‌های autoload ساخته می‌شود و تا زمانی که آن‌ها تغییر نکنند نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>کاتالوگ دوباره ساخته شد: %count کلاس.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>ستون %column (%type) در تعریف نیست.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>اتصال پس از %ms میلی‌ثانیه ناموفق بود: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>اتصال ذخیره نشد</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>اتصال ذخیره شد.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>تعریف این کلاس خوانده نمی‌شود</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>فیلد %column (%type) ستونی ندارد.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>فیلد %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>نخستین %count ردیف</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>گذرواژه در انبارهٔ مقادیر محرمانه ذخیره نشد (علت را در راه‌اندازی &gt; مقادیر محرمانه ببینید).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>جدول %table در پایگاه داده نیست.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>جدول exp_data_connection وجود ندارد: اتصال را می‌توان آزمود، اما تا زمانی که این جدول در صفحهٔ جدول‌های داده ایجاد نشود نمی‌توان آن را ذخیره کرد.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>جدول exp_data_connection وجود ندارد: آن را در صفحهٔ &lt;a href=&quot;%url&quot;&gt;جدول‌های داده&lt;/a&gt; ایجاد کنید. تا آن زمان فقط اتصال‌هایی که در datatable.ini تعریف شده‌اند فهرست می‌شوند.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>جدول exp_data_connection وجود ندارد: ابتدا آن را در صفحهٔ جدول‌های داده ایجاد کنید.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>جدول‌های مربوط به جدول‌های داده هنوز نصب نشده‌اند</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>جدول‌های کلاس‌های ماندگار این نصب، آن‌گونه که تعریف‌هایشان توصیف می‌کنند، و محل ذخیرهٔ هر کدام.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>آن‌ها با دکمهٔ زیر روی این پایگاه داده ایجاد می‌شوند؛ چیز دیگری تغییر نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>پایگاه دادهٔ خود این نصب، از site.ini. در اینجا می‌توان آن را آزمود.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>این مقدار محرمانه تنظیم نشده است.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>برای برداشتن اتصال، «بله، برداشته شود» را علامت بزنید. کلاس‌ها و ابزارهایی که به آن ارجاع می‌دهند تا ساخت دوبارهٔ آن با خطا روبه‌رو می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>کادر زیر را علامت بزنید تا آن به‌صورت رمزنگاری‌شده با نام مقدار محرمانه‌ای که در بالا آمده ذخیره شود (اگر نام خالی باشد، datatable. و شناسه).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>فقط برای یک آزمایش به کار می‌رود و دیگر هرگز نمایش داده نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کاربر</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>نامی که کلاس‌ها و ابزارها با آن به این اتصال ارجاع می‌دهند: حروف کوچک، ارقام و _. بعداً قابل تغییر نیست.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>منشأ کلاس‌ها</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>جاهایی که جدول با تعریف تفاوت دارد</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>بله، برداشته شود</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>کلید خارجی یک فیلد</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>افزایشی: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>فایل datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() با خطا روبه‌رو می‌شود</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>موجود</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>برگرفته از نام</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>موجود نیست</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>در اینجا در دسترس نیست</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>تنظیم نشده</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>فقط خواندنی</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>تنظیم‌شده</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>سایت</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>فایل site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>پنل مدیریت</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>تعریف</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامشخص</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>در اینجا آزموده نشده</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count ردیف از طریق %column (%kind) به این مورد اشاره می‌کنند</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count ردیف که در آن‌ها %field برابر %value است.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count ردیف.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done دستور</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>همهٔ %count ردیف</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>همهٔ ردیف‌ها</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>اعمال</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>تغییر ستون‌ها و شاخص‌هایی که تفاوت دارند</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>ایجاد جدول</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>جدول‌های یک کلاس یا یک افزونه را روی یک اتصال ایجاد یا به‌روزرسانی کنید. پیش از «اعمال» هیچ چیزی اجرا نمی‌شود؛ ستون‌ها و شاخص‌ها فقط زمانی حذف یا تغییر داده می‌شوند که آن را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>انجام شد</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>حذف ستون‌ها و شاخص‌هایی که در طرح‌واره نیستند</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>از تعریف یک کلاس</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>هیچ ردیفی از جدول‌های داده به این مورد اشاره نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>انجام نمی‌شود، مگر اینکه در بالا علامت زده شده باشد: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>همه‌چیز انجام نشد</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>روی اتصال</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>یا از فایل طرح‌وارهٔ یک افزونه</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>ردیف‌های %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>ردیف‌هایی از جدول‌های داده که به این مورد اشاره می‌کنند</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>طرح‌واره</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>نمایش آنچه انجام می‌شود</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>اتصال %id فقط خواندنی است.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>افزونهٔ %name فایل share/db_schema.dba ندارد.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>SQL نصب برای هر موتور</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>اتصالی با شناسهٔ %id وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>کلاس ماندگاری با نام %class وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>به‌روزرسانی جدول</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>آنچه روی %connection (%engine) انجام می‌شود</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>ایجاد</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>به‌روز</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>به‌روزرسانی</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines سطر</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>یک کلاس محتوا</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>شناسهٔ یک کلاس محتوا، connection:table، یا آنچه منبع می‌خواهد. برای فهرست لازم نیست.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>یک شیء محتوا (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>پیوندی در گروه جدول‌های داده در منوی راه‌اندازی، برای کاربرانی که خط‌مشی read را دارند.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>فهرستی از فیلدها که در اینجا وارد می‌شود</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>یک جدول دادهٔ جدید با همهٔ آنچه به آن مربوط است: کلاس ماندگار، طرح‌واره و SQL نصب برای هر موتور، یک ماژول با list، edit، remove و یک نقطهٔ پایانی JSON، خط‌مشی‌های آن، صفحه‌های پنل مدیریت و توابع fetch قالب. فیلدها از یک فهرست، یک کلاس محتوا، یک جدول موجود یا یک منبع درون‌ریزی می‌آیند. تا زمانی که شما نخواهید چیزی نوشته نمی‌شود، و جدول از همین صفحه نصب می‌شود.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>یک نام جدید، یا یک افزونهٔ موجود که جدول به آن افزوده شود.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>یک گره (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>فعال کردن افزونه</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>افزودن created و modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>افزودن به افزونه</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>قالب‌های پنل مدیریت</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>یک جدول موجود (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>نویسنده</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>هر دو</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>به‌روزرسانی جدول</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>رونوشت فیلدهای آن در فهرست</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>دانلود به‌صورت zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>هر جدول همچنین id را می‌گیرد، کلیدی که پایگاه داده آن را افزایش می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>افزونه</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>فیلدها، هر کدام در یک سطر: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>نام نمایشی</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>بدون تغییر باقی ماند: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>مجوز نشر</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>ماژول</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>ویزارد جدول ماژول</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>باز کردن ماژول</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>کلاس PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>اجزا، مجوز نشر و نویسنده</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>کلاس ماندگار</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>توسعهٔ سریع برنامه</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>تازه‌سازی: autoload‌ها و حافظه‌های پنهان</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>طرح‌واره و SQL نصب</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>مدخل منوی راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>نمایش فایل‌ها</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>توابع fetch قالب</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>کلاس eZPersistentObject جدول، با فیلدها، اتصال و ارتباط‌های آن.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>افزونه و جدول</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>افزونه وجود دارد: ویزارد فایل‌هایی را که ندارد اضافه می‌کند و تنظیمات خود را به انتها می‌افزاید؛ هیچ چیزی در آن بازنویسی نمی‌شود.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>افزونه فعال است.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>افزونه نوشته شده است اما فعال نیست.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>فیلدها</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>فیلدهای %source اکنون در فهرست هستند: آن‌ها را به دلخواه تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>فایل‌ها (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>متن مجوز نشر (فقط برای افزونهٔ جدید).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>صفحه‌های ماژول در پنل مدیریت (اجزای admin4، بدون سبک درون‌خطی).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>جدول هنوز وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>جدول وجود دارد.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>پیوند دادن هر ردیف به محتوا</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>عنوان</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>برای نصب افزونه به‌صورت بسته (فقط برای افزونهٔ جدید).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>نوع‌ها: %types. object، node و user ارتباط با محتوا هستند: نمای محتوا ردیف‌هایی را که به یک مورد اشاره می‌کنند نشان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>یکتا</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>نسخه</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>آنچه صفحهٔ «درباره» نشان می‌دهد (فقط برای افزونهٔ جدید).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>آنچه ساخته شد، و چگونگی نصب و استفاده از آن.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>منشأ فیلدها</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>کدام</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>نوشتن افزونه</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>وجود دارد، بدون تغییر ماند</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php و extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>توابع fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list، edit، remove و نقطهٔ پایانی REST/JSON به نام json، با خط‌مشی‌های read و edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba و sql/&lt;engine&gt;/schema.sql برای MySQL، PostgreSQL، SQLite، Oracle و SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>نوشته شد</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count تعارض</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name اجرا شد: %rows ردیف و %objects شیء نوشته شد، %same بدون تغییر، %conflicts تعارض، %failed ناموفق.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name در پس‌زمینه آغاز شد (%engine)؛ تاریخچهٔ اجراها آن را نشان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>یک نگاشت پیشنهاد شد: آن را بررسی و سپس ذخیره کنید.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>منبع، شناسهٔ یک ویژگی از کلاس محتوا است، یا یکی از این موارد: %list. فقط ویژگی‌ها در محتوا نوشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>پرسیدن: تعارضی برای حل کردن</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>از آخرین اجرای یک همگام‌سازی دوطرفه که پرسش می‌کند، هم محتوا و هم ردیف تغییر کرده‌اند. یک طرف را برگزینید؛ طرف دیگر بازنویسی می‌شود.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>دوطرفه</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>تعارض‌ها</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>تعارض‌ها (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>محتوا</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>محتوا و جدول</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>محتوا در یک جدول داده رونوشت می‌شود، یک جدول در محتوا رونوشت می‌شود، یا هر دو همگام نگه داشته می‌شوند: یک بار، طبق زمان‌بندی، یا به‌صورت آنی در هر انتشار، انتقال و برداشتن.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>محتوا به جدول</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>محتوا اولویت دارد</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>جدول داده (کلاس ماندگار)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>جهت</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>خطا</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>هر (ثانیه)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>یافته‌شده %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>ستون(های) کلید</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>آخرین اجرا</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>آنی و طبق زمان‌بندی</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>آنی: هر انتشار، انتقال و برداشتنِ یک شیء از این کلاس در زیر گره، بی‌درنگ در جدول نوشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>نگاشت: هر ستون در یک سطر، ستون = منبع</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>همگام‌سازی جدید</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>هیچ ستونی از کلاس با یک ویژگی یا منبع شناخته‌شده منطبق نیست: نگاشت را خودتان بنویسید.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>هیچ تعارض بازی وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>هنوز هیچ همگام‌سازی‌ای وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>طبق زمان‌بندی</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>پیشنهاد نگاشت</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>برداشتن ردیف شیئی که برداشته می‌شود یا از زیردرخت خارج می‌شود</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>برداشتن این همگام‌سازی</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>اجرای فوری</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>اجراها</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>ذخیره و اجرای فوری</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>آغازشده</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>خاموش (بدون اجرای زمان‌بندی‌شده یا آنی)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>همگام‌سازی‌ها</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>برگزیدن محتوا</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>برگزیدن جدول</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>تعارض حل نشد؛ باز می‌ماند.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>مقادیر محتوا در جدول نوشته شد.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>آخرین اجراها</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>ستون(های) نگاشت‌شده‌ای که ردیف با آن‌ها تطبیق داده می‌شود، مثلاً contentobject_id یا remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>تغییر جدیدتر اولویت دارد</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>ردیف‌ها و محتوا باقی می‌مانند؛ فقط جفت‌سازی و تعارض‌های باز حذف می‌شوند.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>زیردرختی که برای جدول خوانده می‌شود، و والد اشیایی که از ردیف‌ها ساخته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>همگام‌سازی ذخیره نشد</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>همگام‌سازی ذخیره شد.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>همگام‌سازی‌های کلاس شیء منتشرشده</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>جدول به محتوا</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>جدول اولویت دارد</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>مقادیر جدول در محتوا منتشر شد.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>جدول‌های همگام‌سازی هنوز نصب نشده‌اند</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>هنوز هیچ همگام‌سازی جدول داده‌ای وجود ندارد (راه‌اندازی &gt; جدول‌های داده &gt; همگام‌سازی‌ها).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>وقتی هر دو طرف تغییر کرده‌اند</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>هنگام آغاز</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>اگر هیچ‌کدام علامت زده نشود، شیء در هر همگام‌سازی کلاس خود که زیردرختش آن را در بر دارد نوشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>دوطرفه</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>محتوا به جدول</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>هر %minutes دقیقه</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync، exp_data_sync_link و exp_data_sync_conflict با این دکمه روی این پایگاه داده ایجاد می‌شوند؛ چیز دیگری تغییر نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>آنی</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>شیء %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>خاموش</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>جدول به محتوا</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>هنگام آغاز</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>این نصب یک نسخهٔ نمایشی عمومی است: گذرواژه‌های مدیران قابل تغییر یا بازنشانی نیستند.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>به دنبال درون‌ریزی یا برون‌بری دیگری هستید؟</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>درون‌ریزی</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>برون‌بری</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>درون‌ریزی و برون‌بری</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>با این ابزار کار می‌کند</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>به کدام ابزار درون‌ریزی یا برون‌بری نیاز دارم؟</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>به کدام ابزار نیاز دارم؟</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>ابزارهای درون‌ریزی و برون‌بری برای این کار</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>بسته‌ها</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>انتقال محتوا همراه با کلاس‌هایش، یا کلاس‌ها، افزونه‌ها و طراحی‌ها، به نصب دیگری به‌صورت فایل بسته.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>برون‌بری کلاس‌ها به‌صورت بسته…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>بارگذاری و نصب یک بسته…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>درون‌ریزی RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>ایجاد محتوا از خوراک RSS یا Atom یک وب‌سایت دیگر، بارها و بارها توسط کار زمان‌بندی‌شدهٔ rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>برون‌بری RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>انتشار جدیدترین موردهای یک پوشه به‌صورت خوراک RSS یا Atom، یا فهرستی از خوراک‌ها به‌صورت OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>اطلاعات گردآوری‌شده</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>دانلود آنچه یک فرم گردآوری کرده است به‌صورت فایل CSV، از فهرست اطلاعات گردآوری‌شده.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>برون‌بری ممیزی</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>دانلود رکوردهای ردگیری ممیزی، پالایش‌شده مانند کنسول، به‌صورت CSV، JSON lines یا JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>برون‌بری PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>ساخت یک سند PDF از یک پوشه و موردهای آن، برای چاپ یا ارسال.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>جدول‌های داده</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>جدول‌های کلاس‌های ماندگار و اتصال‌های نام‌دار پایگاه داده: توصیف، ایجاد و به‌روزرسانی جدول‌ها روی هر اتصال، مرور ردیف‌های آن‌ها و دیدن آنچه به محتوا اشاره می‌کند.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>ایجاد یا به‌روزرسانی یک جدول روی یک اتصال پایگاه داده…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>مرور جدول‌های کلاس‌های ماندگار…</translation>
     </message>
 </context>
 </TS>

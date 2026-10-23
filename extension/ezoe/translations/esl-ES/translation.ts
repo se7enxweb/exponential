@@ -472,7 +472,7 @@
     </message>
     <message>
         <source>Node</source>
-        <translation>Nodo</translation>
+        <translation>Nudo</translation>
     </message>
     <message>
         <source>Relation</source>
@@ -1576,11 +1576,11 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Browse for a node / object.</source>
-        <translation>Navegar para encontrar nodo/ objeto.</translation>
+        <translation>Navegar para encontrar nudo/ objeto.</translation>
     </message>
     <message>
         <source>Search for a node / object.</source>
-        <translation>Buscar un nodo/ objeto.</translation>
+        <translation>Buscar un nudo/ objeto.</translation>
     </message>
     <message>
         <source>Tips &amp;amp; Tricks</source>
@@ -1620,7 +1620,7 @@ Do you want more information about this issue?</source>
     </message>
     <message>
         <source>Browse for a node / object in your bookmarks.</source>
-        <translation>Explorar para encontrar un nodo / objeto en tus marcadores.</translation>
+        <translation>Explorar para encontrar un nudo / objeto en tus marcadores.</translation>
     </message>
     <message>
         <source>Toggle &lt;u&gt;underline&lt;/u&gt; style on the selected text. This button is only enabled if you have a custom tag named underline.</source>

@@ -7388,6 +7388,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Nuntia fori recentissima onerantur...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Nuntia fori recentissima onerari non potuerunt.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10710,6 +10714,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Non servatum: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Adhibere ad</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Tota subarbor</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Subarbor, exceptis ramis in alia sectione</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Haec res tantum</translation>
     </message>
 </context>
 <context>
@@ -14237,6 +14257,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Haec institutio demonstratio publica est: quivis tesseram administratoris eius scire potest, et tesserae administratorum mutari aut restitui non possunt. Nihil privatum hic inscribe.</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Nihil novi</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14951,6 +14975,38 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Duces, quaestio et quomodo errorem nunties.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Conexiones</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabulae datorum</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Bases datorum nominatae: fasciculi SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Tesserae et claves instrumentorum, cryptatae servatae, nomine tantum ostensae.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Secreta</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabulae classium perpetuarum, earum campi, relationes et locus servationis.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Contenta et tabulae datorum congruentia servata: semel, ex horario aut statim.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronizationes</translation>
     </message>
 </context>
 <context>
@@ -19582,6 +19638,22 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Nota assignationem sectionis rerum subiectarum quoque mutatum iri.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Quae res sectionem accipiant</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Res electa et omnis res infra eam</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Res electa et res infra eam quae sectionem eius habent; rami in alia sectione suam retinent</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Res electa tantum</translation>
     </message>
 </context>
 <context>
@@ -27714,6 +27786,22 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>Find</source>
         <translation>Invenire</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Nova tabula datorum cum classe, schemate, administratione, regulis, functionibus fetch et termino JSON, ex indice camporum, classe contenti aut fonte importationis.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Tabula moduli</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, in basi datorum situs aut in conexione nominata</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba et sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -35557,6 +35645,18 @@ Nota: institutio sarcinarum non revocabitur.</translation>
         <source>VAT charging rules (%rules)</source>
         <translation>Normae VPA exigendi (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Hae regulae VPA non adhibentur.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Nullus tractator VPA statutus est, itaque cuique merci genus VPA in ea statutum imputatur neque hae regulae umquam leguntur. Ut eas adhibeas, Handler=ezdefault in sectione [VATSettings] fasciculi shop.ini statue (in settings/override/shop.ini.append.php) et mercibus genus VPA &quot;%dynamic&quot; da.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Tractator VPA &quot;%handler&quot; in sectione [VATSettings] fasciculi shop.ini statutus onerari non potest, itaque hae regulae numquam leguntur. Nomen tractatoris et directoria inspice in quibus tractatores VPA quaeruntur (RepositoryDirectories et ExtensionDirectories).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -41097,7 +41197,7 @@ rationem tuam activeres.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42222,7 +42322,7 @@ rationem tuam activeres.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -43008,7 +43108,7 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45283,7 +45383,7 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45800,7 +45900,7 @@ Si id facis, omnes res subiectae quoque removebuntur.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46049,7 +46149,7 @@ Rem per URL infra positum inspicere potes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -47002,7 +47102,7 @@ in summa pagina pervenire potes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47320,7 +47420,7 @@ in summa pagina pervenire potes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47553,7 +47653,7 @@ in summa pagina pervenire potes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -50647,6 +50747,38 @@ Plura vide in pagina postulatorum.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Variabilis ambitus EXP_DEMO_MODE=1 hanc institutionem demonstrationem publicam notat: tessera administratoris vulgo nota accipitur, et tesserae administratorum postea mutari aut restitui non possunt. Numquam modum demonstrationis in situ productionis adhibe.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Hic situs iam institutus est</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Ductor configurationis Exponential in novo situ instituit. In situ instituto non currit, et eum aperire nihil mutat: situs praesto manet.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Iterum instituitur per kickstarter (%file, deinde php bin/php/kickstarter.php) aut per institutionem novam.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Visne hunc situm iterum instituere?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Hic situs iam institutus est. Ductor configurationis pro sitibus institutis activatus est (AllowWizardOnInstalledSite), quod ad evolutionem tantum destinatum est.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Ductor incohatus totum situm in modum conservationis redigit: omnis alius visitator paginam conservationis accipit donec ductor finiatur, aut donec per 15 minuta relictus sit.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Ductorem configurationis incohare</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -51527,7 +51659,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51566,7 +51698,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -51650,7 +51782,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordo</translation>
+        <translation>Mandatum</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52257,7 +52389,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordo</translation>
+        <translation>Mandatum</translation>
     </message>
     <message>
         <source>Date</source>
@@ -52703,7 +52835,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52841,7 +52973,7 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53822,7 +53954,7 @@ rationem tuam activeres.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Taberna</translation>
+        <translation>Servare</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -57926,6 +58058,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>eZ Page swap workflow event</source>
         <translation>Eventus cursus operum ad permutandum in eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>In tabulas datorum transcribere</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59270,7 +59406,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordo</translation>
+        <translation>Mandatum</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -64762,6 +64898,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Status ostendi non potuit. Paginam iterum onera ut opus sequaris.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Res in subarbore quae sectionem huius rei habent sectionem accipiunt; rami in alia sectione suam retinent, et res quibus eam assignare tibi non licet praetereuntur.</translation>
     </message>
 </context>
 <context>
@@ -73611,6 +73751,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>More audiences</source>
         <translation>Plura lectorum genera</translation>
     </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Tibi non licet contenta creare (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Enchiridia iam construuntur.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Nullum enchiridion %1 est.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Enchiridion auxilii %1 ex auxilio Markdown construere</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Enchiridia auxilii ex auxilio Markdown construere</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -73836,6 +73996,1566 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
         <translation>Haec institutio demonstratio publica est: tesserae administratorum mutari aut restitui non possunt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>Secreta alia clave quam praesenti cryptata: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>Secreta clave praesenti iterum cryptata: %done; iam erant: %current; legi non potuerunt: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(fit cum primum secretum servatur)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Exemplar tutelae basis datorum solius secreta decryptare non potest</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Nomen est litterae, numeri et _ . : - (ad summum 128), neque ab env: incipit.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Nova clavis fit, omne secretum ea iterum cryptatur, et clavis vetus ut fasciculus .previous servatur. Postea exemplar tutelae novi fasciculi clavis fac.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Nomen novum, aut nomen secreti exstantis ut valor eius substituatur. Valor vacuus: sola descriptio mutatur.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Omnia</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mutatum</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Venit ex</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabulam creare</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descriptio</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Omne secretum clave praesenti iterum cryptare</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Cryptographia</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Valorem da.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ID clavis</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomina</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Nullum secretum adhuc.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Instrumentum %scope tantum.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Tesserae, signa et claves API instrumentorum: conexiones basium datorum, fontes importationis, servitra remota. Instrumentum nomen secreti tenet; valor hic servatur, cryptatus, neque umquam iterum ostenditur.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Clavis prior</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Removere</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Commutare</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Clavem commutare</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Secreta</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Secretum statuere</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Descriptio secreti %name mutata est; valor eius retentus est.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Clavis</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Clavis commutari non potuit (clavis ex EXP_SECRET_KEY commutatur novam statuendo et veterem ut EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Clavis in basi datorum non est. Exemplar fasciculi clavis (aut EXP_SECRET_KEY) cum omni exemplari tutelae serva, in loco tuto suo. Sine ea secreta basis datorum restitutae legi non possunt et iterum statuenda sunt.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Clavis commutata est: secreta iterum cryptata: %done; legi non potuerunt: %bad. Nunc exemplar tutelae novi fasciculi clavis fac.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Secretum %name remotum est.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Secretum %name servatum est, cryptatum. Valor eius iterum non ostenditur.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Secretum servari non potuit: vide clavem supra.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Tabula exp_secret deest</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Instrumentum est litterae minusculae, numeri et _ . - (ad summum 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Prius &quot;Ita, clavem commutare&quot; nota.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Capsulam iuxta secretum nota ut id removeas. Instrumentum quod id nominat deficit donec iterum statuatur.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Ut clavem ex ambitu commutes: novam clavem ut EXP_SECRET_KEY et veterem ut EXP_SECRET_KEY_PREVIOUS statue, deinde hic omne secretum iterum crypta.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Donec creetur, sola secreta fasciculi secrets.ini et variabiles ambitus (env:NAME) adhiberi possunt.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Quis id adhibeat, e.g. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ita, %name removere</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ita, clavem commutare</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>hic decryptari non potest</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>cryptatum</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>fasciculus secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>fasciculus .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>variabilis ambitus EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>fasciculus clavis %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>Classes: %count</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>Ad contenta: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>Classes ostensae: %shown ex %all.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Nomen hospitis aut inscriptio; vacuum pro SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Secretum ex Configuratio &gt; Secreta, aut env:VARIABLE pro variabili ambitus.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Omnes (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Praesto</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Ad indicem redire</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Copia characterum</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classis</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Classis, tabula aut campus</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Classes in hac conexione: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Columna</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Columna in basi datorum</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Conexum per %via in %ms ms: %version, tabulae: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Conexio</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Conexiones</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Conexiones (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Classis contenti</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Res contenti</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Tabulas creare</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabulae datorum</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Basis datorum</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Bases datorum quibus tabulae datorum et instrumenta importationis et exportationis praeter basim propriam huius institutionis uti possunt: fasciculus SQLite, aut servitrum MySQL, MariaDB, PostgreSQL, Oracle, SQL Server aut MongoDB, hic aut remotum. Tessera est nomen secreti, numquam valor eius.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>In datatable.ini [Connection_%id] ab optionibus aut extensione declarata: ibi eam muta. Hic probari potest.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Praedefinitum</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descriptio</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Differentiae</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Rector</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Vacuum pro porta usitata machinae.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Machina</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Machinae in hoc servitro</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Extensio %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campus</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Campus destinationis</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Campi</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrare</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Pro SQL Server: sqlsrv, dblib aut odbc (si vacuum, primus quem hoc servitrum habet).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Pro SQLite fasciculus, e.g. %example (in %dirs). Pro Oracle nomen servitii.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Attributa functionis: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identificator</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Nucleus</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clavis</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Clavis: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Notum ex</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Factum in</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Catalogum iterum facere</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Plura</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Conexiones nominatae tabulam exp_data_connection requirunt, repositorium secretorum tabulam exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Nova conexio</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Nulla classis perpetua congruit.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Nulla relatio nota est.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Nulli versus.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Nodus</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Non ostensa: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Tantum pro machina per PDO adita, cum servitrum, porta et basis datorum non sufficiunt. Numquam tessera.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Nomen fontis datorum PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>Rector PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Tessera</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Tessera ipsa</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Tessera: nomen secreti</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Spectat ad</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Porta</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Legi tantum: synchronizatio in eam numquam scribit</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relationes</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Removere</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Hanc conexionem removere</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Necessarium</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Versus</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>Fasciculi SQLite esse possunt in: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Secreta</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectio</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Servitrum</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Servitrum et basis datorum</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Nidus</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Quisquis regulam datatable/manage habet, eas hic creare potest.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Eam in repositorio secretorum servare cum servatur</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Ad tesseram servandam regula secrets/manage requiritur.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Probare</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Conexionem probare</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Catalogus ex ordinibus autoload fit et servatur donec mutentur.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Catalogus iterum factus est: classes: %count.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Columna %column (%type) in definitione non est.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Conexio post %ms ms defecit: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Conexio servata non est</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Conexio servata est.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definitio huius classis legi non potest</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Campus %column (%type) columnam non habet.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Campus %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>Primi versus: %count</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Tessera in repositorio secretorum servari non potuit (Configuratio &gt; Secreta causam dicit).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabula %table in basi datorum non est.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Tabula exp_data_connection deest: conexio probari potest, sed servari non potest donec in pagina Tabulae datorum creetur.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Tabula exp_data_connection deest: eam in pagina &lt;a href=&quot;%url&quot;&gt;Tabulae datorum&lt;/a&gt; crea. Interea solae conexiones in datatable.ini declaratae recensentur.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Tabula exp_data_connection deest: prius eam in pagina Tabulae datorum crea.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Tabulae tabularum datorum nondum institutae sunt</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabulae classium perpetuarum huius institutionis, ut definitiones earum eas describunt, et ubi quaeque servetur.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>In hac basi datorum puga infra creantur; nihil aliud mutatur.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Basis datorum propria huius institutionis, ex site.ini. Hic probari potest.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Hoc secretum non statutum est.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>&quot;Ita, eam removere&quot; nota ut conexionem removeas. Classes et instrumenta quae eam nominant deinde deficiunt donec iterum fiat.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Capsulam infra nota ut eam serves, cryptatam, ut secretum supra nominatum (datatable. et identificator, si nomen vacuum est).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Ad probationem tantum adhibetur neque umquam iterum ostenditur.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Usor</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Quo nomine classes et instrumenta eam appellent: litterae minusculae, numeri et _. Postea mutari non potest.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Unde classes veniant</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Ubi tabula a definitione differat</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ita, eam removere</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>clavis aliena campi</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>numeratum: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>fasciculus datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() deficit</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>exstat</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>ex nomine coniectum</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>clavis</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>deest</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>hic praesto non est</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>non statutum</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>legi tantum</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>statutum</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>situs</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>fasciculus site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administratio</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definitio</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ignotum</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>hic non probatum</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ita</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>Versus qui per %column (%kind) ad hanc rem spectant: %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>Versus in quibus %field est %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>Versus: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>Mandata: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Omnes versus: %count</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Omnes versus</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Adhibere</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Columnas et indices qui differunt mutare</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabulam creare</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Tabulas classis aut extensionis in conexione creare, aut eas renovare. Nihil currit ante &quot;Adhibere&quot;; columnae et indices tantum delentur aut mutantur si id notas.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Perfectum</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Columnas et indices quos schema non habet delere</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Ex definitione classis</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Nullus versus tabulae datorum ad hanc rem spectat.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Non factum nisi supra notatum: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Non omnia fieri potuerunt</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>In conexione</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Aut ex fasciculo schematis extensionis</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Versus tabulae %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Versus tabularum datorum qui ad hanc rem spectant</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Schema datorum</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Ostendere quid fieret</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Conexio %id legi tantum potest.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Extensio %name fasciculum share/db_schema.dba non habet.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>SQL institutionis omnium machinarum</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Nulla conexio %id est.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Nulla classis perpetua %class est.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Tabulam renovare</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Quid in %connection (%engine) fieret</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>creare</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>recens</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>renovare</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>Lineae: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Classis contenti</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Identificator classis contenti, connection:table, aut quod fons postulat. Pro indice non necessarium.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Res contenti (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Nexus in grege Tabulae datorum indicis Configuratio, pro usoribus cum regula read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Index camporum hic scriptus</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Nova tabula datorum cum omnibus quae circa eam sunt: classis perpetua, schema et SQL institutionis omnium machinarum, modulus cum list, edit, remove et termino JSON, regulae eius, paginae administrationis et functiones fetch formularum. Campi veniunt ex indice, classe contenti, tabula exstante aut fonte importationis. Nihil scribitur donec id petas, et tabula ex hac pagina instituitur.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Nomen novum, aut extensio exstans cui tabula addatur.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Nodus (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Extensionem activare</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Creatum et mutatum addere</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Extensioni addere</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Formulae administrationis</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Tabula exstans (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Auctor</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Utrumque</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Tabulam ad statum recentem perducere</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Campos eius in indicem exscribere</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Ut zip depromere</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Quaeque tabula etiam id accipit, clavem a basi datorum numeratam.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Extensio</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Campi, singuli in singulis lineis: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Titulus</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Relicta ut sunt: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licentia</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modulus</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Ductor tabulae moduli</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Modulum aperire</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Classis PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Partes, licentia et auctor</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Classis perpetua</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Celeris applicationum evolutio</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Renovare: autoloads et promptuaria</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Schema et SQL institutionis</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Elementum indicis Configuratio</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Fasciculos ostendere</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Functiones fetch formularum</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Classis eZPersistentObject tabulae, cum campis, conexione et relationibus suis.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Extensio et tabula</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Extensio exstat: ductor fasciculos addit quos non habet et optiones suas apponit; nihil ibi superscribitur.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Extensio activa est.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Extensio scripta est, sed non activa.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Campi</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Campi fontis %source nunc in indice sunt: eos muta ut opus est.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Fasciculi (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Textus licentiae (nova extensio tantum).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Paginae moduli in administratione (partes admin4, nulli styli interni).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tabula nondum exstat.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tabula exstat.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Quemque versum contentis adnectere</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titulus</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Ad extensionem ut sarcinam instituendam (nova extensio tantum).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Genera: %types. object, node et user sunt relationes ad contenta: aspectus contentorum versus ostendit qui ad rem spectant.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Singulare</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Versio</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Quid pagina de extensione ostendat (nova extensio tantum).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Quid factum sit, et quomodo instituatur et adhibeatur.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Unde campi veniant</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Quod</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Extensionem scribere</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>exstat, relictum ut est</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php et extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Vocatio: fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove et terminus REST/JSON json, cum regulis read et edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba et sql/&lt;engine&gt;/schema.sql pro MySQL, PostgreSQL, SQLite, Oracle et SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>scriptum</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>Conflictus: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name cucurrit: versus scripti: %rows, res scriptae: %objects, immutata: %same, conflictus: %conflicts, defecerunt: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name in recessu incohatum est (%engine); historia exsecutionum id ostendit.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Tabula congruentiae proposita est: eam inspice, deinde serva.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Fons est identificator attributi classis contenti, aut unum ex his: %list. Sola attributa in contenta scribuntur.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Rogare: conflictus solvendus</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Et contenta et versus mutata sunt post ultimam exsecutionem synchronizationis utroque versus quae rogat. Unam partem elige; altera superscribitur.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Utroque versus</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Conflictus</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Conflictus (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Contenta</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Contenta et tabula</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Contenta in tabulam datorum exscripta, tabula in contenta exscripta, aut utraque congruentia servata: semel, ex horario, aut statim in omni publicatione, motu et remotione.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Contenta in tabulam</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Contenta vincunt</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Tabula datorum (classis perpetua)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Directio</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erratum</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Quaque (secundis)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Defecit</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Inventum %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Columna(e) clavis</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ultimus cursus</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Statim et ex horario</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Statim: omnis publicatio, motus et remotio rei classis infra nodum statim in tabulam scribitur.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Tabula congruentiae: una linea in singulas columnas, columna = fons</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Nova synchronizatio</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Nulla columna classis cum attributo aut fonte noto congruit: tabulam congruentiae ipse scribe.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Nullus conflictus apertus.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Nulla synchronizatio adhuc.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ex horario</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Tabulam congruentiae proponere</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Versum rei removere quae removetur aut subarborem relinquit</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Hanc synchronizationem removere</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Nunc exsequi</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Exsecutiones</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Servare et nunc exsequi</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Inceptum</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Inactivum (nullae exsecutiones ex horario aut statim)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synchronizationes</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Contenta accipere</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Tabulam accipere</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Conflictus solvi non potuit; apertus manet.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Valores contentorum in tabulam scripti sunt.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Ultimae exsecutiones</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Columna(e) congruentiae quibus versus agnoscitur, e.g. contentobject_id aut remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Mutatio recentior vincit</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Versus et contenta manent; tantum coniunctio et conflictus aperti abeunt.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Subarbor pro tabula lecta, et parens rerum ex versibus factarum.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Synchronizatio servata non est</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Synchronizatio servata est.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Synchronizationes classis rei publicatae</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tabula in contenta</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tabula vincit</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Valores tabulae in contenta publicati sunt.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Tabulae synchronizationis nondum institutae sunt</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Nulla synchronizatio tabulae datorum adhuc est (Configuratio &gt; Tabulae datorum &gt; Synchronizationes).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Cum utraque pars mutata est</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Cum incohatur</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Nulla notata, res in omnem synchronizationem classis suae scribitur cuius subarbor eam continet.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>utroque versus</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>contenta in tabulam</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>quaque %minutes minuta</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link et exp_data_sync_conflict in hac basi datorum puga creantur; nihil aliud mutatur.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>statim</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>res %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>inactivum</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabula in contenta</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>cum incohatur</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Quaerisne aliam importationem aut exportationem?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importatio</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportatio</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Importatio et exportatio</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Cum hoc instrumento operatur</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Quo instrumento importationis aut exportationis mihi opus est?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Quo instrumento mihi opus est?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Instrumenta importationis et exportationis ad hoc opus</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Sarcinae</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Contenta cum classibus suis, aut classes, extensiones et designationes, in aliam institutionem ut fasciculum sarcinae transferre.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Classes ut sarcinam exportare…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Sarcinam imponere et instituere…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>Importatio RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Contenta ex fluxu RSS aut Atom alius situs creare, iterum atque iterum per opus statutum rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>Exportatio RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Res recentissimas capsae ut fluxum RSS aut Atom publicare, aut indicem fluxuum ut OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Notitia collecta</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Quae una forma collegit ut fasciculum CSV depromere, ex indice notitiae collectae.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Inspectio: exportatio</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Acta vestigiorum inspectionis depromere, filtrata ut in consolatorio, ut CSV, JSON lines aut JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Exportatio PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Documentum PDF ex capsa et rebus eius facere, ad imprimendum aut mittendum.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Tabulae datorum</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabulae classium perpetuarum et conexiones basium datorum nominatae: tabulas in quavis conexione describere, creare et renovare, versus earum perlustrare et videre quid ad contenta spectet.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Tabulam in conexione basis datorum creare aut renovare…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Tabulas classium perpetuarum perlustrare…</translation>
     </message>
 </context>
 </TS>

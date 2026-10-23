@@ -6379,7 +6379,7 @@
     </message>
     <message>
         <source>Locale for custom translation</source>
-        <translation>Örtlichkeit der spezifischen Übersetzung</translation>
+        <translation>Locale der spezifischen Übersetzung</translation>
     </message>
     <message>
         <source>OK</source>
@@ -6490,7 +6490,7 @@
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Translation</source>
@@ -6845,7 +6845,7 @@
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -6853,7 +6853,7 @@
     </message>
     <message>
         <source>%locale [Locale]</source>
-        <translation>%locale [Örtlichkeit]</translation>
+        <translation>%locale [Locale-Code]</translation>
     </message>
     <message>
         <source>Charset</source>
@@ -6901,15 +6901,15 @@
     </message>
     <message>
         <source>Locale code</source>
-        <translation>Code der Örtlichkeit</translation>
+        <translation>Locale-Code</translation>
     </message>
     <message>
         <source>Full locale code</source>
-        <translation>Vollständiger Code der Örtlichkeit</translation>
+        <translation>Vollständiger Locale-Code</translation>
     </message>
     <message>
         <source>HTTP locale code</source>
-        <translation>Code der HTTP Örtlichkeit</translation>
+        <translation>HTTP-Locale-Code</translation>
     </message>
     <message>
         <source>Decimal symbol</source>
@@ -10864,7 +10864,7 @@
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Location</source>
@@ -15752,7 +15752,7 @@ Falls Sie die Deinstallation im Moment nicht durchführen wollen, können Sie da
     </message>
     <message>
         <source>Thumbnail</source>
-        <translation>Vorschaubild</translation>
+        <translation>Miniaturansicht</translation>
     </message>
     <message>
         <source>Versions and languages</source>
@@ -17753,7 +17753,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Orders</source>
-        <translation>Bestellung</translation>
+        <translation>Bestellungen</translation>
     </message>
     <message>
         <source>Product statistics</source>
@@ -18956,7 +18956,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Your email address</source>
-        <translation>Ihre e-Mail Adresse</translation>
+        <translation>Ihre E-Mail-Adresse</translation>
     </message>
     <message>
         <source>Your name</source>
@@ -30506,7 +30506,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>implements ezpContentLimitationHandler (checkAccess() for objects, nodes and versions, permissionSQL() for fetches); ezpContentLimitationSolrHandler adds solrFilter() for searches that filter by the policies themselves (eZ Find)</source>
-        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches); ezpContentLimitationSolrHandler ergänzt solrFilter() für Suchen, die selbst nach den Policies filtern (eZ Find)</translation>
+        <translation>implementiert ezpContentLimitationHandler (checkAccess() für Objekte, Knoten und Versionen, permissionSQL() für Fetches); ezpContentLimitationSolrHandler ergänzt solrFilter() für Suchen, die selbst nach den Richtlinien filtern (eZ Find)</translation>
     </message>
     <message>
         <source>rest.ini, through the rest provider registry</source>
@@ -31121,7 +31121,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Three letters, a dash, two letters.</source>
@@ -37709,7 +37709,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Status</source>
@@ -37836,7 +37836,7 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
     </message>
     <message>
         <source>Orders</source>
-        <translation>Bestellung</translation>
+        <translation>Bestellungen</translation>
     </message>
     <message>
         <source>Total (ex. VAT)</source>
@@ -47802,7 +47802,7 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Change</source>
@@ -55086,7 +55086,7 @@ Der Vorgabecode wurde aus den grundlegenen Parametern erstellt, die Sie ausgewä
     </message>
     <message>
         <source>Locale</source>
-        <translation>Örtlichkeit</translation>
+        <translation>Locale</translation>
     </message>
     <message>
         <source>Strings</source>
@@ -59533,7 +59533,7 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
     </message>
     <message>
         <source>Order</source>
-        <translation>Reihenfolge</translation>
+        <translation>Bestellung</translation>
     </message>
     <message>
         <source>Date</source>
@@ -66047,7 +66047,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <name>kernel/package</name>
     <message>
         <source>Exporting extensions is switched off by default: to switch it on, list the extension in package.ini [ExtensionExportSettings] AllowedExtensions[] (or * for every extension) and grant the policy package/export_extension to the role.</source>
-        <translation>Der Export von Extensions ist standardmäßig ausgeschaltet: Zum Einschalten die Extension in package.ini [ExtensionExportSettings] AllowedExtensions[] eintragen (oder * für alle Extensions) und der Rolle die Policy package/export_extension geben.</translation>
+        <translation>Der Export von Extensions ist standardmäßig ausgeschaltet: Zum Einschalten die Extension in package.ini [ExtensionExportSettings] AllowedExtensions[] eintragen (oder * für alle Extensions) und der Rolle die Richtlinie package/export_extension geben.</translation>
     </message>
     <message>
         <source>The extension %name may not be exported: it is not in package.ini [ExtensionExportSettings] AllowedExtensions[].</source>
@@ -66055,7 +66055,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>Exporting an extension needs the policy package/export_extension.</source>
-        <translation>Für den Export einer Extension ist die Policy package/export_extension nötig.</translation>
+        <translation>Für den Export einer Extension ist die Richtlinie package/export_extension nötig.</translation>
     </message>
     <message>
         <source>The extension %name is not known.</source>

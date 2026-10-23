@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>En son forum gönderileri yükleniyor...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Son forum gönderileri yüklenemedi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10708,6 +10712,22 @@
         <source>Not saved: %error</source>
         <translation>Kaydedilmedi: %error</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Uygulanacak yer</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Tüm alt ağaç</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Alt ağaç, başka bir bölümdeki dallar hariç</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Yalnızca bu nesne</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13214,7 +13234,7 @@ Paketi, sistemden kaldırmadan paket listesinden de silebilirsiniz.</translation
     <name>design/admin/package/list</name>
     <message>
         <source>Remove section?</source>
-        <translation>Seçim kaldırılsın mı?</translation>
+        <translation>Bölüm kaldırılsın mı?</translation>
     </message>
     <message>
         <source>Removal of packages</source>
@@ -14226,6 +14246,18 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Help center</source>
         <translation>Yardım merkezi</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Yeni bir şey yok</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo modu</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Bu kurulum herkese açık bir demodur: Yönetici parolasını herkes bilebilir ve yönetici parolaları değiştirilemez veya sıfırlanamaz. Buraya özel hiçbir şey girmeyin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14940,6 +14972,38 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Kılavuzlar, arama ve bir hatanın nasıl bildirileceği.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Bağlantılar</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Veri tabloları</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Adlandırılmış veritabanları: SQLite dosyaları, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Araçların parolaları ve anahtarları; şifrelenmiş olarak saklanır, yalnızca adlarıyla gösterilir.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Gizli değerler</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Kalıcı sınıfların tabloları, alanları, ilişkileri ve depolama yerleri.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Eşit tutulan içerik ve veri tabloları: bir kez, zamanlanmış olarak veya canlı.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Eşitlemeler</translation>
     </message>
 </context>
 <context>
@@ -19571,6 +19635,22 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Alt öğelerin bölüm atamasının da değiştirileceğini unutmayın.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Bölümü hangi nesneler alır</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Seçilen öğe ve altındaki her nesne</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Seçilen öğe ve altındaki, onun bölümüne sahip nesneler; başka bir bölümdeki dallar kendi bölümlerini korur</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Yalnızca seçilen öğe</translation>
     </message>
 </context>
 <context>
@@ -27703,6 +27783,22 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>Find</source>
         <translation>Bul</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Bir alan listesinden, bir içerik sınıfından veya bir içe aktarma kaynağından; sınıfı, şeması, yönetimi, ilkeleri, getirme işlevleri ve JSON uç noktasıyla birlikte yeni bir veri tablosu.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Modül tablosu</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject; sitenin veritabanında veya adlandırılmış bir bağlantıda</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba ve sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -35545,6 +35641,18 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>KDV uygulama kuralları (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Bu KDV kuralları uygulanmıyor.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>KDV işleyicisi ayarlanmamış; bu nedenle her ürüne üzerinde ayarlı KDV türü uygulanır ve bu kurallar hiç okunmaz. Bunları uygulamak için shop.ini dosyasının [VATSettings] bölümünde (settings/override/shop.ini.append.php içinde) Handler=ezdefault ayarlayın ve ürünlere &quot;%dynamic&quot; KDV türünü verin.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>shop.ini dosyasının [VATSettings] bölümünde ayarlanan &quot;%handler&quot; KDV işleyicisi yüklenemiyor; bu nedenle bu kurallar hiç okunmaz. İşleyici adını ve KDV işleyicilerinin arandığı dizinleri (RepositoryDirectories ve ExtensionDirectories) denetleyin.</translation>
     </message>
 </context>
 <context>
@@ -47703,7 +47811,7 @@ menüden erişilebilir.</translation>
     <message>
         <source>Next</source>
         <comment>Datatype next</comment>
-        <translation>İleri</translation>
+        <translation>Sonraki</translation>
     </message>
     <message>
         <source>Restart</source>
@@ -47962,7 +48070,7 @@ By using %datatypename you can ...</source>
     <message>
         <source>Next</source>
         <comment>Template operator next</comment>
-        <translation>İleri</translation>
+        <translation>Sonraki</translation>
     </message>
     <message>
         <source>Restart</source>
@@ -49353,7 +49461,7 @@ Varsayılan kod, seçtiğiniz temel parametrelerden oluşturuldu.</translation>
     <message>
         <source>Next</source>
         <comment>next button in installation</comment>
-        <translation>İleri</translation>
+        <translation>Sonraki</translation>
     </message>
     <message>
         <source>here</source>
@@ -50659,6 +50767,14 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
     <message>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Bu parola çok bilinen veya çok yaygın bir parola olduğundan herkes tahmin edebilir. Lütfen başka bir parola seçin.</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo modu</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>EXP_DEMO_MODE=1 ortam değişkeni bu kurulumu herkese açık bir demo olarak işaretler: Herkesçe bilinen bir yönetici parolası kabul edilir ve yönetici parolaları daha sonra değiştirilemez veya sıfırlanamaz. Demo modunu asla canlı bir site için kullanmayın.</translation>
     </message>
 </context>
 <context>
@@ -57939,6 +58055,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>eZ Page swap workflow event</source>
         <translation>eZ Page değiştirme iş akışı olayı</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Veri tablolarına yansıt</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -64775,6 +64895,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Durum gösterilemedi. İşi izlemek için sayfayı yeniden yükleyin.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Alt ağaçta bu öğenin bölümüne sahip nesneler bölümü alır; başka bir bölümdeki dallar kendi bölümlerini korur ve bölümü atamanıza izin verilmeyen nesneler atlanır.</translation>
     </message>
 </context>
 <context>
@@ -73849,6 +73973,1593 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>More audiences</source>
         <translation>Diğer hedef kitleler</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>İçerik oluşturamazsınız (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Kılavuzlar zaten oluşturuluyor.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>%1 kılavuzu yok.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>%1 yardım kılavuzunu Markdown yardımından oluştur</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Yardım kılavuzlarını Markdown yardımından oluştur</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count gizli değer, geçerli anahtardan farklı bir anahtarla şifrelenmiş.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done gizli değer geçerli anahtarla yeniden şifrelendi, %current tanesi zaten öyleydi, %bad tanesi okunamadı.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(ilk gizli değer kaydedildiğinde oluşturulur)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Yalnızca veritabanı yedeği gizli değerlerin şifresini çözemez</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Ad; harfler, rakamlar ve _ . : - karakterlerinden oluşur (en fazla 128) ve env: ile başlamaz.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Yeni bir anahtar oluşturulur, her gizli değer onunla yeniden şifrelenir ve eski anahtar .previous dosyası olarak saklanır. Ardından yeni anahtar dosyasını yedekleyin.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Yeni bir ad veya değerini değiştirmek için mevcut bir gizli değerin adı. Boş değer: yalnızca açıklama değişir.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Değiştirilme</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Kaynak</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabloyu oluştur</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Her gizli değeri geçerli anahtarla yeniden şifrele</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Şifreleme</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Değeri girin.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Anahtar kimliği</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Adlar</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Henüz gizli değer yok.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Yalnızca %scope aracı.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Araçların parolaları, belirteçleri ve API anahtarları: veritabanı bağlantıları, içe aktarma kaynakları, uzak sunucular. Bir araç yalnızca gizli değerin adını tutar; değer burada şifrelenmiş olarak saklanır ve bir daha gösterilmez.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Önceki anahtar</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Döndür</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Anahtarı döndür</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Gizli değerler</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Gizli değer ayarla</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>%name açıklaması değiştirildi; değeri korundu.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Anahtar</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Anahtar döndürülemedi (EXP_SECRET_KEY kaynaklı bir anahtar, yenisi EXP_SECRET_KEY, eskisi EXP_SECRET_KEY_PREVIOUS olarak ayarlanarak döndürülür).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Anahtar veritabanında değildir. Anahtar dosyasının (veya EXP_SECRET_KEY değerinin) bir kopyasını her yedekle birlikte, ayrı ve güvenli bir yerde saklayın. Anahtar olmadan geri yüklenen bir veritabanının gizli değerleri okunamaz ve yeniden ayarlanması gerekir.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Anahtar döndürüldü: %done gizli değer yeniden şifrelendi, %bad tanesi okunamadı. Yeni anahtar dosyasını şimdi yedekleyin.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>%name adlı gizli değer kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>%name adlı gizli değer şifrelenerek kaydedildi. Değeri bir daha gösterilmez.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Gizli değer kaydedilemedi: yukarıdaki anahtar bilgisine bakın.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>exp_secret tablosu eksik</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Araç; küçük harfler, rakamlar ve _ . - karakterlerinden oluşur (en fazla 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Önce &quot;Evet, anahtarı döndür&quot; kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Kaldırmak için gizli değerin yanındaki kutuyu işaretleyin. Onu kullanan bir araç, gizli değer yeniden ayarlanana kadar başarısız olur.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Ortamdan gelen bir anahtarı döndürmek için: Yeni anahtarı EXP_SECRET_KEY, eskisini EXP_SECRET_KEY_PREVIOUS olarak ayarlayın, ardından her gizli değeri burada yeniden şifreleyin.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Araç</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Tablo oluşturulana kadar yalnızca secrets.ini dosyasındaki gizli değerler ve ortam değişkenleri (env:NAME) kullanılabilir.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Onu kim kullanıyor, ör. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Evet, %name kaldırılsın</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Evet, anahtarı döndür</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>burada şifresi çözülemiyor</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>şifrelenmiş</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>secrets.ini dosyası</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>.previous dosyası</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>EXP_SECRET_KEY ortam değişkeni</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>%file anahtar dosyası</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count sınıf</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count tanesi içeriğe</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%all sınıftan %shown tanesi gösteriliyor.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Bir ana makine adı veya adresi; SQLite için boş.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Kurulum &gt; Gizli değerler bölümünden bir gizli değer veya bir ortam değişkeni için env:VARIABLE.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Tümü (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Kullanılabilir</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Listeye geri dön</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Karakter kümesi</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sınıf</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Sınıf, tablo veya alan</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Bu bağlantıdaki sınıflar: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Sütun</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Veritabanındaki sütun</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>%via üzerinden %ms ms içinde bağlanıldı: %version, %tables tablo.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Bağlantı</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Bağlantılar</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Bağlantılar (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>İçerik sınıfı</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>İçerik nesnesi</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Tabloları oluştur</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Veri tabloları</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Veritabanı</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Veri tablolarının ve içe/dışa aktarma araçlarının bu kurulumun kendi veritabanı dışında kullanabileceği veritabanları: bir SQLite dosyası ya da burada veya uzakta bir MySQL, MariaDB, PostgreSQL, Oracle, SQL Server veya MongoDB sunucusu. Parola, hiçbir zaman değeri değil, bir gizli değerin adıdır.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Ayarlar veya bir uzantı tarafından datatable.ini [Connection_%id] içinde tanımlanmıştır: Orada değiştirin. Burada test edilebilir.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Farklar</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Sürücü</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Motorun olağan bağlantı noktası için boş bırakın.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Motor</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Bu sunucudaki motorlar</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>%name uzantısı</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Alan</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Hedefin alanı</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Alanlar</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrele</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>SQL Server için: sqlsrv, dblib veya odbc (boşsa bu sunucuda bulunan ilki).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>SQLite için dosya, ör. %example (%dirs içinde). Oracle için hizmet adı.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>İşlev öznitelikleri: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Tanımlayıcı</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Çekirdek</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Anahtar</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Anahtar: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Bilgi kaynağı</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Tanımlandığı yer</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Kataloğu yeniden oluştur</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Daha fazla</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Adlandırılmış bağlantılar exp_data_connection tablosunu, gizli değer deposu ise exp_secret tablosunu gerektirir.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Yeni bağlantı</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Eşleşen kalıcı sınıf yok.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Bilinen ilişki yok.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Satır yok.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Düğüm</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Gösterilmeyen: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Yalnızca PDO üzerinden erişilen bir motor için; sunucu, bağlantı noktası ve veritabanı yetmediğinde. Asla parola değil.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO veri kaynağı adı</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO sürücüsü</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Parolanın kendisi</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Parola: bir gizli değerin adı</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Hedef</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Bağlantı noktası</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Salt okunur: Eşitleme buraya hiçbir zaman yazmaz</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>İlişkiler</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Bu bağlantıyı kaldır</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Gerekli</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Satırlar</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite dosyalarının bulunabileceği yerler: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Gizli değerler</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Sunucu</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Sunucu ve veritabanı</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Soket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>datatable/manage ilkesine sahip biri bunları burada oluşturabilir.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Kaydederken gizli değer deposuna kaydet</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Parola kaydetmek için secrets/manage ilkesi gerekir.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tablo</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test et</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Bağlantıyı test et</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalog, otomatik yükleme dizilerinden oluşturulur ve bunlar değişene kadar saklanır.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalog yeniden oluşturuldu: %count sınıf.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>%column sütunu (%type) tanımda yok.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Bağlantı %ms ms sonra başarısız oldu: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Bağlantı kaydedilmedi</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Bağlantı kaydedildi.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Bu sınıfın tanımı okunamıyor</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>%column alanının (%type) sütunu yok.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>%column alanı: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>İlk %count satır</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Parola gizli değer deposuna kaydedilemedi (nedeni Kurulum &gt; Gizli değerler sayfasında belirtilir).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>%table tablosu veritabanında yok.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>exp_data_connection tablosu eksik: Bir bağlantı test edilebilir, ancak tablo Veri tabloları sayfasında oluşturulana kadar kaydedilemez.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>exp_data_connection tablosu eksik: Tabloyu &lt;a href=&quot;%url&quot;&gt;Veri tabloları&lt;/a&gt; sayfasında oluşturun. O zamana kadar yalnızca datatable.ini dosyasında tanımlanan bağlantılar listelenir.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>exp_data_connection tablosu eksik: Önce tabloyu Veri tabloları sayfasında oluşturun.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Veri tablolarının tabloları henüz yüklü değil</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Bu kurulumun kalıcı sınıflarının tabloları; tanımlarının açıkladığı biçimde ve her birinin nerede depolandığıyla.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Tablolar aşağıdaki düğmeyle bu veritabanında oluşturulur; başka hiçbir şey değişmez.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Bu kurulumun site.ini dosyasındaki kendi veritabanı. Burada test edilebilir.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Bu gizli değer ayarlanmamış.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Bağlantıyı kaldırmak için &quot;Evet, kaldır&quot; kutusunu işaretleyin. Bağlantıyı kullanan sınıflar ve araçlar, bağlantı yeniden oluşturulana kadar başarısız olur.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Parolayı yukarıda adı verilen gizli değer olarak şifrelenmiş biçimde kaydetmek için aşağıdaki kutuyu işaretleyin (ad boşsa datatable. ve tanımlayıcı).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Yalnızca test için kullanılır ve bir daha gösterilmez.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Kullanıcı</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Sınıfların ve araçların bağlantıyı andığı ad: küçük harfler, rakamlar ve _. Daha sonra değiştirilemez.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Sınıfların kaynağı</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Tablonun tanımdan farklı olduğu yerler</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Evet, kaldır</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>bir alanın yabancı anahtarı</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>otomatik artan: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>datatable.ini dosyası</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() başarısız oluyor</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>var</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>addan çıkarıldı</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>anahtar</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>eksik</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>burada kullanılamıyor</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ayarlanmamış</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>salt okunur</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>ayarlanmış</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>site veritabanı</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>site.ini dosyası</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>yönetim paneli</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>tanım</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>bilinmiyor</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>burada test edilmedi</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>evet</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count satır %column (%kind) üzerinden bu öğeye işaret ediyor</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%field değeri %value olan %count satır.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count satır.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done deyim</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>%count satırın tümü</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Tüm satırlar</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Uygula</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Farklı olan sütunları ve dizinleri değiştir</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Tabloyu oluştur</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Bir sınıfın veya uzantının tablolarını bir bağlantıda oluşturun ya da güncelleyin. &quot;Uygula&quot; düğmesine basılmadan hiçbir şey çalışmaz; sütunlar ve dizinler yalnızca bunu işaretlediğinizde kaldırılır veya değiştirilir.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tamamlandı</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Şemada bulunmayan sütunları ve dizinleri kaldır</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Bir sınıfın tanımından</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Hiçbir veri tablosu satırı bu öğeye işaret etmiyor.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Yukarıda işaretlenmediği için yapılmadı: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Her şey yapılamadı</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Bağlantıda</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Veya bir uzantının şema dosyasından</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>%table satırları</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Bu öğeye işaret eden veri tablosu satırları</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Şema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Yapılacakları göster</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>%id bağlantısı salt okunur.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>%name uzantısında share/db_schema.dba yok.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Her motorun kurulum SQL&apos;i</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>%id bağlantısı yok.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>%class kalıcı sınıfı yok.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Tabloyu yükselt</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>%connection (%engine) üzerinde yapılacaklar</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>oluştur</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>güncel</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>yükselt</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines satır</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Bir içerik sınıfı</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Bir içerik sınıfı tanımlayıcısı, bağlantı:tablo veya kaynağın istediği şey. Liste için gerekmez.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Bir içerik nesnesi (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Kurulum menüsünün Veri tabloları grubunda, read ilkesine sahip kullanıcılar için bir bağlantı.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Burada yazılan bir alan listesi</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Etrafındaki her şeyle birlikte yeni bir veri tablosu: kalıcı sınıf, her motor için şema ve kurulum SQL&apos;i, liste, düzenleme, kaldırma işlevleri ve bir JSON uç noktası içeren bir modül, ilkeleri, yönetim sayfaları ve şablon getirme işlevleri. Alanlar bir listeden, bir içerik sınıfından, mevcut bir tablodan veya bir içe aktarma kaynağından gelir. Siz istemedikçe hiçbir şey yazılmaz ve tablo bu sayfadan yüklenir.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Yeni bir ad veya tablonun ekleneceği mevcut bir uzantı.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Bir düğüm (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Uzantıyı etkinleştir</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Oluşturulma ve değiştirilme ekle</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Uzantıya ekle</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Yönetim şablonları</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Mevcut bir tablo (bağlantı:tablo)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Yazar</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Tabloyu güncelle</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Alanlarını listeye kopyala</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Zip olarak indir</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Her tablo ayrıca veritabanının otomatik artırdığı bir anahtar olan id alanını alır.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Uzantı</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Alanlar, satır başına bir tane: ad tür[(uzunluk)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Olduğu gibi bırakılanlar: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lisans</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modül</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Modül tablosu sihirbazı</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Modülü aç</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP sınıfı</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Parçalar, lisans ve yazar</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Kalıcı sınıf</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Hızlı uygulama geliştirme</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Yenile: otomatik yüklemeler ve önbellekler</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Şema ve kurulum SQL&apos;i</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Kurulum menüsü girdisi</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Dosyaları göster</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Şablon getirme işlevleri</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Tablonun alanları, bağlantısı ve ilişkileriyle eZPersistentObject sınıfı.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Uzantı ve tablo</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Uzantı mevcut: Sihirbaz, uzantıda olmayan dosyaları ekler ve ayarlarını sona ekler; oradaki hiçbir şeyin üzerine yazılmaz.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Uzantı etkin.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Uzantı yazıldı ancak etkin değil.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Alanlar</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>%source alanları artık listede: Gerektiği gibi değiştirin.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Dosyalar (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Lisans metni (yalnızca yeni bir uzantı için).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Modülün yönetim panelindeki sayfaları (admin4 bileşenleri, satır içi stil yok).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tablo henüz yok.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tablo var.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Her satırı içeriğe bağla</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Başlık</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Uzantıyı paket olarak kurmak için (yalnızca yeni bir uzantı için).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Türler: %types. object, node ve user içeriğe ilişkilerdir: İçerik görünümü bir öğeye işaret eden satırları gösterir.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Benzersiz</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Sürüm</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Hakkında sayfasının gösterdiği bilgiler (yalnızca yeni bir uzantı için).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Neyin oluşturulduğu ve nasıl kurulup kullanılacağı.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Alanların kaynağı</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Hangisi</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Uzantıyı yaz</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>var, olduğu gibi bırakıldı</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php ve extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>fetch( &lt;module&gt;, list|count|row ) işlevi.</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove ve REST/JSON uç noktası json; read ve edit ilkeleriyle.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>MySQL, PostgreSQL, SQLite, Oracle ve SQL Server için share/db_schema.dba ve sql/&lt;engine&gt;/schema.sql.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>yazıldı</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count çakışma</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name çalıştı: %rows satır ve %objects nesne yazıldı, %same değişmedi, %conflicts çakışma, %failed başarısız.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name arka planda başlatıldı (%engine); çalışma geçmişi bunu gösterir.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Bir eşleme önerildi: Denetleyin, ardından kaydedin.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Kaynak, içerik sınıfının bir öznitelik tanımlayıcısı veya şunlardan biridir: %list. İçeriğe yalnızca öznitelikler yazılır.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Sor: çözülecek bir çakışma</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Soran iki yönlü bir eşitlemenin son çalışmasından bu yana hem içerik hem de satır değişti. Bir tarafı seçin; diğerinin üzerine yazılır.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>İki yönlü</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Çakışmalar</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Çakışmalar (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>İçerik</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>İçerik ve tablo</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Bir veri tablosuna kopyalanan içerik, içeriğe kopyalanan bir tablo veya her ikisinin eşit tutulması: bir kez, zamanlanmış olarak veya her yayımlama, taşıma ve kaldırmada canlı.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>İçerikten tabloya</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>İçerik kazanır</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Veri tablosu (kalıcı sınıf)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Yön</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Her (saniye)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Başarısız</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Bulunma: %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Anahtar sütun(lar)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Son çalışma</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Canlı ve zamanlanmış</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Canlı: Düğümün altındaki, sınıfa ait bir nesnenin her yayımlanması, taşınması ve kaldırılması hemen tabloya yazılır.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Eşleme: sütun başına bir satır, sütun = kaynak</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Yeni eşitleme</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Sınıfın hiçbir sütunu bir öznitelikle veya bilinen bir kaynakla eşleşmiyor: Eşlemeyi kendiniz yazın.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Açık çakışma yok.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Henüz eşitleme yok.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Zamanlanmış</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Eşleme öner</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Kaldırılan veya alt ağaçtan çıkan bir nesnenin satırını kaldır</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Bu eşitlemeyi kaldır</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Şimdi çalıştır</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Çalışmalar</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Kaydet ve şimdi çalıştır</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başlatıldı</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Kapalı (zamanlanmış veya canlı çalışma yok)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Eşitlemeler</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>İçeriği al</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Tabloyu al</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Çakışma çözülemedi; açık kalıyor.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>İçeriğin değerleri tabloya yazıldı.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Son çalışmalar</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Bir satırın eşleştirildiği eşlenmiş sütun(lar), ör. contentobject_id veya remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Daha yeni değişiklik kazanır</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Satırlar ve içerik kalır; yalnızca eşleştirme ve açık çakışmalar kaldırılır.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Tablo için okunan alt ağaç ve satırlardan oluşturulan nesnelerin üst öğesi.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Eşitleme kaydedilmedi</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Eşitleme kaydedildi.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Yayımlanan nesnenin sınıfına ait eşitlemeler</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tablodan içeriğe</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tablo kazanır</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Tablonun değerleri içeriğe yayımlandı.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Eşitleme tabloları henüz yüklü değil</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Henüz veri tablosu eşitlemesi yok (Kurulum &gt; Veri tabloları &gt; Eşitlemeler).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Her iki taraf değiştiğinde</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Başlatıldığında</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Hiçbiri işaretlenmediğinde nesne, alt ağacı onu içeren, sınıfına ait her eşitlemeye yazılır.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>iki yönlü</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>içerikten tabloya</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>her %minutes dakikada bir</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link ve exp_data_sync_conflict tabloları düğmeyle bu veritabanında oluşturulur; başka hiçbir şey değişmez.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>canlı</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>%id nesnesi</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kapalı</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tablodan içeriğe</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>başlatıldığında</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Bu kurulum herkese açık bir demodur: Yöneticilerin parolaları değiştirilemez veya sıfırlanamaz.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Başka bir içe veya dışa aktarma mı arıyorsunuz?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>İçe aktar</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Dışa aktar</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>İçe ve dışa aktarma</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Bu araçla çalışır</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Hangi içe veya dışa aktarma aracına ihtiyacım var?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Hangi araca ihtiyacım var?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Bu görev için içe ve dışa aktarma araçları</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Paketler</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>İçeriği sınıflarıyla birlikte ya da sınıfları, uzantıları ve tasarımları bir paket dosyası olarak başka bir kuruluma taşıyın.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Sınıfları paket olarak dışa aktar…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Paket yükle ve kur…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS içe aktarma</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Başka bir web sitesinin RSS veya Atom akışından, rssimport cron işiyle tekrar tekrar içerik oluşturun.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS dışa aktarma</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Bir klasörün en yeni öğelerini RSS veya Atom akışı olarak ya da bir akış listesini OPML olarak yayımlayın.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Toplanan bilgiler</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Bir formun topladıklarını, toplanan bilgiler listesinden CSV dosyası olarak indirin.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Denetim dışa aktarma</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Denetim izinin kayıtlarını, konsoldaki gibi filtrelenmiş olarak CSV, JSON satırları veya JSON biçiminde indirin.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF dışa aktarma</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Yazdırmak veya göndermek için bir klasörden ve öğelerinden bir PDF belgesi oluşturun.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Veri tabloları</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Kalıcı sınıfların tabloları ve adlandırılmış veritabanı bağlantıları: Herhangi bir bağlantıda tabloları tanımlayın, oluşturun ve yükseltin, satırlarına göz atın ve içeriğe neyin işaret ettiğini görün.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Bir veritabanı bağlantısında tablo oluştur veya yükselt…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Kalıcı sınıfların tablolarına göz at…</translation>
     </message>
 </context>
 </TS>

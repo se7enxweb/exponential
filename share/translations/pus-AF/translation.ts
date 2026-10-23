@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>د فورم وروستۍ لیکنې بارېږي...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>د فورم وروستۍ لیکنې بار نه شوې.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10708,6 +10712,22 @@
         <source>Not saved: %error</source>
         <translation>خوندي نه شو: %error</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>پلي کول پر</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>ټوله فرعي ونه</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>فرعي ونه، پرته له هغو څانګو چې په بله برخه کې دي</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>یوازې دا څیز</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -13214,7 +13234,7 @@ You can also remove the package without uninstalling it from the package list.</
     <name>design/admin/package/list</name>
     <message>
         <source>Remove section?</source>
-        <translation>ټاکنه لرې کول؟</translation>
+        <translation>برخه لرې کړئ؟</translation>
     </message>
     <message>
         <source>Removal of packages</source>
@@ -14226,6 +14246,18 @@ Note: The packages will not be uninstalled.</source>
         <source>Help center</source>
         <translation>د مرستې مرکز</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>هېڅ نوی شی نشته</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>د ډیمو حالت</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>دا نصب یو عمومي ډیمو دی: هر څوک کېدای شي د مدیر پټنوم یې وپېژني، او د مدیرانو پټنومونه نه بدلېدای شي او نه بېرته تنظیمېدای شي. دلته هېڅ شخصي شی مه لیکئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14940,6 +14972,38 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>لارښودونه، لټون او د تېروتنې د راپور ورکولو لاره.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>نښلونونه</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>د ډېټا جدولونه</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>نومول شوي ډېټابېسونه: د SQLite دوتنې، MySQL، PostgreSQL، Oracle، SQL Server، MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>د وسیلو پټنومونه او کیلي، په کوډ شوې بڼه خوندي شوي، یوازې د نوم له مخې ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>رازونه</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>د دوامداره کلاسونو جدولونه، د هغوی ساحې، اړیکې او زېرمه.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>منځپانګه او د ډېټا جدولونه سره همغږي ساتل کېږي: یو ځل، د مهالوېش له مخې یا سمدستي.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>همغږۍ</translation>
     </message>
 </context>
 <context>
@@ -19571,6 +19635,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>پام وکړئ چې د فرعي توکو د برخې ګمارنه به هم بدله شي.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>کوم څیزونه دا برخه ترلاسه کوي</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>ټاکل شوی توکی او د هغه لاندې هر څیز</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>ټاکل شوی توکی او د هغه لاندې هغه څیزونه چې همدا برخه لري؛ هغه څانګې چې په بله برخه کې دي خپله برخه ساتي</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>یوازې ټاکل شوی توکی</translation>
     </message>
 </context>
 <context>
@@ -27017,7 +27097,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Changing an ini file from php rather than by hand: what the settings editor in the admin does, and what an installer or an upgrade script needs. Since 6.0 a direct access write keeps the comments and the ordering of the file it edits rather than rewriting it as bare key and value, so a generated change can be read afterwards by whoever has to maintain it.</source>
-        <translation>د INI دوتنې بدلول له php څخه نه په لاس: هغه څه چې په مدیریت پینل کې د امستنو سمونګر کوي، او هغه څه چې یو نصبوونکی یا د لوړولو سکرېپټ ورته اړتیا لري. له 6.0 راهیسې مستقیم لیکل د هغې دوتنې تبصرې او ترتیب ساتي چې سموي یې، نه دا چې د لوڅو کلیدونو او ارزښتونو په توګه یې بیا ولیکي، نو یو جوړ شوی بدلون وروسته هغه څوک لوستلای شي چې باید ساتنه یې وکړي.</translation>
+        <translation>د INI دوتنې بدلول له php څخه نه په لاس: هغه څه چې په مدیریت پینل کې د امستنو سمونګر کوي، او هغه څه چې یو نصبوونکی یا د لوړولو سکرېپټ ورته اړتیا لري. له 6.0 راهیسې مستقیم لیکل د هغې دوتنې تبصرې او ترتیب ساتي چې سموي یې، نه دا چې د لوڅو کیلیو او ارزښتونو په توګه یې بیا ولیکي، نو یو جوړ شوی بدلون وروسته هغه څوک لوستلای شي چې باید ساتنه یې وکړي.</translation>
     </message>
     <message>
         <source>Settings that apply to one siteaccess only, kept with the extension rather than in settings/.</source>
@@ -27702,6 +27782,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Find</source>
         <translation>موندل</translation>
+    </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>یو نوی د ډېټا جدول له خپل کلاس، سکیما، مدیریت، تګلارو، د fetch فنکشنونو او JSON پای‌ټکي سره، د ساحو له یوه لېست، د منځپانګې له یوه کلاس یا د واردولو له یوې سرچینې څخه.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>د ماډیول جدول</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject، د سایټ په ډېټابېس یا په یوه نومول شوي نښلون</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/، modules/&lt;module&gt;/، share/db_schema.dba او sql/</translation>
     </message>
 </context>
 <context>
@@ -31485,7 +31581,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The same, but never enlarges. What almost every alias wants: a thumbnail of a small image should stay small rather than go soft.</source>
-        <translation>هماغه، خو هېڅکله نه لویوي. هغه څه چې نږدې هر بل نوم یې غواړي: د یوه کوچني انځور thumbnail باید کوچنی پاتې شي نه دا چې تت شي.</translation>
+        <translation>هماغه، خو هېڅکله نه لویوي. هغه څه چې نږدې هر بل نوم یې غواړي: د یوه وړوکي انځور کوچنی انځور باید کوچنی پاتې شي نه دا چې تت شي.</translation>
     </message>
     <message>
         <source>Forces exactly this size, changing the shape of the image to do it.</source>
@@ -31509,7 +31605,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Cuts a rectangle out. Combined with a scale this is how a fixed size thumbnail is made without distortion.</source>
-        <translation>یو مستطیل پرې کوي. د اندازې له بدلون سره یو ځای، په دغه ډول د ټاکلې اندازې thumbnail پرته له ګډوډۍ جوړېږي.</translation>
+        <translation>یو مستطیل پرې کوي. د اندازې له بدلون سره یو ځای، په دغه ډول د ټاکلې اندازې کوچنی انځور پرته له ګډوډۍ جوړېږي.</translation>
     </message>
     <message>
         <source>Takes the color out.</source>
@@ -35545,6 +35641,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>د VAT د اخیستلو قاعدې (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>دا د ارزښت زیاتې مالیې قاعدې نه پلي کېږي.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>د ارزښت زیاتې مالیې هېڅ چلوونکی (handler) نه دی ټاکل شوی، نو له هر محصول څخه هغه د ارزښت زیاتې مالیې ډول اخیستل کېږي چې پر هغه ټاکل شوی، او دا قاعدې هېڅکله نه لوستل کېږي. د دوی د پلي کولو لپاره، Handler=ezdefault د shop.ini په [VATSettings] برخه کې (په settings/override/shop.ini.append.php کې) وټاکئ او محصولاتو ته د ارزښت زیاتې مالیې ډول &quot;%dynamic&quot; ورکړئ.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>د ارزښت زیاتې مالیې چلوونکی &quot;%handler&quot; چې د shop.ini په [VATSettings] برخه کې ټاکل شوی، نه بارېږي، نو دا قاعدې هېڅکله نه لوستل کېږي. د چلوونکي نوم او هغه فولډرونه وګورئ چې د ارزښت زیاتې مالیې چلوونکي پکې لټول کېږي (RepositoryDirectories او ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -41086,7 +41194,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -42211,7 +42319,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -42997,7 +43105,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -45272,7 +45380,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Add Tool</source>
@@ -45789,7 +45897,7 @@ If you do all the children will be removed as well.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46038,7 +46146,7 @@ The item can viewed by using the URL below.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Notification admin</source>
@@ -46991,7 +47099,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Discard changes</source>
@@ -47309,7 +47417,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Add Source</source>
@@ -47542,7 +47650,7 @@ menu on the top.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Section list</source>
@@ -50660,6 +50768,14 @@ See the requirements page for more information.</source>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>دغه پټنوم ښه پېژندل شوی یا ډېر عام دی، نو هر څوک یې اټکلولی شي. بل یو وټاکئ.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>د ډیمو حالت</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>د چاپېریال متغیر EXP_DEMO_MODE=1 دا نصب د عمومي ډیمو په توګه نښه کوي: د مدیر یو پېژندل شوی پټنوم منل کېږي، او د مدیرانو پټنومونه وروسته نه بدلېدای شي او نه بېرته تنظیمېدای شي. د ډیمو حالت هېڅکله د تولیدي سایټ لپاره مه کاروئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -51540,7 +51656,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -51579,7 +51695,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -51663,7 +51779,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>فرمایش</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52270,7 +52386,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>فرمایش</translation>
     </message>
     <message>
         <source>Date</source>
@@ -52716,7 +52832,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Trigger list</source>
@@ -52854,7 +52970,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -53835,7 +53951,7 @@ your account.</source>
     </message>
     <message>
         <source>Store</source>
-        <translation>هټۍ</translation>
+        <translation>خوندي کول</translation>
     </message>
     <message>
         <source>Discard</source>
@@ -57939,6 +58055,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>د eZ Page د ځای بدلولو د کاري بهیر پېښه</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>د ډېټا جدولونو ته انعکاس</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59283,7 +59403,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Order</source>
-        <translation>ترتیب</translation>
+        <translation>فرمایش</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -64775,6 +64895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>حالت نه شو ښودل کېدای. د دندې د تعقیب لپاره پاڼه بیا بار کړئ.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>د فرعي ونې هغه څیزونه چې د دې توکي برخه لري، دا برخه ترلاسه کوي؛ هغه څانګې چې په بله برخه کې دي خپله برخه ساتي، او هغه څیزونه چې تاسو یې د ګمارلو اجازه نه لرئ پرېښودل کېږي.</translation>
     </message>
 </context>
 <context>
@@ -73842,6 +73966,1593 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>More audiences</source>
         <translation>نورې لیدونکې ډلې</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>تاسو د منځپانګې د جوړولو (content/create) اجازه نه لرئ.</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>لاسي کتابونه همدا اوس جوړېږي.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>د %1 په نوم هېڅ لاسي کتاب نشته.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>د مرستې لاسي کتاب %1 د Markdown له مرستې جوړول</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>د مرستې لاسي کتابونه د Markdown له مرستې جوړول</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count رازونه له داسې کیلي سره کوډ شوي چې اوسنۍ کیلي نه ده.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done رازونه له اوسنۍ کیلي سره بیا کوډ شول، %current مخکې له مخکې همداسې وو، %bad ونه لوستل شول.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(د لومړي راز د خوندي کولو پر مهال جوړېږي)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>یوازې د ډېټابېس بیک‌اپ رازونه له کوډه نه شي ایستلای</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>نوم له تورو، عددونو او _ . : - څخه جوړ دی (تر 128 پورې)، او په env: نه پیلېږي.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>یوه نوې کیلي جوړېږي، هر راز ورسره بیا کوډ کېږي، او زړه کیلي د .previous دوتنې په توګه ساتل کېږي. وروسته د نوې کیلي له دوتنې بیک‌اپ واخلئ.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>یو نوی نوم، یا د یوه شته راز نوم چې ارزښت یې بدل شي. تش ارزښت: یوازې تشریح بدلېږي.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>بدل شوی</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>سرچینه</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>جدول جوړول</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>تشریح</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>هر راز له اوسنۍ کیلي سره بیا کوډ کول</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>کوډ کول</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>ارزښت ولیکئ.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>د کیلي پېژند</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>نومونه</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>تر اوسه هېڅ راز نشته.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>یوازې د %scope وسیله.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>د وسیلو پټنومونه، ټوکنونه او د API کیلي: د ډېټابېس نښلونونه، د واردولو سرچینې، لرې سرورونه. وسیله یوازې د راز نوم ساتي؛ ارزښت یې دلته په کوډ شوې بڼه خوندي کېږي، او بیا هېڅکله نه ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>مخکینۍ کیلي</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>بدلول</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>کیلي بدلول</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>رازونه</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>راز ټاکل</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>د %name تشریح بدله شوه؛ ارزښت یې وساتل شو.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>کیلي</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>کیلي بدله نه شوه (هغه کیلي چې له EXP_SECRET_KEY څخه راځي، داسې بدلېږي چې نوې کیلي وټاکل شي او زړه د EXP_SECRET_KEY_PREVIOUS په توګه).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>کیلي په ډېټابېس کې نه ده. له هر بیک‌اپ سره د کیلي د دوتنې (یا د EXP_SECRET_KEY) یوه کاپي په یوه جلا خوندي ځای کې وساتئ. له هغې پرته د بېرته راګرځول شوي ډېټابېس رازونه نه لوستل کېږي او باید بیا وټاکل شي.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>کیلي بدله شوه: %done رازونه بیا کوډ شول، %bad ونه لوستل شول. اوس د نوې کیلي له دوتنې بیک‌اپ واخلئ.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>راز %name لرې شو.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>راز %name په کوډ شوې بڼه خوندي شو. ارزښت یې بیا نه ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>راز خوندي نه شو: پورته کیلي وګورئ.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>د exp_secret جدول نشته</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>د وسیلې نوم له کوچنیو تورو، عددونو او _ . - څخه جوړ دی (تر 64 پورې).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>لومړی «هو، کیلي بدله شي» نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>د راز د لرې کولو لپاره د هغه تر څنګ بکس نښه کړئ. هره وسیله چې دا نوم کاروي، تر هغه پورې ناکامه کېږي چې بیا وټاکل شي.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>د چاپېریال د کیلي د بدلولو لپاره: نوې کیلي د EXP_SECRET_KEY او زړه د EXP_SECRET_KEY_PREVIOUS په توګه وټاکئ، بیا دلته هر راز بیا کوډ کړئ.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>تر هغه چې جوړ شوی نه وي، یوازې د secrets.ini رازونه او د چاپېریال متغیرونه (env:NAME) کارېدای شي.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>ارزښت</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>څوک یې کاروي، د بېلګې په توګه datatable، sqliimport، ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>هو، %name دې لرې شي</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>هو، کیلي دې بدله شي</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>دلته له کوډه نه شي ایستل کېدای</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>کوډ شوی</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>د secrets.ini دوتنه</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>د .previous دوتنه</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>د چاپېریال متغیر EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>د کیلي دوتنه %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count کلاسونه</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count منځپانګې ته</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>د %all کلاسونو له جملې %shown ښودل شوي.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>د کوربه نوم یا پته؛ د SQLite لپاره تش.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>د جوړونه &gt; رازونه یو راز، یا env:VARIABLE د چاپېریال د یوه متغیر لپاره.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>ټول (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>شته</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>لېست ته بېرته</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>کرکټر سیټ (charset)</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>کلاس، جدول یا ساحه</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>په دې نښلون کې کلاسونه: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>ستون</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>په ډېټابېس کې ستون</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>د %via له لارې په %ms ms کې ونښلول شو: %version، %tables جدولونه.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>نښلون</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>نښلونونه</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>نښلونونه (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>د منځپانګې کلاس</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>د منځپانګې څیز</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>جدولونه جوړول</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>د ډېټا جدولونه</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ډېټابېس</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>هغه ډېټابېسونه چې د ډېټا جدولونه او د واردولو او صادرولو وسیلې یې د دې نصب له خپل ډېټابېس سربېره کارولای شي: د SQLite یوه دوتنه، یا د MySQL، MariaDB، PostgreSQL، Oracle، SQL Server یا MongoDB یو سرور، دلته یا لرې. پټنوم د یوه راز نوم دی، هېڅکله یې ارزښت نه دی.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>په datatable.ini [Connection_%id] کې د امستنو یا یوې غځونې له خوا ټاکل شوی: همالته یې بدل کړئ. دلته ازمویل کېدای شي.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>تلواله</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>تشریح</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>توپیرونه</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>چلوونکی</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>د انجن د معمول پورټ لپاره تش پرېږدئ.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>انجن</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>په دې سرور کې انجنونه</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>غځونه %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ساحه</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>د موخې ساحه</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>ساحې</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>چاڼ کول</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>د SQL Server لپاره: sqlsrv، dblib یا odbc (که تش وي، هغه لومړی چې دا سرور یې لري).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>د SQLite لپاره دوتنه، د بېلګې په توګه %example (په %dirs کې). د Oracle لپاره د خدمت نوم.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>د فنکشن ځانګړنې: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>پېژندونکی</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>کرنل</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کیلي</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>کیلي: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>پېژندل شوی له</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>جوړ شوی په</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>کتلاګ بیا جوړول</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>نور</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>نومول شوي نښلونونه د exp_data_connection جدول ته اړتیا لري، او د رازونو زېرمه د exp_secret جدول ته.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>نوی نښلون</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>هېڅ دوامداره کلاس سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>هېڅ اړیکه نه ده پېژندل شوې.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>هېڅ قطار نشته.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>غوټه</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>نه دي ښودل شوي: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>یوازې د داسې انجن لپاره چې د PDO له لارې ورته لاسرسی کېږي، کله چې سرور، پورټ او ډېټابېس بس نه وي. هېڅکله پټنوم نه دی.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>د PDO د ډېټا د سرچینې نوم (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>د PDO چلوونکی</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>پټنوم</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>پخپله پټنوم</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>پټنوم: د یوه راز نوم</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>اشاره کوي</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>پورټ</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>یوازې د لوستلو لپاره: همغږي هېڅکله پکې نه لیکي</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>اړیکې</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>دا نښلون لرې کول</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>اړین</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>قطارونه</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>د SQLite دوتنې کېدای شي په دې ځایونو کې وي: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>رازونه</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>سرور</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>سرور او ډېټابېس</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>ساکټ</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>هغه څوک چې د datatable/manage تګلاره لري، کولای شي دلته یې جوړ کړي.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>د خوندي کولو پر مهال یې د رازونو په زېرمه کې وساتئ</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>د پټنوم خوندي کول د secrets/manage تګلارې ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>جدول</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>ازمویل</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>نښلون ازمویل</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>کتلاګ د autoload له ارېیو جوړېږي او تر هغه ساتل کېږي چې هغوی بدلې شي.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>کتلاګ بیا جوړ شو: %count کلاسونه.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>ستون %column (%type) په تعریف کې نشته.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>نښلون له %ms ms وروسته ناکام شو: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>نښلون خوندي نه شو</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>نښلون خوندي شو.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>د دې کلاس تعریف نه لوستل کېږي</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>ساحه %column (%type) هېڅ ستون نه لري.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>ساحه %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>لومړي %count قطارونه</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>پټنوم د رازونو په زېرمه کې خوندي نه شو (جوړونه &gt; رازونه یې لامل ښيي).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>جدول %table په ډېټابېس کې نشته.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>د exp_data_connection جدول نشته: نښلون ازمویل کېدای شي، خو تر هغه نه خوندي کېږي چې دا جدول د ډېټا جدولونو په پاڼه کې جوړ شي.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>د exp_data_connection جدول نشته: هغه د &lt;a href=&quot;%url&quot;&gt;د ډېټا جدولونو&lt;/a&gt; په پاڼه کې جوړ کړئ. تر هغه وخته یوازې هغه نښلونونه لېست کېږي چې په datatable.ini کې ټاکل شوي.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>د exp_data_connection جدول نشته: لومړی یې د ډېټا جدولونو په پاڼه کې جوړ کړئ.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>د ډېټا جدولونو اړوند جدولونه لا نه دي نصب شوي</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>د دې نصب د دوامداره کلاسونو جدولونه، لکه څنګه چې د هغوی تعریفونه یې بیانوي، او دا چې هر یو چېرته خوندي دی.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>دا د لاندې تڼۍ په واسطه په دې ډېټابېس کې جوړېږي؛ بل هېڅ شی نه بدلېږي.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>د دې نصب خپل ډېټابېس، له site.ini څخه. دلته ازمویل کېدای شي.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>دا راز نه دی ټاکل شوی.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>د نښلون د لرې کولو لپاره «هو، لرې دې شي» نښه کړئ. هغه کلاسونه او وسیلې چې دا نوم کاروي، بیا تر هغه ناکامېږي چې دا بیا جوړ شي.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>لاندې بکس نښه کړئ چې دا په کوډ شوې بڼه د هغه راز په نوم خوندي شي چې پورته لیکل شوی (که نوم تش وي، datatable. او پېژندونکی).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>ډول</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>یوازې د یوې ازموینې لپاره کارېږي او بیا هېڅکله نه ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>کارن</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>هغه نوم چې کلاسونه او وسیلې یې پرې یادوي: کوچني توري، عددونه او _. وروسته نه شي بدلېدای.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>کلاسونه له کومه راځي</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>چېرته چې جدول له تعریف سره توپیر لري</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>هو، لرې دې شي</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>د یوې ساحې بهرنۍ کیلي</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>زیاتېدونکې: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>د datatable.ini دوتنه</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() ناکامېږي</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>شته</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>له نوم څخه اټکل شوی</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>کیلي</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>نشته</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>دلته شتون نه لري</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>نه دی ټاکل شوی</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>یوازې د لوستلو لپاره</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>ټاکل شوی</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>سایټ</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>د site.ini دوتنه</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>د مدیریت پینل</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>تعریف</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>دلته نه دی ازمویل شوی</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count قطارونه د %column (%kind) له لارې دې توکي ته اشاره کوي</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count قطارونه چې پکې %field مساوي له %value سره دی.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count قطارونه.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done بیانونه</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>ټول %count قطارونه</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>ټول قطارونه</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>پلي کول</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>هغه ستونونه او انډکسونه بدلول چې توپیر لري</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>جدول جوړول</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>د یوه کلاس یا یوې غځونې جدولونه په یوه نښلون کې جوړ کړئ، یا یې تازه کړئ. تر «پلي کول» مخکې هېڅ شی نه چلېږي؛ ستونونه او انډکسونه یوازې هغه وخت ړنګېږي یا بدلېږي چې تاسو یې نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>بشپړ شو</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>هغه ستونونه او انډکسونه ړنګول چې په سکیما کې نشته</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>د یوه کلاس له تعریف څخه</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>د ډېټا جدولونو هېڅ قطار دې توکي ته اشاره نه کوي.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>نه ترسره کېږي، مګر دا چې پورته نښه شوي وي: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>ټول کارونه ترسره نه شول</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>په نښلون کې</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>یا د یوې غځونې د سکیما له دوتنې څخه</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>د %table قطارونه</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>د ډېټا جدولونو هغه قطارونه چې دې توکي ته اشاره کوي</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>سکیما</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>ښودل چې څه به ترسره شي</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>نښلون %id یوازې د لوستلو لپاره دی.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>غځونه %name د share/db_schema.dba دوتنه نه لري.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>د هر انجن د نصب SQL</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>د %id په نوم هېڅ نښلون نشته.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>د %class په نوم هېڅ دوامداره کلاس نشته.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>جدول تازه کول</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>څه به په %connection (%engine) کې ترسره شي</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>جوړول</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>تازه</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>تازه کول</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines کرښې</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>د منځپانګې یو کلاس</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>د منځپانګې د یوه کلاس پېژندونکی، connection:table، یا هغه څه چې سرچینه یې غواړي. د لېست لپاره اړین نه دی.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>د منځپانګې یو څیز (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>د جوړونې په مینو کې د ډېټا جدولونو په ډله کې یو لینک، د هغو کارنانو لپاره چې read تګلاره لري.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>د ساحو یو لېست چې دلته لیکل کېږي</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>یو نوی د ډېټا جدول له هغو ټولو سره چې ورپورې اړه لري: دوامداره کلاس، د هر انجن سکیما او د نصب SQL، یو ماډیول له list، edit، remove او یوه JSON پای‌ټکي سره، د هغه تګلارې، د مدیریت پاڼې او د کېنډۍ د fetch فنکشنونه. ساحې له یوه لېست، د منځپانګې له یوه کلاس، له یوه شته جدول یا د واردولو له یوې سرچینې څخه راځي. تر هغه چې تاسو یې ونه غواړئ هېڅ شی نه لیکل کېږي، او جدول له همدې پاڼې نصبېږي.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>یو نوی نوم، یا یوه شته غځونه چې جدول ورته زیات شي.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>یوه غوټه (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>غځونه فعالول</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>created او modified زیاتول</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>غځونې ته زیاتول</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>د مدیریت کېنډۍ</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>یو شته جدول (connection:table)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>لیکوال</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>دواړه</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>جدول تازه کول</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>د هغه ساحې لېست ته کاپي کول</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>د zip په توګه ښکته کول</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>هر جدول همداراز id ترلاسه کوي، یوه کیلي چې ډېټابېس یې شمېره زیاتوي.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>غځونه</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>ساحې، په هره کرښه کې یوه: name type[(length)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>لېبل</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>لکه څنګه چې وو پرېښودل شول: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>جواز</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>ماډیول</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>د ماډیول د جدول لارښود</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>ماډیول پرانیستل</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP کلاس</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>برخې، جواز او لیکوال</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>دوامداره کلاس</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>د اپلیکېشن چټکه پراختیا</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>تازه کول: autoload او کشونه</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>سکیما او د نصب SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>د جوړونې په مینو کې توکی</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>دوتنې ښودل</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>د کېنډۍ د fetch فنکشنونه</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>د جدول eZPersistentObject کلاس، له خپلو ساحو، نښلون او اړیکو سره.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>غځونه او جدول</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>غځونه شته: لارښود هغه دوتنې زیاتوي چې غځونه یې نه لري او خپلې امستنې د هغو پای ته ورزیاتوي؛ هلته هېڅ شی نه بیا لیکل کېږي.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>غځونه فعاله ده.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>غځونه لیکل شوې، خو فعاله نه ده.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>ساحې</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>د %source ساحې اوس په لېست کې دي: د اړتیا سره سم یې بدلې کړئ.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>دوتنې (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>د جواز متن (یوازې د نوې غځونې لپاره).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>په مدیریت پینل کې د ماډیول پاڼې (د admin4 کمپوننټونه، پرته له inline سټایلونو).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>جدول لا نشته.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>جدول شته.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>هر قطار له منځپانګې سره تړل</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>سرلیک</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>د دې لپاره چې غځونه د بستې په توګه نصب شي (یوازې د نوې غځونې لپاره).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>ډولونه: %types. object، node او user له منځپانګې سره اړیکې دي: د منځپانګې لید هغه قطارونه ښيي چې یوه توکي ته اشاره کوي.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>یوازینی</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>نسخه</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>هغه څه چې د «په اړه» پاڼه یې ښيي (یوازې د نوې غځونې لپاره).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>څه جوړ شول، او څنګه یې نصب کړئ او وکاروئ.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>ساحې له کومه راځي</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>کوم یو</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>غځونه لیکل</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>شته، لکه څنګه چې و پرېښودل شو</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php او extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>د fetch( &lt;module&gt;, list|count|row ) فنکشنونه.</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list، edit، remove او د REST/JSON پای‌ټکی json، له read او edit تګلارو سره.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba او sql/&lt;engine&gt;/schema.sql د MySQL، PostgreSQL، SQLite، Oracle او SQL Server لپاره.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>ولیکل شو</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count ټکرونه</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name وچلېد: %rows قطارونه او %objects څیزونه ولیکل شول، %same بې‌بدلونه، %conflicts ټکرونه، %failed ناکام.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name په شالید کې پیل شو (%engine)؛ د چلونو تاریخچه یې ښيي.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>یو تړاو وړاندیز شو: هغه وګورئ، بیا یې خوندي کړئ.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>سرچینه د منځپانګې د کلاس د یوې ځانګړنې پېژندونکی دی، یا له دغو څخه یو: %list. یوازې ځانګړنې په منځپانګه کې لیکل کېږي.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>پوښتل: د حل لپاره یو ټکر</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>د یوې دوه‌اړخیزې همغږۍ له وروستۍ چلونې راهیسې چې پوښتنه کوي، منځپانګه او قطار دواړه بدل شوي. یو اړخ غوره کړئ؛ بل اړخ پرې بیا لیکل کېږي.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>دوه‌اړخیزه</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>ټکرونه</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>ټکرونه (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>منځپانګه</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>منځپانګه او جدول</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>منځپانګه د ډېټا یوه جدول ته کاپي کېږي، یو جدول منځپانګې ته کاپي کېږي، یا دواړه سره همغږي ساتل کېږي: یو ځل، د مهالوېش له مخې، یا سمدستي د هر خپرولو، لېږدولو او لرې کولو پر مهال.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>منځپانګه جدول ته</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>منځپانګه غوره ده</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>د ډېټا جدول (دوامداره کلاس)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>لوری</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>تېروتنه</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>هر (ثانیې)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>موندل شوی %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>د کیلي ستون(ونه)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>وروستۍ چلونه</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>سمدستي، او د مهالوېش له مخې</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>سمدستي: د غوټې لاندې د دې کلاس د یوه څیز هر خپرول، لېږدول او لرې کول سمدستي جدول ته لیکل کېږي.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>تړاو: د هر ستون لپاره یوه کرښه، ستون = سرچینه</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>نوې همغږي</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>د کلاس هېڅ ستون له یوې ځانګړنې یا پېژندل شوې سرچینې سره سمون نه خوري: تړاو پخپله ولیکئ.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>هېڅ پرانیستی ټکر نشته.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>تر اوسه هېڅ همغږي نشته.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>د مهالوېش له مخې</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>د تړاو وړاندیز کول</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>د هغه څیز قطار لرې کول چې لرې کېږي یا له فرعي ونې وځي</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>دا همغږي لرې کول</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>اوس چلول</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>چلونې</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>خوندي کول او اوس چلول</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>پیل شوی</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>بند (نه مهالوېشلې او نه سمدستي چلونې)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>همغږۍ</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>منځپانګه غوره کول</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>جدول غوره کول</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>ټکر حل نه شو؛ پرانیستی پاتې کېږي.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>د منځپانګې ارزښتونه جدول ته ولیکل شول.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>وروستۍ چلونې</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>هغه تړل شوی ستون(ونه) چې قطار پرې پیدا کېږي، د بېلګې په توګه contentobject_id یا remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>نوی بدلون غوره دی</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>قطارونه او منځپانګه پاتې کېږي؛ یوازې جوړې اړیکې او پرانیستي ټکرونه لرې کېږي.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>هغه فرعي ونه چې د جدول لپاره لوستل کېږي، او د هغو څیزونو پورتنی توکی چې له قطارونو جوړېږي.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>همغږي خوندي نه شوه</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>همغږي خوندي شوه.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>د خپور شوي څیز د کلاس همغږۍ</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>جدول منځپانګې ته</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>جدول غوره دی</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>د جدول ارزښتونه په منځپانګه کې خپاره شول.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>د همغږۍ جدولونه لا نه دي نصب شوي</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>تر اوسه د ډېټا جدولونو هېڅ همغږي نشته (جوړونه &gt; د ډېټا جدولونه &gt; همغږۍ).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>کله چې دواړه اړخونه بدل شوي وي</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>کله چې پیل شي</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>که هېڅ یو نښه شوی نه وي، څیز د خپل کلاس هرې هغې همغږۍ ته لیکل کېږي چې فرعي ونه یې دا څیز لري.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>دوه‌اړخیزه</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>منځپانګه جدول ته</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>هر %minutes دقیقې</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync، exp_data_sync_link او exp_data_sync_conflict د دې تڼۍ په واسطه په دې ډېټابېس کې جوړېږي؛ بل هېڅ شی نه بدلېږي.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>سمدستي</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>څیز %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>جدول منځپانګې ته</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>کله چې پیل شي</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>دا نصب یو عمومي ډیمو دی: د مدیرانو پټنومونه نه بدلېدای شي او نه بېرته تنظیمېدای شي.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>ایا بل واردول یا صادرول لټوئ؟</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>واردول</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>صادرول</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>واردول او صادرول</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>له دې وسیلې سره کار کوي</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>د واردولو یا صادرولو کومې وسیلې ته اړتیا لرم؟</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>کومې وسیلې ته اړتیا لرم؟</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>د دې دندې لپاره د واردولو او صادرولو وسیلې</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>بستې</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>منځپانګه له خپلو کلاسونو سره، یا کلاسونه، غځونې او ډیزاینونه، د بستې د دوتنې په توګه بل نصب ته لېږدول.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>کلاسونه د بستې په توګه صادرول…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>یوه بسته پورته کول او نصبول…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>د RSS واردول</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>د بلې وېبپاڼې له RSS یا Atom فیډ څخه منځپانګه جوړول، بیا بیا د rssimport مهالوېشلې دندې په واسطه.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>د RSS صادرول</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>د یوه فولډر نوي توکي د RSS یا Atom فیډ په توګه خپرول، یا د فیډونو یو لېست د OPML په توګه.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>راټول شوي معلومات</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>هغه څه چې یوه فورمه راټول کړي، د CSV دوتنې په توګه ښکته کول، د راټول شویو معلوماتو له لېست څخه.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>د پلټنې صادرول</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>د پلټنې د رېکارډ توکي ښکته کول، لکه په کنسول کې چاڼ شوي، د CSV، JSON lines یا JSON په بڼه.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>د PDF صادرول</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>له یوه فولډر او د هغه له توکو څخه د PDF سند جوړول، د چاپ یا لېږلو لپاره.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>د ډېټا جدولونه</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>د دوامداره کلاسونو جدولونه او د ډېټابېس نومول شوي نښلونونه: په هر نښلون کې د جدولونو بیانول، جوړول او تازه کول، د هغوی قطارونه کتل او دا لیدل چې څه منځپانګې ته اشاره کوي.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>په یوه ډېټابېس نښلون کې یو جدول جوړول یا تازه کول…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>د دوامداره کلاسونو جدولونه کتل…</translation>
     </message>
 </context>
 </TS>

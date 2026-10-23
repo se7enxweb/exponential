@@ -350,7 +350,7 @@
     <name>design/admin/class/datatype/browse_objectrelation_placement</name>
     <message>
         <source>Choose node for default selection</source>
-        <translation>Виберіть вузол для вибору за замовчуванням</translation>
+        <translation>Виберіть вузол для типового вибору</translation>
     </message>
     <message>
         <source>Navigate using the available tabs (above), the tree menu (left) and the content list (middle).</source>
@@ -358,7 +358,7 @@
     </message>
     <message>
         <source>Select the item that you want to be the default selection then click &quot;OK&quot;.</source>
-        <translation>Виберіть елемент, який має бути вибраним за замовчуванням, і натисніть «OK».</translation>
+        <translation>Виберіть елемент, який має бути вибраним типово, і натисніть «Гаразд».</translation>
     </message>
 </context>
 <context>
@@ -373,7 +373,7 @@
     </message>
     <message>
         <source>Select the location that should be the default location then click &quot;OK&quot;.</source>
-        <translation>Виберіть розташування, яке має бути розташуванням за замовчуванням, і натисніть «OK».</translation>
+        <translation>Виберіть розташування, яке має бути типовим розташуванням, і натисніть «Гаразд».</translation>
     </message>
 </context>
 <context>
@@ -5299,7 +5299,7 @@
     </message>
     <message>
         <source>Default for new content in this siteaccess (ContentObjectLocale)</source>
-        <translation>За замовчуванням для нового вмісту в цьому доступі до сайту (ContentObjectLocale)</translation>
+        <translation>Типово для нового вмісту в цьому доступі до сайту (ContentObjectLocale)</translation>
     </message>
     <message>
         <source>Languages</source>
@@ -5315,7 +5315,7 @@
     </message>
     <message>
         <source>Default for new content</source>
-        <translation>За замовчуванням для нового вмісту</translation>
+        <translation>Типово для нового вмісту</translation>
     </message>
     <message>
         <source>Shown first by %count</source>
@@ -5471,7 +5471,7 @@
     </message>
     <message>
         <source>No SiteLanguageList: the siteaccess uses the default of site.ini</source>
-        <translation>Немає SiteLanguageList: доступ до сайту використовує значення за замовчуванням із site.ini</translation>
+        <translation>Немає SiteLanguageList: доступ до сайту використовує типове значення з site.ini</translation>
     </message>
     <message>
         <source>No siteaccess is listed in site.ini [SiteAccessSettings] AvailableSiteAccessList.</source>
@@ -5710,7 +5710,7 @@
     </message>
     <message>
         <source>Default for new content</source>
-        <translation>За замовчуванням для нового вмісту</translation>
+        <translation>Типово для нового вмісту</translation>
     </message>
     <message>
         <source>Language of this interface</source>
@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Завантаження останніх дописів форуму...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Не вдалося завантажити останні дописи форуму.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -8478,7 +8482,7 @@
     <name>design/admin/node/view/full</name>
     <message>
         <source>Default size</source>
-        <translation>Розмір за замовчуванням</translation>
+        <translation>Типовий розмір</translation>
     </message>
     <message>
         <source>Height of the tab panel</source>
@@ -8486,7 +8490,7 @@
     </message>
     <message>
         <source>Drag, or use the arrow keys, to change the height; double-click for the default size</source>
-        <translation>Перетягніть або скористайтеся клавішами зі стрілками, щоб змінити висоту; двічі клацніть для розміру за замовчуванням</translation>
+        <translation>Перетягніть або скористайтеся клавішами зі стрілками, щоб змінити висоту; двічі клацніть для типового розміру</translation>
     </message>
     <message>
         <source>Could not copy</source>
@@ -10708,6 +10712,22 @@
         <source>Not saved: %error</source>
         <translation>Не збережено: %error</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Застосувати до</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Усе піддерево</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Піддерево, крім гілок в іншому розділі</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Лише цей об&apos;єкт</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -10922,7 +10942,7 @@
     </message>
     <message>
         <source>By default every change is mailed at once. A digest holds the messages back and sends one e-mail with all of them: every day, once a week or once a month, at the hour you choose.</source>
-        <translation>За замовчуванням про кожну зміну одразу надсилається лист. Дайджест затримує повідомлення й надсилає їх усі одним листом: щодня, раз на тиждень або раз на місяць, у вибрану вами годину.</translation>
+        <translation>Типово про кожну зміну одразу надсилається лист. Дайджест затримує повідомлення й надсилає їх усі одним листом: щодня, раз на тиждень або раз на місяць, у вибрану вами годину.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -14234,6 +14254,10 @@ Note: The packages will not be uninstalled.</source>
         <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
         <translation>Ця інсталяція є публічною демонстрацією: будь-хто може знати її пароль адміністратора, а паролі адміністраторів не можна змінити або скинути. Не вводьте тут нічого приватного.</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Нічого нового</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -14482,11 +14506,11 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Enable &amp;quot;Tabs&amp;quot; by default while browsing content.</source>
-        <translation>Увімкнути &amp;quot;Вкладки&amp;quot; за замовчуванням під час перегляду вмісту.</translation>
+        <translation>Увімкнути &amp;quot;Вкладки&amp;quot; типово під час перегляду вмісту.</translation>
     </message>
     <message>
         <source>Disable &amp;quot;Tabs&amp;quot; by default while browsing content.</source>
-        <translation>Вимкнути &amp;quot;Вкладки&amp;quot; за замовчуванням під час перегляду вмісту.</translation>
+        <translation>Вимкнути &amp;quot;Вкладки&amp;quot; типово під час перегляду вмісту.</translation>
     </message>
     <message>
         <source>Tabs</source>
@@ -14948,6 +14972,38 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Посібники, пошук і як повідомити про помилку.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>З&apos;єднання</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Таблиці даних</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Іменовані бази даних: файли SQLite, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Паролі та ключі інструментів, зберігаються зашифрованими, показуються лише за назвою.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Секрети</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Таблиці постійних класів, їхні поля, зв&apos;язки та зберігання.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Синхронізація вмісту й таблиць даних: одноразово, за розкладом або в реальному часі.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Синхронізації</translation>
     </message>
 </context>
 <context>
@@ -16514,7 +16570,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Click the &quot;OK&quot; button to finish the wizard. The policy will be added to the role that is currently being edited.</source>
-        <translation>Натисніть кнопку «OK», щоб завершити роботу майстра. Політику буде додано до ролі, що зараз редагується.</translation>
+        <translation>Натисніть кнопку «Гаразд», щоб завершити роботу майстра. Політику буде додано до ролі, що зараз редагується.</translation>
     </message>
     <message>
         <source>Any</source>
@@ -16586,7 +16642,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Choose where the function may be used. "Any" leaves a limitation out. Several limitations must all be met; several values of one limitation are alternatives. Press OK to add the policy to the draft of the role.</source>
-        <translation>Виберіть, де можна використовувати функцію. «Будь-який» пропускає обмеження. Кілька обмежень мають виконуватися всі; кілька значень одного обмеження — це альтернативи. Натисніть «OK», щоб додати політику до чернетки ролі.</translation>
+        <translation>Виберіть, де можна використовувати функцію. «Будь-який» пропускає обмеження. Кілька обмежень мають виконуватися всі; кілька значень одного обмеження — це альтернативи. Натисніть «Гаразд», щоб додати політику до чернетки ролі.</translation>
     </message>
     <message>
         <source>Hold Ctrl (Cmd on a Mac) to choose more than one value.</source>
@@ -17903,7 +17959,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose a destination location for RSS import then click &quot;OK&quot;.</source>
-        <translation>Скористайтеся перемикачами, щоб вибрати розташування призначення для імпорту RSS, а потім натисніть &quot;OK&quot;.</translation>
+        <translation>Скористайтеся перемикачами, щоб вибрати розташування призначення для імпорту RSS, а потім натисніть «Гаразд».</translation>
     </message>
     <message>
         <source>Every new item of the feed becomes an object directly below this location.</source>
@@ -17922,7 +17978,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose an image to use in the RSS export then click &quot;OK&quot;.</source>
-        <translation>Скористайтеся перемикачами, щоб вибрати зображення для експорту RSS, а потім натисніть &quot;OK&quot;.</translation>
+        <translation>Скористайтеся перемикачами, щоб вибрати зображення для експорту RSS, а потім натисніть «Гаразд».</translation>
     </message>
     <message>
         <source>Only RSS 2.0 feeds carry the image; feed readers show it beside the feed name.</source>
@@ -17941,7 +17997,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose the item that you want to export using RSS then click &quot;OK&quot;.</source>
-        <translation>Скористайтеся перемикачами, щоб вибрати елемент, який потрібно експортувати через RSS, а потім натисніть &quot;OK&quot;.</translation>
+        <translation>Скористайтеся перемикачами, щоб вибрати елемент, який потрібно експортувати через RSS, а потім натисніть «Гаразд».</translation>
     </message>
     <message>
         <source>The feed lists the newest objects of the chosen class published below this location; with Subnodes ticked, also those deeper down.</source>
@@ -17960,7 +18016,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Use the radio buttons to choose a user then click &quot;OK&quot;. The user will become the owner of the objects that were imported using RSS.</source>
-        <translation>Скористайтеся перемикачами, щоб вибрати користувача, а потім натисніть &quot;OK&quot;. Цей користувач стане власником об&apos;єктів, імпортованих через RSS.</translation>
+        <translation>Скористайтеся перемикачами, щоб вибрати користувача, а потім натисніть «Гаразд». Цей користувач стане власником об&apos;єктів, імпортованих через RSS.</translation>
     </message>
     <message>
         <source>The owner needs no login of their own; the import creates the objects on their behalf.</source>
@@ -19392,7 +19448,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>A search is only counted when the siteaccess the visitor searches in has LogSearchStats=enabled in the [SearchSettings] block of its site.ini; it is disabled by default. What is listed below was recorded earlier.</source>
-        <translation>Пошук враховується лише тоді, коли доступ до сайту, в якому шукає відвідувач, має LogSearchStats=enabled у блоці [SearchSettings] свого site.ini; за замовчуванням це вимкнено. Перелічене нижче було записано раніше.</translation>
+        <translation>Пошук враховується лише тоді, коли доступ до сайту, в якому шукає відвідувач, має LogSearchStats=enabled у блоці [SearchSettings] свого site.ini; типово це вимкнено. Перелічене нижче було записано раніше.</translation>
     </message>
     <message>
         <source>Searches are recorded on: %siteaccesses.</source>
@@ -19579,6 +19635,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Зауважте, що призначення розділу підлеглих елементів також буде змінено.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Які об&apos;єкти отримують розділ</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Вибраний елемент і кожен об&apos;єкт під ним</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Вибраний елемент і об&apos;єкти під ним, що мають його розділ; гілки в іншому розділі зберігають свій</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Лише вибраний елемент</translation>
     </message>
 </context>
 <context>
@@ -25895,7 +25967,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Constructor, does nothing by default.</source>
-        <translation>Конструктор, за замовчуванням нічого не робить.</translation>
+        <translation>Конструктор, типово нічого не робить.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
@@ -26809,7 +26881,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Which other pages have to be rebuilt when one object is published. The default clears the object, its parents and what relates to it; a group named after a content class identifier says what else - a listing that has to change when a comment is posted, an object somewhere else entirely.</source>
-        <translation>Які інші сторінки треба перебудувати, коли публікується один об&apos;єкт. За замовчуванням очищаються об&apos;єкт, його батьківські елементи й те, що з ним пов&apos;язане; група, названа за ідентифікатором класу вмісту, вказує, що ще - список, який має змінитися, коли додано коментар, або об&apos;єкт зовсім в іншому місці.</translation>
+        <translation>Які інші сторінки треба перебудувати, коли публікується один об&apos;єкт. Типово очищаються об&apos;єкт, його батьківські елементи й те, що з ним пов&apos;язане; група, названа за ідентифікатором класу вмісту, вказує, що ще - список, який має змінитися, коли додано коментар, або об&apos;єкт зовсім в іншому місці.</translation>
     </message>
     <message>
         <source>Decides whether a version is published in the request or handed to the queue. Publishing a large object blocks whoever pressed the button; a queue that takes everything makes small edits feel broken. This is where that line is drawn.</source>
@@ -27710,6 +27782,22 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Find</source>
         <translation>Знайти</translation>
+    </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Нова таблиця даних із класом, схемою, адмініструванням, політиками, функціями вибірки та кінцевою точкою JSON — зі списку полів, класу вмісту або джерела імпорту.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Таблиця модуля</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, у базі даних сайту або в іменованому з&apos;єднанні</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba і sql/</translation>
     </message>
 </context>
 <context>
@@ -29393,7 +29481,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>The DFS handler keeps an index of files in the database and the files themselves somewhere else. That somewhere else is this: a mounted filesystem by default, but it could be object storage or anything reachable.</source>
-        <translation>Обробник DFS зберігає індекс файлів у базі даних, а самі файли — деінде. Це «деінде» — саме воно: за замовчуванням змонтована файлова система, але це може бути об&apos;єктне сховище чи будь-що досяжне.</translation>
+        <translation>Обробник DFS зберігає індекс файлів у базі даних, а самі файли — деінде. Це «деінде» — саме воно: типово змонтована файлова система, але це може бути об&apos;єктне сховище чи будь-що досяжне.</translation>
     </message>
     <message>
         <source>This is what stops two servers building the same cache entry at the same time, and what makes a delete on one server take effect on all of them. Extending the backend that ships means only the parts that need to differ have to be written; every method below already works.</source>
@@ -30017,7 +30105,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Puts what a step needs in front of the person: lists to pick from, defaults, anything fetched. Runs before the form is drawn.</source>
-        <translation>Показує людині те, що потрібно кроку: списки для вибору, значення за замовчуванням, усе отримане. Виконується перед побудовою форми.</translation>
+        <translation>Показує людині те, що потрібно кроку: списки для вибору, типові значення, усе отримане. Виконується перед побудовою форми.</translation>
     </message>
     <message>
         <source>Checks what was sent. Add a message to $errorList and return INVALID to keep the person on this step; nothing is stored until every step has passed.</source>
@@ -35554,6 +35642,18 @@ Note: The packages will not be uninstalled.</source>
         <source>VAT charging rules (%rules)</source>
         <translation>Правила нарахування ПДВ (%rules)</translation>
     </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Ці правила ПДВ не застосовуються.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Обробник ПДВ не задано, тому для кожного товару стягується заданий у ньому тип ПДВ, а ці правила ніколи не зчитуються. Щоб застосувати їх, задайте Handler=ezdefault у розділі [VATSettings] файлу shop.ini (у settings/override/shop.ini.append.php) і призначте товарам тип ПДВ &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Не вдається завантажити обробник ПДВ &quot;%handler&quot;, заданий у розділі [VATSettings] файлу shop.ini, тому ці правила ніколи не зчитуються. Перевірте назву обробника та каталоги, у яких шукаються обробники ПДВ (RepositoryDirectories і ExtensionDirectories).</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/shop/vattype</name>
@@ -38364,7 +38464,7 @@ your account.</source>
     </message>
     <message>
         <source>the default</source>
-        <translation>значення за замовчуванням</translation>
+        <translation>типове значення</translation>
     </message>
     <message>
         <source>this siteaccess</source>
@@ -41581,7 +41681,7 @@ your account.</source>
     </message>
     <message>
         <source>Default name</source>
-        <translation>Назва за замовчуванням</translation>
+        <translation>Типова назва</translation>
     </message>
     <message>
         <source>Identifier</source>
@@ -41613,7 +41713,7 @@ your account.</source>
     </message>
     <message>
         <source>Default number of rows</source>
-        <translation>Кількість рядків за замовчуванням</translation>
+        <translation>Типова кількість рядків</translation>
     </message>
     <message>
         <source>New option</source>
@@ -42141,7 +42241,7 @@ your account.</source>
     </message>
     <message>
         <source>Default Open Graph image</source>
-        <translation>Зображення Open Graph за замовчуванням</translation>
+        <translation>Типове зображення Open Graph</translation>
     </message>
     <message>
         <source>Alternative text is required</source>
@@ -44842,7 +44942,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>Choose node for default selection</source>
-        <translation>Виберіть вузол для вибору за замовчуванням</translation>
+        <translation>Виберіть вузол для типового вибору</translation>
     </message>
     <message>
         <source>Collected info</source>
@@ -48894,7 +48994,7 @@ The default code was made from the basic parameters you chose.</source>
     </message>
     <message>
         <source>It is one of the most popular databases in the Open Source community and most often on by default in PHP.</source>
-        <translation>Це одна з найпопулярніших баз даних у спільноті Open Source, і в PHP вона найчастіше ввімкнена за замовчуванням.</translation>
+        <translation>Це одна з найпопулярніших баз даних у спільноті Open Source, і в PHP вона найчастіше ввімкнена типово.</translation>
     </message>
     <message>
         <source>It is a very popular database in the Open Source community and provides highly advanced database functionality.</source>
@@ -50644,6 +50744,38 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Змінна середовища EXP_DEMO_MODE=1 позначає цю інсталяцію як публічну демонстрацію: приймається загальновідомий пароль адміністратора, а паролі адміністраторів згодом не можна буде змінити або скинути. Ніколи не використовуйте демонстраційний режим для робочого сайту.</translation>
     </message>
+    <message>
+        <source>This site is already installed</source>
+        <translation>Цей сайт уже встановлено</translation>
+    </message>
+    <message>
+        <source>The setup wizard installs Exponential on a new site. It does not run on an installed site, and opening it changes nothing: the site stays online.</source>
+        <translation>Майстер встановлення встановлює Exponential на новий сайт. На встановленому сайті він не запускається, і його відкриття нічого не змінює: сайт залишається доступним.</translation>
+    </message>
+    <message>
+        <source>Reinstalling is done with the kickstarter (%file, then php bin/php/kickstarter.php) or with a fresh installation.</source>
+        <translation>Перевстановлення виконується за допомогою kickstarter (%file, потім php bin/php/kickstarter.php) або чистим встановленням.</translation>
+    </message>
+    <message>
+        <source>Reinstall this site?</source>
+        <translation>Перевстановити цей сайт?</translation>
+    </message>
+    <message>
+        <source>This site is already installed. The setup wizard is enabled for installed sites (AllowWizardOnInstalledSite), which is meant for development only.</source>
+        <translation>Цей сайт уже встановлено. Майстер встановлення увімкнено для встановлених сайтів (AllowWizardOnInstalledSite), що призначено лише для розробки.</translation>
+    </message>
+    <message>
+        <source>Starting the wizard puts the whole site into maintenance mode: every other visitor gets a maintenance page until the wizard finishes, or until it has been left for 15 minutes.</source>
+        <translation>Запуск майстра переводить увесь сайт у режим обслуговування: кожен інший відвідувач бачить сторінку обслуговування, доки майстер не завершить роботу або доки його не буде полишено на 15 хвилин.</translation>
+    </message>
+    <message>
+        <source>Start the setup wizard</source>
+        <translation>Запустити майстер встановлення</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -50653,7 +50785,7 @@ See the requirements page for more information.</source>
     </message>
     <message>
         <source>Constructor, does nothing by default.</source>
-        <translation>Конструктор, за замовчуванням нічого не робить.</translation>
+        <translation>Конструктор, типово нічого не робить.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
@@ -51245,7 +51377,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Exponential comes with a good list of supported charsets by default, however they can be a bit slow due to being made in pure PHP code. Luckily Exponential supports the mbstring extension for handling some of the charsets.</source>
-        <translation>Exponential за замовчуванням постачається з добрим переліком підтримуваних кодувань, однак вони можуть працювати дещо повільно, оскільки написані на чистому PHP. На щастя, Exponential підтримує розширення mbstring для обробки деяких кодувань.</translation>
+        <translation>Exponential типово постачається з добрим переліком підтримуваних кодувань, однак вони можуть працювати дещо повільно, оскільки написані на чистому PHP. На щастя, Exponential підтримує розширення mbstring для обробки деяких кодувань.</translation>
     </message>
     <message>
         <source>By enabling the mbstring extension Exponential will have access to more charsets and also be able to process some of them faster, such as Unicode and iso-8859-*. This is recommended for multilingual sites and sites with more exotic charsets.</source>
@@ -51313,7 +51445,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>In most cases, the DOM extension is enabled by default because it is included in the PHP core. However, some Linux distributions have PHP without compiled-in support for DOM. Instead, they provide DOM as a shared module in a separate RPM package called &quot;php-xml&quot;.</source>
-        <translation>Здебільшого розширення DOM увімкнено за замовчуванням, оскільки воно входить до ядра PHP. Однак у деяких дистрибутивах Linux PHP не має вбудованої підтримки DOM. Натомість вони надають DOM як спільний модуль в окремому RPM-пакеті «php-xml».</translation>
+        <translation>Здебільшого розширення DOM типово увімкнено, оскільки воно входить до ядра PHP. Однак у деяких дистрибутивах Linux PHP не має вбудованої підтримки DOM. Натомість вони надають DOM як спільний модуль в окремому RPM-пакеті «php-xml».</translation>
     </message>
     <message>
         <source>Time zone configuration</source>
@@ -51321,7 +51453,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>You are using the default time zone, UTC. It is important that you set your time zone to make sure date and time is handled correctly. To do this, set the &lt;strong&gt;date.timezone&lt;/strong&gt; setting in &lt;strong&gt;php.ini&lt;/strong&gt;.</source>
-        <translation>Ви використовуєте часовий пояс за замовчуванням, UTC. Важливо задати свій часовий пояс, щоб дата й час оброблялися правильно. Для цього задайте параметр &lt;strong&gt;date.timezone&lt;/strong&gt; у &lt;strong&gt;php.ini&lt;/strong&gt;.</translation>
+        <translation>Ви використовуєте типовий часовий пояс, UTC. Важливо задати свій часовий пояс, щоб дата й час оброблялися правильно. Для цього задайте параметр &lt;strong&gt;date.timezone&lt;/strong&gt; у &lt;strong&gt;php.ini&lt;/strong&gt;.</translation>
     </message>
     <message>
         <source>Example &lt;strong&gt;php.ini&lt;/strong&gt; configuration:</source>
@@ -51647,7 +51779,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>Порядок</translation>
+        <translation>Замовлення</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52254,7 +52386,7 @@ To do this you need to change the %chown commands under Alternative shell comman
     </message>
     <message>
         <source>Order</source>
-        <translation>Порядок</translation>
+        <translation>Замовлення</translation>
     </message>
     <message>
         <source>Date</source>
@@ -57923,6 +58055,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>eZ Page swap workflow event</source>
         <translation>Подія робочого процесу заміни eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Віддзеркалити в таблиці даних</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59267,7 +59403,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Order</source>
-        <translation>Порядок</translation>
+        <translation>Замовлення</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -60937,6 +61073,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The endpoint URI must be an absolute address, such as https://app.example.com/callback.</source>
         <translation>URI кінцевої точки має бути абсолютною адресою, наприклад https://app.example.com/callback.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Вибрати</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Обов&apos;язковий</translation>
     </message>
 </context>
 <context>
@@ -64747,6 +64895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Не вдалося показати стан. Перезавантажте сторінку, щоб стежити за завданням.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Об&apos;єкти піддерева, що мають розділ цього елемента, отримують розділ; гілки в іншому розділі зберігають свій, а об&apos;єкти, яким ви не можете його призначити, пропускаються.</translation>
     </message>
 </context>
 <context>
@@ -71052,7 +71204,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>built-in default</source>
-        <translation>вбудоване значення за замовчуванням</translation>
+        <translation>вбудоване типове значення</translation>
     </message>
     <message>
         <source>never</source>
@@ -72422,7 +72574,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The nonprofit, the product family and its commitments.</source>
-        <translation>Некомерційна організація, сімейство продуктів і її зобов’язання.</translation>
+        <translation>Некомерційна організація, сімейство продуктів і її зобов&apos;язання.</translation>
     </message>
     <message>
         <source>%count help topics</source>
@@ -73596,6 +73748,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>Більше аудиторій</translation>
     </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Ви не можете створювати вміст (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Посібники вже створюються.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Посібника %1 не існує.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Створити посібник довідки %1 з довідки Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Створити посібники довідки з довідки Markdown</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -73821,6 +73993,1566 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
         <translation>Ця інсталяція є публічною демонстрацією: паролі адміністраторів не можна змінити або скинути.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>Секретів, зашифрованих іншим ключем, ніж поточний: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>Повторно зашифровано поточним ключем: %done; уже були зашифровані ним: %current; не вдалося прочитати: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(створюється, коли зберігається перший секрет)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Сама лише резервна копія бази даних не може розшифрувати секрети</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Назва складається з літер, цифр і _ . : - (не більше 128) і не починається з env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Створюється новий ключ, кожен секрет повторно шифрується ним, а старий ключ зберігається як файл .previous. Після цього створіть резервну копію нового файлу ключа.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Нова назва або назва наявного секрету, щоб замінити його значення. Порожнє значення: змінюється лише опис.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Змінено</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Походження</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Створити таблицю</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Опис</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Повторно зашифрувати кожен секрет поточним ключем</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Шифрування</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Введіть значення.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ID ключа</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Назви</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Секретів ще немає.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Лише інструмент %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Паролі, токени та ключі API інструментів: з&apos;єднання з базами даних, джерела імпорту, віддалені сервери. Інструмент зберігає назву секрету; значення зберігається тут у зашифрованому вигляді й більше ніколи не показується.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Попередній ключ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Замінити</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Замінити ключ</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Секрети</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Задати секрет</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Опис %name змінено; значення збережено.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Не вдалося замінити ключ (ключ з EXP_SECRET_KEY замінюється заданням нового ключа, а старого — як EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Ключа немає в базі даних. Зберігайте копію файлу ключа (або EXP_SECRET_KEY) з кожною резервною копією, в окремому безпечному місці. Без нього секрети відновленої бази даних неможливо прочитати, і їх доведеться задати знову.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Ключ замінено: повторно зашифровано: %done; не вдалося прочитати: %bad. Створіть резервну копію нового файлу ключа зараз.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Секрет %name вилучено.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Секрет %name збережено в зашифрованому вигляді. Його значення більше не показується.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Не вдалося зберегти секрет: див. ключ вище.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Таблиця exp_secret відсутня</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Інструмент складається з малих літер, цифр і _ . - (не більше 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Спочатку позначте «Так, замінити ключ».</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Щоб вилучити секрет, позначте поле поруч із ним. Інструмент, що його називає, не працюватиме, доки секрет не буде задано знову.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Щоб замінити ключ із середовища: задайте новий ключ як EXP_SECRET_KEY, а старий — як EXP_SECRET_KEY_PREVIOUS, потім повторно зашифруйте тут кожен секрет.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Інструмент</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Доки її не створено, можна використовувати лише секрети з secrets.ini та змінні середовища (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Хто його використовує, напр. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Так, вилучити %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Так, замінити ключ</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>тут не вдається розшифрувати</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>зашифровано</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>файл secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>файл .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>змінна середовища EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>файл ключа %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>Класів: %count</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>До вмісту: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>Показано класів: %shown з %all.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Ім&apos;я хоста або адреса; порожньо для SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Секрет із «Налаштування &gt; Секрети» або env:VARIABLE для змінної середовища.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Усі (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Доступно</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Назад до списку</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Кодування</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Клас</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Клас, таблиця або поле</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Класи в цьому з&apos;єднанні: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Стовпець</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Стовпець у базі даних</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>З&apos;єднано через %via за %ms мс: %version, таблиць: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>З&apos;єднання</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>З&apos;єднання</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>З&apos;єднання (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Клас вмісту</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Об&apos;єкт вмісту</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Створити таблиці</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Таблиці даних</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>База даних</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Бази даних, які таблиці даних та інструменти імпорту й експорту можуть використовувати, крім власної бази цієї інсталяції: файл SQLite або сервер MySQL, MariaDB, PostgreSQL, Oracle, SQL Server чи MongoDB, локальний або віддалений. Пароль — це назва секрету, ніколи не його значення.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Оголошено в datatable.ini [Connection_%id] у налаштуваннях або розширенням: змінюйте його там. Тут його можна перевірити.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Типово</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Опис</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Відмінності</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Драйвер</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Порожньо — типовий порт рушія.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Рушій</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Рушії на цьому сервері</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Розширення %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Поле</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Поле цілі</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Поля</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Для SQL Server: sqlsrv, dblib або odbc (якщо порожньо — перший, наявний на цьому сервері).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Для SQLite — файл, напр. %example (у %dirs). Для Oracle — назва служби.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Атрибути-функції: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Ідентифікатор</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Ядро</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Ключ: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Відомо з</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Створено в</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Створити каталог знову</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Більше</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Іменованим з&apos;єднанням потрібна таблиця exp_data_connection, сховищу секретів — таблиця exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Нове з&apos;єднання</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Жоден постійний клас не відповідає.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Жоден зв&apos;язок не відомий.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Рядків немає.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Вузол</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Не показано: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Лише для рушія, до якого звертаються через PDO, коли сервера, порту й бази даних недостатньо. Ніколи не пароль.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>Ім&apos;я джерела даних PDO</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>Драйвер PDO</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Сам пароль</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Пароль: назва секрету</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Вказує на</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Лише читання: синхронізація ніколи не записує до неї</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Зв&apos;язки</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Вилучити це з&apos;єднання</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Обов&apos;язковий</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Рядки</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>Файли SQLite можуть бути в: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Секрети</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Розділ</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Сервер</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Сервер і база даних</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Сокет</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Користувач із політикою datatable/manage може створити їх тут.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Під час збереження зберегти його у сховищі секретів</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Для збереження пароля потрібна політика secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Таблиця</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Перевірити</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Перевірити з&apos;єднання</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Каталог створюється з масивів автозавантаження й зберігається, доки вони не зміняться.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Каталог створено знову. Класів: %count.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Стовпця %column (%type) немає у визначенні.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>З&apos;єднання не вдалося через %ms мс: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>З&apos;єднання не збережено</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>З&apos;єднання збережено.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Не вдається прочитати визначення цього класу</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Поле %column (%type) не має стовпця.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Поле %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>Перші рядки: %count</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Не вдалося зберегти пароль у сховищі секретів (причину вказано в «Налаштування &gt; Секрети»).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Таблиці %table немає в базі даних.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Таблиця exp_data_connection відсутня: з&apos;єднання можна перевірити, але не зберегти, доки її не створено на сторінці «Таблиці даних».</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Таблиця exp_data_connection відсутня: створіть її на сторінці &lt;a href=&quot;%url&quot;&gt;Таблиці даних&lt;/a&gt;. Доти показуються лише з&apos;єднання, оголошені в datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Таблиця exp_data_connection відсутня: спочатку створіть її на сторінці «Таблиці даних».</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Таблиці для таблиць даних ще не встановлено</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Таблиці постійних класів цієї інсталяції так, як їх описують їхні визначення, і місце зберігання кожної.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Їх буде створено в цій базі даних кнопкою нижче; більше нічого не змінюється.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Власна база даних цієї інсталяції, з site.ini. Тут її можна перевірити.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Цей секрет не задано.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Щоб вилучити з&apos;єднання, позначте «Так, вилучити його». Класи та інструменти, що його називають, не працюватимуть, доки його не буде створено знову.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Позначте поле нижче, щоб зберегти його в зашифрованому вигляді як секрет із назвою, вказаною вище (datatable. та ідентифікатор, якщо назва порожня).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Використовується лише для перевірки й більше ніколи не показується.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Користувач</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Як його називають класи та інструменти: малі літери, цифри та _. Пізніше змінити не можна.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Звідки походять класи</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Де таблиця відрізняється від визначення</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Так, вилучити його</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>зовнішній ключ поля</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>автоінкремент: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>файл datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() не спрацьовує</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>існує</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>виведено з назви</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>ключ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>відсутня</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>тут недоступно</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>не задано</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>лише читання</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>задано</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>сайт</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>файл site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>адміністрування</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>визначення</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>невідомо</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>тут не перевірено</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>Рядків, що вказують на цей елемент через %column (%kind): %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>Рядків, де %field дорівнює %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>Рядків: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>Інструкцій: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Усі рядки (%count)</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Усі рядки</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Застосувати</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Змінити стовпці й індекси, що відрізняються</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Створити таблицю</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Створіть таблиці класу або розширення в з&apos;єднанні чи оновіть їх. Нічого не виконується до натискання «Застосувати»; стовпці й індекси видаляються або змінюються лише тоді, коли ви це позначите.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Готово</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Видалити стовпці й індекси, яких немає в схемі</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>З визначення класу</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Жоден рядок таблиці даних не вказує на цей елемент.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Не виконано, бо не позначено вище: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Не все вдалося виконати</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>У з&apos;єднанні</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Або з файлу схеми розширення</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Рядки %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Рядки таблиць даних, що вказують на цей елемент</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Схема</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Показати, що буде виконано</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>З&apos;єднання %id доступне лише для читання.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Розширення %name не має share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>SQL встановлення для кожного рушія</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>З&apos;єднання %id не існує.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Постійного класу %class не існує.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Оновити таблицю</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Що буде виконано в %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>створити</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>актуальна</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>оновити</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>Рядків: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Клас вмісту</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Ідентифікатор класу вмісту, з&apos;єднання:таблиця або те, що вимагає джерело. Для списку не потрібно.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Об&apos;єкт вмісту (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Посилання в групі «Таблиці даних» меню «Налаштування» для користувачів із політикою read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Список полів, введений тут</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Нова таблиця даних з усім, що до неї належить: постійний клас, схема та SQL встановлення для кожного рушія, модуль зі списком, редагуванням, вилученням і кінцевою точкою JSON, його політики, сторінки адміністрування та функції вибірки для шаблонів. Поля беруться зі списку, класу вмісту, наявної таблиці або джерела імпорту. Нічого не записується, доки ви цього не запросите, а таблиця встановлюється з цієї сторінки.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Нова назва або наявне розширення, до якого додати таблицю.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Вузол (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Активувати розширення</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Додати created і modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Додати до розширення</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Шаблони адміністрування</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Наявна таблиця (з&apos;єднання:таблиця)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Автор</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Обидва</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Оновити таблицю до актуального стану</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Скопіювати його поля до списку</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Завантажити як zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Кожна таблиця також отримує id — ключ, який база даних збільшує автоматично.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Розширення</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Поля, по одному в рядку: назва тип[(довжина)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Мітка</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Залишено без змін: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Ліцензія</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Модуль</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Майстер таблиць модулів</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Відкрити модуль</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>Клас PHP</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Частини, ліцензія та автор</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Постійний клас</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Швидка розробка застосунків</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Оновити: автозавантаження й кеші</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Схема та SQL встановлення</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Пункт меню «Налаштування»</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Показати файли</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Функції вибірки для шаблонів</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Клас eZPersistentObject таблиці з її полями, з&apos;єднанням і зв&apos;язками.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Розширення й таблиця</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Розширення існує: майстер додає файли, яких у ньому немає, і дописує свої налаштування; нічого з наявного не перезаписується.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Розширення активне.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Розширення записано, але не активовано.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Поля</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Поля з %source тепер у списку: змініть їх за потреби.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Файли (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Текст ліцензії (лише для нового розширення).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Сторінки модуля в адмініструванні (компоненти admin4, без вбудованих стилів).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Таблиця ще не існує.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Таблиця існує.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Прив&apos;язати кожен рядок до вмісту</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Заголовок</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Щоб установити розширення як пакет (лише для нового розширення).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Типи: %types. object, node і user — це зв&apos;язки з вмістом: подання вмісту показує рядки, що вказують на елемент.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Унікальне</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Що показує сторінка «Про розширення» (лише для нового розширення).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Що створено і як це встановити й використовувати.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Звідки беруться поля</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Яке саме</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Записати розширення</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>існує, залишено без змін</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php і extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Виклик fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove і кінцева точка REST/JSON json, з політиками read і edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba і sql/&lt;engine&gt;/schema.sql для MySQL, PostgreSQL, SQLite, Oracle і SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>записано</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>Конфліктів: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name виконано: записано рядків: %rows, об&apos;єктів: %objects; без змін: %same; конфліктів: %conflicts; з помилкою: %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name запущено у фоновому режимі (%engine); його видно в історії запусків.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Запропоновано зіставлення: перевірте його, потім збережіть.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Джерело — це ідентифікатор атрибута класу вмісту або одне з: %list. У вміст записуються лише атрибути.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Запитувати: конфлікт для розв&apos;язання</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>З часу останнього запуску двосторонньої синхронізації, яка запитує, змінилися і вміст, і рядок. Виберіть одну сторону; іншу буде перезаписано.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>В обидва боки</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Конфлікти</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Конфлікти (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Вміст</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Вміст і таблиця</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Вміст копіюється до таблиці даних, таблиця — у вміст, або обидва синхронізуються: одноразово, за розкладом або в реальному часі під час кожної публікації, переміщення й вилучення.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Вміст у таблицю</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Перевага за вмістом</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Таблиця даних (постійний клас)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Напрямок</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Кожні (секунд)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>З помилкою</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Виявлено %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Ключові стовпці</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Останній запуск</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>У реальному часі й за розкладом</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>У реальному часі: кожна публікація, переміщення й вилучення об&apos;єкта цього класу під вузлом одразу записується до таблиці.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Зіставлення: один рядок на стовпець, стовпець = джерело</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Нова синхронізація</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Жоден стовпець класу не відповідає атрибуту чи відомому джерелу: напишіть зіставлення самостійно.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Відкритих конфліктів немає.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Синхронізацій ще немає.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>За розкладом</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Запропонувати зіставлення</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Вилучати рядок об&apos;єкта, який вилучено або який залишає піддерево</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Вилучити цю синхронізацію</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Запустити зараз</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Запуски</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Зберегти й запустити зараз</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Запущено</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Вимкнено (без запусків за розкладом і в реальному часі)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Синхронізації</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Взяти вміст</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Взяти таблицю</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Не вдалося розв&apos;язати конфлікт; він залишається відкритим.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Значення вмісту записано до таблиці.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Останні запуски</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Зіставлені стовпці, за якими визначається рядок, напр. contentobject_id або remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Перевага за новішою зміною</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Рядки й вміст залишаються; зникають лише зв&apos;язок між ними та відкриті конфлікти.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Піддерево, яке зчитується для таблиці, і батьківський вузол об&apos;єктів, створених із рядків.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Синхронізацію не збережено</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Синхронізацію збережено.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Синхронізації класу опублікованого об&apos;єкта</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Таблиця у вміст</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Перевага за таблицею</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Значення таблиці опубліковано у вмісті.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Таблиці синхронізації ще не встановлено</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Синхронізацій таблиць даних ще немає («Налаштування &gt; Таблиці даних &gt; Синхронізації»).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Коли змінилися обидві сторони</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Під час запуску</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Якщо нічого не позначено, об&apos;єкт записується до кожної синхронізації його класу, піддерево якої його містить.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>в обидва боки</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>вміст у таблицю</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>кожні %minutes хв</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link і exp_data_sync_conflict буде створено в цій базі даних кнопкою; більше нічого не змінюється.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>у реальному часі</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>об&apos;єкт %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>вимкнено</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>таблиця у вміст</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>під час запуску</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Шукаєте інший імпорт або експорт?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Імпорт</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Експорт</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Імпорт і експорт</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Працює з цим інструментом</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Який інструмент імпорту чи експорту мені потрібен?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Який інструмент мені потрібен?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Інструменти імпорту та експорту для цього завдання</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Пакети</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Перенесення вмісту з його класами або класів, розширень і дизайнів до іншої інсталяції у вигляді файлу пакета.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Експортувати класи як пакет…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Завантажити й установити пакет…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>Імпорт RSS</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Створення вмісту зі стрічки RSS або Atom іншого вебсайту, знову й знову за допомогою завдання cron rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>Експорт RSS</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Публікація найновіших елементів папки як стрічки RSS або Atom чи списку стрічок як OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Зібрана інформація</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Завантаження зібраних однією формою даних як файлу CSV зі списку зібраної інформації.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Експорт аудиту</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Завантаження записів журналу аудиту, відфільтрованих як у консолі, у форматі CSV, рядків JSON або JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Експорт PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Створення документа PDF з папки та її елементів для друку або надсилання.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Таблиці даних</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Таблиці постійних класів та іменовані з&apos;єднання з базами даних: опис, створення й оновлення таблиць у будь-якому з&apos;єднанні, перегляд їхніх рядків і того, що вказує на вміст.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Створити або оновити таблицю в з&apos;єднанні з базою даних…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Переглянути таблиці постійних класів…</translation>
     </message>
 </context>
 </TS>

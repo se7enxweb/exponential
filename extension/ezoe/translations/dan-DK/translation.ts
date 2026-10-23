@@ -770,7 +770,7 @@ Vil du have flere oplysninger om dette problem?</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation>Markér alt</translation>
+        <translation>Marker alt</translation>
     </message>
     <message>
         <source>Paste is now in plain text mode. Click again to toggle back to regular paste mode. After you paste something you will be returned to regular paste mode.</source>
@@ -902,7 +902,7 @@ Vil du have flere oplysninger om dette problem?</translation>
     </message>
     <message>
         <source>Please wait...</source>
-        <translation>Vent venligst...</translation>
+        <translation>Vent...</translation>
     </message>
     <message>
         <source>Suggestions</source>
@@ -1496,7 +1496,7 @@ Vil du have flere oplysninger om dette problem?</translation>
     </message>
     <message>
         <source>Removes a hyperlink. Select a link first and then click this button to remove the link (but not the content of the link).</source>
-        <translation>Fjerner et hyperlink. Markér først et link, og klik derefter på denne knap for at fjerne linket (men ikke linkets indhold).</translation>
+        <translation>Fjerner et hyperlink. Marker først et link, og klik derefter på denne knap for at fjerne linket (men ikke linkets indhold).</translation>
     </message>
     <message>
         <source>Create a named anchor. An anchor-like icon will appear in the editor.</source>
@@ -1512,7 +1512,7 @@ Vil du have flere oplysninger om dette problem?</translation>
     </message>
     <message>
         <source>Create a custom tag. Optionally select the text you want to transform to a custom tag and click the button to open the insert custom tag window. Select the name of the custom tag you want to insert from the list, edit the attributes and click OK to insert it.</source>
-        <translation>Opret et brugerdefineret tag. Markér eventuelt den tekst, du vil omdanne til et brugerdefineret tag, og klik på knappen for at åbne vinduet til indsættelse af brugerdefinerede tags. Vælg navnet på det brugerdefinerede tag, du vil indsætte, på listen, rediger attributterne, og klik på OK for at indsætte det.</translation>
+        <translation>Opret et brugerdefineret tag. Marker eventuelt den tekst, du vil omdanne til et brugerdefineret tag, og klik på knappen for at åbne vinduet til indsættelse af brugerdefinerede tags. Vælg navnet på det brugerdefinerede tag, du vil indsætte, på listen, rediger attributterne, og klik på OK for at indsætte det.</translation>
     </message>
     <message>
         <source>Insert literal text. Text written in this field will be rendered literally in the final output.</source>
@@ -1556,7 +1556,7 @@ Vil du have flere oplysninger om dette problem?</translation>
     </message>
     <message>
         <source>Merge the selected table cells into one cell. (Select several cells with shift+click or Ctrl+click)</source>
-        <translation>Flet de markerede tabelceller til én celle. (Markér flere celler med Shift+klik eller Ctrl+klik)</translation>
+        <translation>Flet de markerede tabelceller til én celle. (Marker flere celler med Shift+klik eller Ctrl+klik)</translation>
     </message>
     <message>
         <source>Open Online Editor xhtml source code editor. This button is not enabled by default, and is only intended for experienced users.</source>

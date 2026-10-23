@@ -466,7 +466,7 @@
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Ascending</source>
@@ -1220,15 +1220,15 @@
     </message>
     <message>
         <source>Override</source>
-        <translation>Anpassa</translation>
+        <translation>Åsidosättning</translation>
     </message>
     <message>
         <source>Source template</source>
-        <translation>Källstilmall</translation>
+        <translation>Källmall</translation>
     </message>
     <message>
         <source>Override template</source>
-        <translation>Anpassad stilmall</translation>
+        <translation>Åsidosättningsmall</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -1292,7 +1292,7 @@
     </message>
     <message>
         <source>View template overrides for the &lt;%source_template_name&gt; template.</source>
-        <translation>Se stilmallar som lagts över för &lt;%source_template_name&gt; stilmallen.</translation>
+        <translation>Visa mallåsidosättningar för mallen &lt;%source_template_name&gt;.</translation>
     </message>
     <message>
         <source>Edit the override template for the &lt;%override_name&gt; override.</source>
@@ -1300,7 +1300,7 @@
     </message>
     <message>
         <source>This class does not have any class-level override templates.</source>
-        <translation>Den här klassen har inga klassnivåstilmallar som lagts över.</translation>
+        <translation>Den här klassen har inga åsidosättningsmallar på klassnivå.</translation>
     </message>
     <message>
         <source>Default object availability</source>
@@ -1384,15 +1384,15 @@
     </message>
     <message>
         <source>Hide override templates.</source>
-        <translation>Dölj anpassade stilmallar.</translation>
+        <translation>Dölj åsidosättningsmallar.</translation>
     </message>
     <message>
         <source>Override templates</source>
-        <translation>Anpassade stilmallar</translation>
+        <translation>Åsidosättningsmallar</translation>
     </message>
     <message>
         <source>Show override templates.</source>
-        <translation>Visa anpassade stilmallar.</translation>
+        <translation>Visa åsidosättningsmallar.</translation>
     </message>
     <message>
         <source>Hide available translations.</source>
@@ -1452,7 +1452,7 @@
     </message>
     <message>
         <source>Override templates (%1)</source>
-        <translation>Anpassade stilmallar (%1)</translation>
+        <translation>Åsidosättningsmallar (%1)</translation>
     </message>
     <message>
         <source>Translations (%translations)</source>
@@ -2754,7 +2754,7 @@
     </message>
     <message>
         <source>Section</source>
-        <translation>Val</translation>
+        <translation>Sektion</translation>
     </message>
     <message>
         <source>Modified</source>
@@ -3181,7 +3181,7 @@
     </message>
     <message>
         <source>Remove selected locations.</source>
-        <translation>Raderera valda platser.</translation>
+        <translation>Ta bort valda platser.</translation>
     </message>
     <message>
         <source>Add locations</source>
@@ -4861,11 +4861,11 @@
     </message>
     <message>
         <source>The system will prompt you to specify a location by browsing the tree.</source>
-        <translation>Systemet låter dej välja en plats i trädstrukturen.</translation>
+        <translation>Systemet låter dig välja en plats i trädstrukturen.</translation>
     </message>
     <message>
         <source>The system will prompt you to browse for a location for the object.</source>
-        <translation>Systemet låter dej välja en plats för objektet i trädstrukturen.</translation>
+        <translation>Systemet låter dig välja en plats för objektet i trädstrukturen.</translation>
     </message>
 </context>
 <context>
@@ -6767,7 +6767,7 @@
     </message>
     <message>
         <source>The URL wildcard list does not contain any aliases.</source>
-        <translation>Uel-jokerlistan innehåller inte några alias.</translation>
+        <translation>Listan över URL:er med jokertecken innehåller inga alias.</translation>
     </message>
     <message>
         <source>Invert selection.</source>
@@ -7575,6 +7575,10 @@
     <message>
         <source>Loading the latest forum posts...</source>
         <translation>Läser in de senaste foruminläggen...</translation>
+    </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>De senaste foruminläggen kunde inte läsas in.</translation>
     </message>
 </context>
 <context>
@@ -8491,7 +8495,7 @@
     </message>
     <message>
         <source>Override templates</source>
-        <translation>Anpassad stilmall</translation>
+        <translation>Åsidosättningsmallar</translation>
     </message>
 </context>
 <context>
@@ -9014,7 +9018,7 @@
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Ascending</source>
@@ -9910,7 +9914,7 @@
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>The item's object states, as group/state identifiers.</source>
@@ -11079,6 +11083,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Inte sparat: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Tillämpa på</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Hela underträdet</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Underträdet, utom grenar i en annan sektion</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Endast det här objektet</translation>
     </message>
 </context>
 <context>
@@ -14252,7 +14272,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Manage templates, menus, toolbars and other things related to appearence.</source>
-        <translation>Hantera stilmallar, menyer, verktygslådor och andra saker som är relaterade till utseendet.</translation>
+        <translation>Hantera mallar, menyer, verktygsfält och andra saker som är relaterade till utseendet.</translation>
     </message>
     <message>
         <source>Configure settings and manage advanced functionality.</source>
@@ -14657,6 +14677,18 @@ Obs: Paketen avinstalleras inte.</translation>
     <message>
         <source>Help center</source>
         <translation>Hjälpcenter</translation>
+    </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Inget nytt</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demoläge</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Den här installationen är en offentlig demo: vem som helst kan känna till dess administratörslösenord, och administratörslösenord kan inte ändras eller återställas. Ange inget privat här.</translation>
     </message>
 </context>
 <context>
@@ -15388,6 +15420,38 @@ Obs: Paketen avinstalleras inte.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Guider, sökning och hur du rapporterar ett fel.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Anslutningar</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Namngivna databaser: SQLite-filer, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Lösenord och nycklar för verktygen, lagrade krypterade, visas endast med namn.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemligheter</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabellerna för de persistenta klasserna, deras fält, relationer och lagring.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Innehåll och datatabeller i takt: en gång, enligt schema eller direkt.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringar</translation>
     </message>
 </context>
 <context>
@@ -16397,7 +16461,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Template overrides</source>
-        <translation>Anpassad stilmall</translation>
+        <translation>Mallåsidosättningar</translation>
     </message>
     <message>
         <source>New class override</source>
@@ -16405,7 +16469,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>New node override</source>
-        <translation>Ny anpassad nod</translation>
+        <translation>Ny nodåsidosättning</translation>
     </message>
     <message>
         <source>Remove bookmark</source>
@@ -16712,7 +16776,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Welcome to the policy wizard. This three-step wizard will help you create a new policy that will be added to the role that is currently being edited. The wizard can be aborted at any stage by using the &quot;Cancel&quot; button.</source>
-        <translation>Välkommen till policyguiden. den här trestegsguiden hjälper dej att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på &quot;avbryt&quot;-knappen.</translation>
+        <translation>Välkommen till policyguiden. Den här trestegsguiden hjälper dig att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på knappen &quot;Avbryt&quot;.</translation>
     </message>
     <message>
         <source>Use the drop-down menu to select the module that you want to grant access to.</source>
@@ -16835,7 +16899,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Welcome to the policy wizard. This three-step wizard will help you set up a new policy. The policy will be added to the role that is currently being edited. The wizard can be aborted at any stage by using the &quot;Cancel&quot; button.</source>
-        <translation>Välkommen till policyguiden. den här trestegsguiden hjälper dej att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på &quot;avbryt&quot;-knappen.</translation>
+        <translation>Välkommen till policyguiden. Den här trestegsguiden hjälper dig att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på knappen &quot;Avbryt&quot;.</translation>
     </message>
     <message>
         <source>Use the drop-down menu to select the function that you want to grant access to.</source>
@@ -16982,7 +17046,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Welcome to the policy wizard. This three-step wizard will help you set up a new policy. The policy will be added to the role that is currently being edited. The wizard can be aborted at any stage by using the &quot;Cancel&quot; button.</source>
-        <translation>Välkommen till policyguiden. den här trestegsguiden hjälper dej att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på &quot;avbryt&quot;-knappen.</translation>
+        <translation>Välkommen till policyguiden. Den här trestegsguiden hjälper dig att skapa en ny policy att lägga till den roll som redigeras. Du kan avbryta i alla steg genom att klicka på knappen &quot;Avbryt&quot;.</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -19590,6 +19654,22 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Observera att sektionstilldelningen för underobjekten också ändras.</translation>
     </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Vilka objekt som får sektionen</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Det valda elementet och alla objekt under det</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Det valda elementet och de objekt under det som har dess sektion; grenar i en annan sektion behåller sin</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Endast det valda elementet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/confirmremove</name>
@@ -21161,7 +21241,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Template cache was cleared</source>
-        <translation>Stilmallscache tömdes</translation>
+        <translation>Mallcachen tömdes</translation>
     </message>
     <message>
         <source>%name was cleared</source>
@@ -21169,15 +21249,15 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Template overrides and compiled templates</source>
-        <translation>Anpassade stilmallar och färdigställda stilmallar</translation>
+        <translation>Mallåsidosättningar och kompilerade mallar</translation>
     </message>
     <message>
         <source>Clear template caches</source>
-        <translation>Töm cachen för stilmallar</translation>
+        <translation>Töm mallcacher</translation>
     </message>
     <message>
         <source>Content views and template blocks</source>
-        <translation>Innehållsvy och stilmallsblock</translation>
+        <translation>Innehållsvyer och mallblock</translation>
     </message>
     <message>
         <source>Clear content caches</source>
@@ -24751,7 +24831,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Template operator wizard (step 1 of 3)</source>
-        <translation>Stilmallsoperatorsverktyg (steg 1 av 3)</translation>
+        <translation>Guide för malloperatorer (steg 1 av 3)</translation>
     </message>
     <message>
         <source>Restart</source>
@@ -26093,6 +26173,22 @@ Obs: Paketen avinstalleras inte.</translation>
         <source>Find</source>
         <translation>Hitta</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>En ny datatabell med klass, schema, administration, policyer, fetch-funktioner och JSON-slutpunkt, från en lista med fält, en innehållsklass eller en importkälla.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Modultabell</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, på webbplatsens databas eller en namngiven anslutning</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba och sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/datatype</name>
@@ -26733,7 +26829,7 @@ Obs: Paketen avinstalleras inte.</translation>
     <name>design/admin/setup/rad/templateoperator</name>
     <message>
         <source>Template operator wizard (step 2 of 3)</source>
-        <translation>Stilmallsoperatorsverktyg (steg 2 av 3)</translation>
+        <translation>Guide för malloperatorer (steg 2 av 3)</translation>
     </message>
     <message>
         <source>Name</source>
@@ -26777,7 +26873,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Template operator wizard (step 3 of 3)</source>
-        <translation>Stilmallsoperatorsverktyg (steg 3 av 3)</translation>
+        <translation>Guide för malloperatorer (steg 3 av 3)</translation>
     </message>
     <message>
         <source>Class name</source>
@@ -26793,7 +26889,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Handles template operator %operator_name. By using %operator_name you can...</source>
-        <translation>Hanterar stillmallsoperator %operator_name. Genom att använda %operator_name kan du...</translation>
+        <translation>Hanterar malloperatorn %operator_name. Genom att använda %operator_name kan du...</translation>
     </message>
     <message>
         <source>Hint: The first line will be used for the brief description. The rest will become the documentation.</source>
@@ -27354,7 +27450,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Invert selection.</source>
@@ -27972,7 +28068,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Apply to</source>
-        <translation>Applicerae på</translation>
+        <translation>Tillämpa på</translation>
     </message>
     <message>
         <source>Remove selected</source>
@@ -28268,7 +28364,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Invert selection.</source>
@@ -28583,7 +28679,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Ascending</source>
@@ -28938,6 +29034,18 @@ Obs: Paketen avinstalleras inte.</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>Momsregler (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>De här momsreglerna tillämpas inte.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Ingen momshanterare är inställd, så varje produkt debiteras med den momstyp som är inställd på den, och de här reglerna läses aldrig. Om du vill tillämpa dem anger du Handler=ezdefault under [VATSettings] i shop.ini (i settings/override/shop.ini.append.php) och ger produkterna momstypen &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Momshanteraren &quot;%handler&quot; som är inställd under [VATSettings] i shop.ini kan inte läsas in, så de här reglerna läses aldrig. Kontrollera hanterarens namn och de kataloger där momshanterare söks (RepositoryDirectories och ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -29976,7 +30084,7 @@ Obs: Paketen avinstalleras inte.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>No workflow</source>
@@ -31727,7 +31835,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>The newly created template file will be placed in</source>
-        <translation>Den nyskapade stilmallen kommer att placeras i</translation>
+        <translation>Den nyskapade mallfilen placeras i</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -31846,23 +31954,23 @@ ditt konto.</translation>
     </message>
     <message>
         <source>The web server does not have write access to the requested template.</source>
-        <translation>Webservern har inte skrivrättigheter på den förfrågade stilmallen.</translation>
+        <translation>Webbservern har inte skrivbehörighet till den begärda mallen.</translation>
     </message>
     <message>
         <source>The web server does not have read access to the requested template.</source>
-        <translation>Webservern har inte läsrättigheter på den förfrågade stilmallen.</translation>
+        <translation>Webbservern har inte läsbehörighet till den begärda mallen.</translation>
     </message>
     <message>
         <source>The requested template does not exist or is not being used as an override.</source>
-        <translation>Den förfrågade stilmallen existerar inte eller används inte som en override.</translation>
+        <translation>Den begärda mallen finns inte eller används inte som åsidosättning.</translation>
     </message>
     <message>
         <source>Edit &lt;%template_name&gt; [Template]</source>
-        <translation>Redigera &lt;%template_name&gt; [Stilmall]</translation>
+        <translation>Redigera &lt;%template_name&gt; [Mall]</translation>
     </message>
     <message>
         <source>Requested template</source>
-        <translation>Efterfrågad stilmall</translation>
+        <translation>Begärd mall</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -31952,7 +32060,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Edit override template.</source>
-        <translation>Redigera anpassad stilmall.</translation>
+        <translation>Redigera åsidosättningsmallen.</translation>
     </message>
     <message>
         <source>Remove selected</source>
@@ -31968,7 +32076,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Create a new template override.</source>
-        <translation>Skapa ny mall för anpassad stilmall.</translation>
+        <translation>Skapa en ny mallåsidosättning.</translation>
     </message>
     <message>
         <source>Update priorities</source>
@@ -32583,7 +32691,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>What happens to it</source>
@@ -32813,7 +32921,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>User</source>
@@ -33237,7 +33345,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Återställd</translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Done</source>
@@ -35453,19 +35561,19 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Override templates</source>
-        <translation>Anpassad stilmall</translation>
+        <translation>Åsidosättningsmallar</translation>
     </message>
     <message>
         <source>Override</source>
-        <translation>Anpassa</translation>
+        <translation>Åsidosättning</translation>
     </message>
     <message>
         <source>Source template</source>
-        <translation>Källstilmall</translation>
+        <translation>Källmall</translation>
     </message>
     <message>
         <source>Override template</source>
-        <translation>Anpassad stilmall</translation>
+        <translation>Åsidosättningsmall</translation>
     </message>
     <message>
         <source>Objects always available (default value)</source>
@@ -38162,7 +38270,7 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     </message>
     <message>
         <source>The newly created template file will be placed in</source>
-        <translation>Den nyskapade stilmallen kommer att placeras i</translation>
+        <translation>Den nyskapade mallfilen placeras i</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -38260,7 +38368,7 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     <name>design/standard/design/templateview</name>
     <message>
         <source>Overrides for &lt;%template_name&gt; template in &lt;%current_siteaccess&gt; siteaccess [%override_count]</source>
-        <translation>Overrides för &lt;%template_name&gt; stillmall i &lt;%current_siteaccess&gt; siteaccess [%override_count]</translation>
+        <translation>Åsidosättningar för mallen &lt;%template_name&gt; i webbplatsingången &lt;%current_siteaccess&gt; [%override_count]</translation>
     </message>
     <message>
         <source>Default template resource</source>
@@ -40862,7 +40970,7 @@ den övre menyn.</translation>
     </message>
     <message>
         <source>Override</source>
-        <translation>Anpassa</translation>
+        <translation>Åsidosättning</translation>
     </message>
     <message>
         <source>File</source>
@@ -41184,7 +41292,7 @@ Genom att använda %operatorname kan du ...</translation>
     </message>
     <message>
         <source>Content views and template blocks.</source>
-        <translation>Innehållsvy och stilmallsblock.</translation>
+        <translation>Innehållsvyer och mallblock.</translation>
     </message>
     <message>
         <source>Content caches</source>
@@ -41196,7 +41304,7 @@ Genom att använda %operatorname kan du ...</translation>
     </message>
     <message>
         <source>Template overrides and template compiling.</source>
-        <translation>Anpassade stilmallar och färdigställda stilmallar.</translation>
+        <translation>Mallåsidosättningar och mallkompilering.</translation>
     </message>
     <message>
         <source>Template caches</source>
@@ -43782,6 +43890,14 @@ Se sidan med krav för mer information.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Det här lösenordet är välkänt eller för vanligt, så vem som helst kan gissa det. Välj ett annat.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demoläge</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Miljövariabeln EXP_DEMO_MODE=1 markerar den här installationen som en offentlig demo: ett välkänt administratörslösenord godtas, och administratörslösenord kan inte ändras eller återställas senare. Använd aldrig demoläget för en produktionswebbplats.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -44825,7 +44941,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>Apply to</source>
-        <translation>Applicerae på</translation>
+        <translation>Tillämpa på</translation>
     </message>
     <message>
         <source>Add Rule</source>
@@ -44901,7 +45017,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordning</translation>
+        <translation>Beställning</translation>
     </message>
     <message>
         <source>Order total</source>
@@ -44997,11 +45113,11 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Sort descending</source>
-        <translation>Sortera nedstigande</translation>
+        <translation>Sortera fallande</translation>
     </message>
     <message>
         <source>Name</source>
@@ -45471,7 +45587,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>Descending</source>
-        <translation>Nedstigande</translation>
+        <translation>Fallande</translation>
     </message>
     <message>
         <source>Ascending</source>
@@ -45771,7 +45887,7 @@ För att göra detta måste du ändra %chown kommandona under Alternativa shell-
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>No workflow</source>
@@ -46439,7 +46555,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>The newly created template file will be placed in</source>
-        <translation>Den nyskapade stilmallen kommer att placeras i</translation>
+        <translation>Den nyskapade mallfilen placeras i</translation>
     </message>
     <message>
         <source>Filename</source>
@@ -46542,7 +46658,7 @@ ditt konto.</translation>
     <name>design/standard/visual/templateedit</name>
     <message>
         <source>Edit template: &lt;%template&gt;</source>
-        <translation>Redigera stilmall: &lt;%template&gt;</translation>
+        <translation>Redigera mall: &lt;%template&gt;</translation>
     </message>
     <message>
         <source>Apply changes</source>
@@ -46554,31 +46670,31 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Back to overrides</source>
-        <translation>Tillbaka till stilmallar</translation>
+        <translation>Tillbaka till åsidosättningar</translation>
     </message>
     <message>
         <source>Back to override overview.</source>
-        <translation>Tillbaka till stilmallsöversikten.</translation>
+        <translation>Tillbaka till översikten över åsidosättningar.</translation>
     </message>
     <message>
         <source>The web server does not have write access to the requested template.</source>
-        <translation>Webservern har inte skrivrättigheter på den förfrågade stilmallen.</translation>
+        <translation>Webbservern har inte skrivbehörighet till den begärda mallen.</translation>
     </message>
     <message>
         <source>The web server does not have read access to the requested template.</source>
-        <translation>Webservern har inte läsrättigheter på den förfrågade stilmallen.</translation>
+        <translation>Webbservern har inte läsbehörighet till den begärda mallen.</translation>
     </message>
     <message>
         <source>The requested template does not exist or is not being used as an override.</source>
-        <translation>Den förfrågade stilmallen existerar inte eller används inte som en override.</translation>
+        <translation>Den begärda mallen finns inte eller används inte som åsidosättning.</translation>
     </message>
     <message>
         <source>Edit &lt;%template_name&gt; [Template]</source>
-        <translation>Redigera &lt;%template_name&gt; [Stilmall]</translation>
+        <translation>Redigera &lt;%template_name&gt; [Mall]</translation>
     </message>
     <message>
         <source>Requested template</source>
-        <translation>Förfrågad stilmall</translation>
+        <translation>Begärd mall</translation>
     </message>
     <message>
         <source>Siteaccess</source>
@@ -46890,7 +47006,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>Using workflow</source>
@@ -46954,7 +47070,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Ställ om</translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Next step</source>
@@ -47180,7 +47296,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>The application %application_name% has requested access to this website on your behalf.</source>
-        <translation>Applikationen %application_name% har begärt tillgång till webbplatsen åt dej.</translation>
+        <translation>Applikationen %application_name% har begärt åtkomst till webbplatsen åt dig.</translation>
     </message>
 </context>
 <context>
@@ -47408,7 +47524,7 @@ ditt konto.</translation>
     </message>
     <message>
         <source>Template override cache</source>
-        <translation>Cache för anpassade stillmallar</translation>
+        <translation>Cache för mallåsidosättningar</translation>
     </message>
     <message>
         <source>RSS cache</source>
@@ -50782,7 +50898,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -50869,6 +50985,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Arbetsflödeshändelse för byte av eZ Page</translation>
+    </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Spegla till datatabeller</translation>
     </message>
 </context>
 <context>
@@ -59066,7 +59186,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordning</translation>
+        <translation>Beställning</translation>
     </message>
     <message>
         <source>Date</source>
@@ -60581,7 +60701,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Ordning</translation>
+        <translation>Beställning</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -60869,7 +60989,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Workflow</source>
-        <translation>Arbetsflöden</translation>
+        <translation>Arbetsflöde</translation>
     </message>
     <message>
         <source>Events</source>
@@ -65038,7 +65158,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Återställd</translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Result</source>
@@ -66074,6 +66194,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Statusen kunde inte visas. Läs in sidan igen för att följa jobbet.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Objekten i underträdet som har det här elementets sektion får sektionen; grenar i en annan sektion behåller sin, och objekt som du inte får tilldela den hoppas över.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -66909,7 +67033,7 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>Återställd</translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Help</source>
@@ -75147,6 +75271,1593 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>More audiences</source>
         <translation>Fler målgrupper</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Du får inte skapa innehåll (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Handböckerna byggs redan.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Det finns ingen handbok %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Bygg hjälphandboken %1 från Markdown-hjälpen</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Bygg hjälphandböckerna från Markdown-hjälpen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count hemligheter är krypterade med en annan nyckel än den nuvarande.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done hemligheter krypterades om med den nuvarande nyckeln, %current var det redan, %bad kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(skapas när den första hemligheten sparas)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>En säkerhetskopia av enbart databasen kan inte dekryptera hemligheterna</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Ett namn består av bokstäver, siffror och _ . : - (högst 128) och börjar inte med env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>En ny nyckel skapas, varje hemlighet krypteras om med den, och den gamla nyckeln sparas som .previous-filen. Säkerhetskopiera den nya nyckelfilen efteråt.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Ett nytt namn, eller namnet på en befintlig hemlighet för att ersätta dess värde. Tomt värde: endast beskrivningen ändras.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alla</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ändrad</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Kommer från</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Skapa tabellen</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivning</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Kryptera om varje hemlighet med den nuvarande nyckeln</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Kryptering</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Ange värdet.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Nyckel-ID</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Ingen hemlighet ännu.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Endast verktyget %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Lösenord, token och API-nycklar för verktygen: databasanslutningar, importkällor, fjärrservrar. Ett verktyg behåller namnet på en hemlighet; värdet lagras här, krypterat, och visas aldrig igen.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Föregående nyckel</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Rotera</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotera nyckeln</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemligheter</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Ange en hemlighet</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Beskrivningen av %name ändrades; värdet behölls.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Nyckeln</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Nyckeln kunde inte roteras (en nyckel från EXP_SECRET_KEY roteras genom att du anger en ny och den gamla som EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Nyckeln finns inte i databasen. Spara en kopia av nyckelfilen (eller av EXP_SECRET_KEY) med varje säkerhetskopia, på en egen säker plats. Utan den kan hemligheterna i en återställd databas inte läsas och måste anges igen.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Nyckeln roterades: %done hemligheter krypterades om, %bad kunde inte läsas. Säkerhetskopiera den nya nyckelfilen nu.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Hemligheten %name togs bort.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Hemligheten %name sparades krypterad. Dess värde visas inte igen.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Hemligheten kunde inte sparas: se nyckeln ovan.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Tabellen exp_secret saknas</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Verktyget består av gemener, siffror och _ . - (högst 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Markera &quot;Ja, rotera nyckeln&quot; först.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Markera rutan bredvid hemligheten för att ta bort den. Ett verktyg som anger den misslyckas tills den anges igen.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Så roterar du en nyckel från miljön: ange den nya nyckeln som EXP_SECRET_KEY och den gamla som EXP_SECRET_KEY_PREVIOUS och kryptera sedan om varje hemlighet här.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Verktyg</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Tills den har skapats kan endast hemligheterna i secrets.ini och miljövariabler (env:NAME) användas.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Värde</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Vem som använder den, t.ex. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ja, ta bort %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ja, rotera nyckeln</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>kan inte dekrypteras här</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>krypterad</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>filen secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>.previous-filen</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>miljövariabeln EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>nyckelfilen %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count klasser</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count till innehåll</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown av %all klasser visas.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Ett värdnamn eller en adress; tomt för SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>En hemlighet från Konfiguration &gt; Hemligheter, eller env:VARIABLE för en miljövariabel.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alla (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Tillgänglig</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tillbaka till listan</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Teckenuppsättning</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klass, tabell eller fält</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klasser på den här anslutningen: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolumn</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Kolumn i databasen</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Ansluten via %via på %ms ms: %version, %tables tabeller.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Anslutning</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Anslutningar</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Anslutningar (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Innehållsklass</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Innehållsobjekt</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Skapa tabellerna</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databas</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Databaser som datatabellerna och import- och exportverktygen kan använda utöver installationens egen: en SQLite-fil, eller en MySQL-, MariaDB-, PostgreSQL-, Oracle-, SQL Server- eller MongoDB-server, lokalt eller på distans. Ett lösenord är namnet på en hemlighet, aldrig dess värde.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Deklarerad i datatable.ini [Connection_%id] av inställningarna eller ett tillägg: ändra den där. Den kan testas här.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivning</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Skillnader</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Drivrutin</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Tomt för databassystemets vanliga port.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Databassystem</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Databassystem på den här servern</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Tillägget %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Fält</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Målets fält</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Fält</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrera</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>För SQL Server: sqlsrv, dblib eller odbc (tomt: den första som servern har).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>För SQLite filen, t.ex. %example (i %dirs). För Oracle tjänstnamnet.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Funktionsattribut: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifierare</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kärna</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nyckel</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Nyckel: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Känd från</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Skapad i</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Bygg katalogen igen</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Mer</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Namngivna anslutningar behöver tabellen exp_data_connection, hemlighetslagret tabellen exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Ny anslutning</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Ingen persistent klass matchar.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Ingen relation är känd.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Inga rader.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Nod</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Visas inte: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Endast för ett databassystem som nås via PDO, när server, port och databas inte räcker. Aldrig ett lösenord.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO-datakällnamn (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO-drivrutin</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lösenord</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Själva lösenordet</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Lösenord: namnet på en hemlighet</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Pekar på</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Skrivskyddad: synkroniseringen skriver aldrig till den</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relationer</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Ta bort den här anslutningen</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obligatorisk</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rader</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite-filer får ligga i: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemligheter</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server och databas</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Unix-socket</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Den som har policyn datatable/manage kan skapa dem här.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Spara det i hemlighetslagret när du sparar</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Att spara ett lösenord kräver policyn secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabell</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testa</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Testa anslutningen</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalogen byggs från autoload-arrayerna och behålls tills de ändras.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalogen byggdes om: %count klasser.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Kolumnen %column (%type) finns inte i definitionen.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Anslutningen misslyckades efter %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Anslutningen sparades inte</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Anslutningen sparades.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definitionen av den här klassen kan inte läsas</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Fältet %column (%type) har ingen kolumn.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Fältet %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>De första %count raderna</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Lösenordet kunde inte sparas i hemlighetslagret (Konfiguration &gt; Hemligheter anger varför).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabellen %table finns inte i databasen.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Tabellen exp_data_connection saknas: en anslutning kan testas men inte sparas förrän tabellen har skapats på sidan Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Tabellen exp_data_connection saknas: skapa den på sidan &lt;a href=&quot;%url&quot;&gt;Datatabeller&lt;/a&gt;. Fram till dess listas endast de anslutningar som är deklarerade i datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Tabellen exp_data_connection saknas: skapa den först på sidan Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Datatabellernas tabeller är inte installerade ännu</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabellerna för den här installationens persistenta klasser, så som deras definitioner beskriver dem, och var var och en lagras.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>De skapas i den här databasen med knappen nedan; inget annat ändras.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Installationens egen databas, från site.ini. Den kan testas här.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Den här hemligheten är inte angiven.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Markera &quot;Ja, ta bort den&quot; för att ta bort anslutningen. Klasser och verktyg som anger den misslyckas sedan tills den skapas igen.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Markera rutan nedan för att spara det, krypterat, som den hemlighet som anges ovan (datatable. och identifieraren när namnet är tomt).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Typ</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Används endast för ett test och visas aldrig igen.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Användare</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Namnet som klasser och verktyg anger den med: gemener, siffror och _. Det kan inte ändras senare.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Var klasserna kommer ifrån</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Där tabellen skiljer sig från definitionen</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ja, ta bort den</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>en främmande nyckel i ett fält</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>räknas upp automatiskt: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>filen datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() misslyckas</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>finns</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>härledd från namnet</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>nyckel</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>saknas</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>inte tillgänglig här</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>inte angiven</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>skrivskyddad</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>angiven</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>webbplats</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>filen site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administrationen</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definitionen</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>okänd</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>inte testad här</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rader pekar på det här elementet via %column (%kind)</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rader där %field är %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rader.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done satser</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Alla %count rader</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Alla rader</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Tillämpa</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Ändra kolumner och index som skiljer sig</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Skapa tabellen</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Skapa tabellerna för en klass eller ett tillägg på en anslutning, eller uppdatera dem. Inget körs före &quot;Tillämpa&quot;; kolumner och index tas bort eller ändras endast när du markerar det.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Klart</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Ta bort kolumner och index som schemat inte har</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Från definitionen av en klass</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Ingen rad i en datatabell pekar på det här elementet.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Görs endast om det är markerat ovan: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Allt kunde inte utföras</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>På anslutningen</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Eller från schemafilen för ett tillägg</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rader i %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rader i datatabeller som pekar på det här elementet</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Databasschema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Visa vad som skulle göras</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Anslutningen %id är skrivskyddad.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Tillägget %name har ingen share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Installations-SQL för varje databassystem</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Det finns ingen anslutning %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Det finns ingen persistent klass %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Uppgradera tabellen</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Vad som skulle göras på %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>skapa</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>aktuell</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>uppgradera</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines rader</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>En innehållsklass</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>En identifierare för en innehållsklass, anslutning:tabell, eller det som källan frågar efter. Behövs inte för en lista.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Ett innehållsobjekt (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>En länk i gruppen Datatabeller i menyn Konfiguration, för användare med policyn read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>En lista med fält som skrivs in här</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>En ny datatabell med allt runt omkring: den persistenta klassen, schemat och installations-SQL för varje databassystem, en modul med list, edit, remove och en JSON-slutpunkt, dess policyer, administrationssidorna och mallarnas fetch-funktioner. Fälten kommer från en lista, en innehållsklass, en befintlig tabell eller en importkälla. Inget skrivs förrän du ber om det, och tabellen installeras från den här sidan.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Ett nytt namn, eller ett befintligt tillägg som tabellen ska läggas till i.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>En nod (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Aktivera tillägget</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Lägg till created och modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Lägg till i tillägget</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Administrationsmallar</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>En befintlig tabell (anslutning:tabell)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Författare</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Båda</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Uppdatera tabellen</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Kopiera dess fält till listan</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Ladda ner som zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Varje tabell får också id, en nyckel som databasen räknar upp.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Tillägg</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Fält, ett per rad: namn typ[(längd)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etikett</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Lämnade som de är: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licens</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Guide för modultabeller</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Öppna modulen</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klass</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Delar, licens och författare</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Persistent klass</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Snabb applikationsutveckling</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Uppdatera: autoloads och cachar</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Schema och installations-SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Post i menyn Konfiguration</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Visa filerna</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Mallarnas fetch-funktioner</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Tabellens eZPersistentObject-klass, med dess fält, anslutning och relationer.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Tillägget och tabellen</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Tillägget finns: guiden lägger till de filer som saknas och lägger till sina inställningar i slutet; inget där skrivs över.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Tillägget är aktivt.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Tillägget är skrivet men inte aktivt.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Fälten</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Fälten från %source finns nu i listan: ändra dem efter behov.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Filerna (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Licenstexten (endast för ett nytt tillägg).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Modulens sidor i administrationen (admin4-komponenter, inga inline-stilar).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tabellen finns inte ännu.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tabellen finns.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Koppla varje rad till innehåll</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>För att installera tillägget som ett paket (endast för ett nytt tillägg).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Typer: %types. object, node och user är relationer till innehåll: innehållsvyn visar raderna som pekar på ett element.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Unik</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Det som sidan Om visar (endast för ett nytt tillägg).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Vad som skapades och hur du installerar och använder det.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Var fälten kommer ifrån</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Vilken</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Skriv tillägget</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>finns, lämnad som den är</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php och extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Funktionerna fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove och REST/JSON-slutpunkten json, med policyerna read och edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba och sql/&lt;engine&gt;/schema.sql för MySQL, PostgreSQL, SQLite, Oracle och SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>skriven</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count konflikter</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name kördes: %rows rader och %objects objekt skrivna, %same oförändrade, %conflicts konflikter, %failed misslyckades.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name startades i bakgrunden (%engine); körningshistoriken visar den.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>En koppling föreslogs: kontrollera den och spara sedan.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>En källa är en attributidentifierare i innehållsklassen, eller en av: %list. Endast attribut skrivs till innehåll.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Fråga: en konflikt att lösa</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Både innehållet och raden har ändrats sedan den senaste körningen av en tvåvägssynkronisering som frågar. Välj en sida; den andra skrivs över.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Åt båda hållen</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Konflikter</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Konflikter (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Innehåll</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Innehåll och tabell</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Innehåll kopierat till en datatabell, en tabell kopierad till innehåll, eller båda i takt: en gång, enligt schema, eller direkt vid varje publicering, flytt och borttagning.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Innehåll till tabellen</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Innehållet vinner</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datatabell (persistent klass)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Riktning</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fel</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Intervall (sekunder)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misslyckades</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Hittad %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Nyckelkolumn(er)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Senaste körning</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Direkt och enligt schema</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Direkt: varje publicering, flytt och borttagning av ett objekt av klassen under noden skrivs genast till tabellen.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Koppling: en rad per kolumn, kolumn = källa</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Ny synkronisering</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Ingen kolumn i klassen matchar ett attribut eller en känd källa: skriv kopplingen själv.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Ingen öppen konflikt.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Ingen synkronisering ännu.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Enligt schema</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Föreslå koppling</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Ta bort raden för ett objekt som tas bort eller lämnar underträdet</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Ta bort den här synkroniseringen</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Kör nu</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Körningar</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Spara och kör nu</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startad</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Avstängd (inga schemalagda eller direkta körningar)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringar</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Ta innehållet</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Ta tabellen</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Konflikten kunde inte lösas; den förblir öppen.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Innehållets värden skrevs till tabellen.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>De senaste körningarna</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Den eller de kopplade kolumner som en rad matchas med, t.ex. contentobject_id eller remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Den nyare ändringen vinner</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Raderna och innehållet finns kvar; endast parkopplingen och de öppna konflikterna tas bort.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Underträdet som läses för tabellen, och föräldern till objekt som skapas från rader.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Synkroniseringen sparades inte</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Synkroniseringen sparades.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Synkroniseringarna för det publicerade objektets klass</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tabellen till innehåll</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tabellen vinner</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Tabellens värden publicerades till innehållet.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Synkroniseringens tabeller är inte installerade ännu</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Det finns ingen synkronisering av datatabeller ännu (Konfiguration &gt; Datatabeller &gt; Synkroniseringar).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>När båda sidorna har ändrats</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Vid start</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Om ingen är markerad skrivs objektet till varje synkronisering av dess klass vars underträd innehåller det.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>åt båda hållen</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>innehåll till tabell</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>med %minutes minuters mellanrum</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link och exp_data_sync_conflict skapas i den här databasen med knappen; inget annat ändras.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>direkt</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabell till innehåll</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>vid start</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Den här installationen är en offentlig demo: administratörernas lösenord kan inte ändras eller återställas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Letar du efter en annan import eller export?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importera</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Exportera</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import och export</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Fungerar med det här verktyget</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Vilket import- eller exportverktyg behöver jag?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Vilket verktyg behöver jag?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import- och exportverktyg för den här uppgiften</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Paket</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Flytta innehåll med dess klasser, eller klasser, tillägg och designer, till en annan installation som en paketfil.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Exportera klasser som paket…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Ladda upp och installera ett paket…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS-import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Skapa innehåll från ett RSS- eller Atom-flöde från en annan webbplats, om och om igen via cronjobbet rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS-export</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publicera de senaste objekten i en mapp som ett RSS- eller Atom-flöde, eller en lista med flöden som OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Insamlad information</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Ladda ner det som ett formulär har samlat in som en CSV-fil, från listan med insamlad information.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Granskningsexport</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Ladda ner granskningsloggens poster, filtrerade som i konsolen, som CSV, JSON Lines eller JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF-export</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Skapa ett PDF-dokument av en mapp och dess objekt, för utskrift eller för att skicka.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabellerna för de persistenta klasserna och de namngivna databasanslutningarna: beskriv, skapa och uppgradera tabeller på valfri anslutning, bläddra bland deras rader och se vad som pekar på innehåll.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Skapa eller uppgradera en tabell på en databasanslutning…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Bläddra bland tabellerna för de persistenta klasserna…</translation>
     </message>
 </context>
 </TS>

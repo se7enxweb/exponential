@@ -1850,7 +1850,7 @@ Benötigen Sie hierzu weitere Informationen?</translation>
     <name>kernel/classes/datatypes/ezxmltext</name>
     <message>
         <source>Invalid e-mail address: &apos;%1&apos;</source>
-        <translation>Ungültige Email Adresse: &apos;%1&apos;</translation>
+        <translation>Ungültige E-Mail-Adresse: &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Class &apos;%1&apos; is not allowed for element &amp;lt;%2&amp;gt; (check content.ini).</source>

@@ -2181,7 +2181,7 @@
     </message>
     <message>
         <source>Tick bookmarks to move or remove them.</source>
-        <translation>Markér bogmærker for at flytte eller fjerne dem.</translation>
+        <translation>Marker bogmærker for at flytte eller fjerne dem.</translation>
     </message>
     <message>
         <source>%count selected.</source>
@@ -2769,7 +2769,7 @@
     </message>
     <message>
         <source>No draft was selected. Tick the drafts to remove first.</source>
-        <translation>Der blev ikke valgt noget udkast. Markér først de udkast, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt noget udkast. Marker først de udkast, der skal fjernes.</translation>
     </message>
     <message>
         <source>%count of the versions asked for are not drafts of yours and were left as they are.</source>
@@ -2997,7 +2997,7 @@
     </message>
     <message>
         <source>Tick the drafts to remove in the list first.</source>
-        <translation>Markér først de udkast, der skal fjernes, i listen.</translation>
+        <translation>Marker først de udkast, der skal fjernes, i listen.</translation>
     </message>
 </context>
 <context>
@@ -4300,7 +4300,7 @@
     </message>
     <message>
         <source>Tick the versions to remove in the list first.</source>
-        <translation>Markér først de versioner, der skal fjernes, i listen.</translation>
+        <translation>Marker først de versioner, der skal fjernes, i listen.</translation>
     </message>
     <message>
         <source>No version was removed</source>
@@ -4351,7 +4351,7 @@
     </message>
     <message>
         <source>Nothing was selected. Tick some items in a list or a search result and choose &quot;Edit selected&quot; from the More actions menu.</source>
-        <translation>Intet var valgt. Markér nogle elementer i en liste eller et søgeresultat, og vælg &quot;Rediger valgte&quot; i menuen Flere handlinger.</translation>
+        <translation>Intet var valgt. Marker nogle elementer i en liste eller et søgeresultat, og vælg &quot;Rediger valgte&quot; i menuen Flere handlinger.</translation>
     </message>
     <message>
         <source>None of the selected items can be edited.</source>
@@ -7561,6 +7561,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Indlæser de seneste forumindlæg...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>De seneste forumindlæg kunne ikke indlæses.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -8299,7 +8303,7 @@
     </message>
     <message>
         <source>Nothing was selected. Tick the objects whose collections should be removed first.</source>
-        <translation>Intet var valgt. Markér først de objekter, hvis indsamlinger skal fjernes.</translation>
+        <translation>Intet var valgt. Marker først de objekter, hvis indsamlinger skal fjernes.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -10912,6 +10916,22 @@
         <source>in</source>
         <translation type="obsolete">i</translation>
     </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Anvend på</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Hele undertræet</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Undertræ, undtagen grene i en anden sektion</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Kun dette objekt</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/node/view/line</name>
@@ -11302,7 +11322,7 @@
     </message>
     <message>
         <source>Tick at least one item to remove.</source>
-        <translation>Markér mindst ét element, der skal fjernes.</translation>
+        <translation>Marker mindst ét element, der skal fjernes.</translation>
     </message>
     <message>
         <source>Type</source>
@@ -13682,7 +13702,7 @@ Bemærk: Pakkerne afinstalleres ikke.</translation>
     </message>
     <message>
         <source>No package was selected. Tick the packages to remove first.</source>
-        <translation>Der blev ikke valgt nogen pakke. Markér først de pakker, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen pakke. Marker først de pakker, der skal fjernes.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -14436,6 +14456,18 @@ Navigeringsdel</translation>
         <source>Help center</source>
         <translation>Hjælpecenter</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Intet nyt</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demotilstand</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Denne installation er en offentlig demo: alle kan kende dens administratoradgangskode, og administratoradgangskoder kan ikke ændres eller nulstilles. Indtast ikke noget privat her.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15151,6 +15183,38 @@ Navigeringsdel</translation>
         <source>Guides, search and how to report an error.</source>
         <translation>Vejledninger, søgning og hvordan du rapporterer en fejl.</translation>
     </message>
+    <message>
+        <source>Connections</source>
+        <translation>Forbindelser</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Navngivne databaser: SQLite-filer, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Værktøjernes adgangskoder og nøgler, gemt krypteret, vist kun med navn.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheder</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tabellerne for de persistente klasser, deres felter, relationer og lagring.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Indhold og datatabeller holdt i takt: én gang, efter tidsplan eller i realtid.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringer</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -15839,7 +15903,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No export was selected. Tick the exports to remove first.</source>
-        <translation>Der blev ikke valgt nogen eksport. Markér først de eksporter, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen eksport. Marker først de eksporter, der skal fjernes.</translation>
     </message>
     <message>
         <source>The selected exports no longer exist; somebody may have removed them already.</source>
@@ -16931,7 +16995,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No policy was selected. Tick the policies to remove first.</source>
-        <translation>Der blev ikke valgt nogen politik. Markér først de politikker, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen politik. Marker først de politikker, der skal fjernes.</translation>
     </message>
     <message>
         <source>Shown in the role list and wherever the role is assigned.</source>
@@ -17185,7 +17249,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No role was selected. Tick the roles to remove first.</source>
-        <translation>Der blev ikke valgt nogen rolle. Markér først de roller, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen rolle. Marker først de roller, der skal fjernes.</translation>
     </message>
     <message>
         <source>Find roles</source>
@@ -17974,7 +18038,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No assignment was selected. Tick the users and groups to remove first.</source>
-        <translation>Der blev ikke valgt nogen tildeling. Markér først de brugere og grupper, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen tildeling. Marker først de brugere og grupper, der skal fjernes.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -18297,7 +18361,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>Check if you want to only feed the object from the main node.</source>
-        <translation>Markér, hvis objektet kun skal med i feedet fra hovedknuden.</translation>
+        <translation>Marker, hvis objektet kun skal med i feedet fra hovedknuden.</translation>
     </message>
     <message>
         <source>Subnodes</source>
@@ -19263,11 +19327,11 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No import was selected. Tick the imports to remove first.</source>
-        <translation>Der blev ikke valgt nogen import. Markér først de importer, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen import. Marker først de importer, der skal fjernes.</translation>
     </message>
     <message>
         <source>No export was selected. Tick the exports to remove first.</source>
-        <translation>Der blev ikke valgt nogen eksport. Markér først de eksporter, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen eksport. Marker først de eksporter, der skal fjernes.</translation>
     </message>
     <message>
         <source>The selected feeds no longer exist; somebody may have removed them already.</source>
@@ -19786,6 +19850,22 @@ Navigeringsdel</translation>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Bemærk, at underelementernes sektionstildeling også ændres.</translation>
     </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Hvilke objekter der får sektionen</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Det valgte element og alle objekter under det</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Det valgte element og de objekter under det, der har dets sektion; grene i en anden sektion beholder deres</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Kun det valgte element</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/section/confirmremove</name>
@@ -20081,7 +20161,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>No section was selected. Tick the sections to remove first.</source>
-        <translation>Der blev ikke valgt nogen sektion. Markér først de sektioner, der skal fjernes.</translation>
+        <translation>Der blev ikke valgt nogen sektion. Marker først de sektioner, der skal fjernes.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -21877,7 +21957,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>Tick caches in the lists above, then clear them.</source>
-        <translation>Markér caches i listerne ovenfor, og ryd dem derefter.</translation>
+        <translation>Marker caches i listerne ovenfor, og ryd dem derefter.</translation>
     </message>
     <message>
         <source>These caches are cleared:</source>
@@ -22848,7 +22928,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>Could not copy. Select the text and copy it by hand.</source>
-        <translation>Kunne ikke kopiere. Markér teksten, og kopier den manuelt.</translation>
+        <translation>Kunne ikke kopiere. Marker teksten, og kopier den manuelt.</translation>
     </message>
     <message>
         <source>Every minute</source>
@@ -23186,7 +23266,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>Tick the box to confirm the risks above, or go back and change the plan.</source>
-        <translation>Markér feltet for at bekræfte risiciene ovenfor, eller gå tilbage, og ret planen.</translation>
+        <translation>Marker feltet for at bekræfte risiciene ovenfor, eller gå tilbage, og ret planen.</translation>
     </message>
     <message>
         <source>I have read the risks above and want to apply these changes anyway.</source>
@@ -24607,7 +24687,7 @@ Navigeringsdel</translation>
     </message>
     <message>
         <source>Select the text of the report below and copy it.</source>
-        <translation>Markér teksten i rapporten nedenfor, og kopier den.</translation>
+        <translation>Marker teksten i rapporten nedenfor, og kopier den.</translation>
     </message>
     <message>
         <source>Copy report as text</source>
@@ -26049,7 +26129,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Could not copy. Select the text and copy it by hand.</source>
-        <translation>Kunne ikke kopiere. Markér teksten, og kopier den manuelt.</translation>
+        <translation>Kunne ikke kopiere. Marker teksten, og kopier den manuelt.</translation>
     </message>
     <message>
         <source>Maintenance is on: visitors see the maintenance page.</source>
@@ -27924,6 +28004,22 @@ Exponential-version</translation>
         <source>Find</source>
         <translation>Find</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>En ny datatabel med klasse, skema, administration, politikker, fetch-funktioner og JSON-endpoint, ud fra en liste over felter, en indholdsklasse eller en importkilde.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Modultabel</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, på sitets database eller en navngiven forbindelse</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba og sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/content</name>
@@ -28947,11 +29043,11 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Tick all</source>
-        <translation>Markér alle</translation>
+        <translation>Marker alle</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Markér ingen</translation>
+        <translation>Marker ingen</translation>
     </message>
     <message>
         <source>Refresh preview</source>
@@ -30860,11 +30956,11 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Tick the collections this extension should cover. A collection has no declared shape, so the fields below were worked out by reading a sample of its documents: a field that only some documents carry may be missing, and one that holds different kinds of value in different documents is treated as text.</source>
-        <translation>Markér de samlinger, denne udvidelse skal dække. En samling har ingen erklæret form, så felterne nedenfor er fundet ved at læse et udsnit af dens dokumenter: et felt, som kun nogle dokumenter har, kan mangle, og et felt, der indeholder forskellige slags værdier i forskellige dokumenter, behandles som tekst.</translation>
+        <translation>Marker de samlinger, denne udvidelse skal dække. En samling har ingen erklæret form, så felterne nedenfor er fundet ved at læse et udsnit af dens dokumenter: et felt, som kun nogle dokumenter har, kan mangle, og et felt, der indeholder forskellige slags værdier i forskellige dokumenter, behandles som tekst.</translation>
     </message>
     <message>
         <source>Tick the ones this extension should cover. A table with no primary key can still be read, but a single row cannot be addressed, so the first column is used instead.</source>
-        <translation>Markér dem, denne udvidelse skal dække. En tabel uden primærnøgle kan stadig læses, men en enkelt række kan ikke adresseres, så den første kolonne bruges i stedet.</translation>
+        <translation>Marker dem, denne udvidelse skal dække. En tabel uden primærnøgle kan stadig læses, men en enkelt række kan ikke adresseres, så den første kolonne bruges i stedet.</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -30872,7 +30968,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Markér ingen</translation>
+        <translation>Marker ingen</translation>
     </message>
     <message>
         <source>Refresh preview</source>
@@ -31422,7 +31518,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>A good deal of what this system can be told to do differently is told in settings rather than in code. None of it is hard; all of it is in a shape nobody remembers, spread over half a dozen files, with a rule about where the file has to live for anything to read it at all. Tick what this extension should say and the files are written.</source>
-        <translation>En hel del af det, dette system kan få besked på at gøre anderledes, angives i indstillinger i stedet for i kode. Intet af det er svært; alt af det har en form, ingen husker, fordelt over en halv snes filer, med en regel om, hvor filen skal ligge, for at noget overhovedet læser den. Markér, hvad denne udvidelse skal angive, så skrives filerne.</translation>
+        <translation>En hel del af det, dette system kan få besked på at gøre anderledes, angives i indstillinger i stedet for i kode. Intet af det er svært; alt af det har en form, ingen husker, fordelt over en halv snes filer, med en regel om, hvor filen skal ligge, for at noget overhovedet læser den. Marker, hvad denne udvidelse skal angive, så skrives filerne.</translation>
     </message>
     <message>
         <source>Written to %target. Switch it on with the lines below and clear the caches.</source>
@@ -31438,7 +31534,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Each of these is one ini file. Tick one and the questions for it are below.</source>
-        <translation>Hver af disse er én INI-fil. Markér én, så står spørgsmålene til den nedenfor.</translation>
+        <translation>Hver af disse er én INI-fil. Marker én, så står spørgsmålene til den nedenfor.</translation>
     </message>
     <message>
         <source>Image aliases</source>
@@ -32782,7 +32878,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Tick none</source>
-        <translation>Markér ingen</translation>
+        <translation>Marker ingen</translation>
     </message>
     <message>
         <source>Refresh preview</source>
@@ -32846,7 +32942,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Each of these changes what happens next, and several change what the kernel does rather than only what the workflow does. Tick the ones this event will use; each gets a branch in execute() with this explanation beside it.</source>
-        <translation>Hver af disse ændrer, hvad der sker derefter, og flere ændrer, hvad kernen gør, og ikke kun, hvad arbejdsgangen gør. Markér dem, denne hændelse vil bruge; hver får en gren i execute() med denne forklaring ved siden af.</translation>
+        <translation>Hver af disse ændrer, hvad der sker derefter, og flere ændrer, hvad kernen gør, og ikke kun, hvad arbejdsgangen gør. Marker dem, denne hændelse vil bruge; hver får en gren i execute() med denne forklaring ved siden af.</translation>
     </message>
     <message>
         <source>Always included: an event with no way to say it is done would hang every workflow it is in.</source>
@@ -33289,7 +33385,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Nothing was selected. Tick the users or sessions to remove first.</source>
-        <translation>Intet blev valgt. Markér først de brugere eller sessioner, der skal fjernes.</translation>
+        <translation>Intet blev valgt. Marker først de brugere eller sessioner, der skal fjernes.</translation>
     </message>
     <message>
         <source>Only the session you are using now was selected, and it is never removed from this list. Sign out to end it.</source>
@@ -35607,7 +35703,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Check this if you want the status to be usable in the shopping system.</source>
-        <translation>Markér dette, hvis statussen skal kunne bruges i butikssystemet.</translation>
+        <translation>Marker dette, hvis statussen skal kunne bruges i butikssystemet.</translation>
     </message>
     <message>
         <source>There are no order statuses.</source>
@@ -35766,6 +35862,18 @@ Exponential-version</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>Momsregler (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Disse momsregler anvendes ikke.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Der er ikke angivet nogen momshandler, så hvert produkt pålægges den momstype, der er angivet på det, og disse regler læses aldrig. For at anvende dem skal du angive Handler=ezdefault i sektionen [VATSettings] i shop.ini (i settings/override/shop.ini.append.php) og give produkterne momstypen &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Momshandleren &quot;%handler&quot;, der er angivet i sektionen [VATSettings] i shop.ini, kan ikke indlæses, så disse regler læses aldrig. Kontroller handlerens navn og de mapper, momshandlere søges i (RepositoryDirectories og ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -36643,7 +36751,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Select groups with their checkbox to remove them. You will see what is removed and what it touches before anything happens.</source>
-        <translation>Markér grupper med deres afkrydsningsfelt for at fjerne dem. Du ser, hvad der fjernes, og hvad det berører, før der sker noget.</translation>
+        <translation>Marker grupper med deres afkrydsningsfelt for at fjerne dem. Du ser, hvad der fjernes, og hvad det berører, før der sker noget.</translation>
     </message>
     <message>
         <source>Groups per page:</source>
@@ -36836,7 +36944,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>No trigger was selected. Tick the triggers to remove first.</source>
-        <translation>Ingen udløser var valgt. Markér først de udløsere, der skal fjernes.</translation>
+        <translation>Ingen udløser var valgt. Marker først de udløsere, der skal fjernes.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -37142,7 +37250,7 @@ Exponential-version</translation>
     </message>
     <message>
         <source>No link was selected. Tick the links to mark first.</source>
-        <translation>Intet link var valgt. Markér først de links, der skal markeres.</translation>
+        <translation>Intet link var valgt. Marker først de links, der skal markeres.</translation>
     </message>
     <message>
         <source>Overview</source>
@@ -37322,11 +37430,11 @@ Exponential-version</translation>
     </message>
     <message>
         <source>Mark selected valid</source>
-        <translation>Markér valgte som gyldige</translation>
+        <translation>Marker valgte som gyldige</translation>
     </message>
     <message>
         <source>Mark selected invalid</source>
-        <translation>Markér valgte som ugyldige</translation>
+        <translation>Marker valgte som ugyldige</translation>
     </message>
     <message>
         <source>Marking changes only the state shown here and in templates that hide invalid links; nothing is removed and no content changes. The next link check tests the links again.</source>
@@ -38191,7 +38299,7 @@ din konto.</translation>
     </message>
     <message>
         <source>No user was selected. Tick the users first.</source>
-        <translation>Ingen bruger var valgt. Markér først brugerne.</translation>
+        <translation>Ingen bruger var valgt. Marker først brugerne.</translation>
     </message>
     <message>
         <source>Find users</source>
@@ -39969,7 +40077,7 @@ din konto.</translation>
     </message>
     <message>
         <source>No group was selected. Tick the groups to remove first.</source>
-        <translation>Ingen gruppe var valgt. Markér først de grupper, der skal fjernes.</translation>
+        <translation>Ingen gruppe var valgt. Marker først de grupper, der skal fjernes.</translation>
     </message>
     <message>
         <source>The selected groups no longer exist; somebody may have removed them already.</source>
@@ -43837,7 +43945,7 @@ Hvis du vil sende kommentarer til godkenderen eller se status, kan du bruge URL'
     </message>
     <message>
         <source>Select if you want to disallow this option choice</source>
-        <translation>Markér, hvis du vil forbyde dette valg</translation>
+        <translation>Marker, hvis du vil forbyde dette valg</translation>
     </message>
     <message>
         <source>Add multioption sub level</source>
@@ -47631,7 +47739,7 @@ menuen øverst.</translation>
     </message>
     <message>
         <source>Check if you want to only feed the object from the main node.</source>
-        <translation>Markér, hvis objektet kun skal med i feedet fra hovedknuden.</translation>
+        <translation>Marker, hvis objektet kun skal med i feedet fra hovedknuden.</translation>
     </message>
     <message>
         <source>Subnodes</source>
@@ -50993,6 +51101,14 @@ Se siden med krav for at få flere oplysninger.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Denne adgangskode er velkendt eller for almindelig, så alle kan gætte den. Vælg en anden.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demotilstand</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Miljøvariablen EXP_DEMO_MODE=1 markerer denne installation som en offentlig demo: en velkendt administratoradgangskode accepteres, og administratoradgangskoder kan ikke ændres eller nulstilles senere. Brug aldrig demotilstand til et produktionssite.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -52020,7 +52136,7 @@ Det gør du ved at ændre %chown-kommandoerne under Alternative shell-kommandoer
     </message>
     <message>
         <source>Order</source>
-        <translation>Rækkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -52627,7 +52743,7 @@ Det gør du ved at ændre %chown-kommandoerne under Alternative shell-kommandoer
     </message>
     <message>
         <source>Order</source>
-        <translation>Rækkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Date</source>
@@ -56252,7 +56368,7 @@ din konto.</translation>
     </message>
     <message>
         <source>No bookmark was selected. Tick the bookmarks to remove first.</source>
-        <translation>Intet bogmærke blev valgt. Markér først de bogmærker, der skal fjernes.</translation>
+        <translation>Intet bogmærke blev valgt. Marker først de bogmærker, der skal fjernes.</translation>
     </message>
     <message>
         <source>Added %count bookmark(s).</source>
@@ -58336,6 +58452,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>eZ Page swap workflow event</source>
         <translation>Arbejdsgangshændelse til ombytning af eZ Page</translation>
     </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Spejl til datatabeller</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -59680,7 +59800,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Rækkefølge</translation>
+        <translation>Ordre</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -61811,7 +61931,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No object was ticked. Tick the objects to move first.</source>
-        <translation>Intet objekt blev markeret. Markér først de objekter, der skal flyttes.</translation>
+        <translation>Intet objekt blev markeret. Marker først de objekter, der skal flyttes.</translation>
     </message>
     <message>
         <source>Back to the list</source>
@@ -61927,7 +62047,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Nothing was moved: the objects or your access changed after the confirmation. Tick them again.</source>
-        <translation>Intet blev flyttet: objekterne eller din adgang ændrede sig efter bekræftelsen. Markér dem igen.</translation>
+        <translation>Intet blev flyttet: objekterne eller din adgang ændrede sig efter bekræftelsen. Marker dem igen.</translation>
     </message>
     <message>
         <source>Nothing was moved to the trash.</source>
@@ -62215,7 +62335,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Nothing was changed: the files changed after the confirmation. Tick them again.</source>
-        <translation>Intet blev ændret: filerne ændrede sig efter bekræftelsen. Markér dem igen.</translation>
+        <translation>Intet blev ændret: filerne ændrede sig efter bekræftelsen. Marker dem igen.</translation>
     </message>
     <message>
         <source>Nothing was changed.</source>
@@ -62471,7 +62591,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No file was ticked. Tick the files first.</source>
-        <translation>Ingen fil blev markeret. Markér filerne først.</translation>
+        <translation>Ingen fil blev markeret. Marker filerne først.</translation>
     </message>
     <message>
         <source>Dry run: nothing has been changed yet.</source>
@@ -62639,7 +62759,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Mark for review</source>
-        <translation>Markér til gennemgang</translation>
+        <translation>Marker til gennemgang</translation>
     </message>
     <message>
         <source>Version %version</source>
@@ -62803,7 +62923,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Tick at least one problem and one version.</source>
-        <translation>Markér mindst ét problem og én version.</translation>
+        <translation>Marker mindst ét problem og én version.</translation>
     </message>
     <message>
         <source>Preview for all %count results</source>
@@ -62839,7 +62959,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No row was ticked or no action chosen. Tick the rows first.</source>
-        <translation>Ingen række blev markeret, eller ingen handling blev valgt. Markér rækkerne først.</translation>
+        <translation>Ingen række blev markeret, eller ingen handling blev valgt. Marker rækkerne først.</translation>
     </message>
     <message>
         <source>Only the first %count rows are taken; do the others afterwards.</source>
@@ -63098,7 +63218,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Tick the box to confirm that this cannot be undone.</source>
-        <translation>Markér feltet for at bekræfte, at det ikke kan fortrydes.</translation>
+        <translation>Marker feltet for at bekræfte, at det ikke kan fortrydes.</translation>
     </message>
     <message>
         <source>An action can only be sent from a form of the finder.</source>
@@ -65173,6 +65293,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Status kunne ikke vises. Genindlæs siden for at følge jobbet.</translation>
     </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>De objekter i undertræet, der har dette elements sektion, får sektionen; grene i en anden sektion beholder deres, og objekter, du ikke må tildele den, springes over.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/reverserelations</name>
@@ -66808,7 +66932,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Node ID</source>
-        <translation>Node-ID</translation>
+        <translation>Knude-id</translation>
     </message>
     <message>
         <source>HTTP status</source>
@@ -67074,7 +67198,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No account was selected. Tick the accounts first.</source>
-        <translation>Ingen konto var valgt. Markér først kontiene.</translation>
+        <translation>Ingen konto var valgt. Marker først kontiene.</translation>
     </message>
     <message>
         <source>Choose the accounts on Users &gt; Check user accounts, or use the button on a user’s page.</source>
@@ -68029,7 +68153,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>No account was selected. Tick the accounts first.</source>
-        <translation>Ingen konto var valgt. Markér først kontiene.</translation>
+        <translation>Ingen konto var valgt. Marker først kontiene.</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -69433,7 +69557,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Please confirm: %category from %site</source>
-        <translation>Bekræft venligst: %category fra %site</translation>
+        <translation>Bekræft: %category fra %site</translation>
     </message>
     <message>
         <source>Hello,</source>
@@ -70091,6 +70215,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The bounce mailbox has never been read: is the cronjob part mailbounces running?</source>
         <translation>Postkassen til returmails er aldrig blevet læst: kører cronjob-delen mailbounces?</translation>
+    </message>
+    <message>
+        <source>The postal address of the mail footer is empty: enter it under &quot;Sender details&quot; on this page (mailpreferences/admin/status). The law requires the organization and its postal address in every optional mail; mail is sent without it until then.</source>
+        <translation>Postadressen i mailens sidefod er tom: angiv den under &quot;Afsenderoplysninger&quot; på denne side (mailpreferences/admin/status). Loven kræver organisationen og dens postadresse i alle valgfrie mails; indtil da sendes mail uden den.</translation>
     </message>
 </context>
 <context>
@@ -71121,7 +71249,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>The lines could not be copied. Select them in the list and copy them with the keyboard.</source>
-        <translation>Linjerne kunne ikke kopieres. Markér dem i listen, og kopier dem med tastaturet.</translation>
+        <translation>Linjerne kunne ikke kopieres. Marker dem i listen, og kopier dem med tastaturet.</translation>
     </message>
     <message>
         <source>%count logs</source>
@@ -71593,7 +71721,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Mark as known</source>
-        <translation>Markér som kendt</translation>
+        <translation>Marker som kendt</translation>
     </message>
     <message>
         <source>No error or warning in this window.</source>
@@ -73251,7 +73379,7 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     </message>
     <message>
         <source>Sort by %title</source>
-        <translation>Sortér efter %title</translation>
+        <translation>Sorter efter %title</translation>
     </message>
     <message>
         <source>Version, name, year or revision</source>
@@ -74520,6 +74648,1593 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>More audiences</source>
         <translation>Flere målgrupper</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Du må ikke oprette indhold (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Manualerne er allerede ved at blive bygget.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Der findes ingen manual %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Byg hjælpemanualen %1 ud fra Markdown-hjælpen</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Byg hjælpemanualerne ud fra Markdown-hjælpen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>%count hemmeligheder er krypteret med en anden nøgle end den aktuelle.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>%done hemmeligheder krypteret igen med den aktuelle nøgle, %current var det allerede, %bad kunne ikke læses.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(oprettes, når den første hemmelighed gemmes)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>En sikkerhedskopi af databasen alene kan ikke dekryptere hemmelighederne</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Et navn består af bogstaver, cifre og _ . : - (højst 128) og begynder ikke med env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Der oprettes en ny nøgle, alle hemmeligheder krypteres igen med den, og den gamle nøgle bevares som .previous-filen. Tag derefter en sikkerhedskopi af den nye nøglefil.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Et nyt navn eller navnet på en eksisterende hemmelighed for at erstatte dens værdi. Tom værdi: kun beskrivelsen ændres.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ændret</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Kommer fra</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Opret tabellen</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivelse</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Krypter alle hemmeligheder igen med den aktuelle nøgle</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Kryptering</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Angiv værdien.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>Nøgle-id</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Navne</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Ingen hemmeligheder endnu.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Kun værktøjet %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Værktøjernes adgangskoder, tokens og API-nøgler: databaseforbindelser, importkilder, fjernservere. Et værktøj gemmer navnet på en hemmelighed; værdien gemmes her, krypteret, og vises aldrig igen.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Forrige nøgle</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Udskift</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Udskift nøglen</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheder</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Angiv en hemmelighed</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Beskrivelsen af %name blev ændret; dens værdi blev bevaret.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Nøglen</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Nøglen kunne ikke udskiftes (en nøgle fra EXP_SECRET_KEY udskiftes ved at angive en ny og den gamle som EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Nøglen ligger ikke i databasen. Gem en kopi af nøglefilen (eller af EXP_SECRET_KEY) sammen med hver sikkerhedskopi, på et sikkert sted for sig. Uden den kan hemmelighederne i en gendannet database ikke læses og skal angives igen.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Nøglen blev udskiftet: %done hemmeligheder krypteret igen, %bad kunne ikke læses. Tag en sikkerhedskopi af den nye nøglefil nu.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Hemmeligheden %name blev fjernet.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Hemmeligheden %name blev gemt, krypteret. Dens værdi vises ikke igen.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Hemmeligheden kunne ikke gemmes: se nøglen ovenfor.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Tabellen exp_secret mangler</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Værktøjet består af små bogstaver, cifre og _ . - (højst 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Marker &quot;Ja, udskift nøglen&quot; først.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Marker feltet ud for hemmeligheden for at fjerne den. Et værktøj, der henviser til den, fejler, indtil den angives igen.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Sådan udskifter du en nøgle fra miljøet: angiv den nye nøgle som EXP_SECRET_KEY og den gamle som EXP_SECRET_KEY_PREVIOUS, og krypter derefter alle hemmeligheder igen her.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Værktøj</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Indtil den er oprettet, kan kun hemmelighederne fra secrets.ini og miljøvariabler (env:NAME) bruges.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Værdi</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Hvem der bruger den, f.eks. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Ja, fjern %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Ja, udskift nøglen</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>kan ikke dekrypteres her</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>krypteret</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>filen secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>.previous-filen</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>miljøvariablen EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>nøglefilen %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>%count klasser</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>%count til indhold</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>%shown af %all klasser vist.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Et værtsnavn eller en adresse; tom for SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>En hemmelighed fra Opsætning &gt; Hemmeligheder eller env:VARIABLE for en miljøvariabel.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Alle (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Tilgængelig</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tilbage til listen</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Tegnsæt</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klasse, tabel eller felt</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klasser på denne forbindelse: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Kolonne</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Kolonne i databasen</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Forbundet via %via på %ms ms: %version, %tables tabeller.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Forbindelse</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Forbindelser</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Forbindelser (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Indholdsklasse</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Indholdsobjekt</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Opret tabellerne</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Database</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Databaser, som datatabellerne og import- og eksportværktøjerne kan bruge ud over installationens egen: en SQLite-fil eller en MySQL-, MariaDB-, PostgreSQL-, Oracle-, SQL Server- eller MongoDB-server, her eller eksternt. En adgangskode er navnet på en hemmelighed, aldrig dens værdi.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Angivet i datatable.ini [Connection_%id] af indstillingerne eller en udvidelse: ændr den der. Den kan testes her.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskrivelse</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Afvigelser</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Driver</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Tom for databasesystemets sædvanlige port.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Databasesystem</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Databasesystemer på denne server</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Udvidelsen %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Felt</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Målets felt</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Felter</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>For SQL Server: sqlsrv, dblib eller odbc (den første, som denne server har, når feltet er tomt).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>For SQLite filen, f.eks. %example (i %dirs). For Oracle tjenestenavnet.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Funktionsattributter: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Kerne</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nøgle</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Nøgle: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Kendt fra</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Oprettet i</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Opret kataloget igen</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Mere</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Navngivne forbindelser kræver tabellen exp_data_connection, hemmelighedslageret tabellen exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Ny forbindelse</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Ingen persistent klasse passer.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Ingen relation er kendt.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Ingen rækker.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Knude</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Ikke vist: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Kun for et databasesystem, der nås via PDO, når server, port og database ikke er nok. Aldrig en adgangskode.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO-datakildenavn (DSN)</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO-driver</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Adgangskode</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Selve adgangskoden</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Adgangskode: navnet på en hemmelighed</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Peger på</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Skrivebeskyttet: synkroniseringen skriver aldrig til den</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Relationer</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Fjern denne forbindelse</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Påkrævet</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Rækker</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite-filer må ligge i: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Hemmeligheder</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektion</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Server</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Server og database</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Socket-sti</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>En bruger med politikken datatable/manage kan oprette dem her.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Gem den i hemmelighedslageret, når der gemmes</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>For at gemme en adgangskode kræves politikken secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tabel</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Test</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Test forbindelsen</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Kataloget oprettes ud fra autoload-arrays og bevares, indtil de ændres.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Kataloget blev oprettet igen: %count klasser.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Kolonnen %column (%type) findes ikke i definitionen.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Forbindelsen mislykkedes efter %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Forbindelsen blev ikke gemt</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Forbindelsen blev gemt.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definitionen af denne klasse kan ikke læses</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Feltet %column (%type) har ingen kolonne.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Feltet %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>De første %count rækker</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Adgangskoden kunne ikke gemmes i hemmelighedslageret (Opsætning &gt; Hemmeligheder oplyser hvorfor).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tabellen %table findes ikke i databasen.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Tabellen exp_data_connection mangler: en forbindelse kan testes, men ikke gemmes, før tabellen er oprettet på siden Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Tabellen exp_data_connection mangler: opret den på siden &lt;a href=&quot;%url&quot;&gt;Datatabeller&lt;/a&gt;. Indtil da vises kun de forbindelser, der er angivet i datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Tabellen exp_data_connection mangler: opret den først på siden Datatabeller.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Datatabellernes tabeller er ikke installeret endnu</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tabellerne for denne installations persistente klasser, som deres definitioner beskriver dem, og hvor hver enkelt er gemt.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>De oprettes i denne database med knappen nedenfor; intet andet ændres.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Installationens egen database, fra site.ini. Den kan testes her.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Denne hemmelighed er ikke angivet.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Marker &quot;Ja, fjern den&quot; for at fjerne forbindelsen. Klasser og værktøjer, der henviser til den, fejler derefter, indtil den oprettes igen.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Marker feltet nedenfor for at gemme den, krypteret, som hemmeligheden med navnet ovenfor (datatable. og identifikatoren, når navnet er tomt).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Bruges kun til en test og vises aldrig igen.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Bruger</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Det navn, klasser og værktøjer henviser til den med: små bogstaver, cifre og _. Det kan ikke ændres senere.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Hvor klasserne kommer fra</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Hvor tabellen afviger fra definitionen</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Ja, fjern den</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>en fremmednøgle i et felt</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>talt op: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>filen datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() fejler</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>findes</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>udledt af navnet</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>nøgle</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>mangler</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>ikke tilgængelig her</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>ikke angivet</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>skrivebeskyttet</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>angivet</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>sitet</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>filen site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administrationen</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definitionen</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ukendt</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>ikke testet her</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>%count rækker peger på dette element via %column (%kind)</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>%count rækker, hvor %field er %value.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>%count rækker.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>%done SQL-sætninger</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Alle %count rækker</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Alle rækker</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Anvend</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Ændr kolonner og indekser, der afviger</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Opret tabellen</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Opret tabellerne for en klasse eller en udvidelse på en forbindelse, eller bring dem ajour. Intet køres før &quot;Anvend&quot;; kolonner og indekser slettes eller ændres kun, når du markerer det.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Udført</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Slet kolonner og indekser, som skemaet ikke har</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Fra definitionen af en klasse</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Ingen række i en datatabel peger på dette element.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Udføres kun, hvis det er markeret ovenfor: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Ikke alt kunne udføres</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>På forbindelsen</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Eller fra en udvidelses skemafil</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Rækker i %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Rækker i datatabeller, der peger på dette element</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Skema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Vis, hvad der ville blive udført</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Forbindelsen %id er skrivebeskyttet.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Udvidelsen %name har ingen share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Installations-SQL for hvert databasesystem</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Der findes ingen forbindelse %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Der findes ingen persistent klasse %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Opgrader tabellen</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Hvad der ville blive udført på %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>opret</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>aktuel</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>opgrader</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>%lines linjer</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>En indholdsklasse</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>En indholdsklasses identifikator, forbindelse:tabel eller det, kilden beder om. Ikke nødvendigt for en liste.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Et indholdsobjekt (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Et link i gruppen Datatabeller i menuen Opsætning til brugere med politikken read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>En liste over felter, der skrives her</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>En ny datatabel med alt, hvad der hører til: den persistente klasse, skemaet og installations-SQL for hvert databasesystem, et modul med list, edit, remove og et JSON-endpoint, dets politikker, administrationssiderne og skabelonernes fetch-funktioner. Felterne kommer fra en liste, en indholdsklasse, en eksisterende tabel eller en importkilde. Intet skrives, før du beder om det, og tabellen installeres fra denne side.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Et nyt navn eller en eksisterende udvidelse, som tabellen skal tilføjes til.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>En knude (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Aktiver udvidelsen</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Tilføj created og modified</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Tilføj til udvidelsen</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Administrationsskabeloner</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>En eksisterende tabel (forbindelse:tabel)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Forfatter</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Begge</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Bring tabellen ajour</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Kopier dens felter til listen</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Hent som zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Hver tabel får også id, en nøgle, som databasen tæller op.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Udvidelse</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Felter, ét pr. linje: navn type[(længde)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Ladt uændret: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licens</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Guide til modultabeller</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Åbn modulet</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP-klasse</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Dele, licens og forfatter</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Persistent klasse</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Hurtig applikationsudvikling</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Opdater: autoloads og caches</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Skema og installations-SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Punkt i menuen Opsætning</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Vis filerne</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Fetch-funktioner til skabeloner</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Tabellens eZPersistentObject-klasse med dens felter, forbindelse og relationer.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Udvidelsen og tabellen</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Udvidelsen findes: guiden tilføjer de filer, den mangler, og føjer sine indstillinger til; intet i den overskrives.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Udvidelsen er aktiv.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Udvidelsen er skrevet, men ikke aktiv.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Felterne</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Felterne fra %source står nu i listen: ændr dem efter behov.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Filerne (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Licensteksten (kun for en ny udvidelse).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Modulets sider i administrationen (admin4-komponenter, ingen inline-styles).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tabellen findes ikke endnu.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tabellen findes.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Knyt hver række til indhold</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Til at installere udvidelsen som en pakke (kun for en ny udvidelse).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Typer: %types. object, node og user er relationer til indhold: indholdsvisningen viser de rækker, der peger på et element.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Unik</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Version</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Hvad siden Om viser (kun for en ny udvidelse).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Hvad der blev oprettet, og hvordan det installeres og bruges.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Hvor felterne kommer fra</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Hvilken</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Skriv udvidelsen</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>findes, ladt uændret</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php og extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Funktionerne fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove og REST/JSON-endpointet json med politikkerne read og edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba og sql/&lt;engine&gt;/schema.sql til MySQL, PostgreSQL, SQLite, Oracle og SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>skrevet</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>%count konflikter</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name er kørt: %rows rækker og %objects objekter skrevet, %same uændrede, %conflicts konflikter, %failed mislykkedes.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name blev startet i baggrunden (%engine); kørselshistorikken viser den.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Der blev foreslået en tilknytning: kontroller den, og gem derefter.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>En kilde er en attributidentifikator fra indholdsklassen eller en af: %list. Kun attributter skrives til indhold.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Spørg: en konflikt, der skal løses</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>Både indholdet og rækken er ændret siden den seneste kørsel af en tovejssynkronisering, der spørger. Vælg én side; den anden overskrives.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Begge veje</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Konflikter</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Konflikter (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Indhold</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Indhold og tabel</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Indhold kopieret til en datatabel, en tabel kopieret til indhold eller begge holdt i takt: én gang, efter tidsplan eller i realtid ved hver publicering, flytning og fjernelse.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Indhold til tabellen</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Indholdet vinder</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Datatabel (persistent klasse)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Retning</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fejl</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Interval (sekunder)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislykkedes</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Fundet %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Nøglekolonne(r)</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Seneste kørsel</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>I realtid og efter tidsplan</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Realtid: hver publicering, flytning og fjernelse af et objekt af klassen under knuden skrives straks til tabellen.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Tilknytning: én linje pr. kolonne, kolonne = kilde</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Ny synkronisering</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Ingen kolonne i klassen passer til en attribut eller en kendt kilde: skriv selv tilknytningen.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Ingen åbne konflikter.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Ingen synkroniseringer endnu.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Efter tidsplan</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Foreslå tilknytningen</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Fjern rækken for et objekt, der fjernes eller forlader undertræet</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Fjern denne synkronisering</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Kør nu</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Kører</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Gem, og kør nu</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Slået fra (ingen planlagte kørsler eller kørsler i realtid)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Synkroniseringer</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Brug indholdet</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Brug tabellen</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Konflikten kunne ikke løses; den forbliver åben.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Indholdets værdier blev skrevet til tabellen.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>De seneste kørsler</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Den eller de tilknyttede kolonner, som en række matches efter, f.eks. contentobject_id eller remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Den nyeste ændring vinder</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Rækkerne og indholdet bliver; kun parringen og de åbne konflikter forsvinder.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Det undertræ, der læses til tabellen, og den overordnede knude for objekter, der oprettes ud fra rækker.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Synkroniseringen blev ikke gemt</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Synkroniseringen blev gemt.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Synkroniseringerne for det publicerede objekts klasse</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tabellen til indhold</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Tabellen vinder</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Tabellens værdier blev publiceret til indholdet.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Synkroniseringens tabeller er ikke installeret endnu</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Der er endnu ingen synkronisering af datatabeller (Opsætning &gt; Datatabeller &gt; Synkroniseringer).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Når begge sider er ændret</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Når den startes</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Hvis ingen er markeret, skrives objektet til hver synkronisering af dets klasse, hvis undertræ indeholder det.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>begge veje</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>indhold til tabel</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>hvert %minutes. minut</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>exp_data_sync, exp_data_sync_link og exp_data_sync_conflict oprettes i denne database med knappen; intet andet ændres.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>realtid</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>fra</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tabel til indhold</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>når den startes</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Denne installation er en offentlig demo: administratorers adgangskoder kan ikke ændres eller nulstilles.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Leder du efter en anden import eller eksport?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Importer</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Eksporter</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Import og eksport</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Fungerer sammen med dette værktøj</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Hvilket import- eller eksportværktøj har jeg brug for?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Hvilket værktøj har jeg brug for?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Import- og eksportværktøjer til denne opgave</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Pakker</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Flyt indhold med dets klasser, eller klasser, udvidelser og designs, til en anden installation som en pakkefil.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Eksporter klasser som en pakke…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Upload og installer en pakke…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS-import</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Opret indhold ud fra et RSS- eller Atom-feed fra et andet websted, igen og igen via cronjobbet rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS-eksport</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Publicer de nyeste elementer i en mappe som et RSS- eller Atom-feed eller en liste over feeds som OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Indsamlet information</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Hent det, en formular har indsamlet, som en CSV-fil fra listen over indsamlet information.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Revisionseksport</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Hent revisionssporets poster, filtreret som i konsollen, som CSV, JSON lines eller JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>PDF-eksport</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Lav et PDF-dokument af en mappe og dens elementer til udskrivning eller afsendelse.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Datatabeller</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tabellerne for de persistente klasser og de navngivne databaseforbindelser: beskriv, opret og opgrader tabeller på enhver forbindelse, gennemse deres rækker, og se, hvad der peger på indhold.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Opret eller opgrader en tabel på en databaseforbindelse…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Gennemse tabellerne for de persistente klasser…</translation>
     </message>
 </context>
 </TS>

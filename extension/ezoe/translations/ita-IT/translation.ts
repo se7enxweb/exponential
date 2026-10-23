@@ -790,7 +790,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Location</source>
-        <translation>Localizzazione</translation>
+        <translation>Collocazione</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -806,7 +806,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Decrizione</translation>
+        <translation>Descrizione</translation>
     </message>
     <message>
         <source>Upload local file</source>
@@ -978,7 +978,7 @@ Vuoi maggiori informazioni sull&apos;argomento?</translation>
     </message>
     <message>
         <source>Tags</source>
-        <translation>Stringhe</translation>
+        <translation>Parole chiave</translation>
     </message>
     <message>
         <source>There are no related images.</source>

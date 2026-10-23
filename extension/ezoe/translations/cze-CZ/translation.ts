@@ -1206,7 +1206,7 @@ Chcete o tomto problému více informací?</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Redaktor</translation>
+        <translation>Textový editor</translation>
     </message>
     <message>
         <source>Status</source>

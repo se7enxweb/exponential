@@ -38,7 +38,7 @@
     <name>design/admin/content/upload</name>
     <message>
         <source>Upload</source>
-        <translation>Télécharger</translation>
+        <translation>Charger</translation>
     </message>
 </context>
 <context>
@@ -64,7 +64,7 @@
     </message>
     <message>
         <source>Discard</source>
-        <translation>Supprimer</translation>
+        <translation>Abandonner</translation>
     </message>
 </context>
 <context>
@@ -594,7 +594,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>A propos</translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <source>License</source>
@@ -806,11 +806,11 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Upload local file</source>
-        <translation>Télécharger un fichier local</translation>
+        <translation>Charger un fichier local</translation>
     </message>
     <message>
         <source>Upload is in progress, it may take a few seconds...</source>
-        <translation>Téléchargement en cours, cette opération peut prendre quelques secondes...</translation>
+        <translation>Chargement en cours, cette opération peut prendre quelques secondes...</translation>
     </message>
     <message>
         <source>Related images</source>
@@ -838,7 +838,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>ieSpell not detected. Do you want to install it now?</source>
-        <translation>ieSpell est introuvable. Voulez vous l&apos;installer maintenant ?</translation>
+        <translation>ieSpell est introuvable. Voulez-vous l&apos;installer maintenant ?</translation>
     </message>
     <message>
         <source>Horizontale rule</source>
@@ -862,7 +862,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Embarassed</source>
-        <translation>Embarassé</translation>
+        <translation>Embarrassé</translation>
     </message>
     <message>
         <source>Foot in mouth</source>
@@ -886,7 +886,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Money mouth</source>
-        <translation>Embarassé</translation>
+        <translation>Bouche pleine d&apos;argent</translation>
     </message>
     <message>
         <source>Sealed</source>
@@ -1026,7 +1026,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>The url the link points to, starts with link type (like http://).</source>
-        <translation>L&apos;URL vers laquelle le lien doit pointer; elle démarre par le type de lien (par exemple http://).</translation>
+        <translation>L&apos;URL vers laquelle le lien doit pointer ; elle démarre par le type de lien (par exemple http://).</translation>
     </message>
     <message>
         <source>Class are often used to give different design or appearance, either by using a different template, style or both.</source>
@@ -1504,11 +1504,11 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Insert an image from the related images list, upload a new image, search for an existing images or browse for it. To upload a local image choose the local file, specify the name of the new object, choose placement from list, optionally write some caption text (You can use simple html formating here) and then click &quot;Upload&quot; button.</source>
-        <translation>Insérer une image à partir de la liste d&apos;images associée, télécharger une nouvelle image, rechercher des images existantes. Pour télécharger une image locale, choisissez le fichier local, précisez le nom du nouvel objet, choisissez un emplacement dans la liste, écrivez une légende si vous le souhaitez (vous pouvez ici utiliser une mise en page HTML simple) puis cliquez sur le bouton &quot;Télécharger&quot;.</translation>
+        <translation>Insérer une image à partir de la liste d&apos;images associée, charger une nouvelle image, rechercher des images existantes. Pour charger une image locale, choisissez le fichier local, précisez le nom du nouvel objet, choisissez un emplacement dans la liste, écrivez une légende si vous le souhaitez (vous pouvez ici utiliser une mise en page HTML simple) puis cliquez sur le bouton &quot;Charger&quot;.</translation>
     </message>
     <message>
         <source>Insert an object from the related objects list, upload a new object, search for an existing object or browse for it. To upload a local file, click &quot;Upload new&quot; button choose the local file, specify the name of the new object, choose placement from list and then click &quot;Upload&quot; button. Note that embedded object will begin on a new line when displayed in the resulting XHTML.</source>
-        <translation>Insérer un objet à partir de la liste d&apos;objets associée, télécharger un nouvel objet, rechercher un objet existant. Pour télécharger un fichier local, cliquez sur le bouton &quot;Télécharger maintenant&quot;, choisssez le fichier local, précisez le nom du nouvel objet, choisissez un emplacement dans la liste puis cliquez sur le bouton &quot;Télécharger&quot;. Notez qu&apos;un objet embarqué débutera sur une nouvelle ligne lors de l&apos;affichage dans le XHTML résultant.</translation>
+        <translation>Insérer un objet à partir de la liste d&apos;objets associée, charger un nouvel objet, rechercher un objet existant. Pour charger un fichier local, cliquez sur le bouton &quot;Charger un nouvel objet&quot;, choisissez le fichier local, précisez le nom du nouvel objet, choisissez un emplacement dans la liste puis cliquez sur le bouton &quot;Charger&quot;. Notez qu&apos;un objet embarqué débutera sur une nouvelle ligne lors de l&apos;affichage dans le XHTML résultant.</translation>
     </message>
     <message>
         <source>Create a custom tag. Optionally select the text you want to transform to a custom tag and click the button to open the insert custom tag window. Select the name of the custom tag you want to insert from the list, edit the attributes and click OK to insert it.</source>
@@ -1644,7 +1644,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Insert an file from the related file list, upload a new file, search for an existing file or browse for it. To upload a local file, click &quot;Upload new&quot; button choose the local file, specify the name of the new file, choose placement from list and then click &quot;Upload&quot; button. This button is not enabled by default.</source>
-        <translation>Insérer un fichier depuis les fichiers liés, télécharger un nouveau fichier, chercher un fichier existant. Pour télécharger un fichier local, cliquez sur le bouton &quot;Envoyer un nouveau fichier&quot;, choisissez un fichier local et définissez un nom pour ce fichier, choisissez un emplacement dans la liste et enfin cliquez sur le bouton &quot;Télécharger&quot;. Ce bouton n&apos;est pas activé par défaut.</translation>
+        <translation>Insérer un fichier depuis les fichiers liés, charger un nouveau fichier, chercher un fichier existant. Pour charger un fichier local, cliquez sur le bouton &quot;Charger un nouvel objet&quot;, choisissez un fichier local et définissez un nom pour ce fichier, choisissez un emplacement dans la liste et enfin cliquez sur le bouton &quot;Charger&quot;. Ce bouton n&apos;est pas activé par défaut.</translation>
     </message>
     <message>
         <source>Allows you to spellcheck your text using google api or other depending on ezoe.ini settings. This button is not enabled by default.</source>
@@ -1781,19 +1781,19 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Name for the uploaded object, filename is used if none is specified.</source>
-        <translation>Nom pour l&apos;objet télécharger, le nom du fichier est utilisé si rien n&apos;est indiqué.</translation>
+        <translation>Nom de l&apos;objet chargé, le nom du fichier est utilisé si rien n&apos;est indiqué.</translation>
     </message>
     <message>
         <source>Choose file to upload from your local machine.</source>
-        <translation>Choisissez un fichier à télécharger depuis votre machine.</translation>
+        <translation>Choisissez un fichier à charger depuis votre machine.</translation>
     </message>
     <message>
         <source>Lets you specify where in Exponential to store the uploaded object.</source>
-        <translation>Permet d&apos;indiquer où stocker l&apos;objet téléchargé dans Exponential.</translation>
+        <translation>Permet d&apos;indiquer où stocker l&apos;objet chargé dans Exponential.</translation>
     </message>
     <message>
         <source>Upload file from your local machine.</source>
-        <translation>Télécharger un fichier depuis votre machine.</translation>
+        <translation>Charger un fichier depuis votre machine.</translation>
     </message>
     <message>
         <source>Search for content already in Exponential.</source>
@@ -1809,7 +1809,7 @@ Souhaitez-vous plus d&apos;informations sur ce problème ?</translation>
     </message>
     <message>
         <source>Description to the file your uploading, so internet clients can read more about it before they decide to download it.</source>
-        <translation>Description du fichier à télécharger pour permettre de choisir de le télécharger ou non.</translation>
+        <translation>Description du fichier à charger, pour permettre de choisir de le télécharger ou non.</translation>
     </message>
     <message>
         <source>Alternative text for the image, lets internet clients know what kind of image this is without dowloading it or actually seeing it.</source>

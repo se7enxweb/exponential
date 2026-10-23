@@ -7567,6 +7567,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Učitavanje najnovijih objava s foruma...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>Najnovije objave s foruma nije bilo moguće učitati.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>
@@ -10994,6 +10998,22 @@
     <message>
         <source>Not saved: %error</source>
         <translation>Nije spremljeno: %error</translation>
+    </message>
+    <message>
+        <source>Apply to</source>
+        <translation>Primijeni na</translation>
+    </message>
+    <message>
+        <source>Whole subtree</source>
+        <translation>Cijelo podstablo</translation>
+    </message>
+    <message>
+        <source>Subtree, except branches in another section</source>
+        <translation>Podstablo, osim grana u drugom odjeljku</translation>
+    </message>
+    <message>
+        <source>This object only</source>
+        <translation>Samo ovaj objekt</translation>
     </message>
 </context>
 <context>
@@ -14569,6 +14589,18 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Help center</source>
         <translation>Centar za pomoć</translation>
     </message>
+    <message>
+        <source>Nothing new</source>
+        <translation>Ništa novo</translation>
+    </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo način</translation>
+    </message>
+    <message>
+        <source>This installation is a public demo: anyone may know its administrator password, and administrator passwords cannot be changed or reset. Do not enter anything private here.</source>
+        <translation>Ova je instalacija javni demo: administratorsku lozinku može znati bilo tko, a administratorske lozinke ne mogu se promijeniti ni poništiti. Ovdje ne unosite ništa privatno.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/pagelayout/leftmenu</name>
@@ -15299,6 +15331,38 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Guides, search and how to report an error.</source>
         <translation>Vodiči, pretraživanje i kako prijaviti pogrešku.</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Veze</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Podatkovne tablice</translation>
+    </message>
+    <message>
+        <source>Named databases: SQLite files, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</source>
+        <translation>Imenovane baze podataka: SQLite datoteke, MySQL, PostgreSQL, Oracle, SQL Server, MongoDB.</translation>
+    </message>
+    <message>
+        <source>Passwords and keys of the tools, stored encrypted, shown by name only.</source>
+        <translation>Lozinke i ključevi alata, spremljeni šifrirano i prikazani samo po nazivu.</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajne</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes, their fields, relations and storage.</source>
+        <translation>Tablice perzistentnih klasa, njihova polja, veze i pohrana.</translation>
+    </message>
+    <message>
+        <source>Content and data tables kept in step: once, on a schedule or live.</source>
+        <translation>Sadržaj i podatkovne tablice usklađeni: jednokratno, prema rasporedu ili uživo.</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Sinkronizacije</translation>
     </message>
 </context>
 <context>
@@ -19496,6 +19560,22 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>Note that the section assignment of the sub items will also be changed.</source>
         <translation>Imajte na umu da će se promijeniti i dodjela odjeljka podstavkama.</translation>
+    </message>
+    <message>
+        <source>Which objects get the section</source>
+        <translation>Koji objekti dobivaju odjeljak</translation>
+    </message>
+    <message>
+        <source>The chosen item and every object below it</source>
+        <translation>Odabrana stavka i svi objekti ispod nje</translation>
+    </message>
+    <message>
+        <source>The chosen item and the objects below it that have its section; branches in another section keep theirs</source>
+        <translation>Odabrana stavka i objekti ispod nje koji imaju njezin odjeljak; grane u drugom odjeljku zadržavaju svoj</translation>
+    </message>
+    <message>
+        <source>The chosen item only</source>
+        <translation>Samo odabrana stavka</translation>
     </message>
 </context>
 <context>
@@ -25995,6 +26075,22 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Find</source>
         <translation>Pronađi</translation>
     </message>
+    <message>
+        <source>A new data table with its class, schema, administration, policies, fetch functions and JSON endpoint, from a list of fields, a content class or an import source.</source>
+        <translation>Nova podatkovna tablica s klasom, shemom, administracijom, pravilima, funkcijama dohvaćanja i JSON krajnjom točkom, iz popisa polja, klase sadržaja ili izvora uvoza.</translation>
+    </message>
+    <message>
+        <source>Module table</source>
+        <translation>Tablica modula</translation>
+    </message>
+    <message>
+        <source>eZPersistentObject, on the site&apos;s database or a named connection</source>
+        <translation>eZPersistentObject, u bazi podataka web-mjesta ili na imenovanoj vezi</translation>
+    </message>
+    <message>
+        <source>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba and sql/</source>
+        <translation>extension/&lt;name&gt;/classes/, modules/&lt;module&gt;/, share/db_schema.dba i sql/</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/rad/datatype</name>
@@ -28840,6 +28936,18 @@ Napomena: paketi neće biti deinstalirani.</translation>
     <message>
         <source>VAT charging rules (%rules)</source>
         <translation>Pravila za obračun PDV-a (%rules)</translation>
+    </message>
+    <message>
+        <source>These VAT rules are not applied.</source>
+        <translation>Ova se pravila PDV-a ne primjenjuju.</translation>
+    </message>
+    <message>
+        <source>No VAT handler is set, so every product is charged the VAT type set on it and these rules are never read. To apply them, set Handler=ezdefault in the [VATSettings] section of shop.ini (in settings/override/shop.ini.append.php) and give the products the VAT type &quot;%dynamic&quot;.</source>
+        <translation>Nije postavljen rukovatelj PDV-om, pa se svakom proizvodu obračunava vrsta PDV-a koja je na njemu postavljena, a ova se pravila nikad ne čitaju. Da biste ih primijenili, postavite Handler=ezdefault u odjeljku [VATSettings] datoteke shop.ini (u settings/override/shop.ini.append.php) i proizvodima dodijelite vrstu PDV-a &quot;%dynamic&quot;.</translation>
+    </message>
+    <message>
+        <source>The VAT handler &quot;%handler&quot; set in the [VATSettings] section of shop.ini cannot be loaded, so these rules are never read. Check the handler name and the directories VAT handlers are looked for in (RepositoryDirectories and ExtensionDirectories).</source>
+        <translation>Rukovatelj PDV-om &quot;%handler&quot; postavljen u odjeljku [VATSettings] datoteke shop.ini ne može se učitati, pa se ova pravila nikad ne čitaju. Provjerite naziv rukovatelja i direktorije u kojima se traže rukovatelji PDV-om (RepositoryDirectories i ExtensionDirectories).</translation>
     </message>
 </context>
 <context>
@@ -41945,7 +42053,7 @@ Zadani kôd izrađen je iz osnovnih parametara koje ste odabrali.</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Sljedeća</translation>
+        <translation>Dalje</translation>
     </message>
     <message>
         <source>The system check found some issues that, when resolved, may give improved performance or more features. Please have a look through the results below for more information on what might be done. Each issue will give you instructions on how to do the finetuning.</source>
@@ -43585,6 +43693,14 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
         <source>This password is well-known or too common, so anyone could guess it. Choose another one.</source>
         <translation>Ova je lozinka poznata ili previše uobičajena, pa ju je lako pogoditi. Odaberite drugu.</translation>
     </message>
+    <message>
+        <source>Demo mode</source>
+        <translation>Demo način</translation>
+    </message>
+    <message>
+        <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
+        <translation>Varijabla okruženja EXP_DEMO_MODE=1 označava ovu instalaciju kao javni demo: prihvaća se općepoznata administratorska lozinka, a administratorske lozinke ne mogu se kasnije promijeniti ni poništiti. Demo način nikad ne koristite za produkcijsko web-mjesto.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -43932,7 +44048,7 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Sljedeća</translation>
+        <translation>Dalje</translation>
     </message>
     <message>
         <source>Open the php.ini file and change the memory_limit value to at least %1, and press %2</source>
@@ -44600,7 +44716,7 @@ Za to morate promijeniti naredbe %chown u odjeljku Alternativne naredbe ljuske.<
     </message>
     <message>
         <source>Order</source>
-        <translation>Redoslijed</translation>
+        <translation>Narudžba</translation>
     </message>
     <message>
         <source>Subtotal of items</source>
@@ -50619,6 +50735,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>eZ Page swap workflow event</source>
         <translation>Događaj tijeka rada za zamjenu eZ Page</translation>
+    </message>
+    <message>
+        <source>Mirror to data tables</source>
+        <translation>Zrcali u podatkovne tablice</translation>
     </message>
 </context>
 <context>
@@ -58816,7 +58936,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Redoslijed</translation>
+        <translation>Narudžba</translation>
     </message>
     <message>
         <source>Date</source>
@@ -60331,7 +60451,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Redoslijed</translation>
+        <translation>Narudžba</translation>
     </message>
     <message>
         <source>Customer</source>
@@ -65823,6 +65943,10 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>The status could not be shown. Reload the page to follow the job.</source>
         <translation>Status nije bilo moguće prikazati. Ponovno učitajte stranicu kako biste pratili posao.</translation>
+    </message>
+    <message>
+        <source>The objects in the subtree that have the section of this item get the section; branches in another section keep theirs, and objects you may not assign it to are skipped.</source>
+        <translation>Objekti u podstablu koji imaju odjeljak ove stavke dobivaju novi odjeljak; grane u drugom odjeljku zadržavaju svoj, a objekti kojima ga ne smijete dodijeliti preskaču se.</translation>
     </message>
 </context>
 <context>
@@ -74897,6 +75021,1593 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>More audiences</source>
         <translation>Više publika</translation>
+    </message>
+    <message>
+        <source>You may not create content (content/create).</source>
+        <translation>Nemate dopuštenje za stvaranje sadržaja (content/create).</translation>
+    </message>
+    <message>
+        <source>The manuals are already being built.</source>
+        <translation>Priručnici se već izrađuju.</translation>
+    </message>
+    <message>
+        <source>There is no manual %1.</source>
+        <translation>Ne postoji priručnik %1.</translation>
+    </message>
+    <message>
+        <source>Build the help manual %1 from the Markdown help</source>
+        <translation>Izradi priručnik pomoći %1 iz pomoći u formatu Markdown</translation>
+    </message>
+    <message>
+        <source>Build the help manuals from the Markdown help</source>
+        <translation>Izradi priručnike pomoći iz pomoći u formatu Markdown</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/secrets</name>
+    <message>
+        <source>%count secrets are encrypted with another key than the current one.</source>
+        <translation>Broj tajni šifriranih drugim ključem, a ne trenutačnim: %count.</translation>
+    </message>
+    <message>
+        <source>%done secrets encrypted again with the current key, %current were already, %bad could not be read.</source>
+        <translation>Ponovno šifrirano trenutačnim ključem: %done, već je bilo: %current, nije moguće pročitati: %bad.</translation>
+    </message>
+    <message>
+        <source>(made when the first secret is stored)</source>
+        <translation>(stvara se kad se spremi prva tajna)</translation>
+    </message>
+    <message>
+        <source>A backup of the database alone cannot decrypt the secrets</source>
+        <translation>Sama sigurnosna kopija baze podataka ne može dešifrirati tajne</translation>
+    </message>
+    <message>
+        <source>A name is letters, digits and _ . : - (at most 128), and does not start with env:.</source>
+        <translation>Naziv se sastoji od slova, znamenki i _ . : - (najviše 128) i ne počinje s env:.</translation>
+    </message>
+    <message>
+        <source>A new key is made, every secret is encrypted again with it, and the old key is kept as the .previous file. Back up the new key file afterwards.</source>
+        <translation>Stvara se novi ključ, sve se tajne njime ponovno šifriraju, a stari se ključ čuva kao datoteka .previous. Nakon toga napravite sigurnosnu kopiju nove datoteke ključa.</translation>
+    </message>
+    <message>
+        <source>A new name, or the name of an existing secret to replace its value. Empty value: only the description changes.</source>
+        <translation>Novi naziv ili naziv postojeće tajne čija se vrijednost zamjenjuje. Prazna vrijednost: mijenja se samo opis.</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sve</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Izmijenjeno</translation>
+    </message>
+    <message>
+        <source>Comes from</source>
+        <translation>Podrijetlo</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Stvori tablicu</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Opis</translation>
+    </message>
+    <message>
+        <source>Encrypt every secret again with the current key</source>
+        <translation>Ponovno šifriraj sve tajne trenutačnim ključem</translation>
+    </message>
+    <message>
+        <source>Encryption</source>
+        <translation>Šifriranje</translation>
+    </message>
+    <message>
+        <source>Give the value.</source>
+        <translation>Unesite vrijednost.</translation>
+    </message>
+    <message>
+        <source>Key id</source>
+        <translation>ID ključa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nazivi</translation>
+    </message>
+    <message>
+        <source>No secret yet.</source>
+        <translation>Još nema tajni.</translation>
+    </message>
+    <message>
+        <source>Only the tool %scope.</source>
+        <translation>Samo alat %scope.</translation>
+    </message>
+    <message>
+        <source>Passwords, tokens and API keys of the tools: database connections, import sources, remote servers. A tool keeps the name of a secret; the value is stored here, encrypted, and never shown again.</source>
+        <translation>Lozinke, tokeni i API ključevi alata: veze s bazama podataka, izvori uvoza, udaljeni poslužitelji. Alat čuva naziv tajne; vrijednost se sprema ovdje, šifrirano, i više se nikad ne prikazuje.</translation>
+    </message>
+    <message>
+        <source>Previous key</source>
+        <translation>Prethodni ključ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <source>Rotate</source>
+        <translation>Rotiraj</translation>
+    </message>
+    <message>
+        <source>Rotate the key</source>
+        <translation>Rotiraj ključ</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajne</translation>
+    </message>
+    <message>
+        <source>Set a secret</source>
+        <translation>Postavi tajnu</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Postavljanje</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Store</source>
+        <translation>Spremi</translation>
+    </message>
+    <message>
+        <source>The description of %name was changed; its value was kept.</source>
+        <translation>Opis tajne %name je izmijenjen; njezina je vrijednost zadržana.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>The key could not be rotated (a key from EXP_SECRET_KEY is rotated by setting a new one and the old one as EXP_SECRET_KEY_PREVIOUS).</source>
+        <translation>Ključ nije bilo moguće rotirati (ključ iz EXP_SECRET_KEY rotira se postavljanjem novog ključa, a starog kao EXP_SECRET_KEY_PREVIOUS).</translation>
+    </message>
+    <message>
+        <source>The key is not in the database. Keep a copy of the key file (or of EXP_SECRET_KEY) with every backup, in a safe place of its own. Without it the secrets of a restored database cannot be read and have to be set again.</source>
+        <translation>Ključ nije u bazi podataka. Uz svaku sigurnosnu kopiju čuvajte kopiju datoteke ključa (ili EXP_SECRET_KEY) na zasebnom sigurnom mjestu. Bez nje se tajne vraćene baze podataka ne mogu pročitati i moraju se ponovno postaviti.</translation>
+    </message>
+    <message>
+        <source>The key was rotated: %done secrets encrypted again, %bad could not be read. Back up the new key file now.</source>
+        <translation>Ključ je rotiran: ponovno šifrirano %done, nije moguće pročitati %bad. Sada napravite sigurnosnu kopiju nove datoteke ključa.</translation>
+    </message>
+    <message>
+        <source>The secret %name was removed.</source>
+        <translation>Tajna %name je uklonjena.</translation>
+    </message>
+    <message>
+        <source>The secret %name was stored, encrypted. Its value is not shown again.</source>
+        <translation>Tajna %name je spremljena, šifrirano. Njezina se vrijednost više neće prikazati.</translation>
+    </message>
+    <message>
+        <source>The secret could not be stored: see the key above.</source>
+        <translation>Tajnu nije bilo moguće spremiti: pogledajte ključ iznad.</translation>
+    </message>
+    <message>
+        <source>The table exp_secret is missing</source>
+        <translation>Nedostaje tablica exp_secret</translation>
+    </message>
+    <message>
+        <source>The tool is lower case letters, digits and _ . - (at most 64).</source>
+        <translation>Alat se sastoji od malih slova, znamenki i _ . - (najviše 64).</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, rotate the key&quot; first.</source>
+        <translation>Najprije označite „Da, rotiraj ključ“.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the secret to remove it. A tool that names it fails until it is set again.</source>
+        <translation>Označite okvir pokraj tajne da biste je uklonili. Alat koji je navodi neće raditi dok se ponovno ne postavi.</translation>
+    </message>
+    <message>
+        <source>To rotate a key from the environment: set the new key as EXP_SECRET_KEY and the old one as EXP_SECRET_KEY_PREVIOUS, then encrypt every secret again here.</source>
+        <translation>Rotacija ključa iz okruženja: postavite novi ključ kao EXP_SECRET_KEY, a stari kao EXP_SECRET_KEY_PREVIOUS, zatim ovdje ponovno šifrirajte sve tajne.</translation>
+    </message>
+    <message>
+        <source>Tool</source>
+        <translation>Alat</translation>
+    </message>
+    <message>
+        <source>Until it is created, only the secrets of secrets.ini and environment variables (env:NAME) can be used.</source>
+        <translation>Dok se ne stvori, mogu se koristiti samo tajne iz datoteke secrets.ini i varijable okruženja (env:NAME).</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Vrijednost</translation>
+    </message>
+    <message>
+        <source>Who uses it, e.g. datatable, sqliimport, ezodf.</source>
+        <translation>Tko je koristi, npr. datatable, sqliimport, ezodf.</translation>
+    </message>
+    <message>
+        <source>Yes, remove %name</source>
+        <translation>Da, ukloni %name</translation>
+    </message>
+    <message>
+        <source>Yes, rotate the key</source>
+        <translation>Da, rotiraj ključ</translation>
+    </message>
+    <message>
+        <source>cannot be decrypted here</source>
+        <translation>ovdje se ne može dešifrirati</translation>
+    </message>
+    <message>
+        <source>encrypted</source>
+        <translation>šifrirano</translation>
+    </message>
+    <message>
+        <source>secrets.ini</source>
+        <translation>datoteka secrets.ini</translation>
+    </message>
+    <message>
+        <source>the .previous file</source>
+        <translation>datoteka .previous</translation>
+    </message>
+    <message>
+        <source>the environment variable EXP_SECRET_KEY</source>
+        <translation>varijabla okruženja EXP_SECRET_KEY</translation>
+    </message>
+    <message>
+        <source>the key file %file</source>
+        <translation>datoteka ključa %file</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/datatable</name>
+    <message>
+        <source>%count classes</source>
+        <translation>Broj klasa: %count</translation>
+    </message>
+    <message>
+        <source>%count to content</source>
+        <translation>U sadržaj: %count</translation>
+    </message>
+    <message>
+        <source>%shown of %all classes shown.</source>
+        <translation>Prikazano klasa: %shown od %all.</translation>
+    </message>
+    <message>
+        <source>A host name or address; empty for SQLite.</source>
+        <translation>Naziv ili adresa računala; prazno za SQLite.</translation>
+    </message>
+    <message>
+        <source>A secret of Setup &gt; Secrets, or env:VARIABLE for an environment variable.</source>
+        <translation>Tajna iz Postavljanje &gt; Tajne ili env:VARIABLE za varijablu okruženja.</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Radnje</translation>
+    </message>
+    <message>
+        <source>All (%count)</source>
+        <translation>Sve (%count)</translation>
+    </message>
+    <message>
+        <source>Available</source>
+        <translation>Dostupno</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Natrag na popis</translation>
+    </message>
+    <message>
+        <source>Character set</source>
+        <translation>Skup znakova</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Class, table or field</source>
+        <translation>Klasa, tablica ili polje</translation>
+    </message>
+    <message>
+        <source>Classes on this connection: %list</source>
+        <translation>Klase na ovoj vezi: %list</translation>
+    </message>
+    <message>
+        <source>Column</source>
+        <translation>Stupac</translation>
+    </message>
+    <message>
+        <source>Column in the database</source>
+        <translation>Stupac u bazi podataka</translation>
+    </message>
+    <message>
+        <source>Connected through %via in %ms ms: %version, %tables tables.</source>
+        <translation>Povezano putem %via za %ms ms: %version, broj tablica: %tables.</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation>Veza</translation>
+    </message>
+    <message>
+        <source>Connections</source>
+        <translation>Veze</translation>
+    </message>
+    <message>
+        <source>Connections (%count)</source>
+        <translation>Veze (%count)</translation>
+    </message>
+    <message>
+        <source>Content class</source>
+        <translation>Klasa sadržaja</translation>
+    </message>
+    <message>
+        <source>Content object</source>
+        <translation>Objekt sadržaja</translation>
+    </message>
+    <message>
+        <source>Create the tables</source>
+        <translation>Stvori tablice</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Podatkovne tablice</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Baza podataka</translation>
+    </message>
+    <message>
+        <source>Databases the data tables and the import and export tools can use besides this installation&apos;s own: a SQLite file, or a MySQL, MariaDB, PostgreSQL, Oracle, SQL Server or MongoDB server, here or remote. A password is the name of a secret, never its value.</source>
+        <translation>Baze podataka koje podatkovne tablice i alati za uvoz i izvoz mogu koristiti uz vlastitu bazu ove instalacije: SQLite datoteka ili poslužitelj MySQL, MariaDB, PostgreSQL, Oracle, SQL Server ili MongoDB, lokalni ili udaljeni. Lozinka je naziv tajne, nikad njezina vrijednost.</translation>
+    </message>
+    <message>
+        <source>Declared in datatable.ini [Connection_%id] by the settings or an extension: change it there. It can be tested here.</source>
+        <translation>Deklarirana u datatable.ini [Connection_%id] putem postavki ili proširenja: promijenite je ondje. Ovdje se može testirati.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Zadano</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Opis</translation>
+    </message>
+    <message>
+        <source>Differences</source>
+        <translation>Razlike</translation>
+    </message>
+    <message>
+        <source>Driver</source>
+        <translation>Upravljački program</translation>
+    </message>
+    <message>
+        <source>Empty for the engine&apos;s usual port.</source>
+        <translation>Prazno za uobičajeni priključak pogona.</translation>
+    </message>
+    <message>
+        <source>Engine</source>
+        <translation>Pogon</translation>
+    </message>
+    <message>
+        <source>Engines on this server</source>
+        <translation>Pogoni na ovom poslužitelju</translation>
+    </message>
+    <message>
+        <source>Extension %name</source>
+        <translation>Proširenje %name</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Polje</translation>
+    </message>
+    <message>
+        <source>Field of the target</source>
+        <translation>Polje odredišta</translation>
+    </message>
+    <message>
+        <source>Fields</source>
+        <translation>Polja</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtar</translation>
+    </message>
+    <message>
+        <source>For SQL Server: sqlsrv, dblib or odbc (the first one this server has when empty).</source>
+        <translation>Za SQL Server: sqlsrv, dblib ili odbc (ako je prazno, prvi koji ovaj poslužitelj ima).</translation>
+    </message>
+    <message>
+        <source>For SQLite the file, e.g. %example (in %dirs). For Oracle the service name.</source>
+        <translation>Za SQLite datoteka, npr. %example (u %dirs). Za Oracle naziv usluge.</translation>
+    </message>
+    <message>
+        <source>Function attributes: %list</source>
+        <translation>Atributi funkcija: %list</translation>
+    </message>
+    <message>
+        <source>Identifier</source>
+        <translation>Identifikator</translation>
+    </message>
+    <message>
+        <source>Kernel</source>
+        <translation>Jezgra</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>Key: %keys</source>
+        <translation>Ključ: %keys</translation>
+    </message>
+    <message>
+        <source>Known from</source>
+        <translation>Poznato iz</translation>
+    </message>
+    <message>
+        <source>Made in</source>
+        <translation>Izrađeno u</translation>
+    </message>
+    <message>
+        <source>Make the catalogue again</source>
+        <translation>Ponovno izradi katalog</translation>
+    </message>
+    <message>
+        <source>More</source>
+        <translation>Više</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Named connections need the table exp_data_connection, the secret store the table exp_secret.</source>
+        <translation>Imenovanim vezama potrebna je tablica exp_data_connection, a spremištu tajni tablica exp_secret.</translation>
+    </message>
+    <message>
+        <source>New connection</source>
+        <translation>Nova veza</translation>
+    </message>
+    <message>
+        <source>No persistent class matches.</source>
+        <translation>Nijedna perzistentna klasa ne odgovara.</translation>
+    </message>
+    <message>
+        <source>No relation is known.</source>
+        <translation>Nije poznata nijedna veza.</translation>
+    </message>
+    <message>
+        <source>No rows.</source>
+        <translation>Nema redaka.</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Čvor</translation>
+    </message>
+    <message>
+        <source>Not shown: %list</source>
+        <translation>Nije prikazano: %list</translation>
+    </message>
+    <message>
+        <source>Only for an engine reached through PDO, when server, port and database are not enough. Never a password.</source>
+        <translation>Samo za pogon kojem se pristupa putem PDO-a, kad poslužitelj, priključak i baza podataka nisu dovoljni. Nikad lozinka.</translation>
+    </message>
+    <message>
+        <source>PDO data source name</source>
+        <translation>PDO izvor podataka</translation>
+    </message>
+    <message>
+        <source>PDO driver</source>
+        <translation>PDO upravljački program</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lozinka</translation>
+    </message>
+    <message>
+        <source>Password itself</source>
+        <translation>Sama lozinka</translation>
+    </message>
+    <message>
+        <source>Password: the name of a secret</source>
+        <translation>Lozinka: naziv tajne</translation>
+    </message>
+    <message>
+        <source>Points at</source>
+        <translation>Upućuje na</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Priključak</translation>
+    </message>
+    <message>
+        <source>Read only: the synchronisation never writes to it</source>
+        <translation>Samo za čitanje: sinkronizacija nikad ne zapisuje u nju</translation>
+    </message>
+    <message>
+        <source>Relations</source>
+        <translation>Veze</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <source>Remove this connection</source>
+        <translation>Ukloni ovu vezu</translation>
+    </message>
+    <message>
+        <source>Required</source>
+        <translation>Obavezno</translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation>Retci</translation>
+    </message>
+    <message>
+        <source>SQLite files may be in: %dirs</source>
+        <translation>SQLite datoteke mogu biti u: %dirs</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spremi</translation>
+    </message>
+    <message>
+        <source>Secrets</source>
+        <translation>Tajne</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Odjeljak</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation>Poslužitelj</translation>
+    </message>
+    <message>
+        <source>Server and database</source>
+        <translation>Poslužitelj i baza podataka</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Postavljanje</translation>
+    </message>
+    <message>
+        <source>Socket</source>
+        <translation>Utičnica (socket)</translation>
+    </message>
+    <message>
+        <source>Someone with the policy datatable/manage can create them here.</source>
+        <translation>Netko s pravilom datatable/manage može ih ovdje stvoriti.</translation>
+    </message>
+    <message>
+        <source>Store it in the secret store when saving</source>
+        <translation>Pri spremanju je spremi u spremište tajni</translation>
+    </message>
+    <message>
+        <source>Storing a password needs the policy secrets/manage.</source>
+        <translation>Za spremanje lozinke potrebno je pravilo secrets/manage.</translation>
+    </message>
+    <message>
+        <source>Table</source>
+        <translation>Tablica</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>Testiraj</translation>
+    </message>
+    <message>
+        <source>Test connection</source>
+        <translation>Testiraj vezu</translation>
+    </message>
+    <message>
+        <source>The catalogue is made from the autoload arrays and kept until they change.</source>
+        <translation>Katalog se izrađuje iz autoload polja i čuva dok se ona ne promijene.</translation>
+    </message>
+    <message>
+        <source>The catalogue was made again: %count classes.</source>
+        <translation>Katalog je ponovno izrađen. Broj klasa: %count.</translation>
+    </message>
+    <message>
+        <source>The column %column (%type) is not in the definition.</source>
+        <translation>Stupac %column (%type) nije u definiciji.</translation>
+    </message>
+    <message>
+        <source>The connection failed after %ms ms: %error</source>
+        <translation>Povezivanje nije uspjelo nakon %ms ms: %error</translation>
+    </message>
+    <message>
+        <source>The connection was not saved</source>
+        <translation>Veza nije spremljena</translation>
+    </message>
+    <message>
+        <source>The connection was saved.</source>
+        <translation>Veza je spremljena.</translation>
+    </message>
+    <message>
+        <source>The definition of this class cannot be read</source>
+        <translation>Definicija ove klase ne može se pročitati</translation>
+    </message>
+    <message>
+        <source>The field %column (%type) has no column.</source>
+        <translation>Polje %column (%type) nema stupac.</translation>
+    </message>
+    <message>
+        <source>The field %column: %detail.</source>
+        <translation>Polje %column: %detail.</translation>
+    </message>
+    <message>
+        <source>The first %count rows</source>
+        <translation>Prvi retci: %count</translation>
+    </message>
+    <message>
+        <source>The password could not be stored in the secret store (Setup &gt; Secrets says why).</source>
+        <translation>Lozinku nije bilo moguće spremiti u spremište tajni (razlog je naveden pod Postavljanje &gt; Tajne).</translation>
+    </message>
+    <message>
+        <source>The table %table is not in the database.</source>
+        <translation>Tablica %table nije u bazi podataka.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: a connection can be tested but not saved until it is created on the Data tables page.</source>
+        <translation>Nedostaje tablica exp_data_connection: veza se može testirati, ali ne i spremiti dok se tablica ne stvori na stranici Podatkovne tablice.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the &lt;a href=&quot;%url&quot;&gt;Data tables&lt;/a&gt; page. Until then only the connections declared in datatable.ini are listed.</source>
+        <translation>Nedostaje tablica exp_data_connection: stvorite je na stranici &lt;a href=&quot;%url&quot;&gt;Podatkovne tablice&lt;/a&gt;. Do tada se navode samo veze deklarirane u datatable.ini.</translation>
+    </message>
+    <message>
+        <source>The table exp_data_connection is missing: create it on the Data tables page first.</source>
+        <translation>Nedostaje tablica exp_data_connection: najprije je stvorite na stranici Podatkovne tablice.</translation>
+    </message>
+    <message>
+        <source>The tables of the data tables are not installed yet</source>
+        <translation>Tablice podatkovnih tablica još nisu instalirane</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes of this installation, as their definitions describe them, and where each one is stored.</source>
+        <translation>Tablice perzistentnih klasa ove instalacije, onako kako ih opisuju njihove definicije, i gdje je svaka pohranjena.</translation>
+    </message>
+    <message>
+        <source>They are created on this database with the button below; nothing else changes.</source>
+        <translation>Stvaraju se u ovoj bazi podataka gumbom ispod; ništa se drugo ne mijenja.</translation>
+    </message>
+    <message>
+        <source>This installation&apos;s own database, from site.ini. It can be tested here.</source>
+        <translation>Vlastita baza podataka ove instalacije, iz datoteke site.ini. Ovdje se može testirati.</translation>
+    </message>
+    <message>
+        <source>This secret is not set.</source>
+        <translation>Ova tajna nije postavljena.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, remove it&quot; to remove the connection. Classes and tools that name it then fail until it is made again.</source>
+        <translation>Označite „Da, ukloni“ da biste uklonili vezu. Klase i alati koji je navode tada neće raditi dok se ponovno ne stvori.</translation>
+    </message>
+    <message>
+        <source>Tick the box below to store it, encrypted, as the secret named above (datatable. and the identifier when the name is empty).</source>
+        <translation>Označite okvir ispod da biste je spremili, šifrirano, kao tajnu s nazivom navedenim iznad (datatable. i identifikator ako je naziv prazan).</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Used for a test only and never shown again.</source>
+        <translation>Koristi se samo za test i više se nikad ne prikazuje.</translation>
+    </message>
+    <message>
+        <source>User</source>
+        <translation>Korisnik</translation>
+    </message>
+    <message>
+        <source>What classes and tools name it: lower case letters, digits and _. It cannot be changed later.</source>
+        <translation>Naziv pod kojim je klase i alati navode: mala slova, znamenke i _. Kasnije se ne može promijeniti.</translation>
+    </message>
+    <message>
+        <source>Where the classes come from</source>
+        <translation>Odakle dolaze klase</translation>
+    </message>
+    <message>
+        <source>Where the table differs from the definition</source>
+        <translation>Gdje se tablica razlikuje od definicije</translation>
+    </message>
+    <message>
+        <source>Yes, remove it</source>
+        <translation>Da, ukloni</translation>
+    </message>
+    <message>
+        <source>a foreign key of a field</source>
+        <translation>strani ključ polja</translation>
+    </message>
+    <message>
+        <source>counted up: %key</source>
+        <translation>automatski brojeno: %key</translation>
+    </message>
+    <message>
+        <source>datatable.ini</source>
+        <translation>datoteka datatable.ini</translation>
+    </message>
+    <message>
+        <source>definition() fails</source>
+        <translation>definition() ne uspijeva</translation>
+    </message>
+    <message>
+        <source>exists</source>
+        <translation>postoji</translation>
+    </message>
+    <message>
+        <source>inferred from the name</source>
+        <translation>izvedeno iz naziva</translation>
+    </message>
+    <message>
+        <source>key</source>
+        <translation>ključ</translation>
+    </message>
+    <message>
+        <source>missing</source>
+        <translation>nedostaje</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>not available here</source>
+        <translation>ovdje nije dostupno</translation>
+    </message>
+    <message>
+        <source>not set</source>
+        <translation>nije postavljeno</translation>
+    </message>
+    <message>
+        <source>read only</source>
+        <translation>samo za čitanje</translation>
+    </message>
+    <message>
+        <source>set</source>
+        <translation>postavljeno</translation>
+    </message>
+    <message>
+        <source>site</source>
+        <translation>web-mjesto</translation>
+    </message>
+    <message>
+        <source>site.ini</source>
+        <translation>datoteka site.ini</translation>
+    </message>
+    <message>
+        <source>the administration</source>
+        <translation>administracija</translation>
+    </message>
+    <message>
+        <source>the definition</source>
+        <translation>definicija</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>nepoznato</translation>
+    </message>
+    <message>
+        <source>untested here</source>
+        <translation>ovdje nije testirano</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>%count rows point at this item through %column (%kind)</source>
+        <translation>Broj redaka koji upućuju na ovu stavku putem %column (%kind): %count</translation>
+    </message>
+    <message>
+        <source>%count rows where %field is %value.</source>
+        <translation>Broj redaka u kojima je %field jednako %value: %count.</translation>
+    </message>
+    <message>
+        <source>%count rows.</source>
+        <translation>Broj redaka: %count.</translation>
+    </message>
+    <message>
+        <source>%done statements</source>
+        <translation>Broj naredbi: %done</translation>
+    </message>
+    <message>
+        <source>All %count rows</source>
+        <translation>Svi retci (%count)</translation>
+    </message>
+    <message>
+        <source>All rows</source>
+        <translation>Svi retci</translation>
+    </message>
+    <message>
+        <source>Apply</source>
+        <translation>Primijeni</translation>
+    </message>
+    <message>
+        <source>Change columns and indexes that differ</source>
+        <translation>Promijeni stupce i indekse koji se razlikuju</translation>
+    </message>
+    <message>
+        <source>Create the table</source>
+        <translation>Stvori tablicu</translation>
+    </message>
+    <message>
+        <source>Create the tables of a class or an extension on a connection, or bring them up to date. Nothing runs before &quot;Apply&quot;; columns and indexes are dropped or changed only when you tick it.</source>
+        <translation>Stvorite tablice klase ili proširenja na vezi ili ih ažurirajte. Ništa se ne izvodi prije „Primijeni“; stupci i indeksi uklanjaju se ili mijenjaju samo ako to označite.</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gotovo</translation>
+    </message>
+    <message>
+        <source>Drop columns and indexes the schema does not have</source>
+        <translation>Ukloni stupce i indekse koje shema nema</translation>
+    </message>
+    <message>
+        <source>From the definition of a class</source>
+        <translation>Iz definicije klase</translation>
+    </message>
+    <message>
+        <source>No row of a data table points at this item.</source>
+        <translation>Nijedan redak podatkovne tablice ne upućuje na ovu stavku.</translation>
+    </message>
+    <message>
+        <source>Not done unless ticked above: %list</source>
+        <translation>Ne izvodi se ako nije označeno iznad: %list</translation>
+    </message>
+    <message>
+        <source>Not everything could be done</source>
+        <translation>Nije sve bilo moguće izvesti</translation>
+    </message>
+    <message>
+        <source>On the connection</source>
+        <translation>Na vezi</translation>
+    </message>
+    <message>
+        <source>Or from the schema file of an extension</source>
+        <translation>Ili iz datoteke sheme proširenja</translation>
+    </message>
+    <message>
+        <source>Rows of %table</source>
+        <translation>Retci tablice %table</translation>
+    </message>
+    <message>
+        <source>Rows of data tables that point at this item</source>
+        <translation>Retci podatkovnih tablica koji upućuju na ovu stavku</translation>
+    </message>
+    <message>
+        <source>Schema</source>
+        <translation>Shema</translation>
+    </message>
+    <message>
+        <source>Show what would be done</source>
+        <translation>Prikaži što bi se izvelo</translation>
+    </message>
+    <message>
+        <source>The connection %id is read only.</source>
+        <translation>Veza %id je samo za čitanje.</translation>
+    </message>
+    <message>
+        <source>The extension %name has no share/db_schema.dba.</source>
+        <translation>Proširenje %name nema share/db_schema.dba.</translation>
+    </message>
+    <message>
+        <source>The install SQL of every engine</source>
+        <translation>Instalacijski SQL za svaki pogon</translation>
+    </message>
+    <message>
+        <source>There is no connection %id.</source>
+        <translation>Ne postoji veza %id.</translation>
+    </message>
+    <message>
+        <source>There is no persistent class %class.</source>
+        <translation>Ne postoji perzistentna klasa %class.</translation>
+    </message>
+    <message>
+        <source>Upgrade the table</source>
+        <translation>Nadogradi tablicu</translation>
+    </message>
+    <message>
+        <source>What would be done on %connection (%engine)</source>
+        <translation>Što bi se izvelo na %connection (%engine)</translation>
+    </message>
+    <message>
+        <source>create</source>
+        <translation>stvori</translation>
+    </message>
+    <message>
+        <source>up to date</source>
+        <translation>ažurno</translation>
+    </message>
+    <message>
+        <source>upgrade</source>
+        <translation>nadogradi</translation>
+    </message>
+    <message>
+        <source>%lines lines</source>
+        <translation>Broj redaka: %lines</translation>
+    </message>
+    <message>
+        <source>A content class</source>
+        <translation>Klasa sadržaja</translation>
+    </message>
+    <message>
+        <source>A content class identifier, connection:table, or what the source asks for. Not needed for a list.</source>
+        <translation>Identifikator klase sadržaja, veza:tablica ili ono što izvor traži. Nije potrebno za popis.</translation>
+    </message>
+    <message>
+        <source>A content object (contentobject_id)</source>
+        <translation>Objekt sadržaja (contentobject_id)</translation>
+    </message>
+    <message>
+        <source>A link in the Data tables group of the Setup menu, for users with the policy read.</source>
+        <translation>Poveznica u grupi Podatkovne tablice izbornika Postavljanje, za korisnike s pravilom read.</translation>
+    </message>
+    <message>
+        <source>A list of fields typed here</source>
+        <translation>Popis polja upisan ovdje</translation>
+    </message>
+    <message>
+        <source>A new data table with everything around it: the persistent class, the schema and install SQL of every engine, a module with list, edit, remove and a JSON endpoint, its policies, the admin pages and the template fetch functions. The fields come from a list, a content class, an existing table or an import source. Nothing is written until you ask for it, and the table is installed from this page.</source>
+        <translation>Nova podatkovna tablica sa svime što uz nju ide: perzistentna klasa, shema i instalacijski SQL za svaki pogon, modul s popisom, uređivanjem, uklanjanjem i JSON krajnjom točkom, njegova pravila, administracijske stranice i funkcije dohvaćanja za predloške. Polja dolaze iz popisa, klase sadržaja, postojeće tablice ili izvora uvoza. Ništa se ne zapisuje dok to ne zatražite, a tablica se instalira s ove stranice.</translation>
+    </message>
+    <message>
+        <source>A new name, or an existing extension to add the table to.</source>
+        <translation>Novi naziv ili postojeće proširenje u koje se dodaje tablica.</translation>
+    </message>
+    <message>
+        <source>A node (node_id)</source>
+        <translation>Čvor (node_id)</translation>
+    </message>
+    <message>
+        <source>Activate the extension</source>
+        <translation>Aktiviraj proširenje</translation>
+    </message>
+    <message>
+        <source>Add created and modified</source>
+        <translation>Dodaj datum stvaranja i izmjene</translation>
+    </message>
+    <message>
+        <source>Add to the extension</source>
+        <translation>Dodaj u proširenje</translation>
+    </message>
+    <message>
+        <source>Admin templates</source>
+        <translation>Administracijski predlošci</translation>
+    </message>
+    <message>
+        <source>An existing table (connection:table)</source>
+        <translation>Postojeća tablica (veza:tablica)</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Oboje</translation>
+    </message>
+    <message>
+        <source>Bring the table up to date</source>
+        <translation>Ažuriraj tablicu</translation>
+    </message>
+    <message>
+        <source>Copy its fields into the list</source>
+        <translation>Kopiraj njezina polja u popis</translation>
+    </message>
+    <message>
+        <source>Download as zip</source>
+        <translation>Preuzmi kao zip</translation>
+    </message>
+    <message>
+        <source>Each table also gets id, a key counted up by the database.</source>
+        <translation>Svaka tablica dobiva i id, ključ koji automatski broji baza podataka.</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Proširenje</translation>
+    </message>
+    <message>
+        <source>Fields, one per line: name type[(length)] [required] [unique]</source>
+        <translation>Polja, jedno po retku: naziv vrsta[(duljina)] [required] [unique]</translation>
+    </message>
+    <message>
+        <source>LICENSE</source>
+        <translation>LICENSE</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Oznaka</translation>
+    </message>
+    <message>
+        <source>Left as they are: %list</source>
+        <translation>Ostavljeno kako jest: %list</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Licenca</translation>
+    </message>
+    <message>
+        <source>Module</source>
+        <translation>Modul</translation>
+    </message>
+    <message>
+        <source>Module table wizard</source>
+        <translation>Čarobnjak za tablicu modula</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Open the module</source>
+        <translation>Otvori modul</translation>
+    </message>
+    <message>
+        <source>PHP class</source>
+        <translation>PHP klasa</translation>
+    </message>
+    <message>
+        <source>Parts, license and author</source>
+        <translation>Dijelovi, licenca i autor</translation>
+    </message>
+    <message>
+        <source>Persistent class</source>
+        <translation>Perzistentna klasa</translation>
+    </message>
+    <message>
+        <source>README.md</source>
+        <translation>README.md</translation>
+    </message>
+    <message>
+        <source>Rapid Application Development</source>
+        <translation>Brzi razvoj aplikacija</translation>
+    </message>
+    <message>
+        <source>Refresh: autoloads and caches</source>
+        <translation>Osvježi: autoload i predmemorije</translation>
+    </message>
+    <message>
+        <source>Schema and install SQL</source>
+        <translation>Shema i instalacijski SQL</translation>
+    </message>
+    <message>
+        <source>Setup menu entry</source>
+        <translation>Stavka izbornika Postavljanje</translation>
+    </message>
+    <message>
+        <source>Show the files</source>
+        <translation>Prikaži datoteke</translation>
+    </message>
+    <message>
+        <source>Template fetch functions</source>
+        <translation>Funkcije dohvaćanja za predloške</translation>
+    </message>
+    <message>
+        <source>The eZPersistentObject class of the table, with its fields, connection and relations.</source>
+        <translation>Klasa eZPersistentObject tablice, s njezinim poljima, vezom i vezama na druge tablice.</translation>
+    </message>
+    <message>
+        <source>The extension and the table</source>
+        <translation>Proširenje i tablica</translation>
+    </message>
+    <message>
+        <source>The extension exists: the wizard adds the files it does not have and appends its settings; nothing there is overwritten.</source>
+        <translation>Proširenje postoji: čarobnjak dodaje datoteke koje ono nema i nadopunjuje njegove postavke; ništa postojeće se ne prepisuje.</translation>
+    </message>
+    <message>
+        <source>The extension is active.</source>
+        <translation>Proširenje je aktivno.</translation>
+    </message>
+    <message>
+        <source>The extension is written but not active.</source>
+        <translation>Proširenje je zapisano, ali nije aktivno.</translation>
+    </message>
+    <message>
+        <source>The fields</source>
+        <translation>Polja</translation>
+    </message>
+    <message>
+        <source>The fields of %source are in the list now: change them as you need.</source>
+        <translation>Polja iz %source sada su u popisu: promijenite ih prema potrebi.</translation>
+    </message>
+    <message>
+        <source>The files (%count)</source>
+        <translation>Datoteke (%count)</translation>
+    </message>
+    <message>
+        <source>The license text (a new extension only).</source>
+        <translation>Tekst licence (samo za novo proširenje).</translation>
+    </message>
+    <message>
+        <source>The pages of the module in the administration (admin4 components, no inline styles).</source>
+        <translation>Stranice modula u administraciji (komponente admin4, bez ugrađenih stilova).</translation>
+    </message>
+    <message>
+        <source>The table does not exist yet.</source>
+        <translation>Tablica još ne postoji.</translation>
+    </message>
+    <message>
+        <source>The table exists.</source>
+        <translation>Tablica postoji.</translation>
+    </message>
+    <message>
+        <source>Tie each row to content</source>
+        <translation>Poveži svaki redak sa sadržajem</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>To install the extension as a package (a new extension only).</source>
+        <translation>Za instalaciju proširenja kao paketa (samo za novo proširenje).</translation>
+    </message>
+    <message>
+        <source>Types: %types. object, node and user are relations to content: the content view shows the rows that point at an item.</source>
+        <translation>Vrste: %types. object, node i user su veze na sadržaj: prikaz sadržaja pokazuje retke koji upućuju na stavku.</translation>
+    </message>
+    <message>
+        <source>Unique</source>
+        <translation>Jedinstveno</translation>
+    </message>
+    <message>
+        <source>Version</source>
+        <translation>Verzija</translation>
+    </message>
+    <message>
+        <source>What the about page shows (a new extension only).</source>
+        <translation>Što prikazuje stranica O proširenju (samo za novo proširenje).</translation>
+    </message>
+    <message>
+        <source>What was made, and how to install and use it.</source>
+        <translation>Što je izrađeno te kako to instalirati i koristiti.</translation>
+    </message>
+    <message>
+        <source>Where the fields come from</source>
+        <translation>Odakle dolaze polja</translation>
+    </message>
+    <message>
+        <source>Which one</source>
+        <translation>Koji</translation>
+    </message>
+    <message>
+        <source>Write the extension</source>
+        <translation>Zapiši proširenje</translation>
+    </message>
+    <message>
+        <source>composer.json</source>
+        <translation>composer.json</translation>
+    </message>
+    <message>
+        <source>exists, left as it is</source>
+        <translation>postoji, ostavljeno kako jest</translation>
+    </message>
+    <message>
+        <source>ezinfo.php and extension.xml</source>
+        <translation>ezinfo.php i extension.xml</translation>
+    </message>
+    <message>
+        <source>fetch( &lt;module&gt;, list|count|row ).</source>
+        <translation>Poziv fetch( &lt;module&gt;, list|count|row ).</translation>
+    </message>
+    <message>
+        <source>list, edit, remove and the REST/JSON endpoint json, with the policies read and edit.</source>
+        <translation>list, edit, remove i REST/JSON krajnja točka json, s pravilima read i edit.</translation>
+    </message>
+    <message>
+        <source>share/db_schema.dba and sql/&lt;engine&gt;/schema.sql for MySQL, PostgreSQL, SQLite, Oracle and SQL Server.</source>
+        <translation>share/db_schema.dba i sql/&lt;engine&gt;/schema.sql za MySQL, PostgreSQL, SQLite, Oracle i SQL Server.</translation>
+    </message>
+    <message>
+        <source>written</source>
+        <translation>zapisano</translation>
+    </message>
+    <message>
+        <source>%count conflicts</source>
+        <translation>Broj sukoba: %count</translation>
+    </message>
+    <message>
+        <source>%name ran: %rows rows and %objects objects written, %same unchanged, %conflicts conflicts, %failed failed.</source>
+        <translation>%name je izvedena: zapisano redaka %rows i objekata %objects, nepromijenjeno %same, sukoba %conflicts, neuspjelo %failed.</translation>
+    </message>
+    <message>
+        <source>%name was started in the background (%engine); the run history shows it.</source>
+        <translation>%name je pokrenuta u pozadini (%engine); prikazuje je povijest pokretanja.</translation>
+    </message>
+    <message>
+        <source>A map was proposed: check it, then save.</source>
+        <translation>Predloženo je mapiranje: provjerite ga, zatim spremite.</translation>
+    </message>
+    <message>
+        <source>A source is an attribute identifier of the content class, or one of: %list. Only attributes are written to content.</source>
+        <translation>Izvor je identifikator atributa klase sadržaja ili jedno od sljedećeg: %list. U sadržaj se zapisuju samo atributi.</translation>
+    </message>
+    <message>
+        <source>Ask: a conflict to resolve</source>
+        <translation>Pitaj: sukob koji treba riješiti</translation>
+    </message>
+    <message>
+        <source>Both the content and the row changed since the last run of a two-way synchronisation that asks. Take one side; the other is written over.</source>
+        <translation>I sadržaj i redak promijenili su se od posljednjeg pokretanja dvosmjerne sinkronizacije koja pita. Odaberite jednu stranu; druga se prepisuje.</translation>
+    </message>
+    <message>
+        <source>Both ways</source>
+        <translation>Dvosmjerno</translation>
+    </message>
+    <message>
+        <source>Conflicts</source>
+        <translation>Sukobi</translation>
+    </message>
+    <message>
+        <source>Conflicts (%count)</source>
+        <translation>Sukobi (%count)</translation>
+    </message>
+    <message>
+        <source>Content</source>
+        <translation>Sadržaj</translation>
+    </message>
+    <message>
+        <source>Content and table</source>
+        <translation>Sadržaj i tablica</translation>
+    </message>
+    <message>
+        <source>Content copied to a data table, a table copied to content, or both kept in step: once, on a schedule, or live on every publish, move and removal.</source>
+        <translation>Sadržaj kopiran u podatkovnu tablicu, tablica kopirana u sadržaj ili oboje usklađeno: jednokratno, prema rasporedu ili uživo pri svakom objavljivanju, premještanju i uklanjanju.</translation>
+    </message>
+    <message>
+        <source>Content to the table</source>
+        <translation>Sadržaj u tablicu</translation>
+    </message>
+    <message>
+        <source>Content wins</source>
+        <translation>Prednost ima sadržaj</translation>
+    </message>
+    <message>
+        <source>Data table (persistent class)</source>
+        <translation>Podatkovna tablica (perzistentna klasa)</translation>
+    </message>
+    <message>
+        <source>Direction</source>
+        <translation>Smjer</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Pogreška</translation>
+    </message>
+    <message>
+        <source>Every (seconds)</source>
+        <translation>Svakih (sekundi)</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspjelo</translation>
+    </message>
+    <message>
+        <source>Found %time</source>
+        <translation>Pronađeno %time</translation>
+    </message>
+    <message>
+        <source>Key column(s)</source>
+        <translation>Ključni stupci</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Zadnje pokretanje</translation>
+    </message>
+    <message>
+        <source>Live, and on a schedule</source>
+        <translation>Uživo i prema rasporedu</translation>
+    </message>
+    <message>
+        <source>Live: every publish, move and removal of an object of the class below the node is written to the table at once.</source>
+        <translation>Uživo: svako objavljivanje, premještanje i uklanjanje objekta klase ispod čvora odmah se zapisuje u tablicu.</translation>
+    </message>
+    <message>
+        <source>Map: one line per column, column = source</source>
+        <translation>Mapiranje: jedan redak po stupcu, stupac = izvor</translation>
+    </message>
+    <message>
+        <source>New synchronisation</source>
+        <translation>Nova sinkronizacija</translation>
+    </message>
+    <message>
+        <source>No column of the class matches an attribute or a known source: write the map yourself.</source>
+        <translation>Nijedan stupac klase ne odgovara atributu ni poznatom izvoru: mapiranje napišite sami.</translation>
+    </message>
+    <message>
+        <source>No open conflict.</source>
+        <translation>Nema otvorenih sukoba.</translation>
+    </message>
+    <message>
+        <source>No synchronisation yet.</source>
+        <translation>Još nema sinkronizacija.</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Prema rasporedu</translation>
+    </message>
+    <message>
+        <source>Propose the map</source>
+        <translation>Predloži mapiranje</translation>
+    </message>
+    <message>
+        <source>Remove the row of an object that is removed or leaves the subtree</source>
+        <translation>Ukloni redak objekta koji je uklonjen ili napušta podstablo</translation>
+    </message>
+    <message>
+        <source>Remove this synchronisation</source>
+        <translation>Ukloni ovu sinkronizaciju</translation>
+    </message>
+    <message>
+        <source>Run now</source>
+        <translation>Pokreni sada</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Pokretanja</translation>
+    </message>
+    <message>
+        <source>Save and run now</source>
+        <translation>Spremi i pokreni sada</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pokrenuto</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Switched off (no scheduled or live runs)</source>
+        <translation>Isključeno (bez pokretanja prema rasporedu ili uživo)</translation>
+    </message>
+    <message>
+        <source>Synchronisations</source>
+        <translation>Sinkronizacije</translation>
+    </message>
+    <message>
+        <source>Take the content</source>
+        <translation>Uzmi sadržaj</translation>
+    </message>
+    <message>
+        <source>Take the table</source>
+        <translation>Uzmi tablicu</translation>
+    </message>
+    <message>
+        <source>The conflict could not be resolved; it stays open.</source>
+        <translation>Sukob nije bilo moguće riješiti; ostaje otvoren.</translation>
+    </message>
+    <message>
+        <source>The content&apos;s values were written to the table.</source>
+        <translation>Vrijednosti sadržaja zapisane su u tablicu.</translation>
+    </message>
+    <message>
+        <source>The last runs</source>
+        <translation>Posljednja pokretanja</translation>
+    </message>
+    <message>
+        <source>The mapped column(s) a row is matched by, e.g. contentobject_id or remote_id.</source>
+        <translation>Mapirani stupci po kojima se redak uparuje, npr. contentobject_id ili remote_id.</translation>
+    </message>
+    <message>
+        <source>The newer change wins</source>
+        <translation>Prednost ima novija promjena</translation>
+    </message>
+    <message>
+        <source>The rows and the content stay; only the pairing and the open conflicts go.</source>
+        <translation>Retci i sadržaj ostaju; uklanjaju se samo uparivanje i otvoreni sukobi.</translation>
+    </message>
+    <message>
+        <source>The subtree read for the table, and the parent of objects made from rows.</source>
+        <translation>Podstablo koje se čita za tablicu i nadređeni čvor objekata stvorenih iz redaka.</translation>
+    </message>
+    <message>
+        <source>The synchronisation was not saved</source>
+        <translation>Sinkronizacija nije spremljena</translation>
+    </message>
+    <message>
+        <source>The synchronisation was saved.</source>
+        <translation>Sinkronizacija je spremljena.</translation>
+    </message>
+    <message>
+        <source>The synchronisations of the published object&apos;s class</source>
+        <translation>Sinkronizacije klase objavljenog objekta</translation>
+    </message>
+    <message>
+        <source>The table to content</source>
+        <translation>Tablica u sadržaj</translation>
+    </message>
+    <message>
+        <source>The table wins</source>
+        <translation>Prednost ima tablica</translation>
+    </message>
+    <message>
+        <source>The table&apos;s values were published to the content.</source>
+        <translation>Vrijednosti tablice objavljene su u sadržaj.</translation>
+    </message>
+    <message>
+        <source>The tables of the synchronisation are not installed yet</source>
+        <translation>Tablice sinkronizacije još nisu instalirane</translation>
+    </message>
+    <message>
+        <source>There is no data table synchronisation yet (Setup &gt; Data tables &gt; Synchronisations).</source>
+        <translation>Još ne postoji sinkronizacija podatkovnih tablica (Postavljanje &gt; Podatkovne tablice &gt; Sinkronizacije).</translation>
+    </message>
+    <message>
+        <source>When both sides changed</source>
+        <translation>Kad su se promijenile obje strane</translation>
+    </message>
+    <message>
+        <source>When started</source>
+        <translation>Pri pokretanju</translation>
+    </message>
+    <message>
+        <source>With none ticked, the object is written to every synchronisation of its class whose subtree holds it.</source>
+        <translation>Ako ništa nije označeno, objekt se zapisuje u svaku sinkronizaciju svoje klase čije ga podstablo sadrži.</translation>
+    </message>
+    <message>
+        <source>both ways</source>
+        <translation>dvosmjerno</translation>
+    </message>
+    <message>
+        <source>content to table</source>
+        <translation>sadržaj u tablicu</translation>
+    </message>
+    <message>
+        <source>every %minutes minutes</source>
+        <translation>svakih %minutes min</translation>
+    </message>
+    <message>
+        <source>exp_data_sync, exp_data_sync_link and exp_data_sync_conflict are created on this database with the button; nothing else changes.</source>
+        <translation>Tablice exp_data_sync, exp_data_sync_link i exp_data_sync_conflict stvaraju se u ovoj bazi podataka gumbom; ništa se drugo ne mijenja.</translation>
+    </message>
+    <message>
+        <source>live</source>
+        <translation>uživo</translation>
+    </message>
+    <message>
+        <source>object %id</source>
+        <translation>objekt %id</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>isključeno</translation>
+    </message>
+    <message>
+        <source>table to content</source>
+        <translation>tablica u sadržaj</translation>
+    </message>
+    <message>
+        <source>when started</source>
+        <translation>pri pokretanju</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/demo</name>
+    <message>
+        <source>This installation is a public demo: the passwords of administrators cannot be changed or reset.</source>
+        <translation>Ova je instalacija javni demo: lozinke administratora ne mogu se promijeniti ni poništiti.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/transfer</name>
+    <message>
+        <source>Looking for another import or export?</source>
+        <translation>Tražite drugi uvoz ili izvoz?</translation>
+    </message>
+    <message>
+        <source>Import</source>
+        <translation>Uvoz</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Izvoz</translation>
+    </message>
+    <message>
+        <source>Import and export</source>
+        <translation>Uvoz i izvoz</translation>
+    </message>
+    <message>
+        <source>Works with this tool</source>
+        <translation>Radi s ovim alatom</translation>
+    </message>
+    <message>
+        <source>Which import or export tool do I need?</source>
+        <translation>Koji mi alat za uvoz ili izvoz treba?</translation>
+    </message>
+    <message>
+        <source>Which tool do I need?</source>
+        <translation>Koji mi alat treba?</translation>
+    </message>
+    <message>
+        <source>Import and export tools for this task</source>
+        <translation>Alati za uvoz i izvoz za ovaj zadatak</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/transfer</name>
+    <message>
+        <source>Packages</source>
+        <translation>Paketi</translation>
+    </message>
+    <message>
+        <source>Move content with its classes, or classes, extensions and designs, to another installation as a package file.</source>
+        <translation>Prenesite sadržaj s njegovim klasama ili klase, proširenja i dizajne u drugu instalaciju kao datoteku paketa.</translation>
+    </message>
+    <message>
+        <source>Export classes as a package…</source>
+        <translation>Izvezi klase kao paket…</translation>
+    </message>
+    <message>
+        <source>Upload and install a package…</source>
+        <translation>Prenesi i instaliraj paket…</translation>
+    </message>
+    <message>
+        <source>RSS import</source>
+        <translation>RSS uvoz</translation>
+    </message>
+    <message>
+        <source>Create content from an RSS or Atom feed of another website, again and again by the rssimport cronjob.</source>
+        <translation>Stvarajte sadržaj iz RSS ili Atom feeda drugog web-mjesta, uvijek iznova putem cron-zadatka rssimport.</translation>
+    </message>
+    <message>
+        <source>RSS export</source>
+        <translation>RSS izvoz</translation>
+    </message>
+    <message>
+        <source>Publish the newest items of a folder as an RSS or Atom feed, or a list of feeds as OPML.</source>
+        <translation>Objavite najnovije stavke mape kao RSS ili Atom feed, ili popis feedova kao OPML.</translation>
+    </message>
+    <message>
+        <source>Collected information</source>
+        <translation>Prikupljeni podaci</translation>
+    </message>
+    <message>
+        <source>Download what one form collected as a CSV file, from the list of collected information.</source>
+        <translation>Preuzmite podatke koje je prikupio jedan obrazac kao CSV datoteku, s popisa prikupljenih podataka.</translation>
+    </message>
+    <message>
+        <source>Audit export</source>
+        <translation>Izvoz revizije</translation>
+    </message>
+    <message>
+        <source>Download the audit trail&apos;s records, filtered as in the console, as CSV, JSON lines or JSON.</source>
+        <translation>Preuzmite zapise revizijskog traga, filtrirane kao u konzoli, kao CSV, JSON retke ili JSON.</translation>
+    </message>
+    <message>
+        <source>PDF export</source>
+        <translation>Izvoz u PDF</translation>
+    </message>
+    <message>
+        <source>Make a PDF document of a folder and its items, to print or to send.</source>
+        <translation>Izradite PDF dokument iz mape i njezinih stavki, za ispis ili slanje.</translation>
+    </message>
+    <message>
+        <source>Data tables</source>
+        <translation>Podatkovne tablice</translation>
+    </message>
+    <message>
+        <source>The tables of the persistent classes and the named database connections: describe, create and upgrade tables on any connection, browse their rows and see what points at content.</source>
+        <translation>Tablice perzistentnih klasa i imenovane veze s bazama podataka: opisivanje, stvaranje i nadogradnja tablica na bilo kojoj vezi, pregledavanje njihovih redaka i prikaz onoga što upućuje na sadržaj.</translation>
+    </message>
+    <message>
+        <source>Create or upgrade a table on a database connection…</source>
+        <translation>Stvori ili nadogradi tablicu na vezi s bazom podataka…</translation>
+    </message>
+    <message>
+        <source>Browse the tables of the persistent classes…</source>
+        <translation>Pregledaj tablice perzistentnih klasa…</translation>
     </message>
 </context>
 </TS>
