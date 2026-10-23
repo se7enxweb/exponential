@@ -1387,8 +1387,28 @@ class expAudit
         // a command a setup run started (expMaintenance::clearResponseCaches()), in a process of its own
         if ( (string)getenv( 'EXP_SETUP_RUN' ) !== '' )
             return false;
+        // Only a database the run already uses: a lookup would otherwise open a connection of its own just
+        // to name the actor, and before an installation has a database (a Symfony cache:clear in composer
+        // create-project) that connection fails and fills error.log with "Couldn't connect to database server".
+        if ( !self::databaseConnected() )
+            return false;
         $config = expAuditConfig::get();
         return !isset( $config['context'] );
+    }
+
+    /** @return bool An eZDB instance exists and is connected (no connection is opened to find out) */
+    protected static function databaseConnected()
+    {
+        if ( !class_exists( 'eZDB' ) || !eZDB::hasInstance() )
+            return false;
+        try
+        {
+            return (bool)eZDB::instance()->isConnected();
+        }
+        catch ( Throwable $e )
+        {
+            return false;
+        }
     }
 
     /** @return int|null The current user's id, null when there is none or it cannot be known */
