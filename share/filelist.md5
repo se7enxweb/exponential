@@ -22519,7 +22519,7 @@ eb7a495581ffb464450988d3c8d288e2  kernel/private/classes/views/content/copy.php
 5033bd5e1a2a8c4452ba5cd3a9c11fee  kernel/private/classes/views/content/dashboard.php
 5e881d3d7bdbcd1c7584643633909d7e  kernel/private/classes/views/content/download.php
 00226173cf70ad95fb8faf07a5a9043d  kernel/private/classes/views/content/draft.php
-116bd6f9bd0c61249a7a609050e8af29  kernel/private/classes/views/content/edit.php
+0b3789cbed61091c1d015bceb4ce3c4a  kernel/private/classes/views/content/edit.php
 b0694f25dce9a7d6f463fdca3c199b05  kernel/private/classes/views/content/hide.php
 3488097e7300ec1e3dfb107ee2a855d6  kernel/private/classes/views/content/history.php
 ee13ffb2baa7b9add8e3af5e543cf89a  kernel/private/classes/views/content/job.php

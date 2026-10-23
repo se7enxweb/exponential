@@ -555,7 +555,7 @@ class Edit extends \Exponential\Runnable\ModuleView
      * @param \eZModule $Module
      * @return string
      */
-    protected function changeSectionOnly( $http, $obj, $Module )
+    protected function changeSectionOnly( &$http, &$obj, &$Module )
     {
         if ( $http->hasPostVariable( 'SelectedSectionId' ) )
         {
