@@ -35,6 +35,7 @@ Extension nennt jeden zusätzlichen Schritt (Tabellen, Richtlinien, Schlüssel).
 | [explayouts_ui_api](explayouts_ui_api.md) | der Layout-Editor |
 | [ezautosave](ezautosave.md) | automatisches Speichern von Entwürfen |
 | [ezflow](ezflow.md) | Seiten, Zonen und Blöcke |
+| [expimageeditor](expimageeditor.md) | Bildeditor von admin4 (Raster und SVG), mit dem Kernel ausgeliefert |
 | [ezie](ezie.md) | Bildeditor |
 | [ezmultiupload](ezmultiupload.md) | Hochladen mehrerer Dateien |
 | [ezodf](ezodf.md) | Import und Export von OpenDocument |

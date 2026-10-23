@@ -183,7 +183,7 @@
         <translation>Winkel (Grad)</translation>
     </message>
     <message>
-        <source>Background colour</source>
+        <source>Background color</source>
         <translation>Hintergrundfarbe</translation>
     </message>
     <message>
@@ -263,7 +263,7 @@
         <translation>Deckkraft (%)</translation>
     </message>
     <message>
-        <source>Colour</source>
+        <source>Color</source>
         <translation>Farbe</translation>
     </message>
     <message>
@@ -425,6 +425,22 @@
     <message>
         <source>The edited image is larger than this image field accepts.</source>
         <translation>Das bearbeitete Bild ist größer, als dieses Bildfeld annimmt.</translation>
+    </message>
+    <message>
+        <source>The edited image is larger than the editor stores.</source>
+        <translation>Das bearbeitete Bild ist größer, als der Editor speichert.</translation>
+    </message>
+    <message>
+        <source>The edited image has more pixels than the editor stores.</source>
+        <translation>Das bearbeitete Bild hat mehr Pixel, als der Editor speichert.</translation>
+    </message>
+    <message>
+        <source>The edited image could not be read.</source>
+        <translation>Das bearbeitete Bild konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>The server cannot re-encode images of this type.</source>
+        <translation>Der Server kann Bilder dieses Typs nicht neu kodieren.</translation>
     </message>
     <message>
         <source>The attribute has no image to edit.</source>

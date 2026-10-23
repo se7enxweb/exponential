@@ -49,7 +49,7 @@ From `settings/exphelp.ini`:
 | Exponential Velocity | "Errors of the Velocity server itself: starting, workers, its response cache, HTTPS, the exp:velocity command" |
 | Exponential project and community | "The project, the website, the ecosystem and anything that is not an error in a piece of software" |
 
-Extensions shipped inside the kernel's repository (expservices, ezformtoken, ezjscore, ezoe) go to the software
+Extensions shipped inside the kernel's repository (expimageeditor, expservices, ezformtoken, ezjscore, ezoe) go to the software
 tracker; other active extensions from the project's GitHub organization are offered with a tracker of their own
 (`[IssueTrackers] BundledExtensions[]` and `ExtensionOwners[]`).
 

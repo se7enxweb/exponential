@@ -115,8 +115,12 @@ class expImageEditorStore
             throw new expImageEditorException( 400, 'No image was sent.' );
 
         $maxBytes = self::maxBytes( $attribute );
+        clearstatcache( true, $path );
         if ( $maxBytes > 0 && filesize( $path ) > $maxBytes )
             throw new expImageEditorException( 413, 'The edited image is larger than this image field accepts.' );
+        $editorMaxBytes = self::editorMaxBytes();
+        if ( $editorMaxBytes > 0 && filesize( $path ) > $editorMaxBytes )
+            throw new expImageEditorException( 413, 'The edited image is larger than the editor stores.' );
 
         $content = $attribute->attribute( 'content' );
         if ( !$content instanceof eZImageAliasHandler )
@@ -142,7 +146,166 @@ class expImageEditorStore
             throw new expImageEditorException( 415, 'The editor may not store images of this type.' );
 
         $originalName = !$isNew && isset( $original['original_filename'] ) ? (string)$original['original_filename'] : 'drawing';
-        return array( 'path' => $path, 'name' => self::targetName( $originalName, $mime ), 'mime' => $mime );
+        $upload = array( 'path' => $path, 'name' => self::targetName( $originalName, $mime ), 'mime' => $mime, 'temporary' => false );
+        if ( !$isSVG && self::reencodeEnabled() )
+        {
+            // what is stored is what GD decoded and wrote anew, never the bytes the browser sent: no appended payload,
+            // no metadata, no second format hidden in the file
+            $upload['path'] = self::reencodeRaster( $path, $mime );
+            $upload['temporary'] = true;
+        }
+        return $upload;
+    }
+
+    /**
+     * Removes the temporary file checkUpload() made (the re-encoded image), once it is stored or refused.
+     *
+     * @param array|null $upload what checkUpload() returned
+     */
+    public static function discard( $upload )
+    {
+        if ( is_array( $upload ) && !empty( $upload['temporary'] ) && isset( $upload['path'] ) &&
+             strpos( (string)$upload['path'], self::temporaryDirectory() . '/' ) === 0 )
+        {
+            @unlink( $upload['path'] );
+        }
+    }
+
+    /**
+     * Whether a raster image is re-encoded on the server before it is stored: expimageeditor.ini [EditorSettings]
+     * ReEncodeRaster (enabled unless disabled).
+     *
+     * @return bool
+     */
+    public static function reencodeEnabled()
+    {
+        $ini = eZINI::instance( 'expimageeditor.ini' );
+        return !$ini->hasVariable( 'EditorSettings', 'ReEncodeRaster' ) || $ini->variable( 'EditorSettings', 'ReEncodeRaster' ) !== 'disabled';
+    }
+
+    /**
+     * The raster image at $path decoded by GD and written anew, as a file in temporaryDirectory() with a random name,
+     * in the same type, with transparency kept (PNG, WebP) and expimageeditor.ini Quality (JPEG, WebP). Refused above
+     * expimageeditor.ini MaxPixels, before it is decoded.
+     *
+     * @param string $path
+     * @param string $mime image/jpeg, image/png, image/webp or image/gif
+     * @return string the path of the new file (the caller removes it with discard())
+     * @throws expImageEditorException
+     */
+    public static function reencodeRaster( $path, $mime )
+    {
+        $codecs = array( 'image/jpeg' => array( 'imagecreatefromjpeg', 'imagejpeg' ),
+                         'image/png' => array( 'imagecreatefrompng', 'imagepng' ),
+                         'image/webp' => array( 'imagecreatefromwebp', 'imagewebp' ),
+                         'image/gif' => array( 'imagecreatefromgif', 'imagegif' ) );
+        if ( !isset( $codecs[$mime] ) || !function_exists( $codecs[$mime][0] ) || !function_exists( $codecs[$mime][1] ) )
+            throw new expImageEditorException( 415, 'The server cannot re-encode images of this type.' );
+
+        $info = @getimagesize( $path );
+        if ( !is_array( $info ) || empty( $info[0] ) || empty( $info[1] ) )
+            throw new expImageEditorException( 415, 'The edited image could not be read.' );
+        $maxPixels = self::maxPixels();
+        if ( $maxPixels > 0 && (float)$info[0] * (float)$info[1] > $maxPixels )
+            throw new expImageEditorException( 413, 'The edited image has more pixels than the editor stores.' );
+
+        $image = @call_user_func( $codecs[$mime][0], $path );
+        if ( !$image )
+            throw new expImageEditorException( 415, 'The edited image could not be read.' );
+        if ( $mime === 'image/png' || $mime === 'image/webp' )
+        {
+            imagealphablending( $image, false );
+            imagesavealpha( $image, true );
+        }
+
+        $dir = self::temporaryDirectory();
+        if ( !is_dir( $dir ) && !eZDir::mkdir( $dir, false, true ) && !is_dir( $dir ) )
+            throw new expImageEditorException( 500, 'The edited image could not be stored.' );
+        self::removeStaleTemporaryFiles( $dir );
+        $target = $dir . '/' . bin2hex( random_bytes( 16 ) ) . '.' . self::EXTENSIONS[$mime];
+
+        $quality = self::quality();
+        switch ( $mime )
+        {
+            case 'image/jpeg': $written = imagejpeg( $image, $target, (int)round( $quality * 100 ) ); break;
+            case 'image/webp': $written = imagewebp( $image, $target, (int)round( $quality * 100 ) ); break;
+            case 'image/png': $written = imagepng( $image, $target, 6 ); break;
+            default: $written = imagegif( $image, $target );
+        }
+        if ( PHP_VERSION_ID < 80000 )
+            imagedestroy( $image );
+        unset( $image );
+        clearstatcache( true, $target );
+        if ( !$written || !is_file( $target ) || !filesize( $target ) )
+        {
+            @unlink( $target );
+            throw new expImageEditorException( 500, 'The edited image could not be stored.' );
+        }
+        return $target;
+    }
+
+    /**
+     * Where the re-encoded images wait until they are stored: <cache directory>/expimageeditor.
+     *
+     * @return string
+     */
+    public static function temporaryDirectory()
+    {
+        return rtrim( eZSys::cacheDirectory(), '/' ) . '/expimageeditor';
+    }
+
+    /**
+     * Removes the files an interrupted request left in $dir (older than an hour). Under Velocity a worker remembers
+     * file answers within a request, so the stat cache is cleared first.
+     *
+     * @param string $dir
+     */
+    public static function removeStaleTemporaryFiles( $dir )
+    {
+        clearstatcache();
+        $limit = time() - 3600;
+        foreach ( (array)glob( $dir . '/*.{jpg,png,webp,gif}', GLOB_BRACE | GLOB_NOSORT ) as $file )
+        {
+            if ( is_string( $file ) && preg_match( '#/[0-9a-f]{32}\.(?:jpg|png|webp|gif)$#', $file ) && @filemtime( $file ) < $limit )
+                @unlink( $file );
+        }
+    }
+
+    /**
+     * The largest image the editor stores, in pixels: expimageeditor.ini [EditorSettings] MaxPixels (0: no limit of its
+     * own; image.ini MaxImagePixels still applies).
+     *
+     * @return int
+     */
+    public static function maxPixels()
+    {
+        $ini = eZINI::instance( 'expimageeditor.ini' );
+        return $ini->hasVariable( 'EditorSettings', 'MaxPixels' ) ? max( 0, (int)$ini->variable( 'EditorSettings', 'MaxPixels' ) ) : 25000000;
+    }
+
+    /**
+     * The largest file the editor stores, in bytes: expimageeditor.ini [EditorSettings] MaxFileSize in megabytes (0: no
+     * limit of its own; the class attribute's maximum file size and PHP's upload limit still apply).
+     *
+     * @return int
+     */
+    public static function editorMaxBytes()
+    {
+        $ini = eZINI::instance( 'expimageeditor.ini' );
+        $megabytes = $ini->hasVariable( 'EditorSettings', 'MaxFileSize' ) ? (float)$ini->variable( 'EditorSettings', 'MaxFileSize' ) : 20.0;
+        return $megabytes > 0 ? (int)( $megabytes * 1024 * 1024 ) : 0;
+    }
+
+    /**
+     * expimageeditor.ini [EditorSettings] Quality, 0.1 to 1 (0.92 when it is not a number in that range).
+     *
+     * @return float
+     */
+    public static function quality()
+    {
+        $ini = eZINI::instance( 'expimageeditor.ini' );
+        $quality = $ini->hasVariable( 'EditorSettings', 'Quality' ) ? (float)$ini->variable( 'EditorSettings', 'Quality' ) : 0.92;
+        return $quality >= 0.1 && $quality <= 1 ? $quality : 0.92;
     }
 
     /**
@@ -165,6 +328,9 @@ class expImageEditorStore
             $stored = $handler->initializeFromFile( $upload['path'], $handler->attribute( 'alternative_text' ), $upload['name'] );
             // initializeFromFile() does not report a failed copy: the new original must be there before it is recorded
             $original = $stored === false ? null : $handler->attribute( 'original' );
+            // the file was just written: under Velocity a worker remembers an earlier "not there" within the request
+            if ( is_array( $original ) && !empty( $original['url'] ) )
+                clearstatcache( true, $original['url'] );
             if ( !is_array( $original ) || empty( $original['is_valid'] ) || empty( $original['url'] ) ||
                  !eZClusterFileHandler::instance( $original['url'] )->exists() && !is_file( $original['url'] ) )
             {

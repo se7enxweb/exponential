@@ -34,6 +34,7 @@ step (tables, policies, keys).
 | [explayouts_ui_api](explayouts_ui_api.md) | the layout editor |
 | [ezautosave](ezautosave.md) | draft autosave |
 | [ezflow](ezflow.md) | pages, zones and blocks |
+| [expimageeditor](expimageeditor.md) | image editor of admin4 (raster and SVG), shipped with the kernel |
 | [ezie](ezie.md) | image editor |
 | [ezmultiupload](ezmultiupload.md) | multiple file upload |
 | [ezodf](ezodf.md) | OpenDocument import and export |

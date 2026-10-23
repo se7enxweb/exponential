@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of extension/expimageeditor/modules/expimageeditor/save.php.
- * Guide: doc/bc/6.0/cli_cronjob_view_abstractions.md
+ * Guide: doc/eng-us/bc/6.0/cli_cronjob_view_abstractions.md
  *
  * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -25,12 +25,15 @@ class Save extends \Exponential\Runnable\ModuleView
         $attributeId = isset( $Params['attribute_id'] ) ? (string)$Params['attribute_id'] : '';
         $version = isset( $Params['version'] ) ? (string)$Params['version'] : '';
 
+        $upload = null;
+        $refusal = null;
         try
         {
             if ( !isset( $_SERVER['REQUEST_METHOD'] ) || $_SERVER['REQUEST_METHOD'] !== 'POST' )
                 throw new \expImageEditorException( 405, 'The image must be sent with POST.' );
-            // a page of another site cannot send this header without CORS; ezformtoken compares its value
-            if ( !isset( $_SERVER['HTTP_X_CSRF_TOKEN'] ) || $_SERVER['HTTP_X_CSRF_TOKEN'] === '' )
+            // a page of another site cannot send this header without CORS; its value is the form token of the session
+            $token = isset( $_SERVER['HTTP_X_CSRF_TOKEN'] ) ? (string)$_SERVER['HTTP_X_CSRF_TOKEN'] : '';
+            if ( !self::tokenMatches( $token ) )
                 throw new \expImageEditorException( 403, 'The request did not come from the edit form.' );
             if ( !ctype_digit( $attributeId ) || !ctype_digit( $version ) )
                 throw new \expImageEditorException( 400, 'The image does not exist.' );
@@ -43,8 +46,16 @@ class Save extends \Exponential\Runnable\ModuleView
         catch ( \expImageEditorException $e )
         {
             \eZDebug::writeWarning( 'expimageeditor/save: ' . $e->status() . ' ' . $e->getMessage(), __METHOD__ );
-            self::send( $e->status(), array( 'error' => \ezpI18n::tr( 'extension/expimageeditor', $e->getMessage() ) ) );
+            $refusal = $e;
         }
+        finally
+        {
+            // the re-encoded copy, stored or not
+            \expImageEditorStore::discard( $upload );
+        }
+        // answered outside the try: eZExecution::cleanExit() ends a Velocity request with an exception of its own
+        if ( $refusal !== null )
+            self::send( $refusal->status(), array( 'error' => \ezpI18n::tr( 'extension/expimageeditor', $refusal->getMessage() ) ) );
 
         // the attribute as it is now stored, drawn by the same template as the edit form
         $attribute = \eZContentObjectAttribute::fetch( (int)$attributeId, (int)$version );
@@ -54,6 +65,23 @@ class Save extends \Exponential\Runnable\ModuleView
         self::send( 200, array( 'html' => self::withoutStyleAttributes( $tpl->fetch( 'design:content/datatype/edit/ezimage.tpl' ) ) ) );
 
         return $this->viewResult( null, null );
+    }
+
+    /**
+     * Whether $token, the X-CSRF-Token header, is the session's form token. With ezformtoken active its value is
+     * compared (ezformtoken's own input check compares it too, before the view runs); without it, a header that a page
+     * of another site cannot send without CORS is all there is, and any value that is not empty is taken.
+     *
+     * @param string $token
+     * @return bool
+     */
+    public static function tokenMatches( $token )
+    {
+        if ( !is_string( $token ) || $token === '' )
+            return false;
+        if ( class_exists( 'ezxFormToken' ) && in_array( 'ezformtoken', \eZExtension::activeExtensions(), true ) && \ezxFormToken::isEnabled() )
+            return hash_equals( (string)\ezxFormToken::getToken(), $token );
+        return true;
     }
 
     /**

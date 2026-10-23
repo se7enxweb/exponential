@@ -11,6 +11,18 @@ OutputMIMETypes[]=image/webp
 OutputMIMETypes[]=image/svg+xml
 # Quality of a saved JPEG or WebP, 0.1 to 1
 Quality=0.92
+# Whether a raster image is decoded and written anew by GD on the server
+# before it is stored, so what is stored never carries more than the pixels
+# (appended data, metadata, a second format in the same file). enabled or
+# disabled; with enabled, a type GD cannot write is refused.
+ReEncodeRaster=enabled
+# The largest image the editor stores, in pixels (width x height), checked
+# before it is decoded; 0: none of its own (image.ini MaxImagePixels still
+# applies). 25000000 is 5000 x 5000.
+MaxPixels=25000000
+# The largest file the editor stores, in megabytes; 0: none of its own (the
+# class attribute's maximum file size and PHP's upload limit still apply)
+MaxFileSize=20
 # The size of a new drawing, <width>x<height> in pixels: an image attribute
 # without an image offers "New SVG drawing" (needs image/svg+xml here and in
 # image.ini AllowedMIMETypes[])

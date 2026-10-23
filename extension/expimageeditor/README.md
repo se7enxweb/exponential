@@ -15,7 +15,7 @@ Two editors share one frame:
 
 - **Raster images** (JPEG, PNG, WebP, GIF), on [Cropper.js](https://github.com/fengyuanchen/cropperjs) 2.3.1 and
   canvas tools of its own: crop (free, the image's own ratio, the ratios of fixed-shape image aliases and of
-  `AspectRatios[]`), rotate by 90° or by a free angle with a background colour, flip, resize, brightness, contrast,
+  `AspectRatios[]`), rotate by 90° or by a free angle with a background color, flip, resize, brightness, contrast,
   black and white, sepia (each shown on the image at once, for the selection or the whole image, and made a step
   with **Apply**), pixelate or blur a region, watermark (text in the system font or a configured font, or a
   configured image), undo/redo, zoom.
@@ -30,7 +30,7 @@ no `eval()`. The libraries are loaded only when the editor of their kind opens f
 ## Requirements
 
 - Exponential 6 with SVG support in the image datatype (`expSvgSanitizer`, `eZImageType::imageFileError()`,
-  `eZImageAliasHandler::initializeFromFile()`; see `doc/bc/6.0/svg-images.md`).
+  `eZImageAliasHandler::initializeFromFile()`; see `doc/eng-us/bc/6.0/svg-images.md`).
 - The admin design `admin4` with its `content/datatype/edit/ezimage.tpl`, which includes
   `content/datatype/edit/ezimage_editor.tpl` — this extension overrides that include.
 - `ezformtoken` active: the save request carries the page's form token (`X-CSRF-Token`), and ezformtoken is what
@@ -83,7 +83,10 @@ All in `[EditorSettings]`; override in `settings/override/expimageeditor.ini.app
 | Setting | Default | Meaning |
 |---|---|---|
 | `OutputMIMETypes[]` | `image/jpeg`, `image/png`, `image/webp`, `image/svg+xml` | The types the editor may store. A raster image is saved in its own type when that type is listed, otherwise as PNG (so a GIF becomes a PNG by default, and an animated GIF loses its animation). An SVG stays an SVG. Each type must also be on `image.ini [ImageUploadSettings] AllowedMIMETypes[]`, or the datatype refuses it. |
-| `Quality` | `0.92` | Quality of a saved JPEG or WebP, 0.1 to 1. |
+| `Quality` | `0.92` | Quality of a saved JPEG or WebP, 0.1 to 1 (also of the server's re-encoding). |
+| `ReEncodeRaster` | `enabled` | A raster image is decoded and written anew by GD on the server before it is stored, so the stored file carries nothing but the pixels (no appended data, no metadata, no second format). With `enabled`, a type GD cannot write is refused (415). `disabled` stores the bytes the browser sent, after the checks below. |
+| `MaxPixels` | `25000000` | The largest image the editor stores, width x height, checked before it is decoded (413). 0: none of its own; `image.ini MaxImagePixels` still applies. |
+| `MaxFileSize` | `20` | The largest file the editor stores, in megabytes (413). 0: none of its own; the class attribute's maximum file size and PHP's upload limits still apply. |
 | `NewDrawingSize` | `800x600` | The size of a new drawing in pixels, `<width>x<height>`. **New SVG drawing** is offered beside an image attribute without an image when SVG is accepted (`image.ini AllowedMIMETypes[]` with `image/svg+xml`, `SanitizeSVG` not disabled) and `OutputMIMETypes[]` lists `image/svg+xml`. admin4's `content/datatype/edit/ezimage.tpl` includes `ezimage_new.tpl` there; its own copy draws nothing, this extension's draws the button. |
 | `AspectRatios[]` | `1:1`, `4:3`, `3:2`, `16:9` | Ratios the crop tool offers, `<width>:<height>`. They come after the ratios of the image aliases that give an image a fixed shape: an alias of `image.ini [AliasSettings] AliasList[]` with a `Filters[]` entry `geometry/scaleexact=<w>;<h>` or `geometry/crop=<w>;<h>;...`, labelled `<alias> (<w>:<h>)`. A ratio appears once, under its first label. "Free" and "Original" are always there. |
 | `Watermarks[]` | empty | Images the watermark tool offers besides a text, `<label>;<design path>`, resolved like `ezdesign` (a PNG with transparency works best). Example: `Watermarks[]=Logo;images/watermarks/logo.png`. An entry without exactly two parts is ignored. |
@@ -141,12 +144,19 @@ unless every check passes (`expImageEditorStore`):
 1. POST only (405); attribute ID and version are numbers (400).
 2. Permissions as above (403/404).
 3. An upload arrived without error, and it is an HTTP upload (400; 413 when PHP's upload limits cut it off).
-4. Not larger than the class attribute's maximum file size (413).
+4. Not larger than the class attribute's maximum file size, nor than `MaxFileSize` (413).
 5. The attribute has a stored image (404).
 6. The same kind: an SVG stays an SVG, a raster image stays a raster image, judged by content (415).
 7. `eZImageType::imageFileError()`: type by content, `AllowedMIMETypes[]`, `MaxImagePixels`, SVG through the
    sanitizer (415, with the datatype's message).
 8. The type is on `OutputMIMETypes[]` (415).
+9. A raster image (`ReEncodeRaster=enabled`): not more than `MaxPixels` (413), and GD decodes it and writes it anew
+   into `<cache directory>/expimageeditor/` under a random name (415 when it cannot). That copy is what is stored, and
+   it is removed when the request ends, stored or not; copies an interrupted request left behind are removed after an
+   hour.
+
+The form token in `X-CSRF-Token` must be the session's (compared with `hash_equals()` while ezformtoken is active,
+which also checks it before the view runs), else 403.
 
 The image is stored with `eZImageAliasHandler::initializeFromFile()` — an SVG only as the output of
 `expSvgSanitizer` — under the stored image's name with the extension of the new type; the alternative text is kept,
@@ -171,17 +181,17 @@ siteaccesses by default) is kept without exceptions:
   editor writes.
 - An SVG's `style=""` attributes are turned into presentation attributes and its `<style>` elements are applied
   through a constructed style sheet (only plain rules, scoped to the drawing, without anything that loads a URL);
-  both are put back on save, where the server sanitises the file again.
+  both are put back on save, where the server sanitizes the file again.
 
 Measured with the policy enforced: 0 violations in Chromium, Firefox and WebKit, apart from the WebKit `<select>`
 quirk above.
 
 ## SVG specifics
 
-- The stored SVG has already passed `expSvgSanitizer`; the editor sanitises it again through svgcanvas, and the
-  server sanitises the saved result once more.
+- The stored SVG has already passed `expSvgSanitizer`; the editor sanitizes it again through svgcanvas, and the
+  server sanitizes the saved result once more.
 - **Aliases are the original.** The kernel serves the original SVG for every image alias and never hands an SVG to
-  GD or ImageMagick (`doc/bc/6.0/svg-images.md`). The editor does not create PNG aliases for SVGs.
+  GD or ImageMagick (`doc/eng-us/bc/6.0/svg-images.md`). The editor does not create PNG aliases for SVGs.
 - `width`, `height` and `viewBox` of the stored file are written back on save; a layer svgcanvas added only to hold
   the content is unwrapped again.
 - Not supported: PDF or raster export of svgcanvas (left out of the bundle); there are no tools for gradients,
@@ -236,16 +246,16 @@ in its tooltip and in `aria-keyshortcuts`.
 | `design/admin4/javascript/expimageeditor.js` | The frame: dialog, toolbar, panel, shortcuts, fonts, lazy loading, save |
 | `design/admin4/javascript/expimageeditor_raster.js`, `expimageeditor_svg.js` | The two editors |
 | `design/admin4/javascript/cropper.min.js`, `svgcanvas.min.js`, `opentype.min.js` | The libraries |
-| `design/admin4/javascript/licenses/` | Their licence texts |
+| `design/admin4/javascript/licenses/` | Their license texts |
 | `design/admin4/stylesheets/expimageeditor.css` | The dialog in admin4's tokens, light and dark |
 | `design/admin4/images/expimageeditor/icons/` | Bootstrap Icons 1.13.2 (MIT), used as CSS masks |
 | `design/admin4/fonts/expimageeditor/` | The sample fonts Lora, Noto Serif and Noto Sans (OFL 1.1) |
 | `build/svgcanvas/`, `build/opentype/` | Reproducible esbuild bundles of the two libraries |
 | `translations/` | German, and the untranslated template |
 
-## Bundled libraries and licences
+## Bundled libraries and licenses
 
-| Library | Version | Licence | File |
+| Library | Version | License | File |
 |---|---|---|---|
 | Cropper.js | 2.3.1 | MIT | `cropper.min.js` (the release file, unchanged) |
 | @svgedit/svgcanvas | 7.4.2 | MIT | `svgcanvas.min.js` (built, patched) |
@@ -256,7 +266,7 @@ in its tooltip and in `aria-keyshortcuts`.
 | Lora (@fontsource/lora 5.3.0) | 3.008 | SIL OFL 1.1 | `fonts/expimageeditor/` |
 | Noto Serif, Noto Sans (notofonts/latin-greek-cyrillic) | 2.015 | SIL OFL 1.1 | `fonts/expimageeditor/LICENSE-Noto.txt` |
 
-The licence texts are in `design/admin4/javascript/licenses/`, `design/admin4/images/expimageeditor/icons/LICENSE`
+The license texts are in `design/admin4/javascript/licenses/`, `design/admin4/images/expimageeditor/icons/LICENSE`
 and `design/admin4/fonts/expimageeditor/LICENSE`; `extension.xml` lists them. The extension itself is GPL v2 or later.
 
 ## Rebuilding the bundles
@@ -265,7 +275,7 @@ and `design/admin4/fonts/expimageeditor/LICENSE`; `extension.xml` lists them. Th
 `node build.mjs --outfile=...`; keep `node_modules` off the repository). The lock files make the bundles
 reproducible. The svgcanvas build stubs out jsPDF/svg2pdf.js and replaces svgcanvas' `setAttribute( 'style', ... )`
 calls by `style.setProperty()`; a patch that no longer matches stops the build, so an update cannot drop one
-silently. Cropper.js is the release file and is replaced as a whole. On every update copy the licence texts and
+silently. Cropper.js is the release file and is replaced as a whole. On every update copy the license texts and
 update `extension.xml`.
 
 ## Tests
@@ -303,7 +313,7 @@ installation. Check by hand, with the admin's policy enforced and the developer 
 - **Text to paths** places the glyphs one by one where the browser laid out each character: no ligatures, no
   shaping of Arabic, Hebrew or other complex or right-to-left scripts.
 - **viewBox not starting at `0 0`**: the drawing is shown shifted while editing; the saved file keeps its viewBox.
-- **Fill of shapes coloured by a `<style>` class** has no visible effect: the class rule wins over the presentation
+- **Fill of shapes colored by a `<style>` class** has no visible effect: the class rule wins over the presentation
   attribute the editor sets.
 - **GIF** is saved as PNG unless `image/gif` is added to `OutputMIMETypes[]`; animation is lost either way.
 - **SVG aliases** are the original SVG; there are no raster aliases of an SVG.

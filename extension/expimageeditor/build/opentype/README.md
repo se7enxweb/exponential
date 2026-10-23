@@ -19,5 +19,5 @@ Rebuild (Node 20+) in a directory outside the repository, so that `node_modules`
 
 Nothing is patched. The same lock file gives the same bytes (244647 bytes, sha1
 968823894fea1d7380a384bf472bda0a6dbf1a60 for 2.0.0). Most of opentype.js stays in the bundle although only
-`parse()` is called: the font object it returns reaches the rest. On an update, copy the licence texts to
+`parse()` is called: the font object it returns reaches the rest. On an update, copy the license texts to
 `design/admin4/javascript/licenses/` (`opentype-LICENSE`, `tiny-inflate-LICENSE`).

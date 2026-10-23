@@ -50,7 +50,7 @@ Aus `settings/exphelp.ini`:
 | Exponential Velocity | „Fehler des Velocity-Servers selbst: Start, Worker, sein Response-Cache, HTTPS, der Befehl exp:velocity“ |
 | Exponential-Projekt und Community | „Das Projekt, die Website, das Ökosystem und alles, was kein Fehler in einer Software ist“ |
 
-Erweiterungen, die im Repository des Kernels ausgeliefert werden (expservices, ezformtoken, ezjscore, ezoe), gehen an
+Erweiterungen, die im Repository des Kernels ausgeliefert werden (expimageeditor, expservices, ezformtoken, ezjscore, ezoe), gehen an
 den Software-Tracker; andere aktive Erweiterungen aus der GitHub-Organisation des Projekts werden mit einem eigenen
 Tracker angeboten (`[IssueTrackers] BundledExtensions[]` und `ExtensionOwners[]`).
 

@@ -172,7 +172,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Background colour</source>
+        <source>Background color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -252,7 +252,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Colour</source>
+        <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -413,6 +413,22 @@
     </message>
     <message>
         <source>The edited image is larger than this image field accepts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The edited image is larger than the editor stores.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The edited image has more pixels than the editor stores.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The edited image could not be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The server cannot re-encode images of this type.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

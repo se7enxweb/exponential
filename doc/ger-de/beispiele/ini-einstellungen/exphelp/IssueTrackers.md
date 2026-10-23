@@ -57,7 +57,7 @@ ExtensionOwners[]=se7enxweb
 
 > Erweiterungen, die im Repository des Kernels ausgeliefert werden: Ihre Fehler gehen an den Tracker der Software  
 
-Standard: eine Liste mit 4: `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
+Standard: eine Liste mit 5: `expimageeditor`, `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -65,6 +65,7 @@ Standard: eine Liste mit 4: `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
 [IssueTrackers]
 # ein leeres "BundledExtensions[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 BundledExtensions[]
+BundledExtensions[]=expimageeditor
 BundledExtensions[]=expservices
 BundledExtensions[]=ezformtoken
 BundledExtensions[]=ezjscore

@@ -57,7 +57,7 @@ ExtensionOwners[]=se7enxweb
 
 > Extensions shipped inside the kernel's repository: their errors go to the software tracker  
 
-Default: a list of 4: `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
+Default: a list of 5: `expimageeditor`, `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -65,6 +65,7 @@ Default: a list of 4: `expservices`, `ezformtoken`, `ezjscore`, `ezoe`.
 [IssueTrackers]
 # an empty "BundledExtensions[]" first replaces the shipped list; without it the items are added
 BundledExtensions[]
+BundledExtensions[]=expimageeditor
 BundledExtensions[]=expservices
 BundledExtensions[]=ezformtoken
 BundledExtensions[]=ezjscore
