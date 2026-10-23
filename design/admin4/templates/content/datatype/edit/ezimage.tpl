@@ -30,6 +30,7 @@
 {include uri='design:content/datatype/edit/ezimage_editor.tpl'}
 <input class="button" type="submit" name="CustomActionButton[{$attribute.id}_delete_image]" value="{'Remove image'|i18n( 'design/standard/content/datatype' )}" />
 {else}
+{include uri='design:content/datatype/edit/ezimage_new.tpl'}
 <input class="button-disabled" type="submit" name="CustomActionButton[{$attribute.id}_delete_image]" value="{'Remove image'|i18n( 'design/standard/content/datatype' )}" disabled="disabled" />
 {/if}
 </div>

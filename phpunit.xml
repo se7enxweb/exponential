@@ -174,6 +174,15 @@
         </testsuite>
 
         <!--
+          expimageeditor: the checks of the image editor's save view (permissions, file type, kind, size, SVG) without a
+          database, and its design files (texts, icons, no inline code) read as files.
+          Run: php vendor/bin/phpunit - -testsuite expimageeditor
+        -->
+        <testsuite name="expimageeditor">
+            <directory suffix="Test.php">extension/expimageeditor/tests/phpunit/unit</directory>
+        </testsuite>
+
+        <!--
           maps: how the map templates of ezgmaplocation, ezflow and cjw_themes_jumper escape a location's address,
           and the datatype's fromString(). No database; a test whose extension is not installed is skipped.
           Run: php vendor/bin/phpunit - -testsuite maps

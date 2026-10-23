@@ -2013,6 +2013,10 @@
     ],
     "kernel/private/classes/commands/expcontentjob.php": [
       "tests/tests/kernel/classes/eZSectionScopeTest.php"
+    ],
+    "extension/expimageeditor/*": [
+      "extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php",
+      "extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php"
     ]
   },
   "generated": {
