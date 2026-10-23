@@ -7644,6 +7644,10 @@
         <source>Loading the latest forum posts...</source>
         <translation>Loading the latest forum posts...</translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation>The latest forum posts could not be loaded.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>

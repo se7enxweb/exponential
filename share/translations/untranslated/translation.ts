@@ -7385,6 +7385,10 @@
         <source>Loading the latest forum posts...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The latest forum posts could not be loaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard/drafts</name>

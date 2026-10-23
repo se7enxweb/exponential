@@ -23,5 +23,6 @@
 <div id="community-activity-config" hidden
      data-number-of-items="{$block.number_of_items|wash}"
      data-feed-url="{$forumsRssUrl|wash}"
-     data-version="{$versionString|wash}"></div>
+     data-version="{$versionString|wash}"
+     data-failed-text="{'The latest forum posts could not be loaded.'|i18n( 'design/admin/dashboard/community' )|wash}"></div>
 {ezscript( array( 'dashboard_community_activity.js' ) )}

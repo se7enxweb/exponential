@@ -138,9 +138,15 @@ var eZAsynchronousPublishingApp = (function() {
                     retry();
                 }
             }, function (failure) {
-                // the server function's own error text; any other failure: the configured message
+                // the server function's own error text, as text (it may repeat what was sent); any other failure:
+                // the configured message, the template's markup
                 var r = failure && failure.response;
-                failed(r && typeof r === 'object' && r.error_text ? String(r.error_text) : ret.cfg.failure_message);
+                if ( r && typeof r === 'object' && r.error_text ) {
+                    var text = String(r.error_text);
+                    failed(function (element) { element.textContent = text; });
+                } else {
+                    failed(ret.cfg.failure_message);
+                }
             });
         }
 

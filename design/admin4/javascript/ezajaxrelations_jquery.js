@@ -124,9 +124,13 @@
         // Ajax search callback
         function _searchCallBack( data )
         {
-            if ( data && data.content !== '' )
+            if ( data && data.content && typeof data.content === 'object' )
             {
-                var boxID = '#' + data.content.CallbackID, boxElems = document.querySelectorAll( boxID + ' div.ezobject-relation-search-browse' );
+                // the box's id, from the answer, as a selector: escaped, so an id the selector syntax does not take
+                // (a digit first, a dot, a colon) finds its box instead of throwing
+                var callbackID = String( data.content.CallbackID || '' );
+                var boxID = '#' + ( window.CSS && window.CSS.escape ? window.CSS.escape( callbackID ) : callbackID.replace( /[^\w-]/g, '' ) );
+                var boxElems = document.querySelectorAll( boxID + ' div.ezobject-relation-search-browse' );
                 if ( data.content.SearchResultCount )
                 {
                     var arr = data.content.SearchResult, pub = document.getElementById( 'ezobjectrelation-search-published-text' );
@@ -162,7 +166,8 @@
                 else
                 {
                     // The message is the template's markup; the search string goes in as text.
-                    var parts = document.getElementById( 'ezobjectrelation-search-empty-result-text' ).innerHTML.split( '--search-string--' );
+                    var empty = document.getElementById( 'ezobjectrelation-search-empty-result-text' );
+                    var parts = ( empty ? empty.innerHTML : '--search-string--' ).split( '--search-string--' );
                     each( boxElems, function( boxElem )
                     {
                         var message = document.createElement( 'p' );

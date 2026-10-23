@@ -300,7 +300,7 @@ c298e839ce3acde72bc6126b87eb17c6  design/admin/javascript/contentcheck_storage.j
 9d718f7191966f84d8c4fd05a110a6e0  design/admin/javascript/exp_admin_head.js
 0cc5124dcf574cd0a721838e6bc96fae  design/admin/javascript/expajaxuploader.js
 dbbd43d0d364cdb3beab653832ce813b  design/admin/javascript/exphelp.js
-feaf2a2dada8c011591645e6cec4c1f0  design/admin/javascript/ezajaxrelations_jquery.js
+c8843ddf550376326f1f449d3f1f6043  design/admin/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin/javascript/ezajaxsubitems_expdatatable.js
 f8ed2fb594b5741b9c856eb9b1b493d0  design/admin/javascript/leftmenu_widthcontrol.js
 3bf7784133b92bb2e2338cdae349dcbc  design/admin/javascript/node_tabs.js
@@ -984,7 +984,7 @@ c298e839ce3acde72bc6126b87eb17c6  design/admin4/javascript/contentcheck_storage.
 0cc5124dcf574cd0a721838e6bc96fae  design/admin4/javascript/expajaxuploader.js
 dbbd43d0d364cdb3beab653832ce813b  design/admin4/javascript/exphelp.js
 16a43b2509a3b08eace145a605e79c92  design/admin4/javascript/ezadmin_menubar.js
-feaf2a2dada8c011591645e6cec4c1f0  design/admin4/javascript/ezajaxrelations_jquery.js
+c8843ddf550376326f1f449d3f1f6043  design/admin4/javascript/ezajaxrelations_jquery.js
 41c787ac03e0607a1874403535cc65a7  design/admin4/javascript/ezajaxsubitems_expdatatable.js
 b71be6460b8302c2c5594d48b23d5720  design/admin4/javascript/node_tabs.js
 af8d4ff55776cb2c9fd39cc1449c7025  design/admin4/javascript/page/children_detailed.js
@@ -1195,10 +1195,10 @@ afe296b9f61bc7df7010688feac4bb9a  design/admin4/templates/content/create_languag
 e0095570e957586ed14daa81e3a000bc  design/admin4/templates/content/datatype/edit/ezmedia.tpl
 907b54a3a3a55387ddd2beb3ee853685  design/admin4/templates/content/datatype/edit/ezmultioption.tpl
 fd873d8cd9f325229be691dbcd801b4e  design/admin4/templates/content/datatype/edit/ezmultiprice.tpl
-6cace2819d4428a6c0450f0bfec4abb1  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
-5203bec08d6b4bc2556ab14630a16f39  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
+131894ab460a956b6ce57af25f077d90  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl
+be1a2c9246a6a831629f47e7b71ea121  design/admin4/templates/content/datatype/edit/ezobjectrelation_ajaxuploader.tpl
 3c5575c47323d7b999d1869f3b0b1604  design/admin4/templates/content/datatype/edit/ezobjectrelationlist.tpl
-fe73ba22aa80eceba5fa69b765a531c7  design/admin4/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
+3f9ac26191de2fe87a8e0bffa52e8ba2  design/admin4/templates/content/datatype/edit/ezobjectrelationlist_ajaxuploader.tpl
 44ecac915f177433794013f8ccaf3fcb  design/admin4/templates/content/datatype/edit/ezoption.tpl
 718c747ffe16aed22058981eae6a0d15  design/admin4/templates/content/datatype/edit/ezpackage.tpl
 1aee837c9c7ddb56b14dc9d1060a00da  design/admin4/templates/content/datatype/edit/ezprice.tpl
@@ -2115,12 +2115,12 @@ f4c72a3b44fe9648e42d849832a4b87d  design/standard/images/user_group.png
 76abdc2eb6d4212c54ddd4fb724f4e27  design/standard/javascript/content_queued.js
 ebe33174e80d86a38f8a0d3047aafe97  design/standard/javascript/contentcheck_fixfiles.js
 b655d63df595652ef926f853aff526c0  design/standard/javascript/contentstructuremenu/contentstructuremenu.js
-e3d65e472930c8db6eb503a4a6ace5bd  design/standard/javascript/dashboard_community_activity.js
+e22910a715086e56c6865ecfd9caa7c3  design/standard/javascript/dashboard_community_activity.js
 ff23b2b1387845ae5f541b38a7951963  design/standard/javascript/exp_bookmarks.js
 3e27389cb0e9b7fcbc78aa9f77b83e9f  design/standard/javascript/exp_password_field.js
 b8c91691f6f4c2a012fac6884a2523b7  design/standard/javascript/expdebugbar-head.js
 5c5a2fac8ac63b43eabb82a5ec4e59f2  design/standard/javascript/expdebugbar.js
-25015a6b8c5de51832085bc6cbd9490b  design/standard/javascript/ezasynchronouspublishing.js
+c9d4a91276689383a1be79bb68937c1d  design/standard/javascript/ezasynchronouspublishing.js
 c1f77f113c9e98c8d69676a294815077  design/standard/javascript/ezmedia_silverlight.js
 508ff667415a5d98e2a74446341b83ec  design/standard/javascript/ezmultioption/ezmultioption.js
 005eb2f9742f3507024fa0300faec4b2  design/standard/javascript/ezmultioption/ezmultioption_view.js
@@ -2644,7 +2644,7 @@ a2c0a4330bb6b4ef3f8dbfae9325dd6c  design/standard/templates/content/view/version
 bd90b75b44c0bc2caca30407b5035259  design/standard/templates/country/options.tpl
 9c1befb7d3b6c2ef591e49f535392697  design/standard/templates/dashboard/all_latest_content.tpl
 720d81001686bfe9246caf73cce2b4b4  design/standard/templates/dashboard/audit.tpl
-e2124bd4a048da78a9ebbe6ddad80f86  design/standard/templates/dashboard/community_activity.tpl
+63e671197a2e1e4819163c1340a46e97  design/standard/templates/dashboard/community_activity.tpl
 6be85e2ddbe3996947c503e38dcfbed8  design/standard/templates/dashboard/drafts.tpl
 f160344f82c55e1b7deb1aed36d9a85d  design/standard/templates/dashboard/latest_content.tpl
 957103ea6d801060f57d9be5dcf4c4bb  design/standard/templates/dashboard/maintenance.tpl
@@ -3246,7 +3246,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-36b98e4c671bde746bf279413839b3e2  doc/changelogs/6.0/6.0.15.md
+c44522719644b4ca17aa5e116f6cb630  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24166,7 +24166,7 @@ dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-911722e43a71da9ef1bc1041f17a404e  share/translations/eng-US/translation.ts
+48d51e041f546c8f72131423877b023a  share/translations/eng-US/translation.ts
 494a72237f2b99e7ff098df6fa9339d6  share/translations/esl-ES/translation.ts
 a7a28901e0614f18dca43236ab43815e  share/translations/esl-MX/translation.ts
 0d893017d9cb28076b20f47b84f583cc  share/translations/fas-IR/translation.ts
@@ -24174,7 +24174,7 @@ a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
 c2548f11cf751134fed7560c3f0b0204  share/translations/fre-FR/translation.ts
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-31446c26343b59146206527f0137f9af  share/translations/ger-DE/translation.ts
+724ea8cfb0ec60f82ae40218356ff2c5  share/translations/ger-DE/translation.ts
 6b1954808805a24407921e51baa34a0b  share/translations/heb-IL/translation.ts
 061c1972d59c9c6deefd8c903aa2708c  share/translations/ita-IT/translation.ts
 c55b244fe21805a71690ca10e8f33623  share/translations/jpn-JP/translation.ts
@@ -24194,7 +24194,7 @@ ff02ef2713c7b6d98935892ba8cda520  share/translations/swe-SE/translation.ts
 e33d8d06d236157cdb29177ac7e13cdf  share/translations/tur-TR/translation.ts
 ba3bac76c0c480ad49967a5cafdb8976  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-9c11b61608abfd235b035c4af714cc28  share/translations/untranslated/translation.ts
+0f5c95377b2e85db051f06b5802daaf0  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 414f4d1129273ab3dea38b878d554eae  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24316,7 +24316,7 @@ f439d02bf7ee68ecca6ccd30ffe60170  tests/tests/design/AdminNodeUploadButtonTest.p
 91fc8ff0be7f6a3bdbe8de38be0a5d5a  tests/tests/design/AdminOauthadminPagesTest.php
 544fce0fbf9c7b3c979ffe0bb02d73ce  tests/tests/design/AdminPackageWizardTest.php
 88c2ef84c8ada8a15807fcfba2033272  tests/tests/design/AdminPageHeaderTest.php
-2dd17215c7ba6ccc6258c471df0d19c2  tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
+777e93385bcb629a46d7f1e176f5ccce  tests/tests/design/AdminPageScriptsWithoutJQueryTest.php
 1f2f3c2b29989f255143806de86610b4  tests/tests/design/AdminPhoneMenuTest.php
 c7a83ca94e5008c349693102cdcbeedd  tests/tests/design/AdminPopupSiteAccessMenuVariablesTest.php
 09bc63dcafdd65f3f5e0deac447bf043  tests/tests/design/AdminPrePaintGuardsTest.php
