@@ -746,6 +746,11 @@ cache needs clearing (the choice's catalogue is keyed by the names, sizes and ti
    preference) with `Locale=<code>`, after clearing the translation cache
    (`php bin/php/ezcache.php --clear-tag=i18n --allow-root-user`).
 
+**Translation guides.** `share/translations/TRANSLATING.md` holds the rules every language shares (placeholders,
+markup, words that need their context, checking); each complete language has a `GUIDE.md` next to its catalogue
+(`share/translations/<code>/GUIDE.md`) with its form of address, script and typography and a glossary that binds
+the kernel and every extension. Read both before changing a catalogue, and change a term in the guide first.
+
 **Quality test.** `tests/tests/lib/ezi18n/expTranslationQualityTest.php` (no database needed) checks the
 machine-assisted catalogues and those of ezoe and ezjscore: a finished translation keeps the placeholders, HTML tags
 and entities, leading and trailing whitespace and line breaks of its source, and is neither empty nor the English
