@@ -20541,7 +20541,7 @@ dc68ad63014838b2b146ebf6f7129bc4  extension/expimageeditor/design/admin4/javascr
 9e3a041ed5f3f1d795271af7b4f52159  extension/expimageeditor/design/admin4/javascript/licenses/tiny-inflate-LICENSE
 2fdcd025e935ae8e10dafa6d1764637f  extension/expimageeditor/design/admin4/javascript/opentype.min.js
 ad40dcd9062eabeaee9fe3ea63923302  extension/expimageeditor/design/admin4/javascript/svgcanvas.min.js
-4babe8b03e5ec9ac82cc538471eef3e7  extension/expimageeditor/design/admin4/stylesheets/expimageeditor.css
+e8de294915b029601dfb5f027c96f7c8  extension/expimageeditor/design/admin4/stylesheets/expimageeditor.css
 e430511c54f225965eb4298b4cfbb45c  extension/expimageeditor/design/admin4/templates/content/datatype/edit/ezimage_editor.tpl
 e95ea046c3ddd09ac1791df2db30dcf9  extension/expimageeditor/design/admin4/templates/content/datatype/edit/ezimage_new.tpl
 2e29afa45e0dd33d69d091e22085a6c1  extension/expimageeditor/design/admin4/templates/expimageeditor/config.tpl
@@ -20553,7 +20553,7 @@ f6c151a9b4b8ccb902242d28c85e2297  extension/expimageeditor/settings/design.ini.a
 d6e12e8cef34d21f9f43acd5cc2be4f6  extension/expimageeditor/settings/expimageeditor.ini.append.php
 48ad4cc1502bb4d039cb96c045e9f49a  extension/expimageeditor/settings/module.ini.append.php
 21a4a7c978ea02b3d33ed19fb3cf0ad9  extension/expimageeditor/settings/site.ini.append.php
-77fbe8bb49ed4517a3644973fde7f19a  extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php
+5e836617028ba70d02dafc06d1db75b6  extension/expimageeditor/tests/phpunit/unit/expImageEditorDesignTest.php
 3b4b2208becf041797d6f552a111e12f  extension/expimageeditor/tests/phpunit/unit/expImageEditorStoreTest.php
 bda117aff4e64ecc06a1c0ae0934e5ad  extension/expimageeditor/translations/ger-DE/translation.ts
 9fff19b367654df5106af67194c1c808  extension/expimageeditor/translations/untranslated/translation.ts

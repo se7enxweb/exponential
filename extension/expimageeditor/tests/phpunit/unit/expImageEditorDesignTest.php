@@ -174,4 +174,17 @@ class expImageEditorDesignTest extends PHPUnit\Framework\TestCase
             $this->assertSame( $script === 'expimageeditor.js' ? 1 : 0, count( $html[0] ), "$script: markup from a string" );
         }
     }
+
+    /** ID-06: on a phone the dialog fits the visible window, the targets are 44px and the fields do not zoom */
+    public function testTheDialogIsUsableOnAPhone()
+    {
+        $css = preg_replace( '#/\*.*?\*/#s', '', self::read( 'stylesheets/expimageeditor.css' ) );
+        $this->assertMatchesRegularExpression( '/@media \(max-width: 760px\) \{\s*dialog\.expimageeditor \{[^}]*height: 100dvh;/', $css,
+                                               'iOS: 100vh is the height with the bars collapsed, the footer slid under them' );
+        $this->assertMatchesRegularExpression( '/@media \(max-width: 760px\) \{[^@]*\.expimageeditor-toolbar \{ flex-wrap: nowrap; overflow-x: auto;/', $css,
+                                               'one sideways row of tools on a phone, not three wrapped rows' );
+        $this->assertMatchesRegularExpression( '/@media \(max-width: 760px\), \(pointer: coarse\) \{\s*dialog\.expimageeditor \{ --a4-control-h: 44px; \}/', $css );
+        // the dialog is a child of <body>: admin4's 16px rule for #page does not reach it
+        $this->assertMatchesRegularExpression( '/@media \(pointer: coarse\) \{\s*dialog\.expimageeditor :is\([^{]*select, textarea\) \{ font-size: var\(--a4-text-l, 16px\); \}/', $css );
+    }
 }
