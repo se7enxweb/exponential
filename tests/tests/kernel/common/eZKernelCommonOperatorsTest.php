@@ -2,7 +2,8 @@
 /**
  * Tests of template operators in kernel/common that work on plain values, called directly through modify():
  *   - month_overview (eZDateOperatorCollection): the calendar of every month from 2019 to 2031 in a Monday-first
- *     and a Sunday-first locale, links, and the previous/next months
+ *     and a Sunday-first locale, links, and the previous/next months; the month names are the stand-alone form
+ *     (#16654: "январь", not the "января" of a date)
  *   - autolink (eZAutoLinkOperator): mail addresses and URLs, shortening, links already in the text
  *   - simpletags (eZSimpleTagsOperator): the default tag list and a custom one
  *   - alphabet (eZAlphabetOperator): alphabets from content.ini ranges and sequences
@@ -167,6 +168,24 @@ class eZKernelCommonOperatorsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'month' => 'December', 'year' => 2023, 'link' => '/p/(year)/2023/(month)/12' ), $overview['previous'] );
         $this->assertSame( array( 'month' => 'February', 'year' => 2024, 'link' => '/n/(year)/2024/(month)/2' ), $overview['next'] );
         $this->assertSame( 'January', $overview['month'] );
+    }
+
+    /**
+     * #16654: the calendar names a month on its own, so it shows the stand-alone name, not the form used inside a date.
+     */
+    public function testMonthOverviewNamesTheMonthsInTheStandaloneForm()
+    {
+        $this->useLocale( 'rus-RU' );
+        $overview = self::monthOverview( gmmktime( 0, 0, 0, 1, 10, 2024 ), array(),
+                                         array( 'previous' => array( 'link' => '/p' ), 'next' => array( 'link' => '/n' ) ) );
+        $this->assertSame( 'январь', $overview['month'] );
+        $this->assertSame( 'январь', $overview['current']['month'] );
+        $this->assertSame( 'декабрь', $overview['previous']['month'] );
+        $this->assertSame( 'февраль', $overview['next']['month'] );
+
+        $this->useLocale( 'pol-PL' );
+        $overview = self::monthOverview( gmmktime( 0, 0, 0, 10, 10, 2025 ) );
+        $this->assertSame( 'październik', $overview['month'] );
     }
 
     public function testMonthOverviewWithoutNextHasNoNextMonth()
