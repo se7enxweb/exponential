@@ -148,7 +148,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Southeast Asia | LTR | Han (Simplified) (`Hans`) | CLDR 44 | — |
 | `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made | 27% |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `cro-HR` | Croatian (Hrvatski) | Croatian (Hrvatski) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `cro-HR` | Croatian | Hrvatski | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `cym-GB` | Welsh | Cymraeg | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `cze-CZ` | Czech | Čeština | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `dan-DK` | Danish | Dansk | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
@@ -156,7 +156,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `doi-IN` | Dogri | डोगरी | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `dsb-DE` | Lower Sorbian | Dolnoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `dut-BE` | Dutch (Belgium) | Nederlands (België) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `dut-NL` | Dutch | Nederlands | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `dut-NL` | Dutch (Netherlands) | Nederlands (Nederland) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `dzo-BT` | Dzongkha | རྫོང་ཁ | South Asia | LTR | Tibetan (`Tibt`) | CLDR 44 | — |
 | `ell-GR` | Greek (Hellenic) | Ελληνικά | Europe | LTR | Greek (`Grek`) | older, hand-made, fixed in 6.0.15 | 36% |
 | `eng-AU` | English (Australia) | English (Australia) | Oceania | LTR | Latin (`Latn`) | older, hand-made | 100% |
@@ -244,7 +244,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ger-AT` | German (Austria) | Deutsch (Österreich) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ger-BE` | German (Belgium) | Deutsch (Belgien) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `ger-CH` | German (Switzerland) | Deutsch (Schweiz) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `ger-DE` | German | Deutsch (Deutschland) | Europe | LTR | Latin (`Latn`) | older, hand-made | 99% |
+| `ger-DE` | German (Germany) | Deutsch (Deutschland) | Europe | LTR | Latin (`Latn`) | older, hand-made | 99% |
 | `ger-DE@euro` | Variant of `ger-DE`: Euro support |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `ger-LI` | German (Liechtenstein) | Deutsch (Liechtenstein) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `ger-LU` | German (Luxembourg) | Deutsch (Luxemburg) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
@@ -263,7 +263,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ind-ID` | Indonesian | Indonesian | Southeast Asia | LTR | Latin (`Latn`) | older, hand-made | — |
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `ita-IT` | Italian | Italiano | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `ita-IT` | Italian (Italy) | Italiano (Italia) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 37% |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older variation, hand-made | — |
@@ -302,7 +302,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `mya-MM` | Burmese | မြန်မာ | Southeast Asia | LTR | Myanmar (`Mymr`) | CLDR 44 | — |
 | `nep-NP` | Nepali | नेपाली | South Asia | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europe | LTR | Latin (`Latn`) | older, hand-made | 0% |
-| `nor-NO` | Norwegian (Bokmal) | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `nqo-GN` | N’Ko | ߒߞߏ | Africa | RTL | N’Ko (`Nkoo`) | CLDR 44 | — |
@@ -314,7 +314,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `pnb-PK` | Western Punjabi (Shahmukhi) | پنجابی | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `pol-PL` | Polish | Polski | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `por-AO` | Portuguese (Angola) | Português (Angola) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `por-BR` | Portuguese (Brazil) | Português | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
+| `por-BR` | Portuguese (Brazil) | Português (Brasil) | Americas | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `por-CV` | Portuguese (Cape Verde) | Português (Cabo Verde) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `por-MZ` | Portuguese (Mozambique) | Português | Africa | LTR | Latin (`Latn`) | older, hand-made | — |
 | `por-PT` | Portuguese (Portugal) | Português | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
@@ -388,8 +388,8 @@ Notes on single locales:
   the one file with a byte order mark), `chi-CN` (short Sunday `周日`), `ell-GR` (native name `Ελληνικά` instead of
   "Greek (Hellenic)"), `ukr-UA` (`Українська` instead of "Ukrainian"). `kat-GE` lost a capital its generator had
   given it (Georgian has none in running text: `ქართული`).
-- **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia), `cro-HR`,
-  `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names), `ukr-UA`
+- **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia), `ser-SR`
+  and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names), `ukr-UA`
   has nominative month names in dates ("15 Жовтень" for "15 жовтня"), `chi-CN` and `chi-TW` keep their old date
   patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
 - **Dhivehi** (`div-MV`): ICU 74 has no Dhivehi data. Numbers, the rufiyaa (symbol `Rf`) and date patterns follow
