@@ -52,6 +52,13 @@ What demo mode does, and its risks: [Demo mode](../../bc/6.0/demo-mode.md).
   PHP. Without it a well-known or short password is replaced by a generated one, which the rebuild script treats as a
   failed build.
 - **Containers:** the environment file, for the demo service only.
+- **Two-step sign-in:** a new installation requires it of Administrator users and Editors
+  (`settings/override/sevenxauthentication2fa.ini.append.php`, `Enforce2FA=enabled`). The visitors of a public demo
+  share one administrator account, so the first one to set up an authenticator would lock out every other one. Both
+  rebuild scripts here switch it off after the installation (`Enforce2FA=disabled`); `DEMO_ENFORCE_2FA=1` keeps the
+  default, for a demo that shows the second step and is not shared.
+- **Queue and imports:** `crontab-demo` runs the cron parts `expqueue` and `sqliimport` every minute with the admin
+  siteaccess (`-s admin`), where sqliimport is switched on.
 
 ## Checking it
 

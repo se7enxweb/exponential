@@ -52,6 +52,13 @@ Demomodus bewirkt und welche Risiken er hat: [Demomodus](../../bc/6.0/demomodus.
   Setup-Assistenten. Ohne die Variable wird ein bekanntes oder kurzes Passwort durch ein erzeugtes ersetzt, was das
   Skript zum Neuaufbau als fehlgeschlagenen Build wertet.
 - **Container:** die Umgebungsdatei, nur für den Dienst der Demo.
+- **Zweistufige Anmeldung:** eine neue Installation verlangt sie von den Gruppen Administrator users und Editors
+  (`settings/override/sevenxauthentication2fa.ini.append.php`, `Enforce2FA=enabled`). Die Besucher einer öffentlichen
+  Demo teilen sich ein Administratorkonto; wer zuerst eine Authenticator-App einrichtet, sperrte alle anderen aus.
+  Beide Skripte zum Neuaufbau schalten sie deshalb nach der Installation aus (`Enforce2FA=disabled`);
+  `DEMO_ENFORCE_2FA=1` behält die Vorgabe, für eine Demo, die den zweiten Schritt zeigt und nicht geteilt wird.
+- **Warteschlange und Importe:** `crontab-demo` führt die Cronjob-Teile `expqueue` und `sqliimport` jede Minute mit
+  dem Siteaccess der Administration aus (`-s admin`), in dem sqliimport eingeschaltet ist.
 
 ## Prüfen
 

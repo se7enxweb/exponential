@@ -15,5 +15,10 @@ PATH=/usr/local/bin:/usr/bin:/bin
 20 5 * * 1          cd /var/www/demo.example.com && php runcronjobs.php -q infrequent 2>&1
 0,15,30,45 * * * *  cd /var/www/demo.example.com && php runcronjobs.php -q frequent 2>&1
 
+# the job queue (expqueue) and the imports' schedules (sqliimport) every minute; sqliimport is switched on in the
+# administration siteaccess only, so both run with it (-s admin)
+* * * * *           cd /var/www/demo.example.com && php runcronjobs.php -q -s admin expqueue 2>&1
+* * * * *           cd /var/www/demo.example.com && php runcronjobs.php -q -s admin sqliimport 2>&1
+
 # rebuild the demo from the current code every two hours (install-demo-sqlite.sh in this folder)
 15 */2 * * * /var/www/demo.example.com-builds/install-demo-sqlite.sh >> /var/www/demo.example.com-builds/install.log 2>&1

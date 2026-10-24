@@ -109,6 +109,17 @@ if [ -f var/log/initial-admin-password ]; then
     fail "the installer did not take the demo password (is EXP_DEMO_MODE=1 supported by this release?)"
 fi
 
+# Two-step sign-in: a new installation requires it of Administrator users and Editors
+# (settings/override/sevenxauthentication2fa.ini.append.php). Every visitor of this demo signs in as the same
+# administrator, so the first one to set up an authenticator would lock out all the others: switched off here.
+# DEMO_ENFORCE_2FA=1 keeps the installation's default (to prove that default on a demo nobody else uses).
+TFA=settings/override/sevenxauthentication2fa.ini.append.php
+if [ "${DEMO_ENFORCE_2FA:-0}" != 1 ] && [ -f "$TFA" ]; then
+    echo "two-step sign-in off (shared demo administrator)"
+    sed -i 's/^Enforce2FA=.*/Enforce2FA=disabled/' "$TFA"
+    grep -qx 'Enforce2FA=disabled' "$TFA" || fail "$TFA: two-step sign-in could not be switched off"
+fi
+
 # Siteaccess matching, set on every build (the installer writes MatchOrder=uri;host and an empty host map):
 #   MatchOrder=host_uri;host;uri
 #   HostUriMatchMapItems[]=demo.exponential.earth;<name>;<name>;strict  for every other siteaccess the installer made,

@@ -56,6 +56,18 @@ if [ -e var/log/initial-admin-password ]; then
     fail "the installer generated an administrator password: EXP_DEMO_MODE=1 did not reach it"
 fi
 
+# Two-step sign-in: a new installation requires it of Administrator users and
+# Editors (settings/override/sevenxauthentication2fa.ini.append.php). The
+# visitors of a public demo share one administrator account, so the first one
+# to set up an authenticator would lock out every other one: it is switched off
+# here. DEMO_ENFORCE_2FA=1 keeps the installation's default, for a demo that
+# shows the second step itself (and is not shared).
+TFA=settings/override/sevenxauthentication2fa.ini.append.php
+if [ "${DEMO_ENFORCE_2FA:-0}" != 1 ] && [ -f "$TFA" ]; then
+    sed -i 's/^Enforce2FA=.*/Enforce2FA=disabled/' "$TFA"
+    grep -qx 'Enforce2FA=disabled' "$TFA" || fail "$TFA: two-step sign-in could not be switched off"
+fi
+
 # demo mode for the web requests: LiteSpeed (lsphp) and Apache read it from .htaccess
 cat >> .htaccess <<'EOF'
 
