@@ -79,6 +79,11 @@ class eZRedirectManager
             }
         }
 
+        // the front page stores LastAccessesURI = '' (its requested URI is empty), unsafeReason() rejects ''
+        // as 'empty', and views calling redirectTo( $module, false ) did not redirect at all; '' is the site root
+        if ( is_string( $uri ) && trim( $uri, ' ' ) === '' )
+            $uri = '/';
+
         if ( $uri !== false )
             $uri = self::safeURI( $uri );
 
