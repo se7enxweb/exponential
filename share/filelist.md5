@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+47bf4017a02974e872492d897c692345  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21726,7 +21726,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 31424373e7979ffc5f7adbcb6c2c7893  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-fe7f6658ccac4432b66e049eec42fcc1  kernel/classes/ezcontentobject.php
+09a28ecb79df466bd5322046522c6ca1  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -21735,7 +21735,7 @@ b6cb39e28b248e080dc6f37c5c9ca9b9  kernel/classes/ezcontentobjectoperations.php
 e3bb8168c289a73ea00fe69b91fab66b  kernel/classes/ezcontentobjecttrashnode.php
 80199925e216a4e4328ed2bc7f977ed4  kernel/classes/ezcontentobjecttreenode.php
 eb03c6d6dfbd43ec77d0262bb67f0c97  kernel/classes/ezcontentobjecttreenodeoperations.php
-2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
+c10d4c6441df1255f2b6b29ffc79a626  kernel/classes/ezcontentobjectversion.php
 01331d4eaa61e9c8e51519380dcb9b0d  kernel/classes/ezcontentupload.php
 908a9d23c197d5b893c609bdaa444433  kernel/classes/ezcontentuploadhandler.php
 9662925adfb7aaf224b0b8ad868b2a6d  kernel/classes/ezdatatype.php
@@ -24873,6 +24873,7 @@ edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsT
 4ed429eb6333847aea87608bdc25fc50  tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php
 2393c1f4d60f50c867e7fdbe54c1d089  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
 7f30cac712c14a27f670b805d1f6bcb9  tests/tests/kernel/classes/eZContentObjectAttributeListConditionsTest.php
+c060d57fc898203a3905d374038ff624  tests/tests/kernel/classes/eZContentObjectDefaultLanguageTest.php
 749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
 94154626b5390fd506ce342b50dadb8e  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
 8bb07645c2018bb5fdcbed07ccff375d  tests/tests/kernel/classes/eZContentObjectEditAccessListTest.php
@@ -24885,6 +24886,7 @@ ed0904d1dbdb24cc6efe32c823f57bfc  tests/tests/kernel/classes/eZContentObjectTree
 c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTreeNodeTest.php
 491cddea4ba0b62ac90506dacef6e964  tests/tests/kernel/classes/eZContentObjectTreeNodeViewCountTest.php
 96a6bf56522b97aea2f4603917fac829  tests/tests/kernel/classes/eZContentObjectVersionLanguageNameTest.php
+5d303e8fcaf663f26bef91d066e1bb8c  tests/tests/kernel/classes/eZContentObjectVersionNamePerLanguageTest.php
 7a3fa441028fd31dced1d8dee4ab6525  tests/tests/kernel/classes/eZContentVersionviewPathTest.php
 08bae3f881c14044a64af6a735e581cb  tests/tests/kernel/classes/eZContentVersionviewViewModeTest.php
 872626d9764abd0bdf850636ddad3cdd  tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php
