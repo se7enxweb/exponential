@@ -164,6 +164,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [„Dieses Formular ist abgelaufen“: Ablehnungen durch das Formular-Token](seite-abgelaufenes-formular.md)
 - [SOAP-Aufrufe über HTTPS: Zertifikate einer internen Zertifizierungsstelle](soap-client-tls.md)
 - [Ihr Passwort ändern](moderne-passwortaenderung.md)
+- [Passwort bei der nächsten Anmeldung ändern](passwort-bei-naechster-anmeldung-aendern.md)
 - [Das Passwort eines Benutzers auf der Kommandozeile zurücksetzen](benutzerpasswort-zuruecksetzen.md)
 - [Benutzerkonten prüfen](benutzerpflege.md)
 - [Signierte Links in der E-Mail „Neuer Benutzer registriert“](admin-links-der-registrierung.md)

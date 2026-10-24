@@ -3252,7 +3252,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
+6a75139d0e5736d944c9c58a15aeb1ae  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3437,6 +3437,7 @@ e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
+b3ddabe744f64d13e2ecce43ee3c732e  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
 773708cbd55dc9ce34e93900320b170e  doc/eng-us/bc/6.0/pdf-export.md
 bad6741175ace75f0d1180f2b5ef72e1  doc/eng-us/bc/6.0/phar.md
 4cafbbefb37b689a7e54ebbf9efb3bdd  doc/eng-us/bc/6.0/php-8.0-support.md
@@ -3476,7 +3477,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 c8313ef8e05aa1b5e159a0c323eaddb6  doc/eng-us/examples/README.md
-d605fdcf3f92040f6d6c694bb042eadf  doc/eng-us/examples/commands/README.md
+11e7f765c2a6fde48522221da504fd8d  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 60ea9630aa930608496845e80188b40c  doc/eng-us/examples/commands/adddefaultstates.md
 d56b22d202c736dc78c0278eb9573481  doc/eng-us/examples/commands/addexphelpreadpolicy.md
@@ -3570,6 +3571,7 @@ e01b391814b4d973e4af9976d4a5a3e6  doc/eng-us/examples/commands/resetuserpassword
 f8c21c18cae650649051ddaf5e06176a  doc/eng-us/examples/commands/updateniceurls.md
 783827bae0cc70e42c14b85d477823f5  doc/eng-us/examples/commands/updatesearchindex.md
 3791fb70ee357e42c0e5acd8a175ff57  doc/eng-us/examples/commands/userlogincheck.md
+40852363cbc1cc656d77c9eb425504f2  doc/eng-us/examples/commands/userpasswordchangerequired.md
 3a13e7186c347cf06bbb8e354f59b630  doc/eng-us/examples/commands/velocity-router.md
 b36f879fe9c836e4da5362520a2f8113  doc/eng-us/examples/commands/velocity-warmup.md
 d688c58d298d34724f4c222bb90e765c  doc/eng-us/examples/commands/velocity.md
@@ -3900,7 +3902,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 42a70c11641a0fce108e4659cd159987  doc/eng-us/examples/fetch-functions/workflow/workflow_statuses.md
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 af5a82232fdead993b9bef8e8974484a  doc/eng-us/examples/htaccess
-7221b8f075a3e36ab5da4fb452a5b963  doc/eng-us/examples/ini-settings/README.md
+d7f41c5db6ed78206d945cd90a3f3538  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 cf9fc1e268eda3d5536fcfa4ce5399a4  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_policies.md
@@ -5005,10 +5007,11 @@ cc99bb8f59cd2ea2e32f31edc4b36e23  doc/eng-us/examples/ini-settings/site/FormProc
 582f6f21f0ae4980e62f0bc8e38f3afd  doc/eng-us/examples/ini-settings/site/LinkCheck.md
 fdbc65080664b0008ae3fafa5bee743b  doc/eng-us/examples/ini-settings/site/MailSettings.md
 230121f373cda58044aec1a8aa8a26ed  doc/eng-us/examples/ini-settings/site/OverrideSettings.md
+50c7667b98a95374d124c9d2d04d5a82  doc/eng-us/examples/ini-settings/site/PasswordChangeRequiredSettings.md
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-79259a25f3b2935df10f4d0898f39f07  doc/eng-us/examples/ini-settings/site/README.md
+0bbfba153059bd5037fa04905dd61046  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestLogSettings.md
@@ -6190,7 +6193,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-c3cf747743d913747db9da73d88d85bc  doc/eng-us/features/6.0/README.md
+58850219097bb7ac57454be25f201fec  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6314,6 +6317,7 @@ e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 c4a200c5702d75559c297c3520f503f9  doc/eng-us/features/6.0/package-installer-batching.md
 a965ba169b72f314b100976debf1caf2  doc/eng-us/features/6.0/package-licenses-and-versions.md
 48fd83a220c170e55d9d71045b4dc611  doc/eng-us/features/6.0/package-wizard.md
+e14272d00b63fa9eb5ae016d2fe21511  doc/eng-us/features/6.0/password-change-at-next-sign-in.md
 580586e719e07c4425de56df825af3e9  doc/eng-us/features/6.0/pdf-export.md
 8e2819456b4dc80af070fe35b03512fc  doc/eng-us/features/6.0/permission-checks-for-many-assignments.md
 7b116c074d8bb99c35b82b78674ac1ad  doc/eng-us/features/6.0/platform-admin-ui-fork.md
@@ -12392,7 +12396,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-fc16663297c87eb7c849cc3189376779  doc/ger-de/.paths.json
+5105d6efdc1b6ab2e4678fb7dfb1f45d  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -12509,6 +12513,7 @@ cb44c3fa0a4efd14dafd0a022f422ef5  doc/ger-de/bc/6.0/mongodb-kernel-unterstuetzun
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
+9216ae625e43af5a926b4fd211996ac3  doc/ger-de/bc/6.0/passwort-bei-naechster-anmeldung-aendern.md
 86582353c74aa63f9f38f860ad39c1ac  doc/ger-de/bc/6.0/pdf-export.md
 f669cfd172aca1540ec027dd7131f804  doc/ger-de/bc/6.0/phar.md
 4944ed149d15fa09c7967e1e42170465  doc/ger-de/bc/6.0/php-8.0-unterstuetzung.md
@@ -12550,7 +12555,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 0ad668da2bd726246806af66e6fd019b  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 8bcf8c2fce0f295fd2977bc68d23bb1d  doc/ger-de/beispiele/README.md
-1297d3cf45870bc8ef67a6b4c384d19b  doc/ger-de/beispiele/befehle/README.md
+14d17540473d7900378f2fb64720385a  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 983ee1ecad54a1270436c8cde8fd109a  doc/ger-de/beispiele/befehle/adddefaultstates.md
 94df0a3ce727bda25d8e6ab731f8a43e  doc/ger-de/beispiele/befehle/addexphelpreadpolicy.md
@@ -12644,6 +12649,7 @@ a88b2833b01d7a3ca38832d59a340c76  doc/ger-de/beispiele/befehle/updateisbn13.md
 a7571df9d3a0d8d2c82478ca896c117f  doc/ger-de/beispiele/befehle/updateniceurls.md
 7ff782ea83253f9b6387167fa260d06d  doc/ger-de/beispiele/befehle/updatesearchindex.md
 e6060b0c7f76baaae34a927af65fc3ad  doc/ger-de/beispiele/befehle/userlogincheck.md
+f74479b7832e0b71853bfccc218ca268  doc/ger-de/beispiele/befehle/userpasswordchangerequired.md
 8f88219f40f2c58a38c28c5e3d88a215  doc/ger-de/beispiele/befehle/velocity-router.md
 c4b403a4b80b17564eb0d05ec13190b4  doc/ger-de/beispiele/befehle/velocity-warmup.md
 8e68b69448c86f829ba952679fbf5245  doc/ger-de/beispiele/befehle/velocity.md
@@ -12949,7 +12955,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-27dccc8bcd27a4c8462dabafb31d220d  doc/ger-de/beispiele/ini-einstellungen/README.md
+eab99e083ac4ec305a8ae4e24def31c6  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 a1cb181e19b77cd38c3d1b554bf30802  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_policies.md
@@ -14054,10 +14060,11 @@ dd578d74c5b7972527f3cb23ec5b93d3  doc/ger-de/beispiele/ini-einstellungen/site/HT
 e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/LinkCheck.md
 187424d4066d76db01f7b6af434c9515  doc/ger-de/beispiele/ini-einstellungen/site/MailSettings.md
 6518716e701cf5e1ebc7ac217aa7e76b  doc/ger-de/beispiele/ini-einstellungen/site/OverrideSettings.md
+a280471e8acb27da52925df21576d309  doc/ger-de/beispiele/ini-einstellungen/site/PasswordChangeRequiredSettings.md
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-be57de72397e4c4b979317d5915793f2  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+2a91f232258c8cd403e3c1a66190b47f  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 0c379efcf6aa89dde09c2380f4be2550  doc/ger-de/beispiele/ini-einstellungen/site/RegionalSettings.md
 b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/RequestLogSettings.md
@@ -15035,7 +15042,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-8d3a806962f0260d97208fd5c449218b  doc/ger-de/funktionen/6.0/README.md
+f49bc96b74569bda16c7cbc2f1cf8bbb  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15161,6 +15168,7 @@ b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunt
 87a7ca4d2772cee023e56f84e5f9ae15  doc/ger-de/funktionen/6.0/paketinstallation-in-teilschritten.md
 6cee4e5a6165a7ac45a200caca8c8cd3  doc/ger-de/funktionen/6.0/paketlizenzen-und-versionen.md
 bafcae9114374a449576328c71f01bfc  doc/ger-de/funktionen/6.0/papierkorb-wer-und-wo.md
+2dd005dc77242daf53519235710369e8  doc/ger-de/funktionen/6.0/passwort-bei-naechster-anmeldung-aendern.md
 9b39b17168e94616c8a73b1b97a2cb6a  doc/ger-de/funktionen/6.0/pdf-export.md
 5dc104b6425177bdf60bda72fcebef67  doc/ger-de/funktionen/6.0/plattform-admin-ui-fork.md
 b12e55bc3bb06c0e1b05cacfb6438c47  doc/ger-de/funktionen/6.0/plattform-dxp-skeleton.md
