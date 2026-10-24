@@ -22,6 +22,7 @@ That list leaves out three functions an editor needs every day, and no package g
 | See which objects use one (`content/reverserelatedlist/<node>`) before moving or removing it | no `content/reverserelatedlist` | as above |
 | Upload several files at once into the media library (`ezmultiupload/upload/<node>`, the AdminUI dashboard's Upload) | no policy for the module `ezmultiupload` | the packages have installed ezmultiupload without a policy for it |
 | Create an article with a map (`geo_article`) or a video (`video`) | the class lists predate these two classes of the class package | as above |
+| Edit an image in the edit form (the **Edit image** button of expimageeditor, which takes the place of ezie) | no `expimageeditor/edit`: the button is drawn only for a user with it, so editors saw no image editor at all | expimageeditor (root pull request #302); ezie's module needed `ezie/*`, which no package granted either |
 
 On `plain_site`, which keeps the base data's role and assigns no Member role, an editor could not change the own
 password (`user/password`), edit the own account (`user/edit`, function *selfedit*) or open the notification settings
@@ -30,8 +31,8 @@ password (`user/password`), edit the own account (`user/edit`, function *selfedi
 ## What changes
 
 - **The setup wizard and the kickstarter** check, after the site package's roles, that the Editor role has
-  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*` (when the installation has the
-  extension), and `user/password`, `user/selfedit` and `notification/use` unless another role of the Editors group
+  `content/hide`, `content/restore`, `content/reverserelatedlist`, `ezmultiupload/*` and `expimageeditor/edit` (each
+  when the installation has the extension), and `user/password`, `user/selfedit` and `notification/use` unless another role of the Editors group
   (the Member role of the site packages) has them; whatever is missing is added
   (`expEditorPolicies::ensure()`, in `kernel/setup/steps/ezstep_create_sites.php`). This holds for every site
   package and every base data, on every database engine.

@@ -58,6 +58,8 @@ class expEditorPolicies
                    'reason' => 'the list of objects that use one (content/reverserelatedlist), before moving or removing it' ),
             array( 'module' => 'ezmultiupload', 'function' => '*', 'needs' => 'ezmultiupload',
                    'reason' => 'uploading several files at once into the media library (ezmultiupload)' ),
+            array( 'module' => 'expimageeditor', 'function' => 'edit', 'needs' => 'expimageeditor',
+                   'reason' => 'the image editor beside an image in the edit form (expimageeditor; its save view still checks the draft and content/edit)' ),
             array( 'module' => 'user', 'function' => 'password', 'needs' => '',
                    'reason' => 'changing the own password (user/password)' ),
             array( 'module' => 'user', 'function' => 'selfedit', 'needs' => '',

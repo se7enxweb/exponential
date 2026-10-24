@@ -59,6 +59,18 @@ class expEditorPoliciesTest extends PHPUnit\Framework\TestCase
         $this->assertCount( count( expEditorPolicies::definitions() ), $plan );
     }
 
+    /** The image editor (expimageeditor/edit) where its module exists; never where it does not. */
+    public function testImageEditorWhereTheModuleExists()
+    {
+        $plan = expEditorPolicies::plan( self::packageEditor(), array( 'expimageeditor' ), array(), array(), self::packageMember() );
+        $this->assertContains( 'expimageeditor/edit', self::granted( $plan ) );
+        $plan = expEditorPolicies::plan( self::packageEditor(), array(), array(), array(), self::packageMember() );
+        $this->assertNotContains( 'expimageeditor/edit', self::granted( $plan ) );
+        $plan = expEditorPolicies::plan( array_merge( self::packageEditor(), self::policies( array( 'expimageeditor/*' ) ) ), array( 'expimageeditor' ),
+                                         array(), array(), self::packageMember() );
+        $this->assertNotContains( 'expimageeditor/edit', self::granted( $plan ) );
+    }
+
     /** Without the Member role alongside (plain_site), the own account policies are added to the Editor role too. */
     public function testOwnAccountPoliciesWhenNoOtherRoleHasThem()
     {
