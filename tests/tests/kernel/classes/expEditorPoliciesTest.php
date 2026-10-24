@@ -123,6 +123,66 @@ class expEditorPoliciesTest extends PHPUnit\Framework\TestCase
                            array_map( function ( $o ) { return $o['module'] . '/' . $o['function'] . ' by ' . $o['by']; }, $setup ) );
     }
 
+    /** plain_site keeps the base data's content/*: it becomes the single functions the site packages give editors. */
+    public function testPlainSiteContentWildcardIsNarrowed()
+    {
+        $base = self::policies( array( 'content/*', 'ezoe/*', 'user/login' ) );
+        $plan = expEditorPolicies::narrowPlan( $base );
+        $this->assertSame( 'narrow', $plan['action'] );
+        $this->assertSame( 1, $plan['remove'] );
+        $this->assertSame( expEditorPolicies::narrowedContentFunctions(), $plan['add'] );
+        $this->assertStringContainsString( 'content/cleantrash', $plan['why'] );
+
+        // what the role holds afterwards: no over-grant left, nothing of definitions() missing in content
+        $after = self::policies( array( 'ezoe/*', 'user/login' ) );
+        foreach ( $plan['add'] as $function )
+            $after[] = array( 'module' => 'content', 'function' => $function );
+        $this->assertSame( array(), expEditorPolicies::overGrants( $after ) );
+        $granted = self::granted( expEditorPolicies::plan( $after, array( 'content', 'user', 'notification' ) ) );
+        $this->assertSame( array( 'user/password', 'user/selfedit', 'notification/use' ), $granted );
+    }
+
+    /** Every content function the site packages give editors is in the narrowed list, and no over-grant is. */
+    public function testNarrowedListMatchesThePackagesAndLeavesOutOverGrants()
+    {
+        $list = expEditorPolicies::narrowedContentFunctions();
+        foreach ( self::packageEditor() as $policy )
+            if ( $policy['module'] === 'content' )
+                $this->assertContains( $policy['function'], $list );
+        foreach ( expEditorPolicies::definitions() as $definition )
+            if ( $definition['module'] === 'content' )
+                $this->assertContains( $definition['function'], $list );
+        foreach ( expEditorPolicies::overGrantDefinitions() as $over )
+            if ( $over['module'] === 'content' )
+                $this->assertNotContains( $over['function'], $list );
+        $this->assertSame( array_values( array_unique( $list ) ), $list );
+    }
+
+    /** The site packages' Editor role has no content/*: nothing changes there. */
+    public function testPackageEditorIsNotNarrowed()
+    {
+        $plan = expEditorPolicies::narrowPlan( self::packageEditor() );
+        $this->assertSame( 'keep', $plan['action'] );
+        $this->assertSame( array(), $plan['add'] );
+    }
+
+    /** A limited content/* is the site's choice; single functions the role holds already are not added again. */
+    public function testLimitedWildcardIsKeptAndHeldFunctionsAreNotAddedTwice()
+    {
+        $limited = array( array( 'module' => 'content', 'function' => '*', 'limited' => true ) );
+        $plan = expEditorPolicies::narrowPlan( $limited );
+        $this->assertSame( 'keep', $plan['action'] );
+        $this->assertStringContainsString( 'limitations', $plan['why'] );
+
+        $policies = self::policies( array( 'content/*', 'content/read', 'content/hide' ) );
+        $plan = expEditorPolicies::narrowPlan( $policies, array( 'content/restore' ) );
+        $this->assertSame( 'narrow', $plan['action'] );
+        $this->assertNotContains( 'read', $plan['add'] );
+        $this->assertNotContains( 'hide', $plan['add'] );
+        $this->assertNotContains( 'restore', $plan['add'] );
+        $this->assertContains( 'edit', $plan['add'] );
+    }
+
     public function testDefinitionsAreUniqueAndExplained()
     {
         $seen = array();

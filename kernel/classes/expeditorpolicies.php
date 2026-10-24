@@ -30,7 +30,9 @@
  * overGrants() names what an editor role should not hold: functions that work on the whole installation and not on
  * the content the role is limited to (the trash emptied for everybody, the languages, the URL aliases and
  * wildcards, everybody's content jobs) and the administration modules. They are reported by the command, never
- * removed: the base data's content/* (kept by plain_site) holds the first group.
+ * removed one by one. The base data's content/* (kept by plain_site) holds the first group: the setup step and the
+ * command replace a content/* without limitations by the single content functions the site packages give editors
+ * (narrowPlan(), narrow(); the command's --keep-content-wildcard leaves it).
  *
  * plan() and overGrants() work on plain arrays, so they are tested without a database.
  */
@@ -110,9 +112,113 @@ class expEditorPolicies
         foreach ( $role->policyList() as $policy )
         {
             $policies[] = array( 'module' => (string)$policy->attribute( 'module_name' ),
-                                 'function' => (string)$policy->attribute( 'function_name' ) );
+                                 'function' => (string)$policy->attribute( 'function_name' ),
+                                 'limited' => count( (array)$policy->limitationList( false, true ) ) > 0 );
         }
         return $policies;
+    }
+
+    /**
+     * The content functions an editor gets in place of content/*: the list the site packages give their Editor role
+     * (create, edit, read, manage_locations, diff, versionread, versionremove, remove, translate, bookmark,
+     * pendinglist, dashboard, view_embed) and the three of definitions() (hide, restore, reverserelatedlist). Left
+     * out are the functions overGrantDefinitions() names (cleantrash, translations, urltranslator, jobs) and those no
+     * editor view asks for (move, publish, pdf, tipafriend, view_system_url, publish_without_notification).
+     *
+     * @return string[]
+     */
+    public static function narrowedContentFunctions()
+    {
+        return array( 'create', 'edit', 'read', 'manage_locations', 'diff', 'versionread', 'versionremove', 'remove',
+                      'translate', 'bookmark', 'pendinglist', 'dashboard', 'view_embed',
+                      'hide', 'restore', 'reverserelatedlist' );
+    }
+
+    /**
+     * Whether and how content/* of an editor role is replaced by single functions (narrowedContentFunctions()). Only
+     * a content/* without limitations is replaced (the base data's, kept by plain_site); a limited one is the site's
+     * choice and is reported, not changed. The single functions are added without limitations, so the role's
+     * assignment limits them as it limited content/*; a function the role holds as a single policy already (also a
+     * limited one) is not added again.
+     *
+     * @param array $policies the role's policies (policiesOf())
+     * @param string[] $skip content/<function> entries never to add
+     * @return array action ("narrow" or "keep"), why, remove (content/* policies to remove, a count), add (functions)
+     */
+    public static function narrowPlan( array $policies, array $skip = array() )
+    {
+        $wildcards = 0;
+        $limitedWildcards = 0;
+        $rest = array();
+        foreach ( $policies as $policy )
+        {
+            if ( $policy['module'] === 'content' && $policy['function'] === '*' )
+            {
+                if ( !empty( $policy['limited'] ) )
+                {
+                    $limitedWildcards++;
+                    $rest[] = $policy;
+                }
+                else
+                    $wildcards++;
+            }
+            else
+                $rest[] = $policy;
+        }
+        if ( $wildcards === 0 )
+            return array( 'action' => 'keep', 'remove' => 0, 'add' => array(),
+                          'why' => $limitedWildcards ? 'content/* has limitations: the site\'s choice, narrow it by hand' : 'the role has no content/*' );
+        $add = array();
+        foreach ( self::narrowedContentFunctions() as $function )
+        {
+            if ( in_array( 'content/' . $function, $skip, true ) || self::covers( $rest, 'content', $function ) )
+                continue;
+            $add[] = $function;
+        }
+        return array( 'action' => 'narrow', 'remove' => $wildcards, 'add' => $add,
+                      'why' => 'content/* also grants ' . implode( ', ', self::wildcardOnly() ) );
+    }
+
+    /**
+     * The content functions content/* grants and narrowedContentFunctions() does not.
+     *
+     * @return string[]
+     */
+    public static function wildcardOnly()
+    {
+        $over = array();
+        foreach ( self::overGrantDefinitions() as $definition )
+            if ( $definition['module'] === 'content' )
+                $over[] = 'content/' . $definition['function'];
+        return $over;
+    }
+
+    /**
+     * Replaces the role's content/* without limitations by single functions (narrowPlan()).
+     *
+     * @param eZRole $role
+     * @param array $plan a "narrow" plan of narrowPlan()
+     * @return bool whether the role changed
+     */
+    public static function narrow( $role, array $plan )
+    {
+        if ( $plan['action'] !== 'narrow' )
+            return false;
+        $db = eZDB::instance();
+        $db->begin();
+        foreach ( $role->policyList() as $policy )
+        {
+            if ( $policy->attribute( 'module_name' ) === 'content' && $policy->attribute( 'function_name' ) === '*'
+                 && count( (array)$policy->limitationList( false, true ) ) === 0 )
+                $policy->removeThis();
+        }
+        foreach ( $plan['add'] as $function )
+            $role->appendPolicy( 'content', $function );
+        $db->commit();
+        // the role's policy list is read again on the next use
+        $role->Policies = null;
+        eZRole::expireCache();
+        return true;
     }
 
     /**
@@ -249,6 +355,12 @@ class expEditorPolicies
         $role = eZRole::fetchByName( self::ROLE_NAME );
         if ( !is_object( $role ) )
             return 'no role ' . self::ROLE_NAME . ', nothing added';
+        // content/* of the base data (plain_site keeps it; the other site packages replace it themselves) becomes the
+        // single functions the site packages give editors
+        $narrowed = '';
+        $narrowPlan = self::narrowPlan( self::policiesOf( $role ) );
+        if ( self::narrow( $role, $narrowPlan ) )
+            $narrowed = 'content/* replaced by content/' . implode( ', content/', $narrowPlan['add'] ) . '; ';
         $modules = self::availableModules();
         foreach ( self::definitions() as $definition )
         {
@@ -263,8 +375,8 @@ class expEditorPolicies
         }
         if ( $added )
             eZRole::expireCache();
-        return $added ? 'added to the role ' . self::ROLE_NAME . ': ' . implode( ', ', $added )
-                      : 'the role ' . self::ROLE_NAME . ' has every editor policy';
+        return $narrowed . ( $added ? 'added to the role ' . self::ROLE_NAME . ': ' . implode( ', ', $added )
+                                    : 'the role ' . self::ROLE_NAME . ' has every editor policy' );
     }
 
     /**
