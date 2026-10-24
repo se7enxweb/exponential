@@ -6449,7 +6449,7 @@ ee611ae868bab0755ccaf719a285f4d3  doc/eng-us/guides/settings-page.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 9e4779ad88a9e6f97b461ce60bc4e584  doc/eng-us/guides/templates-and-design.md
 5095ff22dd8b6122bd39bbaca6a06e0e  doc/eng-us/guides/test-language-lorem-ipsum.md
-1347e990d712d45b5a5426aed6f47f26  doc/eng-us/guides/two-factor-login.md
+ece15ec77c80cf6be557056386321c5a  doc/eng-us/guides/two-factor-login.md
 d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
@@ -12442,7 +12442,7 @@ a97c60afb83f5c63ee51ebd8a180b52b  doc/ger-de/anleitungen/testsprache-lorem-ipsum
 8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
 b0bee01776ac8b58abb8d76e3cdf6b0d  doc/ger-de/anleitungen/wartungsmodus.md
 703b24385f53a5a3d0a9e7476ee2656d  doc/ger-de/anleitungen/workflows.md
-68323cda239834600eb321ea6e30da67  doc/ger-de/anleitungen/zwei-faktor-anmeldung.md
+a309c3015f2e4822e567a6faa9f998b7  doc/ger-de/anleitungen/zwei-faktor-anmeldung.md
 8979fadc2e16c10ebe153e74ad890ab6  doc/ger-de/bc/5.90/README.md
 9a2363742ead21d40c5d8a8741b42385  doc/ger-de/bc/5.90/indizierung-von-beziehungen.md
 dcf1b0b94d93bc43a5091638826844ee  doc/ger-de/bc/5.90/passwortlaenge.md

@@ -23,9 +23,22 @@ Zeitaufwand: 15 Minuten zum Einschalten, 2 Minuten pro Benutzer zum Einrichten.
 4. **Ändern oder ausschalten**: Der Wechsel zu E-Mail-Codes oder das Ausschalten sowie *2FA zurücksetzen* verlangen
    einen aktuellen Code aus der App, damit niemand an einem unbeaufsichtigten Computer das Konto schwächen kann.
 
-Telefon verloren? Ein Administrator öffnet das Objekt des Benutzers in der Administration, setzt das Feld
-*Zweistufige Anmeldung* auf *Einmalcode per E-Mail* oder *Deaktiviert* und veröffentlicht; der Benutzer meldet sich an
-und richtet die App neu ein.
+5. **Wiederherstellungscodes aufbewahren**: Nach dem Einrichten der App zeigt die Seite einmalig zehn
+   Wiederherstellungscodes. Drucken Sie sie aus oder legen Sie sie in einem Passwortmanager ab. Jeder meldet einmal
+   anstelle des App-Codes an (*Einen Wiederherstellungscode verwenden* auf der Code-Seite); die Einrichtungsseite zeigt,
+   wie viele übrig sind, und erstellt mit einem aktuellen Code einen neuen Satz.
+
+Telefon verloren? Melden Sie sich mit einem Wiederherstellungscode an und richten Sie die App neu ein. Ohne einen
+solchen öffnet ein Administrator das Objekt des Benutzers in der Administration, setzt das Feld *Zweistufige
+Anmeldung* auf *Einmalcode per E-Mail* (oder *Deaktiviert*, wo der zweite Schritt nicht vorgeschrieben ist) und
+veröffentlicht. Einem ausgesperrten Administrator wird auf dem Server geholfen:
+
+```bash
+php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --login=<login>          # was das Konto hat
+php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --login=<login> --reset  # entfernen, Konto entsperren
+```
+
+Nach `--reset` verlangt die nächste Anmeldung eine neue Einrichtung, wo der zweite Schritt vorgeschrieben ist.
 
 ## Einschalten
 
@@ -62,6 +75,24 @@ und richtet die App neu ein.
    | `enabled` | `totp` | Ein Benutzer ohne zweiten Schritt richtet die App direkt nach dem Passwort ein, bevor er angemeldet wird. |
    | `enabled` | `email` | Ein Benutzer ohne zweiten Schritt erhält sofort E-Mail-Codes (die E-Mail-Adresse des Kontos muss echt sein). |
 
+   Für wen ein vorgeschriebener zweiter Schritt gilt:
+
+   | Einstellung | Wirkung |
+   |---|---|
+   | `EnforcedGroups[]` | Nur für Mitglieder dieser Benutzergruppen (Knoten-ID oder Remote-ID des Objekts), auch über Gruppen darunter. Leer: für alle Benutzer. |
+   | `ExemptGroups[]`, `ExemptEmailDomains[]` | Nie verlangt (freiwillig weiter möglich): Mitglieder dieser Gruppen und Adressen in diesen Domains, z. B. `example.invalid` für die Konten automatischer Prüfungen. |
+   | `GracePeriodDays` | Tage, an denen ein Benutzer noch *Später einrichten* wählen kann, ab der ersten Anmeldung, die danach fragte. `0`: Die Einrichtung kommt zuerst. |
+   | `[Security] RecoveryCodes` | Wiederherstellungscodes pro Authenticator (Standard 10, `0` für keine). |
+
+   Eine neue Installation wird mit `Enforce2FA=enabled` für die Gruppen *Administrator users*
+   (`9b47a45624b023b1a76c73b74d704acf`) und *Editors* (`3c160cca19fb135f83bd02d911f04db2`) angelegt, ohne Ausnahmen und
+   ohne Schonfrist: Wer die Website ändern kann, braucht einen zweiten Schritt, Mitglieder im Frontend entscheiden
+   selbst. Der Standard der Extension selbst bleibt `disabled`, damit ein Update niemanden aus einer bestehenden
+   Website aussperrt.
+
+   Bevor Sie ihn vorschreiben, listet `php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --enforced`
+   die Konten auf, die bei ihrer nächsten Anmeldung zur Einrichtung aufgefordert würden.
+
 6. Leeren Sie die Caches und stellen Sie bei Velocity bereit: `./console exp:velocity deploy --allow-root-user`.
 
 Probieren Sie es zuerst auf einem Siteaccess aus: Aktivieren Sie die Extension als Zugriffs-Extension eines
@@ -79,19 +110,31 @@ einem Schlüssel in `settings/override/sevenxauthentication2fa.ini.append.php` v
 automatisch registriert: Jedes Konto meldet sich wie bisher an, bis sein Inhaber den zweiten Schritt unter *Mein Konto*
 einschaltet.
 
-Um sie für alle vorzuschreiben, setzen Sie in `settings/override/sevenxauthentication2fa.ini.append.php`:
+Um sie wie eine neue Installation für Administratoren und Redakteure vorzuschreiben, setzen Sie in
+`settings/override/sevenxauthentication2fa.ini.append.php`:
 
 ```ini
 [General]
 Enforce2FA=enabled
 DefaultMethod=totp
+EnforcedGroups[]
+EnforcedGroups[]=9b47a45624b023b1a76c73b74d704acf
+EnforcedGroups[]=3c160cca19fb135f83bd02d911f04db2
 ```
 
 leeren Sie dann den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini`) und stellen Sie bereit
-(`./console exp:velocity deploy`). Jeder Benutzer ohne zweiten Schritt richtet dann direkt nach dem Passwort einen
+(`./console exp:velocity deploy`). Jeder von ihnen ohne zweiten Schritt richtet dann direkt nach dem Passwort einen
 Authenticator ein. Richten Sie den zweiten Schritt zuerst für die Administratoren ein, damit niemand ohne
-Telefon zur Hand überrascht wird. Eine später angelegte Rolle braucht `user2fa/setup` und `user2fa/verify`, damit ihre Benutzer den zweiten Schritt
-einrichten können. Um es wieder auszuschalten, setzen Sie `Enforce2FA=disabled`.
+Telefon zur Hand überrascht wird, und entscheiden Sie für die Konten automatischer Prüfungen: deren reservierte Domain
+ausnehmen (`ExemptEmailDomains[]=example.invalid`) oder jedem auf der Konsole einen Authenticator geben
+(`sevenx2fauser.php --login=<login> --enrol-totp --secret-file=<pfad>`). Eine später angelegte Rolle braucht
+`user2fa/setup` und `user2fa/verify`, damit ihre Benutzer den zweiten Schritt einrichten können. Um es wieder
+auszuschalten, setzen Sie `Enforce2FA=disabled`.
+
+Die Anmeldung über WebDAV, die Basic-Authentifizierung der REST-API oder Code, der `eZUser::loginUser()` direkt aufruft,
+fragt nur nach dem Passwort. Lassen Sie diese dort ausgeschaltet, wo der zweite Schritt vorgeschrieben ist, oder auf
+Konten beschränkt, die ihn nicht brauchen. Eine Sitzung, die vor dem Vorschreiben angemeldet wurde, bleibt angemeldet,
+bis sie endet.
 
 ## Social Login
 

@@ -20,8 +20,20 @@ Time: 15 minutes to turn it on, 2 minutes per user to set it up.
 4. **Change or turn off**: switching to e-mail codes or off, or *Reset 2FA*, asks for a current code from the app, so
    someone at an unattended computer cannot weaken the account.
 
-Lost the phone? An administrator opens the user's object in the administration, sets the *Two-step sign-in* field to
-*E-mail one-time code* or *Disabled*, and publishes; the user signs in and sets the app up again.
+5. **Keep the recovery codes**: when the app is set up, the page shows ten recovery codes, once. Print them or keep
+   them in a password manager. Each signs in once in place of the app's code (*Use a recovery code* on the code page);
+   the setup page shows how many are left and makes a new set with a current code.
+
+Lost the phone? Sign in with a recovery code and set the app up again. Without one, an administrator opens the user's
+object in the administration, sets the *Two-step sign-in* field to *E-mail one-time code* (or *Disabled*, where the
+second step is not required), and publishes. An administrator who is locked out is helped on the server:
+
+```bash
+php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --login=<login>          # what the account has
+php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --login=<login> --reset  # remove it, unlock the account
+```
+
+After `--reset` the next sign-in asks for a new setup where the second step is required.
 
 ## Turning it on
 
@@ -57,6 +69,23 @@ Lost the phone? An administrator opens the user's object in the administration, 
    | `enabled` | `totp` | A user without a second step sets up the app right after the password, before being signed in. |
    | `enabled` | `email` | A user without a second step gets e-mail codes straight away (the account's e-mail address must be real). |
 
+   Whom a required second step applies to:
+
+   | Setting | Effect |
+   |---|---|
+   | `EnforcedGroups[]` | Only members of these user groups (node id or object remote id), also through groups below them. Empty: every user. |
+   | `ExemptGroups[]`, `ExemptEmailDomains[]` | Never asked (they may still opt in): members of these groups, and addresses in these domains, e.g. `example.invalid` for the accounts of automated checks. |
+   | `GracePeriodDays` | Days a user may still choose *Set up later*, from the first sign-in that asked. `0`: the setup comes first. |
+   | `[Security] RecoveryCodes` | Recovery codes per authenticator (default 10, `0` for none). |
+
+   A new installation is made with `Enforce2FA=enabled` for the groups *Administrator users*
+   (`9b47a45624b023b1a76c73b74d704acf`) and *Editors* (`3c160cca19fb135f83bd02d911f04db2`), no exemptions and no grace
+   period: whoever can change the site needs a second step, front-end members choose for themselves. The extension's
+   own default stays `disabled`, so updating it never locks anyone out of an existing site.
+
+   Before requiring it, `php extension/sevenx_authentication_2fa/bin/php/sevenx2fauser.php --enforced` lists the
+   accounts that would be asked to set it up at their next sign-in.
+
 6. Clear the caches and, for Velocity, deploy: `./console exp:velocity deploy --allow-root-user`.
 
 Try it on one siteaccess first: activate the extension as an access extension of a test siteaccess and put the
@@ -72,18 +101,28 @@ in (Member, Editor and the custom editor role; Administrator has all) has `user2
 `settings/override/sevenxauthentication2fa.ini.append.php`. Nobody is enrolled by it: every account signs in as before
 until its owner turns the second step on under *My account*.
 
-To require it for everyone, set in `settings/override/sevenxauthentication2fa.ini.append.php`:
+To require it for administrators and editors, as a new installation does, set in
+`settings/override/sevenxauthentication2fa.ini.append.php`:
 
 ```ini
 [General]
 Enforce2FA=enabled
 DefaultMethod=totp
+EnforcedGroups[]
+EnforcedGroups[]=9b47a45624b023b1a76c73b74d704acf
+EnforcedGroups[]=3c160cca19fb135f83bd02d911f04db2
 ```
 
 then clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini`) and deploy (`./console exp:velocity deploy`).
-Each user without a second step then sets up an authenticator right after the password. Enrol the administrators
-first, so nobody is caught without a phone at hand. A role made later needs `user2fa/setup` and `user2fa/verify`
-for its users to set it up. To turn it off again, set `Enforce2FA=disabled`.
+Each of them without a second step then sets up an authenticator right after the password. Enrol the administrators
+first, so nobody is caught without a phone at hand, and decide for the accounts of automated checks: exempt their
+reserved domain (`ExemptEmailDomains[]=example.invalid`) or give each an authenticator from the console
+(`sevenx2fauser.php --login=<login> --enrol-totp --secret-file=<path>`). A role made later needs `user2fa/setup` and
+`user2fa/verify` for its users to set it up. To turn it off again, set `Enforce2FA=disabled`.
+
+Signing in through WebDAV, the REST API's basic authentication, or code that calls `eZUser::loginUser()` directly
+asks for the password only. Keep those off where the second step is required, or limited to accounts that do not need
+it. A session signed in before the second step was required stays signed in until it ends.
 
 ## Social login
 
