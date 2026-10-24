@@ -3381,7 +3381,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_M
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 ae6e928910a0204356104d574f8bf3b2  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
-297b7dcdd0a43b112912b1ddfb0f867d  doc/eng-us/bc/6.0/audit.md
+d61b7266e5606abc52f277a68afa1373  doc/eng-us/bc/6.0/audit.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
@@ -3441,7 +3441,7 @@ e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
-b3ddabe744f64d13e2ecce43ee3c732e  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
+5332a9c9008050e4a53b7ef0b78a3ee5  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
 773708cbd55dc9ce34e93900320b170e  doc/eng-us/bc/6.0/pdf-export.md
 bad6741175ace75f0d1180f2b5ef72e1  doc/eng-us/bc/6.0/phar.md
 4cafbbefb37b689a7e54ebbf9efb3bdd  doc/eng-us/bc/6.0/php-8.0-support.md

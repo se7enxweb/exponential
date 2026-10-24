@@ -29,7 +29,7 @@ page covers what a site, a design or an extension may notice after the upgrade.
 - **REST**: a marked account gets `403` with `{"error":"password_change_required"}` from every route that needs
   authentication, also with an OAuth token or a personal API key. A client that treats every 403 as "no permission"
   should show the `error_description` instead.
-- **WebDAV and SOAP** refuse the sign-in of a marked account.
+- **SOAP** refuses the sign-in of a marked account.
 - **Demo mode** (`EXP_DEMO_MODE=1`): the mark of an administrator is kept but ignored.
 
 ## New
