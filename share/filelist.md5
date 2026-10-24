@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+a960bdacf4f269891be694643a426790  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21648,11 +21648,11 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
 2c972d6cb57e5557335a061521870369  kernel/classes/expkernelservicescope.php
-180f6eefa718dcec1dc36119fb0626a4  kernel/classes/expkickstarter.php
+4e334975ebc75e85728fa7c9b39fb58b  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
 f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
-1009a31d576bfc7708a46433ffdd4721  kernel/classes/expmaintenance.php
+f46d18c9bb454b68d96a552a5a59e66e  kernel/classes/expmaintenance.php
 8cca633af22e11b820cc4da7d05273f7  kernel/classes/expmanagedconfiguration.php
 dc11bd0c1a2431c24f6745db69cc1fb0  kernel/classes/expmembermanagement.php
 f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface.php
@@ -25241,7 +25241,7 @@ b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIn
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
 5e2c4449b6c19c29c17716690690fcf5  tests/tests/kernel/classes/setup/KickstarterResumeTest.php
 5c1bbd0f67e486ffbbbb0d2e183f89b2  tests/tests/kernel/classes/setup/MaintenancePageTest.php
-45c4fd96321c423c32cf68eb6f67f2a4  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
+3c8a3a816b785a6fc3744b2e5c870b4e  tests/tests/kernel/classes/setup/MaintenanceRunTest.php
 bc8f87debce9fdd6ab2277a72ff216a4  tests/tests/kernel/classes/setup/RegistrationAndDryRunTest.php
 ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTest.php
 9eefb9efe67f592ab335a0860c480b61  tests/tests/kernel/classes/setup/SetupContentFallbackLanguagesTest.php
