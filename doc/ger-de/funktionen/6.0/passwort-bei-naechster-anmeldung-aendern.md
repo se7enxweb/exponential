@@ -20,7 +20,7 @@ anderen Chat als die E-Mail mit dem Anmeldenamen), und der Redakteur ersetzt es 
 - Die zweistufige Anmeldung kommt zuerst. Ist sie vorgeschrieben, richtet der Benutzer sie wie gewohnt ein oder gibt
   den Code ein und wird danach zur Passwortänderung geschickt.
 - Die REST-Schnittstelle antwortet mit `403` und dem Fehler `password_change_required`, bis das Passwort geändert ist.
-  WebDAV und SOAP weisen die Anmeldung ab. Konsolenbefehle sind nicht betroffen.
+  SOAP weist die Anmeldung ab. Konsolenbefehle sind nicht betroffen.
 - Im Demo-Modus (`EXP_DEMO_MODE=1`) können Administratorpasswörter nicht geändert werden, deshalb wird die Markierung
   bei Administratoren ignoriert. Sonst würde sie sie aussperren. Andere Konten werden weiterhin zur Passwortänderung
   geschickt.
@@ -96,7 +96,7 @@ keine Spalte hinzugefügt, die Funktion arbeitet also mit jeder Datenbank ohne U
 `user/preferences` schreibt diese Einstellung nicht, ein Benutzer kann sie also nicht über die Einstellungslinks setzen
 oder aufheben.
 
-## REST, WebDAV und SOAP
+## REST und SOAP
 
 Eine REST-Anfrage mit den Zugangsdaten eines markierten Kontos (Basic-Authentifizierung, ein OAuth-Token oder ein
 persönlicher API-Schlüssel) erhält:
@@ -109,7 +109,7 @@ Content-Type: application/json; charset=UTF-8
 ```
 
 Die Anfrage wird nicht angemeldet. Der Benutzer ändert das Passwort im Browser; danach funktioniert die nächste
-REST-Anfrage. WebDAV und SOAP weisen die Anmeldung eines markierten Kontos ebenso ab.
+REST-Anfrage. SOAP weist die Anmeldung eines markierten Kontos ebenso ab.
 
 ## Prüfprotokoll
 
@@ -117,7 +117,7 @@ REST-Anfrage. WebDAV und SOAP weisen die Anmeldung eines markierten Kontos ebens
 |---|---|---|
 | `access.user.password.change_required.set` | ein Konto markiert wird | `after.source`: `edit` oder `console` |
 | `access.user.password.change_required.clear` | die Markierung aufgehoben wird | `after.source`: `password` (der Benutzer hat es geändert), `edit` oder `console` |
-| `access.user.password.change_required.redirect` | ein markiertes Konto zu `user/password` geschickt oder seine Anmeldung über REST, WebDAV oder SOAP abgewiesen wird | `after.channel`: `web`, `rest`, `webdav` oder `soap`; `after.view` im Web |
+| `access.user.password.change_required.redirect` | ein markiertes Konto zu `user/password` geschickt oder seine Anmeldung über REST oder SOAP abgewiesen wird | `after.channel`: `web`, `rest` oder `soap`; `after.view` im Web |
 
 Alle drei liegen im Kanal `access` und sind standardmäßig eingeschaltet. Siehe [Prüfprotokoll](pruefprotokoll.md) und
 den [Ereigniskatalog](../../bc/6.0/audit.md).

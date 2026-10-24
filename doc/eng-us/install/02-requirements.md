@@ -170,7 +170,7 @@ prints one line per extension, marked `ok` or missing, with what each is for, fo
 ```text
 PHP 8.5 on linux-x86_64: provides the 'lite' set; checked against 'standard'
   ok  sockets          server       TCP options (no-delay, keep-alive) on client connections
-  ok  dom              required     XML documents: rich text, packages, feeds, WebDAV
+  ok  dom              required     XML documents: rich text, packages, feeds
   ok  intl             required     Locale-aware formatting, collation and transliteration
 ```
 

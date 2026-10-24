@@ -49,7 +49,6 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [template.ini](template.md) | kernel | 2 | DefaultFormatter, OutputFormatter |
 | [uiswitch.ini](uiswitch.md) | kernel | 2 | Class, Class |
 | [upload.ini](upload.md) | kernel | 2 | ClassList, DefaultClass |
-| [webdav.ini](webdav.md) | kernel | 2 | FolderClasses, FolderClass |
 | [workflow.ini](workflow.md) | kernel | 1 | ExtensionDirectories |
 
 - [All examples](../README.md)

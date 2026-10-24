@@ -131,7 +131,7 @@ ausnehmen (`ExemptEmailDomains[]=example.invalid`) oder jedem auf der Konsole ei
 `user2fa/setup` und `user2fa/verify`, damit ihre Benutzer den zweiten Schritt einrichten können. Um es wieder
 auszuschalten, setzen Sie `Enforce2FA=disabled`.
 
-Die Anmeldung über WebDAV, die Basic-Authentifizierung der REST-API oder Code, der `eZUser::loginUser()` direkt aufruft,
+Die Anmeldung über SOAP, die Basic-Authentifizierung der REST-API oder Code, der `eZUser::loginUser()` direkt aufruft,
 fragt nur nach dem Passwort. Lassen Sie diese dort ausgeschaltet, wo der zweite Schritt vorgeschrieben ist, oder auf
 Konten beschränkt, die ihn nicht brauchen. Eine Sitzung, die vor dem Vorschreiben angemeldet wurde, bleibt angemeldet,
 bis sie endet.

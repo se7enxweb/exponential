@@ -396,7 +396,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `templates/` | ja | Code-Vorlagen für den Klassengenerator (`.ctpl`). |
 | `tests/` | ja | Die PHPUnit-Testsuite (`tests/runtests.php`, `phpunit.xml`). |
 | `update/` | ja | Datenbank-Update-Dateien pro Engine und Version (`update/database/<engine>/`) und Skripte zur Datenreparatur (`update/common/scripts/`); siehe [Kapitel 11](11-aktualisieren.md). |
-| `var/` | nein (nur `var/webdav/`) | Alles, was zur Laufzeit geschrieben wird: `var/cache/`, `var/log/`, `var/storage/` (hochgeladene Dateien, Pakete, die SQLite-Datenbank in `var/storage/sqlite3/`), `var/autoload/` (die Class Maps der Extensions), `var/vc/` (Laufzeitdateien und Protokolle von Velocity). Muss für den Webserver beschreibbar sein. |
+| `var/` | nein | Alles, was zur Laufzeit geschrieben wird: `var/cache/`, `var/log/`, `var/storage/` (hochgeladene Dateien, Pakete, die SQLite-Datenbank in `var/storage/sqlite3/`), `var/autoload/` (die Class Maps der Extensions), `var/vc/` (Laufzeitdateien und Protokolle von Velocity). Muss für den Webserver beschreibbar sein. |
 | `vendor/` | nein | Die Composer-Bibliotheken: Zeta Components, das Installer-Plugin, Velocity, sofern installiert. |
 
 ### Dateien
@@ -407,7 +407,7 @@ das Verzeichnis zum Git-Repository gehört; die übrigen werden von Composer ode
 | `index_rest.php` | Der Front-Controller der REST-API (`/api/`). |
 | `index_cluster.php` | Liefert Dateien aus dem Datenbank-Cluster aus. |
 | `index_treemenu.php` | Der schnelle Endpunkt für das Inhaltsbaummenü der Administration. |
-| `soap.php`, `webdav.php` | Die Einstiegspunkte für SOAP und WebDAV. |
+| `soap.php` | Der Einstiegspunkt für SOAP. |
 | `runcronjobs.php` | Führt Cronjob-Teile aus: `php runcronjobs.php --list`. |
 | `autoload.php` | Lädt den Autoloader von Composer und den des Kernels; jeder Einstiegspunkt beginnt damit. |
 | `ezpm.php` | Der Paketmanager auf der Kommandozeile. |

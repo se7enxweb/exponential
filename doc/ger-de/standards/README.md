@@ -45,7 +45,7 @@ und ihrem Betrieb ab: Die Software kann Konformität möglich machen, aber eine 
 | Tests | [Tests und kontinuierliche Integration](tests-und-ci.md) | PHPUnit, die Testkarte, die CI-Workflows und die Prüfungen vor einem Push |
 | Historie | [Versionsverwaltung und Releases](versionsverwaltung-und-releases.md) | Git-Konventionen, Commit-Nachrichten, Changelogs, Tags und Versionsnummern |
 | Dokumentation | [Dokumentation und Veröffentlichung](dokumentation-und-veroeffentlichung.md) | DITA 1.3, CommonMark und GFM, GNU FDL 1.3, PDF, EPUB 3 und EPUB Accessibility |
-| Schnittstellen | [APIs und Protokolle](apis-und-protokolle.md) | OAuth 2.0 und OpenID Connect, REST und JSON, WebDAV, SOAP, Feeds, Mail, LDAP |
+| Schnittstellen | [APIs und Protokolle](apis-und-protokolle.md) | OAuth 2.0 und OpenID Connect, REST und JSON, SOAP, Feeds, Mail, LDAP |
 | Datenbanken | [Datenbanken und SQL](datenbanken-und-sql.md) | SQL und der Dialekt jeder unterstützten Datenbank, die Datenbankabstraktion |
 
 ## Architektur

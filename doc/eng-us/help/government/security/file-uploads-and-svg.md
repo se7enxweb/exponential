@@ -39,7 +39,7 @@ The allowed image types as shipped are JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP and
 
 Since 15 October 2026 the image datatype accepts SVG (`.svg`, `.svgz`) on every site. An SVG is a document a browser
 can run script from, so it is never stored as uploaded: the stored file is the sanitizer's output. Every path that
-stores an image sanitizes (edit form, upload module, multi-upload, editor upload dialog, AJAX uploader, WebDAV, package
+stores an image sanitizes (edit form, upload module, multi-upload, editor upload dialog, AJAX uploader, package
 import). A file that claims to be SVG but is not recognized as one is not stored
 ([SVG images](../../../bc/6.0/svg-images.md)).
 

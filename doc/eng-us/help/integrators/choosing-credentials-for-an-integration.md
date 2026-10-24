@@ -29,7 +29,7 @@ revoked.
 | OAuth 2.0 access token | 40 hexadecimal characters | `Authorization: Bearer <token>` or `Authorization: OAuth <token>` | REST API (`/api/...`) | An app after the user allowed it at `oauth/authorize`; token from `POST /api/auth/v1/oauth/token` | After `rest.ini [OAuthSettings] TokenTTL` (3600 seconds); renewed with the refresh token |
 | Personal API key | `expk_` + 12 + `_` + 40 characters | `Authorization: Bearer expk_...` only (refused in the address) | REST API | The user at **My account > API access** (`/apikey/list`), with `apikey/create` | Revoked, expired (`MaxExpiryDays`, default 365), or owner disabled |
 | `expservices` token | `expt_` + 48 hexadecimal characters | `Authorization: Bearer <token>` or `X-Exp-Token: <token>` | `/ezjscore/call/exp...` services | The user with `expsession::tokenCreate` | Revoked (`expsession::tokenRevoke`), expired, or owner disabled |
-| HTTP basic authentication | login and password | `Authorization: Basic ...` | REST API when `rest.ini [Authentication] AuthenticationStyle=ezpRestBasicAuthStyle`; WebDAV | The user account | When the password changes |
+| HTTP basic authentication | login and password | `Authorization: Basic ...` | REST API when `rest.ini [Authentication] AuthenticationStyle=ezpRestBasicAuthStyle`; SOAP | The user account | When the password changes |
 | Session sign-in | session cookie plus form token | Cookie and `ezxform_token` | `expservices` and ezjscore calls from a browser or a script that signs in | `user/login` | Session end |
 
 The REST layer resolves a personal API key in `expApiKeyAuthFilter` (`kernel/private/rest/classes/auth/apikey_auth_filter.php`)
@@ -43,7 +43,6 @@ for both kernel authentication styles, so keys work whether the site uses OAuth 
 | An app that lets many people sign in and act as themselves | An **OAuth application** | Each user allows the app; the token acts as that user |
 | A script that calls `expservices` (caches, content jobs, users, ...) | An **`expservices` token** of a service account | No form token needed for writes; revocable |
 | A browser page on the same site | The **session** | It is already there; writes carry the form token |
-| A desktop tool mounting content as a drive | **Basic authentication** over HTTPS (WebDAV) | WebDAV clients speak it |
 | A legacy client that only knows basic authentication | **Basic authentication** over HTTPS, with a dedicated account | Last resort: the password opens every page the account may open |
 
 > **Note**

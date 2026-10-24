@@ -86,8 +86,8 @@ HideRemoveConfirmation=false
 >             das früher sofort entfernt wurde; mit HideRemoveConfirmation=true gibt es keine Seite  
 >  block    - wie warn, und das Entfernen wird abgelehnt, solange solche Verweise bestehen: Die Schaltfläche OK ist deaktiviert, und  
 >             der Server lehnt das Entfernen auch von sich aus ab: eine abgeschickte Bestätigung, HideRemoveConfirmation,  
->             ein Entfernen als Inhaltsauftrag, das Entfernen der letzten Platzierungen im Reiter Platzierungen und ein Löschen  
->             über WebDAV. Standardmäßig aus.  
+>             ein Entfernen als Inhaltsauftrag und das Entfernen der letzten Platzierungen im Reiter Platzierungen. Standardmäßig  
+>             aus.  
 
 Standard: `warn`.
 

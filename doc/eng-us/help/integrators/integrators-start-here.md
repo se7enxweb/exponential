@@ -111,7 +111,7 @@ The whole section in one order is on [Integrators' reading path](integrators-rea
 | Day | Do this | Page |
 |---|---|---|
 | 1 | Fill in the discovery worksheet with the customer: systems, data, direction, volume, timing | [Integration discovery worksheet](integration-discovery-worksheet.md) |
-| 1 | Check which surfaces the installation has active (`ActiveExtensions`, `rest.ini`, `soap.ini`, `webdav.ini`) | [Integration surfaces at a glance](integration-surfaces-at-a-glance.md) |
+| 1 | Check which surfaces the installation has active (`ActiveExtensions`, `rest.ini`, `soap.ini`) | [Integration surfaces at a glance](integration-surfaces-at-a-glance.md) |
 | 2 | Pick a surface and a credential per data flow, and write them down | [Choosing an integration surface](choosing-an-integration-surface.md), [Choosing credentials](choosing-credentials-for-an-integration.md) |
 | 2 | Map each external record to a content class and a `remote_id` scheme | [Mapping classes to external data](mapping-content-classes-to-external-data.md) |
 | 3 | Set up a development installation from Git and a service account with a narrow role | [Develop with Git](../develop-with-git.md), [Service accounts and roles](service-accounts-roles-and-policies.md) |

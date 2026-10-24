@@ -3,8 +3,8 @@ title: Documents and file libraries
 audience: businesses, admin, editor
 category: business-solutions
 order: 30
-summary: How an intranet keeps policies, handbooks, forms and other documents in Exponential - files as content objects, downloads that check permissions, versions, bulk upload, text search inside files, PDF exports and the WebDAV option.
-keywords: document library, file library, files, downloads, content/download, ezbinaryfile, policies, handbooks, forms, versions, ezmultiupload, ezodf, WebDAV, PDF export, binaryfile.ini, intranet documents
+summary: How an intranet keeps policies, handbooks, forms and other documents in Exponential - files as content objects, downloads that check permissions, versions, bulk upload, text search inside files, PDF exports, and why there is no network drive.
+keywords: document library, file library, files, downloads, content/download, ezbinaryfile, policies, handbooks, forms, versions, ezmultiupload, ezodf, WebDAV, network drive, PDF export, binaryfile.ini, intranet documents
 type: help
 ---
 # Documents and file libraries
@@ -24,7 +24,7 @@ helps editors keep documents current, and what to check before moving a shared d
 5. [Getting many files in](#getting-many-files-in)
 6. [Finding words inside files](#finding-words-inside-files)
 7. [Handbooks as PDF and office documents](#handbooks-as-pdf-and-office-documents)
-8. [WebDAV](#webdav)
+8. [Network drives (WebDAV)](#network-drives-webdav)
 9. [Checklist](#checklist)
 10. [Related pages](#related-pages)
 
@@ -104,12 +104,11 @@ through `ezfind`, file contents can be indexed too ([Intranet search](intranet-s
   object and exports objects back to Writer documents; it needs OpenOffice or LibreOffice 2.4 or later on the server
   ([ezodf](../../../features/6.0/extensions/ezodf.md)).
 
-## WebDAV
+## Network drives (WebDAV)
 
-The kernel contains a WebDAV entry point (`webdav.php`) with its settings in `settings/webdav.ini`. It is switched off
-by default (`EnableWebDAV=false`) and starts at node 2. Uploads through WebDAV pass the same image checks as other
-uploads (changelog 6.0.15). This help has no step-by-step guide for it; if staff want to mount the library as a
-network drive, ask your partner to test it on your installation before you promise it.
+Exponential has no WebDAV server: the one the kernel contained (`webdav.php`, off by default) was removed in
+October 2026. Staff cannot mount the library as a network drive. They put files in with multi-upload or the edit form
+([Getting many files in](#getting-many-files-in)).
 
 ## Checklist
 

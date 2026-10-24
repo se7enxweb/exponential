@@ -49,7 +49,6 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [template.ini](template.md) | Kernel | 2 | DefaultFormatter, OutputFormatter |
 | [uiswitch.ini](uiswitch.md) | Kernel | 2 | Class, Class |
 | [upload.ini](upload.md) | Kernel | 2 | ClassList, DefaultClass |
-| [webdav.ini](webdav.md) | Kernel | 2 | FolderClasses, FolderClass |
 | [workflow.ini](workflow.md) | Kernel | 1 | ExtensionDirectories |
 
 - [Alle Beispiele](../README.md)

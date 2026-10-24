@@ -89,7 +89,6 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [upload.ini](upload/README.md) | Kernel | 12 |
 | [velocity.ini](velocity/README.md) | Kernel | 13 |
 | [viewcache.ini](viewcache/README.md) | Kernel | 1 |
-| [webdav.ini](webdav/README.md) | Kernel | 2 |
 | [wordmatch.ini](wordmatch/README.md) | Kernel | 10 |
 | [wordtoimage.ini](wordtoimage/README.md) | Kernel | 1 |
 | [workflow.ini](workflow/README.md) | Kernel | 3 |

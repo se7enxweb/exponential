@@ -45,7 +45,7 @@ make compliance possible, but a site has to keep it.
 | Tests | [Testing and continuous integration](testing-and-ci.md) | PHPUnit, the test map, the CI workflows and the gates before a push |
 | History | [Source control and releases](source-control-and-releases.md) | Git conventions, commit messages, changelogs, tags and version numbers |
 | Documentation | [Documentation and publishing](documentation-and-publishing.md) | DITA 1.3, CommonMark and GFM, GNU FDL 1.3, PDF, EPUB 3 and EPUB Accessibility |
-| Interfaces | [APIs and protocols](apis-and-protocols.md) | OAuth 2.0 and OpenID Connect, REST and JSON, WebDAV, SOAP, feeds, mail, LDAP |
+| Interfaces | [APIs and protocols](apis-and-protocols.md) | OAuth 2.0 and OpenID Connect, REST and JSON, SOAP, feeds, mail, LDAP |
 | Databases | [Databases and SQL](databases-and-sql.md) | SQL and the dialect of each supported database, the database abstraction |
 
 ## Architecture

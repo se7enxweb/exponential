@@ -3,7 +3,7 @@ title: API and protocol standards
 audience: developer, admin
 category: standards
 order: 120
-summary: Which API and network protocol standards Exponential implements (OAuth 2.0, OpenID Connect, REST over HTTP, JSON, WebDAV, SOAP, RSS, Atom, sitemaps, SMTP, LDAP, webhooks), with evidence, status and gaps.
+summary: Which API and network protocol standards Exponential implements (OAuth 2.0, OpenID Connect, REST over HTTP, JSON, SOAP, RSS, Atom, sitemaps, SMTP, LDAP, webhooks), with evidence, status and gaps.
 keywords: API, protocol, OAuth, OAuth 2.0, RFC 6749, RFC 6750, OpenID Connect, OIDC, PKCE, REST, HTTP, RFC 9110, status codes, JSON, RFC 8259, WebDAV, RFC 4918, SOAP, XML-RPC, RSS, RSS 2.0, Atom, RFC 4287, OPML, sitemaps, sitemaps.org, SMTP, RFC 5321, STARTTLS, RFC 8058, LDAP, RFC 4511, webhooks, HMAC, OpenAPI, MCP, Model Context Protocol, ezprestapi, API keys
 type: reference
 ---
@@ -26,7 +26,7 @@ says what the standard is, what Exponential implements, where the code, settings
 | REST over HTTP | HTTP semantics, RFC 9110 | **Partly complies** | `ezprestapi` routes `/api/ezp/v1`, `/api/ezp/v2`; status classes in `kernel/private/rest/classes/` |
 | JSON | RFC 8259 | **Complies** | `ezpRestJsonView` (`application/json`, UTF-8), `ezjscore` call interface |
 | OpenAPI description | 3.x | **Not applicable** (kernel) | no OpenAPI document for the kernel's REST API; Velocity publishes one for its own handlers |
-| WebDAV | RFC 4918 | **Partly complies** | `webdav.php`, `kernel/private/classes/webdav/` on `zetacomponents/webdav`; lock ownership not implemented |
+| WebDAV | RFC 4918 | **Not applicable** | the WebDAV server was removed on 24 October 2026 |
 | SOAP | 1.1 (W3C Note) | **Partly complies** | `lib/ezsoap/`, `soap.php`, `settings/soap.ini [GeneralSettings] EnableSOAP=false`; no WSDL |
 | XML-RPC | 1999 specification | **Not applicable** | not implemented |
 | RSS export and import | RSS 1.0, RSS 2.0 (export); 0.91 to 2.0 (import) | **Complies** | `kernel/classes/ezrssexport.php`, `ezrssimport.php` |
@@ -195,29 +195,17 @@ PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK and UNLOCK. Class 1 is the basic se
 
 ### How Exponential complies
 
-- Entry point `webdav.php` at the installation root; it uses the Zeta Components WebDAV server
-  (`zetacomponents/webdav ~1.2` in `composer.json`) with the content backend
-  `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and the authentication backend
-  `ezwebdavcontentbackendauth.php` (basic authentication against Exponential users).
-- `settings/webdav.ini` (`[GeneralSettings]`, `[FolderSettings]`).
-- The lock plugin is registered (`ezcWebdavLockPluginConfiguration` in `webdav.php`) and the backend declares
-  `ezcWebdavLockBackend`.
-- Request and response recordings for COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND, PROPPATCH and PUT are in
-  `tests/tests/kernel/private/webdav/regression/`.
-- History: [the WebDAV engine of 4.1](../features/4.1/webdav_readme.txt) and the design notes in
-  [doc/eng-us/specifications/trunk/webdav](../specifications/trunk/webdav/readme.txt).
+It does not. Exponential no longer contains a WebDAV server: `webdav.php`, `kernel/private/classes/webdav/`,
+`settings/webdav.ini` and the package `zetacomponents/webdav` were removed on 24 October 2026. The server was off by
+default (`EnableWebDAV=false`), its locking (class 2) was never finished, its authorizer allowed every read before
+checking a policy, and the library's file backend did not keep the `Destination` of COPY and MOVE inside its root.
+
+History: [the WebDAV engine of 4.1](../features/4.1/webdav_readme.txt) and the design notes in
+[doc/eng-us/specifications/trunk/webdav](../specifications/trunk/webdav/readme.txt).
 
 ### Status
 
-**Partly complies.** Class 1 methods are implemented; locking (class 2) is incomplete.
-
-### Known gaps
-
-- The lock authorizer's methods `assignLock()`, `ownsLock()` and `releaseLock()` in
-  `ezwebdavcontentbackendauth.php` are empty (`@todo implement`); the backend's own comment says lock calls are still
-  missing in `setProperty` and `removeProperty`. Whether LOCK and UNLOCK work with real clients is **Unverified**.
-- The regression recordings have no `*Test.php` runner, so no PHPUnit suite in `phpunit.xml` runs them and CI does
-  not test WebDAV.
+**Not applicable.**
 
 ## SOAP 1.1
 

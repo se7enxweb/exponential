@@ -22,8 +22,8 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > "Change password at next sign-in": an administrator ticks it on a user account (the  
 > account edit form, or ./console exp:user-password-change-required); after that user's  
 > next sign-in every page sends them to user/password until they set a new password,  
-> which clears it. The REST interface answers 403 password\_change\_required, WebDAV and  
-> SOAP refuse the sign-in. Ignored for administrators in demo mode (EXP\_DEMO\_MODE=1).  
+> which clears it. The REST interface answers 403 password\_change\_required, SOAP refuses  
+> the sign-in. Ignored for administrators in demo mode (EXP\_DEMO\_MODE=1).  
 > Guide: doc/eng-us/features/6.0/password-change-at-next-sign-in.md  
 >
 > The views that stay open meanwhile: module/view, or a module alone for all its views.  

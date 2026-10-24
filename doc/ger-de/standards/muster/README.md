@@ -3,7 +3,7 @@ title: Katalog der Entwurfsmuster
 audience: developer
 category: standards
 order: 300
-summary: Jede Abstraktion und jedes Entwurfsmuster des Exponential-6-Stacks, im Quellcode gefunden: 5067 Vorkommen in 29 Kategorien über Kernel, lib und Extensions, mit Datei, Klasse, Beschreibung und Erweiterungspunkt.
+summary: Jede Abstraktion und jedes Entwurfsmuster des Exponential-6-Stacks, im Quellcode gefunden: 5066 Vorkommen in 29 Kategorien über Kernel, lib und Extensions, mit Datei, Klasse, Beschreibung und Erweiterungspunkt.
 keywords: Entwurfsmuster, Musterkatalog, Abstraktionen, Architektur, Fabrik, Erweiterungspunkt, Datentyp, Template-Operator, Fetch-Funktion, Modulansicht, Richtlinienfunktion, Workflow-Ereignis, design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -19,9 +19,9 @@ Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des
 
 | | |
 |---|---|
-| Vorkommen (alle Kategorien) | 5067 |
-| Klassen, Interfaces, Traits und Enums | 2877 (2804 Klassen, 72 Interfaces, 1 Trait) |
-| ... mit mindestens einem Muster | 2297 |
+| Vorkommen (alle Kategorien) | 5066 |
+| Klassen, Interfaces, Traits und Enums | 2875 (2802 Klassen, 72 Interfaces, 1 Trait) |
+| ... mit mindestens einem Muster | 2296 |
 | Modulansichten | 491 |
 | Richtlinienfunktionen | 232 |
 | Fetch-Funktionen | 290 |
@@ -29,8 +29,8 @@ Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des
 | Cronjob-Teile | 36 |
 | Event-Hooks | 97 |
 | INI-Plugin-Punkte | 574 |
-| Gelesene Quelldateien | 3747 PHP, 509 INI |
-| Bereiche | 142 |
+| Gelesene Quelldateien | 3745 PHP, 509 INI |
+| Bereiche | 141 |
 
 ## Die Muster
 
@@ -50,7 +50,7 @@ Die Regeln, denen der Code folgt: [Standards](../README.md) und [Architektur des
 | [Factory und statische Fabrikmethoden](fabrik.md) | Erzeugung | 352 | Klassenname endet auf Factory oder hat statische Methoden create*(), from*(), factory(), make*() oder erzeugt new self/new static in einer statischen Methode. |
 | [Builder](builder.md) | Erzeugung | 9 | Klassenname enthält Builder oder Generator. |
 | [Registry](registry.md) | Struktur | 30 | Klassenname enthält Registry oder hat statische Methoden register*(). |
-| [Strategy / Handler](strategie-handler.md) | Verhalten | 299 | Klassenname endet auf Handler, Backend, Driver, Transport, Engine oder Strategy oder implementiert ein Interface, dessen Name so endet. |
+| [Strategy / Handler](strategie-handler.md) | Verhalten | 298 | Klassenname endet auf Handler, Backend, Driver, Transport, Engine oder Strategy oder implementiert ein Interface, dessen Name so endet. |
 | [Template Method / abstrakte Basisklasse](schablonenmethode.md) | Verhalten | 53 | Eine abstrakte Klasse mit abstrakten und konkreten Methoden. |
 | [Interface (Vertrag)](schnittstelle.md) | Struktur | 72 | Jedes Interface. |
 | [Observer / Listener / Ereignis](beobachter.md) | Verhalten | 8 | Klassenname enthält Listener, Observer oder Subscriber oder hat Methoden attach()/notify()/addListener(); jeder Aufruf von ezpEvent notify()/filter() (siehe die Seite zu den Hooks). |
@@ -198,7 +198,6 @@ Eine Seite pro Teil der Codebasis: jede Klasse mit ihren Mustern und die dort de
 | [kernel/private/classes/services](bereich-kernel-private-classes-services.md) | 8 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/urlaliasfilters](bereich-kernel-private-classes-urlaliasfilters.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/views](bereich-kernel-private-classes-views.md) | 255 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/webdav](bereich-kernel-private-classes-webdav.md) | 2 | 0 | 0 | 0 | 0 |
 | [lib](bereich-lib.md) | 2 | 0 | 0 | 0 | 0 |
 | [lib/ezdb](bereich-lib-ezdb.md) | 10 | 0 | 0 | 0 | 0 |
 | [lib/ezdbschema](bereich-lib-ezdbschema.md) | 8 | 0 | 0 | 0 | 0 |

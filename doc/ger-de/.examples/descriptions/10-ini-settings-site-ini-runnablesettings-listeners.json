@@ -324,8 +324,8 @@
         "de": "Die Website, zu der ein Administrations-Siteaccess gehört: Seine Links „Website öffnen“ und „Auf der\nWebsite ansehen“ (Template-Operator siteaccess_url() ohne Parameter) führen zu\ndiesem Siteaccess. Setzen Sie ihn in der site.ini.append.php des Administrations-Siteaccess, wenn eine\nInstallation mehrere Websites bedient, jede mit eigener Administration. Leer: DefaultAccess."
     },
     "ini:settings/site.ini [SiteSettings] HTTPAUTHServerVariable": {
-        "en": "Use this variable on FASTCGI/CGI setups to define the Server variable name of the HTTP authentication string.\nOnly Webdav and SOAP interfaces have a dependency on this setting.",
-        "de": "Legt bei FastCGI-/CGI-Einrichtungen den Namen der Servervariable mit der Zeichenkette der HTTP-Authentifizierung fest.\nNur die Schnittstellen WebDAV und SOAP hängen von dieser Einstellung ab."
+        "en": "Use this variable on FASTCGI/CGI setups to define the Server variable name of the HTTP authentication string.\nOnly the SOAP interface has a dependency on this setting.",
+        "de": "Legt bei FastCGI-/CGI-Einrichtungen den Namen der Servervariable mit der Zeichenkette der HTTP-Authentifizierung fest.\nNur die Schnittstelle SOAP hängt von dieser Einstellung ab."
     },
     "ini:settings/site.ini [SiteSettings] IndexPage": {
         "en": "Which page to show when the root index (/) is accessed",

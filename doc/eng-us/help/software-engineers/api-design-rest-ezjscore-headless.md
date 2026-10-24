@@ -3,8 +3,8 @@ title: "API design: REST, ezjscore and headless"
 audience: software-engineer, developer
 category: software-engineering
 order: 800
-summary: The interfaces Exponential offers to other systems and front ends - the REST content API of ezprestapi at v1 and v2, OAuth 2.0 and personal API keys, the ezjscore call interface and expservices, outgoing audit webhooks, RSS and Atom, WebDAV and SOAP - with their status, their gaps, and design guidance for headless and hybrid systems and for your own endpoints.
-keywords: API, API design, REST, ezprestapi, v1, v2, OAuth, API keys, ezjscore, server functions, expservices, JSON, webhooks, headless, decoupled, OpenAPI, WebDAV, SOAP, software engineer
+summary: The interfaces Exponential offers to other systems and front ends - the REST content API of ezprestapi at v1 and v2, OAuth 2.0 and personal API keys, the ezjscore call interface and expservices, outgoing audit webhooks, RSS and Atom, and SOAP - with their status, their gaps, and design guidance for headless and hybrid systems and for your own endpoints.
+keywords: API, API design, REST, ezprestapi, v1, v2, OAuth, API keys, ezjscore, server functions, expservices, JSON, webhooks, headless, decoupled, OpenAPI, SOAP, software engineer
 type: help
 ---
 # API design: REST, ezjscore and headless
@@ -33,7 +33,7 @@ their own. The status of each protocol, with evidence and gaps, is in [API and p
 | `expservices` | named remote services on top of the call interface | see [Remote services and apps](../../guides/remote-services-and-apps.md) |
 | Audit webhook | delivering audit records to another system, HMAC-signed | complies with its own contract |
 | RSS and Atom | feeds (Atom export only) | [RSS feeds](../../guides/rss-feeds.md) |
-| WebDAV, SOAP | file access, legacy integrations; SOAP is off by default | partly complies |
+| SOAP | legacy integrations; off by default | partly complies |
 
 ## The REST content API
 

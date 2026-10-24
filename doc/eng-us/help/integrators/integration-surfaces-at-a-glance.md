@@ -4,7 +4,7 @@ audience: integrator, developer, admin
 category: integration
 order: 20
 summary: Every integration surface that Exponential 6.0.15 and its required extensions provide, with direction, protocol, authentication, where it lives and whether it is on by default, plus what is not provided and how to check what an installation has active.
-keywords: integration surfaces, API overview, REST, OAuth, API keys, expservices, ezjscore, RSS, Atom, OPML, SOAP, WebDAV, syndication, packages, CSV, xrowextract, workflows, triggers, ezpEvent, audit webhook, login handler, LDAP, SSO, search plugin, mail transport, payment gateway, not provided, GraphQL, SAML
+keywords: integration surfaces, API overview, REST, OAuth, API keys, expservices, ezjscore, RSS, Atom, OPML, SOAP, syndication, packages, CSV, xrowextract, workflows, triggers, ezpEvent, audit webhook, login handler, LDAP, SSO, search plugin, mail transport, payment gateway, not provided, GraphQL, SAML
 type: help
 ---
 # Integration surfaces at a glance
@@ -41,7 +41,6 @@ are in [API and protocol standards](../../standards/apis-and-protocols.md).
 | RSS imports | In | RSS 0.91 to 2.0 | `kernel/classes/ezrssimport.php`, cronjob `rssimport.php` | In the global cronjob part |
 | `syndication` | Both, installation to installation | XML feeds over SOAP | `syndication` extension, `/syndication/menu` | Needs `soap.ini EnableSOAP=true` |
 | SOAP server | In | SOAP 1.1, no WSDL | `soap.php`, `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
-| WebDAV | Both | WebDAV class 1 | `webdav.php`, `kernel/private/classes/webdav/` | `webdav.ini [GeneralSettings] EnableWebDAV=false` |
 | Packages (`.ezpkg`) | Both | Package archives; JSON package format | `ezpm.php`, Setup > Packages | On |
 | CSV import and export | Both | CSV | `bin/php/ezcsvimport.php`, `bin/php/ezcsvexport.php` | On |
 | `xrowextract` | Both, scheduled | CSV, JSON, XML, `.ezpkg`; SFTP, FTP, S3, WebDAV, HTTP POST | `xrowextract` extension, admin **Export** | Installed with the distribution |
@@ -79,6 +78,7 @@ Plan the following as custom work, or choose another approach:
 | GraphQL | Use the REST API or `expservices`, or write a module of your own |
 | An OpenAPI description of the content API | Document your routes in your interface specification ([template](interface-specification-template.md)) |
 | XML-RPC | Not implemented; use REST or SOAP |
+| A WebDAV server (content as a network drive) | Removed in October 2026 ([WebDAV and SOAP](webdav-and-soap.md#webdav)); use the uploads of the administration, or a file import with `xrowextract` |
 | SAML or an OpenID Connect provider | Write a login or SSO handler, or put an identity-aware proxy in front ([Single sign-on](single-sign-on-and-social-login.md)) |
 | A generic outgoing webhook for content events | A workflow event or event listener of your own, or the audit webhook sink with `content.object.publish` switched on ([Audit webhooks](outgoing-webhooks-from-the-audit-trail.md)) |
 | Updating content through REST | `POST /content/node/<id>` checks `content/edit` and answers 501; update from PHP or through `expservices` |
@@ -94,7 +94,6 @@ php bin/php/console exp:ini get site.ini/ExtensionSettings/ActiveExtensions   # 
 php bin/php/console exp:ini get rest.ini/Authentication/RequireAuthentication
 php bin/php/console exp:ini get expservices.ini/Services/Enabled
 php bin/php/console exp:ini get soap.ini/GeneralSettings/EnableSOAP
-php bin/php/console exp:ini get webdav.ini/GeneralSettings/EnableWebDAV
 php bin/php/console exp:ini get site.ini/UserSettings/LoginHandler
 php bin/php/console exp:ini get site.ini/MailSettings/Transport
 php bin/php/console exp:ini get site.ini/SearchSettings/SearchEngine

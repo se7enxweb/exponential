@@ -79,7 +79,7 @@ definiert, und der erste Aufruf einer neuen Seite kann CPU kosten, während ihre
 ## Uploads: Typen, Prüfung und Grenzen
 
 `image.ini [ImageUploadSettings]` entscheidet, welche hochgeladenen Dateien als Bilder akzeptiert werden, auf jedem Weg
-(das Bearbeitungsformular, das Upload-Modul, der Rich-Text-Editor, der AJAX-Uploader, WebDAV, Importe):
+(das Bearbeitungsformular, das Upload-Modul, der Rich-Text-Editor, der AJAX-Uploader, Importe):
 
 | Schlüssel | Mitgeliefert | Bedeutung |
 |---|---|---|

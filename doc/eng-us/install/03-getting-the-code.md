@@ -387,7 +387,7 @@ Git repository; the others are created by Composer or at run time.
 | `templates/` | yes | Code templates for the class generator (`.ctpl`). |
 | `tests/` | yes | The PHPUnit test suite (`tests/runtests.php`, `phpunit.xml`). |
 | `update/` | yes | Database update files per engine and version (`update/database/<engine>/`) and data repair scripts (`update/common/scripts/`); see [chapter 11](11-upgrading.md). |
-| `var/` | no (only `var/webdav/`) | Everything written at run time: `var/cache/`, `var/log/`, `var/storage/` (uploaded files, packages, the SQLite database in `var/storage/sqlite3/`), `var/autoload/` (the extensions' class maps), `var/vc/` (Velocity's run files and logs). Must be writable by the web server. |
+| `var/` | no | Everything written at run time: `var/cache/`, `var/log/`, `var/storage/` (uploaded files, packages, the SQLite database in `var/storage/sqlite3/`), `var/autoload/` (the extensions' class maps), `var/vc/` (Velocity's run files and logs). Must be writable by the web server. |
 | `vendor/` | no | The Composer libraries: Zeta Components, the installer plugin, Velocity when installed. |
 
 ### Files
@@ -398,7 +398,7 @@ Git repository; the others are created by Composer or at run time.
 | `index_rest.php` | The front controller of the REST API (`/api/`). |
 | `index_cluster.php` | Serves files from the database cluster. |
 | `index_treemenu.php` | The fast endpoint of the admin's content tree menu. |
-| `soap.php`, `webdav.php` | The SOAP and WebDAV entry points. |
+| `soap.php` | The SOAP entry point. |
 | `runcronjobs.php` | Runs cronjob parts: `php runcronjobs.php --list`. |
 | `autoload.php` | Loads Composer's autoloader and the kernel's; every entry point starts with it. |
 | `ezpm.php` | The package manager on the command line. |

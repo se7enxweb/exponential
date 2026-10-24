@@ -45,7 +45,7 @@ Since 15 October 2026 the image datatype accepts SVG (`.svg`, and `.svgz`) on ev
 - An SVG can carry script, so it is **never stored as uploaded**: the kernel's sanitizer, `expSvgSanitizer`, keeps only
   elements and attributes known to be safe (no script, no event attributes, no `foreignObject`, no external
   references), and the stored file is its output.
-- Every upload path sanitizes: the edit form, uploads, multi-upload, the rich text editor, WebDAV, package imports.
+- Every upload path sanitizes: the edit form, uploads, multi-upload, the rich text editor, package imports.
 - Every alias of an SVG is the sanitized file itself; SVGs are never scaled.
 - The file is served with headers that stop it from running anything when opened directly; serve it with the headers
   the SVG page lists when you use your own web server rules.

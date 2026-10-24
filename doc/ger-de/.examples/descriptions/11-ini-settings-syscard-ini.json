@@ -839,18 +839,6 @@
         "en": "Controls the smart viewcache handler, use enabled, disabled or exclusive.\nWhen the handler is disabled the system will clear the viewcache\nfor all published nodes of the current object, its parent(s), reverse\nrelated objects and objects with same keywords (if any).\nWhen enabled it will in addition try to follow the rules set in viewcache.ini\nfor more advanced relations between objects. e.g. to clear a forum\nlisting when a new topic or reply is posted.\nWhen exclusive, settings for specific classes are used exclusively\n(if defined), instead of in addition to the default settings.",
         "de": "Steuert den intelligenten Handler des View-Caches; verwenden Sie enabled, disabled oder exclusive.\nIst der Handler deaktiviert, leert das System den View-Cache\naller veröffentlichten Knoten des aktuellen Objekts, seines Elternknotens (seiner Elternknoten), umgekehrt\nverknüpfter Objekte und Objekte mit denselben Schlüsselwörtern (falls vorhanden).\nWenn aktiviert, versucht es zusätzlich, den in viewcache.ini gesetzten Regeln\nfür komplexere Beziehungen zwischen Objekten zu folgen, z. B. um eine Forums-\nliste zu leeren, wenn ein neues Thema oder eine Antwort gepostet wird.\nBei exclusive werden die Einstellungen für bestimmte Klassen ausschließlich verwendet\n(falls definiert), statt zusätzlich zu den Standardeinstellungen."
     },
-    "ini:settings/webdav.ini [FolderSettings]": {
-        "en": "FolderClasses[]=article\nFolderClasses[]=your_custom_class\nDEPRECATED: WebDAV will use the settings in upload.ini\n\nThis setting reveales the ID of the folder class.\nIn addition, it is also used to determine which\nattribute to use when creating/naming/renaming the folder.",
-        "de": "FolderClasses[]=article\nFolderClasses[]=your_custom_class\nVERALTET: WebDAV verwendet die Einstellungen aus upload.ini\n\nDiese Einstellung verrät die ID der Ordnerklasse.\nAußerdem bestimmt sie, welches\nAttribut beim Anlegen, Benennen und Umbenennen des Ordners verwendet wird."
-    },
-    "ini:settings/webdav.ini [GeneralSettings] FolderClasses": {
-        "en": "List of classes that should always be seen as a folder.\nBy default, if a class contains an image attribute it is seen as an image.",
-        "de": "Liste der Klassen, die immer als Ordner gelten sollen.\nStandardmäßig gilt eine Klasse mit einem Bildattribut als Bild."
-    },
-    "ini:settings/webdav.ini [GeneralSettings] StartNode": {
-        "en": "Custom start node for WebDAV operations.\nBy default it is /site/Content (NodeID 2).",
-        "de": "Eigener Startknoten für WebDAV-Operationen.\nStandardmäßig ist es /site/Content (Knoten-ID 2)."
-    },
     "ini:settings/wordmatch.ini": {
         "en": "Exponential configuration file for content copied from word document\n\nSyntax under each tag block: MatString[$className]=$matchString, could\nbe multiple lines.\nExample:\n-------------------------------------------------------------------\n[td]\nMatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black\n-------------------------------------------------------------------",
         "de": "Exponential-Konfigurationsdatei für aus Word-Dokumenten kopierte Inhalte\n\nSyntax unter jedem Tag-Block: MatString[$className]=$matchString, kann\nmehrzeilig sein.\nBeispiel:\n-------------------------------------------------------------------\n[td]\nMatchString[tdBlue]=mso-shading: white; mso-pattern: gray-20 black\nMatchString[tdRed]=mso-shading: white; mso-pattern: gray-30 black\n-------------------------------------------------------------------"

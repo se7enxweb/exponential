@@ -245,7 +245,7 @@ Default: `enabled`.
 ## HTTPAUTHServerVariable
 
 > Use this variable on FASTCGI/CGI setups to define the Server variable name of the HTTP authentication string.  
-> Only Webdav and SOAP interfaces have a dependency on this setting.  
+> Only the SOAP interface has a dependency on this setting.  
 
 Default: `Authorization`.
 

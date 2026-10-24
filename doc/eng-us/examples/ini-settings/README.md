@@ -89,7 +89,6 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [upload.ini](upload/README.md) | kernel | 12 |
 | [velocity.ini](velocity/README.md) | kernel | 13 |
 | [viewcache.ini](viewcache/README.md) | kernel | 1 |
-| [webdav.ini](webdav/README.md) | kernel | 2 |
 | [wordmatch.ini](wordmatch/README.md) | kernel | 10 |
 | [wordtoimage.ini](wordtoimage/README.md) | kernel | 1 |
 | [workflow.ini](workflow/README.md) | kernel | 3 |

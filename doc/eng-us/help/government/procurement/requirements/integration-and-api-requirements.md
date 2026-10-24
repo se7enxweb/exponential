@@ -4,7 +4,7 @@ audience: government, project-manager, developer, partner
 category: public-sector
 order: 90
 summary: Requirement wording for how a public CMS connects to other systems - content API, authentication, directory sign-in, feeds, webhooks, mail - with Exponential's documented protocols and their status from the APIs and protocols standards page.
-keywords: integration, API, REST, OAuth, API keys, LDAP, single sign-on, SSO, webhooks, RSS, sitemaps, SMTP, WebDAV, SOAP, interoperability, open standards, tender
+keywords: integration, API, REST, OAuth, API keys, LDAP, single sign-on, SSO, webhooks, RSS, sitemaps, SMTP, SOAP, interoperability, open standards, tender
 type: help
 ---
 # Integration and API requirements

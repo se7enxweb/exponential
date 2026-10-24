@@ -87,7 +87,6 @@ The guides and feature pages explain the background; these pages are for doing t
 | [How do I write rich text without the Online Editor?](how-do-i-write-rich-text-without-the-online-editor.md) | Editors |
 | [Why does search not find an item I know exists?](why-does-search-not-find-an-item.md) | Editors |
 | [How do I import or export a word processor document?](how-do-i-import-or-export-a-text-document.md) | Editors |
-| [How do I work with content as files over WebDAV?](how-do-i-work-with-content-over-webdav.md) | Editors |
 
 ## Administrators and site managers
 
