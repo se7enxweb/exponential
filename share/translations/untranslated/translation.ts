@@ -43865,6 +43865,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>required</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -53194,6 +53202,10 @@ your account.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -60562,6 +60574,18 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Missing file review mark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -68863,6 +68887,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You were signed out on your other devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

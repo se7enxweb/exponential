@@ -104,7 +104,12 @@ if ( $enableSOAP == 'true' )
 {
     // Login if we have username and password.
     if ( eZHTTPTool::username() and eZHTTPTool::password() )
-        eZUser::loginUser( eZHTTPTool::username(), eZHTTPTool::password() );
+    {
+        $soapUser = eZUser::loginUser( eZHTTPTool::username(), eZHTTPTool::password() );
+        // an account marked "change password at next sign-in" sets it in the web interface first
+        if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $soapUser, 'soap' ) )
+            eZUser::logoutCurrent();
+    }
 
     $server = new eZSOAPServer();
 

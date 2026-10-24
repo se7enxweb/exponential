@@ -38330,6 +38330,10 @@ your account.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>You were signed out on your other devices.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Choose a new password before you continue: an administrator asked you to replace the password you have now.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/register</name>
@@ -44866,6 +44870,14 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>required</source>
         <translation>required</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Change password at next sign-in</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</translation>
     </message>
 </context>
 <context>
@@ -54250,6 +54262,10 @@ your account.</translation>
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>You were signed out on your other devices.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Choose a new password before you continue: an administrator asked you to replace the password you have now.</translation>
     </message>
 </context>
 <context>
@@ -66279,6 +66295,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Missing file review mark</source>
         <translation>Missing file review mark</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Password change at next sign-in set</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Password change at next sign-in cleared</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Sent to the password change</translation>
     </message>
 </context>
 <context>

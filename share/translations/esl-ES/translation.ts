@@ -44831,6 +44831,14 @@ Si quieres enviar comentarios al encargado de aprobar el contenido o ver el esta
         <source>Add object</source>
         <translation type="obsolete">Añadir objeto</translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Cambiar la contraseña en el próximo inicio de sesión</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Después de iniciar sesión, el usuario debe elegir una contraseña nueva antes de hacer cualquier otra cosa. Úsalo cuando le des a alguien una contraseña temporal.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -54449,6 +54457,10 @@ tu cuenta.</translation>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Elige una contraseña nueva antes de continuar: un administrador te ha pedido que sustituyas la contraseña que tienes ahora.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -61873,6 +61885,18 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <source>Missing file review mark</source>
         <translation>Marca de revisión de archivo que falta</translation>
     </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Cambio de contraseña en el próximo inicio de sesión activado</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Cambio de contraseña en el próximo inicio de sesión desactivado</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Enviado al cambio de contraseña</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -68723,6 +68747,10 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>Se te ha desconectado en tus otros dispositivos.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Elige una contraseña nueva antes de continuar: un administrador te ha pedido que sustituyas la contraseña que tienes ahora.</translation>
     </message>
 </context>
 <context>
