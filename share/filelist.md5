@@ -196,8 +196,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-214ade2976c07ed4bb62ed1ca6e3abaa  composer.json
-f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
+860917dc269e24226a547db502be98cf  composer.json
+75921bd317e4f2f525e5953821f40364  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+e86a010cb3d51de8cc89b0e78f877a91  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -10465,7 +10465,7 @@ a9183a7583474c8fa6563874a16aeea6  doc/eng-us/help/partners/your-partner-page.md
 5e7228eadf0aeb06d318aeca574867a7  doc/eng-us/help/php-developers/ci-and-reproducing-a-red-check.md
 dff878e1f6c456031a44b1fe315879e6  doc/eng-us/help/php-developers/class-naming-and-the-exp-prefix.md
 2584905aea227e16cbbd6fe2305cb951  doc/eng-us/help/php-developers/code-for-every-supported-database.md
-90cfeef944593e75e715c260200fcb0b  doc/eng-us/help/php-developers/composer-for-php-developers.md
+d353619c2f232d3da9d0fdb81d32a571  doc/eng-us/help/php-developers/composer-for-php-developers.md
 ad944306402644104b8316edc3fad0bd  doc/eng-us/help/php-developers/contributing-php-changes.md
 3f2dc81171b49e4c101a7440179ec2c7  doc/eng-us/help/php-developers/csrf-and-ezformtoken.md
 c519b720841c5eb290b6b48559e63e32  doc/eng-us/help/php-developers/database-and-live-tests.md
@@ -12378,7 +12378,7 @@ b82a18f4d2802f4a2c9c2a3d8e1e8ef6  doc/eng-us/standards/patterns/singleton.md
 d2fc664f12971176f61d5e1223a1037d  doc/eng-us/standards/patterns/utility.md
 eb2886cb8c8d25c60a74b742733a7ffb  doc/eng-us/standards/patterns/value-object.md
 dd8219b03d60ce0dbee6e5abe1289f20  doc/eng-us/standards/patterns/workflow-event.md
-22195ddaf9460e74dd6a3adf2a67b110  doc/eng-us/standards/php-and-composer.md
+3afcf8f8779df748508da91dd1261b57  doc/eng-us/standards/php-and-composer.md
 31a8b4b37b1e81858be9ab41d77db05a  doc/eng-us/standards/privacy.md
 5305ce759b12efd18c5662266a014722  doc/eng-us/standards/security.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
@@ -17668,7 +17668,7 @@ d1d5beebd0bf87139791edad6bb04014  doc/ger-de/hilfe/php-entwickler/checklisten-fu
 23832e6cb67691687a91342823632b1e  doc/ger-de/hilfe/php-entwickler/ci-und-eine-rote-pruefung-nachstellen.md
 424561e48748b56b76e436ae0e23de3d  doc/ger-de/hilfe/php-entwickler/code-der-unter-php-8-0-laeuft.md
 d31f832344715a7c21230309ff74b4b8  doc/ger-de/hilfe/php-entwickler/code-fuer-jede-unterstuetzte-datenbank.md
-eb8b893d97427ee34ad12f7cbd3817ab  doc/ger-de/hilfe/php-entwickler/composer-fuer-php-entwickler.md
+8d4f882fce994f70e2fb3410969a3b17  doc/ger-de/hilfe/php-entwickler/composer-fuer-php-entwickler.md
 5cf75190b6d1c7dbe72e4896b73f8694  doc/ger-de/hilfe/php-entwickler/csrf-und-ezformtoken.md
 c1895da68acb115014eafe8313e025ad  doc/ger-de/hilfe/php-entwickler/das-engine-phar-fuer-php-entwickler.md
 1a9fdecfe62a950881f3e9ca474bc8e2  doc/ger-de/hilfe/php-entwickler/datenbank-und-live-tests.md
@@ -20543,7 +20543,7 @@ bdd932b618b8b2144b9af1e40997c2d5  doc/ger-de/standards/muster/schnittstelle.md
 10dc927505f0174ed43b25d2f2c8f7cd  doc/ger-de/standards/muster/wertobjekt.md
 1b857dc7ef873284c2529d6f70ad818e  doc/ger-de/standards/muster/workflow-ereignis.md
 bb7182f32e4453a2a7c891358d03c14d  doc/ger-de/standards/namenspraefixe-sevenx-und-exp.md
-2dcfc986ef9824b620acc607ad5d96ee  doc/ger-de/standards/php-und-composer.md
+39f38c3f743ef8f152b0f50a173930c9  doc/ger-de/standards/php-und-composer.md
 56be4b3e6d85515a9f91fb1a28c75ad8  doc/ger-de/standards/programmierstandards.md
 f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
@@ -25951,7 +25951,6 @@ eb5acd70adba577abb6f9c5588a8a4a1  tests/toolkit/extras/kernelwrapper/README
 849d7d7c1b903a9cdcae23dcd6cd377b  tests/toolkit/extras/kernelwrapper/classes/class.php
 4029eebb4d8db645efc4b1343bfeefcc  tests/toolkit/extras/kernelwrapper/classes/node.php
 58848abba8b04e91a465f6c5a412fb35  tests/toolkit/extras/kernelwrapper/classes/object.php
-5c9b03d0e6358c1f74387edd811518d6  tests/toolkit/extras/scripts/create-test-from-class.php
 e49e4520b2d58dce8285fb3ebbbe048b  tests/toolkit/extras/tests-files/workflowevent_regression_fetchtemplaterepeat.php
 390ae84af4b7639708afa6602d194a4c  tests/toolkit/extras/tests-files/workflowevent_regression_fetchtemplaterepeat.tpl
 eeec82123df435e4d0823f85f797143c  tests/toolkit/ezpdatabasehelper.php
