@@ -49736,6 +49736,18 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Arhiva je odbijena: unos &quot;%path&quot; upućuje izvan paketa.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arhiva je zapakirana u formatu PAX tar, koji se ne može uvesti. Zapakirajte paket u formatu GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arhiva je odbijena: unos &quot;%path&quot; ima tar vrstu &quot;%type&quot;, a paket sadrži samo datoteke i direktorije.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arhiva je odbijena: navodi unos dulji od %length bajtova.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arhiva je odbijena: unos &quot;%path&quot; je poveznica ili uređaj, a paket sadrži samo datoteke i direktorije.</translation>
     </message>

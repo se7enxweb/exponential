@@ -56976,6 +56976,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Архів відхилено: запис «%path» вказує за межі пакета.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Архів запаковано у форматі PAX tar, який не можна імпортувати. Запакуйте пакет у форматі GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Архів відхилено: запис «%path» має тип tar «%type», а пакет містить лише файли й каталоги.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Архів відхилено: він містить запис з ім’ям, довшим за %length байтів.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Архів відхилено: запис «%path» є посиланням або пристроєм, а пакет містить лише файли й каталоги.</translation>
     </message>

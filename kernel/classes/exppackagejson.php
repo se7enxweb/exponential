@@ -766,8 +766,13 @@ class expPackageJson
         }
         try
         {
-            $archive = ezcArchive::open( "compress.zlib://$archivePath", eZPackage::archiveTarType( $archivePath ),
-                                         new ezcArchiveOptions( array( 'readOnly' => true ) ) );
+            // tar headers scanned before ezcArchive reads them, extracted with modes 0644/0755 (expPackageArchive)
+            $archive = expPackageArchive::open( $archivePath, $tarProblem );
+            if ( !$archive )
+            {
+                $error = 'the archive was refused (' . expPackageArchive::problemText( $tarProblem ) . ')';
+                return false;
+            }
             $problem = eZPackageUploadInspector::entriesProblem( $archive );
             if ( $problem !== null )
             {

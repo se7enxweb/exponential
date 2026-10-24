@@ -49880,6 +49880,18 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; wskazuje poza pakiet.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archiwum zostało spakowane w formacie PAX tar, którego nie można zaimportować. Należy spakować pakiet w formacie GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; ma typ tar &quot;%type&quot;, a pakiet może zawierać tylko pliki i katalogi.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archiwum zostało odrzucone: zawiera wpis o nazwie dłuższej niż %length bajtów.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; jest linkiem lub urządzeniem, a pakiet może zawierać tylko pliki i katalogi.</translation>
     </message>

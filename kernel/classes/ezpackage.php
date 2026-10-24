@@ -1324,8 +1324,6 @@ class eZPackage
 
             eZDir::mkdir( $archivePath, false, true );
 
-            $archiveOptions = new ezcArchiveOptions( array( 'readOnly' => true ) );
-
             // Fix for issue #15891: ezjscore - file names are cutted
             // Force the type of the archive as ezcArchive::TAR_GNU so that long file names are supported on Windows
             // The previous value for the second parameter was null which meant the type was guessed from the
@@ -1335,8 +1333,18 @@ class eZPackage
             // packages of the 3.x releases were written) is read as V7: the GNU
             // reader never gets past the first "\0" typed file of such an archive and reads the same
             // block for ever.
-            $archiveType = self::archiveTarType( $archiveName );
-            $archive = ezcArchive::open( "compress.zlib://$archiveName", $archiveType, $archiveOptions );
+            // expPackageArchive::open() scans the tar headers first. Measured with PHP 8.5.4: a PAX archive
+            // (type "x", Python's tarfile since 3.8) kept the GNU reader of ezcArchive in an endless loop until
+            // max_execution_time, and a long name header of any declared size was read into memory before a single
+            // entry was checked. It also extracts with modes 0644/0755 instead of the archive's (a file packed as
+            // 04755 came out set-uid).
+            $archive = expPackageArchive::open( $archiveName, $tarProblem );
+            if ( !$archive )
+            {
+                eZDebug::writeError( "The archive $archiveName was refused (" . expPackageArchive::problemText( $tarProblem ) . "), not imported", __METHOD__ );
+                eZPackage::removeFiles( $archivePath );
+                return false;
+            }
 
             // the definition in either format: package.xml (classic) or package.json (JSON format)
             $fileList = array();
