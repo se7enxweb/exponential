@@ -43880,6 +43880,14 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
         <source>required</source>
         <translation>necessarium</translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Tesseram proximo introitu mutare</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Post introitum usor novam tesseram eligere debet, antequam quidquam aliud faciat. Hoc utere, cum alicui tesseram temporariam das.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -53339,6 +53347,10 @@ rationem tuam activeres.</translation>
         <source>Cancel</source>
         <translation>Abrogare</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Novam tesseram elige, antequam pergas: administrator te rogavit ut tesseram quam nunc habes mutares.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -60715,6 +60727,18 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Missing file review mark</source>
         <translation>Fasciculus deficiens ad recognitionem notatus</translation>
     </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Mutatio tesserae proximo introitu constituta</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Mutatio tesserae proximo introitu sublata</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Ad mutationem tesserae missus</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -67565,6 +67589,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>In ceteris instrumentis tuis sessiones tuae clausae sunt.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Novam tesseram elige, antequam pergas: administrator te rogavit ut tesseram quam nunc habes mutares.</translation>
     </message>
 </context>
 <context>

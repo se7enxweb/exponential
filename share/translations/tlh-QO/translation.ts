@@ -43880,6 +43880,14 @@ chaw&apos;wI&apos;vaD ja&apos;ghachmey DangeH DaneHchugh pagh Dotlh DaleghmeH, b
         <source>required</source>
         <translation>poQlu&apos;</translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>veb &apos;elDI&apos; pegh mu&apos; yIchoH</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>&apos;elDI&apos; lo&apos;wI&apos;, latlh Ho&apos;Du&apos; ruchpa&apos; pegh mu&apos; chu&apos; wIvnIS. pegh mu&apos; ru&apos; DanobDI&apos; yIlo&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -53339,6 +53347,10 @@ yIlob.</translation>
         <source>Cancel</source>
         <translation>yIqIl</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>yIruchpa&apos; pegh mu&apos; chu&apos; yIwIv: DaH pegh mu&apos;lIj Datam &apos;e&apos; tlhob loHwI&apos;.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -60715,6 +60727,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Missing file review mark</source>
         <translation>tu&apos;lu&apos;be&apos;bogh ghItlh nuDmeH wIvghach</translation>
     </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>veb &apos;elDI&apos; pegh mu&apos; choH: chu&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>veb &apos;elDI&apos; pegh mu&apos; choH: teqlu&apos;</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>pegh mu&apos; choHmeH Daq ngeHlu&apos;</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -67565,6 +67589,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>De&apos;wI&apos;meylIj latlhDaq bImejmoHlu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>yIruchpa&apos; pegh mu&apos; chu&apos; yIwIv: DaH pegh mu&apos;lIj Datam &apos;e&apos; tlhob loHwI&apos;.</translation>
     </message>
 </context>
 <context>

@@ -59,6 +59,13 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
         {
             return false;
         }
+        // an account marked "change password at next sign-in" sets it in the web interface first
+        if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $user, 'webdav' ) )
+        {
+            eZUser::logoutCurrent();
+            eZWebDAVContentBackend::appendLogEntry( "Refused: the account must change its password first" );
+            return false;
+        }
         eZWebDAVContentBackend::appendLogEntry( "AuthenticatedBasic" );
         return true;
     }

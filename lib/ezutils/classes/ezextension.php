@@ -198,6 +198,37 @@ class eZExtension
     }
 
     /**
+     * The extensions the kernel's own designs need (site.ini [ExtensionSettings] RequiredExtensions[]) that are
+     * installed, by their directory names. They are active in every siteaccess, ahead of ActiveExtensions[], so an
+     * override that resets ActiveExtensions[] keeps them; one that is not installed is left out without an error.
+     *
+     * @param eZINI|null $siteINI
+     * @return array
+     */
+    public static function requiredExtensions( eZINI|null $siteINI = null )
+    {
+        if ( $siteINI === null )
+        {
+            $siteINI = eZINI::instance();
+        }
+        if ( !$siteINI->hasVariable( 'ExtensionSettings', 'RequiredExtensions' ) )
+        {
+            return array();
+        }
+
+        $required = array();
+        foreach ( (array)$siteINI->variable( 'ExtensionSettings', 'RequiredExtensions' ) as $name )
+        {
+            $name = trim( (string)$name );
+            if ( $name !== '' && self::extensionPath( $name, $siteINI ) !== false )
+            {
+                $required[] = self::extensionName( $name );
+            }
+        }
+        return array_values( array_unique( $required ) );
+    }
+
+    /**
      * Return an array with activated extensions.
      *
      * @note Default extensions are those who are loaded before a siteaccess are determined while access extensions
@@ -220,7 +251,8 @@ class eZExtension
         $activeExtensions = array();
         if ( !$extensionType || $extensionType === 'default' )
         {
-            $activeExtensions = $siteINI->variable( 'ExtensionSettings', 'ActiveExtensions' );
+            $activeExtensions = array_merge( self::requiredExtensions( $siteINI ),
+                                             (array)$siteINI->variable( 'ExtensionSettings', 'ActiveExtensions' ) );
         }
 
         if ( !$extensionType || $extensionType === 'access' )
@@ -776,7 +808,7 @@ class eZExtension
      *
      *  - on_disk:  every directory in the extension roots (ExtensionDirectory and AdditionalExtensionDirectories),
      *              each name once, active or not
-     *  - global:   ActiveExtensions found on disk: active in every siteaccess
+     *  - global:   RequiredExtensions and ActiveExtensions found on disk: active in every siteaccess
      *  - here:     active in the current siteaccess and found on disk: ActiveExtensions, this siteaccess's
      *              ActiveAccessExtensions and those switched on at run time, in loading order
      *  - anywhere: active in at least one siteaccess and found on disk: ActiveExtensions and the
@@ -830,7 +862,8 @@ class eZExtension
         };
 
         $missing = array();
-        $global = $resolve( (array)$siteINI->variable( 'ExtensionSettings', 'ActiveExtensions' ), $missing );
+        // RequiredExtensions[] are active in every siteaccess too (those that are installed; requiredExtensions())
+        $global = $resolve( array_merge( self::requiredExtensions( $siteINI ), (array)$siteINI->variable( 'ExtensionSettings', 'ActiveExtensions' ) ), $missing );
         // activeExtensions() gives the loading order (ExtensionOrdering) and adds the extensions switched on at run time
         $here = $resolve( self::activeExtensions( false, $siteINI ), $missing );
 

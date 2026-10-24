@@ -140,6 +140,9 @@ class Password extends \Exponential\Runnable\ModuleView
                         \expPasswordPolicy::restampOwnSession( $stored );
                         $otherSessionsSignedOut = \expPasswordPolicy::stampCheckEnabled();
                         $notificationSent = $policy->sendChangedMail( $stored, $sessionsEnded, $otherSessionsSignedOut );
+                        // a new password clears "change password at next sign-in" (expPasswordChangeRequired)
+                        if ( class_exists( 'expPasswordChangeRequired' ) )
+                            \expPasswordChangeRequired::clear( $stored, 'password' );
                     }
                     else
                         $formErrors[] = \ezpI18n::tr( 'kernel/user/password', 'The password could not be changed. Please try again later.' );
@@ -210,6 +213,9 @@ class Password extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( "notification_sent", $notificationSent );
         $tpl->setVariable( "demo_mode_locked", $demoLocked );
         $tpl->setVariable( "demo_mode_text", $demoLocked ? \expDemoMode::refusalText() : '' );
+        // the user was sent here to set a new password before anything else (expPasswordChangeRequired)
+        $tpl->setVariable( "password_change_required", !$passwordChanged && class_exists( 'expPasswordChangeRequired' )
+                                                       && \expPasswordChangeRequired::isRequired( $user ) );
         $tpl->setVariable( "redirect_uri", (string)$redirectionURI );
         $tpl->setVariable( 'redirect_if_discarded', \eZRedirectManager::formReturnURI( $Module, self::FORM_RETURN_NAMES ) );
         $tpl->setVariable( "password_js_config", $jsConfig );

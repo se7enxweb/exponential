@@ -80,6 +80,15 @@ class ezpRestAuthConfiguration
         $user = $this->filter->authenticate( $auth, $this->req );
         if ( $user instanceof eZUser )
         {
+            // An account marked "change password at next sign-in" sets it in the web interface first: 403
+            // password_change_required (expPasswordChangeRequired), before the request is signed in
+            if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $user, 'rest' ) )
+            {
+                $this->req->variables['ezpAuth_redirUrl'] = $this->req->uri;
+                $this->req->variables['ezpAuth_reason'] = expPasswordChangeRequired::REST_ERROR;
+                $this->req->uri = eZINI::instance( 'rest.ini' )->variable( 'System', 'ApiPrefix' ) . '/auth/oauth/login';
+                return new ezcMvcInternalRedirect( $this->req );
+            }
             $userID = $user->id();
             if ( $userID != eZUser::currentUserID() )
             {

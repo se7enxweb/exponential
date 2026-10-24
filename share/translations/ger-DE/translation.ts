@@ -41562,6 +41562,10 @@ Konto zu aktivieren.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Sie wurden auf Ihren anderen Geräten abgemeldet.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Wählen Sie ein neues Passwort, bevor Sie fortfahren: Ein Administrator hat Sie gebeten, Ihr jetziges Passwort zu ersetzen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/register</name>
@@ -49072,6 +49076,14 @@ Wenn Sie einen Kommentar zum Freigebenden schicken oder den Status sehen wollen,
     <message>
         <source>required</source>
         <translation>erforderlich</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Passwort bei der nächsten Anmeldung ändern</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Nach der Anmeldung muss der Benutzer ein neues Passwort wählen, bevor er etwas anderes tun kann. Verwenden Sie dies, wenn Sie jemandem ein vorläufiges Passwort geben.</translation>
     </message>
 </context>
 <context>
@@ -60517,6 +60529,10 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>Auf Ihren anderen Geräten wurden Sie abgemeldet.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Wählen Sie ein neues Passwort, bevor Sie fortfahren: Ein Administrator hat Sie gebeten, Ihr jetziges Passwort zu ersetzen.</translation>
     </message>
 </context>
 <context>
@@ -74986,6 +75002,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Fehlende Datei zur Prüfung markiert</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Passwortänderung bei der nächsten Anmeldung gesetzt</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Passwortänderung bei der nächsten Anmeldung aufgehoben</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Zur Passwortänderung weitergeleitet</translation>
     </message>
 </context>
 <context>

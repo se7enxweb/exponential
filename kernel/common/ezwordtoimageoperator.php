@@ -90,6 +90,21 @@ class eZWordToImageOperator
         return $designThemes[$design];
     }
 
+    /**
+     * The directory the icon repositories (share/icons, extension/<name>/icons) are looked up in: the site's
+     * directory (eZSys::siteDir()) when it is one, else the current directory, the legacy root. Under a Symfony
+     * front controller (the Legacy Bridge's web/app.php or public/index.php) SCRIPT_FILENAME does not end in the
+     * legacy index.php, so siteDir() is "<web dir>/app.php/", which is no directory: every theme was skipped, each
+     * icon answered "Missing icon file" and its <img> pointed at <theme>/<size name>/mimetypes/empty.png, a 404.
+     *
+     * @return string
+     */
+    static function iconRootDirectory()
+    {
+        $siteDir = (string)eZSys::siteDir();
+        return ( $siteDir !== '' && is_dir( $siteDir ) ) ? $siteDir : '';
+    }
+
     /*!
       Returns the template operators.
     */
@@ -175,7 +190,7 @@ class eZWordToImageOperator
                 $mapName = $mapNames[$type];
 
                 // Build the list of repositories to search
-                $siteDir = eZSys::siteDir();
+                $siteDir = self::iconRootDirectory();
                 if ( !is_array( $extensions ) )
                     $extensions = array();
                 $matches = array_merge( array( $defaultRepository ), eZExtension::expandedPathList( $extensions, 'icons' ) );
@@ -377,7 +392,7 @@ class eZWordToImageOperator
                 if ( !is_array( $extensions ) )
                     $extensions = array();
 
-                $siteDir = eZSys::siteDir();
+                $siteDir = self::iconRootDirectory();
 
                 $matches = eZExtension::expandedPathList( $extensions, 'icons' );
                 $matches[] = $defaultRepository;
@@ -452,7 +467,7 @@ class eZWordToImageOperator
                 if ( !is_array( $extensions ) )
                     $extensions = array();
 
-                $siteDir = eZSys::siteDir();
+                $siteDir = self::iconRootDirectory();
 
                 $groups = array( 'mimetype_icon' => 'MimeIcons',
                                  'class_icon' => 'ClassIcons',

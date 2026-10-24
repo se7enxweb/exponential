@@ -81,7 +81,9 @@ class eZTemplateToolbarFunction
 
             $toolbarPosition = $nameValue;
             $toolbarName = "Toolbar_" . $toolbarPosition;
-            $toolArray = $toolbarIni->variable( $toolbarName, 'Tool' );
+            // A toolbar the siteaccess does not configure (no [Toolbar_<name>] in toolbar.ini, as admin_right and
+            // admin_developer in a siteaccess that only falls back to the admin design) has no tools, without an error
+            $toolArray = $toolbarIni->hasVariable( $toolbarName, 'Tool' ) ? $toolbarIni->variable( $toolbarName, 'Tool' ) : array();
             if ( !is_array( $toolArray ) )
                 $toolArray = array();
 
@@ -259,7 +261,9 @@ class eZTemplateToolbarFunction
                     $toolbarPosition = $tpl->elementValue( $functionParameters["name"], $rootNamespace, $currentNamespace, $functionPlacement );
                     $definedVariables = array();
                     $toolbarName = "Toolbar_" . $toolbarPosition;
-                    $toolArray = $toolbarIni->variable( $toolbarName, 'Tool' );
+                    // A toolbar the siteaccess does not configure (no [Toolbar_<name>] in toolbar.ini, as admin_right and
+                    // admin_developer in a siteaccess that only falls back to the admin design) has no tools, without an error
+                    $toolArray = $toolbarIni->hasVariable( $toolbarName, 'Tool' ) ? $toolbarIni->variable( $toolbarName, 'Tool' ) : array();
 
                     if ( !is_array( $toolArray ) )
                         $toolArray = array();
