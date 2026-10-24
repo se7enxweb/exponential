@@ -25724,6 +25724,7 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
+654c78882b4e6b36a7b6d761d26ddbd2  tests/tests/lib/ezdb/eZSQLite3SerialIDTest.php
 6692179605b9a4b1f193f7396448e17e  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
 73b21f6d7ea1ac12151a02b2606d2cdc  tests/tests/lib/ezdb/expPDODBTest.php
 a0cfc060f83bf5becb309e1ec1003f2f  tests/tests/lib/ezdb/ezdbinterface_test.php
