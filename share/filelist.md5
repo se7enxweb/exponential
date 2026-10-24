@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+c46671e545371c0bbf3028247cec36ac  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -20782,7 +20782,7 @@ e50575f294cec5f05bd5539278cceb82  extension/ezjscore/autoloads/eztemplateautoloa
 464c0bd32338160c0de864dbfd79d0cd  extension/ezjscore/classes/ajaxuploader/ezpajaxuploaderhandlerinterface.php
 ca27db89bcb0d92dc460ecff228f14cb  extension/ezjscore/classes/ajaxuploader/ezprelationajaxuploader.php
 aef685f141542ec837d23cd240b3eee4  extension/ezjscore/classes/ajaxuploader/ezprelationlistajaxuploader.php
-062bf7e7efc405f2a8deee9afee08c8e  extension/ezjscore/classes/ezjscajaxcontent.php
+9b80e70c1a14e378f0a6f0a0267f372e  extension/ezjscore/classes/ezjscajaxcontent.php
 e182699a31b59c20ea1ba8a0801f3460  extension/ezjscore/classes/ezjsccachemanager.php
 6414842acfc5fabe67aa8986d865eff7  extension/ezjscore/classes/ezjsccssoptimizer.php
 ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
@@ -24662,6 +24662,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 893aa82aa98f726b8c3707d41329e4f7  tests/tests/extension/ezflow/ezflowEditScriptTest.php
 63f1210778fca68d6548215d9865edef  tests/tests/extension/ezflow/js/ezflow_edit.js
+c9b0dea13595fbbbba7c216eb2124e20  tests/tests/extension/ezjscore/ezjscAjaxContentJsonTest.php
 1e974b3f938f94974e32b08b71f1c2f9  tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php
 a12c3e4b151896794176e0c9ca78d5ca  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php
