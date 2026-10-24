@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+3cfc0ed475c8377ce88db31a0e8cf92f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3438,6 +3438,7 @@ aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands.md
 09126e5f8caee5c1c7e418680e6f5e4f  doc/eng-us/bc/6.0/oauth-authorize-policy.md
 5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
+33b227c29b7b4d34c079af5e0e32fc8f  doc/eng-us/bc/6.0/oauth-token-hardening.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
@@ -4937,10 +4938,10 @@ f03a38793bf6b11e16691cfec0b17612  doc/eng-us/examples/ini-settings/rest/Authenti
 c96ff90781a378411143192c8466ee5b  doc/eng-us/examples/ini-settings/rest/CacheSettings.md
 d21a9606681dfe00727029d405ebe666  doc/eng-us/examples/ini-settings/rest/CorsSettings.md
 3ba79fb25271b5fc45911b3d79a8f7ec  doc/eng-us/examples/ini-settings/rest/DebugSettings.md
-2f3bdaeb6cf9f969d9e6e0ab635e1198  doc/eng-us/examples/ini-settings/rest/OAuthSettings.md
+8b76a48bc15306717c7b5aa6b1d70afd  doc/eng-us/examples/ini-settings/rest/OAuthSettings.md
 5fffabea45925191ea0eb63d39e9034a  doc/eng-us/examples/ini-settings/rest/OutputSettings.md
 40b44f989441d03e7e289bf5b6858efb  doc/eng-us/examples/ini-settings/rest/PreRoutingFilters.md
-b6b6ca7ce187cb80b480b0ce21b19cac  doc/eng-us/examples/ini-settings/rest/README.md
+286ff105202e3a7f8ba7148a060eb0df  doc/eng-us/examples/ini-settings/rest/README.md
 7abdaa9187f460e6686f7c97e83d97d8  doc/eng-us/examples/ini-settings/rest/RequestFilters.md
 da3d5309e6ae5a766a45fba86c0ad1c6  doc/eng-us/examples/ini-settings/rest/ResponseFilters.md
 56ab46dd56360b175e103102d23e7722  doc/eng-us/examples/ini-settings/rest/ResultFilters.md
@@ -6265,7 +6266,7 @@ bd9887246e537835f690a8d60fbcbba4  doc/eng-us/features/6.0/extensions/ezmbpaex.md
 d1ba7d6e53ad78c2b1d8b717803797e9  doc/eng-us/features/6.0/extensions/ezoe.md
 f2b92b0e36552e88377e04008fa73e97  doc/eng-us/features/6.0/extensions/ezpaypal.md
 7638eaf0c246a8e394318c73d2a33a31  doc/eng-us/features/6.0/extensions/ezpm.md
-02668bc5ab76a781117f39f2abbe752b  doc/eng-us/features/6.0/extensions/ezprestapi.md
+77bd2422c2e5be88e26909a5868b60a8  doc/eng-us/features/6.0/extensions/ezprestapi.md
 5300f006e9c1a135dc7fa95771830cc6  doc/eng-us/features/6.0/extensions/ezprestapiprovider.md
 65dde89dc0738636c27854eb5445f92e  doc/eng-us/features/6.0/extensions/ezstarrating.md
 42a7c02a709bdc81009b9c9e1620a86d  doc/eng-us/features/6.0/extensions/eztags.md
@@ -6448,7 +6449,7 @@ c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
 ff27a9b53a75e48c42e57661cd03eddf  doc/eng-us/guides/pdf-exports.md
 970baf1fe67bc723695c6fb1bb358f96  doc/eng-us/guides/preloading-caches.md
 a18d1933d4f72ad93e278381d78e827f  doc/eng-us/guides/remote-services-and-apps.md
-ddc6c4fbe3bd9236974b19bc53884ee6  doc/eng-us/guides/rest-api-v1-and-v2.md
+a9bb2ec96e9ec8787e1dd16e4531a767  doc/eng-us/guides/rest-api-v1-and-v2.md
 73b431620545776f5b07f75bbb73a1fa  doc/eng-us/guides/roles-and-policies.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
@@ -7294,7 +7295,7 @@ bed147861c9b9c9bb11564c44d7ac9d5  doc/eng-us/help/cms-developers/sections-roles-
 073e74326501b86b4d9dca0ff555e21f  doc/eng-us/help/cms-developers/templates-and-overrides-for-cms-developers.md
 b7f982793fc925581a1d2abe1003ae86  doc/eng-us/help/cms-developers/the-built-in-shop.md
 6dadc6ac3fa4c13bcfd964bfa760f901  doc/eng-us/help/cms-developers/the-content-model.md
-9fc10e72c61e7e4695343d6a3cefe8ac  doc/eng-us/help/cms-developers/the-rest-api.md
+cd788cb0badb7cb805a1164a7cc9bf0e  doc/eng-us/help/cms-developers/the-rest-api.md
 91cfce17908e285326844c25acf06013  doc/eng-us/help/cms-developers/translations-and-languages.md
 30b91b5b965aef11d0fc2787f53c1efd  doc/eng-us/help/cms-developers/url-aliases-and-routing.md
 e907c3fbae5f561201838e8a151571a8  doc/eng-us/help/cms-developers/users-and-registration.md
@@ -7392,7 +7393,7 @@ c3329393cbdc5146b456c028d7730612  doc/eng-us/help/creators/app-creators/fetch-fu
 f8f71afd540d4d5ea6f537568ce208c1  doc/eng-us/help/creators/app-creators/json-endpoints-with-ezjscore.md
 9d3bac7d742c8e97e7d01ee4929379c4  doc/eng-us/help/creators/app-creators/module-definition-reference.md
 754379f43bdadf3775be6337e1f4f95d  doc/eng-us/help/creators/app-creators/notifications-and-mail.md
-e6b612dabdf5018fa4d4b292106f02e6  doc/eng-us/help/creators/app-creators/oauth-and-api-keys.md
+a405ec7f5b6c2ba6155b6637fe995d99  doc/eng-us/help/creators/app-creators/oauth-and-api-keys.md
 d93141b2aa4c4c40994c67d11b3e6494  doc/eng-us/help/creators/app-creators/packages-and-ezpkg.md
 dcdba8cd8c4c18000a537ccea46b76eb  doc/eng-us/help/creators/app-creators/packaging-as-an-extension.md
 7d252b02aab345271b57d8d7f469bee7  doc/eng-us/help/creators/app-creators/persistent-objects-and-custom-tables.md
@@ -10011,13 +10012,13 @@ d67cf8fa984204bd5666fa1b62c35025  doc/eng-us/help/integrators/login-handlers-lda
 a344522822b8471936be4ff876d42508  doc/eng-us/help/integrators/mapping-content-classes-to-external-data.md
 dda29dd579d4310ab1fd3f51a527d3cf  doc/eng-us/help/integrators/migrating-content-from-another-cms.md
 439e6efa814fe1f304e7f16b7642abfa  doc/eng-us/help/integrators/monitoring-integrations.md
-ad882b8fd177e1a06616dd03a6296b95  doc/eng-us/help/integrators/oauth-applications-for-integrations.md
+34585342a20ad56bc624c7bd9bc9e0af  doc/eng-us/help/integrators/oauth-applications-for-integrations.md
 0d78a4149491e55a763e05516fbc0736  doc/eng-us/help/integrators/outgoing-webhooks-from-the-audit-trail.md
 d930e1540170ef1bcd448ccbf51c4a9c  doc/eng-us/help/integrators/packages-import-and-export.md
 e0d89e91600656d815a04d5d72aaeaac  doc/eng-us/help/integrators/payment-gateways-and-the-shop.md
 fa787380e7fd3e04b63a9d410e6b4322  doc/eng-us/help/integrators/personal-api-keys-for-integrations.md
 5bf3de5847a5306b09cc62fa28544c47  doc/eng-us/help/integrators/remote-services-with-expservices.md
-c6dcc3fb4d596cbb9e2bcd2698483a16  doc/eng-us/help/integrators/rest-api-for-integrators.md
+2494d522f02db10b996cc73bf1c55207  doc/eng-us/help/integrators/rest-api-for-integrators.md
 fd2eac0db5aeb155096c08158cfb65b6  doc/eng-us/help/integrators/rss-atom-and-opml-feeds.md
 30d105ef14dd10f06d72057da9a69125  doc/eng-us/help/integrators/search-engine-integration.md
 1167ddb20bf0aa93f9359d898684e290  doc/eng-us/help/integrators/security-for-integrations.md
@@ -10228,10 +10229,10 @@ e6cdbd205e096f3fa39d20f244750a42  doc/eng-us/help/manual/which-cache-do-i-clear.
 952892ed18e07a289ad3932936a86799  doc/eng-us/help/media-and-uploads.md
 000adbe890d78c166cf82b3bdf8a9957  doc/eng-us/help/mobile-app-developers/auth/README.md
 736a37eb467caff750ab8ae0dd266169  doc/eng-us/help/mobile-app-developers/auth/a-backend-for-your-app.md
-b041c3237fa7c68f95e057271d4af605  doc/eng-us/help/mobile-app-developers/auth/authorization-header-and-proxies.md
+38d209194f3924ed81a88837641ddd57  doc/eng-us/help/mobile-app-developers/auth/authorization-header-and-proxies.md
 49a7601401e3f022e0bc57837fb7e48a  doc/eng-us/help/mobile-app-developers/auth/choosing-a-credential.md
 80a3f167227781802e13518cb4e8356c  doc/eng-us/help/mobile-app-developers/auth/expservices-tokens-in-apps.md
-26349c43005c771ec9bf0a5be98dec47  doc/eng-us/help/mobile-app-developers/auth/oauth2-authorization-code-flow.md
+61beaa1482ac203077cecee44e0a5089  doc/eng-us/help/mobile-app-developers/auth/oauth2-authorization-code-flow.md
 fe10976c4a4883d28096097718738ad7  doc/eng-us/help/mobile-app-developers/auth/personal-api-keys-for-tools.md
 cc7ac691d668001296fbb1b4fa411994  doc/eng-us/help/mobile-app-developers/auth/storing-secrets-on-devices.md
 1c614174c4277a47c0eee7a475f6843e  doc/eng-us/help/mobile-app-developers/checklists/README.md
@@ -12196,7 +12197,7 @@ f215c05198661b115822ecf85b049791  doc/eng-us/specifications/trunk/webdav/design.
 5437549b02cb05d98a6c0e9faa2a9d6e  doc/eng-us/specifications/trunk/webdav/testing.txt
 063ce552bc878f747754fe24aeba8d5b  doc/eng-us/standards/README.md
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
-e3fc31889b0d5bf593609c3c695c112b  doc/eng-us/standards/apis-and-protocols.md
+d2e882b12acbac67e2b1f352b0cde134  doc/eng-us/standards/apis-and-protocols.md
 76b1855ff6528d0dced746e1ff7e1e5c  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 7cb780b6b347d8eae94a177996e7ef6d  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
@@ -22847,7 +22848,7 @@ b70ab5d832559492657ceb94c8d63faa  kernel/private/rest/classes/cache/options/stor
 f688b66dbcc427e808dc90540217df12  kernel/private/rest/classes/content_renderer.php
 4298b4f8a8448fa6987aa77166eaaacf  kernel/private/rest/classes/controllers/auth.php
 0b6574eea43984924b4c4b7069581232  kernel/private/rest/classes/controllers/error.php
-049553eab199ebdc8c52f82ff3accf7c  kernel/private/rest/classes/controllers/oauth_token.php
+19877b2fd5c321b77cd24288b1700635  kernel/private/rest/classes/controllers/oauth_token.php
 9d1e29271766054745de281a4dc8b649  kernel/private/rest/classes/controllers/rest_controller.php
 b3b653fbe08e028ebeeeac286ccb6e60  kernel/private/rest/classes/cors.php
 690a78e18937a4139eafd518d526f754  kernel/private/rest/classes/debug/debug.php
@@ -22890,9 +22891,9 @@ f18bde4e8acf59d184759eb494239a0d  kernel/private/rest/classes/models/rest_model.
 d18b0c46a501fb27380f2229539815c8  kernel/private/rest/classes/mvc_configuration.php
 7ce787be69b6557fc858ea8987cbc933  kernel/private/rest/classes/oauth/authorize_policy.php
 c7af38bc5a082e7290758290a6343792  kernel/private/rest/classes/oauth/authorize_policy_grant.php
-2699aed333387d9f87475e2e520a4aa3  kernel/private/rest/classes/oauth/oauth_filter.php
+c783e27b95c1da1afc2b5aaa7688f67c  kernel/private/rest/classes/oauth/oauth_filter.php
 dd293dec8b400f87c0dd3945dc70e43a  kernel/private/rest/classes/oauth/pkce.php
-dbda4b72b7ab97d845353ed14223e14a  kernel/private/rest/classes/oauth/utility.php
+427f90797c5d16efd9a95b2b15ca66d1  kernel/private/rest/classes/oauth/utility.php
 7c1d17b1d2ab1f285872833ee383b650  kernel/private/rest/classes/oauth_token_endpoint_error.php
 541be1bf9c18d55d21b799a142fede84  kernel/private/rest/classes/outh_error_type.php
 036d75534b75d27f30b21f5f64404a77  kernel/private/rest/classes/po_maps/ezprestauthcode.php
@@ -23459,7 +23460,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
-9a8e812661c23ad6b1dffe863ade3c43  settings/rest.ini
+3e2095a2df386f55152255ebd34ba8e0  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -24419,7 +24420,7 @@ a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 9ff58a769386f12831d56db2598e292e  tests/suite.php
-39337b797225315afdacc67bbd2fe5e4  tests/test-map.json
+c5e9a15a5b252b653c9878f7ba808cbc  tests/test-map.json
 b5d19721b8f24a3e1bdb926417056f1a  tests/tests/bin/CiWorkflowPullRequestTest.php
 9e66dccfb84af9620c270342b88c7f84  tests/tests/bin/ConsoleExtensionAliasTest.php
 15f8b9a547a53cb8447a1e78dc0a1ef0  tests/tests/bin/githooks/CheckCommitRangeTest.php
@@ -25194,7 +25195,7 @@ e414caf421b6c9adec37d5cae73c38c0  tests/tests/kernel/classes/radwizards/expRadWi
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
 7083b8e7ffc52109d89f3ddd560c0568  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
-3008696e6df33f2bd2df275cbcf62aea  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
+40dbb145ac5caee75b6ded87b49a6279  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
 ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpRequestParserTest.php
 88dce112e50350d80d8abd8568be28a0  tests/tests/kernel/classes/rest/ezpRestPrefixFilterTest.php
 40cb7208c58798029ba784d261738134  tests/tests/kernel/classes/rest/ezpRestRoutesTest.php
@@ -25491,6 +25492,7 @@ d7ca0190a449ce3e4d3bf7e6a05c2aaf  tests/tests/kernel/private/ezpmobiledevicedete
 779770b1ad4be22559129affdc36e217  tests/tests/kernel/private/oauth/expOAuthPkceSchemaTest.php
 699d73f401ca04ffa5493af0b72ed31f  tests/tests/kernel/private/oauth/expOAuthPkceTest.php
 cae49764ee1f00d1405608edaae31640  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
+59ad9d8a08a276201500eb075288d775  tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php
 a3beb6daaccda7385398be0409c86cd8  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
 ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.php
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php

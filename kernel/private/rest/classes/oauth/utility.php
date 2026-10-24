@@ -28,14 +28,14 @@ class ezpOauthUtility extends ezpRestModel
      * According to section 5.1 the header is the preferred way, and the query
      * component and HTTP body are only looked at if no such header can be found.
      *
-     * @TODO A configuration mechanism should alternatively let us select which
-     * method to use: 1. header, 2. query component, 3. http body, in other words
-     * to override the default behaviour according to spec.
+     * Which of the three are looked at is set in rest.ini [OAuthSettings]
+     * (AllowTokenInQuery, AllowTokenInBody), see tokenSources().
      *
-     * @param string $ezcMvcRequest
-     * @return void
+     * @param ezcMvcRequest $request
+     * @param array|null $sources the places to look at, in order ('header', 'get', 'post'); tokenSources() by default
+     * @return string|null
      */
-    public static function getToken( ezcMvcRequest $request )
+    public static function getToken( ezcMvcRequest $request, $sources = null )
     {
         // 1. Should first extract required token from the request object
         //    as we know that the request parser does not support this at the
@@ -44,7 +44,7 @@ class ezpOauthUtility extends ezpRestModel
         //    when available, automatically.
 
         $token = null;
-        $checkStack = array( 'header', 'get', 'post' );
+        $checkStack = $sources === null ? self::tokenSources() : $sources;
 
         foreach ( $checkStack as $step )
         {
@@ -70,6 +70,35 @@ class ezpOauthUtility extends ezpRestModel
         }
 
         return $token;
+    }
+
+    /**
+     * The places an access token is taken from, in order: always the Authorization header, the
+     * form body (RFC 6750 section 2.2) unless rest.ini [OAuthSettings] AllowTokenInBody=disabled,
+     * the query string (RFC 6750 section 2.3) only with AllowTokenInQuery=enabled.
+     *
+     * The oauth_token query parameter used to be accepted always. A token in the address ends up
+     * in web server and proxy access logs, the browser history and Referer headers, which RFC 6750
+     * section 2.3 advises against, so it is off by default.
+     *
+     * @return array
+     */
+    public static function tokenSources()
+    {
+        $ini = eZINI::instance( 'rest.ini' );
+        $sources = array( 'header' );
+        if ( !$ini->hasVariable( 'OAuthSettings', 'AllowTokenInBody' )
+             || $ini->variable( 'OAuthSettings', 'AllowTokenInBody' ) !== 'disabled' )
+        {
+            $sources[] = 'post';
+        }
+        if ( $ini->hasVariable( 'OAuthSettings', 'AllowTokenInQuery' )
+             && $ini->variable( 'OAuthSettings', 'AllowTokenInQuery' ) === 'enabled' )
+        {
+            // the query before the body, the order used before this setting existed
+            array_splice( $sources, 1, 0, array( 'get' ) );
+        }
+        return $sources;
     }
 
 
@@ -218,11 +247,31 @@ class ezpOauthUtility extends ezpRestModel
         $refreshInfo = array_shift( $refreshInfo );
 
         // a refresh token is redeemed only by the client it was issued to
-        if ( (string)$refreshInfo->client_id !== (string)$clientId )
+        if ( !self::clientMatches( $refreshInfo->client_id, $clientId ) )
             throw self::invalidGrant( 'Specified refresh-token does not exist.' );
 
+        // A user disabled in the administration or locked by failed logins used to keep getting fresh
+        // access tokens with a refresh token issued before; the API key and password filters refuse
+        // such a user.
+        $user = eZUser::fetch( $refreshInfo->user_id );
+        if ( !self::userMayUseToken( $user ) )
+            throw self::invalidGrant( 'The user of the refresh-token is disabled or locked.' );
+
+        // Refresh tokens used to live for ever: a leaked one gave access for as long as the user and the
+        // client authorization existed. The token row carries no issue time; it is derived from the
+        // access token's expiry, see refreshTokenExpired().
+        $restINI = eZINI::instance( 'rest.ini' );
+        $refreshTokenTTL = $restINI->hasVariable( 'OAuthSettings', 'RefreshTokenTTL' )
+            ? (int)$restINI->variable( 'OAuthSettings', 'RefreshTokenTTL' )
+            : 0;
+        if ( self::refreshTokenExpired( $refreshInfo->expirytime, $tokenTTL, $refreshTokenTTL, time() ) )
+        {
+            $session->delete( $refreshInfo );
+            throw self::invalidGrant( 'Specified refresh-token has expired.' );
+        }
+
         // Validate client is still authorized, then validate code is not expired
-        $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, eZUser::fetch( $refreshInfo->user_id ) );
+        $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, $user );
 
         if ( !($authorized instanceof ezpRestAuthorizedClient ) )
         {
@@ -230,7 +279,6 @@ class ezpOauthUtility extends ezpRestModel
         }
 
 
-        // Ideally there should be a separate expiry for refresh tokens here, for now allow.
         $newToken = new ezpRestToken();
         $newToken->id = ezpRestToken::generateToken( '' );
         $newToken->refresh_token = ezpRestToken::generateToken( '' );
@@ -287,7 +335,7 @@ class ezpOauthUtility extends ezpRestModel
         $codeInfo = array_shift( $codeInfo );
 
         // a code is redeemed only by the client it was issued to
-        if ( (string)$codeInfo->client_id !== (string)$clientId )
+        if ( !self::clientMatches( $codeInfo->client_id, $clientId ) )
             throw self::invalidGrant( 'Specified authorization code does not exist.' );
 
         // PKCE (RFC 7636, section 4.6): the code_verifier must match the challenge stored with the code. A failed
@@ -299,8 +347,13 @@ class ezpOauthUtility extends ezpRestModel
             throw self::invalidGrant( $pkceError );
         }
 
+        // A user disabled or locked after authorizing the client used to get tokens for the code.
+        $user = eZUser::fetch( $codeInfo->user_id );
+        if ( !self::userMayUseToken( $user ) )
+            throw self::invalidGrant( 'The user of the authorization code is disabled or locked.' );
+
         // Validate client is still authorized, then validate code is not expired
-        $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, eZUser::fetch( $codeInfo->user_id ) );
+        $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, $user );
 
         if ( !($authorized instanceof ezpRestAuthorizedClient ) )
         {
@@ -346,6 +399,69 @@ class ezpOauthUtility extends ezpRestModel
     protected static function invalidGrant( $description )
     {
         return new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_GRANT . ': ' . $description );
+    }
+
+    /**
+     * Whether $user may still use an OAuth grant or access token: an existing user that is
+     * enabled and not locked by failed logins, the rule expRestPasswordAuthFilter and
+     * expApiKeyAuthFilter apply.
+     *
+     * @param eZUser|null $user
+     * @param callable|null $enabledAfterFailedLogin lock check by user id, eZUser::isEnabledAfterFailedLogin() by default (tests pass their own)
+     * @return bool
+     */
+    public static function userMayUseToken( $user, $enabledAfterFailedLogin = null )
+    {
+        if ( !$user instanceof eZUser || !$user->isEnabled() )
+            return false;
+        if ( $enabledAfterFailedLogin === null )
+            $enabledAfterFailedLogin = array( 'eZUser', 'isEnabledAfterFailedLogin' );
+        return (bool)call_user_func( $enabledAfterFailedLogin, $user->attribute( 'contentobject_id' ) );
+    }
+
+    /**
+     * Whether a refresh token has outlived rest.ini [OAuthSettings] RefreshTokenTTL.
+     *
+     * ezprest_token stores one expiry per row, the access token's: issued at + TokenTTL. The issue
+     * time is derived from it with the current TokenTTL, so changing TokenTTL shifts the deadline
+     * of tokens issued before by the difference. Every refresh issues a new refresh token, so the
+     * lifetime counts from the last refresh (a sliding window), not from the first authorization.
+     * A row stored without expiry (0) has no issue time and is refused while a TTL is set.
+     *
+     * @param int $expirytime the row's expirytime
+     * @param int $tokenTTL TokenTTL in seconds
+     * @param int $refreshTokenTTL RefreshTokenTTL in seconds, 0 = refresh tokens do not expire
+     * @param int $now
+     * @return bool
+     */
+    public static function refreshTokenExpired( $expirytime, $tokenTTL, $refreshTokenTTL, $now )
+    {
+        $refreshTokenTTL = (int)$refreshTokenTTL;
+        if ( $refreshTokenTTL <= 0 )
+            return false;
+        $expirytime = (int)$expirytime;
+        if ( $expirytime <= 0 )
+            return true;
+        $issued = $expirytime - max( 0, (int)$tokenTTL );
+        return $now > $issued + $refreshTokenTTL;
+    }
+
+    /**
+     * Whether a grant (authorization code, refresh token) issued to $issuedClientId may be
+     * redeemed by $requestingClientId (RFC 6749 sections 4.1.3 and 6). Both are the public client
+     * identifier strings of ezprest_clients.client_id; they are compared as strings in constant
+     * time, and an empty or non-scalar identifier never matches.
+     *
+     * @param mixed $issuedClientId
+     * @param mixed $requestingClientId
+     * @return bool
+     */
+    public static function clientMatches( $issuedClientId, $requestingClientId )
+    {
+        if ( !is_scalar( $issuedClientId ) || !is_scalar( $requestingClientId ) )
+            return false;
+        $issued = (string)$issuedClientId;
+        return $issued !== '' && hash_equals( $issued, (string)$requestingClientId );
     }
 }
 ?>
