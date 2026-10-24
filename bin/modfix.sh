@@ -85,7 +85,6 @@ chmod $DIR_MODE var/storage/packages
 chmod -R $DIR_MODE settings
 chmod -R $DIR_MODE extension
 chmod -R $DIR_MODE var/autoload
-chmod -R $DIR_MODE var/webdav
 chmod -R $DIR_MODE var/storage
 chmod -R $DIR_MODE var/cache/template
 

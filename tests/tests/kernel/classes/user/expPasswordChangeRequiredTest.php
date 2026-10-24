@@ -16,7 +16,7 @@
  *          the choice only when the form showed it
  *  PCR-06  The preference name is reserved: user/preferences refuses to write it
  *  PCR-07  The REST answer: 403 with the error code password_change_required, wired before the request is signed in;
- *          WebDAV and SOAP refuse the sign-in
+ *          SOAP refuses the sign-in
  *  PCR-08  The kernel asks before every view (after the audit guard, before the request rules); user/password clears
  *          the mark after a change and tells its template
  *  PCR-09  The audit knows .set, .clear and .redirect, with their verbs, and audit.md lists them
@@ -234,7 +234,6 @@ class expPasswordChangeRequiredTest extends PHPUnit\Framework\TestCase
         $this->assertNotFalse( $refusal );
         $this->assertLessThan( $signIn, $refusal, 'refused before the request is signed in' );
         $this->assertStringContainsString( 'new expRestPasswordChangeRequiredStatus()', self::file( 'kernel/private/rest/classes/controllers/auth.php' ) );
-        $this->assertStringContainsString( "refusesSignIn( \$user, 'webdav' )", self::file( 'kernel/private/classes/webdav/ezwebdavcontentbackendauth.php' ) );
         $this->assertStringContainsString( "refusesSignIn( \$soapUser, 'soap' )", self::file( 'soap.php' ) );
         $this->assertFalse( expPasswordChangeRequired::refusesSignIn( null, 'rest' ) );
     }

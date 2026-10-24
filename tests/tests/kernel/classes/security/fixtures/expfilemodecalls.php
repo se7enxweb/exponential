@@ -14,7 +14,7 @@ class expFileModeCalls
     /** What is scanned, relative to the installation root: the kernel, the libraries, the scripts, the extensions of the repository */
     const PATHS = array( 'kernel', 'lib', 'bin', 'cronjobs', 'update', 'extension/ezjscore', 'extension/ezoe',
                          'extension/ezformtoken', 'extension/expservices', 'autoload.php', 'index.php', 'index_cluster.php',
-                         'index_rest.php', 'index_treemenu.php', 'runcronjobs.php', 'soap.php', 'webdav.php', 'ezpm.php' );
+                         'index_rest.php', 'index_treemenu.php', 'runcronjobs.php', 'soap.php', 'ezpm.php' );
 
     /** Helpers whose result is a mode within the limits */
     const HELPERS = array( 'fileMode', 'dirMode', 'executableMode', 'creationUmask' );

@@ -6385,36 +6385,6 @@ parameters:
 			path: kernel/private/classes/views/workflow/workflowlist.php
 
 		-
-			message: '#^Method eZWebDAVContentBackend\:\:resetProperties\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
-			message: '#^Undefined variable\: \$name$#'
-			identifier: variable.undefined
-			count: 2
-			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
-			message: '#^Variable \$nodeID might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackend.php
-
-		-
-			message: '#^Method eZWebDAVContentBackendAuth\:\:ownsLock\(\) should return bool but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
-
-		-
-			message: '#^Variable \$hasAccess might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
-
-		-
 			message: '#^Variable \$Params might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1

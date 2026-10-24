@@ -971,8 +971,6 @@ return array(
       'eZWaitUntilDate'                                              => 'kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildate.php',
       'eZWaitUntilDateType'                                          => 'kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatetype.php',
       'eZWaitUntilDateValue'                                         => 'kernel/classes/workflowtypes/event/ezwaituntildate/ezwaituntildatevalue.php',
-      'eZWebDAVContentBackend'                                       => 'kernel/private/classes/webdav/ezwebdavcontentbackend.php',
-      'eZWebDAVContentBackendAuth'                                   => 'kernel/private/classes/webdav/ezwebdavcontentbackendauth.php',
       'eZWishList'                                                   => 'kernel/classes/ezwishlist.php',
       'eZWizardBase'                                                 => 'lib/ezutils/classes/ezwizardbase.php',
       'eZWizardBaseClassLoader'                                      => 'lib/ezutils/classes/ezwizardbaseclassloader.php',
