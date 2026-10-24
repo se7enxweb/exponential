@@ -11,7 +11,7 @@
 
     <div class="block">
        {let attribute=$object.data_map.subject}
-       <label>{$attribute.contentclass_attribute.name}</label><div class="labelbreak"></div>
+       <label>{$attribute.contentclass_attribute.name|wash}</label><div class="labelbreak"></div>
        <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
        <input class="box" type="text" size="70" name="ContentObjectAttribute_ezstring_data_text_{$attribute.id}" value="" />
        {/let}
@@ -24,7 +24,7 @@
 
         <input type="hidden" name="ContentObjectAttribute_ezstring_data_text_{$attribute.id}" value="{$user.contentobject.name|wash}" />
         {else}
-            <label>{$attribute.contentclass_attribute.name}</label><div class="labelbreak"></div>
+            <label>{$attribute.contentclass_attribute.name|wash}</label><div class="labelbreak"></div>
 	    <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
 	    <input class="box" type="text" size="70" name="ContentObjectAttribute_ezstring_data_text_{$attribute.id}" value="" />
         {/if}
@@ -33,7 +33,7 @@
 
     <div class="block">
        {let attribute=$object.data_map.message}
-       <label>{$attribute.contentclass_attribute.name}</label><div class="labelbreak"></div>
+       <label>{$attribute.contentclass_attribute.name|wash}</label><div class="labelbreak"></div>
        <input type="hidden" name="ContentObjectAttribute_id[]" value="{$attribute.id}" />
        <textarea class="box" cols="70" rows="10" name="ContentObjectAttribute_data_text_{$attribute.id}"></textarea>
        {/let}
