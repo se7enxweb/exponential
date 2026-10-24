@@ -753,10 +753,19 @@ EOT;
      * @param bool $justCheckURL    if true, we should check url only not downloading data.
      * @param string $userAgent     override userAgent request header
      * @param bool $forceGetRequest if true, force curl to perform a 'GET' request even if just checking url.
-     * @return string|bool          data from $url, false if invalid URL.
+     * @return string|bool          data from $url, false if invalid URL, not http(s) or answered with a status >= 400.
      */
     static function getDataByURL( $url, $justCheckURL = false, $userAgent = false, $forceGetRequest = false )
     {
+        // curl and fopen() both read file://, php://, ftp:// and the like, so a configured or posted address
+        // could return local files; only http and https with a host are fetched. An address without a scheme
+        // (www.example.com/feed, as RSS sources are entered) is read as http, as curl did before
+        $url = self::withDefaultScheme( $url );
+        if ( !self::isHTTPURL( $url ) )
+        {
+            return false;
+        }
+
         // First try CURL
         if ( extension_loaded( 'curl' ) )
         {
@@ -769,6 +778,14 @@ EOT;
                     CURLOPT_FOLLOWLOCATION => true,
                 )
             );
+            // a redirect to file:// or gopher:// was followed as well; http and https only, also after redirects
+            if ( !defined( 'CURLOPT_PROTOCOLS_STR' ) ||
+                 !curl_setopt( $ch, CURLOPT_PROTOCOLS_STR, 'http,https' ) ||
+                 !curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS_STR, 'http,https' ) )
+            {
+                curl_setopt( $ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS );
+                curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS );
+            }
             $ini = eZINI::instance();
             if ( $justCheckURL )
             {
@@ -803,6 +820,7 @@ EOT;
             }
 
             $result = curl_exec( $ch );
+            $responseCode = (int)curl_getinfo( $ch, CURLINFO_RESPONSE_CODE );
             if ( PHP_VERSION_ID < 80000 ) curl_close( $ch ); // no effect since PHP 8.0, deprecated in 8.5
 
             // If we should check url without downloading data from it.
@@ -824,6 +842,12 @@ EOT;
                 return false;
             }
 
+            // a 404 or 500 returned the error page's body as the data (RSS import, static cache)
+            if ( $responseCode >= 400 )
+            {
+                return false;
+            }
+
             return $result;
         }
 
@@ -836,6 +860,15 @@ EOT;
         $fid = fopen( $url, 'r' );
         if ( $fid === false )
         {
+            return false;
+        }
+
+        // with ignore_errors in the default stream context a status >= 400 opened, the error page was the data
+        // (the stream's wrapper_data: $http_response_header is deprecated since PHP 8.5, already where it is written)
+        $metaData = stream_get_meta_data( $fid );
+        if ( self::responseStatus( isset( $metaData['wrapper_data'] ) ? $metaData['wrapper_data'] : null ) >= 400 )
+        {
+            fclose( $fid );
             return false;
         }
 
@@ -858,6 +891,76 @@ EOT;
 
         fclose( $fid );
         return $data;
+    }
+
+    /**
+     * $url with http as its scheme when it has none: "www.example.com/feed" and "host:8080/x" get "http://",
+     * "//host/x" gets "http:". An address with a scheme, a path ("/x", "\\x") and anything not a string are returned
+     * unchanged; isHTTPURL() decides about them. A name followed by a colon and digits is a host with a port, not a
+     * scheme.
+     *
+     * @param mixed $url
+     * @return mixed
+     */
+    static function withDefaultScheme( $url )
+    {
+        if ( !is_string( $url ) || $url === '' )
+        {
+            return $url;
+        }
+        if ( substr( $url, 0, 2 ) === '//' )
+        {
+            return 'http:' . $url;
+        }
+        if ( $url[0] === '/' || $url[0] === '\\' )
+        {
+            return $url;
+        }
+        if ( preg_match( '#^[a-z][a-z0-9+.-]*:(?!\d+(?:[/?\#]|$))#i', $url ) )
+        {
+            return $url;
+        }
+        return 'http://' . $url;
+    }
+
+    /**
+     * Whether $url is an absolute http or https URL with a host, the only addresses getDataByURL() fetches.
+     *
+     * @param mixed $url
+     * @return bool
+     */
+    static function isHTTPURL( $url )
+    {
+        if ( !is_string( $url ) || preg_match( '/[\x00-\x1F\x7F]/', $url ) )
+        {
+            return false;
+        }
+        $parts = parse_url( $url );
+        if ( !is_array( $parts ) || !isset( $parts['scheme'], $parts['host'] ) || $parts['host'] === '' )
+        {
+            return false;
+        }
+        return in_array( strtolower( $parts['scheme'] ), array( 'http', 'https' ), true );
+    }
+
+    /**
+     * The status of the last response in $headers, the response headers of an http stream after all redirects,
+     * or 0 when there is none.
+     *
+     * @param array|null $headers
+     * @return int
+     */
+    static function responseStatus( $headers )
+    {
+        $status = 0;
+        foreach ( is_array( $headers ) ? $headers : array() as $header )
+        {
+            if ( is_string( $header ) && preg_match( '#^HTTP/\S+\s+(\d{3})#i', $header, $match ) )
+            {
+                $status = (int)$match[1];
+            }
+        }
+        return $status;
     }
 }
 
