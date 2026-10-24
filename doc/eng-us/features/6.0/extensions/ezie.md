@@ -14,6 +14,19 @@ Exponential 6, PHP 8.1 or later, GD2 or ImageMagick, and an Exponential edit for
 edit form scripts). It uses jQuery, jQuery UI, the Jcrop and colorpicker plugins and the Zeta Components image
 conversion.
 
+## Install it
+
+Since 2026-10-24 the kernel package no longer requires ezie, nor the Zeta Components image conversion it needs; in
+admin4, [expimageeditor](expimageeditor.md) takes its place. A site that keeps ezie requires both itself (ezie does
+not declare the image conversion):
+
+```bash
+composer require se7enxweb/ezie zetacomponents/image-conversion
+```
+
+Then `ActiveExtensions[]=ezie` instead of `expimageeditor` (only one of the two can draw the button), regenerate the
+autoloads and clear the caches.
+
 ## Use it
 
 1. Edit an object that has an image attribute, and open the editor from the image field.

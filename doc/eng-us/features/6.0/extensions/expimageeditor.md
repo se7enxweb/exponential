@@ -6,7 +6,8 @@ which draws with it). It edits raster images (crop, rotate, flip, resize, bright
 sepia, pixelate or blur a region, watermark) and SVG drawings (shapes, paths, freehand, text, fill and stroke), and it
 can start a new SVG drawing for an image attribute without an image. It works without jQuery and under the
 administration's Content Security Policy. It ships inside the kernel's repository, like `ezjscore` and `ezoe`, and
-is off until it is activated. Added in 6.0.15 (2026-10-22). The full reference is the extension's
+is off until it is activated; the setup wizard and the kickstarter activate it for a new installation. Added in
+6.0.15 (2026-10-22). The full reference is the extension's
 `extension/expimageeditor/README.md`.
 
 ## Switch it on
@@ -54,7 +55,7 @@ default is in the extension's README, "Settings".
 
 English and German (`extension/expimageeditor/translations/ger-DE/`). The colors come from admin4's tokens, so the
 dialog follows the light and the dark theme. Only admin4 (and admin4l) has the editor; the classic admin designs
-keep `ezie`.
+have `ezie` where a site installs it ([ezie, Install it](ezie.md#install-it)).
 
 ## Tests
 
