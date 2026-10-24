@@ -254,8 +254,7 @@ class ezpOauthUtility extends ezpRestModel
         // access tokens with a refresh token issued before; the API key and password filters refuse
         // such a user.
         $user = eZUser::fetch( $refreshInfo->user_id );
-        if ( !self::userMayUseToken( $user ) )
-            throw self::invalidGrant( 'The user of the refresh-token is disabled or locked.' );
+        self::checkGrantUser( $user, $refreshInfo->user_id, 'Specified refresh-token does not exist.' );
 
         // Refresh tokens used to live for ever: a leaked one gave access for as long as the user and the
         // client authorization existed. The token row carries no issue time; it is derived from the
@@ -349,8 +348,7 @@ class ezpOauthUtility extends ezpRestModel
 
         // A user disabled or locked after authorizing the client used to get tokens for the code.
         $user = eZUser::fetch( $codeInfo->user_id );
-        if ( !self::userMayUseToken( $user ) )
-            throw self::invalidGrant( 'The user of the authorization code is disabled or locked.' );
+        self::checkGrantUser( $user, $codeInfo->user_id, 'Specified authorization code does not exist.' );
 
         // Validate client is still authorized, then validate code is not expired
         $authorized = ezpRestAuthorizedClient::fetchForClientUser( $client, $user );
@@ -399,6 +397,25 @@ class ezpOauthUtility extends ezpRestModel
     protected static function invalidGrant( $description )
     {
         return new ezpOauthInvalidRequestException( ezpOauthTokenEndpointErrorType::INVALID_GRANT . ': ' . $description );
+    }
+
+    /**
+     * Refuses a grant whose user may not use it (userMayUseToken()) with $description, the text the grant gives for a
+     * code or refresh token of another client: the answer goes to whoever holds the token, and a reason of its own
+     * would tell them that the account exists and is disabled or locked. The reason goes to the debug output.
+     *
+     * @param eZUser|null $user
+     * @param int $userID the user id stored with the grant
+     * @param string $description
+     * @param callable|null $enabledAfterFailedLogin see userMayUseToken()
+     * @throws ezpOauthInvalidRequestException
+     */
+    public static function checkGrantUser( $user, $userID, $description, $enabledAfterFailedLogin = null )
+    {
+        if ( self::userMayUseToken( $user, $enabledAfterFailedLogin ) )
+            return;
+        eZDebug::writeNotice( "OAuth grant refused: user #" . (int)$userID . " is missing, disabled or locked", __METHOD__ );
+        throw self::invalidGrant( $description );
     }
 
     /**

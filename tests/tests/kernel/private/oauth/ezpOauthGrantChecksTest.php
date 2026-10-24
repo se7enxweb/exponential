@@ -53,6 +53,36 @@ class ezpOauthGrantChecksTest extends TestCase
         self::assertFalse( ezpOauthUtility::userMayUseToken( false, self::lockCheck( true ) ) );
     }
 
+    public static function refusedUsers()
+    {
+        return array( 'disabled' => array( false, true ), 'locked by failed logins' => array( true, false ), 'missing' => array( null, true ) );
+    }
+
+    /**
+     * The grant's answer goes to whoever holds the token: a disabled, locked or missing user is refused with the text
+     * of a token of another client, not with a reason that tells the account's state.
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'refusedUsers' )]
+    public function testRefusedGrantUserDoesNotTellTheAccountState( $enabled, $unlocked )
+    {
+        $user = $enabled === null ? null : self::user( $enabled );
+        try
+        {
+            ezpOauthUtility::checkGrantUser( $user, 42, 'Specified refresh-token does not exist.', self::lockCheck( $unlocked ) );
+            self::fail( 'the grant was not refused' );
+        }
+        catch ( ezpOauthInvalidRequestException $e )
+        {
+            self::assertSame( 'invalid_grant: Specified refresh-token does not exist.', $e->getMessage() );
+        }
+    }
+
+    public function testGrantUserWhoMayUseTheTokenPasses()
+    {
+        $this->expectNotToPerformAssertions();
+        ezpOauthUtility::checkGrantUser( self::user( true ), 42, 'Specified authorization code does not exist.', self::lockCheck( true ) );
+    }
+
     public function testGrantIsBoundToItsClient()
     {
         self::assertTrue( ezpOauthUtility::clientMatches( 'a1b2c3', 'a1b2c3' ) );

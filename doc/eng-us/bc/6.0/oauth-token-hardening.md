@@ -9,7 +9,8 @@ checks a token's user, ends refresh tokens after a lifetime, and no longer takes
   user is enabled and not locked by failed logins (`eZUser::isEnabledAfterFailedLogin()`), the rule personal API keys
   and password sign-in already apply. Before, a user disabled in the administration kept full REST access with a token
   issued earlier, and kept getting fresh access tokens with the refresh token. A resource request with such a token
-  gets `401`; the token endpoint answers `invalid_grant`.
+  gets `401`; the token endpoint answers `invalid_grant` with the description it gives for a code or refresh token
+  of another client, so the answer does not tell the token holder that the account is disabled or locked.
 - **Client binding.** A code or refresh token is redeemed only by the client it was issued to. The client identifiers
   are compared as strings in constant time, and an empty identifier never matches.
 - **Refresh token lifetime.** A refresh token used to be valid for ever. It now lasts `RefreshTokenTTL` (30 days by
