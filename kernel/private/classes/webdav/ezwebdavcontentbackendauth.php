@@ -52,12 +52,44 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
         }
         eZWebDAVContentBackend::appendLogEntry( "Processed to username: {$data->username}" );
 
+        // An app password of the account (two-step sign-in, expSignInSecondFactor) first: it never counts as a failed
+        // password, and it signs in for this request only
+        if ( class_exists( 'expSignInSecondFactor' ) )
+        {
+            $appUser = expSignInSecondFactor::appPasswordUser( $data->username, $data->password, expSignInSecondFactor::CHANNEL_WEBDAV );
+            if ( $appUser instanceof eZUser )
+            {
+                if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $appUser, 'webdav' ) )
+                {
+                    eZWebDAVContentBackend::appendLogEntry( "Refused: the account must change its password first" );
+                    return false;
+                }
+                expSignInSecondFactor::signInForRequest( $appUser );
+                eZWebDAVContentBackend::appendLogEntry( "AuthenticatedBasic with an app password" );
+                return true;
+            }
+        }
+
         $userClass = eZUserLoginHandler::instance( $loginHandler );
         $user = $userClass->loginUser( $data->username, $data->password );
 
         if ( !( $user instanceof eZUser ) )
         {
             return false;
+        }
+        // a password alone is not enough for an account that needs a second sign-in step: 401 with WWW-Authenticate
+        // (the server's own) and the reason in X-Exp-Sign-In-Refused
+        if ( class_exists( 'expSignInSecondFactor' ) )
+        {
+            $refusal = expSignInSecondFactor::check( $user, expSignInSecondFactor::CHANNEL_WEBDAV, expSignInSecondFactor::presentedCode() );
+            if ( $refusal !== null )
+            {
+                eZUser::logoutCurrent();
+                if ( !headers_sent() )
+                    header( expSignInSecondFactor::REFUSAL_HEADER . ': ' . $refusal['reason'] );
+                eZWebDAVContentBackend::appendLogEntry( "Refused: " . $refusal['reason'] );
+                return false;
+            }
         }
         // an account marked "change password at next sign-in" sets it in the web interface first
         if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $user, 'webdav' ) )

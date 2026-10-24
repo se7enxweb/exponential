@@ -30,6 +30,14 @@ class ezpRestAuthController extends ezcMvcController
             $statusCode = $this->ezpAuth_reason;
         }
 
+        // a password alone for an account that needs a second sign-in step (expSignInSecondFactor): 401 or 403
+        if ( class_exists( 'expSignInSecondFactor' ) && in_array( $statusCode, expSignInSecondFactor::reasons(), true ) )
+        {
+            $res->status = new expRestSecondFactorRequiredStatus( $statusCode, isset( $this->ezpAuth_message ) ? (string)$this->ezpAuth_message : '' );
+            $res->variables['error'] = $statusCode;
+            return $res;
+        }
+
         // the account must change its password in the web interface first (expPasswordChangeRequired)
         if ( class_exists( 'expPasswordChangeRequired' ) && $statusCode === expPasswordChangeRequired::REST_ERROR )
         {

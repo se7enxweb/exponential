@@ -66308,6 +66308,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Sent to the password change</source>
         <translation>Sent to the password change</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Sign-in without the second step refused</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>App password made</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App password revoked</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>App password used</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>
