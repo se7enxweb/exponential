@@ -16,6 +16,7 @@
  *  RET-01   returnURI(): the first safe page the form names, else the default
  *  RET-02   returnURI(): never the running view (a loop), never a POST-only view, never an unsafe page
  *  RET-03   returnURI(): the page viewed last (LastAccessesURI), only when safe, not the running view and viewable
+ *  RED-01   redirectURI(): an empty page viewed last (the front page stores '') is the site root, not "no target"
  *  VIEW-01  The Cancel/Discard target of user/edit, user/password, user/setting, section/edit, state/edit,
  *           state/group_edit, role/edit, class/edit and class/groupedit: the form's page, else their old default
  *  VIEW-02  The same with an unsafe page in the form: their old default
@@ -217,6 +218,29 @@ class eZRedirectManagerSafeURITest extends PHPUnit\Framework\TestCase
         // without a session
         $this->setSessionStarted( false );
         $this->assertSame( '/d', eZRedirectManager::returnURI( $module, '/d', false, $this->options( array( 'session' => true ) ) ) );
+    }
+
+    /** RED-01 */
+    public function testRedirectURIEmptyPageViewedLastIsTheRoot()
+    {
+        $this->setSessionStarted( true );
+        foreach ( array( '', '   ' ) as $empty )
+        {
+            $_SESSION = array( 'LastAccessesURI' => $empty, 'LastAccessedModifyingURI' => $empty );
+            // shop/setusercountry, content/hide, user/preferences: redirectTo( $module, false )
+            $this->assertSame( '/', eZRedirectManager::redirectURI( null, false ), json_encode( $empty ) );
+            $this->assertSame( '/', eZRedirectManager::redirectURI( null, false, false ), json_encode( $empty ) );
+        }
+        $_SESSION = array( 'LastAccessesURI' => '/content/view/full/5' );
+        $this->assertSame( '/content/view/full/5', eZRedirectManager::redirectURI( null, false ) );
+        // an unsafe page stays no target
+        $_SESSION = array( 'LastAccessesURI' => '//evil.example/x' );
+        $this->assertFalse( eZRedirectManager::redirectURI( null, false ) );
+        // no page viewed at all stays no target
+        $_SESSION = array();
+        $this->assertFalse( eZRedirectManager::redirectURI( null, false ) );
+        // unsafeReason() itself still calls '' empty
+        $this->assertSame( 'empty', $this->reason( '' ) );
     }
 
     /** the Cancel target of each view for a POST, with no session */
