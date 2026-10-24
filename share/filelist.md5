@@ -196,8 +196,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-214ade2976c07ed4bb62ed1ca6e3abaa  composer.json
-f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
+0cb03136a497145add032f345642bdce  composer.json
+555fab4466f1616b2a4b01d7178e1906  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+14efdbb89e52e9a8df2178ce975adc31  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6248,7 +6248,7 @@ bfe9e78152ce569fc06e3a263c2483b8  doc/eng-us/features/6.0/extensions/enhancedezb
 05e93b6f94023df1fe3c6966c6d0ac28  doc/eng-us/features/6.0/extensions/enhancedselection2.md
 46f85590c0a9c25925c3b8fd5f82eb89  doc/eng-us/features/6.0/extensions/exp_enhanced_link.md
 0bdd06c341e780db207a7872e02f8787  doc/eng-us/features/6.0/extensions/expai.md
-db7b1ebbd2591a09db3b5f313e5fcbed  doc/eng-us/features/6.0/extensions/expimageeditor.md
+20a434e2e9c2c1d97bbaf4d406397008  doc/eng-us/features/6.0/extensions/expimageeditor.md
 20fda4ccae44aa86f06307d61aeadc8e  doc/eng-us/features/6.0/extensions/explayouts_ui.md
 853016f1432cb019f9b129948c512b65  doc/eng-us/features/6.0/extensions/explayouts_ui_api.md
 49e20c548d5d5e7570468ea5ec10b05a  doc/eng-us/features/6.0/extensions/expqueue.md
@@ -6257,7 +6257,7 @@ ec399871875b28606002122c1b639d49  doc/eng-us/features/6.0/extensions/ezautosave.
 c540e8c6f10ccd632c9c3f31fdaefc1c  doc/eng-us/features/6.0/extensions/ezdemo.md
 e1e75837211e429a05e24892f153a305  doc/eng-us/features/6.0/extensions/ezflow.md
 d957c44444049c8840ba0d01dbd03e47  doc/eng-us/features/6.0/extensions/ezgmaplocation.md
-697e6ad1f24994615d08488651ba7a77  doc/eng-us/features/6.0/extensions/ezie.md
+f002da9d5ff1e7f53308a4d7eea93a26  doc/eng-us/features/6.0/extensions/ezie.md
 0fcd8d048db15357f4440c6a0fe242b8  doc/eng-us/features/6.0/extensions/ezjscore.md
 bd9887246e537835f690a8d60fbcbba4  doc/eng-us/features/6.0/extensions/ezmbpaex.md
 4d46b7d76fb623165e5e96c71507f17a  doc/eng-us/features/6.0/extensions/ezmultiupload.md
@@ -9960,7 +9960,7 @@ bfb0a1154d911d76492746b9461b75a7  doc/eng-us/help/individuals/personal-sites/pla
 8b1f0f13dee1acd9aabbe00afb0a6843  doc/eng-us/help/individuals/personal-sites/writing-for-your-own-site.md
 92d2d445daa854503f0bee5037a98d18  doc/eng-us/help/individuals/portfolios/README.md
 cc407ddbabf42e5e5b0e192e6b723037  doc/eng-us/help/individuals/portfolios/building-an-image-gallery.md
-417e0954b846a0d3ab01608a31f29288  doc/eng-us/help/individuals/portfolios/editing-images-with-ezie.md
+b261a3bca40fe0f744b43a3512f3e96f  doc/eng-us/help/individuals/portfolios/editing-images-with-ezie.md
 8f7f80f2023184fcae3fcb53595b87f1  doc/eng-us/help/individuals/portfolios/image-variations-for-portfolios.md
 083424e5b7bcd3ad35e7e3ff4422cbfb  doc/eng-us/help/individuals/portfolios/uploading-many-images.md
 229091303cf004b404c9630cf2137cfd  doc/eng-us/help/individuals/running-it/README.md
@@ -9977,7 +9977,7 @@ a1941c2d0542b81bad8e0e69c6005cb1  doc/eng-us/help/individuals/setup/choosing-an-
 689957e1cba63099746d3380d52f0ad3  doc/eng-us/help/individuals/setup/domain-names-and-https.md
 bce5eb8c42a891a253a5af176cf6e68b  doc/eng-us/help/individuals/setup/running-on-a-small-budget.md
 6f203514fb10b77dcab613153ea27f85  doc/eng-us/help/individuals/setup/shared-hosting-or-a-small-server.md
-914c156c0b7216023309ca34f66d3276  doc/eng-us/help/individuals/what-exists-and-what-does-not.md
+c293ed02f00220dc88b955e3cf9fc096  doc/eng-us/help/individuals/what-exists-and-what-does-not.md
 7a7efb15e4ccd6385edfc8090a41f3a7  doc/eng-us/help/integrators/ai-job-queue-and-mcp.md
 536abcdacc4f4282637972fce70b9543  doc/eng-us/help/integrators/building-an-integration-as-an-extension.md
 963af4e756891c458cb1094c5545f360  doc/eng-us/help/integrators/bulk-data-exchange-with-xrowextract.md
@@ -12090,7 +12090,7 @@ d32a7227e8099eea652b62dae1636692  doc/eng-us/install/10-after-installing.md
 ff986fece5b565a9b6e33d074c24c671  doc/eng-us/install/12-troubleshooting.md
 bdb0ba95c711ae8082cfd3f759a72f37  doc/eng-us/install/13-security-hardening.md
 d23daf399903d530107a039366c0100f  doc/eng-us/install/14-migrating-from-4x.md
-7b5b7b073a8b10a6253faccdb7a4013b  doc/eng-us/install/15-migrating-from-5x-legacy.md
+ab5be386bad9edc03e638078420797f5  doc/eng-us/install/15-migrating-from-5x-legacy.md
 9361430142335e3dd33b12b757a7f575  doc/eng-us/install/16-migrating-from-ez-platform-and-ibexa.md
 2abfaf831bc2df49ded608ea6786ea42  doc/eng-us/install/17-migration-reference.md
 13146f99353406bcc5411ded23d17e84  doc/eng-us/install/README.md
@@ -15089,7 +15089,7 @@ e14a766b2f6ea25ae3ba19ecb317a56e  doc/ger-de/funktionen/6.0/erweiterungen/enhanc
 4f953621adf273e8bcdf45290cdd7deb  doc/ger-de/funktionen/6.0/erweiterungen/enhancedselection2.md
 6193ab3abd0f576e403321d0a005e57a  doc/ger-de/funktionen/6.0/erweiterungen/exp_enhanced_link.md
 46424ac68199657cc080b91f7e3a376a  doc/ger-de/funktionen/6.0/erweiterungen/expai.md
-ea075ffaa0fdf62664994b506baa2a69  doc/ger-de/funktionen/6.0/erweiterungen/expimageeditor.md
+416ca585c61cf436094ab2a31e4455c1  doc/ger-de/funktionen/6.0/erweiterungen/expimageeditor.md
 4abbb9068d6b3aa0b3470d572c822edc  doc/ger-de/funktionen/6.0/erweiterungen/explayouts_ui.md
 b2eacbba6825c55c183c0d17899df0a7  doc/ger-de/funktionen/6.0/erweiterungen/explayouts_ui_api.md
 6f2d66d29c9087c0fd79f9f118a04a47  doc/ger-de/funktionen/6.0/erweiterungen/expqueue.md
@@ -15098,7 +15098,7 @@ b2eacbba6825c55c183c0d17899df0a7  doc/ger-de/funktionen/6.0/erweiterungen/explay
 f7c62604f37936f0e96beb4a9e0b6a50  doc/ger-de/funktionen/6.0/erweiterungen/ezdemo.md
 25e121fee121bfa89299c768d88071b8  doc/ger-de/funktionen/6.0/erweiterungen/ezflow.md
 27b447d810070d9791d2f56b3aa16d0a  doc/ger-de/funktionen/6.0/erweiterungen/ezgmaplocation.md
-319ce1f86e5e456ff2921929263789f4  doc/ger-de/funktionen/6.0/erweiterungen/ezie.md
+30e6bc42b327ff06b677744d92dfbb3c  doc/ger-de/funktionen/6.0/erweiterungen/ezie.md
 d79d43684ec437e723c390708682f152  doc/ger-de/funktionen/6.0/erweiterungen/ezjscore.md
 6326e5c09832735d19d071f3533e9bcb  doc/ger-de/funktionen/6.0/erweiterungen/ezmbpaex.md
 c9cd9f38ed767b1d38f60f30654a8e67  doc/ger-de/funktionen/6.0/erweiterungen/ezmultiupload.md
@@ -17951,7 +17951,7 @@ f2d7cece5a3226b0753b5a5b60a10c6d  doc/ger-de/hilfe/privatpersonen/persoenliche-s
 35eff76257c87b22a1f7b283ffbf57d3  doc/ger-de/hilfe/privatpersonen/persoenliche-seiten/fuer-die-eigene-website-schreiben.md
 1346c9d95f4cbbb4b1d81eeda566e384  doc/ger-de/hilfe/privatpersonen/persoenliche-seiten/ueber-mich-seite-und-kontaktformular.md
 ae104ca8e30af43c2ee4b1d370956a85  doc/ger-de/hilfe/privatpersonen/portfolios/README.md
-bfad9ba1ef6a65f633d1ea8b7e0fe035  doc/ger-de/hilfe/privatpersonen/portfolios/bilder-mit-ezie-bearbeiten.md
+0bbef1f6295d210c2aaa20c91d6af3b3  doc/ger-de/hilfe/privatpersonen/portfolios/bilder-mit-ezie-bearbeiten.md
 5682b3d61c79d7b3a6b0a9d326f8519a  doc/ger-de/hilfe/privatpersonen/portfolios/bildvarianten-fuer-portfolios.md
 3b4758ebf8e1b70a995e4cf102d084a4  doc/ger-de/hilfe/privatpersonen/portfolios/eine-bildergalerie-aufbauen.md
 351342c01eec3dded4a7cf59fa9e1768  doc/ger-de/hilfe/privatpersonen/portfolios/viele-bilder-hochladen.md
@@ -17969,7 +17969,7 @@ a897a8601d4b8e3834e0b01ceb093ab7  doc/ger-de/hilfe/privatpersonen/vereinsseiten/
 47d3e8f9f387bb2333925de95950c0d8  doc/ger-de/hilfe/privatpersonen/vereinsseiten/mitglieder-und-registrierung.md
 a77a3eb970907ffb52d048db9af3b2b1  doc/ger-de/hilfe/privatpersonen/vereinsseiten/veranstaltungen-und-kalender-fuer-vereine.md
 28145d52d3b11d05bda8b2a2623fbd64  doc/ger-de/hilfe/privatpersonen/vereinsseiten/vereinsnewsletter.md
-b7436bdfdda0e584fd6b740a2f018758  doc/ger-de/hilfe/privatpersonen/was-es-gibt-und-was-nicht.md
+eea73754cd49f9d4f27c89bb036cf75f  doc/ger-de/hilfe/privatpersonen/was-es-gibt-und-was-nicht.md
 5312c8a5155e25df1b0bd32b40afab85  doc/ger-de/hilfe/projekt/README.md
 3d66aad19e958427806e3afae5cd0c39  doc/ger-de/hilfe/projekt/community-kanaele.md
 e775407933a0f3e56e0552356f5854bc  doc/ger-de/hilfe/projekt/faq.md
@@ -20294,7 +20294,7 @@ a524dfad151c7e6dafc89391120c6c74  doc/ger-de/installation/10-nach-der-installati
 b3dcee8ff6c5a00f9d636d824f82bb63  doc/ger-de/installation/12-fehlerbehebung.md
 bf3347c635165044f26fa5756f16ade0  doc/ger-de/installation/13-sicherheitshaertung.md
 d8836abdc6d31377aa7a50a9033b919a  doc/ger-de/installation/14-migration-von-4x.md
-4d299ace45aa59fdc2b84abca6190c13  doc/ger-de/installation/15-migration-von-5x-legacy.md
+0d7957220ab24089e0155ab4cdfb722c  doc/ger-de/installation/15-migration-von-5x-legacy.md
 e5c8f765c267fe218ff96a8d495ec4b0  doc/ger-de/installation/16-migration-von-ez-platform-und-ibexa.md
 c58f84cb80be43753febbb211fa06f76  doc/ger-de/installation/17-migrationsreferenz.md
 cb3e7ed74503650766a98fc2918f77ed  doc/ger-de/installation/README.md
@@ -23016,7 +23016,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-d59a7775354aef5255319dc5bfdfa98c  kernel/setup/steps/ezstep_create_sites.php
+6cd69ca6acffdb606c75ca425ecaf988  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
