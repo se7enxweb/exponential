@@ -1027,6 +1027,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( class_exists( 'expAuditGuard' ) && !expAuditGuard::webAllows( $this->module->attribute( 'name' ), $functionName ) )
                             $moduleResult = expAuditGuard::refusedResult( $this->module->attribute( 'name' ), $functionName );
 
+                        // An account marked "change password at next sign-in" goes to user/password first, on every
+                        // siteaccess ([PasswordChangeRequiredSettings] ExemptViews[] stay open)
+                        if ( $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
+                            $moduleResult = expPasswordChangeRequired::moduleResult( $this->module, $functionName );
+
                         // The node or object the view is asked for, for the line of a request that ends as a not-found
                         if ( class_exists( 'expRequestLog' ) )
                             expRequestLog::noteView( $this->module->attribute( 'name' ), $functionName,

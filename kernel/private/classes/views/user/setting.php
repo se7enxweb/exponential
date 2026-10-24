@@ -40,6 +40,11 @@ class Setting extends \Exponential\Runnable\ModuleView
         $userObject = $user->attribute( 'contentobject' );
         if ( !$userObject )
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+        // user/preferences opens this view; with [MemberGuardSettings] SettingRequiresEdit the account must also be one
+        // the user may edit, so that a member manager reaches only the accounts of the groups it manages
+        // (doc/eng-us/bc/6.0/member-management.md)
+        if ( class_exists( '\expMemberManagement' ) && !\expMemberManagement::settingAllowed( $userObject ) )
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         $userSetting = \eZUserSetting::fetch( $UserID );
 
         if ( $http->hasPostVariable( "UpdateSettingButton" ) )

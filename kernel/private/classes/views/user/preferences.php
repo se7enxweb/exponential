@@ -60,6 +60,13 @@ class Preferences extends \Exponential\Runnable\ModuleView
         // A request without a key (user/preferences alone) has nothing to store: it only redirects.
         $hasKey = is_string( $key ) && trim( $key ) !== '';
 
+        // "Change password at next sign-in" is a preference only its own code writes (expPasswordChangeRequired)
+        if ( $hasKey && class_exists( 'expPasswordChangeRequired' ) && \expPasswordChangeRequired::isReserved( $key ) )
+        {
+            \eZDebug::writeWarning( "The preference '$key' cannot be written through user/preferences", 'user/preferences' );
+            $hasKey = false;
+        }
+
         // Set user preferences
         if ( $hasKey && $allowPreferenceWrite )
         {

@@ -24,14 +24,18 @@ Never edit `settings/site.ini` itself: an update replaces it. Put the settings y
 > if an user wants to store current session to the cookie  
 > should click on "Remember me" checkbox on login page.  
 > Empty or 0 means this ability will be disabled and CookieTimeout will be used.  
+> 360 days, and the box is checked on the login forms by default: browsers that drop  
+> browser-session cookies on their own (iOS Safari and Chrome) would otherwise sign the  
+> user out. The lifetime is kept for the whole sign-in, also when the session id changes  
+> later (the second step of 2FA). Keep SessionTimeout at least as long.  
 
-Default: empty.
+Default: `31104000`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [Session]
-RememberMeTimeout=
+RememberMeTimeout=31104000
 */ ?>
 ```
 
@@ -55,16 +59,18 @@ Handler=
 
 ## SessionTimeout
 
-> Number of seconds a session will last, 3 days is standard  
+> Number of seconds a session will last when not used, 360 days (as RememberMeTimeout:  
+> the server keeps an idle session as long as a Remember me cookie can bring it back;  
+> 3 days, the earlier standard, signed such users out after a long weekend)  
 > Overwrites session.gc\_maxlifetime when used with ezpSessionHandlerPHP  
 
-Default: `259200`.
+Default: `31104000`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [Session]
-SessionTimeout=259200
+SessionTimeout=31104000
 */ ?>
 ```
 

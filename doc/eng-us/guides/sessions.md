@@ -13,7 +13,13 @@ on 6 October 2026; the files are named in [References](#references).
 ## In short
 
 - A **session** keeps one browser signed in. It is opened at the first request that needs it and ends
-  `site.ini [Session] SessionTimeout` seconds after its last use (default 259200, three days).
+  `site.ini [Session] SessionTimeout` seconds after its last use (default 31104000, 360 days; until October 2026
+  259200, three days).
+- **Remember me** is checked on the login forms by default: the session cookie then lasts `RememberMeTimeout`
+  seconds (default 31104000, 360 days) instead of ending with the browser. iOS Safari and Chrome drop such
+  browser-session cookies on their own when they are put away; with the box the sign-in survives. The lifetime holds
+  for the whole sign-in, also when the session gets a new id later (the code step of a two-factor sign-in), the same
+  under Apache and Velocity. Clearing the box gives the cookie that ends with the browser.
 - Where sessions are kept depends on `site.ini [Session] Handler`. Empty (the default) means
   `ezpSessionHandlerPHP`: PHP keeps them in its own storage (files) and the page **cannot list or remove them one
   by one**. `ezpSessionHandlerDB` keeps them in the table `ezsession`, and the page lists and removes them.

@@ -13,7 +13,14 @@ geprüft; die Dateien sind unter [Quellen](#quellen) genannt.
 ## Kurz gesagt
 
 - Eine **Sitzung** hält einen Browser angemeldet. Sie wird bei der ersten Anfrage geöffnet, die sie braucht, und endet
-  `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Verwendung (Standard 259200, drei Tage).
+  `site.ini [Session] SessionTimeout` Sekunden nach ihrer letzten Verwendung (Standard 31104000, 360 Tage; bis
+  Oktober 2026 259200, drei Tage).
+- **Angemeldet bleiben** ist auf den Anmeldeformularen vorausgewählt: Das Sitzungs-Cookie hält dann
+  `RememberMeTimeout` Sekunden (Standard 31104000, 360 Tage) statt nur bis zum Schließen des Browsers. iOS Safari und
+  Chrome verwerfen solche Browser-Sitzungs-Cookies von sich aus, wenn sie in den Hintergrund gehen; mit dem Kästchen
+  bleibt die Anmeldung erhalten. Die Lebensdauer gilt für die ganze Anmeldung, auch wenn die Sitzung später eine neue
+  ID bekommt (der Code-Schritt der Zwei-Faktor-Anmeldung), unter Apache und Velocity gleich. Wer das Kästchen leert,
+  bekommt das Cookie, das mit dem Browser endet.
 - Wo Sitzungen aufbewahrt werden, hängt von `site.ini [Session] Handler` ab. Leer (der Standard) bedeutet
   `ezpSessionHandlerPHP`: PHP bewahrt sie in seinem eigenen Speicher auf (Dateien), und die Seite **kann sie nicht einzeln auflisten
   oder entfernen**. `ezpSessionHandlerDB` bewahrt sie in der Tabelle `ezsession` auf, und die Seite listet sie auf und entfernt sie.

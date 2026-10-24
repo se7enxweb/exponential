@@ -283,6 +283,9 @@ class eZUserType extends eZDataType
 
             eZDebugSetting::writeDebug( 'kernel-user', "setInformation run", "ezusertype" );
             $user->setInformation( $contentObjectID, $login, $email, $password, $passwordConfirm );
+            // "Change password at next sign-in": the form shows it (the hidden field) only on another person's
+            // account; kept in the draft and applied on publish
+            $user->PasswordChangeRequiredDraft = self::postedPasswordChangeRequired( $http, $base, $contentObjectAttribute->attribute( 'id' ) );
             $contentObjectAttribute->setContent( $user );
             return true;
         }
@@ -440,6 +443,9 @@ class eZUserType extends eZDataType
                         self::createSettingIfMissing( $userID );
                     }
                     $contentObjectAttribute->setContent( $user );
+                    // "Change password at next sign-in" as the form asked, for another person's account only
+                    if ( class_exists( 'expPasswordChangeRequired' ) && $hasLogin )
+                        expPasswordChangeRequired::applyFromEdit( $user, $user->PasswordChangeRequiredDraft );
                 }
             }
 
@@ -457,14 +463,16 @@ class eZUserType extends eZDataType
      */
     public static function serializeDraft( eZUser $user )
     {
-        return json_encode(
-            array(
-                 'login' => $user->attribute( 'login' ),
-                 'password_hash' => $user->attribute( 'password_hash' ),
-                 'email' => $user->attribute( 'email' ),
-                 'password_hash_type' => $user->attribute( 'password_hash_type' )
-            )
+        $draft = array(
+             'login' => $user->attribute( 'login' ),
+             'password_hash' => $user->attribute( 'password_hash' ),
+             'email' => $user->attribute( 'email' ),
+             'password_hash_type' => $user->attribute( 'password_hash_type' )
         );
+        // the choice "change password at next sign-in", when the form showed it (applied on publish)
+        if ( is_bool( $user->PasswordChangeRequiredDraft ) )
+            $draft['password_change_required'] = $user->PasswordChangeRequiredDraft;
+        return json_encode( $draft );
     }
 
     /**
@@ -531,6 +539,9 @@ class eZUserType extends eZDataType
             $user->setAttribute( 'password_hash', $draft->password_hash );
             $user->setAttribute( 'email', $draft->email );
             $user->setAttribute( 'password_hash_type', $draft->password_hash_type );
+            // a draft without the choice keeps the one in hand (a form posted in this request)
+            if ( property_exists( $draft, 'password_change_required' ) && is_bool( $draft->password_change_required ) )
+                $user->PasswordChangeRequiredDraft = $draft->password_change_required;
         }
 
         return $user;
@@ -868,6 +879,23 @@ class eZUserType extends eZDataType
         if ( is_array( $value ) || is_object( $value ) )
             return '';
         return (string)$value;
+    }
+
+    /**
+     * The choice "change password at next sign-in" of a posted edit form: null when the form did not show it (no
+     * <base>_data_user_password_change_shown_<id>), else whether <base>_data_user_password_change_required_<id> was
+     * ticked.
+     *
+     * @param eZHTTPTool $http
+     * @param string $base
+     * @param int $attributeID
+     * @return bool|null
+     */
+    static function postedPasswordChangeRequired( $http, $base, $attributeID )
+    {
+        if ( self::postedString( $http, $base . '_data_user_password_change_shown_' . $attributeID ) !== '1' )
+            return null;
+        return self::postedString( $http, $base . '_data_user_password_change_required_' . $attributeID ) !== '';
     }
 
     /*!

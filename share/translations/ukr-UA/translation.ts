@@ -43877,6 +43877,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>required</source>
         <translation>обов&apos;язковий</translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Змінити пароль під час наступного входу</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Після входу користувач має вибрати новий пароль, перш ніж робити щось інше. Використовуйте це, коли даєте комусь тимчасовий пароль.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/datatype/result/ezoption</name>
@@ -53336,6 +53344,10 @@ your account.</source>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Виберіть новий пароль, перш ніж продовжити: адміністратор попросив вас замінити ваш поточний пароль.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -60712,6 +60724,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Missing file review mark</source>
         <translation>Позначення відсутнього файлу як перевіреного</translation>
     </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Зміну пароля під час наступного входу встановлено</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Зміну пароля під час наступного входу скасовано</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Переспрямовано до зміни пароля</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>
@@ -67562,6 +67586,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>Вас виведено з системи на інших пристроях.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Виберіть новий пароль, перш ніж продовжити: адміністратор попросив вас замінити ваш поточний пароль.</translation>
     </message>
 </context>
 <context>
