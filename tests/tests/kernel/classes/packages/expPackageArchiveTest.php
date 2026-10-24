@@ -9,6 +9,7 @@
  *   the suite);
  * - a header type ezcArchive cannot read ("V", "K", "\0" in an archive with the ustar magic) is refused;
  * - a long name header that says it is larger than 4096 bytes is refused before anything of it is read;
+ * - a size field of 12 octal digits without terminator is read, a base-256 or not octal size is refused;
  * - a file packed as 04755 comes out 0644, directories packed as 0777 and 0000 come out 0755.
  *
  * Archives are written byte by byte under var/tmp and removed in tearDown(). No database.
@@ -156,7 +157,10 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertLessThan( 2.0, microtime( true ) - $start );
         $this->assertFalse( $result['ok'] );
         $this->assertSame( 'tar_pax', $result['code'] );
-        $this->assertStringContainsString( 'tar --format=gnu', eZPackageUploadInspector::message( $result, $this->limits ) );
+        // GNU tar spells the format "gnu", bsdtar (macOS, the BSDs) answers that with "No such format" and wants "gnutar"
+        $message = eZPackageUploadInspector::message( $result, $this->limits );
+        $this->assertStringContainsString( 'tar --format=gnu,', $message );
+        $this->assertStringContainsString( 'tar --format=gnutar', $message );
 
         $this->assertFalse( expPackageJson::extractArchive( $path, $this->dir . '/out', $error ) );
         $this->assertStringContainsString( 'tar_pax', $error );
@@ -271,6 +275,37 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $empty = self::definition( self::GNU_MAGIC ) . self::header( '././@LongLink', 0, 'L', '0000644', self::GNU_MAGIC )
                . self::file( 'short', 'x', '0000644', self::GNU_MAGIC );
         $this->assertSame( 'tar_long_name', expPackageArchive::scan( $this->write( $empty, 'empty.ezpkg' ), $this->limits )['code'] );
+    }
+
+    /**
+     * Old writers fill the size field with 12 octal digits and no terminator; ezcArchive reads that, so the scan does
+     * too. The base-256 form (GNU, from 8 GiB on) and anything not octal stay unreadable.
+     */
+    public function testSizeFieldOfTwelveDigitsIsRead()
+    {
+        $content = 'twelve digits';
+        $field = str_pad( decoct( strlen( $content ) ), 12, '0', STR_PAD_LEFT );
+        $tar = self::definition()
+             . self::header( 'k1_archive/twelve.txt', strlen( $content ), '0', '0000644', self::USTAR_MAGIC, $field )
+             . self::data( $content );
+        $path = $this->write( $tar );
+        $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
+        $this->assertSame( 'ok', $this->inspect( $path ) );
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( $content, file_get_contents( $target . '/k1_archive/twelve.txt' ) );
+
+        $fields = array( 'base-256' => "\x80" . str_repeat( "\0", 10 ) . chr( strlen( $content ) ),
+                         'not octal' => str_pad( '9', 11, '0', STR_PAD_LEFT ) . "\0",
+                         'twelve digits, one not octal' => str_pad( '8', 12, '0', STR_PAD_LEFT ) );
+        foreach ( $fields as $label => $field )
+        {
+            $bad = self::definition()
+                 . self::header( 'k1_archive/bad.txt', strlen( $content ), '0', '0000644', self::USTAR_MAGIC, $field )
+                 . self::data( $content );
+            $problem = expPackageArchive::scan( $this->write( $bad, 'bad.ezpkg' ), $this->limits );
+            $this->assertSame( 'unreadable', $problem['code'] ?? null, $label );
+        }
     }
 
     public function testDamagedHeadersAreRefused()

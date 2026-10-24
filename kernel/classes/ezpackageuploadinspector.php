@@ -380,7 +380,7 @@ class eZPackageUploadInspector
             case 'too_many_entries': return ezpI18n::tr( 'kernel/package', 'The archive has more than %count entries.', false, array( '%count' => $limits['max_entries'] ) );
             case 'too_large_unpacked': return ezpI18n::tr( 'kernel/package', 'The archive unpacks to more than %size.', false, array( '%size' => self::bytesText( $limits['max_unpacked_size'] ) ) );
             case 'unsafe_path': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" points outside the package.', false, $path );
-            case 'tar_pax': return ezpI18n::tr( 'kernel/package', 'The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).' );
+            case 'tar_pax': return ezpI18n::tr( 'kernel/package', 'The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).' );
             case 'tar_entry_type': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.', false, $path + array( '%type' => expPackageArchive::typeText( isset( $result['type'] ) ? $result['type'] : '' ) ) );
             case 'tar_long_name': return ezpI18n::tr( 'kernel/package', 'The archive was refused: it names an entry longer than %length bytes.', false, array( '%length' => expPackageArchive::MAX_LONG_NAME ) );
             case 'unsafe_type': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.', false, $path );

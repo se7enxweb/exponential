@@ -56979,8 +56979,8 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Archivum recusatum est: elementum &quot;%path&quot; extra sarcinam spectat.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>Archivum forma tar PAX confectum est, quae importari non potest. Sarcinam forma tar GNU confice (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archivum forma tar PAX confectum est, quae importari non potest. Sarcinam forma tar GNU confice (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

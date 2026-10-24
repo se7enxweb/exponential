@@ -56979,8 +56979,8 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: &apos;aplo&apos; Hur &apos;agh Doch &quot;%path&quot;.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>PAX tar mIw lo&apos;lu&apos;pu&apos;; ghItlh ngaSwI&apos; lI&apos;laHbe&apos;lu&apos;. GNU tar mIw yIlo&apos; (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>PAX tar mIw lo&apos;lu&apos;pu&apos;; ghItlh ngaSwI&apos; lI&apos;laHbe&apos;lu&apos;. GNU tar mIw yIlo&apos; (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

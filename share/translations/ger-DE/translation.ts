@@ -66574,8 +66574,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Das Archiv wurde abgelehnt: Der Eintrag "%path" zeigt aus dem Paket heraus.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>Das Archiv wurde im PAX-tar-Format gepackt, das nicht importiert werden kann. Packen Sie das Paket im GNU-tar-Format (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Das Archiv wurde im PAX-tar-Format gepackt, das nicht importiert werden kann. Packen Sie das Paket im GNU-tar-Format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

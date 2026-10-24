@@ -60665,8 +60665,8 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <translation>Se rechazó el archivo comprimido: la entrada &quot;%path&quot; apunta fuera del paquete.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>El archivo comprimido se empaquetó en el formato tar PAX, que no se puede importar. Empaqueta el paquete en el formato tar GNU (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>El archivo comprimido se empaquetó en el formato tar PAX, que no se puede importar. Empaqueta el paquete en el formato tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

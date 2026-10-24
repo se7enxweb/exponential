@@ -56964,8 +56964,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; nîşanî derveyî pakêtê dide.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>Arşîv bi formata PAX ya tar hatiye pakêtkirin, ku nayê îthalkirin. Pakêtê bi formata GNU ya tar pakêt bikin (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arşîv bi formata PAX ya tar hatiye pakêtkirin, ku nayê îthalkirin. Pakêtê bi formata GNU ya tar pakêt bikin (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

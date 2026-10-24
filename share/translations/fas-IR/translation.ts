@@ -56964,8 +56964,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>بایگانی پذیرفته نشد: مدخل «%path» به بیرون از بسته اشاره دارد.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>بایگانی با قالب PAX از tar بسته‌بندی شده است که قابل درون‌ریزی نیست. بسته را با قالب GNU از tar بسته‌بندی کنید (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>بایگانی با قالب PAX از tar بسته‌بندی شده است که قابل درون‌ریزی نیست. بسته را با قالب GNU از tar بسته‌بندی کنید (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

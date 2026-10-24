@@ -56976,8 +56976,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; يشير إلى خارج الحزمة.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
-        <translation>حُزم الأرشيف بتنسيق PAX لـ tar، ولا يمكن استيراده. احزم الحزمة بتنسيق GNU لـ tar (tar --format=gnu).</translation>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>حُزم الأرشيف بتنسيق PAX لـ tar، ولا يمكن استيراده. احزم الحزمة بتنسيق GNU لـ tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>

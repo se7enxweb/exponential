@@ -33,7 +33,7 @@
  * - in either, hard and symbolic links, devices and fifos ("1", "2", "3", "4", "6"): they do not trip the reader, and
  *   entriesProblem() refuses them afterwards with its own code (unsafe_type), once the package is named.
  * Everything else is refused, PAX archives with a message of their own: they are not read, a package has to be packed
- * in the GNU format (tar --format=gnu).
+ * in the GNU format (GNU tar: tar --format=gnu; bsdtar, the tar of macOS and the BSDs: tar --format=gnutar).
  *
  * open() opens the archive only when scan() finds nothing, and with an extract callback (expPackageArchiveModes)
  * that gives every file it extracts 0644 and every directory 0755, within the installation's limits.
@@ -167,8 +167,8 @@ class expPackageArchive
                     return self::problem( 'tar_long_name', '', $type );
                 // ezcArchiveGnuHeader::readExtension() reads one block too many when the size is a
                 // multiple of 512 (also 0): it skips the real entry header and parses the entry's
-                // data as the next header, so a forged PAX header there loops forever again. Real
-                // GNU tar writes name plus NUL, so only a name of exactly 511 bytes is lost.
+                // data as the next header, so a forged PAX header there loops forever again. GNU tar
+                // writes the name plus a NUL, so a name of 511, 1023, ... or 4095 bytes cannot be imported.
                 if ( $size % self::BLOCK_SIZE === 0 )
                     return self::problem( 'tar_long_name', '', $type );
                 $data = self::read( $handle, self::padded( $size ) );
@@ -234,6 +234,7 @@ class expPackageArchive
 
     /**
      * The size field (12 bytes, octal); null for the base-256 form (GNU, from 8 GiB on) or anything not octal.
+     * Old writers fill all 12 bytes with digits and no terminator; ezcArchive reads that form too.
      */
     private static function size( $field )
     {
@@ -242,7 +243,7 @@ class expPackageArchive
         $digits = trim( $field, " \0" );
         if ( $digits === '' )
             return 0;
-        if ( !preg_match( '/^[0-7]{1,11}$/', $digits ) )
+        if ( !preg_match( '/^[0-7]{1,12}$/', $digits ) )
             return null;
         return octdec( $digits );
     }

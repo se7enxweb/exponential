@@ -165,8 +165,8 @@ press **Import package**. Before anything is written, the archive is inspected:
 2. it is at most `MaxArchiveSize` bytes and has at most `MaxEntries` entries that unpack to at most
    `MaxUnpackedSize` bytes;
 3. its tar headers are of a kind the archive reader handles: a PAX archive is refused (pack it with
-   `tar --format=gnu`), and so is a header type other than a file, a directory or a GNU long name of at most 4096
-   bytes;
+   `tar --format=gnu`, or `tar --format=gnutar` with bsdtar, the tar of macOS), and so is a header type other
+   than a file, a directory or a GNU long name of at most 4096 bytes;
 4. every entry is a plain file or directory with a relative path: no `..`, no absolute path, no back slash, no
    control character, no symbolic or hard link, no device or fifo;
 5. it has a `package.xml` at its top that is well formed, has `<package>` as its root and no document type, names a
