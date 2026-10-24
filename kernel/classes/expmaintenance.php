@@ -180,16 +180,30 @@ class expMaintenance
      * because it does not carry this run's id, disable( $root, $runId ) at the
      * end of the run leaves it in place too.
      *
+     * The one exception is the window an earlier setup run left on when it
+     * failed (reason 'setup', a run id, no wizard token: a wizard session's
+     * window carries allow_token). That window exists only to hide the half
+     * installed site until a run succeeds, so this run takes it over, and a
+     * successful run switches it off. Before, it counted as someone else's and
+     * stayed on after the next successful installation.
+     *
      * @param string $root
      * @param string $runId the setup log's run
      * @param array $options as enable()
-     * @return string|false 'enabled' when this run switched it on, 'existing'
-     *         when it was on already and is kept, false when it could not be
-     *         switched on
+     * @return string|false 'enabled' when this run switched it on, 'adopted'
+     *         when it took over a failed run's window, 'existing' when it was on
+     *         already and is kept, false when it could not be switched on
      */
     static function beginRun( $root, $runId, array $options = array() )
     {
-        if ( self::state( $root ) !== false )
+        $state = self::state( $root );
+        if ( is_array( $state ) && isset( $state['reason'], $state['run'] ) && $state['reason'] === 'setup'
+             && empty( $state['allow_token'] ) && $state['run'] !== (string)$runId )
+        {
+            $state['run'] = (string)$runId;
+            return self::enable( $root, $state ) ? 'adopted' : 'existing';
+        }
+        if ( $state !== false )
             return 'existing';
         $options['run'] = (string)$runId;
         return self::enable( $root, $options ) ? 'enabled' : false;

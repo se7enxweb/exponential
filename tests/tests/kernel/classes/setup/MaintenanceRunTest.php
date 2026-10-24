@@ -38,6 +38,30 @@ class MaintenanceRunTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $original, file_get_contents( $marker ) );
     }
 
+    public function testAFailedRunsWindowIsTakenOverAndEndedByTheNextRun()
+    {
+        $marker = $this->root . '/' . expMaintenance::MARKER;
+        file_put_contents( $marker, json_encode( array( 'reason' => 'setup', 'run' => 'failed-run', 'message' => '', 'since' => 1 ) ) . "\n" );
+
+        $this->assertSame( 'adopted', expMaintenance::beginRun( $this->root, 'run-3', array( 'reason' => 'setup' ) ) );
+        $state = json_decode( file_get_contents( $marker ), true );
+        $this->assertSame( 'run-3', $state['run'], 'the window now belongs to this run' );
+        $this->assertSame( 1, $state['since'], 'the rest of the window is kept' );
+        $this->assertTrue( expMaintenance::disable( $this->root, 'run-3' ), 'a successful run ends it' );
+        $this->assertFileDoesNotExist( $marker );
+    }
+
+    public function testAWizardSessionsWindowIsNotTakenOver()
+    {
+        $marker = $this->root . '/' . expMaintenance::MARKER;
+        $original = json_encode( array( 'reason' => 'setup', 'run' => 'wizard-run', 'allow_token' => 'abc', 'since' => 1 ) ) . "\n";
+        file_put_contents( $marker, $original );
+
+        $this->assertSame( 'existing', expMaintenance::beginRun( $this->root, 'run-4', array( 'reason' => 'setup' ) ) );
+        $this->assertSame( $original, file_get_contents( $marker ) );
+        $this->assertFalse( expMaintenance::disable( $this->root, 'run-4' ) );
+    }
+
     public function testWithoutMarkerTheRunSwitchesItOnAndOff()
     {
         $marker = $this->root . '/' . expMaintenance::MARKER;
