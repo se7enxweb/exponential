@@ -21775,7 +21775,7 @@ dee39131826612b8eda0d249f761b4b8  kernel/classes/ezpackageuploadinspector.php
 281fb4c5c551758190a823df8e1c43ed  kernel/classes/ezpathelement.php
 a2852263baec56cf69eb8d53f12b2483  kernel/classes/ezpdfexport.php
 3d3da61017eaaab0308ec6ff06cd9c83  kernel/classes/ezpendingactions.php
-7b6431bef29c0b6ee6802b1fd7ce08ea  kernel/classes/ezpersistentobject.php
+ad2359b82b2a5abd0a7ea6b814003bee  kernel/classes/ezpersistentobject.php
 ae33e6f5393513d196e4bd53f6c63b92  kernel/classes/ezpolicy.php
 79388fb542ea43277c1ff809aee45e48  kernel/classes/ezpolicylimitation.php
 fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
@@ -23180,7 +23180,7 @@ c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
 1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
-3ee88b531d7dbf15782e759d484d73d4  lib/ezdb/classes/ezsqlite3db.php
+0be783a571299dc5610f5717f8cd94ac  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
 c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php

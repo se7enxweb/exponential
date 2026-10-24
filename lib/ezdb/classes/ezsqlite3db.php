@@ -778,6 +778,63 @@ class eZSQLite3DB extends eZDBInterface
         return $ok;
     }
 
+    /**
+     * Whether an insert into $table must give its serial column $column a value itself.
+     *
+     * SQLite numbers a column only when it is the table's single INTEGER PRIMARY KEY (an
+     * alias of the rowid). The legacy kernel's own schema has columns like that or leaves the
+     * column nullable, and lastSerialID() numbers the new row after the insert. A schema made
+     * by the Platform (Doctrine) keeps the id in a primary key of two columns and declares it
+     * NOT NULL, for example ezcontentobject_attribute (id, version) of Exponential Platform 4.6
+     * and 5: an insert without an id failed with "NOT NULL constraint failed", so creating
+     * content (uploads among it) in the legacy admin on SQLite stopped with an error page.
+     * The Platform numbers those rows itself (the maximum + 1, inside its transaction), and
+     * so does nextSerialID() below.
+     *
+     * @param string $table
+     * @param string $column
+     * @return bool
+     */
+    function serialIDNeedsValue( $table, $column )
+    {
+        $cacheKey = $table . '.' . $column;
+        if ( isset( $this->SerialIDNeedsValue[$cacheKey] ) )
+            return $this->SerialIDNeedsValue[$cacheKey];
+        $needs = false;
+        if ( $this->IsConnected && preg_match( '/^[A-Za-z0-9_]+$/', $table ) )
+        {
+            $rows = $this->arrayQuery( "PRAGMA table_info($table)" );
+            $keys = array();
+            $columnRow = null;
+            foreach ( is_array( $rows ) ? $rows : array() as $row )
+            {
+                if ( (int)$row['pk'] > 0 )
+                    $keys[] = $row['name'];
+                if ( $row['name'] === $column )
+                    $columnRow = $row;
+            }
+            $rowidAlias = count( $keys ) === 1 && $keys[0] === $column
+                          && strtoupper( (string)$columnRow['type'] ) === 'INTEGER';
+            $needs = $columnRow !== null && !$rowidAlias && (int)$columnRow['notnull'] === 1;
+        }
+        return $this->SerialIDNeedsValue[$cacheKey] = $needs;
+    }
+
+    /**
+     * The next value of the serial column $column of $table: the maximum + 1, as the Platform
+     * computes it on SQLite. Only race free inside a transaction (which holds the write lock
+     * from its start, BEGIN IMMEDIATE); eZPersistentObject::storeObject() opens one around it.
+     *
+     * @param string $table
+     * @param string $column
+     * @return int
+     */
+    function nextSerialID( $table, $column )
+    {
+        $rows = $this->arrayQuery( "SELECT MAX($column) AS maximum FROM $table" );
+        return (int)( is_array( $rows ) && isset( $rows[0]['maximum'] ) ? $rows[0]['maximum'] : 0 ) + 1;
+    }
+
     /*!
      \reimp
     */
@@ -1088,6 +1145,9 @@ class eZSQLite3DB extends eZDBInterface
     protected $StatementWaitMs = 5000;
     /// Whether SQLite has a transaction open on this connection (BEGIN IMMEDIATE succeeded, not ended yet)
     protected $InSQLTransaction = false;
+
+    /// serialIDNeedsValue() per "table.column"
+    protected $SerialIDNeedsValue = array();
     /// Set by beginQuery() when the start did not get the write lock in time
     protected $BeginFailed = false;
     /// The open <database>.writer-lock file (null: not opened yet, false: none), and whether this connection holds it

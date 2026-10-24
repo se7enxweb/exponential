@@ -641,6 +641,23 @@ class eZPersistentObject
         {
             // Note: When inserting we cannot hone the $fieldFilters parameters
 
+            // SQLite numbers a serial column only when it is the table's single INTEGER PRIMARY KEY;
+            // in a Platform schema the id is part of a two column key and NOT NULL, and the insert
+            // must give it a value (see eZSQLite3DB::serialIDNeedsValue()). The maximum + 1 is taken
+            // and used inside one transaction, which holds the write lock from its start.
+            $serialTransaction = false;
+            if ( $db->DatabaseName() == 'sqlite' &&
+                 isset( $def["increment_key"] ) && is_string( $def["increment_key"] ) &&
+                 in_array( $def["increment_key"], $exclude_fields ) &&
+                 method_exists( $db, 'serialIDNeedsValue' ) &&
+                 $db->serialIDNeedsValue( $table, $def["increment_key"] ) )
+            {
+                $db->begin();
+                $serialTransaction = true;
+                $obj->setAttribute( $def["increment_key"], $db->nextSerialID( $table, $def["increment_key"] ) );
+                $exclude_fields = array_values( array_diff( $exclude_fields, array( $def["increment_key"] ) ) );
+            }
+
             $use_fields = array_diff( array_keys( $fields ), $exclude_fields );
             $use_field_names = $use_fields;
             if ( $db->useShortNames() )
@@ -710,6 +727,8 @@ class eZPersistentObject
                 $sql = "INSERT INTO $table ($field_text) VALUES($value_text)";
             }
             $db->query( $sql );
+            if ( $serialTransaction )
+                $db->commit();
 
             if ( isset( $def["increment_key"] ) &&
                  is_string( $def["increment_key"] ) &&
