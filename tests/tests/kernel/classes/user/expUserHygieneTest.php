@@ -190,7 +190,7 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 103, 104 ), $this->find( array( 'filter' => 'inactive', 'days' => '180' ) ) );
         $this->assertSame( array( 103 ), $this->find( array( 'filter' => 'inactive', 'days' => '365' ) ) );
         $this->assertSame( array( 103, 104, 105 ), $this->find( array( 'filter' => 'inactive', 'days' => '9' ) ) );
-        $this->assertSame( array( 105, 106 ), $this->find( array( 'filter' => 'disabled' ) ) );
+        $this->assertSame( array( 105, 106, 115 ), $this->find( array( 'filter' => 'disabled' ) ), '115 has no ezuser_setting row' );
         $this->assertSame( array( 107 ), $this->find( array( 'filter' => 'locked' ) ) );
         $this->assertSame( array(), $this->find( array( 'filter' => 'locked' ), true, null, 0 ), 'no limit, no lock' );
         $this->assertSame( array( 109, 110, 111 ), $this->find( array( 'filter' => 'orphaned' ) ) );
@@ -278,7 +278,8 @@ class expUserHygieneTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'no_object', 'never' ), $byID[109]['states'] );
         $this->assertSame( array( 'draft_only', 'never' ), $byID[110]['states'] );
         $this->assertSame( array( 'no_location', 'never' ), $byID[111]['states'] );
-        $this->assertTrue( $byID[115]['enabled'], 'no ezuser_setting row counts as enabled, as eZUser::isEnabled() does' );
+        $this->assertFalse( $byID[115]['enabled'], 'no ezuser_setting row is not enabled, as eZUser::isEnabled() decides' );
+        $this->assertSame( array( 'disabled', 'never' ), $byID[115]['states'] );
 
         $this->assertSame( array( array( 'node_id' => 12, 'name' => 'Members' ) ), $byID[101]['groups'] );
         $this->assertSame( 1022, $byID[101]['node_id'] );
