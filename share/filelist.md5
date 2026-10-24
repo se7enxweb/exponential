@@ -3251,7 +3251,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
+05479349b2e0f3840e6c14b0590e4d64  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -22102,7 +22102,7 @@ b13aefe62a3e0030247f06a02f133148  kernel/common/eztocoperator.php
 c1b77acfcb295ee03ada1972e12a84d6  kernel/common/eztopmenuoperator.php
 84fe1fae52b9b8b9f029ff975ce1e09b  kernel/common/eztreemenuoperator.php
 6953a12aa883c8681e89d787fac58636  kernel/common/ezurloperator.php
-4e4c70cf30e8c4a22efdaaa9467ab3b1  kernel/common/ezwordtoimageoperator.php
+db18aeee1da38f3696efcd936668926e  kernel/common/ezwordtoimageoperator.php
 02173ea3c8c2a03249c09f3c5fd0f451  kernel/common/i18n.php
 d2ddf7466b4280c4911c37c8102bbfa9  kernel/common/template.php
 d9a19707d273b7203fc3126bfb7cf064  kernel/content/action.php
@@ -23324,7 +23324,7 @@ b47036e6c9a6b724c83817e30e10c8d7  lib/eztemplate/classes/eztemplatestringoperato
 ce64e8ddc670f525fc4f7a061e369df1  lib/eztemplate/classes/eztemplateswitchfunction.php
 3203d0b04dc182ec2491644db60bc42e  lib/eztemplate/classes/eztemplatetextelement.php
 feb6381fbc782f2d25849a502d6b02e7  lib/eztemplate/classes/eztemplatetextoperator.php
-1f75b44294d455665ef4383eee95fad2  lib/eztemplate/classes/eztemplatetoolbarfunction.php
+9c039aa11140fee52e566931b0d1329a  lib/eztemplate/classes/eztemplatetoolbarfunction.php
 d27d72fa632723c912c0e30955660dfb  lib/eztemplate/classes/eztemplatetreecache.php
 4774dc127c85b83300146b357586e9c0  lib/eztemplate/classes/eztemplatetypeoperator.php
 83db4deedb094ab56e41666aa89d1d45  lib/eztemplate/classes/eztemplateunitoperator.php
@@ -23339,7 +23339,7 @@ b55898a868b558383b32af3334bd55d6  lib/ezutils/classes/expinfo.php
 072c48359e732e46bda20413549d3a94  lib/ezutils/classes/ezdebugsetting.php
 9aaad506ff8b06ee6e95ef9ae0592556  lib/ezutils/classes/ezexecution.php
 72fc7a1f67f3eaa83336f9d5b48a0169  lib/ezutils/classes/ezexpiryhandler.php
-a256bb774de5a0c3c51dc54091759972  lib/ezutils/classes/ezextension.php
+0da4388f4bfc0b22a549ec7e55484e1e  lib/ezutils/classes/ezextension.php
 072c8aadc71992ed763c699b6999fda2  lib/ezutils/classes/ezfatalusererror.php
 9e4092daa80dcaa119d74d48870c65d1  lib/ezutils/classes/ezfileextensionblacklistvalidator.php
 b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
@@ -23442,7 +23442,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-df74d651cc3f3a92ca3396f62e8a9ee5  settings/site.ini
+4de21854a9740173a83d60483472268e  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -25318,6 +25318,7 @@ d44f7d91cfcfce7f540940d68cc67a08  tests/tests/kernel/common/eZTopMenuOperatorMis
 8b30e928ef30214515342d68df84a9ee  tests/tests/kernel/common/eZTopMenuOperatorSetupTabsTest.php
 598827358b1c432bc3318f2109f7e9f8  tests/tests/kernel/common/eZURLOperatorAbsoluteEscapeTest.php
 93a01690434d0b2630f9d66c73204936  tests/tests/kernel/common/eZWordToImageOperatorDesignThemeTest.php
+65cf6fa39b8420575cad0cee0af8e156  tests/tests/kernel/common/eZWordToImageOperatorIconRootDirectoryTest.php
 2750fff669b9a51f2ad1a9cf046ccd88  tests/tests/kernel/common/ezautolinkoperator_test.php
 1a99838d59e88859ac7fdf49f50c2172  tests/tests/kernel/common/ezpI18nMissingTranslationLogTest.php
 0272b9db6554e00826c7f5085696ac37  tests/tests/kernel/common/ezurloperator_test.php
@@ -25784,6 +25785,7 @@ c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledI
 c6de6085f5bb0a3d346ae55181b75719  tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php
 03f60714b241ec5a58dd492b824bc688  tests/tests/lib/eztemplate/eZTemplateRoleOperatorRegistrationTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
+4bc06587b27c7c91d3a50b3d93489cdd  tests/tests/lib/eztemplate/eZTemplateToolbarUnconfiguredTest.php
 897c11a86ad0ae4c7ee05d4433239ae1  tests/tests/lib/eztemplate/eZTemplateUnitLocaleAndSequenceTest.php
 d3098c09d1bc71770ffd4c1a7e674691  tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php
 2a645a4d7081ec3e7be5ba692d72199f  tests/tests/lib/eztemplate/eztemplate_regression.php
@@ -25810,6 +25812,7 @@ ce575fc0814b1be85b41eab21e1760d4  tests/tests/lib/ezutils/eZExecutionExceptionHa
 60e4f4c4fcc1cfe2c734e6fc4b947dfd  tests/tests/lib/ezutils/eZExpiryHandlerCacheDirectoryTest.php
 e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.php
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
+5e2632f4df904bff687d912cae161989  tests/tests/lib/ezutils/eZExtensionRequiredExtensionsTest.php
 d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.php
 eac43077ae5cd7f561145f492ceece2d  tests/tests/lib/ezutils/eZHTTPToolPostNullTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
