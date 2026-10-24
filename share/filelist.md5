@@ -21638,7 +21638,7 @@ c1ae6737ac9b0ef9e74d5e4e1c2a4670  kernel/classes/expcontentdraftlist.php
 afba64859f8efa10835453902c32e626  kernel/classes/expcontentlanguagestates.php
 cf9939957167c71adbb8488217528eaf  kernel/classes/expcontentpendinglist.php
 3883f366ebecfccb5323bdae8da93a31  kernel/classes/expcronjobpause.php
-c8445cbbe36f81bf78475d87e0b2e446  kernel/classes/expcrontabsetup.php
+4f128af24293118e44082a150b3cb58b  kernel/classes/expcrontabsetup.php
 c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 66ac6b986ba97e409e6cbdb61becbbeb  kernel/classes/expeditorpolicies.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
@@ -24319,7 +24319,7 @@ d1edfc6fda691f10cf3306642f0eb98f  share/translations/dut-NL/GUIDE.md
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-6b14ecbd3482d7f4207919cfc44c2a9a  share/translations/eng-US/translation.ts
+92297649f5ccc6485ff99fd9d02cadf9  share/translations/eng-US/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
 f8456f0e05f462d47e47d6cf59d5a18e  share/translations/esl-ES/translation.ts
 99a8b049c3de4158b7de5fc2838ae5f7  share/translations/esl-MX/GUIDE.md
@@ -24332,7 +24332,7 @@ a563091cad1507c3270153cec4926c36  share/translations/fre-FR/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-448f71ae2bfdfc692f9bd4ba68bd8449  share/translations/ger-DE/translation.ts
+0726541f6997e22812df81b725d0e5d7  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 83c0956d32fe4e1440d089beceae285c  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -24366,7 +24366,7 @@ e97186d95acc45f8b903c2f6fbf36810  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 4c4434ef0e73180f4ecd090df5211373  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-2f7430f72869778e8c09b65e03453f9d  share/translations/untranslated/translation.ts
+d414548db97d436462ce4063d32d65f5  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 8f181d71de442e1dbe15a5783938d30f  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt

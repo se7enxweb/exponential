@@ -798,7 +798,7 @@ class expCrontabSetup
         $part = $part === '' ? self::GLOBAL_PART : (string)$part;
         $file = ( $root === null ? self::root() : rtrim( $root, '/' ) ) . '/' . self::RUN_FILE;
         $dir = dirname( $file );
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) )
             return false;
         $handle = @fopen( $file, 'c+' );
         if ( $handle === false )

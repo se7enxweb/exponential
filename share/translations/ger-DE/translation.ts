@@ -9248,7 +9248,7 @@
     </message>
     <message>
         <source>Setup &gt; Cronjobs</source>
-        <translation>Setup &gt; Cronjobs</translation>
+        <translation>Zur Seite Setup &gt; Cronjobs</translation>
     </message>
 </context>
 <context>
