@@ -156,6 +156,10 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
             // Reply-To below. Only when neither EmailSender nor AdminEmail is a valid address, the visitor as before.
             if ( $fromEmail == null )
                 $fromEmail = self::siteSender( $ini );
+            // Whether the sender address is the site's (FromEmail or siteSender()), decided here and not by comparing
+            // with the visitor's input: a visitor who typed the site's own address as YourEmail would get their
+            // free-text name shown in front of the site's address again.
+            $fromIsSite = $fromEmail != null;
             if ( $fromEmail == null )
                 $fromEmail = $yourEmail;
 
@@ -172,8 +176,8 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
             if ( count( $error_strings ) == 0 )
             {
                 $mail = new \eZMail();
-                $mail->setSender( $fromEmail, $fromEmail !== $yourEmail ? self::siteSenderName( $ini ) : $yourName );
-                if ( $fromEmail !== $yourEmail )
+                $mail->setSender( $fromEmail, $fromIsSite ? self::siteSenderName( $ini ) : $yourName );
+                if ( $fromIsSite )
                     $mail->setReplyTo( $yourEmail, $yourName );
                 $mail->setReceiver( $receiversEmail, $receiversName );
                 $mail->setSubject( $subject );
