@@ -600,6 +600,12 @@ class expKickstarter
         $stepObject = new eZStepFinal( $this->tpl, $this->http, $this->ini, $this->persistenceList );
         $stepObject->init();
         $stepObject->processPostData();
+        // the cron job init() wrote, or the lines to add by hand (doc/eng-us/bc/6.0/installer-crontab.md)
+        if ( is_array( $stepObject->CrontabResult ) )
+        {
+            foreach ( $stepObject->CrontabResult['lines'] as $line )
+                $this->cli->output( $line );
+        }
         return 'break';
     }
 

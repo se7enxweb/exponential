@@ -89,6 +89,14 @@ $FunctionList['cronjob_pauses'] = array( 'name' => 'cronjob_pauses',
                                                                  'method' => 'fetchCronjobPauses' ),
                                          'parameter_type' => 'standard',
                                          'parameters' => array( ) );
+// When the cronjob parts last ran and whether one is late, for the dashboard block "cronjobs"; an empty array for a user
+// without setup/managecronjobs (doc/eng-us/bc/6.0/installer-crontab.md).
+$FunctionList['cronjob_status'] = array( 'name' => 'cronjob_status',
+                                         'operation_types' => array( 'read' ),
+                                         'call_method' => array( 'class' => 'eZSetupFunctionCollection',
+                                                                 'method' => 'fetchCronjobStatus' ),
+                                         'parameter_type' => 'standard',
+                                         'parameters' => array( ) );
 // The log files of the log viewer's navigator (Setup > Log files), grouped: kernel, site, extensions, archives; an empty
 // list for a user without setup/logs (doc/eng-us/features/6.0/log-viewer.md).
 $FunctionList['log_files'] = array( 'name' => 'log_files',

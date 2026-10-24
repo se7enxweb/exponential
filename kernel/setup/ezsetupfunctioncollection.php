@@ -85,6 +85,22 @@ class eZSetupFunctionCollection
      * look into the directory of the state files; no rights of its own, so it is drawn only where the user may open
      * Setup > Cronjobs.
      */
+    /**
+     * When the cronjob parts of the installation last ran and whether one is late (expCrontabSetup::status()), for
+     * the dashboard block "cronjobs". Nothing for a user without setup/managecronjobs.
+     *
+     * @return array result: enabled, overall (ok, late, never), last, parts (part, schedule, siteaccess, started,
+     *               finished, state), admin_siteaccess; an empty array without the policy
+     */
+    function fetchCronjobStatus()
+    {
+        $user = eZUser::currentUser();
+        $access = $user->hasAccessTo( 'setup', 'managecronjobs' );
+        if ( !is_array( $access ) || $access['accessWord'] === 'no' || !class_exists( 'expCrontabSetup' ) )
+            return array( 'result' => array() );
+        return array( 'result' => expCrontabSetup::status() );
+    }
+
     function fetchCronjobPauses()
     {
         if ( !expCronjobPause::enabled() )

@@ -434,6 +434,12 @@ class Runcronjobs extends \Exponential\Runnable\Command
         $single = $cronScript !== false && $cronScript !== '';
         $partName = !$single && $cronPart !== false ? (string)$cronPart : '';
 
+        // When the part last ran (var/log/cronjob-lastrun.json), for the dashboard's cronjob block and exp:syscard:
+        // a start counts even when the part is paused or left out below, since cron did start it.
+        $recordRun = !$single && class_exists( '\expCrontabSetup' );
+        if ( $recordRun )
+            \expCrontabSetup::recordRun( $partName, $currentAccess !== null ? $currentAccess['name'] : (string)$siteaccess, 'started' );
+
         // A part paused at Setup > Cronjobs is left out before any listener is asked; that is not an error either.
         if ( class_exists( '\expCronjobPause' ) )
         {
@@ -506,6 +512,9 @@ class Runcronjobs extends \Exponential\Runnable\Command
                 }
             }
         }
+
+        if ( $recordRun )
+            \expCrontabSetup::recordRun( $partName, $currentAccess !== null ? $currentAccess['name'] : (string)$siteaccess, 'finished' );
 
         $script->shutdown();
     }

@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-9ab6da9472724a89be8078d440024f10  autoload/ezp_kernel.php
+35f40f7abe9a94d00d82f93fdf4656c1  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -119,7 +119,8 @@ aef5f587ba98095996266b403af6d77c  bin/php/ezwebinupgrade.php
 776d90775d3fe142bc18f7d48987b426  bin/php/frankenphp.php
 038994d40f5bd45e6d6f97ace5ba73f2  bin/php/i18n.php
 59c9fcb832a37194d1ea457b7793ae64  bin/php/ini.php
-2ce67010f346047ad37c51f5a86a0c1c  bin/php/install.php
+b244cfe59c683bcb6c3c5a8fbd1634fe  bin/php/install.php
+c9c673f063cd13b8f28d6054be7762e5  bin/php/installcrontab.php
 e4675b2c9840dcfeb3b515eb1fe87dd5  bin/php/kickstarter.php
 363da3b296a1e0748fc886f949963fee  bin/php/mailbounces.php
 356aba7479f51e2bddae6268c89b47f9  bin/php/mailconsent.php
@@ -2653,6 +2654,7 @@ bd90b75b44c0bc2caca30407b5035259  design/standard/templates/country/options.tpl
 9c1befb7d3b6c2ef591e49f535392697  design/standard/templates/dashboard/all_latest_content.tpl
 720d81001686bfe9246caf73cce2b4b4  design/standard/templates/dashboard/audit.tpl
 63e671197a2e1e4819163c1340a46e97  design/standard/templates/dashboard/community_activity.tpl
+b4ef7093bb00005e28617e9630d4e3fa  design/standard/templates/dashboard/cronjobs.tpl
 6be85e2ddbe3996947c503e38dcfbed8  design/standard/templates/dashboard/drafts.tpl
 f160344f82c55e1b7deb1aed36d9a85d  design/standard/templates/dashboard/latest_content.tpl
 957103ea6d801060f57d9be5dcf4c4bb  design/standard/templates/dashboard/maintenance.tpl
@@ -2879,7 +2881,7 @@ d1e3a923a9127579b13c6a5e7e7c3845  design/standard/templates/setup/init/details.t
 924de7c02aa0329fa0a2b2cc3009c629  design/standard/templates/setup/init/disable.tpl
 e1c9c18ccf264be850532c46154c0eee  design/standard/templates/setup/init/email_settings.tpl
 a02008c87dd24fbfbfb101bbeb1399aa  design/standard/templates/setup/init/email_settings_help.tpl
-9e6ea004f6489307ee330f7754a461f1  design/standard/templates/setup/init/final.tpl
+b095eda84bfac55866df51a449f04aac  design/standard/templates/setup/init/final.tpl
 aafea629f775ef9a8e9043d52b7fd16e  design/standard/templates/setup/init/final_help.tpl
 371b031f800c532659953c4a587eb0c0  design/standard/templates/setup/init/finished.tpl
 bfb07800384f18abfd52719a02c22178  design/standard/templates/setup/init/installed.tpl
@@ -3254,7 +3256,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+6aa58de0e8eb6ed5143a507e4c241841  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3415,6 +3417,7 @@ c096765a30ac8ef624ea0dee89dec81c  doc/eng-us/bc/6.0/help-content-dita-ebooks-rev
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 26385728e213f79942873fc7ea3fabc4  doc/eng-us/bc/6.0/httpcache.md
 b4b2d3cf7a13a38b86ae1add01523e49  doc/eng-us/bc/6.0/ini-save-file-permissions.md
+2134e095afcb721391b5809ed25944c0  doc/eng-us/bc/6.0/installer-crontab.md
 10189eced2db4da71ce7f5f88fbe6a5d  doc/eng-us/bc/6.0/kernel-services.md
 0ec2cae64cd60f8b29b5ccf7554c856d  doc/eng-us/bc/6.0/kickstartercli.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
@@ -6403,7 +6406,7 @@ b73a9d2acee4cfc8c68b3afca0bab7a5  doc/eng-us/guides/classic-menu-settings.md
 42311d8c175d353c9ffebeb9431bc599  doc/eng-us/guides/content-history.md
 fa173f0c69eb5141b3b59102a5125c59  doc/eng-us/guides/content-languages.md
 43118956e94de4efb7c6d37ee9e9b6b4  doc/eng-us/guides/content-model-and-editing.md
-ffb61acd8994cfcb94eefe379d1ea956  doc/eng-us/guides/cronjobs.md
+860d5bf4308b9461ad9ac5477dc2868c  doc/eng-us/guides/cronjobs.md
 10eb03f5af36ad42a71b0d78bc734e5f  doc/eng-us/guides/deploying.md
 ab00d66607f66a79d69efd28d9fba855  doc/eng-us/guides/drafts-and-pending.md
 c69d984b19030671dec77fff741de4ac  doc/eng-us/guides/environment-variables.md
@@ -12400,7 +12403,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-5105d6efdc1b6ab2e4678fb7dfb1f45d  doc/ger-de/.paths.json
+ad29fb90cab773655c4f26a9fd39a07a  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -12413,7 +12416,7 @@ b69e8c5a0f3bc09a59b98b3a600b00fd  doc/ger-de/anleitungen/bereitstellung.md
 6fc5f73f0a7f589c62e06ce46a7e08ba  doc/ger-de/anleitungen/betrieb-einer-website.md
 342c92d6852a00a6ea152fd09146fc44  doc/ger-de/anleitungen/caches-vorwaermen.md
 fb0ec7f27949ee16d1ac8c4e123b60e0  doc/ger-de/anleitungen/caches.md
-851ce197af4b8bff9654828439e9e0a7  doc/ger-de/anleitungen/cronjobs.md
+7497ff43be8df3eb101aa8a25313c6fc  doc/ger-de/anleitungen/cronjobs.md
 e9159f73e1f92f04a0571a6696814f4c  doc/ger-de/anleitungen/eigentuemer-aendern.md
 151f036c62298f688a9c78aeb9650705  doc/ger-de/anleitungen/einstellungsseite.md
 3fe6751fd962193fc20de472c59b64c5  doc/ger-de/anleitungen/entfernte-dienste-und-apps.md
@@ -12470,6 +12473,7 @@ db7eda525294b18a40ac90327cdfc4a9  doc/ger-de/bc/6.0/cache-konsole.md
 7c8fc03f63aca0660cd5253f9b7e96e6  doc/ger-de/bc/6.0/cli-cronjob-und-view-abstraktionen.md
 2318db44688c4209c1afb835dc867d9b  doc/ger-de/bc/6.0/console-exp-ini.md
 3359e5f2f7c679769b1229d71a8a6631  doc/ger-de/bc/6.0/cors-fuer-die-rest-api.md
+9b1445ac5e2909f2f6cdcc90b9da73d2  doc/ger-de/bc/6.0/crontab-bei-der-installation.md
 c41fa48d0a75c5a9617be07d18294511  doc/ger-de/bc/6.0/dateimodi.md
 85d63574c52a9a89e437d0fe39f629b6  doc/ger-de/bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md
 e137fe4e902234cdafca7b2be9179b58  doc/ger-de/bc/6.0/debug-leiste.md
@@ -21633,6 +21637,7 @@ c1ae6737ac9b0ef9e74d5e4e1c2a4670  kernel/classes/expcontentdraftlist.php
 afba64859f8efa10835453902c32e626  kernel/classes/expcontentlanguagestates.php
 cf9939957167c71adbb8488217528eaf  kernel/classes/expcontentpendinglist.php
 3883f366ebecfccb5323bdae8da93a31  kernel/classes/expcronjobpause.php
+c8445cbbe36f81bf78475d87e0b2e446  kernel/classes/expcrontabsetup.php
 c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 38f888d90a86a9d8d3987e731e01e15f  kernel/classes/expeditorpolicies.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
@@ -21648,7 +21653,7 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
 2c972d6cb57e5557335a061521870369  kernel/classes/expkernelservicescope.php
-180f6eefa718dcec1dc36119fb0626a4  kernel/classes/expkickstarter.php
+a36f1c0ae3c99c701df83675c65501ec  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
 f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
@@ -22036,7 +22041,7 @@ e15502cf959a7962e688f55cf77d3ca3  kernel/classes/syscard/expsyscardcontext.php
 12890cf403991f5412ea5ff8bd776ab8  kernel/classes/syscard/providers/expsyscardaboutprovider.php
 2b681bc76771bf56ad1f01ba0c4e5e96  kernel/classes/syscard/providers/expsyscardcacheprovider.php
 759238e09125a10ecda66b68245e6a6d  kernel/classes/syscard/providers/expsyscardcomposerprovider.php
-016da229cc0453453bde53c577dbc997  kernel/classes/syscard/providers/expsyscardcronprovider.php
+f48954a9c069e79700cf084ece243dd5  kernel/classes/syscard/providers/expsyscardcronprovider.php
 5d738b60fd3c2c4b1208a0af782f861d  kernel/classes/syscard/providers/expsyscarddatabaseprovider.php
 dd30f1799ba3044a99ab315330f77669  kernel/classes/syscard/providers/expsyscardexponentialprovider.php
 10bae37aac371cdca655d9fe944b017a  kernel/classes/syscard/providers/expsyscardextensionsprovider.php
@@ -22368,6 +22373,7 @@ fd4e1af35d892872dea6d4780364afab  kernel/private/classes/commands/flatten.php
 bf69d054c36a88b90d3dee0f9f1d051e  kernel/private/classes/commands/i18n.php
 64e2b0277f5e311994539d81cf55c378  kernel/private/classes/commands/ini.php
 97796012ff01b1c1263a437356ff1e0f  kernel/private/classes/commands/install.php
+39c0eebfbbc8030f7ac2e138d6f3eaf6  kernel/private/classes/commands/installcrontab.php
 7fa2d2c044f7afb785a98408cbaf64e0  kernel/private/classes/commands/kickstarter.php
 f44aa579a98c3c4f14f8a7e8e5eb114d  kernel/private/classes/commands/mailbounces.php
 0a5b99f0cb4d3b4a4ebf51367b66234b  kernel/private/classes/commands/mailconsent.php
@@ -22386,7 +22392,7 @@ a53300d2b6eb0afbc337252492936c30  kernel/private/classes/commands/notificationst
 3fcdde5246c048edfa4a11188754a9af  kernel/private/classes/commands/preloadjob.php
 8be263fbc63147105258a3541907547b  kernel/private/classes/commands/publish_content.php
 fbd90b652ba8c22a12ad6d61b11cd039  kernel/private/classes/commands/resetuserpassword.php
-5f25043efdf4dd50521e98baf1063de5  kernel/private/classes/commands/runcronjobs.php
+67d58f123dd7e033e8b844a73a3c48d9  kernel/private/classes/commands/runcronjobs.php
 1c5682954c8dce38aa81c09e6a5e56da  kernel/private/classes/commands/services.php
 8b5575a7eae1944b34a0bce991416ed1  kernel/private/classes/commands/solr.php
 fb5e9a16c6103e4cc55d5376f4d6fac1  kernel/private/classes/commands/syscard.php
@@ -22986,9 +22992,9 @@ b19a30b50ea53759ed82909d21761236  kernel/setup/exptemplateextensionwizard.php
 f7657a2d39889bcc63f9e9a9ed72ec17  kernel/setup/ezsetup.php
 939f6afaaeeb8425b5a6cd2117ace549  kernel/setup/ezsetup_summary.php
 b3d46bd1c3ea5767a9ffcb90f8b22061  kernel/setup/ezsetupcommon.php
-449f4b032e007375ff1005105b2170ed  kernel/setup/ezsetupfunctioncollection.php
+7f70e1fbb96af520b91d82af6c15e0e9  kernel/setup/ezsetupfunctioncollection.php
 39a33be6623d8cea5e768bcde38a99e1  kernel/setup/ezsetuptests.php
-98355a8fbf444b36e6f74ae8149df5a3  kernel/setup/function_definition.php
+01c7698069eb84d0a5678de8de7f97b3  kernel/setup/function_definition.php
 7183ac0ed7562b87665665a2daad4b6f  kernel/setup/handlerextension.php
 f74e53f9425a012b53f82f9d23c7306c  kernel/setup/info.php
 041d133355eda95b9fbdb57620982207  kernel/setup/kerneloverride.php
@@ -23021,7 +23027,7 @@ d59a7775354aef5255319dc5bfdfa98c  kernel/setup/steps/ezstep_create_sites.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
 8d584fd77647712ce36d00124b341561  kernel/setup/steps/ezstep_email_settings.php
-ec307014c41d8fa37e0fda379071b14d  kernel/setup/steps/ezstep_final.php
+043c0a1ab7e9d2157c18d3428f4723cd  kernel/setup/steps/ezstep_final.php
 a2fbe78e6737be2db035b6181a070432  kernel/setup/steps/ezstep_installer.php
 96ae534a7cc652a6bb45b7147a6fd426  kernel/setup/steps/ezstep_language_options.php
 41d54b87e20deffa583a3524853e16fa  kernel/setup/steps/ezstep_package_language_options.php
@@ -23420,8 +23426,8 @@ de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 93a7d156b36f22f7daa9640f36e8f569  settings/country.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
-35c66abd1e719702efa623e62d46d22f  settings/cronjob.ini
-dc72e22f5c98f3c85457b235dc87073b  settings/dashboard.ini
+dad2c7cfb3e54481f424cd7973a0e7cb  settings/cronjob.ini
+a4067ca23a8083b7356758275cc244b8  settings/dashboard.ini
 1dc1ef94d1fa90f311786af722de75af  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
 ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
@@ -24325,7 +24331,7 @@ a563091cad1507c3270153cec4926c36  share/translations/fre-FR/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-86f69663d7e291d06252bb2d00fcd654  share/translations/ger-DE/translation.ts
+448f71ae2bfdfc692f9bd4ba68bd8449  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 83c0956d32fe4e1440d089beceae285c  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -24959,6 +24965,7 @@ d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftList
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
+0e82974abf98bd4c2554c42b1b8e71c2  tests/tests/kernel/classes/expCrontabSetupTest.php
 c575171b3b6c0646b95006e7cacb8252  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php

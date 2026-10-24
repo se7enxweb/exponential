@@ -68,6 +68,7 @@
     "bc/6.0/cli-cronjob-und-view-abstraktionen.md": "bc/6.0/cli_cronjob_view_abstractions.md",
     "bc/6.0/console-exp-ini.md": "bc/6.0/console-exp-ini.md",
     "bc/6.0/cors-fuer-die-rest-api.md": "bc/6.0/rest-cors.md",
+    "bc/6.0/crontab-bei-der-installation.md": "bc/6.0/installer-crontab.md",
     "bc/6.0/dateimodi.md": "bc/6.0/file-modes.md",
     "bc/6.0/dateirechte-beim-speichern-von-ini-dateien.md": "bc/6.0/ini-save-file-permissions.md",
     "bc/6.0/debug-leiste.md": "bc/6.0/debug-bar.md",
