@@ -46,6 +46,11 @@ class eZAutoloadGeneratorTestGenerator extends eZAutoloadGenerator
     {
         return $this->getClassFileList( $files, $mode );
     }
+
+    public function useExtensionClasses( array $classes )
+    {
+        $this->runtimeExtensionClasses = $classes;
+    }
 }
 
 class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
@@ -317,6 +322,40 @@ class eZAutoloadGeneratorTest extends PHPUnit\Framework\TestCase
                            'real paths, one backslash, no kernel class (eZDB), the directories always skipped left out' );
         $this->assertSame( array(), eZAutoloadGenerator::testsClassMap( "$this->dir/$p/nothing" ) );
         $this->assertFalse( is_dir( "$this->dir/$p/tests/autoload" ) );
+    }
+
+    /**
+     * The test array (ezp_tests.php) is merged before the extension array and read before Composer's autoloader. A
+     * PHPStan stub file in an extension's tests/ (7x SQLI Import 2.0.0: a hollow ezcBaseOptions, eZPersistentObject,
+     * expDataTableCatalogue ...) got its non-kernel classes mapped, and the first test that autoloaded ezcBaseOptions
+     * loaded the hollow one: "Class ezpExtensionOptions contains 4 abstract methods".
+     */
+    public function testTheTestArrayTakesNoStandInFileAndNoRuntimeClass()
+    {
+        $p = $this->name;
+        $base = "$this->dir/$p/tests";
+        $this->file( 'tests/phpstan-stubs.php', "<?php\nclass eZPersistentObject { }\nabstract class ezcBaseOptions implements ArrayAccess { }\nclass {$p}Hollow { }\n" );
+        $this->file( 'tests/composer-only.php', "<?php\nclass ezcBaseFile { }\nclass {$p}WithComposerStandIn { }\n" );
+        $this->file( 'tests/braced.php', "<?php\nnamespace {\n    class eZINI { }\n    class {$p}Braced { }\n}\n" );
+        $this->file( 'tests/guarded.php', "<?php\nif ( !class_exists( 'eZDB' ) )\n{\n    class eZDB { }\n}\nif ( !class_exists( 'ezcBaseStruct' ) ) { class ezcBaseStruct { } }\n"
+                                         . "class {$p}Guarded { function f( \$x ) { return \"{\$x} \${x}\"; } }\n" );
+        $this->file( 'tests/extension.php', "<?php\nclass {$p}RuntimeExtension { }\nclass {$p}Beside { }\n" );
+        $this->file( 'tests/unit/ns.php', "<?php\nnamespace K1\\{$p};\nclass MockServer { }\n" );
+        $files = array( "$base/phpstan-stubs.php", "$base/composer-only.php", "$base/braced.php", "$base/guarded.php",
+                        "$base/extension.php", "$base/unit/ns.php" );
+
+        $generator = $this->generator();
+        $generator->useExtensionClasses( array( "{$p}RuntimeExtension" => "extension/$p/classes/runtime.php" ) );
+        $classes = $generator->classes( $files, eZAutoloadGenerator::MODE_TESTS );
+        $this->assertSame( array( "K1\\\\{$p}\\\\MockServer" => "$base/unit/ns.php", "{$p}Guarded" => "$base/guarded.php" ), $classes,
+                           'no class of a file declaring a kernel, Composer or extension class outright; guarded stand-ins'
+                           . ' do not count, and the guarded Composer class itself is not taken' );
+
+        // the tests directory of one extension, for its own suite: only the classes themselves are refused
+        $map = eZAutoloadGenerator::testsClassMap( $base );
+        $this->assertArrayHasKey( "{$p}Hollow", $map );
+        $this->assertArrayNotHasKey( 'ezcBaseOptions', $map );
+        $this->assertArrayNotHasKey( 'ezcBaseFile', $map );
     }
 
     public function testTheTestsAutoloadFindsTheClassesOfATestsDirectory()

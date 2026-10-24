@@ -22432,7 +22432,7 @@ bf2513d8cd5148420c052f0eb8556f28  kernel/private/classes/exceptions/kernel/modul
 1c77dc217ba9fc1305b1db3dc9398006  kernel/private/classes/expcontentsecuritypolicyreport.php
 abc76ce382ead2e495c2e4e4fe4c185c  kernel/private/classes/expfileconsistencyreport.php
 93df9f749a9059d8ce060474b9043801  kernel/private/classes/expschemaconsistencyreport.php
-bcd01e7b931fc92c9a47641aefaaa1a0  kernel/private/classes/ezautoloadgenerator.php
+0d45a6ea50a1eaa3384c8e1ab6252fc6  kernel/private/classes/ezautoloadgenerator.php
 7642907aab26669358d257577baedeab  kernel/private/classes/ezcontentobjectstate.php
 6288d50d915fadc3e956d6a8c9ce660c  kernel/private/classes/ezcontentobjectstategroup.php
 00e0da11d764b55e34ca0f7094fe1c96  kernel/private/classes/ezcontentobjectstategrouplanguage.php
@@ -25435,7 +25435,7 @@ b2521586ac48373828c3608d035556cb  tests/tests/kernel/logviewer/expLogViewerTest.
 dee34a2f9e2ccc7f1d4fb1eb19c3f62c  tests/tests/kernel/logviewer/expLogViewerTestFixtures.php
 ada54e8051171910973a08eeae662617  tests/tests/kernel/logviewer/expLogWebServerFormatsTest.php
 7f0ae6ebc878e472b8b2d4022093a078  tests/tests/kernel/logviewer/expLogWrapPreferenceTest.php
-4e8230b879efcf4bace57b6f5354531a  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
+e981df770682f6c07e03c3f510b90f7a  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
 d74dbdb50cbaeff996f841e63a2de9c8  tests/tests/kernel/private/classes/expContentSecurityPolicyReportTest.php
