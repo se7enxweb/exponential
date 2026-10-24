@@ -3,8 +3,8 @@ title: "API-Design: REST, ezjscore und Headless"
 audience: software-engineer, developer
 category: software-engineering
 order: 800
-summary: Die Schnittstellen, die Exponential anderen Systemen und Frontends bietet - die REST-Inhalts-API von ezprestapi in v1 und v2, OAuth 2.0 und persönliche API-Schlüssel, die ezjscore-Aufrufschnittstelle und expservices, ausgehende Audit-Webhooks, RSS und Atom, WebDAV und SOAP - mit ihrem Stand, ihren Lücken und Hinweisen für den Entwurf von Headless- und Hybridsystemen und eigenen Endpunkten.
-keywords: API, API-Design, REST, ezprestapi, v1, v2, OAuth, API-Schlüssel, ezjscore, Serverfunktionen, expservices, JSON, Webhooks, Headless, entkoppelt, OpenAPI, WebDAV, SOAP, Softwareingenieur, API design, API keys, server functions, headless, decoupled
+summary: Die Schnittstellen, die Exponential anderen Systemen und Frontends bietet - die REST-Inhalts-API von ezprestapi in v1 und v2, OAuth 2.0 und persönliche API-Schlüssel, die ezjscore-Aufrufschnittstelle und expservices, ausgehende Audit-Webhooks, RSS und Atom sowie SOAP - mit ihrem Stand, ihren Lücken und Hinweisen für den Entwurf von Headless- und Hybridsystemen und eigenen Endpunkten.
+keywords: API, API-Design, REST, ezprestapi, v1, v2, OAuth, API-Schlüssel, ezjscore, Serverfunktionen, expservices, JSON, Webhooks, Headless, entkoppelt, OpenAPI, SOAP, Softwareingenieur, API design, API keys, server functions, headless, decoupled
 type: help
 ---
 # API-Design: REST, ezjscore und Headless
@@ -34,7 +34,7 @@ eigene Endpunkte hinzufügen. Der Stand jedes Protokolls, mit Belegen und Lücke
 | `expservices` | benannte entfernte Dienste auf der Aufrufschnittstelle | siehe [Entfernte Dienste und Apps](../../anleitungen/entfernte-dienste-und-apps.md) |
 | Audit-Webhook | Zustellung von Audit-Datensätzen an ein anderes System, HMAC-signiert | erfüllt seinen eigenen Vertrag |
 | RSS und Atom | Feeds (Atom nur beim Export) | [RSS-Feeds](../../anleitungen/rss-feeds.md) |
-| WebDAV, SOAP | Dateizugriff, Legacy-Integrationen; SOAP ist standardmäßig aus | teilweise erfüllt |
+| SOAP | Legacy-Integrationen; standardmäßig aus | teilweise erfüllt |
 
 ## Die REST-Inhalts-API
 

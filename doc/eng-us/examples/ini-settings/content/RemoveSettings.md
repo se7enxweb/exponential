@@ -86,8 +86,8 @@ HideRemoveConfirmation=false
 >             which was removed at once before; with HideRemoveConfirmation=true there is no page  
 >  block    - as warn, and the removal is refused while such references exist: the OK button is disabled, and  
 >             the server refuses the removal on its own as well: a posted confirmation, HideRemoveConfirmation,  
->             a removal as a content job, the removal of the last locations on the Locations tab and a delete  
->             over WebDAV. Off by default.  
+>             a removal as a content job and the removal of the last locations on the Locations tab. Off by  
+>             default.  
 
 Default: `warn`.
 

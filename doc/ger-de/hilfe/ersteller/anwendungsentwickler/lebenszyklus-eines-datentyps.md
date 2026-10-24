@@ -88,7 +88,7 @@ eigenen Wert hat.
 | `toString()`, `fromString()` | eine einfache Zeichenkettenform, verwendet von Importen, CSV, REST und `eZContentFunctions` |
 | `serializeContentClassAttribute()`, `unserializeContentClassAttribute()` | die Einstellungen des Attributs in Paketen |
 | `serializeContentObjectAttribute()`, `unserializeContentObjectAttribute()`, `postUnserializeContentObjectAttribute()` | Werte in Inhaltspaketen |
-| `isSimpleStringInsertionSupported()`, `insertSimpleString()`, `insertHTTPFile()`, `insertRegularFile()` | Uploads und WebDAV |
+| `isSimpleStringInsertionSupported()`, `insertSimpleString()`, `insertHTTPFile()`, `insertRegularFile()` | Uploads |
 
 Sorgen Sie dafür, dass `fromString( toString( x ) )` wieder `x` ergibt; testen Sie das.
 

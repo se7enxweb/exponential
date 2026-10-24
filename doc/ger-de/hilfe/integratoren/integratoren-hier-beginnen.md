@@ -112,7 +112,7 @@ Der ganze Bereich in einer Reihenfolge steht im [Lesepfad für Integratoren](les
 | Tag | Tun Sie dies | Seite |
 |---|---|---|
 | 1 | Füllen Sie mit dem Kunden das Analyse-Arbeitsblatt aus: Systeme, Daten, Richtung, Menge, Zeitpunkte | [Analyse-Arbeitsblatt für Integrationen](arbeitsblatt-zur-bestandsaufnahme-einer-integration.md) |
-| 1 | Prüfen Sie, welche Schnittstellen die Installation aktiv hat (`ActiveExtensions`, `rest.ini`, `soap.ini`, `webdav.ini`) | [Integrationsschnittstellen auf einen Blick](integrationsschnittstellen-auf-einen-blick.md) |
+| 1 | Prüfen Sie, welche Schnittstellen die Installation aktiv hat (`ActiveExtensions`, `rest.ini`, `soap.ini`) | [Integrationsschnittstellen auf einen Blick](integrationsschnittstellen-auf-einen-blick.md) |
 | 2 | Wählen Sie pro Datenfluss eine Schnittstelle und Zugangsdaten, und schreiben Sie sie auf | [Eine Integrationsschnittstelle wählen](eine-integrationsschnittstelle-waehlen.md), [Zugangsdaten wählen](zugangsdaten-fuer-eine-integration-waehlen.md) |
 | 2 | Bilden Sie jeden externen Datensatz auf eine Inhaltsklasse und ein Schema für die `remote_id` ab | [Klassen auf externe Daten abbilden](inhaltsklassen-auf-externe-daten-abbilden.md) |
 | 3 | Richten Sie eine Entwicklungsinstallation aus Git und ein Dienstkonto mit einer engen Rolle ein | [Mit Git entwickeln](../mit-git-entwickeln.md), [Dienstkonten und Rollen](dienstkonten-rollen-und-richtlinien.md) |

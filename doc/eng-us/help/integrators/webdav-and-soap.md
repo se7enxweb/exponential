@@ -3,17 +3,16 @@ title: WebDAV and SOAP
 audience: integrator, developer, admin
 category: integration
 order: 120
-summary: The two older protocols Exponential still speaks - WebDAV for mounting content as a drive, and a SOAP 1.1 server that extensions add functions to - how to switch each on, how they authenticate, their known gaps, and when to use them in a new integration.
-keywords: WebDAV, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, SOAP, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+summary: The SOAP 1.1 server that extensions add functions to - how to switch it on, how it authenticates, and when to use it in a new integration - and what replaces the WebDAV server, which is no longer part of Exponential.
+keywords: SOAP, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols, WebDAV, webdav.php, removed
 type: help
 ---
 # WebDAV and SOAP
 
-This page is for integrators who meet a requirement such as "editors save files from their desktop into the site" or
-"our middleware speaks SOAP". Exponential ships a WebDAV server (`webdav.php`) and a SOAP 1.1 server (`soap.php`).
-Both are **off by default**, both have known gaps, and both are worth considering only when the other side cannot use
-something newer. Their status against the standards is in
-[API and protocol standards](../../standards/apis-and-protocols.md#webdav-rfc-4918).
+This page is for integrators who meet a requirement such as "our middleware speaks SOAP" or "editors save files from
+their desktop into the site". Exponential ships a SOAP 1.1 server (`soap.php`). It is **off by default**, has known
+gaps, and is worth considering only when the other side cannot use something newer. Its status against the standards
+is in [API and protocol standards](../../standards/apis-and-protocols.md#soap-11).
 
 ## Contents
 
@@ -24,34 +23,12 @@ something newer. Their status against the standards is in
 
 ## WebDAV
 
-The entry point is `webdav.php` at the installation root. It runs the Zeta Components WebDAV server
-(`zetacomponents/webdav ~1.2`) with the content backend `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and
-basic authentication against Exponential users (`ezwebdavcontentbackendauth.php`).
-
-Switch it on in `settings/override/webdav.ini.append.php`:
-
-```ini
-<?php /* #?ini charset="utf-8"?
-[GeneralSettings]
-EnableWebDAV=true
-# the node WebDAV starts at (2 = the content root)
-StartNode=2
-# classes shown as folders
-FolderClasses[]
-FolderClasses[]=folder
-*/ ?>
-```
-
-| Point | Detail |
-|---|---|
-| Authentication | Basic authentication with an Exponential login; serve it over HTTPS only |
-| Rights | The user's policies apply; give WebDAV users a role limited to the subtrees they may change |
-| What works | WebDAV class 1 methods (COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND, PROPPATCH, PUT), with recorded regression cases in `tests/tests/kernel/private/webdav/regression/` |
-| Known gaps | Locking (class 2) is incomplete: the lock authorizer's methods are empty; whether LOCK and UNLOCK work with real clients is unverified. The regression recordings are not run by CI |
-
-> **Note**
-> Your web server must send WebDAV requests to `webdav.php` (a rewrite rule or a separate virtual host). Test with the
-> client your customer will really use before promising it; desktop clients differ in how they handle locks.
+Exponential no longer contains a WebDAV server. `webdav.php`, `kernel/private/classes/webdav/`, `settings/webdav.ini`
+and the package `zetacomponents/webdav` were removed on 24 October 2026: the server was off by default, its locking was
+never finished and its authorizer let every read through. For editors who save files into the site, use the upload
+features of the administration (multi-upload, the rich text editor's upload dialog) or a scheduled import. A site that
+still needs WebDAV keeps the removed files in an extension of its own and requires `zetacomponents/webdav` itself
+([changelog](../../../changelogs/6.0/6.0.15.md#2026-10-24-the-webdav-server-is-removed)).
 
 ## SOAP
 
@@ -104,7 +81,7 @@ extension) is usually the better tool inside your extension.
 
 | Requirement | Use |
 |---|---|
-| Editors drag files into a folder of the site from their desktop | WebDAV, after testing the client; or the upload features of the administration |
+| Editors put files from their desktop into the site | The upload features of the administration (multi-upload); WebDAV is no longer part of Exponential |
 | A middleware product can only call SOAP | The SOAP server with functions of your extension |
 | Two Exponential installations share content | `syndication`, which uses SOAP underneath ([page](syndication-between-installations.md)) |
 | Anything new | The REST API, `expservices` or a server function of your own |

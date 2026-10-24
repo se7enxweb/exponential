@@ -29,7 +29,7 @@ ist, wie lange das Zugangsdatum gilt und wie es widerrufen wird.
 | OAuth-2.0-Zugriffstoken | 40 hexadezimale Zeichen | `Authorization: Bearer <token>` oder `Authorization: OAuth <token>` | REST-API (`/api/...`) | Einer App, nachdem der Benutzer sie unter `oauth/authorize` zugelassen hat; Token von `POST /api/auth/v1/oauth/token` | Nach `rest.ini [OAuthSettings] TokenTTL` (3600 Sekunden); mit dem Refresh-Token erneuert |
 | Persönlicher API-Schlüssel | `expk_` + 12 + `_` + 40 Zeichen | Nur `Authorization: Bearer expk_...` (in der Adresse abgelehnt) | REST-API | Dem Benutzer unter **Mein Konto > API-Zugang** (`/apikey/list`), mit `apikey/create` | Widerrufen, abgelaufen (`MaxExpiryDays`, Standard 365) oder Eigentümer deaktiviert |
 | `expservices`-Token | `expt_` + 48 hexadezimale Zeichen | `Authorization: Bearer <token>` oder `X-Exp-Token: <token>` | Dienste unter `/ezjscore/call/exp...` | Dem Benutzer mit `expsession::tokenCreate` | Widerrufen (`expsession::tokenRevoke`), abgelaufen oder Eigentümer deaktiviert |
-| HTTP-Basic-Authentifizierung | Login und Passwort | `Authorization: Basic ...` | REST-API, wenn `rest.ini [Authentication] AuthenticationStyle=ezpRestBasicAuthStyle`; WebDAV | Dem Benutzerkonto | Wenn sich das Passwort ändert |
+| HTTP-Basic-Authentifizierung | Login und Passwort | `Authorization: Basic ...` | REST-API, wenn `rest.ini [Authentication] AuthenticationStyle=ezpRestBasicAuthStyle`; SOAP | Dem Benutzerkonto | Wenn sich das Passwort ändert |
 | Anmeldung per Sitzung | Sitzungscookie plus Formular-Token | Cookie und `ezxform_token` | `expservices`- und ezjscore-Aufrufe aus einem Browser oder einem Skript, das sich anmeldet | `user/login` | Ende der Sitzung |
 
 Die REST-Schicht löst einen persönlichen API-Schlüssel in `expApiKeyAuthFilter`
@@ -44,7 +44,6 @@ Schlüssel funktionieren also, ob die Website OAuth oder Basic-Authentifizierung
 | Eine App, bei der sich viele Menschen anmelden und als sie selbst handeln | Eine **OAuth-Anwendung** | Jeder Benutzer lässt die App zu; das Token handelt als dieser Benutzer |
 | Ein Skript, das `expservices` aufruft (Caches, Inhaltsjobs, Benutzer, ...) | Ein **`expservices`-Token** eines Dienstkontos | Für Schreibzugriffe ist kein Formular-Token nötig; widerrufbar |
 | Eine Browserseite auf derselben Website | Die **Sitzung** | Sie ist bereits da; Schreibzugriffe tragen den Formular-Token |
-| Ein Desktop-Werkzeug, das Inhalte als Laufwerk einbindet | **Basic-Authentifizierung** über HTTPS (WebDAV) | WebDAV-Clients sprechen sie |
 | Ein älterer Client, der nur Basic-Authentifizierung kennt | **Basic-Authentifizierung** über HTTPS, mit einem eigenen Konto | Letzter Ausweg: Das Passwort öffnet jede Seite, die das Konto öffnen darf |
 
 > **Hinweis**

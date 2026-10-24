@@ -21,7 +21,7 @@
  *  RC-14 - objects and locations the user may not read are counted, never named; a block holds all the same
  *  RC-15 - providers of [ReverseRelationSettings] (Layouts blocks): missing classes skipped, rows of the kind layout
  *          given to the subtree that holds the node, readable as the provider says, a failing provider is failed
- *  RC-16 - removing the last locations on the Locations tab and a WebDAV delete go through the check
+ *  RC-16 - removing the last locations on the Locations tab goes through the check
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -447,18 +447,13 @@ class expReverseRelationCheckTest extends PHPUnit\Framework\TestCase
     }
 
     /** RC-16 */
-    public function testTheLastLocationsAndWebDAVGoThroughTheCheck()
+    public function testTheLastLocationsGoThroughTheCheck()
     {
         $action = self::code( 'kernel/private/classes/views/content/action.php' );
         $this->assertMatchesRegularExpression( '/ReverseRelationCheck::forNodes\( array_keys\( \$removeList \) \);\s+if \( \\\\Exponential\\\\Service\\\\ReverseRelationCheck::templateData\( \$relationMode, \$relationCheck \) !== null \)\s+\$hasChildren = true;/', $action,
                                                'the Locations tab sends a removal with findings to content/removeobject' );
         $this->assertLessThan( strpos( $action, "if ( \$hasChildren )\n            {\n                \$http->setSessionVariable( 'CurrentViewMode'" ),
                                strpos( $action, 'ReverseRelationCheck::forNodes( array_keys( $removeList ) )' ) );
-        $webdav = self::code( 'kernel/private/classes/webdav/ezwebdavcontentbackend.php' );
-        $check = strpos( $webdav, 'ReverseRelationCheck::refusesRemoval' );
-        $this->assertNotFalse( $check );
-        $this->assertLessThan( strpos( $webdav, '$node->removeNodeFromTree( $moveToTrash );' ), $check );
-        $this->assertStringContainsString( "class_exists( 'Exponential\\\\Service\\\\ReverseRelationCheck' )", $webdav );
     }
 }
 

@@ -42,7 +42,6 @@ muss. Die Standards hinter jedem Protokoll, mit ihren bekannten Lücken, stehen 
 | RSS-Importe | hinein | RSS 0.91 bis 2.0 | `kernel/classes/ezrssimport.php`, Cronjob `rssimport.php` | im globalen Cronjob-Teil |
 | `syndication` | beide, Installation zu Installation | XML-Feeds über SOAP | Erweiterung `syndication`, `/syndication/menu` | braucht `soap.ini EnableSOAP=true` |
 | SOAP-Server | hinein | SOAP 1.1, keine WSDL | `soap.php`, `lib/ezsoap/` | `soap.ini [GeneralSettings] EnableSOAP=false` |
-| WebDAV | beide | WebDAV Klasse 1 | `webdav.php`, `kernel/private/classes/webdav/` | `webdav.ini [GeneralSettings] EnableWebDAV=false` |
 | Pakete (`.ezpkg`) | beide | Paketarchive; JSON-Paketformat | `ezpm.php`, Setup > Pakete | an |
 | CSV-Import und -Export | beide | CSV | `bin/php/ezcsvimport.php`, `bin/php/ezcsvexport.php` | an |
 | `xrowextract` | beide, zeitgesteuert | CSV, JSON, XML, `.ezpkg`; SFTP, FTP, S3, WebDAV, HTTP POST | Erweiterung `xrowextract`, Administration **Export** | mit der Distribution installiert |
@@ -80,6 +79,7 @@ Planen Sie Folgendes als individuelle Arbeit ein, oder wählen Sie einen anderen
 | GraphQL | die REST-API oder `expservices` verwenden oder ein eigenes Modul schreiben |
 | Eine OpenAPI-Beschreibung der Inhalts-API | Ihre Routen in Ihrer Schnittstellenspezifikation dokumentieren ([Vorlage](vorlage-fuer-eine-schnittstellenspezifikation.md)) |
 | XML-RPC | nicht umgesetzt; REST oder SOAP verwenden |
+| Ein WebDAV-Server (Inhalte als Netzlaufwerk) | im Oktober 2026 entfernt ([WebDAV und SOAP](webdav-und-soap.md#webdav)); die Uploads der Administration oder ein Dateiimport mit `xrowextract` verwenden |
 | SAML oder ein OpenID-Connect-Provider | einen Login- oder SSO-Handler schreiben oder einen identitätsbewussten Proxy vorschalten ([Single Sign-on](single-sign-on-und-social-login.md)) |
 | Ein allgemeiner ausgehender Webhook für Inhaltsereignisse | ein eigenes Workflow-Ereignis oder ein eigener Event-Listener oder die Webhook-Senke des Audit-Trails mit eingeschaltetem `content.object.publish` ([Audit-Webhooks](ausgehende-webhooks-aus-dem-audit-trail.md)) |
 | Inhalte über REST aktualisieren | `POST /content/node/<id>` prüft `content/edit` und antwortet mit 501; aus PHP oder über `expservices` aktualisieren |
@@ -95,7 +95,6 @@ php bin/php/console exp:ini get site.ini/ExtensionSettings/ActiveExtensions   # 
 php bin/php/console exp:ini get rest.ini/Authentication/RequireAuthentication
 php bin/php/console exp:ini get expservices.ini/Services/Enabled
 php bin/php/console exp:ini get soap.ini/GeneralSettings/EnableSOAP
-php bin/php/console exp:ini get webdav.ini/GeneralSettings/EnableWebDAV
 php bin/php/console exp:ini get site.ini/UserSettings/LoginHandler
 php bin/php/console exp:ini get site.ini/MailSettings/Transport
 php bin/php/console exp:ini get site.ini/SearchSettings/SearchEngine

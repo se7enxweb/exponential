@@ -25,7 +25,7 @@
  * and one warning per process says so.
  *
  * Used for every image that enters the site: the image datatype (edit form, upload module,
- * eZContentUpload, the rich text editor's upload dialog, the AJAX uploader, WebDAV and imports)
+ * eZContentUpload, the rich text editor's upload dialog, the AJAX uploader and imports)
  * and the package thumbnails of the package wizard.
  *
  * Holds no request data; the only static is the "fileinfo is missing" warning flag.

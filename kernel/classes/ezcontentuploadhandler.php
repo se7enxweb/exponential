@@ -15,8 +15,8 @@
 
   This defines the interface for upload handlers for content objects. The handler
   will be used if upload.ini is configured for a specific MIME type.
-  The uploading system is general and will be used both by Web uploads as well
-  as WebDAV PUT requests.
+  The uploading system is general and is used by Web uploads as well as by
+  other callers of eZContentUpload.
 
   The handler must inherit this class and implement the following methods:
   - handleFile() - This takes care of creating content objects from the uploaded file.

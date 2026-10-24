@@ -18,7 +18,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 299 |
+| Instances | 298 |
 | Recognized by | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | Extension point | The INI setting that names the handler (see the INI plugin points page). |
 
@@ -624,14 +624,6 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `ezpRequestFactProvider` | interface | `kernel/private/classes/requestrules/ezprequestruleinterfaces.php:90` | Adds facts to every request's context before the rules run. | – |
 | `ezpRequestRuleEngine` | class | `kernel/private/classes/requestrules/ezprequestruleengine.php:32` | The request rules: an ordered list of rules, each a set of conditions and an action, asked about every module view the kernel is about to run. | – |
 | `ezpRequestRuleProvider` | interface | `kernel/private/classes/requestrules/ezprequestruleinterfaces.php:76` | Adds rules from PHP: an extension whose rules are computed (from a database table, from another INI file) rather than written in requestrules.ini. | – |
-
-### kernel/private/classes/webdav (1)
-
-[All patterns of kernel/private/classes/webdav](area-kernel-private-classes-webdav.md)
-
-| Class | Kind | File | Description | Extension point |
-|---|---|---|---|---|
-| `eZWebDAVContentBackend` | class extends ezcWebdavSimpleBackend | `kernel/private/classes/webdav/ezwebdavcontentbackend.php:30` | WebDAV backend for Exponential, based on eZ Components Webdav component. | – |
 
 ### lib/ezdiff (4)
 

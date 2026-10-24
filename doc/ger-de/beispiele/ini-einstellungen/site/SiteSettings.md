@@ -245,7 +245,7 @@ Standard: `enabled`.
 ## HTTPAUTHServerVariable
 
 > Legt bei FastCGI-/CGI-Einrichtungen den Namen der Servervariable mit der Zeichenkette der HTTP-Authentifizierung fest.  
-> Nur die Schnittstellen WebDAV und SOAP hängen von dieser Einstellung ab.  
+> Nur die Schnittstelle SOAP hängt von dieser Einstellung ab.  
 
 Standard: `Authorization`.
 

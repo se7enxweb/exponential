@@ -45,8 +45,8 @@ Die Verweigerung (`block`, standardmäßig aus) greift bei jedem Weg, auf dem de
 entfernt: die Bestätigung von content/removeobject (auch als content/removeuserobject und
 content/removemediaobject), `HideRemoveConfirmation=true`, ein Entfernen als Inhaltsauftrag, das Verschieben in den
 Papierkorb (es ist dasselbe Entfernen), das Entfernen der letzten Orte eines Objekts auf dem Reiter **Orte**
-(content/action sendet ein Entfernen mit Befunden an content/removeobject, das es auflistet oder verweigert) und ein
-Löschen über WebDAV (als verboten abgelehnt). ezjscore und die REST-Schnittstelle des Kernels bieten kein Entfernen.
+(content/action sendet ein Entfernen mit Befunden an content/removeobject, das es auflistet oder verweigert).
+ezjscore und die REST-Schnittstelle des Kernels bieten kein Entfernen.
 Skripte, Cronjobs und die direkt aufgerufene Inhalts-API werden nicht geprüft.
 
 ### Verstecken
@@ -147,7 +147,7 @@ abgeglichen, was der Index von `ezcontentobject_tree` bedient.
 - Berechtigungen, Formular-Tokens und Audit-Einträge sind die der Operationen selbst: Die Bestätigungsseiten senden
   mit dem Formular-Token, wo `ezformtoken` aktiv ist, und nichts wird geschrieben, bevor die Operation läuft.
 - Tests: `expReverseRelationCheckTest` (Modi, Entscheidungen, die Abfrage auf SQLite, die Reihenfolge der Prüfungen
-  in den Ansichten, die Provider, der Reiter **Orte** und WebDAV) und `AdminReverseRelationCheckTest` (die Seiten in
+  in den Ansichten, die Provider und der Reiter **Orte**) und `AdminReverseRelationCheckTest` (die Seiten in
   admin4, die Zählungen, die Layouts-Zeile, die Übersetzungen); explayouts:
   `tests/explayoutsreverserelationprovidertest.php`.
 

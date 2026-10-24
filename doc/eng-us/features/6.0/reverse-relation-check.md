@@ -42,7 +42,7 @@ The refusal (`block`, off by default) holds on every way the kernel removes cont
 confirmation of content/removeobject (also as content/removeuserobject and content/removemediaobject),
 `HideRemoveConfirmation=true`, a removal as a content job, the move to the trash (it is the same removal), the
 removal of the last locations of an object on the Locations tab (content/action sends a removal with findings to
-content/removeobject, which lists or refuses it) and a delete over WebDAV (refused as forbidden). ezjscore and the
+content/removeobject, which lists or refuses it). ezjscore and the
 REST interface of the kernel have no removal. Scripts, cronjobs and the content API called directly are not checked.
 
 ### Hiding
@@ -137,7 +137,7 @@ the same number of statements; the subtree is matched with `path_string LIKE`, w
 - Permissions, form tokens and audit records are those of the operations themselves: the confirmation pages post
   with the form token where `ezformtoken` is active, and nothing is written before the operation runs.
 - Tests: `expReverseRelationCheckTest` (modes, decisions, the query on SQLite, the order of the checks in the
-  views, the providers, the Locations tab and WebDAV) and `AdminReverseRelationCheckTest` (the pages in admin4,
+  views, the providers and the Locations tab) and `AdminReverseRelationCheckTest` (the pages in admin4,
   the counts, the Layouts row, the translations); explayouts: `tests/explayoutsreverserelationprovidertest.php`.
 
 <!-- exp-partner-block:start -->

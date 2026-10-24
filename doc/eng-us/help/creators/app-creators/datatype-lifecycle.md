@@ -87,7 +87,7 @@ version, a copy and a new translation: copy what the original holds, including d
 | `toString()`, `fromString()` | a plain string form, used by imports, CSV, REST and `eZContentFunctions` |
 | `serializeContentClassAttribute()`, `unserializeContentClassAttribute()` | the attribute's settings in packages |
 | `serializeContentObjectAttribute()`, `unserializeContentObjectAttribute()`, `postUnserializeContentObjectAttribute()` | values in content packages |
-| `isSimpleStringInsertionSupported()`, `insertSimpleString()`, `insertHTTPFile()`, `insertRegularFile()` | uploads and WebDAV |
+| `isSimpleStringInsertionSupported()`, `insertSimpleString()`, `insertHTTPFile()`, `insertRegularFile()` | uploads |
 
 Make `fromString( toString( x ) )` give `x` back; test it.
 

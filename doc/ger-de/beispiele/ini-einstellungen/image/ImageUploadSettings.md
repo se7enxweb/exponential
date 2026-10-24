@@ -12,7 +12,7 @@ generated: exp:help:examples
 Der Block `[ImageUploadSettings]` von `settings/image.ini`, mit 3 Einstellung(en).
 
 > Welche hochgeladenen Dateien als Bilder akzeptiert werden: der Datentyp Bild (Bearbeitungsformular,  
-> Modul upload, Upload im Rich-Text-Editor, AJAX-Uploader, WebDAV, Importe) und  
+> Modul upload, Upload im Rich-Text-Editor, AJAX-Uploader, Importe) und  
 > die Vorschaubilder der Pakete. Der Typ wird mit der PHP-Erweiterung fileinfo aus dem Inhalt der Datei gelesen,  
 > nicht aus ihrem Namen, und muss in AllowedMIMETypes\[\] stehen.  
 > Eine abgelehnte Datei wird nicht gespeichert. Ohne fileinfo kommt der Typ aus  

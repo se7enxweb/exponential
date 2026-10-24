@@ -45,7 +45,7 @@ Seit dem 15. Oktober 2026 nimmt der Bild-Datentyp auf jeder Website SVG an (`.sv
 - Ein SVG kann Skripte enthalten, deshalb wird es **niemals so gespeichert, wie es hochgeladen wurde**: Der Bereiniger des
   Kernels, `expSvgSanitizer`, behält nur Elemente und Attribute, die als sicher bekannt sind (keine Skripte, keine
   Ereignisattribute, kein `foreignObject`, keine externen Verweise), und die gespeicherte Datei ist seine Ausgabe.
-- Jeder Upload-Weg bereinigt: das Bearbeitungsformular, Uploads, Mehrfach-Upload, der Rich-Text-Editor, WebDAV,
+- Jeder Upload-Weg bereinigt: das Bearbeitungsformular, Uploads, Mehrfach-Upload, der Rich-Text-Editor,
   Paketimporte.
 - Jede Bildvariante eines SVG ist die bereinigte Datei selbst; SVGs werden nie skaliert.
 - Die Datei wird mit Headern ausgeliefert, die verhindern, dass sie beim direkten Öffnen etwas ausführt; liefern Sie sie

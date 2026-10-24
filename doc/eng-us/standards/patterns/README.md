@@ -3,7 +3,7 @@ title: Design pattern catalogue
 audience: developer
 category: standards
 order: 300
-summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5066 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
+summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 5065 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
 keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -19,9 +19,9 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 
 | | |
 |---|---|
-| Instances (all categories) | 5066 |
-| Classes, interfaces, traits and enums | 2877 (2804 classes, 72 interfaces, 1 trait) |
-| ... with at least one pattern | 2297 |
+| Instances (all categories) | 5065 |
+| Classes, interfaces, traits and enums | 2875 (2802 classes, 72 interfaces, 1 trait) |
+| ... with at least one pattern | 2296 |
 | Module views | 491 |
 | Policy functions | 232 |
 | Fetch functions | 290 |
@@ -29,8 +29,8 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | Cronjob parts | 36 |
 | Event hooks | 96 |
 | INI plugin points | 574 |
-| Source files read | 3744 PHP, 509 INI |
-| Areas | 142 |
+| Source files read | 3742 PHP, 509 INI |
+| Areas | 141 |
 
 ## The patterns
 
@@ -50,7 +50,7 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 | [Factory and static factory methods](factory.md) | Creation | 352 | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
 | [Builder](builder.md) | Creation | 9 | Class name contains Builder or Generator. |
 | [Registry](registry.md) | Structure | 30 | Class name contains Registry, or has static register*() methods. |
-| [Strategy / handler](strategy-handler.md) | Behavior | 299 | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
+| [Strategy / handler](strategy-handler.md) | Behavior | 298 | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | [Template Method / abstract base class](template-method.md) | Behavior | 53 | An abstract class with both abstract and concrete methods. |
 | [Interface (contract)](interface.md) | Structure | 72 | Every interface. |
 | [Observer / listener / event](observer.md) | Behavior | 8 | Class name contains Listener, Observer or Subscriber, or has attach()/notify()/addListener() methods; every ezpEvent notify()/filter() call (see the hooks page). |
@@ -198,7 +198,6 @@ One page per part of the code base: every class with its patterns, and the views
 | [kernel/private/classes/services](area-kernel-private-classes-services.md) | 8 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/urlaliasfilters](area-kernel-private-classes-urlaliasfilters.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/views](area-kernel-private-classes-views.md) | 255 | 0 | 0 | 0 | 0 |
-| [kernel/private/classes/webdav](area-kernel-private-classes-webdav.md) | 2 | 0 | 0 | 0 | 0 |
 | [lib](area-lib.md) | 2 | 0 | 0 | 0 | 0 |
 | [lib/ezdb](area-lib-ezdb.md) | 10 | 0 | 0 | 0 | 0 |
 | [lib/ezdbschema](area-lib-ezdbschema.md) | 8 | 0 | 0 | 0 | 0 |

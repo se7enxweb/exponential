@@ -3,17 +3,17 @@ title: WebDAV und SOAP
 audience: integrator, developer, admin
 category: integration
 order: 120
-summary: Die beiden älteren Protokolle, die Exponential noch spricht - WebDAV, um Inhalte als Laufwerk einzubinden, und ein SOAP-1.1-Server, dem Erweiterungen Funktionen hinzufügen - wie Sie jedes einschalten, wie sie authentifizieren, ihre bekannten Lücken und wann Sie sie in einer neuen Integration verwenden.
-keywords: WebDAV, SOAP, Laufwerk, ältere Protokolle, Authentifizierung, webdav.php, webdav.ini, EnableWebDAV, StartNode, FolderClasses, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols
+summary: Der SOAP-1.1-Server, dem Erweiterungen Funktionen hinzufügen - wie Sie ihn einschalten, wie er authentifiziert und wann Sie ihn in einer neuen Integration verwenden - und was den WebDAV-Server ersetzt, der nicht mehr zu Exponential gehört.
+keywords: SOAP, ältere Protokolle, Authentifizierung, soap.php, soap.ini, EnableSOAP, SOAPExtensions, registerFunction, eZSOAPServer, eZSOAPClient, legacy protocols, WebDAV, webdav.php, entfernt
 type: help
 ---
 # WebDAV und SOAP
 
-Diese Seite richtet sich an Integratoren, die auf eine Anforderung treffen wie "Redakteure speichern Dateien von ihrem
-Desktop direkt in die Website" oder "unsere Middleware spricht SOAP". Exponential liefert einen WebDAV-Server
-(`webdav.php`) und einen SOAP-1.1-Server (`soap.php`) mit. Beide sind **standardmäßig aus**, beide haben bekannte
-Lücken, und beide lohnen sich nur, wenn die Gegenseite nichts Neueres verwenden kann. Ihren Stand gegenüber den
-Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-und-protokolle.md#webdav-rfc-4918).
+Diese Seite richtet sich an Integratoren, die auf eine Anforderung treffen wie "unsere Middleware spricht SOAP" oder
+"Redakteure speichern Dateien von ihrem Desktop direkt in die Website". Exponential liefert einen SOAP-1.1-Server
+(`soap.php`) mit. Er ist **standardmäßig aus**, hat bekannte Lücken und lohnt sich nur, wenn die Gegenseite nichts
+Neueres verwenden kann. Seinen Stand gegenüber den Standards beschreibt
+[Standards für APIs und Protokolle](../../standards/apis-und-protokolle.md#soap-11).
 
 ## Inhalt
 
@@ -24,36 +24,13 @@ Standards beschreibt [Standards für APIs und Protokolle](../../standards/apis-u
 
 ## WebDAV
 
-Der Einstiegspunkt ist `webdav.php` im Wurzelverzeichnis der Installation. Er führt den WebDAV-Server der Zeta
-Components (`zetacomponents/webdav ~1.2`) mit dem Inhalts-Backend
-`kernel/private/classes/webdav/ezwebdavcontentbackend.php` und Basic-Authentifizierung gegen Exponential-Benutzer aus
-(`ezwebdavcontentbackendauth.php`).
-
-Schalten Sie ihn in `settings/override/webdav.ini.append.php` ein:
-
-```ini
-<?php /* #?ini charset="utf-8"?
-[GeneralSettings]
-EnableWebDAV=true
-# the node WebDAV starts at (2 = the content root)
-StartNode=2
-# classes shown as folders
-FolderClasses[]
-FolderClasses[]=folder
-*/ ?>
-```
-
-| Punkt | Einzelheit |
-|---|---|
-| Authentifizierung | Basic-Authentifizierung mit einem Exponential-Login; nur über HTTPS ausliefern |
-| Rechte | Die Richtlinien des Benutzers gelten; geben Sie WebDAV-Benutzern eine Rolle, die auf die Teilbäume begrenzt ist, die sie ändern dürfen |
-| Was funktioniert | Die Methoden der WebDAV-Klasse 1 (COPY, DELETE, GET, HEAD, MKCOL, MOVE, OPTIONS, PROPFIND, PROPPATCH, PUT), mit aufgezeichneten Regressionsfällen in `tests/tests/kernel/private/webdav/regression/` |
-| Bekannte Lücken | Sperren (Klasse 2) sind unvollständig: Die Methoden des Lock-Authorizers sind leer; ob LOCK und UNLOCK mit echten Clients funktionieren, ist nicht geprüft. Die Regressionsaufzeichnungen laufen nicht in der CI |
-
-> **Hinweis**
-> Ihr Webserver muss WebDAV-Anfragen an `webdav.php` leiten (eine Rewrite-Regel oder ein eigener virtueller Host).
-> Testen Sie mit dem Client, den Ihr Kunde wirklich verwenden wird, bevor Sie es zusagen; Desktop-Clients gehen
-> unterschiedlich mit Sperren um.
+Exponential enthält keinen WebDAV-Server mehr. `webdav.php`, `kernel/private/classes/webdav/`, `settings/webdav.ini`
+und das Paket `zetacomponents/webdav` wurden am 24. Oktober 2026 entfernt: Der Server war standardmäßig aus, sein
+Sperren wurde nie fertig, und sein Autorisierer ließ jedes Lesen durch. Für Redakteure, die Dateien in die Website
+bringen, gibt es die Upload-Funktionen der Administration (Mehrfach-Upload, den Upload-Dialog des Rich-Text-Editors)
+oder einen zeitgesteuerten Import. Eine Website, die WebDAV weiter braucht, behält die entfernten Dateien in einer
+eigenen Extension und verlangt `zetacomponents/webdav` selbst
+([Changelog](../../../changelogs/6.0/6.0.15.md#2026-10-24-the-webdav-server-is-removed)).
 
 ## SOAP
 
@@ -107,7 +84,7 @@ eigene `SoapClient` von PHP (die PHP-Erweiterung `soap`) das bessere Werkzeug.
 
 | Anforderung | Verwenden Sie |
 |---|---|
-| Redakteure ziehen Dateien von ihrem Desktop in einen Ordner der Website | WebDAV, nachdem Sie den Client getestet haben; oder die Upload-Funktionen der Administration |
+| Redakteure bringen Dateien von ihrem Desktop in die Website | Die Upload-Funktionen der Administration (Mehrfach-Upload); WebDAV gehört nicht mehr zu Exponential |
 | Ein Middleware-Produkt kann nur SOAP aufrufen | Den SOAP-Server mit Funktionen Ihrer Erweiterung |
 | Zwei Exponential-Installationen teilen Inhalte | `syndication`, das darunter SOAP verwendet ([Seite](syndizierung-zwischen-installationen.md)) |
 | Alles Neue | Die REST-API, `expservices` oder eine eigene Serverfunktion |

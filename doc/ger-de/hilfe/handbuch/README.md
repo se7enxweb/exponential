@@ -88,7 +88,6 @@ Die Anleitungen und Funktionsseiten erklären die Hintergründe; diese Seiten si
 | [Wie schreibe ich Rich Text ohne den Online-Editor?](wie-schreibe-ich-rich-text-ohne-den-online-editor.md) | Redakteure |
 | [Warum findet die Suche ein Element nicht, von dem ich weiß, dass es existiert?](warum-findet-die-suche-ein-element-nicht.md) | Redakteure |
 | [Wie importiere oder exportiere ich ein Textverarbeitungsdokument?](wie-importiere-oder-exportiere-ich-ein-textdokument.md) | Redakteure |
-| [Wie arbeite ich über WebDAV mit Inhalten als Dateien?](wie-arbeite-ich-ueber-webdav-mit-inhalten.md) | Redakteure |
 
 ## Administratoren und Website-Verantwortliche
 

@@ -18,8 +18,8 @@ the editor replaces it with a password that only they know.
 - The user can still sign out (`user/logout`).
 - Two-step sign-in comes first. When it is required, the user sets it up or enters the code as usual, and is then
   sent to the password change.
-- The REST interface answers `403` with the error `password_change_required` until the password is changed. WebDAV
-  and SOAP refuse the sign-in. Console commands are not affected.
+- The REST interface answers `403` with the error `password_change_required` until the password is changed. SOAP
+  refuses the sign-in. Console commands are not affected.
 - In demo mode (`EXP_DEMO_MODE=1`) administrator passwords cannot change, so the mark is ignored for administrators.
   It would otherwise lock them out. Other accounts are still sent to the password change.
 - Setting the mark, removing it and every redirect are recorded in the audit trail.
@@ -88,7 +88,7 @@ was set; an empty value means no mark. No table or column was added, so the feat
 without an upgrade script. The page `user/preferences` refuses to write this preference, so a user cannot set or
 remove it through the preference links.
 
-## REST, WebDAV and SOAP
+## REST and SOAP
 
 A REST request with the credentials of a marked account (basic authentication, an OAuth token or a personal API key)
 gets:
@@ -100,8 +100,8 @@ Content-Type: application/json; charset=UTF-8
 {"error":"password_change_required","error_description":"This account must set a new password before it can use the REST interface. Sign in to the site and change the password (user/password)."}
 ```
 
-The request is not signed in. The user changes the password in the browser; the next REST request then works. WebDAV
-and SOAP refuse the sign-in of a marked account in the same way.
+The request is not signed in. The user changes the password in the browser; the next REST request then works. SOAP
+refuses the sign-in of a marked account in the same way.
 
 ## Audit
 
@@ -109,7 +109,7 @@ and SOAP refuse the sign-in of a marked account in the same way.
 |---|---|---|
 | `access.user.password.change_required.set` | an account is marked | `after.source`: `edit` or `console` |
 | `access.user.password.change_required.clear` | the mark is removed | `after.source`: `password` (the user changed it), `edit` or `console` |
-| `access.user.password.change_required.redirect` | a marked account is sent to `user/password`, or its REST, WebDAV or SOAP sign-in is refused | `after.channel`: `web`, `rest`, `webdav` or `soap`; `after.view` for the web |
+| `access.user.password.change_required.redirect` | a marked account is sent to `user/password`, or its REST or SOAP sign-in is refused | `after.channel`: `web`, `rest` or `soap`; `after.view` for the web |
 
 All three are in the `access` channel and on by default. See the [audit trail](audit-trail.md) and the
 [event catalogue](../../bc/6.0/audit.md).

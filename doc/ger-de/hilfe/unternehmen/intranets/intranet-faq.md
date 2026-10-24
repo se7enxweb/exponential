@@ -84,8 +84,8 @@ Ja, wenn die in `settings/binaryfile.ini` genannten Werkzeuge zur Textextraktion
 ([Suche im Intranet, In Dokumenten suchen](suche-im-intranet.md#in-dokumenten-suchen)).
 
 **Können Mitarbeiter die Bibliothek als Netzlaufwerk einbinden?**
-Der Kernel enthält einen WebDAV-Einstiegspunkt, standardmäßig ausgeschaltet. Testen Sie ihn auf Ihrer Installation,
-bevor Sie es zusagen ([Dokumente und Dateibibliotheken, WebDAV](dokumente-und-dateibibliotheken.md#webdav)).
+Nein. Exponential hat keinen WebDAV-Server; Dateien kommen über den Mehrfach-Upload oder das Bearbeitungsformular
+hinein ([Dokumente und Dateibibliotheken, Netzlaufwerke](dokumente-und-dateibibliotheken.md#netzlaufwerke-webdav)).
 
 ## Veröffentlichen und Kommunikation
 

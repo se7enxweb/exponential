@@ -22,8 +22,8 @@
  *
  * Where it is enforced: every web request (ezpKernelWeb::dispatchLoop(), moduleResult()) except the views of
  * site.ini [PasswordChangeRequiredSettings] ExemptViews[] (user/password, user/logout, the two-step sign-in views of
- * user2fa); the REST interface (ezpRestAuthConfiguration answers 403 password_change_required); WebDAV and SOAP
- * refuse the sign-in. Console commands are not affected. Two-step sign-in comes first: it runs before the user is
+ * user2fa); the REST interface (ezpRestAuthConfiguration answers 403 password_change_required); SOAP refuses
+ * the sign-in. Console commands are not affected. Two-step sign-in comes first: it runs before the user is
  * signed in, the password change after.
  *
  * Demo mode (EXP_DEMO_MODE=1, expDemoMode): an administrator's password cannot change there, so the mark is ignored
@@ -285,11 +285,11 @@ class expPasswordChangeRequired
     }
 
     /**
-     * For a sign-in outside the web pages (REST, WebDAV, SOAP): whether the account is refused because it must change
+     * For a sign-in outside the web pages (REST, SOAP): whether the account is refused because it must change
      * its password first. Records access.user.password.change_required.redirect with the channel.
      *
      * @param eZUser|null $user
-     * @param string $channel rest, webdav, soap
+     * @param string $channel rest, soap
      * @return bool refused
      */
     public static function refusesSignIn( $user, $channel )

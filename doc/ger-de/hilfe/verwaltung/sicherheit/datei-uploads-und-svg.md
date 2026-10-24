@@ -41,7 +41,7 @@ Die ab Werk erlaubten Bildtypen sind JPEG, PNG, GIF, WebP, AVIF, TIFF, BMP und S
 Seit dem 15. Oktober 2026 nimmt der Bild-Datentyp auf jeder Website SVG an (`.svg`, `.svgz`). Ein SVG ist ein Dokument,
 aus dem ein Browser Skript ausführen kann, deshalb wird es nie so gespeichert, wie es hochgeladen wurde: Die
 gespeicherte Datei ist die Ausgabe des Bereinigers. Jeder Weg, der ein Bild speichert, bereinigt (Bearbeitungsformular,
-Upload-Modul, Mehrfach-Upload, Upload-Dialog des Editors, AJAX-Uploader, WebDAV, Paketimport). Eine Datei, die vorgibt,
+Upload-Modul, Mehrfach-Upload, Upload-Dialog des Editors, AJAX-Uploader, Paketimport). Eine Datei, die vorgibt,
 ein SVG zu sein, aber nicht als solches erkannt wird, wird nicht gespeichert ([SVG-Bilder](../../../bc/6.0/svg-bilder.md)).
 
 ## Beibehalten

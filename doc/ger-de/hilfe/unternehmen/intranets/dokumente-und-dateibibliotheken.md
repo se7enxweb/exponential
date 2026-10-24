@@ -3,8 +3,8 @@ title: Dokumente und Dateibibliotheken
 audience: businesses, admin, editor
 category: business-solutions
 order: 30
-summary: Wie ein Intranet Richtlinien, Handbücher, Formulare und andere Dokumente in Exponential aufbewahrt - Dateien als Inhaltsobjekte, Downloads mit Berechtigungsprüfung, Versionen, Massen-Upload, Volltextsuche in Dateien, PDF-Exporte und die Option WebDAV.
-keywords: Dokumentenbibliothek, Dateibibliothek, Dateien, Downloads, content/download, ezbinaryfile, Richtlinien, Handbücher, Formulare, Versionen, ezmultiupload, ezodf, WebDAV, PDF-Export, binaryfile.ini, Dokumente im Intranet, document library, file library, files, downloads, policies, handbooks, forms, versions, PDF export, intranet documents
+summary: Wie ein Intranet Richtlinien, Handbücher, Formulare und andere Dokumente in Exponential aufbewahrt - Dateien als Inhaltsobjekte, Downloads mit Berechtigungsprüfung, Versionen, Massen-Upload, Volltextsuche in Dateien, PDF-Exporte, und warum es kein Netzlaufwerk gibt.
+keywords: Dokumentenbibliothek, Dateibibliothek, Dateien, Downloads, content/download, ezbinaryfile, Richtlinien, Handbücher, Formulare, Versionen, ezmultiupload, ezodf, WebDAV, Netzlaufwerk, PDF-Export, binaryfile.ini, Dokumente im Intranet, document library, file library, files, downloads, policies, handbooks, forms, versions, PDF export, intranet documents
 type: help
 ---
 # Dokumente und Dateibibliotheken
@@ -25,7 +25,7 @@ prüfen sollten, bevor Sie ein gemeinsames Laufwerk ins Intranet verlagern.
 5. [Viele Dateien hineinbekommen](#viele-dateien-hineinbekommen)
 6. [Wörter in Dateien finden](#wörter-in-dateien-finden)
 7. [Handbücher als PDF und Office-Dokumente](#handbücher-als-pdf-und-office-dokumente)
-8. [WebDAV](#webdav)
+8. [Netzlaufwerke (WebDAV)](#netzlaufwerke-webdav)
 9. [Checkliste](#checkliste)
 10. [Verwandte Seiten](#verwandte-seiten)
 
@@ -108,13 +108,11 @@ installiert sein. Mit Solr über `ezfind` können auch Dateiinhalte indiziert we
   Inhaltsobjekt und exportiert Objekte zurück in Writer-Dokumente; sie braucht OpenOffice oder LibreOffice 2.4 oder
   neuer auf dem Server ([ezodf](../../../funktionen/6.0/erweiterungen/ezodf.md)).
 
-## WebDAV
+## Netzlaufwerke (WebDAV)
 
-Der Kernel enthält einen WebDAV-Einstiegspunkt (`webdav.php`) mit seinen Einstellungen in `settings/webdav.ini`. Er ist
-standardmäßig ausgeschaltet (`EnableWebDAV=false`) und beginnt bei Knoten 2. Uploads über WebDAV durchlaufen dieselben
-Bildprüfungen wie andere Uploads (Changelog 6.0.15). Diese Hilfe hat keine Anleitung Schritt für Schritt dafür; wenn
-Mitarbeiter die Bibliothek als Netzlaufwerk einbinden möchten, bitten Sie Ihren Partner, es auf Ihrer Installation zu
-testen, bevor Sie es zusagen.
+Exponential hat keinen WebDAV-Server: Der, den der Kernel enthielt (`webdav.php`, standardmäßig aus), wurde im
+Oktober 2026 entfernt. Mitarbeiter können die Bibliothek nicht als Netzlaufwerk einbinden. Sie bringen Dateien mit dem
+Mehrfach-Upload oder dem Bearbeitungsformular hinein ([Viele Dateien hineinbekommen](#viele-dateien-hineinbekommen)).
 
 ## Checkliste
 

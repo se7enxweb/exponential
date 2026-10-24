@@ -82,8 +82,8 @@ Yes, when the text extraction tools named in `settings/binaryfile.ini` are insta
 ([Intranet search, Searching inside documents](intranet-search.md#searching-inside-documents)).
 
 **Can staff mount the library as a network drive?**
-The kernel contains a WebDAV entry point, off by default. Test it on your installation before promising it
-([Documents and file libraries, WebDAV](documents-and-file-libraries.md#webdav)).
+No. Exponential has no WebDAV server; files go in through multi-upload or the edit form
+([Documents and file libraries, Network drives](documents-and-file-libraries.md#network-drives-webdav)).
 
 ## Publishing and communication
 

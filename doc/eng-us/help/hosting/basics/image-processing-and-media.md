@@ -77,7 +77,7 @@ first view of a new page can cost CPU while its variations are made.
 ## Uploads: types, validation and limits
 
 `image.ini [ImageUploadSettings]` decides which uploaded files are accepted as images, for every way in (the edit
-form, the upload module, the rich text editor, the AJAX uploader, WebDAV, imports):
+form, the upload module, the rich text editor, the AJAX uploader, imports):
 
 | Key | Shipped | Meaning |
 |---|---|---|

@@ -721,7 +721,7 @@ class eZImageType extends eZDataType
             return false;
         }
 
-        // The upload module and the WebDAV/REST inserts skip the edit form's
+        // The upload module and the REST inserts skip the edit form's
         // validation: the same content check applies here
         $imageError = self::validateImageFileExtension( $httpFile->attribute( 'original_filename' ) ) ?
                       self::imageFileError( $httpFile->attribute( 'filename' ), $httpFile->attribute( 'original_filename' ) ) :

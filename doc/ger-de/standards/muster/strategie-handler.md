@@ -3,7 +3,7 @@ title: Strategie / Handler
 audience: developer
 category: standards
 order: 324
-summary: "Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: Cluster-Datei-Handler, Bild-Handler, Login-Handler, Suchmaschinen, Mail-Transporte, Cache-Backends ... 299 Instanzen in Exponential."
+summary: "Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: Cluster-Datei-Handler, Bild-Handler, Login-Handler, Suchmaschinen, Mail-Transporte, Cache-Backends ... 298 Instanzen in Exponential."
 keywords: Entwurfsmuster, Strategie / Handler, Verhalten, Musterkatalog, design pattern, strategy-handler, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 |  |  |
 | --- | --- |
 | Gruppe | Verhalten |
-| Instanzen | 299 |
+| Instanzen | 298 |
 | Erkannt an | Der Klassenname endet auf Handler, Backend, Driver, Transport, Engine oder Strategy, oder die Klasse implementiert eine Schnittstelle, deren Name das tut. |
 | Erweiterungspunkt | Die INI-Einstellung, die den Handler benennt (siehe die Seite der INI-Plugin-Punkte). |
 
@@ -624,14 +624,6 @@ Austauschbare Implementierungen einer Aufgabe, gewählt über eine Einstellung: 
 | `ezpRequestFactProvider` | interface | `kernel/private/classes/requestrules/ezprequestruleinterfaces.php:90` | Fügt dem Kontext jeder Anfrage Fakten hinzu, bevor die Regeln laufen. | – |
 | `ezpRequestRuleEngine` | class | `kernel/private/classes/requestrules/ezprequestruleengine.php:32` | Die Anfrageregeln: eine geordnete Liste von Regeln, jede eine Menge von Bedingungen und eine Aktion, befragt zu jeder Modulansicht, die der Kernel gleich ausführt. | – |
 | `ezpRequestRuleProvider` | interface | `kernel/private/classes/requestrules/ezprequestruleinterfaces.php:76` | Fügt Regeln aus PHP hinzu: eine Extension, deren Regeln berechnet werden (aus einer Datenbanktabelle, aus einer anderen INI-Datei), statt in requestrules.ini geschrieben zu sein. | – |
-
-### kernel/private/classes/webdav (1)
-
-[Alle Muster von kernel/private/classes/webdav](bereich-kernel-private-classes-webdav.md)
-
-| Klasse | Art | Datei | Beschreibung | Erweiterungspunkt |
-| --- | --- | --- | --- | --- |
-| `eZWebDAVContentBackend` | class extends ezcWebdavSimpleBackend | `kernel/private/classes/webdav/ezwebdavcontentbackend.php:30` | WebDAV-Backend für Exponential, basierend auf der Webdav-Komponente der eZ Components. | – |
 
 ### lib/ezdiff (4)
 

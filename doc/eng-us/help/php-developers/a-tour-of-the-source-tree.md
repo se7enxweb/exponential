@@ -33,7 +33,7 @@ rather than to the code.
 | `index_cluster.php` | serving clustered binary files |
 | `bin/php/*.php` | command line scripts; one dispatcher, `bin/php/console`, runs them all as `exp:<name>` |
 | `runcronjobs.php` | cronjob parts (`php runcronjobs.php frequent`) |
-| `soap.php`, `webdav.php` | the SOAP and WebDAV servers |
+| `soap.php` | the SOAP server |
 
 Every PHP entry point starts with `autoload.php`. It defines `EXP_ROOT_DIR` (the installation root, an absolute path),
 loads `lib/phpcompat.php` on PHP older than 8.1, decides about the engine archive and registers the class map

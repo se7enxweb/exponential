@@ -4,7 +4,7 @@ audience: government, project-manager, developer, partner
 category: public-sector
 order: 90
 summary: Formulierungen dazu, wie ein öffentliches CMS sich mit anderen Systemen verbindet - Inhalts-API, Authentifizierung, Anmeldung über Verzeichnisdienste, Feeds, Webhooks, E-Mail - mit den dokumentierten Protokollen von Exponential und ihrem Status laut der Seite zu den Standards für APIs und Protokolle.
-keywords: Integration, API, REST, OAuth, API-Schlüssel, LDAP, Single Sign-on, SSO, Webhooks, RSS, Sitemaps, SMTP, WebDAV, SOAP, Interoperabilität, offene Standards, Ausschreibung, integration, API keys, single sign-on, interoperability, open standards, tender
+keywords: Integration, API, REST, OAuth, API-Schlüssel, LDAP, Single Sign-on, SSO, Webhooks, RSS, Sitemaps, SMTP, SOAP, Interoperabilität, offene Standards, Ausschreibung, integration, API keys, single sign-on, interoperability, open standards, tender
 type: help
 ---
 # Anforderungen an Integration und API

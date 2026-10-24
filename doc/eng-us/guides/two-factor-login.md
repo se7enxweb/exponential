@@ -120,7 +120,7 @@ reserved domain (`ExemptEmailDomains[]=example.invalid`) or give each an authent
 (`sevenx2fauser.php --login=<login> --enrol-totp --secret-file=<path>`). A role made later needs `user2fa/setup` and
 `user2fa/verify` for its users to set it up. To turn it off again, set `Enforce2FA=disabled`.
 
-Signing in through WebDAV, the REST API's basic authentication, or code that calls `eZUser::loginUser()` directly
+Signing in through SOAP, the REST API's basic authentication, or code that calls `eZUser::loginUser()` directly
 asks for the password only. Keep those off where the second step is required, or limited to accounts that do not need
 it. A session signed in before the second step was required stays signed in until it ends.
 
