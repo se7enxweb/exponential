@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-76663ba69c825d83541db8023e8b1de1  autoload/ezp_kernel.php
+1292ed70624cad6bc885b055f0cceae9  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -193,7 +193,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-7d8aa4afa5a24b526db9673dae93b873  composer.json
+214ade2976c07ed4bb62ed1ca6e3abaa  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
@@ -3251,7 +3251,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
+c5971a8fb3c23c7e1131785f8170fa7e  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3653,13 +3653,13 @@ e37753efe1f2a6c778455cb8e00e16bb  doc/eng-us/examples/datatypes/eztext.md
 9cee0e1a1d73c3a713eac4c3ecba22f0  doc/eng-us/examples/datatypes/ezurl.md
 0b82da1b146d3a9a199231c2db490836  doc/eng-us/examples/datatypes/ezuser.md
 27147271b09243c44cc4d27c71933d93  doc/eng-us/examples/datatypes/ezxmltext.md
-127a9a04db9825c9bdf95edb76829002  doc/eng-us/examples/demo-mode/README.md
+3906c654bb59fc79bf16c2e1133ea480  doc/eng-us/examples/demo-mode/README.md
 d9151af9fa51426efaa3f0f867b73dd5  doc/eng-us/examples/demo-mode/apache-vhost-demo.conf
-f63b1459bc018cd25380629340f6cf86  doc/eng-us/examples/demo-mode/crontab-demo
+8b476fdb9a8827879c44e7ab27a237ef  doc/eng-us/examples/demo-mode/crontab-demo
 8e8e4c7adc9953ba057eaec91c272a17  doc/eng-us/examples/demo-mode/docker-demo.env
 fe2338de7f116fb2d6461ca17a1d5460  doc/eng-us/examples/demo-mode/htaccess-setenv.conf
-eec0794c1a3439cc9fae79ab0c0d57d9  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
-c3b16416aa018ac3a5588b9945d60b22  doc/eng-us/examples/demo-mode/install-demo-sqlite.sh
+084cdea359c2ed4a266f868778e33f7c  doc/eng-us/examples/demo-mode/install-demo-sqlite-demo-exponential-earth.sh
+b747b6da2456476362eb5f60d4719529  doc/eng-us/examples/demo-mode/install-demo-sqlite.sh
 cca5d7ab779676279104a95fbfe62288  doc/eng-us/examples/demo-mode/nginx-fastcgi-demo.conf
 85231412f69ddf5584dc88af3b27095c  doc/eng-us/examples/demo-mode/php-fpm-pool-demo.conf
 b8b3d6b9a764ca22e43f9f52beb3610d  doc/eng-us/examples/demo-mode/velocity-demo-mode.conf
@@ -10829,7 +10829,7 @@ c655f874f438a502f9329eb4c342a48e  doc/eng-us/help/site-packages/requirements/thu
 87f7d3553e3a42989f56b7c7bae66875  doc/eng-us/help/site-packages/requirements/validating-a-package-before-publishing.md
 920f493941adcc979b417d9f9a1aecc0  doc/eng-us/help/site-packages/requirements/version-numbers.md
 4bdd3332ad2517e616037347d4d08958  doc/eng-us/help/site-packages/sevenx-multisite/README.md
-9a0a69cb48f87e37d3555b701f2413cd  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
+09bde7c05b36cd99d0b955e49a391f0d  doc/eng-us/help/site-packages/sevenx-multisite/extensions-it-activates.md
 b15ea7c1fdde5ce5fd8572e4a9de2e01  doc/eng-us/help/site-packages/sevenx-multisite/layouts-data-and-share-dba.md
 05a122d9ac02b4947367f268bc6d8bc4  doc/eng-us/help/site-packages/sevenx-multisite/post-install-fixes.md
 ddd9dfb14d8ad2a51608e2ae78278304  doc/eng-us/help/site-packages/sevenx-multisite/roles-and-policies.md
@@ -12713,7 +12713,7 @@ d6b6f6f0de5c4d1d24032473b8324bed  doc/ger-de/beispiele/datentypen/ezselection.md
 b029afb37c9ff1b5c013628114d1d7b6  doc/ger-de/beispiele/datentypen/ezurl.md
 740888a57dd1953e7c47aad0aa957ea0  doc/ger-de/beispiele/datentypen/ezuser.md
 506914e9196030f94b7e99a7d94b5133  doc/ger-de/beispiele/datentypen/ezxmltext.md
-bf6998bb19a6c723c92429b0cc0f5fe1  doc/ger-de/beispiele/demomodus/README.md
+b6bdbe4773d230b1b91eb3895bfdc387  doc/ger-de/beispiele/demomodus/README.md
 4f5e6f3863f9e7316122e9565ca950bb  doc/ger-de/beispiele/erweiterungspunkte/README.md
 a490e1ec426aca441fb5e252d2527133  doc/ger-de/beispiele/erweiterungspunkte/audit.md
 e34329194560e142b7bd6d21a0cbb109  doc/ger-de/beispiele/erweiterungspunkte/binaryfile.md
@@ -18041,7 +18041,7 @@ e5e949c0a9b61357fdf1aeb80902b302  doc/ger-de/hilfe/seitenpakete/paketserver/wenn
 fd459a697c3c1d9e6c7cc56b90eb4c79  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/das-skript-des-multisite-installers.md
 d1e43646eb0b345f8e43beb016b5a215  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-clean-variante-und-sevenx-site.md
 a18505cc314994807556b39c2a375173  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/die-demo-inhaltspakete.md
-b5a2e4329fe38f68e7eafa8b6ffc9af4  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
+ead5d7b1d45e6fdcb2601b205b4bed06  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/erweiterungen-die-sevenx-multisite-aktiviert.md
 6f1ed7a32e9ab127044aa98e37f1752f  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/korrekturen-nach-der-installation-von-sevenx-multisite.md
 c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/layoutdaten-und-share-dba-dateien.md
 2bee7c5f19c8ffd0823e4281e64858c7  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/rollen-und-richtlinien-von-sevenx-multisite.md
@@ -21627,6 +21627,7 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 92394bbcdb21059999dc3fddfc00e1f0  kernel/classes/expimageuploadvalidator.php
 64d640a63b25eac5a16a8446f2c2a332  kernel/classes/expinstallationdetailsoutputfilter.php
 0b0842cfaa46f40c0709b0a664852476  kernel/classes/expinstallationoperator.php
+81c876fe6f1265fecca982125bdb598f  kernel/classes/expinstalldefaultextensions.php
 6a26dd8312653231ab2187eea9655b65  kernel/classes/expjsonschemavalidator.php
 933bd2dd795e196483af744989fda260  kernel/classes/expkernelextensionoverridelist.php
 649f98db5a269520471fd566ae8db93d  kernel/classes/expkernelservicecompiler.php
@@ -22995,7 +22996,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-6468263fd6d529e40f9de1bc5c19047c  kernel/setup/steps/ezstep_create_sites.php
+7737debdca9490fd5637f840c6cc79ed  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -24938,6 +24939,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
+542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
 18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php

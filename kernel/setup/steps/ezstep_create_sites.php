@@ -683,7 +683,10 @@ class eZStepCreateSites extends eZStepInstaller
             $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
                 ? (array)$site->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) : array(),
             eZExtension::baseDirectory() );
-        if ( $editorAccessExtensions )
+        // without the imports (sqliimport): they belong to the administration (expInstallDefaultExtensions::EDITOR_EXCLUDED)
+        if ( class_exists( 'expInstallDefaultExtensions' ) )
+            $editorAccessExtensions = expInstallDefaultExtensions::editorAccessExtensions( $editorAccessExtensions );
+        if ( $editorAccessExtensions || $site->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' ) )
             $site->setVariable( 'ExtensionSettings', 'ActiveAccessExtensions', $editorAccessExtensions );
         // its own address, not the admin's (SiteURL is written without the scheme)
         $urls = $this->siteaccessURLs();
@@ -1799,6 +1802,15 @@ language_locale='eng-GB'";
                 $extensionsToEnable[] = $extension;
             }
         }
+        // two-step sign-in, whatever the site package (expInstallDefaultExtensions; its settings and field come below)
+        if ( class_exists( 'expInstallDefaultExtensions' ) )
+        {
+            foreach ( expInstallDefaultExtensions::globalExtensions( eZExtension::baseDirectory() ) as $extension )
+            {
+                if ( !in_array( $extension, $extensionsToEnable, true ) )
+                    $extensionsToEnable[] = $extension;
+            }
+        }
         // the extension that carries the database driver (Oracle: ezoracle):
         // without it the site cannot even connect
         $databaseMapForSite = eZSetupDatabaseMap();
@@ -1881,6 +1893,21 @@ language_locale='eng-GB'";
         // New installations show the Online Editor's custom tag controls (ezoe.ini [EditorSettings]
         // CustomTagControls); the shipped default stays disabled, so an upgraded site keeps its editor as it was
         $extraCommonSettings = self::withCustomTagControls( $extraCommonSettings );
+
+        // The extensions of the installation, for the access extensions and tables of the default extensions below
+        $installActiveExtensions = array();
+        foreach ( $extraCommonSettings as $extraCommonSetting )
+        {
+            if ( is_array( $extraCommonSetting ) && $extraCommonSetting['name'] == 'site.ini'
+                 && isset( $extraCommonSetting['settings']['ExtensionSettings']['ActiveExtensions'] ) )
+                $installActiveExtensions = array_merge( $installActiveExtensions, (array)$extraCommonSetting['settings']['ExtensionSettings']['ActiveExtensions'] );
+        }
+
+        // Two-step sign-in, required for Administrator users and Editors: its login handler and
+        // settings/override/sevenxauthentication2fa.ini.append.php where the site package wrote neither
+        // (expInstallDefaultExtensions::withTwoFactorSettings(); the maintained packages write both themselves)
+        if ( class_exists( 'expInstallDefaultExtensions' ) )
+            $extraCommonSettings = expInstallDefaultExtensions::withTwoFactorSettings( $extraCommonSettings, eZExtension::baseDirectory() );
 
         $resultArray['common_settings'] = $extraCommonSettings;
 
@@ -2263,6 +2290,23 @@ language_locale='eng-GB'";
             }
         }
 
+
+        // The default extensions where the site package did not set them up (expInstallDefaultExtensions): sqliimport,
+        // with expui and expqueue when they are not global, in the admin siteaccess and its Imports tab; then their
+        // tables, the user class's two-step sign-in field and the user2fa policies of the roles that sign in. After
+        // the post-install, so a package's own settings and roles come first; the editor below is made from these files.
+        if ( class_exists( 'expInstallDefaultExtensions' ) )
+        {
+            $adminDefaults = expInstallDefaultExtensions::activateInAdminSiteAccess( "settings/siteaccess/$adminSiteaccessName",
+                                                                                   $installActiveExtensions, eZExtension::baseDirectory() );
+            eZLog::write( "eZStepCreateSites: default extensions in $adminSiteaccessName: $adminDefaults", 'setup.log' );
+            $adminSite = new eZINI( 'site.ini.append.php', "settings/siteaccess/$adminSiteaccessName", null, null, null, true, true );
+            $adminAccess = $adminSite->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                         ? (array)$adminSite->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) : array();
+            foreach ( expInstallDefaultExtensions::ensureDatabase( array_merge( $installActiveExtensions, $adminAccess ),
+                                                                   $primaryLanguageLocaleCode, eZExtension::baseDirectory() ) as $line )
+                eZLog::write( "eZStepCreateSites: $line", 'setup.log' );
+        }
 
         // exp_adminui in the admin siteaccess when the installation has it (activateAdminUIAccessExtension()): AdminUI
         // is then a choice of the UI switch's design menu. After the post-install, so a site package's settings

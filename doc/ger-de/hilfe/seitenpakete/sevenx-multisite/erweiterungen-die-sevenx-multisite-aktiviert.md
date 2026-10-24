@@ -78,20 +78,25 @@ deshalb bleiben die zwei Themes am Ende. Wenn ein Datentyp nachgeschlagen wird, 
 
 ## Erweiterungen nur der Administration
 
-Zwei Erweiterungen stehen bewusst nicht in `extension_list`. `adminAccessExtensionList()` gibt `expai` und `exp_adminui` zurück, jeweils nur,
-wenn `extension/<name>` existiert, und `adminSiteINISettings()` schreibt sie als `[ExtensionSettings] ActiveAccessExtensions` des
-Siteaccess der Administration. Die Siteaccesses editor und adminui sind Kopien der Dateien der Administration und erben sie.
+Drei Erweiterungen stehen bewusst nicht in `extension_list`. `adminAccessExtensionList()` gibt `expai`, `exp_adminui` und `sqliimport`
+zurück, jeweils nur, wenn `extension/<name>` existiert, und `adminSiteINISettings()` schreibt sie als `[ExtensionSettings]
+ActiveAccessExtensions` des Siteaccess der Administration. Die Siteaccesses editor und adminui sind Kopien der Dateien der Administration und
+erben sie; nur die Redaktion legt der Installationsschritt ohne `sqliimport` an.
 
 - `expai` (Exponential Intelligence) wird ausgeschaltet installiert: sein eigenes `[AISettings] Enabled=false`, kein Anbieterschlüssel wird
   geschrieben. Sein Cronjob-Teil braucht den Siteaccess der Administration.
 - `exp_adminui` macht Admin UI zu einer Wahl im Designmenü der Administration und der Redaktion; jeder andere Siteaccess behält sein eigenes
   Design.
+- `sqliimport` (Importe, mit Zeitplänen über den Worker von expqueue) braucht `expqueue` und `expui`, die in `extension_list` stehen. Seine
+  13 Tabellen kommen aus `extensionSchemas()`, sein Reiter **Importe** steht in der Reiterliste der Administration zwischen Export und CIE,
+  und nur die Rolle Administrator hat seine Richtlinien. Seine Zeitpläne laufen jede Minute per Cron mit dem Siteaccess der Administration:
+  `php runcronjobs.php -q -s <admin> expqueue` und `php runcronjobs.php -q -s <admin> sqliimport`.
 
 ## Erweiterungen, nach denen der Installer sieht
 
 | Erweiterung | Was der Installer tut, wenn sie vorhanden ist |
 |---|---|
-| `sevenx_authentication_2fa` | fügt der Benutzerklasse das Feld **Zweistufige Anmeldung** hinzu, schreibt `sevenxauthentication2fa.ini` (`Enforce2FA=disabled`, `DefaultMethod=totp`, ein für diese Installation erstellter `SecretKey`), setzt `LoginHandler` `sevenxUser2fa`, dann `standard`, und gibt `user2fa/setup` und `user2fa/verify` an Member, Editor und Partner |
+| `sevenx_authentication_2fa` | fügt der Benutzerklasse das Feld **Zweistufige Anmeldung** hinzu, schreibt `sevenxauthentication2fa.ini` (`Enforce2FA=enabled` mit `EnforcedGroups[]` Administrator users und Editors, deren Mitglieder bei der ersten Anmeldung einen zweiten Schritt einrichten, während jedes andere Konto selbst wählt; `DefaultMethod=totp`, `RecoveryCodes=10`, keine Ausnahmen, keine Schonfrist, ein für diese Installation erstellter `SecretKey`), setzt `LoginHandler` `sevenxUser2fa`, dann `standard`, und gibt `user2fa/setup` und `user2fa/verify` an Member, Editor und Partner |
 | `cjw_newsletter` | importiert seine Inhaltsklassen in die Klassengruppe „Newsletter“, legt den Newsletter-Baum an und setzt die Einstellung seines Wurzelordners |
 | `exp_adminui` | legt den Siteaccess `adminui` an |
 | `ezurlmultisite` | schreibt `settings/override/ezurlmultisite.ini.append.php` (siehe [Was Sie nach der Installation haben](was-sie-nach-der-installation-von-sevenx-multisite-haben.md)) |

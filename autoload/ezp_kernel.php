@@ -1239,6 +1239,7 @@ return array(
       'expIniScopeProvider'                                          => 'kernel/classes/ini/expiniscopeprovider.php',
       'expIniWriteResult'                                            => 'kernel/classes/ini/expiniwriteresult.php',
       'expIniWriter'                                                 => 'kernel/classes/ini/expiniwriter.php',
+      'expInstallDefaultExtensions'                                  => 'kernel/classes/expinstalldefaultextensions.php',
       'expJsonSchemaValidator'                                       => 'kernel/classes/expjsonschemavalidator.php',
       'expKernelExtensionOverrideList'                               => 'kernel/classes/expkernelextensionoverridelist.php',
       'expKernelOverrideWizard'                                      => 'kernel/setup/expkerneloverridewizard.php',
