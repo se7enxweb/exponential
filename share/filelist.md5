@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+2f4cc25fec442ec59c406602428d21fc  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -12182,7 +12182,7 @@ ae360783d46830e044f01e061dd7d3e1  doc/eng-us/specifications/6.0/platform-package
 9fe14a3b13d6da50b9dffc8c3858c342  doc/eng-us/specifications/6.0/platform-sqlite-installer.md
 d4ae8555a63a606ef74a8614cc7b300e  doc/eng-us/specifications/6.0/runnable-commands-cronjobs-views.md
 bf7a556d260f878a1c4ec26d3d91e6d9  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
-8f2abe02e7df02e196c874f403c05816  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
+d31b4521b480d3f0d635428eade35f1b  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
@@ -21589,7 +21589,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 502c16d973bd9cd475cb5f5803d414a2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 303b9b3fcd92348310a194e3e48da982  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-df18166e803545ee14503f44641b7e33  kernel/classes/datatypes/ezuser/ezuser.php
+4f51399ecb14864d0258ea01f6bb1262  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -22071,8 +22071,8 @@ b126960d71eaaad56ecf6a7cab653a08  kernel/classes/user/exppasswordchangerequired.
 7df6628c49d6030ee1d27897bcadce81  kernel/classes/user/expuseraccountoverview.php
 d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
-7e65d1f34b5fc98561e9390b739c45c2  kernel/classes/user/expuserdeactivation.php
-d443bce0cc7fe5af3714f1828c260934  kernel/classes/user/expuserhygiene.php
+885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
+f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 f3f09a1b9f8e7b344c065316df421263  kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php
 d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
@@ -23132,7 +23132,7 @@ a4b7323541eb6d9e33c5ca705d03f4e7  kernel/url/ezurlfunctioncollection.php
 c4718cd84310691f70cc3fd4987d9181  kernel/user/deactivate.php
 0cfaea40a5b0f11948ff0ef6837bcf4a  kernel/user/edit.php
 cdd599212f9e5a9bc6fbdbb13482d5ce  kernel/user/ezuserfunctioncollection.php
-9e6746d5374d82c75aa66e26956e21f5  kernel/user/ezuseroperationcollection.php
+f9b9afe91da0c1e95c22d50b838fb3c0  kernel/user/ezuseroperationcollection.php
 a24698b44fc828b90cf66f0d6956d157  kernel/user/forgotpassword.php
 6172456eb66bed634d2f997ba275033d  kernel/user/function_definition.php
 7d047e0e7abede73d95c46b13692a06c  kernel/user/hygiene.php
@@ -24689,7 +24689,7 @@ e705197d70c864da1fd7a87fb1e031f9  tests/tests/extension/ezoe/expOECustomTagListT
 1fb1efb1583e2d890d7ddd777c043514  tests/tests/extension/ezoe/expOECustomTagNameTest.php
 6646b21538cfe75a6d91d5fbf96f9051  tests/tests/extension/ezoe/expOEDeadLinkMessageTest.php
 b35407af9e2ca6ea1f275c2f3ebbb002  tests/tests/extension/ezoe/expOEDialogAccessRulesTest.php
-9c2ff5a50c1feff03a2718dd04f3a755  tests/tests/extension/ezoe/expOEDialogAccessTest.php
+3aa3566add6fb10664e6b08fb24e8be3  tests/tests/extension/ezoe/expOEDialogAccessTest.php
 3b5206bd80f0c3c811566f546ccd2aad  tests/tests/extension/ezoe/expOEEditorRegistryTest.php
 ec537531a37d13e0a1a90a8f3a112d4d  tests/tests/extension/ezoe/expOEEditorServicesTest.php
 c986f5766a23f4b954a6b74c5c4f8931  tests/tests/extension/ezoe/expOEEditorViewAccessTest.php
@@ -24870,10 +24870,10 @@ c27a9015f7fbb87702e8932aa1238ea8  tests/tests/kernel/classes/eZContentCacheEvent
 4ca02673913513270eaef99170d6106d  tests/tests/kernel/classes/eZContentClassTest.php
 918e9828b094735f61bf48a1ab5cc1de  tests/tests/kernel/classes/eZContentFunctionCollectionTest.php
 edf76901f3f919a1e484ac2342ddce9c  tests/tests/kernel/classes/eZContentFunctionsTest.php
-4ed429eb6333847aea87608bdc25fc50  tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php
+43730207ad05d173fcc62cd359532875  tests/tests/kernel/classes/eZContentHistoryAccessLiveTest.php
 2393c1f4d60f50c867e7fdbe54c1d089  tests/tests/kernel/classes/eZContentHistoryAccessTest.php
 7f30cac712c14a27f670b805d1f6bcb9  tests/tests/kernel/classes/eZContentObjectAttributeListConditionsTest.php
-749895a2982f127d2581d6ed8ab94895  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
+ea9ac087c78f7b6129b765fcaeb009ec  tests/tests/kernel/classes/eZContentObjectDraftAccessLiveTest.php
 94154626b5390fd506ce342b50dadb8e  tests/tests/kernel/classes/eZContentObjectDraftLocationTest.php
 8bb07645c2018bb5fdcbed07ccff375d  tests/tests/kernel/classes/eZContentObjectEditAccessListTest.php
 3391b6094e41c01c2e3ef953b1fbef3a  tests/tests/kernel/classes/eZContentObjectStateGroupTest.php
@@ -25162,10 +25162,10 @@ c5023bde0ea213df997e6d6203683f9a  tests/tests/kernel/classes/packages/eZPackageS
 e10e23767fe5e72162d8e8b63877a64b  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
 5738766b4b9f2240e2996ef757cbd501  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 0043db4959174b004fde61a7e7ad347d  tests/tests/kernel/classes/permissions/eZAccessArrayFailClosedTest.php
-42e0e22ad6571e63b3af124140cf8975  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
-20dcf9ccc7dee40f0bae19edaade3a95  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
+9eb5e4a2c1e2415c9e4824fdc62f96b6  tests/tests/kernel/classes/permissions/eZContentAccessForAnotherUserTest.php
+e3418a91f76a367906a2dbf855b116e9  tests/tests/kernel/classes/permissions/eZContentAccessForUserLiveTest.php
 a8422625bada666061cfc28db6f7ad0d  tests/tests/kernel/classes/permissions/eZContentNodePathConditionTest.php
-4349df33be71dcfd09b0a49bf472ecbb  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationLiveTest.php
+33e9d1bca2b503a0cc82c2642e06024c  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationLiveTest.php
 97879ccc697976aa5f8517905214e1d4  tests/tests/kernel/classes/permissions/eZContentPermissionSQLOptimizationTest.php
 779e3bbe4351fbbcf647ee5836683168  tests/tests/kernel/classes/permissions/eZContentPermissionSQLTest.php
 8c7cbac83c31166ea44ef268800334c2  tests/tests/kernel/classes/permissions/eZPackagePolicyTest.php
@@ -25318,7 +25318,7 @@ fc63055bcb0f1d48ebb5c64f8a116fb7  tests/tests/kernel/classes/user/expRegistratio
 64d742541700bf64eaf55cfe5dc25040  tests/tests/kernel/classes/user/expUserAccountStatusTest.php
 dff03a58accdae7a511ca92c6c1eaf06  tests/tests/kernel/classes/user/expUserDeactivationLiveTest.php
 0e4f544bc052c59d86f11776f6248fde  tests/tests/kernel/classes/user/expUserDeactivationTest.php
-05107fa6d170a0d872336e09c9cc3ae9  tests/tests/kernel/classes/user/expUserHygieneTest.php
+c89d1f48bdd4ae3dac8ad01160445051  tests/tests/kernel/classes/user/expUserHygieneTest.php
 b853b2bf2eee7b3ea1f66c6cb8f66c3f  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
 60b9f5237265384bd9159e210ee0a177  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
 4a8a6b5ce8e426358b96a89368e789f2  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
@@ -25419,6 +25419,7 @@ bc30de6594ec7dde7b08948f89129a7a  tests/tests/kernel/datatypes/ezuser/eZLDAPUser
 beb4ea1cd19edf033b537f7e3c855419  tests/tests/kernel/datatypes/ezuser/eZTextFileUserTest.php
 d870567095cccca2caf22f47138d41b6  tests/tests/kernel/datatypes/ezuser/eZUserCacheTest.php
 10043f2da0d2f36334080b8607155e47  tests/tests/kernel/datatypes/ezuser/eZUserDisabledCurrentUserLiveTest.php
+2accc0219ad7573f20e2e838c47687ef  tests/tests/kernel/datatypes/ezuser/eZUserIsEnabledWithoutSettingLiveTest.php
 6728ae33daaf7d78675888b09635ceb9  tests/tests/kernel/datatypes/ezuser/eZUserTest.php
 0699712b35279c635711f32c6728179b  tests/tests/kernel/datatypes/ezuser/eZUserTypePasswordDraftLiveTest.php
 4a9301bc59a82d9e59a4cecd3b20b3a1  tests/tests/kernel/datatypes/ezuser/ezldapuser_test.php

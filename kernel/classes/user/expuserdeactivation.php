@@ -577,7 +577,8 @@ class expUserDeactivation
         $classID = (int)$object->attribute( 'contentclass_id' );
         $state += array(
             'can_edit' => $object->canEdit(),
-            'enabled' => !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0,
+            // no ezuser_setting row is not enabled, as eZUser::isEnabled() and the login decide
+            'enabled' => $setting && (int)$setting->attribute( 'is_enabled' ) !== 0,
             'has_key' => eZUserAccountKey::fetchByUserID( $id ) instanceof eZUserAccountKey,
             'main_node_id' => (int)$object->attribute( 'main_node_id' ),
             'locations' => array(),
@@ -700,7 +701,8 @@ class expUserDeactivation
             return array( 'ok' => false, 'error' => 'gone' );
         $groupID = (int)$group->attribute( 'node_id' );
         $setting = eZUserSetting::fetch( $id );
-        $wasEnabled = !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0;
+        // no ezuser_setting row is not enabled (enabling it creates the row: setSettings())
+        $wasEnabled = $setting && (int)$setting->attribute( 'is_enabled' ) !== 0;
 
         $main = null;
         $others = array();
@@ -815,7 +817,8 @@ class expUserDeactivation
         $mainParent = (int)$main->attribute( 'parent_node_id' );
         $inGroup = $groupID > 0 && $mainParent === $groupID;
         $setting = eZUserSetting::fetch( $id );
-        $wasEnabled = !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0;
+        // no ezuser_setting row is not enabled (enabling it creates the row: setSettings())
+        $wasEnabled = $setting && (int)$setting->attribute( 'is_enabled' ) !== 0;
 
         $record = self::remembered( $id );
         $plan = self::planRestore( $record, function ( $nodeID, $main ) use ( $classID ) { return self::mayPlace( $nodeID, $classID, $main ); },
@@ -948,7 +951,8 @@ class expUserDeactivation
         $group = self::groupNode();
         $groupID = $group ? (int)$group->attribute( 'node_id' ) : 0;
         $setting = eZUserSetting::fetch( $objectID );
-        $enabled = !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0;
+        // no ezuser_setting row is not enabled
+        $enabled = $setting && (int)$setting->attribute( 'is_enabled' ) !== 0;
         $main = $object->mainNode();
         $inGroup = $groupID > 0 && $main instanceof eZContentObjectTreeNode && (int)$main->attribute( 'parent_node_id' ) === $groupID;
         $remembered = self::remembered( $objectID ) !== null;

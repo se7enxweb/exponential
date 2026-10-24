@@ -2227,8 +2227,10 @@ WHERE user_id = '" . $userID . "' AND
             return $this->UserCache['info'][$this->ContentObjectID]['is_enabled'];
         }
 
+        // no ezuser_setting row means not enabled, as loginUser() decides. This answered true for such an
+        // account, so a session, API key or OAuth token of an account that cannot sign in kept working.
         $setting = eZUserSetting::fetch( $this->attribute( 'contentobject_id' ) );
-        if ( $setting and !$setting->attribute( 'is_enabled' ) )
+        if ( !$setting or !$setting->attribute( 'is_enabled' ) )
         {
             return false;
         }
