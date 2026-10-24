@@ -37,10 +37,13 @@ class ezpContentPublishingQueue implements ezpContentPublishingQueueReaderInterf
      */
     protected final static function initHooks()
     {
-        if ( isset( $init ) )
+        // this was "if ( isset( $init ) ) return; static $init = true;", and a static variable is bound only
+        // where it is declared: the check never held, each add() connected the INI hooks once more (measured: three
+        // calls, each hook run three times per signal).
+        if ( self::$hooksInitialized )
             return;
 
-        static $init = true;
+        self::$hooksInitialized = true;
 
         $ini = eZINI::instance( 'content.ini' );
 
@@ -113,6 +116,12 @@ class ezpContentPublishingQueue implements ezpContentPublishingQueueReaderInterf
      * @var ezcSignalCollection
      */
     protected static $signals = null;
+
+    /**
+     * Whether initHooks() has connected the INI hooks to $signals
+     * @var bool
+     */
+    protected static $hooksInitialized = false;
 
     /**
      * Returns the next queued item, excluding those for which another version of the same content is being published.
