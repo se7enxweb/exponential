@@ -23192,7 +23192,7 @@ c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
 1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
-0be783a571299dc5610f5717f8cd94ac  lib/ezdb/classes/ezsqlite3db.php
+383d01fa298fa7f5b84b98d8434c8fe4  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
 c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -25738,6 +25738,7 @@ d185830f980916133c98bbee065b75bb  tests/tests/lib/ezdb/eZPostgreSQLDBEscapeStrin
 647b489c0b9f59541e1d26587ed4bb2b  tests/tests/lib/ezdb/eZPostgreSQLDBTest.php
 a0c0ae8787effaa5ef6bf8c35edc273a  tests/tests/lib/ezdb/eZSQLite3DBQueryCountTest.php
 e7c428ffa18e115fd9afa3ac417d175c  tests/tests/lib/ezdb/eZSQLite3MirrorTest.php
+6717784b518c234af57a75e931e34535  tests/tests/lib/ezdb/eZSQLite3ModFunctionTest.php
 654c78882b4e6b36a7b6d761d26ddbd2  tests/tests/lib/ezdb/eZSQLite3SerialIDTest.php
 6692179605b9a4b1f193f7396448e17e  tests/tests/lib/ezdb/eZSQLite3TransactionWaitTest.php
 73b21f6d7ea1ac12151a02b2606d2cdc  tests/tests/lib/ezdb/expPDODBTest.php

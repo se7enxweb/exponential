@@ -242,6 +242,20 @@ class eZSQLite3DB extends eZDBInterface
                 },
                 function ( $context, $rows ) { return $rows > 0 ? (int)$context : 0; }, 1 );
 
+            // MySQL's MOD(). eZ Tags reads the main language bit of a language mask with
+            // MOD( language_mask, 2 ), and the SQLite builds without the math functions
+            // (3.34 among them) do not know it: editing content with a tags field failed
+            // with "no such function: MOD" and a failed transaction. NULL for a NULL
+            // argument or a zero divisor, as MySQL answers; the sign follows the dividend.
+            $connection->createFunction( 'MOD',
+                function ( $dividend, $divisor ) {
+                    if ( !is_numeric( $dividend ) || !is_numeric( $divisor ) || $divisor == 0 )
+                        return null;
+                    if ( is_float( $dividend + 0 ) || is_float( $divisor + 0 ) )
+                        return fmod( (float)$dividend, (float)$divisor );
+                    return (int)$dividend % (int)$divisor;
+                }, 2 );
+
             $this->IsConnected = true;
         }
 
