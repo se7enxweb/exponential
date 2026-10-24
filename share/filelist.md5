@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+6b3edd95d5d81831353d076a8a35f26f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -20768,7 +20768,7 @@ c68620496dee6ff6d0f89b0571dc7da5  extension/expservices/settings/expservices.ini
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezformtoken/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezformtoken/README
 e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
-720b8ec8da386827c5db1d97ff0ecfae  extension/ezformtoken/event/ezxformtoken.php
+913c19b864aee2cdbfcac3ef57a9591e  extension/ezformtoken/event/ezxformtoken.php
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
@@ -21756,7 +21756,7 @@ e2252b6e1d197c062045bffc75a5e414  kernel/classes/ezorder.php
 86309a3a8345d384269aa6c9a40b96a6  kernel/classes/ezorderitem.php
 2f9eac8dc6b5df15a80011f7c1fe7d60  kernel/classes/ezorderstatus.php
 278dfacf412d1922b529c20fd13dbad2  kernel/classes/ezorderstatushistory.php
-a251a474e5b424abea2cc7757d30bc96  kernel/classes/ezpackage.php
+b2fef34d9aac6309db529d958d767814  kernel/classes/ezpackage.php
 0b53b484b4af1dc127c7cf6eb74ec90e  kernel/classes/ezpackagecatalog.php
 cffe46a39235866fc16b4fec0d25dd2b  kernel/classes/ezpackagecomparison.php
 2c828e859fb0854385c991d923b6458e  kernel/classes/ezpackagecomparisondiff.php
@@ -21764,7 +21764,7 @@ cffe46a39235866fc16b4fec0d25dd2b  kernel/classes/ezpackagecomparison.php
 d9c6fb7e407ccbabcee6c5da6e0a1629  kernel/classes/ezpackagecomparisonimport.php
 9df53fe1293d22a305eb26c489bf4e05  kernel/classes/ezpackagecreationhandler.php
 0c43d697c6e84038acb2ab4d7672542a  kernel/classes/ezpackagedownload.php
-25d276631ce7d46fa5c8b9af0e5b353e  kernel/classes/ezpackagefilebrowser.php
+ba6baf9572950f26a5f2e9edf8b8451f  kernel/classes/ezpackagefilebrowser.php
 e9869eadcc889b837b1a6dc98249fa41  kernel/classes/ezpackagehandler.php
 f3b29307a8a38c5f06cffb143afde12f  kernel/classes/ezpackageinstallationhandler.php
 58d08be4af1e4881a0e34961d881792e  kernel/classes/ezpackagelicense.php
@@ -25063,6 +25063,7 @@ cb5cb17b3fe0cc32bee0dd8f2fb6b7e4  tests/tests/kernel/classes/ezurl_test.php
 fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthentication_test.php
 6d55864478b562693e77197e4a5e94c1  tests/tests/kernel/classes/ezuserdiscountrule_test.php
 43a4eefe5f44077ad2e85271207b9890  tests/tests/kernel/classes/ezworkflowevent_regression.php
+8fbd06bc9fc3e0274f15646615e9b085  tests/tests/kernel/classes/ezxFormTokenCompareTest.php
 82ae7cde2c5b517fd6ccc515ab772c6e  tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php
 15ce983a094e9cdcc0d658817e44997c  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 ab48655d2b55173d9a7de603c97a4643  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
@@ -25159,6 +25160,7 @@ eacca614b86b64086f3813c700dc4fd8  tests/tests/kernel/classes/packages/eZPackageR
 c5023bde0ea213df997e6d6203683f9a  tests/tests/kernel/classes/packages/eZPackageSitePackageExportTest.php
 421f83967d60e0a3bb57aea1920b5d2b  tests/tests/kernel/classes/packages/eZPackageTestFixtures.php
 61fc1c296b5ef4cef7424c44161d8126  tests/tests/kernel/classes/packages/eZPackageUploadInspectorTest.php
+6ad17145c224d066cf6d06b45a404b08  tests/tests/kernel/classes/packages/eZPackageXMLNoNetworkTest.php
 e10e23767fe5e72162d8e8b63877a64b  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
 5738766b4b9f2240e2996ef757cbd501  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 0043db4959174b004fde61a7e7ad347d  tests/tests/kernel/classes/permissions/eZAccessArrayFailClosedTest.php
