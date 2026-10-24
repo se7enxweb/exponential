@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-76663ba69c825d83541db8023e8b1de1  autoload/ezp_kernel.php
+1533667871fd57708f5a4524e54bde3c  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -51,6 +51,7 @@ f5b56ee1da203c9510cc1c77269cc2b7  bin/mongodb/mysql2ndjson.py
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
 255a3f966ab8f9925778cf9e1016a3e0  bin/php/addanonymouspublicpolicies.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
+80c99044316057d5feeb5c98b1fc0be5  bin/php/addeditorpolicies.php
 c54a6f68ea2ace17c9469d30f2b6f32e  bin/php/addexphelpreadpolicy.php
 446fab6194c2edbe6edc69620702dd35  bin/php/addoauthauthorizepolicy.php
 0c4a1b950bee916e0a5a39f8a6e7b102  bin/php/audit.php
@@ -3251,7 +3252,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
+879b1bd95bf0f282d48fd19144c97fb2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3397,6 +3398,7 @@ bd7e17c4ad79edba44858d93f629b015  doc/eng-us/bc/6.0/debug-bar.md
 6f1d64a6fd8be380d4fb385f1c015a95  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
+0a183c8cc407a53aab627ba896534124  doc/eng-us/bc/6.0/editor-role-policies.md
 6f84e346bd4e6b717ec6e552f2d152c6  doc/eng-us/bc/6.0/expinfo-operator.md
 dde90f374f5c726818094a022c0d5a7b  doc/eng-us/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-check.md
@@ -21621,6 +21623,7 @@ afba64859f8efa10835453902c32e626  kernel/classes/expcontentlanguagestates.php
 cf9939957167c71adbb8488217528eaf  kernel/classes/expcontentpendinglist.php
 3883f366ebecfccb5323bdae8da93a31  kernel/classes/expcronjobpause.php
 c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
+929579146da620ae357f2d2035d2c7e4  kernel/classes/expeditorpolicies.php
 06c3fd9f915b90205f43300f8a58fe55  kernel/classes/experrorheaderlist.php
 9c40fee608343760c047cc95aa0b3a8f  kernel/classes/expextensioncatalogue.php
 95932f51d7d355d00e9b99257b1f6425  kernel/classes/expextensionchangeplan.php
@@ -22287,6 +22290,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
 91d04418cc1cd00a2325aee9a76299dd  kernel/private/classes/commands/addanonymouspublicpolicies.php
 9e4a9c8c5c45c9d1cc7090536dd814aa  kernel/private/classes/commands/adddefaultstates.php
+4ae8edaaba539ca2de736bd4d2bafb86  kernel/private/classes/commands/addeditorpolicies.php
 0557d1bc715f90b7705b9f2a94ba0ddb  kernel/private/classes/commands/addexphelpreadpolicy.php
 496a9a93c1f6cdc29cfb505e9743d77c  kernel/private/classes/commands/addoauthauthorizepolicy.php
 fd48c5e9ce5d0aff44ba778d817f6bc7  kernel/private/classes/commands/audit.php
@@ -22995,7 +22999,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-6468263fd6d529e40f9de1bc5c19047c  kernel/setup/steps/ezstep_create_sites.php
+d96032572c9b830b16e1189ad7fca1b4  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -24937,6 +24941,7 @@ d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftList
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 487e832749fab3848ed2ef2c039cf0c8  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
+284d17577e2188c4c814f5fd5bc92184  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
 18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php

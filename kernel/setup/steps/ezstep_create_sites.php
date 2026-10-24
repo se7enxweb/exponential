@@ -2109,6 +2109,15 @@ language_locale='eng-GB'";
             eZDebug::writeNotice( expAnonymousPublicPolicies::ensure(), __METHOD__ );
         }
 
+        // The site packages replace the Editor role's content/* with single functions and leave out hiding, the trash,
+        // the list of what uses an object and the multi-upload; plain_site gives the Editors group no role for the
+        // own account. Checked here after the package's roles, for every package and base data
+        // (doc/eng-us/bc/6.0/editor-role-policies.md).
+        if ( class_exists( 'expEditorPolicies' ) )
+        {
+            eZDebug::writeNotice( expEditorPolicies::ensure( eZExtension::baseDirectory() ), __METHOD__ );
+        }
+
         // Setup user preferences based on the site chosen and addons
         if ( function_exists( 'eZSitePreferences' ) )
         {
