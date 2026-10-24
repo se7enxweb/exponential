@@ -2881,7 +2881,7 @@ d1e3a923a9127579b13c6a5e7e7c3845  design/standard/templates/setup/init/details.t
 924de7c02aa0329fa0a2b2cc3009c629  design/standard/templates/setup/init/disable.tpl
 e1c9c18ccf264be850532c46154c0eee  design/standard/templates/setup/init/email_settings.tpl
 a02008c87dd24fbfbfb101bbeb1399aa  design/standard/templates/setup/init/email_settings_help.tpl
-b095eda84bfac55866df51a449f04aac  design/standard/templates/setup/init/final.tpl
+c567b256954ddda4ebd770f35f6fbd9d  design/standard/templates/setup/init/final.tpl
 aafea629f775ef9a8e9043d52b7fd16e  design/standard/templates/setup/init/final_help.tpl
 371b031f800c532659953c4a587eb0c0  design/standard/templates/setup/init/finished.tpl
 bfb07800384f18abfd52719a02c22178  design/standard/templates/setup/init/installed.tpl
