@@ -1792,7 +1792,7 @@ language_locale='eng-GB'";
         $extensionsPrepended = array( 'ezjscore', /*@EZP_BUILD_EXTENSION_ACTIVATE@*/ 'ezoe', 'ezformtoken' );
         foreach (
             array(
-                'ezie', 'ezodf', self::restApiExtension(), 'ezmultiupload', 'eztags',
+                'expimageeditor', 'ezodf', self::restApiExtension(), 'ezmultiupload', 'eztags',
                 'ezautosave', 'ezownerchange', 'ez_network', 'ez_network_demo'
             ) as $extension
         )
