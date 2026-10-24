@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+29ac84ef643054b64d224d0abc449fe2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21506,7 +21506,7 @@ f25e252d0822980021557dfd3a75ec00  kernel/classes/contentjob/expcontentjobremoves
 6617d7ed34cf4d2efe4157c92f302c79  kernel/classes/contentjob/expcontentjobstore.php
 d9add8b8d3ad7b5888d56f75e0f67d49  kernel/classes/contentjob/expcontentjobtransfer.php
 d8226b00b7469da9040b293266a47da4  kernel/classes/contentjob/expcontentjobtype.php
-130779b1aed31be7b3468442ebbb7e98  kernel/classes/contentjob/expcontentjobworker.php
+6f848be9e80ae0af9df4b02906333340  kernel/classes/contentjob/expcontentjobworker.php
 1d8b832eecfb80dc796a06810788b7b9  kernel/classes/datatable/expdataconnection.php
 e5bf4833e3b0cc2a8725e0fd0b362dd0  kernel/classes/datatable/expdataconnections.php
 2afaa6dc8436aae0ac16fe7a7211e2fd  kernel/classes/datatable/expdatatablecatalogue.php
@@ -24804,7 +24804,7 @@ e6b808f293e1210884853e65c6b5dd7f  tests/tests/kernel/classes/clusterfilehandlers
 e6f607f0cf7f48459ede5ea9888592f3  tests/tests/kernel/classes/codetemplate/eZCodeTemplateTest.php
 32678a5e41a48c6e006f21154cf8b8df  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 70613220d6447007e5d7695cb754a65d  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
-4ee132f776899fe8b15f3aec57a24d6b  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
+dc5ef33e213dc940df0cf27891ba846e  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 f62f8590531d8ff28b478e0a0da37ffc  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
 4735cd1c55e288f15d12ebd597a22232  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
 2783c92fac8de3c6d341c3a4cab60b1d  tests/tests/kernel/classes/contentmodel/eZContentFunctionCollectionLiveTest.php
