@@ -2,31 +2,41 @@
 
 Die zweistufige Anmeldung (die Extension `sevenx_authentication_2fa`) fragt ihren zweiten Schritt im
 Anmeldeformular der Website ab. Vier andere Wege prüfen ein Passwort selbst: die REST-Schnittstelle mit
-Basic-Authentifizierung, WebDAV, SOAP und die Anmeldung der entfernten Dienste (expservices). Bis 6.0.15 konnte sich
-ein Konto, für das die Website einen zweiten Schritt verlangt, dort allein mit dem Passwort anmelden. Jetzt fragt der
-Kernel auf diesen Wegen ebenfalls die Extension. Für ein solches Konto wird ein Passwort allein dort abgewiesen;
-stattdessen meldet es sich mit einem **App-Passwort** oder mit dem **aktuellen Code seiner Authenticator-App** an.
+Basic-Authentifizierung, WebDAV, SOAP und die Anmeldung der entfernten Dienste (expservices). Ein Konto, für das die
+Website einen zweiten Schritt verlangt, meldet sich dort allein mit dem Passwort an. Das bleibt der Standard: Die
+Clients dieser Wege können keinen zweiten Schritt beantworten. Seit 6.0.15 fragt der Kernel auf diesen Wegen die
+Extension, und eine Website kann **jeden Weg einzeln einbeziehen**. Auf einem einbezogenen Weg wird für ein solches
+Konto ein Passwort allein abgewiesen; stattdessen meldet es sich mit einem **App-Passwort** oder mit dem **aktuellen
+Code seiner Authenticator-App** an.
 
 ## Kurz gesagt
 
-- Für ein Konto, für das `Enforce2FA` gilt (zum Beispiel die Gruppen Administrator users und Editors), wird ein
-  Passwort allein über REST mit Basic-Authentifizierung, WebDAV, SOAP und die expservices-Anmeldung abgewiesen.
+- **Standardmäßig ändert sich nichts.** `sevenxauthentication2fa.ini [OtherSignInPaths] Guard[]` ist leer: REST
+  (Basic-Authentifizierung, API-Schlüssel, OAuth), SOAP, WebDAV und die expservices-Anmeldung melden ein Konto mit
+  `Enforce2FA` allein mit dem Passwort an, genau wie vor 6.0.15, und die Einrichtungsseite zeigt keine App-Passwörter.
+- Eine Website bezieht einen Weg mit je einer Zeile ein: `Guard[]=expservices`, `Guard[]=webdav`, `Guard[]=rest`,
+  `Guard[]=soap`. Dann wird für ein Konto, für das `Enforce2FA` gilt (zum Beispiel die Gruppen Administrator users und
+  Editors), ein Passwort allein auf diesem Weg abgewiesen.
 - Ein **App-Passwort**, das der Benutzer auf der Seite der zweistufigen Anmeldung (`user2fa/setup`) erstellt, meldet
-  über REST, WebDAV und SOAP an. Es wird einmal angezeigt, nur als gesalzener Hash gespeichert, gilt nur auf den
-  Wegen, für die es erstellt wurde, und der Benutzer kann es jederzeit widerrufen.
-- Die **expservices-Anmeldung** erzeugt eine Sitzung, die auch die Website annimmt. App-Passwörter gelten dort nicht.
-  Das Konto sendet mit dem Passwort den aktuellen Code seiner Authenticator-App im POST-Feld `otp` (oder im Header
-  `X-Exp-OTP`).
-- REST-Clients können auch einen **persönlichen API-Schlüssel** oder ein **OAuth-Token** verwenden. Beides ist kein
-  Passwort allein: Den Autorisierungscode von OAuth gibt es erst nach der Anmeldung im Web, mit ihrem zweiten
-  Schritt.
+  über die einbezogenen unter REST, WebDAV und SOAP an. Es wird einmal angezeigt, nur als gesalzener Hash
+  gespeichert, gilt nur auf den Wegen, für die es erstellt wurde, und der Benutzer kann es jederzeit widerrufen. Die
+  Seite bietet nur einbezogene Wege an.
+- Die **expservices-Anmeldung** erzeugt eine Sitzung, die auch die Website annimmt. App-Passwörter gelten dort nie.
+  Ist sie einbezogen, sendet das Konto mit dem Passwort den aktuellen Code seiner Authenticator-App im POST-Feld `otp`
+  (oder im Header `X-Exp-OTP`).
+- Auf einer einbezogenen REST-Schnittstelle können Clients auch einen **persönlichen API-Schlüssel** oder ein
+  **OAuth-Token** verwenden. Beides ist kein Passwort allein: Den Autorisierungscode von OAuth gibt es erst nach der
+  Anmeldung im Web, mit ihrem zweiten Schritt.
 - Konten, für die `Enforce2FA` nicht gilt, bleiben unverändert. Ausgenommene Konten (`ExemptGroups[]`,
   `ExemptEmailDomains[]`) ebenfalls. Konsolenbefehle fragen nie.
 - Jede Abweisung steht im Prüfprotokoll (`access.user.second_factor.refused`). Ebenso das Erstellen, Widerrufen und
   Verwenden eines App-Passworts.
 - Es funktioniert unter Apache mit PHP-FPM ebenso wie unter Exponential Velocity.
 
-## Was jeder Weg antwortet
+## Was jeder einbezogene Weg antwortet
+
+Auf einem Weg, der nicht in `Guard[]` steht, meldet ein Passwort allein wie bisher an; die Tabelle gilt, sobald ein
+Weg aufgeführt ist.
 
 | Weg | Passwort allein, Konto braucht einen zweiten Schritt | Was anmeldet |
 |---|---|---|
@@ -48,11 +58,12 @@ Password-Grant, der den zweiten Schritt umgehen könnte, gibt es nicht.
 
 ## App-Passwörter
 
-Auf `user2fa/setup` findet ein angemeldeter Benutzer mit einem eingerichteten zweiten Schritt den Abschnitt
-**App-Passwörter**:
+Sobald eine Website REST, WebDAV oder SOAP einbezogen hat, findet ein angemeldeter Benutzer mit einem eingerichteten
+zweiten Schritt auf `user2fa/setup` den Abschnitt **App-Passwörter** (ist keiner davon einbezogen, wird er nicht
+angezeigt):
 
-1. **App-Passwort erstellen**: einen Namen geben (der Client, für den es ist), ankreuzen, wo es gelten darf
-   (REST-Schnittstelle, WebDAV, SOAP), und mit dem aktuellen Code der Authenticator-App bestätigen. Wer Codes per
+1. **App-Passwort erstellen**: einen Namen geben (der Client, für den es ist), ankreuzen, wo es gelten darf (die
+   einbezogenen unter REST-Schnittstelle, WebDAV und SOAP), und mit dem aktuellen Code der Authenticator-App bestätigen. Wer Codes per
    E-Mail erhält, braucht keinen Code.
 2. Das Passwort wird einmal angezeigt, in Vierergruppen (`abcd-efgh-jkmn-pqrs-tuvw-xyz2`). Im Client wird es statt
    des Passworts des Kontos eingetragen, mit dem üblichen Benutzernamen. Groß- und Kleinschreibung und die
@@ -73,7 +84,8 @@ Weitere Regeln:
 
 ## Der Code der Authenticator-App
 
-Auf den Wegen in `CodeChannels[]` (standardmäßig nur die expservices-Anmeldung) zählt der aktuelle Code als zweiter
+Auf den einbezogenen Wegen in `CodeChannels[]` (standardmäßig nur die expservices-Anmeldung, sobald
+`Guard[]=expservices` gesetzt ist) zählt der aktuelle Code als zweiter
 Schritt:
 
 ```bash
@@ -93,13 +105,13 @@ mit jeder Anfrage; ein Code, der nur einmal gilt, passt dort schlecht. Eine Webs
 
 ```ini
 [OtherSignInPaths]
-# disabled: the password alone signs in on these paths as before (not recommended)
-Guard=enabled
-GuardedChannels[]
-GuardedChannels[]=rest
-GuardedChannels[]=webdav
-GuardedChannels[]=soap
-GuardedChannels[]=expservices
+# the default: no path guarded, every path signs in with the password alone as before
+Guard[]
+# opt in, one line each:
+#Guard[]=expservices
+#Guard[]=webdav
+#Guard[]=rest
+#Guard[]=soap
 # also accounts that set up a second step themselves (Enforce2FA does not apply to them)
 GuardOptedIn=disabled
 CodeChannels[]
@@ -108,7 +120,7 @@ CodeLockSeconds=900
 
 [AppPasswords]
 AppPasswords=enabled
-# only rest, webdav and soap are possible
+# only rest, webdav and soap are possible, and only those also in Guard[] are offered
 Channels[]
 Channels[]=rest
 Channels[]=webdav
@@ -121,7 +133,7 @@ LastUsedInterval=900
 
 Die Seite des Kernels ist `site.ini [SignInSecondFactorSettings]`. `Handlers[]` nennt die Klassen, die der Kernel
 fragt: Die Extension trägt `sevenxAuthentication2faSignIn` in ihrer eigenen `site.ini.append.php` ein. `CodeHeader`
-nennt den Header eines Codes. Ohne Handler ändert sich nichts.
+nennt den Header eines Codes. Ohne Handler, oder mit dem Handler und leerem `Guard[]`, ändert sich nichts.
 
 ## Für Entwickler
 

@@ -2,30 +2,37 @@
 
 Two-step sign-in (the extension `sevenx_authentication_2fa`) asks for its second step in the web login form. Four
 other ways in check a password on their own: the REST interface with basic authentication, WebDAV, SOAP and the
-login of the remote services (expservices). Until 6.0.15 an account for which the site requires a second step could
-sign in there with its password alone. Now the kernel asks the two-step extension on those paths too. For such an
-account a password alone is refused there, and the account uses an **app password** or the **current code of its
+login of the remote services (expservices). An account for which the site requires a second step signs in there with
+its password alone. That stays the default: the clients of these paths cannot answer a second step. Since 6.0.15 the
+kernel asks the two-step extension on those paths, and a site can **opt each path in**. On an opted-in path a
+password alone is refused for such an account, which then uses an **app password** or the **current code of its
 authenticator app** instead.
 
 ## In short
 
-- For an account that `Enforce2FA` applies to (for example the Administrator users and Editors groups), a password
-  alone is refused on REST with basic authentication, WebDAV, SOAP and the expservices login.
-- An **app password** made by the user on the two-step sign-in page (`user2fa/setup`) signs in on REST, WebDAV and
-  SOAP. It is shown once, stored only as a salted hash, works only on the paths it was made for, and the user can
-  revoke it at any time.
-- The **expservices login** creates a session, which the website accepts too. App passwords do not work there. The
-  account sends the current code of its authenticator app in the POST field `otp` (or the header `X-Exp-OTP`) along
-  with the password.
-- REST clients can also use a **personal API key** or an **OAuth token**. Neither is a password alone: the OAuth
-  authorization code is issued after the web login, with its second step.
+- **By default nothing changes.** `sevenxauthentication2fa.ini [OtherSignInPaths] Guard[]` is empty: REST (basic
+  authentication, API keys, OAuth), SOAP, WebDAV and the expservices login sign an enforced account in with its
+  password alone, exactly as before 6.0.15, and the setup page shows no app passwords.
+- A site opts a path in with one line each: `Guard[]=expservices`, `Guard[]=webdav`, `Guard[]=rest`,
+  `Guard[]=soap`. Then, for an account that `Enforce2FA` applies to (for example the Administrator users and Editors
+  groups), a password alone is refused on that path.
+- An **app password** made by the user on the two-step sign-in page (`user2fa/setup`) signs in on the opted-in ones of
+  REST, WebDAV and SOAP. It is shown once, stored only as a salted hash, works only on the paths it was made for, and
+  the user can revoke it at any time. The page offers only opted-in paths.
+- The **expservices login** creates a session, which the website accepts too. App passwords never work there. Once it
+  is opted in, the account sends the current code of its authenticator app in the POST field `otp` (or the header
+  `X-Exp-OTP`) along with the password.
+- On an opted-in REST interface clients can also use a **personal API key** or an **OAuth token**. Neither is a
+  password alone: the OAuth authorization code is issued after the web login, with its second step.
 - Accounts that `Enforce2FA` does not apply to are unchanged. Exempt accounts (`ExemptGroups[]`,
   `ExemptEmailDomains[]`) are unchanged as well. Console commands never ask.
 - Each refusal is recorded in the audit trail (`access.user.second_factor.refused`), and so are making, revoking and
   using an app password.
 - It works the same under Apache with PHP-FPM and under Exponential Velocity.
 
-## What each path answers
+## What each opted-in path answers
+
+On a path that is not in `Guard[]` a password alone signs in as before; the table applies once a path is listed.
 
 | Path | Password alone, account needs a second step | What signs in |
 |---|---|---|
@@ -47,10 +54,11 @@ password grant that could get around the second step.
 
 ## App passwords
 
-On `user2fa/setup` a signed-in user with a working second step finds the section **App passwords**:
+Once a site has opted in REST, WebDAV or SOAP, a signed-in user with a working second step finds the section **App
+passwords** on `user2fa/setup` (with none of them opted in, the section is not shown):
 
-1. **Make an app password**: give it a name (the client it is for), tick where it may be used (REST interface,
-   WebDAV, SOAP) and confirm with the current code of the authenticator app. A user with e-mail codes needs no code.
+1. **Make an app password**: give it a name (the client it is for), tick where it may be used (the opted-in ones of
+   REST interface, WebDAV and SOAP) and confirm with the current code of the authenticator app. A user with e-mail codes needs no code.
 2. The password is shown once, in groups of four (`abcd-efgh-jkmn-pqrs-tuvw-xyz2`). Type it into the client in place
    of the account's password, with the usual username. Upper or lower case and the dashes do not matter.
 3. The list shows each app password with its paths, when it was made, when it was last used and when it expires.
@@ -69,7 +77,8 @@ Further rules:
 
 ## The code of the authenticator app
 
-On the paths of `CodeChannels[]` (by default only the expservices login) the current code counts as the second step:
+On the opted-in paths of `CodeChannels[]` (by default only the expservices login, once `Guard[]=expservices` is set)
+the current code counts as the second step:
 
 ```bash
 curl -s -c jar -d 'username=<user>' --data-urlencode 'password=<password>' -d 'otp=<code>' \
@@ -88,13 +97,13 @@ once is a poor fit there. A site can still add them to `CodeChannels[]`, and the
 
 ```ini
 [OtherSignInPaths]
-# disabled: the password alone signs in on these paths as before (not recommended)
-Guard=enabled
-GuardedChannels[]
-GuardedChannels[]=rest
-GuardedChannels[]=webdav
-GuardedChannels[]=soap
-GuardedChannels[]=expservices
+# the default: no path guarded, every path signs in with the password alone as before
+Guard[]
+# opt in, one line each:
+#Guard[]=expservices
+#Guard[]=webdav
+#Guard[]=rest
+#Guard[]=soap
 # also accounts that set up a second step themselves (Enforce2FA does not apply to them)
 GuardOptedIn=disabled
 CodeChannels[]
@@ -103,7 +112,7 @@ CodeLockSeconds=900
 
 [AppPasswords]
 AppPasswords=enabled
-# only rest, webdav and soap are possible
+# only rest, webdav and soap are possible, and only those also in Guard[] are offered
 Channels[]
 Channels[]=rest
 Channels[]=webdav
@@ -116,7 +125,7 @@ LastUsedInterval=900
 
 The kernel side is `site.ini [SignInSecondFactorSettings]`. `Handlers[]` lists the classes the kernel asks: the
 extension adds `sevenxAuthentication2faSignIn` in its own `site.ini.append.php`. `CodeHeader` names the request
-header of a code. Without a handler nothing changes.
+header of a code. Without a handler, or with the handler and an empty `Guard[]`, nothing changes.
 
 ## For developers
 

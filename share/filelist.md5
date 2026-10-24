@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-066f377fe1cd0907b922fe7d7bcdbf18  doc/changelogs/6.0/6.0.15.md
+ef03f1cc4e727a0c4bbc1af00f9a56bf  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6338,7 +6338,7 @@ cb0153220c0728b0df4f98f3577ff7cf  doc/eng-us/features/6.0/platform-site-bundles.
 ed0aaba04814f4c4a95783747d008baf  doc/eng-us/features/6.0/rad-tools.md
 f7a865c242f17225cb98ff1463606013  doc/eng-us/features/6.0/rebranding-to-exponential.md
 4c2051cd0440eaa1dec8e788f2cbd69b  doc/eng-us/features/6.0/registration-admin-links.md
-6c17eb837e035768ee59592277a1baa6  doc/eng-us/features/6.0/remote-services-expservices.md
+746b30f9a985ef5a5604204fa1c44335  doc/eng-us/features/6.0/remote-services-expservices.md
 c33ebb6920a1cdd3401d68c3439e4253  doc/eng-us/features/6.0/repair-from-the-browser.md
 f5e4958f9d3d63bcf9d9532889bfb9a2  doc/eng-us/features/6.0/request-logs.md
 cb7cc5398c087e0e65890983dd173f8a  doc/eng-us/features/6.0/request-rules.md
@@ -6352,7 +6352,7 @@ f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
 136749fff30f5b083e52648257ed2e7d  doc/eng-us/features/6.0/safe-redirects.md
-117b5911cb3b20fed490e3285c7d7231  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
+defa3ccdb9844ad78a0df579935f6fea  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
 feeacad1371c0dcfb7a2afc264bf32bd  doc/eng-us/features/6.0/secret-store.md
 1671b58594af2d53ae16a4bc8b67a51e  doc/eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md
 a3c9e2957fb512acbbbb3f7ecbf57df4  doc/eng-us/features/6.0/siteaccess-host-and-language-matching.md
@@ -15077,7 +15077,7 @@ c60cd2b24e9d7d010b86a57124ae2ab2  doc/ger-de/funktionen/6.0/content-security-pol
 b3e456d2f10a16a5331ce2c08d501420  doc/ger-de/funktionen/6.0/e-mail-einstellungen.md
 236706d8d28dba7a4d469e4f69ed7006  doc/ger-de/funktionen/6.0/eigene-anzahl-eintraege-pro-seite.md
 b3433a0730d58a1b5a4e4711c402f31a  doc/ger-de/funktionen/6.0/einrichtungsassistent-und-editor-siteaccess.md
-15b067b8c30c698d5ac53b97ab43ede5  doc/ger-de/funktionen/6.0/entfernte-dienste-expservices.md
+2675712f2345f80d0f2996d3c039b540  doc/ger-de/funktionen/6.0/entfernte-dienste-expservices.md
 4f69b3c9d369ee42cb3acf9581717079  doc/ger-de/funktionen/6.0/erweiterungen/AdminAid.md
 686b5a9153bcff7058a2aca1f256fc44  doc/ger-de/funktionen/6.0/erweiterungen/README.md
 0b0d140f0db3abe3573d5b41c0d2782b  doc/ger-de/funktionen/6.0/erweiterungen/bccie.md
@@ -15240,7 +15240,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
-8429f48d6dbbd55fa1df153595d9e34e  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
+796711990921370e64d0193636cd3e97  doc/ger-de/funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md
 f93c81f4ad0dd384ce6de2fb1688d476  doc/ger-de/geschichte/2023/2023-12.md
 e6058bf5bf6fcbfe5cb963fdab35d6cd  doc/ger-de/geschichte/2024/2024-01a.md
 707d66e5767a0e07fad4308fa952623e  doc/ger-de/geschichte/2024/2024-01b.md
