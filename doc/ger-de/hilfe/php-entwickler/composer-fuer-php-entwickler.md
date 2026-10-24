@@ -32,7 +32,7 @@ Klassen.
 | `require` `php` | `^8.0 \|\| ^8.1 \|\| ... \|\| ^8.5` (und vorausschauende Bereiche bis 8.8) |
 | `require` `ext-*` | `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection`, `session`, `spl`, `simplexml` |
 | `require` Pakete | das Installer-Plugin, Velocity (`se7enxweb/exponential-velocity`), die mitgelieferten `se7enxweb/*`-Erweiterungen, die Zeta Components |
-| `require-dev` | `phpunit/phpunit` (`^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4`), `zetacomponents/php-generator` |
+| `require-dev` | `phpunit/phpunit` (`^9.6 \|\| ^10.5 \|\| ^11.5 \|\| ^12.0 \|\| ^13.4`) |
 | `suggest` | Datenbankerweiterungen (`ext-sqlite3`, `ext-pgsql`, `ext-mysqli`, `mongodb/mongodb`), `ext-gd`, `ext-curl`, optionale Erweiterungen |
 | `autoload` | `files: autoload.php`, sodass der Autoloader von Composer den des Kernels lädt |
 | `scripts` | `legacy-scripts` führt nach `install` und `update` `@php bin/php/ezpgenerateautoloads.php` aus |

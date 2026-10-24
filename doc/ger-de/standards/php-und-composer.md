@@ -150,7 +150,7 @@ JSON-Schema.
   `license`: `GPL-2.0-or-later` (ein SPDX-Bezeichner).
 - `require` legt jede Extension `se7enxweb/*` mit einer Tilde-Beschränkung fest (`~6.0.12`, `~1.4.39`, `~1.0.0.46`):
   Die letzte Stelle ist variabel, die Stellen darüber nicht.
-- `require-dev`: `phpunit/phpunit` `^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4` und `zetacomponents/php-generator`.
+- `require-dev`: `phpunit/phpunit` `^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4`, sonst nichts.
 - `extra.branch-alias`: `"dev-main": "6.0.x-dev"`, sodass Pakete, die `se7enxweb/exponential: ^6.0.14` verlangen,
   gegen `main` aufgelöst werden können. Die CI setzt aus demselben Grund `COMPOSER_ROOT_VERSION=dev-main`.
 - `config.allow-plugins` erlaubt nur die Legacy-Installer-Plugins.
