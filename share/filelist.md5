@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-b7a0222040fc9b26583ee1a56fc1b897  doc/changelogs/6.0/6.0.15.md
+b8a8ab7b81a20dfdb75f33f5088c698b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3432,6 +3432,7 @@ e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
+46c24c7fed6e2458ef7a88681ae951aa  doc/eng-us/bc/6.0/mail-transport-hardening.md
 890b7eaa20d76c5578d916869ec1e72b  doc/eng-us/bc/6.0/member-management.md
 abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
@@ -5009,13 +5010,13 @@ cc99bb8f59cd2ea2e32f31edc4b36e23  doc/eng-us/examples/ini-settings/site/FormProc
 615c63753768d28f6babf33456015022  doc/eng-us/examples/ini-settings/site/HTTPHeaderSettings.md
 419034c17def2264c3654eea9e12e3c1  doc/eng-us/examples/ini-settings/site/InformationCollectionSettings.md
 582f6f21f0ae4980e62f0bc8e38f3afd  doc/eng-us/examples/ini-settings/site/LinkCheck.md
-fdbc65080664b0008ae3fafa5bee743b  doc/eng-us/examples/ini-settings/site/MailSettings.md
+a60fb9a1c249c2538a0d76b5b6d8f194  doc/eng-us/examples/ini-settings/site/MailSettings.md
 230121f373cda58044aec1a8aa8a26ed  doc/eng-us/examples/ini-settings/site/OverrideSettings.md
 50c7667b98a95374d124c9d2d04d5a82  doc/eng-us/examples/ini-settings/site/PasswordChangeRequiredSettings.md
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-0bbfba153059bd5037fa04905dd61046  doc/eng-us/examples/ini-settings/site/README.md
+d79a78653519f5e83845a6f10ad31753  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
 f28588e05ec0e35f21c7961596721b67  doc/eng-us/examples/ini-settings/site/RequestLogSettings.md
@@ -9347,7 +9348,7 @@ f975f075c6ca6fe827237a296aad8a5b  doc/eng-us/help/hosting/operations/clustering-
 8b9d574104ff39e26970729b7a44e51a  doc/eng-us/help/hosting/operations/health-checks-and-uptime.md
 1bcd76bcaa2b6fe47e0a67fd9cbc4743  doc/eng-us/help/hosting/operations/log-viewer-and-rotation.md
 19ac98e160f34c59056b53e6c4c27384  doc/eng-us/help/hosting/operations/mail-consent-and-bounces.md
-7b6c6324f668ea212a8984a0ff0177d5  doc/eng-us/help/hosting/operations/mail-delivery.md
+d94022c2c45bb87a463d52cd0daa089b  doc/eng-us/help/hosting/operations/mail-delivery.md
 b0b3bfab60356828280f39ad16045e15  doc/eng-us/help/hosting/operations/maintenance-mode.md
 5676e5c587a7637309ada8bdd8ea7f4a  doc/eng-us/help/hosting/operations/monitoring-overview.md
 6fde3c512d2a2d040dca4b428fa48a4a  doc/eng-us/help/hosting/operations/request-logs.md
@@ -21923,7 +21924,7 @@ f29742086cfd39bfdd0deaa5285750bf  kernel/classes/logviewer/explogratelimit.php
 8a3722a4aa7a19817b9c85a106dd1f0a  kernel/classes/logviewer/explogtail.php
 58e24578d200217dadb713c53d08a0c1  kernel/classes/logviewer/explogviewer.php
 43baf243ec87964144cf8b4cdc52a7c8  kernel/classes/logviewer/explogviewerconfig.php
-1eceafba9220ed97b85e958303e0f306  kernel/classes/mail/expmailtemplatebody.php
+3c097e0e6690ed0460f9d545ff84ba93  kernel/classes/mail/expmailtemplatebody.php
 433fa0d8a63f3ab1be70354c7a4c145d  kernel/classes/mailpreferences/expconsentcontext.php
 edd4fe2a12021de5f1e04134421a0cca  kernel/classes/mailpreferences/expconsentlog.php
 ef42ff76c9c0799535968bb0f46defbc  kernel/classes/mailpreferences/expmailaddresschange.php
@@ -22472,7 +22473,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
 a686ac48c608d14304ef4ea3b07e2615  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
-c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
+f20c7a17b7fd059a0014e7aa192733cd  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
 2624f73f09c71233ff19dfbd28ff79b5  kernel/private/classes/ezpmobiledevicedetectfilter.php
 b6faff304d7afedf043b946e2b2104fb  kernel/private/classes/ezpmobiledevicedetectfilterinterface.php
@@ -22566,7 +22567,7 @@ cb5b9fdfc09d81cd65f022e289bedaf5  kernel/private/classes/views/content/restore.p
 59d1cccb1c918607b70fefc51b23f549  kernel/private/classes/views/content/reverserelatedlist.php
 989488ba76246550f8645db88223acc2  kernel/private/classes/views/content/search.php
 65ecf66f993d9a775354c150ee12cbdd  kernel/private/classes/views/content/subitemsexport.php
-39034b8c97840d5381c5153e86f1fca8  kernel/private/classes/views/content/tipafriend.php
+4027945089b5fbd20d2d3e3c3bf79b89  kernel/private/classes/views/content/tipafriend.php
 a102967a7da9333f97c2eccdc4d3f4c1  kernel/private/classes/views/content/translation.php
 63d3bd3f6a1d1da1e8deeda179aa28f3  kernel/private/classes/views/content/translations.php
 ea37d9ca312de79451250d6dfe4bbbf9  kernel/private/classes/views/content/trash.php
@@ -23372,7 +23373,7 @@ e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
 5bbb1b1d33b211b3f1ff047d0c03d5b6  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
-cb5821291cb049256ae9d7b1f5089550  lib/ezutils/classes/ezmail.php
+ee07b130bc8f1c12f36169438e24848f  lib/ezutils/classes/ezmail.php
 e75a092b1de357f8d182ac2239f5a301  lib/ezutils/classes/ezmailtransport.php
 f332b18175f3da43c2c40839be7bd864  lib/ezutils/classes/ezmath.php
 654f90c8d02e3fafb48c7dbf58430d80  lib/ezutils/classes/ezmimetype.php
@@ -23387,8 +23388,8 @@ debfbaf2b1900d0e88f3b302f266c9f6  lib/ezutils/classes/ezprepairqueue.php
 1451d0c978604b5009244c5b63612641  lib/ezutils/classes/ezprocess.php
 062090dfa05bec0757d7ba2901de8788  lib/ezutils/classes/ezregexpvalidator.php
 f607c04ba265e18c3ddbd633162270bd  lib/ezutils/classes/ezremoteidutility.php
-9f1db4169edbb509187997cebc76b147  lib/ezutils/classes/ezsendmailtransport.php
-8332652b485a80bf465c56d2d240dd63  lib/ezutils/classes/ezsmtptransport.php
+0c5fdb567177d6ca04f6c979c2824d93  lib/ezutils/classes/ezsendmailtransport.php
+56b9fb3a3aaee12db457cdd1eda5665e  lib/ezutils/classes/ezsmtptransport.php
 0db1d3279d37725c3a0bc60388c04861  lib/ezutils/classes/ezstringutils.php
 96ecb08fc769be8d25f4b1dfe8f68ef1  lib/ezutils/classes/ezsys.php
 ead255df95cadecdc810d3576eeddf2f  lib/ezutils/classes/ezsysinfo.php
@@ -23464,7 +23465,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-17968b145292f4488061e275e051705c  settings/site.ini
+28432a60787de856a3d0b571927a4d27  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -25122,7 +25123,9 @@ ca41032b1c1c8e298f38c4c948bf48ec  tests/tests/kernel/classes/ini/expIniLocatorTe
 161aa7e74f13a3c60c46b5d2a9a63a1f  tests/tests/kernel/classes/ini/fixtures/expinienginetestfixtures.php
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 854ed28cc23b9fd79329399790ab423b  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
-a075b76d5245380cae129e021ac441d6  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
+f139dc99615218f7e796feb6321fc16e  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
+8f8998af3c997ce3a3d6aab9b9d34546  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
+dcf6a5bc8e3672ab612c608c9b5889cd  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
 c9c417f167681af1e55e9915f763fb47  tests/tests/kernel/classes/mailpreferences/MailPreferencesBounceListenersTest.php
 c97e956ffc379971dea7c7031224ad03  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
 245280f0221afce15401c2327945e5f1  tests/tests/kernel/classes/mailpreferences/MailPreferencesCoreTest.php
@@ -25850,13 +25853,14 @@ e45dd6fcf44b971d6a9e2eac2bd4f1bc  tests/tests/lib/ezutils/eZINIParserAndAccessTe
 f23df022454c4a9eaa71300127b39d69  tests/tests/lib/ezutils/eZINISaveFilePermissionsTest.php
 1420df2b74cc255fd0139ce4f50ba3a0  tests/tests/lib/ezutils/eZINITest.php
 f7ef4361c347a658c05efcaafe4d7051  tests/tests/lib/ezutils/eZMailEzcTest.php
-6108d2e9ccef5a860674d71bc38cc38e  tests/tests/lib/ezutils/eZMailTest.php
+b204ed291d2df3cf194e3ee78711bf67  tests/tests/lib/ezutils/eZMailTest.php
 23db94484c48785054d66e282f0718c1  tests/tests/lib/ezutils/eZMailTransportSendTest.php
 e7bb2a012b5c38a287fce1ad02817ca4  tests/tests/lib/ezutils/eZMailUserAgentTest.php
 ad9b40230e54fa366826f27052a68264  tests/tests/lib/ezutils/eZModuleFunctionInfoTest.php
 4de84b483d83f06ae1d82c0bfacee32c  tests/tests/lib/ezutils/eZModuleTest.php
 b63b08251a27ea86e14255f2d343ba65  tests/tests/lib/ezutils/eZPHPCreatorRoundTripTest.php
-853e2b1329fe8ce4ae8a630a21c3bc04  tests/tests/lib/ezutils/eZSendmailEnvelopeSenderTest.php
+a85a1c9685c9787a7c22d92c049cf97f  tests/tests/lib/ezutils/eZSMTPTransportTest.php
+5cf6e5ab4c245dd63496d838ae333b32  tests/tests/lib/ezutils/eZSendmailEnvelopeSenderTest.php
 a46d1ff58bc1d58f91c2cbadffe983bf  tests/tests/lib/ezutils/eZSiteLogAndExpiryPathsTest.php
 295ccf384fbb67b358a39cf87d5b809d  tests/tests/lib/ezutils/eZSysInfoTest.php
 f456335943fc0aade2512be73fe79b5a  tests/tests/lib/ezutils/eZSysRequestURIDecodeOnceTest.php
@@ -25896,6 +25900,7 @@ f3a2a3b1a63a674704b84839c3f7870a  tests/tests/lib/ezutils/fixtures/engine_archiv
 5af0571f8641dc73f1be006a0ac65d6d  tests/tests/lib/ezutils/fixtures/fatal_user_error_child.php
 9f3c10075ebe68667bb847d0073e15aa  tests/tests/lib/ezutils/fixtures/sendmail_capture.php
 466cc5fa8a69dfb41333ea86a577b8db  tests/tests/lib/ezutils/fixtures/sendmail_envelope_child.php
+465ea665e5d1916997b6209ae5419b8c  tests/tests/lib/ezutils/fixtures/smtp_fake_server.php
 9701747cd273b064a86365f34fc6090e  tests/tests/lib/ezutils/server/README.rst
 3815ba59cd32518a496671af5f546aed  tests/tests/lib/ezutils/server/nvh/index/feebsd_lighttpd_fastcgi_php53.php
 d5a3b79e8b4cd9983204272c12329340  tests/tests/lib/ezutils/server/nvh/index/linux_apache2216_mod_php533.php
