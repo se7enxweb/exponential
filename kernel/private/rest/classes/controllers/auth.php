@@ -30,6 +30,14 @@ class ezpRestAuthController extends ezcMvcController
             $statusCode = $this->ezpAuth_reason;
         }
 
+        // the account must change its password in the web interface first (expPasswordChangeRequired)
+        if ( class_exists( 'expPasswordChangeRequired' ) && $statusCode === expPasswordChangeRequired::REST_ERROR )
+        {
+            $res->status = new expRestPasswordChangeRequiredStatus();
+            $res->variables['error'] = expPasswordChangeRequired::REST_ERROR;
+            return $res;
+        }
+
         switch ( $statusCode )
         {
             case ezpOauthFilter::STATUS_TOKEN_UNAVAILABLE:

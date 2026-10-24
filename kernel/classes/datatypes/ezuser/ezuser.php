@@ -21,6 +21,15 @@
 class eZUser extends eZPersistentObject
 {
     public $GroupsAsObjects;
+
+    /**
+     * The choice "change password at next sign-in" of the account edit form while it is a draft (eZUserType): true,
+     * false, or null when the form did not show it. Applied on publish (expPasswordChangeRequired::applyFromEdit()).
+     *
+     * @var bool|null
+     */
+    public $PasswordChangeRequiredDraft = null;
+
     /// No hash, used by external handlers such as LDAP and TextFile
     const PASSWORD_HASH_EMPTY = 0;
     /// MD5 of password
@@ -124,6 +133,8 @@ class eZUser extends eZPersistentObject
                                                       'account_key' => 'accountKey',
                                                       'groups' => 'groups',
                                                       'has_stored_login' => 'hasStoredLogin',
+                                                      'password_change_required' => 'passwordChangeRequired',
+                                                      'password_change_checked' => 'passwordChangeChecked',
                                                       'original_password' => 'originalPassword',
                                                       'original_password_confirm' => 'originalPasswordConfirm',
                                                       'roles' => 'roles',
@@ -355,6 +366,30 @@ class eZUser extends eZPersistentObject
                 return array( 'object' => expAuditHook::user( $user ),
                               'after' => array( 'self' => (int)eZUser::currentUserID() === $id ) );
             } );
+    }
+
+    /**
+     * @return bool the account is marked "change password at next sign-in" (expPasswordChangeRequired)
+     */
+    function passwordChangeRequired()
+    {
+        return class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::isMarked( $this );
+    }
+
+    /**
+     * Whether the edit form ticks "change password at next sign-in": the draft's choice, else ticked for an account
+     * whose user object was never published (an administrator creating it), else the account's mark.
+     *
+     * @return bool
+     */
+    function passwordChangeChecked()
+    {
+        if ( !class_exists( 'expPasswordChangeRequired' ) )
+            return false;
+        $object = $this->ContentObjectID ? eZContentObject::fetch( (int)$this->ContentObjectID ) : null;
+        $isNew = !$object instanceof eZContentObject || (int)$object->attribute( 'status' ) === eZContentObject::STATUS_DRAFT;
+        $marked = $isNew ? false : expPasswordChangeRequired::isMarked( $this );
+        return expPasswordChangeRequired::checkboxState( $this->PasswordChangeRequiredDraft, $isNew, $marked );
     }
 
     function originalPassword()

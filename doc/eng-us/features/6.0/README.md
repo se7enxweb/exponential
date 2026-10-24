@@ -159,6 +159,7 @@ nginx with PHP-FPM keep working as before.
 - ["This form has expired": form token refusals](form-expired-page.md)
 - [SOAP calls over HTTPS: certificates of an internal CA](soap-client-tls.md)
 - [Changing your password](modern-password-change.md)
+- [Change password at next sign-in](password-change-at-next-sign-in.md)
 - [Reset a user password from the command line](reset-user-password.md)
 - [Check user accounts](user-hygiene.md)
 - [Signed links in the "New user registered" mail](registration-admin-links.md)

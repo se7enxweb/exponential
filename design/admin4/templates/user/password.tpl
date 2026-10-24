@@ -53,6 +53,9 @@
 {elseif first_set( $demo_mode_locked, false() )}
     {* demo mode (EXP_DEMO_MODE=1): an administrator's password cannot be changed *}
     <div class="a4-notice is-warn" role="status"><p>{$demo_mode_text|wash}</p></div>
+{elseif first_set( $password_change_required, false() )}
+    {* the account is marked "change password at next sign-in": nothing else opens until it is changed *}
+    <div class="a4-notice is-warn" role="status"><p>{'Choose a new password before you continue: an administrator asked you to replace the password you have now.'|i18n( $ctx )}</p></div>
 {/if}
 
 <form name="Password" class="a4pw-card" method="post" action={concat( $module.functions.password.uri, '/', $userID )|ezurl} novalidate

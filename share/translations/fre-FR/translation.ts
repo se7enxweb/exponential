@@ -36885,6 +36885,14 @@ Si vous voulez laisser un commentaire au responsable de l&apos;approbation ou en
         <source>required</source>
         <translation>requis</translation>
     </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Changer le mot de passe à la prochaine connexion</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Après sa connexion, l&apos;utilisateur doit choisir un nouveau mot de passe avant de faire quoi que ce soit d&apos;autre. Utilisez cette option lorsque vous donnez un mot de passe provisoire à quelqu&apos;un.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/diff</name>
@@ -59443,6 +59451,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Choisissez un nouveau mot de passe avant de continuer : un administrateur vous a demandé de remplacer votre mot de passe actuel.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/error/formtoken</name>
@@ -62121,6 +62133,18 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Missing file review mark</source>
         <translation>Marquage de fichier manquant comme examiné</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Changement du mot de passe à la prochaine connexion activé</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Changement du mot de passe à la prochaine connexion désactivé</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Redirigé vers le changement de mot de passe</translation>
     </message>
 </context>
 <context>
@@ -68972,6 +68996,10 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>You were signed out on your other devices.</source>
         <translation>Vous avez été déconnecté sur vos autres appareils.</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Choisissez un nouveau mot de passe avant de continuer : un administrateur vous a demandé de remplacer votre mot de passe actuel.</translation>
     </message>
 </context>
 <context>

@@ -107,6 +107,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:updateniceurls](updateniceurls.md) |  | Import old URL aliases and update the URL aliases of all nodes (--update-nodes) |
 | [exp:updatesearchindex](updatesearchindex.md) |  | Reindex all content objects in the search engine |
 | [exp:userlogincheck](userlogincheck.md) | exp:user-login-check | Unique logins: list the logins more than one user account has; --fix-index adds the unique index on ezuser.login once there are none |
+| [exp:userpasswordchangerequired](userpasswordchangerequired.md) | exp:user-password-change-required | Change password at next sign-in: show, set or clear the mark of a user account |
 | [exp:velocity-router](velocity-router.md) |  |  |
 | [exp:velocity-warmup](velocity-warmup.md) |  |  |
 | [exp:velocity](velocity.md) | exp:vc |  |
