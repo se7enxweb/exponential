@@ -24,14 +24,18 @@ Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Sch
 > wenn ein Benutzer die aktuelle Sitzung im Cookie speichern will und  
 > auf der Anmeldeseite das Kontrollkästchen „Angemeldet bleiben“ anklickt.  
 > Leer oder 0 bedeutet, dass diese Möglichkeit deaktiviert ist und CookieTimeout verwendet wird.  
+> 360 Tage, und das Kästchen ist auf den Anmeldeformularen vorausgewählt: Browser, die  
+> Sitzungs-Cookies von sich aus verwerfen (iOS Safari und Chrome), würden den Benutzer  
+> sonst abmelden. Die Lebensdauer gilt für die ganze Anmeldung, auch wenn die Sitzungs-ID  
+> später wechselt (der zweite Schritt der 2FA). SessionTimeout mindestens ebenso lang halten.  
 
-Standard: leer.
+Standard: `31104000`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [Session]
-RememberMeTimeout=
+RememberMeTimeout=31104000
 */ ?>
 ```
 
@@ -55,16 +59,18 @@ Handler=
 
 ## SessionTimeout
 
-> Sekunden, die eine Sitzung hält; 3 Tage sind Standard  
+> Sekunden, die eine unbenutzte Sitzung hält, 360 Tage (wie RememberMeTimeout:  
+> der Server behält eine ruhende Sitzung so lange, wie ein Angemeldet-bleiben-Cookie sie zurückholen kann;  
+> 3 Tage, der frühere Standard, meldeten solche Benutzer nach einem langen Wochenende ab)  
 > Überschreibt session.gc\_maxlifetime, wenn ezpSessionHandlerPHP verwendet wird  
 
-Standard: `259200`.
+Standard: `31104000`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/site.ini.append.php
 [Session]
-SessionTimeout=259200
+SessionTimeout=31104000
 */ ?>
 ```
 
