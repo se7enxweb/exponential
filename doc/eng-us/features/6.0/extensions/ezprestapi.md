@@ -39,7 +39,9 @@ Template=rest_pagelayout.tpl
 
 The create and delete calls are backed by [nxc_powercontent](nxc_powercontent.md) (an update is checked, then answers 501). Authentication is the REST
 framework's OAuth2: obtain a token at `POST /api/auth/v1/oauth/token` (grants `authorization_code` and
-`refresh_token`) and send it as the `oauth_token` parameter or the `Authorization: OAuth` header.
+`refresh_token`) and send it in the `Authorization: Bearer` (or `OAuth`) header; the `oauth_token` parameter is read
+from a POST form body, and from the query string only with `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`
+([OAuth token hardening](../../../bc/6.0/oauth-token-hardening.md)).
 A user can also make a [personal API key](../../../guides/api-keys.md) on the site and send it as
 `Authorization: Bearer expk_...`; the create, update and delete routes then need the key's `publish`, `edit` or
 `remove` scope as well (`rest.ini [ApiKeySettings] RouteScopes[]`, `RouteGuards[]`).

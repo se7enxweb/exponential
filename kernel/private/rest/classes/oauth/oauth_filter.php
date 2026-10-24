@@ -66,6 +66,14 @@ class ezpOauthFilter extends ezcAuthenticationFilter
                 }
             }
 
+            // The token's user used to go unchecked: a user disabled in the administration or locked by
+            // failed logins kept full REST access with a token issued before. The API key and password
+            // filters refuse such a user.
+            if ( !ezpOauthUtility::userMayUseToken( eZUser::fetch( $tokenInfo->user_id ) ) )
+            {
+                return self::STATUS_TOKEN_INVALID;
+            }
+
             self::$tokenInfo = $tokenInfo;
 
             // Scope checking to be implemented.

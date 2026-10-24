@@ -102,24 +102,34 @@ class ezpRestOauthTokenController extends ezcMvcController
 
     protected function checkParams( $paramsToCheck )
     {
+        // $missingParams used to be reset inside the loop, so only a missing last parameter was
+        // refused: a request without client_id went on to fetchByClientId( null ) with
+        // "Undefined array key" warnings. Every missing parameter is reported now.
+        $missingParams = self::missingParams( $this->request->post, $paramsToCheck );
+        if ( !empty( $missingParams ) )
+        {
+            throw new ezpOauthInvalidRequestException( 'Missing ' . implode( ', ', $missingParams ) . ( count( $missingParams ) > 1 ? ' parameters.' : ' parameter.' ) );
+        }
+    }
+
+    /**
+     * The names in $paramsToCheck that $post does not carry, in their order.
+     *
+     * @param array $post
+     * @param array $paramsToCheck
+     * @return array
+     */
+    public static function missingParams( $post, $paramsToCheck )
+    {
+        $missingParams = array();
         foreach( $paramsToCheck as $param )
         {
-            $missingParams = array();
-            if ( !isset( $this->request->post[$param] ) )
+            if ( !isset( $post[$param] ) )
             {
                 $missingParams[] = $param;
             }
         }
-        // For now bail out on first missing param, as spec does not yet specify
-        // how to specify multiple missing params simultaneously.
-
-        if ( !empty( $missingParams ))
-        {
-            $error = array_pop( $missingParams );
-
-            throw new ezpOauthInvalidRequestException( "Missing {$error} parameter." );
-        }
-
+        return $missingParams;
     }
 
     protected function validateGrantType( $grant )
