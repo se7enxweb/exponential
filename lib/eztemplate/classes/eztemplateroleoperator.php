@@ -11,15 +11,20 @@
 
 /**
  * The eZTemplateRoleOperator class provides template operators for checking user role membership
- * 
+ * and policies (doc/eng-us/features/6.0/role-and-policy-template-operators.md).
+ *
+ * The piped value is ignored: the user is the one named by the parameters, or the current user.
+ *
  * Template usage examples:
- * {if $current_user|has_role('Administrator')}
- * {if $current_user|has_role_id(1)}
- * {if $current_user|has_any_role(array('Editor', 'Administrator'))}
- * {if $current_user|has_any_role(array(1, 2, 3))}
- * {if $current_user|has_any_role(array('Editor', 2, 'Publisher'), match_all=true())}
- * {if $user_object|has_role_by_user(1)}
- * {if 42|has_role_by_user_id(1)}
+ * {if has_role('Administrator')}
+ * {if has_role_id(1)}
+ * {if has_any_role(array('Editor', 'Administrator'))}
+ * {if has_any_role(array(1, 2, 3))}
+ * {if has_any_role(array('Editor', 2, 'Publisher'), 0, true())}   (match_all; 0 = the current user)
+ * {if has_role_by_user($user_object, 1)}
+ * {if has_role_by_user_id(42, 1)}
+ * {if has_policy('content', 'edit')}
+ * {if has_policy_by_user($user_object, 'content', 'edit')}
  */
 class eZTemplateRoleOperator
 {
@@ -203,27 +208,17 @@ class eZTemplateRoleOperator
             case 'has_role':
             {
                 $roleName = $namedParameters['role_name'];
-                $userId = $namedParameters['user_id'];
-                
-                if ( $userId === 0 )
-                {
-                    $userId = eZUser::currentUserID();
-                }
-                
+                $userId = self::userIdOrCurrent( $namedParameters['user_id'] );
+
                 $operatorValue = $this->isMemberOfRole( $userId, $roleName );
             }
             break;
 
             case 'has_role_id':
             {
-                $roleId = $namedParameters['role_id'];
-                $userId = $namedParameters['user_id'];
-                
-                if ( $userId === 0 )
-                {
-                    $userId = eZUser::currentUserID();
-                }
-                
+                $roleId = (int)$namedParameters['role_id'];
+                $userId = self::userIdOrCurrent( $namedParameters['user_id'] );
+
                 $operatorValue = $this->isMemberOfRoleId( $userId, $roleId );
             }
             break;
@@ -231,14 +226,9 @@ class eZTemplateRoleOperator
             case 'has_any_role':
             {
                 $roles = $namedParameters['roles'];
-                $userId = $namedParameters['user_id'];
-                $matchAll = $namedParameters['match_all'];
-                
-                if ( $userId === 0 )
-                {
-                    $userId = eZUser::currentUserID();
-                }
-                
+                $userId = self::userIdOrCurrent( $namedParameters['user_id'] );
+                $matchAll = (bool)$namedParameters['match_all'];
+
                 $operatorValue = $this->isMemberOfAnyRole( $userId, $roles, $matchAll );
             }
             break;
@@ -254,9 +244,9 @@ class eZTemplateRoleOperator
 
             case 'has_role_by_user_id':
             {
-                $userId = $namedParameters['user_id'];
-                $roleId = $namedParameters['role_id'];
-                
+                $userId = (int)$namedParameters['user_id'];
+                $roleId = (int)$namedParameters['role_id'];
+
                 $operatorValue = self::memberOfRoleByUserId( $userId, $roleId );
             }
             break;
@@ -265,14 +255,9 @@ class eZTemplateRoleOperator
             {
                 $module = $namedParameters['module'];
                 $function = $namedParameters['function'];
-                $userId = $namedParameters['user_id'];
+                $userId = self::userIdOrCurrent( $namedParameters['user_id'] );
 
-                if ($userId === 0)
-                {
-                    $userId = eZUser::currentUserID();
-                }
-
-                $operatorValue = $this->userHasPolicy($userId, $module, $function);
+                $operatorValue = $this->userHasPolicy( $userId, $module, $function );
             }
             break;
 
@@ -286,6 +271,18 @@ class eZTemplateRoleOperator
             }
             break;
         }
+    }
+
+    /**
+     * The user id a template passed, or the current user's for 0 (the default) and an empty value
+     *
+     * @param mixed $userId The user_id parameter (an integer, or a string of digits such as $node.contentobject_id)
+     * @return int
+     */
+    private static function userIdOrCurrent( $userId )
+    {
+        $userId = (int)$userId;
+        return $userId === 0 ? (int)eZUser::currentUserID() : $userId;
     }
 
     /**
@@ -459,15 +456,13 @@ class eZTemplateRoleOperator
      */
     static function memberOfRoleByUser( $user, $roleID )
     {
-        $result = false;
-        
-        // Fetch user ID
-        $userID = $user->attribute('contentobject_id');
-        
-        // Perform comparison
-        $result = self::memberOfRoleByUserId( $userID, $roleID );
-        
-        return $result;
+        // Anything but a user object (a number piped in, an empty variable) is no user
+        if ( !$user instanceof eZUser )
+        {
+            return false;
+        }
+
+        return self::memberOfRoleByUserId( (int)$user->attribute( 'contentobject_id' ), (int)$roleID );
     }
 
     /**
@@ -510,6 +505,9 @@ class eZTemplateRoleOperator
     /**
      * Check if user has a specific policy by module and function
      *
+     * A policy for every module (`*`, as the Administrator role has) or for every function of the module
+     * (`content/*`) counts, as it does for eZUser::hasAccessTo(). Limitations are not evaluated.
+     *
      * @param int $userId User ID
      * @param string $module Policy module name (e.g., 'content', 'user')
      * @param string $function Policy function name (e.g., 'read', 'edit', 'create')
@@ -517,6 +515,7 @@ class eZTemplateRoleOperator
      */
     public function userHasPolicy( $userId, $module, $function )
     {
+        $userId = (int)$userId;
         if ( empty( $module ) || empty( $function ) || $userId <= 0 )
         {
             return false;
@@ -528,44 +527,28 @@ class eZTemplateRoleOperator
             return false;
         }
 
-        $roles = $user->roles();
-
-        foreach ( $roles as $role )
+        foreach ( $user->roles() as $role )
         {
             if ( !$role instanceof eZRole )
             {
                 continue;
             }
 
-            // Check if eZRole has the hasPolicy method (from kernel override extension)
-            if ( method_exists( $role, 'hasPolicy' ) )
+            foreach ( $role->policyList() as $policy )
             {
-                if ( $role->hasPolicy( $module, $function ) )
+                if ( !$policy instanceof eZPolicy )
+                {
+                    continue;
+                }
+
+                $policyModule = $policy->attribute( 'module_name' );
+                $policyFunction = $policy->attribute( 'function_name' );
+
+                // An exact match, or a policy for every module / every function of the module
+                if ( ( $policyModule == $module || $policyModule == '*' ) &&
+                     ( $policyFunction == $function || $policyFunction == '*' ) )
                 {
                     return true;
-                }
-            }
-            else
-            {
-                // Fallback: manually check policies if hasPolicy method doesn't exist
-                $policies = $role->policyList();
-
-                foreach ( $policies as $policy )
-                {
-                    if ( !$policy instanceof eZPolicy )
-                    {
-                        continue;
-                    }
-
-                    $policyModule = $policy->attribute('module_name');
-                    $policyFunction = $policy->attribute('function_name');
-
-                    // Check for exact match or wildcard (*)
-                    if ( ( $policyModule == $module || $policyModule == '*' ) &&
-                        ( $policyFunction == $function || $policyFunction == '*' ) )
-                    {
-                        return true;
-                    }
                 }
             }
         }
@@ -584,21 +567,13 @@ class eZTemplateRoleOperator
      */
     static function hasPolicyByUser( $user, $module, $function )
     {
-        $result = false;
-
         if ( !$user instanceof eZUser )
         {
             return false;
         }
 
-        // Fetch user ID
-        $userID = $user->attribute('contentobject_id');
-
-        // Create instance to call userHasPolicy
         $instance = new self();
-        $result = $instance->userHasPolicy( $userID, $module, $function );
-
-        return $result;
+        return $instance->userHasPolicy( (int)$user->attribute( 'contentobject_id' ), $module, $function );
     }
 }
 

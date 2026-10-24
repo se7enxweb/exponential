@@ -51,13 +51,18 @@ as a role id; anything else as a role name.
 {/if}
 
 {* a specific other user, by id *}
-{if 42|has_role_by_user_id(1)}
+{if has_role_by_user_id(42, 1)}
     ...
 {/if}
 ```
 
 (The `user_id` parameter is the second one of `has_any_role`, so the third
-example passes `0` to mean "the current user" and sets `match_all` to true.)
+example passes `0` to mean "the current user" and sets `match_all` to true.
+The last example asks about user 42 and role 1: `has_role_by_user_id` takes
+both as parameters; a value piped in, as in `42|has_role_by_user_id(1)`, is
+ignored like everywhere else, so that form asks about user 1 and role 0 and is always
+false. `$current_user` is set in the pagelayout; in other templates define it
+with `{def $current_user = fetch( 'user', 'current_user' )}`.)
 
 ## Use in PHP
 
@@ -77,10 +82,13 @@ function. With `false` it answers for any function of the module.
 
 - `has_policy` reads the **policy rows** of the roles. It says "this user has a
   role with a content/edit policy"; it does not evaluate limitations (sections,
-  subtrees, owner) and a policy stored as "all functions" (`*`) does not answer
-  true for a named function when the kernel method `eZRole::hasPolicy()` is in
-  use. To ask whether the user may edit one particular node, use the node's
-  `can_edit` attribute instead.
+  subtrees, owner), so a content/edit policy limited to one section counts. A
+  policy for every module (`*`, as the Administrator role has) or for every
+  function of a module (`content/*`) counts too, as it does for the kernel's
+  access check (before 23 October 2026 it did not, and the Administrator got
+  false). The PHP method `eZRole::hasPolicy()` compares names only and does not
+  treat `*` that way. To ask whether the user may edit one particular node, use
+  the node's `can_edit` attribute instead.
 - For checks that guard something security relevant, do not rely on hiding a
   link; the module view still checks permissions, hiding is a convenience.
 - Operators evaluate on every use; keep them out of long loops and put the answer
@@ -99,6 +107,12 @@ copied an example from a development snapshot, replace `member_of_` by `has_`.
 Until 18 October 2026 the class was not registered with the template engine, so a template that used one of the
 operators got "unknown operator". Since then `lib/eztemplate/classes/eztemplateautoload.php` registers all seven;
 `eZTemplateRoleOperatorRegistrationTest` checks the registration and renders each operator.
+
+On 23 October 2026 `has_policy` and `has_policy_by_user` began to count policies for every module or function
+(`*`), `has_role_by_user` answers false instead of failing when it gets no user object (as `has_policy_by_user`
+already did), and a `user_id` given as a string (`'0'`, `$node.object.owner_id`) is read as a number.
+`eZTemplateRoleOperatorLiveTest` renders every example on this page, interpreted and compiled, for the anonymous user,
+the admin user and a user with two test roles.
 
 The idea comes from the community extension `bcmemberofrole`.
 

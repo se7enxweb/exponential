@@ -39,8 +39,8 @@ current user: id 10, roles: 1 Anonymous
 
 ## Zwei Regeln, bevor Sie sie verwenden
 
-**Die gepipte Eingabe wird ignoriert.** `modify()` liest nur die Parameter. Der Kommentar am Anfang der Klasse zeigt
-Formen wie `$current_user|has_role( 'Administrator' )`, aber der Wert vor dem `|` spielt keine Rolle: Der Operator prüft
+**Die gepipte Eingabe wird ignoriert.** `modify()` liest nur die Parameter. Viele Beispiele schreiben
+`$current_user|has_role( 'Administrator' )`, aber der Wert vor dem `|` spielt keine Rolle: Der Operator prüft
 den Benutzer, der mit `user_id` angegeben ist, und ohne ihn den **aktuellen** Benutzer. `$someone|has_role( ... )`
 antwortet also stillschweigend für den Besucher, nicht für `$someone`:
 
@@ -123,7 +123,7 @@ has_any_role( array( 'Anonymous', 'Editor' ), 0, true() ) = false
 ### has_role_by_user
 
 Ob das übergebene Benutzerobjekt (ein `eZUser`, etwa `fetch( 'user', 'current_user' )`) die Rolle mit dieser ID hat.
-Das Objekt muss ein `eZUser` sein: Die Methode liest sein Attribut `contentobject_id`.
+Alles andere (eine Zahl, eine leere Variable) ergibt false.
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|
@@ -160,9 +160,10 @@ has_role_by_user_id( $me.contentobject_id, 1 ) = true
 
 ### has_policy
 
-Ob irgendeine Rolle des Benutzers eine Richtlinie für das Modul und die Funktion hat. Hat die Rollenklasse eine Methode
-`hasPolicy()`, wird diese verwendet; sonst werden die Richtlinien nach Modul- und Funktionsname verglichen, wobei `*` in
-einer Richtlinie auf alles passt. Einschränkungen werden nicht betrachtet (siehe die Regeln oben).
+Ob irgendeine Rolle des Benutzers eine Richtlinie für das Modul und die Funktion hat. Die Richtlinien werden nach Modul-
+und Funktionsname verglichen, wobei `*` in einer Richtlinie auf jedes Modul oder jede Funktion passt: Die Richtlinie `*`
+der Rolle Administrator beantwortet jede Frage mit true, eine Richtlinie `content/*` jede Funktion von content.
+Einschränkungen werden nicht betrachtet (siehe die Regeln oben).
 
 | Parameter | Typ | Erforderlich | Standard |
 |---|---|---|---|

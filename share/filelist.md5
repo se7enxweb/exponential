@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-0a70d933ee7c1498f77d416323b41692  autoload/ezp_kernel.php
+76663ba69c825d83541db8023e8b1de1  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -49,6 +49,7 @@ a9586e3978dfedf84e40af4d9ff7edd6  bin/mongodb/fixup_ndjson.py
 f5b56ee1da203c9510cc1c77269cc2b7  bin/mongodb/mysql2ndjson.py
 1374ed9d080d58b9372d49d958ba0ed1  bin/mongodb/validate_ndjson.sh
 04ea36d6c950a3853af68f0b8424a2b2  bin/php/accesscheck.php
+255a3f966ab8f9925778cf9e1016a3e0  bin/php/addanonymouspublicpolicies.php
 11893714c574088dd6f49b8aba0e9018  bin/php/adddefaultstates.php
 c54a6f68ea2ace17c9469d30f2b6f32e  bin/php/addexphelpreadpolicy.php
 446fab6194c2edbe6edc69620702dd35  bin/php/addoauthauthorizepolicy.php
@@ -3250,7 +3251,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-751b14697dc078adc66da5d8f6efd6a6  doc/changelogs/6.0/6.0.15.md
+28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3375,6 +3376,7 @@ accadab106c015d13ca13436972c269e  doc/eng-us/bc/6.0/ICONS.md
 d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_MENU_EXPANSION_HIDE_UNHIDE.md
 26fb0c7c82a5aa83bee59e3ee0c5d1fc  doc/eng-us/bc/6.0/admin4-styling.md
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
+ae6e928910a0204356104d574f8bf3b2  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 e1c07d1b74f89991a310793c014e465b  doc/eng-us/bc/6.0/audit.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
@@ -6336,7 +6338,7 @@ b9891e0910d2e3feb530a7bd60a621bf  doc/eng-us/features/6.0/reverse-relation-check
 9cc566fd4212c691405ae71d2e91e42a  doc/eng-us/features/6.0/rich-text-supplementary-characters-and-tex-source.md
 d383b52b08b6591fa66ed0f68a386c3e  doc/eng-us/features/6.0/right-to-left.md
 78f41bded307b6c2d3934c41a3f5b076  doc/eng-us/features/6.0/robots-txt.md
-fa6848ebc9fc48afb7bfb99e66b935c2  doc/eng-us/features/6.0/role-and-policy-template-operators.md
+aa7e8209ebb2327ad5ca7bc222b4d375  doc/eng-us/features/6.0/role-and-policy-template-operators.md
 f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging.md
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
@@ -7899,7 +7901,7 @@ b5eb0bbf834df79396a53899373beec8  doc/eng-us/help/designers/templates/node-view-
 f55dd9d7a5849e078b01597da2050399  doc/eng-us/help/designers/templates/pagination.md
 b2b8fc3eeec230f29e43cce10e588611  doc/eng-us/help/designers/templates/persistent-variable.md
 f2a86687e440f26720c881cec5f849d3  doc/eng-us/help/designers/templates/rich-text-templates.md
-089733fb7f73056711efac79a2c20903  doc/eng-us/help/designers/templates/role-and-policy-operators.md
+ac6f52fa77ba9797f42574abcfa3d95c  doc/eng-us/help/designers/templates/role-and-policy-operators.md
 0460054b2bf83cd81b95036c3ac707e9  doc/eng-us/help/designers/templates/run-once.md
 451773f38ad1aff0077d61dce30a8531  doc/eng-us/help/designers/templates/search-results-template.md
 c03da7a0b9caa77264f8b381c3d11690  doc/eng-us/help/designers/templates/section-legacy.md
@@ -11050,7 +11052,7 @@ d8623379278f58dcf26b28ab3cf43bc0  doc/eng-us/help/template-operators/php-string-
 5830cd1d73a007b61344e0736d1965bf  doc/eng-us/help/template-operators/php-string-functions-transform.md
 30b2a67a421386349a00a52e6b63039e  doc/eng-us/help/template-operators/registering-operators.md
 cd41c4e4e6508c9406b1da26ef0be3bb  doc/eng-us/help/template-operators/registration-order-and-overrides.md
-80c02552c45176b83daa11de0090dc4c  doc/eng-us/help/template-operators/role-operators.md
+3d9e4a619502aadffd401943c17bb0b1  doc/eng-us/help/template-operators/role-operators.md
 506ed7c463645bf79a750f72e7f1073e  doc/eng-us/help/template-operators/siteaccess-operators.md
 a6d7aa179864c2bb2cfe6ecfb0a6bbc4  doc/eng-us/help/template-operators/small-extension-operators.md
 b7d1dec28debe23ebacf7e14921b7e82  doc/eng-us/help/template-operators/string-operators.md
@@ -15191,7 +15193,7 @@ f3ed97646931e90dd16b823e00a706ce  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
 12c36dc9d304b2882f1491786d868d11  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
-e74cdba13351e2357f5d44752cfb4e3e  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
+1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
 13be67ed0258c4ebe40353d3ef07dafd  doc/ger-de/funktionen/6.0/template-operatoren-fuer-zeichenketten.md
 0caf6f8a83e6258e50740659d8b5ea4c  doc/ger-de/funktionen/6.0/template-pfad-kommentare.md
 e24a7bd7bc416dfbe85b84c2aa2a29d9  doc/ger-de/funktionen/6.0/transfer-laeufe.md
@@ -16104,7 +16106,7 @@ e07d066cfb9fe653ca93638c4cabc572  doc/ger-de/hilfe/designer/vorlagen/override-gr
 0d297c409658b7ad1d68b96d6ba20515  doc/ger-de/hilfe/designer/vorlagen/override-reihenfolge.md
 516557e7a2364cd7ccd167e8eb7e7ccf  doc/ger-de/hilfe/designer/vorlagen/php-zeichenkettenfunktionen-als-operatoren.md
 bd1449888b097f936f0e27994df341e6  doc/ger-de/hilfe/designer/vorlagen/rich-text-templates.md
-8bb76eb66a9a02a5afaaeb7c0e2ef107  doc/ger-de/hilfe/designer/vorlagen/rollen-und-richtlinien-operatoren.md
+2a5a819eab464059f91d36ecc0d21cd5  doc/ger-de/hilfe/designer/vorlagen/rollen-und-richtlinien-operatoren.md
 88c5ae7b3fe7ef217e64624d272d372c  doc/ger-de/hilfe/designer/vorlagen/run-once.md
 90c4c50ad6ee959cd2a5cfc50777c22a  doc/ger-de/hilfe/designer/vorlagen/schaltflaechen-zum-bearbeiten-entfernen-und-anlegen.md
 6c1b76822370fb7707768c7e3cbaf14a  doc/ger-de/hilfe/designer/vorlagen/section-legacy.md
@@ -18155,7 +18157,7 @@ c32601015c6a0c826166e2c31cbc445c  doc/ger-de/hilfe/template-operatoren/owsimpleo
 a0ac9bc301a3efc92544657ac3291518  doc/ger-de/hilfe/template-operatoren/php-zeichenkettenfunktionen-umwandeln.md
 9816e2c5ea208e1cec3566861aafa32d  doc/ger-de/hilfe/template-operatoren/referenz-der-operatorklassen.md
 c99e1305113396d99056d8d594e4b10b  doc/ger-de/hilfe/template-operatoren/registrierungsreihenfolge-und-ueberschreibungen.md
-4ed1d8c8b5a119e1b46c97d715334cac  doc/ger-de/hilfe/template-operatoren/rollen-operatoren.md
+abb7d166b574fe38ae18f6041ae559ee  doc/ger-de/hilfe/template-operatoren/rollen-operatoren.md
 5e30f7f8799abb6d9eb2e764fcbb9c7e  doc/ger-de/hilfe/template-operatoren/siteaccess-operatoren.md
 fa26e3a927f3fcb38b3be26eb2faca7e  doc/ger-de/hilfe/template-operatoren/steueroperatoren.md
 ab591ea7ae56a37ff496726fbc35adda  doc/ger-de/hilfe/template-operatoren/swark-operatoren-anfrage-und-system.md
@@ -21600,6 +21602,7 @@ ba997b223af329390ce72d88a6040b68  kernel/classes/debugbar/expdebugbarregistry.ph
 ebea9ff791c432014b1a03333c67a8ed  kernel/classes/debugbar/expdebugbarsummary.php
 0b4c6fa7acfbaf38347f97934a19cb8e  kernel/classes/debugbar/exprenderstats.php
 d0b9fe4899a6bfc77d3e2fe69b0d9a3e  kernel/classes/expadminpagination.php
+e024c259b0132ce6c550ebed48974a8b  kernel/classes/expanonymouspublicpolicies.php
 0dc063d43d781562aceed1ea6df05f57  kernel/classes/expbenchmark.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
@@ -22282,6 +22285,7 @@ b0e12e259bdfd4a6d96e1c5cd9f8a74d  kernel/private/classes/clusterfilehandlers/int
 20656a179cf535afff572d16ad2e78f0  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventlogger.php
 3d3a0ae30251fcd03d11507ca6aca2bb  kernel/private/classes/clusterfilehandlers/interfaces/ezclustereventnotifier.php
 7b075fff6b1e2111d3f2b9f83e59c705  kernel/private/classes/commands/accesscheck.php
+91d04418cc1cd00a2325aee9a76299dd  kernel/private/classes/commands/addanonymouspublicpolicies.php
 9e4a9c8c5c45c9d1cc7090536dd814aa  kernel/private/classes/commands/adddefaultstates.php
 0557d1bc715f90b7705b9f2a94ba0ddb  kernel/private/classes/commands/addexphelpreadpolicy.php
 496a9a93c1f6cdc29cfb505e9743d77c  kernel/private/classes/commands/addoauthauthorizepolicy.php
@@ -22991,7 +22995,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-4ae149ffb015f67c1c61fb917492d69d  kernel/setup/steps/ezstep_create_sites.php
+6468263fd6d529e40f9de1bc5c19047c  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -23309,7 +23313,7 @@ d801af1e8d07bdd5808d320f3e21d1dc  lib/eztemplate/classes/eztemplateoperatoreleme
 e0d00010a86b1c1037b155156024ee25  lib/eztemplate/classes/eztemplateoptimizer.php
 4a6f69f6881a2dd92f6c9239510b9d4b  lib/eztemplate/classes/eztemplateparser.php
 f906d53d531f8cf614173980b0b3b536  lib/eztemplate/classes/eztemplatephpoperator.php
-75a8704049fc4d34dd71c6db06767df1  lib/eztemplate/classes/eztemplateroleoperator.php
+2833bc1fe10ea570748d7e9140917c69  lib/eztemplate/classes/eztemplateroleoperator.php
 ea6f92f0a7d920a6030979b35e90b630  lib/eztemplate/classes/eztemplateroot.php
 58160df7a19b4f52d535d7cf2f0b9e70  lib/eztemplate/classes/eztemplatesectionfunction.php
 9dbca1e98c046fcd232894bf526f0e88  lib/eztemplate/classes/eztemplatesectioniterator.php
@@ -24792,6 +24796,7 @@ b18640f932a77141d5c78065ca8348cb  tests/tests/kernel/classes/contentmodel/eZInfo
 ced37a9f81d9eaba260d259e70b1fb25  tests/tests/kernel/classes/contentmodel/eZSearchEngineLiveTest.php
 c73fd8d4f3d55afe486254a66926a61b  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListFallbackLocaleTest.php
 5c9b7947f2722161129dbe4bea8d2baa  tests/tests/kernel/classes/contentmodel/eZSerializedObjectNameListTest.php
+37bdf88641f4784bc53dc512a09d5234  tests/tests/kernel/classes/contentmodel/eZTemplateRoleOperatorLiveTest.php
 98c7fb9b0847a4b55acfdc559a733d02  tests/tests/kernel/classes/contentmodel/eZUserAndRoleLiveTest.php
 b0f5e308de066b9c9634ee29f470b137  tests/tests/kernel/classes/contentmodel/expContentModelLiveTestCase.php
 0321349fed5a1463c9cdb4127fc3a42d  tests/tests/kernel/classes/datatable/expDataConnectionsTest.php
@@ -24918,6 +24923,7 @@ be689765e8454420d901b85cbf6886a9  tests/tests/kernel/classes/eZWorkflowProcessLi
 19ff7e4f706df3370f089e4895b31527  tests/tests/kernel/classes/engineindex/expPharCheckTest.php
 d5d338c22e6d93889bfb8f6e8f13f061  tests/tests/kernel/classes/expAdminListsRedesignTest.php
 4d598dae7c7b0975d1f25362cbd5f73a  tests/tests/kernel/classes/expAdminPaginationTest.php
+58bcee8d3b9db4fa9f28083eb18bfa27  tests/tests/kernel/classes/expAnonymousPublicPoliciesTest.php
 4e0893db5795f22ff538007e399b97dd  tests/tests/kernel/classes/expBaseDataSeedTest.php
 eda5eece6bd10760282f3d48c5394688  tests/tests/kernel/classes/expCacheCatalogueTest.php
 152e9f8901df06cbdd8b002324689322  tests/tests/kernel/classes/expCacheManagerTest.php
@@ -25776,7 +25782,7 @@ c0be3d17b10801879ce3559488f18e5c  tests/tests/lib/eztemplate/eZTemplateCompiledI
 14c4ac52ed9429ce9ba6ea2b67dfc89c  tests/tests/lib/eztemplate/eZTemplateOperatorDefaultWarningTest.php
 021b629a14c10d16795252b566981e7e  tests/tests/lib/eztemplate/eZTemplateOperatorMatrixTest.php
 c6de6085f5bb0a3d346ae55181b75719  tests/tests/lib/eztemplate/eZTemplatePHP8RegressionTest.php
-380c07e52cdc17c47d2d90b078d7d52c  tests/tests/lib/eztemplate/eZTemplateRoleOperatorRegistrationTest.php
+03f60714b241ec5a58dd492b824bc688  tests/tests/lib/eztemplate/eZTemplateRoleOperatorRegistrationTest.php
 054ba093ee53d9607044dc8dd344c73c  tests/tests/lib/eztemplate/eZTemplateStringsOperatorTest.php
 897c11a86ad0ae4c7ee05d4433239ae1  tests/tests/lib/eztemplate/eZTemplateUnitLocaleAndSequenceTest.php
 d3098c09d1bc71770ffd4c1a7e674691  tests/tests/lib/eztemplate/eZTemplateVanishedCompiledTemplateTest.php
