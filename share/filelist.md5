@@ -815,7 +815,7 @@ a07da19bad529539a8ac821a99668b25  design/admin/templates/user/activate.tpl
 5a3280528f18120fe178cf6e91aea186  design/admin/templates/user/deactivate.tpl
 9814744c282536701b487a57be112b92  design/admin/templates/user/edit.tpl
 87925fbf98498bd07eba155221641c5d  design/admin/templates/user/hygiene.tpl
-9870ce94bbfb59f85f96fce2f536b4a5  design/admin/templates/user/login.tpl
+77c432e6f64a200ecc5cd429efa60579  design/admin/templates/user/login.tpl
 6f4eb7afe762ef54aa95caa4e31584c3  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
@@ -1617,7 +1617,7 @@ a07da19bad529539a8ac821a99668b25  design/admin4/templates/user/activate.tpl
 5a3280528f18120fe178cf6e91aea186  design/admin4/templates/user/deactivate.tpl
 82ceaf8d91afeaf26792067abefa5044  design/admin4/templates/user/edit.tpl
 87925fbf98498bd07eba155221641c5d  design/admin4/templates/user/hygiene.tpl
-2def407612c5c5a8e2f878e97fcd2c09  design/admin4/templates/user/login.tpl
+a177fef8ccad05ec98e40ec136df81e5  design/admin4/templates/user/login.tpl
 7483e615f780df44798ae53acd67664b  design/admin4/templates/user/megamenu.tpl
 afc84287d6bd6da0f1922ee80aa974b1  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
@@ -3059,7 +3059,7 @@ e709916cf34c9f054a2c09a23f614ed5  design/standard/templates/url/view/valid.tpl
 2554c5f3a60f7013a82f4cbdc73c1fc1  design/standard/templates/user/edit.tpl
 1b5ae92d3cc33387a920e5e7f762a04e  design/standard/templates/user/forgotpassword.tpl
 d0384c9c12c990831650877f4e8a4cdb  design/standard/templates/user/forgotpasswordmail.tpl
-971ebbbcaf4b518149832ec6385cbf83  design/standard/templates/user/login.tpl
+806af1c45f29fbe7395aeef28b2bdb71  design/standard/templates/user/login.tpl
 6685342c1c48359f2f4168494f8bf71a  design/standard/templates/user/megamenu.tpl
 5c78ccc776add726cb2d72dcb6c168d3  design/standard/templates/user/password.tpl
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
@@ -3251,7 +3251,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28df813ffcd1f8294958f7ef5e317a4d  doc/changelogs/6.0/6.0.15.md
+64d4642c45099a6d85c7495b650956ff  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -5015,7 +5015,7 @@ e261e7370603eca4cd761cc833ca847a  doc/eng-us/examples/ini-settings/site/RoleSett
 c1d3e329ac9594a584b06c5857d79084  doc/eng-us/examples/ini-settings/site/RunnableSettings.md
 234ffb8572b80d1ccf09da9d2cfffdd4  doc/eng-us/examples/ini-settings/site/SSLZoneSettings.md
 18308ceff84326f966bf76d2a0ac90a1  doc/eng-us/examples/ini-settings/site/SearchSettings.md
-f94ce0a678d0b040284cb151615939c5  doc/eng-us/examples/ini-settings/site/Session.md
+e48642eee4dbd6e70732b2362277b641  doc/eng-us/examples/ini-settings/site/Session.md
 5070c9d5ae4fdbe45aa19dbdf9cbefc8  doc/eng-us/examples/ini-settings/site/SettingsViewSettings.md
 9ea662af35016255e2bf43b4d5011026  doc/eng-us/examples/ini-settings/site/SetupSettings.md
 94c8a3269ae0216f9bb8c244676c3164  doc/eng-us/examples/ini-settings/site/ShopSettings.md
@@ -6444,7 +6444,7 @@ ddc6c4fbe3bd9236974b19bc53884ee6  doc/eng-us/guides/rest-api-v1-and-v2.md
 f337e682866a0c40c31e27575e8f3a38  doc/eng-us/guides/rss-feeds.md
 95673ee9935e9be417754641a1ca13dc  doc/eng-us/guides/sections.md
 be8c054654ee7b03031313c38fbaa43c  doc/eng-us/guides/security-and-audit.md
-c9d69c18641eb389f494cab5998489b5  doc/eng-us/guides/sessions.md
+22bf3d5931ce2065dc3de2864862883f  doc/eng-us/guides/sessions.md
 ee611ae868bab0755ccaf719a285f4d3  doc/eng-us/guides/settings-page.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 9e4779ad88a9e6f97b461ce60bc4e584  doc/eng-us/guides/templates-and-design.md
@@ -12385,7 +12385,7 @@ e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-setti
 abcfa2c79b753427744d3e5a2ae440f5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 fdfcaf4b6961630006ea21f669da4aef  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
-1b2ccad9ad3fbcd19b01464cb3e90707  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
+c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
@@ -12431,7 +12431,7 @@ b7e5959e0be69985584f9459039a77e6  doc/ger-de/anleitungen/rollen-und-richtlinien.
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
 67a9c0e56a52d0eb3f6b3c34999635cb  doc/ger-de/anleitungen/sicherheit-und-audit.md
-eaf0cb7d1ae999a66835b89232128a60  doc/ger-de/anleitungen/sitzungen.md
+d6db773a158afb91849a3a30996801a2  doc/ger-de/anleitungen/sitzungen.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e4973164f23eded49f23e96f6b2e8fa1  doc/ger-de/anleitungen/templates-und-design.md
 a97c60afb83f5c63ee51ebd8a180b52b  doc/ger-de/anleitungen/testsprache-lorem-ipsum.md
@@ -14064,7 +14064,7 @@ b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/Re
 bd480a1aff3c6bcb6c4ad7801fe146c8  doc/ger-de/beispiele/ini-einstellungen/site/RunnableSettings.md
 5e4c3e6299812834a252e9ebed1315a8  doc/ger-de/beispiele/ini-einstellungen/site/SSLZoneSettings.md
 3d51a2f37c53f10f7d29266e969bb321  doc/ger-de/beispiele/ini-einstellungen/site/SearchSettings.md
-8b9a97a575374fe734ec149d8ddb8886  doc/ger-de/beispiele/ini-einstellungen/site/Session.md
+6c6a788f8f8b0d0f590d03f0545f958d  doc/ger-de/beispiele/ini-einstellungen/site/Session.md
 fcad2a9141871c1b2031263cf684ae7f  doc/ger-de/beispiele/ini-einstellungen/site/SettingsViewSettings.md
 3171d7499731ff93b9e7cbbbc56ce25e  doc/ger-de/beispiele/ini-einstellungen/site/SetupSettings.md
 20025c05a82e1ac5b21fd3d3231e342a  doc/ger-de/beispiele/ini-einstellungen/site/ShopSettings.md
@@ -22737,7 +22737,7 @@ a0a1cc684ce363b7374041f78d048651  kernel/private/classes/views/user/deactivate.p
 5323a0ca0de7dab7f0851e5897dac514  kernel/private/classes/views/user/edit.php
 11f2f1d9e6e99df28141cc4b821757b4  kernel/private/classes/views/user/forgotpassword.php
 f135f7ff0f5a3a5c3c4c2295b1faa521  kernel/private/classes/views/user/hygiene.php
-c5bd70ed9c7ff919f1aa1ea5f6267dd6  kernel/private/classes/views/user/login.php
+23b1afd79c139eff6d1b389277d3413f  kernel/private/classes/views/user/login.php
 b699f7e0783ff6b691486f531f512926  kernel/private/classes/views/user/logout.php
 4fa2fbc69dc7cd4843a1949cb632a61c  kernel/private/classes/views/user/megamenu.php
 cfb8c8edd93e88f7f62583780eae8f82  kernel/private/classes/views/user/password.php
@@ -23263,7 +23263,7 @@ c491f066b55329cfac1484004644acf4  lib/ezpdf/classes/fonts/php_ZapfDingbats.font
 ba620772d83602fa6fb1857fba0d6e2e  lib/ezsession/classes/ezpsessionhandlerdb.php
 e41d1902af441bcd7dcb654bfea1e3cd  lib/ezsession/classes/ezpsessionhandlerphp.php
 51ac7a903d7b3dbe304b37788739ef99  lib/ezsession/classes/ezpsessionhandlersymfony.php
-1e0852f44bd85c423245328bacdb1447  lib/ezsession/classes/ezsession.php
+f9998d243028c3484e6470a73ab42a1e  lib/ezsession/classes/ezsession.php
 995cfd2eb1246294e6e921d401106f48  lib/ezsoap/classes/ezsoapbody.php
 d13bbc3582dce07ac85b37200a6073a3  lib/ezsoap/classes/ezsoapclient.php
 4e0d0628ea5bc587e9595c5be5332418  lib/ezsoap/classes/ezsoapcodec.php
@@ -23442,7 +23442,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-df74d651cc3f3a92ca3396f62e8a9ee5  settings/site.ini
+806a1f8d39af0811db8db69f14ee3548  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -25765,6 +25765,7 @@ b534c94bd16d35b2e4c350ed914eeed0  tests/tests/lib/ezlocale/suite.php
 d72315fa9b3256a89308f3109ca900e0  tests/tests/lib/ezsession/EzpSessionHandlerAdapterTest.php
 b6d9a1d17254c473234dbcf75d807cf9  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTest.php
 bfa32adb29c2c6cd0bc24e2075b80450  tests/tests/lib/ezsession/EzpSessionHandlerDBPhp8BugfixesTestStubs.php
+204daae809bb12a309ee21089061d666  tests/tests/lib/ezsession/eZSessionRememberMeTest.php
 acbb9b3905b1d5cad1c75014265dec30  tests/tests/lib/ezsession/eZSessionResponseCookieTest.php
 73b35b62ec7c6e4868123e802790213b  tests/tests/lib/ezsession/eZSessionSameSiteAliasTest.php
 30b880bea4f1463e4d346dc8020eaed0  tests/tests/lib/ezsoap/eZSOAPClientTest.php

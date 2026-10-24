@@ -337,6 +337,124 @@ class eZSession
     }
 
     /**
+     * The session key under which rememberCookieLifetime() keeps the lifetime of the session cookie.
+     */
+    const COOKIE_LIFETIME_KEY = 'eZSessionCookieLifetime';
+
+    /**
+     * "Remember me": the session cookie lasts $lifetime seconds instead of ending with the browser session, for the
+     * rest of this session. The lifetime is kept in the session, so every new session id it gets later (regenerate():
+     * the sign-in itself, the second step of a two-factor sign-in on a later request) is sent with the same expiry;
+     * the cookie is sent again with it now. Browsers that drop session cookies on their own (iOS Safari and Chrome
+     * when they are put away) keep the sign-in. 0 forgets a lifetime remembered before (from the next new id on).
+     *
+     * Not setCookieLifetime(): PHP does not change the cookie parameters of a session that runs, and at sign-in it
+     * usually does.
+     *
+     * @param int $lifetime seconds, 0 for a cookie that ends with the browser session
+     * @return bool whether the session cookie is sent with $lifetime
+     */
+    static public function rememberCookieLifetime( $lifetime )
+    {
+        $lifetime = (int)$lifetime;
+        if ( $lifetime <= 0 )
+        {
+            self::unsetkey( self::COOKIE_LIFETIME_KEY, false );
+            return false;
+        }
+        if ( !self::$hasStarted && !self::start( $lifetime ) )
+        {
+            return false;
+        }
+        self::set( self::COOKIE_LIFETIME_KEY, $lifetime );
+        return self::sendCookie( $lifetime );
+    }
+
+    /**
+     * The lifetime rememberCookieLifetime() keeps in the running session, 0 when none (or no session runs).
+     *
+     * @return int
+     */
+    static public function rememberedCookieLifetime()
+    {
+        if ( !self::$hasStarted )
+        {
+            return 0;
+        }
+        $session = self::sessionArray();
+        return isset( $session[self::COOKIE_LIFETIME_KEY] ) ? max( 0, (int)$session[self::COOKIE_LIFETIME_KEY] ) : 0;
+    }
+
+    /**
+     * The cookie parameters of the running session (session_get_cookie_params()), with the lifetime
+     * rememberCookieLifetime() keeps in it.
+     *
+     * @return array
+     */
+    static protected function sessionCookieParams()
+    {
+        $params = session_get_cookie_params();
+        $lifetime = self::rememberedCookieLifetime();
+        if ( $lifetime > 0 )
+        {
+            $params['lifetime'] = $lifetime;
+        }
+        return $params;
+    }
+
+    /**
+     * Sends the cookie of the running session with this response, lasting $lifetime seconds, in place of a session
+     * cookie the response sets already (PHP sets one when it starts a session or gives it a new id, with the
+     * lifetime the session started with). Nothing happens when no session runs or the headers have gone out.
+     *
+     * @param int $lifetime
+     * @return bool whether the cookie is sent
+     */
+    static protected function sendCookie( $lifetime )
+    {
+        $id = session_id();
+        if ( !self::$hasStarted || !is_string( $id ) || $id === '' || headers_sent() )
+        {
+            return false;
+        }
+        $params = session_get_cookie_params();
+        $params['lifetime'] = (int)$lifetime;
+        $cookie = self::sessionCookie( session_name(), $id, $params, time() );
+        $headers = headers_list();
+        if ( self::listsCookie( $headers, $cookie['name'] ) )
+        {
+            // One Set-Cookie per name: the others the response sets stay, in their order
+            header_remove( 'Set-Cookie' );
+            foreach ( self::otherCookieHeaders( $headers, $cookie['name'] ) as $header )
+            {
+                header( $header, false );
+            }
+        }
+        return setcookie( $cookie['name'], $cookie['value'], $cookie['options'] );
+    }
+
+    /**
+     * The Set-Cookie lines of the response headers $headers (headers_list()) that set a cookie other than $name.
+     *
+     * @param array $headers
+     * @param string $name
+     * @return array
+     */
+    static public function otherCookieHeaders( array $headers, $name )
+    {
+        $prefix = rawurlencode( (string)$name ) . '=';
+        $others = array();
+        foreach ( $headers as $header )
+        {
+            if ( preg_match( '/^Set-Cookie\s*:\s*(.*)$/is', (string)$header, $m ) && strncmp( $m[1], $prefix, strlen( $prefix ) ) !== 0 )
+            {
+                $others[] = 'Set-Cookie: ' . $m[1];
+            }
+        }
+        return $others;
+    }
+
+    /**
      * Set default cookie parameters based on site.ini settings (fallback to php.ini settings)
      * Used by {@link eZSession::registerFunctions()}. If you only want to set
      * the cookie lifetime, use {@link eZSession::setCookieLifetime} instead.
@@ -502,7 +620,7 @@ class eZSession
         {
             return null;
         }
-        return self::sessionCookie( session_name(), $id, session_get_cookie_params(), time() );
+        return self::sessionCookie( session_name(), $id, self::sessionCookieParams(), time() );
     }
 
     /**
@@ -540,8 +658,8 @@ class eZSession
      * SameSite of the session cookie, so it is sent exactly where and as long as the session cookie is. Not HttpOnly:
      * it holds no secret, and the scripts of cached pages (the service worker) read it.
      *
-     * The parameters of the running session (session_get_cookie_params()) when one has started, else those it would
-     * start with (cookieParams()).
+     * The parameters of the running session (session_get_cookie_params(), with the lifetime of Remember me,
+     * rememberCookieLifetime()) when one has started, else those it would start with (cookieParams()).
      *
      * @param array|null $params the session cookie parameters, null for those of this request
      * @param int|null $now the time a lifetime counts from, null for now
@@ -551,7 +669,7 @@ class eZSession
     {
         if ( $params === null )
         {
-            $params = self::$hasStarted ? session_get_cookie_params() : self::cookieParams();
+            $params = self::$hasStarted ? self::sessionCookieParams() : self::cookieParams();
         }
         $options = self::cookieOptions( $params, $now === null ? time() : (int)$now );
         $options['httponly'] = false;
@@ -860,7 +978,15 @@ class eZSession
             return false;
         }
 
-        return self::getHandlerInstance()->regenerate( ($updateBackendData && self::$hasSessionCookie) );
+        $regenerated = self::getHandlerInstance()->regenerate( ($updateBackendData && self::$hasSessionCookie) );
+        // The new id goes out with the lifetime the session started with; Remember me keeps its own
+        // (rememberCookieLifetime()), also when the id changes on a later request than the one that set it
+        $lifetime = self::rememberedCookieLifetime();
+        if ( $regenerated && $lifetime > 0 )
+        {
+            self::sendCookie( $lifetime );
+        }
+        return $regenerated;
     }
 
     /**

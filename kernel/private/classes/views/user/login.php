@@ -120,13 +120,11 @@ class Login extends \Exponential\Runnable\ModuleView
                 }
                 $hasAccessToSite = true;
 
-                if ( $http->hasPostVariable( 'Cookie' )
-                    && $ini->hasVariable( 'Session', 'RememberMeTimeout' )
-                    && ( $rememberMeTimeout = $ini->variable( 'Session', 'RememberMeTimeout' ) )
-                )
-                {
-                    \eZSession::setCookieLifetime( $rememberMeTimeout );
-                }
+                // Remember me: the session cookie lasts RememberMeTimeout seconds instead of ending with the browser
+                // session. Kept in the session, so a later new session id of this sign-in (the second step of 2FA)
+                // keeps it too; without the box a lifetime remembered before is forgotten.
+                $rememberMeTimeout = $ini->hasVariable( 'Session', 'RememberMeTimeout' ) ? (int)$ini->variable( 'Session', 'RememberMeTimeout' ) : 0;
+                \eZSession::rememberCookieLifetime( $http->hasPostVariable( 'Cookie' ) ? $rememberMeTimeout : 0 );
 
                 foreach ( array_keys ( $loginHandlers ) as $key )
                 {

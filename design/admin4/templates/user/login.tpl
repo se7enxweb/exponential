@@ -57,7 +57,7 @@
     </div>
 
     {if $remember}
-    <label class="a4-check"><input type="checkbox" name="Cookie" id="id3" /> <span>{'Remember me'|i18n( 'design/admin/user/login' )}</span></label>
+    <label class="a4-check"><input type="checkbox" name="Cookie" id="id3" checked="checked" /> <span>{'Remember me'|i18n( 'design/admin/user/login' )}</span></label>
     {/if}
 
     {if and( is_set( $User:max_num_of_failed_login ), ne( $User:max_num_of_failed_login, false() ) )}
