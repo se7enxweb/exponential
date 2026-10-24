@@ -66574,6 +66574,18 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Das Archiv wurde abgelehnt: Der Eintrag "%path" zeigt aus dem Paket heraus.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Das Archiv wurde im PAX-tar-Format gepackt, das nicht importiert werden kann. Packen Sie das Paket im GNU-tar-Format (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Das Archiv wurde abgelehnt: Der Eintrag „%path“ hat den tar-Typ „%type“, und ein Paket enthält nur Dateien und Verzeichnisse.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Das Archiv wurde abgelehnt: Es nennt einen Eintrag, der länger als %length Bytes ist.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Das Archiv wurde abgelehnt: Der Eintrag "%path" ist ein Link oder ein Gerät, und ein Paket enthält nur Dateien und Verzeichnisse.</translation>
     </message>

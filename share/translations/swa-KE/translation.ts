@@ -56964,6 +56964,18 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; linaelekeza nje ya kifurushi.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Kumbukumbu iliyobanwa imefungwa kwa muundo wa PAX wa tar, ambao hauwezi kuingizwa. Funga kifurushi kwa muundo wa GNU wa tar (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; lina aina ya tar &quot;%type&quot;, na kifurushi kina faili na saraka pekee.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Kumbukumbu iliyobanwa imekataliwa: ina ingizo lenye jina refu kuliko baiti %length.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; ni kiungo au kifaa, na kifurushi kina faili na saraka pekee.</translation>
     </message>

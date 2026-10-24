@@ -164,18 +164,22 @@ press **Import package**. Before anything is written, the archive is inspected:
 1. its name ends in an allowed suffix and the file starts with the gzip signature;
 2. it is at most `MaxArchiveSize` bytes and has at most `MaxEntries` entries that unpack to at most
    `MaxUnpackedSize` bytes;
-3. every entry is a plain file or directory with a relative path: no `..`, no absolute path, no back slash, no
+3. its tar headers are of a kind the archive reader handles: a PAX archive is refused (pack it with
+   `tar --format=gnu`), and so is a header type other than a file, a directory or a GNU long name of at most 4096
+   bytes;
+4. every entry is a plain file or directory with a relative path: no `..`, no absolute path, no back slash, no
    control character, no symbolic or hard link, no device or fifo;
-4. it has a `package.xml` at its top that is well formed, has `<package>` as its root and no document type, names a
+5. it has a `package.xml` at its top that is well formed, has `<package>` as its root and no document type, names a
    valid package (lower case letters, digits and `_`) and has its version and packaging information, and its vendor
    gives a repository name;
-5. no package of that name exists in any repository.
+6. no package of that name exists in any repository.
 
 The page names the first rule that failed. Then the package itself is validated: each document well formed, the
 JSON documents of a [JSON package](../bc/6.0/package-json-format.md) against its schema, and the checksums of its
 `package.json`. A package that fails is refused with the list of what failed. When all hold, the package is
 extracted into its repository; a package with install items opens its install step next, any other its page, and
-both show the validation result until the next action on the package.
+both show the validation result until the next action on the package. Extracted files get mode 0644 and
+directories 0755, whatever the archive says.
 
 The limits, with their defaults:
 

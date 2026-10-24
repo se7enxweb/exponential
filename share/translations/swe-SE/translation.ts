@@ -49971,6 +49971,18 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Arkivet vägrades: posten &quot;%path&quot; pekar utanför paketet.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Arkivet är packat i PAX-tar-formatet, som inte kan importeras. Packa paketet i GNU-tar-formatet (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkivet vägrades: posten &quot;%path&quot; har tar-typen &quot;%type&quot;, och ett paket innehåller bara filer och kataloger.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivet vägrades: det innehåller en post med ett namn som är längre än %length byte.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arkivet vägrades: posten &quot;%path&quot; är en länk eller en enhet, och ett paket innehåller bara filer och kataloger.</translation>
     </message>

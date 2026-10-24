@@ -56979,6 +56979,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: &apos;aplo&apos; Hur &apos;agh Doch &quot;%path&quot;.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>PAX tar mIw lo&apos;lu&apos;pu&apos;; ghItlh ngaSwI&apos; lI&apos;laHbe&apos;lu&apos;. GNU tar mIw yIlo&apos; (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: tar Segh &quot;%type&quot; ghaj Doch &quot;%path&quot;; ghItlhmey ghItlh pa&apos;mey je neH ngaS &apos;aplo&apos;.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: %length mI&apos; law&apos; Doch pong tIq law&apos;.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: rarwI&apos; pagh jan &apos;oH Doch &quot;%path&quot;; ghItlhmey ghItlh pa&apos;mey je neH ngaS &apos;aplo&apos;.</translation>
     </message>

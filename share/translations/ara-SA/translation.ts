@@ -56976,6 +56976,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; يشير إلى خارج الحزمة.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>حُزم الأرشيف بتنسيق PAX لـ tar، ولا يمكن استيراده. احزم الحزمة بتنسيق GNU لـ tar (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; من نوع tar &quot;%type&quot;، والحزمة لا تحتوي إلا على ملفات ومجلدات.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>رُفض الأرشيف: يسمّي إدخالًا أطول من %length بايت.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; رابط أو جهاز، والحزمة لا تحتوي إلا على ملفات ومجلدات.</translation>
     </message>

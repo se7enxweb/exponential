@@ -56964,6 +56964,18 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Arşiv reddedildi: &quot;%path&quot; girdisi paketin dışını gösteriyor.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Arşiv PAX tar biçiminde paketlenmiş; bu biçim içe aktarılamaz. Paketi GNU tar biçiminde paketleyin (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arşiv reddedildi: &quot;%path&quot; girdisinin tar türü &quot;%type&quot;; paket yalnızca dosya ve dizin içerir.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arşiv reddedildi: adı %length bayttan uzun bir girdi içeriyor.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arşiv reddedildi: &quot;%path&quot; girdisi bir bağlantı veya aygıt; paket yalnızca dosya ve dizin içerir.</translation>
     </message>

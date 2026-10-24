@@ -56964,6 +56964,18 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; nîşanî derveyî pakêtê dide.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Arşîv bi formata PAX ya tar hatiye pakêtkirin, ku nayê îthalkirin. Pakêtê bi formata GNU ya tar pakêt bikin (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arşîv hate redkirin: cureyê tar ê tomara &quot;%path&quot; &quot;%type&quot; e, û pakêt tenê pel û peldankan digire.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arşîv hate redkirin: navê tomarekê ji %length baytan dirêjtir e.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; girêdanek an amûrek e, û pakêt tenê pel û peldankan digire.</translation>
     </message>

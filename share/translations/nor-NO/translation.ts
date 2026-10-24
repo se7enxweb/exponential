@@ -57897,6 +57897,18 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; peker utenfor pakken.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>Arkivet er pakket i PAX-tar-formatet, som ikke kan importeres. Pakk pakken i GNU-tar-formatet (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; har tar-typen &quot;%type&quot;, og en pakke inneholder bare filer og kataloger.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivet ble avvist: det inneholder en oppføring med et navn som er lengre enn %length byte.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; er en lenke eller en enhet, og en pakke inneholder bare filer og kataloger.</translation>
     </message>

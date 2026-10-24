@@ -50075,6 +50075,18 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; punta all&apos;esterno del pacchetto.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (tar --format=gnu).</source>
+        <translation>L&apos;archivio è stato creato nel formato tar PAX, che non può essere importato. Crea il pacchetto nel formato tar GNU (tar --format=gnu).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; è di tipo tar &quot;%type&quot;, e un pacchetto contiene solo file e directory.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>L&apos;archivio è stato rifiutato: contiene una voce con un nome più lungo di %length byte.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; è un link o un dispositivo, e un pacchetto contiene solo file e directory.</translation>
     </message>
