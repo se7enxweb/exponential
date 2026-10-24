@@ -5398,6 +5398,17 @@ class eZContentObjectTreeNode extends eZPersistentObject
                                   'after' => array( 'parent' => (int)$newParentNodeID,
                                                     'path' => $newParent ? $newParent->attribute( 'path_string' ) . $nodeID . '/' : null ) );
                 } );
+            // A user account moved to another group (doc/eng-us/bc/6.0/member-management.md, access.user.move)
+            if ( class_exists( 'expAuditHook' ) && expAuditHook::on( 'access.user.move' )
+                 && ( $movedUser = eZUser::fetch( (int)$node->attribute( 'contentobject_id' ) ) ) instanceof eZUser )
+                expAuditHook::emit( 'access.user.move', function () use ( $movedUser, $oldParentNodeID, $newParentNodeID ) {
+                    $oldParent = eZContentObjectTreeNode::fetch( $oldParentNodeID );
+                    $newParent = eZContentObjectTreeNode::fetch( $newParentNodeID );
+                    return array( 'object' => expAuditHook::user( $movedUser ),
+                                  'target' => expAuditHook::node( $newParent ) ?: array( 'type' => 'node', 'id' => (int)$newParentNodeID ),
+                                  'before' => array( 'group' => (int)$oldParentNodeID, 'group_name' => $oldParent ? (string)$oldParent->attribute( 'name' ) : null ),
+                                  'after' => array( 'group' => (int)$newParentNodeID, 'group_name' => $newParent ? (string)$newParent->attribute( 'name' ) : null ) );
+                } );
 
             // content/move ( node id, object id, old parent, new parent ) for listeners (site.ini [Event] Listeners[]),
             // and the live mirror of the data tables in every process; both act at the end of the request
@@ -5510,6 +5521,20 @@ class eZContentObjectTreeNode extends eZPersistentObject
      * @return int 1 if has access, 0 if not
      */
     function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
+    {
+        $result = $this->checkAccessWithoutMemberGuard( $functionName, $originalClassID, $parentClassID, $returnAccessList, $language, $userID );
+        // An account with a location below a protected user group (membermanagement.ini) keeps an allowed function only
+        // when each such location allows it on its own (doc/eng-us/bc/6.0/member-management.md)
+        if ( !is_array( $result ) && $result == 1 && class_exists( 'expMemberManagement' ) && expMemberManagement::guards( $functionName )
+             && !expMemberManagement::guardAllows( $this->object(), $functionName, $userID ) )
+            return 0;
+        return $result;
+    }
+
+    /**
+     * checkAccess() without the member management guard; same parameters and result.
+     */
+    protected function checkAccessWithoutMemberGuard( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
         $classID = $originalClassID;
         $user = eZUser::accessUser( $userID );

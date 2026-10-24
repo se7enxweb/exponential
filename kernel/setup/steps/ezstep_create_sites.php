@@ -2118,6 +2118,14 @@ language_locale='eng-GB'";
             eZDebug::writeNotice( expEditorPolicies::ensure( eZExtension::baseDirectory() ), __METHOD__ );
         }
 
+        // Member management (membermanagement.ini): by default the Editors group manages the accounts below Members
+        // through the role "Member management", never those of Administrator users or Editors
+        // (doc/eng-us/bc/6.0/member-management.md)
+        if ( class_exists( 'expMemberManagement' ) )
+        {
+            eZDebug::writeNotice( expMemberManagement::ensure(), __METHOD__ );
+        }
+
         // Setup user preferences based on the site chosen and addons
         if ( function_exists( 'eZSitePreferences' ) )
         {

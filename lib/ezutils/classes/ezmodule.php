@@ -724,7 +724,16 @@ class eZModule
                         $target = array( 'type' => 'node', 'id' => (int)$p['NodeID'] );
                     elseif ( isset( $p['ObjectID'] ) && is_numeric( $p['ObjectID'] ) )
                         $target = array( 'type' => 'object', 'id' => (int)$p['ObjectID'] );
+                    elseif ( isset( $p['UserID'] ) && is_numeric( $p['UserID'] ) )
+                        $target = array( 'type' => 'object', 'id' => (int)$p['UserID'] );
                 }
+                // content/action names its object in the form (a move, a removal, a new location)
+                if ( $target === null && isset( $_POST['ContentObjectID'] ) && is_numeric( $_POST['ContentObjectID'] ) )
+                    $target = array( 'type' => 'object', 'id' => (int)$_POST['ContentObjectID'] );
+                // The account a refusal was about (an edit, a setting, a move of a user), with its login: who tried to
+                // reach whom (doc/eng-us/bc/6.0/member-management.md)
+                if ( $target !== null && $target['type'] === 'object' && ( $account = eZUser::fetch( $target['id'] ) ) instanceof eZUser )
+                    $target = expAuditHook::user( $account );
                 return array( 'object' => array( 'type' => 'view', 'id' => $module->attribute( 'name' ) . '/' . $view ),
                               'target' => $target, 'verb' => 'access', 'result' => 'refused',
                               'reason' => isset( $after['limitations'] ) && $after['limitations'] > 0 ? 'limitation' : 'policy',

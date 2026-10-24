@@ -5203,6 +5203,20 @@ class eZContentObject extends eZPersistentObject
      */
     function checkAccess( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
     {
+        $result = $this->checkAccessWithoutMemberGuard( $functionName, $originalClassID, $parentClassID, $returnAccessList, $language, $userID );
+        // An account with a location below a protected user group (membermanagement.ini) keeps an allowed function only
+        // when each such location allows it on its own (doc/eng-us/bc/6.0/member-management.md)
+        if ( !is_array( $result ) && $result == 1 && !$returnAccessList && class_exists( 'expMemberManagement' )
+             && !expMemberManagement::guardAllows( $this, $functionName, $userID ) )
+            return 0;
+        return $result;
+    }
+
+    /**
+     * checkAccess() without the member management guard; same parameters and result.
+     */
+    protected function checkAccessWithoutMemberGuard( $functionName, $originalClassID = false, $parentClassID = false, $returnAccessList = false, $language = false, $userID = false )
+    {
         $classID = $originalClassID;
         $user = eZUser::accessUser( $userID );
         if ( !$user instanceof eZUser )

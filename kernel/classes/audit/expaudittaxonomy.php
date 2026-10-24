@@ -120,6 +120,8 @@ class expAuditTaxonomy
         'access.user.enable' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.user.disable' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
         'access.user.remove' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access' ),
+        'access.user.change' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'User account change' ),
+        'access.user.move' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'User group change' ),
         'access.registration.approve' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Registration approve' ),
         'access.registration.reject' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Registration reject' ),
         'access.registration.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'access', 'label' => 'Registration link refused' ),

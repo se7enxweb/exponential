@@ -205,7 +205,8 @@ class eZContentOperationCollection
         // content.object.publish and content.object.translate
         $auditBefore = null;
         if ( class_exists( 'expAuditHook' )
-             && ( expAuditHook::on( 'content.object.create' ) || expAuditHook::on( 'content.object.publish' ) || expAuditHook::on( 'content.object.translate' ) ) )
+             && ( expAuditHook::on( 'content.object.create' ) || expAuditHook::on( 'content.object.publish' ) || expAuditHook::on( 'content.object.translate' )
+                  || expAuditHook::on( 'access.user.change' ) ) )
         {
             $auditBefore = expAuditHook::safe( function () use ( $object ) {
                 return array( 'published' => (int)$object->attribute( 'published' ) > 0 && (int)$object->attribute( 'status' ) == eZContentObject::STATUS_PUBLISHED,
@@ -303,6 +304,7 @@ class eZContentOperationCollection
             } );
             return;
         }
+        self::auditUserChanged( $object, $version, $before );
         expAuditHook::emit( 'content.object.publish', function () use ( $object, $version, $objectDesc, $target, $before, $languagesBefore, $languagesAfter ) {
             $changed = array();
             $previous = eZContentObjectVersion::fetchVersion( $before['version'], $object->attribute( 'id' ) );
@@ -334,6 +336,61 @@ class eZContentOperationCollection
                               'before' => array( 'languages' => $languagesBefore ), 'after' => array( 'languages' => $languagesAfter ) );
             } );
         }
+    }
+
+    /**
+     * Records the edit of a user account (doc/eng-us/bc/6.0/member-management.md, access.user.change): each attribute
+     * that changed with its value before and after, as text. The account attribute itself (login, e-mail, password) is
+     * left out: access.user.email.change, access.user.login.change and access.user.password.change record it, the
+     * password never. [AuditPrivacySettings] NeverRecord[] drops further attributes by identifier, and
+     * [AuditRecordSettings] MaxValueLength cuts long values.
+     *
+     * @param eZContentObject $object
+     * @param eZContentObjectVersion $version
+     * @param array $before published, version, language_mask, modified
+     */
+    static protected function auditUserChanged( $object, $version, array $before )
+    {
+        if ( !expAuditHook::on( 'access.user.change' ) || !in_array( (int)$object->attribute( 'contentclass_id' ), array_map( 'intval', eZUser::contentClassIDs() ), true ) )
+            return;
+        expAuditHook::emit( 'access.user.change', function () use ( $object, $version, $before ) {
+            $previous = eZContentObjectVersion::fetchVersion( $before['version'], $object->attribute( 'id' ) );
+            if ( !$previous )
+                return null;
+            $text = function ( $attribute ) {
+                $value = $attribute->hasContent() ? $attribute->toString() : '';
+                return is_scalar( $value ) ? (string)$value : json_encode( $value );
+            };
+            $old = array();
+            foreach ( (array)$previous->contentObjectAttributes() as $a )
+            {
+                if ( $a->attribute( 'data_type_string' ) !== 'ezuser' )
+                    $old[$a->attribute( 'contentclass_attribute_identifier' ) . '|' . $a->attribute( 'language_code' )] = $text( $a );
+            }
+            $fieldsBefore = array();
+            $fieldsAfter = array();
+            foreach ( (array)$version->contentObjectAttributes() as $a )
+            {
+                if ( $a->attribute( 'data_type_string' ) === 'ezuser' )
+                    continue;
+                $identifier = (string)$a->attribute( 'contentclass_attribute_identifier' );
+                $now = $text( $a );
+                $key = $identifier . '|' . $a->attribute( 'language_code' );
+                if ( !array_key_exists( $key, $old ) || $old[$key] !== $now )
+                {
+                    $fieldsBefore[$identifier] = array_key_exists( $key, $old ) ? $old[$key] : null;
+                    $fieldsAfter[$identifier] = $now;
+                }
+            }
+            if ( !$fieldsAfter )
+                return null;
+            ksort( $fieldsBefore );
+            ksort( $fieldsAfter );
+            $user = eZUser::fetch( (int)$object->attribute( 'id' ) );
+            return array( 'object' => $user instanceof eZUser ? expAuditHook::user( $user ) : expAuditHook::object( $object ),
+                          'before' => array( 'version' => (int)$before['version'], 'fields' => $fieldsBefore ),
+                          'after' => array( 'version' => (int)$version->attribute( 'version' ), 'fields' => $fieldsAfter ) );
+        } );
     }
 
     static public function attributePublishAction( $objectID, $versionNum )

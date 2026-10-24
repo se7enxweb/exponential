@@ -49,9 +49,9 @@ Editors group, to the Content and Media subtrees. Hiding and the reverse related
 - **Emptying the trash** (`content/cleantrash`) removes everybody's trashed objects for good; editors restore, an
   administrator empties.
 - **Users**: the Editor role reads and edits nothing below Users (`/1/5/`); editors change their own account through
-  `user/edit` and `user/password`. Managing the site's members needs a role of its own, assigned to the Editors group
-  with a Subtree limitation on the members' group, so that editors never reach the administrators' and editors'
-  accounts; no package makes it.
+  `user/edit` and `user/password`. Managing the site's members is the role "Member management", which the setup step
+  makes from `membermanagement.ini` and assigns to the Editors group, limited to Members, so that editors never reach
+  the administrators' and editors' accounts ([Member management](member-management.md)).
 - **Tags, newsletters, layouts, object states**: no class of the default class package has a tags field, the
   newsletter's editorial views are cjw_newsletter's own roles, the layout editor (`explayouts_ui`) and the state module
   are switched off in the editor siteaccess, and the only state group of a new installation is the lock group.
