@@ -32,7 +32,7 @@
 class expDataTableCatalogue
 {
     /** The format of the cache file */
-    const CACHE_VERSION = 2;
+    const CACHE_VERSION = 3;
 
     /** The kinds of relation target */
     const KINDS = array( 'object', 'node', 'class', 'user', 'section', 'table' );
@@ -78,7 +78,7 @@ class expDataTableCatalogue
         {
             $temp = $file . '.' . getmypid() . '.tmp';
             if ( @file_put_contents( $temp, json_encode( array( 'version' => self::CACHE_VERSION, 'stamp' => $stamp, 'entries' => $entries ),
-                                                           JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) ) !== false )
+                                                           JSON_UNESCAPED_SLASHES | JSON_PRESERVE_ZERO_FRACTION | JSON_PARTIAL_OUTPUT_ON_ERROR ) ) !== false )
                 @rename( $temp, $file );
         }
         return self::$instance = new self( $entries );
