@@ -144,6 +144,12 @@ class eZCollaborationFunctionCollection
     function fetchObjectTreeCount( $parentNodeID, $class_filter_type, $class_filter_array, $depth )
     {
         $node = eZContentObjectTreeNode::fetch( $parentNodeID );
+        // a parent node that does not exist ended in "Call to a member function subTreeCount() on null"
+        if ( !$node instanceof eZContentObjectTreeNode )
+        {
+            return array( 'error' => array( 'error_type' => 'kernel',
+                                            'error_code' => eZError::KERNEL_NOT_FOUND ) );
+        }
         $childrenCount = $node->subTreeCount( array( 'Limitation' => null,
                                                      'ClassFilterType' => $class_filter_type,
                                                      'ClassFilterArray' => $class_filter_array,

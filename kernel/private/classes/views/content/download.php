@@ -60,10 +60,12 @@ class Download extends \Exponential\Runnable\ModuleView
             return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( $denied, 'kernel' ) );
         }
 
+        // the arguments were an array with string keys, which call_user_func_array() passes as named
+        // arguments under PHP 8: a listener whose parameters had other names failed with "Unknown named parameter
+        // $contentObjectID". Positional, as ezpEvent::notify() documents (object ID, attribute ID).
         \ezpEvent::getInstance()->notify(
             'content/download',
-            array( 'contentObjectID' => $contentObjectID,
-                   'contentObjectAttributeID' => $contentObjectAttributeID ) );
+            array( $contentObjectID, $contentObjectAttributeID ) );
 
         // Audit (doc/eng-us/bc/6.0/audit.md, content.object.download): a sampled read
         if ( class_exists( 'expAuditHook' ) )
