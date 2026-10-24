@@ -17,8 +17,10 @@ an SMTP failure of any kind is a failed send instead of an error page, and MIME 
 - **Tip a friend.** Without `site.ini [TipAFriend] FromEmail` (the default) the mail used to be sent with the
   visitor's address as sender and envelope sender. It is now sent with the site's address, the first valid one of
   `[MailSettings] EmailSender` and `AdminEmail` (written as `address` or `Name <address>`), and the visitor's address
-  goes into `Reply-To`, so a reply still reaches the visitor and the mail passes SPF and DMARC checks of the site's
-  domain. Only when neither setting is a valid address is the visitor's address the sender, as before. With
+  goes into `Reply-To`. The display name of the sender is then `[SiteSettings] SiteName` (control characters and
+  quotes removed), not the name the visitor typed, so a visitor cannot make the mail arrive as
+  "Bank support <site address>". A reply still reaches the visitor and the mail passes SPF and DMARC checks of the
+  site's domain. Only when neither setting is a valid address is the visitor's address the sender, as before. With
   `FromEmail` set, `Reply-To` is added as well.
 - **SMTP failures.** `eZSMTPTransport::sendMail()` caught only `ezcMailException`. Measured with a fake SMTP server on
   127.0.0.1 that offers only `AUTH NTLM`: `ezcMailSmtpTransport::authNtlm()` threw
@@ -55,7 +57,7 @@ an SMTP failure of any kind is a failed send instead of an error page, and MIME 
 
 - `eZSendmailTransport::isShellSafeAddress()` (`lib/ezutils/classes/ezsendmailtransport.php`),
   `eZSMTPTransport::authMethod()` and `sendsCredentialsInClear()` (`lib/ezutils/classes/ezsmtptransport.php`),
-  `Tipafriend::siteSender()` (`kernel/private/classes/views/content/tipafriend.php`),
+  `Tipafriend::siteSender()` and `siteSenderName()` (`kernel/private/classes/views/content/tipafriend.php`),
   `expMailTemplateBody` (`kernel/classes/mail/expmailtemplatebody.php`), `ezpMail::messageIdHost()`
   (`kernel/private/classes/ezpmail.php`), `eZMail::composeEmailName()` and `encodeMimeHeader()`.
 - Tests without a database: `eZSendmailEnvelopeSenderTest`, `eZSMTPTransportTest` (with the fake server

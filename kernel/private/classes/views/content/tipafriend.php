@@ -41,6 +41,22 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
         return null;
     }
 
+    /**
+     * The display name of a tip sent with the site's own address: site.ini [SiteSettings] SiteName without control
+     * characters and quotes, never the visitor's name. With the visitor's name an entry like "Bank support" would
+     * have arrived as "Bank support <site address>" from the site's own domain; the visitor's name stays in Reply-To.
+     *
+     * @param \eZINI $ini
+     * @return string
+     */
+    public static function siteSenderName( \eZINI $ini )
+    {
+        $name = $ini->hasVariable( 'SiteSettings', 'SiteName' ) ? $ini->variable( 'SiteSettings', 'SiteName' ) : '';
+        if ( !is_string( $name ) )
+            return '';
+        return trim( preg_replace( '/[\x00-\x1F\x7F"]+/', ' ', $name ) );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -156,7 +172,7 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
             if ( count( $error_strings ) == 0 )
             {
                 $mail = new \eZMail();
-                $mail->setSender( $fromEmail, $yourName );
+                $mail->setSender( $fromEmail, $fromEmail !== $yourEmail ? self::siteSenderName( $ini ) : $yourName );
                 if ( $fromEmail !== $yourEmail )
                     $mail->setReplyTo( $yourEmail, $yourName );
                 $mail->setReceiver( $receiversEmail, $receiversName );

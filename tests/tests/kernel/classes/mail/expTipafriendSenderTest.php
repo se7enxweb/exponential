@@ -55,4 +55,28 @@ class expTipafriendSenderTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'admin@example.invalid', self::sender( 'not an address', 'admin@example.invalid' ) );
         $this->assertNull( self::sender( '', '' ) );
     }
+
+    /**
+     * Sent with the site's address, the display name is the site's, never the visitor's: "Bank support" would
+     * otherwise have arrived as "Bank support <site address>" from the site's own domain.
+     */
+    public function testTheSiteSenderNameIsTheSiteName()
+    {
+        $ini = eZINI::instance();
+        $saved = $ini->hasVariable( 'SiteSettings', 'SiteName' ) ? $ini->variable( 'SiteSettings', 'SiteName' ) : null;
+        try
+        {
+            $ini->setVariable( 'SiteSettings', 'SiteName', 'Example "Site"' . "\r\nBcc: x@example.invalid" );
+            $this->assertSame( 'Example  Site Bcc: x@example.invalid', Tipafriend::siteSenderName( $ini ) );
+            $ini->setVariable( 'SiteSettings', 'SiteName', 'Example Site' );
+            $this->assertSame( 'Example Site', Tipafriend::siteSenderName( $ini ) );
+        }
+        finally
+        {
+            if ( $saved === null )
+                $ini->removeSetting( 'SiteSettings', 'SiteName' );
+            else
+                $ini->setVariable( 'SiteSettings', 'SiteName', $saved );
+        }
+    }
 }

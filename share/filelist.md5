@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-f36997e72349778e87aed0f8f35c35db  doc/changelogs/6.0/6.0.15.md
+b8a8ab7b81a20dfdb75f33f5088c698b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3432,7 +3432,7 @@ e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
-4e7742acca8689b7c8eb1764bde665bd  doc/eng-us/bc/6.0/mail-transport-hardening.md
+46c24c7fed6e2458ef7a88681ae951aa  doc/eng-us/bc/6.0/mail-transport-hardening.md
 890b7eaa20d76c5578d916869ec1e72b  doc/eng-us/bc/6.0/member-management.md
 abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
@@ -22567,7 +22567,7 @@ cb5b9fdfc09d81cd65f022e289bedaf5  kernel/private/classes/views/content/restore.p
 59d1cccb1c918607b70fefc51b23f549  kernel/private/classes/views/content/reverserelatedlist.php
 989488ba76246550f8645db88223acc2  kernel/private/classes/views/content/search.php
 65ecf66f993d9a775354c150ee12cbdd  kernel/private/classes/views/content/subitemsexport.php
-fbe0cde25a6b977d6c36c3964ab6f57e  kernel/private/classes/views/content/tipafriend.php
+11d463c4c465679bf0924ec638b84a5d  kernel/private/classes/views/content/tipafriend.php
 a102967a7da9333f97c2eccdc4d3f4c1  kernel/private/classes/views/content/translation.php
 63d3bd3f6a1d1da1e8deeda179aa28f3  kernel/private/classes/views/content/translations.php
 ea37d9ca312de79451250d6dfe4bbbf9  kernel/private/classes/views/content/trash.php
@@ -25124,7 +25124,7 @@ ca41032b1c1c8e298f38c4c948bf48ec  tests/tests/kernel/classes/ini/expIniLocatorTe
 bd25076f8b7ba02a3816eb1c5ffc7ed0  tests/tests/kernel/classes/ini/fixtures/expinisaveasuser.php
 854ed28cc23b9fd79329399790ab423b  tests/tests/kernel/classes/installationdetails/ExpInstallationDetailsTest.php
 f139dc99615218f7e796feb6321fc16e  tests/tests/kernel/classes/mail/expMailTemplateBodyTest.php
-46a95dc36a0afe1d235eb51f665712e3  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
+8f8998af3c997ce3a3d6aab9b9d34546  tests/tests/kernel/classes/mail/expTipafriendSenderTest.php
 dcf6a5bc8e3672ab612c608c9b5889cd  tests/tests/kernel/classes/mail/ezpMailMessageIdTest.php
 c9c417f167681af1e55e9915f763fb47  tests/tests/kernel/classes/mailpreferences/MailPreferencesBounceListenersTest.php
 c97e956ffc379971dea7c7031224ad03  tests/tests/kernel/classes/mailpreferences/MailPreferencesComplianceTest.php
