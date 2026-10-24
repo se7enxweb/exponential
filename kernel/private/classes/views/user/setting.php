@@ -44,7 +44,7 @@ class Setting extends \Exponential\Runnable\ModuleView
         // the user may edit, so that a member manager reaches only the accounts of the groups it manages
         // (doc/eng-us/bc/6.0/member-management.md)
         if ( class_exists( '\expMemberManagement' ) && !\expMemberManagement::settingAllowed( $userObject ) )
-            return $this->viewResult( isset( $Result ) ? $Result : null,  $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
+            return $this->viewResult( null, $Module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel' ) );
         $userSetting = \eZUserSetting::fetch( $UserID );
 
         if ( $http->hasPostVariable( "UpdateSettingButton" ) )

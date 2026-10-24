@@ -3431,7 +3431,7 @@ e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
-7c601493485138dde9aea11e47280521  doc/eng-us/bc/6.0/member-management.md
+890b7eaa20d76c5578d916869ec1e72b  doc/eng-us/bc/6.0/member-management.md
 abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands.md
@@ -21644,7 +21644,7 @@ f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 f4d6ecae469a38295a4d8c566f6ba3be  kernel/classes/explovestack.php
 1009a31d576bfc7708a46433ffdd4721  kernel/classes/expmaintenance.php
 8cca633af22e11b820cc4da7d05273f7  kernel/classes/expmanagedconfiguration.php
-92af3fe2a3fc500e482c35325cdc778a  kernel/classes/expmembermanagement.php
+dc11bd0c1a2431c24f6745db69cc1fb0  kernel/classes/expmembermanagement.php
 f33944dda86f2612b983e1d72273dccc  kernel/classes/expnamepatternresolverinterface.php
 3c8216922babd78b53efd9ee377cffe0  kernel/classes/expnodequickpick.php
 846590ae94cadbe8b9122bfb25b89d0c  kernel/classes/expnotificationjob.php
@@ -22752,7 +22752,7 @@ cfb8c8edd93e88f7f62583780eae8f82  kernel/private/classes/views/user/password.php
 26bb56d7c34650f8836f2e9b5cbe1a4a  kernel/private/classes/views/user/preferences.php
 6f8d12174344ffa2654294e32a58344d  kernel/private/classes/views/user/register.php
 a7b60c9d389123d76e4d53a16a6bf55c  kernel/private/classes/views/user/registration.php
-f9f6c154d240cc4cbc8ce5d7aa852fbe  kernel/private/classes/views/user/setting.php
+5fed20a4d845c37c85d1353ee74580e7  kernel/private/classes/views/user/setting.php
 967a9bebacaf526b5188913496a04bbb  kernel/private/classes/views/user/success.php
 4031f958695d18a7f61a6cb5f99e336b  kernel/private/classes/views/user/unactivated.php
 a26ea87469c2938f0706af01eeae2e18  kernel/private/classes/views/visual/menuconfig.php
@@ -24752,7 +24752,7 @@ cf8fc76d38f1db1b11f47a6aa1e7f33a  tests/tests/kernel/classes/audit/expAuditForkT
 42e8e45e571a7a385b561f7b4150f6b9  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
 95b5c571bce2d71de41ee87cb0f34108  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 e5a45657eb985ea8445c68b47ede63ad  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
-142f7cb0ed70abd19eef516d2e4202c9  tests/tests/kernel/classes/audit/expAuditRecordTest.php
+4e308c0b60080f002312d640db2c9b39  tests/tests/kernel/classes/audit/expAuditRecordTest.php
 baea57e5bf9da3f12e56e0bb1e5fcc73  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 1e2d12f0d0eae7d2bdd941d75b9631bc  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 48b46955f2d2754be10ad2ea72e3687d  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php

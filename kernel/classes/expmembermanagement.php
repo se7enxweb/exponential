@@ -655,6 +655,15 @@ class expMemberManagement
     {
         if ( !$object instanceof eZContentObject || !self::guards( $functionName ) )
             return true;
+        // Only a limited policy can reach an account through another of its locations: a user with the function
+        // everywhere ('yes') passes each location anyway, and an allowance without a policy ('no', the user's own new
+        // draft) concerns an object that is no account yet
+        $user = eZUser::accessUser( $userID );
+        if ( !$user instanceof eZUser )
+            return true;
+        $access = $user->hasAccessTo( 'content', $functionName === 'move' ? 'edit' : $functionName );
+        if ( !isset( $access['accessWord'] ) || $access['accessWord'] !== 'limited' )
+            return true;
         self::$inGuard = true;
         try
         {

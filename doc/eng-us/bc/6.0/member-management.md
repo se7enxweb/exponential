@@ -137,16 +137,14 @@ keeps /24 and /48), `NeverRecord[]` drops keys everywhere (add a field identifie
 add their own names and sinks (`[AuditSinkSettings] SinkClasses[]`: syslog, webhook, mail, or a class implementing
 `expAuditSink`) without a kernel change.
 
-The same log is the base of the security event log (#270): its events are per user, typed by name, with the actor,
-the target and before/after, so session tracking adds names to the catalogue rather than another table.
+The events are generic: per user, typed by name, with the actor, the target and before/after. Session tracking,
+workflow and collaboration events go into the same log as further names, not into another table.
 
-## Approval of accounts in protected groups (#272)
+## Accounts in protected groups
 
-The protected groups stay outside every rule. Creating a user in Editors, or moving one there, remains an
-administrator's action; #272 adds a request path (an approval by an Administrator users member through a signed,
-single-use, time-limited link) with its own `[ApprovalRule_<name>]` blocks and events (`access.approval.request`,
-`.approve`, `.reject`, `.expire`, `.refused`) in the same log, rather than letting the member management role create
-pending accounts there.
+The protected groups stay outside every rule: creating a user in Administrator users or Editors, moving one there,
+and editing their accounts remain administrators' actions. Member management adds no pending or approval state of its
+own.
 
 ## What to do on an installation that exists
 
