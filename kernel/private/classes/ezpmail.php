@@ -54,8 +54,42 @@ class ezpMail extends ezcMail
         // Following code ensures that there is no double $lineBreak introduced
         // by this process because it potentially breaks headers
         $lineBreak = ezcMailTools::lineBreak();
-        $headers = str_replace( "$lineBreak$lineBreak", $lineBreak, parent::generateHeaders() );
+
+        // Without a Message-Id of its own a mail gets a random one for this generation only.
+        // ezcMailTools::generateMessageId() builds it from date( 'YmdGHjs' ), getmypid() and a counter: measured, every
+        // mail sent by SMTP carried the PHP process id. One set with eZMail::setMessageID() stays as it is.
+        $generatedMessageId = false;
+        if ( $this->messageId === null )
+        {
+            $this->messageId = '<' . bin2hex( random_bytes( 16 ) ) . '@' . $this->messageIdHost() . '>';
+            $generatedMessageId = true;
+        }
+        try
+        {
+            $headers = str_replace( "$lineBreak$lineBreak", $lineBreak, parent::generateHeaders() );
+        }
+        finally
+        {
+            if ( $generatedMessageId )
+                $this->messageId = null;
+        }
         return $headers;
+    }
+
+    /**
+     * The host part of a generated Message-Id: the domain of the sender when it is a host name, else localhost (the
+     * library's default as well).
+     *
+     * @return string
+     */
+    protected function messageIdHost()
+    {
+        $email = $this->from instanceof ezcMailAddress ? (string)$this->from->email : '';
+        $at = strrpos( $email, '@' );
+        $host = $at === false ? '' : substr( $email, $at + 1 );
+        if ( preg_match( '/^[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*$/D', $host ) )
+            return strtolower( $host );
+        return 'localhost';
     }
 }
 ?>

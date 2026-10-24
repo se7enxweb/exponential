@@ -20,6 +20,27 @@ namespace Exponential\View\Kernel\Content
 
 class Tipafriend extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * The first valid address of site.ini [MailSettings] EmailSender and AdminEmail ("address" or "Name <address>"),
+     * null when neither is one.
+     *
+     * @param \eZINI $ini
+     * @return string|null
+     */
+    public static function siteSender( \eZINI $ini )
+    {
+        foreach ( array( 'EmailSender', 'AdminEmail' ) as $setting )
+        {
+            $text = $ini->hasVariable( 'MailSettings', $setting ) ? $ini->variable( 'MailSettings', $setting ) : '';
+            if ( !is_string( $text ) || trim( $text ) === '' )
+                continue;
+            \eZMail::extractEmail( trim( $text ), $address, $name );
+            if ( is_string( $address ) && \eZMail::validate( $address ) )
+                return $address;
+        }
+        return null;
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -114,6 +135,11 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
                         $fromEmail = null;
                     }
             }
+            // Without FromEmail the site's own sender, not the visitor's address (it reached
+            // sendmail as the envelope sender, see eZSendmailTransport::sendmailOptions()); the visitor goes into
+            // Reply-To below. Only when neither EmailSender nor AdminEmail is a valid address, the visitor as before.
+            if ( $fromEmail == null )
+                $fromEmail = self::siteSender( $ini );
             if ( $fromEmail == null )
                 $fromEmail = $yourEmail;
 
@@ -131,6 +157,8 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
             {
                 $mail = new \eZMail();
                 $mail->setSender( $fromEmail, $yourName );
+                if ( $fromEmail !== $yourEmail )
+                    $mail->setReplyTo( $yourEmail, $yourName );
                 $mail->setReceiver( $receiversEmail, $receiversName );
                 $mail->setSubject( $subject );
 

@@ -62,6 +62,20 @@ class eZSMTPTransport extends eZMailTransport
         {
             $options->connectionType = $parameters['connectionType'];
         }
+        // site.ini [MailSettings] TransportAuthMethod, empty is the library's choice (the
+        // strongest the server offers, NTLM before LOGIN and PLAIN)
+        if ( isset( $parameters['auth'] ) && $ini->hasVariable( 'MailSettings', 'TransportAuthMethod' ) )
+        {
+            $authSetting = $ini->variable( 'MailSettings', 'TransportAuthMethod' );
+            $authMethod = self::authMethod( $authSetting );
+            if ( $authMethod !== null )
+                $options->preferredAuthMethod = $authMethod;
+            elseif ( is_string( $authSetting ) && trim( $authSetting ) !== '' )
+                eZDebug::writeWarning( "Unknown [MailSettings] TransportAuthMethod '$authSetting', the method is chosen from what the server offers", __METHOD__ );
+        }
+        // Credentials sent in clear to another host only log a warning, so existing setups keep working
+        if ( self::sendsCredentialsInClear( $parameters['host'], $parameters['connectionType'], $user, $password ) )
+            eZDebug::writeWarning( "SMTP credentials are sent unencrypted to {$parameters['host']}: set [MailSettings] TransportConnectionType to tls or ssl", __METHOD__ );
         $smtp = new ezcMailSmtpTransport( $parameters['host'], $user, $password,
         $parameters['port'], $options );
 
@@ -84,9 +98,54 @@ class eZSMTPTransport extends eZMailTransport
             eZDebug::writeError( $e->getMessage(), __METHOD__ );
             return false;
         }
+        // Not every failure is an ezcMailException. Measured: a server that offers AUTH NTLM
+        // makes ezcMailSmtpTransport::authNtlm() throw ezcBaseExtensionNotFoundException('mcrypt') (mcrypt is gone
+        // since PHP 7.2), which left this method and broke registration and password reset requests.
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( get_class( $e ) . ': ' . $e->getMessage(), __METHOD__ );
+            return false;
+        }
 
         // return true in case of no exceptions
         return true;
+    }
+
+    /**
+     * The ezcMailSmtpTransport::AUTH_* value of site.ini [MailSettings] TransportAuthMethod (PLAIN, LOGIN, CRAM-MD5,
+     * DIGEST-MD5, NTLM, XOAUTH2, any case), null for empty or unknown (the library chooses).
+     *
+     * @param mixed $value
+     * @return string|null
+     */
+    public static function authMethod( $value )
+    {
+        if ( !is_string( $value ) )
+            return null;
+        $value = strtoupper( trim( $value ) );
+        if ( $value === '' )
+            return null;
+        return in_array( $value, ezcMailSmtpTransport::getSupportedAuthMethods(), true ) ? $value : null;
+    }
+
+    /**
+     * Whether a user name and password go to $host over a connection without encryption: no connection type (or
+     * tcp), credentials set, and a host that is not loopback (localhost, 127.0.0.0/8, ::1).
+     *
+     * @param string $host
+     * @param string $connectionType site.ini [MailSettings] TransportConnectionType
+     * @param string $user
+     * @param string $password
+     * @return bool
+     */
+    public static function sendsCredentialsInClear( $host, $connectionType, $user, $password )
+    {
+        if ( !$user || !$password )
+            return false;
+        if ( is_string( $connectionType ) && $connectionType !== '' && strtolower( $connectionType ) !== 'tcp' )
+            return false;
+        $host = strtolower( trim( (string)$host, " []" ) );
+        return !( $host === 'localhost' || $host === '::1' || preg_match( '/^127\.\d{1,3}\.\d{1,3}\.\d{1,3}$/D', $host ) );
     }
 }
 
