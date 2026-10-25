@@ -175,6 +175,13 @@ CREATE TABLE `expbookmark_folder` (
 ,  `priority` integer NOT NULL DEFAULT '0'
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `expbookmark_view` (
+  `bookmark_id` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `module_uri` longtext
+,  `user_id` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`bookmark_id`)
+);
 CREATE TABLE `ezcontentbrowserecent` (
   `created` integer NOT NULL DEFAULT '0'
 ,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
@@ -718,6 +725,24 @@ CREATE TABLE `expapikey` (
 ,  `salt` varchar(64) NOT NULL DEFAULT ''
 ,  `scopes` varchar(255) NOT NULL DEFAULT ''
 ,  `secret_hash` varchar(128) NOT NULL DEFAULT ''
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exppasskey` (
+  `aaguid` varchar(36) NOT NULL DEFAULT ''
+,  `algorithm` integer NOT NULL DEFAULT '0'
+,  `backup_eligible` integer NOT NULL DEFAULT '0'
+,  `backup_state` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `credential_hash` varchar(64) NOT NULL DEFAULT ''
+,  `credential_id` longtext
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `last_ip` varchar(64) NOT NULL DEFAULT ''
+,  `last_used` integer NOT NULL DEFAULT '0'
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `public_key` longtext
+,  `sign_count` integer NOT NULL DEFAULT '0'
+,  `transports` varchar(255) NOT NULL DEFAULT ''
+,  `user_handle` varchar(128) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
 CREATE TABLE `exp_transfer_run` (
@@ -1364,11 +1389,14 @@ CREATE INDEX "idx_ezworkflow_event_wid_version_placement" ON "ezworkflow_event" 
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_user" ON "ezcontentbrowsebookmark" (`user_id`);
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_folder" ON "ezcontentbrowsebookmark" (`user_id`,`folder_id`);
 CREATE INDEX "idx_expbookmark_folder_expbookmark_folder_user" ON "expbookmark_folder" (`user_id`,`parent_id`);
+CREATE INDEX "idx_expbookmark_view_expbookmark_view_user" ON "expbookmark_view" (`user_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_from" ON "ezcontentobject_link" (`from_contentobject_id`,`from_contentobject_version`,`contentclassattribute_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_link" (`to_contentobject_id`);
 CREATE INDEX "idx_ezprest_token_token_client_id" ON "ezprest_token" (`client_id`);
 CREATE UNIQUE INDEX expapikey_prefix ON expapikey ( key_prefix );
 CREATE INDEX expapikey_user ON expapikey ( user_id );
+CREATE UNIQUE INDEX exppasskey_credential ON exppasskey ( credential_hash );
+CREATE INDEX exppasskey_user ON exppasskey ( user_id );
 CREATE INDEX exp_transfer_run_started ON exp_transfer_run ( started );
 CREATE INDEX exp_transfer_run_tool ON exp_transfer_run ( tool, started );
 CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );

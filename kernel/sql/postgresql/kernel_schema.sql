@@ -764,6 +764,15 @@ CREATE SEQUENCE expapikey_id_seq
 
 
 
+CREATE SEQUENCE exppasskey_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 CREATE SEQUENCE exp_transfer_run_id_seq
     START 1
     INCREMENT 1
@@ -1546,6 +1555,19 @@ CREATE TABLE expbookmark_folder (
     name character varying(255) DEFAULT ''::character varying NOT NULL,
     parent_id integer DEFAULT 0 NOT NULL,
     priority integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+
+
+
+
+CREATE TABLE expbookmark_view (
+    bookmark_id integer DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    module_uri text,
     user_id integer DEFAULT 0 NOT NULL
 );
 
@@ -2460,6 +2482,30 @@ CREATE TABLE expapikey (
     salt character varying(64) DEFAULT ''::character varying NOT NULL,
     scopes character varying(255) DEFAULT ''::character varying NOT NULL,
     secret_hash character varying(128) DEFAULT ''::character varying NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+
+
+
+CREATE TABLE exppasskey (
+    aaguid character varying(36) DEFAULT ''::character varying NOT NULL,
+    algorithm integer DEFAULT 0 NOT NULL,
+    backup_eligible integer DEFAULT 0 NOT NULL,
+    backup_state integer DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    credential_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+    credential_id text,
+    id integer DEFAULT nextval('exppasskey_id_seq'::text) NOT NULL,
+    last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+    last_used integer DEFAULT 0 NOT NULL,
+    name character varying(255) DEFAULT ''::character varying NOT NULL,
+    public_key text,
+    sign_count bigint DEFAULT 0 NOT NULL,
+    transports character varying(255) DEFAULT ''::character varying NOT NULL,
+    user_handle character varying(128) DEFAULT ''::character varying NOT NULL,
     user_id integer DEFAULT 0 NOT NULL
 );
 
@@ -3416,6 +3462,11 @@ CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree (user_id,
 
 
 
+CREATE INDEX expbookmark_view_user ON expbookmark_view USING btree (user_id);
+
+
+
+
 
 
 
@@ -4063,6 +4114,17 @@ CREATE INDEX expapikey_user ON expapikey USING btree (user_id);
 
 
 
+
+CREATE UNIQUE INDEX exppasskey_credential ON exppasskey USING btree (credential_hash);
+
+
+
+
+
+CREATE INDEX exppasskey_user ON exppasskey USING btree (user_id);
+
+
+
 CREATE INDEX exp_transfer_run_started ON exp_transfer_run USING btree (started);
 
 
@@ -4679,6 +4741,12 @@ ALTER TABLE ONLY expbookmark_folder
 
 
 
+ALTER TABLE ONLY expbookmark_view
+    ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY (bookmark_id);
+
+
+
+
 
 
 
@@ -5175,6 +5243,12 @@ ALTER TABLE ONLY ezprest_token
 
 ALTER TABLE ONLY expapikey
     ADD CONSTRAINT expapikey_pkey PRIMARY KEY (id);
+
+
+
+
+ALTER TABLE ONLY exppasskey
+    ADD CONSTRAINT exppasskey_pkey PRIMARY KEY (id);
 
 
 

@@ -9,6 +9,7 @@ SELECT setval('ezcollab_simple_message_id_seq',max(id)+1) FROM ezcollab_simple_m
 SELECT setval('ezcontentbrowsebookmark_id_seq',max(id)+1) FROM ezcontentbrowsebookmark;
 SELECT setval('expbookmark_folder_id_seq',max(id)+1) FROM expbookmark_folder;
 SELECT setval('expapikey_id_seq',max(id)+1) FROM expapikey;
+SELECT setval('exppasskey_id_seq',max(id)+1) FROM exppasskey;
 SELECT setval('exp_transfer_run_id_seq',max(id)+1) FROM exp_transfer_run;
 SELECT setval('exp_data_connection_id_seq',max(id)+1) FROM exp_data_connection;
 SELECT setval('exp_secret_id_seq',max(id)+1) FROM exp_secret;

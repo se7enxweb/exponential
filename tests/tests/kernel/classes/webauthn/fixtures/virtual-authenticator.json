@@ -1,0 +1,37 @@
+{
+  "rp_id": "localhost",
+  "origin": "http://localhost:18273",
+  "recorded_with": "Chromium virtual authenticator (CDP WebAuthn), ctap2, internal transport",
+  "ceremonies": [
+    {
+      "name": "ES256",
+      "credential_id": "kkhATfv6k06WKBSWcOzCer3bqTRuoUeAnDrJNRiryxw",
+      "registration": {
+        "challenge": "7i58VqeF7GQUCjCyjLHdz4WMojT8D8Jiq2SdkMj1Qq8",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoiN2k1OFZxZUY3R1FVQ2pDeWpMSGR6NFdNb2pUOEQ4SmlxMlNka01qMVFxOCIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MTgyNzMiLCJjcm9zc09yaWdpbiI6ZmFsc2V9",
+        "attestationObject": "o2NmbXRkbm9uZWdhdHRTdG10oGhhdXRoRGF0YVikSZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2NFAAAAAQECAwQFBgcIAQIDBAUGBwgAIJJIQE37-pNOligUlnDswnq926k0bqFHgJw6yTUYq8scpQECAyYgASFYIKB5W811lFiPgcd-2WU9r_eHEKdNAG_MKzID2-_nRa9jIlggce3HQL8eW36CVnQLw_rwLDWrvd00KyGQAOxwZxEFBcI"
+      },
+      "assertion": {
+        "challenge": "hvJIaXvMaDd0w8jbcQcVyEHI1VY-aatq0LYvev0cpZo",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiaHZKSWFYdk1hRGQwdzhqYmNRY1Z5RUhJMVZZLWFhdHEwTFl2ZXYwY3BabyIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MTgyNzMiLCJjcm9zc09yaWdpbiI6ZmFsc2V9",
+        "authenticatorData": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MFAAAABA",
+        "signature": "MEQCIAqTnHa1tHhAettJ8uaFtbO9O7txNlNqejN-0RzUhT2kAiB802ifiE29vhQjspLlwSe4I9oX6zLp20irDSQWIpu0aA"
+      }
+    },
+    {
+      "name": "RS256",
+      "credential_id": "Xd3teuH4L-1TeCrMwNhCpKOwiimJVMA5DCTagTxbDrY",
+      "registration": {
+        "challenge": "lBIe5Oks3osMQyP3cpJB-r9XI81Dt3kaYiF9PMUz3dE",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIiwiY2hhbGxlbmdlIjoibEJJZTVPa3Mzb3NNUXlQM2NwSkItcjlYSTgxRHQza2FZaUY5UE1VejNkRSIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MTgyNzMiLCJjcm9zc09yaWdpbiI6ZmFsc2UsIm90aGVyX2tleXNfY2FuX2JlX2FkZGVkX2hlcmUiOiJkbyBub3QgY29tcGFyZSBjbGllbnREYXRhSlNPTiBhZ2FpbnN0IGEgdGVtcGxhdGUuIFNlZSBodHRwczovL2dvby5nbC95YWJQZXgifQ",
+        "attestationObject": "o2NmbXRkbm9uZWdhdHRTdG10oGhhdXRoRGF0YVkBZ0mWDeWIDoxodDQXD2R2YFuP5K65ooYyx5lc87qDHZdjRQAAAAEBAgMEBQYHCAECAwQFBgcIACBd3e164fgv7VN4KszA2EKko7CKKYlUwDkMJNqBPFsOtqQBAwM5AQAgWQEArfDQt8-FKdTbZwt2Zvv18epqRyUmV5uMgsBn2erzK1svzhCEIT9dck-7g-mv61dXcSSP9Y4IA2kcxOP67B4gESVzQTTpbAyTDd4lBBDKxHtP7GSteS-n1wXFoOJHxl-eC7dNSXRK2K5acxt3IQho0VWs54FaZA6V-FHpWGQVDLBPj-nhdm-vHLjummaWwHvPnnQWHGSIC_2G2IYG_QQPh9aW7h2JVVEqQ40Y2Eh7k62OttzWDF6ICa-5uHQuCiJwsbCoOszFsmDBwhIAEmsRcWl-hY-wFY0yQl3nhx77aYXb3WgXxdU0WbSlIrTWd4RJcyykobbprEsdBezF97lRlSFDAQAB"
+      },
+      "assertion": {
+        "challenge": "uBqfx0eSa7qqqL16-sdGCgcoE_7dC7YstXHEz2VhdkM",
+        "clientDataJSON": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoidUJxZngwZVNhN3FxcUwxNi1zZEdDZ2NvRV83ZEM3WXN0WEhFejJWaGRrTSIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MTgyNzMiLCJjcm9zc09yaWdpbiI6ZmFsc2V9",
+        "authenticatorData": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MFAAAAAw",
+        "signature": "diCB7_BNpvhInRbWqn-Pgrltsuh9DMDqUO0sGpcrNT_v9x8dnUWz84M8pMAa9HjqzKb-ugNH0-3EQgNVAu9R2EGY_aiasIn6z0S_Bq0l-XoK6mfiphyKGNZUiHHBHVfWzv3yodRPhO3jkA2irEtRoPhyoy9Dxn_8m2YEE5XrnksTkGVovbJX2VghPwui31fukVIygtWmVtbqWr5Yqa1AvZ5HfMovhRLD4JSNFfhEQSkPCVBlJaEUc-xGs190InajbHW7Tu2PMC00zNRwFlrdrHCV__M8ErQZElVI0NzUo_xdIJ9Xp9HEjr9eZctsKOqKx6yjeAAQry3F9wgpy7ImTg"
+      }
+    }
+  ]
+}

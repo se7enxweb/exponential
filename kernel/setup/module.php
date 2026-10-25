@@ -228,6 +228,16 @@ $ViewList["templateoperator"] = array(
                                     ),
     "params" => array( ) );
 
+// "Verify it's you" (doc/eng-us/guides/verify-its-you.md): which groups of actions ask the signed-in user to confirm
+// who they are, and for how many minutes a confirmation counts; written to settings/override/site.ini.append.php.
+// Saving asks itself ([ReauthGroup_system] Rules[]=setup/*). See kernel/setup/reauth.php
+$ViewList['reauth'] = array(
+    'functions' => array( 'setup' ),
+    'script' => 'reauth.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'params' => array() );
+
 $ViewList["extensions"] = array(
     'functions' => array( 'setup' ),
     "script" => "extensions.php",
