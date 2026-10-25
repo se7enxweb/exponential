@@ -194,6 +194,12 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $no = function () { return false; };
         $this->assertNull( expReauth::matchGroup( $s, 'content', 'edit', 'POST', array( 'PublishButton' => 1 ), $self, $no ),
                            'publishing one\'s own profile without a credential change' );
+        // "Your devices": switching off one's own sign-in mail asks (account), signing another user out asks (users);
+        // signing out one's own other devices never waits for a question
+        $this->assertSame( 'account', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'SaveMailButton' => 1 ), $self )['group'] );
+        $this->assertSame( 'users', expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $other )['group'] );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'POST', array( 'RevokeOthersButton' => 1 ), $self ) );
+        $this->assertNull( expReauth::matchGroup( $s, 'user', 'sessions', 'GET', array(), $other ) );
     }
 
     /** RA-09 */

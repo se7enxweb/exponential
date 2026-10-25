@@ -392,7 +392,7 @@ class expReauth
 
     /**
      * The account a request addresses, for the rules "self" and "other": the user object edited (content/edit, a
-     * class with a user account field), the account of user/password, user/setting, user/edit; null for none.
+     * class with a user account field), the account of user/password, user/setting, user/edit, user/sessions; null for none.
      *
      * @param string $module
      * @param string $view
@@ -403,7 +403,7 @@ class expReauth
     {
         $first = isset( $params[0] ) && is_numeric( $params[0] ) ? (int)$params[0] : 0;
         $where = $module . '/' . $view;
-        if ( in_array( $where, array( 'user/password', 'user/setting', 'user/edit' ), true ) )
+        if ( in_array( $where, array( 'user/password', 'user/setting', 'user/edit', 'user/sessions' ), true ) )
             return $first > 0 ? $first : (int)eZUser::currentUserID();
         if ( $where === 'content/edit' && $first > 0 )
         {

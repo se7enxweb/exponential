@@ -57,8 +57,8 @@ As shipped in `settings/site.ini`:
 
 | Group | On | Rules |
 |---|---|---|
-| `account`: the security of one's own account | yes | `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials` |
-| `users`: users, roles and policies | yes | `content/edit other`, `user/password other`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `role/*`, `oauthadmin/*` |
+| `account`: the security of one's own account | yes | `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton` |
+| `users`: users, roles and policies | yes | `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `role/*`, `oauthadmin/*` |
 | `system`: system settings and setup actions | yes | `setup/*` except `setup/info`, `logs`, `logshealth`, `logsdigest`, `logsfeed`, `templatelist`, `templateview`, `menu` and the three streams; `settings/edit`, `package/*`, `package/upload *`, `secrets/*`, `update/*`, `git_manager/*` |
 | `export`: exporting data | yes | `infocollector/export *`, `audit/export *`, `content/subitemsexport *`, `mailpreferences/export *`, `bccie/export *`, `bccie/doexport *`, `newsletter/subscription_list_csvexport *`, `newsletter/subscriber_export *`, `newsletter/statistics_export *` |
 | `content`: removing and publishing content | no | `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton` |
@@ -85,7 +85,7 @@ A rule is `module/view [token ...]`:
 | `module/view` | the view; `module/*` every view of the module. A POST to it asks |
 | `*` | every request asks, GET too: a page that downloads, or a form with a file upload |
 | `Name` | only a POST that carries this field (one of several names), usually the action's button |
-| `self`, `other` | only when the account the request addresses is the user's own, or another user's (`content/edit` of a user object, `user/password`, `user/setting`, `user/edit`) |
+| `self`, `other` | only when the account the request addresses is the user's own, or another user's (`content/edit` of a user object, `user/password`, `user/setting`, `user/edit`, `user/sessions`) |
 | `credentials` | only when the POST changes the login, e-mail address or password of a user |
 | `!module/view` | an exception: the view never asks in this group (wins over `module/*`) |
 
