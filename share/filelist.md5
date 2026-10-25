@@ -3254,7 +3254,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a960bdacf4f269891be694643a426790  doc/changelogs/6.0/6.0.15.md
+15fe9b1fffa1b3031e38c4429656b301  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3439,6 +3439,7 @@ e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands
 09126e5f8caee5c1c7e418680e6f5e4f  doc/eng-us/bc/6.0/oauth-authorize-policy.md
 5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
+6d5afc9f15682d0a04fa6715ff862161  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
 b3ddabe744f64d13e2ecce43ee3c732e  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
@@ -21968,7 +21969,7 @@ b427d6c90f94788d54c369d9e1c15295  kernel/classes/packagecreators/ezcontentobject
 235431d938443cab609c0b539f871da2  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
 7f52b8ed6e4c0bca419915f16389ccd9  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 9a6101de5a469ab5ae14a33de85b2836  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
-dd0547219a65f68dd74cd5150452a203  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
+fd95bf6807a1c5d8ac0e1203191b29be  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
 6a2e81e1729f301ffbccceafdb77679f  kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php
 66050e29e89a2fdfada84320696ce531  kernel/classes/packagehandlers/eziniaddon/eziniaddonpackagehandler.php
 9293334bc191a66cd75a0f72469ac6ef  kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php
@@ -25236,6 +25237,7 @@ b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteacc
 728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
 66e7e5299d742825ba0fc98478401837  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
 56cb7815ef06c0e7a095668c99ff57c8  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
+2c7af335b2e799767b29009792d3fa47  tests/tests/kernel/classes/setup/ExtensionKeepNewerTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
