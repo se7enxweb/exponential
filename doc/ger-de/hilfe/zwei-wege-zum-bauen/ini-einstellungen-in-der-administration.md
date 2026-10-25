@@ -25,7 +25,7 @@ ist das Gegenstück der Administration zu `./console exp:ini`.
 Wählen Sie die **INI-Datei** und den **Siteaccess**, dann **Einstellungen anzeigen**. Die Adresse wird zu
 `/settings/view/<siteaccess>/<file>`, sodass sich die Seite als Lesezeichen speichern lässt.
 
-![Die Seite Einstellungen mit der Auswahl von INI-Datei und Siteaccess und der Schaltfläche Einstellungen anzeigen](../../../eng-us/help/build-two-ways/images/hm-11-settings-pick-file.webp)
+![Die Seite Einstellungen mit der Auswahl von INI-Datei und Siteaccess und der Schaltfläche Einstellungen anzeigen](bilder/hm-11-settings-pick-file.webp)
 
 Die Seite erklärt, wie Einstellungen funktionieren: *Jede INI-Datei wird in Schichten gelesen: zuerst settings/&lt;file&gt;.ini,
 dann die ActiveAccessExtensions, dann der Siteaccess (zuerst die Extensions, settings/siteaccess zuletzt), dann die
@@ -39,7 +39,7 @@ schlägt die Extension.
 Jede Einstellung zeigt ihren wirksamen Wert und unter **In N Dateien gesetzt** jede Datei, die sie setzt, in der
 Lesereihenfolge. Eine Datei, deren Werte verworfen werden, ist als **überschrieben** markiert, die wirksame mit **Elemente wirksam**.
 
-![Die Einstellung MainMenuID: die Erweiterung sevenx_themes_media für site ist überschrieben, die Datei des Siteaccess site ist wirksam](../../../eng-us/help/build-two-ways/images/hm-03-settings-mainmenuid.webp)
+![Die Einstellung MainMenuID: die Erweiterung sevenx_themes_media für site ist überschrieben, die Datei des Siteaccess site ist wirksam](bilder/hm-03-settings-mainmenuid.webp)
 
 Kennzeichen: **kein Standard** (die `settings/<file>.ini` des Kernels setzt sie nicht), **Liste mit 6** (ein Array mit
 sechs Elementen). Die Seite kann außerdem eine Datei durchsuchen, die gegenüber dem Standard geänderten Einstellungen
@@ -56,7 +56,7 @@ Die eigene Hilfe der Seite: *Ein Element pro Zeile: =Wert fügt ein Element hinz
 Lassen Sie die erste Zeile leer, um das Array vor diesen Elementen zu leeren; ohne sie werden sie zu dem hinzugefügt, was
 frühere Dateien liefern.*
 
-![Das Feld Wert von MainMenuID mit leerer erster Zeile und einer Zeile =id pro Menüeintrag](../../../eng-us/help/build-two-ways/images/hm-04-settings-edit-add-192.webp)
+![Das Feld Wert von MainMenuID mit leerer erster Zeile und einer Zeile =id pro Menüeintrag](bilder/hm-04-settings-edit-add-192.webp)
 
 ## Wo die Änderung gespeichert wird
 
