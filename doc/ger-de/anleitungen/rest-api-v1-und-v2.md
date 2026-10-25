@@ -108,9 +108,15 @@ Für eine Anwendung, bei der sich *andere* Benutzer anmelden und für die sie in
    `redirect_uri`, dazu `code_verifier`, wenn sie eine Challenge gesendet hat. Ein öffentlicher Client (ohne
    gespeichertes Geheimnis, etwa eine mobile App) sendet kein `client_secret` und muss PKCE verwenden
    ([PKCE und state](../bc/6.0/oauth-pkce-und-state.md)).
-4. Sie sendet das Token mit jeder Anfrage (`Authorization: OAuth <token>` oder den Parameter `oauth_token`).
+4. Sie sendet das Token mit jeder Anfrage (`Authorization: Bearer <token>` oder `Authorization: OAuth <token>`; auch
+   den Parameter `oauth_token` eines POST-Formulars, außer bei `rest.ini [OAuthSettings] AllowTokenInBody=disabled`;
+   den Query-Parameter `oauth_token` nur bei `AllowTokenInQuery=enabled`, standardmäßig aus).
 5. Wenn das Token abgelaufen ist (`rest.ini [OAuthSettings] TokenTTL`, standardmäßig eine Stunde), fordert die Anwendung mit
-   `grant_type=refresh_token` und `refresh_token=<refresh token>` ein neues an.
+   `grant_type=refresh_token` und `refresh_token=<refresh token>` ein neues an. Ein Refresh-Token gilt
+   `RefreshTokenTTL` (standardmäßig 30 Tage, `0` = kein Ablauf) ab der Erneuerung, die es ausgestellt hat.
+
+Ein Token, ein Code oder ein Refresh-Token hört auf zu funktionieren, sobald sein Benutzer deaktiviert oder durch
+fehlgeschlagene Anmeldungen gesperrt ist ([Härtung der OAuth-Tokens](../bc/6.0/oauth-token-haertung.md)).
 
 Der Token-Endpunkt unterstützt die Grants `authorization_code` und `refresh_token`.
 
@@ -188,6 +194,9 @@ DefaultUserID=
 
 [OAuthSettings]
 TokenTTL=3600
+RefreshTokenTTL=2592000
+AllowTokenInQuery=disabled
+AllowTokenInBody=enabled
 
 # the template of OutputFormat=xhtml for the controller of ezprestapi (ezprestapi 1.2.6, kernel 6.0.15)
 [ezp7xRestContentController_viewContent_OutputSettings]

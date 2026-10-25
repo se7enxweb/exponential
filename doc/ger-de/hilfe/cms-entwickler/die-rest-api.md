@@ -112,7 +112,8 @@ Ein Anlegen antwortet mit `{"message":"Created","objectId":...,"nodeId":...}`. M
 | `[ApiProvider] ProviderClass[<prefix>]` | die Provider-Klasse jedes Präfixes |
 | `[Authentication] RequireAuthentication`, `AuthenticationStyle`, `RequireHTTPS` | wer aufrufen darf, wie, und nur über HTTPS |
 | `[ApiKeySettings] ApiKeys` | persönliche Schlüssel an oder aus (standardmäßig an) |
-| `[OAuthSettings] TokenTTL` | die Lebensdauer eines OAuth2-Tokens |
+| `[OAuthSettings] TokenTTL`, `RefreshTokenTTL` | die Lebensdauer eines OAuth2-Tokens und seines Refresh-Tokens |
+| `[OAuthSettings] AllowTokenInQuery`, `AllowTokenInBody` | wo außer im Header `Authorization` ein Token gelesen wird |
 
 Lesen Sie sie so, wie die Website sie sieht: `./console exp:ini list rest.ini/Authentication`. Schalten Sie
 `RequireHTTPS` für jede Installation ein, die für andere erreichbar ist.

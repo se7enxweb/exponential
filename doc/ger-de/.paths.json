@@ -119,6 +119,7 @@
     "bc/6.0/mongodb-kernel-unterstuetzung.md": "bc/6.0/MONGODB_KERNEL_SUPPORT_EXPANSION.md",
     "bc/6.0/oauth-autorisierungsrichtlinie.md": "bc/6.0/oauth-authorize-policy.md",
     "bc/6.0/oauth-pkce-und-state.md": "bc/6.0/oauth-pkce.md",
+    "bc/6.0/oauth-token-haertung.md": "bc/6.0/oauth-token-hardening.md",
     "bc/6.0/opml.md": "bc/6.0/opml.md",
     "bc/6.0/package-json-format.md": "bc/6.0/package-json-format.md",
     "bc/6.0/papierkorb.md": "bc/6.0/trash.md",

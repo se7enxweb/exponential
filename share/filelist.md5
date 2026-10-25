@@ -12442,7 +12442,7 @@ a2cdb6d91f08e7a03fa339d5428ce4a6  doc/ger-de/.examples/descriptions/04-ini-setti
 e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 284dff665c38187e010417279824d742  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 abcfa2c79b753427744d3e5a2ae440f5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
-fdfcaf4b6961630006ea21f669da4aef  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
+d2c0ea88c16ae752715acb2e825170e5  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
@@ -12450,7 +12450,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-52cc849ca6a908ae2a19cf672d661956  doc/ger-de/.paths.json
+861dde501ff32fe3f864e69410b7552d  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
@@ -12489,7 +12489,7 @@ ce4ea8c80a55d899af96fce7fa7a3d0f  doc/ger-de/anleitungen/neue-redakteurskonten-f
 e284dbffe107486bd07fb059fa282962  doc/ger-de/anleitungen/pakete.md
 fcd4791370e2165c8800e7148e0bf2c7  doc/ger-de/anleitungen/passkeys.md
 16520e397aa690a6f6867e3fcd1f2f4e  doc/ger-de/anleitungen/pdf-exporte.md
-3a7b4029ca75ca7490d355d1869927f4  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
+72951f73b5a5eeab9cfc1b1e879ab541  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
 b7e5959e0be69985584f9459039a77e6  doc/ger-de/anleitungen/rollen-und-richtlinien.md
 e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 6c14b68ff14fb3ae5a59c84bb5609cc8  doc/ger-de/anleitungen/sektionen.md
@@ -12571,6 +12571,7 @@ d5c8b87ad96b7a1bb586d0719143abce  doc/ger-de/bc/6.0/menue-inhalte-exportieren.md
 cb44c3fa0a4efd14dafd0a022f422ef5  doc/ger-de/bc/6.0/mongodb-kernel-unterstuetzung.md
 675bd63c1c146c02ff9d08e3bd2a1855  doc/ger-de/bc/6.0/oauth-autorisierungsrichtlinie.md
 3adff359762b0e0403b89d0bfef2f0be  doc/ger-de/bc/6.0/oauth-pkce-und-state.md
+4f34865c236121798d8914f2f63c0f38  doc/ger-de/bc/6.0/oauth-token-haertung.md
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
@@ -14049,10 +14050,10 @@ d374066bb97cbf9fcf5699dcfd671b3a  doc/ger-de/beispiele/ini-einstellungen/rest/Au
 a16cbd5cdbedf80418b0aaf089058b62  doc/ger-de/beispiele/ini-einstellungen/rest/CacheSettings.md
 90f42368ec39d9158ec2d7cd02bde0d2  doc/ger-de/beispiele/ini-einstellungen/rest/CorsSettings.md
 8d1af89c154b2193c927c4c447717773  doc/ger-de/beispiele/ini-einstellungen/rest/DebugSettings.md
-fd0bc7582970e01d354976c5bea7b7fb  doc/ger-de/beispiele/ini-einstellungen/rest/OAuthSettings.md
+b4e937e2ceadeabc0de1f0d20f3f5880  doc/ger-de/beispiele/ini-einstellungen/rest/OAuthSettings.md
 7a591a1761a6af5ece3eca998fcca39c  doc/ger-de/beispiele/ini-einstellungen/rest/OutputSettings.md
 c368c33a27b10acd802427871c924235  doc/ger-de/beispiele/ini-einstellungen/rest/PreRoutingFilters.md
-3173d47b24221148593363a01f321fad  doc/ger-de/beispiele/ini-einstellungen/rest/README.md
+40a4796c8148f330f28bebfaa219d978  doc/ger-de/beispiele/ini-einstellungen/rest/README.md
 f8b6063bf490da72cab33be9cdc39a58  doc/ger-de/beispiele/ini-einstellungen/rest/RequestFilters.md
 af9c1334a3d27dca368d09ec0b90a980  doc/ger-de/beispiele/ini-einstellungen/rest/ResponseFilters.md
 212f7d4c0a532bbd91cb176f6468a337  doc/ger-de/beispiele/ini-einstellungen/rest/ResultFilters.md
@@ -15166,7 +15167,7 @@ a8fa050cf8fd60cd81520b4b122059b1  doc/ger-de/funktionen/6.0/erweiterungen/ezodf.
 cf58780cff2ec5e323e109c90cede0f6  doc/ger-de/funktionen/6.0/erweiterungen/ezoe.md
 13f1ef70ab65cb71dd5352e921773709  doc/ger-de/funktionen/6.0/erweiterungen/ezpaypal.md
 0452413daf2aa59fb141f0ac6af973a0  doc/ger-de/funktionen/6.0/erweiterungen/ezpm.md
-5d7bb137e5ae997769ea7849e59b8c68  doc/ger-de/funktionen/6.0/erweiterungen/ezprestapi.md
+328c1d4b4c4e78690cbd532cb95b6329  doc/ger-de/funktionen/6.0/erweiterungen/ezprestapi.md
 c9d62c18c26635f6ba9e13c09d511f3a  doc/ger-de/funktionen/6.0/erweiterungen/ezprestapiprovider.md
 39a79824894401714b1cacc5c0999813  doc/ger-de/funktionen/6.0/erweiterungen/ezstarrating.md
 c72f72ab9ab7d0ab1d508762e69e378d  doc/ger-de/funktionen/6.0/erweiterungen/eztags.md
@@ -15796,7 +15797,7 @@ db8d5654f22de9969cff53e764bc66d0  doc/ger-de/hilfe/cms-entwickler/checkliste-zur
 82b1e278ac70b51ffcf62bb94ae3fe75  doc/ger-de/hilfe/cms-entwickler/das-inhaltsmodell.md
 e56ab25a8003426a556322a0b9ec575b  doc/ger-de/hilfe/cms-entwickler/datentypen-waehlen.md
 4eff3cf881df9b4ca27c142c253cdfb5  doc/ger-de/hilfe/cms-entwickler/der-eingebaute-shop.md
-65c00b8c9d7ae78037ccad364f828a55  doc/ger-de/hilfe/cms-entwickler/die-rest-api.md
+ad679d821842790226f50389c5cf23f0  doc/ger-de/hilfe/cms-entwickler/die-rest-api.md
 238266c2a8594f277d3e7033dad096ad  doc/ger-de/hilfe/cms-entwickler/ein-inhaltsmodell-entwerfen.md
 c632de175ad62a75532dc0a76a5f1e7f  doc/ger-de/hilfe/cms-entwickler/eine-fertige-inhaltsklasse-waehlen.md
 e4d8b5626ed97669089d56d10aafa438  doc/ger-de/hilfe/cms-entwickler/eine-inhaltsklasse-anlegen.md
@@ -16355,7 +16356,7 @@ e3bb49366ee337eedec7eaf460aa91be  doc/ger-de/hilfe/ersteller/anwendungsentwickle
 b72ce9c35aa71a2eae79ec35165dc82e  doc/ger-de/hilfe/ersteller/anwendungsentwickler/lesepfad-fuer-anwendungsentwickler.md
 13fd5db93dd7e3df9b06cb63395df495  doc/ger-de/hilfe/ersteller/anwendungsentwickler/mit-velocity-ausliefern.md
 96bdb45cff847e4d6d00fd1fcd3d00c7  doc/ger-de/hilfe/ersteller/anwendungsentwickler/muster-fuer-hintergrundarbeit.md
-1d4bbe342e745b79b9da04ea0318b5ab  doc/ger-de/hilfe/ersteller/anwendungsentwickler/oauth-und-api-schluessel.md
+22869a6be229c2619738dfebace6e0bd  doc/ger-de/hilfe/ersteller/anwendungsentwickler/oauth-und-api-schluessel.md
 6617b65f53414ebf97b82d63c84809e6  doc/ger-de/hilfe/ersteller/anwendungsentwickler/pakete-und-ezpkg.md
 2d98c43f8df4746668288d3cd3a4fa35  doc/ger-de/hilfe/ersteller/anwendungsentwickler/persistente-objekte-und-eigene-tabellen.md
 b3bf635f91d1aa88aeddcdd59cff5748  doc/ger-de/hilfe/ersteller/anwendungsentwickler/phpunit-tests-ohne-datenbank.md
@@ -17124,11 +17125,11 @@ bd691adcd6a344bbbbc979ad0f7b46b5  doc/ger-de/hilfe/integratoren/leistungsbeschre
 121d4a4d24632b3457f056c3aae9711a  doc/ger-de/hilfe/integratoren/lesepfad-fuer-integratoren.md
 a7eb7c2ddece2fcfd95ba3e2975ab9f4  doc/ger-de/hilfe/integratoren/login-handler-ldap-und-textdatei.md
 bbff6b558bac0f810861975a818cdd1f  doc/ger-de/hilfe/integratoren/massendatenaustausch-mit-xrowextract.md
-ed2df3e8b8e406cf55c9b04362344bd3  doc/ger-de/hilfe/integratoren/oauth-anwendungen-fuer-integrationen.md
+e9851a976a7b248a2b072b8784ec138c  doc/ger-de/hilfe/integratoren/oauth-anwendungen-fuer-integrationen.md
 299714a96e5a2a68e180ba2d57b7807a  doc/ger-de/hilfe/integratoren/pakete-importieren-und-exportieren.md
 bc04810e674e9696fd3f27e4e55270e9  doc/ger-de/hilfe/integratoren/persoenliche-api-schluessel-fuer-integrationen.md
 bbfd66970f1b397389e7213b14e83aef  doc/ger-de/hilfe/integratoren/playbook-fuer-integrationsprojekte.md
-e71170f925fe71b29a45bba5ea727769  doc/ger-de/hilfe/integratoren/rest-api-fuer-integratoren.md
+55df48ff6098206351b2fe1c91762a99  doc/ger-de/hilfe/integratoren/rest-api-fuer-integratoren.md
 8cb569ad1c1dda2be71eb09b0ffba964  doc/ger-de/hilfe/integratoren/rss-atom-und-opml-feeds.md
 7082a5d44727e3ace7f0abfdd97f05dd  doc/ger-de/hilfe/integratoren/sicherheit-fuer-integrationen.md
 d48b613ee00f01eecf62a1d709a16fea  doc/ger-de/hilfe/integratoren/sicherheits-checkliste-fuer-integrationen.md
@@ -17458,11 +17459,11 @@ e472d4b2d51dc9914132192819a82084  doc/ger-de/hilfe/lokale-unternehmen/marketing/
 19fa5d73aa177d764784ade753c5fbbf  doc/ger-de/hilfe/mit-git-aktualisieren.md
 4c5b0549cc98f0b420deb3b1bd7582ac  doc/ger-de/hilfe/mit-git-entwickeln.md
 d68df7d91cd2e0698d0449fe4100aa2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/README.md
-c1962bddfbbac1a2c62608d81836a07f  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/der-authorization-header-und-proxys.md
+35e379a9c9d3bb5abb4f6603698dd8ee  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/der-authorization-header-und-proxys.md
 08be1c77b39349f67196e4f7490b0f3b  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/ein-backend-fuer-ihre-app.md
 7c2ccb4bde831d22f8a6e045cd672466  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/expservices-tokens-in-apps.md
 e9625fcca33cf9808442f280919d2e2d  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/geheimnisse-auf-geraeten-speichern.md
-2eb3debe0a8ab19edcdce68616e96086  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/oauth2-autorisierungscode-ablauf.md
+782e8005a72a615ae0fed383e76663fb  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/oauth2-autorisierungscode-ablauf.md
 4ea2bfd43b2e3488e609407b903b4d23  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/persoenliche-api-schluessel-fuer-werkzeuge.md
 19376acb408cb1032a8057f72693f750  doc/ger-de/hilfe/mobile-app-entwickler/anmeldung/zugangsdaten-auswaehlen.md
 58045ef04dc050b59c7d0b41192bc044  doc/ger-de/hilfe/mobile-app-entwickler/checklisten/README.md
@@ -20434,7 +20435,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
 86fc86fa94563bb99bd2c44c24e2e530  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
-3bbe24a9e587469ea526adca93a99a10  doc/ger-de/standards/apis-und-protokolle.md
+d668c54ddd26f3b59956c1b468b0e5ff  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
 8b6b6fca0836e5563e177dc55378dc84  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
