@@ -25146,7 +25146,7 @@ dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensions
 4d6d57d87b8484b899ad48f416ba3ef3  tests/tests/kernel/classes/ezpMobileDeviceDetectTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
-873b4b859bf5589e2d3a430ba02ddcc2  tests/tests/kernel/classes/ezpThrowawayDatabaseGuardTest.php
+19b8925e92976470106070ae504efc3e  tests/tests/kernel/classes/ezpThrowawayDatabaseGuardTest.php
 a5532fb28c026fe034f0e1358fdd488b  tests/tests/kernel/classes/ezpackage_regression.php
 04478dc238acc2c04f951ff184c2b19f  tests/tests/kernel/classes/ezpackage_regression_testIssue15223.ezpkg
 b2b601cef224249b184db5afd4424259  tests/tests/kernel/classes/ezpendingactions_test.php
@@ -26087,7 +26087,7 @@ b59058bb35a0d81caf9cdf01a57087b7  tests/toolkit/ezpextensionhelper.php
 881070205f601043c659fbb70348a310  tests/toolkit/ezpliveinstallation.php
 6113cf61216a4796b3f8ed5602c7710f  tests/toolkit/ezpregressiontest.php
 066b8cefd09dcae040ac3532f7113666  tests/toolkit/ezptestcase.php
-3503da09669faf539af4f11e161d8e9a  tests/toolkit/ezptestdatabasehelper.php
+6af760fbf124ae2384c00b8e2106acd8  tests/toolkit/ezptestdatabasehelper.php
 a6b093172a75a3984d8d3210496fcc9b  tests/toolkit/ezptestregressionsuite.php
 8cf5839972540e71c71c4b83c9e97867  tests/toolkit/ezptestrunner.php
 c522c5fe7a846bae4469c62db10a0663  tests/toolkit/ezptestsuite.php

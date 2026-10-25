@@ -10,6 +10,8 @@
  *  TD-03 - ezpTestDatabaseHelper::create() refuses a DSN whose database is not a test database
  *  TD-04 - ezpTestDatabaseHelper::clean() refuses a connection to a database that is not a test database
  *  TD-05 - ezpDsn: the keys the cluster tests read are there also when the DSN does not name them
+ *  TD-06 - the old helpers take "test", "tests" or "testdb" as a word of the name, not a substring (expdemolatest);
+ *          for Oracle the account, whose schema create() empties
  *
  * Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -52,6 +54,35 @@ class ezpThrowawayDatabaseGuardTest extends PHPUnit\Framework\TestCase
         $this->expectException( RuntimeException::class );
         $this->expectExceptionMessage( "'exponential_lernapp'" );
         ezpTestDatabaseHelper::clean( $db );
+    }
+
+    /**
+     * TD-06 - the old helpers accept the databases CI's database jobs use (testdb) and the throwaway names, but not
+     *         a name that only contains "test" in another word: a demo site's "expdemolatest", a reinstall target
+     *         "xa_alpha_ref_pkgtest" or "contest" used to be emptied by create() and clean().
+     */
+    public function testSetUpDatabaseNames()
+    {
+        foreach ( array( 'testdb', 'test', 'tests', 'test2', 'testdb_2', 'exp_test_1_0a1b2c3d', 'site_test', 'my_TESTDB' ) as $name )
+            self::assertTrue( ezpTestDatabaseHelper::isSetUpDatabaseName( $name ), $name );
+        foreach ( array( 'expdemolatest', 'xa_alpha_ref_pkgtest', 'contest', 'attestation', 'latest_shop', 'testimonials', 'exponential_1',
+                         '', null, 'test`; DROP DATABASE x', 'test-db' ) as $name )
+            self::assertFalse( ezpTestDatabaseHelper::isSetUpDatabaseName( $name ), var_export( $name, true ) );
+    }
+
+    public function testCreateRefusesADatabaseThatOnlyContainsTest()
+    {
+        $this->expectException( RuntimeException::class );
+        $this->expectExceptionMessage( "'expdemolatest'" );
+        ezpTestDatabaseHelper::create( new ezpDsn( 'mysqli://user:secret@localhost/expdemolatest' ) );
+    }
+
+    public function testCreateRefusesAnOracleAccountThatIsNoTestSchema()
+    {
+        // Oracle's create() empties the schema of the account, so the account is what is checked
+        $this->expectException( RuntimeException::class );
+        $this->expectExceptionMessage( "'exponential'" );
+        ezpTestDatabaseHelper::create( new ezpDsn( 'oracle://exponential:secret@localhost/test' ) );
     }
 
     public function testDsnKeys()
