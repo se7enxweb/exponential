@@ -3274,7 +3274,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-0d1a9506f96f58b28fb9eb0637d75447  doc/changelogs/6.0/6.0.15.md
+798f9cc04dac1fbbc79826353dc89742  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6318,7 +6318,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-4ee0a75cb577ead6420451a6b2ed256e  doc/eng-us/features/6.0/help-content.md
+38f0bbd6ab367bf4c580dfd960e70f3b  doc/eng-us/features/6.0/help-content.md
 3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -10139,7 +10139,7 @@ c329d580bc7a32af9f83029d40467528  doc/eng-us/help/local-businesses/simple-shop/v
 60c0aaaa3135cd494a3bb52da730523f  doc/eng-us/help/local-businesses/templates/website-brief-for-a-local-business.md
 3df344903995a78673f9dcea325f2453  doc/eng-us/help/logging-into-the-admin.md
 b49194a3a7d8fddac219aa13dadcc1a3  doc/eng-us/help/logging-into-the-editor.md
-6a2f07a348986d7ef4cd6250c30f0fec  doc/eng-us/help/maintaining-help-topics.md
+785a72d3cd852ad449f049da3c380a41  doc/eng-us/help/maintaining-help-topics.md
 b6f53929208624cdd2030096b8bfd298  doc/eng-us/help/manual/README.md
 748035c032cc85c5d75213012c1177da  doc/eng-us/help/manual/a-user-lost-their-phone-how-do-they-sign-in.md
 90c576b3e72c30a505c0e99bb4a7d7ed  doc/eng-us/help/manual/how-do-i-add-a-content-language.md
@@ -12193,9 +12193,9 @@ d4319a4e3b09997677c74dae68fe6136  doc/eng-us/specifications/6.0/explayouts-ui-ap
 5194bdcdc9b5b72e5e15c20105edea83  doc/eng-us/specifications/6.0/expservices.md
 9f6990d78cc3c9ffde53cc08589e1fbc  doc/eng-us/specifications/6.0/extension-metadata.md
 81d3fb49240ef27e94a0902542317bd2  doc/eng-us/specifications/6.0/help-content-package.md
-3b772013bd7769c387f449221aa1d215  doc/eng-us/specifications/6.0/help-standards.md
+f379452b7958e12f5fe742cd9ba2803b  doc/eng-us/specifications/6.0/help-standards.md
 31b4402e56b74a5c1066a80912346be9  doc/eng-us/specifications/6.0/help-style-guide.md
-c8176d96d56f373df0057e412e083428  doc/eng-us/specifications/6.0/help-system.md
+87875fb7b0bae58bd091beaa0a36e23d  doc/eng-us/specifications/6.0/help-system.md
 d3406ef83d12af1a3e315faa2f6c2831  doc/eng-us/specifications/6.0/ini-override-placements.md
 0d6e5f7237b6f1db42f6db52959b225e  doc/eng-us/specifications/6.0/installer-logs-and-seed-data.md
 5f300d9337fb8350dc082ec8d3c49bcd  doc/eng-us/specifications/6.0/legacy-bridge-bundle.md
@@ -12428,7 +12428,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-d47eb7401b7c21ae71521d017008320b  doc/ger-de/.paths.json
+c281f4efcb3c3aca5e1753bfde29c4db  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 ad672f1a5e3339c4c2ad9cbad65beafc  doc/ger-de/anleitungen/README.md
@@ -15176,7 +15176,7 @@ deeaaa21af70d1a936c366b5206d0a47  doc/ger-de/funktionen/6.0/freigabe-von-redakte
 be024ce43b83d098e3f788a3b450d3f9  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
-dcc5fc4cf6299f35586872893ac83565  doc/ger-de/funktionen/6.0/hilfeinhalte.md
+5ec9b3e0eb6761c4b754835fde582e2c  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 963b9da2ea59e31f718ce59b040357a5  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
@@ -16908,7 +16908,7 @@ f76c13425d20730964afc5a1ac96d860  doc/ger-de/hilfe/handbuch/wie-waehle-ich-meine
 e9a2cdaff011ecaceffbebfceee25107  doc/ger-de/hilfe/handbuch/wie-zeige-ich-ein-element-in-nicht-uebersetzten-sprachen.md
 0254c1bc6a928c4e311581e9b3048289  doc/ger-de/hilfe/handbuch/wo-sehe-ich-meine-wartenden-elemente.md
 60649e9f1907ddda8310b502de82120b  doc/ger-de/hilfe/hilfe-in-anderen-sprachen-lesen.md
-ce9db63fb5d7b1c11c3ae6accf9cf6bc  doc/ger-de/hilfe/hilfethemen-pflegen.md
+082a7f22352307cad2b234b0b18ee31a  doc/ger-de/hilfe/hilfethemen-pflegen.md
 e5bdc0065a100c3d10da2b40928b0d86  doc/ger-de/hilfe/hosting/bereitstellung/README.md
 f324c77c7d7562c283998207e60181e8  doc/ger-de/hilfe/hosting/bereitstellung/bereitstellung-automatisieren.md
 5f9d4562b335e712891086d89e3b76c8  doc/ger-de/hilfe/hosting/bereitstellung/der-kickstarter-fuer-hoster.md
@@ -20374,8 +20374,8 @@ f88e8ef0cfdc14aa84bc239512586eab  doc/ger-de/spezifikationen/6.0/explayouts-ui-a
 582a371747cdeb92f77a8e5d6ca81fa4  doc/ger-de/spezifikationen/6.0/extension-metadaten.md
 ec43191225aa0d9f8213af10faf78ab4  doc/ger-de/spezifikationen/6.0/hilfe-stilrichtlinien.md
 14912518e29118ed2937f134df009ab2  doc/ger-de/spezifikationen/6.0/hilfeklassen-als-paket.md
-2f8670bc9f5688ea08f2eb5f29702e85  doc/ger-de/spezifikationen/6.0/hilfestandards.md
-74b6b7581ff6593f2e410f4132aabe07  doc/ger-de/spezifikationen/6.0/hilfesystem.md
+5f08471b1488db72762123ec60880810  doc/ger-de/spezifikationen/6.0/hilfestandards.md
+117564135639fa7eaaa93f4c1d62895d  doc/ger-de/spezifikationen/6.0/hilfesystem.md
 96b78f92e050e7582a8ff94a2dac5be3  doc/ger-de/spezifikationen/6.0/ini-override-platzierungen.md
 093832af7105cdeffcc7ce6760fc3927  doc/ger-de/spezifikationen/6.0/installer-protokolle-und-startdaten.md
 ea8bbf536a8d7d93913d11ad76ac3ca6  doc/ger-de/spezifikationen/6.0/kontinuierliche-integration.md
@@ -21884,7 +21884,7 @@ a9c7d74348524064ec0aa30c24961072  kernel/classes/help/content/exphelpcontenthelp
 9d107411338348d0b8ac08744e508277  kernel/classes/help/content/exphelpcontentprovider.php
 ff1192f8bedabae689aab376000f7977  kernel/classes/help/content/exphelpcontentrepository.php
 0496731d690b945501427f97a23e5893  kernel/classes/help/content/exphelpcontentreview.php
-ce7ba90e3355c6d806c8205fadf8b774  kernel/classes/help/content/exphelpcontentschema.php
+a88151bc1c7d47ee096ad13f30d987dd  kernel/classes/help/content/exphelpcontentschema.php
 d0cacb75ebc33485eb5ff90d9ca42d8f  kernel/classes/help/content/exphelpcontentseeder.php
 23767ec2431bd65741ef795e7429027c  kernel/classes/help/content/exphelpcontentsite.php
 099b521940b6b6e2775ac30c771e0b3e  kernel/classes/help/content/exphelpcontenttables.php
@@ -25150,7 +25150,7 @@ e65692aa5c652521877848dfcbec2000  tests/tests/kernel/classes/help/expHelpContent
 76c79716bf06b3eddb6dc7f5635c7870  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 321f570378477f6d95103cb485707cc9  tests/tests/kernel/classes/help/expHelpContentTest.php
 dac945a9f992111a0078fb7055ae4573  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
-10045c36acd84e614a2d900dc9d872be  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
+abfa134b93d63a2c6398bf433d53fa9b  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
 1a6f8d25a51abc94dc6d40460b69c1e0  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php

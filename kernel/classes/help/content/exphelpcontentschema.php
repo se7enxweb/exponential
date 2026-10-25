@@ -356,6 +356,8 @@ class expHelpContentSchema
                 array( 'content', 'remove', $tree + $editable ),
                 array( 'state', 'assign', $tree + array( $group => array( self::STATE_DRAFT ), 'NewState' => array( self::STATE_REVIEW ) ) ),
                 array( 'exphelp', 'read', array() ),
+                // the JSON of a topic ("JSON" on its page) and context help for the editor's own clients and tokens
+                array( 'exphelp', 'context', array() ),
             ),
             self::ROLE_RELEASE => array(
                 array( 'state', 'assign', $tree + array( $group => $all, 'NewState' => $all ) ),

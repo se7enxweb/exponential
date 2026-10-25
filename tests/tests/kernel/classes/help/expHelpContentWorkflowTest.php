@@ -342,6 +342,8 @@ class expHelpContentWorkflowTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'step' => 'Step', 'helpful' => 'Helpful' ), $m['views']['topic']['unordered_params'] );
         foreach ( array( 'state', 'feedback' ) as $view )
             $this->assertFileExists( self::root() . '/kernel/exphelp/' . $view . '.php' );
+        // help editors open the JSON of a topic and make API keys with the scope help
+        $this->assertContains( array( 'exphelp', 'context', array() ), expHelpContentSchema::roles()[expHelpContentSchema::ROLE_EDITOR] );
         if ( expHelpContentSchema::setting( 'AnonymousFeedback', 'disabled' ) !== 'enabled' )
         {
             $roles = expHelpContentSchema::roles();
