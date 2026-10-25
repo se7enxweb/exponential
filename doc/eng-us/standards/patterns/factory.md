@@ -3,7 +3,7 @@ title: Factory and static factory methods
 audience: developer
 category: standards
 order: 321
-summary: A class or static method that creates objects for the caller, so the caller does not name the concrete class. 439 instances in Exponential.
+summary: A class or static method that creates objects for the caller, so the caller does not name the concrete class. 443 instances in Exponential.
 keywords: design pattern, factory, creation, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class or static method that creates objects for the caller, so the caller does
 | | |
 |---|---|
 | Group | Creation |
-| Instances | 439 |
+| Instances | 443 |
 | Recognized by | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
 | Extension point | Often the INI setting that names the class to create (see the INI plugin points). |
 
@@ -446,12 +446,13 @@ A class or static method that creates objects for the caller, so the caller does
 |---|---|---|---|---|
 | `xrowSitemapTools` | class | `extension/xrowmetadata/classes/xrowsitemaptools.php:3` | – | – |
 
-### kernel/classes (83)
+### kernel/classes (84)
 
 [All patterns of kernel/classes](area-kernel-classes.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expBookmarkView` | class extends eZPersistentObject | `kernel/classes/expbookmarkview.php:39` | A bookmark of a system page: a page of a module view (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) instead of a node. | – |
 | `expCacheCatalogue` | class | `kernel/classes/expcachecatalogue.php:22` | The caches of Setup › Caches, described for a person: what each holds, its id and tags, its directory, its size and number of files, when it was last… | – |
 | `expCollaborationGroupManager` | class | `kernel/classes/expcollaborationgroupmanager.php:14` | Creates, renames and deletes the collaboration groups of one user and moves items between them. | – |
 | `expCrontabSetup` | class | `kernel/classes/expcrontabsetup.php:47` | The cron job of an installation: the crontab lines that run its cronjob parts (runcronjobs.php), written by the installers and by bin/php/installcron… | – |
@@ -698,6 +699,23 @@ A class or static method that creates objects for the caller, so the caller does
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `eZContentObjectPackageHandler` | class extends eZPackageHandler | `kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php:18` | – | settings/package.ini [PackageSettings] HandlerAlias[ezcontentobject] |
+
+### kernel/classes/passkey (2)
+
+[All patterns of kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expPasskey` | class extends eZPersistentObject | `kernel/classes/passkey/exppasskey.php:22` | A passkey of a user: one row of exppasskey (doc/eng-us/guides/passkeys.md). | – |
+| `expPasskeySettings` | class | `kernel/classes/passkey/exppasskeysettings.php:19` | site.ini [PasskeySettings], read for one request (doc/eng-us/guides/passkeys.md): whether passkeys are on, the relying party (id and name), the origi… | – |
+
+### kernel/classes/reauth (1)
+
+[All patterns of kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expReauthSettings` | class | `kernel/classes/reauth/expreauthsettings.php:18` | The settings of "Verify it's you" as the page setup/reauth edits them (doc/eng-us/guides/verify-its-you.md): the switch of the whole feature, the min… | – |
 
 ### kernel/classes/requestclassifier (1)
 

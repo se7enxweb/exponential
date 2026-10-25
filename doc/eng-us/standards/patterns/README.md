@@ -3,7 +3,7 @@ title: Design pattern catalogue
 audience: developer
 category: standards
 order: 300
-summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 6181 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
+summary: Every abstraction and design pattern of the Exponential 6 stack, found in the source code: 6189 instances in 29 categories across kernel, lib and extensions, with file, class, description and extension point.
 keywords: design patterns, pattern catalogue, abstractions, architecture, factory, singleton, registry, strategy, handler, template method, observer, adapter, facade, active record, eZPersistentObject, datatype, template operator, fetch function, module view, policy function, workflow event, extension point, plugin, INI
 type: reference
 ---
@@ -19,52 +19,52 @@ The rules the code follows: [Standards](../README.md) and [Kernel architecture](
 
 | | |
 |---|---|
-| Instances (all categories) | 6181 |
-| Classes, interfaces, traits and enums | 3485 (3389 classes, 95 interfaces, 1 trait) |
-| ... with at least one pattern | 2846 |
-| Module views | 545 |
+| Instances (all categories) | 6189 |
+| Classes, interfaces, traits and enums | 3500 (3403 classes, 96 interfaces, 1 trait) |
+| ... with at least one pattern | 2861 |
+| Module views | 530 |
 | Policy functions | 259 |
-| Fetch functions | 313 |
+| Fetch functions | 314 |
 | Template operators | 255 |
 | Cronjob parts | 49 |
 | Event hooks | 99 |
-| INI plugin points | 840 |
-| Source files read | 4477 PHP, 575 INI |
-| Areas | 151 |
+| INI plugin points | 841 |
+| Source files read | 4494 PHP, 575 INI |
+| Areas | 154 |
 
 ## The patterns
 
 | Pattern | Group | Instances | Recognized by |
 |---|---|---|---|
-| [Active Record (eZPersistentObject)](active-record.md) | Data access | 231 | Extends eZPersistentObject, directly or through a parent class. |
+| [Active Record (eZPersistentObject)](active-record.md) | Data access | 234 | Extends eZPersistentObject, directly or through a parent class. |
 | [Datatype (Strategy for content fields)](datatype.md) | Plugins | 54 | Extends eZDataType, directly or through a parent class. |
 | [Workflow event type (Command, plugin)](workflow-event.md) | Plugins | 15 | Extends eZWorkflowEventType. |
 | [Template operator (Interpreter plugin)](template-operator.md) | Plugins | 338 | Registered in an eztemplateautoload.php ($eZTemplateOperatorArray[]), or has operatorList() and modify(). |
 | [Template function (Interpreter plugin)](template-function.md) | Plugins | 45 | Registered in an eztemplateautoload.php ($eZTemplateFunctionArray[]), or has functionList() and process(). |
-| [Fetch function (Query Object, Facade)](fetch-function.md) | Plugins | 351 | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
-| [Module view (Page Controller)](module-view.md) | Request handling | 1004 | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
+| [Fetch function (Query Object, Facade)](fetch-function.md) | Plugins | 352 | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
+| [Module view (Page Controller)](module-view.md) | Request handling | 989 | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
 | [Policy function (access control)](policy-function.md) | Request handling | 259 | An entry of $FunctionList in a module.php. |
 | [Front Controller](front-controller.md) | Request handling | 10 | The kernel classes ezpKernel, ezpKernelWeb, ezpKernelTreeMenu, ezpKernelRest, eZModule and their kind. |
 | [Command (console, scripts, cronjobs)](command.md) | Request handling | 246 | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
 | [Singleton / instance()](singleton.md) | Creation | 77 | Has a static instance() or getInstance() method. |
-| [Factory and static factory methods](factory.md) | Creation | 439 | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
+| [Factory and static factory methods](factory.md) | Creation | 443 | Class name ends in Factory, or has static create*(), from*(), factory(), make*() methods, or creates new self/new static in a static method. |
 | [Builder](builder.md) | Creation | 10 | Class name contains Builder or Generator. |
 | [Registry](registry.md) | Structure | 39 | Class name contains Registry, or has static register*() methods. |
-| [Strategy / handler](strategy-handler.md) | Behavior | 379 | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
+| [Strategy / handler](strategy-handler.md) | Behavior | 381 | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | [Template Method / abstract base class](template-method.md) | Behavior | 69 | An abstract class with both abstract and concrete methods. |
-| [Interface (contract)](interface.md) | Structure | 95 | Every interface. |
+| [Interface (contract)](interface.md) | Structure | 96 | Every interface. |
 | [Observer / listener / event](observer.md) | Behavior | 10 | Class name contains Listener, Observer or Subscriber, or has attach()/notify()/addListener() methods; every ezpEvent notify()/filter() call (see the hooks page). |
 | [Event hook (ezpEvent)](event-hook.md) | Behavior | 99 | A call of ezpEvent::getInstance()-›notify( 'EVENT' ) or -›filter( 'EVENT' ). |
 | [Adapter / bridge / wrapper](adapter.md) | Structure | 6 | Class name contains Adapter, Bridge, Wrapper or Proxy. |
-| [Facade / service](facade.md) | Structure | 39 | Class name ends in Facade, Service, Manager, API or Api. |
+| [Facade / service](facade.md) | Structure | 40 | Class name ends in Facade, Service, Manager, API or Api. |
 | [Decorator / filter](decorator.md) | Structure | 64 | Class name contains Decorator or Filter. |
 | [Chain of Responsibility](chain.md) | Behavior | 19 | Class name contains LoginHandler, Chain, Pipeline, Middleware, Router or Matcher. |
 | [Iterator](iterator.md) | Behavior | 16 | Implements Iterator, IteratorAggregate or ArrayAccess. |
 | [Value object / struct](value-object.md) | Structure | 105 | Class name ends in Struct, Value, Result, Item, Info or Definition and the class has few methods, or extends ezcBaseStruct. |
 | [Exception hierarchy](exception.md) | Structure | 73 | Extends Exception, an *Exception class or Error. |
 | [Trait (mixin)](trait.md) | Structure | 1 | Every trait. |
-| [Utility (static helper)](utility.md) | Structure | 716 | A concrete class whose methods are all static (at least two). |
-| [INI plugin point (extension point)](ini-plugin-point.md) | Plugins | 1372 | A setting of a settings/*.ini file (or an extension's) whose value is the name of a class of the catalogue. |
+| [Utility (static helper)](utility.md) | Structure | 725 | A concrete class whose methods are all static (at least two). |
+| [INI plugin point (extension point)](ini-plugin-point.md) | Plugins | 1374 | A setting of a settings/*.ini file (or an extension's) whose value is the name of a class of the catalogue. |
 
 ## The areas
 
@@ -155,7 +155,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [extension/syndication](area-extension-syndication.md) | 34 | 13 | 0 | 0 | 1 |
 | [extension/xrowextract](area-extension-xrowextract.md) | 94 | 9 | 2 | 0 | 35 |
 | [extension/xrowmetadata](area-extension-xrowmetadata.md) | 38 | 2 | 0 | 7 | 1 |
-| [kernel/classes](area-kernel-classes.md) | 214 | 0 | 0 | 0 | 0 |
+| [kernel/classes](area-kernel-classes.md) | 215 | 0 | 0 | 0 | 0 |
 | [kernel/classes/apikey](area-kernel-classes-apikey.md) | 3 | 0 | 0 | 0 | 0 |
 | [kernel/classes/audit](area-kernel-classes-audit.md) | 54 | 0 | 0 | 0 | 0 |
 | [kernel/classes/basketinfohandlers](area-kernel-classes-basketinfohandlers.md) | 1 | 0 | 0 | 0 | 0 |
@@ -180,7 +180,9 @@ One page per part of the code base: every class with its patterns, and the views
 | [kernel/classes/packagecreators](area-kernel-classes-packagecreators.md) | 4 | 0 | 0 | 0 | 0 |
 | [kernel/classes/packagehandlers](area-kernel-classes-packagehandlers.md) | 7 | 0 | 0 | 0 | 0 |
 | [kernel/classes/packageinstallers](area-kernel-classes-packageinstallers.md) | 2 | 0 | 0 | 0 | 0 |
+| [kernel/classes/passkey](area-kernel-classes-passkey.md) | 5 | 0 | 0 | 0 | 0 |
 | [kernel/classes/pdfexport](area-kernel-classes-pdfexport.md) | 4 | 0 | 0 | 0 | 0 |
+| [kernel/classes/reauth](area-kernel-classes-reauth.md) | 5 | 0 | 0 | 0 | 0 |
 | [kernel/classes/requestclassifier](area-kernel-classes-requestclassifier.md) | 12 | 0 | 0 | 0 | 0 |
 | [kernel/classes/requestlog](area-kernel-classes-requestlog.md) | 1 | 0 | 0 | 0 | 0 |
 | [kernel/classes/role](area-kernel-classes-role.md) | 3 | 0 | 0 | 0 | 0 |
@@ -192,9 +194,10 @@ One page per part of the code base: every class with its patterns, and the views
 | [kernel/classes/uiswitch](area-kernel-classes-uiswitch.md) | 6 | 0 | 0 | 0 | 0 |
 | [kernel/classes/user](area-kernel-classes-user.md) | 14 | 0 | 0 | 0 | 0 |
 | [kernel/classes/vathandlers](area-kernel-classes-vathandlers.md) | 1 | 0 | 0 | 0 | 0 |
+| [kernel/classes/webauthn](area-kernel-classes-webauthn.md) | 4 | 0 | 0 | 0 | 0 |
 | [kernel/classes/workflowtypes](area-kernel-classes-workflowtypes.md) | 11 | 0 | 0 | 0 | 0 |
 | [kernel/common](area-kernel-common.md) | 26 | 0 | 0 | 48 | 0 |
-| [kernel/modules](area-kernel-modules.md) | 78 | 244 | 179 | 0 | 0 |
+| [kernel/modules](area-kernel-modules.md) | 78 | 229 | 180 | 0 | 0 |
 | [kernel/private](area-kernel-private.md) | 181 | 8 | 1 | 1 | 0 |
 | [kernel/private/classes/asynchronouspublisheroutput](area-kernel-private-classes-asynchronouspublisheroutput.md) | 2 | 0 | 0 | 0 | 0 |
 | [kernel/private/classes/clusterfilehandlers](area-kernel-private-classes-clusterfilehandlers.md) | 14 | 0 | 0 | 0 | 0 |
@@ -222,7 +225,7 @@ One page per part of the code base: every class with its patterns, and the views
 | [lib/ezsoap](area-lib-ezsoap.md) | 10 | 0 | 0 | 0 | 0 |
 | [lib/eztemplate](area-lib-eztemplate.md) | 56 | 0 | 0 | 115 | 0 |
 | [lib/ezutils](area-lib-ezutils.md) | 47 | 0 | 0 | 0 | 0 |
-| [settings](area-settings.md) | 0 | 0 | 0 | 0 | 252 |
+| [settings](area-settings.md) | 0 | 0 | 0 | 0 | 253 |
 
 ## What was read
 

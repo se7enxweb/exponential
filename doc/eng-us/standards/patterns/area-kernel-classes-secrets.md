@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/secrets
 audience: developer
 category: standards
-order: 512
+order: 514
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/secrets with its design patterns.
 keywords: kernel/classes/secrets, design patterns, classes, extension points
 type: catalogue

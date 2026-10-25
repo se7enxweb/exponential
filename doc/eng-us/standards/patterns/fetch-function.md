@@ -3,7 +3,7 @@ title: Fetch function (Query Object, Facade)
 audience: developer
 category: standards
 order: 315
-summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 351 instances in Exponential.
+summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 352 instances in Exponential.
 keywords: design pattern, fetch-function, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 351 |
+| Instances | 352 |
 | Recognized by | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
 | Extension point | function_definition.php in the module directory of an extension (module.ini ModuleRepositories[]). |
 
@@ -195,7 +195,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 |---|---|---|---|---|
 | `ezpLanguageSwitcherFunctionCollection` | class | `kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php:14` | – | – |
 
-## Fetch functions (313)
+## Fetch functions (314)
 
 ### extension/cjw_newsletter (16)
 
@@ -400,7 +400,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'xrowextract', 'schedule_alerts' )` | `XrowExtractFunctionCollection::fetchScheduleAlerts()` | `extension/xrowextract/modules/xrowextract/function_definition.php:10` |
 | `fetch( 'xrowextract', 'requirement_notices' )` | `XrowExtractFunctionCollection::fetchRequirementNotices()` | `extension/xrowextract/modules/xrowextract/function_definition.php:17` |
 
-### kernel/modules (179)
+### kernel/modules (180)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
@@ -460,36 +460,37 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'content', 'contentobject_attributes' )` | `eZContentFunctionCollection::contentobjectAttributes()` | `kernel/content/function_definition.php:723` |
 | `fetch( 'content', 'bookmarks' )` | `eZContentFunctionCollection::fetchBookmarks()` | `kernel/content/function_definition.php:737` |
 | `fetch( 'content', 'bookmark_rows' )` | `eZContentFunctionCollection::fetchBookmarkRows()` | `kernel/content/function_definition.php:751` |
-| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:761` |
-| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:768` |
-| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:775` |
-| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:782` |
-| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:816` |
-| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:838` |
-| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:864` |
-| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:875` |
-| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:889` |
-| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:919` |
-| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:929` |
-| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:947` |
-| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:962` |
-| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1008` |
-| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1048` |
-| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1073` |
-| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1081` |
-| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1106` |
-| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1114` |
-| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1124` |
-| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1173` |
-| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1190` |
-| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1234` |
-| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1254` |
-| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1261` |
-| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1275` |
-| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1285` |
-| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1302` |
-| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1321` |
-| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1330` |
+| `fetch( 'content', 'view_bookmark' )` | `eZContentFunctionCollection::fetchViewBookmark()` | `kernel/content/function_definition.php:761` |
+| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:774` |
+| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:781` |
+| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:788` |
+| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:795` |
+| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:829` |
+| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:851` |
+| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:877` |
+| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:888` |
+| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:902` |
+| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:932` |
+| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:942` |
+| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:960` |
+| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:975` |
+| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1021` |
+| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1061` |
+| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1086` |
+| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1094` |
+| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1119` |
+| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1127` |
+| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1137` |
+| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1186` |
+| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1203` |
+| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1247` |
+| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1267` |
+| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1274` |
+| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1288` |
+| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1298` |
+| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1315` |
+| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1334` |
+| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1343` |
 | `fetch( 'datatable', 'list' )` | `expDataTableFunctionCollection::fetchList()` | `kernel/datatable/function_definition.php:13` |
 | `fetch( 'datatable', 'count' )` | `expDataTableFunctionCollection::fetchCount()` | `kernel/datatable/function_definition.php:23` |
 | `fetch( 'datatable', 'row' )` | `expDataTableFunctionCollection::fetchRow()` | `kernel/datatable/function_definition.php:30` |

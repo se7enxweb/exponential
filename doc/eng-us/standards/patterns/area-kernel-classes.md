@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (214)
+## Classes (215)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -26,6 +26,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expBenchmarkKernel` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbenchmarkkernel.php:29` | The in-process side of exp:benchmark: what the kernel spends on the parts of a page, without HTTP, a web server or a response cache in between. |
 | `expBenchmarkMicro` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbenchmarkmicro.php:33` | The micro mode of exp:benchmark: pure-PHP hot paths of the kernel, timed in this process without HTTP, a web server or a database, so it runs on a CI… |
 | `expBookmarkPage` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbookmarkpage.php:18` | What the bookmark page (content/bookmark) shows, worked out from plain arrays: the folders with their counts, which bookmarks a folder, a search and… |
+| `expBookmarkView` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/expbookmarkview.php:39` | A bookmark of a system page: a page of a module view (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) instead of a node. |
 | `expCacheCatalogue` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expcachecatalogue.php:22` | The caches of Setup › Caches, described for a person: what each holds, its id and tags, its directory, its size and number of files, when it was last… |
 | `expCacheManager` | class | [Facade / service](facade.md) | `kernel/classes/expcachemanager.php:30` | Everything Setup › Cache (kernel/setup/cache.php) can do, as functions that return what happened instead of setting template variables, so the admini… |
 | `expCacheWarm` | class | [Utility (static helper)](utility.md) | `kernel/classes/expcachewarm.php:28` | Keeps the response cache full, so that no visitor is the one who pays for a page to be rendered. |

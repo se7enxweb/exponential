@@ -420,16 +420,16 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `section/assign` | Class, Section, Owner, NewSection | `kernel/section/module.php:79` |
 | `section/edit` | – | `kernel/section/module.php:83` |
 | `section/view` | – | `kernel/section/module.php:84` |
-| `setup/administrate` | – | `kernel/setup/module.php:475` |
-| `setup/install` | – | `kernel/setup/module.php:476` |
-| `setup/logs` | – | `kernel/setup/module.php:478` |
-| `setup/managelogs` | – | `kernel/setup/module.php:479` |
-| `setup/unmasklogs` | – | `kernel/setup/module.php:480` |
-| `setup/managecache` | – | `kernel/setup/module.php:481` |
-| `setup/managecronjobs` | – | `kernel/setup/module.php:482` |
-| `setup/preload` | – | `kernel/setup/module.php:483` |
-| `setup/setup` | – | `kernel/setup/module.php:484` |
-| `setup/system_info` | – | `kernel/setup/module.php:485` |
+| `setup/administrate` | – | `kernel/setup/module.php:485` |
+| `setup/install` | – | `kernel/setup/module.php:486` |
+| `setup/logs` | – | `kernel/setup/module.php:488` |
+| `setup/managelogs` | – | `kernel/setup/module.php:489` |
+| `setup/unmasklogs` | – | `kernel/setup/module.php:490` |
+| `setup/managecache` | – | `kernel/setup/module.php:491` |
+| `setup/managecronjobs` | – | `kernel/setup/module.php:492` |
+| `setup/preload` | – | `kernel/setup/module.php:493` |
+| `setup/setup` | – | `kernel/setup/module.php:494` |
+| `setup/system_info` | – | `kernel/setup/module.php:495` |
 | `shop/setup` | – | `kernel/shop/module.php:350` |
 | `shop/administrate` | – | `kernel/shop/module.php:351` |
 | `shop/buy` | – | `kernel/shop/module.php:352` |
@@ -437,15 +437,15 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:354` |
 | `state/administrate` | – | `kernel/state/module.php:132` |
 | `state/assign` | Class, Section, Owner, Group, Node, Subtree | `kernel/state/module.php:134` |
-| `user/login` | SiteAccess | `kernel/user/module.php:195` |
-| `user/password` | – | `kernel/user/module.php:196` |
-| `user/preferences` | – | `kernel/user/module.php:197` |
-| `user/register` | – | `kernel/user/module.php:198` |
-| `user/selfedit` | – | `kernel/user/module.php:199` |
-| `user/activation` | – | `kernel/user/module.php:200` |
-| `user/hygiene` | – | `kernel/user/module.php:201` |
-| `user/deactivate` | – | `kernel/user/module.php:202` |
-| `user/sessions` | – | `kernel/user/module.php:204` |
+| `user/login` | SiteAccess | `kernel/user/module.php:204` |
+| `user/password` | – | `kernel/user/module.php:205` |
+| `user/preferences` | – | `kernel/user/module.php:206` |
+| `user/register` | – | `kernel/user/module.php:207` |
+| `user/selfedit` | – | `kernel/user/module.php:208` |
+| `user/activation` | – | `kernel/user/module.php:209` |
+| `user/hygiene` | – | `kernel/user/module.php:210` |
+| `user/deactivate` | – | `kernel/user/module.php:211` |
+| `user/sessions` | – | `kernel/user/module.php:213` |
 
 ### kernel/private (1)
 

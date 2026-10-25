@@ -3,7 +3,7 @@ title: Strategy / handler
 audience: developer
 category: standards
 order: 324
-summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 379 instances in Exponential.
+summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 381 instances in Exponential.
 keywords: design pattern, strategy-handler, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 379 |
+| Instances | 381 |
 | Recognized by | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | Extension point | The INI setting that names the handler (see the INI plugin points page). |
 
@@ -639,6 +639,15 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `eZFilePackageHandler` | class extends eZPackageHandler | `kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php:18` | – | settings/package.ini [PackageSettings] HandlerAlias[ezdesign]; settings/package.ini [PackageSettings] HandlerAlias[ezfile]; settings/package.ini [PackageSettings] HandlerAlias[ezini]; settings/package.ini [PackageSettings] HandlerAlias[eztemplate]; settings/package.ini [PackageSettings] HandlerAlias[ezthumbnail] |
 | `eZINIAddonPackageHandler` | class extends eZPackageHandler | `kernel/classes/packagehandlers/eziniaddon/eziniaddonpackagehandler.php:18` | – | settings/package.ini [PackageSettings] HandlerAlias[eziniaddon] |
 | `eZInstallScriptPackageHandler` | class extends eZPackageHandler | `kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php:19` | – | settings/package.ini [PackageSettings] HandlerAlias[ezinstallscript] |
+
+### kernel/classes/reauth (2)
+
+[All patterns of kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expReauthCodeHandler` | interface | `kernel/classes/reauth/expreauthcodehandler.php:14` | A class that checks the code of a two-step sign-in method for "Verify it's you" (expReauth). | – |
+| `expReauthTotpCode` | class | `kernel/classes/reauth/expreauthtotpcode.php:19` | "Verify it's you" with the code of an authenticator app set up in sevenx_authentication_2fa (when that extension is active): the account's TOTP secre… | settings/site.ini [ReauthSettings] CodeHandlers[] |
 
 ### kernel/classes/shopaccounthandlers (4)
 

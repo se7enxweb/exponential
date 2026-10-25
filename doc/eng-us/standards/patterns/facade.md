@@ -3,7 +3,7 @@ title: Facade / service
 audience: developer
 category: standards
 order: 330
-summary: One simple entry point in front of a subsystem, or a service class that holds the operations of one domain. 39 instances in Exponential.
+summary: One simple entry point in front of a subsystem, or a service class that holds the operations of one domain. 40 instances in Exponential.
 keywords: design pattern, facade, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ One simple entry point in front of a subsystem, or a service class that holds th
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 39 |
+| Instances | 40 |
 | Recognized by | Class name ends in Facade, Service, Manager, API or Api. |
 
 ## Classes by area
@@ -176,6 +176,14 @@ One simple entry point in front of a subsystem, or a service class that holds th
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expMailPreferencesService` | class | `kernel/classes/mailpreferences/expmailpreferencesservice.php:18` | The flows around the preferences: the double opt-in mail and its confirmation, the one-click unsubscribe, "send me a link" for people without login,… | settings/mailpreferences.ini [GateSettings] EssentialSenders[] |
+
+### kernel/classes/passkey (1)
+
+[All patterns of kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expPasskeyService` | class | `kernel/classes/passkey/exppasskeyservice.php:32` | The passkey ceremonies of the web pages (doc/eng-us/guides/passkeys.md): | – |
 
 ### kernel/private (2)
 

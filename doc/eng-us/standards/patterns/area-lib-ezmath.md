@@ -2,7 +2,7 @@
 title: Patterns in lib/ezmath
 audience: developer
 category: standards
-order: 544
+order: 547
 summary: Every class, view, fetch function, operator and plugin point of lib/ezmath with its design patterns.
 keywords: lib/ezmath, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/cronjobs
 audience: developer
 category: standards
-order: 527
+order: 530
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/cronjobs with its design patterns.
 keywords: kernel/private/classes/cronjobs, design patterns, classes, extension points
 type: catalogue

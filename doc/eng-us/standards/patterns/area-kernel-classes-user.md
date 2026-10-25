@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/user
 audience: developer
 category: standards
-order: 518
+order: 520
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/user with its design patterns.
 keywords: kernel/classes/user, design patterns, classes, extension points
 type: catalogue

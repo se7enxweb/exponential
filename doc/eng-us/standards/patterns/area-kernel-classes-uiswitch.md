@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/uiswitch
 audience: developer
 category: standards
-order: 517
+order: 519
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/uiswitch with its design patterns.
 keywords: kernel/classes/uiswitch, design patterns, classes, extension points
 type: catalogue

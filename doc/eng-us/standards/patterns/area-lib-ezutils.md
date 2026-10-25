@@ -2,7 +2,7 @@
 title: Patterns in lib/ezutils
 audience: developer
 category: standards
-order: 549
+order: 552
 summary: Every class, view, fetch function, operator and plugin point of lib/ezutils with its design patterns.
 keywords: lib/ezutils, design patterns, classes, extension points
 type: catalogue

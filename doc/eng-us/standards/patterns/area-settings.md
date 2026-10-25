@@ -2,7 +2,7 @@
 title: Patterns in settings
 audience: developer
 category: standards
-order: 550
+order: 553
 summary: Every class, view, fetch function, operator and plugin point of settings with its design patterns.
 keywords: settings, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `settings` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## INI plugin points (252)
+## INI plugin points (253)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -134,13 +134,14 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[DatabaseSettings] ImplementationAlias[mongodb]` | `expMongoDB` | `settings/site.ini:142` |
 | `[URLTranslator] FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `settings/site.ini:593` |
 | `[SearchSettings] SearchEngine` | `eZSearchEngine` | `settings/site.ini:795` |
-| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1335` |
-| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1625` |
-| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:1952` |
-| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:1961` |
-| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:1992` |
-| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:1993` |
-| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:1994` |
+| `[ReauthSettings] CodeHandlers[]` | `expReauthTotpCode` | `settings/site.ini:1185` |
+| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1480` |
+| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1770` |
+| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:2097` |
+| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:2106` |
+| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:2137` |
+| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:2138` |
+| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:2139` |
 | `[Column_parentnodeid] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:172` |
 | `[Column_depth] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:183` |
 | `[Column_pathstring] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:194` |

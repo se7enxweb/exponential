@@ -2,7 +2,7 @@
 title: Patterns in kernel/private
 audience: developer
 category: standards
-order: 523
+order: 526
 summary: Every class, view, fetch function, operator and plugin point of kernel/private with its design patterns.
 keywords: kernel/private, design patterns, classes, extension points
 type: catalogue
@@ -236,7 +236,7 @@ Every class, interface and trait of `kernel/private` with the patterns it was re
 
 | Event | Kind | Called in |
 |---|---|---|
-| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1653` |
-| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1778` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1658` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1783` |
 | `response/preoutput` | filter | `kernel/private/classes/global_functions.php:83` |
 | `response/output` | filter | `kernel/private/classes/global_functions.php:102` |

@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/services
 audience: developer
 category: standards
-order: 532
+order: 535
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/services with its design patterns.
 keywords: kernel/private/classes/services, design patterns, classes, extension points
 type: catalogue

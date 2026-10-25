@@ -3,7 +3,7 @@ title: Interface (contract)
 audience: developer
 category: standards
 order: 326
-summary: A contract that implementations follow; code depends on the interface, not on a class. 95 instances in Exponential.
+summary: A contract that implementations follow; code depends on the interface, not on a class. 96 instances in Exponential.
 keywords: design pattern, interface, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A contract that implementations follow; code depends on the interface, not on a 
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 95 |
+| Instances | 96 |
 | Recognized by | Every interface. |
 | Extension point | Implement the interface and register the class where the interface is used. |
 
@@ -252,6 +252,14 @@ A contract that implementations follow; code depends on the interface, not on a 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expMailCategoryHandler` | interface | `kernel/classes/mailpreferences/expmailcategoryhandler.php:26` | The optional PHP class of a category ([Category_] HandlerClass): it reads data that existed before the preference system (subtree notifications, dige… | – |
+
+### kernel/classes/reauth (1)
+
+[All patterns of kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expReauthCodeHandler` | interface | `kernel/classes/reauth/expreauthcodehandler.php:14` | A class that checks the code of a two-step sign-in method for "Verify it's you" (expReauth). | – |
 
 ### kernel/classes/requestclassifier (2)
 

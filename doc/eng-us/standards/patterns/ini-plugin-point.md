@@ -3,7 +3,7 @@ title: INI plugin point (extension point)
 audience: developer
 category: standards
 order: 338
-summary: A setting that names the class the kernel uses for a job, so an extension or a site can replace or add one without changing code. 1372 instances in Exponential.
+summary: A setting that names the class the kernel uses for a job, so an extension or a site can replace or add one without changing code. 1374 instances in Exponential.
 keywords: design pattern, ini-plugin-point, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 1372 |
+| Instances | 1374 |
 | Recognized by | A setting of a settings/*.ini file (or an extension's) whose value is the name of a class of the catalogue. |
 | Extension point | Set the setting in an extension's settings/FILE.ini.append.php or in settings/override/. |
 
@@ -836,6 +836,14 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `eZContentObjectPackageInstaller` | class extends eZPackageInstallationHandler | `kernel/classes/packageinstallers/ezcontentobject/ezcontentobjectpackageinstaller.php:18` | – | settings/package.ini [InstallerSettings] HandlerAlias[ezcontentobject] |
 | `eZInstallScriptPackageInstaller` | class extends eZPackageInstallationHandler | `kernel/classes/packageinstallers/ezinstallscript/ezinstallscriptpackageinstaller.php:17` | – | settings/package.ini [InstallerSettings] HandlerAlias[ezinstallscript] |
 
+### kernel/classes/reauth (1)
+
+[All patterns of kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expReauthTotpCode` | class | `kernel/classes/reauth/expreauthtotpcode.php:19` | "Verify it's you" with the code of an authenticator app set up in sevenx_authentication_2fa (when that extension is active): the account's TOTP secre… | settings/site.ini [ReauthSettings] CodeHandlers[] |
+
 ### kernel/classes/subitems (12)
 
 [All patterns of kernel/classes/subitems](area-kernel-classes-subitems.md)
@@ -997,7 +1005,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `eZSendmailTransport` | class extends eZMailTransport | `lib/ezutils/classes/ezsendmailtransport.php:20` | – | settings/site.ini [MailSettings] TransportAlias[sendmail] |
 | `eZSMTPTransport` | class extends eZMailTransport | `lib/ezutils/classes/ezsmtptransport.php:18` | – | settings/site.ini [MailSettings] TransportAlias[smtp] |
 
-## INI plugin points (840)
+## INI plugin points (841)
 
 ### extension/AdminAid (18)
 
@@ -1782,7 +1790,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 |---|---|---|
 | `[SolrFieldMapSettings] CustomMap[xrowmetadata]` | `ezfSolrDocumentFieldxrowMetadata` | `extension/xrowmetadata/settings/ezfind.ini.append.php:4` |
 
-### settings (252)
+### settings (253)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -1901,13 +1909,14 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `[DatabaseSettings] ImplementationAlias[mongodb]` | `expMongoDB` | `settings/site.ini:142` |
 | `[URLTranslator] FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `settings/site.ini:593` |
 | `[SearchSettings] SearchEngine` | `eZSearchEngine` | `settings/site.ini:795` |
-| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1335` |
-| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1625` |
-| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:1952` |
-| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:1961` |
-| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:1992` |
-| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:1993` |
-| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:1994` |
+| `[ReauthSettings] CodeHandlers[]` | `expReauthTotpCode` | `settings/site.ini:1185` |
+| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1480` |
+| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1770` |
+| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:2097` |
+| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:2106` |
+| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:2137` |
+| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:2138` |
+| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:2139` |
 | `[Column_parentnodeid] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:172` |
 | `[Column_depth] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:183` |
 | `[Column_pathstring] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:194` |

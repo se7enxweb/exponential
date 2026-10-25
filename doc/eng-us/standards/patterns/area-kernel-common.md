@@ -2,7 +2,7 @@
 title: Patterns in kernel/common
 audience: developer
 category: standards
-order: 521
+order: 524
 summary: Every class, view, fetch function, operator and plugin point of kernel/common with its design patterns.
 keywords: kernel/common, design patterns, classes, extension points
 type: catalogue

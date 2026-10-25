@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/requestrules
 audience: developer
 category: standards
-order: 530
+order: 533
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/requestrules with its design patterns.
 keywords: kernel/private/classes/requestrules, design patterns, classes, extension points
 type: catalogue

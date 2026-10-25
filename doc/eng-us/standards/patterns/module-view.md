@@ -3,7 +3,7 @@ title: Module view (Page Controller)
 audience: developer
 category: standards
 order: 316
-summary: Each view is a page controller: the front controller dispatches /MODULE/VIEW to the view's script, which reads the request and renders a template. 1004 instances in Exponential.
+summary: Each view is a page controller: the front controller dispatches /MODULE/VIEW to the view's script, which reads the request and renders a template. 989 instances in Exponential.
 keywords: design pattern, module-view, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 1004 |
+| Instances | 989 |
 | Recognized by | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
 | Extension point | module.ini [ModuleSettings] ExtensionRepositories[] and ModuleList[]; views declare the policy functions they need. |
 
@@ -665,7 +665,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `Exponential\View\Kernel\Workflow\View` | class extends ModuleView | `kernel/private/classes/views/workflow/view.php:21` | The code of kernel/workflow/view.php, moved into a class (#207 stage 1). | – |
 | `Exponential\View\Kernel\Workflow\Workflowlist` | class extends ModuleView | `kernel/private/classes/views/workflow/workflowlist.php:56` | Removes a workflow and everything that belongs to it. | – |
 
-## Module views (545)
+## Module views (530)
 
 ### extension/AdminAid (6)
 
@@ -1140,7 +1140,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `/sitemaps/index` | `index.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:9` |
 | `/sitemaps/robots` | `robots.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:12` |
 
-### kernel/modules (244)
+### kernel/modules (229)
 
 | View | Script | Policy functions | Defined in |
 |---|---|---|---|
@@ -1291,22 +1291,6 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:21` |
 | `/setup/init` | `ezsetup.php` | install | `kernel/setup/module.php:18` |
 | `/setup/cache` | `cache.php` | managecache | `kernel/setup/module.php:25` |
-| `/setup/cronjobsstream` | `cronjobsstream.php` | managecronjobs | `kernel/setup/module.php:313` |
-| `/setup/staticcachestream` | `staticcachestream.php` | managecache | `kernel/setup/module.php:325` |
-| `/setup/systemupgrade` | `systemupgrade.php` | setup | `kernel/setup/module.php:336` |
-| `/setup/logs` | `logs.php` | logs | `kernel/setup/module.php:352` |
-| `/setup/logsmanage` | `logsmanage.php` | managelogs | `kernel/setup/module.php:367` |
-| `/setup/logshealth` | `logshealth.php` | logs | `kernel/setup/module.php:377` |
-| `/setup/logsdigest` | `logsdigest.php` | logs | `kernel/setup/module.php:386` |
-| `/setup/logsfeed` | `logsfeed.php` | logs | `kernel/setup/module.php:394` |
-| `/setup/logsaction` | `logsaction.php` | logs | `kernel/setup/module.php:407` |
-| `/setup/toolbarlist` | `toolbarlist.php` | setup | `kernel/setup/module.php:416` |
-| `/setup/toolbar` | `toolbar.php` | setup | `kernel/setup/module.php:422` |
-| `/setup/menuconfig` | `menuconfig.php` | setup | `kernel/setup/module.php:430` |
-| `/setup/templatelist` | `templatelist.php` | setup | `kernel/setup/module.php:438` |
-| `/setup/templateview` | `templateview.php` | setup | `kernel/setup/module.php:445` |
-| `/setup/templateedit` | `templateedit.php` | setup | `kernel/setup/module.php:455` |
-| `/setup/templatecreate` | `templatecreate.php` | setup | `kernel/setup/module.php:464` |
 | `/shop/add` | `add.php` | buy | `kernel/shop/module.php:14` |
 | `/shop/orderview` | `orderview.php` | buy | `kernel/shop/module.php:20` |
 | `/shop/orderreceipt` | `orderreceipt.php` | – | `kernel/shop/module.php:28` |
@@ -1359,17 +1343,18 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `/user/setting` | `setting.php` | preferences | `kernel/user/module.php:34` |
 | `/user/preferences` | `preferences.php` | login | `kernel/user/module.php:40` |
 | `/user/megamenu` | `megamenu.php` | login | `kernel/user/module.php:52` |
-| `/user/password` | `password.php` | password | `kernel/user/module.php:58` |
-| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:65` |
-| `/user/edit` | `edit.php` | login | `kernel/user/module.php:76` |
-| `/user/register` | `register.php` | register | `kernel/user/module.php:86` |
-| `/user/activate` | `activate.php` | login | `kernel/user/module.php:96` |
-| `/user/success` | `success.php` | register | `kernel/user/module.php:103` |
-| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:110` |
-| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:135` |
-| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:148` |
-| `/user/registration` | `registration.php` | login | `kernel/user/module.php:161` |
-| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:178` |
+| `/user/passkeys` | `passkeys.php` | login | `kernel/user/module.php:61` |
+| `/user/password` | `password.php` | password | `kernel/user/module.php:67` |
+| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:74` |
+| `/user/edit` | `edit.php` | login | `kernel/user/module.php:85` |
+| `/user/register` | `register.php` | register | `kernel/user/module.php:95` |
+| `/user/activate` | `activate.php` | login | `kernel/user/module.php:105` |
+| `/user/success` | `success.php` | register | `kernel/user/module.php:112` |
+| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:119` |
+| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:144` |
+| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:157` |
+| `/user/registration` | `registration.php` | login | `kernel/user/module.php:170` |
+| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:187` |
 | `/visual/toolbarlist` | `toolbarlist.php` | – | `kernel/visual/module.php:15` |
 | `/visual/toolbar` | `toolbar.php` | – | `kernel/visual/module.php:20` |
 | `/visual/menuconfig` | `menuconfig.php` | – | `kernel/visual/module.php:33` |

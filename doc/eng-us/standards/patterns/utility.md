@@ -3,7 +3,7 @@ title: Utility (static helper)
 audience: developer
 category: standards
 order: 337
-summary: A class of static functions grouped by subject; no instances. 716 instances in Exponential.
+summary: A class of static functions grouped by subject; no instances. 725 instances in Exponential.
 keywords: design pattern, utility, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class of static functions grouped by subject; no instances.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 716 |
+| Instances | 725 |
 | Recognized by | A concrete class whose methods are all static (at least two). |
 
 ## Classes by area
@@ -740,7 +740,7 @@ A class of static functions grouped by subject; no instances.
 | `xrowSitemapTools` | class | `extension/xrowmetadata/classes/xrowsitemaptools.php:3` | – | – |
 | `xrowSiteUpdater` | class | `extension/xrowmetadata/classes/xrowsiteupdater.php:3` | – | – |
 
-### kernel/classes (87)
+### kernel/classes (88)
 
 [All patterns of kernel/classes](area-kernel-classes.md)
 
@@ -753,6 +753,7 @@ A class of static functions grouped by subject; no instances.
 | `expBenchmarkKernel` | class | `kernel/classes/expbenchmarkkernel.php:29` | The in-process side of exp:benchmark: what the kernel spends on the parts of a page, without HTTP, a web server or a response cache in between. | – |
 | `expBenchmarkMicro` | class | `kernel/classes/expbenchmarkmicro.php:33` | The micro mode of exp:benchmark: pure-PHP hot paths of the kernel, timed in this process without HTTP, a web server or a database, so it runs on a CI… | – |
 | `expBookmarkPage` | class | `kernel/classes/expbookmarkpage.php:18` | What the bookmark page (content/bookmark) shows, worked out from plain arrays: the folders with their counts, which bookmarks a folder, a search and… | – |
+| `expBookmarkView` | class extends eZPersistentObject | `kernel/classes/expbookmarkview.php:39` | A bookmark of a system page: a page of a module view (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) instead of a node. | – |
 | `expCacheWarm` | class | `kernel/classes/expcachewarm.php:28` | Keeps the response cache full, so that no visitor is the one who pays for a page to be rendered. | – |
 | `expCollaborationGroupManager` | class | `kernel/classes/expcollaborationgroupmanager.php:14` | Creates, renames and deletes the collaboration groups of one user and moves items between them. | – |
 | `expCollaborationInbox` | class | `kernel/classes/expcollaborationinbox.php:15` | The collaboration summary as an inbox: every item of the current user with its state (waiting, approved, denied), its role for the user (approver or… | – |
@@ -1031,6 +1032,14 @@ A class of static functions grouped by subject; no instances.
 | `eZNotificationEventFilter` | class | `kernel/classes/notification/eznotificationeventfilter.php:17` | – | – |
 | `eZNotificationSchedule` | class | `kernel/classes/notification/eznotificationschedule.php:18` | – | – |
 
+### kernel/classes/passkey (1)
+
+[All patterns of kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expPasskeySchema` | class | `kernel/classes/passkey/exppasskeyschema.php:17` | The exppasskey table on any engine: whether it exists, and creating it from its definition in share/db_schema.dba through the engine's schema handler… | – |
+
 ### kernel/classes/pdfexport (4)
 
 [All patterns of kernel/classes/pdfexport](area-kernel-classes-pdfexport.md)
@@ -1041,6 +1050,16 @@ A class of static functions grouped by subject; no instances.
 | `expPDFExportForm` | class | `kernel/classes/pdfexport/exppdfexportform.php:19` | Reads and checks the form of pdf/edit. | – |
 | `expPDFExportGenerator` | class | `kernel/classes/pdfexport/exppdfexportgenerator.php:27` | Generates the PDF of an export: into its stored file, or into a temporary file that is then sent and removed. | – |
 | `expPDFExportInfo` | class | `kernel/classes/pdfexport/exppdfexportinfo.php:19` | What the PDF export pages (pdf/list and its removal confirmation) say about an export beyond its row: how it is produced, whether its source node sti… | – |
+
+### kernel/classes/reauth (3)
+
+[All patterns of kernel/classes/reauth](area-kernel-classes-reauth.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expReauth` | class | `kernel/classes/reauth/expreauth.php:37` | "Verify it's you" (doc/eng-us/guides/verify-its-you.md): before a sensitive action the signed-in user confirms who they are again, with their passwor… | – |
+| `expReauthRules` | class | `kernel/classes/reauth/expreauthrules.php:28` | The rules of "Verify it's you" (site.ini [ReauthSettings], [ReauthGroup_] Rules[]) and the decision whether a request matches one (doc/eng-us/guides/… | – |
+| `expReauthSettings` | class | `kernel/classes/reauth/expreauthsettings.php:18` | The settings of "Verify it's you" as the page setup/reauth edits them (doc/eng-us/guides/verify-its-you.md): the switch of the whole feature, the min… | – |
 
 ### kernel/classes/requestlog (1)
 
@@ -1120,6 +1139,17 @@ A class of static functions grouped by subject; no instances.
 | `expUserApproval` | class | `kernel/classes/user/expuserapproval.php:30` | Approval of new accounts in chosen user groups (doc/eng-us/bc/6.0/user-account-approval.md): the workflow event "Approve user accounts" (expUserAppro… | – |
 | `expUserDeactivation` | class | `kernel/classes/user/expuserdeactivation.php:36` | "Deactivate and move" and "Reactivate and move back": instead of removing a user account (users never go to the trash, so removing one cannot be undo… | – |
 | `expUserSessionTracker` | class | `kernel/classes/user/expusersessiontracker.php:44` | The signed-in sessions of a user ("Your devices", user/sessions): every sign-in gets a row in expuser_session (expUserSession), the user sees where t… | – |
+
+### kernel/classes/webauthn (4)
+
+[All patterns of kernel/classes/webauthn](area-kernel-classes-webauthn.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expWebAuthn` | class | `kernel/classes/webauthn/expwebauthn.php:34` | The server side of WebAuthn (W3C Web Authentication, Level 2/3) for passkeys: the options a browser is given, and the checks of what it sends back wh… | – |
+| `expWebAuthnCbor` | class | `kernel/classes/webauthn/expwebauthncbor.php:20` | The part of CBOR (RFC 8949) that WebAuthn needs: decoding the attestation object of a new passkey and the COSE public key inside its authenticator da… | – |
+| `expWebAuthnChallenge` | class | `kernel/classes/webauthn/expwebauthnchallenge.php:19` | The WebAuthn challenges a session was given: each request for options gets a new random challenge, kept on the server (in the session) with what it i… | – |
+| `expWebAuthnCose` | class | `kernel/classes/webauthn/expwebauthncose.php:26` | The public key of a passkey as COSE (RFC 9052/9053) and the check of a signature made with it. | – |
 
 ### kernel/common (2)
 

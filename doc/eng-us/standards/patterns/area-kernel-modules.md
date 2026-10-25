@@ -2,7 +2,7 @@
 title: Patterns in kernel/modules
 audience: developer
 category: standards
-order: 522
+order: 525
 summary: Every class, view, fetch function, operator and plugin point of kernel/modules with its design patterns.
 keywords: kernel/modules, design patterns, classes, extension points
 type: catalogue
@@ -98,7 +98,7 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `eZWorkflowFunctionCollection` | class | [Fetch function (Query Object, Facade)](fetch-function.md) | `kernel/workflow/ezworkflowfunctioncollection.php:20` | – |
 | `eZWorkflowFunctions` | class | [Utility (static helper)](utility.md) | `kernel/workflow/ezworkflowfunctions.php:14` | – |
 
-## Module views (244)
+## Module views (229)
 
 | View | Script | Policy functions | Defined in |
 |---|---|---|---|
@@ -249,22 +249,6 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `/settings/edit` | `edit.php` | – | `kernel/settings/module.php:21` |
 | `/setup/init` | `ezsetup.php` | install | `kernel/setup/module.php:18` |
 | `/setup/cache` | `cache.php` | managecache | `kernel/setup/module.php:25` |
-| `/setup/cronjobsstream` | `cronjobsstream.php` | managecronjobs | `kernel/setup/module.php:313` |
-| `/setup/staticcachestream` | `staticcachestream.php` | managecache | `kernel/setup/module.php:325` |
-| `/setup/systemupgrade` | `systemupgrade.php` | setup | `kernel/setup/module.php:336` |
-| `/setup/logs` | `logs.php` | logs | `kernel/setup/module.php:352` |
-| `/setup/logsmanage` | `logsmanage.php` | managelogs | `kernel/setup/module.php:367` |
-| `/setup/logshealth` | `logshealth.php` | logs | `kernel/setup/module.php:377` |
-| `/setup/logsdigest` | `logsdigest.php` | logs | `kernel/setup/module.php:386` |
-| `/setup/logsfeed` | `logsfeed.php` | logs | `kernel/setup/module.php:394` |
-| `/setup/logsaction` | `logsaction.php` | logs | `kernel/setup/module.php:407` |
-| `/setup/toolbarlist` | `toolbarlist.php` | setup | `kernel/setup/module.php:416` |
-| `/setup/toolbar` | `toolbar.php` | setup | `kernel/setup/module.php:422` |
-| `/setup/menuconfig` | `menuconfig.php` | setup | `kernel/setup/module.php:430` |
-| `/setup/templatelist` | `templatelist.php` | setup | `kernel/setup/module.php:438` |
-| `/setup/templateview` | `templateview.php` | setup | `kernel/setup/module.php:445` |
-| `/setup/templateedit` | `templateedit.php` | setup | `kernel/setup/module.php:455` |
-| `/setup/templatecreate` | `templatecreate.php` | setup | `kernel/setup/module.php:464` |
 | `/shop/add` | `add.php` | buy | `kernel/shop/module.php:14` |
 | `/shop/orderview` | `orderview.php` | buy | `kernel/shop/module.php:20` |
 | `/shop/orderreceipt` | `orderreceipt.php` | – | `kernel/shop/module.php:28` |
@@ -317,17 +301,18 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `/user/setting` | `setting.php` | preferences | `kernel/user/module.php:34` |
 | `/user/preferences` | `preferences.php` | login | `kernel/user/module.php:40` |
 | `/user/megamenu` | `megamenu.php` | login | `kernel/user/module.php:52` |
-| `/user/password` | `password.php` | password | `kernel/user/module.php:58` |
-| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:65` |
-| `/user/edit` | `edit.php` | login | `kernel/user/module.php:76` |
-| `/user/register` | `register.php` | register | `kernel/user/module.php:86` |
-| `/user/activate` | `activate.php` | login | `kernel/user/module.php:96` |
-| `/user/success` | `success.php` | register | `kernel/user/module.php:103` |
-| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:110` |
-| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:135` |
-| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:148` |
-| `/user/registration` | `registration.php` | login | `kernel/user/module.php:161` |
-| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:178` |
+| `/user/passkeys` | `passkeys.php` | login | `kernel/user/module.php:61` |
+| `/user/password` | `password.php` | password | `kernel/user/module.php:67` |
+| `/user/forgotpassword` | `forgotpassword.php` | password | `kernel/user/module.php:74` |
+| `/user/edit` | `edit.php` | login | `kernel/user/module.php:85` |
+| `/user/register` | `register.php` | register | `kernel/user/module.php:95` |
+| `/user/activate` | `activate.php` | login | `kernel/user/module.php:105` |
+| `/user/success` | `success.php` | register | `kernel/user/module.php:112` |
+| `/user/unactivated` | `unactivated.php` | activation | `kernel/user/module.php:119` |
+| `/user/hygiene` | `hygiene.php` | hygiene | `kernel/user/module.php:144` |
+| `/user/deactivate` | `deactivate.php` | deactivate | `kernel/user/module.php:157` |
+| `/user/registration` | `registration.php` | login | `kernel/user/module.php:170` |
+| `/user/sessions` | `sessions.php` | login | `kernel/user/module.php:187` |
 | `/visual/toolbarlist` | `toolbarlist.php` | – | `kernel/visual/module.php:15` |
 | `/visual/toolbar` | `toolbar.php` | – | `kernel/visual/module.php:20` |
 | `/visual/menuconfig` | `menuconfig.php` | – | `kernel/visual/module.php:33` |
@@ -418,16 +403,16 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `section/assign` | Class, Section, Owner, NewSection | `kernel/section/module.php:79` |
 | `section/edit` | – | `kernel/section/module.php:83` |
 | `section/view` | – | `kernel/section/module.php:84` |
-| `setup/administrate` | – | `kernel/setup/module.php:475` |
-| `setup/install` | – | `kernel/setup/module.php:476` |
-| `setup/logs` | – | `kernel/setup/module.php:478` |
-| `setup/managelogs` | – | `kernel/setup/module.php:479` |
-| `setup/unmasklogs` | – | `kernel/setup/module.php:480` |
-| `setup/managecache` | – | `kernel/setup/module.php:481` |
-| `setup/managecronjobs` | – | `kernel/setup/module.php:482` |
-| `setup/preload` | – | `kernel/setup/module.php:483` |
-| `setup/setup` | – | `kernel/setup/module.php:484` |
-| `setup/system_info` | – | `kernel/setup/module.php:485` |
+| `setup/administrate` | – | `kernel/setup/module.php:485` |
+| `setup/install` | – | `kernel/setup/module.php:486` |
+| `setup/logs` | – | `kernel/setup/module.php:488` |
+| `setup/managelogs` | – | `kernel/setup/module.php:489` |
+| `setup/unmasklogs` | – | `kernel/setup/module.php:490` |
+| `setup/managecache` | – | `kernel/setup/module.php:491` |
+| `setup/managecronjobs` | – | `kernel/setup/module.php:492` |
+| `setup/preload` | – | `kernel/setup/module.php:493` |
+| `setup/setup` | – | `kernel/setup/module.php:494` |
+| `setup/system_info` | – | `kernel/setup/module.php:495` |
 | `shop/setup` | – | `kernel/shop/module.php:350` |
 | `shop/administrate` | – | `kernel/shop/module.php:351` |
 | `shop/buy` | – | `kernel/shop/module.php:352` |
@@ -435,17 +420,17 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:354` |
 | `state/administrate` | – | `kernel/state/module.php:132` |
 | `state/assign` | Class, Section, Owner, Group, Node, Subtree | `kernel/state/module.php:134` |
-| `user/login` | SiteAccess | `kernel/user/module.php:195` |
-| `user/password` | – | `kernel/user/module.php:196` |
-| `user/preferences` | – | `kernel/user/module.php:197` |
-| `user/register` | – | `kernel/user/module.php:198` |
-| `user/selfedit` | – | `kernel/user/module.php:199` |
-| `user/activation` | – | `kernel/user/module.php:200` |
-| `user/hygiene` | – | `kernel/user/module.php:201` |
-| `user/deactivate` | – | `kernel/user/module.php:202` |
-| `user/sessions` | – | `kernel/user/module.php:204` |
+| `user/login` | SiteAccess | `kernel/user/module.php:204` |
+| `user/password` | – | `kernel/user/module.php:205` |
+| `user/preferences` | – | `kernel/user/module.php:206` |
+| `user/register` | – | `kernel/user/module.php:207` |
+| `user/selfedit` | – | `kernel/user/module.php:208` |
+| `user/activation` | – | `kernel/user/module.php:209` |
+| `user/hygiene` | – | `kernel/user/module.php:210` |
+| `user/deactivate` | – | `kernel/user/module.php:211` |
+| `user/sessions` | – | `kernel/user/module.php:213` |
 
-## Fetch functions (179)
+## Fetch functions (180)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
@@ -505,36 +490,37 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `fetch( 'content', 'contentobject_attributes' )` | `eZContentFunctionCollection::contentobjectAttributes()` | `kernel/content/function_definition.php:723` |
 | `fetch( 'content', 'bookmarks' )` | `eZContentFunctionCollection::fetchBookmarks()` | `kernel/content/function_definition.php:737` |
 | `fetch( 'content', 'bookmark_rows' )` | `eZContentFunctionCollection::fetchBookmarkRows()` | `kernel/content/function_definition.php:751` |
-| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:761` |
-| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:768` |
-| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:775` |
-| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:782` |
-| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:816` |
-| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:838` |
-| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:864` |
-| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:875` |
-| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:889` |
-| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:919` |
-| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:929` |
-| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:947` |
-| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:962` |
-| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1008` |
-| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1048` |
-| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1073` |
-| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1081` |
-| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1106` |
-| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1114` |
-| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1124` |
-| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1173` |
-| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1190` |
-| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1234` |
-| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1254` |
-| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1261` |
-| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1275` |
-| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1285` |
-| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1302` |
-| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1321` |
-| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1330` |
+| `fetch( 'content', 'view_bookmark' )` | `eZContentFunctionCollection::fetchViewBookmark()` | `kernel/content/function_definition.php:761` |
+| `fetch( 'content', 'bookmark_folders' )` | `eZContentFunctionCollection::fetchBookmarkFolders()` | `kernel/content/function_definition.php:774` |
+| `fetch( 'content', 'recent' )` | `eZContentFunctionCollection::fetchRecent()` | `kernel/content/function_definition.php:781` |
+| `fetch( 'content', 'section_list' )` | `eZContentFunctionCollection::fetchSectionList()` | `kernel/content/function_definition.php:788` |
+| `fetch( 'content', 'tipafriend_top_list' )` | `eZContentFunctionCollection::fetchTipafriendTopList()` | `kernel/content/function_definition.php:795` |
+| `fetch( 'content', 'view_top_list' )` | `eZContentFunctionCollection::fetchMostViewedTopList()` | `kernel/content/function_definition.php:829` |
+| `fetch( 'content', 'collected_info_count' )` | `eZContentFunctionCollection::fetchCollectedInfoCount()` | `kernel/content/function_definition.php:851` |
+| `fetch( 'content', 'collected_info_count_list' )` | `eZContentFunctionCollection::fetchCollectedInfoCountList()` | `kernel/content/function_definition.php:877` |
+| `fetch( 'content', 'collected_info_collection' )` | `eZContentFunctionCollection::fetchCollectedInfoCollection()` | `kernel/content/function_definition.php:888` |
+| `fetch( 'content', 'collected_info_list' )` | `eZContentFunctionCollection::fetchCollectionsList()` | `kernel/content/function_definition.php:902` |
+| `fetch( 'content', 'object_by_attribute' )` | `eZContentFunctionCollection::fetchObjectByAttribute()` | `kernel/content/function_definition.php:932` |
+| `fetch( 'content', 'object_count_by_user_id' )` | `eZContentFunctionCollection::fetchObjectCountByUserID()` | `kernel/content/function_definition.php:942` |
+| `fetch( 'content', 'same_classattribute_node' )` | `eZContentFunctionCollection::fetchSameClassAttributeNodeList()` | `kernel/content/function_definition.php:960` |
+| `fetch( 'content', 'keyword' )` | `eZContentFunctionCollection::fetchKeyword()` | `kernel/content/function_definition.php:975` |
+| `fetch( 'content', 'keyword_count' )` | `eZContentFunctionCollection::fetchKeywordCount()` | `kernel/content/function_definition.php:1021` |
+| `fetch( 'content', 'assigned_nodes' )` | `eZContentFunctionCollection::fetchAssignedNodes()` | `kernel/content/function_definition.php:1061` |
+| `fetch( 'content', 'assigned_node_count' )` | `eZContentFunctionCollection::fetchAssignedNodeCount()` | `kernel/content/function_definition.php:1086` |
+| `fetch( 'content', 'access' )` | `eZContentFunctionCollection::checkAccess()` | `kernel/content/function_definition.php:1094` |
+| `fetch( 'content', 'navigation_parts' )` | `eZContentFunctionCollection::fetchNavigationParts()` | `kernel/content/function_definition.php:1119` |
+| `fetch( 'content', 'navigation_part' )` | `eZContentFunctionCollection::fetchNavigationPart()` | `kernel/content/function_definition.php:1127` |
+| `fetch( 'content', 'related_objects' )` | `eZContentFunctionCollection::fetchRelatedObjects()` | `kernel/content/function_definition.php:1137` |
+| `fetch( 'content', 'related_objects_count' )` | `eZContentFunctionCollection::fetchRelatedObjectsCount()` | `kernel/content/function_definition.php:1186` |
+| `fetch( 'content', 'reverse_related_objects' )` | `eZContentFunctionCollection::fetchReverseRelatedObjects()` | `kernel/content/function_definition.php:1203` |
+| `fetch( 'content', 'reverse_related_objects_count' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsCount()` | `kernel/content/function_definition.php:1247` |
+| `fetch( 'content', 'available_sort_fields' )` | `eZContentFunctionCollection::fetchAvailableSortFieldList()` | `kernel/content/function_definition.php:1267` |
+| `fetch( 'content', 'country_list' )` | `eZContentFunctionCollection::fetchCountryList()` | `kernel/content/function_definition.php:1274` |
+| `fetch( 'content', 'country_groups' )` | `eZContentFunctionCollection::fetchCountryGroups()` | `kernel/content/function_definition.php:1288` |
+| `fetch( 'content', 'related_objects_ids' )` | `eZContentFunctionCollection::fetchRelatedObjectsID()` | `kernel/content/function_definition.php:1298` |
+| `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1315` |
+| `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1334` |
+| `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1343` |
 | `fetch( 'datatable', 'list' )` | `expDataTableFunctionCollection::fetchList()` | `kernel/datatable/function_definition.php:13` |
 | `fetch( 'datatable', 'count' )` | `expDataTableFunctionCollection::fetchCount()` | `kernel/datatable/function_definition.php:23` |
 | `fetch( 'datatable', 'row' )` | `expDataTableFunctionCollection::fetchRow()` | `kernel/datatable/function_definition.php:30` |

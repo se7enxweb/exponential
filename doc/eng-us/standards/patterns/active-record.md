@@ -3,7 +3,7 @@ title: Active Record (eZPersistentObject)
 audience: developer
 category: standards
 order: 310
-summary: A class whose objects are rows of one database table: it describes the table in definition() and loads, stores and removes itself through eZPersistentObject. 231 instances in Exponential.
+summary: A class whose objects are rows of one database table: it describes the table in definition() and loads, stores and removes itself through eZPersistentObject. 234 instances in Exponential.
 keywords: design pattern, active-record, data access, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class whose objects are rows of one database table: it describes the table in 
 | | |
 |---|---|
 | Group | Data access |
-| Instances | 231 |
+| Instances | 234 |
 | Recognized by | Extends eZPersistentObject, directly or through a parent class. |
 | Extension point | A new table: a class that extends eZPersistentObject with a static definition(); schema in the extension's share/db_schema.dba or sql/ENGINE/schema.sql. |
 
@@ -262,12 +262,13 @@ A class whose objects are rows of one database table: it describes the table in 
 | `XrowExtractHistory` | class extends eZPersistentObject | `extension/xrowextract/classes/xrowextracthistory.php:12` | The export history index (table xrowextract_history): one row per run - a background job (started by hand, from the command line or by a schedule) or… | – |
 | `XrowExtractSchedule` | class extends eZPersistentObject | `extension/xrowextract/classes/xrowextractschedule.php:20` | A scheduled export or import (table xrowextract_schedule, created lazily by XrowExtractSchema). | – |
 
-### kernel/classes (65)
+### kernel/classes (66)
 
 [All patterns of kernel/classes](area-kernel-classes.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expBookmarkView` | class extends eZPersistentObject | `kernel/classes/expbookmarkview.php:39` | A bookmark of a system page: a page of a module view (setup/systemupgrade, exphelp/dashboard, audit/console/(user)/14 ...) instead of a node. | – |
 | `eZBasket` | class extends eZPersistentObject | `kernel/classes/ezbasket.php:20` | – | – |
 | `eZCollaborationGroup` | class extends eZPersistentObject | `kernel/classes/ezcollaborationgroup.php:18` | – | – |
 | `eZCollaborationItem` | class extends eZPersistentObject | `kernel/classes/ezcollaborationitem.php:18` | – | – |
@@ -400,6 +401,15 @@ A class whose objects are rows of one database table: it describes the table in 
 | `eZNotificationCollectionItem` | class extends eZPersistentObject | `kernel/classes/notification/eznotificationcollectionitem.php:18` | – | – |
 | `eZNotificationEvent` | class extends eZPersistentObject | `kernel/classes/notification/eznotificationevent.php:17` | – | – |
 | `eZSubtreeNotificationRule` | class extends eZPersistentObject | `kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule.php:17` | – | – |
+
+### kernel/classes/passkey (2)
+
+[All patterns of kernel/classes/passkey](area-kernel-classes-passkey.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expPasskey` | class extends eZPersistentObject | `kernel/classes/passkey/exppasskey.php:22` | A passkey of a user: one row of exppasskey (doc/eng-us/guides/passkeys.md). | – |
+| `expPasskeyLogin` | class extends eZUser | `kernel/classes/passkey/exppasskeylogin.php:16` | Signs in an account whose passkey expPasskeyService checked, through the same housekeeping as every password sign-in (eZUser::loginSucceeded(): last… | – |
 
 ### kernel/classes/secrets (1)
 
