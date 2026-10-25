@@ -6319,7 +6319,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-38f0bbd6ab367bf4c580dfd960e70f3b  doc/eng-us/features/6.0/help-content.md
+01392736a3c1611ae6e3f39e1c71b25b  doc/eng-us/features/6.0/help-content.md
 3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -15178,7 +15178,7 @@ deeaaa21af70d1a936c366b5206d0a47  doc/ger-de/funktionen/6.0/freigabe-von-redakte
 be024ce43b83d098e3f788a3b450d3f9  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 cf3a96964aed0c8e828d7cfd4bded725  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
-5ec9b3e0eb6761c4b754835fde582e2c  doc/ger-de/funktionen/6.0/hilfeinhalte.md
+2856ea21f7fb800fdf6c687c7e620165  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 963b9da2ea59e31f718ce59b040357a5  doc/ger-de/funktionen/6.0/hilfesystem.md
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
@@ -21891,7 +21891,7 @@ d0cacb75ebc33485eb5ff90d9ca42d8f  kernel/classes/help/content/exphelpcontentseed
 23767ec2431bd65741ef795e7429027c  kernel/classes/help/content/exphelpcontentsite.php
 099b521940b6b6e2775ac30c771e0b3e  kernel/classes/help/content/exphelpcontenttables.php
 2c1d5177727b83cbe7b8c3797d88bfc2  kernel/classes/help/content/exphelpcontentvalidator.php
-ebe403dae011507e7c65a944d7489689  kernel/classes/help/content/exphelpcontentworkflow.php
+9d299ae52c50e65bbbe2c6f560908706  kernel/classes/help/content/exphelpcontentworkflow.php
 48e384647599d779d6911558b7547f37  kernel/classes/help/content/exphelpditamarkup.php
 a799ad20f40c5c70a6abbe4b69ff1c17  kernel/classes/help/content/exphelpmanualbuilder.php
 d91399e64d489b89bc4efb1b59e9fa1e  kernel/classes/help/content/exphelpmanualsource.php

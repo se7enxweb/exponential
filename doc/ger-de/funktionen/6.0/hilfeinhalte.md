@@ -270,7 +270,9 @@ Wie im Plan, mit diesen Entscheidungen dort, wo er eine Wahl lässt:
   (`[ContentSettings] PublicAudiences[]`, Standard Visitors); andernfalls und ohne Zielgruppe ist es **intern**
   (`help_internal`). Abbildungen sind öffentlich, sobald ein öffentliches Thema auf sie verweist; Kapitel, sobald ein
   öffentliches Handbuch sie aufführt (direkt oder über Kapitel); das Glossar ist immer intern. Die Ordner sind intern.
-- Die Sektion setzt `check --fix` (und jeder `seed-*`-Lauf danach), **nur am Objekt**, nie an einem Teilbaum.
+- Die Sektion setzt `check --fix` (und jeder `seed-*`-Lauf danach), **nur am Objekt**, nie an einem Teilbaum. Ein
+  Thema erhält die Sektion seiner Zielgruppe außerdem, sobald ihm ein Status von `help_status` zugewiesen wird (Zur
+  Prüfung geben, Freigeben ...), sodass ein neues Thema nie in der Sektion seines Ordners freigegeben wird.
   Wird ein Objekt verschoben, erhält es die Sektion seines neuen Elternknotens: Führen Sie danach `check --fix` aus.
 - `help_status` ist Entwurf (der Standard jedes neuen Objekts), Prüfung, Veröffentlicht. Nur Veröffentlichtes wird
   ausgeliefert. Der erste Status der neuen Gruppe wird einmalig jedem Objekt der Installation zugewiesen (ein INSERT;

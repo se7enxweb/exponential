@@ -113,6 +113,11 @@ class expHelpContentWorkflow
     {
         try
         {
+            // a topic's section follows its audience (as check --fix sets it): a new topic has its folder's section
+            // until then, and must not be released into the wrong one
+            $topic = eZContentObject::fetch( (int)$objectId );
+            if ( $topic instanceof eZContentObject )
+                self::fixTopicSection( $topic );
             $released = expHelpContentEbooks::releasedState();
             if ( !$released instanceof eZContentObjectState || !in_array( (int)$released->attribute( 'id' ), array_map( 'intval', $stateIds ), true ) )
                 return;
@@ -124,6 +129,26 @@ class expHelpContentWorkflow
         {
             eZDebug::writeError( 'The released help_id could not be recorded: ' . $e->getMessage(), __METHOD__ );
         }
+    }
+
+    /**
+     * Sets the section of a topic from its audience, on the object only (as "exp:help:content check --fix" does; the
+     * section is never set by hand). Figures, chapters and manuals depend on other objects and are left to check --fix.
+     *
+     * @param eZContentObject $object
+     * @return bool whether the section changed
+     */
+    public static function fixTopicSection( eZContentObject $object )
+    {
+        if ( !isset( expHelpContentSchema::TOPIC_TYPES[(string)$object->attribute( 'class_identifier' )] ) )
+            return false;
+        $dataMap = $object->attribute( 'data_map' );
+        $audience = isset( $dataMap['audience'] ) ? (array)expHelpContentRepository::attributeValue( $dataMap['audience'] ) : array();
+        $section = eZSection::fetchByIdentifier( expHelpContentSchema::sectionForAudience( $audience ), false );
+        if ( !is_array( $section ) || empty( $section['id'] ) )
+            return false;
+        $installer = new expHelpContentInstaller( array( 'dry_run' => false ) );
+        return $installer->setObjectSection( $object, (int)$section['id'] );
     }
 
     /**

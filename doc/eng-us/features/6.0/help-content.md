@@ -259,7 +259,9 @@ As the plan says, with these decisions where it leaves a choice:
   PublicAudiences[]`, default Visitors); otherwise, and without audience, it is **internal** (`help_internal`).
   Figures are public as soon as one public topic refers to them; chapters as soon as a public manual lists them
   (directly or through chapters); the glossary is always internal. The folders are internal.
-- The section is set by `check --fix` (and after every `seed-*`), on the **object only**, never on a subtree.
+- The section is set by `check --fix` (and after every `seed-*`), on the **object only**, never on a subtree. A
+  topic also gets the section of its audience whenever a state of `help_status` is assigned to it (Send to Review,
+  Release ...), so a new topic is never released in its folder's section.
   Moving an object gives it the section of its new parent: run `check --fix` afterwards.
 - `help_status` is Draft (the default of every new object), Review, Released. Only Released is delivered. The
   first state of the new group is given to every object of the installation once (one INSERT; only help policies
