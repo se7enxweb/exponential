@@ -595,6 +595,38 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( '1' => 10 ), $this->counts() );
     }
 
+    /**
+     * CJ-12b: the log line per batch uses a dot as decimal separator whatever LC_NUMERIC says. With %f a German
+     * locale (config.php calling setlocale( LC_ALL, "de_DE.UTF-8" )) wrote "in 0,01 s, peak 30,0 MB".
+     */
+    public function testWorkerLogLineUsesADotUnderACommaLocale()
+    {
+        $previous = setlocale( LC_NUMERIC, '0' );
+        $comma = setlocale( LC_NUMERIC, 'de_DE.UTF-8', 'de_DE.utf8', 'de_DE', 'German_Germany.1252' );
+        if ( $comma === false || sprintf( '%.1f', 1.5 ) !== '1,5' )
+        {
+            setlocale( LC_NUMERIC, $previous );
+            $this->markTestSkipped( 'no locale with a decimal comma is installed' );
+        }
+        try
+        {
+            $job = $this->create( '/1/2/42/', 10 );
+            // the forked child inherits the comma locale
+            $this->assertSame( 0, $this->runForked( $job->id() ) );
+        }
+        finally
+        {
+            setlocale( LC_NUMERIC, $previous );
+        }
+        $lines = preg_grep( '/^.*batch \d+: /', expContentJob::fetch( $job->id() )->log( 100 ) );
+        $this->assertCount( 4, $lines );
+        foreach ( $lines as $line )
+        {
+            $this->assertMatchesRegularExpression( '/ in \d+\.\d\d s, peak \d+\.\d MB, memory \d+\.\d MB/', $line );
+            $this->assertStringNotContainsString( ',0 MB', $line );
+        }
+    }
+
     /** CJ-13 */
     public function testFailedBatchIsRolledBackAndResumeFinishesOnce()
     {
