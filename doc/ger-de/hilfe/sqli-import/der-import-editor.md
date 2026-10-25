@@ -59,7 +59,7 @@ Media. Jede Karte des Katalogs beschreibt das Format, bietet eine Beispieldatei 
 Schaltfläche **New import**. Das durchgerechnete Beispiel jeder Quelle steht im Handbuch
 (`/exphelp/viewer/ext/sqliimport/ger-de/sources.md` und die Seiten `source-examples-*.md` daneben).
 
-![Der Schritt Quelle des Imports „Demo: Products (CSV)“: Name, Identifier demo-products-csv, Description und die Quelltypen der Gruppe Data, mit CSV and delimited text gewählt](../../../eng-us/help/images/sqli-import/sqli-import-editor-source.webp)
+![Der Schritt Quelle des Imports „Demo: Products (CSV)“: Name, Identifier demo-products-csv, Description und die Quelltypen der Gruppe Data, mit CSV and delimited text gewählt](../bilder/sqli-import/sqli-import-editor-source.webp)
 
 Es folgen die Optionen des gewählten Typs: bei einer CSV-Datei das Trennzeichen (`auto` erkennt es), das
 Begrenzungszeichen, die Kodierung und **Key field**, die Spalte, die einen Datensatz benennt (`id` im Produktbeispiel).
@@ -69,7 +69,7 @@ Ein neuer Import wird angelegt, wenn dieser Schritt zum ersten Mal gespeichert w
 
 Dieser Schritt legt fest, was aus jedem Datensatz wird und wie sich ein Lauf verhält.
 
-![Der Schritt Verarbeitung: Mapping to a content class (no code) gewählt, daneben Rows of a data table, der Elternknoten 54698, Sektion und Sprache, Run as user 0, 200 Datensätze pro Abschnitt, Existing content „Create new, update existing“, die Konfliktregel „Overwrite with the source“ und Days a run can be undone, leer für die Vorgabe von 30 Tagen](../../../eng-us/help/images/sqli-import/sqli-import-editor-processing.webp)
+![Der Schritt Verarbeitung: Mapping to a content class (no code) gewählt, daneben Rows of a data table, der Elternknoten 54698, Sektion und Sprache, Run as user 0, 200 Datensätze pro Abschnitt, Existing content „Create new, update existing“, die Konfliktregel „Overwrite with the source“ und Days a run can be undone, leer für die Vorgabe von 30 Tagen](../bilder/sqli-import/sqli-import-editor-processing.webp)
 
 - **How the records are processed**: **Mapping to a content class (no code)** (Zuordnung zu einer Inhaltsklasse),
   **Rows of a data table (a persistent class)** (Zeilen einer Datentabelle, siehe
@@ -107,7 +107,7 @@ Wählen Sie die Inhaltsklasse und speichern Sie den Schritt, um ihre Attribute z
 Datensatz sein Objekt findet: über eine Remote-ID aus dem Datensatz, etwa `product-{id}`, oder über den Wert eines
 Attributs. Jede Zeile des Rasters ist ein Attribut:
 
-![Das Zuordnungsraster der Klasse Folder: Name aus dem Feld name mit trim und angehaktem Required, Short name aus code, Summary aus description mit der Umwandlung richtext, die übrigen Attribute leer, darüber die Schaltfläche Auto-match by name](../../../eng-us/help/images/sqli-import/sqli-import-editor-mapping.webp)
+![Das Zuordnungsraster der Klasse Folder: Name aus dem Feld name mit trim und angehaktem Required, Short name aus code, Summary aus description mit der Umwandlung richtext, die übrigen Attribute leer, darüber die Schaltfläche Auto-match by name](../bilder/sqli-import/sqli-import-editor-mapping.webp)
 
 | Spalte | Bedeutung |
 |---|---|
@@ -149,7 +149,7 @@ Die Vorschau läuft in der Anfrage selbst; sie startet keinen Job und speichert 
 CSV-Datei, die Blätter einer Tabelle), und einen Probelauf dieser Datensätze: für jeden, was geschähe, und die Felder,
 die sich änderten, mit dem durchgestrichenen aktuellen und dem neuen Wert daneben.
 
-![Der Probelauf der ersten Datensätze in der Vorschau: Datensatz 3 und 8 würden mit ihren neuen Namen aktualisiert, Datensatz 13 schlüge fehl, weil der Pflichtname leer ist, die übrigen bleiben unverändert](../../../eng-us/help/images/sqli-import/sqli-import-editor-preview.webp)
+![Der Probelauf der ersten Datensätze in der Vorschau: Datensatz 3 und 8 würden mit ihren neuen Namen aktualisiert, Datensatz 13 schlüge fehl, weil der Pflichtname leer ist, die übrigen bleiben unverändert](../bilder/sqli-import/sqli-import-editor-preview.webp)
 
 Nichts wird veröffentlicht, und kein Bild und keine Datei wird heruntergeladen. Ändern Sie Quelle oder Zuordnung und
 öffnen Sie die Vorschau erneut, bis alles stimmt.
@@ -171,7 +171,7 @@ Import, startet sofort einen Lauf und öffnet seine Seite.
 
 Neben jedem Import in der Liste finden Benutzer mit **Manage imports** die Schaltfläche **Edit** und unter **More**:
 
-![Das geöffnete Menü More des Imports „Demo: Books into a data table“: Duplicate, New data table from its fields, Disable und Delete](../../../eng-us/help/images/sqli-import/sqli-import-more-menu.webp)
+![Das geöffnete Menü More des Imports „Demo: Books into a data table“: Duplicate, New data table from its fields, Disable und Delete](../bilder/sqli-import/sqli-import-more-menu.webp)
 
 - **Duplicate**: eine deaktivierte Kopie mit Quelle, Verarbeitung und Zuordnung, ohne Zeitpläne und Läufe, die im
   Editor geöffnet wird;

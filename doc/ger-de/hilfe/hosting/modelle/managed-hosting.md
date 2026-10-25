@@ -15,7 +15,7 @@ Sicherheit. Sie beantwortet, welche Aufgaben ein solcher Dienst üblicherweise �
 davon unterstützt, wie Sie aufschreiben, wer was tut, und was 7x, der Verwalter des Projekts, selbst anbietet. Sie nennt keine
 Preise oder Service-Level: Das sind Entscheidungen eines Hosters ([SLA-Optionen](../geschaeft/sla-optionen-fuer-exponential-hosting.md)).
 
-![Setup, Systeminformationen: PHP, Datenbank und Webserver, die ein verwaltender Hoster aktuell hält](../../../../eng-us/help/images/hosting/system-info-managed.webp)
+![Setup, Systeminformationen: PHP, Datenbank und Webserver, die ein verwaltender Hoster aktuell hält](../../bilder/hosting/system-info-managed.webp)
 
 ## Inhalt
 

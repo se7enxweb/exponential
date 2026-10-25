@@ -17,7 +17,7 @@ beantwortet: Was eine Exponential-Website von einem Server braucht, welche Hosti
 Sie Kunden-Websites installieren, aktualisieren, sichern, überwachen und absichern und wie Sie all das als Produkt
 schnüren.
 
-![Setup in der Administration: Inhaltsmodell, Website und URLs, Workflows, Benutzer und Nachrichten, System und Updates, jeweils als Karte](../../../eng-us/help/images/hosting/setup-overview.webp)
+![Setup in der Administration: Inhaltsmodell, Website und URLs, Workflows, Benutzer und Nachrichten, System und Updates, jeweils als Karte](../bilder/hosting/setup-overview.webp)
 
 Jeder Befehl und jede Einstellung in diesem Bereich wurde gegen den Quellcode und das Installationsbuch dieses Release
 geprüft. Wo die Quellen keine Zahl nennen (Preise, Reaktionszeiten, Kapazität pro Server), nennen auch die Seiten
