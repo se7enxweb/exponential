@@ -27,6 +27,10 @@ class ezpTestDatabaseHelper
      */
     public static function create( ezpDsn $dsn )
     {
+        // create() empties an existing database; only one with "test" in its name
+        if ( stripos( (string)$dsn->database, 'test' ) === false )
+            throw new RuntimeException( "refusing to set up the database '" . $dsn->database . "' for tests: \"test\" is not part of its name" );
+
         //oracle unit test doesn't support creating database, just use database string
         if ( $dsn->parts['phptype'] === 'oracle' )
         {
@@ -73,6 +77,10 @@ class ezpTestDatabaseHelper
      */
     public static function clean( eZDBInterface $db )
     {
+        // removes every table; only in a database with "test" in its name
+        if ( stripos( (string)$db->DB, 'test' ) === false )
+            throw new RuntimeException( "refusing to empty the database '" . $db->DB . "': \"test\" is not part of its name" );
+
         $supportedRelationTypes = $db->supportedRelationTypes();
         foreach( $supportedRelationTypes as $type )
         {

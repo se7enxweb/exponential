@@ -334,6 +334,10 @@ EOT;
     {
         $testRunner = ezpTestRunner::instance();
 
+        // without --dsn, the throwaway database of the running test (ezpThrowawayDatabase)
+        if ( $testRunner->arguments['dsn'] === '' )
+            return new ezpDsn( ezpThrowawayDatabase::dsn() );
+
         return new ezpDsn( $testRunner->arguments['dsn'] );
     }
 

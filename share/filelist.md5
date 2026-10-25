@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-3dc2577a5b7eac4869a2c3acb3e07e24  doc/changelogs/6.0/6.0.15.md
+5a1cde4b2c6caac1fa3fc34087e3f52f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3456,7 +3456,7 @@ ea712add4a62f4b68cfe631e746b404a  doc/eng-us/bc/6.0/love/FAQ.md
 daefa9bbd836c42a2b768b2423e56f6f  doc/eng-us/bc/6.0/love/PHP8-REVIEW.md
 e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 5b683f02a33e0c3dde0e109e22d878ac  doc/eng-us/bc/6.0/love/ROADMAP.md
-9ca37842b2d184d8c2f4b14f0628b586  doc/eng-us/bc/6.0/love/TESTING.md
+697a530d527a43367a9722e2cc9a3137  doc/eng-us/bc/6.0/love/TESTING.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
@@ -23508,7 +23508,7 @@ d0439b8f2b787ccf297f4018fe42e6e1  lib/version.php
 b30a45607707aac28b209398030287b4  phpcs.xml.dist
 d75f9c86a66f0ee1b7d3208547666681  phpstan-baseline.neon
 1f1afac4ef3101d57248f02c262ad6d1  phpstan.neon.dist
-8bde31f866e1939350ada1409e378819  phpunit.xml
+6ea773a2a99a8fb65176711f4a647705  phpunit.xml
 c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 0e6836ac300696c897053d3d97f46af7  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
@@ -24517,7 +24517,7 @@ a6c0fb60814262a0631a2ff0d20beff4  tests/bin/ezptestrunner.php
 73d2fc2713b7397d800f491f5599462c  tests/bin/lint_manifest.txt
 1066ba94c6d2a1daaadb51527778b2cf  tests/bin/test_report_2026-02-21.txt
 5f0e6422e18bece875206a606cfe8003  tests/bin/tests/functional_tests.php
-f6fafb7be7aacccc80cd557f75d26bb9  tests/bootstrap.php
+74af3e6435968816ff342458aa9d10cf  tests/bootstrap.php
 29513a3dd65d617fb046ffdd009e895f  tests/compat/PHPUnit/TextUI/Configuration/Registry.php
 a4e7a187670959adc083b3b4ab09caca  tests/runtests.php
 59b4689fb7226fd9c820b76ab68d979b  tests/settings/site.ini
@@ -25146,6 +25146,7 @@ dbcfd409cc6cd6c3d9a9a461369158d7  tests/tests/kernel/classes/ezpActiveExtensions
 4d6d57d87b8484b899ad48f416ba3ef3  tests/tests/kernel/classes/ezpMobileDeviceDetectTest.php
 c758e9c8740a66339dc5d27d746ed630  tests/tests/kernel/classes/ezpRestLazyTest.php
 cde6894a0438daa7404bdddb6b21aabc  tests/tests/kernel/classes/ezpTemplateOverridesTest.php
+873b4b859bf5589e2d3a430ba02ddcc2  tests/tests/kernel/classes/ezpThrowawayDatabaseGuardTest.php
 a5532fb28c026fe034f0e1358fdd488b  tests/tests/kernel/classes/ezpackage_regression.php
 04478dc238acc2c04f951ff184c2b19f  tests/tests/kernel/classes/ezpackage_regression_testIssue15223.ezpkg
 b2b601cef224249b184db5afd4424259  tests/tests/kernel/classes/ezpendingactions_test.php
@@ -26079,17 +26080,18 @@ e49e4520b2d58dce8285fb3ebbbe048b  tests/toolkit/extras/tests-files/workflowevent
 eeec82123df435e4d0823f85f797143c  tests/toolkit/ezpdatabasehelper.php
 85ff19b2385ecf1f3c015470adea2979  tests/toolkit/ezpdatabaseregressiontest.php
 3e82f36b609b7a49d94cbc9176e6db60  tests/toolkit/ezpdatabasesuite.php
-d941ed32cf25f2db7cf01557af36dcc8  tests/toolkit/ezpdatabasetestcase.php
-876b2dfd8c5dc9210252b63036ee9e7f  tests/toolkit/ezpdsn.php
+cd3ae1731e7726978b0f73fdaa1605a4  tests/toolkit/ezpdatabasetestcase.php
+96b211fac64f9d68b7f1c0938495c9c7  tests/toolkit/ezpdsn.php
 b59058bb35a0d81caf9cdf01a57087b7  tests/toolkit/ezpextensionhelper.php
 07f91ca501a167d157f60f0bb69a6ae2  tests/toolkit/ezpinihelper.php
-68bbca3dd5010a7d9bcbd31d12df4163  tests/toolkit/ezpliveinstallation.php
+881070205f601043c659fbb70348a310  tests/toolkit/ezpliveinstallation.php
 6113cf61216a4796b3f8ed5602c7710f  tests/toolkit/ezpregressiontest.php
 066b8cefd09dcae040ac3532f7113666  tests/toolkit/ezptestcase.php
-a82688fd6259880c2e627b50393df5eb  tests/toolkit/ezptestdatabasehelper.php
+3503da09669faf539af4f11e161d8e9a  tests/toolkit/ezptestdatabasehelper.php
 a6b093172a75a3984d8d3210496fcc9b  tests/toolkit/ezptestregressionsuite.php
-74a47c27330851cf9003e7064729aa6f  tests/toolkit/ezptestrunner.php
+8cf5839972540e71c71c4b83c9e97867  tests/toolkit/ezptestrunner.php
 c522c5fe7a846bae4469c62db10a0663  tests/toolkit/ezptestsuite.php
+896e3adcb1b59fa4eb4e7711034371bc  tests/toolkit/ezpthrowawaydatabase.php
 fccf8b2cb8b58e57ad99254e2f4f346f  tests/xdebug.ini
 6916316f547addcebecd7e455c582519  update/common/scripts/4.0/updatebinaryfile.php
 b01af3d3b947aff6a8e648233d61a836  update/common/scripts/4.0/updatetipafriendpolicy.php
