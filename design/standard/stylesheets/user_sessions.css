@@ -1,0 +1,54 @@
+/*
+ * "Your devices" (user/sessions) and the link to it on the user's profile (user/parts/sessions_account_link.tpl), in
+ * the designs without an administration look of their own. The administration designs (admin, admin4) draw the page
+ * with their shared components instead. Linked from the templates, so the page needs nothing of the design it is in.
+ */
+.us-page, .us-account-link {
+  --us-ink: #1f2430;
+  --us-muted: #5b6270;
+  --us-line: #d9dde3;
+  --us-soft: #f5f6f8;
+  --us-card: #fff;
+  --us-accent: #9a3412;
+  --us-ok: #166534;
+  --us-ok-soft: #dcfce7;
+  --us-warn-soft: #fef3c7;
+  --us-bad: #b91c1c;
+  color: var(--us-ink);
+}
+@media (prefers-color-scheme: dark) {
+  .us-page, .us-account-link {
+    --us-ink: #e6e8ec;
+    --us-muted: #a5acb8;
+    --us-line: #3a4150;
+    --us-soft: #1d222b;
+    --us-card: #161a21;
+    --us-accent: #fb923c;
+    --us-ok: #86efac;
+    --us-ok-soft: #14532d;
+    --us-warn-soft: #422006;
+    --us-bad: #fca5a5;
+  }
+}
+.us-page h1 { margin: 0 0 .3em; }
+.us-intro, .us-meta { color: var(--us-muted); }
+.us-meta { font-size: .9em; }
+.us-notice { margin: 0 0 1em; padding: .6em .9em; border: 1px solid var(--us-line); border-radius: 8px; background: var(--us-soft); }
+.us-notice.is-ok { background: var(--us-ok-soft); }
+.us-notice.is-warn, .us-notice.is-bad { background: var(--us-warn-soft); }
+.us-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20em), 1fr)); gap: 1em; margin: 0 0 1.5em; padding: 0; list-style: none; }
+.us-card { padding: .9em 1em; border: 1px solid var(--us-line); border-radius: 10px; background: var(--us-card); }
+.us-card.is-current { border-color: var(--us-ok); }
+.us-card h3 { display: flex; flex-wrap: wrap; gap: .4em; align-items: center; margin: 0 0 .5em; font-size: 1.05em; }
+.us-badge { display: inline-block; padding: .05em .55em; border-radius: 999px; background: var(--us-ok-soft); color: var(--us-ok); font-size: .8em; font-weight: 600; }
+.us-facts { display: grid; grid-template-columns: max-content 1fr; gap: .25em .8em; margin: 0 0 .8em; }
+.us-facts dt { color: var(--us-muted); }
+.us-facts dd { margin: 0; overflow-wrap: anywhere; }
+.us-button, .us-account-link a.us-account-link-button { display: inline-block; padding: .4em .95em; border: 1px solid var(--us-accent); border-radius: 8px; background: var(--us-card); color: var(--us-accent); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.us-button.is-danger { border-color: var(--us-bad); color: var(--us-bad); }
+.us-section { margin: 0 0 1.5em; }
+.us-table-wrap { overflow-x: auto; }
+.us-table { width: 100%; border-collapse: collapse; }
+.us-table th, .us-table td { padding: .4em .6em; border-bottom: 1px solid var(--us-line); text-align: left; vertical-align: top; }
+.us-account-link { display: flex; flex-wrap: wrap; gap: .4em 1em; align-items: center; justify-content: space-between; margin: 0 0 1em; padding: .7em .95em; border: 1px solid var(--us-line); border-radius: 9px; background: var(--us-soft); }
+.us-account-link p { margin: 0; flex: 1 1 18em; }

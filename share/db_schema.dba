@@ -7636,6 +7636,167 @@ $schema = array (
       ),
     ),
   ),
+  'expuser_session' =>
+  array (
+    'name' => 'expuser_session',
+    'fields' =>
+    array (
+      'browser' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'device_type' =>
+      array (
+        'length' => 16,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'end_reason' =>
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'ended' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'ended_by' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'first_ip' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'id' =>
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'last_active' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'last_ip' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'method' =>
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'os' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'remember_until' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'siteaccess' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'token_hash' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'user_agent' =>
+      array (
+        'length' => 512,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'id',
+        ),
+      ),
+      'expuser_session_token' =>
+      array (
+        'type' => 'unique',
+        'fields' =>
+        array (
+          0 => 'token_hash',
+        ),
+      ),
+      'expuser_session_user' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'user_id',
+          1 => 'ended',
+        ),
+      ),
+      'expuser_session_active' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'ended',
+          1 => 'last_active',
+        ),
+      ),
+    ),
+  ),
   'ezproductcategory' =>
   array (
     'name' => 'ezproductcategory',

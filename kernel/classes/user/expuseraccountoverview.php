@@ -25,7 +25,7 @@ class expUserAccountOverview
     const PASSWORD_AGE_HINT_DAYS = 365;
 
     /** The cards, in the order the page shows them */
-    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'passkeys', 'apikeys', 'bookmarks', 'notifications', 'mail' );
+    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'passkeys', 'sessions', 'apikeys', 'bookmarks', 'notifications', 'mail' );
 
     /** @var array */
     protected $facts;
@@ -49,6 +49,7 @@ class expUserAccountOverview
      * own: the viewer looks at their own account. access: what the viewer may open (password, settings, roles,
      * twofactor_setup, apikeys_own, apikeys_admin, bookmarks, notifications, mail_own, mail_admin). twofactor:
      * null when the user class has no two-step field or the extension is not active, else array( active, method ).
+     * sessions: null when sessions are not tracked (user/sessions), else array( active ): the running sessions.
      * apikeys: null when not readable, else the counts of the apikey module (active, total). password_changed: the
      * time of the last password change the audit index knows, else null. hash_type: eZUser::PASSWORD_HASH_*.
      *
@@ -61,7 +62,7 @@ class expUserAccountOverview
             'own' => false, 'enabled' => true, 'locked' => false, 'failed_attempts' => 0, 'max_failed_attempts' => 0,
             'login_count' => 0, 'last_visit' => null, 'hash_type' => eZUser::PASSWORD_HASH_PHP_DEFAULT,
             'password_changed' => null, 'groups' => array(), 'roles' => array(), 'twofactor' => null, 'passkeys' => null, 'apikeys' => null,
-            'can_create_apikeys' => false, 'access' => array(),
+            'can_create_apikeys' => false, 'access' => array(), 'sessions' => null,
         );
     }
 
@@ -107,6 +108,18 @@ class expUserAccountOverview
             $service = new expPasskeyService();
             if ( $service->available() )
                 $facts['passkeys'] = array( 'total' => expPasskey::countByUser( $id ) );
+        }
+        if ( class_exists( 'expUserSessionTracker' ) && expUserSessionTracker::enabled() && expUserSessionTracker::available() )
+        {
+            try
+            {
+                $list = expUserSessionTracker::listForUser( $id, false );
+                $facts['sessions'] = array( 'active' => count( $list['active'] ) );
+            }
+            catch ( Throwable $e )
+            {
+                $facts['sessions'] = null;
+            }
         }
         if ( class_exists( 'expApiKeyFunctionCollection' ) )
         {
@@ -196,7 +209,7 @@ class expUserAccountOverview
     {
         $f = $this->facts;
         $a = $f['access'] + array_fill_keys( array( 'password', 'settings', 'roles', 'twofactor_setup', 'apikeys_own',
-            'apikeys_admin', 'bookmarks', 'notifications', 'mail_own', 'mail_admin' ), false );
+            'apikeys_admin', 'bookmarks', 'notifications', 'mail_own', 'mail_admin', 'sessions_admin' ), false );
         $id = (int)$f['user_id'];
         $own = (bool)$f['own'];
         $out = array();
@@ -237,6 +250,17 @@ class expUserAccountOverview
                         $total = (int)$f['passkeys']['total'];
                         $card = array( 'how' => 'link', 'url' => 'user/passkeys',
                                        'status' => array( 'key' => $total > 0 ? 'count' : 'none', 'level' => $total > 0 ? 'ok' : 'none', 'total' => $total ) );
+                    }
+                    break;
+                case 'sessions':
+                    if ( is_array( $f['sessions'] ) )
+                    {
+                        $active = isset( $f['sessions']['active'] ) ? (int)$f['sessions']['active'] : 0;
+                        $status = array( 'key' => 'count', 'level' => $active > 1 ? 'info' : 'none', 'active' => $active );
+                        if ( $own )
+                            $card = array( 'how' => 'link', 'url' => 'user/sessions', 'status' => $status );
+                        elseif ( $a['sessions_admin'] )
+                            $card = array( 'how' => 'link', 'url' => 'user/sessions/' . $id, 'status' => $status );
                     }
                     break;
                 case 'apikeys':
@@ -371,6 +395,7 @@ class expUserAccountOverview
             'notifications' => $own && $may( 'notification', 'use' ),
             'mail_own' => $own && eZModule::exists( 'mailpreferences' ),
             'mail_admin' => $may( 'mailpreferences', 'administrate' ),
+            'sessions_admin' => !$own && $may( 'user', 'sessions' ),
         );
     }
 

@@ -827,6 +827,15 @@ CREATE SEQUENCE exp_data_sync_link_id_seq
 
 
 
+CREATE SEQUENCE expuser_session_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2610,6 +2619,28 @@ CREATE TABLE exp_data_sync_link (
 
 
 
+CREATE TABLE expuser_session (
+    browser character varying(64) DEFAULT ''::character varying NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    device_type character varying(16) DEFAULT ''::character varying NOT NULL,
+    end_reason character varying(32) DEFAULT ''::character varying NOT NULL,
+    ended integer DEFAULT 0 NOT NULL,
+    ended_by integer DEFAULT 0 NOT NULL,
+    first_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+    id integer DEFAULT nextval('expuser_session_id_seq'::text) NOT NULL,
+    last_active integer DEFAULT 0 NOT NULL,
+    last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+    method character varying(32) DEFAULT ''::character varying NOT NULL,
+    os character varying(64) DEFAULT ''::character varying NOT NULL,
+    remember_until integer DEFAULT 0 NOT NULL,
+    siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+    token_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+    user_agent character varying(512) DEFAULT ''::character varying NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
 
 
 
@@ -4091,6 +4122,18 @@ CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link USING btree (sync_i
 
 
 
+CREATE UNIQUE INDEX expuser_session_token ON expuser_session USING btree (token_hash);
+
+
+
+CREATE INDEX expuser_session_user ON expuser_session USING btree (user_id, ended);
+
+
+
+CREATE INDEX expuser_session_active ON expuser_session USING btree (ended, last_active);
+
+
+
 
 
 
@@ -5171,6 +5214,11 @@ ALTER TABLE ONLY exp_data_sync_conflict
 
 ALTER TABLE ONLY exp_data_sync_link
     ADD CONSTRAINT exp_data_sync_link_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY expuser_session
+    ADD CONSTRAINT expuser_session_pkey PRIMARY KEY (id);
 
 
 

@@ -17687,6 +17687,10 @@ Note: The packages will not be uninstalled.</source>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/view</name>
@@ -37790,6 +37794,34 @@ your account.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Passkeys</source>
         <translation type="unfinished"></translation>
     </message>
@@ -39751,6 +39783,30 @@ your account.</source>
     </message>
     <message>
         <source>Class/attribute combinations (%count)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -54253,6 +54309,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55656,6 +55728,14 @@ your account.</source>
     </message>
     <message>
         <source>Your comment was added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -58016,6 +58096,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Mirror to data tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -71107,6 +71195,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75543,6 +75639,672 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Browse the tables of the persistent classes…</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

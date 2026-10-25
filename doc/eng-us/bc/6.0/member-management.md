@@ -54,7 +54,10 @@ to a role without `content/edit` of users loses that path; give the role `conten
 should reach, or set `SettingRequiresEdit=disabled`.
 
 Moving a member into a protected group, or adding a location there, needs `content/create` at the target, which the
-role gives only below Members: refused. Creating a user in a protected group: refused the same way.
+role gives only below Members: refused. Creating a user in a protected group: refused the same way, except in Editors,
+where the role *Editor account requests* lets editors create an account that then waits for an administrator's
+approval; moving a member into Editors or adding a location there stays refused for them
+([user-account-approval.md](user-account-approval.md)).
 
 ## Settings: `membermanagement.ini`
 
@@ -142,9 +145,12 @@ workflow and collaboration events go into the same log as further names, not int
 
 ## Accounts in protected groups
 
-The protected groups stay outside every rule: creating a user in Administrator users or Editors, moving one there,
-and editing their accounts remain administrators' actions. Member management adds no pending or approval state of its
-own.
+The protected groups stay outside every rule: moving a user into Administrator users or Editors and editing their
+accounts remain administrators' actions. Member management adds no pending or approval state of its own.
+
+Creating a new **editor** is the one exception, and it goes through an approval: the role *Editor account requests*
+lets editors create an account directly in Editors, and the workflow event *Approve user accounts* holds it until an
+administrator approves it. See [Approval of new user accounts](user-account-approval.md).
 
 ## What to do on an installation that exists
 

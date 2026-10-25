@@ -588,6 +588,38 @@ CREATE TABLE IF NOT EXISTS exp_data_sync_link (
 ) ENGINE=InnoDB;
 
 --
+-- The signed-in sessions of the users, "Your devices" (doc/eng-us/features/6.0/user-sessions.md).
+--
+-- One row per sign-in: when it started and was last used, the address, the User-Agent header and what it names, the
+-- sign-in method, Remember me, and when and why it ended. The row is found by the SHA-256 of a random token kept in
+-- the session; neither the token nor the session id is stored. Without the table nothing is tracked and every page
+-- works as before; update/common/scripts/6.0/createusersessiontable.php creates it on any engine.
+-- Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS expuser_session (
+  browser varchar(64) NOT NULL DEFAULT '',
+  created int(11) NOT NULL DEFAULT '0',
+  device_type varchar(16) NOT NULL DEFAULT '',
+  end_reason varchar(32) NOT NULL DEFAULT '',
+  ended int(11) NOT NULL DEFAULT '0',
+  ended_by int(11) NOT NULL DEFAULT '0',
+  first_ip varchar(64) NOT NULL DEFAULT '',
+  id int(11) NOT NULL AUTO_INCREMENT,
+  last_active int(11) NOT NULL DEFAULT '0',
+  last_ip varchar(64) NOT NULL DEFAULT '',
+  method varchar(32) NOT NULL DEFAULT '',
+  os varchar(64) NOT NULL DEFAULT '',
+  remember_until int(11) NOT NULL DEFAULT '0',
+  siteaccess varchar(64) NOT NULL DEFAULT '',
+  token_hash varchar(64) NOT NULL DEFAULT '',
+  user_agent varchar(512) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY expuser_session_token ( token_hash ),
+  KEY expuser_session_user ( user_id, ended ),
+  KEY expuser_session_active ( ended, last_active )
+) ENGINE=InnoDB;
+
+--
 -- ezuser.login: one account per login.
 --
 -- A new installation has the unique index ezuser_login from the kernel schema.

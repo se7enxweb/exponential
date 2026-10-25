@@ -8,6 +8,7 @@
 {include uri='design:mailpreferences/parts/account_link.tpl' context='profile'}
 {include uri='design:apikey/parts/account_link.tpl'}
 {if ezmodule( 'user/passkeys' )}<p class="box"><a href={'user/passkeys'|ezurl}>{'Passkeys'|i18n( 'design/standard/user/passkeys' )}</a>: {'sign in with your fingerprint, face, screen lock or security key instead of your password.'|i18n( 'design/standard/user/passkeys' )}</p>{/if}
+{include uri='design:user/parts/sessions_account_link.tpl'}
 {if ezmodule( 'user2fa/setup' )}{include uri='design:user2fa/parts/account_link.tpl' style='box'}{/if}
 
 <div class="block">
