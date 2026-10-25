@@ -25,8 +25,13 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
                     . "(expimageeditor/edit), and the own account\n"
                     . "(user/password, user/selfedit, notification/use) when no other role of the editors has it.\n"
                     . "A policy the role, or another role of the same users or groups, has in any form (also limited, or\n"
-                    . "module/*) is left alone, so the script can run again. Also lists what the role holds that an editor\n"
-                    . "role should not (WARN lines; nothing is removed). Prints PASS or FAIL at the end.\n\n"
+                    . "module/*) is left alone, so the script can run again.\n"
+                    . "First, a content/* without limitations (the base data's, which plain_site keeps) is replaced by the\n"
+                    . "content functions the site packages give editors (create, edit, read, manage_locations, diff,\n"
+                    . "versionread, versionremove, remove, translate, bookmark, pendinglist, dashboard, view_embed, hide,\n"
+                    . "restore, reverserelatedlist): it also grants emptying everybody's trash, the languages, the URL\n"
+                    . "aliases and everybody's content jobs. --keep-content-wildcard leaves it. Lists what the role still\n"
+                    . "holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.\n\n"
                     . "Example: php bin/php/addeditorpolicies.php --dry-run\n"
                     . "         php bin/php/addeditorpolicies.php --only=content/restore\n"
                     . "         php bin/php/addeditorpolicies.php --skip=ezmultiupload/* --role=Redakteur",
@@ -36,10 +41,11 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             )
         );
         $options = $this->startup(
-            "[dry-run][role:][only:*][skip:*]",
+            "[dry-run][role:][only:*][skip:*][keep-content-wildcard]",
             '',
             array(
-                'dry-run' => "List what would be added, change nothing",
+                'dry-run' => "List what would be removed and added, change nothing",
+                'keep-content-wildcard' => "Leave a content/* of the role as it is (not replaced by single functions)",
                 'role' => "The role to complete (ID or name); default Editor",
                 'only' => "Only this policy (module/function), may be repeated",
                 'skip' => "Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed"
@@ -71,8 +77,44 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
         }
         $label = sprintf( '%s (%d)', $role->attribute( 'name' ), $role->attribute( 'id' ) );
 
+        // content/* without limitations becomes single functions; in a dry run the plan below works on the role as
+        // the narrowing would leave it
+        $policies = \expEditorPolicies::policiesOf( $role );
+        $narrowed = 0;
+        if ( $options['keep-content-wildcard'] )
+            $narrowPlan = array( 'action' => 'keep', 'remove' => 0, 'add' => array(), 'why' => 'kept on request (--keep-content-wildcard)' );
+        else if ( $only )
+            $narrowPlan = array( 'action' => 'keep', 'remove' => 0, 'add' => array(), 'why' => 'kept: --only adds single policies only' );
+        else
+            $narrowPlan = \expEditorPolicies::narrowPlan( $policies, $skip );
+        if ( $narrowPlan['action'] === 'narrow' )
+        {
+            $cli->output( ( $dryRun ? 'would remove' : 'remove      ' ) . sprintf( ' %-28s %s', 'content/*', $narrowPlan['why'] ) );
+            foreach ( $narrowPlan['add'] as $function )
+                $cli->output( ( $dryRun ? 'would add   ' : 'add         ' ) . sprintf( ' %-28s %s', 'content/' . $function, 'in place of content/*' ) );
+            if ( !$dryRun )
+            {
+                \expEditorPolicies::narrow( $role, $narrowPlan );
+                $role = \eZRole::fetch( (int)$role->attribute( 'id' ) );
+                $policies = \expEditorPolicies::policiesOf( $role );
+            }
+            else
+            {
+                $kept = array();
+                foreach ( $policies as $policy )
+                    if ( !( $policy['module'] === 'content' && $policy['function'] === '*' && empty( $policy['limited'] ) ) )
+                        $kept[] = $policy;
+                foreach ( $narrowPlan['add'] as $function )
+                    $kept[] = array( 'module' => 'content', 'function' => $function, 'limited' => false );
+                $policies = $kept;
+            }
+            $narrowed = 1 + count( $narrowPlan['add'] );
+        }
+        else if ( strpos( $narrowPlan['why'], 'no content/*' ) === false )
+            $cli->output( sprintf( 'keep         %-28s %s', 'content/*', $narrowPlan['why'] ) );
+
         $modules = \expEditorPolicies::availableModules();
-        $plan = \expEditorPolicies::plan( \expEditorPolicies::policiesOf( $role ), $modules, $only, $skip,
+        $plan = \expEditorPolicies::plan( $policies, $modules, $only, $skip,
                                           \expEditorPolicies::heldAlongside( $role ) );
         $granted = 0;
         foreach ( $plan as $entry )
@@ -89,9 +131,29 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             $granted++;
         }
 
-        foreach ( \expEditorPolicies::overGrants( \expEditorPolicies::policiesOf( $role ) ) as $over )
+        foreach ( \expEditorPolicies::overGrants( $dryRun ? $policies : \expEditorPolicies::policiesOf( \eZRole::fetch( (int)$role->attribute( 'id' ) ) ) ) as $over )
         {
             $cli->output( sprintf( 'WARN        %-28s granted by %s: %s', $over['module'] . '/' . $over['function'], $over['by'], $over['reason'] ) );
+        }
+
+        if ( $narrowed && !$dryRun )
+        {
+            // Check what was stored: no content/* without limitations, every single function there.
+            $stored = \expEditorPolicies::policiesOf( \eZRole::fetch( (int)$role->attribute( 'id' ) ) );
+            $again = \expEditorPolicies::narrowPlan( $stored, $skip );
+            if ( $again['action'] === 'narrow' )
+            {
+                $cli->error( "FAIL: $label still has content/*" );
+                $script->shutdown( 1 );
+            }
+            foreach ( $narrowPlan['add'] as $function )
+            {
+                if ( !\expEditorPolicies::covers( $stored, 'content', $function ) )
+                {
+                    $cli->error( "FAIL: content/$function is missing from $label" );
+                    $script->shutdown( 1 );
+                }
+            }
         }
 
         if ( $granted && !$dryRun )
@@ -112,10 +174,12 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
         }
 
         $cli->output();
+        $replaced = $narrowed ? 'content/* ' . ( $dryRun ? 'would be' : 'was' ) . ' replaced by ' . count( $narrowPlan['add'] )
+                                . ' content function' . ( count( $narrowPlan['add'] ) === 1 ? '' : 's' ) . '; ' : '';
         if ( $dryRun )
-            $cli->output( "PASS: $granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed)" );
+            $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed)" );
         else
-            $cli->output( "PASS: $granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " added to $label" );
+            $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " added to $label" );
         $script->shutdown();
     }
 }

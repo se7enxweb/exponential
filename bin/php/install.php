@@ -58,7 +58,7 @@ $options = array(
     'last-name'      => 'User',
 );
 $flags = array( 'force' => false, 'dry-run' => false, 'print' => false, 'help' => false, 'allow-root-user' => false,
-                'random-password' => false );
+                'random-password' => false, 'no-crontab' => false );
 
 foreach ( $argvIn as $arg )
 {
@@ -316,6 +316,9 @@ if ( $written === false )
     exit( 1 );
 }
 $startedAt = time();
+// The final step writes the cron job unless this run says not to (expCrontabSetup::enabled())
+if ( $flags['no-crontab'] )
+    putenv( 'EXP_INSTALL_CRONTAB=0' );
 // A password generated here is recorded where the setup records its own, so the
 // two cases look alike and the file is the one place to read it back
 if ( !$passwordGiven && !$flags['dry-run'] )
@@ -464,6 +467,9 @@ Run
                          database and settings)
   --dry-run              check the configuration and the packages, install nothing
   --print                show the configuration that would be used and stop
+  --no-crontab           do not write the cron job; print its lines instead
+                         (the default writes them to the crontab of the user
+                         that owns the installation: doc/eng-us/bc/6.0/installer-crontab.md)
   --help                 this help
 
 Examples

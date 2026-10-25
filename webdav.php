@@ -136,6 +136,7 @@ if ( $enable === 'true' )
         // }
 
         $server = ezcWebdavServer::getInstance();
+        eZWebDAVContentBackend::usePathFactory( $server );
 
         $backend = new eZWebDAVContentBackend();
         $server->handle( $backend );
@@ -145,6 +146,7 @@ if ( $enable === 'true' )
     {
         // Create & initialize a new instance of the content server.
         $server = ezcWebdavServer::getInstance();
+        eZWebDAVContentBackend::usePathFactory( $server );
         $server->pluginRegistry->registerPlugin(
             new ezcWebdavLockPluginConfiguration()
         );

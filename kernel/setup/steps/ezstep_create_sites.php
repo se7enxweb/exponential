@@ -2138,7 +2138,8 @@ language_locale='eng-GB'";
 
         // The site packages replace the Editor role's content/* with single functions and leave out hiding, the trash,
         // the list of what uses an object and the multi-upload; plain_site gives the Editors group no role for the
-        // own account. Checked here after the package's roles, for every package and base data
+        // own account and keeps the base data's content/*, which is replaced by the same single functions first.
+        // Checked here after the package's roles, for every package and base data
         // (doc/eng-us/bc/6.0/editor-role-policies.md).
         if ( class_exists( 'expEditorPolicies' ) )
         {
@@ -2323,6 +2324,17 @@ language_locale='eng-GB'";
             foreach ( expInstallDefaultExtensions::ensureDatabase( array_merge( $installActiveExtensions, $adminAccess ),
                                                                    $primaryLanguageLocaleCode, eZExtension::baseDirectory() ) as $line )
                 eZLog::write( "eZStepCreateSites: $line", 'setup.log' );
+            // Every other active extension with a share/db_schema.dba gets the tables it lacks (none dropped or
+            // changed): the legacy site packages (ezwebin_site, ezflow_site, ezdemo_site) switch on extensions such
+            // as eztags and xrowextract without creating their tables.
+            foreach ( array_unique( array_merge( $installActiveExtensions, $adminAccess, eZExtension::activeExtensions() ) ) as $extension )
+            {
+                if ( !is_string( $extension ) || $extension === '' || !file_exists( eZExtension::baseDirectory() . "/$extension/share/db_schema.dba" ) )
+                    continue;
+                $line = expInstallDefaultExtensions::ensureExtensionTables( $extension, eZExtension::baseDirectory() );
+                if ( substr( $line, -15 ) !== 'tables present' )
+                    eZLog::write( "eZStepCreateSites: $line", 'setup.log' );
+            }
         }
 
         // exp_adminui in the admin siteaccess when the installation has it (activateAdminUIAccessExtension()): AdminUI

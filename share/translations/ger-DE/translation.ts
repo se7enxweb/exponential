@@ -9197,6 +9197,61 @@
     </message>
 </context>
 <context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Noch kein Cronjob-Teil ist gelaufen: Die Job-Warteschlange, die Importe, die Benachrichtigungen und der Suchindex warten. Führen Sie php bin/php/installcrontab.php --add aus, oder tragen Sie die Zeilen von --show in die Crontab ein.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Ein Cronjob-Teil ist länger nicht gelaufen, als sein Zeitplan erlaubt: Prüfen Sie die Crontab (php bin/php/installcrontab.php --show) und die Logs var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Teil</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zeitplan</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Zuletzt gestartet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>pünktlich</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>überfällig</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nie gelaufen</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Die Installation hat keinen Cronjob-Teil, den der Cronjob ausführen könnte.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Zur Seite Setup &gt; Cronjobs</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/drafts</name>
     <message>
         <source>My drafts</source>
@@ -57710,6 +57765,22 @@ Weitere Informationen finden Sie auf der Seite mit den Anforderungen.</translati
     <message>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Die Umgebungsvariable EXP_DEMO_MODE=1 kennzeichnet diese Installation als öffentliche Demo: Ein bekanntes Administratorpasswort wird akzeptiert, und Administratorpasswörter können später nicht geändert oder zurückgesetzt werden. Verwenden Sie den Demo-Modus nie für eine Produktivsite.</translation>
+    </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Die Cronjobs laufen aus der Crontab des Benutzers %user, dem die Installation gehört.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Die Installation hat keinen Cronjob-Teil, der zu planen wäre.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Die Crontab wurde nicht geschrieben (%reason). Tragen Sie diese Zeilen in die Crontab des Benutzers ein, unter dem die Website läuft, sonst laufen die Warteschlange, die Importe, die Benachrichtigungen und der Suchindex nie:</translation>
     </message>
 </context>
 <context>

@@ -120,6 +120,22 @@ class eZExtensionPackageHandler extends eZPackageHandler
         $existingExtensionPath = eZExtension::extensionPath( $extensionName );
         $packageExtensionDir = $package->path() . '/' . $parameters['sub-directory'] . '/' . $extensionName;
 
+        // An installed copy at least as new as the package's (a Composer install, a git checkout, a later release)
+        // is kept, whatever was chosen: a site package never puts an older copy of an extension in its place.
+        if ( $existingExtensionPath !== false && file_exists( $existingExtensionPath ) )
+        {
+            $kept = self::keepInstalledReason( $existingExtensionPath, $packageExtensionDir );
+            if ( $kept !== '' )
+            {
+                $message = "Extension '$extensionName' from package '" . $package->attribute( 'name' ) . "' not installed: $kept";
+                eZDebug::writeNotice( $message, __METHOD__ );
+                if ( class_exists( 'expSetupLog' ) )
+                    expSetupLog::note( $message );
+                self::activateExtension( $extensionName );
+                return true;
+            }
+        }
+
         // Error: extension already exists.
         if ( $existingExtensionPath !== false && file_exists( $existingExtensionPath ) )
         {
@@ -157,7 +173,156 @@ class eZExtensionPackageHandler extends eZPackageHandler
         // Regenerate autoloads for extensions to pick up the newly created extension
         ezpAutoloader::updateExtensionAutoloadArray();
 
-        // Activate extension
+        self::activateExtension( $extensionName );
+        return true;
+    }
+
+    /**
+     * The version an extension directory states: extension.xml <metadata><version> first (as the about page reads
+     * it), else 'Version' in ezinfo.php (read as text, never included). Null when neither holds a release number
+     * (normalizeVersion()). Pure apart from reading the two files.
+     *
+     * @param string $dir
+     * @return string|null
+     */
+    static function extensionVersion( $dir )
+    {
+        $raw = self::extensionVersionText( $dir );
+        return $raw === null ? null : self::normalizeVersion( $raw );
+    }
+
+    /**
+     * The version text an extension directory states, as written (see extensionVersion()); null when it states none.
+     *
+     * @param string $dir
+     * @return string|null
+     */
+    static function extensionVersionText( $dir )
+    {
+        $found = null;
+        $xml = @file_get_contents( $dir . '/extension.xml' );
+        if ( is_string( $xml ) && preg_match( '#<metadata\b.*?</metadata>#s', $xml, $metadata )
+             && preg_match( '#<version>\s*([^<]*?)\s*</version>#', $metadata[0], $m ) )
+        {
+            if ( self::normalizeVersion( $m[1] ) !== null )
+                return $m[1];
+            $found = $m[1];
+        }
+        $info = @file_get_contents( $dir . '/ezinfo.php' );
+        if ( is_string( $info ) && preg_match( '#[\'"]Version[\'"]\s*=>\s*[\'"]([^\'"]*)[\'"]#', $info, $m ) )
+        {
+            if ( self::normalizeVersion( $m[1] ) !== null || $found === null )
+                return $m[1];
+        }
+        return $found;
+    }
+
+    /**
+     * A release number in the form version_compare() orders ("6.0.27", "2.4.25", "5.3", "v6.1.2" -> "6.1.2"), or
+     * null for anything that is not one: "dev-master", "//autogentag//", "", "unknown". Pure.
+     *
+     * @param mixed $version
+     * @return string|null
+     */
+    static function normalizeVersion( $version )
+    {
+        if ( !is_string( $version ) && !is_int( $version ) && !is_float( $version ) )
+            return null;
+        $version = trim( (string)$version );
+        if ( $version !== '' && ( $version[0] === 'v' || $version[0] === 'V' ) )
+            $version = substr( $version, 1 );
+        if ( !preg_match( '/^\d+(\.\d+)*([-.+]?[A-Za-z][A-Za-z0-9.]*)?$/', $version ) )
+            return null;
+        return $version;
+    }
+
+    /**
+     * Who manages an installed extension directory: 'git' (a checkout: .git in it), 'composer' (an install path
+     * in vendor/composer/installed.json of $rootDir), or '' (neither: a copy a package or a person put there).
+     *
+     * @param string $dir
+     * @param string|null $rootDir the installation root; null: eZSys::rootDir()
+     * @return string
+     */
+    static function extensionManager( $dir, $rootDir = null )
+    {
+        if ( file_exists( $dir . '/.git' ) )
+            return 'git';
+        $real = realpath( $dir );
+        if ( $real === false )
+            return '';
+        if ( $rootDir === null )
+            $rootDir = class_exists( 'eZSys' ) ? eZSys::rootDir() : getcwd();
+        $installed = $rootDir . '/vendor/composer/installed.json';
+        $json = is_file( $installed ) ? json_decode( (string)@file_get_contents( $installed ), true ) : null;
+        if ( !is_array( $json ) )
+            return '';
+        $packages = isset( $json['packages'] ) && is_array( $json['packages'] ) ? $json['packages'] : $json;
+        foreach ( $packages as $composerPackage )
+        {
+            if ( !is_array( $composerPackage ) || !isset( $composerPackage['install-path'] ) || !is_string( $composerPackage['install-path'] ) )
+                continue;
+            $path = $composerPackage['install-path'];
+            $path = ( $path !== '' && $path[0] === '/' ) ? $path : $rootDir . '/vendor/composer/' . $path;
+            if ( realpath( $path ) === $real )
+                return 'composer';
+        }
+        return '';
+    }
+
+    /**
+     * The keep-newer rule: true when the installed copy of an extension stays and the package's copy is not put
+     * in its place. Pure.
+     *  - both state a release number: the package's copy replaces the installed one only when it is newer;
+     *  - only the installed copy states one: it stays (a copy without a number is never shown to be newer);
+     *  - the installed copy states none: it stays when Composer or git manages it, else the package's copy goes in
+     *    (as before: a copy an earlier package put there).
+     *
+     * @param string|null $installedVersion normalizeVersion() of the installed copy
+     * @param string|null $packageVersion normalizeVersion() of the package's copy
+     * @param string $manager extensionManager() of the installed copy
+     * @return bool
+     */
+    static function keepInstalled( $installedVersion, $packageVersion, $manager = '' )
+    {
+        if ( $installedVersion !== null && $packageVersion !== null )
+            return !version_compare( $packageVersion, $installedVersion, '>' );
+        if ( $installedVersion !== null )
+            return true;
+        return $manager !== '';
+    }
+
+    /**
+     * Why the installed copy in $installedDir stays instead of the package's copy in $packageDir; '' when the
+     * package's copy may replace it (keepInstalled()).
+     *
+     * @param string $installedDir
+     * @param string $packageDir
+     * @param string|null $rootDir see extensionManager()
+     * @return string
+     */
+    static function keepInstalledReason( $installedDir, $packageDir, $rootDir = null )
+    {
+        $installedText = self::extensionVersionText( $installedDir );
+        $packageText = self::extensionVersionText( $packageDir );
+        $installed = $installedText === null ? null : self::normalizeVersion( $installedText );
+        $packaged = $packageText === null ? null : self::normalizeVersion( $packageText );
+        $manager = self::extensionManager( $installedDir, $rootDir );
+        if ( !self::keepInstalled( $installed, $packaged, $manager ) )
+            return '';
+        $by = array( 'git' => ' (a git checkout)', 'composer' => ' (installed by Composer)', '' => '' );
+        return 'the installed copy ' . ( $installed !== null ? $installed : 'without a release number' ) . $by[$manager] .
+               ' is kept; the package carries ' . ( $packaged !== null ? $packaged :
+               ( $packageText !== null && $packageText !== '' ? '"' . $packageText . '", not a release number' : 'no version' ) );
+    }
+
+    /**
+     * Adds the extension to site.ini [ExtensionSettings] ActiveExtensions in settings/override, once.
+     *
+     * @param string $extensionName
+     */
+    static function activateExtension( $extensionName )
+    {
         $siteINI = eZINI::instance( 'site.ini', 'settings/override', null, null, false, true );
 
         if ( $siteINI->hasVariable( 'ExtensionSettings', "ActiveExtensions" ) )

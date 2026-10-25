@@ -718,7 +718,11 @@ class eZPersistentObject
             unset( $use_values_hash );
             $value_text = implode( ", ", $use_values );
 
-            if( $db->DatabaseName() == 'sqlite' )
+            // On SQLite REPLACE only where it can replace nothing but the row of these keys: a table
+            // keyed by a part of them (ezcontentobject_attribute by id alone in a Platform schema)
+            // lost the row of the published version to the copy for a new one.
+            if ( $db->DatabaseName() == 'sqlite' &&
+                 ( !method_exists( $db, 'insertOrReplaceIsSafe' ) || $db->insertOrReplaceIsSafe( $table, $keys ) ) )
             {
                 $sql = "INSERT OR REPLACE INTO $table ($field_text) VALUES($value_text)";
             }

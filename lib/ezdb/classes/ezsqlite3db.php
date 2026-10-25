@@ -242,6 +242,20 @@ class eZSQLite3DB extends eZDBInterface
                 },
                 function ( $context, $rows ) { return $rows > 0 ? (int)$context : 0; }, 1 );
 
+            // MySQL's MOD(). eZ Tags reads the main language bit of a language mask with
+            // MOD( language_mask, 2 ), and the SQLite builds without the math functions
+            // (3.34 among them) do not know it: editing content with a tags field failed
+            // with "no such function: MOD" and a failed transaction. NULL for a NULL
+            // argument or a zero divisor, as MySQL answers; the sign follows the dividend.
+            $connection->createFunction( 'MOD',
+                function ( $dividend, $divisor ) {
+                    if ( !is_numeric( $dividend ) || !is_numeric( $divisor ) || $divisor == 0 )
+                        return null;
+                    if ( is_float( $dividend + 0 ) || is_float( $divisor + 0 ) )
+                        return fmod( (float)$dividend, (float)$divisor );
+                    return (int)$dividend % (int)$divisor;
+                }, 2 );
+
             $this->IsConnected = true;
         }
 
@@ -835,6 +849,80 @@ class eZSQLite3DB extends eZDBInterface
         return (int)( is_array( $rows ) && isset( $rows[0]['maximum'] ) ? $rows[0]['maximum'] : 0 ) + 1;
     }
 
+    /**
+     * The column sets of $table's unique keys: its primary key and every unique index.
+     *
+     * @param string $table
+     * @return array[] one list of column names per key; empty for an unknown table
+     */
+    function uniqueKeyColumns( $table )
+    {
+        if ( isset( $this->UniqueKeyColumns[$table] ) )
+            return $this->UniqueKeyColumns[$table];
+        $sets = array();
+        if ( $this->IsConnected && preg_match( '/^[A-Za-z0-9_]+$/', $table ) )
+        {
+            $primary = array();
+            foreach ( (array)$this->arrayQuery( "PRAGMA table_info($table)" ) as $row )
+            {
+                if ( (int)$row['pk'] > 0 )
+                    $primary[(int)$row['pk']] = $row['name'];
+            }
+            if ( $primary )
+            {
+                ksort( $primary );
+                $sets[] = array_values( $primary );
+            }
+            foreach ( (array)$this->arrayQuery( "PRAGMA index_list($table)" ) as $index )
+            {
+                if ( (int)$index['unique'] !== 1 || !preg_match( '/^[A-Za-z0-9_]+$/', $index['name'] ) )
+                    continue;
+                $columns = array();
+                foreach ( (array)$this->arrayQuery( "PRAGMA index_info(" . $index['name'] . ")" ) as $column )
+                    $columns[] = $column['name'];
+                if ( $columns && !in_array( $columns, $sets ) )
+                    $sets[] = $columns;
+            }
+        }
+        return $this->UniqueKeyColumns[$table] = $sets;
+    }
+
+    /**
+     * Whether "INSERT OR REPLACE" into $table can only replace the row its persistent object
+     * definition identifies by $keys.
+     *
+     * REPLACE deletes every row that collides with the new one on any unique key of the table.
+     * That is the row with the same $keys only when each unique key contains all of $keys. A
+     * schema made by the Platform (Doctrine) gives ezcontentobject_attribute the key (id) alone,
+     * while the legacy kernel identifies a row by (id, version): copying an attribute into a new
+     * version (same id) replaced, that is deleted, the attribute of the published version, and
+     * every edit in the legacy admin lost the published content. Where this is false the kernel
+     * inserts without REPLACE, so a collision fails with an error instead of deleting a row.
+     *
+     * @param string $table
+     * @param string[] $keys
+     * @return bool
+     */
+    function insertOrReplaceIsSafe( $table, array $keys )
+    {
+        foreach ( $this->uniqueKeyColumns( $table ) as $columns )
+        {
+            if ( array_diff( $keys, $columns ) )
+            {
+                if ( !isset( $this->UnsafeReplaceReported[$table] ) )
+                {
+                    $this->UnsafeReplaceReported[$table] = true;
+                    eZDebug::writeWarning( "Table $table has the unique key (" . implode( ', ', $columns )
+                        . ") without all of (" . implode( ', ', $keys ) . "), the key its rows are stored by:"
+                        . " inserting without REPLACE. Rebuild the table with the key of the legacy schema.",
+                        __METHOD__ );
+                }
+                return false;
+            }
+        }
+        return true;
+    }
+
     /*!
      \reimp
     */
@@ -1145,6 +1233,10 @@ class eZSQLite3DB extends eZDBInterface
     protected $StatementWaitMs = 5000;
     /// Whether SQLite has a transaction open on this connection (BEGIN IMMEDIATE succeeded, not ended yet)
     protected $InSQLTransaction = false;
+
+    /// uniqueKeyColumns() per table, and the tables insertOrReplaceIsSafe() reported
+    protected $UniqueKeyColumns = array();
+    protected $UnsafeReplaceReported = array();
 
     /// serialIDNeedsValue() per "table.column"
     protected $SerialIDNeedsValue = array();

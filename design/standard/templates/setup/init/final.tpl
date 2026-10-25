@@ -62,3 +62,19 @@
 
   </table>*}
 </fieldset>
+
+{* The cron job of the new installation (expCrontabSetup, written by the final step): where it went, or the lines to
+   add when no crontab could be written. *}
+{if is_set( $crontab )}
+<fieldset>
+<legend>{'Cronjobs'|i18n( 'design/standard/setup/init' )}:</legend>
+{if or( eq( $crontab.status, 'written' ), eq( $crontab.status, 'unchanged' ) )}
+<p>{'The cronjobs run from the crontab of the user %user, which owns the installation.'|i18n( 'design/standard/setup/init',, hash( '%user', $crontab.user|wash ) )}</p>
+{elseif eq( $crontab.status, 'empty' )}
+<p>{'The installation has no cronjob part to schedule.'|i18n( 'design/standard/setup/init' )}</p>
+{else}
+<p>{'The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:'|i18n( 'design/standard/setup/init',, hash( '%reason', $crontab.message|wash ) )}</p>
+<pre>{foreach $crontab.block as $line}{$line|wash}<br />{/foreach}</pre>
+{/if}
+</fieldset>
+{/if}
