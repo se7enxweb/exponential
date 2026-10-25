@@ -69,7 +69,7 @@ davon; die Site zeigt weiterhin das veröffentlichte Layout, bis Sie veröffentl
    **Placeholders**.
 2. Ziehen Sie einen Blocktyp in eine Zone, an die Stelle, an der er stehen soll.
 
-![Die Liste der Blocktypen](../../eng-us/help/images/layouts-add-block.webp)
+![Die Liste der Blocktypen](bilder/layouts-add-block.webp)
 
 ## Einen Block ändern
 
@@ -83,7 +83,7 @@ Klicken Sie auf einen Block, um ihn auszuwählen. Rechts erscheinen seine Eigens
 und **Block löschen**. Um einen Block zu verschieben, ziehen Sie ihn an seinem Griff an eine andere Stelle oder in eine
 andere Zone.
 
-![Ein Title-Block, der der linken Zone hinzugefügt wurde](../../eng-us/help/images/layouts-block-added.webp)
+![Ein Title-Block, der der linken Zone hinzugefügt wurde](bilder/layouts-block-added.webp)
 
 ## Veröffentlichen, behalten oder verwerfen
 

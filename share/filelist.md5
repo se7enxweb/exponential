@@ -15917,6 +15917,8 @@ a76e97ce9d11384d8c123b2b31d7c16f  doc/ger-de/hilfe/bilder/hosting/user-hygiene.w
 dd02fefca8f180452ccef3ad675735bf  doc/ger-de/hilfe/bilder/languages/setup-languages.webp
 efe93e0886ece385815e5a23f3ca825b  doc/ger-de/hilfe/bilder/languages/translation-badges.webp
 a2dbeb0affef69e4cfaa2a3f34b8a135  doc/ger-de/hilfe/bilder/languages/translations-tab.webp
+2173af519aea4766457f3116349ef37a  doc/ger-de/hilfe/bilder/layouts-add-block.webp
+6b9d147592aac59bf0f3ce98f88bc5e4  doc/ger-de/hilfe/bilder/layouts-block-added.webp
 5c5b3a64b8284f95ff420492134961f2  doc/ger-de/hilfe/bilder/layouts-editor.webp
 5594da64fe9fec036c8152290a678ceb  doc/ger-de/hilfe/bilder/layouts/item-layouts-tab.webp
 c22bd063431c6f75aee4973a162e5def  doc/ger-de/hilfe/bilder/layouts/layout-components.webp
@@ -17825,7 +17827,7 @@ f85b851665e1080dd7ce5e9a13f449d8  doc/ger-de/hilfe/kunden/wachstum/newsletter.md
 fd6fb22e1621e972c2617d49bd8fe424  doc/ger-de/hilfe/kunden/wachstum/rest-api-fuer-betreiber.md
 2901b5aa1e1215c75c8ba2155563ef31  doc/ger-de/hilfe/kunden/wachstum/rss-und-podcast-feeds.md
 9df0d69895337149daa676746adba2cd  doc/ger-de/hilfe/kunden/was-ihnen-gehoert.md
-b5a6e9bfac50c09e9bcc13714ae27b6e  doc/ger-de/hilfe/layout-editor.md
+b3906d23540bdc5fd6cf36ff589e28bc  doc/ger-de/hilfe/layout-editor.md
 c547f54b681075446355c65ce0a42771  doc/ger-de/hilfe/lernende/als-lernende-beitragen.md
 50cc9cc62ec1440a3493b06cff24e6a0  doc/ger-de/hilfe/lernende/als-lernende-uebersetzen.md
 2c1d67c243813eb29a7f98c61ac1b822  doc/ger-de/hilfe/lernende/aus-git-klonen-zum-lernen-installieren.md
