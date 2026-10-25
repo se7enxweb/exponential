@@ -795,3 +795,43 @@ $$;
 --
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge character varying(128);
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge_method character varying(10);
+
+-- Passkeys (doc/eng-us/guides/passkeys.md).
+--
+-- One row per passkey (WebAuthn credential) a user registered on user/passkeys. credential_id
+-- and public_key are base64url (the COSE key the authenticator sent); credential_hash is the
+-- SHA-256 (hex) of the credential id, what a sign-in looks the passkey up by. user_handle is
+-- the random handle the browser keeps with the passkey (never the user id). sign_count is the
+-- authenticator's signature counter; created and last_used are timestamps (0 = not yet).
+-- Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so running this block
+-- again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exppasskey' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exppasskey_id_seq' ) THEN
+            CREATE SEQUENCE exppasskey_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exppasskey (
+          aaguid character varying(36) DEFAULT ''::character varying NOT NULL,
+          algorithm integer DEFAULT 0 NOT NULL,
+          backup_eligible integer DEFAULT 0 NOT NULL,
+          backup_state integer DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          credential_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+          credential_id text,
+          id integer DEFAULT nextval('exppasskey_id_seq'::text) NOT NULL,
+          last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          last_used integer DEFAULT 0 NOT NULL,
+          name character varying(255) DEFAULT ''::character varying NOT NULL,
+          public_key text,
+          sign_count bigint DEFAULT 0 NOT NULL,
+          transports character varying(255) DEFAULT ''::character varying NOT NULL,
+          user_handle character varying(128) DEFAULT ''::character varying NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exppasskey ADD CONSTRAINT exppasskey_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX exppasskey_credential ON exppasskey USING btree ( credential_hash );
+        CREATE INDEX exppasskey_user ON exppasskey USING btree ( user_id );
+    END IF;
+END
+$$;

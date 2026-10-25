@@ -55,6 +55,15 @@ $ViewList['megamenu'] = array(
     'ui_context' => 'ajax',
     'params' => array( 'Tab' ) );
 
+// The passkeys of the signed-in user's own account (doc/eng-us/guides/passkeys.md): add one (the browser's passkey
+// dialog), name, list, rename and remove them. Opens with user/login; the view sends a visitor who is not signed in
+// to the sign-in. "Verify it's you" asks first ([ReauthGroup_account]). See kernel/user/passkeys.php
+$ViewList['passkeys'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'passkeys.php',
+    'default_navigation_part' => 'ezmynavigationpart',
+    'params' => array() );
+
 $ViewList['password'] = array(
     'functions' => array( 'password' ),
     'script' => 'password.php',

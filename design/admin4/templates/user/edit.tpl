@@ -132,6 +132,13 @@
                             eq( $action.status.key, 'on_email' ), 'On, e-mail codes'|i18n( 'design/admin/user/edit' ), 'Off'|i18n( 'design/admin/user/edit' ) )
              $icon = 'phone'}
     {/case}
+    {case match='passkeys'}
+        {set $title = 'Passkeys'|i18n( 'design/admin/user/edit' )
+             $text = 'Sign in with your fingerprint, face, screen lock or security key instead of your password.'|i18n( 'design/admin/user/edit' )
+             $label = cond( $action.status.total|gt( 0 ), 'Manage passkeys'|i18n( 'design/admin/user/edit' ), 'Add a passkey'|i18n( 'design/admin/user/edit' ) )
+             $badge = cond( $action.status.total|gt( 0 ), '%count passkeys'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.total ) ), 'None yet'|i18n( 'design/admin/user/edit' ) )
+             $icon = 'person-lock'}
+    {/case}
     {case match='apikeys'}
         {set $title = 'API keys'|i18n( 'design/admin/user/edit' )
              $text = cond( $own, 'Personal keys for your own scripts and tools to publish through the REST interface.'|i18n( 'design/admin/user/edit' ), 'Show and revoke the API keys of this user.'|i18n( 'design/admin/user/edit' ) )

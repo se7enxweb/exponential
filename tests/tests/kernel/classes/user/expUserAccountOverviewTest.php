@@ -74,10 +74,14 @@ class expUserAccountOverviewTest extends PHPUnit\Framework\TestCase
     /** UAO-03 */
     public function testOwnAccountActions()
     {
-        $actions = $this->overview( array( 'twofactor' => array( 'active' => true, 'method' => 'email' ),
+        $actions = $this->overview( array( 'twofactor' => array( 'active' => true, 'method' => 'email' ), 'passkeys' => array( 'total' => 2 ),
             'apikeys' => array( 'active' => 2, 'total' => 3 ), 'can_create_apikeys' => true ) )->actions();
         $this->assertSame( expUserAccountOverview::ACTIONS, self::keys( $actions ) );
         $by = array_column( $actions, null, 'key' );
+        $this->assertSame( array( 'link', 'user/passkeys', 'count', 'ok', 2 ), array( $by['passkeys']['how'], $by['passkeys']['url'],
+            $by['passkeys']['status']['key'], $by['passkeys']['status']['level'], $by['passkeys']['status']['total'] ) );
+        // another user's account has no passkeys card: passkeys are managed by their owner only
+        $this->assertNotContains( 'passkeys', self::keys( $this->overview( array( 'own' => false, 'passkeys' => array( 'total' => 1 ) ) )->actions() ) );
         $this->assertSame( array( 'post', 'EditButton', '' ), array( $by['profile']['how'], $by['profile']['button'], $by['profile']['url'] ) );
         $this->assertSame( 'ChangePasswordButton', $by['password']['button'] );
         $this->assertSame( 'ChangeSettingButton', $by['settings']['button'] );

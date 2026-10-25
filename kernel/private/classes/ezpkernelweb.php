@@ -1032,6 +1032,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
                         if ( $moduleResult === null && class_exists( 'expPasswordChangeRequired' ) )
                             $moduleResult = expPasswordChangeRequired::moduleResult( $this->module, $functionName );
 
+                        // "Verify it's you" before a sensitive action ([ReauthSettings]; doc/eng-us/guides/verify-its-you.md):
+                        // only here, on the web pages, never on REST, SOAP, WebDAV or the command line
+                        if ( $moduleResult === null && class_exists( 'expReauth' ) )
+                            $moduleResult = expReauth::moduleResult( $this->module, $functionName, is_array( $params ) ? $params : array() );
+
                         // The node or object the view is asked for, for the line of a request that ends as a not-found
                         if ( class_exists( 'expRequestLog' ) )
                             expRequestLog::noteView( $this->module->attribute( 'name' ), $functionName,

@@ -613,3 +613,33 @@ CREATE TABLE IF NOT EXISTS exp_data_sync_link (
 ALTER TABLE ezprest_authcode
   ADD COLUMN code_challenge varchar(128) default NULL,
   ADD COLUMN code_challenge_method varchar(10) default NULL;
+
+-- Passkeys (doc/eng-us/guides/passkeys.md).
+--
+-- One row per passkey (WebAuthn credential) a user registered on user/passkeys. credential_id
+-- and public_key are base64url (the COSE key the authenticator sent); credential_hash is the
+-- SHA-256 (hex) of the credential id, what a sign-in looks the passkey up by. user_handle is
+-- the random handle the browser keeps with the passkey (never the user id). sign_count is the
+-- authenticator's signature counter; created and last_used are timestamps (0 = not yet).
+-- Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS exppasskey (
+  aaguid varchar(36) NOT NULL DEFAULT '',
+  algorithm int(11) NOT NULL DEFAULT '0',
+  backup_eligible int(11) NOT NULL DEFAULT '0',
+  backup_state int(11) NOT NULL DEFAULT '0',
+  created int(11) NOT NULL DEFAULT '0',
+  credential_hash varchar(64) NOT NULL DEFAULT '',
+  credential_id longtext,
+  id int(11) NOT NULL AUTO_INCREMENT,
+  last_ip varchar(64) NOT NULL DEFAULT '',
+  last_used int(11) NOT NULL DEFAULT '0',
+  name varchar(255) NOT NULL DEFAULT '',
+  public_key longtext,
+  sign_count bigint(20) NOT NULL DEFAULT '0',
+  transports varchar(255) NOT NULL DEFAULT '',
+  user_handle varchar(128) NOT NULL DEFAULT '',
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( id ),
+  UNIQUE KEY exppasskey_credential ( credential_hash ),
+  KEY exppasskey_user ( user_id )
+) ENGINE=InnoDB;

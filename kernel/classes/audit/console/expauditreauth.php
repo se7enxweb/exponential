@@ -86,6 +86,9 @@ class expAuditReauth
     {
         if ( !$user instanceof eZUser )
             return false;
+        // "Verify it's you" (expReauth) answered within its time counts here too
+        if ( class_exists( 'expReauth' ) && expReauth::isFresh( $user ) )
+            return true;
         $http = eZHTTPTool::instance();
         if ( !$http->hasSessionVariable( self::SESSION_KEY ) )
             return false;
