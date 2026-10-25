@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-bc9fc0744bfd6f0e490ec3fc84a41221  doc/changelogs/6.0/6.0.15.md
+414d317d703512986df734ea6dac40c2  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -10077,7 +10077,7 @@ a627247c853dce82d5b06e055e572acd  doc/eng-us/help/integrators/syndication-betwee
 09d924e598a90d4c808fd3b26dc9c803  doc/eng-us/help/integrators/testing-integrations.md
 247bb915d78f0a9441c1b2ae2e653a02  doc/eng-us/help/integrators/upgrades-without-breaking-integrations.md
 501ca0774b554c58930114335c73b430  doc/eng-us/help/integrators/velocity-and-performance-for-integrations.md
-9c1cd56cc3a87778722690961a53ab4f  doc/eng-us/help/integrators/webdav-and-soap.md
+d2e3e59cb5f415a88583fafaf18d59d0  doc/eng-us/help/integrators/webdav-and-soap.md
 1a14cc46ca2370354063794245ffc950  doc/eng-us/help/integrators/what-integrators-do-with-exponential.md
 719d17210f1ea527e8b9eaccad844fdc  doc/eng-us/help/integrators/workflows-and-triggers-as-hooks.md
 e5e6c739439786c25d6c52fe3f97f25a  doc/eng-us/help/integrators/writing-an-export-or-outbound-sync.md
@@ -17138,7 +17138,7 @@ a4079eacdea5bab07b34149aae6bc586  doc/ger-de/hilfe/integratoren/upgrades-ohne-de
 2ce677a5304d762c3b64d55726373b3f  doc/ger-de/hilfe/integratoren/velocity-und-leistung-fuer-integrationen.md
 19f111a4fcd9966ee3699b8d5cfec93a  doc/ger-de/hilfe/integratoren/vorlage-fuer-eine-schnittstellenspezifikation.md
 22a826a91f1a769d447b83d233354a9d  doc/ger-de/hilfe/integratoren/was-integratoren-mit-exponential-tun.md
-29d305fb696891a71f7cd4d664f494ad  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
+4e936c03f6f6e474f27eaac08936676e  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
 bbf44d6f18db0cd75a0c86e463043335  doc/ger-de/hilfe/integratoren/workflows-und-trigger-als-hooks.md
 fc494ee8d53fe23b6cbb2d1f6bd0506b  doc/ger-de/hilfe/integratoren/zahlungsanbieter-und-der-shop.md
 6d9d5cf3b3b53770d5938793a4e25344  doc/ger-de/hilfe/integratoren/zugangsdaten-fuer-eine-integration-waehlen.md

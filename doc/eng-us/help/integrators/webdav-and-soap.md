@@ -64,7 +64,7 @@ What a WebDAV user may see and change is decided as on the web, in two steps:
 | Reading a folder or file | `content/read` on the node | `404`: a node the user may not read is not listed and not shown |
 | PUT, MKCOL | `content/create` (a new file or folder) or `content/edit` (a replaced file) below the folder | `403`; nothing is stored |
 | DELETE | `content/remove` | `403`; nothing is removed |
-| COPY, MOVE | the rights of the same copy or move in the administration (`content/create` at the destination) | `403`; COPY or MOVE between two siteaccesses is always refused |
+| COPY, MOVE | the rights of the same copy or move in the administration (`content/create` at the destination) | `403` (inside a `207` multistatus answer, as WebDAV clients expect it); nothing is copied or moved. COPY or MOVE between two siteaccesses is always refused |
 
 Until 6.0.15 every read was granted before the policy check, and a refused PUT, MKCOL, DELETE, COPY or MOVE was
 answered with `201` or `204`: the client showed a success and the change was lost. Check that WebDAV users have
