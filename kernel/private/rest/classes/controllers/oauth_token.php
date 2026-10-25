@@ -60,7 +60,8 @@ class ezpRestOauthTokenController extends ezcMvcController
         $client_id = $this->request->post['client_id'];
         $client_secret = isset( $this->request->post['client_secret'] ) && is_string( $this->request->post['client_secret'] )
                          ? $this->request->post['client_secret'] : null;
-        $code_verifier = isset( $this->request->post['code_verifier'] ) ? $this->request->post['code_verifier'] : null;
+        $code_verifier = isset( $this->request->post['code_verifier'] ) && is_string( $this->request->post['code_verifier'] )
+                         ? $this->request->post['code_verifier'] : null;
         $tokenTTL = (int)eZINI::instance( 'rest.ini' )->variable( 'OAuthSettings', 'TokenTTL' );
 
         if ( !$this->validateGrantType( $grant_type ) )
@@ -110,6 +111,33 @@ class ezpRestOauthTokenController extends ezcMvcController
         {
             throw new ezpOauthInvalidRequestException( 'Missing ' . implode( ', ', $missingParams ) . ( count( $missingParams ) > 1 ? ' parameters.' : ' parameter.' ) );
         }
+        // A parameter posted as a list (client_id[]=..., refresh_token[]=...) reached the client and token lookups
+        // as an array, where the database layer failed with an error page instead of an OAuth answer.
+        $invalidParams = self::invalidParams( $this->request->post, $paramsToCheck );
+        if ( !empty( $invalidParams ) )
+        {
+            throw new ezpOauthInvalidRequestException( 'Invalid ' . implode( ', ', $invalidParams ) . ( count( $invalidParams ) > 1 ? ' parameters.' : ' parameter.' ) );
+        }
+    }
+
+    /**
+     * The names in $paramsToCheck whose value in $post is present but not a string (a list posted as name[]=...).
+     *
+     * @param array $post
+     * @param array $paramsToCheck
+     * @return array
+     */
+    public static function invalidParams( $post, $paramsToCheck )
+    {
+        $invalidParams = array();
+        foreach ( $paramsToCheck as $param )
+        {
+            if ( isset( $post[$param] ) && !is_string( $post[$param] ) )
+            {
+                $invalidParams[] = $param;
+            }
+        }
+        return $invalidParams;
     }
 
     /**

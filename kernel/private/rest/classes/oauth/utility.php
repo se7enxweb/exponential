@@ -33,7 +33,7 @@ class ezpOauthUtility extends ezpRestModel
      *
      * @param ezcMvcRequest $request
      * @param array|null $sources the places to look at, in order ('header', 'get', 'post'); tokenSources() by default
-     * @return string|null
+     * @return string|null a value that is not a string (oauth_token[]=...) is no token
      */
     public static function getToken( ezcMvcRequest $request, $sources = null )
     {
@@ -63,10 +63,24 @@ class ezpOauthUtility extends ezpRestModel
                 break;
             }
 
+            // a parameter posted as a list (oauth_token[]=...) is no token
+            if ( isset( $token ) && !is_string( $token ) )
+            {
+                $token = null;
+            }
+
             if ( isset( $token ) ) // Go out of the loop if we find the token during the iteration
             {
                 break;
             }
+        }
+
+        // A client that still sends ?oauth_token= gets 401 since AllowTokenInQuery is disabled by default; say why in
+        // the debug output, so the change is found from the site's side as well.
+        if ( !isset( $token ) && !in_array( 'get', $checkStack, true ) && $request instanceof ezpRestRequest
+             && isset( $request->get['oauth_token'] ) )
+        {
+            eZDebug::writeNotice( 'An OAuth token in the query string (oauth_token) was ignored: rest.ini [OAuthSettings] AllowTokenInQuery is not enabled; send it in the Authorization header', __METHOD__ );
         }
 
         return $token;

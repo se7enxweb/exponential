@@ -154,6 +154,37 @@ class ezpOauthGrantChecksTest extends TestCase
         $controller->doHandleRequest();
     }
 
+    public function testListParamsAreNamedAsInvalid()
+    {
+        self::assertSame( array( 'client_id', 'refresh_token' ),
+                          ezpRestOauthTokenController::invalidParams( array( 'grant_type' => 'refresh_token', 'client_id' => array( 'x' ), 'refresh_token' => array() ),
+                                                                      array( 'grant_type', 'client_id', 'refresh_token' ) ) );
+        self::assertSame( array(), ezpRestOauthTokenController::invalidParams( array( 'a' => '1' ), array( 'a', 'missing' ) ) );
+    }
+
+    public function testRequestWithAListClientIdIsRefusedBeforeAnyLookup()
+    {
+        // client_id[]=x used to reach ezpRestClient::fetchByClientId() as an array
+        $request = new ezpRestRequest();
+        $request->post = array( 'grant_type' => 'refresh_token', 'client_id' => array( 'x' ), 'refresh_token' => 'r' );
+        $controller = new ezpRestOauthTokenController( 'handleRequest', $request );
+
+        $this->expectException( ezpOauthInvalidRequestException::class );
+        $this->expectExceptionMessage( 'Invalid client_id parameter.' );
+        $controller->doHandleRequest();
+    }
+
+    public function testRequestWithAListRefreshTokenIsRefusedBeforeAnyLookup()
+    {
+        $request = new ezpRestRequest();
+        $request->post = array( 'grant_type' => 'refresh_token', 'client_id' => 'c', 'refresh_token' => array( 'r' ) );
+        $controller = new ezpRestOauthTokenController( 'handleRequest', $request );
+
+        $this->expectException( ezpOauthInvalidRequestException::class );
+        $this->expectExceptionMessage( 'Invalid refresh_token parameter.' );
+        $controller->doHandleRequest();
+    }
+
     public function testRequestNamesEveryMissingParameter()
     {
         $request = new ezpRestRequest();

@@ -58,6 +58,9 @@ class ezpOauthUtilityTokenTest extends PHPUnit\Framework\TestCase
             'bad characters'         => array( 'OAuth abc-123', array(), array(), null ),
             'two tokens'             => array( 'OAuth abc def', array(), array(), null ),
             'bad header then query'  => array( 'Basic x', array( 'oauth_token' => 'q' ), array(), 'q' ),
+            'query list'             => array( null, array( 'oauth_token' => array( 'a' ) ), array(), null ),
+            'body list'              => array( null, array(), array( 'oauth_token' => array( 'a' ) ), null ),
+            'query list then body'   => array( null, array( 'oauth_token' => array( 'a' ) ), array( 'oauth_token' => 'b' ), 'b' ),
             'nothing'                => array( null, array(), array(), null ),
         );
     }

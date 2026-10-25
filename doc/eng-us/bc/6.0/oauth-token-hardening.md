@@ -29,7 +29,13 @@ checks a token's user, ends refresh tokens after a lifetime, and no longer takes
   history and `Referer` headers.
 - **Missing parameters.** The token endpoint names every missing parameter ("Missing grant_type, client_id
   parameters."). Before, only a missing last parameter was refused, and a request without `client_id` went on to look
-  up a client `null` with "Undefined array key" warnings.
+  up a client `null` with "Undefined array key" warnings. A parameter posted as a list (`client_id[]=...`) is refused
+  as `invalid_request` ("Invalid client_id parameter.") instead of reaching the database layer as an array.
+- **Diagnosis.** A request whose token comes only in the address while `AllowTokenInQuery` is off writes a notice to
+  the debug output ("An OAuth token in the query string (oauth_token) was ignored ...").
+- **Not changed.** The REST API, SOAP, WebDAV and `expservices` are not guarded by two-factor sign-in by default; this
+  change adds no second factor to the token endpoint or to resource requests. The second factor is asked where the
+  user signs in on the web form, which `oauth/authorize` uses.
 
 ## Settings
 
@@ -55,6 +61,6 @@ checks a token's user, ends refresh tokens after a lifetime, and no longer takes
 
 - `ezpOauthUtility` (`kernel/private/rest/classes/oauth/utility.php`): `userMayUseToken()`, `clientMatches()`,
   `refreshTokenExpired()`, `tokenSources()`; `ezpOauthFilter::run()` (`oauth_filter.php`);
-  `ezpRestOauthTokenController::missingParams()` (`controllers/oauth_token.php`).
+  `ezpRestOauthTokenController::missingParams()` and `invalidParams()` (`controllers/oauth_token.php`).
 - `tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php` and
   `tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php` (no database).

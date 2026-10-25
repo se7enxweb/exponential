@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-e9e7006fdb82d4d2b344f2db73daf5a3  doc/changelogs/6.0/6.0.15.md
+313a9150ccbea5193588a1c122f5ca65  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3466,7 +3466,7 @@ aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
 e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands.md
 09126e5f8caee5c1c7e418680e6f5e4f  doc/eng-us/bc/6.0/oauth-authorize-policy.md
 5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
-1e43562593d1474d09c9a3619e992b90  doc/eng-us/bc/6.0/oauth-token-hardening.md
+21631aad083808b1268ae87a5cdfd7ce  doc/eng-us/bc/6.0/oauth-token-hardening.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
 6d5afc9f15682d0a04fa6715ff862161  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
@@ -22949,7 +22949,7 @@ b70ab5d832559492657ceb94c8d63faa  kernel/private/rest/classes/cache/options/stor
 f688b66dbcc427e808dc90540217df12  kernel/private/rest/classes/content_renderer.php
 f8089b4537dac3a5adb5109709008955  kernel/private/rest/classes/controllers/auth.php
 0b6574eea43984924b4c4b7069581232  kernel/private/rest/classes/controllers/error.php
-19877b2fd5c321b77cd24288b1700635  kernel/private/rest/classes/controllers/oauth_token.php
+3e15d4338218d5744789907790d27fba  kernel/private/rest/classes/controllers/oauth_token.php
 9d1e29271766054745de281a4dc8b649  kernel/private/rest/classes/controllers/rest_controller.php
 b3b653fbe08e028ebeeeac286ccb6e60  kernel/private/rest/classes/cors.php
 690a78e18937a4139eafd518d526f754  kernel/private/rest/classes/debug/debug.php
@@ -22994,7 +22994,7 @@ d18b0c46a501fb27380f2229539815c8  kernel/private/rest/classes/mvc_configuration.
 c7af38bc5a082e7290758290a6343792  kernel/private/rest/classes/oauth/authorize_policy_grant.php
 c783e27b95c1da1afc2b5aaa7688f67c  kernel/private/rest/classes/oauth/oauth_filter.php
 dd293dec8b400f87c0dd3945dc70e43a  kernel/private/rest/classes/oauth/pkce.php
-efe750ad4cd409360b4033f324976728  kernel/private/rest/classes/oauth/utility.php
+bde60818edf9216a9a53b4b51e3cd173  kernel/private/rest/classes/oauth/utility.php
 7c1d17b1d2ab1f285872833ee383b650  kernel/private/rest/classes/oauth_token_endpoint_error.php
 541be1bf9c18d55d21b799a142fede84  kernel/private/rest/classes/outh_error_type.php
 036d75534b75d27f30b21f5f64404a77  kernel/private/rest/classes/po_maps/ezprestauthcode.php
@@ -25309,7 +25309,7 @@ e414caf421b6c9adec37d5cae73c38c0  tests/tests/kernel/classes/radwizards/expRadWi
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
 a07264cc546fa42e7261bd7e3c01aa31  tests/tests/kernel/classes/reauth/expReauthRulesTest.php
 7083b8e7ffc52109d89f3ddd560c0568  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
-40dbb145ac5caee75b6ded87b49a6279  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
+109e3d2ff709b1176a1c828322cfb192  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
 ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpRequestParserTest.php
 88dce112e50350d80d8abd8568be28a0  tests/tests/kernel/classes/rest/ezpRestPrefixFilterTest.php
 40cb7208c58798029ba784d261738134  tests/tests/kernel/classes/rest/ezpRestRoutesTest.php
@@ -25612,7 +25612,7 @@ d7ca0190a449ce3e4d3bf7e6a05c2aaf  tests/tests/kernel/private/ezpmobiledevicedete
 779770b1ad4be22559129affdc36e217  tests/tests/kernel/private/oauth/expOAuthPkceSchemaTest.php
 699d73f401ca04ffa5493af0b72ed31f  tests/tests/kernel/private/oauth/expOAuthPkceTest.php
 cae49764ee1f00d1405608edaae31640  tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php
-0d068465d8719a1724e16fb3b0266cbc  tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php
+1badec472c6768dea91bc06e79d2b59a  tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php
 a3beb6daaccda7385398be0409c86cd8  tests/tests/kernel/private/oauth/fixtures/authorize_harness.php
 ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.php
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php
