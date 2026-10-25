@@ -44,9 +44,17 @@
 	    <input class="button" type="submit" name="ActionAddToBookmarks" value="{'Add to bookmarks'|i18n( 'design/admin/pagelayout' )}" title="{'Add the current item to your bookmarks.'|i18n( 'design/admin/pagelayout' )}" />
 	    </form>
     {else}
+	    {* a page of a module view: bookmark the page itself (expBookmarkView), where that is possible *}
+	    {def $box_view_bookmark = fetch( 'content', 'view_bookmark', hash( 'uri', first_set( $requested_uri_string, $module_result.uri, '' ),
+	                                                                       'path', first_set( $module_result.path, array() ) ) )}
+	    {if and( $box_view_bookmark.available, is_set( $module_result.content_info.node_id )|not, is_set( $module_result.errorType )|not, $ui_context|ne( 'edit' ), $ui_context|ne( 'browse' ) )}
+	    {include uri='design:content/bookmark_view_action.tpl' mode='box' ui_context=$ui_context}
+	    {else}
 	    <form method="post" action={'content/action'|ezurl}>
 	    <input class="button-disabled" type="submit" value="{'Add to bookmarks'|i18n( 'design/admin/pagelayout' )}" disabled="disabled" />
 	    </form>
+	    {/if}
+	    {undef $box_view_bookmark}
 	{/if}
     </div>
     {undef $bookmark_rows $bookmark_folders}

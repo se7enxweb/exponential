@@ -119,6 +119,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Sites vorladen (Administrationsoberfläche)](ansicht-websites-vorladen.md)
 - [Schaltflächen für die schnelle Platzierung](schaltflaechen-fuer-schnelle-platzierung.md)
 - [Lesezeichenordner](lesezeichenordner.md)
+- [Lesezeichen für Systemseiten](lesezeichen-fuer-systemseiten.md)
 - [Der Content Finder](inhalts-finder.md)
 - [Inhaltsaufträge: große Entfernen-, Kopier- und Verschiebevorgänge im Hintergrund](inhaltsauftraege.md)
 - [Die Inhaltsprüfungen: nicht referenzierte Objekte, defekte Beziehungen und fehlende Dateien](inhaltspruefungen.md)

@@ -1555,6 +1555,19 @@ CREATE TABLE expbookmark_folder (
 
 
 
+CREATE TABLE expbookmark_view (
+    bookmark_id integer DEFAULT 0 NOT NULL,
+    created integer DEFAULT 0 NOT NULL,
+    module_uri text,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+
+
+
+
 CREATE TABLE ezcontentbrowserecent (
     created integer DEFAULT 0 NOT NULL,
     id integer DEFAULT nextval('ezcontentbrowserecent_id_seq'::text) NOT NULL,
@@ -3420,6 +3433,11 @@ CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree (user_id,
 
 
 
+CREATE INDEX expbookmark_view_user ON expbookmark_view USING btree (user_id);
+
+
+
+
 
 
 
@@ -4678,6 +4696,12 @@ ALTER TABLE ONLY ezcontentbrowsebookmark
 
 ALTER TABLE ONLY expbookmark_folder
     ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY (id);
+
+
+
+
+ALTER TABLE ONLY expbookmark_view
+    ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY (bookmark_id);
 
 
 

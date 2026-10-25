@@ -200,6 +200,8 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
     <div id="maincontent" role="main" tabindex="-1">
     <div id="maincontent-design" class="float-break"><div id="fix">
 
+    {* "Bookmark this page" on the pages of module views (not cached: it names the user's bookmark of the page) *}
+    {include uri='design:content/bookmark_view_action.tpl' mode='toolbar' ui_context=$ui_context}
     <div id="path" role="navigation" aria-label="{'Breadcrumb'|i18n( 'design/admin/pagelayout' )|wash}">
         <div id="path-design">
             {include uri='design:page_toppath.tpl'}

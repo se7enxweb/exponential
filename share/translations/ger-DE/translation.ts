@@ -2713,6 +2713,74 @@
         <source>%count selected.</source>
         <translation>%count ausgewählt.</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Diese Seite ist in Ihren Lesezeichen. Öffnen Sie sie, um Name oder Ordner zu ändern.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Diese Seite zu Ihren Lesezeichen hinzufügen.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Gemerkt</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Seite merken</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Das Lesezeichen speichert die Adresse dieser Seite mit ihren Parametern: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Lesezeichen speichern</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Lesezeichen hinzufügen</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Meine Lesezeichen</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemseite</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemseiten</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Sie dürfen diese Seite nicht mehr öffnen.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Die Adresse dieser Seite fehlt. Entfernen Sie das Lesezeichen und merken Sie die Seite erneut.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Sie dürfen diese Seite nicht mehr öffnen. Entfernen Sie das Lesezeichen oder bitten Sie einen Administrator um Zugriff.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul und Ansicht</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Auch Systemseiten lassen sich merken: Öffnen Sie die Seite (Einrichtung, das Audit-Protokoll, eine Benutzerliste ...) und wählen Sie darüber „Seite merken“. Solche Lesezeichen haben ein Zahnrad-Symbol.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -63918,6 +63986,38 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count Lesezeichen hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemseite</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemseiten können noch nicht gemerkt werden: Das Datenbank-Update dieser Version wurde noch nicht ausgeführt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Diese Seite kann nicht gemerkt werden: Sie ist keine Seite einer Modulansicht.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Diese Seite kann nicht gemerkt werden: Sie dürfen sie nicht öffnen.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Die Seite konnte nicht gemerkt werden.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Die Seite „%name“ ist in Ihren Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Das Lesezeichen konnte nicht umbenannt werden: Es braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Das Lesezeichen wurde in „%name“ umbenannt.</translation>
     </message>
 </context>
 <context>

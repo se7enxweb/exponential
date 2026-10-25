@@ -295,6 +295,19 @@ CREATE TABLE expbookmark_folder (
 
 
 
+CREATE TABLE expbookmark_view (
+  bookmark_id int(11) NOT NULL default '0',
+  created int(11) NOT NULL default '0',
+  module_uri longtext,
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (bookmark_id),
+  KEY expbookmark_view_user (user_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezcontentbrowserecent (
   created int(11) NOT NULL default '0',
   id int(11) NOT NULL auto_increment,

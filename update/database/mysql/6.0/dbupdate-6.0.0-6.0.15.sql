@@ -320,6 +320,22 @@ CREATE TABLE expbookmark_folder (
   KEY expbookmark_folder_user ( user_id, parent_id )
 ) ENGINE=InnoDB;
 
+-- Bookmarks of system pages (doc/eng-us/features/6.0/bookmarks-of-system-pages.md).
+--
+-- A bookmark can point to a page of a module view (setup/systemupgrade, audit/console ...)
+-- instead of a node. Such a bookmark is a row of ezcontentbrowsebookmark with node_id 0, so
+-- it has a name, a folder and a place in its folder like every other; expbookmark_view holds
+-- its address (module_uri, without the siteaccess). New table only: node bookmarks do not
+-- change. Written with IF NOT EXISTS, so running this statement again changes nothing.
+CREATE TABLE IF NOT EXISTS expbookmark_view (
+  bookmark_id int(11) NOT NULL DEFAULT '0',
+  created int(11) NOT NULL DEFAULT '0',
+  module_uri longtext,
+  user_id int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY ( bookmark_id ),
+  KEY expbookmark_view_user ( user_id )
+) ENGINE=InnoDB;
+
 -- E-mail preferences and consent.
 --
 -- New tables only; nothing existing changes. Mail without a category is sent as before, so the update can run
