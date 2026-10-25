@@ -1,5 +1,11 @@
 {* Portions derived from LoveStack (mugoweb/ezpublish-legacy, commit 98854ab935), Copyright (C) Mugo Web, GPL v2 *}
 {* Warnings *}
+{if first_set( $passkey_warning, false() )}
+<div class="message-warning" role="alert">
+<h2>{'Could not sign in with the passkey'|i18n( 'design/standard/user/passkeys' )}</h2>
+<ul><li>{$passkey_warning|wash}</li></ul>
+</div>
+{/if}
 {if $User:warning.bad_login}
 <div class="message-warning">
 <h2><span class="time">[{currentdate()|l10n( shortdatetime )}]</span> {'The system could not log you in.'|i18n( 'design/admin/user/login' )}</h2>
@@ -29,7 +35,13 @@
 {* Login window *}
 <div class="context-block">
 
-<form name="loginform" method="post" action={'/user/login/'|ezurl}>
+{* With passkeys on, the form also signs in with a passkey: the button in the control bar and the browser's passkey
+   autofill of the username field (design:javascript/exp_passkey.js, doc/eng-us/guides/passkeys.md) *}
+{def $passkey_options = first_set( $passkey_options, '' )}
+<form name="loginform" method="post" action={'/user/login/'|ezurl}{if $passkey_options} data-exp-passkey="login"{if first_set( $passkey_warning, false() )|not} data-exp-passkey-autofill="1"{/if} data-exp-passkey-options="{$passkey_options|wash}"
+      data-msg-working="{'Follow the steps of your browser or device.'|i18n( 'design/standard/user/passkeys' )|wash}"
+      data-msg-cancelled="{'The passkey dialog was closed. You can sign in with your password instead.'|i18n( 'design/standard/user/passkeys' )|wash}"
+      data-msg-failed="{'The passkey could not be used. Please try again, or sign in with your password.'|i18n( 'design/standard/user/passkeys' )|wash}"{/if}>
 
 <div class="login-inputs context-attributes">
     
@@ -42,14 +54,14 @@
     <div class="block">
         <div class="login-input-wrapper">
             <div id="icon-login"></div>
-            <input class="halfbox" type="text" autofocus="autofocus" size="10" name="Login" id="logintext" placeholder="{'Username'|i18n( 'design/admin/user/login' )}" tabindex="1" title="{'Enter a valid username in this field.'|i18n( 'design/admin/user/login' )}" />
+            <input class="halfbox" type="text" autofocus="autofocus" size="10" name="Login" id="logintext" autocomplete="{if $passkey_options}username webauthn{else}username{/if}" placeholder="{'Username'|i18n( 'design/admin/user/login' )}" tabindex="1" title="{'Enter a valid username in this field.'|i18n( 'design/admin/user/login' )}" />
         </div>
     </div>
 
     <div class="block">
         <div class="login-input-wrapper">
             <div id="icon-password"></div>
-            <input class="halfbox" type="password" size="10" name="Password" id="passwordtext" placeholder="{'Password'|i18n( 'design/admin/user/login' )}" tabindex="2" title="{'Enter a valid password in this field.'|i18n( 'design/admin/user/login' )}" />
+            <input class="halfbox" type="password" size="10" name="Password" id="passwordtext" autocomplete="current-password" placeholder="{'Password'|i18n( 'design/admin/user/login' )}" tabindex="2" title="{'Enter a valid password in this field.'|i18n( 'design/admin/user/login' )}" />
         </div>
     </div>
 
@@ -68,6 +80,12 @@
     <div class="login-input-wrapper">
         <input class="defaultbutton" type="submit" id="loginbutton" name="LoginButton" value="{'Log in'|i18n( 'design/admin/user/login', 'Login button' )}" tabindex="3" title="{'Click here to log in using the username/password combination entered in the fields above.'|i18n( 'design/admin/user/login' )}" />
     </div>
+    {if $passkey_options}
+    <div class="login-input-wrapper" data-exp-passkey-only="1" hidden="hidden">
+        <button class="a4-btn" type="button" data-exp-passkey-start="1" tabindex="4"><span class="a4-icon a4-bi-key" aria-hidden="true"></span> {'Sign in with a passkey'|i18n( 'design/standard/user/passkeys' )}</button>
+    </div>
+    <p class="a4-notice is-info" data-exp-passkey-status="1" role="status" aria-live="polite" hidden="hidden"></p>
+    {/if}
     {* the register link only for a user who may register: user/register in the policy omit list or the policy *}
     {if and( ezmodule( 'user/register' ), fetch( 'user', 'can_open', hash( 'uri', 'user/register' ) ) )}
         <div class="login-text-wrapper">
@@ -83,6 +101,8 @@
 <input type="hidden" name="RedirectURI" value="{$User:redirect_uri|wash}" />
 
 </form>
+{if $passkey_options}{ezscript( array( 'exp_passkey.js' ) )}{/if}
+{undef $passkey_options}
 {* The social login buttons of sevenx_authentication_2fa, where that extension is active and enables a provider *}
 {if ezmodule( 'user2fa/oauth' )}
     {include uri='design:user2fa/exp_style.tpl'}

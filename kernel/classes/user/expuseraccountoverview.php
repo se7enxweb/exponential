@@ -25,7 +25,7 @@ class expUserAccountOverview
     const PASSWORD_AGE_HINT_DAYS = 365;
 
     /** The cards, in the order the page shows them */
-    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'sessions', 'apikeys', 'bookmarks', 'notifications', 'mail' );
+    const ACTIONS = array( 'profile', 'password', 'settings', 'twofactor', 'passkeys', 'sessions', 'apikeys', 'bookmarks', 'notifications', 'mail' );
 
     /** @var array */
     protected $facts;
@@ -61,7 +61,7 @@ class expUserAccountOverview
             'user_id' => 0, 'login' => '', 'email' => '', 'name' => '', 'node_id' => 0, 'language' => '',
             'own' => false, 'enabled' => true, 'locked' => false, 'failed_attempts' => 0, 'max_failed_attempts' => 0,
             'login_count' => 0, 'last_visit' => null, 'hash_type' => eZUser::PASSWORD_HASH_PHP_DEFAULT,
-            'password_changed' => null, 'groups' => array(), 'roles' => array(), 'twofactor' => null, 'apikeys' => null,
+            'password_changed' => null, 'groups' => array(), 'roles' => array(), 'twofactor' => null, 'passkeys' => null, 'apikeys' => null,
             'can_create_apikeys' => false, 'access' => array(), 'sessions' => null,
         );
     }
@@ -102,6 +102,13 @@ class expUserAccountOverview
             'twofactor' => self::twoFactorOf( $object ),
             'access' => self::accessOf( $viewer, $own ),
         );
+        // the passkeys card: the own account only, while passkeys can be used here
+        if ( $own && class_exists( 'expPasskeyService' ) )
+        {
+            $service = new expPasskeyService();
+            if ( $service->available() )
+                $facts['passkeys'] = array( 'total' => expPasskey::countByUser( $id ) );
+        }
         if ( class_exists( 'expUserSessionTracker' ) && expUserSessionTracker::enabled() && expUserSessionTracker::available() )
         {
             try
@@ -234,6 +241,15 @@ class expUserAccountOverview
                             $card = array( 'how' => 'link', 'url' => 'user2fa/setup', 'status' => $status );
                         elseif ( !$own )
                             $card = array( 'how' => 'post', 'button' => 'EditButton', 'status' => $status );
+                    }
+                    break;
+                case 'passkeys':
+                    // the user's own passkeys (user/passkeys); null: passkeys cannot be used here, or another user's account
+                    if ( $own && is_array( $f['passkeys'] ) )
+                    {
+                        $total = (int)$f['passkeys']['total'];
+                        $card = array( 'how' => 'link', 'url' => 'user/passkeys',
+                                       'status' => array( 'key' => $total > 0 ? 'count' : 'none', 'level' => $total > 0 ? 'ok' : 'none', 'total' => $total ) );
                     }
                     break;
                 case 'sessions':

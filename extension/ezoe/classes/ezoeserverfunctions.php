@@ -435,7 +435,8 @@ class ezoeServerFunctions extends ezjscServerFunctions
         $folders = array();
 
         // fetch bookmarks
-        $count = eZPersistentObject::count( eZContentBrowseBookmark::definition(), array( 'user_id' => $userID ) );
+        // the bookmarks of nodes only: the bookmarks of system pages (node_id 0, expBookmarkView) are not content
+        $count = eZPersistentObject::count( eZContentBrowseBookmark::definition(), array( 'user_id' => $userID, 'node_id' => array( '>', 0 ) ) );
         if ( $count && $asTree )
         {
             // all bookmarks in tree order, paged over that order
@@ -447,7 +448,7 @@ class ezoeServerFunctions extends ezjscServerFunctions
                     $folders[] = array( 'id' => $row['id'], 'name' => $row['name'], 'parent_id' => $row['parent_id'],
                                         'depth' => $row['depth'], 'count' => $row['count'] );
                 }
-                else
+                else if ( (int) $row['bookmark']->attribute( 'node_id' ) > 0 )
                 {
                     $ordered[] = $row['bookmark'];
                     $paths[(int) $row['bookmark']->attribute( 'node_id' )] = array( 'folder_id' => $row['folder_id'], 'folder_path' => $row['path'] );
@@ -459,7 +460,7 @@ class ezoeServerFunctions extends ezjscServerFunctions
         {
             $objectList = eZPersistentObject::fetchObjectList( eZContentBrowseBookmark::definition(),
                                                             null,
-                                                            array( 'user_id' => $userID ),
+                                                            array( 'user_id' => $userID, 'node_id' => array( '>', 0 ) ),
                                                             array( 'id' => $sort ),
                                                             array( 'offset' => $offset, 'length' => $limit ),
                                                             true );

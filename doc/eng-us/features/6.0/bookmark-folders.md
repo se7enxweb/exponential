@@ -14,6 +14,9 @@ online editor.
 | Online editor, TinyMCE 3 and 8 | The Bookmarks tab shows a heading row per folder, indented by depth |
 | Remote services | `expbookmark::tree`, `rows`, `folders`, `bookmarks`, `createFolder`, `renameFolder`, `deleteFolder`, `moveFolder`, `moveBookmark`, `place`, `addBookmark`, `removeBookmark` |
 
+Since 6.0.15 a folder can also hold bookmarks of system pages (module views): see
+[Bookmarks of system pages](bookmarks-of-system-pages.md).
+
 Designs: admin4 (and admin4l, which uses its templates), admin (and admin2, admin3, which fall back to it) and standard.
 
 ## Using it

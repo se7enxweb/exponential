@@ -198,7 +198,7 @@ class expBookmarkPageTest extends PHPUnit\Framework\TestCase
     public function testSummary()
     {
         $summary = expBookmarkPage::summary( $this->items(), expBookmarkPage::folders( $this->rows() ) );
-        $this->assertSame( array( 'bookmarks' => 5, 'folders' => 3, 'unfiled' => 2, 'hidden' => 2, 'gone' => 2 ), $summary );
+        $this->assertSame( array( 'bookmarks' => 5, 'folders' => 3, 'unfiled' => 2, 'hidden' => 2, 'gone' => 2, 'views' => 0 ), $summary );
     }
 
     public function testShiftBefore()

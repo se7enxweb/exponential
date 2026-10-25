@@ -5,7 +5,9 @@
      mode='browse'   the bookmarks of the browse dialog (needs $browse, $select_name, $select_type, $select_attribute)
    The folders open and close in the browser (remembered, shared by the three places); without JavaScript
    the whole tree is open. Parameters: rows (the result of fetch content bookmark_rows, fetched when not given),
-   ui_context (sidebar: edit or browse disables the context menu). *}
+   ui_context (sidebar: edit or browse disables the context menu). A bookmark of a system page (row.kind 'view', from
+   expBookmarkView::decorateRows(), which the bookmark_rows fetch applies) has a gear icon and links to its address, or
+   is shown disabled when the user may no longer open it; the browse dialog leaves it out. *}
 {default mode='sidebar'
          rows=false()
          ui_context=''
@@ -85,6 +87,32 @@
         {else}
           {$node.class_identifier|class_icon( ghost, $node.class_name )}&nbsp;<span class="disabled exp-bm-link"><bdi>{$node.name|wash}</bdi></span>
         {/if}
+      {/if}
+    </li>
+    {elseif and( eq( first_set( $row.kind, '' ), 'view' ), ne( $mode, 'browse' ) )}
+    {* A bookmark of a system page (a module view, see expBookmarkView): its own name, a link to its address while the
+       user may open it, otherwise shown disabled. The browse dialog selects nodes, so it does not list them. *}
+    <li class="exp-bm-row exp-bm-bookmark exp-bm-view{if first_set( $row.can_open, false() )|not} is-denied{/if}" role="treeitem" aria-level="{$row.depth|inc}" data-depth="{$row.depth}"
+        data-type="bookmark" data-kind="view" data-id="{$row.id}" data-parent="{$row.folder_id}" data-name="{$row.name|wash}"{if eq( $mode, 'page' )} draggable="true"{/if}>
+      <span class="exp-bm-indent" aria-hidden="true"></span>
+      {if eq( $mode, 'page' )}
+        <input type="checkbox" name="DeleteIDArray[]" value="{$row.id}" title="{'Select bookmark for removal.'|i18n( 'design/admin/content/bookmark' )}" />
+      {/if}
+      <span class="a4-icon a4-bi-gear exp-bm-kind" aria-hidden="true" title="{'System page'|i18n( 'design/admin/content/bookmark' )}"></span>
+      {if and( first_set( $row.can_open, false() ), ne( $ui_context, 'edit' ), ne( $ui_context, 'browse' ) )}
+        <a class="exp-bm-link" href={concat( '/', $row.uri )|ezurl} title="{concat( '/', $row.uri )|wash}"><bdi>{$row.name|wash}</bdi></a>
+      {else}
+        <span class="disabled exp-bm-link"{if first_set( $row.can_open, false() )|not} title="{'You may no longer open this page.'|i18n( 'design/admin/content/bookmark' )|wash}"{/if}><bdi>{$row.name|wash}</bdi></span>
+      {/if}
+      {if eq( $mode, 'page' )}
+        <span class="exp-bm-meta">{'System page'|i18n( 'design/admin/content/bookmark' )} &middot; /{$row.uri|wash}</span>
+        <span class="exp-bm-actions">
+          <span class="exp-bm-js">
+            <button type="button" class="exp-bm-act" data-action="up" title="{'Move up'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move up'|i18n( 'design/admin/content/bookmark' )}">&uarr;</button>
+            <button type="button" class="exp-bm-act" data-action="down" title="{'Move down'|i18n( 'design/admin/content/bookmark' )}" aria-label="{'Move down'|i18n( 'design/admin/content/bookmark' )}">&darr;</button>
+            <button type="button" class="exp-bm-act" data-action="move" title="{'Move bookmark'|i18n( 'design/admin/content/bookmark' )}">{'Move'|i18n( 'design/admin/content/bookmark' )}</button>
+          </span>
+        </span>
       {/if}
     </li>
     {/if}

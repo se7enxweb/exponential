@@ -37,6 +37,10 @@
 
 <p class="a4-intro">{'Bookmarks take you back to the items you work on: they are personal, nobody else sees them, and removing one never changes the item. Sort them into folders; the Bookmarks box at the side and the browse dialog show the same folders.'|i18n( 'design/admin/content/bookmark' )}</p>
 
+{if $bp.views_available}
+<p class="a4-help a4-content-bookmark-viewhint"><span class="a4-icon a4-bi-bookmark" aria-hidden="true"></span> {'System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.'|i18n( 'design/admin/content/bookmark' )}</p>
+{/if}
+
 {if is_set( $bookmark_notice )}
 <div class="a4-notice {if eq( $bookmark_notice.level, 'error' )}is-bad{else}is-ok{/if}" role="{if eq( $bookmark_notice.level, 'error' )}alert{else}status{/if}">{$bookmark_notice.text|wash}</div>
 {/if}
@@ -46,6 +50,7 @@
 <ul class="a4-figures">
     <li class="a4-figure{if eq( $bp.scope_key, 'all' )} is-current{/if}"><a href={'content/bookmark'|ezurl}><strong>{$summary.bookmarks}</strong> <span>{'Bookmarks'|i18n( 'design/admin/content/bookmark' )}</span></a></li>
     <li class="a4-figure"><strong>{$summary.folders}</strong> <span>{'Folders'|i18n( 'design/admin/content/bookmark' )}</span></li>
+    {if $bp.views_available}<li class="a4-figure"><strong>{$summary.views}</strong> <span>{'System pages'|i18n( 'design/admin/content/bookmark' )}</span></li>{/if}
     <li class="a4-figure{if eq( $bp.scope_key, 'top' )} is-current{/if}"><a href={'content/bookmark/(folder)/top'|ezurl}><strong>{$summary.unfiled}</strong> <span>{'Not in a folder'|i18n( 'design/admin/content/bookmark' )}</span></a></li>
     <li class="a4-figure"><strong>{$summary.hidden}</strong> <span>{'Hidden items'|i18n( 'design/admin/content/bookmark' )}</span></li>
     <li class="a4-figure{if $summary.gone|gt( 0 )} is-attention{/if}"><strong>{$summary.gone}</strong> <span>{'No longer available'|i18n( 'design/admin/content/bookmark' )}</span></li>
@@ -271,8 +276,8 @@
                 <label class="a4-pick" title="{'Select this bookmark.'|i18n( 'design/admin/content/bookmark' )}">
                     <input type="checkbox" name="DeleteIDArray[]" value="{$item.id}" aria-label="{'Select %name'|i18n( 'design/admin/content/bookmark',, hash( '%name', $item.name ) )|wash}" />
                 </label>
-                {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{/if}
-                <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}<bdi>{$item.name|wash}</bdi>{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl} dir="auto">{$item.name|wash}</a>{/if}</h4>
+                {if $item.class_identifier}{$item.class_identifier|class_icon( small, $item.class_name )}{elseif eq( $item.kind, 'view' )}<span class="a4-icon a4-bi-gear is-medium a4-content-bookmark-kind" aria-hidden="true"></span>{/if}
+                <h4 id="{$card_id}-title">{if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )}<bdi>{$item.name|wash}</bdi>{elseif eq( $item.kind, 'view' )}<a href={concat( '/', $item.uri )|ezurl} dir="auto">{$item.name|wash}</a>{else}<a href={concat( 'content/view/full/', $item.node_id )|ezurl} dir="auto">{$item.name|wash}</a>{/if}</h4>
                 <ul class="a4-badges">
                     {if $item.class_name}<li class="a4-badge">{$item.class_name|wash}</li>{/if}
                     {switch match=$item.state}
@@ -285,7 +290,9 @@
                 </ul>
             </div>
             <div class="a4-actions a4-content-bookmark-actions-tight">
-                {if or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ) )|not}
+                {if and( eq( $item.kind, 'view' ), eq( $item.state, 'ok' ) )}
+                <a class="a4-btn a4-btn-small" href={concat( '/', $item.uri )|ezurl} aria-describedby="{$card_id}-title">{'Open'|i18n( 'design/admin/content/bookmark' )}</a>
+                {elseif or( eq( $item.state, 'gone' ), eq( $item.state, 'denied' ), eq( $item.kind, 'view' ) )|not}
                 <a class="a4-btn a4-btn-small" href={concat( 'content/view/full/', $item.node_id )|ezurl} aria-describedby="{$card_id}-title">{'View'|i18n( 'design/admin/content/bookmark' )}</a>
                 {if $item.can_edit}<a class="a4-btn a4-btn-small" href={concat( 'content/edit/', $item.contentobject_id )|ezurl} aria-describedby="{$card_id}-title">{'Edit'|i18n( 'design/admin/content/bookmark' )}</a>{/if}
                 {/if}
@@ -296,7 +303,36 @@
             </div>
         </div>
         <div class="a4-content-bookmark-cardfoot">
+        {if eq( $item.kind, 'view' )}
         {if eq( $item.state, 'gone' )}
+        <p class="a4-content-bookmark-note">{'The address of this page is missing. Remove the bookmark and bookmark the page again.'|i18n( 'design/admin/content/bookmark' )}</p>
+        {elseif eq( $item.state, 'denied' )}
+        <p class="a4-content-bookmark-note">{'You may no longer open this page. Remove the bookmark, or ask an administrator for access.'|i18n( 'design/admin/content/bookmark' )}</p>
+        {/if}
+        <dl class="a4-facts">
+            <div>
+                <dt>{'Address'|i18n( 'design/admin/content/bookmark' )}</dt>
+                <dd><code class="a4-content-bookmark-uri">/{$item.uri|wash}</code></dd>
+            </div>
+            <div>
+                <dt>{'Module and view'|i18n( 'design/admin/content/bookmark' )}</dt>
+                <dd>{$item.module|wash}{if $item.view|ne( '' )} / {$item.view|wash}{/if}</dd>
+            </div>
+        </dl>
+        <details class="a4-fold a4-content-bookmark-rename">
+            <summary>{'Rename'|i18n( 'design/admin/content/bookmark' )}</summary>
+            <div class="a4-fold-body">
+                <div class="a4-content-bookmark-inline-form">
+                    <div class="a4-field">
+                        <label for="{$card_id}-name">{'New name'|i18n( 'design/admin/content/bookmark' )}</label>
+                        <input type="text" id="{$card_id}-name" name="BookmarkRenameName[{$item.id}]" value="{$item.name|wash}" maxlength="255" autocomplete="off" />
+                        <input type="hidden" name="BookmarkRenameShown[{$item.id}]" value="{$item.name|wash}" />
+                    </div>
+                    <div class="a4-actions"><button type="submit" class="a4-btn a4-btn-primary a4-btn-small" name="BookmarkRenameButton" value="{$item.id}" aria-describedby="{$card_id}-title">{'Save name'|i18n( 'design/admin/content/bookmark' )}</button></div>
+                </div>
+            </div>
+        </details>
+        {elseif eq( $item.state, 'gone' )}
         <p class="a4-content-bookmark-note">{'The item was removed, is in the trash, or is not in a language of this site. Remove the bookmark, or restore the item.'|i18n( 'design/admin/content/bookmark' )}</p>
         {elseif eq( $item.state, 'denied' )}
         <p class="a4-content-bookmark-note">{'You may no longer read this item. Remove the bookmark, or ask an administrator for access.'|i18n( 'design/admin/content/bookmark' )}</p>
