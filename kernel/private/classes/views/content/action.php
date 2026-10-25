@@ -1805,6 +1805,12 @@ class Action extends \Exponential\Runnable\ModuleView
                 {
                     $contentNodeID = $http->postVariable( 'ContentNodeID' );
                     $node = \eZContentObjectTreeNode::fetch( $contentNodeID );
+                    // a node ID that no longer exists (form sent again after the removal) ended in
+                    // "Call to a member function attribute() on null"; answered like the other branches with a missing node.
+                    if ( !$node instanceof \eZContentObjectTreeNode )
+                    {
+                        return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                    }
                     $parentNodeID = $node->attribute( 'parent_node_id' );
                 }
 

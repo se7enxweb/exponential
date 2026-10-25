@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-33a1ca06a7f38005f2f862ae34e5ba06  doc/changelogs/6.0/6.0.15.md
+120c6d9d78bdd05ae3a7c82f09d3e625  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21800,7 +21800,7 @@ db4013be707506032e099ade7a68cd03  kernel/classes/ezcontentclassnamelist.php
 0a82214399f33b8c798211c8ac2981a0  kernel/classes/ezcontentclassoperations.php
 31424373e7979ffc5f7adbcb6c2c7893  kernel/classes/ezcontentfunctions.php
 e160e8e6d8ba7040c2fa613696ecf8c8  kernel/classes/ezcontentlanguage.php
-09a28ecb79df466bd5322046522c6ca1  kernel/classes/ezcontentobject.php
+5a14af213ec29765d8157338e61a742d  kernel/classes/ezcontentobject.php
 35a995bd7316087adcef9f41550c600e  kernel/classes/ezcontentobjectassignmenthandler.php
 8be5a058027bab3e4c1219fc5ec7cc81  kernel/classes/ezcontentobjectattribute.php
 056ba02a1f3c1d32722ad0176e215c65  kernel/classes/ezcontentobjectedithandler.php
@@ -22634,7 +22634,7 @@ e7563299271b184bcb13cfc88f720e44  kernel/private/classes/views/class/removegroup
 04e79715afd000fa2c3b362974714174  kernel/private/classes/views/collaboration/group.php
 699c99a3cc1f94f29a834742110cfaa8  kernel/private/classes/views/collaboration/item.php
 ccefa96914e28491976b457d03a55ba1  kernel/private/classes/views/collaboration/view.php
-70ab745d5068b97795a781153d356bd8  kernel/private/classes/views/content/action.php
+590bf271a39cab624ef32e9b566cfd0d  kernel/private/classes/views/content/action.php
 58a9443b36a375d365c43bb1aa4cc3ed  kernel/private/classes/views/content/advancedsearch.php
 d7a18f14f302f62a7bb633e91917ff33  kernel/private/classes/views/content/bookmark.php
 30c6386008e5ca98774846ae08d7741a  kernel/private/classes/views/content/browse.php
@@ -22658,7 +22658,7 @@ f8ed857141541037f107aeb11914ec7c  kernel/private/classes/views/content/move.php
 4a2205b41dcabe2b6078bf913e2b53b6  kernel/private/classes/views/content/pendinglist.php
 6e60aba8f6e0142a11a9959f13f08b65  kernel/private/classes/views/content/queued.php
 404cd36fe1cef1ca8a6f0c70921287f9  kernel/private/classes/views/content/removeassignment.php
-dde65590bb2e9c6b9e0eefbc92386e33  kernel/private/classes/views/content/removeeditversion.php
+66102a6957cee7acf55cf606b47f6124  kernel/private/classes/views/content/removeeditversion.php
 589b516fc1882a01202090da4f5c9ee2  kernel/private/classes/views/content/removenode.php
 29c28c4b523b9d1c6417869ef34545be  kernel/private/classes/views/content/removeobject.php
 cb5b9fdfc09d81cd65f022e289bedaf5  kernel/private/classes/views/content/restore.php
@@ -25067,6 +25067,7 @@ d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftList
 3d4aea56bbd6b88864909c0e1ea1ec2a  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 3491471a762f9be5f10c662d4e35f862  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
+8f5d13082c6ad7671df7a2fb598354f3  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
 4799a37a0347c83794a9d7d43a865107  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php

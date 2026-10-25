@@ -2355,13 +2355,13 @@ class eZContentObject extends eZPersistentObject
              SET owner_id = 0
              WHERE owner_id = '$delID'" );
 
-        if ( isset( $GLOBALS["eZWorkflowTypeObjects"] ) and is_array( $GLOBALS["eZWorkflowTypeObjects"] ) )
+        // once any event type had been created in this request, only the types already in
+        // $GLOBALS["eZWorkflowTypeObjects"] were asked to clean up; the others kept their rows for the purged object.
+        // fetchRegisteredTypes() loads every type of workflow.ini and keeps those already loaded.
+        $registeredTypes = eZWorkflowType::fetchRegisteredTypes();
+        if ( !is_array( $registeredTypes ) )
         {
-            $registeredTypes =& $GLOBALS["eZWorkflowTypeObjects"];
-        }
-        else
-        {
-            $registeredTypes = eZWorkflowType::fetchRegisteredTypes();
+            $registeredTypes = array();
         }
 
         // Cleanup ezworkflow_event etc...
