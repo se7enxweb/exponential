@@ -42,7 +42,7 @@ Adresse auf, unter der die Installation antwortet.
 
 Unter dem Titel nennt *Administration von ...* den Siteaccess, in dem Sie sich anmelden. Wo die Site es zulässt,
 bietet die Seite außerdem **Passwort vergessen?** und **Neues Konto registrieren** an; ein Feld zum Angemeldetbleiben
-(**Erinnerung**) erscheint nur, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`).
+(**Angemeldet bleiben**) erscheint nur, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`).
 
 ### Zweistufige Anmeldung
 
