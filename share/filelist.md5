@@ -6387,6 +6387,7 @@ c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 6586bcc3de074253bac811b9c4f7aaa1  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
+207228500b8e72a85d90aeb0c9f0a5a0  doc/eng-us/features/6.0/user-sessions.md
 1c8d79710d70799c57b2d0ad69b30bd7  doc/eng-us/features/6.0/valkey-cache-hooks.md
 aeab614b104ddc5b03384aa3e24a56d5  doc/eng-us/features/6.0/velocity-control-panel.md
 40fc877ab6272ca916936ec4b376d6c9  doc/eng-us/features/6.0/velocity-discovery-federation-and-deploy.md
@@ -6478,6 +6479,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
+ec2af2efe4962f7da5701c817953ba6d  doc/eng-us/guides/your-devices-and-sessions.md
 eb5ffb754935beeff276d04045aadd44  doc/eng-us/help/README.md
 c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
@@ -12437,6 +12439,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 9826e0a53c279a9875a563ec8c6ca13f  doc/ger-de/anleitungen/fehlende-dateien.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
+e6ca3f7504b9e3f26e732979a4f53092  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 4b4a46f8ae9a91c52163809cda939c5c  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
 9c5433e8c63c63c0e0fabc41db46b29e  doc/ger-de/anleitungen/inhaltssprachen.md
 54e9abc27cfbca244fc3f19ca62eb500  doc/ger-de/anleitungen/inhaltsverlauf.md
@@ -15079,6 +15082,7 @@ b5ab866318b551d544f0563be5b5b6a3  doc/ger-de/funktionen/6.0/anfrageprotokolle.md
 6a30d34cce1f16401f0dd9e98039d160  doc/ger-de/funktionen/6.0/benchmark.md
 2cd14aa43f6df51b06e567996df18b8e  doc/ger-de/funktionen/6.0/benutzerpasswort-zuruecksetzen.md
 6acd0f6b0631a8ac42b4a3aa53b7d50e  doc/ger-de/funktionen/6.0/benutzerpflege.md
+35c3ee521f88e5e8fff1d90b48bfd900  doc/ger-de/funktionen/6.0/benutzersitzungen.md
 01bdf1a7b634a65d50398bd9afe37d36  doc/ger-de/funktionen/6.0/berechtigungspruefung-bei-vielen-zuweisungen.md
 1bba785c9852e2e139030b7f31d9182a  doc/ger-de/funktionen/6.0/bestellbelege.md
 e5e4bca0d8e45f940df7c289f45b3bb6  doc/ger-de/funktionen/6.0/cache-leeren-durch-umbenennen.md
