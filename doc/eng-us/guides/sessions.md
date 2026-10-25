@@ -8,7 +8,8 @@ It is written for administrators. Every page, field and rule below was checked a
 on 6 October 2026; the files are named in [References](#references).
 
 [Guides](README.md) · Related: [Security and audit](security-and-audit.md) ·
-[Operating a site](operating-a-site.md) · [List paging](../features/6.0/admin-list-paging.md)
+[Operating a site](operating-a-site.md) · [List paging](../features/6.0/admin-list-paging.md) ·
+[Your devices and sessions](your-devices-and-sessions.md) (the sessions of one user, by device, signed out for good)
 
 ## In short
 

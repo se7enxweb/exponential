@@ -31,4 +31,9 @@
     <a href={'notification/settings'|ezurl}>{'Notification settings'|i18n( 'design/standard/mailpreferences' )}</a></p>
 {/if}
 
+{if and( $mode|eq( 'account' ), ne( ezini( 'UserSessionSettings', 'Tracking' ), 'disabled' ), eq( ezini( 'UserSessionSettings', 'NewDeviceMail' ), 'enabled' ) )}
+    <p class="mp-hint" id="mp-signin-alerts">{'The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.'|i18n( 'design/standard/mailpreferences' )}
+    <a href={'user/sessions'|ezurl}>{'Your devices'|i18n( 'design/standard/mailpreferences' )}</a></p>
+{/if}
+
 {include uri='design:mailpreferences/parts/page_end.tpl'}

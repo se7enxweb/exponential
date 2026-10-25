@@ -794,6 +794,47 @@ BEGIN
 END
 $$;
 
+-- The signed-in sessions of the users, "Your devices" (doc/eng-us/features/6.0/user-sessions.md).
+--
+-- One row per sign-in: when it started and was last used, the address, the User-Agent header and what it names, the
+-- sign-in method, Remember me, and when and why it ended. The row is found by the SHA-256 of a random token kept in
+-- the session; neither the token nor the session id is stored. Without the table nothing is tracked and every page
+-- works as before; update/common/scripts/6.0/createusersessiontable.php creates it on any engine.
+-- Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so running this block again
+-- changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expuser_session' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'expuser_session_id_seq' ) THEN
+            CREATE SEQUENCE expuser_session_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE expuser_session (
+          browser character varying(64) DEFAULT ''::character varying NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          device_type character varying(16) DEFAULT ''::character varying NOT NULL,
+          end_reason character varying(32) DEFAULT ''::character varying NOT NULL,
+          ended integer DEFAULT 0 NOT NULL,
+          ended_by integer DEFAULT 0 NOT NULL,
+          first_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          id integer DEFAULT nextval('expuser_session_id_seq'::text) NOT NULL,
+          last_active integer DEFAULT 0 NOT NULL,
+          last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          method character varying(32) DEFAULT ''::character varying NOT NULL,
+          os character varying(64) DEFAULT ''::character varying NOT NULL,
+          remember_until integer DEFAULT 0 NOT NULL,
+          siteaccess character varying(64) DEFAULT ''::character varying NOT NULL,
+          token_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+          user_agent character varying(512) DEFAULT ''::character varying NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY expuser_session ADD CONSTRAINT expuser_session_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX expuser_session_token ON expuser_session USING btree ( token_hash );
+        CREATE INDEX expuser_session_user ON expuser_session USING btree ( user_id, ended );
+        CREATE INDEX expuser_session_active ON expuser_session USING btree ( ended, last_active );
+    END IF;
+END
+$$;
+
 --
 -- ezuser.login: one account per login.
 --

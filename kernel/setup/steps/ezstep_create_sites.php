@@ -2153,6 +2153,12 @@ language_locale='eng-GB'";
         {
             eZDebug::writeNotice( expMemberManagement::ensure(), __METHOD__ );
         }
+        // Approval of new editor accounts: an editor who creates an account in Editors waits for the Administrator
+        // users (doc/eng-us/bc/6.0/user-account-approval.md)
+        if ( class_exists( 'expUserApproval' ) )
+        {
+            eZDebug::writeNotice( expUserApproval::ensure(), __METHOD__ );
+        }
 
         // Setup user preferences based on the site chosen and addons
         if ( function_exists( 'eZSitePreferences' ) )

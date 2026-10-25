@@ -170,6 +170,19 @@ $ViewList['registration'] = array(
     'params' => array( 'Token' ),
 );
 
+// "Your devices" (doc/eng-us/features/6.0/user-sessions.md): user/sessions lists where the signed-in user is signed in
+// (browser, system, approximate address, sign-in method, first and last use) and signs out one session or all others;
+// user/sessions/<user id> does the same for another user and needs the policy user/sessions. Opens with user/login;
+// the view refuses the anonymous user and checks user/sessions itself. Changes are POST only, with a token of the
+// session's own (besides the form token of ezformtoken). See kernel/private/classes/views/user/sessions.php
+$ViewList['sessions'] = array(
+    'functions' => array( 'login' ),
+    'script' => 'sessions.php',
+    'ui_context' => 'administration',
+    'default_navigation_part' => 'ezmynavigationpart',
+    'params' => array( 'UserID' ),
+);
+
 $SiteAccess = array(
     'name'=> 'SiteAccess',
     'values'=> array(),
@@ -187,5 +200,7 @@ $FunctionList['selfedit'] = array();
 $FunctionList['activation'] = array();
 $FunctionList['hygiene'] = array();
 $FunctionList['deactivate'] = array();
+// see and sign out the sessions of other users (user/sessions/<user id>)
+$FunctionList['sessions'] = array();
 
 ?>

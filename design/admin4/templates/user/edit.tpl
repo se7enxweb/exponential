@@ -3,7 +3,8 @@
    An overview of the account (name, login, e-mail, groups, roles, last sign-in, when the password was last changed
    and the account's state), the security hints that apply (disabled or locked, failed sign-ins, two-step sign-in
    off, a password stored with an old method or not changed for a year, never signed in), then a card for each page
-   the viewer may go on to: the profile, the password, the account settings, two-step sign-in, API keys, bookmarks,
+   the viewer may go on to: the profile, the password, the account settings, two-step sign-in, the devices signed in
+   (user/sessions), API keys, bookmarks,
    notifications and e-mail preferences. The overview is expUserAccountOverview's ($account_overview).
 
    Every name the view reads is kept (EditButton, ChangePasswordButton, ChangeSettingButton, CancelButton,
@@ -131,6 +132,13 @@
              $badge = cond( eq( $action.status.key, 'on_app' ), 'On, authenticator app'|i18n( 'design/admin/user/edit' ),
                             eq( $action.status.key, 'on_email' ), 'On, e-mail codes'|i18n( 'design/admin/user/edit' ), 'Off'|i18n( 'design/admin/user/edit' ) )
              $icon = 'phone'}
+    {/case}
+    {case match='sessions'}
+        {set $title = cond( $own, 'Your devices'|i18n( 'design/admin/user/edit' ), 'Sessions'|i18n( 'design/admin/user/edit' ) )
+             $text = cond( $own, 'Where you are signed in: browser, system, place and time. Sign out a device you do not know.'|i18n( 'design/admin/user/edit' ), 'Where this user is signed in, and signing the user out everywhere.'|i18n( 'design/admin/user/edit' ) )
+             $label = cond( $own, 'Manage devices'|i18n( 'design/admin/user/edit' ), 'Show sessions'|i18n( 'design/admin/user/edit' ) )
+             $badge = cond( $action.status, '%count signed in'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.active ) ), '' )
+             $icon = 'laptop'}
     {/case}
     {case match='apikeys'}
         {set $title = 'API keys'|i18n( 'design/admin/user/edit' )

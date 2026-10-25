@@ -1402,6 +1402,34 @@ CREATE TABLE exp_data_sync_link (
 
 
 
+CREATE TABLE expuser_session (
+  browser varchar(64) NOT NULL default '',
+  created int(11) NOT NULL default '0',
+  device_type varchar(16) NOT NULL default '',
+  end_reason varchar(32) NOT NULL default '',
+  ended int(11) NOT NULL default '0',
+  ended_by int(11) NOT NULL default '0',
+  first_ip varchar(64) NOT NULL default '',
+  id int(11) NOT NULL auto_increment,
+  last_active int(11) NOT NULL default '0',
+  last_ip varchar(64) NOT NULL default '',
+  method varchar(32) NOT NULL default '',
+  os varchar(64) NOT NULL default '',
+  remember_until int(11) NOT NULL default '0',
+  siteaccess varchar(64) NOT NULL default '',
+  token_hash varchar(64) NOT NULL default '',
+  user_agent varchar(512) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  UNIQUE KEY expuser_session_token (token_hash),
+  KEY expuser_session_user (user_id,ended),
+  KEY expuser_session_active (ended,last_active)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezproductcategory (
   id int(11) NOT NULL auto_increment,
   name varchar(255) NOT NULL default '',
