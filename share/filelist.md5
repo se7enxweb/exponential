@@ -2271,6 +2271,7 @@ eeb2fa6f5621444e436ee177d6e799a5  design/standard/templates/content/advancedsear
 80f7682f8712c93fc2a91de3d3b3632e  design/standard/templates/content/bookmark.tpl
 dd2d083063d92a1267370c78fde9056d  design/standard/templates/content/bookmark_folder_forms.tpl
 ab608f90151f45fc2c382026f8ef0c5c  design/standard/templates/content/bookmark_tree.tpl
+a797e348d6d1b6416e0f69070275b646  design/standard/templates/content/bookmark_view_action.tpl
 3514af6c300de574c1c6b24adad1a636  design/standard/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/standard/templates/content/browse_add_locations.tpl
 ab6257b41bb7309eaf281abacfbee2b9  design/standard/templates/content/browse_bookmark.tpl
