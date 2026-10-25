@@ -31,7 +31,7 @@ heißt, dass es Teil der Standardinstallation ist.
 | Entwürfe, Versionen, zeitgesteuerte Veröffentlichung | Kernel; `README.md` „Main Exponential features" | [Veröffentlichen und Versionen](../veroeffentlichen-und-versionen.md) |
 | RSS 1.0, RSS 2.0, Atom, OPML und Podcast-Feeds | Kernel-Modul `rss` | [RSS-Feeds für Ihr Blog](blogs/rss-feeds-fuer-ihr-blog.md) |
 | Bildvarianten (Vorschaubilder und Größen) | `settings/image.ini` | [Bildvarianten für Portfolios](portfolios/bildvarianten-fuer-portfolios.md) |
-| Bildeditor im Bearbeitungsformular | `expimageeditor` im Kernel-Repository (admin4); `ezie` wird separat installiert | [expimageeditor](../../funktionen/6.0/erweiterungen/expimageeditor.md), [Bilder mit ezie bearbeiten](portfolios/bilder-mit-ezie-bearbeiten.md) |
+| Bildeditor im Bearbeitungsformular | `expimageeditor` im Kernel-Repository (admin4); `se7enxweb/ezie` in `composer.json` (klassische Admin-Designs) | [expimageeditor](../../funktionen/6.0/erweiterungen/expimageeditor.md), [Bilder mit ezie bearbeiten](portfolios/bilder-mit-ezie-bearbeiten.md) |
 | Hochladen mehrerer Dateien | `se7enxweb/ezmultiupload` | [Viele Bilder hochladen](portfolios/viele-bilder-hochladen.md) |
 | Tags | `se7enxweb/eztags` | [Tags und Kategorien](blogs/tags-und-kategorien.md) |
 | Feld für Sternebewertungen | `se7enxweb/ezstarrating`; die Klassen *Gallery* und *Image* haben ein Feld `rating` | [ezstarrating](../../funktionen/6.0/erweiterungen/ezstarrating.md) |

@@ -16,16 +16,22 @@ conversion.
 
 ## Install it
 
-Since 2026-10-24 the kernel package no longer requires ezie, nor the Zeta Components image conversion it needs; in
-admin4, [expimageeditor](expimageeditor.md) takes its place. A site that keeps ezie requires both itself (ezie does
-not declare the image conversion):
+ezie is installed with Exponential: the root `composer.json` requires `se7enxweb/ezie` and the Zeta Components image
+conversion it needs (`zetacomponents/image-conversion`), which ezie does not declare itself. The `sevenx_multisite`
+site package activates it for the classic admin designs; the setup wizard and the kickstarter activate
+[expimageeditor](expimageeditor.md) for admin4 instead. A project that builds its own `composer.json` without the
+root's requires both:
 
 ```bash
 composer require se7enxweb/ezie zetacomponents/image-conversion
 ```
 
-Then `ActiveExtensions[]=ezie` instead of `expimageeditor` (only one of the two can draw the button), regenerate the
-autoloads and clear the caches.
+To use ezie in admin4 too, `ActiveExtensions[]=ezie` instead of `expimageeditor` (both replace the same include, only
+one of the two can draw the button), regenerate the autoloads and clear the caches.
+
+ezie composites only the watermark images of its own folder (`design/standard/images/watermarks`, resolved with
+`realpath()`), so the file name the image conversion's ImageMagick handler builds into its command unescaped never
+comes from a request.
 
 ## Use it
 

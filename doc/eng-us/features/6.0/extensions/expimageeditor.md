@@ -55,7 +55,7 @@ default is in the extension's README, "Settings".
 
 English and German (`extension/expimageeditor/translations/ger-DE/`). The colors come from admin4's tokens, so the
 dialog follows the light and the dark theme. Only admin4 (and admin4l) has the editor; the classic admin designs
-have `ezie` where a site installs it ([ezie, Install it](ezie.md#install-it)).
+keep `ezie`, which is installed with Exponential ([ezie, Install it](ezie.md#install-it)).
 
 ## Tests
 

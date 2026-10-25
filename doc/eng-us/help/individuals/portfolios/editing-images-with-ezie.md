@@ -10,8 +10,8 @@ type: help
 # Editing images with ezie
 
 This page is for individuals who want to make small changes to an image without leaving the browser. The `ezie`
-image editor is a separate package (`composer require se7enxweb/ezie zetacomponents/image-conversion`; the kernel
-package no longer installs it, admin4 has `expimageeditor` instead) and works inside the edit form of
+image editor ships with Exponential (`se7enxweb/ezie` in the root `composer.json`; admin4 has `expimageeditor`
+instead) and works inside the edit form of
 any object that has an image field, such as *Image* and *Gallery*. The technical page is
 [ezie: the image editor](../../../features/6.0/extensions/ezie.md).
 

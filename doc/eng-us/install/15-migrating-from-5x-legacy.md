@@ -196,8 +196,7 @@ installed with it (the `require` list of `composer.json`):
 | 5.x built-in | Exponential |
 |---|---|
 | `ezjscore`, `ezoe`, `ezformtoken` | in the kernel repository |
-| `ezflow`, `ezodf`, `ezmultiupload`, `ezmbpaex`, `ezprestapiprovider`, `ezwebin`, `ezdemo`, `ezstarrating`, `ezgmaplocation` | installed by default (`se7enxweb/<name>`) |
-| `ezie` | replaced in admin4 by `expimageeditor` (in the kernel repository); to keep it: `composer require se7enxweb/ezie zetacomponents/image-conversion` |
+| `ezflow`, `ezodf`, `ezie`, `ezmultiupload`, `ezmbpaex`, `ezprestapiprovider`, `ezwebin`, `ezdemo`, `ezstarrating`, `ezgmaplocation` | installed by default (`se7enxweb/<name>`); in admin4 `expimageeditor` (in the kernel repository) takes the place of `ezie` |
 | `ezfind`, `ezscriptmonitor`, `ezsi` | suggested: `composer require se7enxweb/<name>` |
 | `ezcomments` | `composer require se7enxweb/ezcomments` |
 | `ez_network` | no equivalent (it tied the site to the vendor's support service); remove it from `ActiveExtensions` |

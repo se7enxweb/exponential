@@ -1790,6 +1790,9 @@ language_locale='eng-GB'";
         $extensionsToEnable = array();
         // Included in "fat" install, needs to override $extraCommonSettings extensions
         $extensionsPrepended = array( 'ezjscore', /*@EZP_BUILD_EXTENSION_ACTIVATE@*/ 'ezoe', 'ezformtoken' );
+        // The image editor: expimageeditor (admin4), not ezie. Both replace the same include of admin4's image edit
+        // template and only one wins, so the wizard activates one. ezie stays installed by composer.json: a site
+        // package that lists it (sevenx_multisite) still activates it for the classic admin designs.
         foreach (
             array(
                 'expimageeditor', 'ezodf', self::restApiExtension(), 'ezmultiupload', 'eztags',

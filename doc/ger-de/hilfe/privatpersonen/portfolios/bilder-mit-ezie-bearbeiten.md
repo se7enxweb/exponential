@@ -10,9 +10,9 @@ type: help
 # Bilder mit ezie bearbeiten
 
 Diese Seite ist für Privatpersonen, die kleine Änderungen an einem Bild vornehmen möchten, ohne den Browser zu
-verlassen. Der Bildeditor `ezie` ist ein eigenes Paket (`composer require se7enxweb/ezie
-zetacomponents/image-conversion`; das Kernel-Paket installiert ihn nicht mehr, admin4 hat stattdessen
-`expimageeditor`) und funktioniert im Bearbeitungsformular jedes Objekts mit einem Bildfeld, etwa *Image* und
+verlassen. Der Bildeditor `ezie` wird mit Exponential geliefert (`se7enxweb/ezie` in der `composer.json` im
+Wurzelverzeichnis; admin4 hat stattdessen `expimageeditor`) und funktioniert im Bearbeitungsformular jedes Objekts
+mit einem Bildfeld, etwa *Image* und
 *Gallery*. Die technische Seite ist [ezie: der Bildeditor](../../../funktionen/6.0/erweiterungen/ezie.md).
 
 ## Inhalt

@@ -55,7 +55,7 @@ Standardwert steht in der README der Erweiterung, „Settings“.
 
 Englisch und Deutsch (`extension/expimageeditor/translations/ger-DE/`). Die Farben kommen aus den Tokens von admin4,
 daher folgt der Dialog dem hellen und dem dunklen Thema. Nur admin4 (und admin4l) hat den Editor; die klassischen
-Admin-Designs haben `ezie`, wo eine Site ihn installiert ([ezie, Installieren](ezie.md#installieren)).
+Admin-Designs behalten `ezie`, der mit Exponential installiert wird ([ezie, Installieren](ezie.md#installieren)).
 
 ## Tests
 

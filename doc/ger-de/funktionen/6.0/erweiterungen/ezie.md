@@ -17,16 +17,22 @@ colorpicker und die Bildkonvertierung der Zeta Components.
 
 ## Installieren
 
-Seit dem 24.10.2026 verlangt das Kernel-Paket ezie nicht mehr, auch nicht die Bildkonvertierung der Zeta Components,
-die er braucht; in admin4 tritt [expimageeditor](expimageeditor.md) an seine Stelle. Eine Site, die ezie behält,
-verlangt beide selbst (ezie gibt die Bildkonvertierung nicht als Abhängigkeit an):
+ezie wird mit Exponential installiert: Die `composer.json` im Wurzelverzeichnis verlangt `se7enxweb/ezie` und die
+Bildkonvertierung der Zeta Components, die er braucht (`zetacomponents/image-conversion`) und selbst nicht als
+Abhängigkeit angibt. Das Site-Paket `sevenx_multisite` aktiviert ihn für die klassischen Admin-Designs; der
+Setup-Assistent und der Kickstarter aktivieren für admin4 stattdessen [expimageeditor](expimageeditor.md). Ein Projekt,
+das seine eigene `composer.json` ohne die des Wurzelverzeichnisses aufbaut, verlangt beide:
 
 ```bash
 composer require se7enxweb/ezie zetacomponents/image-conversion
 ```
 
-Dann `ActiveExtensions[]=ezie` statt `expimageeditor` (nur einer der beiden kann die Schaltfläche zeichnen), die
-Autoloads neu erzeugen und die Caches leeren.
+Um ezie auch in admin4 zu verwenden: `ActiveExtensions[]=ezie` statt `expimageeditor` (beide ersetzen dasselbe
+Include, nur einer der beiden kann die Schaltfläche zeichnen), dann die Autoloads neu erzeugen und die Caches leeren.
+
+ezie fügt nur die Wasserzeichenbilder seines eigenen Ordners ein (`design/standard/images/watermarks`, aufgelöst mit
+`realpath()`). Der Dateiname, den der ImageMagick-Handler der Bildkonvertierung unmaskiert in seinen Befehl setzt,
+stammt daher nie aus einer Anfrage.
 
 ## Verwenden
 
