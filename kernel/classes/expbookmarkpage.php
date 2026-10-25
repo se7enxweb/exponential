@@ -133,10 +133,12 @@ class expBookmarkPage
      * @param int $position the place of the row in the user's own order
      * @return array
      */
-    static function item( array $row, $node, $position )
+    static function item( array $row, $node, $position, $viewLabel = 'System page' )
     {
         $bookmark = $row['bookmark'];
         $nodeID = (int) ( is_object( $bookmark ) ? $bookmark->attribute( 'node_id' ) : $bookmark['node_id'] );
+        if ( $nodeID === 0 )
+            return self::viewItem( $row, $position, $viewLabel );
         $state = 'ok';
         if ( $node && array_key_exists( 'can_read', $node ) && !$node['can_read'] )
         {
@@ -161,17 +163,53 @@ class expBookmarkPage
                       'path' => $node ? array_values( (array) $node['path'] ) : array(),
                       'is_container' => $node ? (bool) $node['is_container'] : false,
                       'contentobject_id' => $node ? (int) $node['contentobject_id'] : 0,
+                      'kind' => 'node',
+                      'uri' => '',
+                      'state' => $state );
+    }
+
+    /**
+     * One bookmark row of a system page (node_id 0, see expBookmarkView): its own name, its address and whether the
+     * user may open it. A row that expBookmarkView::decorateRows() did not see, or whose address is missing, is 'gone';
+     * a page the user may no longer open is 'denied' (shown without a link).
+     *
+     * @param array $row a bookmark row with 'uri' and 'can_open' (expBookmarkView::decorateRows())
+     * @param int $position
+     * @param string $viewLabel the type shown for system pages (and used by the type order and the search)
+     * @return array the keys of item(), with 'kind' => 'view', 'uri', 'module' and 'view'
+     */
+    static function viewItem( array $row, $position, $viewLabel = 'System page' )
+    {
+        $uri = isset( $row['uri'] ) ? (string) $row['uri'] : '';
+        $state = $uri === '' ? 'gone' : ( empty( $row['can_open'] ) ? 'denied' : 'ok' );
+        $parts = explode( '/', $uri );
+        return array( 'id' => (int) $row['id'],
+                      'node_id' => 0,
+                      'folder_id' => (int) $row['folder_id'],
+                      'position' => (int) $position,
+                      'name' => (string) $row['name'] !== '' ? (string) $row['name'] : '/' . $uri,
+                      'class_identifier' => '',
+                      'class_name' => (string) $viewLabel,
+                      'modified' => 0,
+                      'path' => array(),
+                      'is_container' => false,
+                      'contentobject_id' => 0,
+                      'kind' => 'view',
+                      'uri' => $uri,
+                      'module' => (string) $parts[0],
+                      'view' => isset( $parts[1] ) ? (string) $parts[1] : '',
                       'state' => $state );
     }
 
     /**
      * The items of every bookmark row, in the user's own order.
      *
-     * @param array $rows fetchRowsForUser()
+     * @param array $rows fetchRowsForUser() (for system pages after expBookmarkView::decorateRows())
      * @param array $nodes node arrays (see item()) keyed by node id
+     * @param string $viewLabel the type shown for system pages
      * @return array
      */
-    static function items( array $rows, array $nodes )
+    static function items( array $rows, array $nodes, $viewLabel = 'System page' )
     {
         $items = array();
         $position = 0;
@@ -181,7 +219,7 @@ class expBookmarkPage
                 continue;
             $bookmark = $row['bookmark'];
             $nodeID = (int) ( is_object( $bookmark ) ? $bookmark->attribute( 'node_id' ) : $bookmark['node_id'] );
-            $items[] = self::item( $row, isset( $nodes[$nodeID] ) ? $nodes[$nodeID] : null, $position++ );
+            $items[] = self::item( $row, isset( $nodes[$nodeID] ) ? $nodes[$nodeID] : null, $position++, $viewLabel );
         }
         return $items;
     }
@@ -195,6 +233,9 @@ class expBookmarkPage
         if ( $search === '' )
             return true;
         $haystack = array( $item['name'], $item['class_name'], implode( ' / ', $item['path'] ) );
+        // a system page is found by its address too ("systemupgrade", "setup/")
+        if ( isset( $item['uri'] ) && $item['uri'] !== '' )
+            $haystack[] = $item['uri'];
         if ( isset( $folders[$item['folder_id']] ) )
             $haystack[] = implode( ' / ', array_merge( $folders[$item['folder_id']]['path'], array( $folders[$item['folder_id']]['name'] ) ) );
         $needle = self::lower( $search );
@@ -305,13 +346,16 @@ class expBookmarkPage
     /**
      * The overview figures of every bookmark of the user.
      *
-     * @return array( 'bookmarks', 'folders', 'unfiled', 'hidden' (hidden or under a hidden item), 'gone' (not found, or no longer readable) )
+     * @return array( 'bookmarks', 'folders', 'unfiled', 'hidden' (hidden or under a hidden item), 'gone' (not found, or no longer readable),
+     *                'views' (bookmarks of system pages) )
      */
     static function summary( array $items, array $folders )
     {
-        $summary = array( 'bookmarks' => count( $items ), 'folders' => count( $folders ), 'unfiled' => 0, 'hidden' => 0, 'gone' => 0 );
+        $summary = array( 'bookmarks' => count( $items ), 'folders' => count( $folders ), 'unfiled' => 0, 'hidden' => 0, 'gone' => 0, 'views' => 0 );
         foreach ( $items as $item )
         {
+            if ( isset( $item['kind'] ) && $item['kind'] === 'view' )
+                ++$summary['views'];
             if ( !isset( $folders[$item['folder_id']] ) )
                 ++$summary['unfiled'];
             if ( $item['state'] === 'hidden' || $item['state'] === 'invisible' )

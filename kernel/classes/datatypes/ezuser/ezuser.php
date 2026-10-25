@@ -889,6 +889,11 @@ WHERE user_id = '" . $userID . "' AND
             }
         }
 
+        // Passkeys (doc/eng-us/guides/passkeys.md): a removed account signs in with none of them again; an installation
+        // whose database has no exppasskey table yet (update script not run) still removes the user
+        if ( class_exists( 'expPasskeyService' ) )
+            expPasskeyService::removeForRemovedAccount( $user );
+
         eZSubtreeNotificationRule::removeByUserID( $userID );
         eZCollaborationNotificationRule::removeByUserID( $userID );
         eZUserSetting::removeByUserID( $userID );

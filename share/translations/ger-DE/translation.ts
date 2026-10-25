@@ -2713,6 +2713,74 @@
         <source>%count selected.</source>
         <translation>%count ausgewählt.</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Diese Seite ist in Ihren Lesezeichen. Öffnen Sie sie, um Name oder Ordner zu ändern.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Diese Seite zu Ihren Lesezeichen hinzufügen.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Gemerkt</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Seite merken</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Das Lesezeichen speichert die Adresse dieser Seite mit ihren Parametern: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Lesezeichen speichern</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Lesezeichen hinzufügen</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Meine Lesezeichen</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemseite</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemseiten</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Sie dürfen diese Seite nicht mehr öffnen.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öffnen</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Die Adresse dieser Seite fehlt. Entfernen Sie das Lesezeichen und merken Sie die Seite erneut.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Sie dürfen diese Seite nicht mehr öffnen. Entfernen Sie das Lesezeichen oder bitten Sie einen Administrator um Zugriff.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul und Ansicht</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Auch Systemseiten lassen sich merken: Öffnen Sie die Seite (Einrichtung, das Audit-Protokoll, eine Benutzerliste ...) und wählen Sie darüber „Seite merken“. Solche Lesezeichen haben ein Zahnrad-Symbol.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -41322,6 +41390,30 @@ Konto zu aktivieren.</translation>
         <source>%count signed in</source>
         <translation>%count angemeldet</translation>
     </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Melden Sie sich statt mit Ihrem Passwort mit Fingerabdruck, Gesicht, Bildschirmsperre oder Sicherheitsschlüssel an.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Passkeys verwalten</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Passkey hinzufügen</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count Passkeys</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Noch keine</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -63895,6 +63987,38 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
         <source>Added %count bookmark(s).</source>
         <translation>%count Lesezeichen hinzugefügt.</translation>
     </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemseite</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemseiten können noch nicht gemerkt werden: Das Datenbank-Update dieser Version wurde noch nicht ausgeführt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Diese Seite kann nicht gemerkt werden: Sie ist keine Seite einer Modulansicht.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Diese Seite kann nicht gemerkt werden: Sie dürfen sie nicht öffnen.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Die Seite konnte nicht gemerkt werden.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Die Seite „%name“ ist in Ihren Lesezeichen.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Das Lesezeichen konnte nicht umbenannt werden: Es braucht einen Namen.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Das Lesezeichen wurde in „%name“ umbenannt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content/copysubtree</name>
@@ -83450,6 +83574,403 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Sessions of %name</source>
         <translation>Sitzungen von %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Ein Passkey meldet Sie statt mit Ihrem Passwort mit Fingerabdruck, Gesicht, Bildschirmsperre oder Sicherheitsschlüssel an. Er liegt auf Ihrem Gerät oder in Ihrem Passwortmanager; diese Website speichert nur seinen öffentlichen Schlüssel, ein Datenleck hier kann ihn also nicht preisgeben.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Passkeys sind auf dieser Website ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Passkeys können auf dieser Website noch nicht verwendet werden: Der Administrator muss zuerst das Datenbank-Update ausführen.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Den Passkey „%name“ entfernen?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Er kann sich dann nicht mehr bei diesem Konto anmelden. Entfernen Sie ihn auch von Ihrem Gerät oder aus Ihrem Passwortmanager.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Passkey entfernen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Ihre Passkeys</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count von höchstens %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Sie haben noch keinen Passkey. Fügen Sie unten einen hinzu: Wählen Sie bei der nächsten Anmeldung „Mit einem Passkey anmelden“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Hinzugefügt</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Zuletzt verwendet</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Noch nicht</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synchronisiert</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Dieses Gerät oder dieser Schlüssel</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Neuer Name</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Namen speichern</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Passkey hinzufügen</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Folgen Sie den Schritten Ihres Browsers oder Geräts.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Der Passkey-Dialog wurde geschlossen. Es wurde nichts geändert.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Der Passkey konnte nicht erstellt werden. Bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Dieser Browser kann keine Passkeys erstellen. Verwenden Sie einen aktuellen Browser oder melden Sie sich mit Ihrem Passwort an.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Zum Beispiel das Gerät oder der Passwortmanager, auf dem er liegt, damit Sie Ihre Passkeys unterscheiden können.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Dieses Konto hat so viele Passkeys, wie es haben darf (%max). Entfernen Sie einen, um einen weiteren hinzuzufügen.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Der Passkey konnte nicht verwendet werden. Bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mein Konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Der Passkey-Dialog wurde geschlossen. Sie können sich stattdessen mit Ihrem Passwort anmelden.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Der Passkey konnte nicht verwendet werden. Bitte versuchen Sie es noch einmal oder melden Sie sich mit Ihrem Passwort an.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Mit einem Passkey anmelden</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Anmeldung mit dem Passkey nicht möglich</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>melden Sie sich statt mit Ihrem Passwort mit Fingerabdruck, Gesicht, Bildschirmsperre oder Sicherheitsschlüssel an.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Der Passkey „%name“ ist hinzugefügt. Sie können sich ab jetzt damit anmelden.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Der Passkey heißt jetzt „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Der Passkey „%name“ ist entfernt. Er kann sich nicht mehr bei diesem Konto anmelden.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Passkey vom %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Dieses Konto hat so viele Passkeys, wie es haben darf. Entfernen Sie zuerst einen.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Die Datenbank war ausgelastet, es wurde nichts gespeichert. Bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Dieser Passkey ist bereits registriert.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Die Anfrage hat zu lange gedauert oder wurde bereits verwendet. Bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Der Passkey hat nicht geprüft, wer Sie sind (PIN, Fingerabdruck oder Gesicht). Bitte versuchen Sie es noch einmal und bestätigen Sie auf Ihrem Gerät.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Dieser Authenticator verwendet eine Schlüsselart, die diese Website nicht annimmt.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Der Passkey wurde für eine andere Adresse als diese Website erstellt.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Dieser Passkey ist hier für kein Konto registriert. Melden Sie sich mit Ihrem Passwort an und fügen Sie ihn unter Mein Konto, Passkeys hinzu.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Dieses Konto kann sich zurzeit nicht anmelden. Bitte wenden Sie sich an den Administrator der Website.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Der Passkey konnte nicht geprüft werden. Bitte versuchen Sie es noch einmal.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Sie sind dabei, Ihre Anmeldung oder die Sicherheit Ihres Kontos zu ändern.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Sie sind dabei, Benutzer, Rollen oder Richtlinien zu verwalten.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Sie sind dabei, Systemeinstellungen zu ändern oder eine Setup-Aktion auszuführen.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Sie sind dabei, Daten zu exportieren.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Sie sind dabei, Inhalte zu entfernen oder zu veröffentlichen.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Für diese Aktion müssen Sie bestätigen, wer Sie sind.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Bestätigen Sie, dass Sie es sind, angemeldet als %login. Sie werden %minutes Minuten lang nicht erneut gefragt.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Dieses Passwort ist nicht richtig.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Dieser Code ist nicht richtig oder wurde bereits verwendet.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Wählen Sie einen der Wege unten.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Der Passkey konnte nicht geprüft werden.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Noch %count Versuche, bevor Sie abgemeldet werden.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Die gewählten Dateien können nicht erneut gesendet werden: Wählen Sie sie nach dem Bestätigen noch einmal aus.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Mit Ihrem Passwort</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Mit einem Passkey</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bestätigen</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Passkey verwenden</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Mit einem Code aus Ihrer Authenticator-App</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Dieses Konto hat keinen Weg zu bestätigen, wer Sie sind (kein Passwort, kein Passkey, keine Authenticator-App). Melden Sie sich ab und wieder an oder fragen Sie einen Administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Bestätigen Sie, dass Sie es sind</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Code aus Ihrer Authenticator-App</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Das eigene Konto</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Das eigene Passwort, die E-Mail-Adresse, Passkeys, die zweistufige Anmeldung oder API-Schlüssel ändern.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Benutzer, Rollen und Richtlinien</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Benutzer anlegen und bearbeiten, Kontoeinstellungen, Rollen zuweisen und Richtlinien bearbeiten.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systemeinstellungen und Setup-Aktionen</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Einstellungen bearbeiten, Extensions, Caches und Wartung, Pakete und Updates, Sicherungen und der Git-Manager.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Daten exportieren</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exporte gesammelter Informationen, von Benutzern, Newsletter-Abonnenten und des Audits.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Inhalte entfernen und veröffentlichen</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Inhalte entfernen (auch in den Papierkorb), den Papierkorb leeren und veröffentlichen. Standardmäßig aus.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Vor einer heiklen Aktion bestätigt ein angemeldeter Benutzer erneut, wer er ist: mit seinem Passwort, einem Passkey oder dem Code seiner Authenticator-App. Nur die Webseiten fragen: Die REST-Schnittstelle, SOAP, WebDAV, die expservices-Anmeldung und die Kommandozeile fragen nie.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Allgemein</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuten, die eine Bestätigung gilt</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Wann gefragt wird</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count Regeln in site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Gespeichert in settings/override/site.ini.append.php. Beim Speichern werden Sie gebeten zu bestätigen, dass Sie es sind.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Bestätigen Sie, dass Sie es sind</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Vor den Aktionen der unten eingeschalteten Gruppen „Bestätigen Sie, dass Sie es sind“ fragen</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Die Einstellungen sind gespeichert.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Die Einstellungen konnten nicht gespeichert werden: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
     </message>
 </context>
 </TS>

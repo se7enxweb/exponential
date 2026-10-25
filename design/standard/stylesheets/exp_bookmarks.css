@@ -107,3 +107,8 @@ html.exp-bm-has-js .exp-bm-actions > .exp-bm-js { display: inline-flex; gap: .25
 .exp-bm-row[data-depth="8"] { --d: 8; }
 .exp-bm-row[data-depth="9"] { --d: 9; }
 .exp-bm-row[data-depth="10"], .exp-bm-row[data-depth="11"], .exp-bm-row[data-depth="12"] { --d: 10; }
+
+/* a bookmark of a system page (a module view): a gear icon instead of the class icon; disabled when it cannot be
+   opened any more (the mask icon of the admin designs, a plain square elsewhere) */
+.exp-bm-kind { flex: none; width: 1em; height: 1em; color: var(--a4-muted, #777); }
+.exp-bm-view.is-denied .exp-bm-link { color: var(--a4-muted, #777); }

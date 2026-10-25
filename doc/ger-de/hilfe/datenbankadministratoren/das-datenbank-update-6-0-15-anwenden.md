@@ -36,6 +36,7 @@ fügt die Tabellen und Spalten der Linie hinzu:
 | OPML- und Podcast-Exporte | `ezrss_export.opml_head`, `podcast_head`, Tabelle `ezrss_export_opml_item` |
 | Audit-Index | `expaudit_cursor`, `expaudit_event`, `expaudit_file` |
 | Lesezeichenordner | `expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority` |
+| Lesezeichen für Systemseiten | `expbookmark_view` (jede Datenbank: `update/common/scripts/6.0/createbookmarkviewtable.php`) |
 | E-Mail-Einstellungen | `expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression` |
 | Wer ein Objekt in den Papierkorb gelegt hat | `ezcontentobject_trash.trashed_by`, `trashed_via` |
 | Persönliche API-Schlüssel | `expapikey` |

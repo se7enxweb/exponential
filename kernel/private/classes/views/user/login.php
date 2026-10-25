@@ -54,6 +54,45 @@ class Login extends \Exponential\Runnable\ModuleView
             $http->removeSessionVariable( '$_POST_BeforeLogin' );
         }
 
+        // Sign-in with a passkey (doc/eng-us/guides/passkeys.md): the answer of the browser's passkey dialog, posted by
+        // exp_passkey.js. No login handler is asked: the passkey with its user verification is the whole sign-in.
+        $passkeyWarning = false;
+        $passkeyService = class_exists( 'expPasskeyService' ) ? new \expPasskeyService() : null;
+        $passkeyOffered = $passkeyService && $passkeyService->settings()->signInForm() && $passkeyService->available();
+        if ( $passkeyOffered && $http->hasPostVariable( 'PasskeyLoginButton' ) )
+        {
+            $passkeyResult = $passkeyService->verifyLogin( $_POST );
+            if ( $passkeyResult['ok'] && !$passkeyResult['user']->canLoginToSiteAccess( $GLOBALS['eZCurrentAccess'] ) )
+            {
+                $siteAccessName = $GLOBALS['eZCurrentAccess']['name'];
+                $siteAccessAllowed = false;
+                $passkeyResult = array( 'ok' => false, 'error' => 'siteaccess' );
+            }
+            if ( $passkeyResult['ok'] )
+            {
+                $rememberMeTimeout = $ini->hasVariable( 'Session', 'RememberMeTimeout' ) ? (int)$ini->variable( 'Session', 'RememberMeTimeout' ) : 0;
+                \eZSession::rememberCookieLifetime( $http->hasPostVariable( 'Cookie' ) ? $rememberMeTimeout : 0 );
+                $passkeyUser = $passkeyResult['user'];
+                \expPasskeyLogin::signIn( $passkeyUser );
+                $passkeyUserID = (int)$passkeyUser->attribute( 'contentobject_id' );
+                $http->setSessionVariable( 'eZUserLoggedInID', $passkeyUserID );
+                \eZContentObject::cleanupAllInternalDrafts( $passkeyUserID );
+
+                $redirectionURI = $http->postVariable( 'RedirectURI', '' );
+                $redirectionURI = is_string( $redirectionURI ) ? trim( $redirectionURI ) : '';
+                if ( $http->hasSessionVariable( 'RedirectAfterLogin', false ) )
+                {
+                    $redirectionURI = (string)$http->sessionVariable( 'RedirectAfterLogin' );
+                    $http->removeSessionVariable( 'RedirectAfterLogin' );
+                }
+                if ( $redirectionURI === '' || $redirectionURI === '/' )
+                    $redirectionURI = $ini->variable( 'SiteSettings', 'DefaultPage' );
+                return $this->viewResult( null, $Module->redirectTo( $redirectionURI ) );
+            }
+            if ( $passkeyResult['error'] !== 'siteaccess' )
+                $passkeyWarning = \expPasskeyService::errorText( $passkeyResult['error'] );
+        }
+
         if ( $Module->isCurrentAction( 'Login' ) and
              $Module->hasActionParameter( 'UserLogin' ) and
              $Module->hasActionParameter( 'UserPassword' ) and
@@ -321,6 +360,9 @@ class Login extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'user_is_not_allowed_to_login', $userIsNotAllowedToLogin, 'User' );
         $tpl->setVariable( 'failed_login_attempts', $failedLoginAttempts, 'User' );
         $tpl->setVariable( 'max_num_of_failed_login', $maxNumOfFailedLogin, 'User' );
+        // the passkey sign-in: the options of the browser's dialog (a new challenge each time the form is shown)
+        $tpl->setVariable( 'passkey_options', $passkeyOffered ? json_encode( $passkeyService->loginOptions(), JSON_UNESCAPED_SLASHES ) : '' );
+        $tpl->setVariable( 'passkey_warning', $passkeyWarning );
 
 
         $Result = array();

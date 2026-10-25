@@ -74,10 +74,14 @@ class expUserAccountOverviewTest extends PHPUnit\Framework\TestCase
     /** UAO-03 */
     public function testOwnAccountActions()
     {
-        $actions = $this->overview( array( 'twofactor' => array( 'active' => true, 'method' => 'email' ),
+        $actions = $this->overview( array( 'twofactor' => array( 'active' => true, 'method' => 'email' ), 'passkeys' => array( 'total' => 2 ),
             'apikeys' => array( 'active' => 2, 'total' => 3 ), 'can_create_apikeys' => true, 'sessions' => array( 'active' => 2 ) ) )->actions();
         $this->assertSame( expUserAccountOverview::ACTIONS, self::keys( $actions ) );
         $by = array_column( $actions, null, 'key' );
+        $this->assertSame( array( 'link', 'user/passkeys', 'count', 'ok', 2 ), array( $by['passkeys']['how'], $by['passkeys']['url'],
+            $by['passkeys']['status']['key'], $by['passkeys']['status']['level'], $by['passkeys']['status']['total'] ) );
+        // another user's account has no passkeys card: passkeys are managed by their owner only
+        $this->assertNotContains( 'passkeys', self::keys( $this->overview( array( 'own' => false, 'passkeys' => array( 'total' => 1 ) ) )->actions() ) );
         // "Your devices": the user's own page with the running sessions counted
         $this->assertSame( array( 'link', 'user/sessions', 2, 'info' ), array( $by['sessions']['how'], $by['sessions']['url'],
             $by['sessions']['status']['active'], $by['sessions']['status']['level'] ) );

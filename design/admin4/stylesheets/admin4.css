@@ -2388,6 +2388,18 @@ html:has(body.a4-login-page) { background: var(--a4-surface); }
 .a4-login-form #loginbutton:hover { background-color: var(--a4-accent-press); color: var(--a4-on-accent-hover); }
 .a4-login-form #loginbutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
 .a4-login-form #loginbutton.a4-busy { opacity: .75; cursor: progress; pointer-events: none; }
+/* "Sign in with a passkey" (doc/eng-us/guides/passkeys.md): the second way in, as wide as the first, outlined */
+.a4-login-form #passkeybutton {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--a4-space-2);
+  box-sizing: border-box; width: 100%; height: 48px; margin: var(--a4-space-3) 0 0; padding: 0 var(--a4-space-4);
+  border: 1px solid var(--a4-field-line); border-radius: var(--a4-radius-s); background-color: var(--a4-card); color: var(--a4-ink);
+  font: 600 var(--a4-text-l)/1 var(--a4-font); cursor: pointer;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.a4-login-form #passkeybutton:hover { border-color: var(--a4-accent); background-color: var(--a4-soft); }
+.a4-login-form #passkeybutton:focus-visible { outline: 3px solid var(--a4-ring); outline-offset: 2px; }
+.a4-login-form #passkeybutton[hidden] { display: none; }
+.a4-login-form .a4-notice { margin: var(--a4-space-3) 0 0; font-size: var(--a4-text-s); }
 .a4-login-alt { margin: var(--a4-space-4) 0 0; text-align: center; font-size: var(--a4-text-m); color: var(--a4-muted); }
 .a4-login-alt a { color: var(--a4-accent-text); font-weight: 600; text-decoration: none; }
 

@@ -29,6 +29,8 @@ class expBookmarkServices extends expUsersBase
         'place' => array( 'summary' => 'Put a folder or bookmark into a folder in front of another entry of the same kind (POST type folder|bookmark, id, parent_id, before_id; 0 is last)', 'access' => 'user', 'write' => true, 'args' => array( 'type' => 'string', 'id' => 'int', 'parent_id' => 'int', 'before_id' => 'int' ), 'returns' => 'type, id, parent_id' ),
         'addBookmark' => array( 'summary' => 'Bookmark a node, optionally in a folder (POST node_id, folder_id)', 'access' => 'user', 'write' => true, 'args' => array( 'node_id' => 'int', 'folder_id' => 'int' ), 'returns' => 'bookmark' ),
         'removeBookmark' => array( 'summary' => 'Remove a bookmark (POST id)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int' ), 'returns' => 'id, removed' ),
+        'addPageBookmark' => array( 'summary' => 'Bookmark a system page, a page of a module view such as setup/systemupgrade (POST uri: module/view/parameters without the siteaccess, name: the title, folder_id); the same address again updates its name and folder. 422 when it is not a module view, 403 when the user may not open it, 409 before the database update', 'access' => 'user', 'write' => true, 'args' => array( 'uri' => 'string', 'name' => 'string', 'folder_id' => 'int' ), 'returns' => 'bookmark' ),
+        'renameBookmark' => array( 'summary' => 'Rename a bookmark of a system page (POST id, name); a node bookmark shows the name of its node and is not renamed (409)', 'access' => 'user', 'write' => true, 'args' => array( 'id' => 'int', 'name' => 'string' ), 'returns' => 'bookmark' ),
     );
 
     protected static function me()
@@ -39,9 +41,18 @@ class expBookmarkServices extends expUsersBase
     protected static function exportBookmark( eZContentBrowseBookmark $b, array $path = array() )
     {
         $node = $b->attribute( 'node' );
-        return array( 'type' => 'bookmark', 'id' => (int)$b->attribute( 'id' ), 'node_id' => (int)$b->attribute( 'node_id' ),
-                      'name' => $b->attribute( 'name' ), 'folder_id' => (int)$b->attribute( 'folder_id' ), 'priority' => (int)$b->attribute( 'priority' ),
-                      'path' => $path, 'url_alias' => $node instanceof eZContentObjectTreeNode ? $node->attribute( 'url_alias' ) : null );
+        $export = array( 'type' => 'bookmark', 'id' => (int)$b->attribute( 'id' ), 'node_id' => (int)$b->attribute( 'node_id' ),
+                         'name' => $b->attribute( 'name' ), 'folder_id' => (int)$b->attribute( 'folder_id' ), 'priority' => (int)$b->attribute( 'priority' ),
+                         'path' => $path, 'url_alias' => $node instanceof eZContentObjectTreeNode ? $node->attribute( 'url_alias' ) : null,
+                         'kind' => (int)$b->attribute( 'node_id' ) > 0 ? 'node' : 'view' );
+        // a bookmark of a system page (expBookmarkView): its address and whether the user may open it now
+        if ( $export['kind'] === 'view' && class_exists( 'expBookmarkView' ) )
+        {
+            $export['uri'] = (string)$b->attribute( 'module_uri' );
+            $access = $export['uri'] !== '' ? expBookmarkView::access( $export['uri'] ) : array( 'result' => false );
+            $export['can_open'] = (bool)$access['result'];
+        }
+        return $export;
     }
 
     protected static function exportFolder( eZContentBrowseBookmarkFolder $f )
@@ -129,7 +140,7 @@ class expBookmarkServices extends expUsersBase
         }
         // all of them, flat, the order of the content/bookmarks fetch
         $total = (int)eZPersistentObject::count( eZContentBrowseBookmark::definition(), array( 'user_id' => self::me() ) );
-        $list = eZContentBrowseBookmark::fetchListForUser( self::me(), $offset, $limit );
+        $list = eZContentBrowseBookmark::fetchListForUser( self::me(), $offset, $limit, false );
         return self::page( array_map( array( 'expBookmarkServices', 'exportBookmark' ), (array)$list ), $total, $offset, $limit );
     }
 
@@ -247,5 +258,36 @@ class expBookmarkServices extends expUsersBase
         $id = (int)$b->attribute( 'id' );
         $b->remove();
         return self::ok( array( 'id' => $id, 'removed' => true ) );
+    }
+
+    public static function addPageBookmark( array $a = array() )
+    {
+        self::guard( 'addPageBookmark' );
+        if ( !class_exists( 'expBookmarkView' ) || !expBookmarkView::isAvailable() )
+            throw new expServiceException( 'System pages cannot be bookmarked before the database update of this version', 409 );
+        $uri = expBookmarkView::moduleURI( self::post( 'uri', 'string', '' ) );
+        if ( $uri === false )
+            throw new expServiceException( 'uri must be the address of a module view (module/view/parameters)', 422 );
+        $access = expBookmarkView::access( $uri );
+        if ( !$access['result'] )
+            throw new expServiceException( 'You may not open this page', 403 );
+        $folder = self::post( 'folder_id', 'int', -1 );
+        if ( $folder > 0 )
+            self::folder( $folder );
+        $b = expBookmarkView::createNew( self::me(), $uri, self::post( 'name', 'string', '' ), $folder >= 0 ? $folder : false );
+        if ( !$b )
+            throw new expServiceException( 'The page could not be bookmarked', 500 );
+        return self::ok( self::exportBookmark( $b ) );
+    }
+
+    public static function renameBookmark( array $a = array() )
+    {
+        self::guard( 'renameBookmark' );
+        $b = self::bookmark( self::post( 'id', 'int' ) );
+        if ( (int)$b->attribute( 'node_id' ) > 0 )
+            throw new expServiceException( 'A node bookmark shows the name of its node and is not renamed', 409 );
+        if ( !class_exists( 'expBookmarkView' ) || !expBookmarkView::rename( self::me(), $b->attribute( 'id' ), self::post( 'name', 'string', '' ) ) )
+            throw new expServiceException( 'The bookmark needs a name', 422 );
+        return self::ok( self::exportBookmark( self::bookmark( $b->attribute( 'id' ) ) ) );
     }
 }

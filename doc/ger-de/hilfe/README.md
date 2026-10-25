@@ -45,6 +45,7 @@ ausgegraut oder gar nicht angezeigt.
 |---|---|
 | [Inhalte erstellen und bearbeiten](inhalte-bearbeiten.md) | Ein Objekt erstellen, seine Felder ausfüllen, den Rich-Text-Editor verwenden, verschieben und kopieren |
 | [Bilder, Medien und Uploads](medien-und-uploads.md) | Eine Datei oder viele auf einmal hochladen und die Medienbibliothek in Ordnung halten |
+| [Systemseiten als Lesezeichen](systemseiten-als-lesezeichen.md) | Einrichtung, Hilfe, Audit-Protokoll oder eine gefilterte Liste in Ihren Lesezeichen behalten, in Ordnern neben Ihren Inhalten |
 | [Veröffentlichen, Versionen und der Papierkorb](veroeffentlichen-und-versionen.md) | Veröffentlichen, Entwürfe aufbewahren, zu einer älteren Version zurückkehren, verbergen, entfernen und wiederherstellen |
 | [Suchen](suchen.md) | Inhalte in der Administration und auf der Site finden |
 | [Sprachen](sprachen.md) | Inhalte übersetzen und die Sprache der Administration selbst wählen |
