@@ -97,7 +97,7 @@
 
     <input type="hidden" name="RedirectURI" value="{$User:redirect_uri|wash}" />
 </form>
-{if $a4_passkey}<script src={'javascript/exp_passkey.js'|ezdesign} defer="defer"></script>{/if}
+{if $a4_passkey}{ezscript( array( 'exp_passkey.js' ) )}{/if}
 {undef $a4_login_name $a4_passkey}
 {* The social login buttons of sevenx_authentication_2fa, where that extension is active and enables a provider *}
 {if ezmodule( 'user2fa/oauth' )}

@@ -307,7 +307,7 @@ class expReauth
                 return null;
             return $addressed === $userID ? 'self' : 'other';
         };
-        $credentials = function () use ( $moduleName, $view, $params, $post, $userID ) {
+        $credentials = function () use ( $moduleName, $view, $params, $post ) {
             $target = self::addressedUser( $moduleName, $view, (array)$params );
             $account = $target ? eZUser::fetch( $target ) : null;
             if ( !$account instanceof eZUser )

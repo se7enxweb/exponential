@@ -90,5 +90,5 @@
 </div></div></div>
 
 </div>
-{if $has_passkey}<script src={'javascript/exp_passkey.js'|ezdesign} defer="defer"></script>{/if}
+{if $has_passkey}{ezscript( array( 'exp_passkey.js' ) )}{/if}
 {undef $why $has_password $has_passkey $has_code}

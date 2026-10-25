@@ -125,4 +125,4 @@
 </div></div></div>
 
 </div>
-<script src={'javascript/exp_passkey.js'|ezdesign} defer="defer"></script>
+{ezscript( array( 'exp_passkey.js' ) )}

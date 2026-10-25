@@ -38123,6 +38123,30 @@ your account.</translation>
         <source>Open e-mail preferences</source>
         <translation>Open e-mail preferences</translation>
     </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Sign in with your fingerprint, face, screen lock or security key instead of your password.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Manage passkeys</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Add a passkey</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count passkeys</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>None yet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -75700,6 +75724,403 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Browse the tables of the persistent classes…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Passkeys are switched off on this site.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Remove the passkey "%name"?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>It can no longer sign in to this account. Remove it from your device or password manager as well.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Remove the passkey</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Your passkeys</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count of at most %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Added</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Last used</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Kind</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Not yet</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synced</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>This device or key</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>New name</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Save the name</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Add a passkey</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Follow the steps of your browser or device.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>The passkey dialog was closed. Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>The passkey could not be made. Please try again.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>This browser cannot make passkeys. Use a current browser, or sign in with your password.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>For example the device or password manager it is on, so you can tell your passkeys apart.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>This account has as many passkeys as it may have (%max). Remove one to add another.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>The passkey could not be used. Please try again.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>The passkey dialog was closed. You can sign in with your password instead.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>The passkey could not be used. Please try again, or sign in with your password.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Sign in with a passkey</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Could not sign in with the passkey</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>sign in with your fingerprint, face, screen lock or security key instead of your password.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>The passkey "%name" is added. You can sign in with it from now on.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>The passkey is now called "%name".</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>The passkey "%name" is removed. It cannot sign in to this account any more.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Passkey of %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>This account has as many passkeys as it may have. Remove one first.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>The database was busy and nothing was saved. Please try again.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>This passkey is registered already.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>The request took too long or was already used. Please try again.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>This authenticator uses a kind of key this site does not accept.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>The passkey was made for another address than this site.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>This account cannot sign in at the moment. Please contact the site administrator.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>The passkey could not be checked. Please try again.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>You are about to change how you sign in or the security of your account.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>You are about to manage users, roles or policies.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>You are about to change system settings or run a setup action.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>You are about to export data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>You are about to remove or publish content.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>This action needs you to confirm who you are.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>That password is not right.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>That code is not right, or it was used already.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Choose one of the ways below.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>The passkey could not be checked.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>%count tries are left before you are signed out.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>The files you chose cannot be sent again: after confirming, choose them once more.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>With your password</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>With a passkey</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Use a passkey</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>With a code from your authenticator app</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verify it's you</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Code from your authenticator app</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Your own account</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Users, roles and policies</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Creating and editing users, account settings, assigning roles and editing policies.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>System settings and setup actions</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Exporting data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exports of collected information, users, newsletter subscribers and the audit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Removing and publishing content</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Removing content (also to the trash), emptying the trash and publishing. Off by default.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>General</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minutes a confirmation counts</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>When to ask</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count rules in site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verify it's you</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Ask "Verify it's you" before the actions of the groups switched on below</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>The settings are saved.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>The settings could not be saved: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
     </message>
 </context>
 </TS>
