@@ -88,7 +88,7 @@ class expHelpContentDitaHistory
             if ( $run['code'] !== 0 )
                 return array( 'status' => 'error', 'message' => 'git init: ' . trim( $run['output'] ), 'commit' => '' );
         }
-        $status = $this->git( array( 'status', '--porcelain' ) );
+        $status = $this->git( array( 'status', '--porcelain', '--untracked-files=all' ) );
         if ( $status['code'] !== 0 )
             return array( 'status' => 'error', 'message' => 'git status: ' . trim( $status['output'] ), 'commit' => '' );
         if ( trim( $status['output'] ) === '' )

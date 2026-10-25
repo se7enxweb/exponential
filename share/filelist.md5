@@ -21875,7 +21875,7 @@ b5df9a0ea7c21f00c8d8de5d4de7f2fa  kernel/classes/ezworkflowprocess.php
 afed489e8cf1f4830711d2e94be83ae6  kernel/classes/help/content/exphelpcontentaccess.php
 eda82ade3f54aefcc40840dcfa506e70  kernel/classes/help/content/exphelpcontentbookcheck.php
 809731dbdb99481738c541cba4ac6bdc  kernel/classes/help/content/exphelpcontentdita.php
-3352e0410df61059032aa1873e57d961  kernel/classes/help/content/exphelpcontentditahistory.php
+a07858849dae13ae8e06df92b99f2982  kernel/classes/help/content/exphelpcontentditahistory.php
 8678ce93d46a1f26e7bb67bc1d2072f6  kernel/classes/help/content/exphelpcontentebooks.php
 55413d93f88a3bc7acc6f3dd8368de64  kernel/classes/help/content/exphelpcontenteditionprovider.php
 76c95ab6db140a4516e4320aa888839a  kernel/classes/help/content/exphelpcontentexport.php
