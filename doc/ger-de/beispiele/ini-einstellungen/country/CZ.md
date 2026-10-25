@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/country.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Name
 
-Standard: `Czech Republic`.
+Standard: `Czechia`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/country.ini.append.php
 [CZ]
-Name=Czech Republic
+Name=Czechia
 */ ?>
 ```
 

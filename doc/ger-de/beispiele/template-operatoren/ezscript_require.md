@@ -35,7 +35,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/children.tpl` Zeile 97:
 
 ```tpl
-{ezscript_require( array( 'ezajaxsubitems_expdatatable.js' ) )}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable', 'ezajaxsubitems_expdatatable.js' ) )}
 ```
 
 ## Siehe auch

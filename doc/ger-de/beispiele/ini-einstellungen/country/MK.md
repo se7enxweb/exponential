@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/country.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Name
 
-Standard: `Macedonia, The Former Yugoslav Republic of`.
+Standard: `North Macedonia`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/country.ini.append.php
 [MK]
-Name=Macedonia, The Former Yugoslav Republic of
+Name=North Macedonia
 */ ?>
 ```
 

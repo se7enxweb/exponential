@@ -15,9 +15,13 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | Command | Aliases | What it does |
 |---|---|---|
 | [exp:accesscheck](accesscheck.md) | exp:access:check | Check what a user may do with a node or object (content/read, edit, ...) and which limitation refuses it |
+| [exp:addanonymouspublicpolicies](addanonymouspublicpolicies.md) |  | Give the Anonymous role the public policies it lacks: user/register, rss/feed, tags/view, the newsletter's public views (--dry-run lists them first) |
 | [exp:adddefaultstates](adddefaultstates.md) |  |  |
+| [exp:addeditorpolicies](addeditorpolicies.md) |  | Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (--dry-run lists them first) |
 | [exp:addexphelpreadpolicy](addexphelpreadpolicy.md) | exp:help-grant | Grant exphelp/read (the help system) to the Editor role or the roles named (--dry-run lists them first) |
+| [exp:addmembermanagement](addmembermanagement.md) |  | Set up member management from membermanagement.ini: the role that lets a group (default Editors) manage the accounts of another (default Members), never Administrator users or Editors (--dry-run lists it first) |
 | [exp:addoauthauthorizepolicy](addoauthauthorizepolicy.md) |  | Grant oauth/authorize to the roles that let users sign in (6.0.15 upgrade; --dry-run lists them first) |
+| [exp:adduserapproval](adduserapproval.md) |  | Set up the approval of new accounts in a user group (default: new Editors wait for the Administrator users): the workflow event on content/publish before and the role that lets the requesters create such accounts (--dry-run lists it first) |
 | [exp:audit](audit.md) |  | Audit log: tail, show one event, verify the hash chains, list the channels |
 | [exp:benchmark](benchmark.md) | exp:bench | Measure this installation: page timings over HTTP, A/B between servers, kernel probes, regression check |
 | [exp:cache](cache.md) |  | Clear and inspect caches by tag, id or all: content, static, HTTP, Velocity, OPcache, APCu |
@@ -82,6 +86,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:i18n](i18n.md) |  | The translation fallbacks: per locale the chain of translations it falls back to, and how much of the kernel and of each extension it shows translated; --check for CI |
 | [exp:ini](ini.md) |  | Read and change INI settings in every scope: get, set, add, rem, clear, toggle, copy, move, where, list, scopes |
 | [exp:install](install.md) | exp:names | One-command installation, SQLite by default, no kickstart.ini needed |
+| [exp:installcrontab](installcrontab.md) |  | Show, add or remove the cron job of the installation: the crontab lines that run its cronjob parts (--dry-run says what would change) |
 | [exp:kickstarter](kickstarter.md) |  | Kickstarter runner. Supports "ini" generation and full "run" setup subcommands |
 | [exp:mailbounces](mailbounces.md) | exp:mail:bounces | Read the bounce mailbox: hard bounces and spam complaints go on the suppression list |
 | [exp:mailconsent](mailconsent.md) | exp:mail:consent | The consent log of the e-mail preferences: list, export as CSV, retention cleanup |
@@ -100,6 +105,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:preloadjob](preloadjob.md) |  |  |
 | [exp:publish_content](publish_content.md) |  |  |
 | [exp:resetuserpassword](resetuserpassword.md) |  | Reset a user password with admin authentication or root bypass |
+| [exp:services](services.md) | exp:services:compile, exp:services:list, exp:services:show, exp:services:check | Compile, list, show and check the kernel service container (verbs compile, list, show, check) |
 | [exp:solr](solr.md) | exp:search | Control the Solr search server, once it is installed and configured |
 | [exp:systeminfo](systeminfo.md) | exp:system:info | The facts and health checks of Setup > System information, as text or JSON (--json, --sizes) |
 | [exp:trashpurge](trashpurge.md) |  | Permanently delete all objects in the trash |

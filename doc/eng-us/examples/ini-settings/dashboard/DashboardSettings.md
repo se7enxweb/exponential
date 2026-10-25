@@ -21,7 +21,7 @@ Never edit `settings/dashboard.ini` itself: an update replaces it. Put the setti
 
 > DashboardBlocks\[\]=example  
 
-Default: a list of 5: `pending_list`, `drafts`, `latest_content`, `all_latest_content`, `audit`.
+Default: a list of 6: `pending_list`, `drafts`, `latest_content`, `all_latest_content`, `audit`, `cronjobs`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -34,6 +34,7 @@ DashboardBlocks[]=drafts
 DashboardBlocks[]=latest_content
 DashboardBlocks[]=all_latest_content
 DashboardBlocks[]=audit
+DashboardBlocks[]=cronjobs
 */ ?>
 ```
 

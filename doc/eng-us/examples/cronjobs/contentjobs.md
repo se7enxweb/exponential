@@ -16,7 +16,8 @@ Entry point `cronjobs/contentjobs.php`, code in `kernel/private/classes/cronjobs
 > The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a  
 > worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job  
 > nobody started within content.ini \[ContentJobSettings\] QueuedGrace seconds (the spawn from the web request  
-> failed) — and removes finished jobs older than KeepDays.  
+> failed) — and removes finished jobs older than KeepDays, and the runs of the import and export tools'  
+> run history older than transfer.ini \[TransferSettings\] KeepDays (expKernelTransferHistory::purge()).  
 >
 > The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job  
 > never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and  

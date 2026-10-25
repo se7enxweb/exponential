@@ -2,7 +2,7 @@
 title: Policies of the user module
 audience: developer, admin
 category: examples
-summary: The policy functions of the user module (8) and their limitations.
+summary: The policy functions of the user module (9) and their limitations.
 keywords: user, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -67,7 +67,7 @@ $role->appendPolicy( 'user', 'hygiene' );
 
 ## login
 
-Checked by the views: [activate](../module-views/user/activate.md), [edit](../module-views/user/edit.md), [login](../module-views/user/login.md), [logout](../module-views/user/logout.md), [megamenu](../module-views/user/megamenu.md), [preferences](../module-views/user/preferences.md), [registration](../module-views/user/registration.md).
+Checked by the views: [activate](../module-views/user/activate.md), [edit](../module-views/user/edit.md), [login](../module-views/user/login.md), [logout](../module-views/user/logout.md), [megamenu](../module-views/user/megamenu.md), [preferences](../module-views/user/preferences.md), [registration](../module-views/user/registration.md), [sessions](../module-views/user/sessions.md).
 
 | Limitation | Values come from |
 |---|---|
@@ -153,6 +153,24 @@ $role->appendPolicy( 'user', 'selfedit' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'selfedit' ) )}
+    ...
+{/if}
+```
+
+## sessions
+
+No view of the module names it; code checks it (`eZUser::hasAccessTo( 'user', 'sessions' )` or the `user/has_access_to` fetch).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'sessions' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'sessions' ) )}
     ...
 {/if}
 ```

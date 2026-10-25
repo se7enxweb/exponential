@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 49 Blöcke, 422 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 52 Blöcke, 438 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -27,16 +27,18 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 49 Blöcke, 422 Einste
 | [Cache](Cache.md) | 1 |
 | [Cache_rest](Cache_rest.md) | 5 |
 | [Cache_restRoutes](Cache_restRoutes.md) | 5 |
+| [Cache_exphelpcontent](Cache_exphelpcontent.md) | 5 |
 | [DatabaseSettings](DatabaseSettings.md) | 20 |
 | [Event](Event.md) | 1 |
 | [RunnableSettings](RunnableSettings.md) | 2 |
-| [ExtensionSettings](ExtensionSettings.md) | 5 |
+| [ExtensionSettings](ExtensionSettings.md) | 6 |
 | [InformationCollectionSettings](InformationCollectionSettings.md) | 1 |
 | [Session](Session.md) | 14 |
+| [UserSessionSettings](UserSessionSettings.md) | 7 |
 | [DebugSettings](DebugSettings.md) | 16 |
 | [RequestLogSettings](RequestLogSettings.md) | 4 |
 | [HTMLForms](HTMLForms.md) | 2 |
-| [URLTranslator](URLTranslator.md) | 12 |
+| [URLTranslator](URLTranslator.md) | 13 |
 | [AppendNodeIDFilterSettings](AppendNodeIDFilterSettings.md) | 1 |
 | [SiteSettings](SiteSettings.md) | 18 |
 | [AdminEnvironment](AdminEnvironment.md) | 7 |
@@ -46,6 +48,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 49 Blöcke, 422 Einste
 | [UserSettings](UserSettings.md) | 44 |
 | [PasswordSettings](PasswordSettings.md) | 11 |
 | [PasswordChangeRequiredSettings](PasswordChangeRequiredSettings.md) | 1 |
+| [SignInSecondFactorSettings](SignInSecondFactorSettings.md) | 2 |
 | [SiteAccessSettings](SiteAccessSettings.md) | 37 |
 | [PortAccessSettings](PortAccessSettings.md) | 2 |
 | [RoleSettings](RoleSettings.md) | 13 |

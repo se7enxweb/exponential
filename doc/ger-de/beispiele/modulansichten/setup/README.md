@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # Das Modul setup
 
-Name `eZSetup`, definiert in `kernel/setup/module.php`. 43 Ansichten.
+Name `eZSetup`, definiert in `kernel/setup/module.php`. 44 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
@@ -37,6 +37,7 @@ Name `eZSetup`, definiert in `kernel/setup/module.php`. 43 Ansichten.
 | [menu](menu.md) | `/setup/menu` | setup or administrate or managecache or managecronjobs or preload or system_info or logs |
 | [menuconfig](menuconfig.md) | `/setup/menuconfig` | setup |
 | [moduleextension](moduleextension.md) | `/setup/moduleextension` | setup |
+| [moduletable](moduletable.md) | `/setup/moduletable` | setup |
 | [modulewizard](modulewizard.md) | `/setup/modulewizard` | setup |
 | [preload](preload.md) | `/setup/preload` | preload |
 | [preloadjob](preloadjob.md) | `/setup/preloadjob/<JobID>/<Offset>` | preload |

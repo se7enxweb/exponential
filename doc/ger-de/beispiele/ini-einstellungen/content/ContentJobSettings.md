@@ -158,11 +158,14 @@ PhpBinary=
 
 ## JobTypes
 
-> Die Auftragstypen: JobTypes\[<name>\]=<class implementing expContentJobType>.  
-> Eine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, „Im Hintergrund installieren“), doc/eng-us/bc/6.0/package-json-format.md  
-> Ein Export der Audit-Konsole im Hintergrund (Audit > Export, „Im Hintergrund exportieren“), doc/eng-us/bc/6.0/audit.md  
+> The job types: JobTypes\[<name>\]=<class implementing expContentJobType>.  
+> A package install in the background (Setup > Packages > Install, "Install in the background"), doc/eng-us/bc/6.0/package-json-format.md  
+> An export of the audit console in the background (Audit > Export, "Export in the background"), doc/eng-us/bc/6.0/audit.md  
+> The help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md  
+> A background run of an import or export tool (Export, CIE ...) when there is no job queue,  
+> doc/eng-us/features/6.0/transfer-runs.md (transfer.ini)  
 
-Standard: ein Hash mit 11: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`.
+Standard: ein Hash mit 13: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -181,6 +184,8 @@ JobTypes[addlocation]=expContentJobAddLocation
 JobTypes[removelocation]=expContentJobRemoveLocation
 JobTypes[packageinstall]=expContentJobPackageInstall
 JobTypes[auditexport]=expContentJobAuditExport
+JobTypes[helpmanuals]=expContentJobHelpManuals
+JobTypes[transfer]=expContentJobTransfer
 */ ?>
 ```
 

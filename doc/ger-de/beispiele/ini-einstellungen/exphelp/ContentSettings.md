@@ -2,14 +2,14 @@
 title: exphelp.ini [ContentSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [ContentSettings] in exphelp.ini: Enabled, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds ..."
-keywords: Einstellung, exphelp.ini, ContentSettings, INI, setting, Enabled, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp, EbooksOnRelease, ReviewMaxDays, ReviewListLimit
+summary: "Die Einstellungen von [ContentSettings] in exphelp.ini: Enabled, CachePhpBinary, CacheSiteAccessList, ParentNode, Audiences, PublicAudiences, Platforms, Areas ..."
+keywords: Einstellung, exphelp.ini, ContentSettings, INI, setting, Enabled, CachePhpBinary, CacheSiteAccessList, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp, EbooksOnRelease, ReviewMaxDays, ReviewListLimit
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [ContentSettings]
 
-Der Block `[ContentSettings]` von `settings/exphelp.ini`, mit 12 Einstellung(en).
+Der Block `[ContentSettings]` von `settings/exphelp.ini`, mit 14 Einstellung(en).
 
 Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -33,6 +33,38 @@ Enabled=enabled
 */ ?>
 ```
 
+## CachePhpBinary
+
+> The rows of help content are kept in var/<site>/cache/exphelp/content. A web request never reads every help object  
+> (an emptied cache): it starts "php bin/php/exphelpcontent.php cache -s <siteaccess>" in the background and shows no  
+> help content until that is done. The PHP command line binary for it; empty: found next to the running PHP.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+CachePhpBinary=
+*/ ?>
+```
+
+## CacheSiteAccessList
+
+> The siteaccesses whose help cache exp:velocity deploy fills, besides those that have used it  
+> (var/<site>/cache/exphelp/content/siteaccesses.json)  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+# ein leeres "CacheSiteAccessList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+CacheSiteAccessList[]
+*/ ?>
+```
+
 ## ParentNode
 
 > Wo der Ordner „Hilfe“ (remote\_id help-root) angelegt wird: media (Standard), content, users oder eine remote\_id. Nicht im  
@@ -50,10 +82,12 @@ ParentNode=media
 
 ## Audiences
 
-> Die Zielgruppenoptionen der Klassen help\_\*, in ihrer gespeicherten Reihenfolge. NUR ANHÄNGEN: ezselection speichert die Position  
-> einer Option, eine umsortierte Liste gibt also jedem Thema eine andere Zielgruppe. Der Befehl hängt fehlende an.  
+> The audience options of the help\_\* classes, in their stored order. ONLY APPEND: ezselection stores the position of  
+> an option, so a reordered list gives every topic another audience. The command appends missing ones.  
+> The other audiences of the help (\[AudienceSettings\] AudienceNames\[\]), so the manuals built from the Markdown help  
+> (exp:help:content build-manuals) keep who each page is for  
 
-Standard: eine Liste mit 4: `Visitors`, `Members`, `Editors`, `Administrators`.
+Standard: eine Liste mit 42: `Visitors`, `Members`, `Editors`, `Administrators`, `Developers`, `Project managers`, `Sales & marketing`, `Partners`, `Advocates`, `Designers`, `Hosting companies`, `Application creators` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -65,6 +99,23 @@ Audiences[]=Visitors
 Audiences[]=Members
 Audiences[]=Editors
 Audiences[]=Administrators
+Audiences[]=Developers
+Audiences[]=Project managers
+Audiences[]=Sales & marketing
+Audiences[]=Partners
+Audiences[]=Advocates
+Audiences[]=Designers
+Audiences[]=Hosting companies
+Audiences[]=Application creators
+Audiences[]=Website creators
+Audiences[]=Supporters
+Audiences[]=Sponsors
+Audiences[]=Customers
+Audiences[]=Governments
+Audiences[]=Businesses
+Audiences[]=Press, media and influencers
+Audiences[]=Trainers
+# ... 22 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -104,9 +155,10 @@ Platforms[]=Mobile
 
 ## Areas
 
-> Die Bereiche der help\_ids (area.topic\[.variant\]); der Validator warnt bei jedem anderen  
+> The areas of help\_ids (area.topic\[.variant\]); the validator warns about any other  
+> the pages of the Markdown help as topics (exp:help:content build-manuals): doc.<path of the page>  
 
-Standard: eine Liste mit 8: `account`, `content`, `media`, `search`, `users`, `setup`, `privacy`, `help`.
+Standard: eine Liste mit 9: `account`, `content`, `media`, `search`, `users`, `setup`, `privacy`, `help`, `doc`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -122,14 +174,16 @@ Areas[]=users
 Areas[]=setup
 Areas[]=privacy
 Areas[]=help
+Areas[]=doc
 */ ?>
 ```
 
 ## AudienceMap
 
-> Die Zielgruppe der Hilfe (editor, admin, developer, user) jeder Zielgruppenoption, in Kleinbuchstaben  
+> The help's audience (editor, admin, developer, user ...) of each audience option, in lower case. build-manuals  
+> gives a page of the help audience X the first option that maps to X.  
 
-Standard: ein Hash mit 4: `visitors=user`, `members=user`, `editors=editor`, `administrators=admin`.
+Standard: ein Hash mit 42: `visitors=user`, `members=user`, `editors=editor`, `administrators=admin`, `developers=developer`, `project managers=project-manager`, `sales & marketing=sales-marketing`, `partners=partner`, `advocates=advocate`, `designers=designer`, `hosting companies=hosting`, `application creators=app-creator` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -141,6 +195,23 @@ AudienceMap[visitors]=user
 AudienceMap[members]=user
 AudienceMap[editors]=editor
 AudienceMap[administrators]=admin
+AudienceMap[developers]=developer
+AudienceMap[project managers]=project-manager
+AudienceMap[sales & marketing]=sales-marketing
+AudienceMap[partners]=partner
+AudienceMap[advocates]=advocate
+AudienceMap[designers]=designer
+AudienceMap[hosting companies]=hosting
+AudienceMap[application creators]=app-creator
+AudienceMap[website creators]=website-creator
+AudienceMap[supporters]=supporter
+AudienceMap[sponsors]=sponsor
+AudienceMap[customers]=customer
+AudienceMap[governments]=government
+AudienceMap[businesses]=businesses
+AudienceMap[press, media and influencers]=press
+AudienceMap[trainers]=trainer
+# ... 22 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

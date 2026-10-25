@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls user
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls user (8) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls user (9) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, user, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -67,7 +67,7 @@ $role->appendPolicy( 'user', 'hygiene' );
 
 ## login
 
-Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md).
+Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md), [sessions](../modulansichten/user/sessions.md).
 
 | Einschränkung | Werte stammen aus |
 |---|---|
@@ -153,6 +153,24 @@ $role->appendPolicy( 'user', 'selfedit' );
 
 ```tpl
 {if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'selfedit' ) )}
+    ...
+{/if}
+```
+
+## sessions
+
+Keine Ansicht des Moduls nennt sie; Code prüft sie (`eZUser::hasAccessTo( 'user', 'sessions' )` oder der Fetch `user/has_access_to`).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'user', 'sessions' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'user', 'function', 'sessions' ) )}
     ...
 {/if}
 ```

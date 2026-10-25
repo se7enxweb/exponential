@@ -30,7 +30,7 @@ Content jobs: large subtree removes and copies, run in batches in the background
   cancel <id>                          stop a job after its current batch
   remove <node id>[,...] [--trash|--delete] [--background]
   copy <src node> <dest parent> [--all-versions] [--keep-creator] [--keep-time] [--background]
-  move <node> <new parent> | hide <node> | reveal <node> | section <node> <section id> | state <node> <state id>
+  move <node> <new parent> | hide <node> | reveal <node> | section <node> <section id> [--scope=...] | state <node> <state id>
   addlocation <target node> <node>[,...] | removelocation <node>[,...]        (all: [--background])
 ```
 
@@ -46,6 +46,7 @@ Content jobs: large subtree removes and copies, run in batches in the background
 | `--all-versions` |  | copy: copy all versions of each object, not only the current one |
 | `--keep-creator` |  | copy: keep the owner and creator of the copied objects |
 | `--keep-time` |  | copy: keep the creation and modification times |
+| `--scope` | required | section: which objects below the node get the section: subtree (the default, all of them), inherited (those that have the section of the node's object, not branches in another section) or object (none) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

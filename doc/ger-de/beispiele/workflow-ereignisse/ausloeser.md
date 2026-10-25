@@ -50,8 +50,8 @@ Die Stellen, an denen ein Workflow laufen kann: jede Operation von `kernel/conte
 | `content` | `updateobjectstate` | `post_updateobjectstate` | danach | object_id, state_id_list |
 | `content` | `updatepriority` | `pre_updatepriority` | davor | node_id, priority, priority_id |
 | `content` | `updatepriority` | `post_updatepriority` | danach | node_id, priority, priority_id |
-| `content` | `updatesection` | `pre_updatesection` | davor | node_id, selected_section_id |
-| `content` | `updatesection` | `post_updatesection` | danach | node_id, selected_section_id |
+| `content` | `updatesection` | `pre_updatesection` | davor | node_id, selected_section_id, update_search_indexes, scope, old_section_id, check_access |
+| `content` | `updatesection` | `post_updatesection` | danach | node_id, selected_section_id, update_search_indexes, scope, old_section_id, check_access |
 | `shop` | `addtobasket` | `pre_addtobasket` | davor | object_id, option_list, quantity, basket_id |
 | `shop` | `addtobasket` | `post_addtobasket` | danach | object_id, option_list, quantity, basket_id |
 | `shop` | `checkout` | `pre_checkout` | davor | order_id |

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # country.ini
 
-Die ausgelieferten Einstellungen von `settings/country.ini`: 246 Blöcke, 984 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/country.ini`: 250 Blöcke, 1000 Einstellungen.
 
 > Exponential-Konfigurationsdatei für das Modul content  
 >
@@ -61,6 +61,7 @@ Die ausgelieferten Einstellungen von `settings/country.ini`: 246 Blöcke, 984 Ei
 | [BM](BM.md) | 4 |
 | [BT](BT.md) | 4 |
 | [BO](BO.md) | 4 |
+| [BQ](BQ.md) | 4 |
 | [BA](BA.md) | 4 |
 | [BW](BW.md) | 4 |
 | [BV](BV.md) | 4 |
@@ -90,6 +91,7 @@ Die ausgelieferten Einstellungen von `settings/country.ini`: 246 Blöcke, 984 Ei
 | [CI](CI.md) | 4 |
 | [HR](HR.md) | 4 |
 | [CU](CU.md) | 4 |
+| [CW](CW.md) | 4 |
 | [CY](CY.md) | 4 |
 | [CZ](CZ.md) | 4 |
 | [DK](DK.md) | 4 |
@@ -232,12 +234,14 @@ Die ausgelieferten Einstellungen von `settings/country.ini`: 246 Blöcke, 984 Ei
 | [SC](SC.md) | 4 |
 | [SL](SL.md) | 4 |
 | [SG](SG.md) | 4 |
+| [SX](SX.md) | 4 |
 | [SK](SK.md) | 4 |
 | [SI](SI.md) | 4 |
 | [SB](SB.md) | 4 |
 | [SO](SO.md) | 4 |
 | [ZA](ZA.md) | 4 |
 | [GS](GS.md) | 4 |
+| [SS](SS.md) | 4 |
 | [ES](ES.md) | 4 |
 | [LK](LK.md) | 4 |
 | [SD](SD.md) | 4 |

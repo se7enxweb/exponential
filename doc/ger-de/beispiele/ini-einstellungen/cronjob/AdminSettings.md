@@ -2,14 +2,14 @@
 title: cronjob.ini [AdminSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [AdminSettings] in cronjob.ini: ForbiddenParts, PhpCliPath, LogFile, ErrorFile"
-keywords: Einstellung, cronjob.ini, AdminSettings, INI, setting, ForbiddenParts, PhpCliPath, LogFile, ErrorFile
+summary: "Die Einstellungen von [AdminSettings] in cronjob.ini: ForbiddenParts, PhpCliPath, LogFile, ErrorFile, CrontabSchedule_expqueue, CrontabSchedule_sqliimport, CrontabSchedule_expai"
+keywords: Einstellung, cronjob.ini, AdminSettings, INI, setting, ForbiddenParts, PhpCliPath, LogFile, ErrorFile, CrontabSchedule_expqueue, CrontabSchedule_sqliimport, CrontabSchedule_expai
 type: generated
 generated: exp:help:examples
 ---
 # cronjob.ini [AdminSettings]
 
-Der Block `[AdminSettings]` von `settings/cronjob.ini`, mit 4 Einstellung(en).
+Der Block `[AdminSettings]` von `settings/cronjob.ini`, mit 7 Einstellung(en).
 
 Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -80,6 +80,47 @@ Standard: `cronjobs/error.log`.
 # settings/override/cronjob.ini.append.php
 [AdminSettings]
 ErrorFile=cronjobs/error.log
+*/ ?>
+```
+
+## CrontabSchedule_expqueue
+
+> The schedule of a part in a crontab line, CrontabSchedule\_<part>=<five cron fields>: the line Setup >  
+> Cronjobs proposes and the line the installers and bin/php/installcrontab.php write. Without one:  
+> frequent \*/5 \* \* \* \*, the global part \*/15 \* \* \* \*, infrequent 17 \* \* \* \*, any other part 0 \* \* \* \*.  
+> The job queue and the imports' schedules run every minute, expai's queue every five minutes.  
+
+Standard: `* * * * *`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/cronjob.ini.append.php
+[AdminSettings]
+CrontabSchedule_expqueue=* * * * *
+*/ ?>
+```
+
+## CrontabSchedule_sqliimport
+
+Standard: `* * * * *`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/cronjob.ini.append.php
+[AdminSettings]
+CrontabSchedule_sqliimport=* * * * *
+*/ ?>
+```
+
+## CrontabSchedule_expai
+
+Standard: `*/5 * * * *`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/cronjob.ini.append.php
+[AdminSettings]
+CrontabSchedule_expai=*/5 * * * *
 */ ?>
 ```
 

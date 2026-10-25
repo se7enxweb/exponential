@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # country.ini
 
-The shipped settings of `settings/country.ini`: 246 blocks, 984 settings.
+The shipped settings of `settings/country.ini`: 250 blocks, 1000 settings.
 
 > Exponential configuration file for content module  
 >
@@ -61,6 +61,7 @@ The shipped settings of `settings/country.ini`: 246 blocks, 984 settings.
 | [BM](BM.md) | 4 |
 | [BT](BT.md) | 4 |
 | [BO](BO.md) | 4 |
+| [BQ](BQ.md) | 4 |
 | [BA](BA.md) | 4 |
 | [BW](BW.md) | 4 |
 | [BV](BV.md) | 4 |
@@ -90,6 +91,7 @@ The shipped settings of `settings/country.ini`: 246 blocks, 984 settings.
 | [CI](CI.md) | 4 |
 | [HR](HR.md) | 4 |
 | [CU](CU.md) | 4 |
+| [CW](CW.md) | 4 |
 | [CY](CY.md) | 4 |
 | [CZ](CZ.md) | 4 |
 | [DK](DK.md) | 4 |
@@ -232,12 +234,14 @@ The shipped settings of `settings/country.ini`: 246 blocks, 984 settings.
 | [SC](SC.md) | 4 |
 | [SL](SL.md) | 4 |
 | [SG](SG.md) | 4 |
+| [SX](SX.md) | 4 |
 | [SK](SK.md) | 4 |
 | [SI](SI.md) | 4 |
 | [SB](SB.md) | 4 |
 | [SO](SO.md) | 4 |
 | [ZA](ZA.md) | 4 |
 | [GS](GS.md) | 4 |
+| [SS](SS.md) | 4 |
 | [ES](ES.md) | 4 |
 | [LK](LK.md) | 4 |
 | [SD](SD.md) | 4 |

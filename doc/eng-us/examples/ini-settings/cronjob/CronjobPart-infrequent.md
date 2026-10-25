@@ -20,8 +20,9 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 ## Scripts
 
 > E-mail preferences retention (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
+> Signed-in sessions: expired ones end, ended ones go after site.ini \[UserSessionSettings\] RetentionDays  
 
-Default: a list of 3: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`.
+Default: a list of 4: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`, `usersessions.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -32,6 +33,7 @@ Scripts[]
 Scripts[]=basket_cleanup.php
 Scripts[]=linkcheck.php
 Scripts[]=mailpreferences.php
+Scripts[]=usersessions.php
 */ ?>
 ```
 

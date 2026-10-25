@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # cronjob.ini
 
-Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 19 Blöcke, 37 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 22 Blöcke, 47 Einstellungen.
 
 > Exponential-Konfigurationsdatei für Cronjobs.  
 >
@@ -26,18 +26,21 @@ Die ausgelieferten Einstellungen von `settings/cronjob.ini`: 19 Blöcke, 37 Eins
 | Block | Einstellungen |
 |---|---|
 | [CronjobSettings](CronjobSettings.md) | 4 |
-| [AdminSettings](AdminSettings.md) | 4 |
+| [AdminSettings](AdminSettings.md) | 7 |
+| [CrontabSettings](CrontabSettings.md) | 5 |
 | [PauseSettings](PauseSettings.md) | 2 |
 | [ScriptDocumentation](ScriptDocumentation.md) | 2 |
 | [CronjobPart-infrequent](CronjobPart-infrequent.md) | 1 |
 | [CronjobPart-frequent](CronjobPart-frequent.md) | 1 |
 | [CronjobPart-contentcheck](CronjobPart-contentcheck.md) | 1 |
 | [CronjobPart-contentjobs](CronjobPart-contentjobs.md) | 1 |
+| [CronjobPart-datatable](CronjobPart-datatable.md) | 1 |
 | [CronjobPart-audit](CronjobPart-audit.md) | 1 |
 | [CronjobPart-logs](CronjobPart-logs.md) | 1 |
 | [CronjobPart-notification](CronjobPart-notification.md) | 1 |
 | [CronjobPart-mailpreferences](CronjobPart-mailpreferences.md) | 1 |
 | [CronjobPart-mailbounces](CronjobPart-mailbounces.md) | 1 |
+| [CronjobPart-usersessions](CronjobPart-usersessions.md) | 1 |
 | [linkCheckSettings](linkCheckSettings.md) | 9 |
 | [CronjobPart-unlock](CronjobPart-unlock.md) | 1 |
 | [CronjobPart-cluster_maintenance](CronjobPart-cluster_maintenance.md) | 1 |

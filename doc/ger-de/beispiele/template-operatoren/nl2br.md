@@ -2,18 +2,19 @@
 title: Template-Operator nl2br
 audience: developer, admin
 category: examples
-summary: "Der Template-Operator nl2br: keine benannten Parameter, registriert von eZTemplateNl2BrOperator."
-keywords: Template-Operator, Operator, nl2br, template operator, operator, tpl, eZTemplateNl2BrOperator
+summary: "Der Template-Operator nl2br: keine benannten Parameter, registriert von eZTemplatePHPOperator."
+keywords: Template-Operator, Operator, nl2br, template operator, operator, tpl, eZTemplatePHPOperator
 type: generated
 generated: exp:help:examples
 ---
 # Der Template-Operator nl2br
 
-Registriert in `lib/eztemplate/classes/eztemplateautoload.php` von der Klasse `eZTemplateNl2BrOperator` (`lib/eztemplate/classes/eztemplatenl2broperator.php`).
+Registriert in `kernel/common/eztemplateautoload.php` von der Klasse `eZTemplatePHPOperator` (`lib/eztemplate/classes/eztemplatephpoperator.php`).
+Dieselbe Klasse registriert auch: [urlencode](urlencode.md), [urldecode](urldecode.md), [rawurlencode](rawurlencode.md), [rawurldecode](rawurldecode.md), [getenv](getenv.md), [serialize](serialize.md), [unserialize](unserialize.md), [strip_tags](strip_tags.md).
 
 ## Parameter
 
-Keine.
+Die Klasse beschreibt ihre Parameter nicht (kein `namedParameterList()`); was sie liest, steht in ihrem Quelltext.
 
 Der Operator arbeitet mit seiner Eingabe: dem Wert vor `|`.
 
@@ -41,4 +42,4 @@ Die erste Verwendung in den Templates dieser Installation, `design/admin/templat
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `lib/eztemplate/classes/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplatenl2broperator.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/common/eztemplateautoload.php`, `lib/eztemplate/classes/eztemplatephpoperator.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

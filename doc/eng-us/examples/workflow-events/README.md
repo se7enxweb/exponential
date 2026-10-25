@@ -14,6 +14,8 @@ Every workflow event type of the kernel and the bundled extensions, and every [t
 
 | Event | Name | Class | Triggers it accepts |
 |---|---|---|---|
+| [expdatatablemirror](expdatatablemirror.md) | Mirror to data tables | `expDataTableMirrorType` | content/publish (after) |
+| [expuserapprove](expuserapprove.md) | Approve user accounts | `expUserApproveType` | content/publish (before) |
 | [ezapprove](ezapprove.md) | Approve | `eZApproveType` | content/publish (before) |
 | [ezfinishuserregister](ezfinishuserregister.md) | Finish User Registration | `eZFinishUserRegisterType` | content/publish (after) |
 | [ezmultiplexer](ezmultiplexer.md) | Multiplexer | `eZMultiplexerType` | any |

@@ -28,10 +28,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/rss/list.tpl` Zeile 84:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/datatable/syncs.tpl` Zeile 48:
 
 ```tpl
-<p class="a4-meta">{if eq( $cache_time, 0 )}{'Feeds are written anew for every request (site.ini [RSSSettings] CacheTime is 0).'|i18n( 'design/admin/rss/list' )}{else}{'A feed is written at most every %minutes minutes and served from a cached copy in between (site.ini [RSSSettings] CacheTime).'|i18n( 'design/admin/rss/list',, hash( '%minutes', div( $cache_time, 60 )|round ) )}{/if}</p>
+<td>{switch match=$s.run_mode}{case match='once'}{'when started'|i18n( 'design/admin/datatable' )}{/case}{case match='live'}{'live'|i18n( 'design/admin/datatable' )}{/case}{case}{'every %minutes minutes'|i18n( 'design/admin/datatable',, hash( '%minutes', div( $s.interval_seconds, 60 )|floor ) )|wash}{/case}{/switch}</td>
 ```
 
 ## Siehe auch

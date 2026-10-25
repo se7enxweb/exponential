@@ -42,8 +42,10 @@ HiddenTabs[]
 > List of additional tab identifiers  
 > AdditionalTabs\[\]=customtab  
 > The audit trail of a node (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/read  
+> The rows of data tables that point at a node or its object (doc/eng-us/features/6.0/data-tables.md,  
+> "Relations"), only with datatable/read and only when there are some  
 
-Default: a list of 3: `roles`, `policies`, `audit`.
+Default: a list of 4: `roles`, `policies`, `audit`, `datatable`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -54,6 +56,7 @@ AdditionalTabs[]
 AdditionalTabs[]=roles
 AdditionalTabs[]=policies
 AdditionalTabs[]=audit
+AdditionalTabs[]=datatable
 */ ?>
 ```
 

@@ -26,6 +26,14 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 {$value|floor}
 ```
 
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/datatable/syncs.tpl` Zeile 48:
+
+```tpl
+<td>{switch match=$s.run_mode}{case match='once'}{'when started'|i18n( 'design/admin/datatable' )}{/case}{case match='live'}{'live'|i18n( 'design/admin/datatable' )}{/case}{case}{'every %minutes minutes'|i18n( 'design/admin/datatable',, hash( '%minutes', div( $s.interval_seconds, 60 )|floor ) )|wash}{/case}{/switch}</td>
+```
+
 ## Siehe auch
 
 - [Alle Template-Operatoren](README.md)

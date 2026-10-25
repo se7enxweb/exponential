@@ -25,6 +25,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [contentcheck.ini](contentcheck.md) | kernel | 3 | AssetClassList, StorageParentClassList, Handlers |
 | [contentstructuremenu.ini](contentstructuremenu.md) | kernel | 2 | ShowClasses, ChapterClasses |
 | [cronjob.ini](cronjob.md) | kernel | 1 | ExtensionDirectories |
+| [datatable.ini](datatable.md) | kernel | 1 | IgnoreClasses |
 | [dbschema.ini](dbschema.md) | kernel | 1 | SchemaHandlerClasses |
 | [error.ini](error.md) | kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
 | [exphelp.ini](exphelp.md) | kernel | 1 | Providers |
@@ -32,8 +33,10 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [file.ini](file.md) | kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
 | [image.ini](image.md) | kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |
 | [ini.ini](ini.md) | kernel | 1 | ScopeProviders |
+| [kernelservices.ini](kernelservices.md) | kernel | 25 | Class, Factory, Class, Factory, Class, Factory ... |
 | [ldap.ini](ldap.md) | kernel | 2 | LDAPSearchFilters, LDAPGroupClass |
 | [mailpreferences.ini](mailpreferences.md) | kernel | 11 | HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass, HandlerClass ... |
+| [membermanagement.ini](membermanagement.md) | kernel | 1 | GuardedClasses |
 | [module.ini](module.md) | kernel | 2 | ModuleRepositories, ExtensionRepositories |
 | [notification.ini](notification.md) | kernel | 5 | IncludeClasses, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, DefaultTransport |
 | [package.ini](package.md) | kernel | 3 | ExtensionDirectories, HandlerList, HandlerList |
@@ -43,7 +46,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [setup.ini](setup.md) | kernel | 1 | TestClass |
 | [shop.ini](shop.md) | kernel | 7 | MathHandler, ExchangeRatesUpdateHandler, ExtensionDirectories, ExtensionDirectories, Handler, ExtensionDirectories ... |
 | [shopaccount.ini](shopaccount.md) | kernel | 4 | Repositories, ExtensionRepositories, Handler, Handler |
-| [site.ini](site.md) | kernel | 25 | purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners, ExtensionDirectory ... |
+| [site.ini](site.md) | kernel | 27 | purgeClass, purgeClass, DatabaseImplementation, Listeners, Implementation, Listeners ... |
 | [subitemscolumns.ini](subitemscolumns.md) | kernel | 112 | Class, Class, Class, Class, Class, Class ... |
 | [syscard.ini](syscard.md) | kernel | 1 | ProviderClasses |
 | [template.ini](template.md) | kernel | 2 | DefaultFormatter, OutputFormatter |

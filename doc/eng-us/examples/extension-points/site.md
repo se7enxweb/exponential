@@ -2,7 +2,7 @@
 title: Extension points in site.ini
 audience: developer, admin
 category: examples
-summary: Settings of site.ini that list handlers, classes or directories an extension can add to (25, found by name).
+summary: Settings of site.ini that list handlers, classes or directories an extension can add to (27, found by name).
 keywords: site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -22,6 +22,18 @@ Shipped: `ezpRestRoutesCacheClear`. [The setting](../ini-settings/site/Cache_res
 # extension/expexample/settings/site.ini.append.php
 [Cache_restRoutes]
 purgeClass=ezpRestRoutesCacheClear    # replace with your class or value
+*/ ?>
+```
+
+## Cache_exphelpcontent purgeClass
+
+Shipped: `expHelpContentRepository`. [The setting](../ini-settings/site/Cache_exphelpcontent.md#purgeclass).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[Cache_exphelpcontent]
+purgeClass=expHelpContentRepository    # replace with your class or value
 */ ?>
 ```
 
@@ -226,6 +238,18 @@ Shipped: `0`. [The setting](../ini-settings/site/PasswordSettings.md#mincharacte
 # extension/expexample/settings/site.ini.append.php
 [PasswordSettings]
 MinCharacterClasses=0    # replace with your class or value
+*/ ?>
+```
+
+## SignInSecondFactorSettings Handlers
+
+Shipped: an empty list. [The setting](../ini-settings/site/SignInSecondFactorSettings.md#handlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[SignInSecondFactorSettings]
+Handlers[]=expExampleHandler    # your class or value, added to the list
 */ ?>
 ```
 

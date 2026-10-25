@@ -3,13 +3,13 @@ title: velocity.ini [ServerSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [ServerSettings] in velocity.ini: Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User ..."
-keywords: Einstellung, velocity.ini, ServerSettings, INI, setting, Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User, Group, AllowRootWorkers, Workers, SpareWorkers, IdleWorkerTimeout, Instances, Nice, StatTtl, Zygote, Brand, BrandUrl, Maintainer, MaintainerUrl, BrandMark, BrandColor, BrandAccent, BrandBackground, BrandIcon, BrandOgImage, BrandDescription, PreloadWarmup, ForkPerRequest
+keywords: Einstellung, velocity.ini, ServerSettings, INI, setting, Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User, Group, AllowRootWorkers, Workers, SpareWorkers, IdleWorkerTimeout, Instances, SharedInstances, Nice, StatTtl, Zygote, Brand, BrandUrl, Maintainer, MaintainerUrl, BrandMark, BrandColor, BrandAccent, BrandBackground, BrandIcon, BrandOgImage, BrandDescription, PreloadWarmup
 type: generated
 generated: exp:help:examples
 ---
 # velocity.ini [ServerSettings]
 
-Der Block `[ServerSettings]` von `settings/velocity.ini`, mit 42 Einstellung(en).
+Der Block `[ServerSettings]` von `settings/velocity.ini`, mit 43 Einstellung(en).
 
 Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -253,19 +253,19 @@ IdleWorkerTimeout=60
 
 ## Instances
 
-> Wie viele Server auf denselben Ports laufen (nur die Engine qbix). Ein Server  
-> beantwortet gecachte Seiten in seinem eigenen Prozess, etwa 0,3 ms CPU pro Seite, ein  
-> Server ist also durch einen Kern begrenzt: ~3.500 gecachte Seiten pro Sekunde, gemessen auf einem  
-> Rechner mit 12 Kernen. Bei mehr als einem lauscht jede Instanz mit  
-> SO\_REUSEPORT auf denselben Ports, und der Kernel verteilt die Verbindungen auf sie: zwei  
-> maßen 6.600-6.900, vier 12.200-13.100. Rendern wird nicht schneller; es ist  
-> durch die Worker begrenzt.  
+> How many servers to run on the same ports (the qbix engine only). A server  
+> answers cached pages in its own process, about 0.3 ms of CPU a page, so one  
+> server is bounded by one core: ~3,500 cached pages a second measured on a  
+> 12-core machine. With more than one, every instance listens on the same ports  
+> with SO\_REUSEPORT and the kernel spreads connections across them: two  
+> measured 6,600-6,900, four 12,200-13,100. Renders are not faster; they are  
+> bounded by the workers.  
 >
-> Jede Instanz hat ihren eigenen Worker-Pool: Workers und SpareWorkers oben gelten  
-> pro Instanz, teilen Sie sie also durch Instances, um denselben Speicher zu behalten. Jede hat  
-> ihre eigene PID-Datei und ihr eigenes Log neben PidFile und LogFile (server.pid,  
-> server.1.pid, ...). graceful lädt sie einzeln neu, sodass der Port weiter  
-> antwortet. Nur Linux und die BSDs.  
+> Each instance has its own worker pool: Workers and SpareWorkers above are  
+> per instance, so divide them by Instances to keep the same memory. Each has  
+> its own pid file beside PidFile (server.pid, server.1.pid, ...). graceful  
+> reloads them one at a time, so the port keeps answering. Linux and the BSDs  
+> only.  
 
 Standard: `1`.
 
@@ -274,6 +274,26 @@ Standard: `1`.
 # settings/override/velocity.ini.append.php
 [ServerSettings]
 Instances=1
+*/ ?>
+```
+
+## SharedInstances
+
+> enabled: the instances share one cache of compiled scripts and one APCu  
+> segment (the engine starts the first and forks the others from it, Exponential  
+> Velocity 0.0.4.56 and later), so a script is compiled once and a result the  
+> kernel keeps in APCu (the query cache) is paid for once, not once per  
+> instance; all of them write to LogFile. disabled: every instance is started  
+> on its own, with caches and a log (console.1.log ...) of its own. An instance  
+> reloaded by graceful sets PHP up again and has caches of its own from then on.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+SharedInstances=enabled
 */ ?>
 ```
 

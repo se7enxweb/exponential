@@ -19,9 +19,10 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Scripts
 
-> Aufbewahrung der E-Mail-Einstellungen (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
+> E-mail preferences retention (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
+> Signed-in sessions: expired ones end, ended ones go after site.ini \[UserSessionSettings\] RetentionDays  
 
-Standard: eine Liste mit 3: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`.
+Standard: eine Liste mit 4: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`, `usersessions.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -32,6 +33,7 @@ Scripts[]
 Scripts[]=basket_cleanup.php
 Scripts[]=linkcheck.php
 Scripts[]=mailpreferences.php
+Scripts[]=usersessions.php
 */ ?>
 ```
 

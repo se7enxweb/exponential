@@ -19,13 +19,13 @@ Never edit `settings/country.ini` itself: an update replaces it. Put the setting
 
 ## Name
 
-Default: `Turkey`.
+Default: `Türkiye`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/country.ini.append.php
 [TR]
-Name=Turkey
+Name=Türkiye
 */ ?>
 ```
 

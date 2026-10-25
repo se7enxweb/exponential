@@ -53,10 +53,12 @@ ExtensionDirectories[]
 
 ## AvailableEventTypes
 
-> Eine Liste von Ereignissen; jeder Eintrag besteht aus der Gruppe  
-> und dem Namen mit \_ als Trenner  
+> A list of events, each entry consists of the group  
+> and the name with a \_ as separator  
+> Writes the published object to the tables of data table synchronisations (doc/eng-us/features/6.0/data-tables.md)  
+> Approve user accounts: a new account in a chosen user group waits for an approver (doc/eng-us/bc/6.0/user-account-approval.md)  
 
-Standard: eine Liste mit 6: `event_ezapprove`, `event_ezwaituntildate`, `event_ezsimpleshipping`, `event_ezmultiplexer`, `event_ezpaymentgateway`, `event_ezfinishuserregister`.
+Standard: eine Liste mit 8: `event_ezapprove`, `event_ezwaituntildate`, `event_ezsimpleshipping`, `event_ezmultiplexer`, `event_ezpaymentgateway`, `event_ezfinishuserregister`, `event_expdatatablemirror`, `event_expuserapprove`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -70,6 +72,8 @@ AvailableEventTypes[]=event_ezsimpleshipping
 AvailableEventTypes[]=event_ezmultiplexer
 AvailableEventTypes[]=event_ezpaymentgateway
 AvailableEventTypes[]=event_ezfinishuserregister
+AvailableEventTypes[]=event_expdatatablemirror
+AvailableEventTypes[]=event_expuserapprove
 */ ?>
 ```
 

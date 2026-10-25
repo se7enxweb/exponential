@@ -22,8 +22,10 @@ Jedes Modul des Kernels und der mitgelieferten Erweiterungen, aus seiner `module
 | [contentcheck](contentcheck/README.md) | 7 | `kernel/contentcheck/module.php` |
 | [contentfinder](contentfinder/README.md) | 2 | `kernel/contentfinder/module.php` |
 | [csp](csp/README.md) | 1 | `kernel/csp/module.php` |
+| [datatable](datatable/README.md) | 9 | `kernel/datatable/module.php` |
 | [error](error/README.md) | 1 | `kernel/error/module.php` |
 | [exphelp](exphelp/README.md) | 13 | `kernel/exphelp/module.php` |
+| [expimageeditor](expimageeditor/README.md) | 1 | `extension/expimageeditor/modules/expimageeditor/module.php` |
 | [ezinfo](ezinfo/README.md) | 3 | `kernel/ezinfo/module.php` |
 | [ezjscore](ezjscore/README.md) | 3 | `extension/ezjscore/modules/ezjscore/module.php` |
 | [ezoe](ezoe/README.md) | 8 | `extension/ezoe/modules/ezoe/module.php` |
@@ -38,16 +40,17 @@ Jedes Modul des Kernels und der mitgelieferten Erweiterungen, aus seiner `module
 | [role](role/README.md) | 6 | `kernel/role/module.php` |
 | [rss](rss/README.md) | 4 | `kernel/rss/module.php` |
 | [search](suche/README.md) | 1 | `kernel/search/module.php` |
+| [secrets](secrets/README.md) | 1 | `kernel/secrets/module.php` |
 | [section](section/README.md) | 4 | `kernel/section/module.php` |
 | [settings](settings/README.md) | 2 | `kernel/settings/module.php` |
-| [setup](setup/README.md) | 43 | `kernel/setup/module.php` |
+| [setup](setup/README.md) | 44 | `kernel/setup/module.php` |
 | [shop](shop/README.md) | 36 | `kernel/shop/module.php` |
 | [state](state/README.md) | 6 | `kernel/state/module.php` |
 | [switchlanguage](switchlanguage/README.md) | 1 | `kernel/private/modules/switchlanguage/module.php` |
 | [trigger](trigger/README.md) | 1 | `kernel/trigger/module.php` |
 | [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/module.php` |
 | [url](url/README.md) | 3 | `kernel/url/module.php` |
-| [user](user/README.md) | 15 | `kernel/user/module.php` |
+| [user](user/README.md) | 16 | `kernel/user/module.php` |
 | [visual](visual/README.md) | 7 | `kernel/visual/module.php` |
 | [workflow](workflow/README.md) | 11 | `kernel/workflow/module.php` |
 

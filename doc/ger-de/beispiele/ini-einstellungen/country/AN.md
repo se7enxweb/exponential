@@ -19,6 +19,8 @@ Bearbeiten Sie `settings/country.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Name
 
+> Obsolete: ISO 3166-1 withdrew AN in 2010 (now BQ, CW, SX); kept for existing data.  
+
 Standard: `Netherlands Antilles`.
 
 ```ini

@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # design.ini
 
-The shipped settings of `settings/design.ini`: 4 blocks, 14 settings.
+The shipped settings of `settings/design.ini`: 5 blocks, 15 settings.
 
 > Exponential configuration file for designs  
 >
@@ -28,6 +28,7 @@ The shipped settings of `settings/design.ini`: 4 blocks, 14 settings.
 | [StylesheetSettings](StylesheetSettings.md) | 6 |
 | [JavaScriptSettings](JavaScriptSettings.md) | 4 |
 | [AdminDesignSettings](AdminDesignSettings.md) | 3 |
+| [AdminHeaderSettings](AdminHeaderSettings.md) | 1 |
 
 - [All examples](../../README.md)
 

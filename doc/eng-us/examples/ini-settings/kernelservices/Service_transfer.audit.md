@@ -1,0 +1,223 @@
+---
+title: kernelservices.ini [Service_transfer.audit]
+audience: developer, admin
+category: examples
+summary: "The settings of [Service_transfer.audit] in kernelservices.ini: Class, Factory, Arguments, Scope, Tags, Description, Name, Direction ..."
+keywords: kernelservices.ini, Service_transfer.audit, INI, setting, Class, Factory, Arguments, Scope, Tags, Description, Name, Direction, Scopes, Formats, EntryURL, Permission, HelpPage, Keywords, Weight
+type: generated
+generated: exp:help:examples
+---
+# kernelservices.ini [Service_transfer.audit]
+
+The block `[Service_transfer.audit]` of `settings/kernelservices.ini`, with 15 setting(s).
+
+Never edit `settings/kernelservices.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
+
+- `settings/override/kernelservices.ini.append.php` for every siteaccess,
+- `settings/siteaccess/<siteaccess>/kernelservices.ini.append.php` for one siteaccess,
+- `extension/<extension>/settings/kernelservices.ini.append.php` in an extension (read when the extension is active).
+
+## Class
+
+Default: `expKernelTransferTool`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Class=expKernelTransferTool
+*/ ?>
+```
+
+## Factory
+
+Default: `expKernelTransferTool::fromSettings`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Factory=expKernelTransferTool::fromSettings
+*/ ?>
+```
+
+## Arguments
+
+Default: a list of 1: `transfer.audit`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+# an empty "Arguments[]" first replaces the shipped list; without it the items are added
+Arguments[]
+Arguments[]=transfer.audit
+*/ ?>
+```
+
+## Scope
+
+Default: `worker`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Scope=worker
+*/ ?>
+```
+
+## Tags
+
+Default: a list of 1: `transfer.tool`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+# an empty "Tags[]" first replaces the shipped list; without it the items are added
+Tags[]
+Tags[]=transfer.tool
+*/ ?>
+```
+
+## Description
+
+Default: `Download the audit trail's records, filtered as in the console, as CSV, JSON lines or JSON.`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Description=Download the audit trail's records, filtered as in the console, as CSV, JSON lines or JSON.
+*/ ?>
+```
+
+## Name
+
+Default: `Audit export`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Name=Audit export
+*/ ?>
+```
+
+## Direction
+
+Default: `export`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Direction=export
+*/ ?>
+```
+
+## Scopes
+
+Default: a list of 1: `data`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+# an empty "Scopes[]" first replaces the shipped list; without it the items are added
+Scopes[]
+Scopes[]=data
+*/ ?>
+```
+
+## Formats
+
+Default: a list of 3: `CSV`, `JSONL`, `JSON`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+# an empty "Formats[]" first replaces the shipped list; without it the items are added
+Formats[]
+Formats[]=CSV
+Formats[]=JSONL
+Formats[]=JSON
+*/ ?>
+```
+
+## EntryURL
+
+Default: `audit/export`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+EntryURL=audit/export
+*/ ?>
+```
+
+## Permission
+
+Default: `audit/read`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Permission=audit/read
+*/ ?>
+```
+
+## HelpPage
+
+Default: `features/6.0/audit-trail.md#exports-and-the-channels-of-extensions`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+HelpPage=features/6.0/audit-trail.md#exports-and-the-channels-of-extensions
+*/ ?>
+```
+
+## Keywords
+
+Default: a list of 4: `log`, `who changed what`, `compliance`, `Protokoll`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+# an empty "Keywords[]" first replaces the shipped list; without it the items are added
+Keywords[]
+Keywords[]=log
+Keywords[]=who changed what
+Keywords[]=compliance
+Keywords[]=Protokoll
+*/ ?>
+```
+
+## Weight
+
+Default: `80`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/kernelservices.ini.append.php
+[Service_transfer.audit]
+Weight=80
+*/ ?>
+```
+
+## Related
+
+- [All blocks of kernelservices.ini](README.md)
+- [All INI files](../README.md)
+- [The settings page](../../../guides/settings-page.md)
+
+---
+
+Generated by `./console exp:help:examples` from `settings/kernelservices.ini`. Do not edit this page: change the source and generate again ([how](../../README.md#how-the-generated-pages-are-made)). Free documentation: [GFDL 1.3 or later](../../../help/free-documentation.md).

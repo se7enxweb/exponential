@@ -26,6 +26,14 @@ Built from the parameter list above; the values are placeholders (the operator's
 {$value|floor}
 ```
 
+## In a shipped template
+
+The first use in the templates of this installation, `design/admin/templates/datatable/syncs.tpl` line 48:
+
+```tpl
+<td>{switch match=$s.run_mode}{case match='once'}{'when started'|i18n( 'design/admin/datatable' )}{/case}{case match='live'}{'live'|i18n( 'design/admin/datatable' )}{/case}{case}{'every %minutes minutes'|i18n( 'design/admin/datatable',, hash( '%minutes', div( $s.interval_seconds, 60 )|floor ) )|wash}{/case}{/switch}</td>
+```
+
 ## Related
 
 - [All template operators](README.md)

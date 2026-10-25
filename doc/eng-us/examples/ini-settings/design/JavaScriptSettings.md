@@ -75,9 +75,9 @@ BackendJavaScriptList[]=ezadmin_menubar.js
 
 ## ClassicBackendJavaScriptList
 
-> Scripts the older admin designs (admin, admin3 and adminui, chosen with the UI switch) still expect on every page:  
-> their page\_head\_script.tpl loads them after jQuery and BackendJavaScriptList; admin4 and admin4l do not read this  
-> list. An extension that used to put a jQuery script or an exp:: module into BackendJavaScriptList for those  
+> Scripts the older admin designs (admin and admin3, chosen with the UI switch) still expect on every page: their  
+> page\_head\_script.tpl loads them after jQuery and BackendJavaScriptList (adminui once its package reads it too);  
+> admin4 and admin4l do not read this list. An extension that used to put a jQuery script or an exp:: module into BackendJavaScriptList for those  
 > designs adds it here.  
 
 Default: an empty list.

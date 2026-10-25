@@ -35,7 +35,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 The first use in the templates of this installation, `design/admin/templates/children.tpl` line 97:
 
 ```tpl
-{ezscript_require( array( 'ezajaxsubitems_expdatatable.js' ) )}
+{ezscript_require( array( 'exp::core::shared', 'exp::io', 'exp::datatable', 'ezajaxsubitems_expdatatable.js' ) )}
 ```
 
 ## Related

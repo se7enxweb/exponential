@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/country.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Name
 
-Standard: `Libyan Arab Jamahiriya`.
+Standard: `Libya`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/country.ini.append.php
 [LY]
-Name=Libyan Arab Jamahiriya
+Name=Libya
 */ ?>
 ```
 

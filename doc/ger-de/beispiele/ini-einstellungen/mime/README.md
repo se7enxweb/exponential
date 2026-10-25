@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # mime.ini
 
-Die ausgelieferten Einstellungen von `settings/mime.ini`: 191 Blöcke, 191 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/mime.ini`: 192 Blöcke, 192 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -53,6 +53,7 @@ Die ausgelieferten Einstellungen von `settings/mime.ini`: 191 Blöcke, 191 Einst
 | [dvi](dvi.md) | 1 |
 | [dxr](dxr.md) | 1 |
 | [ent](ent.md) | 1 |
+| [epub](epub.md) | 1 |
 | [eps](eps.md) | 1 |
 | [etx](etx.md) | 1 |
 | [exe](exe.md) | 1 |

@@ -32,7 +32,7 @@ Der Variablenname ist der `input_name` der Regel; der Wert ist ein Platzhalter.
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/view.tpl` Zeile 121:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/view.tpl` Zeile 129:
 
 ```tpl
 <div class="a4-class-datatype">{class_attribute_view_gui class_attribute=$attribute}</div>

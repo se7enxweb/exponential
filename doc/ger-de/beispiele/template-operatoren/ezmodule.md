@@ -27,7 +27,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/view.tpl` Zeile 36:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/class/view.tpl` Zeile 41:
 
 ```tpl
 {if ezmodule( 'scriptmonitor/view' )}<a href={concat( 'scriptmonitor/view/', $scheduled_script_id )|ezurl}>{'Background process monitor'|i18n( 'design/admin/class/view' )}</a>{/if}</p>

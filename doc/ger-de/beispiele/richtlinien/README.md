@@ -22,8 +22,10 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [contentcheck](contentcheck.md) | `brokenrelations`, `fixfiles`, `permissions`, `quarantine`, `storage`, `trash`, `unreferenced` |
 | [contentfinder](contentfinder.md) | `delete`, `search` |
 | [csp](csp.md) | (keine: `csp/*`) |
+| [datatable](datatable.md) | `connections`, `manage`, `read`, `sync` |
 | [error](error.md) | (keine: `error/*`) |
 | [exphelp](exphelp.md) | `context`, `read` |
+| [expimageeditor](expimageeditor.md) | `edit` |
 | [ezinfo](ezinfo.md) | `read` |
 | [ezjscore](ezjscore.md) | `call`, `run` |
 | [ezoe](ezoe.md) | `browse`, `disable_editor`, `editor`, `relations`, `search` |
@@ -38,6 +40,7 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [role](role.md) | (keine: `role/*`) |
 | [rss](rss.md) | `edit`, `feed` |
 | [search](search.md) | (keine: `search/*`) |
+| [secrets](secrets.md) | `manage` |
 | [section](section.md) | `assign`, `edit`, `view` |
 | [settings](settings.md) | (keine: `settings/*`) |
 | [setup](setup.md) | `administrate`, `install`, `logs`, `managecache`, `managecronjobs`, `managelogs`, `preload`, `setup`, `system_info`, `unmasklogs` |
@@ -47,7 +50,7 @@ Die Richtlinienfunktionen jedes Moduls und die Einschränkungen, die jede tragen
 | [trigger](trigger.md) | (keine: `trigger/*`) |
 | [uiswitch](uiswitch.md) | `design`, `language` |
 | [url](url.md) | (keine: `url/*`) |
-| [user](user.md) | `activation`, `deactivate`, `hygiene`, `login`, `password`, `preferences`, `register`, `selfedit` |
+| [user](user.md) | `activation`, `deactivate`, `hygiene`, `login`, `password`, `preferences`, `register`, `selfedit`, `sessions` |
 | [visual](visual.md) | (keine: `visual/*`) |
 | [workflow](workflow.md) | (keine: `workflow/*`) |
 

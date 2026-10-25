@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Every operator the kernel, its libraries and the bundled extensions register (the `$eZTemplateOperatorArray` of each `eztemplateautoload.php`, and `settings/template.ini` `[PHP] PHPOperatorList[]`), with its parameters and an example. "Used in" says whether a shipped template uses it; its page quotes the first use.
 
-237 operators.
+244 operators.
 
 | Operator | Class | Parameters | Used in a shipped template |
 |---|---|---|---|
@@ -98,10 +98,11 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [first_set](first_set.md) | eZTemplateControlOperator | 0 | yes |
 | [flag_icon](flag_icon.md) | eZWordToImageOperator | ? | yes |
 | [float](float.md) | eZTemplateArithmeticOperator | 0 |  |
-| [floor](floor.md) | eZTemplateArithmeticOperator | 0 |  |
+| [floor](floor.md) | eZTemplateArithmeticOperator | 0 | yes |
 | [ge](ge.md) | eZTemplateLogicOperator | 1 | yes |
 | [get_class](get_class.md) | eZTemplateTypeOperator | 0 | yes |
 | [get_type](get_type.md) | eZTemplateTypeOperator | 0 |  |
+| [getenv](getenv.md) | eZTemplatePHPOperator | ? |  |
 | [gettime](gettime.md) | eZTemplateLocaleOperator | 1 |  |
 | [gt](gt.md) | eZTemplateLogicOperator | 1 | yes |
 | [has_access_to_limitation](has_access_to_limitation.md) | ezjscAccessTemplateFunctions | 4 |  |
@@ -163,7 +164,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [month_overview](month_overview.md) | eZDateOperatorCollection | 3 |  |
 | [mul](mul.md) | eZTemplateArithmeticOperator | 0 | yes |
 | [ne](ne.md) | eZTemplateLogicOperator | 0 | yes |
-| [nl2br](nl2br.md) | eZTemplateNl2BrOperator | 0 | yes |
+| [nl2br](nl2br.md) | eZTemplatePHPOperator | ? | yes |
 | [node_encode](node_encode.md) | ezjscEncodingTemplateFunctions | 3 |  |
 | [not](not.md) | eZTemplateLogicOperator | 0 | yes |
 | [null](null.md) | eZTemplateLogicOperator | 0 | yes |
@@ -189,6 +190,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [round](round.md) | eZTemplateArithmeticOperator | 0 | yes |
 | [rstring](rstring.md) | eZTemplateStringsOperator | ? |  |
 | [rtrim](rtrim.md) | eZTemplateStringsOperator | ? |  |
+| [serialize](serialize.md) | eZTemplatePHPOperator | ? |  |
 | [shorten](shorten.md) | eZTemplateStringOperator | 3 | yes |
 | [si](si.md) | eZTemplateUnitOperator | 5 | yes |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |
@@ -210,7 +212,7 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [strcmp](strcmp.md) | eZTemplateStringsOperator | ? |  |
 | [strcoll](strcoll.md) | eZTemplateStringsOperator | ? |  |
 | [strcspn](strcspn.md) | eZTemplateStringsOperator | ? |  |
-| [strip_tags](strip_tags.md) | eZTemplateStringsOperator | ? | yes |
+| [strip_tags](strip_tags.md) | eZTemplatePHPOperator | ? | yes |
 | [stripcslashes](stripcslashes.md) | eZTemplateStringsOperator | ? |  |
 | [stripos](stripos.md) | eZTemplateStringsOperator | ? |  |
 | [stripslashes](stripslashes.md) | eZTemplateStringsOperator | ? |  |
@@ -237,10 +239,15 @@ Every operator the kernel, its libraries and the bundled extensions register (th
 | [sum](sum.md) | eZTemplateArithmeticOperator | 0 | yes |
 | [texttoimage](texttoimage.md) | eZTemplateImageOperator | 12 |  |
 | [topmenu](topmenu.md) | eZTopMenuOperator | 2 | yes |
+| [transfer_actions](transfer_actions.md) | expKernelTransferOperator | 3 | yes |
+| [transfer_related](transfer_related.md) | expKernelTransferOperator | 1 |  |
+| [transfer_tool](transfer_tool.md) | expKernelTransferOperator | 1 |  |
+| [transfer_tools](transfer_tools.md) | expKernelTransferOperator | 1 | yes |
 | [treemenu](treemenu.md) | eZTreeMenuOperator | 9 |  |
 | [trim](trim.md) | eZTemplateStringOperator | 1 | yes |
 | [true](true.md) | eZTemplateLogicOperator | 0 | yes |
 | [unique](unique.md) | eZTemplateArrayOperator | 0 | yes |
+| [unserialize](unserialize.md) | eZTemplatePHPOperator | ? |  |
 | [upcase](upcase.md) | eZTemplateStringOperator | 0 | yes |
 | [upfirst](upfirst.md) | eZTemplateStringOperator | 0 | yes |
 | [upword](upword.md) | eZTemplateStringOperator | 0 |  |

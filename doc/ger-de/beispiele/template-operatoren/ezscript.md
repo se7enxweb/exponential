@@ -32,10 +32,10 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/oauthadmin/list.tpl` Zeile 119:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/content/datatype/edit/ezdate.tpl` Zeile 26:
 
 ```tpl
-{ezscript( array( 'oauthadmin_list.js' ) )}
+{ezscript( array( 'page/content_datepicker.js' ) )}
 ```
 
 ## Siehe auch

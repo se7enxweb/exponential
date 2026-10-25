@@ -86,4 +86,4 @@ Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `optio
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `bin/php/exphelpcontent.php`, `kernel/private/classes/commands/exphelpcontent.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../../../../doc/ger-de/beispiele/README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../../../doc/ger-de/hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `bin/php/exphelpcontent.php`, `kernel/private/classes/commands/exphelpcontent.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

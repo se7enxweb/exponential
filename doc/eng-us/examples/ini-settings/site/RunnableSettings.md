@@ -11,6 +11,10 @@ generated: exp:help:examples
 
 The block `[RunnableSettings]` of `settings/site.ini`, with 2 setting(s).
 
+> The kernel notifies content/publish ( object id, version ), content/move ( node id, object id, old parent, new  
+> parent ) and content/remove ( object ids, node ids ). The live mirror of the data tables is called by the kernel  
+> itself, in every process (doc/eng-us/features/6.0/data-tables.md, "Live mirror").  
+
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
 - `settings/override/site.ini.append.php` for every siteaccess,

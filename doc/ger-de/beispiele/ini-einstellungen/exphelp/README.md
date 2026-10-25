@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # exphelp.ini
 
-Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 68 Blöcke, 243 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 69 Blöcke, 253 Einstellungen.
 
 > Das Hilfesystem der Administration: exphelp/dashboard, exphelp/viewer, exphelp/search, exphelp/asset und  
 > exphelp/report (doc/eng-us/features/6.0/help-system.md). Es zeigt die von git versionierten Text- und Markdown-Dateien unter doc/,  
@@ -88,7 +88,8 @@ Die ausgelieferten Einstellungen von `settings/exphelp.ini`: 68 Blöcke, 243 Ein
 | [SecuritySettings](SecuritySettings.md) | 3 |
 | [License](License.md) | 17 |
 | [PdfSettings](PdfSettings.md) | 8 |
-| [ContentSettings](ContentSettings.md) | 12 |
+| [ContentSettings](ContentSettings.md) | 14 |
+| [ManualSettings](ManualSettings.md) | 8 |
 
 - [Alle Beispiele](../../README.md)
 

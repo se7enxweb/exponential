@@ -32,10 +32,10 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/oauthadmin/list.tpl` line 119:
+The first use in the templates of this installation, `design/admin/templates/content/datatype/edit/ezdate.tpl` line 26:
 
 ```tpl
-{ezscript( array( 'oauthadmin_list.js' ) )}
+{ezscript( array( 'page/content_datepicker.js' ) )}
 ```
 
 ## Related

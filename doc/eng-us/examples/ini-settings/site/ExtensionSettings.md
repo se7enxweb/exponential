@@ -2,14 +2,14 @@
 title: site.ini [ExtensionSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [ExtensionSettings] in site.ini: ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, ActiveAccessExtensions"
-keywords: site.ini, ExtensionSettings, INI, setting, ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, ActiveAccessExtensions
+summary: "The settings of [ExtensionSettings] in site.ini: ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, RequiredExtensions, ActiveAccessExtensions"
+keywords: site.ini, ExtensionSettings, INI, setting, ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, RequiredExtensions, ActiveAccessExtensions
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [ExtensionSettings]
 
-The block `[ExtensionSettings]` of `settings/site.ini`, with 5 setting(s).
+The block `[ExtensionSettings]` of `settings/site.ini`, with 6 setting(s).
 
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -103,6 +103,29 @@ Default: a list of 1: `xrowmetadata`.
 # an empty "ActiveExtensions[]" first replaces the shipped list; without it the items are added
 ActiveExtensions[]
 ActiveExtensions[]=xrowmetadata
+*/ ?>
+```
+
+## RequiredExtensions
+
+> Extensions the kernel's own designs need. Each one that is installed is active  
+> in every siteaccess, ahead of ActiveExtensions\[\], whatever an override sets  
+> there; one that is not installed is left out without an error. The admin  
+> designs request the script packs of Exponential UI (expui, which the kernel  
+> package requires: exp::core::shared, exp::io, exp::datatable ...) for the  
+> sub-items table, relation search, uploads and date fields; without it ezjscore  
+> answers "Not a valid ezjscServer function" for each of them. A project that  
+> resets ActiveExtensions\[\] (a Platform Legacy project's override) keeps it.  
+
+Default: a list of 1: `expui`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ExtensionSettings]
+# an empty "RequiredExtensions[]" first replaces the shipped list; without it the items are added
+RequiredExtensions[]
+RequiredExtensions[]=expui
 */ ?>
 ```
 

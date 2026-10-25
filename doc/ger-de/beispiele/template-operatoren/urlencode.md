@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Registriert in `kernel/common/eztemplateautoload.php` von der Klasse `eZTemplatePHPOperator` (`lib/eztemplate/classes/eztemplatephpoperator.php`).
 Er ruft die PHP-Funktion `urlencode()` auf, aufgeführt in `settings/template.ini` `[PHP] PHPOperatorList[]`.
-Dieselbe Klasse registriert auch: [urldecode](urldecode.md), [rawurlencode](rawurlencode.md), [rawurldecode](rawurldecode.md).
+Dieselbe Klasse registriert auch: [urldecode](urldecode.md), [rawurlencode](rawurlencode.md), [rawurldecode](rawurldecode.md), [getenv](getenv.md), [serialize](serialize.md), [unserialize](unserialize.md), [nl2br](nl2br.md), [strip_tags](strip_tags.md).
 
 ## Parameter
 

@@ -27,7 +27,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/class/view.tpl` line 36:
+The first use in the templates of this installation, `design/admin/templates/class/view.tpl` line 41:
 
 ```tpl
 {if ezmodule( 'scriptmonitor/view' )}<a href={concat( 'scriptmonitor/view/', $scheduled_script_id )|ezurl}>{'Background process monitor'|i18n( 'design/admin/class/view' )}</a>{/if}</p>

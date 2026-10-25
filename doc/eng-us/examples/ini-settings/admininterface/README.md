@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # admininterface.ini
 
-The shipped settings of `settings/admininterface.ini`: 9 blocks, 41 settings.
+The shipped settings of `settings/admininterface.ini`: 10 blocks, 46 settings.
 
 | Block | Settings |
 |---|---|
@@ -20,6 +20,7 @@ The shipped settings of `settings/admininterface.ini`: 9 blocks, 41 settings.
 | [AdditionalTab_roles](AdditionalTab_roles.md) | 5 |
 | [AdditionalTab_policies](AdditionalTab_policies.md) | 5 |
 | [AdditionalTab_audit](AdditionalTab_audit.md) | 5 |
+| [AdditionalTab_datatable](AdditionalTab_datatable.md) | 5 |
 | [ContentEditSettings](ContentEditSettings.md) | 1 |
 | [ContentEditAttributeSettings](ContentEditAttributeSettings.md) | 6 |
 | [PaginationSettings](PaginationSettings.md) | 7 |

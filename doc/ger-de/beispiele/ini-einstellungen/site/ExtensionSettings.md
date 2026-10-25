@@ -2,14 +2,14 @@
 title: site.ini [ExtensionSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [ExtensionSettings] in site.ini: ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, ActiveAccessExtensions"
-keywords: Einstellung, site.ini, ExtensionSettings, INI, setting, ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, ActiveAccessExtensions
+summary: "Die Einstellungen von [ExtensionSettings] in site.ini: ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, RequiredExtensions, ActiveAccessExtensions"
+keywords: Einstellung, site.ini, ExtensionSettings, INI, setting, ExtensionDirectory, AdditionalExtensionDirectories, ExtensionOrdering, ActiveExtensions, RequiredExtensions, ActiveAccessExtensions
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [ExtensionSettings]
 
-Der Block `[ExtensionSettings]` von `settings/site.ini`, mit 5 Einstellung(en).
+Der Block `[ExtensionSettings]` von `settings/site.ini`, mit 6 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -103,6 +103,29 @@ Standard: eine Liste mit 1: `xrowmetadata`.
 # ein leeres "ActiveExtensions[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 ActiveExtensions[]
 ActiveExtensions[]=xrowmetadata
+*/ ?>
+```
+
+## RequiredExtensions
+
+> Extensions the kernel's own designs need. Each one that is installed is active  
+> in every siteaccess, ahead of ActiveExtensions\[\], whatever an override sets  
+> there; one that is not installed is left out without an error. The admin  
+> designs request the script packs of Exponential UI (expui, which the kernel  
+> package requires: exp::core::shared, exp::io, exp::datatable ...) for the  
+> sub-items table, relation search, uploads and date fields; without it ezjscore  
+> answers "Not a valid ezjscServer function" for each of them. A project that  
+> resets ActiveExtensions\[\] (a Platform Legacy project's override) keeps it.  
+
+Standard: eine Liste mit 1: `expui`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[ExtensionSettings]
+# ein leeres "RequiredExtensions[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+RequiredExtensions[]
+RequiredExtensions[]=expui
 */ ?>
 ```
 

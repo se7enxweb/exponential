@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # mime.ini
 
-The shipped settings of `settings/mime.ini`: 191 blocks, 191 settings.
+The shipped settings of `settings/mime.ini`: 192 blocks, 192 settings.
 
 > Exponential configuration file.  
 >
@@ -53,6 +53,7 @@ The shipped settings of `settings/mime.ini`: 191 blocks, 191 settings.
 | [dvi](dvi.md) | 1 |
 | [dxr](dxr.md) | 1 |
 | [ent](ent.md) | 1 |
+| [epub](epub.md) | 1 |
 | [eps](eps.md) | 1 |
 | [etx](etx.md) | 1 |
 | [exe](exe.md) | 1 |

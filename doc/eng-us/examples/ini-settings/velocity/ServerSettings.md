@@ -3,13 +3,13 @@ title: velocity.ini [ServerSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [ServerSettings] in velocity.ini: Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User ..."
-keywords: velocity.ini, ServerSettings, INI, setting, Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User, Group, AllowRootWorkers, Workers, SpareWorkers, IdleWorkerTimeout, Instances, Nice, StatTtl, Zygote, Brand, BrandUrl, Maintainer, MaintainerUrl, BrandMark, BrandColor, BrandAccent, BrandBackground, BrandIcon, BrandOgImage, BrandDescription, PreloadWarmup, ForkPerRequest
+keywords: velocity.ini, ServerSettings, INI, setting, Engine, ScriptPath, DocumentRoot, FollowSymlinks, Host, Port, HTTPSPort, User, Group, AllowRootWorkers, Workers, SpareWorkers, IdleWorkerTimeout, Instances, SharedInstances, Nice, StatTtl, Zygote, Brand, BrandUrl, Maintainer, MaintainerUrl, BrandMark, BrandColor, BrandAccent, BrandBackground, BrandIcon, BrandOgImage, BrandDescription, PreloadWarmup
 type: generated
 generated: exp:help:examples
 ---
 # velocity.ini [ServerSettings]
 
-The block `[ServerSettings]` of `settings/velocity.ini`, with 42 setting(s).
+The block `[ServerSettings]` of `settings/velocity.ini`, with 43 setting(s).
 
 Never edit `settings/velocity.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -263,9 +263,9 @@ IdleWorkerTimeout=60
 >
 > Each instance has its own worker pool: Workers and SpareWorkers above are  
 > per instance, so divide them by Instances to keep the same memory. Each has  
-> its own pid file and log beside PidFile and LogFile (server.pid,  
-> server.1.pid, ...). graceful reloads them one at a time, so the port keeps  
-> answering. Linux and the BSDs only.  
+> its own pid file beside PidFile (server.pid, server.1.pid, ...). graceful  
+> reloads them one at a time, so the port keeps answering. Linux and the BSDs  
+> only.  
 
 Default: `1`.
 
@@ -274,6 +274,26 @@ Default: `1`.
 # settings/override/velocity.ini.append.php
 [ServerSettings]
 Instances=1
+*/ ?>
+```
+
+## SharedInstances
+
+> enabled: the instances share one cache of compiled scripts and one APCu  
+> segment (the engine starts the first and forks the others from it, Exponential  
+> Velocity 0.0.4.56 and later), so a script is compiled once and a result the  
+> kernel keeps in APCu (the query cache) is paid for once, not once per  
+> instance; all of them write to LogFile. disabled: every instance is started  
+> on its own, with caches and a log (console.1.log ...) of its own. An instance  
+> reloaded by graceful sets PHP up again and has caches of its own from then on.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+SharedInstances=enabled
 */ ?>
 ```
 

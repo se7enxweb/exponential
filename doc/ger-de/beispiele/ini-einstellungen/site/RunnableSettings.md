@@ -11,6 +11,10 @@ generated: exp:help:examples
 
 Der Block `[RunnableSettings]` von `settings/site.ini`, mit 2 Einstellung(en).
 
+> The kernel notifies content/publish ( object id, version ), content/move ( node id, object id, old parent, new  
+> parent ) and content/remove ( object ids, node ids ). The live mirror of the data tables is called by the kernel  
+> itself, in every process (doc/eng-us/features/6.0/data-tables.md, "Live mirror").  
+
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
 - `settings/override/site.ini.append.php` für jeden Siteaccess,

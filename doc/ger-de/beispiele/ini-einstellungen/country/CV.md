@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/country.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Name
 
-Standard: `Cape Verde`.
+Standard: `Cabo Verde`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/country.ini.append.php
 [CV]
-Name=Cape Verde
+Name=Cabo Verde
 */ ?>
 ```
 

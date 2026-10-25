@@ -161,8 +161,11 @@ PhpBinary=
 > The job types: JobTypes\[<name>\]=<class implementing expContentJobType>.  
 > A package install in the background (Setup > Packages > Install, "Install in the background"), doc/eng-us/bc/6.0/package-json-format.md  
 > An export of the audit console in the background (Audit > Export, "Export in the background"), doc/eng-us/bc/6.0/audit.md  
+> The help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md  
+> A background run of an import or export tool (Export, CIE ...) when there is no job queue,  
+> doc/eng-us/features/6.0/transfer-runs.md (transfer.ini)  
 
-Default: a hash of 11: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`.
+Default: a hash of 13: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -181,6 +184,8 @@ JobTypes[addlocation]=expContentJobAddLocation
 JobTypes[removelocation]=expContentJobRemoveLocation
 JobTypes[packageinstall]=expContentJobPackageInstall
 JobTypes[auditexport]=expContentJobAuditExport
+JobTypes[helpmanuals]=expContentJobHelpManuals
+JobTypes[transfer]=expContentJobTransfer
 */ ?>
 ```
 

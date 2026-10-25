@@ -20,12 +20,13 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 ## Scripts
 
 > Content jobs whose worker died, or that nobody started (kernel/classes/contentjob/)  
+> The data table synchronisations that are due (doc/eng-us/features/6.0/data-tables.md; nothing without them)  
 > The audit: sink spools, alert rules; once a day rotation, archives, retention and the  
 > checkpoint (audit.ini \[AuditRotationSettings\] RotateAfter). Here so that an installation  
 > running only the frequent group needs no extra crontab line.  
 > The bounce mailbox (mailpreferences.ini \[BounceSettings\]; does nothing until it is set up)  
 
-Default: a list of 5: `notification.php`, `workflow.php`, `contentjobs.php`, `audit.php`, `mailbounces.php`.
+Default: a list of 6: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -36,6 +37,7 @@ Scripts[]
 Scripts[]=notification.php
 Scripts[]=workflow.php
 Scripts[]=contentjobs.php
+Scripts[]=datatablesync.php
 Scripts[]=audit.php
 Scripts[]=mailbounces.php
 */ ?>

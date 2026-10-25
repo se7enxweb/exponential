@@ -32,7 +32,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/page_head_script.tpl` line 21:
+The first use in the templates of this installation, `design/admin/templates/page_head_script.tpl` line 23:
 
 ```tpl
 {ezscript_load( $admin_backend_script_list )}

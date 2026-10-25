@@ -19,13 +19,14 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## Scripts
 
-> Inhaltsaufträge, deren Worker gestorben ist oder die niemand gestartet hat (kernel/classes/contentjob/)  
-> Das Audit: Spools der Ziele, Alarmregeln; einmal am Tag Rotation, Archive, Aufbewahrung und der  
-> Prüfpunkt (audit.ini \[AuditRotationSettings\] RotateAfter). Hier, damit eine Installation,  
-> die nur die Gruppe frequent ausführt, keine zusätzliche Crontab-Zeile braucht.  
-> Das Postfach für Rückläufer (mailpreferences.ini \[BounceSettings\]; tut nichts, bis es eingerichtet ist)  
+> Content jobs whose worker died, or that nobody started (kernel/classes/contentjob/)  
+> The data table synchronisations that are due (doc/eng-us/features/6.0/data-tables.md; nothing without them)  
+> The audit: sink spools, alert rules; once a day rotation, archives, retention and the  
+> checkpoint (audit.ini \[AuditRotationSettings\] RotateAfter). Here so that an installation  
+> running only the frequent group needs no extra crontab line.  
+> The bounce mailbox (mailpreferences.ini \[BounceSettings\]; does nothing until it is set up)  
 
-Standard: eine Liste mit 5: `notification.php`, `workflow.php`, `contentjobs.php`, `audit.php`, `mailbounces.php`.
+Standard: eine Liste mit 6: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -36,6 +37,7 @@ Scripts[]
 Scripts[]=notification.php
 Scripts[]=workflow.php
 Scripts[]=contentjobs.php
+Scripts[]=datatablesync.php
 Scripts[]=audit.php
 Scripts[]=mailbounces.php
 */ ?>

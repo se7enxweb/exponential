@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # design.ini
 
-Die ausgelieferten Einstellungen von `settings/design.ini`: 4 Blöcke, 13 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/design.ini`: 5 Blöcke, 15 Einstellungen.
 
 > Exponential-Konfigurationsdatei für Designs  
 >
@@ -26,8 +26,9 @@ Die ausgelieferten Einstellungen von `settings/design.ini`: 4 Blöcke, 13 Einste
 |---|---|
 | [ExtensionSettings](ExtensionSettings.md) | 1 |
 | [StylesheetSettings](StylesheetSettings.md) | 6 |
-| [JavaScriptSettings](JavaScriptSettings.md) | 3 |
+| [JavaScriptSettings](JavaScriptSettings.md) | 4 |
 | [AdminDesignSettings](AdminDesignSettings.md) | 3 |
+| [AdminHeaderSettings](AdminHeaderSettings.md) | 1 |
 
 - [Alle Beispiele](../../README.md)
 

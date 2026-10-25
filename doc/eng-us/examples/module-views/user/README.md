@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The user module
 
-Name `User management`, defined in `kernel/user/module.php`. 15 views.
+Name `User management`, defined in `kernel/user/module.php`. 16 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -26,6 +26,7 @@ Name `User management`, defined in `kernel/user/module.php`. 15 views.
 | [preferences](preferences.md) | `/user/preferences/<Function>/<Key>/<Value>` | login |
 | [register](register.md) | `/user/register/<redirect_number>` | register |
 | [registration](registration.md) | `/user/registration/<Token>` | login |
+| [sessions](sessions.md) | `/user/sessions/<UserID>` | login |
 | [setting](setting.md) | `/user/setting/<UserID>` | preferences |
 | [success](success.md) | `/user/success` | register |
 | [unactivated](unactivated.md) | `/user/unactivated/<SortField>/<SortOrder>` | activation |

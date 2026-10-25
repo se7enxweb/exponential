@@ -16,6 +16,7 @@ Defined in `kernel/setup/function_definition.php`. A parameter marked * is requi
 |---|---|
 | [alias](alias.md) |  |
 | [cronjob_pauses](cronjob_pauses.md) |  |
+| [cronjob_status](cronjob_status.md) |  |
 | [database_release](database_release.md) |  |
 | [database_version](database_version.md) | `with_release` |
 | [edition](edition.md) |  |
