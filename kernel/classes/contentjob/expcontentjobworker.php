@@ -219,7 +219,10 @@ class expContentJobWorker
             $job->set( 'batches', array_slice( $batches, -200 ) );
             $job->save();
             $p = $job->progress();
-            $line = sprintf( 'batch %d: %d done (%d/%d, %d%%) in %.2f s, peak %.1f MB, memory %.1f MB%s',
+            // %F, not %f, which follows LC_NUMERIC. Measured with a German locale (config.php calling
+            // setlocale( LC_ALL, "de_DE.UTF-8" )): "in 0,01 s, peak 30,0 MB" in the job log; the job page and
+            // ContentJobEngineTest CJ-12 expect a dot.
+            $line = sprintf( 'batch %d: %d done (%d/%d, %d%%) in %.2F s, peak %.1F MB, memory %.1F MB%s',
                              $p['batch'], $r['done'], $p['done'], $p['total'], $p['percent'], $seconds, $peak / 1048576,
                              memory_get_usage() / 1048576, $p['phase'] !== '' ? ', ' . $p['phase'] : '' );
             $job->appendLog( $line );

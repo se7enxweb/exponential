@@ -276,22 +276,96 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         return expContentJob::create( 'test', array( 'path' => $path, 'items' => $items ), $this->user( $user ) );
     }
 
+    /**
+     * Forks a child that runs $body and then always ends with SIGKILL (no PHPUnit shutdown handlers in the child).
+     *
+     * The children used to end with a posix_kill() after their work, so an exception or a failed assertion in the
+     * child (testWorkerRunsToDoneEachItemOnce under a German locale) skipped it: the copy of the PHPUnit
+     * process ran the rest of the suite next to the parent, and its later SIGKILL ended runs at random places
+     * (exit 137). The kill is in a finally now, and an exception is shown on stderr.
+     *
+     * @return int the child's pid
+     */
+    private static function fork( callable $body )
+    {
+        $pid = pcntl_fork();
+        if ( $pid === -1 )
+            self::fail( 'could not fork' );
+        if ( $pid === 0 )
+        {
+            // exit() or a fatal error in $body skips the finally below; the shutdown function still ends the child
+            register_shutdown_function( static function () { posix_kill( getmypid(), SIGKILL ); } );
+            try
+            {
+                $body();
+            }
+            catch ( \Throwable $e )
+            {
+                fwrite( STDERR, 'forked child ' . getmypid() . ': ' . get_class( $e ) . ': ' . $e->getMessage() . "\n" );
+            }
+            finally
+            {
+                posix_kill( getmypid(), SIGKILL );
+                exit( 255 ); // not reached
+            }
+        }
+        return $pid;
+    }
+
+    /**
+     * Waits for the children; one still running after $seconds is killed and the test fails, the parent never hangs.
+     *
+     * @return array pid => wait status
+     */
+    private static function waitFor( array $pids, $seconds = 60 )
+    {
+        $statuses = array();
+        $deadline = microtime( true ) + $seconds;
+        while ( count( $statuses ) < count( $pids ) )
+        {
+            foreach ( $pids as $pid )
+            {
+                if ( array_key_exists( $pid, $statuses ) )
+                    continue;
+                $r = pcntl_waitpid( $pid, $status, WNOHANG );
+                if ( $r === $pid || $r === -1 )
+                    $statuses[$pid] = $r === $pid ? $status : null;
+            }
+            if ( count( $statuses ) < count( $pids ) )
+            {
+                if ( microtime( true ) > $deadline )
+                {
+                    foreach ( $pids as $pid )
+                    {
+                        if ( !array_key_exists( $pid, $statuses ) )
+                        {
+                            posix_kill( $pid, SIGKILL );
+                            pcntl_waitpid( $pid, $status );
+                        }
+                    }
+                    self::fail( "forked children did not end within $seconds s and were killed" );
+                }
+                usleep( 5000 );
+            }
+        }
+        return $statuses;
+    }
+
     /** Runs a worker in a forked child; returns its exit code, or 'killed'. */
     private function runForked( $id, $killPoint = null, $killBatch = 0 )
     {
         $codeFile = $this->dir . '/exit-code';
         @unlink( $codeFile );
-        $pid = pcntl_fork();
-        if ( $pid === 0 )
+        $pid = self::fork( function () use ( $id, $killPoint, $killBatch, $codeFile )
         {
             ezpTestContentJobKill::$point = $killPoint;
             ezpTestContentJobKill::$batch = $killBatch;
             $code = ( new ezpTestContentJobWorker() )->run( $id );
             file_put_contents( $codeFile, (string) $code );
-            posix_kill( getmypid(), SIGKILL );   // leave without PHPUnit's shutdown handlers
-        }
-        pcntl_waitpid( $pid, $status );
-        if ( pcntl_wifsignaled( $status ) && !is_file( $codeFile ) )
+        } );
+        self::waitFor( array( $pid ) );
+        // the child always ends by SIGKILL; without the file it was killed before the worker returned
+        if ( !is_file( $codeFile ) )
             return 'killed';
         return (int) file_get_contents( $codeFile );
     }
@@ -335,17 +409,13 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         $pids = array();
         for ( $p = 0; $p < 8; $p++ )
         {
-            $pid = pcntl_fork();
-            if ( $pid === 0 )
+            $pids[] = self::fork( function ()
             {
                 for ( $i = 0; $i < 25; $i++ )
                     expContentJobStore::update( 'cnt-000001', function ( array &$d ) { $d['n']++; } );
-                posix_kill( getmypid(), SIGKILL );
-            }
-            $pids[] = $pid;
+            } );
         }
-        foreach ( $pids as $pid )
-            pcntl_waitpid( $pid, $status );
+        self::waitFor( $pids );
         $this->assertSame( 200, expContentJobStore::read( 'cnt-000001' )['n'] );
     }
 
@@ -425,8 +495,7 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         $pids = array();
         for ( $p = 0; $p < 6; $p++ )
         {
-            $pid = pcntl_fork();
-            if ( $pid === 0 )
+            $pids[] = self::fork( function () use ( $p )
             {
                 try
                 {
@@ -437,12 +506,9 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
                 {
                     file_put_contents( $this->dir . "/lost-$p", $e->getMessage() );
                 }
-                posix_kill( getmypid(), SIGKILL );
-            }
-            $pids[] = $pid;
+            } );
         }
-        foreach ( $pids as $pid )
-            pcntl_waitpid( $pid, $status );
+        self::waitFor( $pids );
         $this->assertCount( 1, glob( $this->dir . '/won-*' ) );
         $this->assertCount( 5, glob( $this->dir . '/lost-*' ) );
         $this->assertCount( 1, expContentJob::listFor( null ), 'the refused ones wrote no job' );
