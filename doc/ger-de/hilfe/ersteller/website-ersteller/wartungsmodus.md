@@ -34,7 +34,7 @@ ausgeliefert. Ihre Nachricht und das erwartete Ende werden angezeigt.
 Vorschau und eine Bestätigung vor **Website offline nehmen**. Solange die Website offline ist, zeigt die Seite ein
 bernsteinfarbenes Banner und **Website wieder online bringen**. Die Wartung endet nie von selbst.
 
-![Setup, Wartung: die Website ist online, mit dem Plan für ein Wartungsfenster und einer Vorschau der Seite, die Besucher sehen werden](../../../../eng-us/help/images/creators/maintenance-window.webp)
+![Setup, Wartung: die Website ist online, mit dem Plan für ein Wartungsfenster und einer Vorschau der Seite, die Besucher sehen werden](../../bilder/creators/maintenance-window.webp)
 
 ## Aus einer Shell
 

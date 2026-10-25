@@ -35,7 +35,7 @@ Administration unter **Newsletter** geöffnet (`/newsletter/index`).
 | Öffentliche Formulare | `newsletter/subscribe`, `configure`, `unsubscribe`, `subscribe_infomail` |
 | Versand | `newsletter/send` plant; Cron baut die Mail-Warteschlange auf und arbeitet sie ab |
 
-![Das Newsletter-Dashboard: Newsletter-Systeme, Listen, Ausgaben und Abonnements](../../../../eng-us/help/images/creators/newsletter-dashboard.webp)
+![Das Newsletter-Dashboard: Newsletter-Systeme, Listen, Ausgaben und Abonnements](../../bilder/creators/newsletter-dashboard.webp)
 
 ## Einrichten
 

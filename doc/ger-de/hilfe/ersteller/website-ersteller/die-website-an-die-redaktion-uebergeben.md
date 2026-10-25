@@ -30,9 +30,9 @@ gute Übergabe entscheidet, ob sie gut bleibt. Projektleiter finden eine Vorlage
 - Zweistufige Anmeldung für alle, die veröffentlichen können
   ([Zwei-Faktor-Anmeldung](../../../anleitungen/zwei-faktor-anmeldung.md)).
 
-![Die Administration aus Sicht eines Redakteurs: weniger Reiter, das Dashboard mit Entwürfen und neuen Inhalten](../../../../eng-us/help/images/creators/editor-dashboard.webp)
+![Die Administration aus Sicht eines Redakteurs: weniger Reiter, das Dashboard mit Entwürfen und neuen Inhalten](../../bilder/creators/editor-dashboard.webp)
 
-![Der Reiter Benutzer: die Benutzergruppen wie Administrator users, Editors und Members als Ordner des Baums](../../../../eng-us/help/images/creators/users-tree.webp)
+![Der Reiter Benutzer: die Benutzergruppen wie Administrator users, Editors und Members als Ordner des Baums](../../bilder/creators/users-tree.webp)
 
 ## Der Leitfaden für die Redaktion
 

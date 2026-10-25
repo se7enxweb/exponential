@@ -84,7 +84,7 @@ Oder Sie holen alle Objekte, auf die das aktuelle Objekt verweist, über ein Fel
 Die andere Richtung, "alles, was auf dieses Objekt verweist", beantwortet Fragen wie "welche Veranstaltungen finden in
 diesem Raum statt" oder "welche Artikel verwenden dieses Bild":
 
-![Der Reiter Verknüpfungen eines Elements: die Elemente, auf die es verweist, und die Elemente, die auf es verweisen](../../../../eng-us/help/images/creators/relations-tab.webp)
+![Der Reiter Verknüpfungen eines Elements: die Elemente, auf die es verweist, und die Elemente, die auf es verweisen](../../bilder/creators/relations-tab.webp)
 
 ```text
 {def $events = fetch( 'content', 'reverse_related_objects', hash(

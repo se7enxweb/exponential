@@ -14,7 +14,7 @@ Inhaltsmodell ist die dauerhafteste Entscheidung einer Website: Templates und De
 Inhalte viel seltener. Ein gutes Modell ist einfach für die Redaktion, einfach in Templates umzusetzen und einfach zu
 erweitern.
 
-![Die Klassen der Gruppe Content: jede Klasse mit ihrem Bezeichner, der Anzahl der Objekte und dem Zeitpunkt der letzten Änderung](../../../../eng-us/help/images/creators/class-list.webp)
+![Die Klassen der Gruppe Content: jede Klasse mit ihrem Bezeichner, der Anzahl der Objekte und dem Zeitpunkt der letzten Änderung](../../bilder/creators/class-list.webp)
 
 ## Inhalt
 

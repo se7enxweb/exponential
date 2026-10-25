@@ -33,7 +33,7 @@ bewirkt nichts, bis eine **Regel** Anfragen darauf richtet. Regeln liegen unter 
 | Priorität | die höhere gewinnt, wenn mehrere Regeln passen |
 | Aktiviert | ein Schalter, um eine Regel stillzulegen, ohne sie zu löschen |
 
-![Der Reiter Layouts einer Seite: welches Layout sie verwendet, mit Preview, Edit layout, Map layout und New layout](../../../../eng-us/help/images/creators/item-layouts-tab.webp)
+![Der Reiter Layouts einer Seite: welches Layout sie verwendet, mit Preview, Edit layout, Map layout und New layout](../../bilder/creators/item-layouts-tab.webp)
 
 ## Ziele
 

@@ -14,7 +14,7 @@ Suchmaschine, die ihren Index in der Datenbank hält; sie reicht für die meiste
 die Facetten und eine Abstimmung der Relevanz brauchen, wechseln zu Solr
 ([Suche mit ezfind und Solr](suche-mit-ezfind-und-solr.md)).
 
-![Suchstatistiken: wonach Besucher gesucht haben und wie viele Ergebnisse sie erhielten](../../../../eng-us/help/images/creators/search-statistics.webp)
+![Suchstatistiken: wonach Besucher gesucht haben und wie viele Ergebnisse sie erhielten](../../bilder/creators/search-statistics.webp)
 
 ![Die Suchseite der öffentlichen Website mit den Ergebnissen für running](../../../../eng-us/help/images/creators/site-search-results.webp)
 
