@@ -1575,7 +1575,9 @@ class eZPackage
         {
             $dom = new DOMDocument( '1.0', 'utf-8' );
             $dom->preserveWhiteSpace = false;
-            $success = $dom->load( $filename );
+            // a package's XML is an uploaded file; it may name a DTD or entities on any host, and
+            // load() would fetch them (LIBXML_NONET as in expPackageJson and the upload inspector)
+            $success = $dom->load( $filename, LIBXML_NONET );
 
             if ( !$success )
             {
