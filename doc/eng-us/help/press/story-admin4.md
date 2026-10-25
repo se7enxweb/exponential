@@ -64,7 +64,7 @@ tests check for contrast in light and dark mode.
 
 ## Angles and headline ideas
 
-- "A twenty-year-old CMS gets dark mode, and tests its contrast."
+- "A CMS developed since 1999 gets dark mode, and tests its contrast."
 - "No fonts downloaded, no inline styles: an admin built for strict security."
 
 ## Who to ask

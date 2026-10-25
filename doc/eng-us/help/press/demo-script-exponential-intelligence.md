@@ -14,7 +14,7 @@ message that must survive any edit of your video: **it writes drafts only**, as 
 editor's permissions, and never publishes on its own (`README.md`, "Exponential Intelligence";
 [Exponential Intelligence](../../features/6.0/extensions/expai.md)).
 
-It is the extension `se7enxweb/expai`, release 0.0.1.0, required in `composer.json` since 6.0.15, which is in
+It is the extension `se7enxweb/expai`, required in `composer.json` since 6.0.15 (at `~0.0.1.18` on 25 October 2026), which is in
 development. Say so: "the 6.0.15 development line" or the version you really run. The script runs about six minutes;
 the setup is done **off camera**.
 
