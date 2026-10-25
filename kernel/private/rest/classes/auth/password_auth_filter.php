@@ -15,6 +15,10 @@
  * against the user's own hash type, so bcrypt and argon2 (php_default) work as well as the md5 types. A wrong
  * password counts as a failed login, so the lock after [UserSettings] MaxNumberOfFailedLogin applies to the REST
  * interface too. The session is never touched: the request is signed in by the REST layer, not by a cookie.
+ *
+ * An app password of the account (a two-step sign-in extension's, expSignInSecondFactor::appPasswordUser()) is tried
+ * before the password, so it never counts as a failed one; $viaAppPassword tells ezpRestAuthConfiguration that the
+ * request carried a second factor. A password alone is then checked there (expSignInSecondFactor::check()).
  */
 class expRestPasswordAuthFilter extends ezcAuthenticationFilter
 {
@@ -28,13 +32,33 @@ class expRestPasswordAuthFilter extends ezcAuthenticationFilter
      */
     public static $user = null;
 
+    /**
+     * Whether the last successful run() signed in with an app password; reset by every run().
+     *
+     * @var bool
+     */
+    public static $viaAppPassword = false;
+
     public function run( $credentials )
     {
         self::$user = null;
+        self::$viaAppPassword = false;
         $login = isset( $credentials->id ) ? (string)$credentials->id : '';
         $password = isset( $credentials->password ) ? (string)$credentials->password : '';
         if ( $login === '' || $password === '' )
             return self::STATUS_INVALID_CREDENTIALS;
+
+        // An app password (two-step sign-in) first: it is the second factor of a non-interactive client
+        if ( class_exists( 'expSignInSecondFactor' ) )
+        {
+            $appUser = expSignInSecondFactor::appPasswordUser( $login, $password, expSignInSecondFactor::CHANNEL_REST );
+            if ( $appUser instanceof eZUser )
+            {
+                self::$user = $appUser;
+                self::$viaAppPassword = true;
+                return self::STATUS_OK;
+            }
+        }
 
         $user = self::findUser( $login );
         if ( !$user instanceof eZUser )

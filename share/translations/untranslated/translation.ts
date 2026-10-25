@@ -60659,6 +60659,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Sent to the password change</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>

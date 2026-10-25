@@ -124,8 +124,10 @@ class expKickstarter
         // replaced by this run's, and not switched off at its end
         $maintenanceState = empty( $this->options['dry-run'] )
             ? expMaintenance::beginRun( getcwd(), $runId, array( 'reason' => 'setup' ) ) : false;
-        $maintenance = $maintenanceState === 'enabled';
-        if ( $maintenance )
+        $maintenance = $maintenanceState === 'enabled' || $maintenanceState === 'adopted';
+        if ( $maintenanceState === 'adopted' )
+            $this->cli->output( 'Maintenance mode is still on from a setup run that failed: this run takes it over and switches it off when it is done.' );
+        elseif ( $maintenance )
             $this->cli->output( 'Maintenance mode on: the site shows the maintenance page until the installation is done.' );
         elseif ( $maintenanceState === 'existing' )
             $this->cli->output( 'Maintenance mode was already on: kept as it is, and left on after the installation (php bin/php/maintenance.php off ends it).' );

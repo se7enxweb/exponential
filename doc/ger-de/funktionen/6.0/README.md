@@ -165,6 +165,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [SOAP-Aufrufe über HTTPS: Zertifikate einer internen Zertifizierungsstelle](soap-client-tls.md)
 - [Ihr Passwort ändern](moderne-passwortaenderung.md)
 - [Passwort bei der nächsten Anmeldung ändern](passwort-bei-naechster-anmeldung-aendern.md)
+- [Zweiter Schritt auf den anderen Anmeldewegen: REST, WebDAV, SOAP, expservices; App-Passwörter](zweiter-schritt-auf-anderen-anmeldewegen.md)
 - [Das Passwort eines Benutzers auf der Kommandozeile zurücksetzen](benutzerpasswort-zuruecksetzen.md)
 - [Benutzerkonten prüfen](benutzerpflege.md)
 - [Signierte Links in der E-Mail „Neuer Benutzer registriert“](admin-links-der-registrierung.md)

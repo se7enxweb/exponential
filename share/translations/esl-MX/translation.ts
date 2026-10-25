@@ -64481,6 +64481,22 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Sent to the password change</source>
         <translation>Enviado al cambio de contraseña</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Inicio de sesión sin el segundo paso rechazado</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Contraseña de aplicación creada</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Contraseña de aplicación revocada</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Contraseña de aplicación usada</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>

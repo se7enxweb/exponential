@@ -16,7 +16,7 @@
         "ext-pcntl": "If you plan to take advantage of Exponential Async publishing feature, then pcntl extension is required",
         "se7enxweb/ezsi": "ezsi would allow you to use Edge/Server Side Includes of blocks in templates",
         "se7enxweb/ezscriptmonitor": "ezscriptmonitor makes it possible to better deal with long running bulk operations within Exponential",
-        "se7enxweb/ezfind": "ezfind is a Solr based advanced search engine for Exponential with a lot more features than the built in search. Install it with: composer require se7enxweb/ezfind:~3.0.7",
+        "se7enxweb/ezfind": "ezfind is a Solr based advanced search engine for Exponential with a lot more features than the built in search. Install it with: composer require se7enxweb/ezfind:~3.0.11",
         "se7enxweb/ezoracle": "ezoracle is the Oracle database driver of Exponential (Oracle 19c and later)",
         "se7enxweb/ezauthorize": "ezauthorize is a feature complete transparent (no redirect away to paypal.com website distractions) payment solution for Exponential replacing the simpler builtin ezpaypal redirection based web shop payment support",
         "se7enxweb/bcurlaliaswithdash": "bcurlaliaswithdash is a feature complete lower case url seo enhancing solution that provides dashes to replace spaces in urls providing simply amazing results in terms of easy to type website urls. Works well with existing content in a website. Try it today and you won't be disappointed.",
@@ -45,10 +45,10 @@
         "se7enxweb/exponential-legacy-installer": "*",
         "se7enxweb/exponential-velocity": "~0.0.4.55",
         "se7enxweb/ezautosave": "~6.0.15",
-        "se7enxweb/ezdemo": "~6.0.15",
-        "se7enxweb/ezflow": "~6.1.12",
+        "se7enxweb/ezdemo": "~6.0.17",
+        "se7enxweb/ezflow": "~6.1.13",
         "se7enxweb/ezoracle": "~2.3.7",
-        "se7enxweb/ezwebin": "~6.0.26",
+        "se7enxweb/ezwebin": "~6.0.28",
         "se7enxweb/sevenx_dse": "~1.1.16",
         "se7enxweb/sevenx_themes_simple": "~1.0.26",
         "se7enxweb/sevenx_authentication_2fa": "~1.0.15",
@@ -61,8 +61,8 @@
         "se7enxweb/ezmultiupload": "~6.1.13",
         "se7enxweb/ezodf": "~7.0.0",
         "se7enxweb/ezprestapi": "~1.2.6",
-        "se7enxweb/ezstarrating": "~6.0.16",
-        "se7enxweb/ezwt": "~6.0.16",
+        "se7enxweb/ezstarrating": "~6.0.17",
+        "se7enxweb/ezwt": "~6.0.17",
         "se7enxweb/swark": "~1.0.5",
         "se7enxweb/owsimpleoperator": "~1.2.7",
         "se7enxweb/bcgooglesitemaps": "~1.1.6.6",
@@ -130,6 +130,9 @@
         "zetacomponents/system-information": "~1.1.2",
         "zetacomponents/webdav": "~1.2",
         "zetacomponents/base": "^1.9.5"
+    },
+    "replace": {
+        "se7enxweb/ezpublish": "self.version"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4",

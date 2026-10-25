@@ -160,6 +160,7 @@ nginx with PHP-FPM keep working as before.
 - [SOAP calls over HTTPS: certificates of an internal CA](soap-client-tls.md)
 - [Changing your password](modern-password-change.md)
 - [Change password at next sign-in](password-change-at-next-sign-in.md)
+- [Second step on the other sign-in paths: REST, WebDAV, SOAP, expservices; app passwords](second-factor-on-other-sign-in-paths.md)
 - [Reset a user password from the command line](reset-user-password.md)
 - [Check user accounts](user-hygiene.md)
 - [Signed links in the "New user registered" mail](registration-admin-links.md)

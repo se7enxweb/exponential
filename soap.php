@@ -103,9 +103,33 @@ $enableSOAP = $soapINI->variable( 'GeneralSettings', 'EnableSOAP' );
 if ( $enableSOAP == 'true' )
 {
     // Login if we have username and password.
-    if ( eZHTTPTool::username() and eZHTTPTool::password() )
+    // An app password of the account (two-step sign-in, expSignInSecondFactor) signs in for this request only
+    $soapAppUser = null;
+    if ( eZHTTPTool::username() and eZHTTPTool::password() and class_exists( 'expSignInSecondFactor' ) )
+    {
+        $soapAppUser = expSignInSecondFactor::appPasswordUser( eZHTTPTool::username(), eZHTTPTool::password(), expSignInSecondFactor::CHANNEL_SOAP );
+        // an account marked "change password at next sign-in" sets it in the web interface first
+        if ( $soapAppUser instanceof eZUser && !( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $soapAppUser, 'soap' ) ) )
+            expSignInSecondFactor::signInForRequest( $soapAppUser );
+    }
+    if ( !$soapAppUser instanceof eZUser and eZHTTPTool::username() and eZHTTPTool::password() )
     {
         $soapUser = eZUser::loginUser( eZHTTPTool::username(), eZHTTPTool::password() );
+        // a password alone is not enough for an account that needs a second sign-in step: 401 (403 when it has to
+        // set the step up first) with WWW-Authenticate and a SOAP fault that names the reason
+        $soapRefusal = class_exists( 'expSignInSecondFactor' )
+            ? expSignInSecondFactor::check( $soapUser, expSignInSecondFactor::CHANNEL_SOAP, expSignInSecondFactor::presentedCode() )
+            : null;
+        if ( $soapRefusal !== null )
+        {
+            eZUser::logoutCurrent();
+            expSignInSecondFactor::sendRefusalHeaders( $soapRefusal, 'Exponential SOAP' );
+            if ( !headers_sent() )
+                header( 'Content-Type: text/xml; charset=UTF-8' );
+            echo expSignInSecondFactor::soapFault( $soapRefusal );
+            ob_end_flush();
+            eZExecution::cleanExit();
+        }
         // an account marked "change password at next sign-in" sets it in the web interface first
         if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $soapUser, 'soap' ) )
             eZUser::logoutCurrent();

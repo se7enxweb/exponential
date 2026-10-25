@@ -75086,6 +75086,22 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Sent to the password change</source>
         <translation>Zur Passwortänderung weitergeleitet</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Anmeldung ohne zweiten Schritt abgewiesen</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>App-Passwort erstellt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-Passwort widerrufen</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>App-Passwort verwendet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/dashboard</name>

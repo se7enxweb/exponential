@@ -19,10 +19,19 @@
 
 class expServiceException extends Exception
 {
-    /** @param string $message @param int $code 400, 401, 403, 404, 409, 422 (500 for faults) */
-    public function __construct( $message = '', $code = 400, ?Throwable $previous = null )
+    /** @var string|null a machine-readable reason, error.reason of the envelope (e.g. second_factor_required) */
+    public $reason = null;
+
+    /**
+     * @param string $message
+     * @param int $code 400, 401, 403, 404, 409, 422 (500 for faults)
+     * @param Throwable|null $previous
+     * @param string|null $reason
+     */
+    public function __construct( $message = '', $code = 400, ?Throwable $previous = null, $reason = null )
     {
         parent::__construct( $message, (int)$code, $previous );
+        $this->reason = $reason === null ? null : (string)$reason;
     }
 }
 
@@ -73,7 +82,7 @@ abstract class expServiceBase extends ezjscServerFunctions
         }
         catch ( expServiceException $e )
         {
-            return self::error( $e->getCode() ?: 400, $e->getMessage() );
+            return self::error( $e->getCode() ?: 400, $e->getMessage(), $e->reason );
         }
         catch ( Throwable $e )
         {
@@ -173,10 +182,13 @@ abstract class expServiceBase extends ezjscServerFunctions
         }
     }
 
-    /** The error envelope. */
-    public static function error( $code, $message )
+    /** The error envelope; error.reason only when a reason is given. */
+    public static function error( $code, $message, $reason = null )
     {
-        return array( 'ok' => false, 'error' => array( 'code' => (int)$code, 'message' => (string)$message ) );
+        $error = array( 'code' => (int)$code, 'message' => (string)$message );
+        if ( $reason !== null && $reason !== '' )
+            $error['reason'] = (string)$reason;
+        return array( 'ok' => false, 'error' => $error );
     }
 
     // ------------------------------------------------------------------ envelopes

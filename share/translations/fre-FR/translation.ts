@@ -62146,6 +62146,22 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>Sent to the password change</source>
         <translation>Redirigé vers le changement de mot de passe</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Connexion sans la deuxième étape refusée</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Mot de passe d&apos;application créé</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Mot de passe d&apos;application révoqué</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Mot de passe d&apos;application utilisé</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>

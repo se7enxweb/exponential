@@ -19,6 +19,12 @@ curl -b jar 'https://<site>/ezjscore/call/expsession::whoami?ContentType=json'
 curl -b jar 'https://<site>/ezjscore/call/expservices::catalog::system?ContentType=json'
 ```
 
+By default the login takes the password alone, also for an account that must use two-step sign-in. A site that opts
+the login in (`sevenxauthentication2fa.ini [OtherSignInPaths] Guard[]=expservices`) asks such an account
+(`Enforce2FA`) for the current code of its authenticator app as well: `-d 'otp=<code>'` (or the header `X-Exp-OTP`).
+Without it the login then answers `401` with `error.reason` `second_factor_required`
+([Second step on the other sign-in paths](second-factor-on-other-sign-in-paths.md)).
+
 The URL form is `<root>/ezjscore/call/exp<domain>::<method>[::<arg>...]`. Answers use an envelope:
 `{"ok":true,"data":...,"meta":{...}}` or `{"ok":false,"error":{"code":403,"message":"..."}}`; lists are paged with
 `total`, `offset`, `limit`, `count`, `has_more`.
