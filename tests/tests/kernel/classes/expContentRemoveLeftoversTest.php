@@ -3,11 +3,14 @@
  * Three leftovers around removing content. No database: a stand-in records every query.
  *
  *  RL-01 - content/action ActionRemove: a node ID that no longer exists is answered with "not available" before
- *          the node is used (it ended in "Call to a member function attribute() on null")
+ *          the node is used (it ended in "Call to a member function attribute() on null"); ActionPreview the same
+ *          with an object that no longer exists
  *  RL-02 - content/removeeditversion: the DiscardConfirm of the session counts for one request only; it stayed
  *          and let any later GET discard the version without asking
  *  RL-03 - eZContentObject::purge(): every event type of workflow.ini cleans up, also when another type was
  *          already loaded in this request (then only the loaded ones did)
+ *  RL-04 - expUserApproval::resetRequest(): the "Approve user accounts" configurations are read again in every
+ *          request (a persistent worker kept them) and after a purge changed an event's lists
  *
  * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -134,6 +137,23 @@ class expContentRemoveLeftoversTest extends PHPUnit\Framework\TestCase
     }
 
     /** RL-01 */
+    public function testActionPreviewChecksTheObjectBeforeUsingIt()
+    {
+        $code = (string)file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/action.php' );
+        $start = strpos( $code, 'hasPostVariable( "ActionPreview" )' );
+        $this->assertNotFalse( $start );
+        $branch = substr( $code, $start, 1200 );
+        $fetch = strpos( $branch, '\\eZContentObject::fetch(  $objectID )' );
+        $guard = strpos( $branch, 'if ( !$object instanceof \\eZContentObject )' );
+        $use = strpos( $branch, '$object->attribute( \'current_version\' )' );
+        $this->assertNotFalse( $fetch );
+        $this->assertNotFalse( $guard, 'the fetched object is checked' );
+        $this->assertNotFalse( $use );
+        $this->assertTrue( $fetch < $guard && $guard < $use, 'between fetching and using the object' );
+        $this->assertStringContainsString( 'KERNEL_NOT_AVAILABLE', substr( $branch, $guard, $use - $guard ) );
+    }
+
+    /** RL-01 */
     public function testActionRemoveChecksTheNodeBeforeUsingIt()
     {
         $code = (string)file_get_contents( dirname( __DIR__, 4 ) . '/kernel/private/classes/views/content/action.php' );
@@ -198,5 +218,36 @@ class expContentRemoveLeftoversTest extends PHPUnit\Framework\TestCase
             return strpos( $sql, "workflow_type_string = 'event_ezapprove'" ) !== false;
         } );
         $this->assertNotEmpty( $approve, 'event_ezapprove (workflow.ini, not loaded before) cleans up as well' );
+        // "Approve user accounts" (6.0.15): a purged group or user leaves the lists of its events
+        $userApprove = array_filter( $db->queries, function ( $sql ) {
+            return strpos( $sql, 'ezworkflow_event' ) !== false && strpos( $sql, "'event_expuserapprove'" ) !== false;
+        } );
+        $this->assertNotEmpty( $userApprove, 'event_expuserapprove (workflow.ini, not loaded before) cleans up as well' );
+    }
+
+    /** RL-04 */
+    public function testUserApprovalConfigurationsAreReadAgainEachRequest()
+    {
+        $active = new ReflectionProperty( 'expUserApproval', 'active' );
+        $test = new ReflectionProperty( 'expUserApproval', 'testConfigs' );
+        if ( PHP_VERSION_ID < 80100 )
+        {
+            $active->setAccessible( true );
+            $test->setAccessible( true );
+        }
+        try
+        {
+            $active->setValue( null, array( array( 'required' => array( 12 ) ) ) );
+            $test->setValue( null, array( array( 'required' => array( 13 ) ) ) );
+            expUserApproval::resetRequest();
+            $this->assertNull( $active->getValue(), 'the configurations of the request before are forgotten' );
+            $this->assertSame( array( array( 'required' => array( 13 ) ) ), $test->getValue(), 'a test override is kept' );
+            $this->assertSame( array( 'expUserApproval', 'resetRequest' ), expKernelServiceScope::DEFAULT_RESET_HOOKS['userapproval'],
+                               'run at the start of every request, also in a persistent worker' );
+        }
+        finally
+        {
+            expUserApproval::reset();
+        }
     }
 }

@@ -1791,6 +1791,12 @@ class Action extends \Exponential\Runnable\ModuleView
             {
                 $user = \eZUser::currentUser();
                 $object = \eZContentObject::fetch(  $objectID );
+                // an object that no longer exists (the form of a removed object sent again) ended in
+                // "Call to a member function attribute() on null", as ActionRemove did
+                if ( !$object instanceof \eZContentObject )
+                {
+                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                }
                 $module->redirectTo( $module->functionURI( 'versionview' ) . '/' . $objectID . '/' . $object->attribute( 'current_version' ) . '/' );
                 return $this->viewResult( isset( $Result ) ? $Result : null, null );
 

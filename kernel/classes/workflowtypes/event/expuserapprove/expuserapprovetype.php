@@ -263,7 +263,11 @@ class expUserApproveType extends eZApproveType
                 }
             }
             if ( $changed )
+            {
                 $event->store();
+                // the request's cached configurations named the removed group or user
+                expUserApproval::resetRequest();
+            }
         }
     }
 }

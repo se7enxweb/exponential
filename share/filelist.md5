@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-120c6d9d78bdd05ae3a7c82f09d3e625  doc/changelogs/6.0/6.0.15.md
+827261b54448504f4041efd1efab40aa  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3443,7 +3443,7 @@ ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 26385728e213f79942873fc7ea3fabc4  doc/eng-us/bc/6.0/httpcache.md
 b4b2d3cf7a13a38b86ae1add01523e49  doc/eng-us/bc/6.0/ini-save-file-permissions.md
 2134e095afcb721391b5809ed25944c0  doc/eng-us/bc/6.0/installer-crontab.md
-10189eced2db4da71ce7f5f88fbe6a5d  doc/eng-us/bc/6.0/kernel-services.md
+3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
 0ec2cae64cd60f8b29b5ccf7554c856d  doc/eng-us/bc/6.0/kickstartercli.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
 55e1c907228e8d0b48be0e9f4da11b39  doc/eng-us/bc/6.0/love/API.md
@@ -21721,7 +21721,7 @@ c0b45317b01b2d3b5c26f41524a76077  kernel/classes/expdemomode.php
 649f98db5a269520471fd566ae8db93d  kernel/classes/expkernelservicecompiler.php
 b744014d45bbb8a080e82b39cec611c9  kernel/classes/expkernelservicecontainer.php
 734d185d9c5493c4f018eee4c442edce  kernel/classes/expkernelservices.php
-2c972d6cb57e5557335a061521870369  kernel/classes/expkernelservicescope.php
+750bf024fbb3a0c6c885c32ea16bca2b  kernel/classes/expkernelservicescope.php
 80d7a6b619852f71450b282009e26b66  kernel/classes/expkickstarter.php
 f93c0a4b63a19a1bc54c806e89fd6a22  kernel/classes/expkickstarterini.php
 260fe378605929bcf0d4755cb2240c9c  kernel/classes/explinkcheck.php
@@ -22159,7 +22159,7 @@ f4fdba63ee29eebccf2e14d6e50285ff  kernel/classes/user/expsigninsecondfactorhandl
 d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
 330f681b93dd4c010ba1ec56509d536e  kernel/classes/user/expuseragent.php
-38eb2dbb8b20f102f9d881a48099b2a7  kernel/classes/user/expuserapproval.php
+bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
 7e65d1f34b5fc98561e9390b739c45c2  kernel/classes/user/expuserdeactivation.php
 d443bce0cc7fe5af3714f1828c260934  kernel/classes/user/expuserhygiene.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
@@ -22170,7 +22170,7 @@ ad5598f1d462f590a311361ca8209029  kernel/classes/user/expusersessiontracker.php
 f0bb8d4ea2e98212843fe5682c067018  kernel/classes/webauthn/expwebauthnchallenge.php
 e13142d6f81b46d8d4c14e5a82ea8eb9  kernel/classes/webauthn/expwebauthncose.php
 f3f09a1b9f8e7b344c065316df421263  kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php
-b75b267001d59ddad4995001fe735bf7  kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php
+7e0dd01553c25e6f30727ca64d274687  kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php
 d083e9c0146d1fd5f8c0620718d2aec1  kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php
 349f6fbfecba427d0224cfccad47fdf0  kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php
 5c2178f2f7cdf34fb18f23bb8fef95e3  kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php
@@ -22634,7 +22634,7 @@ e7563299271b184bcb13cfc88f720e44  kernel/private/classes/views/class/removegroup
 04e79715afd000fa2c3b362974714174  kernel/private/classes/views/collaboration/group.php
 699c99a3cc1f94f29a834742110cfaa8  kernel/private/classes/views/collaboration/item.php
 ccefa96914e28491976b457d03a55ba1  kernel/private/classes/views/collaboration/view.php
-590bf271a39cab624ef32e9b566cfd0d  kernel/private/classes/views/content/action.php
+653c04f3a5df733fdb4c8c6980f6fa31  kernel/private/classes/views/content/action.php
 58a9443b36a375d365c43bb1aa4cc3ed  kernel/private/classes/views/content/advancedsearch.php
 d7a18f14f302f62a7bb633e91917ff33  kernel/private/classes/views/content/bookmark.php
 30c6386008e5ca98774846ae08d7741a  kernel/private/classes/views/content/browse.php
@@ -25067,7 +25067,7 @@ d2e32a52cf0830e74fa5377be864c38c  tests/tests/kernel/classes/expContentDraftList
 3d4aea56bbd6b88864909c0e1ea1ec2a  tests/tests/kernel/classes/expContentHistoryListTest.php
 201f85cc8198f7389a66a982878dcf6a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 3491471a762f9be5f10c662d4e35f862  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
-8f5d13082c6ad7671df7a2fb598354f3  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
+530d3937f557729c918c83262d7ea3b5  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
 4799a37a0347c83794a9d7d43a865107  tests/tests/kernel/classes/expCronjobPauseTest.php
 e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 4aa8729ed24e4daafb1546cee1942e99  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
@@ -25076,7 +25076,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 6a75e222b1f1ace574393f14fca4aba2  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
-6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
+e1dbfe3ec87a005729f7ad910d6ff647  tests/tests/kernel/classes/expKernelServicesTest.php
 18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
 005e68dac380fb8240e13d69320e6dce  tests/tests/kernel/classes/expLoveStackCheckTest.php
