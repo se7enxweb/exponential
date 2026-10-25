@@ -123,6 +123,42 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'long content', file_get_contents( $target . '/' . $long ) );
     }
 
+    /**
+     * An archive written the way eZPackage::exportToArchive() writes one (ezcArchive's ustar writer, a path longer
+     * than 100 bytes split into the prefix field, directories with a trailing slash, then gzip) passes the scan and is
+     * imported: every package the kernel exports has to be importable again.
+     */
+    public function testArchiveWrittenAsTheExporterWritesItPassesTheScan()
+    {
+        $source = $this->dir . '/src';
+        $deep = 'ezextension/k1_archive/design/standard/templates/' . str_repeat( 'n', 60 ) . '/' . str_repeat( 'm', 40 );
+        eZDir::mkdir( $source . '/' . $deep, false, true );
+        file_put_contents( $source . '/package.xml', eZPackageTestFixtures::definition( array( 'name' => 'k1_archive' ) ) );
+        file_put_contents( $source . '/' . $deep . '/full.tpl', 'deep template' );
+
+        $tmp = $this->dir . '/export.tmp';
+        $archive = ezcArchive::open( $tmp, ezcArchive::TAR_USTAR );
+        $archive->truncate();
+        $fileList = array();
+        eZDir::recursiveList( $source, $source, $fileList );
+        foreach ( $fileList as $fileInfo )
+        {
+            $path = $fileInfo['type'] === 'dir' ? $fileInfo['path'] . '/' . $fileInfo['name'] . '/' : $fileInfo['path'] . '/' . $fileInfo['name'];
+            $archive->append( array( $path ), $source . '/' );
+        }
+        $archive->close();
+        $path = $this->dir . '/k1_archive.ezpkg';
+        copy( $tmp, "compress.zlib://$path" );
+
+        $this->assertGreaterThan( 100, strlen( $deep . '/full.tpl' ), 'the path needs the ustar prefix field' );
+        $this->assertNull( expPackageArchive::scan( $path, $this->limits ) );
+        $this->assertSame( 'ok', $this->inspect( $path ) );
+        $target = $this->dir . '/out';
+        $this->assertTrue( expPackageJson::extractArchive( $path, $target, $error ), (string)$error );
+        $this->assertSame( 'deep template', file_get_contents( $target . '/' . $deep . '/full.tpl' ) );
+        $this->assertSame( sprintf( '%04o', eZFile::fileMode( 0644 ) ), sprintf( '%04o', fileperms( $target . '/' . $deep . '/full.tpl' ) & 07777 ) );
+    }
+
     public function testV7ArchivePassesTheScan()
     {
         $v7 = str_repeat( "\0", 8 );

@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-035a42a5a4fb95aab33eadcf65e98155  doc/changelogs/6.0/6.0.15.md
+b6a620651117988d55494eabfe2927d7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -10852,7 +10852,7 @@ b2840c4cc0c00e5b6d57d0fddd40f039  doc/eng-us/help/site-packages/basics/README.md
 e1f43da13a062c4b16c1c836d1a1ffe8  doc/eng-us/help/site-packages/basics/install-scripts-in-a-site-package.md
 abbd079dc3517d0c17ed3f7b7864ae00  doc/eng-us/help/site-packages/basics/package-types.md
 18593758e83d9987e82524ad982d9485  doc/eng-us/help/site-packages/basics/package-xml-reference.md
-21c2a87555eb259c174f18c7c3689397  doc/eng-us/help/site-packages/basics/the-ezpkg-file.md
+dee088d61ef79d7debb53310ecbda575  doc/eng-us/help/site-packages/basics/the-ezpkg-file.md
 8c46f5105e3c2214890a67dd5455f3c6  doc/eng-us/help/site-packages/basics/the-local-package-repository.md
 9d7782da74b6b9b511a37ec9c563c8be  doc/eng-us/help/site-packages/basics/what-a-site-installer-package-is.md
 732070fe416f623f886b7d6dbbdae110  doc/eng-us/help/site-packages/cjw-multisite/README.md
@@ -12487,7 +12487,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
 ce4ea8c80a55d899af96fce7fa7a3d0f  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 7d327f243481e36aa04751b585b4b346  doc/ger-de/anleitungen/objektzustaende.md
-e284dbffe107486bd07fb059fa282962  doc/ger-de/anleitungen/pakete.md
+a768e684a0a0005863846098fa92604b  doc/ger-de/anleitungen/pakete.md
 fcd4791370e2165c8800e7148e0bf2c7  doc/ger-de/anleitungen/passkeys.md
 16520e397aa690a6f6867e3fcd1f2f4e  doc/ger-de/anleitungen/pdf-exporte.md
 72951f73b5a5eeab9cfc1b1e879ab541  doc/ger-de/anleitungen/rest-api-v1-und-v2.md
@@ -18101,7 +18101,7 @@ acd3bc9b7f0b23cb582b66a3304e9d8f  doc/ger-de/hilfe/seitenpakete/glossar-der-seit
 09bddda80f821c44c1307b51db7f5632  doc/ger-de/hilfe/seitenpakete/grundlagen/README.md
 e7a732207a7786db31d96588f47f37a5  doc/ger-de/hilfe/seitenpakete/grundlagen/abhaengigkeiten-und-die-installationsreihenfolge.md
 cb625304502eaaf7eac629bbfe452681  doc/ger-de/hilfe/seitenpakete/grundlagen/das-lokale-paket-repository.md
-f43434cad887c00889bb8fdc42a04427  doc/ger-de/hilfe/seitenpakete/grundlagen/die-datei-ezpkg.md
+5141398ee53bfc476078d5389aaf8ec7  doc/ger-de/hilfe/seitenpakete/grundlagen/die-datei-ezpkg.md
 09ad07f1fbc802ecdf2b5866139f19a4  doc/ger-de/hilfe/seitenpakete/grundlagen/importieren-oder-installieren.md
 19b6880372d49cc459e94948b7080228  doc/ger-de/hilfe/seitenpakete/grundlagen/installationselemente-und-handler.md
 a5717a0c9aead8ed50d5494d4285952a  doc/ger-de/hilfe/seitenpakete/grundlagen/installationsskripte-in-einem-seitenpaket.md
@@ -25279,7 +25279,7 @@ c5023bde0ea213df997e6d6203683f9a  tests/tests/kernel/classes/packages/eZPackageS
 421f83967d60e0a3bb57aea1920b5d2b  tests/tests/kernel/classes/packages/eZPackageTestFixtures.php
 61fc1c296b5ef4cef7424c44161d8126  tests/tests/kernel/classes/packages/eZPackageUploadInspectorTest.php
 e10e23767fe5e72162d8e8b63877a64b  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
-9e1bb2302e5e5e3cc9e9922d5986b1d5  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
+ce2c07c2047a69000aaffb769cece713  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
 5738766b4b9f2240e2996ef757cbd501  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 78fb237e8d15fb07d1b62e021edeb4f5  tests/tests/kernel/classes/passkey/PasskeySchemaSqlTest.php
 319358ee0e4f003c546542022a1e97fa  tests/tests/kernel/classes/passkey/expPasskeyTest.php
