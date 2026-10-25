@@ -27,7 +27,7 @@ Versionsnummern (Exponential Velocity 0.0.4.x). Nennen Sie beide vor der Kamera.
 
 ## Außerhalb der Kamera: installieren und vorbereiten
 
-Die Engine wird von der `composer.json` von Exponential verlangt (in `~0.0.4.54`), daher bringt `composer install` sie
+Die Engine wird von der `composer.json` von Exponential verlangt (in `~0.0.4.55`), daher bringt `composer install` sie
 mit; sie braucht PHP 8.0 oder später und die Erweiterung `sockets` ([Die Website ausliefern, 8.3.1](../../installation/08-die-website-ausliefern.md#831-das-engine-paket-installieren)):
 
 ```bash

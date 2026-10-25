@@ -69,7 +69,7 @@ Jedes Skript, das "den neuesten Tag" auswählt, muss nach Version sortieren.
 
 Composer und Packagist vergleichen jede Stelle numerisch, sodass `0.0.4.10` neuer ist als `0.0.4.9`. Eine
 Tilde-Bedingung lässt die letzte Stelle frei: `~0.0.4.9` bedeutet `>=0.0.4.9 <0.0.5.0` und nimmt `0.0.4.10` bereits an.
-Die `composer.json` im Hauptverzeichnis verlangt zum Beispiel `se7enxweb/exponential-velocity` in `~0.0.4.54`. Ein neues
+Die `composer.json` im Hauptverzeichnis verlangt zum Beispiel `se7enxweb/exponential-velocity` in `~0.0.4.55`. Ein neues
 Festlegen auf ein höheres Minimum dient der Klarheit und muss warten, bis die Version auf Packagist steht
 ([Abhängigkeitsverwaltung mit Composer](abhaengigkeitsverwaltung-mit-composer.md)).
 

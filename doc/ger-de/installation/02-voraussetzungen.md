@@ -381,7 +381,7 @@ Extension-Manifest von Velocity (`vendor/se7enxweb/exponential-velocity/build/ex
 
 Ab dem Release 0.0.4.54 (20. Oktober 2026) läuft Exponential Velocity unter PHP 8.0 bis 8.5: Die `composer.json` der
 Engine verlangt `"php": ">=8.0"` (bisher `>=8.1`), und unter 8.0 ist nichts zusätzlich nötig, weder ein Polyfill-Paket
-noch eine Erweiterung. Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.54`, sodass
+noch eine Erweiterung. Die `composer.json` von Exponential verlangt die Engine als `~0.0.4.55`, sodass
 `composer install` sie auch unter PHP 8.0 installiert.
 
 - **RHEL 9 und seine Nachbauten**: Das Standard-PHP 8.0 aus AppStream führt Velocity aus. Das el9-RPM

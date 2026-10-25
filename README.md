@@ -45,7 +45,7 @@ of its own — **Exponential Velocity** — which is considerably faster. See
 [How Exponential is served](#how-exponential-is-served) below.
 
 **As of 6.0.15, the Velocity Internet / Web Application Server is part of Exponential.** The root `composer.json`
-requires `se7enxweb/exponential-velocity` (`~0.0.4.54`); it is no longer a suggestion, so every installation has it,
+requires `se7enxweb/exponential-velocity` (`~0.0.4.55`); it is no longer a suggestion, so every installation has it,
 on every PHP Exponential supports (8.0 and later, the stock PHP of Red Hat Enterprise Linux 9 included). This marks a
 turning point for the project: a cornerstone, a capstone, and a new level of application system integration, which
 provides even greater features out of the box in the core product, by default. Exponential is a whole working unit,
@@ -82,7 +82,7 @@ The 6.0.15 line also brings, among much else (the full list is in the
   first drafts ([languages](doc/eng-us/languages.md)); right-to-left languages get `dir="rtl"` in content and in the
   administration ([right to left](doc/eng-us/features/6.0/right-to-left.md)).
 - **MariaDB, MySQL, PostgreSQL, SQLite, Oracle and MongoDB** on one kernel, PHP 8.0 to 8.5, and the bundled
-  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.54`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
+  application server Exponential Velocity, part of Exponential as of 6.0.15 (required at `~0.0.4.55`, which runs on PHP 8.0 as well, answers HEAD over HTTP/2 with its
   headers only and drains its connections when it stops).
 
 ## What does Exponential provide for end users building websites?
@@ -141,7 +141,7 @@ the application loaded between requests.**
 ### Part of Exponential as of 6.0.15
 
 As of 6.0.15 Velocity is part of Exponential itself. `composer.json` requires
-`se7enxweb/exponential-velocity ~0.0.4.54`, so `composer install` installs the
+`se7enxweb/exponential-velocity ~0.0.4.55`, so `composer install` installs the
 server with the rest of the product, on PHP 8.0 and later, next to Apache with
 PHP-FPM, nginx and FrankenPHP. It is the recommended engine for every stage;
 FrankenPHP is the production-ready alternative; the traditional servers keep

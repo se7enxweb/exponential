@@ -36,7 +36,7 @@ extensions are `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `reflection
 database and image extensions are in `suggest`.
 
 Exponential Velocity, the application server, runs on PHP 8.0 to 8.5 from its release 0.0.4.54 and is required at
-`~0.0.4.54`, so the kernel, the shipped extensions and the server share one minimum
+`~0.0.4.55`, so the kernel, the shipped extensions and the server share one minimum
 ([Velocity is part of Exponential 6.0.15](../velocity-is-part-of-exponential-6-0-15.md)).
 
 ## Why PHP 8.0 is the oldest

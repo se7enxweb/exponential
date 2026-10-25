@@ -47,7 +47,7 @@ php bin/php/console exp:velocity config get ServerSettings Engine --allow-root-u
 
 | Message or symptom | Cause | Fix |
 |---|---|---|
-| `velocity: no server script at ...` | the `qbix` engine needs the Velocity package, which is not installed | run `composer install` (the package is required), or install `se7enxweb/exponential-velocity` `~0.0.4.54` (PHP 8.0 or later), as [12.11](../../../install/12-troubleshooting.md#1211-velocity-and-the-web-server) describes |
+| `velocity: no server script at ...` | the `qbix` engine needs the Velocity package, which is not installed | run `composer install` (the package is required), or install `se7enxweb/exponential-velocity` `~0.0.4.55` (PHP 8.0 or later), as [12.11](../../../install/12-troubleshooting.md#1211-velocity-and-the-web-server) describes |
 | `velocity: already running` | a server of that engine runs already | `exp:velocity status`; `restart` to apply changes |
 | `velocity: port ... is already in use by another process` | another program or engine holds the port | stop the other engine (`exp:velocity stop --engine=...`), or change `Port`/`HTTPSPort` with `exp:velocity config set` |
 | `velocity: EnginePhar names an archive that does not exist` | `[ServerSettings] EnginePhar` points at an archive that was never built or was removed | `php bin/php/console exp:phar build`, or `exp:velocity config set ServerSettings EnginePhar disabled` |

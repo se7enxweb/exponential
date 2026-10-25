@@ -56,7 +56,7 @@ Quellen: `README.md` („What does Exponential provide“, „License“, „Req
 | Sechs unterstützte Datenbanken: SQLite 3 (Standard), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Unterstützte Datenbanken](../datenbankunterstuetzung.md) |
 | „fast jedes“ Betriebssystem, „auf dem PHP 8.0 oder später läuft“ | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | PHP 8.0 bis 8.5 werden unterstützt | `README.md`, „What version of PHP is required“ |
-| 268 Locale-Dateien, davon 40 mit Schreibrichtung von rechts nach links; 32 Übersetzungen der Administration, davon zehn vollständig | [Sprachen in Exponential](../../sprachen.md) |
+| 268 Locale-Dateien, davon 40 mit Schreibrichtung von rechts nach links; 37 Übersetzungen der Administration, davon 24 vollständig (Stand 25. Oktober 2026) | [Sprachen in Exponential](../../sprachen.md) |
 | „Der empfohlene Weg ist, den Kernel und jede se7enxweb-Erweiterung als Git-Klon mit vollständiger Historie zu beziehen“ | `README.md`, „Installation“; [Mit Git entwickeln](../mit-git-entwickeln.md) |
 | „Ein veröffentlichter Tag wird nie geändert“ | `SECURITY.md` |
 | Die Dokumentation ist freie Dokumentation unter der GNU FDL 1.3 oder später | [Freie Dokumentation](../freie-dokumentation.md) |
@@ -152,7 +152,7 @@ sie für Nachfragen bereit.
 > 2. Nachrichtenveröffentlichung, E-Commerce und Foren sind eingebaut, und es bedient mehrere Sites und Sprachen aus
 >    einer Installation. [README]
 > 3. Inhalte lassen sich in 268 Locales schreiben, Sprachen mit Schreibrichtung von rechts nach links eingeschlossen,
->    und die Administration spricht 32 Sprachen, zehn davon vollständig. [Sprachen in Exponential]
+>    und die Administration spricht 37 Sprachen, 24 davon vollständig (Stand 25. Oktober 2026). [Sprachen in Exponential]
 > 4. Redakteure bauen Seiten mit Exponential Layouts selbst, und Exponential Intelligence hilft ihnen beim Schreiben,
 >    aber immer nur in Form von Entwürfen, die ein Mensch veröffentlicht. [README]
 > 5. Es ist unter der GNU General Public License, Version 2 oder später, kostenlos nutzbar, und seine Dokumentation ist

@@ -45,7 +45,7 @@ also handle mirrored layout ([Right-to-left sites](../../creators/website-creato
 
 ## Can staff use the administration in their language?
 
-Yes, where a translation exists. The Foundation page counts 32 administration translations, ten of them complete
+Yes, where a translation exists. The Foundation page counts 37 administration translations, 24 of them complete (25 October 2026)
 ([Who is the Exponential Foundation?](../../who-is-the-exponential-foundation.md#languages-and-accessibility)); other
 pages give slightly different counts, so check the current state in the language list, which shows how complete each
 translation is ([Languages](../../languages.md)). Staff choose their interface language

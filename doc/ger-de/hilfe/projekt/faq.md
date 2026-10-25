@@ -74,7 +74,7 @@ Integrationsarbeit aus. Siehe [Velocity ist Teil von Exponential 6.0.15](../velo
 ### Enthält Exponential einen Webserver?
 
 Ja, seit 6.0.15. Der Velocity Internet / Web Application Server ist Teil von Exponential: Die `composer.json` im
-Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.54`, sodass jede Installation ihn hat, auf PHP 8.0
+Wurzelverzeichnis verlangt `se7enxweb/exponential-velocity ~0.0.4.55`, sodass jede Installation ihn hat, auf PHP 8.0
 und neuer. Das Projekt nennt das einen Wendepunkt, einen Grundstein und einen Schlussstein: eine neue Stufe der
 Integration von Anwendung und System, die noch mehr Funktionen von Haus aus und standardmäßig ins Kernprodukt bringt.
 Velocity ist die empfohlene Engine für jede Stufe, und FrankenPHP ist eine produktionsreife Alternative; Apache und

@@ -30,7 +30,7 @@ you add your own parts, so you neither ship something twice nor miss something y
 | The kernel | `kernel/`, `lib/`, `bin/php/`, `design/`, `settings/`, `share/` | the repository |
 | Kernel-shipped extensions | `ezjscore`, `ezoe`, `ezformtoken`, `expservices` | [3.2 A](../../install/03-getting-the-code.md#a-git-clone-and-composer-install-recommended) |
 | Required extensions | every `se7enxweb/*` package under `require`, each its own Composer package | `composer.json` |
-| Velocity | `se7enxweb/exponential-velocity ~0.0.4.54` is required since 6.0.15 | [Velocity engines](../../bc/6.0/velocity-engines.md#velocity-is-part-of-exponential-as-of-6015) |
+| Velocity | `se7enxweb/exponential-velocity ~0.0.4.55` is required since 6.0.15 | [Velocity engines](../../bc/6.0/velocity-engines.md#velocity-is-part-of-exponential-as-of-6015) |
 | The default theme | `se7enxweb/sevenx_themes_simple`, required since 6.0.10 "so the default theme is always distributed" | [Default extension distribution](../../features/6.0/default-extension-distribution.md#timeline-of-the-distribution-root-composerjson) |
 | The Oracle driver | `se7enxweb/ezoracle`, required, so it is present in every installation | [Database support](../database-support.md#the-supported-databases-in-order) |
 | The documentation | `doc/`, this help included | the repository |

@@ -67,9 +67,9 @@ und [Velocity für Hoster](../../../hosting/server/velocity-fuer-hoster.md).
 **Brauche ich Apache davor?** Nein. Velocity liefert HTTP und HTTPS selbst aus. Ein Proxy davor ist weiterhin richtig,
 wenn ein Load Balancer oder CDN TLS terminiert (Abschnitt 8.8).
 
-**Ist das Engine-Paket schon installiert?** Ja: Die `composer.json` von Exponential verlangt es mit `~0.0.4.54`, dem
-ersten Release, das auf PHP 8.0 läuft. Davor brauchte es PHP 8.1 und wurde nur vorgeschlagen; eine ältere Installation
-fügt es mit `composer require se7enxweb/exponential-velocity:~0.0.4.54` hinzu.
+**Ist das Engine-Paket schon installiert?** Ja: Die `composer.json` von Exponential verlangt es mit `~0.0.4.55`; 0.0.4.54 war das
+erste Release, das auf PHP 8.0 läuft. Davor brauchte es PHP 8.1 und wurde nur vorgeschlagen; eine ältere Installation
+fügt es mit `composer require se7enxweb/exponential-velocity:~0.0.4.55` hinzu.
 
 **Was macht `ext check`?** Es listet die PHP-Erweiterungen auf, die diesem PHP fehlen, mit dem Installationsbefehl für
 das Betriebssystem (`ext install-hint <extension>`).

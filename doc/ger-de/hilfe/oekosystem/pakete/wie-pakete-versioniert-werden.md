@@ -36,7 +36,7 @@ alphabetische Sortierung setzt `0.0.4.10` vor `0.0.4.8`; sortieren Sie mit `git 
 
 Die Einschränkungen des Kernels verwenden `~`, das "lets the last position float: `~6.0.8` accepts `6.0.9` and `6.0.10`
 but not `6.1.0`", die letzte Stelle also beweglich lässt ([Die Standardverteilung der Erweiterungen](../../../funktionen/6.0/standard-extension-auslieferung.md)).
-Velocity zum Beispiel wird mit `~0.0.4.54` verlangt (`README.md`).
+Velocity zum Beispiel wird mit `~0.0.4.55` verlangt (`README.md`).
 
 ## Versionen in einer Erweiterung
 

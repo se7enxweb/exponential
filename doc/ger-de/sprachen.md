@@ -5,8 +5,8 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 18. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **38 Übersetzungen
-der Administrationsoberfläche**, dreiundzwanzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **37 Übersetzungen
+der Administrationsoberfläche** (`share/translations`, gezählt am 25. Oktober 2026), vierundzwanzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
 Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
 (Kurmandschi), Suaheli, Latein und, zum Spaß, Klingonisch).
@@ -825,7 +825,7 @@ Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche 
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
 Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa 10.000) sind die nützlichste Arbeit für jede Sprache außer den
-dreiundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
+vierundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
 Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.

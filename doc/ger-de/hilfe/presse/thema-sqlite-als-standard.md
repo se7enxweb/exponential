@@ -37,7 +37,7 @@ incredible improvement to the kernel“ ([README, Recent improvements](https://g
 
 | Was | Wann | Quelle |
 |---|---|---|
-| 6.0.0 ist stabil, und SQLite kommt als Datenbank, die keinen Server braucht | Januar 2024 | [Januar 2024](../../geschichte/2024/2024-01a.md) |
+| SQLite kommt als Datenbank, die keinen Server braucht (gemergt am 7. Januar 2024, zuerst veröffentlicht in 6.0.1 am 29. Januar 2024; 6.0.0 war am 1. Januar stabil) | Januar 2024 | [Januar 2024](../../geschichte/2024/2024-01a.md) |
 | SQLite-Unterstützung in den Releases 6.0.1 bis 6.0.3, seitdem verfeinert | Januar bis April 2024 | [Unterstützung der SQLite-Datenbank](../../funktionen/6.0/sqlite-datenbank.md) |
 | SQLite ist der Standard des Einrichtungsassistenten; Installation mit einem Befehl auf SQLite | 16. bis 30. September 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-to-30-september-2026) |
 | Eine Schreibwarteschlange: Gleichzeitige Veröffentlichungen warten, bis sie an der Reihe sind, statt mit „database is locked“ zu scheitern | 1. und 2. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#1-and-2-october-2026) |

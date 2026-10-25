@@ -27,7 +27,7 @@ version numbers (Exponential Velocity 0.0.4.x). Say both on camera.
 
 ## Off camera: install and prepare
 
-The engine is required by Exponential's `composer.json` (at `~0.0.4.54`), so `composer install` brings it; it needs
+The engine is required by Exponential's `composer.json` (at `~0.0.4.55`), so `composer install` brings it; it needs
 PHP 8.0 or later and the `sockets` extension ([Serving the site, 8.3.1](../../install/08-serving-the-site.md#831-install-the-engine-package)):
 
 ```bash

@@ -91,7 +91,7 @@ frei kopiert und angepasst werden ([Freie Dokumentation](../freie-dokumentation.
 | [Erste Schritte](../erste-schritte.md) | Anmelden und eine erste Änderung vornehmen |
 | [Ein Rundgang durch die Administration](../rundgang-durch-die-administration.md) | Die Bildschirme, die Sie zeigen und über die Sie sprechen werden |
 | [Der Layout-Editor](../layout-editor.md) | Der Seitenbaukasten, mit dem Redakteure arbeiten |
-| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../sprachen.md) | Inhalte übersetzen; die 268 Locales und 32 Übersetzungen der Administration |
+| [Sprachen](../sprachen.md) und [Sprachen in Exponential](../../sprachen.md) | Inhalte übersetzen; die 268 Locales und 37 Übersetzungen der Administration |
 | [Datenbankunterstützung](../datenbankunterstuetzung.md) | Die sechs unterstützten Datenbanken, in ihrer Reihenfolge |
 | [Unterstützte Betriebssysteme](../betriebssystemunterstuetzung.md) | Wo Exponential läuft |
 | [Sicherheitshärtung](../sicherheitshaertung.md) | Wie Exponential eine Site schützt |

@@ -24,8 +24,8 @@ seinem Datum auf, nach [doc/eng-us/release-overview](../../../eng-us/release-ove
 
 | Version | Datum | Dokumentierter Schwerpunkt |
 |---|---|---|
-| 6.0.0 | 1. Januar 2024 | Das erste stabile Release der Linie; SQLite als Datenbank |
-| 6.0.1 | 29. Januar 2024 | |
+| 6.0.0 | 1. Januar 2024 | Das erste stabile Release der Linie (SQLite folgte in 6.0.1) |
+| 6.0.1 | 29. Januar 2024 | SQLite als Datenbank, die keinen Server braucht |
 | 6.0.2 | 29. Februar 2024 | |
 | 6.0.3 | 2. April 2024 | |
 | 6.0.4 | 5. September 2024 | Das erste Release nach admin3, dem responsiven Design der Administration |

@@ -31,7 +31,7 @@ proves it. Check the source before you answer: facts change with releases.
 | What does it need? | PHP 8.0 or later; a database (SQLite needs no server) | [Operating system support](../os-support.md), [Database support](../database-support.md) |
 | Which web server? | Velocity is recommended; FrankenPHP or Apache/nginx with PHP-FPM work too | [Velocity](../../features/6.0/velocity-persistent-worker-server.md) |
 | Shared hosting? | Possible with Apache or LiteSpeed; Velocity usually not | [Containers, cloud and hosting panels](../os-support.md#containers-cloud-and-hosting-panels) |
-| Is my language supported? | 268 locale files for content; 32 administration translations, ten complete | [Talking points: languages](talking-points-languages-and-right-to-left.md) |
+| Is my language supported? | 268 locale files for content; 37 administration translations, 24 complete (25 October 2026) | [Talking points: languages](talking-points-languages-and-right-to-left.md) |
 
 ## Getting help and helping
 

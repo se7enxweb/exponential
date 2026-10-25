@@ -24,7 +24,7 @@ Anfragen geladen hält (`README.md`, "Exponential Velocity — the fast option")
 ## Sein Platz im Ökosystem
 
 - "As of 6.0.15 Velocity is part of Exponential itself. `composer.json` requires `se7enxweb/exponential-velocity
-  ~0.0.4.54`, so `composer install` installs the server with the rest of the product", seit 6.0.15 ist Velocity also
+  ~0.0.4.55`, so `composer install` installs the server with the rest of the product", seit 6.0.15 ist Velocity also
   Teil von Exponential selbst, und `composer install` installiert den Server mit dem übrigen Produkt (`README.md`).
 - Er "is based on the Qbix server and is developed alongside Exponential, so the two are tuned against each other",
   basiert also auf dem Qbix-Server und wird zusammen mit Exponential entwickelt, sodass beide aufeinander abgestimmt

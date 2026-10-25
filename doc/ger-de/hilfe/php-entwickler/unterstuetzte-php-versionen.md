@@ -36,7 +36,7 @@ PHP-Erweiterungen sind `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`, `re
 `simplexml`; Datenbank- und Bilderweiterungen stehen unter `suggest`.
 
 Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 unter PHP 8.0 bis 8.5 und wird mit
-`~0.0.4.54` vorausgesetzt, sodass der Kernel, die mitgelieferten Erweiterungen und der Server ein gemeinsames Minimum
+`~0.0.4.55` vorausgesetzt, sodass der Kernel, die mitgelieferten Erweiterungen und der Server ein gemeinsames Minimum
 haben ([Velocity ist Teil von Exponential 6.0.15](../velocity-ist-teil-von-exponential-6-0-15.md)).
 
 ## Warum PHP 8.0 die älteste ist

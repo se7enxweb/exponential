@@ -82,7 +82,7 @@ offen:
 | Einschränkung | Erlaubt |
 |---|---|
 | `~6.0.15` | `>=6.0.15 <6.1.0` |
-| `~0.0.4.54` | `>=0.0.4.54 <0.0.5.0` |
+| `~0.0.4.55` | `>=0.0.4.55 <0.0.5.0` |
 | `^8.0` | `>=8.0 <9.0` |
 
 Nach `.9` kommt an der letzten Stelle `.10` (`0.0.4.9`, `0.0.4.10`). Packagist vergleicht jede Stelle als Zahl; eine

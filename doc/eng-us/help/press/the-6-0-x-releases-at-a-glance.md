@@ -23,8 +23,8 @@ from [doc/eng-us/release-overview](../../release-overview) and the Git tags, as 
 
 | Version | Date | Documented highlight |
 |---|---|---|
-| 6.0.0 | 1 January 2024 | The first stable release of the line; SQLite as a database |
-| 6.0.1 | 29 January 2024 | |
+| 6.0.0 | 1 January 2024 | The first stable release of the line (SQLite followed in 6.0.1) |
+| 6.0.1 | 29 January 2024 | SQLite as a database that needs no server |
 | 6.0.2 | 29 February 2024 | |
 | 6.0.3 | 2 April 2024 | |
 | 6.0.4 | 5 September 2024 | The first release after admin3, the responsive administration design |

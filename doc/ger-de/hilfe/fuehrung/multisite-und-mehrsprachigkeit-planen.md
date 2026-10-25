@@ -147,8 +147,8 @@ Aus [Sprachen in Exponential](../../sprachen.md):
 
 - **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten) in 32 Schriften, 40
   davon von rechts nach links geschrieben, können als Inhaltssprachen und Locales von Siteaccesses gewählt werden.
-- **32 Übersetzungen der Administration**, zehn davon vollständig: `eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
-  Französisch, Ukrainisch, Hebräisch, Arabisch, Latein und Klingonisch.
+- **37 Übersetzungen der Administration**, 24 davon vollständig (Stand 25. Oktober 2026), aufgeführt in
+  [Sprachen in Exponential](../../sprachen.md).
 - **Unterstützungsstufen**:
 
 | Stufe | Bedeutung |

@@ -133,10 +133,10 @@ Die Spalte „Stand“ gibt den Stand vom 18. Oktober 2026 mit seiner Quelle an.
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony-Plattform plus Exponential 6 (Dual-Kernel) | Sites, die Exponential 6 behalten und Symfony ergänzen | Linien 2.5.x bis 5.0.x (README) |
 | [Exponential Platform Nexus](#exponential-platform-nexus) | Plattform plus Exponential 6, Netgen Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site wollen | Linien 1.0.0.x bis 1.3.0.x (README) |
 | [Exponential Platform DXP](#exponential-platform-dxp) | Reines Symfony-DXP-Metapaket, die freiheitlich weitergeführte Fortsetzung von Ibexa DXP OSS | Neue Symfony-Projekte | „Stable; Open Source“ (seine composer.json) |
-| [Exponential Velocity](#exponential-velocity) | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential und andere PHP-Anwendungen ausliefern | Erforderlich als `~0.0.4.54`, das erste Release unter PHP 8.0 (README) |
-| [Exponential Intelligence](#exponential-intelligence) | Ein Schreibassistent in der Administration | Redakteure und ihre Vorgesetzten | Seit 6.0.15 Pflicht, `~0.0.1.12` in composer.json |
-| [Exponential Layouts](#exponential-layouts) | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | Redakteure und Designer | Seit 6.0.15 Pflicht, `~1.4.39` in composer.json |
-| [AdminUI](#adminui) | Eine alternative Administrationsoberfläche | Redakteure, die sie bevorzugen | Seit 6.0.15 Pflicht, `~1.0.0.46` in composer.json |
+| [Exponential Velocity](#exponential-velocity) | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential und andere PHP-Anwendungen ausliefern | Erforderlich als `~0.0.4.55` (README; seit dem Release 0.0.4.54 läuft es unter PHP 8.0) |
+| [Exponential Intelligence](#exponential-intelligence) | Ein Schreibassistent in der Administration | Redakteure und ihre Vorgesetzten | Seit 6.0.15 Pflicht, `~0.0.1.18` in composer.json |
+| [Exponential Layouts](#exponential-layouts) | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | Redakteure und Designer | Seit 6.0.15 Pflicht, `~1.4.43` in composer.json |
+| [AdminUI](#adminui) | Eine alternative Administrationsoberfläche | Redakteure, die sie bevorzugen | Seit 6.0.15 Pflicht, `~1.0.0.50` in composer.json |
 | [Das Hilfesystem](#das-hilfesystem) | Die Hilfe, die Sie gerade lesen | Alle Benutzer der Administration | Phase 1 in 6.0.15 ([Hilfe als Inhalt](../funktionen/6.0/hilfeinhalte.md)) |
 | [Die Erweiterungen](#das-ökosystem-der-erweiterungen) | 66 se7enxweb-Pakete, die der Kernel voraussetzt | Site-Entwickler | Jede mit eigenen Releases |
 
@@ -242,7 +242,7 @@ production“ (README, „Engines“). FrankenPHP ist „the production-ready al
 Vorgabe für die Entwicklung.
 
 **Wo es steht.** Erste Commits im Juli 2026, erstes Release `v0.0.1` im September 2026, seit dem 22. September 2026
-Teil von Exponential ([Velocity-Chronik](../geschichte/velocity/README.md)); das README nennt es als erforderlich in `~0.0.4.54`, dem ersten Release, das unter PHP 8.0 läuft.
+Teil von Exponential ([Velocity-Chronik](../geschichte/velocity/README.md)); das README nennt es als erforderlich in `~0.0.4.55`; seit dem Release 0.0.4.54 läuft es unter PHP 8.0.
 
 ### Exponential Intelligence
 
@@ -365,7 +365,7 @@ jedem Push auf `main` und bei jedem Pull-Request ([CI](../bc/6.0/ci.md)).
 
 ### Sprachen und Barrierefreiheit
 
-- 268 Locale-Dateien, 40 davon von rechts nach links, und 32 Übersetzungen der Administration, zehn davon vollständig
+- 268 Locale-Dateien, 40 davon von rechts nach links, und 37 Übersetzungen der Administration, 24 davon vollständig (Stand 25. Oktober 2026)
   ([Sprachen](../sprachen.md)); `dir="rtl"` in Inhalten und Administration ([Von rechts nach links](../funktionen/6.0/rechts-nach-links.md)).
 - Das Design admin4 folgt WCAG-Regeln, die Tests prüfen: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus
   und Zielgrößen von mindestens 24 mal 24 Pixeln ([Gestaltung der Administration](../bc/6.0/admin4-gestaltung.md)).

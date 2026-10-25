@@ -7,7 +7,7 @@ PHP changes to a site that Velocity serves. Velocity drives one of three web ser
 
 ## Velocity is part of Exponential as of 6.0.15
 
-As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.54`; before, it only
+As of 6.0.15 the root `composer.json` **requires** `se7enxweb/exponential-velocity ~0.0.4.55`; before, it only
 suggested it. What that changes for an existing installation:
 
 | | |
@@ -815,7 +815,7 @@ rather than assuming velocity.ini's.
 
 The `qbix` engine runs on PHP 8.0 to 8.5 from release 0.0.4.54 (20 October 2026); its `composer.json` requires
 `"php": ">=8.0"` (it was `>=8.1`), and nothing extra is needed on 8.0, no polyfill package and no extension.
-Exponential's `composer.json` requires the engine at `~0.0.4.54`, so `composer install` on PHP 8.0 installs it too.
+Exponential's `composer.json` requires the engine at `~0.0.4.55`, so `composer install` on PHP 8.0 installs it too.
 
 - **RHEL 9, AlmaLinux 9, Rocky Linux 9**: the default AppStream PHP 8.0 works, with the el9 rpm
   (`exponential-velocity-<release>-1.el9.noarch.rpm`, which depends on `php-cli >= 8.0`) or with Composer; no module

@@ -27,7 +27,7 @@ Historie von `main` nie umgeschrieben, und spätere Korrekturen kommen als neue 
 ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst), [CI](../../bc/6.0/ci.md)).
 Beiträge werden unter derselben GPL-Lizenz veröffentlicht (CONTRIBUTING.md). Seit Dezember 2023 kommen Pull Requests
 von 7x, von Entwicklern wie ekked und fwoldt und von Unternehmen wie Netgen und Mugo Web; in der gesamten Historie
-erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential-in-zahlen.md)).
+erscheinen 1.062 übernommene Pull Requests (Stand 25. Oktober 2026) ([Exponential in Zahlen](exponential-in-zahlen.md)).
 
 ## Fakten, die Sie drucken können
 

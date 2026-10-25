@@ -45,7 +45,7 @@ zwei Jahre Sicherheitskorrekturen.
   [Unterstützung für PHP 8.0](../bc/6.0/php-8.0-unterstuetzung.md). PHP-Funktionen, die neuer als 8.0 sind, werden in
   `lib/phpcompat.php` definiert, das `autoload.php` nur lädt, wenn `PHP_VERSION_ID < 80100`.
 - Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 auf PHP 8.0 bis 8.5 und steht mit
-  `~0.0.4.54` in `require` (bis dahin brauchte es PHP 8.1 und stand nur in `suggest`).
+  `~0.0.4.55` in `require` (bis dahin brauchte es PHP 8.1 und stand nur in `suggest`).
 - Erforderliche PHP-Erweiterungen in `composer.json`: `dom`, `libxml`, `mbstring`, `pcre`, `json`, `iconv`,
   `reflection`, `session`, `spl`, `simplexml`. Datenbank- und Bilderweiterungen stehen in `suggest`.
 
@@ -148,7 +148,7 @@ JSON-Schema.
   `./composer.json is valid` aus (für diese Seite ausgeführt).
 - `name`: `se7enxweb/exponential`, `type`: `ezpublish-legacy` (der Typ, den das Legacy-Installer-Plugin versteht),
   `license`: `GPL-2.0-or-later` (ein SPDX-Bezeichner).
-- `require` legt jede Extension `se7enxweb/*` mit einer Tilde-Beschränkung fest (`~6.0.12`, `~1.4.39`, `~1.0.0.46`):
+- `require` legt jede Extension `se7enxweb/*` mit einer Tilde-Beschränkung fest (`~6.0.28`, `~1.4.43`, `~1.0.0.50`):
   Die letzte Stelle ist variabel, die Stellen darüber nicht.
 - `require-dev`: `phpunit/phpunit` `^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4` und `zetacomponents/php-generator`.
 - `extra.branch-alias`: `"dev-main": "6.0.x-dev"`, sodass Pakete, die `se7enxweb/exponential: ^6.0.14` verlangen,
@@ -190,8 +190,8 @@ Bedeutung jeder Erhöhung.
   `VERSION_MINOR = 0`, `VERSION_RELEASE = 15`) und die Tags `v6.0.0` bis `v6.0.14`. 6.0.15 ist in Entwicklung
   ([Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)). Neue Funktionen landen in Patch-Releases der Linie 6.0, was
   nicht der Absicht von SemVer für PATCH entspricht.
-- **Extensions** verwenden drei oder vier Stellen: `exp_adminui ~1.0.0.46`, `bcgooglesitemaps ~1.1.6.6`,
-  `expai ~0.0.1.12` und Exponential Velocity `0.0.4.x`. Eine vierteilige Nummer ist kein gültiges SemVer 2.0.0, aber
+- **Extensions** verwenden drei oder vier Stellen: `exp_adminui ~1.0.0.50`, `bcgooglesitemaps ~1.1.6.6`,
+  `expai ~0.0.1.18` und Exponential Velocity `0.0.4.x`. Eine vierteilige Nummer ist kein gültiges SemVer 2.0.0, aber
   Composer akzeptiert bis zu vier numerische Stellen und vergleicht jede numerisch.
 - **Die letzte Stelle zählt weiter.** Nach `0.0.4.9` kommt `0.0.4.10`, nie `0.0.5.0`
   ([Leitfaden zu Extensions](../anleitungen/extensions.md), „Veröffentlichen“;

@@ -14,7 +14,7 @@ ist.
 | Velocity | Exponential Velocity, der Anwendungsserver, läuft ab seinem Release 0.0.4.54 ebenfalls unter PHP 8.0 (bis dahin brauchte er 8.1; siehe unten). |
 | Was sich in 6.0.15 geändert hat | Die wenigen Stellen, die PHP 8.1 oder neuer brauchten, funktionieren jetzt unter 8.0; die CI prüft 8.0 bei jedem Push. |
 | Verhalten unter 8.1 und neuer | Unverändert. Jeder Ersatz wird nur dort verwendet, wo PHP die Funktion fehlt. |
-| Composer | `composer.json` deklariert `^8.0` und verlangt Velocity in `~0.0.4.54`; ein einfaches `composer install` funktioniert unter 8.0 und installiert die Engine mit. |
+| Composer | `composer.json` deklariert `^8.0` und verlangt Velocity in `~0.0.4.55`; ein einfaches `composer install` funktioniert unter 8.0 und installiert die Engine mit. |
 
 ## Was gefunden und wie es behoben wurde
 
@@ -139,12 +139,12 @@ exp_enhanced_link, expchangeclass, expquery-translator, sevenx-themes-media 1.5.
 `exponential-legacy-installer` 2.2.4), und syndication 1.3.5, ezstarrating 6.0.9, swark 1.0.5, birthday 1.3.3 und
 enhancedezbinaryfile 4.4.5 wurden mit Korrekturen für Code veröffentlicht, den kein PHP 8 laden konnte.
 
-Velocity wird wieder verlangt, in `~0.0.4.54`, dem ersten Release, das unter PHP 8.0 läuft. Zwischen seiner
+Velocity wird wieder verlangt, in `~0.0.4.55` (0.0.4.54 war das erste Release, das unter PHP 8.0 läuft). Zwischen seiner
 Verschiebung nach `"suggest"` (weil es PHP 8.1 brauchte) und diesem Release musste es von Hand hinzugefügt werden;
 eine in dieser Zeit erstellte Installation fügt es so hinzu:
 
 ```sh
-composer require se7enxweb/exponential-velocity:~0.0.4.54
+composer require se7enxweb/exponential-velocity:~0.0.4.55
 ```
 
 | Paket | Deklariert | Blockiert 8.0 |

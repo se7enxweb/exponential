@@ -26,7 +26,7 @@ it onto `main` as the reviews ask; once it is merged, `main`'s history is never 
 pull requests ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows),
 [CI](../../bc/6.0/ci.md)). Contributions are released under the same GPL license (CONTRIBUTING.md). Since December 2023
 pull requests have come from 7x, from developers such as ekked and fwoldt, and from companies such as Netgen and Mugo
-Web; 1,039 merged pull requests appear in the whole history ([Exponential by the numbers](exponential-by-the-numbers.md)).
+Web; 1,062 merged pull requests appear in the whole history (25 October 2026) ([Exponential by the numbers](exponential-by-the-numbers.md)).
 
 ## Facts you can print
 

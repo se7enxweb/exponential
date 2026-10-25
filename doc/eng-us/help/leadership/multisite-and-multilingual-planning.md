@@ -145,8 +145,8 @@ From [Languages in Exponential](../../languages.md):
 
 - **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations), in 32 scripts,
   40 of them written right to left, can be chosen as content languages and siteaccess locales.
-- **32 administration translations**, ten complete: `eng-US`, `ger-DE`, Spanish for Spain and Mexico, French,
-  Ukrainian, Hebrew, Arabic, Latin and Klingon.
+- **37 administration translations**, 24 complete (25 October 2026), listed in
+  [Languages in Exponential](../../languages.md).
 - **Support levels**:
 
 | Level | Meaning |

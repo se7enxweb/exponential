@@ -4,8 +4,8 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 18 October 2026 (Exponential 6.0.15).
 
 In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
-right to left) can be chosen as content languages and siteaccess locales; **38 administration translations**
-exist, twenty-three of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic,
+right to left) can be chosen as content languages and siteaccess locales; **37 administration translations**
+exist (`share/translations`, counted on 25 October 2026), twenty-four of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic,
 Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Persian,
 Pashto, Kurdish (Kurmanji), Swahili, Latin and, for fun, Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
@@ -784,7 +784,7 @@ language joins the test's list of languages; the ten languages added on 18 Octob
 ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login, Siteaccess, Extension ...) are in
 the allowlist's `ger-DE` list.
 
-Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the twenty-three
+Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the twenty-four
 complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
 Klingon, Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Czech, Croatian, Persian, Pashto,
 Kurdish and Swahili) is the quickest win.

@@ -33,7 +33,7 @@ instead.
 | What | When | Source |
 |---|---|---|
 | `ezpm` in the console, a one-command installer and the Kickstarter | July 2026 | [July 2026](../../history/2026/2026-07.md) |
-| SQLite as a database that needs no server | 1 January 2024 (6.0.0) | [January 2024](../../history/2024/2024-01a.md) |
+| SQLite as a database that needs no server | 7 January 2024 (released in 6.0.1) | [January 2024](../../history/2024/2024-01a.md) |
 
 ## Facts you can print
 

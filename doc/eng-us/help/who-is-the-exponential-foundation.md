@@ -128,10 +128,10 @@ The "State" column is the state on 18 October 2026, with its source.
 | [Exponential Platform Legacy](#exponential-platform-legacy) | Symfony platform plus Exponential 6 (dual kernel) | Sites that keep Exponential 6 and add Symfony | 2.5.x to 5.0.x lines (README) |
 | [Exponential Platform Nexus](#exponential-platform-nexus) | Platform plus Exponential 6, Netgen Layouts and Media Site, with demo content | Agencies and teams who want a complete site fast | 1.0.0.x to 1.3.0.x lines (README) |
 | [Exponential Platform DXP](#exponential-platform-dxp) | Symfony-only DXP meta package, the freedom-enabled continuation of Ibexa DXP OSS | New Symfony projects | "Stable; Open Source" (its composer.json) |
-| [Exponential Velocity](#exponential-velocity) | A web and application server written in PHP | Anyone serving Exponential, and other PHP applications | Required at `~0.0.4.54`, the first release on PHP 8.0 (README) |
-| [Exponential Intelligence](#exponential-intelligence) | A writing assistant in the administration | Editors and the people who manage them | Required since 6.0.15, `~0.0.1.12` in composer.json |
-| [Exponential Layouts](#exponential-layouts) | A visual page builder: layouts, zones, blocks and rules | Editors and designers | Required since 6.0.15, `~1.4.39` in composer.json |
-| [AdminUI](#adminui) | An alternative administration interface | Editors who prefer it | Required since 6.0.15, `~1.0.0.46` in composer.json |
+| [Exponential Velocity](#exponential-velocity) | A web and application server written in PHP | Anyone serving Exponential, and other PHP applications | Required at `~0.0.4.55` (README; it runs on PHP 8.0 since release 0.0.4.54) |
+| [Exponential Intelligence](#exponential-intelligence) | A writing assistant in the administration | Editors and the people who manage them | Required since 6.0.15, `~0.0.1.18` in composer.json |
+| [Exponential Layouts](#exponential-layouts) | A visual page builder: layouts, zones, blocks and rules | Editors and designers | Required since 6.0.15, `~1.4.43` in composer.json |
+| [AdminUI](#adminui) | An alternative administration interface | Editors who prefer it | Required since 6.0.15, `~1.0.0.50` in composer.json |
 | [The help system](#the-help-system) | The help you are reading | Every user of the administration | Phase 1 in 6.0.15 ([Help as content](../features/6.0/help-content.md)) |
 | [The extensions](#the-extension-ecosystem) | 66 se7enxweb packages required by the kernel | Site builders | Each with its own releases |
 
@@ -234,7 +234,7 @@ production" (README, "Engines"). FrankenPHP is "the production-ready alternative
 development default.
 
 **Where it stands.** First commits in July 2026, first release `v0.0.1` in September 2026, part of Exponential since
-22 September 2026 ([Velocity chronicle](../history/velocity/README.md)); the README names it as required at `~0.0.4.54`, the first release that runs on PHP 8.0.
+22 September 2026 ([Velocity chronicle](../history/velocity/README.md)); the README names it as required at `~0.0.4.55`; it runs on PHP 8.0 since release 0.0.4.54.
 
 ### Exponential Intelligence
 
@@ -352,7 +352,7 @@ to `main` and every pull request ([CI](../bc/6.0/ci.md)).
 
 ### Languages and accessibility
 
-- 268 locale files, 40 of them right to left, and 32 administration translations, ten of them complete
+- 268 locale files, 40 of them right to left, and 37 administration translations, 24 of them complete (25 October 2026)
   ([Languages](../languages.md)); `dir="rtl"` in content and administration ([Right to left](../features/6.0/right-to-left.md)).
 - The admin4 design follows WCAG rules that tests check: a contrast test of the color tokens in light and dark mode
   and target sizes of at least 24 by 24 pixels ([Styling the administration](../bc/6.0/admin4-styling.md)).

@@ -368,7 +368,7 @@ prints.
 
 From release 0.0.4.54 (20 October 2026) Exponential Velocity runs on PHP 8.0 to 8.5: the engine's `composer.json`
 requires `"php": ">=8.0"` (it was `>=8.1`), and nothing extra is needed on 8.0, no polyfill package and no
-extension. Exponential's `composer.json` requires the engine at `~0.0.4.54`, so `composer install` on PHP 8.0
+extension. Exponential's `composer.json` requires the engine at `~0.0.4.55`, so `composer install` on PHP 8.0
 installs it too.
 
 - **RHEL 9 and its rebuilds**: the default AppStream PHP 8.0 runs Velocity. The el9 rpm

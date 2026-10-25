@@ -13,7 +13,7 @@ wrapped in `function_exists()`.
 | Velocity | Exponential Velocity, the application server, runs on PHP 8.0 too, from its release 0.0.4.54 (until then it needed 8.1; see below). |
 | What changed in 6.0.15 | The few places that needed PHP 8.1 or later were made to work on 8.0; CI checks 8.0 on every push. |
 | Behaviour on 8.1 and later | Unchanged. Every fallback is used only where PHP lacks the function. |
-| Composer | `composer.json` declares `^8.0` and requires Velocity at `~0.0.4.54`; a plain `composer install` works on 8.0 and installs the engine too. |
+| Composer | `composer.json` declares `^8.0` and requires Velocity at `~0.0.4.55`; a plain `composer install` works on 8.0 and installs the engine too. |
 
 ## What was found and how it was fixed
 
@@ -110,7 +110,7 @@ page; the engine's minimums are in its
 [requirements](https://github.com/se7enxweb/exponential-velocity/blob/main/docs/requirements.md) and the release in
 its [changelog](https://github.com/se7enxweb/exponential-velocity/blob/main/CHANGELOG.md).
 
-With that, **Velocity is part of Exponential as of 6.0.15**: the root `composer.json` requires it at `~0.0.4.54`, so
+With that, **Velocity is part of Exponential as of 6.0.15**: the root `composer.json` requires it at `~0.0.4.55`, so
 the kernel, the shipped extensions and the server share one minimum, PHP 8.0. The story for every reader:
 [Velocity is part of Exponential 6.0.15](../../help/velocity-is-part-of-exponential-6-0-15.md).
 
@@ -138,12 +138,12 @@ expchangeclass, expquery-translator, sevenx-themes-media 1.5.32, `exponential-le
 syndication 1.3.5, ezstarrating 6.0.9, swark 1.0.5, birthday 1.3.3 and enhancedezbinaryfile 4.4.5 were released with fixes for code no PHP 8
 could load.
 
-Velocity is required again, at `~0.0.4.54`, the first release that runs on PHP 8.0. Between its move to
+Velocity is required again, at `~0.0.4.55` (0.0.4.54 was the first release that runs on PHP 8.0). Between its move to
 `"suggest"` (because it needed PHP 8.1) and that release, it had to be added by hand; an installation made in that
 time adds it with:
 
 ```sh
-composer require se7enxweb/exponential-velocity:~0.0.4.54
+composer require se7enxweb/exponential-velocity:~0.0.4.55
 ```
 
 | Package | Declares | Blocks 8.0 |

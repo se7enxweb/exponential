@@ -268,7 +268,7 @@ stage, is part of Exponential. It is the package
 `composer.json` **requires** it (it was only suggested before 6.0.15):
 
 ```json
-"se7enxweb/exponential-velocity": "~0.0.4.54"
+"se7enxweb/exponential-velocity": "~0.0.4.55"
 ```
 
 Velocity 0.0.4.54 runs on PHP 8.0 and later (`"php": ">=8.0"`) and needs the `sockets` extension
@@ -277,10 +277,10 @@ Linux 9 included. A plain `composer install` installs it; nothing more is needed
 PHP 8.1, and `composer.json` only suggested it; an installation made in that time adds it with:
 
 ```bash
-composer require se7enxweb/exponential-velocity:~0.0.4.54
+composer require se7enxweb/exponential-velocity:~0.0.4.55
 ```
 
-`~0.0.4.54` accepts every later `0.0.4.x` release (`>=0.0.4.54 <0.0.5.0`), so Composer installs the newest of them.
+`~0.0.4.55` accepts every later `0.0.4.x` release (`>=0.0.4.55 <0.0.5.0`), so Composer installs the newest of them.
 The last position of a Velocity version counts on past 9 (`0.0.4.9`, `0.0.4.10`, ...), so a version sort, not a name
 sort, finds the newest.
 

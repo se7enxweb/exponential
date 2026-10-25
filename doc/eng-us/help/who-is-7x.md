@@ -174,7 +174,8 @@ overview" is the file [doc/eng-us/release-overview](../release-overview), which 
 | 2022 | 7x, stage two: the project starts. | 7x's account (owner, 18 October 2026); README.md |
 | 5 October 2023 | The repository `se7enxweb/exponential` is created on GitHub, as a fork of `netgen/ezpublish-legacy`. | GitHub API |
 | December 2023 | 7x, stage three: the project is launched. The first outside change of the fork is merged on 11 December (pull request #40, `2ddbc4c624`); the stewardship era begins. | [December 2023](../history/2023/2023-12.md) |
-| 1 January 2024 | 6.0.0 is stable, and SQLite arrives as a database that needs no server. | [January 2024](../history/2024/2024-01a.md) |
+| 1 January 2024 | 6.0.0 is stable. | [January 2024](../history/2024/2024-01a.md) |
+| 7 January 2024 | SQLite arrives as a database that needs no server: driver, schema handler, demonstration database and the setup wizard's choice (first released in 6.0.1, 29 January 2024; `git tag --contains a078ae1729`). | [January 2024](../history/2024/2024-01a.md) |
 | 4 February 2024 | The repository `exponential-platform` (Exponential Platform 3.2.9, Symfony only) is created. | GitHub API |
 | 22 August 2024 | admin3, a complete responsive administration design. | [August 2024](../history/2024/2024-08.md) |
 | 23 February 2025 | The repository `exponential-platform-legacy` is created. | GitHub API |
@@ -256,8 +257,8 @@ From [doc/eng-us/release-overview](../release-overview) and the git tags (`git t
 
 | Version | Date | Highlights (from the history pages) |
 |---|---|---|
-| 6.0.0 | 1 January 2024 | The first stable release of the fork; SQLite driver and installer path |
-| 6.0.1 | 29 January 2024 | |
+| 6.0.0 | 1 January 2024 | The first stable release of the fork |
+| 6.0.1 | 29 January 2024 | SQLite driver and installer path (merged on 7 January 2024) |
 | 6.0.2 | 29 February 2024 | |
 | 6.0.3 | 2 April 2024 | |
 | 6.0.4 | 5 September 2024 | The first release after admin3, the responsive administration design |
@@ -292,7 +293,7 @@ publishing, media portals, intranets, e-commerce and extranets" (<https://expone
 | Framework (CMF) | MVC architecture, modules and views, a template engine, INI settings, a database abstraction layer, CLI scripts, a REST API, stand-alone libraries | [Templates and design](../guides/templates-and-design.md), [REST API v1 and v2](../guides/rest-api-v1-and-v2.md) |
 | E-commerce | "Advanced e-Commerce Stores (Built in)": products, baskets, orders, VAT, currencies, PayPal | README, "Main Exponential features"; [Order receipts](../features/6.0/order-receipts.md), [Order list sorting](../features/6.0/order-list-sorting.md) |
 | Multisite | Several sites from one installation, each a siteaccess with its own host, path, language and design | [Siteaccess host and language matching](../features/6.0/siteaccess-host-and-language-matching.md), [Multi-site settings](../features/6.0/multi-site-ini-overrides.md) |
-| Multilingual | 268 locale files (261 languages and countries) as content languages; 32 administration translations, ten of them complete | [Languages in Exponential](../languages.md) |
+| Multilingual | 268 locale files (261 languages and countries) as content languages; 37 administration translations in `share/translations`, 24 of them, English included, complete (at least 98% of the current strings, as of 25 October 2026) | [Languages in Exponential](../languages.md) |
 | Right to left | `dir="rtl"` in content and in the administration for right-to-left languages | [Right to left](../features/6.0/right-to-left.md) |
 | Page building | Exponential Layouts: layouts, zones, blocks and rules, a port of the Netgen Layouts concept | README, "Exponential Layouts"; [The layouts editor](layouts-editor.md) |
 | Writing assistance | Exponential Intelligence (`expai`): writes drafts, never publishes on its own, hosted providers in the US or the EU or a local model | [Exponential Intelligence](../features/6.0/extensions/expai.md) |
@@ -482,7 +483,8 @@ Counted on 18 October 2026. Numbers change; the command or page in the last colu
 | Years in the copyright notice | 1998 to 2026 | COPYRIGHT.md |
 | Commits in this repository's `main` | 27,242 | `git rev-list --count origin/main` |
 | Oldest commit | 2 September 2002 | `git log --reverse` |
-| Merged pull requests in the history | 1,039 | `git log --grep="Merge pull request"` |
+| Merged pull requests in the history | 1,062 (as of 25 October 2026; the inherited history included) | `git log --oneline --grep="Merge pull request" origin/main \| wc -l` |
+| Merged pull requests on GitHub (se7enxweb/exponential) | 288 (as of 25 October 2026) | GitHub search `repo:se7enxweb/exponential is:pr is:merged` |
 | 6.0.x releases | 15 (6.0.0 to 6.0.14), 6.0.15 in development | `git tag -l 'v6.0.*'` |
 | se7enxweb packages required by `composer.json` | 66 | composer.json |
 | Packages of the vendor se7enxweb on Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
@@ -496,7 +498,7 @@ Counted on 18 October 2026. Numbers change; the command or page in the last colu
   [forums](https://share.exponential.earth/forums) or on [Telegram](https://t.me/exponentialcms).
 - **Grow from user to developer.** Install with Git, keep your work on a branch and send pull requests:
   [Develop with Git](develop-with-git.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md).
-- **Translate.** The administration has 32 translations, ten complete; [Languages](../languages.md) explains how to
+- **Translate.** The administration has 37 translations, 24 of them complete (as of 25 October 2026); [Languages](../languages.md) explains how to
   add or complete one.
 - **Improve this help.** Every page has "Edit on GitHub"; the pages are free documentation
   ([Free documentation](free-documentation.md)).

@@ -3,7 +3,7 @@ title: "Story: languages and right to left"
 audience: press
 category: press-media
 order: 64
-summary: A feature story about languages in Exponential - 268 locale files, 40 of them right to left, 33 administration translations of which nineteen are complete, an administration that turns around for Hebrew and Arabic - with printable facts, a counting difference to watch, and the claims to avoid.
+summary: A feature story about languages in Exponential - 268 locale files, 40 of them right to left, 37 administration translations of which 24 are complete, an administration that turns around for Hebrew and Arabic - with printable facts, a counting difference to watch, and the claims to avoid.
 keywords: story, languages, locales, translations, right to left, RTL, Hebrew, Arabic, multilingual, internationalization, press
 type: help
 ---
@@ -28,8 +28,8 @@ counts with their date, and shows where two sources count differently.
 
 Exponential separates the language of the **content** from the language of the **administration**. "268 locale files
 (261 languages and countries, [a test language] and 6 variations, in 32 scripts, 40 of them written right
-to left) can be chosen as content languages and siteaccess locales; 33 administration translations exist, nineteen of them
-complete" ([Languages in Exponential](../../languages.md)). When an editor chooses a right-to-left interface language,
+to left) can be chosen as content languages and siteaccess locales; 37 administration translations
+exist (`share/translations`, counted on 25 October 2026), twenty-four of them complete" ([Languages in Exponential](../../languages.md)). When an editor chooses a right-to-left interface language,
 "the administration turns around": the page says `dir="rtl"`, the side columns change places and text starts at the
 right ([Right to left](../../features/6.0/right-to-left.md)). Most of this arrived in October 2026, in the 6.0.15
 development line, which is not released.
@@ -64,8 +64,8 @@ October in several steps, so use the dated figure from the languages page and gi
 
 ## What not to claim
 
-- "Exponential is available in 268 languages." Say "268 locale files as content languages; 33 administration
-  translations, nineteen complete".
+- "Exponential is available in 268 languages." Say "268 locale files as content languages; 37 administration
+  translations, 24 complete (25 October 2026)".
 - "Every translation is perfect" or "professionally translated". Several were machine-assisted.
 - "Unlimited content languages." The documented limit is 62 per installation on 64-bit PHP.
 - "Klingon support" as a serious feature: the README itself says "(for fun)".
@@ -77,7 +77,7 @@ October in several steps, so use the dated figure from the languages page and gi
 
 ```text
 "An admin that reads right to left: Exponential adds Hebrew and Arabic"
-"268 locales, nineteen complete translations: counting languages honestly"
+"268 locales, 24 complete translations: counting languages honestly"
 "Native speakers wanted: reviewing a CMS translated with machine help"
 ```
 

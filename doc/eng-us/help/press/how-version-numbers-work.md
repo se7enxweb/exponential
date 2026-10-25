@@ -81,7 +81,7 @@ You will meet these in `composer.json` and in changelogs that list required pack
 
 | Constraint | Means | Example and source |
 |---|---|---|
-| `~0.0.4.54` | `>=0.0.4.54 <0.0.5.0`, so every later 0.0.4.x | Velocity, [Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package) |
+| `~0.0.4.55` | `>=0.0.4.55 <0.0.5.0`, so every later 0.0.4.x | Velocity, [Getting the code](../../install/03-getting-the-code.md#34-the-velocity-package) |
 | `~2.4.11` | `>=2.4.11 <2.5.0` | eztags, [Getting the code](../../install/03-getting-the-code.md#35-extensions-are-composer-packages) |
 | `^8.0` | PHP 8.0 or any later 8.x | The 6.0.15 line's PHP requirement, same page, section 3.1 |
 

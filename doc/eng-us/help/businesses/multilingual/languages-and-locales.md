@@ -4,7 +4,7 @@ audience: businesses, project-manager, admin
 category: business-solutions
 order: 20
 summary: What Exponential supports for languages, explained for decision makers - locales, content languages, administration translations and site locales, the three support levels, the 62-language limit, and how to check a language before you commit to a market.
-keywords: languages, locales, content languages, administration translation, interface language, support levels, 268 locales, 33 translations, limit of 62 languages, fallback, business
+keywords: languages, locales, content languages, administration translation, interface language, support levels, 268 locales, 37 translations, limit of 62 languages, fallback, business
 type: help
 ---
 # Languages and locales
@@ -45,9 +45,9 @@ As counted in [Languages in Exponential](../../../languages.md) (Exponential 6.0
 - **268 locale files**: 261 languages and countries, the test language Lorem Ipsum and 6 variations.
 - **32 scripts**, from Latin, Cyrillic and Greek to Arabic, Hebrew, Devanagari, Chinese and many more.
 - **40 locales written right to left** ([Right-to-left markets](right-to-left-markets.md)).
-- **33 administration translations**, nineteen of them complete: `eng-US`, `ger-DE`, Spanish for Spain and Mexico,
+- **37 administration translations**, 24 of them complete (25 October 2026): `eng-US`, `ger-DE`, Spanish for Spain and Mexico,
   French, Ukrainian, Hebrew, Arabic, Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål,
-  Danish, Czech, Croatian, Latin and, for fun, Klingon.
+  Danish, Czech, Croatian, Persian, Pashto, Kurdish (Kurmanji), Swahili, Latin and, for fun, Klingon.
 - **No PHP extension needed at run time**: locales are plain INI files
   ([Languages, section 10](../../../languages.md#10-no-php-extension-at-run-time)).
 

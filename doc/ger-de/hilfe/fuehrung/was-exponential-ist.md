@@ -85,7 +85,7 @@ Was das für ein Projekt bedeutet, mit der Seite, die jeden Teil erklärt:
 | Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln | [Der Layout-Editor](../layout-editor.md) |
 | Schreibunterstützung | Exponential Intelligence: nur Entwürfe, veröffentlicht nie von sich aus | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 | Multisite | Mehrere Sites aus einer Installation, jede ein Siteaccess | [Multisite- und mehrsprachige Projekte planen](multisite-und-mehrsprachigkeit-planen.md) |
-| Sprachen | 268 Gebietsschema-Dateien als Inhaltssprachen; 32 Übersetzungen der Administration, zehn davon vollständig | [Sprachen in Exponential](../../sprachen.md) |
+| Sprachen | 268 Gebietsschema-Dateien als Inhaltssprachen; 37 Übersetzungen der Administration, 24 davon vollständig (Stand 25. Oktober 2026) | [Sprachen in Exponential](../../sprachen.md) |
 | E-Commerce | Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, PayPal | [Wer ist 7x?](../wer-ist-7x.md#cms-cmf-und-shop-in-einem) |
 | Integration | REST-API v1 und v2 | [REST-API v1 und v2](../../anleitungen/rest-api-v1-und-v2.md) |
 | Sicherheit und Prüfung | Content Security Policy, zweistufige Anmeldung, ein manipulationssicheres Audit-Protokoll | [Sicherheitshärtung](../sicherheitshaertung.md), [Audit-Protokoll](../../funktionen/6.0/pruefprotokoll.md) |
@@ -152,7 +152,7 @@ Die Entscheidung zwischen ihnen ist Thema von
 
 - **268 Gebietsschema-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten) in 32 Schriften,
   40 davon von rechts nach links geschrieben, können als Inhaltssprachen gewählt werden; es gibt
-  **32 Übersetzungen der Administration**, zehn davon vollständig ([Sprachen in Exponential](../../sprachen.md)).
+  **37 Übersetzungen der Administration**, 24 davon vollständig (Stand 25. Oktober 2026) ([Sprachen in Exponential](../../sprachen.md)).
 - Eine Installation enthält auf 64-Bit-PHP höchstens 62 Inhaltssprachen gleichzeitig
   ([Sprachen](../../sprachen.md#11-die-grenze-von-62-inhaltssprachen)).
 - Die Administration dreht sich für Sprachen der Oberfläche um, die von rechts nach links geschrieben werden, und
