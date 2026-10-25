@@ -113,6 +113,7 @@
         "zetacomponents/archive": "~1.5.1",
         "zetacomponents/authentication": "~1.4.1",
         "zetacomponents/cache": "~1.6.3",
+        "zetacomponents/configuration": "~1.4",
         "zetacomponents/console-tools": "^1.7.5",
         "zetacomponents/database": "~1.5.4",
         "zetacomponents/debug": "~1.3",

@@ -198,8 +198,8 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-beed22870299a09cc59ca4714f0f9a37  composer.json
-acf9750531560fedfae48975cfd6a495  composer.json.dist
+a6a99193e83ea70e50ec1625bee4bfde  composer.json
+b5755d6fd19c5fb4b625f871b0be3812  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
 cc7ccfafe6b4245628b2099dfd4c5dc9  cronjobs/audit.php
