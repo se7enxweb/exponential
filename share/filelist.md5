@@ -358,7 +358,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 093b78b2b3dc9453140918b54316f745  design/admin/stylesheets/modules/content.css
-ae73d4a6150d0dbfa6d97c52ae1370da  design/admin/stylesheets/modules/help.css
+a2b4077d3fbd67c69a25ac04d480f7bf  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
@@ -1116,7 +1116,7 @@ ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 093b78b2b3dc9453140918b54316f745  design/admin4/stylesheets/modules/content.css
-ae73d4a6150d0dbfa6d97c52ae1370da  design/admin4/stylesheets/modules/help.css
+a2b4077d3fbd67c69a25ac04d480f7bf  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
@@ -24449,9 +24449,9 @@ a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
 051b2eff791229145e565ddfe359ee68  share/translations/eng-US/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
-1727baa4f275be68cffee3db64f27a16  share/translations/esl-ES/translation.ts
+680c806a635bb218a4ffdd97b4695680  share/translations/esl-ES/translation.ts
 99a8b049c3de4158b7de5fc2838ae5f7  share/translations/esl-MX/GUIDE.md
-6f1799926853e0cce4a57c88e4784604  share/translations/esl-MX/translation.ts
+75769e5de9e73085dcf21c4decf03f75  share/translations/esl-MX/translation.ts
 0997403771a794ade5ecf62ffffa65e1  share/translations/fas-IR/GUIDE.md
 839ebd4cba63f13c6746cae668c4a9ed  share/translations/fas-IR/translation.ts
 a1ff9edf6db2ff3ff0b2d442410db154  share/translations/fin-FI/translation.ts
@@ -26282,7 +26282,7 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-0ef4b08d648b4713acb95ad6a70d5495  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+d9f45def2da2ca4e8c44c77dd1de0e6a  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql

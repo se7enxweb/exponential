@@ -913,7 +913,13 @@ CREATE TABLE IF NOT EXISTS exphelp_help_id (
     CONSTRAINT exphelp_help_id_pkey PRIMARY KEY (help_id)
 );
 CREATE INDEX IF NOT EXISTS exphelp_help_id_object ON exphelp_help_id USING btree (object_id);
-CREATE SEQUENCE IF NOT EXISTS exphelp_feedback_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exphelp_feedback_id_seq' ) THEN
+        CREATE SEQUENCE exphelp_feedback_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+    END IF;
+END
+$$;
 CREATE TABLE IF NOT EXISTS exphelp_feedback (
     created integer DEFAULT 0 NOT NULL,
     help_id character varying(80) DEFAULT ''::character varying NOT NULL,

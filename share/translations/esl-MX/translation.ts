@@ -78059,11 +78059,11 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>You wrote the current version, so someone else with the release role releases it.</source>
-        <translation>Usted escribió la versión actual, así que otra persona con el rol de publicación lo publica.</translation>
+        <translation>Escribiste la versión actual, así que otra persona con el rol de publicación lo publica.</translation>
     </message>
     <message>
         <source>The state was not changed: your role does not allow this step.</source>
-        <translation>El estado no cambió: su rol no permite este paso.</translation>
+        <translation>El estado no cambió: tu rol no permite este paso.</translation>
     </message>
     <message>
         <source>Review workflow</source>
@@ -78123,7 +78123,7 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Was this helpful?</source>
-        <translation>¿Le resultó útil?</translation>
+        <translation>¿Te resultó útil?</translation>
     </message>
     <message>
         <source>Readers answered yes %yes times and no %no times.</source>
@@ -78135,7 +78135,7 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Thank you. Your answer helps us improve the help.</source>
-        <translation>Gracias. Su respuesta nos ayuda a mejorar la ayuda.</translation>
+        <translation>Gracias. Tu respuesta nos ayuda a mejorar la ayuda.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -78155,7 +78155,7 @@ Gracias por la retroalimentación</translation>
     </message>
     <message>
         <source>Only your answer is kept, not who you are.</source>
-        <translation>Solo se guarda su respuesta, no quién es usted.</translation>
+        <translation>Solo se guarda tu respuesta, no quién eres.</translation>
     </message>
     <message>
         <source>It is out of date</source>
