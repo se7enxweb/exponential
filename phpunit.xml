@@ -230,9 +230,13 @@
     <groups>
         <exclude>
             <!--
-              Tests tagged @group database require a live database connection.
-              Run them separately:
-                php tests/runtests.php - -db-per-test - -dsn=mysql://u:p@host/db
+              Tests tagged @group database require a database server. Each test
+              class (ezpDatabaseTestCase) gets a throwaway database exp_test_*
+              with the kernel schema and the clean data, dropped again
+              (tests/toolkit/ezpthrowawaydatabase.php). It needs an account with
+              CREATE and DROP: EXP_TEST_DB_USER / EXP_TEST_DB_PASSWORD (default:
+              the database settings of EXP_TEST_SITEACCESS, else DefaultAccess);
+              without one the tests are skipped with the reason.
             -->
             <group>database</group>
             <group>mail-live</group>

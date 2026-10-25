@@ -19,6 +19,15 @@ back, and are skipped when there is no installation:
 php vendor/bin/phpunit --group database tests/tests/kernel/content/eZAuditLocationTest.php
 ```
 
+The installation is the siteaccess named in `EXP_TEST_SITEACCESS`, else `DefaultAccess`. Tests
+write only to a database with `test` as a word of its name (`site_test`, not `latest`): when the siteaccess's database is not one, they
+run on a throwaway database `exp_test_*` (kernel schema and clean data) that is dropped at the end,
+made with the account in `EXP_TEST_DB_USER`/`EXP_TEST_DB_PASSWORD` (default: the siteaccess's
+database settings), which needs CREATE and DROP on `exp\_test\_%`. `EXP_TEST_KEEP_DATABASES=1`
+keeps them and lists them in `var/log/test-databases.log`. Without such an account the tests are
+skipped, and the message names the siteaccess, the database and the reason. The test classes on
+`ezpDatabaseTestCase` always get a throwaway database of their own.
+
 To run only the tests of the files a change touched (instead of the whole suite), see
 [run only the tests of a change](../../../features/6.0/quality-checks.md#run-only-the-tests-of-a-change):
 `tests/test-map.json` maps source files, templates and scripts to the tests that cover them.

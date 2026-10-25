@@ -11,6 +11,10 @@
 
 class ezpDsn
 {
+    // declared, so that setting the DSN creates no dynamic properties (deprecated since PHP 8.2)
+    protected $dsnString = '';
+    protected $parts = array();
+
     public function __construct( $dsn )
     {
         $this->dsn = $dsn;
@@ -22,8 +26,10 @@ class ezpDsn
         {
             case 'parts':
                 return $this->parts;
+            case 'dsn':
+                return $this->dsnString;
             default:
-                return $this->parts[$name];
+                return isset( $this->parts[$name] ) ? $this->parts[$name] : null;
         }
     }
 
@@ -32,8 +38,8 @@ class ezpDsn
         switch ( $name )
         {
             case 'dsn':
-                $this->dsn = $value;
-                $this->parts = self::parseDSN( $value );
+                $this->dsnString = $value;
+                $this->parts = $value !== '' ? self::parseDSN( $value ) : array();
                 break;
             default:
                 $this->$name = $value;
@@ -51,6 +57,9 @@ class ezpDsn
 
         if ( isset( $parts['username'] ) )
             $parts['user'] = $parts['username'];
+
+        // the keys the cluster tests read, present also when the DSN does not name them
+        $parts += array( 'port' => null, 'socket' => null, 'database' => null, 'user' => null, 'password' => null );
 
         return $parts;
     }
