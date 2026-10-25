@@ -41,9 +41,7 @@
         "ezsystems/eztags-ls": "~1.3",
         "zetacomponents/archive": "~1.5",
         "zetacomponents/authentication": "~1.4",
-        "zetacomponents/authentication-database-tiein": "~1.2",
         "zetacomponents/cache": "~1.6",
-        "zetacomponents/configuration": "~1.4",
         "zetacomponents/console-tools": "~1.7",
         "zetacomponents/database": "~1.5",
         "zetacomponents/debug": "~1.3",
@@ -52,14 +50,12 @@
         "zetacomponents/image-conversion": "~1.4",
         "zetacomponents/mail": "~1.8",
         "zetacomponents/mvc-tools": "~1.2",
-        "zetacomponents/mvc-authentication-tiein": "~1.1",
         "zetacomponents/persistent-object": "~1.8",
         "zetacomponents/signal-slot": "~1.2",
         "zetacomponents/system-information": "~1.1",
         "zetacomponents/webdav": "~1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
-        "zetacomponents/php-generator": "~1.1"
+        "phpunit/phpunit": "3.7.*"
     }
 }
