@@ -19,8 +19,10 @@
  */
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
-    const LANGUAGES = array( 'ara-SA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dut-NL', 'esl-ES', 'esl-MX', 'fas-IR', 'fre-FR', 'ger-DE', 'heb-IL', 'ita-IT',
-        'kur-TR', 'lat-VA', 'nor-NO', 'pol-PL', 'por-BR', 'pus-AF', 'swa-KE', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA' );
+    const LANGUAGES = array( 'ara-SA', 'bos-BA', 'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES',
+        'esl-MX', 'est-EE', 'fas-IR', 'fin-FI', 'fre-FR', 'ger-DE', 'gle-IE', 'heb-IL', 'hin-IN', 'hun-HU', 'isl-IS',
+        'ita-IT', 'jpn-JP', 'kal-GL', 'kor-KR', 'kur-TR', 'lat-VA', 'lav-LV', 'mlt-MT', 'nor-NO', 'pol-PL', 'por-BR',
+        'pus-AF', 'ron-RO', 'slk-SK', 'slv-SI', 'sqi-AL', 'swa-KE', 'swe-SE', 'tlh-QO', 'tur-TR', 'ukr-UA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';
