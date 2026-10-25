@@ -1520,7 +1520,21 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
         eZDebug::accumulatorStart( 'mysql_cluster_query', 'MySQL Cluster', 'DB queries' );
         $time = microtime( true );
 
-        $res = mysqli_query( $this->db, $query );
+        // a caller passing $reportError = false handles the failure itself through mysqli_errno() (for
+        // _startCacheGeneration() the duplicate key means "being generated"). With mysqli reporting errors as
+        // exceptions, PHP 8.1's default, the failed INSERT threw instead, and startCacheGeneration() caught it and
+        // returned false: never the remaining generation time, and a timed-out generation was never taken over.
+        // Measured: eZDFSFileHandlerTest::testStartCacheGeneration, "Failed asserting that false is of type int".
+        try
+        {
+            $res = mysqli_query( $this->db, $query );
+        }
+        catch ( mysqli_sql_exception $e )
+        {
+            if ( $reportError )
+                throw $e;
+            $res = false;
+        }
         if ( !$res && $reportError )
         {
             $this->_error( $query, $fname );
@@ -1765,6 +1779,14 @@ class eZDFSFileHandlerMySQLiBackend implements eZClusterEventNotifier
 
             // the original file does not exist: we move the generating file
             $res = $this->_query( "SELECT * FROM " . $this->dbTable( $filePath ) . " WHERE name_hash = " . $this->_md5( $filePath ) . " FOR UPDATE", $fname, false );
+            // since _query() reports a failure with $reportError = false as false instead of throwing, a lock
+            // wait timeout, deadlock or lost connection here ends like the other failures of this method, instead of
+            // a TypeError from mysqli_num_rows( false ) with the transaction left open.
+            if ( !$res )
+            {
+                $this->_rollback( $fname );
+                return false;
+            }
             if ( mysqli_num_rows( $res ) == 0 )
             {
                 $metaData = $generatingMetaData;

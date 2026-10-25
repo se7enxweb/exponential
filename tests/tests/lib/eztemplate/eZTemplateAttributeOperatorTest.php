@@ -51,7 +51,7 @@ class eZTemplateAttributeOperatorTest extends ezpDatabaseTestCase
         $formatterMock = $this->createMock( 'ezpAttributeOperatorFormatterInterface' );
         $formatterMock->expects( $this->any() )
                       ->method( 'line' )
-                      ->will( $this->returnValue( __METHOD__ ) );
+                      ->willReturn( __METHOD__ );
 
         $attrOp->displayVariable( $node, $formatterMock, true, 2, 0, $outputTxt );
 

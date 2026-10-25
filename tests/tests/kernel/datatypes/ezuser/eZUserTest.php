@@ -15,7 +15,8 @@ class eZUserTest extends ezpDatabaseTestCase
 {
     public $username = 'admin';
     public $password = 'publish';
-    public $email = 'nospam@ez.no';
+    /** the address of the user $username in the test database, read in setUp() */
+    public $email;
 
     public function setUp(): void
     {
@@ -35,6 +36,7 @@ class eZUserTest extends ezpDatabaseTestCase
         {
             self::markTestSkipped( "User {$this->username} is not in database.");
         }
+        $this->email = $user->attribute( 'email' );
     }
 
     public function tearDown(): void

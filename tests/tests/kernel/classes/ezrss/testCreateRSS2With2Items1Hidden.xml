@@ -4,7 +4,7 @@
     <title>RSS 2.0 feed</title>
     <link>http://@ezp_server@/</link>
     <description>This feed is of &lt;b&gt;RSS 2.0&lt;/b&gt; type.</description>
-    <language>en-GB</language>
+    <language>@ezp_locale@</language>
     <managingEditor>@ezp_admin_email@ (Administrator User)</managingEditor>
     <pubDate>XXX</pubDate>
     <lastBuildDate>Tue, 27 Oct 2009 15:59:26 +0000</lastBuildDate>
