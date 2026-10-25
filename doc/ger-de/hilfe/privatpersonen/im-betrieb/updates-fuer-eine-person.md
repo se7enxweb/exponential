@@ -65,7 +65,7 @@ Wartungsmodus oder schalten Sie die betroffene Funktion ab, bis Sie es können
 Unter Velocity folgen Sie dessen Deploy-Schritt, damit die laufenden Worker den neuen Code laden
 ([Velocity ist Teil von Exponential 6.0.15](../../velocity-ist-teil-von-exponential-6-0-15.md)).
 
-![Die Upgrade-Prüfung in der Administration](../../../../eng-us/help/images/update-upgrade-check.webp)
+![Die Upgrade-Prüfung in der Administration](../../bilder/update-upgrade-check.webp)
 
 ## Werkzeuge in der Administration
 

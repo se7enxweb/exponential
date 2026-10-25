@@ -106,7 +106,7 @@ Partners.
   über Farbe gekennzeichnet.
 - Der Trainer sammelt die Tabellen ein und schreibt die drei häufigsten Template-Befunde an die Tafel.
 
-![Die Seite eines Elements bei 375 Pixel Breite, einer der Breiten, bei denen eine Seite getestet wird](../../../../../eng-us/help/images/trainers/td-rtl-375.webp)
+![Die Seite eines Elements bei 375 Pixel Breite, einer der Breiten, bei denen eine Seite getestet wird](../../../bilder/trainers/td-rtl-375.webp)
 
 ## Quiz
 

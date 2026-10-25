@@ -14,7 +14,7 @@ Inhaltsbestandsaufnahme listet auf, was die Website enthalten wird; eine Sitemap
 diese Seite es beschreibt, lassen sich beide eins zu eins in den Inhaltsbaum, die Klassen und Sektionen von Exponential
 übertragen.
 
-![PDF-Export: die Exporte von Teilen des Inhaltsbaums als PDF](../../../../eng-us/help/images/creators/pdf-export.webp)
+![PDF-Export: die Exporte von Teilen des Inhaltsbaums als PDF](../../bilder/creators/pdf-export.webp)
 
 ## Inhalt
 

@@ -14,9 +14,9 @@ das Team für Automatisierung und Support-Mitarbeitende. Jede Installation begin
 sein Passwort ist, hängt davon ab, wie die Website installiert wurde. Diese Seite sagt Ihnen, was jeder Installer hinterlässt und wie Sie
 die erste Anmeldung sicher an einen Kunden übergeben.
 
-![Benutzerkonten prüfen: Konten, die niemand nutzt oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](../../../../eng-us/help/images/hosting/user-hygiene.webp)
+![Benutzerkonten prüfen: Konten, die niemand nutzt oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](../../bilder/hosting/user-hygiene.webp)
 
-![Die Anmeldeseite der Administration, wo die erste Anmeldung mit einem neuen Administratorkonto stattfindet](../../../../eng-us/help/images/hosting/sign-in-page.webp)
+![Die Anmeldeseite der Administration, wo die erste Anmeldung mit einem neuen Administratorkonto stattfindet](../../bilder/hosting/sign-in-page.webp)
 
 > **Warnung**
 > Diese Seite gibt nie ein Passwort aus. Das historische Standardpasswort des mitgelieferten Datenbank-Seeds und jede Regel zu erzeugten

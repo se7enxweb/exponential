@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die schnelle Seiten wollen. Expon
 meisten sind standardmäßig eingeschaltet. Diese Seite zeigt die Ebenen, die Hebel nach ihrer Wirkung geordnet und wie
 Sie messen ([10.12 Leistungsoptimierung](../../../installation/10-nach-der-installation.md#1012-performance-tuning)).
 
-![Websites vorladen: die Caches der Websites nach dem Leeren vorwärmen](../../../../eng-us/help/images/creators/preload-sites.webp)
+![Websites vorladen: die Caches der Websites nach dem Leeren vorwärmen](../../bilder/creators/preload-sites.webp)
 
 ## Inhalt
 

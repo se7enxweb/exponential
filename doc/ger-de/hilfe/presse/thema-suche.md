@@ -34,7 +34,7 @@ sehr lange Suchanfragen sie nicht mehr zum Absturz bringen
 ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#14-october-2026-the-search-of-the-administration)). Das
 Hilfesystem hat seine eigene Sofortsuche.
 
-![Die Suche der Administration](../../../eng-us/help/images/help/pr-search.webp)
+![Die Suche der Administration](../bilder/help/pr-search.webp)
 
 ## Was neu ist, und seit wann
 

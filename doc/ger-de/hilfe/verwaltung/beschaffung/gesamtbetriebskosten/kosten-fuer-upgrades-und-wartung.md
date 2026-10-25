@@ -15,7 +15,7 @@ erhält, die Werkzeuge, die sie günstiger machen, was sie teuer macht und wie S
 stammen aus `SECURITY.md`, [Aktualisieren](../../../../anleitungen/aktualisieren.md)
 und [Quellcodeverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md).
 
-![Die Upgrade-Prüfung mit den Prüfungen der Konsistenz von Dateien und Datenbank](../../../../../eng-us/help/images/government/gov-upgrade.webp)
+![Die Upgrade-Prüfung mit den Prüfungen der Konsistenz von Dateien und Datenbank](../../../bilder/government/gov-upgrade.webp)
 
 ## Inhalt
 1. [Arten von Updates](#arten-von-updates)

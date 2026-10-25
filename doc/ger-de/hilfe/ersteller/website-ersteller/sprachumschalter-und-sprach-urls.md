@@ -29,7 +29,7 @@ Sprache des Besuchers und das Template des Umschalters.
 | Host pro Sprache | `example.de`, `de.example.com` | `MatchOrder=host`, `HostMatchMapItems[]=example.de;site_de` |
 | Host und Pfad | `example.com/de` auf einem Host, andere Hosts anderswo | `host_uri` mit `HostUriMatchMapItems[]` |
 
-![Setup, Sprachen: die Sprachen, in denen Inhalte geschrieben werden können](../../../../eng-us/help/images/creators/languages-setup.webp)
+![Setup, Sprachen: die Sprachen, in denen Inhalte geschrieben werden können](../../bilder/creators/languages-setup.webp)
 
 Pfade sind am einfachsten (ein Zertifikat, ein Host); Hosts passen zu Länderdomains. Die Einstellungen stehen in
 `site.ini [SiteAccessSettings]` ([10.2](../../../installation/10-nach-der-installation.md#102-siteaccesses-und-adressen-der-site)).

@@ -124,7 +124,7 @@ Verwenden Sie die Schulungsinstallation. Speichern Sie kein Mailkonto.
 - Der Probelauf hat gemeldet, dass es nichts zu lesen gab (oder welche Konten es gab), und nichts geändert.
 - Der Trainer prüft die Zeichnungen anhand der Anleitung zur Zustellbarkeit.
 
-![Die Mailkonten, die die Bounce-Verarbeitung liest](../../../../../eng-us/help/images/trainers/nl-mail-accounts.webp)
+![Die Mailkonten, die die Bounce-Verarbeitung liest](../../../bilder/trainers/nl-mail-accounts.webp)
 
 ## Quiz
 

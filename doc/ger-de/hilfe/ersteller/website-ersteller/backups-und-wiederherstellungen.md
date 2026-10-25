@@ -36,7 +36,7 @@ Caches werden neu erzeugt und brauchen kein Backup.
 
 1. Wartungsmodus einschalten, damit Datenbank und Dateien übereinstimmen:
 
-![Backups in der Administration: ein vollständiges Website-Backup oder Datenbank und Dateien, optional verschlüsselt](../../../../eng-us/help/images/creators/backups.webp)
+![Backups in der Administration: ein vollständiges Website-Backup oder Datenbank und Dateien, optional verschlüsselt](../../bilder/creators/backups.webp)
 
    ```bash
    php bin/php/maintenance.php on --message="Back soon" --until=30m --allow-admin --allow-root-user

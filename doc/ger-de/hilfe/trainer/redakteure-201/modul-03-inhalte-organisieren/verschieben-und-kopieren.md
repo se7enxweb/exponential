@@ -103,7 +103,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Die beiden Artikel wurden nach `Archive` und zurück verschoben.
 - Der Trainer prüft das, indem er `Archive` einer Person am Beamer öffnet.
 
-![Ein Element verschieben: die neue Stelle im Browser wählen, der sich öffnet](../../../../../eng-us/help/images/trainers/e201-move.webp)
+![Ein Element verschieben: die neue Stelle im Browser wählen, der sich öffnet](../../../bilder/trainers/e201-move.webp)
 
 ## Quiz
 

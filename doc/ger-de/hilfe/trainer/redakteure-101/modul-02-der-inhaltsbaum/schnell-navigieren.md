@@ -106,7 +106,7 @@ Inhalte.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, ein vom Trainer genanntes Element
   nur mit der Tastatur zu öffnen.
 
-![Der Inhaltsfinder in der linken Spalte, der ein Element über seine Adresse oder Knotennummer öffnet](../../../../../eng-us/help/images/trainers/e101-content-finder.webp)
+![Der Inhaltsfinder in der linken Spalte, der ein Element über seine Adresse oder Knotennummer öffnet](../../../bilder/trainers/e101-content-finder.webp)
 
 ## Quiz
 

@@ -15,7 +15,7 @@ die ihn betreiben. Sie beantwortet: ohne welche Daten eine Exponential-Website n
 enthalten, die sich nicht neu erzeugen lassen, was weggelassen werden kann, weil die Website es neu aufbaut, und wie Sie ein
 Backup erstellen, dessen Datenbank und Dateien übereinstimmen.
 
-![Backup in der Administration: Backups der Installation erstellen, herunterladen und entfernen](../../../../eng-us/help/images/hosting/git-manager-backup.webp)
+![Backup in der Administration: Backups der Installation erstellen, herunterladen und entfernen](../../bilder/hosting/git-manager-backup.webp)
 
 Die Fakten stammen aus [10.9 Backups und Wiederherstellung](../../../installation/10-nach-der-installation.md#109-sicherung-und-wiederherstellung),
 [Backup und Wiederherstellung](../../datenbankunterstuetzung.md#backup-und-wiederherstellung) und den unten verlinkten Seiten zu den Funktionen.

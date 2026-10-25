@@ -43,7 +43,7 @@ einzelne Schutz für dieses Konto. Schalten Sie sie vor dem Start ein.
 Der Schlüssel wird nicht noch einmal angezeigt. Wenn Ihre App eine verschlüsselte Sicherung ihrer Codes anbietet,
 nutzen Sie sie.
 
-![Die zweistufige Anmeldung einrichten](../../../../eng-us/help/images/two-step-setup.webp)
+![Die zweistufige Anmeldung einrichten](../../bilder/two-step-setup.webp)
 
 ## App oder E-Mail
 

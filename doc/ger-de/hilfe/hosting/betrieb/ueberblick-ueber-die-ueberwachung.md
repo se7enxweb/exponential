@@ -14,7 +14,7 @@ die wissen müssen, wo sie zuerst nachsehen. Sie beantwortet: welche Signale Exp
 Überwachungssystem lesen kann (Exit-Codes, JSON, HTTP-Endpunkte) und welche in die Hände eines Menschen gehören, der einmal pro
 Woche auf eine Seite schaut.
 
-![Job-Warteschlange: wartende, laufende und gescheiterte Hintergrundjobs](../../../../eng-us/help/images/hosting/job-queue.webp)
+![Job-Warteschlange: wartende, laufende und gescheiterte Hintergrundjobs](../../bilder/hosting/job-queue.webp)
 
 Es gibt keine einzelne Zustands-URL; kombinieren Sie eine Prüfung von außen mit den Statusbefehlen im Inneren
 ([10.11 Überwachung und Zustandsprüfungen](../../../installation/10-nach-der-installation.md#1011-überwachung-und-zustandsprüfungen)). Die

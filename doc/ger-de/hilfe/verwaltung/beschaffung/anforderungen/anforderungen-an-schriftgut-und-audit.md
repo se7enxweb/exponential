@@ -15,7 +15,7 @@ wann, was darin stand und dass der Nachweis nicht verändert wurde. Sie gibt For
 sie den dokumentierten Funktionen von Exponential zu. Ein CMS ist kein Schriftgutverwaltungssystem; die Anforderungen
 unten decken ab, was das CMS an eines übergeben muss.
 
-![Der Zustand des Audit-Protokolls: jede Hash-Kette als intakt verifiziert](../../../../../eng-us/help/images/government/gov-audit-req.webp)
+![Der Zustand des Audit-Protokolls: jede Hash-Kette als intakt verifiziert](../../../bilder/government/gov-audit-req.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

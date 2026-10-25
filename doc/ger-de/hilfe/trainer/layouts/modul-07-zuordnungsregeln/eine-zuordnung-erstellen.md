@@ -103,7 +103,7 @@ ein veröffentlichtes Kurs-Layout.
   zurückgebracht.
 - Der Trainer prüft das, indem er die Testseiten von zwei Teilnehmenden am Beamer in einem privaten Fenster öffnet.
 
-![Der Reiter Layouts mit Map layout, das eine Zuordnung für diesen Ort beginnt](../../../../../eng-us/help/images/trainers/ly-map.webp)
+![Der Reiter Layouts mit Map layout, das eine Zuordnung für diesen Ort beginnt](../../../bilder/trainers/ly-map.webp)
 
 ## Quiz
 

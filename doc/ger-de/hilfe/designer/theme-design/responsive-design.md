@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die ein Design auf jedem Bildschirm funktionsfähig machen. Sie beantwortet: was das Pagelayout braucht, wie
 Sie Breakpoints planen und welche Breiten und Zoomstufen Sie testen.
 
-![Die Seite eines Eintrags in der Administration bei 375 Pixeln Breite, der Breite eines Telefons](../../../../eng-us/help/images/designers/item-page-375.webp)
+![Die Seite eines Eintrags in der Administration bei 375 Pixeln Breite, der Breite eines Telefons](../../bilder/designers/item-page-375.webp)
 
 ## Inhalt
 

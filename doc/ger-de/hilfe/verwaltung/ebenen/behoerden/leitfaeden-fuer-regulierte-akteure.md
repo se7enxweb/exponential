@@ -15,7 +15,7 @@ Exponential: die Klasse Leitfaden und die Zustandsgruppe für den Status aus
 [Inhaltsmodell für Behörden](inhaltsmodell.md), den Prüf-Workflow aus
 [Struktur, Sektionen und Rollen für Behörden](struktur-sektionen-und-rollen.md) und die Versionsseite.
 
-![Die Anmeldeseite der Administration](../../../../../eng-us/help/images/government/gov-sign-in.webp)
+![Die Anmeldeseite der Administration](../../../bilder/government/gov-sign-in.webp)
 
 ## Inhalt
 

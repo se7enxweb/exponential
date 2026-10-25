@@ -14,7 +14,7 @@ von Ihnen zu hören, und mit einem Klick nichts mehr von Ihnen zu hören. Expone
 Seite, auf der jedes Mitglied entscheidet, was es bekommt. Das Newsletter-System behandelt der Bereich
 [Newsletter](../newsletters/README.md) im Detail; diese Seite zeigt, wie die Teile zu einer Mitgliederwebsite passen.
 
-![Das Newsletter-Dashboard](../../../../eng-us/help/images/help/bu-newsletter.webp)
+![Das Newsletter-Dashboard](../../bilder/help/bu-newsletter.webp)
 
 ## Inhalt
 

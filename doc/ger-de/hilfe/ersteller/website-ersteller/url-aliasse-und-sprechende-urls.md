@@ -56,9 +56,9 @@ Der Reiter **URL-Aliase** des Knotens fügt dem Knoten weitere Aliasse hinzu (ei
 Adresse einer früheren Website). Globale Aliasse für Modulansichten und Platzhalter für Muster liegen unter
 **Setup > URL-Übersetzer** und **Setup > URL-Platzhalter** ([URL-Platzhalter](url-platzhalter.md)).
 
-![Der Reiter Orte eines Artikels: die Stellen im Baum, an denen er erscheint, jede mit eigener Adresse](../../../../eng-us/help/images/creators/locations-tab.webp)
+![Der Reiter Orte eines Artikels: die Stellen im Baum, an denen er erscheint, jede mit eigener Adresse](../../bilder/creators/locations-tab.webp)
 
-![Die URL-Aliase eines Elements: die erzeugte Adresse und das Formular, um einen eigenen Alias in einer Sprache hinzuzufügen](../../../../eng-us/help/images/creators/url-alias-tab.webp)
+![Die URL-Aliase eines Elements: die erzeugte Adresse und das Formular, um einen eigenen Alias in einer Sprache hinzuzufügen](../../bilder/creators/url-alias-tab.webp)
 
 ## In Templates verlinken
 

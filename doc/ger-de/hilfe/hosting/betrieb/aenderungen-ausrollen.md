@@ -15,7 +15,7 @@ eine Änderung live machen, in welcher Reihenfolge und warum, wie ein Neuladen v
 betrifft, was für eine Template-Änderung genügt und wie Sie die Konfiguration einer ausgerollten Website unter
 Versionsverwaltung halten.
 
-![Setup, Extensions: die Erweiterungen auf der Festplatte, welche aktiv sind, und die Schaltfläche zum Neuerzeugen der Autoload-Arrays](../../../../eng-us/help/images/hosting/extensions.webp)
+![Setup, Extensions: die Erweiterungen auf der Festplatte, welche aktiv sind, und die Schaltfläche zum Neuerzeugen der Autoload-Arrays](../../bilder/hosting/extensions.webp)
 
 Die Referenz ist [Eine PHP-Änderung ausrollen](../../../bc/6.0/velocity-engines.md#eine-php-änderung-bereitstellen-expvelocity-deploy);
 die Schritt-für-Schritt-Anleitung ist [Exponential ausrollen](../../../anleitungen/bereitstellung.md#7-eine-php-änderung-mit-einem-befehl-ausliefern).

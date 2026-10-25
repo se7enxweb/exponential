@@ -102,7 +102,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
   meldete *Wählen Sie einen Block aus, um seine Eigenschaften zu bearbeiten.*
 - Der Trainer prüft das, indem er die Liste **Layouts** am Beamer nach **Zuletzt geändert** sortiert.
 
-![Die Schaltfläche Neues Layout auf dem Layouts-Dashboard](../../../../../eng-us/help/images/trainers/ly-new-layout.webp)
+![Die Schaltfläche Neues Layout auf dem Layouts-Dashboard](../../../bilder/trainers/ly-new-layout.webp)
 
 ## Quiz
 

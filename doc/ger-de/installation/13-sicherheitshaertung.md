@@ -405,7 +405,7 @@ Standardwerte gelten, solange sie nicht gesetzt sind:
 | `CookieHttponly` | `true` | Skripte können das Sitzungs-Cookie nicht lesen |
 | `CookieSameSite` | `Lax` | `Lax`, `Strict`, `None` (nur mit `Secure`) oder leer |
 | `SessionTimeout` | `259200` | Sekunden, die eine Sitzung dauert (3 Tage) |
-| `RememberMeTimeout` | leer | die Gültigkeitsdauer von „Erinnerung“ (Remember me); leer schaltet sie ab |
+| `RememberMeTimeout` | leer | die Gültigkeitsdauer von „Angemeldet bleiben“ (Remember me); leer schaltet sie ab |
 | `SessionNameHandler`, `SessionNamePerSiteAccess` | `default`, `enabled` | `custom` gibt jedem Siteaccess sein eigenes Sitzungs-Cookie, sodass eine Anmeldung auf der öffentlichen Site keine Anmeldung in der Administration ist |
 
 Für eine Site, die nur über HTTPS ausgeliefert wird:

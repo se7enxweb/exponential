@@ -117,7 +117,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
   Stundengrenze.
 - Der Trainer prüft die Liste der Testgruppen und eine Auflistung des Postausgangs.
 
-![Die Versandraten pro Transport](../../../../../eng-us/help/images/trainers/nl-throttle.webp)
+![Die Versandraten pro Transport](../../../bilder/trainers/nl-throttle.webp)
 
 ## Quiz
 

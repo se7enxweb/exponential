@@ -141,9 +141,9 @@ Lektion 4.2.
 - Der Trainer prüft die endgültige `training_admin.css` von zwei Teilnehmenden: nur Tokens, keine Regel
   `html[data-a4-theme]`.
 
-![Eine Listenseite im hellen Modus](../../../../../eng-us/help/images/trainers/td-tokens-light.webp)
+![Eine Listenseite im hellen Modus](../../../bilder/trainers/td-tokens-light.webp)
 
-![Dieselbe Seite im dunklen Modus, nur die Werte der Tokens ändern sich](../../../../../eng-us/help/images/trainers/td-tokens-dark.webp)
+![Dieselbe Seite im dunklen Modus, nur die Werte der Tokens ändern sich](../../../bilder/trainers/td-tokens-dark.webp)
 
 ## Quiz
 

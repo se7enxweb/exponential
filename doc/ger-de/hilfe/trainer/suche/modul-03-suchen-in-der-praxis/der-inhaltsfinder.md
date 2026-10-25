@@ -106,7 +106,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator angemeldet. D
 - Der Trainer prüft Schritt 8 in einer kurzen Runde: Suchen für Support-Rollen, Löschen nur für Rollen, die auch
   Inhalte entfernen.
 
-![Der Inhaltsfinder: ein Element über seine ID, Remote-ID, seinen Pfad oder seine Adresse öffnen](../../../../../eng-us/help/images/trainers/se-finder.webp)
+![Der Inhaltsfinder: ein Element über seine ID, Remote-ID, seinen Pfad oder seine Adresse öffnen](../../../bilder/trainers/se-finder.webp)
 
 ## Quiz
 

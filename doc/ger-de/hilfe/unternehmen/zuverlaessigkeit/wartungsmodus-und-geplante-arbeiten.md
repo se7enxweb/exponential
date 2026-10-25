@@ -15,7 +15,7 @@ planen und ankündigen, wie Sie es ein- und ausschalten und welche Regeln verhin
 Ausfall wird. Die vollständige Anleitung ist
 [Wartungsmodus: die Site vom Netz nehmen und zurückholen](../../../anleitungen/wartungsmodus.md).
 
-![Setup, Wartung: ein Wartungsfenster planen](../../../../eng-us/help/images/help/bu-maint.webp)
+![Setup, Wartung: ein Wartungsfenster planen](../../bilder/help/bu-maint.webp)
 
 ## Inhalt
 

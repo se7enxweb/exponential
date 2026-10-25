@@ -25,7 +25,7 @@ und jede verknüpfte Seite ändert sich.
 
 **Layouts > Gemeinsame Layouts** listet die Layouts, mit denen andere Layouts verknüpft sind:
 
-![Die Liste Gemeinsame Layouts: Header / Footer mit 36 Verweisen, Prefooter mit 2 Verweisen und die gemeinsamen Layouts von Starter](../../../eng-us/help/build-two-ways/images/hm-10-shared-layouts-list.webp)
+![Die Liste Gemeinsame Layouts: Header / Footer mit 36 Verweisen, Prefooter mit 2 Verweisen und die gemeinsamen Layouts von Starter](bilder/hm-10-shared-layouts-list.webp)
 
 | Gemeinsames Layout | Typ | Zonen und Blöcke |
 |---|---|---|

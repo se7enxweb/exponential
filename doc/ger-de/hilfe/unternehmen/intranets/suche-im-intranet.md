@@ -15,7 +15,7 @@ Suchserver lohnt und wie Sie aus dem lernen, wonach Mitarbeiter suchen. Die tech
 [Suche auf der Website](../../ersteller/website-ersteller/suche-auf-der-website.md) und
 [Suche mit ezfind und Solr](../../ersteller/website-ersteller/suche-mit-ezfind-und-solr.md).
 
-![Suchstatistiken: wonach gesucht und was gefunden wurde](../../../../eng-us/help/images/help/bu-search-stats.webp)
+![Suchstatistiken: wonach gesucht und was gefunden wurde](../../bilder/help/bu-search-stats.webp)
 
 ## Inhalt
 

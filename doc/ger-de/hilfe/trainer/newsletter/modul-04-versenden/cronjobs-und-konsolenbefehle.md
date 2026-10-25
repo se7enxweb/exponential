@@ -146,7 +146,7 @@ Sie `--allow-root-user` hinzu, wenn Ihr Trainer es Ihnen sagt). Ersetzen Sie `<n
 - Jede Person hat zwei Crontab-Zeilen mit ihrem Pfad und Siteaccess.
 - Der Trainer prüft die Terminalausgabe und die Crontab-Zeilen einer Person.
 
-![Der Kasten Jetzt ausführen des Dashboards mit Jetzt senden, Nur zählen und den Cron-Zeilen](../../../../../eng-us/help/images/trainers/nl-run-now.webp)
+![Der Kasten Jetzt ausführen des Dashboards mit Jetzt senden, Nur zählen und den Cron-Zeilen](../../../bilder/trainers/nl-run-now.webp)
 
 ## Quiz
 

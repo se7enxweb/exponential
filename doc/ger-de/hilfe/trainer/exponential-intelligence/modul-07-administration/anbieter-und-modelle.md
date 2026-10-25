@@ -105,7 +105,7 @@ Verwenden Sie die Schulungsinstallation mit einem Administratorkonto (oder folge
 - Die Teilnehmenden können erklären, warum ein Modell nur liest.
 - Der Trainer prüft die Modellauswahl und die Begründungen von zwei Teilnehmenden.
 
-![Models and providers: jedes Modell mit seinen Werkzeugen, der Berechtigung für Entwürfe, der Probe und den Kosten](../../../../../eng-us/help/images/trainers/ei-models.webp)
+![Models and providers: jedes Modell mit seinen Werkzeugen, der Berechtigung für Entwürfe, der Probe und den Kosten](../../../bilder/trainers/ei-models.webp)
 
 ## Quiz
 
