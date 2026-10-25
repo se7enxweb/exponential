@@ -170,6 +170,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Benutzerkonten prüfen](benutzerpflege.md)
 - [Ihre Geräte: angemeldete Sitzungen je Benutzer, endgültig abgemeldet, eine E-Mail über ein neues Gerät](benutzersitzungen.md)
 - [Signierte Links in der E-Mail „Neuer Benutzer registriert“](admin-links-der-registrierung.md)
+- [Administratoren geben neue Redakteurskonten frei](freigabe-von-redakteurskonten.md)
 - [Rollen: IDs der Richtlinien, Sortierung und Schaltflächen für die Reihenfolge](reihenfolge-der-richtlinien-einer-rolle.md)
 - [Die Benutzer und Gruppen einer Rolle, seitenweise](seitenweise-rollenzuweisungen.md)
 - [Berechtigungsprüfungen für Benutzer mit vielen Rollenzuweisungen](berechtigungspruefung-bei-vielen-zuweisungen.md)

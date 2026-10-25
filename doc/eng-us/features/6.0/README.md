@@ -165,6 +165,7 @@ nginx with PHP-FPM keep working as before.
 - [Check user accounts](user-hygiene.md)
 - [Your devices: signed-in sessions per user, signed out for good, an e-mail about a new device](user-sessions.md)
 - [Signed links in the "New user registered" mail](registration-admin-links.md)
+- [Administrators approve new editor accounts](editor-account-approval.md)
 - [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
 - [The users and groups of a role, a page at a time](role-assignment-paging.md)
 - [Permission checks for users with many role assignments](permission-checks-for-many-assignments.md)

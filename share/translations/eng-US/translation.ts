@@ -40764,6 +40764,30 @@ your account.</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Class/attribute combinations (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>User groups whose new accounts need approval</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Users who approve the accounts</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Groups who approve the accounts</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>User groups that need no approval (their members publish such accounts directly; approvers never need it)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -55397,6 +55421,22 @@ your account.</translation>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute name</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Accounts that need approval</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail to the approvers</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -56806,6 +56846,14 @@ your account.</translation>
     <message>
         <source>Your comment was added.</source>
         <translation>Your comment was added.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>The account &quot;%1&quot; was approved and published: it can sign in now.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</translation>
     </message>
 </context>
 <context>
@@ -59076,6 +59124,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Mirror to data tables</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Approve user accounts</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>A new user account waits for your approval</translation>
     </message>
 </context>
 <context>
@@ -75740,6 +75796,53 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Browse the tables of the persistent classes…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>New user account waiting for approval: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Username</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Requested by</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Open the approval</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>If the button does not work, copy this address into your browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>A new user account waits for your approval</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>This mail was sent by %site because you approve new accounts of these groups.</translation>
     </message>
 </context>
 <context>

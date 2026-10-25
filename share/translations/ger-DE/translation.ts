@@ -44075,6 +44075,30 @@ Konto zu aktivieren.</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klasse/Attribut Kombination (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Benutzergruppen, deren neue Konten eine Freigabe brauchen</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Ein Konto, das in eine dieser Gruppen oder darunter veröffentlicht wird, wartet, bis ein Freigebender es annimmt. Vorher kann es sich nicht anmelden.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Benutzer, die die Konten freigeben</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Gruppen, die die Konten freigeben</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Benutzergruppen ohne Freigabe (ihre Mitglieder veröffentlichen solche Konten direkt; Freigebende brauchen nie eine)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Den Freigebenden eine E-Mail mit dem Link zur Freigabe senden (sie melden sich an, um freizugeben oder abzulehnen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -61831,6 +61855,22 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>ClassAttribute name</source>
         <translation>Name des Klassenattributs</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konten, die eine Freigabe brauchen</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-Mail an die Freigebenden</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -63515,6 +63555,14 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
     <message>
         <source>Your comment was added.</source>
         <translation>Ihr Kommentar wurde hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Das Konto „%1“ wurde freigegeben und veröffentlicht: es kann sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Das Konto „%1“ wurde abgelehnt. Es ist nicht veröffentlicht und kann sich nicht anmelden; es ist wieder ein Entwurf seines Autors.</translation>
     </message>
 </context>
 <context>
@@ -67763,6 +67811,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>In Datentabellen spiegeln</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Benutzerkonten freigeben</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ein neues Benutzerkonto wartet auf Ihre Freigabe</translation>
     </message>
 </context>
 <context>
@@ -82708,6 +82764,53 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Die Tabellen der persistenten Klassen ansehen …</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Neues Benutzerkonto wartet auf Freigabe: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Angefragt von</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Freigabe öffnen</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Wenn die Schaltfläche nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ein neues Benutzerkonto wartet auf Ihre Freigabe</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester hat das Konto „%name“ in %groups angelegt. Es ist nicht veröffentlicht und kann sich nicht anmelden, bis ein Freigebender es annimmt.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Melden Sie sich in der Administration an und geben Sie es in Ihrer Kollaborationsliste frei oder lehnen Sie es ab. Dieser Link meldet Sie nicht an und entscheidet selbst nichts.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Diese Mail wurde von %site gesendet, weil Sie neue Konten dieser Gruppen freigeben.</translation>
     </message>
 </context>
 <context>
