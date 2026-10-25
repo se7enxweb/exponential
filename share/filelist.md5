@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a32f8dba0acbb10b5ea0442693593a48  doc/changelogs/6.0/6.0.15.md
+33a1ca06a7f38005f2f862ae34e5ba06  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -20844,11 +20844,11 @@ e9d30140fbd42f2815532e7daf033609  extension/ezformtoken/README.rst
 53322d752c21521e6736059158a8dd4b  extension/ezformtoken/extension.xml
 d026b4b6493a2fbdafad45ce440bcce2  extension/ezformtoken/settings/debug.ini.append.php
 904cefcac39deefdc471b89751b82a85  extension/ezformtoken/settings/site.ini.append.php
-5caf171d63a1ec202a787443a851c7ca  extension/ezjscore/CHANGELOG
+52fbc67c659bc501f6e02c928b72f660  extension/ezjscore/CHANGELOG
 0636e73ff0215e8d672dc4c32c317bb3  extension/ezjscore/LICENSE
 d41d8cd98f00b204e9800998ecf8427e  extension/ezjscore/README
 8901b1cdb8d2fd269beef27e7322be09  extension/ezjscore/autoloads/ezjscaccesstemplatefunctions.php
-0c615b75c1f1e1889369d440cd847132  extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php
+90436fd2986e40587466477b1cfb1d04  extension/ezjscore/autoloads/ezjscencodingtemplatefunctions.php
 ee9aea63cc9b733e227085a7a46b6503  extension/ezjscore/autoloads/ezjscpackertemplatefunctions.php
 e50575f294cec5f05bd5539278cceb82  extension/ezjscore/autoloads/eztemplateautoload.php
 464c0bd32338160c0de864dbfd79d0cd  extension/ezjscore/classes/ajaxuploader/ezpajaxuploaderhandlerinterface.php
@@ -20860,7 +20860,7 @@ e182699a31b59c20ea1ba8a0801f3460  extension/ezjscore/classes/ezjsccachemanager.p
 ac3dd65ba7ed3f9a5b14ff27ebdd4746  extension/ezjscore/classes/ezjscjavascriptoptimizer.php
 8ff9ef69c4e8bca33334dc598334ad79  extension/ezjscore/classes/ezjscpacker.php
 1f9804412c3ba9cc36ec68bb52c2e242  extension/ezjscore/classes/ezjscserverfunctions.php
-ddae9e0236a6ee243cb653b346b757a2  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
+c43abc50f12bdb85274cec2820e19414  extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php
 018dec8d9a0a8011f55ff30d2e4c2702  extension/ezjscore/classes/ezjscserverfunctionsjs.php
 eee52e35e1b18f8394bc382b425cb655  extension/ezjscore/classes/ezjscserverfunctionsnode.php
 3e1a8dd82d3b15bd9675fd974097b7ce  extension/ezjscore/classes/ezjscserverfunctionspublishingqueue.php
@@ -24768,7 +24768,7 @@ b977ef5a409ff4c1d2e4c734c839d6e3  tests/tests/extension/expservices/users/expUse
 c2d1d9f4d1d3bfd48c427cac7ccaace7  tests/tests/extension/expservices/users/expUsersTestCase.php
 893aa82aa98f726b8c3707d41329e4f7  tests/tests/extension/ezflow/ezflowEditScriptTest.php
 63f1210778fca68d6548215d9865edef  tests/tests/extension/ezflow/js/ezflow_edit.js
-c9b0dea13595fbbbba7c216eb2124e20  tests/tests/extension/ezjscore/ezjscAjaxContentJsonTest.php
+f770f6887ead2724f148e7b2864e6975  tests/tests/extension/ezjscore/ezjscAjaxContentJsonTest.php
 1e974b3f938f94974e32b08b71f1c2f9  tests/tests/extension/ezjscore/ezjscPackerGeneratedContentTest.php
 a12c3e4b151896794176e0c9ca78d5ca  tests/tests/extension/ezjscore/ezjscPackerNoVersionQueryTest.php
 815c9c214d99424bb693376c627ac29b  tests/tests/extension/ezjscore/ezjscServerFunctionsAjaxUploaderAltTextTest.php

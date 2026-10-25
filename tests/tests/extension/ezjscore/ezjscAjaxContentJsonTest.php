@@ -10,6 +10,9 @@
  *  JSON-02  a value json_encode() cannot encode at all: the error object, never false or ''
  *  JSON-03  ezjscore/call with a server function returning invalid UTF-8: a decodable response with its content
  *  JSON-04  valid values are encoded exactly as before (json_encode() without flags)
+ *  JSON-05  the json_encode template operator with invalid UTF-8: valid JSON, never an empty value in the page
+ *  JSON-06  the ajax uploader's own JSON answers (the error with the exception message, the location form) use
+ *           jsonEncode(), so a file name that is not UTF-8 does not empty them
  *
  * The server function is a stand-in, so no kernel, database or siteaccess is needed.
  *
@@ -24,6 +27,7 @@ $ezjscoreRoot = dirname( __DIR__, 4 ) . '/extension/ezjscore';
 require_once $ezjscoreRoot . '/classes/ezjscserverrouter.php';
 require_once $ezjscoreRoot . '/classes/ezjscajaxcontent.php';
 require_once $ezjscoreRoot . '/classes/runnable/views/ezjscore/call.php';
+require_once $ezjscoreRoot . '/autoloads/ezjscencodingtemplatefunctions.php';
 unset( $ezjscoreRoot );
 
 /**
@@ -108,5 +112,27 @@ class ezjscAjaxContentJsonTest extends PHPUnit\Framework\TestCase
     {
         foreach ( array( array( 'a' => 'ä/ö "x"', 'b' => array( 1, 2.5, true, null ) ), 'text', 0, array(), '<b>&</b>' ) as $value )
             $this->assertSame( json_encode( $value ), ezjscAjaxContent::autoEncode( $value, 'json' ), var_export( $value, true ) );
+    }
+
+    /** JSON-05 */
+    public function testTheTemplateOperatorAnswersWithValidJSON()
+    {
+        $operators = new ezjscEncodingTemplateFunctions();
+        $value = null;
+        $operators->modify( null, 'json_encode', array(), '', '', $value, array( 'hash' => array( 'title' => self::BROKEN ) ) );
+        $this->assertIsString( $value );
+        $this->assertSame( array( 'title' => "Caf\u{FFFD} \u{FFFD}" ), json_decode( $value, true ) );
+
+        $value = null;
+        $operators->modify( null, 'json_encode', array(), '', '', $value, array( 'hash' => array( 'a' => 'ä "x"', 'n' => 3 ) ) );
+        $this->assertSame( json_encode( array( 'a' => 'ä "x"', 'n' => 3 ) ), $value, 'valid values as before' );
+    }
+
+    /** JSON-06 */
+    public function testTheUploaderAnswersThroughJsonEncode()
+    {
+        $source = file_get_contents( dirname( __DIR__, 4 ) . '/extension/ezjscore/classes/ezjscserverfunctionsajaxuploader.php' );
+        $this->assertSame( 2, substr_count( $source, 'return ezjscAjaxContent::jsonEncode(' ) );
+        $this->assertStringNotContainsString( 'return json_encode(', $source );
     }
 }
