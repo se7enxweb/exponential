@@ -51,9 +51,9 @@ Nach der Anmeldung sehen Sie das **Dashboard**: eine Begrüßung, Schnelllinks, 
 wartenden Objekte, kürzlich veröffentlichte Inhalte) und Listen aktueller Inhalte. Die Reiter oben führen zu den
 wichtigsten Bereichen:
 
-![Das Dashboard nach der Anmeldung: eine Begrüßung mit Schnelllinks, Zähler für Inhalte, Entwürfe und wartende Objekte sowie die Hauptreiter in der Kopfzeile](../../eng-us/help/images/getting-started/dashboard-overview.webp)
+![Das Dashboard nach der Anmeldung: eine Begrüßung mit Schnelllinks, Zähler für Inhalte, Entwürfe und wartende Objekte sowie die Hauptreiter in der Kopfzeile](bilder/getting-started/dashboard-overview.webp)
 
-![Die Kopfzeile der Administration mit hervorgehobenen Reitern Dashboard, Inhaltsstruktur, Medien, Benutzer, Shop, Layouts, Setup und Mehr](../../eng-us/help/images/getting-started/header-tabs.webp)
+![Die Kopfzeile der Administration mit hervorgehobenen Reitern Dashboard, Inhaltsstruktur, Medien, Benutzer, Shop, Layouts, Setup und Mehr](bilder/getting-started/header-tabs.webp)
 
 - **Inhaltsstruktur**: die Seiten der Site als Baum.
 - **Medien**: die Medienbibliothek mit Bildern, Dateien und Videos.
@@ -67,9 +67,9 @@ wichtigsten Bereichen:
 - geben Sie ein Wort in das Feld **Suchen...** oben ein und drücken Sie die Eingabetaste. [Suchen](suchen.md) zeigt
   weitere Wege.
 
-![Das Suchfeld rechts in der Kopfzeile, hervorgehoben](../../eng-us/help/images/getting-started/header-search.webp)
+![Das Suchfeld rechts in der Kopfzeile, hervorgehoben](bilder/getting-started/header-search.webp)
 
-![Die Seite des Ordners Fitness mit den hervorgehobenen Schaltflächen Bearbeiten, Hochladen, Import/Export, Verschieben, Kopieren und Entfernen](../../eng-us/help/images/getting-started/item-page-buttons.webp)
+![Die Seite des Ordners Fitness mit den hervorgehobenen Schaltflächen Bearbeiten, Hochladen, Import/Export, Verschieben, Kopieren und Entfernen](bilder/getting-started/item-page-buttons.webp)
 
 Klicken Sie auf den Namen eines Objekts, um es zu öffnen. Seine Seite zeigt den Inhalt des Objekts und die
 Schaltflächen für das, was Sie damit tun können: **Bearbeiten**, **Verschieben**, **Kopieren**, **Entfernen** und mehr.
@@ -85,7 +85,7 @@ unter **Meine Entwürfe** auf dem Dashboard. Sie haben es sich anders überlegt?
 Entwurf und lässt das veröffentlichte Objekt, wie es war.
 [Inhalte anlegen und bearbeiten](inhalte-bearbeiten.md) erklärt das Formular im Detail.
 
-![Der obere Teil des Bearbeitungsformulars mit den hervorgehobenen Schaltflächen Zur Veröffentlichung schicken, Entwurf speichern und beenden und Entwurf verwerfen](../../eng-us/help/images/getting-started/edit-buttons.webp)
+![Der obere Teil des Bearbeitungsformulars mit den hervorgehobenen Schaltflächen Zur Veröffentlichung schicken, Entwurf speichern und beenden und Entwurf verwerfen](bilder/getting-started/edit-buttons.webp)
 
 ## 5. Abmelden
 
@@ -94,7 +94,7 @@ Sie darauf zeigen, erscheinen **Abmelden** und Ihr Benutzername. Solange ein Obj
 die Schaltfläche ausgegraut: Schließen Sie die Bearbeitung zuerst ab oder verlassen Sie sie. Melden Sie sich an einem
 gemeinsam genutzten Computer immer ab.
 
-![Die Schaltfläche zum Abmelden, die letzte am rechten Ende der Kopfzeile, hervorgehoben](../../eng-us/help/images/getting-started/sign-out-button.webp)
+![Die Schaltfläche zum Abmelden, die letzte am rechten Ende der Kopfzeile, hervorgehoben](bilder/getting-started/sign-out-button.webp)
 
 ## Hilfe bekommen
 
@@ -104,7 +104,7 @@ gemeinsam genutzten Computer immer ab.
   sich, wenn Sie auf sie zeigen.
 - Wenn etwas defekt aussieht, lesen Sie [Wenn etwas schiefgeht](wenn-etwas-schiefgeht.md).
 
-![Das Hilfe-Center mit seinem Suchfeld und Schaltflächen, die die Hilfeseiten nach Zielgruppe filtern](../../eng-us/help/images/getting-started/help-dashboard.webp)
+![Das Hilfe-Center mit seinem Suchfeld und Schaltflächen, die die Hilfeseiten nach Zielgruppe filtern](bilder/getting-started/help-dashboard.webp)
 
 ## Vom Benutzer zum Entwickler
 

@@ -68,7 +68,7 @@ Regeln werden nach Priorität ausgewertet, und der erste Treffer gewinnt. Die h�
 nicht, weil eine breitere Regel mit höherer Priorität die Anfrage zuerst abfängt. Geben Sie spezifischen Regeln (ein
 Knoten) eine höhere Priorität als allgemeinen (ein Teilbaum, eine Klasse).
 
-![Layouts, Regeln: die Zuordnungen mit Priorität, Ziel, dem gewählten Layout und ob sie aktiviert sind](../../../../eng-us/help/images/layouts/rule-list.webp)
+![Layouts, Regeln: die Zuordnungen mit Priorität, Ziel, dem gewählten Layout und ob sie aktiviert sind](../../bilder/layouts/rule-list.webp)
 
 ## Rezepte
 

@@ -34,7 +34,7 @@ sich an einen Administrator.
 Der Reiter **Layouts** öffnet das **Layouts-Dashboard**: die Anzahl der Layouts, Zonen, Blöcke und Zuordnungen, die
 zuletzt geänderten Layouts und Schaltflächen für **Neues Layout**, **Layouts** und **Regeln** (die Zuordnungen).
 
-![Layouts, die Liste der Layouts mit ihrem Typ, Status und der Schaltfläche, um jedes im Editor zu öffnen](../../eng-us/help/images/layouts/layout-list.webp)
+![Layouts, die Liste der Layouts mit ihrem Typ, Status und der Schaltfläche, um jedes im Editor zu öffnen](bilder/layouts/layout-list.webp)
 
 **Layouts** listet jedes Layout mit seinem Bezeichner, Typ, Datum und der Anzahl seiner Zuordnungen auf. Jedes hat
 **Öffnen** (im Editor bearbeiten), **Vorschau** und **Löschen**. **Sortieren nach** und **Reihenfolge** ordnen die Liste.
@@ -45,7 +45,7 @@ Klicken Sie auf **Neues Layout**, wählen Sie einen **Layouttyp**, geben Sie ihm
 **Beschreibung** sind optional) und klicken Sie auf **Layout anlegen**. Der Editor öffnet sich mit den leeren Zonen
 dieses Typs.
 
-![Das Layouts-Dashboard mit hervorgehobener Schaltfläche Neues Layout, neben Layouts, Regeln, Template-Editor und Datenbank einrichten](../../eng-us/help/images/layouts/layouts-dashboard-buttons.webp)
+![Das Layouts-Dashboard mit hervorgehobener Schaltfläche Neues Layout, neben Layouts, Regeln, Template-Editor und Datenbank einrichten](bilder/layouts/layouts-dashboard-buttons.webp)
 
 ## Der Editor
 
@@ -105,7 +105,7 @@ wählen Sie **Caches leeren**, damit Besucher die Änderung sehen.
 Inhaltstyp oder ein Siteaccess). Es gewinnt die erste aktivierte Zuordnung nach Priorität, deren Ziele und Bedingungen
 auf eine Seite zutreffen. **Layout bearbeiten** öffnet das Layout einer Zuordnung; **Neue Zuordnung** fügt eine hinzu.
 
-![Der Reiter Layouts einer Seite: das Layout, das für sie ermittelt wird, mit Vorschau und Layout bearbeiten, und die Zuordnungen, die auf diesen Ort angewendet werden](../../eng-us/help/images/layouts/item-layouts-tab.webp)
+![Der Reiter Layouts einer Seite: das Layout, das für sie ermittelt wird, mit Vorschau und Layout bearbeiten, und die Zuordnungen, die auf diesen Ort angewendet werden](bilder/layouts/item-layouts-tab.webp)
 
 Zuordnungen zu ändern bestimmt, wie ganze Teile der Site aussehen. Wenn Sie unsicher sind, fragen Sie einen
 Site-Entwickler.
