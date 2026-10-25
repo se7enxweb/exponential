@@ -16,6 +16,7 @@ SELECT setval('exp_data_sync_id_seq',max(id)+1) FROM exp_data_sync;
 SELECT setval('exp_data_sync_conflict_id_seq',max(id)+1) FROM exp_data_sync_conflict;
 SELECT setval('exp_data_sync_link_id_seq',max(id)+1) FROM exp_data_sync_link;
 SELECT setval('expuser_session_id_seq',max(id)+1) FROM expuser_session;
+SELECT setval('exphelp_feedback_id_seq',max(id)+1) FROM exphelp_feedback;
 SELECT setval('ezcontentbrowserecent_id_seq',max(id)+1) FROM ezcontentbrowserecent;
 SELECT setval('ezcontentclass_attribute_id_seq',max(id)+1) FROM ezcontentclass_attribute;
 SELECT setval('ezcontentclassgroup_id_seq',max(id)+1) FROM ezcontentclassgroup;

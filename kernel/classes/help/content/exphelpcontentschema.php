@@ -344,6 +344,9 @@ class expHelpContentSchema
         // Opt-in: the context help JSON without login (exphelp/context) for public topics, for a public site or app
         if ( self::setting( 'AnonymousContextHelp', 'disabled' ) === 'enabled' )
             $anonymous[] = array( 'exphelp', 'context', array() );
+        // Opt-in: "Was this helpful?" under the public help (exphelp/feedback), for a site that shows its help publicly
+        if ( self::setting( 'AnonymousFeedback', 'disabled' ) === 'enabled' )
+            $anonymous[] = array( 'exphelp', 'feedback', array() );
         return array(
             self::ROLE_EDITOR => array(
                 array( 'content', 'read', $tree ),

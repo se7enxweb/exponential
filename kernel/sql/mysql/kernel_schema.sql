@@ -1417,6 +1417,35 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE exphelp_help_id (
+  help_id varchar(80) NOT NULL default '',
+  object_id int(11) NOT NULL default '0',
+  released int(11) NOT NULL default '0',
+  PRIMARY KEY  (help_id),
+  KEY exphelp_help_id_object (object_id)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exphelp_feedback (
+  created int(11) NOT NULL default '0',
+  help_id varchar(80) NOT NULL default '',
+  helpful int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  language varchar(20) NOT NULL default '',
+  object_id int(11) NOT NULL default '0',
+  reason varchar(32) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY exphelp_feedback_object (object_id,created),
+  KEY exphelp_feedback_created (created)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE ezproductcategory (
   id int(11) NOT NULL auto_increment,
   name varchar(255) NOT NULL default '',

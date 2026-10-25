@@ -645,3 +645,29 @@ CREATE TABLE IF NOT EXISTS expuser_session (
 ALTER TABLE ezprest_authcode
   ADD COLUMN code_challenge varchar(128) default NULL,
   ADD COLUMN code_challenge_method varchar(10) default NULL;
+
+-- Help maintained as content (doc/eng-us/features/6.0/help-content.md): exphelp_help_id records every help_id that
+-- was Released and the object it belongs to, so the validator reports a help_id that was renamed or reused (clients
+-- call it); exphelp_feedback keeps the answers to "Was this helpful?": the topic, yes or no, a reason from a fixed
+-- list and the day, nothing about who answered. Without the tables both features are off and every page works as
+-- before; ./console exp:help:content install creates them on any engine.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exphelp_help_id (
+  help_id varchar(80) NOT NULL default '',
+  object_id int(11) NOT NULL default '0',
+  released int(11) NOT NULL default '0',
+  PRIMARY KEY  (help_id),
+  KEY exphelp_help_id_object (object_id)
+) ENGINE=InnoDB;
+CREATE TABLE IF NOT EXISTS exphelp_feedback (
+  created int(11) NOT NULL default '0',
+  help_id varchar(80) NOT NULL default '',
+  helpful int(11) NOT NULL default '0',
+  id int(11) NOT NULL auto_increment,
+  language varchar(20) NOT NULL default '',
+  object_id int(11) NOT NULL default '0',
+  reason varchar(32) NOT NULL default '',
+  PRIMARY KEY  (id),
+  KEY exphelp_feedback_object (object_id,created),
+  KEY exphelp_feedback_created (created)
+) ENGINE=InnoDB;

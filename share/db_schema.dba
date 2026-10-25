@@ -7657,6 +7657,135 @@ $schema = array (
       ),
     ),
   ),
+  'exphelp_help_id' =>
+  array (
+    'name' => 'exphelp_help_id',
+    'fields' =>
+    array (
+      'help_id' =>
+      array (
+        'length' => 80,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'object_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'released' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'help_id',
+        ),
+      ),
+      'exphelp_help_id_object' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'object_id',
+        ),
+      ),
+    ),
+  ),
+  'exphelp_feedback' =>
+  array (
+    'name' => 'exphelp_feedback',
+    'fields' =>
+    array (
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'help_id' =>
+      array (
+        'length' => 80,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'helpful' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'id' =>
+      array (
+        'type' => 'auto_increment',
+        'default' => false,
+      ),
+      'language' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'object_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'reason' =>
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'id',
+        ),
+      ),
+      'exphelp_feedback_object' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'object_id',
+          1 => 'created',
+        ),
+      ),
+      'exphelp_feedback_created' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'created',
+        ),
+      ),
+    ),
+  ),
   'ezproductcategory' =>
   array (
     'name' => 'ezproductcategory',

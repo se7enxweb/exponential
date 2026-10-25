@@ -836,3 +836,30 @@ $$;
 --
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge character varying(128);
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge_method character varying(10);
+
+-- Help maintained as content (doc/eng-us/features/6.0/help-content.md): exphelp_help_id records every help_id that
+-- was Released and the object it belongs to, so the validator reports a help_id that was renamed or reused (clients
+-- call it); exphelp_feedback keeps the answers to "Was this helpful?": the topic, yes or no, a reason from a fixed
+-- list and the day, nothing about who answered. Without the tables both features are off and every page works as
+-- before; ./console exp:help:content install creates them on any engine.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exphelp_help_id (
+    help_id character varying(80) DEFAULT ''::character varying NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    released integer DEFAULT 0 NOT NULL,
+    CONSTRAINT exphelp_help_id_pkey PRIMARY KEY (help_id)
+);
+CREATE INDEX IF NOT EXISTS exphelp_help_id_object ON exphelp_help_id USING btree (object_id);
+CREATE SEQUENCE IF NOT EXISTS exphelp_feedback_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+CREATE TABLE IF NOT EXISTS exphelp_feedback (
+    created integer DEFAULT 0 NOT NULL,
+    help_id character varying(80) DEFAULT ''::character varying NOT NULL,
+    helpful integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('exphelp_feedback_id_seq'::text) NOT NULL,
+    language character varying(20) DEFAULT ''::character varying NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    reason character varying(32) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exphelp_feedback_pkey PRIMARY KEY (id)
+);
+CREATE INDEX IF NOT EXISTS exphelp_feedback_object ON exphelp_feedback USING btree (object_id, created);
+CREATE INDEX IF NOT EXISTS exphelp_feedback_created ON exphelp_feedback USING btree (created);

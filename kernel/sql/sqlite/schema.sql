@@ -844,6 +844,20 @@ CREATE TABLE `expuser_session` (
 ,  `user_agent` varchar(512) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `exphelp_help_id` (
+  `help_id` varchar(80) NOT NULL DEFAULT '' PRIMARY KEY
+,  `object_id` integer NOT NULL DEFAULT '0'
+,  `released` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exphelp_feedback` (
+  `created` integer NOT NULL DEFAULT '0'
+,  `help_id` varchar(80) NOT NULL DEFAULT ''
+,  `helpful` integer NOT NULL DEFAULT '0'
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `language` varchar(20) NOT NULL DEFAULT ''
+,  `object_id` integer NOT NULL DEFAULT '0'
+,  `reason` varchar(32) NOT NULL DEFAULT ''
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1369,6 +1383,9 @@ CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link ( sync_id, object_i
 CREATE UNIQUE INDEX expuser_session_token ON expuser_session ( token_hash );
 CREATE INDEX expuser_session_user ON expuser_session ( user_id, ended );
 CREATE INDEX expuser_session_active ON expuser_session ( ended, last_active );
+CREATE INDEX exphelp_help_id_object ON exphelp_help_id ( object_id );
+CREATE INDEX exphelp_feedback_object ON exphelp_feedback ( object_id, created );
+CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);
