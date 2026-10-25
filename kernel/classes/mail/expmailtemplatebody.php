@@ -68,7 +68,12 @@ class expMailTemplateBody
             $textPart->subType = 'plain';
             $htmlPart = new ezcMailText( $html, 'utf-8' );
             $htmlPart->subType = 'html';
-            $mail->Mail->body = new ezcMailMultipartAlternative( $textPart, $htmlPart );
+            $alternative = new ezcMailMultipartAlternative( $textPart, $htmlPart );
+            // The random boundary of the raw body, not the library's
+            // date( "YmdGHjs" ) . ':' . getmypid() . ':' . counter (ezcMailMultipart::generateBoundary()), which is
+            // predictable and wrote the PHP process id into every mail sent by SMTP
+            $alternative->boundary = $boundary;
+            $mail->Mail->body = $alternative;
         }
     }
 }
