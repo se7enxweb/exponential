@@ -112,7 +112,7 @@ die Administration. Sie lesen nur.
 - Es wurde kein Hintergrundlauf gestartet (der Abschnitt **Letzte Aktionen** zeigt nichts Neues).
 - Der Trainer prüft das, indem er jedes Paar bittet, einen Hinweis und seine Abhilfe zu erklären.
 
-![Das Newsletter-Dashboard: Abonnenten, Versand, Rückläufer, Jetzt ausführen und Zustellbarkeit](../../../../../eng-us/help/images/trainers/nl-dashboard.webp)
+![Das Newsletter-Dashboard: Abonnenten, Versand, Rückläufer, Jetzt ausführen und Zustellbarkeit](../../../bilder/trainers/nl-dashboard.webp)
 
 ## Quiz
 

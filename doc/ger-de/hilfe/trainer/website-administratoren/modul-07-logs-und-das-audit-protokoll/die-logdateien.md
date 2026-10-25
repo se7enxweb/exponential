@@ -130,7 +130,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, in einem Terminal im Wurzelverz
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer die eigene 404-Zeile laut vorlesen und das
   Feld des Grundes erklären lässt.
 
-![Zustand der Logs: jede Logdatei mit ihrer Größe, ihrem Wachstum und der letzten Änderung](../../../../../eng-us/help/images/trainers/sa-log-health.webp)
+![Zustand der Logs: jede Logdatei mit ihrer Größe, ihrem Wachstum und der letzten Änderung](../../../bilder/trainers/sa-log-health.webp)
 
 ## Quiz
 

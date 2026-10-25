@@ -128,7 +128,7 @@ Browsern (oder einem normalen und einem privaten Fenster).
   `SessionTimeout`.
 - Der Trainer prüft, indem er eine Person erklären lässt, was sie nach einer echten Kontoübernahme noch tun würde.
 
-![Sitzungsverwaltung: Sitzungen mit Anmeldung in der letzten Stunde, am letzten Tag und während der Sitzungsdauer](../../../../../eng-us/help/images/trainers/sa-sessions.webp)
+![Sitzungsverwaltung: Sitzungen mit Anmeldung in der letzten Stunde, am letzten Tag und während der Sitzungsdauer](../../../bilder/trainers/sa-sessions.webp)
 
 ## Quiz
 

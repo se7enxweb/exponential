@@ -113,7 +113,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Trainer prüft das, indem er **Benutzerkonten prüfen** öffnet (Lektion 2.4 zeigt die Seite) oder die Gruppe
   `Training team` jeder Person.
 
-![Die Gruppe Administrator users mit ihren Konten und Neu erstellen für einen neuen Benutzer](../../../../../eng-us/help/images/trainers/sa-admin-group.webp)
+![Die Gruppe Administrator users mit ihren Konten und Neu erstellen für einen neuen Benutzer](../../../bilder/trainers/sa-admin-group.webp)
 
 ## Quiz
 

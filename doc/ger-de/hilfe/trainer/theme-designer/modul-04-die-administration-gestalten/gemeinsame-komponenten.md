@@ -165,7 +165,7 @@ Schulungs-Administrator.
 - Schritt 10: kein Treffer.
 - Der Trainer prüft das Dashboard einer Person im hellen und im dunklen Modus am Projektor.
 
-![Eine aus den gemeinsamen Komponenten gebaute Seite: Zählerkarten, eine Filterleiste, Schaltflächen und Karten](../../../../../eng-us/help/images/trainers/td-components.webp)
+![Eine aus den gemeinsamen Komponenten gebaute Seite: Zählerkarten, eine Filterleiste, Schaltflächen und Karten](../../../bilder/trainers/td-components.webp)
 
 ## Quiz
 

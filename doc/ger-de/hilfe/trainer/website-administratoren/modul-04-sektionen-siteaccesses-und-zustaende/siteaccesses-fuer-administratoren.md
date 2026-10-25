@@ -116,7 +116,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 - Schritt 9: `HostMatchMethod=start` (oder der Eintrag `HostMatchMapItems[]=www.example.com;site;start`).
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer die Zuordnungstabelle laut erklären lässt.
 
-![Der Kasten Oberfläche, in dem sich das Administrationsdesign des Siteaccess admin umschalten lässt](../../../../../eng-us/help/images/trainers/sa-siteaccesses.webp)
+![Der Kasten Oberfläche, in dem sich das Administrationsdesign des Siteaccess admin umschalten lässt](../../../bilder/trainers/sa-siteaccesses.webp)
 
 ## Quiz
 

@@ -93,7 +93,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 - Die Teilnehmenden können sagen, wo die Fußzeile der Schulungs-Website bearbeitet wird.
 - Der Trainer prüft das mit der Frage, wo jemand die Telefonnummer in der Fußzeile ändern würde.
 
-![Gemeinsame Layouts, etwa die Kopf- und Fußzeile, mit denen andere Layouts verknüpft sind](../../../../../eng-us/help/images/trainers/ly-shared.webp)
+![Gemeinsame Layouts, etwa die Kopf- und Fußzeile, mit denen andere Layouts verknüpft sind](../../../bilder/trainers/ly-shared.webp)
 
 ## Quiz
 

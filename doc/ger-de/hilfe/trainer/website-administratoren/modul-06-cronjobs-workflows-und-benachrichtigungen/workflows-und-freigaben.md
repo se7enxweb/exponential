@@ -126,9 +126,9 @@ von Train the Trainer).
 - Der Trainer prüft das, indem er alle Teilnehmenden die auf **Kein Workflow** zurückgesetzte Trigger-Zeile zeigen
   lässt.
 
-![Wartende Workflow-Prozesse, zum Beispiel auf eine Freigabe oder den Workflow-Cronjob](../../../../../eng-us/help/images/trainers/sa-workflow-processes.webp)
+![Wartende Workflow-Prozesse, zum Beispiel auf eine Freigabe oder den Workflow-Cronjob](../../../bilder/trainers/sa-workflow-processes.webp)
 
-![Trigger: welcher Workflow vor oder nach dem Veröffentlichen und anderen Vorgängen läuft](../../../../../eng-us/help/images/trainers/sa-triggers.webp)
+![Trigger: welcher Workflow vor oder nach dem Veröffentlichen und anderen Vorgängen läuft](../../../bilder/trainers/sa-triggers.webp)
 
 ## Quiz
 

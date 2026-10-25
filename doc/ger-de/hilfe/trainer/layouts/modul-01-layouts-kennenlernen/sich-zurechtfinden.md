@@ -103,7 +103,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto. In diese
 - Die Teilnehmenden haben eine Vorschau gesehen und den visuellen Editor nicht geöffnet.
 - Der Trainer prüft das, indem er eine Person bittet, am Beamer die Zuordnung eines genannten Layouts zu finden.
 
-![Das Layouts-Dashboard: Zahlen und die neuesten Layouts](../../../../../eng-us/help/images/trainers/ly-dashboard.webp)
+![Das Layouts-Dashboard: Zahlen und die neuesten Layouts](../../../bilder/trainers/ly-dashboard.webp)
 
 ## Quiz
 

@@ -114,7 +114,7 @@ Installation am Beamer.
 - Der Trainer prüft die kurze Antwort aus Schritt 9: Darin erscheint keine Adresse, keine IP und kein Login von
   irgendjemandem.
 
-![Die Fehlerübersicht der Logdateien](../../../../../eng-us/help/images/trainers/sa-log-digest.webp)
+![Die Fehlerübersicht der Logdateien](../../../bilder/trainers/sa-log-digest.webp)
 
 ## Quiz
 

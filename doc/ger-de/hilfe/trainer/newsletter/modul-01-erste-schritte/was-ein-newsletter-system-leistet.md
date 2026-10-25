@@ -122,7 +122,7 @@ Sie ändern nichts.
   erhält“ zeigen.
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, ihre Zeichnung dem Raum zu erklären.
 
-![Die Übersichtszeile des Newsletter-Dashboards: Listen, Abonnenten, Ausgaben und Adressen auf der Sperrliste](../../../../../eng-us/help/images/trainers/nl-what.webp)
+![Die Übersichtszeile des Newsletter-Dashboards: Listen, Abonnenten, Ausgaben und Adressen auf der Sperrliste](../../../bilder/trainers/nl-what.webp)
 
 ## Quiz
 
