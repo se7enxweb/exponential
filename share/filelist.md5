@@ -25367,6 +25367,7 @@ ae30bcf264ae9a0e1b6e2e582bb0e469  tests/tests/kernel/classes/setup/SessionPageTe
 92a6d3706f71b2bd0c5bc38d4c500e70  tests/tests/kernel/classes/setup/SetupRemoteIndexSanitizingTest.php
 6c464bc501b547eae3d4ffb37aa5e3c9  tests/tests/kernel/classes/setup/SetupRunCommandAuditTest.php
 5c009c5724a7a3da87cb98dadbfe917b  tests/tests/kernel/classes/setup/SetupWizardGuardTest.php
+000ebc789eace72e641b6cd2c735e5f2  tests/tests/kernel/classes/setup/expComposerKernelRequirementsTest.php
 be124ca8bd5eed793ebfb648619273d6  tests/tests/kernel/classes/setupsteps/eZSetupCheckFunctionsTest.php
 ff0f446447b511ded16794509df958e8  tests/tests/kernel/classes/setupsteps/eZSetupStepTestHelper.php
 9b06f6476b309fd2b41458004178fa7f  tests/tests/kernel/classes/setupsteps/eZSetupStepsTest.php
