@@ -120,7 +120,7 @@
 {def $root_node_value=ezini( 'LocationSettings', 'RootNode', 'upload.ini' )
      $root_node=cond( $root_node_value|is_numeric, fetch( content, node, hash( node_id, $root_node_value ) ),
                       fetch( content, node, hash( node_path, $root_node_value ) ) )
-     $content_object=fetch( content, object, hash( object_id, $upload.content.object_id ) )
+     $content_object=cond( $upload.content.object_id, fetch( content, object, hash( object_id, $upload.content.object_id ) ), false() )
      $selection_list=fetch( 'content', 'tree',
                             hash( 'parent_node_id', $root_node.node_id,
                             'class_filter_type', include,

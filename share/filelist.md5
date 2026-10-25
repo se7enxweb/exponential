@@ -479,7 +479,7 @@ c58456f930801986a94ae1c6a68e4fdc  design/admin/templates/content/searchresult.tp
 309adfdcc06a0f07b383af5304df8de8  design/admin/templates/content/translations.tpl
 a6d41195785a916df4a2080e5a1b22a7  design/admin/templates/content/translationview.tpl
 869d039b7708fc0e8406a77482dbab81  design/admin/templates/content/trash.tpl
-74ad82a1dab143d1ad065e5b736e5c94  design/admin/templates/content/upload.tpl
+1c642378bc9c444d9d413a309d3b92eb  design/admin/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin/templates/content/upload_related.tpl
 2268e2aed392f8db552bbcafa5e5f060  design/admin/templates/content/urlalias.tpl
 8f54b61900e936316e288784041a3e64  design/admin/templates/content/urlalias_global.tpl
@@ -1255,7 +1255,7 @@ f5c05b96a0d08b1c2aa472d971a245c2  design/admin4/templates/content/translationnew
 c60276c0a804238b6e5f375ccf4a61c5  design/admin4/templates/content/translations.tpl
 8caf05a5b6bc6888134513ff5bae283e  design/admin4/templates/content/translationview.tpl
 2717e66ac3198bb58afe5fc47b8e8f9f  design/admin4/templates/content/trash.tpl
-d25e984e2699170bf8c0ca5783fb8984  design/admin4/templates/content/upload.tpl
+704fc75a9e48e2b0b7c856b81111e841  design/admin4/templates/content/upload.tpl
 38726927dee8a4db82d729a58882095d  design/admin4/templates/content/upload_related.tpl
 d4ea512230c6acc13a64853ef398c540  design/admin4/templates/content/urlalias.tpl
 9209070205fabf225bec8dc1969d491b  design/admin4/templates/content/urlalias_global.tpl
@@ -2630,7 +2630,7 @@ cd6f4309bdb5cdf9bbe417dd3c9aa8d6  design/standard/templates/content/tipafriendma
 80f7bc7450980c4ab7e2ef338cc2f857  design/standard/templates/content/translationnew.tpl
 5f1bf52ccd64bc0dc8d4e035ca9a6727  design/standard/templates/content/translations.tpl
 7a3e66f1bb50842e1041535434bf3593  design/standard/templates/content/trash.tpl
-cc031d3e2410ff2c70d59474916af59c  design/standard/templates/content/upload.tpl
+b41e05ef792c2323fbb5a7d8505e92e9  design/standard/templates/content/upload.tpl
 e1cf9d9dbc6d8f877f9cc71f0eac648e  design/standard/templates/content/upload_related.tpl
 8612bf2825286dbd233f6d0afefe42a7  design/standard/templates/content/version/view/full.tpl
 9b4d0712d235203826416f9eef41aa89  design/standard/templates/content/version/view/plain.tpl
@@ -21744,7 +21744,7 @@ e3bb8168c289a73ea00fe69b91fab66b  kernel/classes/ezcontentobjecttrashnode.php
 80199925e216a4e4328ed2bc7f977ed4  kernel/classes/ezcontentobjecttreenode.php
 eb03c6d6dfbd43ec77d0262bb67f0c97  kernel/classes/ezcontentobjecttreenodeoperations.php
 2f030c045fd3fad90ba7068db4481958  kernel/classes/ezcontentobjectversion.php
-01331d4eaa61e9c8e51519380dcb9b0d  kernel/classes/ezcontentupload.php
+57a0ea5f5dfe546aa77125276ad5f7c8  kernel/classes/ezcontentupload.php
 908a9d23c197d5b893c609bdaa444433  kernel/classes/ezcontentuploadhandler.php
 9662925adfb7aaf224b0b8ad868b2a6d  kernel/classes/ezdatatype.php
 6576a4796232913482631fe770f35b33  kernel/classes/ezdbgarbagecollector.php

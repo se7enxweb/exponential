@@ -109,6 +109,14 @@ class eZContentUpload
             return $this->Parameters[$attributeName];
         }
 
+        // An upload parameter this upload was started without (content/upload opened directly has
+        // none): the upload view reads them to decide, so "not set" is an answer, not an error.
+        if ( in_array( $attributeName, self::$UploadParameters ) ||
+             ( is_array( $this->Parameters ) && array_key_exists( $attributeName, $this->Parameters ) ) )
+        {
+            return null;
+        }
+
         eZDebug::writeError( "Attribute '$attributeName' does not exist", __METHOD__ );
         return null;
     }
@@ -1484,6 +1492,13 @@ class eZContentUpload
     /// \privatesection
     /// The upload parameters.
     public $Parameters = false;
+
+    /// The parameters an upload can be started with (see upload()), each optional for the views
+    private static $UploadParameters = array( 'action_name', 'result_action_name', 'result_action_parameters',
+                                              'navigation_part_identifier', 'type', 'return_type',
+                                              'upload_custom_action', 'custom_action_data', 'description_template',
+                                              'parent_nodes', 'persistent_data', 'result_uri', 'result_module',
+                                              'cancel_uri', 'keys', 'ui_context', 'url' );
 }
 
 ?>
