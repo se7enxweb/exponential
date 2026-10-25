@@ -128,7 +128,7 @@ Die vollständige Liste steht unter [Was es gibt und was nicht](was-es-gibt-und-
 Die vollständige Lesereihenfolge ist der [Lesepfad](lesepfad-fuer-privatpersonen.md). Kurze Antworten stehen in den
 [FAQ](faq-fuer-privatpersonen.md), und die Begriffe werden im [Glossar](glossar-fuer-privatpersonen.md) erklärt.
 
-![Das Dashboard der Administration von Exponential](../../../eng-us/help/images/admin-dashboard.webp)
+![Das Dashboard der Administration von Exponential](../bilder/admin-dashboard.webp)
 
 ## Weitere Bereiche dieser Hilfe
 

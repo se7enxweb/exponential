@@ -32,7 +32,7 @@ Jeder Benutzer, der Inhalte bearbeiten kann. Sie sehen nur Ihre eigenen Entwürf
 5. Um Entwürfe zu verwerfen, markieren Sie sie und klicken Sie auf **Ausgewählte entfernen**. **Alte Entwürfe
    entfernen** entfernt jeden Entwurf, der älter ist als das Alter, das Sie wählen.
 
-![Meine Entwürfe mit dem Suchformular und der Liste der Entwürfe](../../../eng-us/help/manual/images/my-drafts.webp)
+![Meine Entwürfe mit dem Suchformular und der Liste der Entwürfe](bilder/my-drafts.webp)
 
 ## Was schiefgehen kann
 

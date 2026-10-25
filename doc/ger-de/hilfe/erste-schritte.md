@@ -40,7 +40,7 @@ Redakteure, [In der Administration anmelden](anmelden-in-der-administration.md) 
    Telefon oder aus Ihrer E-Mail. Siehe
    [Ihr Konto und die Anmeldung](konten-und-anmeldung.md#zweistufige-anmeldung).
 
-![Die Anmeldeseite der Administration](../../eng-us/help/images/sign-in.webp)
+![Die Anmeldeseite der Administration](bilder/sign-in.webp)
 
 Passwort vergessen? Wählen Sie **Passwort vergessen?** unter der Schaltfläche. Siehe
 [Ihr Konto und die Anmeldung](konten-und-anmeldung.md#wenn-sie-ihr-passwort-vergessen-haben).

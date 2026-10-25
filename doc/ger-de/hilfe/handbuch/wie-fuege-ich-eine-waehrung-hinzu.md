@@ -30,7 +30,7 @@ Benutzer, deren Rolle `shop/administrate` hat.
    auf **Auto-Preis aktualisieren**.
 7. Wählen Sie im linken Menü unter **Bevorzugte Währung** die Währung, die Besucher zuerst sehen.
 
-![Die Seite Währungen des Tabs Shop mit der Schaltfläche Neue Währung](../../../eng-us/help/manual/images/store-currencies.webp)
+![Die Seite Währungen des Tabs Shop mit der Schaltfläche Neue Währung](bilder/store-currencies.webp)
 
 ## Was schiefgehen kann
 

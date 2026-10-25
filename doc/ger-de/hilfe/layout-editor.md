@@ -49,7 +49,7 @@ dieses Typs.
 
 ## Der Editor
 
-![Der Layout-Editor mit einem leeren zweispaltigen Layout](../../eng-us/help/images/layouts-editor.webp)
+![Der Layout-Editor mit einem leeren zweispaltigen Layout](bilder/layouts-editor.webp)
 
 - **Oben**: der Name des Layouts (klicken Sie auf den Stift, um ihn umzubenennen), **Verwerfen**, **Abbrechen**,
   **Layout veröffentlichen** und das Menü mit drei Punkten: **Veröffentlichen und weiter bearbeiten** und **Entwurf speichern und schließen**.

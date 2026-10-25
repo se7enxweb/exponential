@@ -31,7 +31,7 @@ Wird ein Entwurf veröffentlicht, wird die zuvor veröffentlichte Version archiv
 eine begrenzte Zahl von Versionen auf; ist die Grenze erreicht, wird die älteste archivierte Version entfernt, um
 Platz zu schaffen.
 
-![Die Versionen eines Artikels mit dem Status jeder Version: veröffentlicht, archiviert oder Entwurf](../../eng-us/help/images/publishing/version-history.webp)
+![Die Versionen eines Artikels mit dem Status jeder Version: veröffentlicht, archiviert oder Entwurf](bilder/publishing/version-history.webp)
 
 ## Veröffentlichen
 
@@ -39,7 +39,7 @@ Klicken Sie im Bearbeitungsformular auf **Zur Veröffentlichung schicken**. Auf 
 sofort sichtbar. Verwendet Ihre Site für Ihre Rolle oder diesen Bereich der Site eine **Freigabe**, wird die Version
 stattdessen **ausstehend** und erst veröffentlicht, wenn jemand sie freigibt.
 
-![Zur Veröffentlichung schicken, umrandet, neben Entwurf speichern und beenden und Entwurf verwerfen oben im Bearbeitungsformular](../../eng-us/help/images/publishing/publish-buttons.webp)
+![Zur Veröffentlichung schicken, umrandet, neben Entwurf speichern und beenden und Entwurf verwerfen oben im Bearbeitungsformular](bilder/publishing/publish-buttons.webp)
 
 Um ohne Veröffentlichen aufzuhören:
 
@@ -53,7 +53,7 @@ begonnen und noch nicht veröffentlicht haben. Öffnen Sie einen, um daran weite
 die Sie nicht mehr brauchen. Das Entfernen des Entwurfs eines neuen Objekts entfernt auch dieses neue Objekt, das ja
 nie veröffentlicht wurde.
 
-![Meine Entwürfe mit einem gespeicherten Entwurf eines Artikels, seiner Version, Sprache und letzten Änderung](../../eng-us/help/images/publishing/my-drafts.webp)
+![Meine Entwürfe mit einem gespeicherten Entwurf eines Artikels, seiner Version, Sprache und letzten Änderung](bilder/publishing/my-drafts.webp)
 
 ### Meine Warteliste
 
@@ -61,7 +61,7 @@ nie veröffentlicht wurde.
 noch zurückhält, sowie, falls Sie Inhalte freigeben, die Versionen, die auf Ihre Freigabe warten. Öffnen Sie die
 Freigabe, um ihre Kommentare zu lesen oder freizugeben.
 
-![Meine Warteliste, die Liste der Versionen, die ein Workflow noch zurückhält](../../eng-us/help/images/publishing/my-pending-items.webp)
+![Meine Warteliste, die Liste der Versionen, die ein Workflow noch zurückhält](bilder/publishing/my-pending-items.webp)
 
 Alle Einzelheiten finden Sie unter [Meine Entwürfe und meine Warteliste](../anleitungen/entwuerfe-und-ausstehende-objekte.md).
 
@@ -70,9 +70,9 @@ Alle Einzelheiten finden Sie unter [Meine Entwürfe und meine Warteliste](../anl
 Klicken Sie auf der Seite des Objekts auf **Versionen verwalten** (die runde Schaltfläche mit einer Uhr) oder wählen
 Sie **Versionen verwalten** in der linken Spalte des Bearbeitungsformulars. Die Versionsseite öffnet sich:
 
-![Die Versionsseite eines Objekts](../../eng-us/help/images/versions.webp)
+![Die Versionsseite eines Objekts](bilder/versions.webp)
 
-![Die Schaltfläche Versionen verwalten, eine runde Schaltfläche mit einer Uhr, umrandet auf der Seite eines Artikels](../../eng-us/help/images/publishing/versions-button.webp)
+![Die Schaltfläche Versionen verwalten, eine runde Schaltfläche mit einer Uhr, umrandet auf der Seite eines Artikels](bilder/publishing/versions-button.webp)
 
 - **Übersicht**: wie viele Versionen es gibt, veröffentlichte, archivierte und Ihre Entwürfe.
 - **Filter und Reihenfolge**: alle Versionen oder nur einen Status zeigen, die neuesten oder die ältesten zuerst.
@@ -99,12 +99,12 @@ darunter. Verwenden Sie das für Inhalte, die noch nicht fertig sind oder eine Z
 - Kreuzen Sie in einer Liste **Unterelemente** Objekte an und wählen Sie **Weitere Aktionen** > **Auswahl
   verstecken** oder **Auswahl einblenden**.
 
-![Das Untermenü Fortgeschritten eines Objekts im Baum mit umrandetem Verstecken / Zeigen](../../eng-us/help/images/publishing/tree-menu-hide.webp)
+![Das Untermenü Fortgeschritten eines Objekts im Baum mit umrandetem Verstecken / Zeigen](bilder/publishing/tree-menu-hide.webp)
 
 Versteckte Objekte sind im Baum und in Listen gekennzeichnet, und die Plakette neben dem Typ auf der Seite des
 Objekts zeigt seine Sichtbarkeit.
 
-![Der Titel der Seite eines Objekts mit seinem Typ und der umrandeten Plakette Sichtbar](../../eng-us/help/images/publishing/visibility-badge.webp)
+![Der Titel der Seite eines Objekts mit seinem Typ und der umrandeten Plakette Sichtbar](bilder/publishing/visibility-badge.webp)
 
 ## Entfernen und wiederherstellen
 
@@ -121,7 +121,7 @@ Der **Papierkorb** steht unten im Baum in der linken Spalte. Er listet die entfe
 wer sie entfernt hat, wann und wo sie sich befanden. Filter grenzen die Liste nach der Person, die sie entfernt hat,
 nach ihrem Typ und nach dem Datum ein.
 
-![Der obere Teil des Papierkorbs: wie viele Objekte er enthält und die Filter In den Papierkorb verschoben von, Typ und Zeitraum](../../eng-us/help/images/publishing/trash-filters.webp)
+![Der obere Teil des Papierkorbs: wie viele Objekte er enthält und die Filter In den Papierkorb verschoben von, Typ und Zeitraum](bilder/publishing/trash-filters.webp)
 
 - **Wiederherstellen** holt ein Objekt zurück. Gibt es seine ursprüngliche Stelle noch, kehrt es dorthin zurück;
   liegt diese Stelle ebenfalls im Papierkorb, stellen Sie zuerst das übergeordnete Objekt wieder her; andernfalls
