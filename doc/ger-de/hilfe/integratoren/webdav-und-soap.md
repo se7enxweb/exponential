@@ -55,6 +55,29 @@ FolderClasses[]=folder
 > Testen Sie mit dem Client, den Ihr Kunde wirklich verwenden wird, bevor Sie es zusagen; Desktop-Clients gehen
 > unterschiedlich mit Sperren um.
 
+### Berechtigungen (seit 6.0.15)
+
+Was ein WebDAV-Benutzer sehen und ändern darf, wird wie im Web in zwei Schritten entschieden:
+
+| Anfrage | Wer darf | Antwort bei Ablehnung |
+|---|---|---|
+| Die Wurzel `/` (die Liste der Siteaccesses) | jeder, ohne Anmeldung | - |
+| Alles unterhalb von `/<siteaccess>/`, auch Lesen | ein angemeldeter Benutzer mit `user/login` für diesen Siteaccess (die SiteAccess-Begrenzung der Richtlinie) | `401` ohne oder mit falschen Zugangsdaten, `403` ohne `user/login` dort |
+| Einen Ordner oder eine Datei lesen | `content/read` auf dem Knoten | `404`: ein Knoten, den der Benutzer nicht lesen darf, wird weder gelistet noch gezeigt |
+| PUT, MKCOL | `content/create` (eine neue Datei, ein neuer Ordner) oder `content/edit` (eine ersetzte Datei) unterhalb des Ordners | `403`; nichts wird gespeichert |
+| DELETE | `content/remove` | `403`; nichts wird entfernt |
+| COPY, MOVE | die Rechte desselben Kopierens oder Verschiebens in der Administration (`content/create` am Ziel) | `403`; COPY oder MOVE zwischen zwei Siteaccesses wird immer abgelehnt |
+
+Bis 6.0.15 wurde jedes Lesen vor der Prüfung der Richtlinien erlaubt, und ein abgelehntes PUT, MKCOL, DELETE, COPY oder
+MOVE wurde mit `201` oder `204` beantwortet: der Client zeigte einen Erfolg, und die Änderung ging verloren. Prüfen Sie,
+dass WebDAV-Benutzer `user/login` für den Siteaccess haben, den sie verwenden (`/<siteaccess>/` im WebDAV-Pfad), wie sie
+es auch für das Web brauchen.
+
+"Identität bestätigen" wird bei WebDAV nie gefragt: es gehört zu Aktionen in der Weboberfläche. Ein zweiter
+Anmeldeschritt wird nur gefragt, wo die Site WebDAV einbezieht (`Guard[]=webdav`), siehe
+[zweiter Schritt auf anderen Anmeldewegen](../../funktionen/6.0/zweiter-schritt-auf-anderen-anmeldewegen.md); ein Konto
+ohne seine Zeile in `ezuser_setting` kann sich nicht anmelden.
+
 ## SOAP
 
 Der Einstiegspunkt ist `soap.php`. Die Bibliothek ist `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, Envelope,

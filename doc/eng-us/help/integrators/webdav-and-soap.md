@@ -53,6 +53,28 @@ FolderClasses[]=folder
 > Your web server must send WebDAV requests to `webdav.php` (a rewrite rule or a separate virtual host). Test with the
 > client your customer will really use before promising it; desktop clients differ in how they handle locks.
 
+### Permissions (since 6.0.15)
+
+What a WebDAV user may see and change is decided as on the web, in two steps:
+
+| Request | Who may | Answer when refused |
+|---|---|---|
+| The root `/` (the list of siteaccesses) | everybody, without signing in | - |
+| Anything below `/<siteaccess>/`, reading too | a signed-in user with `user/login` for that siteaccess (the policy's SiteAccess limitation) | `401` without or with wrong credentials, `403` without `user/login` there |
+| Reading a folder or file | `content/read` on the node | `404`: a node the user may not read is not listed and not shown |
+| PUT, MKCOL | `content/create` (a new file or folder) or `content/edit` (a replaced file) below the folder | `403`; nothing is stored |
+| DELETE | `content/remove` | `403`; nothing is removed |
+| COPY, MOVE | the rights of the same copy or move in the administration (`content/create` at the destination) | `403`; COPY or MOVE between two siteaccesses is always refused |
+
+Until 6.0.15 every read was granted before the policy check, and a refused PUT, MKCOL, DELETE, COPY or MOVE was
+answered with `201` or `204`: the client showed a success and the change was lost. Check that WebDAV users have
+`user/login` for the siteaccess they use (`/<siteaccess>/` in the WebDAV path), as they need for the web.
+
+"Verify it's you" is never asked on WebDAV: it belongs to actions in the web interface. A second sign-in step is asked
+only where the site opts WebDAV in (`Guard[]=webdav`), see
+[second sign-in step on other sign-in paths](../../features/6.0/second-factor-on-other-sign-in-paths.md); an account
+without its `ezuser_setting` row cannot sign in.
+
 ## SOAP
 
 The entry point is `soap.php`. The library is `lib/ezsoap/classes/` (`eZSOAPServer`, `eZSOAPClient`, envelope,

@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-993a8e8502c9f1bcaeccb613fa7b454f  doc/changelogs/6.0/6.0.15.md
+bc9fc0744bfd6f0e490ec3fc84a41221  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -10077,7 +10077,7 @@ a627247c853dce82d5b06e055e572acd  doc/eng-us/help/integrators/syndication-betwee
 09d924e598a90d4c808fd3b26dc9c803  doc/eng-us/help/integrators/testing-integrations.md
 247bb915d78f0a9441c1b2ae2e653a02  doc/eng-us/help/integrators/upgrades-without-breaking-integrations.md
 501ca0774b554c58930114335c73b430  doc/eng-us/help/integrators/velocity-and-performance-for-integrations.md
-547a386fa912d7d744ab841a50e4be4c  doc/eng-us/help/integrators/webdav-and-soap.md
+9c1cd56cc3a87778722690961a53ab4f  doc/eng-us/help/integrators/webdav-and-soap.md
 1a14cc46ca2370354063794245ffc950  doc/eng-us/help/integrators/what-integrators-do-with-exponential.md
 719d17210f1ea527e8b9eaccad844fdc  doc/eng-us/help/integrators/workflows-and-triggers-as-hooks.md
 e5e6c739439786c25d6c52fe3f97f25a  doc/eng-us/help/integrators/writing-an-export-or-outbound-sync.md
@@ -17138,7 +17138,7 @@ a4079eacdea5bab07b34149aae6bc586  doc/ger-de/hilfe/integratoren/upgrades-ohne-de
 2ce677a5304d762c3b64d55726373b3f  doc/ger-de/hilfe/integratoren/velocity-und-leistung-fuer-integrationen.md
 19f111a4fcd9966ee3699b8d5cfec93a  doc/ger-de/hilfe/integratoren/vorlage-fuer-eine-schnittstellenspezifikation.md
 22a826a91f1a769d447b83d233354a9d  doc/ger-de/hilfe/integratoren/was-integratoren-mit-exponential-tun.md
-025f0516b3922c4d3b6c2bc6584f3c4e  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
+29d305fb696891a71f7cd4d664f494ad  doc/ger-de/hilfe/integratoren/webdav-und-soap.md
 bbf44d6f18db0cd75a0c86e463043335  doc/ger-de/hilfe/integratoren/workflows-und-trigger-als-hooks.md
 fc494ee8d53fe23b6cbb2d1f6bd0506b  doc/ger-de/hilfe/integratoren/zahlungsanbieter-und-der-shop.md
 6d9d5cf3b3b53770d5938793a4e25344  doc/ger-de/hilfe/integratoren/zugangsdaten-fuer-eine-integration-waehlen.md
@@ -22884,7 +22884,7 @@ cbad7ff8cbff9c9526c8e5b03afc52d7  kernel/private/classes/views/workflow/processl
 db2a22f8e4fb77185b39ae42170e9fed  kernel/private/classes/views/workflow/view.php
 87156798d6fdd3cbc3e11b0eb02909ee  kernel/private/classes/views/workflow/workflowlist.php
 ac7f0afbf35787c24fb3bac4c8a49ac8  kernel/private/classes/webdav/expwebdavpathfactory.php
-9505033890d20cf998174326b9b5ee29  kernel/private/classes/webdav/ezwebdavcontentbackend.php
+552fd4bd5838688f9dfe59de3f950639  kernel/private/classes/webdav/ezwebdavcontentbackend.php
 58bfa419ff9c37595d50cae0aa42015c  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
 6d252912d19edc3b3120b059668fbe59  kernel/private/eztemplate/ezpattributeoperatorformatter.php
 b8448bbe375187aaa67945e723b56cbe  kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php
@@ -25604,6 +25604,7 @@ ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpConte
 69ed472b64dcf9aa536c72dc727301ee  tests/tests/kernel/private/expTreeMenuErrorStatusTest.php
 a78a4e2fe294915b07d65af9d98d599e  tests/tests/kernel/private/expWebdavAuthorizeTest.php
 57cc173e4d084a960d4643268599f3fd  tests/tests/kernel/private/expWebdavBackendRefusalTest.php
+701b4dc5244180f77166042f5ae0bb9e  tests/tests/kernel/private/expWebdavReadRefusalTest.php
 b6b6e540825226d42728ede902f6b71e  tests/tests/kernel/private/ezp_api/ezpcontent_regression.php
 d99d278d87120c88f0d79c961fc6ccdc  tests/tests/kernel/private/ezp_api/suite.php
 4da85a88c01da664a6eee41080c9ed23  tests/tests/kernel/private/ezpautoloadgenerator_test.php

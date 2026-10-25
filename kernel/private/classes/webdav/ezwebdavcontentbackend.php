@@ -287,7 +287,8 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $target = $this->splitFirstPathElement( $fullPath, $currentSite );
 
         $data = $this->getVirtualFolderData( $result, $currentSite, $target, $fullPath );
-        if ( $data['file'] )
+        // false: not found, or a node the user may not read (getContentNodeData())
+        if ( is_array( $data ) && $data['file'] )
         {
             $file = eZClusterFileHandler::instance( $data['file'] );
             //$this->cachedProperties[ $data['file'] ]['size'] = $file->size();
@@ -1819,10 +1820,11 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $nodePath = $this->internalNodePath( $virtualFolder, $target );
         eZWebDAVContentBackend::appendLogEntry( __FUNCTION__ . " Path:" . $nodePath );
         $node = $this->fetchNodeByTranslation( $nodePath );
-        $info = $this->fetchNodeInfo( $fullPath, $node );
 
-        // Proceed only if the node is valid:
-        if ( $node === null )
+        // Proceed only if the node is valid. fetchNodeByTranslation() answers false for a path without a node, and
+        // fetchNodeInfo() was called before this check: a call on false. Nothing about a node the user may not read
+        // is read either.
+        if ( !$node instanceof eZContentObjectTreeNode )
         {
             return $result;
         }
@@ -1832,6 +1834,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         {
             return false; // @as self::FAILED_FORBIDDEN;
         }
+        $info = $this->fetchNodeInfo( $fullPath, $node );
 
         $object = $node->attribute( 'object' );
 
