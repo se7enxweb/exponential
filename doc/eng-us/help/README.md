@@ -46,6 +46,7 @@ allowed to use is shown grayed out or not at all.
 |---|---|
 | [Creating and editing content](editing-content.md) | Create an item, fill in its fields, use the rich text editor, move and copy |
 | [Images, media and uploads](media-and-uploads.md) | Upload one file or many at once, and keep the media library tidy |
+| [Bookmarking system pages](bookmarking-system-pages.md) | Keep Setup, the help, the audit trail or a filtered list in your bookmarks, in folders next to your content |
 | [Publishing, versions and the trash](publishing-and-versions.md) | Publish, keep drafts, go back to an older version, hide, remove and restore |
 | [Searching](searching.md) | Find content in the administration and on the site |
 | [Languages](languages.md) | Translate content, and choose the language of the administration itself |

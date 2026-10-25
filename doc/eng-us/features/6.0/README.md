@@ -114,6 +114,7 @@ nginx with PHP-FPM keep working as before.
 - [Preload Sites (administration interface)](preload-sites-view.md)
 - [Quick location buttons](quick-location-buttons.md)
 - [Bookmark folders](bookmark-folders.md)
+- [Bookmarks of system pages](bookmarks-of-system-pages.md)
 - [The content finder](content-finder.md)
 - [Content jobs: large removes, copies and moves in the background](content-jobs.md)
 - [The content checks: unreferenced objects, broken relations and missing files](content-checks.md)

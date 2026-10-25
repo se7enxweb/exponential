@@ -3390,6 +3390,7 @@ b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
 6eda2bd886dfdb0de3a91d2c5ad117c5  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
+7e4247374ae24bc79c71dae504e4d3c0  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
 a4728bf2db13d48f57e43d6418d4a08f  doc/eng-us/bc/6.0/ci.md
 3d0804ac2faa3e731dc4668b223bb4e5  doc/eng-us/bc/6.0/cleanuprss.md
@@ -6218,6 +6219,7 @@ c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
 ad4b2afdcaccafc35da62044d0a0fc5f  doc/eng-us/features/6.0/benchmark.md
 457ed37f55792f132d65cf84e8825a68  doc/eng-us/features/6.0/bookmark-folders.md
+8678c61c5d3fad4be8d9fa56a8bac0ab  doc/eng-us/features/6.0/bookmarks-of-system-pages.md
 73986af5ddf303d1baee0bc49446baf1  doc/eng-us/features/6.0/cache-clear-rename-aside.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
@@ -6704,6 +6706,7 @@ a222c67d01a735c8c1b34fddcdbe4ccd  doc/eng-us/help/book-learning/template-syntax-
 6b42b26254156de67757cbb87ffb6ddb  doc/eng-us/help/book-learning/versions-translations-and-related-content.md
 e65ffedcc9d6030622351c3fcbb0442f  doc/eng-us/help/book-learning/what-is-content-management.md
 7b5febaffc9fa1b0585759030b87b92f  doc/eng-us/help/book-learning/workflows-and-triggers.md
+7ea0746900f73a8442b81f9788b83820  doc/eng-us/help/bookmarking-system-pages.md
 c421e441c6d61b009d8d9762963ce3a1  doc/eng-us/help/build-two-ways/README.md
 d3599501c8c0ed7b00eca32db44d02f2  doc/eng-us/help/build-two-ways/add-a-block-type.md
 2c06441e088d0f48633a16cae943dc06  doc/eng-us/help/build-two-ways/add-a-header-menu-item.md
@@ -9443,6 +9446,15 @@ f8e9fbe839cbdc34814eb934f19fad65  doc/eng-us/help/images/accounts/user-hygiene.w
 b392982796cc493a76d76997b2321e3c  doc/eng-us/help/images/accounts/user-password-admin.webp
 1d516fbea0b2d840a588db40574d1877  doc/eng-us/help/images/accounts/users-sessions.webp
 c62bd3523b50c73d0284cce14072b804  doc/eng-us/help/images/admin-dashboard.webp
+0916db39ce0ab7345b1f10f579f1e892  doc/eng-us/help/images/bookmarks/bookmark-page-no-access.webp
+dc1528020a6f4413d279610f42d20904  doc/eng-us/help/images/bookmarks/bookmark-page-overview.webp
+848717f6b2a9e293a9fc6ed3a35d97c9  doc/eng-us/help/images/bookmarks/bookmark-page-rename.webp
+4604c4941a4f17edb2e6ce4b1dbcc09c  doc/eng-us/help/images/bookmarks/bookmark-page-system-page-card.webp
+4a81023d2d21b6c15abd69d7068b9f57  doc/eng-us/help/images/bookmarks/bookmark-this-page-button.webp
+0f9dc5a58a89d386fa40dd1e5f2d3792  doc/eng-us/help/images/bookmarks/bookmark-this-page-form.webp
+a6770b2f7cbe783d07ba3deecbb12366  doc/eng-us/help/images/bookmarks/bookmarked-button.webp
+15b88c41b33e6a44c58b93fd48153c74  doc/eng-us/help/images/bookmarks/bookmarks-box-both-kinds.webp
+080a0a65c76d26e0db8ca47c532e40df  doc/eng-us/help/images/bookmarks/bookmarks-box-system-pages.webp
 aed66f92cd4fd51069175ad3af41a2c1  doc/eng-us/help/images/content-view.webp
 3fdb924d0adb52c6ba456bf0aee9df7a  doc/eng-us/help/images/context-menu.webp
 c2df63287f2461e530eb9837e15b5010  doc/eng-us/help/images/create-new.webp
@@ -12501,6 +12513,7 @@ b07cb9d0845526f5a8130ac0d9c4c0f6  doc/ger-de/bc/6.0/inhaltsjobs.md
 479ebce51c43e3bed185ec37e619e09e  doc/ger-de/bc/6.0/kickstartercli.md
 7ba9afdf3ad6c78386f7b65a89221352  doc/ger-de/bc/6.0/konsole.md
 91033bcb69b5008d798485f1da4d8e5c  doc/ger-de/bc/6.0/layouts.md
+a967fafd140554a657f929cc8df276c8  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
 a004e13c4ed73564f977fa433d7563da  doc/ger-de/bc/6.0/lesezeichenordner.md
 3960886f2f6999e1244e5c7b47723104  doc/ger-de/bc/6.0/love/README.md
 53d864812901942975deaa4e6b771765  doc/ger-de/bc/6.0/love/api.md
@@ -15165,6 +15178,7 @@ a23c82e7bfd15faed6bd3072d4203e4e  doc/ger-de/funktionen/6.0/klassenattribute-an-
 c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-extensions.md
 2c4d56fdc633b7a35390ebf1c5c06270  doc/ger-de/funktionen/6.0/laendergruppen.md
 aded008fb0cb6c843f2caa5ce1fa255f  doc/ger-de/funktionen/6.0/legacy-bridge.md
+8ec5ea2b02ef8dc0ebf18d8742d6ff89  doc/ger-de/funktionen/6.0/lesezeichen-fuer-systemseiten.md
 da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 3e21e2c7d791d5c588752175514567a0  doc/ger-de/funktionen/6.0/log-rotation.md
@@ -17023,6 +17037,15 @@ a03cffad6f781a2fbcd82672906f920a  doc/ger-de/hilfe/hosting/sicherheit/sicherheit
 773ccaaa6454d632c683fd475ede31dd  doc/ger-de/hilfe/hosting/sicherheit/tls-und-https.md
 89600dda8a132d475ce027d3fb9ac5a5  doc/ger-de/hilfe/hosting/sicherheit/trennung-von-mandanten.md
 b7007a5a1e0ad8960cadd403d87caa73  doc/ger-de/hilfe/hosting/sicherheit/zweistufige-anmeldung.md
+67b0d01a151bb8070d53f0a4e13316d1  doc/ger-de/hilfe/images/bookmarks/bookmark-page-no-access.webp
+cd1589ad525f5afc34a673d953cc09bd  doc/ger-de/hilfe/images/bookmarks/bookmark-page-overview.webp
+6d738b75c5ea240cb62277014af1a972  doc/ger-de/hilfe/images/bookmarks/bookmark-page-rename.webp
+02fcf712e73b85864df87e57151ae20b  doc/ger-de/hilfe/images/bookmarks/bookmark-page-system-page-card.webp
+6560e98796bfa4705fdb3bc125f44e77  doc/ger-de/hilfe/images/bookmarks/bookmark-this-page-button.webp
+4dc4552aa71357fa8d8cf134c895b574  doc/ger-de/hilfe/images/bookmarks/bookmark-this-page-form.webp
+89cedf5771671a8e9fcaec0d76def697  doc/ger-de/hilfe/images/bookmarks/bookmarked-button.webp
+278a8ca1d660b2c1842f2e6e0591fde2  doc/ger-de/hilfe/images/bookmarks/bookmarks-box-both-kinds.webp
+8b82c5530748a5ffc096e7ba61fdda9b  doc/ger-de/hilfe/images/bookmarks/bookmarks-box-system-pages.webp
 9c219dc373e3b1a77d12d0df7bae329c  doc/ger-de/hilfe/import-oder-export-werkzeug.md
 94bdd42e822a3953ce31051f080ee6a1  doc/ger-de/hilfe/inhalte-bearbeiten.md
 0530058a847a325a95b5520e3d6f2f9f  doc/ger-de/hilfe/integratoren/anbindung-einer-suchmaschine.md
@@ -18143,6 +18166,7 @@ c5df534f07f1a330cadcf19589a5470c  doc/ger-de/hilfe/sqli-import/der-import-editor
 0dea37c59fb6f33bcfd9829267a1bd14  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 a249bf4399119d8a25602f14a66d6855  doc/ger-de/hilfe/standard-administratorpasswort.md
 92efd310179ab092a8cfe670f3e35181  doc/ger-de/hilfe/suchen.md
+f6336f27d4e608bf560101cfe1a94821  doc/ger-de/hilfe/systemseiten-als-lesezeichen.md
 76f963434797c96b92c3d4169ab34f81  doc/ger-de/hilfe/tastenkuerzel.md
 fb4f5d510f6e946d98a2d5d071031fa2  doc/ger-de/hilfe/template-operatoren/README.md
 83de97071bbac2b7312337360d37df78  doc/ger-de/hilfe/template-operatoren/arithmetische-operatoren.md

@@ -14,6 +14,9 @@ Seitenleiste, im Auswahldialog und im Online-Editor gezeigt.
 | Online-Editor, TinyMCE 3 und 8 | Der Reiter Lesezeichen zeigt eine Überschriftenzeile pro Ordner, nach Tiefe eingerückt |
 | Entfernte Dienste | `expbookmark::tree`, `rows`, `folders`, `bookmarks`, `createFolder`, `renameFolder`, `deleteFolder`, `moveFolder`, `moveBookmark`, `place`, `addBookmark`, `removeBookmark` |
 
+Seit 6.0.15 kann ein Ordner auch Lesezeichen von Systemseiten (Modulansichten) enthalten: siehe
+[Lesezeichen für Systemseiten](lesezeichen-fuer-systemseiten.md).
+
 Designs: admin4 (und admin4l, das dessen Templates verwendet), admin (und admin2, admin3, die darauf zurückgreifen) und
 standard.
 
