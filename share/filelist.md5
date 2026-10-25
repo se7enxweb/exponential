@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-177aa3f3557c634f9354bbde7913d09c  autoload/ezp_kernel.php
+cc9500594ffa01fdc39dbe92384cd1c8  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a199529171daf0c4e195f0893049ba69  doc/changelogs/6.0/6.0.15.md
+1bc1ccf798691c89c6632b236bb80536  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -12231,7 +12231,7 @@ ae360783d46830e044f01e061dd7d3e1  doc/eng-us/specifications/6.0/platform-package
 9fe14a3b13d6da50b9dffc8c3858c342  doc/eng-us/specifications/6.0/platform-sqlite-installer.md
 d4ae8555a63a606ef74a8614cc7b300e  doc/eng-us/specifications/6.0/runnable-commands-cronjobs-views.md
 bf7a556d260f878a1c4ec26d3d91e6d9  doc/eng-us/specifications/6.0/security-defaults-2026-09.md
-d31b4521b480d3f0d635428eade35f1b  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
+7cfa35396e92191dbe2408004e86d416  doc/eng-us/specifications/6.0/security-hardening-2026-08.md
 8e5d88b3a7f5bd9ec543ac03aa7463ec  doc/eng-us/specifications/6.0/security-hardening-6.0.13.md
 26d18bdf558a01bafff2ac715a841d66  doc/eng-us/specifications/6.0/sqlite3-database-driver.md
 b118225dc0e1ae32082c94ca48138d4c  doc/eng-us/specifications/6.0/syndication.md
@@ -20422,7 +20422,7 @@ da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellun
 48bdb3cbf182b10c664586e25c053831  doc/ger-de/spezifikationen/6.0/platform-konsolenbefehle.md
 263d51a58c1dd3f587cd4308e7c3a75b  doc/ger-de/spezifikationen/6.0/platform-paketzuordnung.md
 094d02d390f2d960c5c9af9214a29dd7  doc/ger-de/spezifikationen/6.0/platform-sqlite-installer.md
-723b7e49d7d316140c7bbf5e6206ba79  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-2026-08.md
+4ec8f48910c797a51ab989445815067c  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-2026-08.md
 c83d971494616e6050d2ac9fad29ff2f  doc/ger-de/spezifikationen/6.0/sicherheitshaertung-6.0.13.md
 5db1faebfb78dccd4092aeb0dfb485bf  doc/ger-de/spezifikationen/6.0/sicherheitsvorgaben-2026-09.md
 876a7f3c2cc819436930c0fa5235088c  doc/ger-de/spezifikationen/6.0/sqlite3-datenbanktreiber.md
@@ -22164,6 +22164,7 @@ a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
 ad5598f1d462f590a311361ca8209029  kernel/classes/user/expusersessiontracker.php
+194684543d849fdaf2e36ecb0e670180  kernel/classes/user/expusersettingrepair.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 00603cb976aa7f1079309ce30c35d19a  kernel/classes/webauthn/expwebauthn.php
 7ed8c6c60ac161bebbdc28adf7e12ce0  kernel/classes/webauthn/expwebauthncbor.php
@@ -25438,6 +25439,7 @@ dff03a58accdae7a511ca92c6c1eaf06  tests/tests/kernel/classes/user/expUserDeactiv
 0e4f544bc052c59d86f11776f6248fde  tests/tests/kernel/classes/user/expUserDeactivationTest.php
 c89d1f48bdd4ae3dac8ad01160445051  tests/tests/kernel/classes/user/expUserHygieneTest.php
 1ad1f133231002dcde01c2a1b115788d  tests/tests/kernel/classes/user/expUserSessionTest.php
+cd0ac1466d905e1188e08460c19fd95c  tests/tests/kernel/classes/user/expUserSettingRepairTest.php
 b853b2bf2eee7b3ea1f66c6cb8f66c3f  tests/tests/kernel/classes/user/expWeakPasswordListTest.php
 60b9f5237265384bd9159e210ee0a177  tests/tests/kernel/classes/user/expWeakPasswordTestINI.php
 4a8a6b5ce8e426358b96a89368e789f2  tests/tests/kernel/classes/velocitylayout/expVelocityConfigLayoutTest.php
@@ -26126,6 +26128,7 @@ bf625f57144144427b01aecee3a6f9f8  update/common/scripts/5.4/cleanupfieldvaluerel
 be0ae0aa7baa6e05635c1b233a529337  update/common/scripts/6.0/createapikeytable.php
 f07dfabe3b5632bed2ae68a1977706fb  update/common/scripts/6.0/createaudittables.php
 749f4d771bd5483b6d10264371c8661f  update/common/scripts/6.0/createbookmarkviewtable.php
+ebda0ecc6788537b3edc6e7c41d14da9  update/common/scripts/6.0/createmissingusersettings.php
 303c7af1c44cf877ccb545fac4a6994d  update/common/scripts/6.0/createpasskeytable.php
 b83dbbb08f4886434931632bc5ffefc5  update/common/scripts/6.0/createtransferruntable.php
 3b819f404706735168c0dd536fc4ee97  update/common/scripts/6.0/createusersessiontable.php

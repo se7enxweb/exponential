@@ -54,6 +54,20 @@ INSERT INTO ezuser_setting ( user_id, is_enabled, max_login ) VALUES ( <contento
 `max_login` is the allowed number of simultaneous logins; use the value your other accounts have. Package and
 migration importers should create this row when they create a user.
 
+Since 6.0.15 an upgrade script creates the rows of all such accounts at once, on every database engine. Until 6.0.15
+these accounts counted as enabled everywhere but at the sign-in, and the script gives them back that state: an
+enabled row, or a disabled one for an account waiting for its activation mail; an account whose content object is not
+published (a draft held for approval) is left alone. Rows that exist are never changed, so it can be run again:
+
+```sh
+php update/common/scripts/6.0/createmissingusersettings.php --dry-run    # lists the ids and what each would get
+php update/common/scripts/6.0/createmissingusersettings.php              # creates the rows
+php update/common/scripts/6.0/createmissingusersettings.php --disabled   # creates every row disabled
+```
+
+Run it before or right after updating to 6.0.15: from that release on an account without its row is not enabled
+anywhere, so its open session, API key or OAuth token stops working as well.
+
 ## jQuery 3.7.1 and jQuery Migrate 3.4.1
 
 On 16 August `ezjscore` replaced the bundled jQuery 1.10.2 with 3.7.1. The server function `ezjsc::jquery` now

@@ -1471,6 +1471,7 @@ return array(
       'expUserLoginIntegrity'                                        => 'kernel/classes/expuserloginintegrity.php',
       'expUserSession'                                               => 'kernel/classes/user/expusersession.php',
       'expUserSessionTracker'                                        => 'kernel/classes/user/expusersessiontracker.php',
+      'expUserSettingRepair'                                         => 'kernel/classes/user/expusersettingrepair.php',
       'expVelocity'                                                  => 'kernel/classes/expvelocity.php',
       'expVelocityConfig'                                            => 'kernel/classes/expvelocityconfig.php',
       'expVelocityConfigLayout'                                      => 'kernel/classes/expvelocityconfiglayout.php',
