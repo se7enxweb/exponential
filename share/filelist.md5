@@ -3411,7 +3411,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 b8a4ee939fef98f95e90c899e9718e96  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 7f48c053c6ee255a85130fcc69c31355  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
-6eda2bd886dfdb0de3a91d2c5ad117c5  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
+d978849c185c42dd24172d734d3af4dd  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
 7e4247374ae24bc79c71dae504e4d3c0  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
@@ -3456,7 +3456,7 @@ ea712add4a62f4b68cfe631e746b404a  doc/eng-us/bc/6.0/love/FAQ.md
 daefa9bbd836c42a2b768b2423e56f6f  doc/eng-us/bc/6.0/love/PHP8-REVIEW.md
 e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 5b683f02a33e0c3dde0e109e22d878ac  doc/eng-us/bc/6.0/love/ROADMAP.md
-697a530d527a43367a9722e2cc9a3137  doc/eng-us/bc/6.0/love/TESTING.md
+b391e7ce000d0e9ed0b90cea39a33b16  doc/eng-us/bc/6.0/love/TESTING.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
@@ -12561,7 +12561,7 @@ f8fe25bc3cc238a60f68eff9bcdff103  doc/ger-de/bc/6.0/love/faq.md
 73b48de242654521e1144261d592022f  doc/ger-de/bc/6.0/love/migration.md
 639edd5f59f1a1bf3161b8bd6b55499e  doc/ger-de/bc/6.0/love/php8-pruefung.md
 d8c339136c7125122ef4e3cc9dd2850b  doc/ger-de/bc/6.0/love/roadmap.md
-187e91f2488dd9d32f83f79a6122bb5d  doc/ger-de/bc/6.0/love/testen.md
+159ccc432f8714a66e98a9dc7528275d  doc/ger-de/bc/6.0/love/testen.md
 8cc58833bc6336ea3bf9d93ba1455d23  doc/ger-de/bc/6.0/love/zuordnung-der-tests.md
 3cb6f2e0c5eb72ecdaaa81a77ec2ee70  doc/ger-de/bc/6.0/lovestack.md
 d7f5ce4b51c75152afaa5ff7563a5b7c  doc/ger-de/bc/6.0/mehrere-elemente-bearbeiten.md
@@ -12609,7 +12609,7 @@ fb7e473b95d422399e463bfe56d9395d  doc/ger-de/bc/6.0/ui-umschalter.md
 49f042040eb5d4a84e4376a52b330e66  doc/ger-de/bc/6.0/velocity-verzeichnisstruktur.md
 370c2a1fff3d2d6bce27361c8ac9ae5c  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-07-08.md
 55c5b5417bdcece86dcb502387b92142  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-09b.md
-284fe3457515cea2edf63797cc615107  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-10.md
+391b32488081175598bb7e5841197419  doc/ger-de/bc/6.0/verhaltensaenderungen-2026-10.md
 de06444ae64c1f7da28439138625ca17  doc/ger-de/bc/6.0/verhaltensaenderungen-von-erweiterungen.md
 a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 45d36688020334839b661bb980c6f6ce  doc/ger-de/bc/6.0/view-name-des-shop-warenkorbs.md

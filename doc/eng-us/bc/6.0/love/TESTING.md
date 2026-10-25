@@ -26,7 +26,8 @@ made with the account in `EXP_TEST_DB_USER`/`EXP_TEST_DB_PASSWORD` (default: the
 database settings), which needs CREATE and DROP on `exp\_test\_%`. `EXP_TEST_KEEP_DATABASES=1`
 keeps them and lists them in `var/log/test-databases.log`. Without such an account the tests are
 skipped, and the message names the siteaccess, the database and the reason. The test classes on
-`ezpDatabaseTestCase` always get a throwaway database of their own.
+`ezpDatabaseTestCase` always get a throwaway database of their own. `tests/runtests.php --db-per-test --dsn=…`
+empties only a database with `test`, `tests` or `testdb` as a word of its name (`testdb`, not `expdemolatest`).
 
 To run only the tests of the files a change touched (instead of the whole suite), see
 [run only the tests of a change](../../../features/6.0/quality-checks.md#run-only-the-tests-of-a-change):

@@ -115,6 +115,16 @@ text to the TLS port, which no HTTPS server answers with a SOAP response. Check 
 PHP of the web server) that curl is loaded wherever SOAP calls over HTTPS are made. Calls over HTTP are unchanged.
 See [SOAP calls over HTTPS](../../features/6.0/soap-client-tls.md).
 
+## Composer requirements, image editor and tests (24 and 25 October 2026)
+
+| Change | How to check | What to do |
+|---|---|---|
+| `composer.json` no longer requires `zetacomponents/authentication-database-tiein`, `zetacomponents/mvc-authentication-tiein` (both `require`) and `zetacomponents/php-generator` (`require-dev`). No code of the kernel or of the packages it requires uses them. `zetacomponents/configuration` stays required while 7x SQLI Import 2.0.x throws one of its exceptions; `se7enxweb/ezie` and `zetacomponents/image-conversion` stay required as well. | `grep -rE 'ezc(AuthenticationDatabase\|MvcAuthentication\|PhpGenerator)' extension/ <your code>` | Code of your own that uses one of the three requires it in your project's `composer.json` (`composer require zetacomponents/php-generator`); the next `composer update` removes it otherwise. |
+| The setup wizard and the kickstarter activate `expimageeditor` for a new installation where they activated `ezie`. Existing installations keep their `ActiveExtensions`; ezie stays installed. | `ActiveExtensions[]` of a new installation's `settings/override/site.ini.append.php`. | Nothing. To switch an existing site to expimageeditor: `ActiveExtensions[]=expimageeditor` in place of `ezie`, then `php bin/php/addeditorpolicies.php --only=expimageeditor/edit` ([expimageeditor](../../features/6.0/extensions/expimageeditor.md)). |
+| The content job log writes its numbers with a dot whatever the locale `config.php` sets ("in 0.01 s, peak 30.0 MB"; it was "0,01" under a German locale). | The log of a job at **Setup > Content jobs**. | A script that read the comma form reads the dot. |
+| With the MySQLi cluster backend (`eZDFSFileHandlerMySQLiBackend`) on PHP 8.1 and later, a cache file another process is generating is waited for again instead of generated a second time: `startCacheGeneration()` returns the remaining generation time and a timed-out generation is taken over. A failed `SELECT ... FOR UPDATE` at the end of a generation rolls back and reports failure instead of a `TypeError`. | Clustered sites under load: fewer duplicate generations of the same view cache. | Nothing. |
+| The tests of the group `database` run on throwaway MySQL/MariaDB databases `exp_test_<pid>_<hex>` and the live tests use `EXP_TEST_SITEACCESS` or `DefaultAccess` (they used `admin`). `tests/runtests.php --db-per-test --dsn=…` empties only a database with `test`, `tests` or `testdb` as a word of its name. | `vendor/bin/phpunit --group database` without an account with `CREATE` and `DROP` on `exp\_test\_%` skips with the reason. | For the test runs: `EXP_TEST_DB_USER` and `EXP_TEST_DB_PASSWORD`, see [TESTING.md](love/TESTING.md). |
+
 ## Related pages
 
 - [October 2026 chronicle](../../history/2026/2026-10.md)
