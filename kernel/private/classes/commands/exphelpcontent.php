@@ -494,10 +494,14 @@ class Exphelpcontent extends \Exponential\Runnable\Command
     protected function fillCache( $json )
     {
         $cli = $this->cli();
-        if ( !\expHelpContentRepository::isInstalled() )
+        // nothing to fill: not a failure (exp:velocity deploy runs this for each siteaccess that shows the help)
+        if ( !\expHelpContentProvider::isEnabled() || !\expHelpContentRepository::isInstalled() )
         {
-            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
-            return 2;
+            if ( $json )
+                $this->printJson( array( 'skipped' => 'help as content is not installed or switched off' ) );
+            else
+                $cli->output( 'SKIP: help as content is not installed or switched off here (exphelp.ini [ContentSettings] Enabled)' );
+            return 0;
         }
         \expHelpContentProvider::resetInstance();
         $repository = \expHelpContentRepository::instance();
@@ -508,6 +512,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         $words = $repository->searchWords();
         $search = microtime( true ) - $started;
         $root = \expHelpContentRepository::rootNode();
+        // started by a web request that found the cache empty (expHelpContentRepository::startBackgroundBuild())
+        if ( $root !== null && method_exists( '\expHelpContentRepository', 'finishBackgroundBuild' ) )
+            \expHelpContentRepository::finishBackgroundBuild( \expHelpContentRepository::cacheFile( $root ) );
         $result = array( 'file' => $root !== null ? \expHelpContentRepository::cacheFile( $root ) : null, 'topics' => count( $index['topics'] ),
                          'maps' => count( $index['maps'] ), 'figures' => count( $index['figures'] ), 'glossary' => count( $index['glossary'] ),
                          'search_words' => count( $words ), 'rows_seconds' => round( $rows, 2 ), 'search_seconds' => round( $search, 2 ) );

@@ -358,7 +358,21 @@ language list):
 ```
 
 The cache needs no clearing after a change. `php bin/php/ezcache.php --clear-id=exphelpcontent` (tag `exphelp`,
-`site.ini [Cache_exphelpcontent]`) removes it; the next help page reads every help object again.
+`site.ini [Cache_exphelpcontent]`, and `--clear-all`) removes it.
+
+**A web request never reads every help object.** When the cache is missing or cannot be brought up to date by
+reading only what changed (a cleared cache, a changed help class or section, more than 300 changed objects), the
+request starts `php bin/php/exphelpcontent.php cache -s <its siteaccess>` in the background (detached with
+`setsid`, once: a marker file `<cache file>.building` keeps a second one from starting for 15 minutes) and goes on
+without help content: the dashboard leaves out its help content part, the search finds no help topics, a topic or
+manual is not found, and the context help keeps its last list. As soon as the command has written the file, the next
+request has everything again. The command line PHP it uses is found next to the running PHP (`exphelp.ini
+[ContentSettings] CachePhpBinary` to set it). A search that would compute the search words of every topic does the
+same.
+
+`exp:velocity deploy` fills the cache after it has cleared the caches, one step per siteaccess that shows the help:
+those of `exphelp.ini [ContentSettings] CacheSiteAccessList[]` and those that have used the cache (recorded in
+`var/<site>/cache/exphelp/content/siteaccesses.json`). Where help content is not installed the step is a SKIP.
 
 ## Context help by help_id (JSON)
 

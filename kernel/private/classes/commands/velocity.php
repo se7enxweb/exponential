@@ -289,7 +289,8 @@ class Velocity extends \Exponential\Runnable\Command
             "             extension autoloads, INI + template + template-override + translation\n" .
             "             + design_base caches, PHP-FPM (waits for OPcache to revalidate, or reloads\n" .
             "             [DeploySettings] PhpFpmService), restart Velocity, and only then the content,\n" .
-            "             exphttpcache, template-block and response caches, then warm-up requests\n" .
+            "             exphttpcache, template-block and response caches, the help content cache of each\n" .
+            "             siteaccess that shows the help (exp:help:content cache), then warm-up requests\n" .
             "             ([DeploySettings] WarmUpURL[]). Stops at the first step that fails.\n" .
             "             --kernel (kernel autoloads too)  --no-autoload  --no-fpm  --fpm-reload  --no-velocity\n" .
             "             --rebuild-phar  --packer (packed scripts + styles, with template-block)\n" .

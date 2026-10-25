@@ -26,6 +26,15 @@ class expHelpContentRepository
     /** Up to this many objects read again stay loaded for object() */
     const KEEP_OBJECTS = 50;
 
+    /** A web request reads at most this many changed objects itself; more are read by the background command */
+    const WEB_BUILD_LIMIT = 300;
+
+    /** Seconds the marker of a background build keeps another from starting */
+    const BUILD_MARKER_SECONDS = 900;
+
+    /** @var bool the cache is filled in the background and this request has no help content */
+    protected $building = false;
+
     /** @var array|null the loaded set with the topics' text fields: topics, figures, maps, glossary */
     protected $loaded = null;
 
@@ -274,14 +283,27 @@ class expHelpContentRepository
         }
         $words = array();
         $keys = array();
+        $missing = array();
         foreach ( $set['topics'] as $topic )
         {
             $id = $topic['object_id'];
             $keys[$id] = md5( serialize( array( $topic['title'], $topic['help_id'], $topic['shortdesc'], $topic['fields'] ) ) );
-            $words[$id] = $cached !== null && isset( $cached['keys'][$id], $cached['words'][$id] ) && $cached['keys'][$id] === $keys[$id]
-                ? $cached['words'][$id]
-                : expHelpContentProvider::searchWordSets( $topic );
+            if ( $cached !== null && isset( $cached['keys'][$id], $cached['words'][$id] ) && $cached['keys'][$id] === $keys[$id] )
+                $words[$id] = $cached['words'][$id];
+            else
+                $missing[] = $topic;
         }
+        // a web request computes the words of a few changed topics, never of all of them (25 seconds): the background
+        // command does, and until then this request finds no help topics (isBuilding())
+        if ( $file !== null && $stamp !== '' && count( $missing ) > self::WEB_BUILD_LIMIT && self::isWebRequest()
+             && self::backgroundCommand() !== null )
+        {
+            self::startBackgroundBuild( dirname( $file ) . '/repository-' . substr( basename( $file ), strlen( 'search-' ) ) );
+            $this->building = true;
+            return $this->searchWords = array();
+        }
+        foreach ( $missing as $topic )
+            $words[$topic['object_id']] = expHelpContentProvider::searchWordSets( $topic );
         if ( $file !== null && $stamp !== '' )
         {
             $tmp = $file . '.' . getmypid() . '.' . mt_rand() . '.tmp';
@@ -337,6 +359,17 @@ class expHelpContentRepository
                 return;
             }
         }
+        // A web request never reads every help object (a cleared cache, a changed help class or section, or more
+        // changed objects than WEB_BUILD_LIMIT): that took longer than Velocity's 30 seconds. It starts the command
+        // "exp:help:content cache" in the background and answers as if there were no help content until the file is
+        // there (isBuilding()). Where no background command can be started (no proc_open, setsid or command line
+        // PHP) it reads them itself, as before.
+        $web = $stamp !== '' && $file !== null && self::isWebRequest() && self::backgroundCommand() !== null;
+        if ( $web && !self::canUpdate( self::readCacheFile( $file, false ) ) )
+        {
+            $this->startBuilding( $file );
+            return;
+        }
         $lock = $file !== null ? self::lock( $file ) : null;
         try
         {
@@ -346,9 +379,12 @@ class expHelpContentRepository
                 $data = $cached;
             else
             {
-                $data = $this->build( $root, $stamp, $cached );
-                if ( $file !== null && $stamp !== '' )
+                $data = $this->build( $root, $stamp, $cached, $web ? self::WEB_BUILD_LIMIT : 0 );
+                if ( $data !== null && $file !== null && $stamp !== '' )
+                {
                     self::writeCacheFile( $file, $data );
+                    self::recordSiteAccess( $file );
+                }
             }
         }
         finally
@@ -359,8 +395,224 @@ class expHelpContentRepository
                 fclose( $lock );
             }
         }
+        if ( $data === null )
+        {
+            $this->startBuilding( $file );
+            return;
+        }
         $this->setData( $data );
         $this->fields = $data['fields'];
+    }
+
+    /**
+     * Whether the cache's data can be brought up to date by reading only the objects that changed: its format and
+     * globalStamp() are the current ones
+     *
+     * @param array|null $data readCacheFile()
+     * @return bool
+     */
+    protected static function canUpdate( $data )
+    {
+        return is_array( $data ) && isset( $data['format'], $data['global'] ) && $data['format'] === self::CACHE_FORMAT
+            && $data['global'] === self::globalStamp();
+    }
+
+    /**
+     * Whether this process answers a web request (Apache, PHP-FPM, Velocity's workers), not a command
+     *
+     * @return bool
+     */
+    protected static function isWebRequest()
+    {
+        return class_exists( 'eZExecution' ) && method_exists( 'eZExecution', 'isWebRequest' ) ? eZExecution::isWebRequest()
+            : PHP_SAPI !== 'cli';
+    }
+
+    /**
+     * This request goes on without help content while the background command reads it (isBuilding())
+     *
+     * @param string|null $file
+     */
+    protected function startBuilding( $file )
+    {
+        if ( $file !== null )
+            self::startBackgroundBuild( $file );
+        $this->building = true;
+        $this->setData( self::emptyData( '' ) );
+        $this->fields = array();
+    }
+
+    /**
+     * Whether this request has no help content because the cache is being filled in the background
+     *
+     * @return bool
+     */
+    public function isBuilding()
+    {
+        return $this->building;
+    }
+
+    /**
+     * Starts "php bin/php/exphelpcontent.php cache -s <this siteaccess>" detached (setsid), once: a marker file next to
+     * the cache file (<file>.building) says it runs, and only one older than BUILD_MARKER_SECONDS lets another start
+     *
+     * @param string $file the cache file
+     * @return bool whether a build runs now (started here or before)
+     */
+    public static function startBackgroundBuild( $file )
+    {
+        $marker = $file . '.building';
+        clearstatcache( true, $marker );
+        if ( is_file( $marker ) && filemtime( $marker ) > time() - self::BUILD_MARKER_SECONDS )
+            return true;
+        if ( !is_dir( dirname( $file ) ) )
+            eZDir::mkdir( dirname( $file ), false, true );
+        @unlink( $marker );
+        $handle = @fopen( $marker, 'x' );
+        if ( $handle === false )
+            return true; // another request was faster
+        fwrite( $handle, (string)time() );
+        fclose( $handle );
+        self::sharedMode( $marker );
+        $command = self::backgroundCommand();
+        if ( $command === null )
+        {
+            eZDebug::writeWarning( 'Help content: no PHP command line binary or setsid to fill the cache in the background; run ./console exp:help:content cache', __METHOD__ );
+            return false;
+        }
+        $process = @proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ), 1 => array( 'file', '/dev/null', 'w' ),
+                                                2 => array( 'file', '/dev/null', 'w' ) ), $pipes, rtrim( eZSys::rootDir(), '/' ) ?: getcwd() );
+        $code = is_resource( $process ) ? proc_close( $process ) : 127;
+        if ( $code !== 0 )
+        {
+            @unlink( $marker );
+            eZDebug::writeWarning( 'Help content: the cache could not be filled in the background (exit ' . $code . ')', __METHOD__ );
+            return false;
+        }
+        eZDebug::writeNotice( 'Help content: the cache is filled in the background: ' . implode( ' ', $command ), __METHOD__ );
+        return true;
+    }
+
+    /**
+     * Ends the marker of startBackgroundBuild() (the command "cache" when it is done)
+     *
+     * @param string $file
+     */
+    public static function finishBackgroundBuild( $file )
+    {
+        @unlink( $file . '.building' );
+    }
+
+    /**
+     * The background command: setsid -f <php> bin/php/exphelpcontent.php cache -s <siteaccess> --allow-root-user;
+     * null when there is no setsid, no command line PHP or no siteaccess
+     *
+     * @return string[]|null
+     */
+    public static function backgroundCommand()
+    {
+        $setsid = is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : '' );
+        $php = self::commandLinePhp();
+        $access = class_exists( 'eZSiteAccess' ) ? eZSiteAccess::current() : null;
+        $siteaccess = is_array( $access ) && isset( $access['name'] ) ? (string)$access['name'] : '';
+        if ( $setsid === '' || $php === '' || !preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $siteaccess ) || !function_exists( 'proc_open' ) )
+            return null;
+        return array( $setsid, '-f', $php, 'bin/php/exphelpcontent.php', 'cache', '-s', $siteaccess, '--allow-root-user', '--no-colors' );
+    }
+
+    /**
+     * The command line PHP: exphelp.ini [ContentSettings] CachePhpBinary, else this process's binary when it is the
+     * command line one (Velocity), else the php next to PHP-FPM's (<prefix>/sbin/php-fpm: <prefix>/bin/php), else
+     * <PHP_BINDIR>/php
+     *
+     * @return string '' when none is found
+     */
+    public static function commandLinePhp()
+    {
+        $configured = class_exists( 'expHelpContentSchema' ) ? trim( (string)expHelpContentSchema::setting( 'CachePhpBinary', '' ) ) : '';
+        $candidates = array();
+        if ( $configured !== '' )
+            $candidates[] = $configured;
+        $binary = (string)PHP_BINARY;
+        if ( $binary !== '' && preg_match( '/^php[0-9.]*$/', basename( $binary ) ) )
+            $candidates[] = $binary;
+        if ( $binary !== '' )
+            $candidates[] = dirname( dirname( $binary ) ) . '/bin/php';
+        $candidates[] = PHP_BINDIR . '/php';
+        foreach ( $candidates as $candidate )
+        {
+            if ( is_file( $candidate ) && is_executable( $candidate ) )
+                return $candidate;
+        }
+        return '';
+    }
+
+    /**
+     * Remembers which siteaccess uses which cache file (<cache>/siteaccesses.json): exp:velocity deploy fills the
+     * cache of each (siteAccessesToFill())
+     *
+     * @param string $file
+     */
+    protected static function recordSiteAccess( $file )
+    {
+        $access = class_exists( 'eZSiteAccess' ) ? eZSiteAccess::current() : null;
+        $siteaccess = is_array( $access ) && isset( $access['name'] ) ? (string)$access['name'] : '';
+        if ( !preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $siteaccess ) )
+            return;
+        $record = dirname( $file ) . '/siteaccesses.json';
+        $list = self::recordedSiteAccesses( dirname( $file ) );
+        if ( isset( $list[basename( $file )] ) && $list[basename( $file )] === $siteaccess )
+            return;
+        $list[basename( $file )] = $siteaccess;
+        $tmp = $record . '.' . getmypid() . '.tmp';
+        if ( @file_put_contents( $tmp, json_encode( $list, JSON_PRETTY_PRINT ) ) !== false )
+        {
+            self::sharedMode( $tmp );
+            if ( !@rename( $tmp, $record ) )
+                @unlink( $tmp );
+        }
+    }
+
+    /**
+     * @param string|null $dir the cache directory (default cacheDirectory())
+     * @return array cache file name => siteaccess
+     */
+    public static function recordedSiteAccesses( $dir = null )
+    {
+        $dir = $dir !== null ? $dir : self::cacheDirectory();
+        if ( $dir === null )
+            return array();
+        $list = @json_decode( (string)@file_get_contents( $dir . '/siteaccesses.json' ), true );
+        $out = array();
+        foreach ( is_array( $list ) ? $list : array() as $name => $siteaccess )
+        {
+            if ( is_string( $siteaccess ) && preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $siteaccess ) )
+                $out[(string)$name] = $siteaccess;
+        }
+        return $out;
+    }
+
+    /**
+     * The siteaccesses whose help cache exp:velocity deploy fills: exphelp.ini [ContentSettings]
+     * CacheSiteAccessList[], and those that have used the cache (recordedSiteAccesses()); only siteaccesses of
+     * site.ini [SiteAccessSettings] AvailableSiteAccessList[]
+     *
+     * @return string[]
+     */
+    public static function siteAccessesToFill()
+    {
+        $list = class_exists( 'expHelpContentSchema' ) ? (array)expHelpContentSchema::setting( 'CacheSiteAccessList', array() ) : array();
+        $list = array_merge( $list, array_values( self::recordedSiteAccesses() ) );
+        $ini = eZINI::instance();
+        $available = $ini->hasVariable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) ? (array)$ini->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) : array();
+        $out = array();
+        foreach ( $list as $siteaccess )
+        {
+            $siteaccess = trim( (string)$siteaccess );
+            if ( $siteaccess !== '' && ( !$available || in_array( $siteaccess, $available, true ) ) && !in_array( $siteaccess, $out, true ) )
+                $out[] = $siteaccess;
+        }
+        return $out;
     }
 
     /**
@@ -406,9 +658,10 @@ class expHelpContentRepository
      * @param eZContentObjectTreeNode $root
      * @param string $stamp
      * @param array|null $previous the cache's data, also of an older stamp
-     * @return array the shape of emptyData()
+     * @param int $limit read at most this many objects (0: no limit)
+     * @return array|null the shape of emptyData(); null when more than $limit objects would have to be read
      */
-    protected function build( eZContentObjectTreeNode $root, $stamp, $previous )
+    protected function build( eZContentObjectTreeNode $root, $stamp, $previous, $limit = 0 )
     {
         $data = self::emptyData( $stamp );
         $rows = eZContentObjectTreeNode::subTreeByNodeID(
@@ -455,6 +708,8 @@ class expHelpContentRepository
             if ( !$usable || !isset( $previousRows[$id], $previous['signatures'][$id] ) || $previous['signatures'][$id] !== $signature )
                 $load[] = $id;
         }
+        if ( $limit > 0 && count( $load ) > $limit )
+            return null;
         $stateIds = array();
         foreach ( $access as $id => $item )
             $stateIds[$id] = $item['state_ids'];

@@ -140,6 +140,18 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     }
 
     /**
+     * Whether the help content is being read into the cache in the background, so that this request has none
+     * (expHelpContentRepository::isBuilding())
+     *
+     * @return bool
+     */
+    public function isBuilding()
+    {
+        $repository = $this->repository();
+        return method_exists( $repository, 'isBuilding' ) && $repository->isBuilding();
+    }
+
+    /**
      * The manuals the current user may see
      *
      * @return array
@@ -503,6 +515,9 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         // the words of every topic, kept with the repository's rows (computing them is what a search cost)
         $repository = $this->repository();
         $wordSets = method_exists( $repository, 'searchWords' ) ? $repository->searchWords() : array();
+        // the cache is being filled in the background: no help topics until it is there
+        if ( $this->isBuilding() )
+            return array( 'total' => 0, 'hits' => array() );
         foreach ( $this->topics() as $topic )
         {
             $document = self::document( $topic );
@@ -679,10 +694,17 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         {
             if ( self::isEnabled() )
             {
-                foreach ( expHelpContentRepository::instance()->index()['topics'] as $topic )
+                $repository = expHelpContentRepository::instance();
+                foreach ( $repository->index()['topics'] as $topic )
                 {
                     if ( $topic['state'] === expHelpContentSchema::STATE_RELEASED && $topic['help_id'] !== '' )
                         $ids[$topic['help_id']] = $topic['title'];
+                }
+                // while the background command fills the help cache: the last list, kept as it is
+                if ( $repository->isBuilding() )
+                {
+                    $data = $file !== null ? json_decode( (string)@file_get_contents( $file ), true ) : null;
+                    return $memo = is_array( $data ) ? $data : array();
                 }
             }
         }

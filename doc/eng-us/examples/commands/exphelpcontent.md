@@ -31,15 +31,20 @@ Help maintained as content (topics, manuals, glossary in the content tree)
 ./console exp:help:content check -s ... [--fix]   the validator (check_help.php); --fix sets the sections from the audience
 ./console exp:help:content seed-glossary -s ... [--file=] [--update]   the glossary (seed_glossary.php)
 ./console exp:help:content seed-topics -s ... [--file=] [--update] [--release]   topics and manuals (seed_topics.php)
+./console exp:help:content build-manuals -s ... [--manual=<key>] [--language=ger-DE,...] [--release] [--dry-run] [--queue]
+                                              the manuals of the Markdown help (exphelp.ini [ManualSettings]):
+                                              made, updated and removed so they match the pages (help-gen-...)
 ./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state
-./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file]
+./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=]
                                               an e-book of the Released topics of a manual (export_manual.php)
 ./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]
                                               the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a
                                               directory, checked after writing (also: export --format=dita)
-./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--dry-run]   build the e-books of the
+./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the
                                               Released manuals and store them as file objects under E-books
 ./console exp:help:content review -s ... [--json]   the topics whose review is overdue
+./console exp:help:content cache -s ... [--json]   fill the cache of the help rows and search words of the
+                                              siteaccess (after a deploy or ezcache --clear-id=exphelpcontent)
 ./console exp:help:content package -s ... [--output=dir] [--version=6.0.15]   the eight classes as the content
                                               class package exp_help_classes (a directory and an .ezpkg)
 ./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the
@@ -60,14 +65,16 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 | `--fix` |  | check: set the section of each topic, figure, chapter and manual from the audience |
 | `--file` | required | seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json) |
 | `--update` |  | seed-*: also update existing objects that differ from the file |
-| `--release` |  | seed-topics: set new topics, chapters and manuals to Released |
+| `--release` |  | seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released |
 | `--with-content` |  | uninstall: also the help tree (into the trash), the classes, the state group and the sections |
 | `--login` | required | The user who creates the classes and objects (default admin) |
 | `--json` |  | Print one JSON document instead of the text |
-| `--manual` | required | export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual |
+| `--manual` | required | export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[] |
 | `--format` | required | export: epub, pdf or dita |
 | `--output` | required | export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages) |
 | `--version` | required | package: the release, MAJOR.MINOR.PATCH (default: the version of this installation) |
+| `--language` | required | build-manuals: the translations to write (default [ManualSettings] Languages[]; "none" for none); ebooks, export: the language of the edition (default: the default language) |
+| `--queue` |  | build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

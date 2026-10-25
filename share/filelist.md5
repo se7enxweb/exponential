@@ -3256,7 +3256,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-08d1524bce346e14b605129a788b5383  doc/changelogs/6.0/6.0.15.md
+5d274e040de83c32019ca57f2dda0c8b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3511,7 +3511,7 @@ f4587c65e9bc49f6da02850ae831874e  doc/eng-us/examples/commands/dfscleanup.md
 60e198cf38c26ff250920618474b4902  doc/eng-us/examples/commands/expcontentjob.md
 bf66b4b9145212157d8ce068d252ba37  doc/eng-us/examples/commands/expfetch.md
 379924437a3392f4f0015a1224c8d8b8  doc/eng-us/examples/commands/exphelp.md
-f6e163c2df1a2511d56ba1d90bab769d  doc/eng-us/examples/commands/exphelpcontent.md
+7a3099d14ed60d9583c78b1e335a25c4  doc/eng-us/examples/commands/exphelpcontent.md
 da36319ce9b473e688815ba1ef0871ae  doc/eng-us/examples/commands/exphelpexamples.md
 75c3b75c2ec80254bb3869f3ff5cf7c3  doc/eng-us/examples/commands/explogs.md
 9c2583a2ffbca4f35ebbf20967445fed  doc/eng-us/examples/commands/exploremipsumfill.md
@@ -4424,7 +4424,7 @@ caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.
 94d97523d44a2855a3d867b5e072667c  doc/eng-us/examples/ini-settings/exphelp/AudienceSettings.md
 17fa8708c29f974ac6c32fdbbd40f544  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
-4877ec3124ccf0a66889006fa25409cb  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
+11f0065446326417658156265e32dee9  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
 af20763130c6ec5d439924e9e747972a  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
@@ -6298,7 +6298,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-4510dac8d4bee75a8cacba46c61e1246  doc/eng-us/features/6.0/help-content.md
+4ee0a75cb577ead6420451a6b2ed256e  doc/eng-us/features/6.0/help-content.md
 3b51634fa66e26d10a01c4063d66db8e  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 a33c777580a98b0eb53557d739b537c3  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -12592,7 +12592,7 @@ f2c126a2c289be7660f72b5d95fda8c0  doc/ger-de/beispiele/befehle/dfscleanup.md
 64c49f994478b02677ec5c317ef0d64d  doc/ger-de/beispiele/befehle/expcontentjob.md
 982242f96f8558a44a6a4d2693d04c4e  doc/ger-de/beispiele/befehle/expfetch.md
 62e2f08e25f22b0cee2f6c2f811ad897  doc/ger-de/beispiele/befehle/exphelp.md
-fe821c279e4145f66e5523ee63b6af10  doc/ger-de/beispiele/befehle/exphelpcontent.md
+1f8c3e04572aa17042612c0c4d0471b2  doc/ger-de/beispiele/befehle/exphelpcontent.md
 58988a3fdec2f3125b5d8701b0d29f1c  doc/ger-de/beispiele/befehle/exphelpexamples.md
 57c89e1214411276f810abcf46352464  doc/ger-de/beispiele/befehle/explogs.md
 89f03b061506696323cf36d4caee9273  doc/ger-de/beispiele/befehle/exploremipsumfill.md
@@ -21690,7 +21690,7 @@ d1743b6d55d3d778b90feac8ba7b953f  kernel/classes/expsystemreportmask.php
 15691fbe304ca3cc927317d6be8a9e41  kernel/classes/expvelocity.php
 3b2051fab9283e3c15ac1e5519951c5d  kernel/classes/expvelocityconfig.php
 046ae550b5ef2b208448e9407174c875  kernel/classes/expvelocityconfiglayout.php
-5ae615730949619c3e5c0c0413c157c5  kernel/classes/expvelocitydeploy.php
+82a2caa706092dbefeac60fde834c5ce  kernel/classes/expvelocitydeploy.php
 ca152db03e020c7bbe4ba8951c72a906  kernel/classes/expvelocityfrankenphp.php
 7c4ebba6437621654ba6ac7004296173  kernel/classes/expvelocityfrankenphpinstaller.php
 600c52c5993053d67fa78bde9b37ff99  kernel/classes/expvelocitymarkers.php
@@ -21842,8 +21842,8 @@ e04ee46f0297d3e42d103f76846bbb1f  kernel/classes/help/content/exphelpcontenteboo
 76c95ab6db140a4516e4320aa888839a  kernel/classes/help/content/exphelpcontentexport.php
 55f92f1a206b102c012d371f1dd5f36a  kernel/classes/help/content/exphelpcontentinstaller.php
 3b94473a8041ad398f2b49b184ddd6bb  kernel/classes/help/content/exphelpcontentpackage.php
-1e84f5439482daa7170969ffd81a8d3f  kernel/classes/help/content/exphelpcontentprovider.php
-46ac26a4404152efcb4d59d7d51bb8cf  kernel/classes/help/content/exphelpcontentrepository.php
+5f71e447615e217150067db016e224a6  kernel/classes/help/content/exphelpcontentprovider.php
+ff1192f8bedabae689aab376000f7977  kernel/classes/help/content/exphelpcontentrepository.php
 0496731d690b945501427f97a23e5893  kernel/classes/help/content/exphelpcontentreview.php
 98660e143f3b7e33599761fe4d3dd9ef  kernel/classes/help/content/exphelpcontentschema.php
 731dacfbc9e210d26a6115321f360d89  kernel/classes/help/content/exphelpcontentseeder.php
@@ -22338,7 +22338,7 @@ fc100209dee85f836a6d9ed383e3a0c1  kernel/private/classes/commands/collaborations
 5e242e01ae17e9af4730a1dfa8c42a71  kernel/private/classes/commands/dfscleanup.php
 dc85ce7ce1594bf547f142c6174c1f4b  kernel/private/classes/commands/expcontentjob.php
 7454fdd05a72f8378dd7173255b9e426  kernel/private/classes/commands/exphelp.php
-ecd9b8813049e691c260225f2c393b98  kernel/private/classes/commands/exphelpcontent.php
+53af038c144c897762dd7651b8f7ad83  kernel/private/classes/commands/exphelpcontent.php
 5d62cc9053a5337cfddce50e7b770eff  kernel/private/classes/commands/exphelpexamples.php
 532ba01b895e20eab4ad19d93c091358  kernel/private/classes/commands/explogs.php
 95572d3690cc6ceaa5bcdcbe2bad29eb  kernel/private/classes/commands/exploremipsumfill.php
@@ -22412,7 +22412,7 @@ bb15b3247ce0fdc1054094583bb9fdfa  kernel/private/classes/commands/updatesearchin
 7d965c05da2a5c87920ebbb39a4ebbd9  kernel/private/classes/commands/userpasswordchangerequired.php
 8f95645ff99a22bccb7cc98e67d72dac  kernel/private/classes/commands/velocity-router.php
 e1e0e881bb7f10985bec30c5f4c3c00b  kernel/private/classes/commands/velocity-warmup.php
-d41915dffeadc6f1b5dbbe4905855619  kernel/private/classes/commands/velocity.php
+fd91430dc1090ccaa6ec88348460c02a  kernel/private/classes/commands/velocity.php
 459ade5685b7da3718f61d04bfc8f83a  kernel/private/classes/commands/verify_aliases.php
 6a0c8e5fc57c47766d9b3a7f38d1b3c6  kernel/private/classes/commands/warm.php
 5377f1078d101f3938f16ea91381652c  kernel/private/classes/commands/webserver.php
@@ -22614,7 +22614,7 @@ b1606fd898f6e478fdcd946397240d26  kernel/private/classes/views/datatable/table.p
 3e05eb609d86ceb23a37a47aa6a92576  kernel/private/classes/views/exphelp/audience.php
 dae6b4492866c932a7da53ed250c830f  kernel/private/classes/views/exphelp/contents.php
 5416525820d820233d18d32fd5d4063c  kernel/private/classes/views/exphelp/context.php
-10d2b4d74d3115882ac7f9d7c156dc61  kernel/private/classes/views/exphelp/dashboard.php
+e2b0a7b560938f5d26f565dd914caa59  kernel/private/classes/views/exphelp/dashboard.php
 f38f485c0eb6d3ea64d7c9ec294ef33a  kernel/private/classes/views/exphelp/extensions.php
 b4736cae3fc7f5ca712b2ddc512f82da  kernel/private/classes/views/exphelp/image.php
 84f6f9d49b1c5870cc7689c9ce4a1457  kernel/private/classes/views/exphelp/manual.php
@@ -23445,7 +23445,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-619207219601d61dc7aff00e65efefd7  settings/exphelp.ini
+ba6ecf7cbfe9046dad4be5d04c89d3e2  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
@@ -25082,7 +25082,7 @@ fc07fa0794be1662a0968c48cd6b4e9d  tests/tests/kernel/classes/ezuserauthenticatio
 82ae7cde2c5b517fd6ccc515ab772c6e  tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php
 15ce983a094e9cdcc0d658817e44997c  tests/tests/kernel/classes/help/expHelpCachePruneTest.php
 ab48655d2b55173d9a7de603c97a4643  tests/tests/kernel/classes/help/expHelpCommunityAudiencesTest.php
-dc49d167e84772a6d9ef8a39b53419cc  tests/tests/kernel/classes/help/expHelpContentAccessTest.php
+3ec2d5f801b3efad5531d2f1b5ed046b  tests/tests/kernel/classes/help/expHelpContentAccessTest.php
 83c90ccb65e3d61eb3c65a6c62afc6d7  tests/tests/kernel/classes/help/expHelpContentDitaTest.php
 b9d42fd5fe587845e22012d9363ae7cf  tests/tests/kernel/classes/help/expHelpContentEbooksTest.php
 d3242d9bfe2f82d0261d2e4c061aec4e  tests/tests/kernel/classes/help/expHelpContentExportTest.php

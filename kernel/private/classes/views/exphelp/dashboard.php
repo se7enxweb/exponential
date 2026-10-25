@@ -177,6 +177,9 @@ class Dashboard extends \Exponential\Runnable\ModuleView
                 usort( $all, function ( $a, $b ) { return $b['modified'] <=> $a['modified']; } );
                 $newest = array( 'topics' => array_slice( $all, 0, 6 ), 'count' => count( $all ) );
             }
+            // the help cache is being filled in the background (it was cleared): the dashboard goes without this part
+            if ( method_exists( $provider, 'isBuilding' ) && $provider->isBuilding() )
+                return false;
             $topics = array();
             foreach ( $newest['topics'] as $topic )
                 $topics[] = \expHelpContentProvider::document( $topic );

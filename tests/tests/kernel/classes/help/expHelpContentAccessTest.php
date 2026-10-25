@@ -16,6 +16,9 @@
  *          loading an object when the rows decide
  *  HCA-09  the cache file: the index is read without the texts, the texts with it, a foreign or damaged file is none
  *  HCA-10  searchWordSets(): each word of a field and its stem
+ *  HCA-11  the background build: the command line PHP, one build at a time (the marker), the siteaccesses that used
+ *          the cache
+ *  HCA-12  exp:velocity deploy fills the help cache after the cache clears and before the warm-up, SKIP without help
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/help/expHelpContentAccessTest.php
  *
@@ -247,6 +250,53 @@ class expHelpContentAccessTest extends PHPUnit\Framework\TestCase
                 unlink( $f );
             rmdir( $dir );
         }
+    }
+
+    /** HCA-11 */
+    public function testBackgroundBuild()
+    {
+        $php = expHelpContentRepository::commandLinePhp();
+        $this->assertNotSame( '', $php, 'a command line PHP is found' );
+        $this->assertTrue( is_executable( $php ) );
+        $this->assertStringNotContainsString( 'fpm', basename( $php ) );
+
+        $dir = dirname( __DIR__, 5 ) . '/var/tmp/phpunit-exphelp-build-' . getmypid() . '-' . bin2hex( random_bytes( 4 ) );
+        mkdir( $dir, 0777, true );
+        try
+        {
+            // a build that runs (a fresh marker): no second one
+            touch( $dir . '/repository-x.cache.building' );
+            $this->assertTrue( expHelpContentRepository::startBackgroundBuild( $dir . '/repository-x.cache' ) );
+            $this->assertSame( array( 'repository-x.cache.building' ), array_values( array_diff( scandir( $dir ), array( '.', '..' ) ) ) );
+            expHelpContentRepository::finishBackgroundBuild( $dir . '/repository-x.cache' );
+            $this->assertFileDoesNotExist( $dir . '/repository-x.cache.building' );
+
+            // the siteaccesses that used a cache: only valid names
+            file_put_contents( $dir . '/siteaccesses.json', json_encode( array( 'repository-a.cache' => 'admin', 'repository-b.cache' => 'bad name;',
+                                                                                'repository-c.cache' => array( 'x' ), 'repository-d.cache' => 'eng_site' ) ) );
+            $this->assertSame( array( 'repository-a.cache' => 'admin', 'repository-d.cache' => 'eng_site' ),
+                               expHelpContentRepository::recordedSiteAccesses( $dir ) );
+            unlink( $dir . '/siteaccesses.json' );
+            $this->assertSame( array(), expHelpContentRepository::recordedSiteAccesses( $dir ) );
+        }
+        finally
+        {
+            foreach ( (array)glob( $dir . '/*' ) as $f )
+                unlink( $f );
+            rmdir( $dir );
+        }
+    }
+
+    /** HCA-12 */
+    public function testDeployFillsTheHelpCache()
+    {
+        $source = file_get_contents( dirname( __DIR__, 5 ) . '/kernel/classes/expvelocitydeploy.php' );
+        $help = strpos( $source, '$this->helpCacheSteps()' );
+        $this->assertNotFalse( $help, 'the deploy has the help cache steps' );
+        $this->assertGreaterThan( strpos( $source, "'velocity-cache'" ), $help, 'after the caches are cleared' );
+        $this->assertLessThan( strpos( $source, '$steps[] = $this->warmUpStep();' ), $help, 'before the warm-up requests' );
+        $this->assertStringContainsString( "'bin/php/exphelpcontent.php', 'cache', '-s'", $source );
+        $this->assertStringContainsString( "strpos( \$tail, 'SKIP:' ) === 0", $source, 'help content not installed is a SKIP' );
     }
 
     /** HCA-10 */

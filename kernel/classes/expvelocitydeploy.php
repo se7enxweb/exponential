@@ -37,7 +37,10 @@
  *      caches, one id per call; the packer only ever right before
  *      template-block
  *   9  Velocity's response cache
- *  10  warm-up: [DeploySettings] WarmUpURL[] requested once each, in the
+ *  10  the help content cache, one step per siteaccess that shows the help:
+ *      bin/php/exphelpcontent.php cache -s <siteaccess> (SKIP where help
+ *      content is not installed)
+ *  11  warm-up: [DeploySettings] WarmUpURL[] requested once each, in the
  *      background
  *
  * The first step that fails stops the run, and nothing after it is done: a
@@ -135,8 +138,63 @@ class expVelocityDeploy
             },
         );
 
+        foreach ( $this->helpCacheSteps() as $step )
+            $steps[] = $step;
+
         $steps[] = $this->warmUpStep();
 
+        return $steps;
+    }
+
+    /**
+     * The help content cache (expHelpContentRepository): ./console exp:help:content cache -s <siteaccess> for each
+     * siteaccess that shows the help (expHelpContentRepository::siteAccessesToFill(): exphelp.ini [ContentSettings]
+     * CacheSiteAccessList[] and those that have used the cache), after the caches are cleared, so no visitor waits for
+     * the help objects to be read. Only what changed is read when the cache is there. A siteaccess without help
+     * content is a SKIP.
+     *
+     * @return array list of steps
+     */
+    protected function helpCacheSteps()
+    {
+        $siteaccesses = array();
+        $why = '';
+        try
+        {
+            if ( !class_exists( 'expHelpContentRepository' ) || !method_exists( 'expHelpContentRepository', 'siteAccessesToFill' ) )
+                $why = 'no help content in this version';
+            else
+                $siteaccesses = expHelpContentRepository::siteAccessesToFill();
+        }
+        catch ( Exception $e )
+        {
+            $why = 'the siteaccesses could not be read: ' . $e->getMessage();
+        }
+        if ( !$siteaccesses )
+            return array( array( 'id' => 'help-cache', 'label' => 'help content cache', 'command' => 'exp:help:content cache',
+                                 'skip' => $why !== '' ? $why : 'no siteaccess has shown help content yet (exphelp.ini [ContentSettings] CacheSiteAccessList[])',
+                                 'run' => function () { return array( null, '' ); } ) );
+        $steps = array();
+        $self = $this;
+        foreach ( $siteaccesses as $siteaccess )
+        {
+            $args = array( 'bin/php/exphelpcontent.php', 'cache', '-s', $siteaccess, '--allow-root-user', '--no-colors' );
+            $steps[] = array(
+                'id' => 'help-cache-' . $siteaccess, 'label' => 'help content cache (' . $siteaccess . ')', 'skip' => '',
+                'command' => 'php ' . implode( ' ', $args ),
+                'dry' => function () use ( $args ) { return 'php ' . implode( ' ', $args ); },
+                'run' => function () use ( $self, $args ) {
+                    list( $code, $output ) = $self->runCommand( array_merge( array( PHP_BINARY ), $args ) );
+                    $tail = trim( implode( ' ', array_slice( $output, -1 ) ) );
+                    if ( $code !== 0 || preg_match( '/(Fatal error|Exception|Parse error)/', implode( "\n", $output ) ) )
+                        return array( false, 'exit ' . $code . ( $tail !== '' ? ': ' . $tail : '' ) );
+                    // help content not installed or switched off there
+                    if ( strpos( $tail, 'SKIP:' ) === 0 )
+                        return array( null, substr( $tail, 6 ) );
+                    return array( true, $tail );
+                },
+            );
+        }
         return $steps;
     }
 
