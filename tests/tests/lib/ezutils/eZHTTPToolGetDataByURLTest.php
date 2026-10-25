@@ -11,6 +11,9 @@
  *          headers of a real stream from the server
  *  GDU-06  an address without a scheme is read as http (withDefaultScheme()): "127.0.0.1:<port>/ok" and
  *          "//127.0.0.1:<port>/ok" return the body, as RSS sources entered without "http://" did before
+ *  GDU-07  limitCurlToHTTP(): a curl handle limited to http and https refuses a file:// address
+ *  GDU-08  eZStaticCache::fetchPages() (curl_multi) keeps the same rules: 200 and a redirect to 200 are the body,
+ *          404 and a redirect to file:// are false
  *
  * GDU-02 to GDU-05 use PHP's built-in server on a free port of 127.0.0.1 (fixtures/http_status_router.php), no
  * other network; the proxy of site.ini is switched off for the test.
@@ -127,6 +130,32 @@ class eZHTTPToolGetDataByURLTest extends PHPUnit\Framework\TestCase
     public function testARedirectToAFileIsNotFollowed()
     {
         $this->assertFalse( eZHTTPTool::getDataByURL( $this->base() . '/moved-file' ) );
+    }
+
+    /** GDU-07 */
+    public function testCurlLimitedToHTTPRefusesAFileAddress()
+    {
+        if ( !extension_loaded( 'curl' ) )
+            $this->markTestSkipped( 'no curl' );
+        $hosts = PHP_OS_FAMILY === 'Windows' ? 'C:/Windows/System32/drivers/etc/hosts' : '/etc/hosts';
+        $ch = curl_init( 'file://' . $hosts );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        $this->assertTrue( eZHTTPTool::limitCurlToHTTP( $ch ) );
+        $this->assertFalse( curl_exec( $ch ) );
+        $this->assertSame( CURLE_UNSUPPORTED_PROTOCOL, curl_errno( $ch ) );
+    }
+
+    /** GDU-08: the static cache fetches several pages at once with curl_multi, under the same rules */
+    public function testStaticCacheFetchPagesKeepsTheSameRules()
+    {
+        if ( !function_exists( 'curl_multi_init' ) )
+            $this->markTestSkipped( 'no curl_multi' );
+        $base = $this->base();
+        $pages = eZStaticCache::fetchPages( array( $base . '/ok', $base . '/moved', $base . '/missing', $base . '/moved-file' ), 2 );
+        $this->assertSame( 'the feed', $pages[$base . '/ok'] );
+        $this->assertSame( 'the feed', $pages[$base . '/moved'] );
+        $this->assertFalse( $pages[$base . '/missing'] );
+        $this->assertFalse( $pages[$base . '/moved-file'] );
     }
 
     /** GDU-06 */

@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-64e73eb47c08f5437b71c94def1e4547  doc/changelogs/6.0/6.0.15.md
+ad4f4d6d43bb77f81956c3a6be2dddc1  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21882,7 +21882,7 @@ db259eaa0bd7d33f5d216101986ad969  kernel/classes/ezsiteaccess.php
 ebcba5714a295eef01ac74d076b1f321  kernel/classes/ezsitedata.php
 fb7d18141de54975752467d31e706002  kernel/classes/ezsiteinstaller.php
 d5472916c1f931c0dec703689a6e41ef  kernel/classes/ezsslzone.php
-826b082a22964fe40fca16ff259ff120  kernel/classes/ezstaticcache.php
+49e205351e03db2f7a529f83fa0e4409  kernel/classes/ezstaticcache.php
 4c4ebf0efde00cda84dd42cd126a5e6f  kernel/classes/ezsubtreecache.php
 8835a6f1662a176840f77ee8c76f6434  kernel/classes/eztextinputparser.php
 89eb1d518fd574d9fc1194e74895e58b  kernel/classes/eztipafriendcounter.php
@@ -23479,7 +23479,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 9cba35ad141d582489c58342a5110976  lib/ezutils/classes/ezfunctionhandler.php
 bc562a9b40207fedd00c05e8e70c4fa6  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
-a8e1c12f218b390383d44da16d24c284  lib/ezutils/classes/ezhttptool.php
+56a4ea5bb164d555e3b625eac92c3c7c  lib/ezutils/classes/ezhttptool.php
 5bbb1b1d33b211b3f1ff047d0c03d5b6  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
@@ -25976,7 +25976,7 @@ e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
 5e2632f4df904bff687d912cae161989  tests/tests/lib/ezutils/eZExtensionRequiredExtensionsTest.php
 d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.php
-743707757a43f71f9cc8ff90510eee36  tests/tests/lib/ezutils/eZHTTPToolGetDataByURLTest.php
+d0e3294210c1bf83b6c8b838abf4c7d5  tests/tests/lib/ezutils/eZHTTPToolGetDataByURLTest.php
 eac43077ae5cd7f561145f492ceece2d  tests/tests/lib/ezutils/eZHTTPToolPostNullTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php

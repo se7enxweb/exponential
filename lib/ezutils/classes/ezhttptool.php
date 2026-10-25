@@ -779,13 +779,7 @@ EOT;
                 )
             );
             // a redirect to file:// or gopher:// was followed as well; http and https only, also after redirects
-            if ( !defined( 'CURLOPT_PROTOCOLS_STR' ) ||
-                 !curl_setopt( $ch, CURLOPT_PROTOCOLS_STR, 'http,https' ) ||
-                 !curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS_STR, 'http,https' ) )
-            {
-                curl_setopt( $ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS );
-                curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS );
-            }
+            self::limitCurlToHTTP( $ch );
             $ini = eZINI::instance();
             if ( $justCheckURL )
             {
@@ -891,6 +885,27 @@ EOT;
 
         fclose( $fid );
         return $data;
+    }
+
+    /**
+     * Limits the curl handle $ch to http and https, for the address itself and for every redirect it follows
+     * (CURLOPT_PROTOCOLS_STR/CURLOPT_REDIR_PROTOCOLS_STR, or CURLOPT_PROTOCOLS/CURLOPT_REDIR_PROTOCOLS on an older
+     * libcurl). With CURLOPT_FOLLOWLOCATION and no limit, a redirect to file:// or gopher:// was followed by libcurl
+     * versions that allow it.
+     *
+     * @param resource|\CurlHandle $ch
+     * @return bool whether the limit was set
+     */
+    static function limitCurlToHTTP( $ch )
+    {
+        if ( defined( 'CURLOPT_PROTOCOLS_STR' ) && defined( 'CURLOPT_REDIR_PROTOCOLS_STR' ) &&
+             curl_setopt( $ch, CURLOPT_PROTOCOLS_STR, 'http,https' ) &&
+             curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS_STR, 'http,https' ) )
+        {
+            return true;
+        }
+        return curl_setopt( $ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS ) &&
+               curl_setopt( $ch, CURLOPT_REDIR_PROTOCOLS, CURLPROTO_HTTP | CURLPROTO_HTTPS );
     }
 
     /**
