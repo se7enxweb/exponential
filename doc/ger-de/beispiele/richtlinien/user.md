@@ -67,7 +67,7 @@ $role->appendPolicy( 'user', 'hygiene' );
 
 ## login
 
-Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md), [sessions](../modulansichten/user/sessions.md).
+Geprüft von den Ansichten: [activate](../modulansichten/user/activate.md), [edit](../modulansichten/user/edit.md), [login](../modulansichten/user/login.md), [logout](../modulansichten/user/logout.md), [megamenu](../modulansichten/user/megamenu.md), [passkeys](../modulansichten/user/passkeys.md), [preferences](../modulansichten/user/preferences.md), [registration](../modulansichten/user/registration.md), [sessions](../modulansichten/user/sessions.md).
 
 | Einschränkung | Werte stammen aus |
 |---|---|

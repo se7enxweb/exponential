@@ -76,7 +76,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |
 | [shopaccount.ini](shopaccount/README.md) | Kernel | 3 |
-| [site.ini](site/README.md) | Kernel | 52 |
+| [site.ini](site/README.md) | Kernel | 59 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |
 | [staticcache.ini](staticcache/README.md) | Kernel | 1 |

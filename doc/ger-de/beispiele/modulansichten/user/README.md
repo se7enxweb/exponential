@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # Das Modul user
 
-Name `User management`, definiert in `kernel/user/module.php`. 16 Ansichten.
+Name `User management`, definiert in `kernel/user/module.php`. 17 Ansichten.
 
 | Ansicht | Adresse | Richtlinienfunktionen |
 |---|---|---|
@@ -22,6 +22,7 @@ Name `User management`, definiert in `kernel/user/module.php`. 16 Ansichten.
 | [login](login.md) | `/user/login` | login |
 | [logout](logout.md) | `/user/logout` | login |
 | [megamenu](megamenu.md) | `/user/megamenu/<Tab>` | login |
+| [passkeys](passkeys.md) | `/user/passkeys` | login |
 | [password](password.md) | `/user/password/<UserID>` | password |
 | [preferences](preferences.md) | `/user/preferences/<Function>/<Key>/<Value>` | login |
 | [register](register.md) | `/user/register/<redirect_number>` | register |

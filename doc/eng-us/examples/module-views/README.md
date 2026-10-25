@@ -43,14 +43,14 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [secrets](secrets/README.md) | 1 | `kernel/secrets/module.php` |
 | [section](section/README.md) | 4 | `kernel/section/module.php` |
 | [settings](settings/README.md) | 2 | `kernel/settings/module.php` |
-| [setup](setup/README.md) | 44 | `kernel/setup/module.php` |
+| [setup](setup/README.md) | 45 | `kernel/setup/module.php` |
 | [shop](shop/README.md) | 36 | `kernel/shop/module.php` |
 | [state](state/README.md) | 6 | `kernel/state/module.php` |
 | [switchlanguage](switchlanguage/README.md) | 1 | `kernel/private/modules/switchlanguage/module.php` |
 | [trigger](trigger/README.md) | 1 | `kernel/trigger/module.php` |
 | [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/module.php` |
 | [url](url/README.md) | 3 | `kernel/url/module.php` |
-| [user](user/README.md) | 16 | `kernel/user/module.php` |
+| [user](user/README.md) | 17 | `kernel/user/module.php` |
 | [visual](visual/README.md) | 7 | `kernel/visual/module.php` |
 | [workflow](workflow/README.md) | 11 | `kernel/workflow/module.php` |
 

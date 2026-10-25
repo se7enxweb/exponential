@@ -76,6 +76,7 @@ Definiert in `kernel/content/function_definition.php`. Ein mit * markierter Para
 | [version](version.md) | `object_id`*, `version_id`* |
 | [version_count](version_count.md) | `contentobject`* |
 | [version_list](version_list.md) | `contentobject`*, `offset`, `limit`, `sorts` |
+| [view_bookmark](view_bookmark.md) | `uri`*, `path` |
 | [view_top_list](view_top_list.md) | `class_id`, `section_id`, `offset`, `limit` |
 
 - [Alle Beispiele](../../README.md)

@@ -34,7 +34,7 @@ $result = eZFunctionHandler::execute( 'content', 'bookmark_rows', array( 'folder
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/standard/templates/content/bookmark_tree.tpl` line 18:
+The first use in the templates of this installation, `design/standard/templates/content/bookmark_tree.tpl` line 20:
 
 ```tpl
 {set $tree_rows = fetch( 'content', 'bookmark_rows', hash() )}

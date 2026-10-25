@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # The setup module
 
-Name `eZSetup`, defined in `kernel/setup/module.php`. 44 views.
+Name `eZSetup`, defined in `kernel/setup/module.php`. 45 views.
 
 | View | Address | Policy functions |
 |---|---|---|
@@ -44,6 +44,7 @@ Name `eZSetup`, defined in `kernel/setup/module.php`. 44 views.
 | [preloadstream](preloadstream.md) | `/setup/preloadstream` | preload |
 | [rad](rad.md) | `/setup/rad` | setup |
 | [radsurvey](radsurvey.md) | `/setup/radsurvey` | setup |
+| [reauth](reauth.md) | `/setup/reauth` | setup |
 | [session](session.md) | `/setup/session/<UserID>` | administrate |
 | [settingsextension](settingsextension.md) | `/setup/settingsextension` | setup |
 | [settingstoolbar](settingstoolbar.md) | `/setup/settingstoolbar` | setup |

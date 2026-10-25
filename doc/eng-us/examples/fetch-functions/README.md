@@ -18,7 +18,7 @@ Every `fetch( 'module', 'function', hash( ... ) )` the kernel and the bundled ex
 | [audit](audit/README.md) | 6 | `kernel/audit/function_definition.php` |
 | [class](class/README.md) | 5 | `kernel/class/function_definition.php` |
 | [collaboration](collaboration/README.md) | 10 | `kernel/collaboration/function_definition.php` |
-| [content](content/README.md) | 63 | `kernel/content/function_definition.php` |
+| [content](content/README.md) | 64 | `kernel/content/function_definition.php` |
 | [datatable](datatable/README.md) | 5 | `kernel/datatable/function_definition.php` |
 | [exphelp](exphelp/README.md) | 3 | `kernel/exphelp/function_definition.php` |
 | [expimageeditor](expimageeditor/README.md) | 1 | `extension/expimageeditor/modules/expimageeditor/function_definition.php` |

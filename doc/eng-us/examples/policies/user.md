@@ -67,7 +67,7 @@ $role->appendPolicy( 'user', 'hygiene' );
 
 ## login
 
-Checked by the views: [activate](../module-views/user/activate.md), [edit](../module-views/user/edit.md), [login](../module-views/user/login.md), [logout](../module-views/user/logout.md), [megamenu](../module-views/user/megamenu.md), [preferences](../module-views/user/preferences.md), [registration](../module-views/user/registration.md), [sessions](../module-views/user/sessions.md).
+Checked by the views: [activate](../module-views/user/activate.md), [edit](../module-views/user/edit.md), [login](../module-views/user/login.md), [logout](../module-views/user/logout.md), [megamenu](../module-views/user/megamenu.md), [passkeys](../module-views/user/passkeys.md), [preferences](../module-views/user/preferences.md), [registration](../module-views/user/registration.md), [sessions](../module-views/user/sessions.md).
 
 | Limitation | Values come from |
 |---|---|
