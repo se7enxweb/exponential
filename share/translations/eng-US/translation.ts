@@ -18019,6 +18019,10 @@ Note: The packages will not be uninstalled.</translation>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deactivate user accounts and move them to the group of deactivated users, and move them back</translation>
     </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>see where other users are signed in, and sign them out</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/view</name>
@@ -38122,6 +38126,34 @@ your account.</translation>
     <message>
         <source>Open e-mail preferences</source>
         <translation>Open e-mail preferences</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Where this user is signed in, and signing the user out everywhere.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Manage devices</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Show sessions</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count signed in</translation>
     </message>
 </context>
 <context>
@@ -68323,6 +68355,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75700,6 +75740,625 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Browse the tables of the persistent classes…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Phone</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program or app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automated client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unknown device</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Signed in before sessions were recorded</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Signed out from this page</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Signed out by an administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Signed out with &quot;all other sessions&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Replaced by a new sign-in</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ended by a password change</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Where this account is signed in right now. Signing the user out ends every session at its next request.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Back to the account</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>The session was signed out. The device has to sign in again.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count other sessions were signed out.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>There were no other sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessions of this user were signed out.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>This user had no sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>This is the session you are using. To end it, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>That session had already ended.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>You will get an e-mail when your account signs in from a new device.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>You will no longer get an e-mail about sign-ins from new devices.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>The page had expired. Nothing was changed; please try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>The table expuser_session is missing</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sign out all other sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out everywhere</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Yes, sign out the other sessions</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Yes, sign out every session</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>This device</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Shown as its network; the full address is kept for the administrators.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>signed in from %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last active</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Now</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Stays signed in</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Remember me, until %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Until the browser is closed</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Signed in at</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Browser identification</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>To end this session, sign out.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sign out this session</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>No session is signed in.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sign-in alerts</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail me when my account signs in from a new device or browser</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>This site does not send sign-in alerts.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Recently ended</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessions that ended in the last %days days.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ended</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>None.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Phone</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program or app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automated client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unknown device</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Signed in before sessions were recorded</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Signed out from this page</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Signed out by an administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Signed out with &quot;all other sessions&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Replaced by a new sign-in</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ended by a password change</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Where this account is signed in right now. Signing the user out ends every session at its next request.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>The session was signed out. The device has to sign in again.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count other sessions were signed out.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>There were no other sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessions of this user were signed out.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>This user had no sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>This is the session you are using. To end it, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>That session had already ended.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>You will get an e-mail when your account signs in from a new device.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>You will no longer get an e-mail about sign-ins from new devices.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>The page had expired. Nothing was changed; please try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sessions are not recorded on this site.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessions are not recorded yet: the site needs its database update.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>This device</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last active</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Now</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Stays signed in</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Remember me, until %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Until the browser is closed</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>To end this session, sign out.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sign out this session</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sign out all other sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out everywhere</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sign-in alerts</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail me when my account signs in from a new device or browser</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Recently ended</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ended</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>None in the last %days days.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>See where your account is signed in, and sign out a device you do not know.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Manage devices</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>New sign-in to your account on %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hello,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Device:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Time:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Approximate address:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>If this was you, you do not need to do anything.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>You can turn these e-mails off on the same page.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>New sign-in of %login on %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>The account %login signed in from a device or browser it has not used lately.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>The sessions of this user:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>New sign-in to your account</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Your account %login was used to sign in from %device (%ip) on %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>New sign-in of %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>The account %login signed in from a new device: %device (%ip) on %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
     </message>
 </context>
 </TS>

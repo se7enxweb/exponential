@@ -825,6 +825,25 @@ CREATE TABLE `exp_data_sync_link` (
 ,  `sync_id` integer NOT NULL DEFAULT '0'
 ,  `synced` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `expuser_session` (
+  `browser` varchar(64) NOT NULL DEFAULT ''
+,  `created` integer NOT NULL DEFAULT '0'
+,  `device_type` varchar(16) NOT NULL DEFAULT ''
+,  `end_reason` varchar(32) NOT NULL DEFAULT ''
+,  `ended` integer NOT NULL DEFAULT '0'
+,  `ended_by` integer NOT NULL DEFAULT '0'
+,  `first_ip` varchar(64) NOT NULL DEFAULT ''
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `last_active` integer NOT NULL DEFAULT '0'
+,  `last_ip` varchar(64) NOT NULL DEFAULT ''
+,  `method` varchar(32) NOT NULL DEFAULT ''
+,  `os` varchar(64) NOT NULL DEFAULT ''
+,  `remember_until` integer NOT NULL DEFAULT '0'
+,  `siteaccess` varchar(64) NOT NULL DEFAULT ''
+,  `token_hash` varchar(64) NOT NULL DEFAULT ''
+,  `user_agent` varchar(512) NOT NULL DEFAULT ''
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
 CREATE TABLE `ezproductcategory` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
 ,  `name` varchar(255) NOT NULL DEFAULT ''
@@ -1347,6 +1366,9 @@ CREATE INDEX exp_data_sync_mode ON exp_data_sync ( run_mode, state );
 CREATE INDEX exp_data_sync_conflict_state ON exp_data_sync_conflict ( sync_id, state );
 CREATE UNIQUE INDEX exp_data_sync_link_key ON exp_data_sync_link ( sync_id, row_key );
 CREATE INDEX exp_data_sync_link_object ON exp_data_sync_link ( sync_id, object_id );
+CREATE UNIQUE INDEX expuser_session_token ON expuser_session ( token_hash );
+CREATE INDEX expuser_session_user ON expuser_session ( user_id, ended );
+CREATE INDEX expuser_session_active ON expuser_session ( ended, last_active );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);
