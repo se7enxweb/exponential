@@ -86,6 +86,16 @@ The page size comes from `admininterface.ini [PaginationSettings] ItemsPerPageLi
   ticked bookmarks move with it.
 - **Remove selected** opens a short confirmation first. Only the bookmarks are removed.
 
+### Bookmarking a system page
+
+Pages of the administration itself (System information, the cache page, the help dashboard, the audit trail filtered
+to a user, a list opened at a page) are bookmarked from the page: **Bookmark this page** above the breadcrumb, or the
+same button in the Bookmarks box. The form takes a name (the page title by default) and a folder. Such bookmarks have a
+gear icon, a card with their address, **Open** and **Rename**, and are arranged, moved and removed like every other
+bookmark; a page you may no longer open is shown without a link and marked **No access**. Step by step, with
+pictures: [Bookmarking system pages](../help/bookmarking-system-pages.md); details:
+[Bookmarks of system pages](../features/6.0/bookmarks-of-system-pages.md).
+
 ## 4. Arranging bookmarks and folders
 
 In **Your order** (without a search) every card has a **grip** (⠿) at its left, and every folder of the folder list

@@ -694,7 +694,23 @@ class eZContentFunctionCollection
     static public function fetchBookmarkRows( $folderID = 0 )
     {
         $user = eZUser::currentUser();
-        return array( 'result' => eZContentBrowseBookmarkFolder::fetchRowsForUser( $user->id(), $folderID ) );
+        $rows = eZContentBrowseBookmarkFolder::fetchRowsForUser( $user->id(), $folderID );
+        // every bookmark row says its kind ('node' or 'view'); a bookmark of a system page has its address and
+        // whether the user may open it now (expBookmarkView)
+        if ( class_exists( 'expBookmarkView' ) )
+            $rows = expBookmarkView::decorateRows( $rows, $user->id() );
+        return array( 'result' => $rows );
+    }
+
+    /**
+     * What the "Bookmark this page" action needs to know about a page of a module view, see
+     * expBookmarkView::pageState(): available, uri, name, bookmark, folder_id.
+     */
+    static public function fetchViewBookmark( $uri, $path = array() )
+    {
+        if ( !class_exists( 'expBookmarkView' ) )
+            return array( 'result' => array( 'available' => false, 'uri' => '', 'name' => '', 'bookmark' => 0, 'folder_id' => 0 ) );
+        return array( 'result' => expBookmarkView::pageState( (string) $uri, is_array( $path ) ? $path : array() ) );
     }
 
     /**

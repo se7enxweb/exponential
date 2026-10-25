@@ -437,6 +437,29 @@ CREATE TABLE expbookmark_folder (
 ALTER TABLE ONLY expbookmark_folder ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY ( id );
 CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree ( user_id, parent_id );
 
+-- Bookmarks of system pages (doc/eng-us/features/6.0/bookmarks-of-system-pages.md).
+--
+-- A bookmark can point to a page of a module view (setup/systemupgrade, audit/console ...)
+-- instead of a node. Such a bookmark is a row of ezcontentbrowsebookmark with node_id 0, so
+-- it has a name, a folder and a place in its folder like every other; expbookmark_view holds
+-- its address (module_uri, without the siteaccess). New table only: node bookmarks do not
+-- change. Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so
+-- running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expbookmark_view' ) THEN
+        CREATE TABLE expbookmark_view (
+          bookmark_id integer DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          module_uri text,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY expbookmark_view ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY ( bookmark_id );
+        CREATE INDEX expbookmark_view_user ON expbookmark_view USING btree ( user_id );
+    END IF;
+END
+$$;
+
 -- E-mail preferences and consent.
 --
 -- New tables only; nothing existing changes. Mail without a category is sent as before, so the update can run
@@ -836,3 +859,43 @@ $$;
 --
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge character varying(128);
 ALTER TABLE ezprest_authcode ADD COLUMN IF NOT EXISTS code_challenge_method character varying(10);
+
+-- Passkeys (doc/eng-us/guides/passkeys.md).
+--
+-- One row per passkey (WebAuthn credential) a user registered on user/passkeys. credential_id
+-- and public_key are base64url (the COSE key the authenticator sent); credential_hash is the
+-- SHA-256 (hex) of the credential id, what a sign-in looks the passkey up by. user_handle is
+-- the random handle the browser keeps with the passkey (never the user id). sign_count is the
+-- authenticator's signature counter; created and last_used are timestamps (0 = not yet).
+-- Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so running this block
+-- again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'exppasskey' ) THEN
+        IF NOT EXISTS ( SELECT 1 FROM information_schema.sequences WHERE sequence_schema = current_schema() AND sequence_name = 'exppasskey_id_seq' ) THEN
+            CREATE SEQUENCE exppasskey_id_seq START 1 INCREMENT 1 MAXVALUE 9223372036854775807 MINVALUE 1 CACHE 1;
+        END IF;
+        CREATE TABLE exppasskey (
+          aaguid character varying(36) DEFAULT ''::character varying NOT NULL,
+          algorithm integer DEFAULT 0 NOT NULL,
+          backup_eligible integer DEFAULT 0 NOT NULL,
+          backup_state integer DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          credential_hash character varying(64) DEFAULT ''::character varying NOT NULL,
+          credential_id text,
+          id integer DEFAULT nextval('exppasskey_id_seq'::text) NOT NULL,
+          last_ip character varying(64) DEFAULT ''::character varying NOT NULL,
+          last_used integer DEFAULT 0 NOT NULL,
+          name character varying(255) DEFAULT ''::character varying NOT NULL,
+          public_key text,
+          sign_count bigint DEFAULT 0 NOT NULL,
+          transports character varying(255) DEFAULT ''::character varying NOT NULL,
+          user_handle character varying(128) DEFAULT ''::character varying NOT NULL,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY exppasskey ADD CONSTRAINT exppasskey_pkey PRIMARY KEY ( id );
+        CREATE UNIQUE INDEX exppasskey_credential ON exppasskey USING btree ( credential_hash );
+        CREATE INDEX exppasskey_user ON exppasskey USING btree ( user_id );
+    END IF;
+END
+$$;

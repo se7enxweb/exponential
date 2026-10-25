@@ -92,6 +92,17 @@ Die Seitengröße kommt aus `admininterface.ini [PaginationSettings] ItemsPerPag
   markiert, werden alle markierten Lesezeichen mit verschoben.
 - **Ausgewählte entfernen** öffnet zuerst eine kurze Bestätigung. Es werden nur die Lesezeichen entfernt.
 
+### Eine Systemseite merken
+
+Seiten der Administration selbst (die Systeminformationen, die Cache-Seite, die Hilfe-Übersicht, das Audit-Protokoll
+gefiltert auf einen Benutzer, eine Liste auf einer bestimmten Seite) merken Sie auf der Seite: **Seite merken** über dem
+Pfad oder dieselbe Schaltfläche im Kasten Lesezeichen. Das Formular nimmt einen Namen (standardmäßig den Seitentitel)
+und einen Ordner. Solche Lesezeichen haben ein Zahnrad-Symbol, eine Karte mit ihrer Adresse, **Öffnen** und
+**Umbenennen** und werden wie jedes andere Lesezeichen angeordnet, verschoben und entfernt; eine Seite, die Sie nicht
+mehr öffnen dürfen, erscheint ohne Link und mit **Kein Zugriff**. Schritt für Schritt, mit Bildern:
+[Systemseiten als Lesezeichen](../hilfe/systemseiten-als-lesezeichen.md); Einzelheiten:
+[Lesezeichen für Systemseiten](../funktionen/6.0/lesezeichen-fuer-systemseiten.md).
+
 ## 4. Lesezeichen und Ordner anordnen
 
 In **Ihre Reihenfolge** (ohne Suche) hat jede Karte links einen **Griff** (⠿), und jeder Ordner der Ordnerliste hat

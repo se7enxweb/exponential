@@ -61,6 +61,22 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             return \expViewParameters::redirect( \expBookmarkPage::path( $scopeFolder, $sort,
                                                      \expViewParameters::clean( \expViewParameters::posted( $_POST, 'q' ) ) ) );
 
+        // Bookmarks of system pages (expBookmarkView): add (from "Bookmark this page" of any module view, which posts
+        // the page's address and comes back to it) and rename (a card of this page).
+        if ( $http->hasPostVariable( 'BookmarkViewAction' ) && class_exists( '\expBookmarkView' ) )
+        {
+            $notice = \expBookmarkView::handleAction( $userID, $http );
+            if ( $notice['level'] !== 'error' && $http->hasPostVariable( 'RedirectURI' ) )
+            {
+                // back to the page that was bookmarked, when that is a page of this site
+                $back = \eZRedirectManager::safeURI( $http->postVariable( 'RedirectURI' ) );
+                if ( $back !== false && $back !== '' )
+                    return $this->viewResult( null, $Module->redirectTo( $back ) );
+            }
+            $http->setSessionVariable( 'BookmarkNotice', array( 'level' => $notice['level'], 'text' => $notice['text'] ) );
+            return $this->viewResult( null, $Module->redirectTo( $here ) );
+        }
+
         // Folder actions: one POST field says which (create, rename, delete, move_bookmark, move_folder, place, reorder).
         if ( $http->hasPostVariable( 'MoveSelectedButton' ) )
             $http->setPostVariable( 'BookmarkFolderAction', 'move_bookmark' );
@@ -104,6 +120,32 @@ class Bookmark extends \Exponential\Runnable\ModuleView
                 : array( 'level' => 'error', 'text' => \ezpI18n::tr( 'kernel/content', 'The order was not saved: it named an entry that is not in that folder of yours.' ) ) );
             return $this->viewResult( null, $Module->redirectTo( $here ) );
         }
+        // Rename of a system page bookmark on its card: its Save name button (BookmarkRenameButton = its id), or Enter in
+        // its name field (the form's first button, BookmarkPositionDefault), which renames the first one that was changed.
+        $renameID = 0;
+        if ( $http->hasPostVariable( 'BookmarkRenameButton' ) )
+            $renameID = (int) $http->postVariable( 'BookmarkRenameButton' );
+        else if ( $http->hasPostVariable( 'BookmarkPositionDefault' ) && $http->hasPostVariable( 'BookmarkRenameName' ) )
+        {
+            $shownNames = (array) $http->postVariable( 'BookmarkRenameShown', array() );
+            foreach ( (array) $http->postVariable( 'BookmarkRenameName' ) as $key => $value )
+                if ( isset( $shownNames[$key] ) && is_scalar( $value ) && (string) $shownNames[$key] !== (string) $value )
+                {
+                    $renameID = (int) $key;
+                    break;
+                }
+        }
+        if ( $renameID > 0 && class_exists( '\expBookmarkView' ) )
+        {
+            $names = (array) $http->postVariable( 'BookmarkRenameName', array() );
+            $name = isset( $names[$renameID] ) && is_scalar( $names[$renameID] ) ? (string) $names[$renameID] : '';
+            $renamed = \expBookmarkView::rename( $userID, $renameID, $name );
+            $http->setSessionVariable( 'BookmarkNotice', $renamed
+                ? array( 'level' => 'feedback', 'text' => \ezpI18n::tr( 'kernel/content', 'The bookmark was renamed to "%name".', null, array( '%name' => \eZContentBrowseBookmarkFolder::cleanName( $name ) ) ) )
+                : array( 'level' => 'error', 'text' => \ezpI18n::tr( 'kernel/content', 'The bookmark could not be renamed: it needs a name.' ) ) );
+            return $this->viewResult( null, $Module->redirectTo( $here ) );
+        }
+
         // The position fields: the Move button of one bookmark (BookmarkPositionButton = its id), or Enter in a field
         // (BookmarkPositionDefault, the form's first button), which moves the first bookmark whose field was changed.
         if ( $http->hasPostVariable( 'BookmarkPositionButton' ) || $http->hasPostVariable( 'BookmarkPositionDefault' ) )
@@ -192,8 +234,10 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             return $this->viewResult( null, $Module->redirectTo( \expBookmarkPage::path( $scopeFolder, $sort ) ) );
         }
 
-        // What the page shows
-        $items = \expBookmarkPage::items( $rows, self::nodeInfo( $rows ) );
+        // What the page shows. The bookmarks of system pages carry their address and whether the user may open them.
+        if ( class_exists( '\expBookmarkView' ) )
+            $rows = \expBookmarkView::decorateRows( $rows, $userID );
+        $items = \expBookmarkPage::items( $rows, self::nodeInfo( $rows ), \ezpI18n::tr( 'kernel/content', 'System page' ) );
         list( $limit, $limitChoice, $limitChoices ) = \expAdminPagination::chosen( 'content/bookmark', 'admin_bookmark_list_limit', array( 25, 50, 100 ) );
         $selection = \expBookmarkPage::select( $items, $folders, $scopeFolder, $search, $sort );
         $page = \expBookmarkPage::page( $selection, $offset, $limit );
@@ -246,6 +290,8 @@ class Bookmark extends \Exponential\Runnable\ModuleView
             'order_buttons' => $sort === 'own' && $search === '',
             'own_path' => \expBookmarkPage::path( $scopeFolder ),
             'first_last' => self::firstLast( $items ),
+            // system pages can be bookmarked (the table of their addresses exists)
+            'views_available' => class_exists( '\expBookmarkView' ) && \expBookmarkView::isAvailable(),
         ) );
 
         $Result = array();
@@ -265,7 +311,7 @@ class Bookmark extends \Exponential\Runnable\ModuleView
         self::$nodes = array();
         $nodeIDs = array();
         foreach ( $rows as $row )
-            if ( $row['type'] === 'bookmark' )
+            if ( $row['type'] === 'bookmark' && (int) $row['bookmark']->attribute( 'node_id' ) > 0 )
                 $nodeIDs[(int) $row['bookmark']->attribute( 'node_id' )] = true;
         if ( !$nodeIDs )
             return array();

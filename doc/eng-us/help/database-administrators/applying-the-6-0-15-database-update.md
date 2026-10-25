@@ -36,6 +36,7 @@ whoever deploys the site, the database by you. Follow the steps in order.
 | OPML and podcast exports | `ezrss_export.opml_head`, `podcast_head`, table `ezrss_export_opml_item` |
 | Audit index | `expaudit_cursor`, `expaudit_event`, `expaudit_file` |
 | Bookmark folders | `expbookmark_folder`, `ezcontentbrowsebookmark.folder_id`, `priority` |
+| Bookmarks of system pages | `expbookmark_view` (any engine: `update/common/scripts/6.0/createbookmarkviewtable.php`) |
 | E-mail preferences | `expmail_category`, `expmail_consent_log`, `expmail_pending`, `expmail_preference`, `expmail_suppression` |
 | Who trashed an object | `ezcontentobject_trash.trashed_by`, `trashed_via` |
 | Personal API keys | `expapikey` |

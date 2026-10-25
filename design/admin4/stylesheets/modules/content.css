@@ -175,6 +175,52 @@
   .a4-content-bookmark .a4-content-bookmark-cardfoot { padding-inline-start: 0; }
 }
 
+/* a bookmark of a system page (a module view): its gear icon, its address, Rename on its card */
+.a4-content-bookmark .a4-content-bookmark-kind { flex: 0 0 auto; color: var(--a4-muted); }
+.a4-content-bookmark .a4-content-bookmark-uri { font-family: var(--a4-mono); font-size: var(--a4-text-s); overflow-wrap: anywhere; }
+.a4-content-bookmark .a4-content-bookmark-rename { margin-top: var(--a4-space-2); }
+.a4-content-bookmark .a4-content-bookmark-rename > summary { min-height: 32px; padding: var(--a4-space-1) var(--a4-space-3); font-size: var(--a4-text-s); }
+.a4-content-bookmark .a4-content-bookmark-viewhint { display: flex; align-items: center; gap: var(--a4-space-2); margin: 0 0 var(--a4-space-3); }
+.a4-content-bookmark .a4-content-bookmark-viewhint .a4-icon { flex: 0 0 auto; color: var(--a4-accent-text); }
+
+/* "Bookmark this page" (design:content/bookmark_view_action.tpl): a button above the breadcrumb on the end side of the
+   page, and in the Bookmarks box; it opens a small form in place */
+.a4-content-bookmark-pageaction { position: relative; margin: 0; }
+.a4-content-bookmark-pageaction.is-toolbar { float: inline-end; margin-inline-start: var(--a4-space-3); margin-bottom: var(--a4-space-1); z-index: var(--a4-z-raised); }
+.a4-content-bookmark-pageaction.is-box { margin-top: var(--a4-space-1); max-width: 100%; }
+.a4-content-bookmark-pageaction.is-box > summary { max-width: 100%; white-space: normal; text-align: start; }
+.a4-content-bookmark-pageaction > summary { display: inline-flex; align-items: center; gap: var(--a4-space-1); list-style: none; cursor: pointer; }
+.a4-content-bookmark-pageaction > summary::-webkit-details-marker { display: none; }
+.a4-content-bookmark-pageaction.is-bookmarked > summary { border-color: var(--a4-accent); background-color: var(--a4-accent-soft); color: var(--a4-accent-text); }
+.a4-content-bookmark-pageaction.is-bookmarked > summary .a4-icon { color: var(--a4-accent-text); }
+.a4-content-bookmark-pageaction[open] > summary { box-shadow: 0 0 0 2px var(--a4-ring); }
+.a4-content-bookmark-pageform {
+  display: grid;
+  gap: var(--a4-space-2);
+  margin: var(--a4-space-1) 0 0;
+  padding: var(--a4-space-3);
+  border: 1px solid var(--a4-line);
+  border-radius: var(--a4-radius);
+  background-color: var(--a4-card);
+  color: var(--a4-ink);
+  box-shadow: var(--a4-shadow-m);
+}
+.a4-content-bookmark-pageaction.is-toolbar .a4-content-bookmark-pageform {
+  position: absolute;
+  inset-inline-end: 0;
+  top: 100%;
+  z-index: var(--a4-z-popover);
+  width: min(24rem, calc(100vw - var(--a4-space-6)));
+}
+.a4-content-bookmark-pageform .a4-field input[type="text"],
+.a4-content-bookmark-pageform .a4-field select { width: 100%; box-sizing: border-box; }
+.a4-content-bookmark-pageform .a4-help { margin: 0; overflow-wrap: anywhere; }
+.a4-content-bookmark-pageform .a4-actions { justify-content: flex-start; flex-wrap: wrap; gap: var(--a4-space-2); }
+@media (max-width: 600px) {
+  .a4-content-bookmark-pageaction.is-toolbar { float: none; margin: 0 0 var(--a4-space-2); }
+  .a4-content-bookmark-pageaction.is-toolbar .a4-content-bookmark-pageform { position: static; width: auto; }
+}
+
 /* ---- languages ---- content/translations, its language page and the add form ------------------------------ */
 
 .a4-content-languages h1.context-title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--a4-space-1) var(--a4-space-3); }
