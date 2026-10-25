@@ -776,7 +776,7 @@ a60e0b8b6c2889f620c07be0ac358e89  design/admin/templates/shop/discountgroup.tpl
 d430e8f6f216235d6f8fd86f3b3c7ff6  design/admin/templates/shop/discountgroupedit.tpl
 c36ae5abac788856184a63d7ec74057e  design/admin/templates/shop/discountgroupmembershipview.tpl
 428d625914d4ae46107a79cd3e08c268  design/admin/templates/shop/discountruleedit.tpl
-c601a76641325748d5168083ff954df3  design/admin/templates/shop/editcurrency.tpl
+ee0e79b4ce1b4b97d81e3027d8dfa471  design/admin/templates/shop/editcurrency.tpl
 05cbfd346b181a0e8f603afc1f1c88de  design/admin/templates/shop/editvatrule.tpl
 f5c08358e61adca9983befbf5c392600  design/admin/templates/shop/orderlist.tpl
 559970854a040f502b37304906f5ace1  design/admin/templates/shop/orderstatistics.tpl
@@ -1582,7 +1582,7 @@ b93e11154287ac254e5145bee3990c88  design/admin4/templates/shop/discountgroup.tpl
 17bcf8be30b9eca0d12969e0c7446ff7  design/admin4/templates/shop/discountgroupedit.tpl
 70d353ed94c75ea8cb16d9a6df27af8b  design/admin4/templates/shop/discountgroupmembershipview.tpl
 212055f7c498ae444c2248791c45b8cc  design/admin4/templates/shop/discountruleedit.tpl
-9e182b3e7746147d9e110e54eef5f1e0  design/admin4/templates/shop/editcurrency.tpl
+045333e7c2e9b095c4300c599ba15f82  design/admin4/templates/shop/editcurrency.tpl
 8d91ad43162fe42bcf9fe87f8723603c  design/admin4/templates/shop/editvatrule.tpl
 4414d68153c3cca7d6bd28d25a7a019e  design/admin4/templates/shop/orderlist.tpl
 0f625fff7f6070eefe0aebe8ec7da8f6  design/admin4/templates/shop/orderstatistics.tpl
@@ -1775,7 +1775,7 @@ a231e856b95f14b6996ff2ad0512cf39  design/base/override/templates/datatype/ezobje
 79f06729684b86aa9787180461f60060  design/base/override/templates/datatype/ezxmltext/quote.tpl
 aef227200811f5130222d1b53ae74bdd  design/base/override/templates/datatype/multiprice.tpl
 341d709aa68cbcc6acc7ac9dceb8f67a  design/base/override/templates/datatype/price.tpl
-558780b3aedd6966e85abd2d4b7c5e41  design/base/override/templates/edit/comment.tpl
+3f341cd677850961c1219263a29295e5  design/base/override/templates/edit/comment.tpl
 a8a9b1a384c22b90d7424aaf7adcdc11  design/base/override/templates/edit/company.tpl
 540560bf171b6454a977a4b9ab2fbe75  design/base/override/templates/edit/file.tpl
 fa423c80bc0398cf1a12ef6bdc67c154  design/base/override/templates/edit/forum_reply.tpl
@@ -2299,7 +2299,7 @@ c2281775e95557cf600178080d8f13ef  design/standard/templates/content/browse_relat
 d10eaf3b86459adc8368b26375377270  design/standard/templates/content/collectedinfo.tpl
 42a173abb0152f703c46ad88c7eb2da3  design/standard/templates/content/collectedinfo/feedback.tpl
 9925fe6f60157c5534c31ec4a8756c60  design/standard/templates/content/collectedinfo/form.tpl
-1e78aed642129d41b4daa5f580d02857  design/standard/templates/content/collectedinfo/poll.tpl
+3e859a5cc115118580061dc57dd1803e  design/standard/templates/content/collectedinfo/poll.tpl
 97071f9dc4d763fbc1fe5d1856862a8d  design/standard/templates/content/collectedinfo_validation.tpl
 6366f2652dda21a25224ba1f0a5d76da  design/standard/templates/content/collectedinfomail.tpl
 a703444c6c44c9b801e9b732fee924cb  design/standard/templates/content/collectedinfomail/feedback.tpl
@@ -2604,7 +2604,7 @@ b898e8ef7724e37b2b6286d5f10119c1  design/standard/templates/content/edit_placeme
 23dcd6d6ce6130caf3174bafbef08b4f  design/standard/templates/content/edit_redirection.tpl
 b47784b07d7484a95f2ca4c6d6fe8703  design/standard/templates/content/edit_right_menu.tpl
 adae0def427fd51706089f0a31a1063e  design/standard/templates/content/edit_validation.tpl
-a634488f758570d50d423218f7c883f8  design/standard/templates/content/history.tpl
+d8079a06a353c58205c4023b72fdd1a3  design/standard/templates/content/history.tpl
 a716d7ff7c19c5cac43aaafeeb84c4a1  design/standard/templates/content/history_access_messages.tpl
 456ae8da6dd39dde2bdb8e80b7f218ea  design/standard/templates/content/job.tpl
 4b3ee7e61152f67d41cdb954bf253096  design/standard/templates/content/job_confirm.tpl
@@ -3089,7 +3089,7 @@ f8fe91f379102cd8eb485cfc365bb809  design/standard/templates/user/parts/reauth_re
 eca5d5ed39fdf3334394887dad070c6e  design/standard/templates/user/password_changed_mail.tpl
 0df6c6679df5971b6ce443d1bd0fe421  design/standard/templates/user/preferences_confirm.tpl
 4afad28b0a52aa2ddf0dfa4a0807beca  design/standard/templates/user/reauth.tpl
-403ede2a718a1989f8627ad885554040  design/standard/templates/user/register.tpl
+7d62aeac7ad3b7636d3429748085c159  design/standard/templates/user/register.tpl
 ed5856b59fd9402bdad145c9c129582b  design/standard/templates/user/register_user_not_valid.tpl
 a31eca132c1aa9d51bcf5825b31dcb5c  design/standard/templates/user/registration.tpl
 be1ed870602e97378284d47a65ab8fb5  design/standard/templates/user/registrationapproved.tpl
@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4b15c03156f078cfe878660aef7d43f9  doc/changelogs/6.0/6.0.15.md
+e98f8e742c30df126865fd8cc83b3d97  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24613,7 +24613,7 @@ cdc564cefe111d41b225a7d0a1604c44  tests/tests/design/AdminSetupTabsLeftMenuTest.
 0c0fed57491289c5ea0e983542bf772f  tests/tests/design/AdminSetupWizardTemplatesTest.php
 4bd9fe5fe6853e5b2879c67ea5be56d7  tests/tests/design/AdminSidebarDrawerTest.php
 2f2e16d4973b83b8ce685cc1cf2a1b24  tests/tests/design/AdminSiteAccessMenuTest.php
-ba6800e0719d740cf5a62564c495af76  tests/tests/design/AdminStoredValueEscapingTest.php
+f9a721f86fb1326e5582c3afe58c4fa5  tests/tests/design/AdminStoredValueEscapingTest.php
 0a10e632053871f73c98a0353398add6  tests/tests/design/AdminStylingRulesTest.php
 d909f7a7e48a8c41f5e1e16aa8f2d149  tests/tests/design/AdminSubitemsPriorityDragTest.php
 f7ac963fcf5507d76f586eaa634c782c  tests/tests/design/AdminSubitemsTranslationsTest.php
@@ -24635,6 +24635,7 @@ f49ffb34b9d0b45ed1940a7ce8b1bb43  tests/tests/design/ExtensionInlineScriptsTest.
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 d21601b03696560126cb8441faf9ba78  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
+900e06a30a94c5a2f566451e710e54d3  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 f3b5318282b84e8fa64775c32a4684de  tests/tests/design/TranslationFilesValidTest.php
