@@ -75985,6 +75985,146 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Build the help manuals from the Markdown help</source>
         <translation>Gerar os manuais de ajuda a partir da ajuda em Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Revisão e liberação</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>O tópico agora está em revisão.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>O tópico está liberado: os leitores já o veem.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>O tópico é um rascunho novamente.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Você escreveu a versão atual, então outra pessoa com a função de liberação a libera.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>O estado não foi alterado: sua função não permite esta etapa.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Fluxo de revisão</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Rascunho</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Revisão</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Voltar para revisão</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Enviar para revisão</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Liberar</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Voltar para rascunho</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Verificação do guia de estilo</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>A verificação do guia de estilo não encontrou nada.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors erros, %warnings avisos, %notices observações. Um erro faz ./console exp:help:content check falhar.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nível</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regra</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campo</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Constatação</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Isto foi útil?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Os leitores responderam sim %yes vezes e não %no vezes.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Motivos dados para não:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Obrigado. Sua resposta nos ajuda a melhorar a ajuda.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sim</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Se não, o que estava errado?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nenhum motivo informado</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Só a sua resposta é guardada, não quem você é.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Está desatualizado</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>É difícil de entender</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Falta alguma coisa</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Está errado</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Outro motivo</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Este tópico não está liberado; os leitores não o veem.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

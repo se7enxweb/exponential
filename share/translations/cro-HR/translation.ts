@@ -75042,6 +75042,146 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Izradi priručnike pomoći iz pomoći u formatu Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Pregled i izdavanje</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tema je sada u pregledu.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tema je izdana: čitatelji je sada vide.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Tema je ponovno nacrt.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Vi ste napisali trenutačnu verziju, pa je izdaje netko drugi s ulogom izdavanja.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Stanje nije promijenjeno: vaša uloga ne dopušta ovaj korak.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Tijek pregleda</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Nacrt</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Natrag u pregled</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Pošalji na pregled</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Izdaj</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Natrag u nacrt</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Provjera prema stilskom priručniku</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Provjera prema stilskom priručniku nije ništa pronašla.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors pogrešaka, %warnings upozorenja, %notices napomena. Pogreška uzrokuje neuspjeh naredbe ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Razina</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Pravilo</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Polje</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Nalaz</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Je li ovo bilo korisno?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Čitatelji su odgovorili da %yes puta i ne %no puta.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Navedeni razlozi za ne:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Hvala. Vaš odgovor pomaže nam poboljšati pomoć.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ako nije, što nije bilo u redu?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nije naveden razlog</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Sprema se samo vaš odgovor, a ne tko ste.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Zastarjelo je</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Teško je razumljivo</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Nešto nedostaje</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Netočno je</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Drugi razlog</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ova tema nije izdana; čitatelji je ne vide.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

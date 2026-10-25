@@ -75483,6 +75483,146 @@ Gracias por tu feedback</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Generar los manuales de ayuda a partir de la ayuda en Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Revisión y publicación</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>El tema está ahora en revisión.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>El tema está publicado: los lectores ya lo ven.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>El tema vuelve a ser un borrador.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Usted escribió la versión actual, así que otra persona con el rol de publicación lo publica.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>El estado no ha cambiado: su rol no permite este paso.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Flujo de revisión</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Borrador</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Revisión</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Volver a revisión</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Enviar a revisión</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Publicar</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Volver a borrador</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Comprobación de la guía de estilo</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>La comprobación de la guía de estilo no encontró nada.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors errores, %warnings advertencias, %notices avisos. Un error hace que ./console exp:help:content check falle.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivel</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regla</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campo</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Hallazgo</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>¿Le ha resultado útil?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Los lectores respondieron sí %yes veces y no %no veces.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Motivos indicados para no:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Gracias. Su respuesta nos ayuda a mejorar la ayuda.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Si no, ¿qué estaba mal?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Sin motivo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Solo se guarda su respuesta, no quién es usted.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Está desactualizado</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Es difícil de entender</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Falta algo</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Es incorrecto</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Otro motivo</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Este tema no está publicado; los lectores no lo ven.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -82624,6 +82624,146 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>More audiences</source>
         <translation>Weitere Zielgruppen</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Prüfung und Freigabe</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Das Thema ist jetzt in Prüfung.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Das Thema ist freigegeben: Leser sehen es jetzt.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Das Thema ist wieder ein Entwurf.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Sie haben die aktuelle Version geschrieben, deshalb gibt sie jemand anderes mit der Freigaberolle frei.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Der Status wurde nicht geändert: Ihre Rolle erlaubt diesen Schritt nicht.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Prüfablauf</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entwurf</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Prüfung</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Zurück in Prüfung</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Zur Prüfung geben</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Freigeben</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Zurück zum Entwurf</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Prüfung nach dem Styleguide</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Die Prüfung nach dem Styleguide hat nichts gefunden.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors Fehler, %warnings Warnungen, %notices Hinweise. Ein Fehler lässt ./console exp:help:content check fehlschlagen.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Stufe</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Feld</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Befund</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>War das hilfreich?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Leser haben %yes-mal mit Ja und %no-mal mit Nein geantwortet.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Gründe für Nein:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Vielen Dank. Ihre Antwort hilft uns, die Hilfe zu verbessern.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Wenn nicht, was war falsch?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Kein Grund angegeben</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Gespeichert wird nur Ihre Antwort, nicht wer Sie sind.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Es ist veraltet</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Es ist schwer zu verstehen</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Es fehlt etwas</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Es ist falsch</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Ein anderer Grund</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Dieses Thema ist nicht freigegeben; Leser sehen es nicht.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
