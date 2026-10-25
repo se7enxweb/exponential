@@ -265,7 +265,8 @@ class expUserHygiene
                 $sql .= ' AND v.login_count > 0 AND ABS( v.current_visit_timestamp ) < ' . (int)$cutoff;
                 break;
             case 'disabled':
-                $sql .= ' AND s.is_enabled = 0';
+                // an account without its ezuser_setting row is not enabled either
+                $sql .= ' AND ( s.is_enabled = 0 OR s.user_id IS NULL )';
                 break;
             case 'locked':
                 // eZUser::isEnabledAfterFailedLogin(): locked once the attempts exceed the limit; no limit, no lock
@@ -468,8 +469,8 @@ class expUserHygiene
                 'login' => (string)$row['login'],
                 'email' => (string)$row['email'],
                 'name' => (string)$row['name'],
-                // no ezuser_setting row: eZUser::isEnabled() counts the account as enabled
-                'enabled' => $row['is_enabled'] === null || $row['is_enabled'] === '' || (int)$row['is_enabled'] !== 0,
+                // no ezuser_setting row is not enabled, as eZUser::isEnabled() and the login decide
+                'enabled' => $row['is_enabled'] !== null && $row['is_enabled'] !== '' && (int)$row['is_enabled'] !== 0,
                 'has_key' => isset( $keys[$id] ),
                 'failed_attempts' => (int)$row['failed_login_attempts'],
                 'locked' => $this->maxFailed > 0 && (int)$row['failed_login_attempts'] > $this->maxFailed,
@@ -644,7 +645,8 @@ class expUserHygiene
             'exists' => true,
             'has_object' => $object instanceof eZContentObject,
             'can_edit' => $object instanceof eZContentObject && $object->canEdit(),
-            'enabled' => !$setting || (int)$setting->attribute( 'is_enabled' ) !== 0,
+            // no ezuser_setting row is not enabled
+            'enabled' => $setting && (int)$setting->attribute( 'is_enabled' ) !== 0,
             'has_key' => eZUserAccountKey::fetchByUserID( (int)$id ) instanceof eZUserAccountKey,
             'failed_attempts' => (int)eZUser::failedLoginAttemptsByUserID( (int)$id ),
         );

@@ -95,6 +95,9 @@ class eZContentAccessForAnotherUserTest extends PHPUnit\Framework\TestCase
     {
         $user = new eZUser( array( 'contentobject_id' => $id, 'login' => "x1user$id", 'email' => "x1user$id@x1.example.invalid" ) );
         $user->AccessArray = array( 'content' => $contentPolicies ) + $more;
+        // without an ezuser_setting row (the null database has none) isEnabled() says false; a stand-in is
+        // an enabled account
+        $user->setUserCache( array( 'info' => array( $id => array( 'is_enabled' => true ) ) ) );
         return $user;
     }
 
