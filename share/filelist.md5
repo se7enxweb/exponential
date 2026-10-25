@@ -24340,7 +24340,7 @@ d1edfc6fda691f10cf3306642f0eb98f  share/translations/dut-NL/GUIDE.md
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-72c91388de483e48831743d2078182b2  share/translations/eng-US/translation.ts
+609b7fd635d9a8d2b43529132a0afc8e  share/translations/eng-US/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
 6551182321d7cbe3663753787b77a63f  share/translations/esl-ES/translation.ts
 99a8b049c3de4158b7de5fc2838ae5f7  share/translations/esl-MX/GUIDE.md
@@ -24353,7 +24353,7 @@ dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-00ff54535bf12be403373cfaeadf3c16  share/translations/ger-DE/translation.ts
+cfcc40f87380d8f610d8fa0ac1124d8d  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 47faf9a9276b0ae89c78137ddf9df7c0  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -24387,7 +24387,7 @@ e97186d95acc45f8b903c2f6fbf36810  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 025951efa4fa7bff079e333901502cd4  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-d5f2455a547b3d1722b3a80cee77b790  share/translations/untranslated/translation.ts
+9499e726c250579b0cffc445db6b97ca  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 44e5568bf3339959aeafdbec6bae3246  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt

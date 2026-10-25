@@ -39729,6 +39729,30 @@ your account.</source>
         <source>Class/attribute combinations (%count)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -54229,6 +54253,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55632,6 +55672,14 @@ your account.</source>
     </message>
     <message>
         <source>Your comment was added.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -57992,6 +58040,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Mirror to data tables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -75519,6 +75575,53 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Browse the tables of the persistent classes…</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
