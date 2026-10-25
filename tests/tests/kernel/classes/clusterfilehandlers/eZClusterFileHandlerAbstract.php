@@ -37,6 +37,21 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
     }
 
     /**
+     * Removes the local files of the test: every test writes below var/tests/<its name>/ (relative to the
+     * installation), which the throwaway database of the class does not take with it. Only that directory, and only
+     * when it is a real directory.
+     */
+    public function tearDown(): void
+    {
+        // name() since PHPUnit 10, getName() before
+        $name = method_exists( $this, 'name' ) ? $this->name() : $this->getName( false );
+        $directory = 'var/tests/' . preg_replace( '/[^A-Za-z0-9_]/', '', $name );
+        if ( $directory !== 'var/tests/' && is_dir( $directory ) && !is_link( $directory ) )
+            eZDir::recursiveDelete( $directory );
+        parent::tearDown();
+    }
+
+    /**
      * Helper function that creates a cluster file
      * @param string $path
      * @param mixed $contents
@@ -96,7 +111,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         $this->createFile( $file, md5( time() ) );
         $ch = eZClusterFileHandler::instance( $file );
         self::assertEquals( 32,    $ch->size() );
-        self::assertInternalType( 'integer', $ch->mtime() );
+        self::assertIsInt( $ch->mtime() );
     }
 
     /**
@@ -970,7 +985,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         {
             $ch = eZClusterFileHandler::instance( $file );
             $ch->loadMetaData( true );
-            self::assertInternalType( 'array', $ch->metaData, "File $file no longer exists" );
+            self::assertIsArray( $ch->metaData, "File $file no longer exists" );
         }
 
         self::deleteLocalFiles( $files, $otherFiles);

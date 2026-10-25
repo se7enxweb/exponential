@@ -24,6 +24,18 @@ abstract class eZClusterStaleCacheBase extends ezpDatabaseTestCase
     protected $previousFileHandler;
 
     /**
+     * Removes the local files of the test, below var/tests/<its name>/ (see eZClusterFileHandlerAbstract::tearDown()).
+     */
+    public function tearDown(): void
+    {
+        $name = method_exists( $this, 'name' ) ? $this->name() : $this->getName( false );
+        $directory = 'var/tests/' . preg_replace( '/[^A-Za-z0-9_]/', '', $name );
+        if ( $directory !== 'var/tests/' && is_dir( $directory ) && !is_link( $directory ) )
+            eZDir::recursiveDelete( $directory );
+        parent::tearDown();
+    }
+
+    /**
      * Tests the cluster shutdown handler.
      * Handlers that support stalecache should cleanup their generating files if any
      */
@@ -83,7 +95,7 @@ abstract class eZClusterStaleCacheBase extends ezpDatabaseTestCase
         self::assertEquals( "$path.generating", $ch->filePath );
 
         $res = $ch2->startCacheGeneration();
-        self::assertInternalType( 'integer', $res, "Calling startCacheGeneration for the second time should have returned the remaining cache generation time" );
+        self::assertIsInt( $res, "Calling startCacheGeneration for the second time should have returned the remaining cache generation time" );
         self::assertStringEndsNotWith( ".generating.generating", $ch->filePath );
 
         $ch->abortCacheGeneration();
