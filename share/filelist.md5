@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-0639b7e5cd3b61f06865dc1aa7acdb60  doc/changelogs/6.0/6.0.15.md
+8f7cc10827120b560e4794f17286f8b8  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -21640,7 +21640,7 @@ dc6492eaca787ba257dca4e108f22d17  kernel/classes/datatypes/ezmultioption2/ezmult
 ffabab58366cbcf856c87dc4ea4a1c84  kernel/classes/datatypes/ezmultioption2/ezmultioption2type.php
 99c242d7019e05d617bb48cdf62cdba0  kernel/classes/datatypes/ezmultiprice/ezmultiprice.php
 3c2a835facb6e8f523d92ffc49202692  kernel/classes/datatypes/ezmultiprice/ezmultipricetype.php
-f12035f21f5602d03423aa9dbaaa794c  kernel/classes/datatypes/ezobjectrelation/ezobjectrelationtype.php
+3d6233b0a2f311902a573aec59c46c45  kernel/classes/datatypes/ezobjectrelation/ezobjectrelationtype.php
 a9afe0ae83d89d7fed3171620730169b  kernel/classes/datatypes/ezobjectrelationlist/ezobjectrelationlisttype.php
 c4b8e53cb43ed9b1d0000d9085f84aa5  kernel/classes/datatypes/ezoption/ezoption.php
 9a6463625ba6b2c492e6423924b7506b  kernel/classes/datatypes/ezoption/ezoptiontype.php
@@ -22183,8 +22183,8 @@ d00cd45a90954d393149d88c495493f0  kernel/classes/workflowtypes/event/ezwaituntil
 4c18eae437b9feda0701654a89b41ffb  kernel/clustering/dfsmysqli.php
 eb9dae5e281a906136be22026aa4da37  kernel/clustering/gateway.php
 b4a3f9707811338f13702435dd2ab275  kernel/collaboration/action.php
-819594dd25db4ad3b2cb42e1563c1a3b  kernel/collaboration/ezcollaborationfunctioncollection.php
-e5173154b8dda8d8a484430bcd35dd78  kernel/collaboration/function_definition.php
+4f589bd2338951738ab131252181eb76  kernel/collaboration/ezcollaborationfunctioncollection.php
+441e17da4093282275213e53762f0817  kernel/collaboration/function_definition.php
 36fd4cf3dc6c1ec3b4356aa8509edbb4  kernel/collaboration/group.php
 8fe60791c573fda9930b833dce8011cd  kernel/collaboration/item.php
 016c85ad64baf306bb039e9e8abc4c61  kernel/collaboration/module.php
@@ -22560,7 +22560,7 @@ bdaf3dfbfa218e33a0ee681501a10ea3  kernel/private/classes/ezpasynchronouspublishi
 c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.php
 2135cb79d6fd99bd416877a5d6ec7416  kernel/private/classes/ezpcontentlimitation.php
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
-dad70a135e50fcc3415d197dd961caad  kernel/private/classes/ezpcontentpublishingqueue.php
+6731f3047691efb02fc335be4f33681e  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
 0776e5d1ac1cb5de51f7dee8b46cf113  kernel/private/classes/ezpevent.php
 93ec1ada8eab0c1428a81264a05a9e2d  kernel/private/classes/ezpextension.php
@@ -22643,7 +22643,7 @@ d7a18f14f302f62a7bb633e91917ff33  kernel/private/classes/views/content/bookmark.
 eb7a495581ffb464450988d3c8d288e2  kernel/private/classes/views/content/copy.php
 6ad99f7800aa2924ab6a4bef9c1671da  kernel/private/classes/views/content/copysubtree.php
 5033bd5e1a2a8c4452ba5cd3a9c11fee  kernel/private/classes/views/content/dashboard.php
-5e881d3d7bdbcd1c7584643633909d7e  kernel/private/classes/views/content/download.php
+582f3b2fb8eebdbc899f6c2d2c51ec22  kernel/private/classes/views/content/download.php
 00226173cf70ad95fb8faf07a5a9043d  kernel/private/classes/views/content/draft.php
 0b3789cbed61091c1d015bceb4ce3c4a  kernel/private/classes/views/content/edit.php
 b0694f25dce9a7d6f463fdca3c199b05  kernel/private/classes/views/content/hide.php
@@ -24954,6 +24954,7 @@ f65de49a296b8df733dd0a2f160f89bc  tests/tests/kernel/classes/datatypes/eZIdentif
 efe59a322e82b01b5d198f5ce4ac2d5c  tests/tests/kernel/classes/datatypes/eZMatrixAndOptionDatatypesTest.php
 8b7725310f999cfd85ede73a60ca4f95  tests/tests/kernel/classes/datatypes/eZMultiOptionDatatypeTest.php
 3838e382720201da0ba10c1f69b0ff29  tests/tests/kernel/classes/datatypes/eZNumericDatatypesTest.php
+f7c98e1fdbaa1bc41a4956b0593077fa  tests/tests/kernel/classes/datatypes/eZObjectRelationClassConstraintsTest.php
 4a21957961bc085715c7b1ae745ecf74  tests/tests/kernel/classes/datatypes/eZStringTypeTrimTest.php
 d3c199ef12933087e7bf07a63474ce7f  tests/tests/kernel/classes/datatypes/eZTextDatatypesTest.php
 e8093e3d17d03cfdae2feafd46d02173  tests/tests/kernel/classes/datatypes/eZUserDatatypeDraftSecurityTest.php
@@ -25071,6 +25072,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 6a75e222b1f1ace574393f14fca4aba2  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
+3d1e93cbbb5ad74f23989d8ce2a63129  tests/tests/kernel/classes/expKernelCallFixesTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
 18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php
