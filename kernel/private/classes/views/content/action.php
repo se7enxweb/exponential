@@ -643,7 +643,7 @@ class Action extends \Exponential\Runnable\ModuleView
 
                 // A user account moved into a group whose new accounts need approval (doc/eng-us/bc/6.0/user-account-approval.md)
                 if ( class_exists( 'expUserApproval' ) && !\expUserApproval::placementAllowed( $object, $selectedNode ) )
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array() ) );
+                    return $this->viewResult( null, $module->handleError( \eZError::KERNEL_ACCESS_DENIED, 'kernel', array() ) );
 
                 // Check if we try to move the node as child of itself or one of its children
                 if ( in_array( $node->attribute( 'node_id' ), $selectedNode->pathArray()  ) )
