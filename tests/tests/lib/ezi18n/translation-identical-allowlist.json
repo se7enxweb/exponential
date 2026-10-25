@@ -1704,6 +1704,7 @@
     },
     "ger-DE": {
         "Schema": "the same word in German (a database schema)",
+        "Passkeys": "the same word in German (the WebAuthn sign-in credential, as browsers and operating systems name it)",
         "live": "the same word in German (a synchronisation that runs live)",
         "Socket": "the same word in German (a database socket)",
         "#level1 - #level2": "only placeholders, units or tokens; nothing to translate",
