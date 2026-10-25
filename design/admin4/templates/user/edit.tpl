@@ -139,6 +139,7 @@
              $label = cond( $action.status.total|gt( 0 ), 'Manage passkeys'|i18n( 'design/admin/user/edit' ), 'Add a passkey'|i18n( 'design/admin/user/edit' ) )
              $badge = cond( $action.status.total|gt( 0 ), '%count passkeys'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.total ) ), 'None yet'|i18n( 'design/admin/user/edit' ) )
              $icon = 'person-lock'}
+    {/case}
     {case match='sessions'}
         {set $title = cond( $own, 'Your devices'|i18n( 'design/admin/user/edit' ), 'Sessions'|i18n( 'design/admin/user/edit' ) )
              $text = cond( $own, 'Where you are signed in: browser, system, place and time. Sign out a device you do not know.'|i18n( 'design/admin/user/edit' ), 'Where this user is signed in, and signing the user out everywhere.'|i18n( 'design/admin/user/edit' ) )

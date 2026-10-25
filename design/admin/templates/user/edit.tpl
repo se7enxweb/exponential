@@ -139,6 +139,7 @@
              $label = cond( $action.status.total|gt( 0 ), 'Manage passkeys'|i18n( 'design/admin/user/edit' ), 'Add a passkey'|i18n( 'design/admin/user/edit' ) )
              $badge = cond( $action.status.total|gt( 0 ), '%count passkeys'|i18n( 'design/admin/user/edit',, hash( '%count', $action.status.total ) ), 'None yet'|i18n( 'design/admin/user/edit' ) )
              $icon = '<circle cx="12" cy="7" r="4"/><path d="M4 21c0-4 3.5-6 8-6"/><rect x="14" y="15" width="7" height="6" rx="1"/><path d="M15.5 15v-1.5a2 2 0 0 1 4 0V15"/>'}
+    {/case}
     {case match='sessions'}
         {set $title = cond( $own, 'Your devices'|i18n( 'design/admin/user/edit' ), 'Sessions'|i18n( 'design/admin/user/edit' ) )
              $text = cond( $own, 'Where you are signed in: browser, system, place and time. Sign out a device you do not know.'|i18n( 'design/admin/user/edit' ), 'Where this user is signed in, and signing the user out everywhere.'|i18n( 'design/admin/user/edit' ) )
