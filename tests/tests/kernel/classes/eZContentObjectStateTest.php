@@ -13,6 +13,13 @@
 
 class eZContentObjectStateTest extends ezpDatabaseTestCase
 {
+    /** The locale of a language of the test database (the base data may not have eng-GB) */
+    private static function locale()
+    {
+        $languages = eZContentLanguage::fetchList();
+        return reset( $languages )->attribute( 'locale' );
+    }
+
     public static function providerCreateWithInvalidIdentifier()
     {
         return array(
@@ -21,14 +28,12 @@ class eZContentObjectStateTest extends ezpDatabaseTestCase
         );
     }
 
-    /**
-     * @dataProvider providerCreateWithInvalidIdentifier
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithInvalidIdentifier')]
     public function testCreateWithInvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );
         $state = new eZContentObjectState( $row );
-        $trans = $state->translationByLocale( 'eng-GB' );
+        $trans = $state->translationByLocale( self::locale() );
         $trans->setAttribute( 'name', $identifier );
         $messages = array();
         $this->assertFalse( $state->isValid( $messages ), "Invalid state identifier '$identifier' was accepted" );
@@ -42,14 +47,12 @@ class eZContentObjectStateTest extends ezpDatabaseTestCase
         );
     }
 
-    /**
-     * @dataProvider providerCreateWithValidIdentifier
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithValidIdentifier')]
     public function testCreateWithvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );
         $state = new eZContentObjectState( $row );
-        $trans = $state->translationByLocale( 'eng-GB' );
+        $trans = $state->translationByLocale( self::locale() );
         $trans->setAttribute( 'name', $identifier );
         $messages = array();
         $this->assertTrue( $state->isValid( $messages ), "Valid state identifier '$identifier' was refused" );

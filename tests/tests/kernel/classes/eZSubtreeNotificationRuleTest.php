@@ -21,7 +21,8 @@ class eZSubtreeNotificationRuleTest extends ezpDatabaseTestCase
     public function testFetchUserList()
     {
         // Add a notification rule for admin on root
-        $adminUserID = eZUser::fetchByName( 'admin' )->attribute( 'contentobject_id' );
+        $admin = eZUser::fetchByName( 'admin' );
+        $adminUserID = $admin->attribute( 'contentobject_id' );
         $rule = new eZSubtreeNotificationRule( array(
             'user_id' => $adminUserID,
             'use_digest' => 0,
@@ -43,9 +44,9 @@ class eZSubtreeNotificationRuleTest extends ezpDatabaseTestCase
         $this->assertArrayHasKey( 'user_id', $list[0] );
         $this->assertArrayHasKey( 'use_digest', $list[0] );
         $this->assertArrayHasKey( 'address', $list[0] );
-        $this->assertEquals( 14, $list[0]['user_id'] );
+        $this->assertEquals( $adminUserID, $list[0]['user_id'] );
         $this->assertEquals( 0, $list[0]['use_digest'] );
-        $this->assertEquals( 'nospam@ez.no', $list[0]['address'] );
+        $this->assertEquals( $admin->attribute( 'email' ), $list[0]['address'] );
     }
 }
 

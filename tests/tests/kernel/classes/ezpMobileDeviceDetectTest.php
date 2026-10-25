@@ -29,7 +29,7 @@ class ezpMobileDeviceDetectTest extends PHPUnit\Framework\TestCase
             unset( $_SERVER[$name] );
         }
         $ini = eZINI::instance();
-        foreach ( array( 'MobileUserAgentCodes', 'MobileUserAgentRegexps' ) as $name )
+        foreach ( array( 'MobileUserAgentCodes', 'MobileUserAgentRegexps', 'DetectMobileDevice', 'MobileSiteAccessList' ) as $name )
             $this->settings[$name] = $ini->hasVariable( 'SiteAccessSettings', $name ) ? array( $ini->variable( 'SiteAccessSettings', $name ) ) : null;
         $ini->setVariable( 'SiteAccessSettings', 'MobileUserAgentCodes', 'noki|sams|sony' );
         $ini->setVariable( 'SiteAccessSettings', 'MobileUserAgentRegexps', array(
@@ -113,6 +113,33 @@ class ezpMobileDeviceDetectTest extends PHPUnit\Framework\TestCase
     {
         $detect = self::detect( array( 'HTTP_USER_AGENT' => 'Desktop/1.0', 'HTTP_ACCEPT' => 'text/html,application/xhtml+xml' ) );
         $this->assertFalse( $detect->isMobileDevice() );
+    }
+
+    public function testIsEnabledWithMobileSiteAccesses()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'SiteAccessSettings', 'DetectMobileDevice', 'enabled' );
+        $ini->setVariable( 'SiteAccessSettings', 'MobileSiteAccessList', array( 'eng' ) );
+        $this->assertTrue( ezpMobileDeviceDetect::isEnabled() );
+    }
+
+    /**
+     * Detection switched on without a MobileSiteAccessList is reported as disabled.
+     */
+    public function testIsEnabledWithoutMobileSiteAccesses()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'SiteAccessSettings', 'DetectMobileDevice', 'enabled' );
+        $ini->setVariable( 'SiteAccessSettings', 'MobileSiteAccessList', '' );
+        $this->assertFalse( ezpMobileDeviceDetect::isEnabled() );
+    }
+
+    public function testIsDisabledByDefaultSwitch()
+    {
+        $ini = eZINI::instance();
+        $ini->setVariable( 'SiteAccessSettings', 'DetectMobileDevice', 'disabled' );
+        $ini->setVariable( 'SiteAccessSettings', 'MobileSiteAccessList', array( 'eng' ) );
+        $this->assertFalse( ezpMobileDeviceDetect::isEnabled() );
     }
 
     public function testTheFilterIsKept()

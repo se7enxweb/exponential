@@ -168,7 +168,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         $path = 'var/tests/' . __FUNCTION__ . '/nofile.txt';
         $ch = eZClusterFileHandler::instance();
         self::assertFalse( $ch->fileFetch( $path ) );
-        self::assertFileNotExists( $path );
+        self::assertFileDoesNotExist( $path );
     }
 
     /**
@@ -197,7 +197,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         // Fetch the file, and test for existence
         $ch = eZClusterFileHandler::instance( $path );
         $ch->fetch();
-        self::assertFileNotExists( $path );
+        self::assertFileDoesNotExist( $path );
     }
 
     /**
@@ -221,7 +221,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         {
             self::assertEquals( 'text/plain', $ch2->metaData['datatype'] );
             self::assertEquals( 'test', $ch2->metaData['scope'] );
-            self::assertFileNotExists( $localFile );
+            self::assertFileDoesNotExist( $localFile );
         }
     }
 
@@ -930,7 +930,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         $chValidate = eZClusterFileHandler::instance( $path );
         $chValidate->loadMetadata( true );
 
-        self::assertFileNotExists( $path );
+        self::assertFileDoesNotExist( $path );
         self::assertFalse( $chValidate->metaData );
 
         self::deleteLocalFiles( $path );
@@ -961,7 +961,7 @@ abstract class eZClusterFileHandlerAbstract extends ezpDatabaseTestCase
         {
             $ch = eZClusterFileHandler::instance( $file );
             $ch->loadMetaData( true );
-            self::assertFileNotExists( $file );
+            self::assertFileDoesNotExist( $file );
             self::assertFalse( $ch->metaData, "File $file still exists" );
         }
 

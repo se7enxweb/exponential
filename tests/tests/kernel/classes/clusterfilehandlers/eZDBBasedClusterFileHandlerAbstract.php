@@ -79,9 +79,8 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
 
     /**
      * Test for the cleanPath() method
-     *
-     * @dataProvider providerForTestCleanPath
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestCleanPath')]
     public function testCleanPath( $path, $expectedPath )
     {
         self::assertEquals( $expectedPath, call_user_func( array( $this->clusterClass, 'cleanpath' ), $path ) );
@@ -207,13 +206,18 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
 
     /**
      * Tests the name trunk automatic creation (at backend level)
-     * @dataProvider providerForTestNameTrunk
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestNameTrunk')]
     public function testNameTrunk( $path, $scope, $expectedNameTrunk, $expectedCacheType )
     {
         // postgres doesn't use nametrunk
         if ( ezpTestRunner::dsn()->parts['phptype'] == 'postgresql' )
             self::markTestSkipped( "name_trunk isn't used by postgresql" );
+
+        // the template block cache directory of the installation the test runs on (its var directory)
+        $templateBlockCacheDir = eZTemplateCacheBlock::templateBlockCacheDir();
+        $path = str_replace( '@template-block@/', $templateBlockCacheDir, $path );
+        $expectedNameTrunk = str_replace( '@template-block@/', $templateBlockCacheDir, $expectedNameTrunk );
 
         $ch = self::createFile( $path, false, array( 'scope' => $scope ) );
         self::assertEquals( $expectedNameTrunk, $ch->metaData['name_trunk'] );
@@ -233,9 +237,9 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
 
             // template block with subtree expiry
             array(
-                'var/plain_site/cache/template-block/subtree/1/cache/1/1/0/110322645.cache',
+                '@template-block@/subtree/1/cache/1/1/0/110322645.cache',
                 'template-block',
-                'var/plain_site/cache/template-block/subtree/1/cache/',
+                '@template-block@/subtree/1/cache/',
                 'cacheblock'
             ),
 
@@ -290,7 +294,7 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
 
         $ch->fileDeleteLocal( $path );
 
-        self::assertFileNotExists( $path );
+        self::assertFileDoesNotExist( $path );
     }
 
     /**
@@ -306,7 +310,7 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
 
         $ch->deleteLocal( $path );
 
-        self::assertFileNotExists( $path );
+        self::assertFileDoesNotExist( $path );
     }
 
     public function testRequiresClusterizing()

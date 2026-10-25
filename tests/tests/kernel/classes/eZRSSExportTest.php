@@ -24,6 +24,12 @@ class eZRSSExportTest extends ezpDatabaseTestCase
      */
     protected $backupGlobals = FALSE;
 
+    protected $ezp_server, $ezp_locale, $ezp_admin_id, $ezp_admin_email, $currentUser;
+    protected $test_data_folder, $remote_id_map;
+
+    /** @var ezpObject[] the articles the test created, removed in tearDown() */
+    protected $createdObjects = array();
+
     /**
      * Called by PHPUnit before each test.
      */
@@ -40,10 +46,15 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $admin = eZUser::fetchByName( 'admin' );
         eZUser::setCurrentlyLoggedInUser( $admin, $admin->attribute( 'contentobject_id' ) );
         $this->ezp_admin_id = $admin->attribute('contentobject_id');
-        $this->ezp_admin_email = $admin->attribute('email');
+        // the feeds name the site's administrator address (MailSettings.AdminEmail), not the admin user's
+        $this->ezp_admin_email = eZINI::instance()->variable( 'MailSettings', 'AdminEmail' );
 
         $this->test_data_folder = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'ezrss' . DIRECTORY_SEPARATOR;
         $this->remote_id_map = array( '894c0959925a6ac47c915b7c8fb6376c', '935f192b93cbadbbf93d7b031bdceb70' );
+        $this->createdObjects = array();
+
+        // The feeds name the site's address and locale; the expected files hold placeholders for both
+        $this->ezp_locale = eZLocale::instance()->httpLocaleCode();
     }
 
     /**
@@ -51,6 +62,10 @@ class eZRSSExportTest extends ezpDatabaseTestCase
      */
     public function tearDown(): void
     {
+        // The articles carry fixed remote ids: they go also when a test failed, or the next one cannot store them
+        $this->removeObjects( array_reverse( $this->createdObjects ) );
+        $this->createdObjects = array();
+
         // Log in as whoever was logged in
         eZUser::setCurrentlyLoggedInUser( $this->currentUser, $this->currentUser->attribute( 'id' ) );
 
@@ -105,6 +120,7 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         // Update object RemoteID
         $object->setAttribute( 'remote_id', $articleRemoteID );
         $object->store();
+        $this->createdObjects[] = $object;
 
         return $object;
     }
@@ -172,10 +188,19 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $text = preg_replace( '@<pubDate>.*?</pubDate>@', '<pubDate>XXX</pubDate>', $text );
         $text = preg_replace( '@<lastBuildDate>.*?</lastBuildDate>@', '<lastBuildDate>XXX</lastBuildDate>', $text );
 
-        // Machine values cleaning
+        // Machine values cleaning: the site's address with its scheme, the locale, and the URL alias paths below the
+        // address in lower case, as the default transformation (urlalias) writes them
+        $text = str_replace( 'http://@ezp_server@', '@ezp_base_url@', $text );
+        // the address an export is created with (eZRSSExport::create())
+        $baseURL = eZRSSExport::publicSiteURL();
+        $text = str_replace( $baseURL, '@ezp_base_url@', $text );
+        $text = preg_replace_callback( '#@ezp_base_url@[^"<]*#', function ( $m ) { return strtolower( $m[0] ); }, $text );
+        $text = str_replace( '@ezp_locale@', $this->ezp_locale, $text );
         $text = str_replace( '@ezp_server@', $this->ezp_server, $text );
         $text = str_replace( '@ezp_admin_email@', $this->ezp_admin_email, $text );
         $text = preg_replace( '@<name>.*?</name>@', '<name>XXX</name>', $text );
+        // the item text as the XML text output renders it, which may end with a line break
+        $text = preg_replace( '@\s+</(description|summary)>@', '</$1>', $text );
         return $text;
     }
 
@@ -202,7 +227,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
 
     }
 
@@ -226,7 +250,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     public function testCreateATOMWith1Items()
@@ -249,7 +272,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     /**
@@ -277,7 +299,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     /**
@@ -305,7 +326,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     /**
@@ -333,7 +353,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     /**
@@ -361,7 +380,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
         $expected = $this->cleanRSSFeed( file_get_contents( $this->test_data_folder . __FUNCTION__ . '.xml' ) );
 
         $this->assertEquals( $expected, $rssContent );
-        $this->removeObjects( $articles );
     }
 
     /**
@@ -396,7 +414,6 @@ class eZRSSExportTest extends ezpDatabaseTestCase
             $this->assertTrue( $valid, 'Feed ' . $type . ' is not valid' );
         }
 
-        $this->removeObjects( $articles );
     }
 }
 ?>
