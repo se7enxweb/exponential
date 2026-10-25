@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller und Administratoren, die Newslette
 geht auf einmal an viele Menschen und lässt sich nicht zurückholen, also proben Sie zuerst und schalten Sie den echten
 Versand bewusst ein.
 
-![Das Newsletter-Dashboard mit der Versand-Warteschlange, den Bounces und den Schaltflächen Jetzt senden und Nur zählen](../../../../eng-us/help/images/creators/newsletter-sending.webp)
+![Das Newsletter-Dashboard mit der Versand-Warteschlange, den Bounces und den Schaltflächen Jetzt senden und Nur zählen](../../bilder/creators/newsletter-sending.webp)
 
 ## Inhalt
 

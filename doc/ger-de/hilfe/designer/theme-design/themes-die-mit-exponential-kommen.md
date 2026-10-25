@@ -32,7 +32,7 @@ sie, um ein Template zum Lernen oder ein Design zum Aufbauen zu finden.
 | `ezdemo` (`se7enxweb/ezdemo`) | `ezdemo`, `admin` | das klassische Design der Demo-Website | [ezdemo](../../../funktionen/6.0/erweiterungen/ezdemo.md) |
 | `ezflow` (`se7enxweb/ezflow`) | `ezflow`, `standard`, `admin`, `iphone` | der klassische Page Builder (Datentyp page mit Zonen und Blöcken) | [ezflow](../../../funktionen/6.0/erweiterungen/ezflow.md) |
 
-![Der Siteaccess bold der Demonstrationsinstallation, der das Design media mit anderen Inhalten zeigt](../../../../eng-us/help/images/designers/themes-public-site.webp)
+![Der Siteaccess bold der Demonstrationsinstallation, der das Design media mit anderen Inhalten zeigt](../../bilder/designers/themes-public-site.webp)
 
 Die Demonstrationsinstallation hat außerdem `sevenx_themes_super`, ein kleines Design, das mit dem Assistenten für Design-Erweiterungen
 erzeugt wurde ([Das Theme super](rundgang-durch-das-super-theme.md)). Es ist nicht Teil des Hauptpakets.

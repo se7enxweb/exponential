@@ -105,7 +105,7 @@ Der Trainer prüft jeden Artikel anhand dieser Liste:
 Wer fünf der sieben Prüfungen erfüllt, hat die Fähigkeiten von Redakteure 101; der Trainer empfiehlt zu jeder
 fehlenden Prüfung die Lektionen dahinter zur Wiederholung.
 
-![Die Seite eines fertigen Artikels in der Administration, der Ausgangspunkt der Prüfungen des Trainers](../../../../../eng-us/help/images/trainers/e101-capstone-view.webp)
+![Die Seite eines fertigen Artikels in der Administration, der Ausgangspunkt der Prüfungen des Trainers](../../../bilder/trainers/e101-capstone-view.webp)
 
 ## Quiz
 

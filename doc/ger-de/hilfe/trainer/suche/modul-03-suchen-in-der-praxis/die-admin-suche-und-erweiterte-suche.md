@@ -106,7 +106,7 @@ Beispielinhalten vorkommen.
 - Schritt 6 findet nur Artikel mit dem Wort im Titel; Schritt 7 nur die in der letzten Woche veröffentlichten.
 - Der Trainer bittet zwei Teilnehmende, ihre Trefferzahlen aus Schritt 8 zu erklären.
 
-![Die erweiterte Suche der Administration](../../../../../eng-us/help/images/trainers/se-quick.webp)
+![Die erweiterte Suche der Administration](../../../bilder/trainers/se-quick.webp)
 
 ## Quiz
 

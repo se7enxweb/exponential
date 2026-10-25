@@ -36,7 +36,7 @@ Shop-Dashboard öffnet ([Shop-Dashboard und Bestellstatus](../../../funktionen/6
 | Rabatte | `shop/discountgroup` |
 | Dashboard | `shop/dashboard` |
 
-![Das Shop-Dashboard: Bestellungen, Kunden, Produkte und die Shop-Einstellungen auf einen Blick](../../../../eng-us/help/images/creators/shop-dashboard.webp)
+![Das Shop-Dashboard: Bestellungen, Kunden, Produkte und die Shop-Einstellungen auf einen Blick](../../bilder/creators/shop-dashboard.webp)
 
 Modul und Ansichten des Shops sind in `kernel/shop/module.php` definiert, seine Einstellungen in `settings/shop.ini`.
 

@@ -116,7 +116,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - **Auf der Website ansehen** zeigt die Zusammenfassung des Ordners auf der öffentlichen Website.
 - Der Trainer prüft das, indem er **Training** auf dem Projektor öffnet: ein Ordner pro Teilnehmer.
 
-![Neu erstellen, geöffnet unter den Unterelementen eines Ordners, mit den Inhaltstypen in Gruppen](../../../../../eng-us/help/images/trainers/e101-create-new.webp)
+![Neu erstellen, geöffnet unter den Unterelementen eines Ordners, mit den Inhaltstypen in Gruppen](../../../bilder/trainers/e101-create-new.webp)
 
 ## Quiz
 

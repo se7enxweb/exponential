@@ -14,7 +14,7 @@ waren, sind ein Jahr später oft falsch: Menschen wechseln die Stelle, Verträge
 Prüfung in einem festen Rhythmus hält das Portal sauber. Die Seite nennt die Routine und die Seiten von Exponential,
 die jeden Schritt schnell machen.
 
-![Sektionen mit den Rollen, die sie verwenden](../../../../eng-us/help/images/help/bu-sections.webp)
+![Sektionen mit den Rollen, die sie verwenden](../../bilder/help/bu-sections.webp)
 
 ## Inhalt
 

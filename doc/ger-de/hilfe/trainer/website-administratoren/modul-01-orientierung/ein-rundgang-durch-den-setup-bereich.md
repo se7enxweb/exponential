@@ -109,7 +109,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Trainer prüft das, indem er eine Aufgabe ausruft („Wo sehe ich die Cronjobs?“) und die Zeit bis zur Antwort
   misst.
 
-![Der Setup-Bereich: seine Karten für das Inhaltsmodell, die Website, Workflows, Benutzer, das System und Updates](../../../../../eng-us/help/images/trainers/sa-setup-tour.webp)
+![Der Setup-Bereich: seine Karten für das Inhaltsmodell, die Website, Workflows, Benutzer, das System und Updates](../../../bilder/trainers/sa-setup-tour.webp)
 
 ## Quiz
 

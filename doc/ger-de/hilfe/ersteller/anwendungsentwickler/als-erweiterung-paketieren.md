@@ -13,7 +13,7 @@ Diese Seite richtet sich an Anwendungsentwickler, die möchten, dass andere (ode
 installieren. Eine Erweiterung, die sich mit einem einzigen `composer require` installieren und mit einer einzigen
 Einstellung aktivieren lässt und sich selbst dokumentiert, wird leicht übernommen.
 
-![Die Seite „Über“ listet jede Erweiterung mit dem auf, was in ihrer ezinfo.php oder extension.xml steht](../../../../eng-us/help/images/creators/about-extensions.webp)
+![Die Seite „Über“ listet jede Erweiterung mit dem auf, was in ihrer ezinfo.php oder extension.xml steht](../../bilder/creators/about-extensions.webp)
 
 ## Inhalt
 

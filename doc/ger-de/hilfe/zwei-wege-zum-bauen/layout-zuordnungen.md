@@ -13,7 +13,7 @@ type: help
 *Eine Zuordnung verbindet ein Layout mit Seiten: Es gilt die erste aktive Zuordnung nach Priorität, deren Ziele und
 Bedingungen auf die Seite passen.*
 
-![Die Seite Layout-Zuordnungen: jede Zuordnung mit dem Namen ihres Layouts, Aktiviert, ihren Zielen und Bedingungen und den Schaltflächen Details, Layout bearbeiten, Anderes Layout verknüpfen und Weitere Aktionen](../../../eng-us/help/build-two-ways/images/lm-01-layout-mappings.webp)
+![Die Seite Layout-Zuordnungen: jede Zuordnung mit dem Namen ihres Layouts, Aktiviert, ihren Zielen und Bedingungen und den Schaltflächen Details, Layout bearbeiten, Anderes Layout verknüpfen und Weitere Aktionen](bilder/lm-01-layout-mappings.webp)
 
 ## Inhalt
 
@@ -56,7 +56,7 @@ Bedingungen. Die angebotenen Zieltypen sind Pfad, Pfadpräfix, Pfad (regulärer 
 die Bedingungstypen Siteaccess, Klasse, Abfrageparameter, Routenparameter und Zeit. *Any target can be
 met*; jede Bedingung muss erfüllt sein.
 
-![Das Feld Neue Zuordnung: Zugeordnetes Layout, Layout verknüpfen, Priorität mit Aktiviert, Keine Ziele mit der Auswahl Pfad und Ziel hinzufügen, Keine Bedingungen mit der Auswahl Siteaccess und Bedingung hinzufügen](../../../eng-us/help/build-two-ways/images/mp-01-new-mapping.webp)
+![Das Feld Neue Zuordnung: Zugeordnetes Layout, Layout verknüpfen, Priorität mit Aktiviert, Keine Ziele mit der Auswahl Pfad und Ziel hinzufügen, Keine Bedingungen mit der Auswahl Siteaccess und Bedingung hinzufügen](bilder/mp-01-new-mapping.webp)
 
 Eine Siteaccess-Bedingung ist eine Liste der Siteaccesse der Installation zur Auswahl:
 

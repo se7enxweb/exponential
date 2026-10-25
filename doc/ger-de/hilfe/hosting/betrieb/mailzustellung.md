@@ -14,7 +14,7 @@ Support-Mitarbeitende, die die Meldung beantworten, dass die Mail zum Passwort n
 Transporte Exponential hat, welche Einstellungen sie auswählen und konfigurieren, was die Mail-Einrichtung des Hosters
 bereitstellen muss und wie Sie eine Testkopie davon abhalten, echte Mail zu versenden.
 
-![Status der Benachrichtigungen: ausstehende Benachrichtigungen und die letzten Läufe](../../../../eng-us/help/images/hosting/notification-status.webp)
+![Status der Benachrichtigungen: ausstehende Benachrichtigungen und die letzten Läufe](../../bilder/hosting/notification-status.webp)
 
 Die Einstellungen stehen in `settings/site.ini [MailSettings]`; die Schritt-für-Schritt-Anleitung ist
 [10.4 Mail: der Datei-Transport und echter Versand](../../../installation/10-nach-der-installation.md#104-mail-der-datei-transport-und-echter-versand).

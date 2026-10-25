@@ -33,7 +33,7 @@ Funktionsseite listet jede Einstellung auf ([ezmultiupload](../../../funktionen/
 | Eine Galerie | `*.jpg`, `*.png`, `*.gif`, `*.flv`, `*.mp4`, `*.mov` (auch in Großbuchstaben) |
 | Einen Ordner | jeder Dateityp |
 
-![Die Mehrfach-Upload-Seite](../../../../eng-us/help/images/multi-upload.webp)
+![Die Mehrfach-Upload-Seite](../../bilder/multi-upload.webp)
 
 ## Die Dateien vorher vorbereiten
 

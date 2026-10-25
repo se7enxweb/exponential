@@ -14,7 +14,7 @@ Personalrichtlinie, das Reisekostenformular, das Markenhandbuch. Sie erklärt, w
 ein Download aus einem geschützten Bereich sicher ist, was Redakteuren hilft, Dokumente aktuell zu halten, und was Sie
 prüfen sollten, bevor Sie ein gemeinsames Laufwerk ins Intranet verlagern.
 
-![Die Medien-Bibliothek mit ihren Ordnern](../../../../eng-us/help/images/help/bu-files.webp)
+![Die Medien-Bibliothek mit ihren Ordnern](../../bilder/help/bu-files.webp)
 
 ## Inhalt
 

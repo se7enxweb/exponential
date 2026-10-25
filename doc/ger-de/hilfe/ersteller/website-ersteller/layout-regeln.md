@@ -33,7 +33,7 @@ bewirkt nichts, bis eine **Regel** Anfragen darauf richtet. Regeln liegen unter 
 | Priorität | die höhere gewinnt, wenn mehrere Regeln passen |
 | Aktiviert | ein Schalter, um eine Regel stillzulegen, ohne sie zu löschen |
 
-![Der Reiter Layouts einer Seite: welches Layout sie verwendet, mit Preview, Edit layout, Map layout und New layout](../../../../eng-us/help/images/creators/item-layouts-tab.webp)
+![Der Reiter Layouts einer Seite: welches Layout sie verwendet, mit Preview, Edit layout, Map layout und New layout](../../bilder/creators/item-layouts-tab.webp)
 
 ## Ziele
 
@@ -68,7 +68,7 @@ Regeln werden nach Priorität ausgewertet, und der erste Treffer gewinnt. Die h�
 nicht, weil eine breitere Regel mit höherer Priorität die Anfrage zuerst abfängt. Geben Sie spezifischen Regeln (ein
 Knoten) eine höhere Priorität als allgemeinen (ein Teilbaum, eine Klasse).
 
-![Layouts, Regeln: die Zuordnungen mit Priorität, Ziel, dem gewählten Layout und ob sie aktiviert sind](../../../../eng-us/help/images/layouts/rule-list.webp)
+![Layouts, Regeln: die Zuordnungen mit Priorität, Ziel, dem gewählten Layout und ob sie aktiviert sind](../../bilder/layouts/rule-list.webp)
 
 ## Rezepte
 

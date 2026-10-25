@@ -102,7 +102,7 @@ eingerichtet oder führt die Schritte am Beamer vor).
 - Der Export und seine Datei sind nach Schritt 10 entfernt; die Inhalte sind unberührt.
 - Der Trainer prüft das, indem er vor Schritt 10 das PDF einer Person am Beamer herunterlädt.
 
-![PDF-Export: die gespeicherten Exporte mit Neuer PDF-Export](../../../../../eng-us/help/images/trainers/e201-pdf-list.webp)
+![PDF-Export: die gespeicherten Exporte mit Neuer PDF-Export](../../../bilder/trainers/e201-pdf-list.webp)
 
 ## Quiz
 

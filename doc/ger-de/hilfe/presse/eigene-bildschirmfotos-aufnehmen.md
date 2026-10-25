@@ -60,7 +60,7 @@ Machen Sie keine Bildschirmfotos von der Live-Website oder der Administration an
 | Hilfe | Das Hilfe-Dashboard und eine Hilfeseite | [Thema: das Hilfesystem](thema-das-hilfesystem.md) |
 | Exponential Intelligence | Ein Vorschlag für einen Entwurf im Editor (nur, nachdem Sie selbst einen Anbieter eingerichtet haben) | [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md) |
 
-![Ein Bildschirmfoto in 1440 Pixeln Breite im hellen Modus](../../../eng-us/help/images/help/pr-shots-dash.webp)
+![Ein Bildschirmfoto in 1440 Pixeln Breite im hellen Modus](../bilder/help/pr-shots-dash.webp)
 
 ## Einstellungen für gute Bilder
 
@@ -71,7 +71,7 @@ Machen Sie keine Bildschirmfotos von der Live-Website oder der Administration an
 - **Keine Browser-Unordnung**: Blenden Sie Lesezeichen und Erweiterungen aus; schneiden Sie die Adressleiste ab, sofern
   sie nicht nur eine Demoadresse zeigt.
 
-![Dieselbe Art Bildschirm im dunklen Modus](../../../eng-us/help/images/help/pr-shots-dark.webp)
+![Dieselbe Art Bildschirm im dunklen Modus](../bilder/help/pr-shots-dark.webp)
 
 ## Prüfungen vor der Veröffentlichung
 

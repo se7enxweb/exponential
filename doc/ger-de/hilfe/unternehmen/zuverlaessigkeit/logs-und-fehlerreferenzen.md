@@ -16,7 +16,7 @@ gehalten werden. Die technischen Anleitungen sind
 [Einen Fehler anhand seiner Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md) und
 [Der Log-Viewer](../../../funktionen/6.0/log-betrachter.md).
 
-![Die Fehlerübersicht der Logdateien](../../../../eng-us/help/images/help/bu-logs.webp)
+![Die Fehlerübersicht der Logdateien](../../bilder/help/bu-logs.webp)
 
 ## Inhalt
 

@@ -103,7 +103,7 @@ arbeiten auf Papier.
 - Drei Teamregeln stehen an der Tafel.
 - Der Trainer prüft die Rollenentwürfe von zwei Paaren.
 
-![Die Rollen, darunter diejenigen, die Layouts bearbeiten dürfen](../../../../../eng-us/help/images/trainers/ly-roles.webp)
+![Die Rollen, darunter diejenigen, die Layouts bearbeiten dürfen](../../../bilder/trainers/ly-roles.webp)
 
 ## Quiz
 

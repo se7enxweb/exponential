@@ -116,7 +116,7 @@ Inhalte.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, den Reiter **Details** auf dem
   Projektor zu öffnen und die Sektion vorzulesen.
 
-![Die Seite eines Ordners mit ihren Reitern, dem Schalter Reiter und der Liste Unterelemente mit Spalten und Seitennavigation](../../../../../eng-us/help/images/trainers/e101-tabs-subitems.webp)
+![Die Seite eines Ordners mit ihren Reitern, dem Schalter Reiter und der Liste Unterelemente mit Spalten und Seitennavigation](../../../bilder/trainers/e101-tabs-subitems.webp)
 
 ## Quiz
 

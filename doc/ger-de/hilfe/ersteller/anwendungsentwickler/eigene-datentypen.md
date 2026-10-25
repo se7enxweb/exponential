@@ -14,7 +14,7 @@ eine Farbe, eine Bewertung, eine strukturierte Adresse. Ein Datentyp ist eine Kl
 (`kernel/classes/ezdatatype.php`) erweitert, plus ein Ansichts- und ein Bearbeitungs-Template.
 **Setup > RAD > Datentyp-Assistent** (`/setup/datatype`) schreibt ein lauffähiges Gerüst ([RAD-Werkzeuge](rad-werkzeuge.md)).
 
-![Setup, RAD, der Datentyp-Assistent: Name und Klasse eines neuen Datentyps, um sein Gerüst zu erzeugen](../../../../eng-us/help/images/creators/rad-datatype-wizard.webp)
+![Setup, RAD, der Datentyp-Assistent: Name und Klasse eines neuen Datentyps, um sein Gerüst zu erzeugen](../../bilder/creators/rad-datatype-wizard.webp)
 
 ## Inhalt
 

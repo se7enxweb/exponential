@@ -110,7 +110,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - Der Trainer prüft das, indem er den Artikel einer Teilnehmerin oder eines Teilnehmers und dessen Seite
   **Versionen verwalten** auf dem Projektor öffnet.
 
-![Das Bearbeitungsformular verweigert das Veröffentlichen: Die Meldung oben nennt das leere Pflichtfeld Title](../../../../../eng-us/help/images/trainers/e101-required-error.webp)
+![Das Bearbeitungsformular verweigert das Veröffentlichen: Die Meldung oben nennt das leere Pflichtfeld Title](../../../bilder/trainers/e101-required-error.webp)
 
 ## Quiz
 

@@ -14,7 +14,7 @@ für Produktmanager, die beschreiben, was die Plattform bei Einwilligung und Abm
 entscheidet, ob eine Mail versandt werden darf, was pro Kunde eingerichtet werden muss, wie Bounces und Spam-Beschwerden auf die
 Unterdrückungsliste kommen und wie Anfragen zu personenbezogenen Daten behandelt werden.
 
-![E-Mail-Einstellungen in Setup: Mailkategorien, Unterdrückungen und Einwilligungen](../../../../eng-us/help/images/hosting/mail-preferences-status.webp)
+![E-Mail-Einstellungen in Setup: Mailkategorien, Unterdrückungen und Einwilligungen](../../bilder/hosting/mail-preferences-status.webp)
 
 Die Anleitung für Administratoren ist [E-Mail-Einstellungen: einrichten und betreiben](../../../anleitungen/mail-einstellungen-administrator.md);
 die Einstellungen stehen in `settings/mailpreferences.ini`. Transporte und Zustellbarkeit stehen auf

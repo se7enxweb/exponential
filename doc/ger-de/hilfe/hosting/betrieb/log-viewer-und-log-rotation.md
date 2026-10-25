@@ -36,7 +36,7 @@ Die vollständigen Referenzen sind [Der Log-Viewer](../../../funktionen/6.0/log-
 Erweiterungen und ihre Rotationen (`.gz` nur lesend). Ein Navigator gruppiert sie als **Kern**, **Seite**, **Extensions**,
 **Webserver** und **Rotierte Archive**, mit Größe, letztem Schreiben und Zeilen pro Minute.
 
-![Setup, Logdateien, Zustand der Logs: jede Logdatei der Installation mit Größe, Wachstum und letzter Änderung](../../../../eng-us/help/images/hosting/log-files.webp)
+![Setup, Logdateien, Zustand der Logs: jede Logdatei der Installation mit Größe, Wachstum und letzter Änderung](../../bilder/hosting/log-files.webp)
 
 - Jede Ansicht hat einen **Permalink** ohne Query-String, etwa `/setup/logs/view/error`, sicher zum Einfügen in ein Ticket.
 - Eine Datei wird mit kurzen Anfragen **live verfolgt**; nichts hält einen Serverprozess offen.
@@ -74,7 +74,7 @@ im Audit festgehalten.
 Eine Fehlerseite zeigt eine Referenz wie `ERR-0123456789`, und dieselbe Referenz steht in `error.log`
 ([Einen Fehler über seine Referenz finden](../../../anleitungen/fehler-anhand-der-referenz-finden.md)):
 
-![Die Übersicht der Logdateien: aktuelle Fehler und Warnungen, über Dateien hinweg gruppiert](../../../../eng-us/help/images/hosting/log-digest.webp)
+![Die Übersicht der Logdateien: aktuelle Fehler und Warnungen, über Dateien hinweg gruppiert](../../bilder/hosting/log-digest.webp)
 
 1. Fragen Sie den Kunden nach der Referenz und ungefähr, wann es geschah.
 2. **Setup > Logdateien**, Feld **Fehlerreferenz**, **Suchen**; oder öffnen Sie

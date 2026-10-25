@@ -108,7 +108,7 @@ andere Prüfer; der Trainer hat den Prüferkonten eine Prüferrolle gegeben.
 - Schritt 9 hat den Zustand für den ganzen Kursordner gesetzt.
 - Der Trainer prüft das, indem er den Tab **Details** von `Review me` am Beamer öffnet.
 
-![Die Objektzustände eines Elements in seinem Tab Details, mit Zustände einstellen](../../../../../eng-us/help/images/trainers/e201-states.webp)
+![Die Objektzustände eines Elements in seinem Tab Details, mit Zustände einstellen](../../../bilder/trainers/e201-states.webp)
 
 ## Quiz
 

@@ -105,7 +105,7 @@ Auf Ihrer Schulungsinstallation, in `extension/training_theme/`.
 - Schritt 8: Die Seite „Über“ zeigte `0.1.1`; das beweist, dass `extension.xml` zuerst gelesen wird.
 - Der Trainer prüft die Zeilen von zwei Teilnehmenden auf der Seite „Über“.
 
-![Die Seite „Über“ liest Version und Lizenz jedes Themes aus seinen Metadaten](../../../../../eng-us/help/images/trainers/td-about.webp)
+![Die Seite „Über“ liest Version und Lizenz jedes Themes aus seinen Metadaten](../../../bilder/trainers/td-about.webp)
 
 ## Quiz
 

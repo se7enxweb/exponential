@@ -117,7 +117,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
   Daten ist.
 - Der Trainer prüft die Vorschau einer Person am Beamer.
 
-![Die Skin-Vorschau des Newsletters](../../../../../eng-us/help/images/trainers/nl-skin.webp)
+![Die Skin-Vorschau des Newsletters](../../../bilder/trainers/nl-skin.webp)
 
 ## Quiz
 

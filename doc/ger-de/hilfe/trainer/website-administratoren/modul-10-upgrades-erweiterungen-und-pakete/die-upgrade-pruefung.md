@@ -109,7 +109,7 @@ Installation.
 - Der Trainer prüft, dass bei allen Teilnehmenden `index.php` wiederhergestellt wurde (Schritt 8) und die Website
   noch antwortet.
 
-![Die Upgrade-Prüfung: Datei- und Datenbankkonsistenz](../../../../../eng-us/help/images/trainers/sa-upgrade-check.webp)
+![Die Upgrade-Prüfung: Datei- und Datenbankkonsistenz](../../../bilder/trainers/sa-upgrade-check.webp)
 
 ## Quiz
 

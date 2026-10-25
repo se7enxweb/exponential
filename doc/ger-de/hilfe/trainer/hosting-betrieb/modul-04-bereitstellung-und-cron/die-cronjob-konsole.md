@@ -116,7 +116,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator in ihrer Admi
 - Schritt 9: Kein Teil ist angehalten.
 - Der Trainer prüft das, indem er jede Person bittet, den Hinweis aus Schritt 7 laut vorzulesen.
 
-![Die Cronjob-Konsole in der Administration](../../../../../eng-us/help/images/trainers/ho-cronjobs.webp)
+![Die Cronjob-Konsole in der Administration](../../../bilder/trainers/ho-cronjobs.webp)
 
 ## Quiz
 

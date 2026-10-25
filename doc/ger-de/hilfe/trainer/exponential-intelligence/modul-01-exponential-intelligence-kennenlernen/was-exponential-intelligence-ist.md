@@ -107,7 +107,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto (in dieser Übung
 - Die Karte nennt: nur Entwürfe; als der Redakteur; veröffentlicht nie von sich aus.
 - Der Trainer prüft zwei Karten.
 
-![Exponential Intelligence, Summary: Anbieter, Modelle und Nutzung](../../../../../eng-us/help/images/trainers/ei-summary.webp)
+![Exponential Intelligence, Summary: Anbieter, Modelle und Nutzung](../../../bilder/trainers/ei-summary.webp)
 
 ## Quiz
 

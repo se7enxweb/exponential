@@ -115,7 +115,7 @@ Verwenden Sie die Schulungsinstallation, Ihren Kursordner und die Beispielbilder
 - Der Trainer prüft das, indem er den Ordner einer Teilnehmerin oder eines Teilnehmers und den Reiter **Ansehen** eines
   Bildes auf dem Projektor öffnet.
 
-![Die Upload-Seite mit zwei Bildern in der Warteschlange, mit Titel und Alternativtext für jedes, vor Alle hochladen](../../../../../eng-us/help/images/trainers/e101-upload-queue.webp)
+![Die Upload-Seite mit zwei Bildern in der Warteschlange, mit Titel und Alternativtext für jedes, vor Alle hochladen](../../../bilder/trainers/e101-upload-queue.webp)
 
 ## Quiz
 

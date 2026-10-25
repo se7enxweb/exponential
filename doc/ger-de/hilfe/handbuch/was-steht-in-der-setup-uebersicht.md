@@ -39,7 +39,7 @@ ihrer eigenen Seite, zum Beispiel `class/*` für **Klassen**, `section/*` für *
    ist eine schnelle Zählung.
 4. Dieselben Seiten stehen im Menü **Setup** links auf jeder Setup-Seite.
 
-![Die Setup-Übersicht mit den Gruppen Inhaltsmodell, Website und URLs und ihren Kacheln](../../../eng-us/help/manual/images/setup-overview.webp)
+![Die Setup-Übersicht mit den Gruppen Inhaltsmodell, Website und URLs und ihren Kacheln](bilder/setup-overview.webp)
 
 ## Was schiefgehen kann
 

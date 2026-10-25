@@ -12,7 +12,7 @@ type: help
 Das Projekt führt seine Pläne an zwei öffentlichen Orten, beide auf Share Exponential und beide verlinkt von
 [exponential.earth/roadmap](https://exponential.earth/roadmap):
 
-![Setup, Aktualisierungen und Pakete](../../../eng-us/help/images/help/pj-updates.webp)
+![Setup, Aktualisierungen und Pakete](../bilder/help/pj-updates.webp)
 
 | Roadmap | Was sie ist | Adresse |
 |---|---|---|

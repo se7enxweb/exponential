@@ -94,7 +94,7 @@ Zustandsgruppe angelegt (zum Beispiel *Review*).
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, den Unterschied zwischen einer Entwurfsversion und dem
   Zustand *Draft* zu erklären.
 
-![Die Objektzustandsgruppen der Installation, etwa die Sperrgruppe, und ihre Zustände](../../../../../eng-us/help/images/trainers/e201-state-groups.webp)
+![Die Objektzustandsgruppen der Installation, etwa die Sperrgruppe, und ihre Zustände](../../../bilder/trainers/e201-state-groups.webp)
 
 ## Quiz
 

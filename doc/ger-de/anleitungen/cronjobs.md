@@ -144,7 +144,7 @@ JavaScript (Abschnitt 15). Das Layout hält ab 390 Pixeln Breite und bei 200 Pro
 
 ## 4. Die Statusleiste: Laufenden Job anhalten und Protokolle leeren
 
-![Die Statusleiste, während nichts läuft: Untätig, mit deaktiviertem Laufenden Job anhalten und Protokolle leeren](../../eng-us/guides/images/cronjobs/status-and-overview.png)
+![Die Statusleiste, während nichts läuft: Untätig, mit deaktiviertem Laufenden Job anhalten und Protokolle leeren](bilder/cronjobs/status-and-overview.png)
 
 Die linke Seite zeigt **Untätig** oder **Läuft: <part>** mit einem grün pulsierenden Punkt, gefolgt von **Website: <siteaccess>**,
 **Prozess: <pid>** und **Verstrichen: <seconds>s**, das hochzählt, während Sie zusehen. Der Zustand stammt aus
@@ -172,7 +172,7 @@ bevor irgendetwas ausgeführt wird.
 
 ## 5. Die Übersicht
 
-![Die Übersicht: 28 Teile und 47 Skripte, 1 geplant, 27 nicht geplant, 2 brauchen Aufmerksamkeit, und die letzte Ausführung](../../eng-us/guides/images/cronjobs/overview.png)
+![Die Übersicht: 28 Teile und 47 Skripte, 1 geplant, 27 nicht geplant, 2 brauchen Aufmerksamkeit, und die letzte Ausführung](bilder/cronjobs/overview.png)
 
 | Zahl | Bedeutung |
 |---|---|
@@ -187,7 +187,7 @@ Einstellungen sperren (Abschnitt 7).
 
 ## 6. Die Site wählen und einen Teil finden
 
-![Die Bedienelemente: Für Website ausführen, Teil oder Skript suchen, die Auswahlknöpfe unter Anzeigen sowie Cronjob-Teil mit Starten](../../eng-us/guides/images/cronjobs/controls.png)
+![Die Bedienelemente: Für Website ausführen, Teil oder Skript suchen, die Auswahlknöpfe unter Anzeigen sowie Cronjob-Teil mit Starten](bilder/cronjobs/controls.png)
 
 **Für Website ausführen** ist der Siteaccess, den jeder Knopf zum Starten auf der Seite verwendet. Vorausgewählt ist die erste Site der Liste, die
 nicht der Administrations-Siteaccess ist, den Sie gerade betrachten, denn ein Job, der auf Inhalte wirkt, soll auf die Site wirken, die
@@ -203,7 +203,7 @@ sodass ein Treffer bei einem Skript sichtbar ist; sie schließen sich wieder, we
 unter den Bedienelementen gibt an, wie viele Karten angezeigt werden (*25 Teile auf dieser Seite* oder *3 von 25 Teilen dieser Seite angezeigt*);
 *Kein Cronjob-Teil auf dieser Seite passt.*, wenn die Filter keinen übrig lassen.
 
-![Anzeigen: Brauchen Aufmerksamkeit lässt die beiden gesperrten Teile mit ihrem roten Rand übrig](../../eng-us/guides/images/cronjobs/need-attention.png)
+![Anzeigen: Brauchen Aufmerksamkeit lässt die beiden gesperrten Teile mit ihrem roten Rand übrig](bilder/cronjobs/need-attention.png)
 
 Die Suche und **Anzeigen** wirken auf die Karten der aktuellen Seite. Die Liste wird nach
 `admininterface.ini [PaginationSettings] ItemsPerPage[setup/cronjobs]` (ausgeliefert 25) in Seiten aufgeteilt; die Seitennavigation steht unter der Liste.
@@ -268,7 +268,7 @@ Die Liste der Teile hat zwei Ansichten, umschaltbar neben ihrer Überschrift: **
 mit seinen Kennzeichen, seinem Zeitplan, nächster und letzter Ausführung und den Knöpfen **Anhalten**/**Fortsetzen** und **Starten**, alle Teile auf einer Seite;
 **Ausführlich** zeigt die in diesem Abschnitt beschriebenen Karten, seitenweise. Die Wahl wird für Ihren Benutzer gespeichert.
 
-![Eine Teil-Karte mit geöffneten Skripten: Kennzeichen, Zeitplan, nächste Ausführung, letzte Ausführung, Shell-Befehl und drei Skripte mit ihren Beschreibungen](../../eng-us/guides/images/cronjobs/part-card-scripts-open.png)
+![Eine Teil-Karte mit geöffneten Skripten: Kennzeichen, Zeitplan, nächste Ausführung, letzte Ausführung, Shell-Befehl und drei Skripte mit ihren Beschreibungen](bilder/cronjobs/part-card-scripts-open.png)
 
 Jede Karte zeigt von oben:
 
@@ -306,7 +306,7 @@ Jede Karte zeigt von oben:
 
 ## 9. Ausgabe: einen Job während der Ausführung verfolgen
 
-![Ausgabe, mit der letzten Ausführung des Teils googlesitemaps](../../eng-us/guides/images/cronjobs/output.png)
+![Ausgabe, mit der letzten Ausführung des Teils googlesitemaps](bilder/cronjobs/output.png)
 
 **Ausgabe** zeigt das Ende des Protokolls der neuesten von der Seite gestarteten Ausführung (die letzten 64 KB; darüber *... earlier output not
 shown ...*, wenn es mehr gibt), gefolgt von allem Neuen im Fehlerprotokoll. Ihre Zusammenfassung nennt die Datei:
@@ -341,7 +341,7 @@ würde einen PHP-Worker umsonst belegen.
 
 ## 10. Letzte Ausführungen und wie Probleme gezählt werden
 
-![Letzte Ausführungen: Cronjob, Site, Start, Dauer und Ergebnis der letzten zwanzig von der Seite gestarteten Ausführungen](../../eng-us/guides/images/cronjobs/recent-runs.png)
+![Letzte Ausführungen: Cronjob, Site, Start, Dauer und Ergebnis der letzten zwanzig von der Seite gestarteten Ausführungen](bilder/cronjobs/recent-runs.png)
 
 **Letzte Ausführungen** listet die letzten 20 von der Seite gestarteten Ausführungen auf, neueste zuerst: den Teil oder *Skript (Teil)*; die Site;
 wann sie begann; wie lange sie dauerte; und *läuft*, *OK* oder *n Probleme*. Die Seite erfasst eine Ausführung, wenn sie sie startet,
@@ -360,7 +360,7 @@ egal wer sie gestartet hat: siehe das [Audit-Protokoll](../funktionen/6.0/pruefp
 
 ## 11. Skripte, die kein Teil ausführt, und wie Sie eines aktivieren
 
-![Verfügbar, aber nicht aktiviert: Skripte in den Cronjob-Verzeichnissen, die kein Teil nennt](../../eng-us/guides/images/cronjobs/available-scripts.png)
+![Verfügbar, aber nicht aktiviert: Skripte in den Cronjob-Verzeichnissen, die kein Teil nennt](bilder/cronjobs/available-scripts.png)
 
 **Verfügbar, aber nicht aktiviert** listet jede `*.php` in den Cronjob-Verzeichnissen auf, die kein Teil nennt, mit dem, was sie tut,
 und wo sie liegt. Nichts führt sie je aus. In einer neuen Installation sind das unter anderem `session_gc.php` (abgelaufene

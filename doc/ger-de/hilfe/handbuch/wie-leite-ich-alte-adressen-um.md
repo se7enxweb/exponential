@@ -29,7 +29,7 @@ Benutzer, deren Rolle `content/urltranslator` hat.
 6. Geben Sie unter **Eine Adresse ausprobieren** eine alte Adresse ein und klicken Sie auf **Ausprobieren**: Die Seite
    zeigt unter **Wird zu**, wohin sie führt.
 
-![URL Platzhalter mit den Formularen Neue Weiterleitung mit Platzhalter anlegen und Eine Adresse ausprobieren](../../../eng-us/help/manual/images/url-wildcards.webp)
+![URL Platzhalter mit den Formularen Neue Weiterleitung mit Platzhalter anlegen und Eine Adresse ausprobieren](bilder/url-wildcards.webp)
 
 ## Was schiefgehen kann
 

@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren, die ein Paket von einem Paketserver auf ei
 herunter- und hochzuladen. ezupdate liest die `index.xml` des Servers, zeigt, was er anbietet, neben dem, was Sie haben, und ruft das Archiv
 direkt ins lokale Paket-Repository ab. Installiert wird es dann auf den Paketseiten des Kernels.
 
-![Updates und Pakete, Paketserver](../../../../eng-us/help/images/help/sp-servers.webp)
+![Updates und Pakete, Paketserver](../../bilder/help/sp-servers.webp)
 
 ## Inhalt
 

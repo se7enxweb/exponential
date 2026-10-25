@@ -14,7 +14,7 @@ Diese Seite ist für Support-Mitarbeitende und Administratoren bei Hosting-Anbie
 Jobs laufen müssen und wie oft, welche PHP-Binärdatei eine Cron-Zeile nutzen muss, was die eigene Seite Cronjobs der
 Administration braucht und was ein Kunde ohne Shell tun kann.
 
-![Setup, Cache-Verwaltung: was Sie nutzen, wenn ein Hosting-Panel keine Shell bietet](../../../../eng-us/help/images/hosting/cache-from-panel.webp)
+![Setup, Cache-Verwaltung: was Sie nutzen, wenn ein Hosting-Panel keine Shell bietet](../../bilder/hosting/cache-from-panel.webp)
 
 ## Inhalt
 

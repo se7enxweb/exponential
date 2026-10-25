@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die Klassen Attribute hinzufügen
 bearbeitet, gespeichert, validiert, durchsucht und angezeigt wird, und er lässt sich später nicht ohne Datenmigration
 ändern. Wählen Sie danach, was Sie mit dem Wert tun werden.
 
-![Die Seite einer Klasse: ihre Attribute, jedes mit Datentyp, Bezeichner und der Angabe, ob es Pflichtfeld, durchsuchbar oder übersetzbar ist](../../../../eng-us/help/images/creators/class-view.webp)
+![Die Seite einer Klasse: ihre Attribute, jedes mit Datentyp, Bezeichner und der Angabe, ob es Pflichtfeld, durchsuchbar oder übersetzbar ist](../../bilder/creators/class-view.webp)
 
 ## Inhalt
 

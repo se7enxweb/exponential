@@ -104,9 +104,9 @@ Verwenden Sie die Adresse des Editors der Schulungsinstallation, die der Trainer
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, einen Reiter zu nennen, den die
   Administration hat und der Editor nicht.
 
-![Das Anmeldeformular des Editors mit der Bezeichnung Administration of Editor](../../../../../eng-us/help/images/trainers/e101-editor-signin.webp)
+![Das Anmeldeformular des Editors mit der Bezeichnung Administration of Editor](../../../bilder/trainers/e101-editor-signin.webp)
 
-![Die Kopfzeile des Editors mit ihrer kürzeren Liste von Reitern: Dashboard, Inhaltsstruktur und Medien](../../../../../eng-us/help/images/trainers/e101-editor-tabs.webp)
+![Die Kopfzeile des Editors mit ihrer kürzeren Liste von Reitern: Dashboard, Inhaltsstruktur und Medien](../../../bilder/trainers/e101-editor-tabs.webp)
 
 ## Quiz
 

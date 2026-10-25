@@ -36,7 +36,7 @@ und bei 320 CSS-Pixeln Breite ohne waagrechtes Scrollen umbrechen.
   wie ein 1920-px-Bildschirm bei 200 %.
 - **Automatisch:** Die Browserprüfungen des Projekts verwenden 1440 px mit Skalierung 1, 960 px mit Skalierung 2 und 375 px mit Skalierung 2.
 
-![Die Seite eines Eintrags bei 960 Pixeln Breite, wie bei 200 Prozent Zoom auf einem Laptop: Die Spalten klappen weg, und nichts läuft über](../../../../eng-us/help/images/designers/edit-form-960.webp)
+![Die Seite eines Eintrags bei 960 Pixeln Breite, wie bei 200 Prozent Zoom auf einem Laptop: Die Spalten klappen weg, und nichts läuft über](../../bilder/designers/edit-form-960.webp)
 
 ## Was meistens bricht
 

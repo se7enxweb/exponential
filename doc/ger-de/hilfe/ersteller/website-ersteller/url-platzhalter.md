@@ -38,7 +38,7 @@ eine bestehende Adresse), **Sprache**, **In andere Sprachen übernehmen** und **
 Ein Alias auf `content/view/full/<node>` wird zu einem Alias dieses Knotens und erscheint stattdessen im Reiter des
 Knotens. Die Liste markiert Aliasse, deren Modul nicht mehr existiert.
 
-![URL-Übersetzer: die globalen URL-Aliasse und das Formular, um einen hinzuzufügen](../../../../eng-us/help/images/creators/url-translator.webp)
+![URL-Übersetzer: die globalen URL-Aliasse und das Formular, um einen hinzuzufügen](../../bilder/creators/url-translator.webp)
 
 ## URL-Platzhalter
 
@@ -46,7 +46,7 @@ Jeder `*` im Muster passt auf beliebigen Text; `{1}`, `{2}` im Ziel setzen ihn w
 das einen Platzhalter verwendet, für den das Muster keinen `*` hat. **Eine Adresse ausprobieren** zeigt, auf welchen
 Platzhalter eine Adresse passt, was daraus wird und ob Besucher weitergeleitet werden, ohne etwas zu ändern.
 
-![URL-Platzhalter: Adressmuster, die weiterleiten oder durchreichen, und das Formular, um eines hinzuzufügen](../../../../eng-us/help/images/creators/url-wildcards.webp)
+![URL-Platzhalter: Adressmuster, die weiterleiten oder durchreichen, und das Formular, um eines hinzuzufügen](../../bilder/creators/url-wildcards.webp)
 
 | Muster | Ziel | `news/2026/october` wird zu |
 |---|---|---|

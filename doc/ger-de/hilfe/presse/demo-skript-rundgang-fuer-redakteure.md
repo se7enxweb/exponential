@@ -35,7 +35,7 @@ Ordner mit erfundenen Objekten, eine zweite Inhaltssprache und keine Entwürfe, 
 | Einen Ordner im Baum öffnen | „Ein Klick auf das Dreieck öffnet einen Ordner, ein Klick auf den Namen öffnet das Objekt.“ | [Die linke Spalte](../rundgang-durch-die-administration.md#die-linke-spalte) |
 | Auf der Seite des Objekts auf die Schaltflächen zeigen | „**Bearbeiten**, **Verschieben**, **Kopieren**, **Entfernen** und drei runde Schaltflächen: **Auf der Website ansehen**, **Vorschau** und **Versionen verwalten**.“ | [Die Seite eines Objekts](../rundgang-durch-die-administration.md#die-seite-eines-objekts) |
 
-![Teil 1: der Baum, die Seite eines Objekts und die rechte Spalte](../../../eng-us/help/images/help/pr-editor-tree.webp)
+![Teil 1: der Baum, die Seite eines Objekts und die rechte Spalte](../bilder/help/pr-editor-tree.webp)
 
 ## Teil 2: einen Ordner bearbeiten (4 Minuten)
 
@@ -61,7 +61,7 @@ Ordner mit erfundenen Objekten, eine zweite Inhaltssprache und keine Entwürfe, 
 Erwähnen Sie eine Freigabe nur so, wie sie dokumentiert ist: „Wenn eine Website eine Freigabe verwendet, wartet die
 Version unter **Meine Warteliste**.“
 
-![Teil 2: das Bearbeitungsformular](../../../eng-us/help/images/help/pr-editor-form.webp)
+![Teil 2: das Bearbeitungsformular](../bilder/help/pr-editor-form.webp)
 
 ## Teil 3: Versionen (1 Minute 30)
 
@@ -71,7 +71,7 @@ Version unter **Meine Warteliste**.“
 3. Zeigen Sie auf **Neuen Entwurf machen**: „Zurückgehen heißt, einen Entwurf aus einer älteren Version zu beginnen und
    ihn zu veröffentlichen.“ ([Zu einer früheren Version zurückkehren](../veroeffentlichen-und-versionen.md#zu-einer-früheren-version-zurückkehren))
 
-![Teil 3: die Versionen eines Objekts](../../../eng-us/help/images/help/pr-editor-versions.webp)
+![Teil 3: die Versionen eines Objekts](../bilder/help/pr-editor-versions.webp)
 
 ## Teil 4: Sprachen und Rechts-nach-links (2 Minuten 30)
 
@@ -89,7 +89,7 @@ Wenn Sie Zahlen nennen, verwenden Sie die dokumentierten mit ihrer Quelle: 268 L
 verwendet werden können, 38 Übersetzungen der Administration, dreiundzwanzig davon vollständig (23. Oktober 2026)
 ([Sprachen in Exponential](../../sprachen.md)).
 
-![Teil 4: die Übersetzungen eines Objekts](../../../eng-us/help/images/help/pr-editor-translations.webp)
+![Teil 4: die Übersetzungen eines Objekts](../bilder/help/pr-editor-translations.webp)
 
 ## Sich vor der Kamera fangen
 

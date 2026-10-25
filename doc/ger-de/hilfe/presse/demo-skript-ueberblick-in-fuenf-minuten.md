@@ -47,7 +47,7 @@ selbst anordnen können und Hilfe im Produkt finden. **Publikum:** Menschen, die
 | 4:05 | Eine beliebige Seite | Die Schaltfläche **Hilfe** in der Kopfzeile | „Die Hilfe ist eingebaut: Diese Schaltfläche öffnet die Seite, die zu dem Bildschirm gehört, auf dem ich bin.“ |
 | 4:35 | Titelkarte | | „Es ist freie Software unter der GNU GPL, und Sie können es selbst hosten. Die Links zu allem, was ich gezeigt habe, stehen unten.“ |
 
-![Das Dashboard, wo der Überblick in fünf Minuten beginnt](../../../eng-us/help/images/help/pr-five-dash.webp)
+![Das Dashboard, wo der Überblick in fünf Minuten beginnt](../bilder/help/pr-five-dash.webp)
 
 Proben Sie es einmal mit einem Timer. Wenn Sie zu lang werden, kürzen Sie den Teil zu den Layouts, nicht die Offenlegung.
 

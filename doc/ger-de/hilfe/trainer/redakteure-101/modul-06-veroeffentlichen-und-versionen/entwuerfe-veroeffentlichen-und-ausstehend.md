@@ -113,7 +113,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - **Meine Warteliste** zeigt auf einer Schulungs-Website ohne Freigabe keine Einträge (0).
 - Der Trainer prüft das, indem er alle Teilnehmenden fragt, wie viele Entwürfe sie noch haben (meist keinen).
 
-![Meine Entwürfe mit einem gespeicherten Entwurf und den Schaltflächen zum Bearbeiten oder Entfernen](../../../../../eng-us/help/images/trainers/e101-my-drafts.webp)
+![Meine Entwürfe mit einem gespeicherten Entwurf und den Schaltflächen zum Bearbeiten oder Entfernen](../../../bilder/trainers/e101-my-drafts.webp)
 
 ## Quiz
 

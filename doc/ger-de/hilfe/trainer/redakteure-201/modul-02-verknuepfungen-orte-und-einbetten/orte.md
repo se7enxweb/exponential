@@ -106,7 +106,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Der Papierkorb enthält den Artikel nicht.
 - Der Trainer prüft das, indem er den Tab **Orte** einer Person am Beamer öffnet.
 
-![Der Tab Orte: jede Stelle, an der das Element erscheint, der Hauptort markiert, mit Orte hinzufügen und Als Haupt setzen](../../../../../eng-us/help/images/trainers/e201-locations-tab.webp)
+![Der Tab Orte: jede Stelle, an der das Element erscheint, der Hauptort markiert, mit Orte hinzufügen und Als Haupt setzen](../../../bilder/trainers/e201-locations-tab.webp)
 
 ## Quiz
 

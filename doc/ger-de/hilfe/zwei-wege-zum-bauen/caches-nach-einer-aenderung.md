@@ -46,7 +46,7 @@ Der Kasten **Cache leeren** rechts in der Administration bietet:
 | INI-Einstellungen | den Tag `ini` |
 | Statisch | den statischen Seiten-Cache, neu erzeugt |
 
-![Der Kasten Cache leeren mit der Auswahlliste und der Schaltfläche Leeren](../../../eng-us/help/build-two-ways/images/hm-07-clear-cache-panel.webp)
+![Der Kasten Cache leeren mit der Auswahlliste und der Schaltfläche Leeren](bilder/hm-07-clear-cache-panel.webp)
 
 Mit den Tags `template` und `content` zusammen werden diese geleert (aus einem echten Lauf): `exphttpcache` (Seiten-Cache),
 `template` (kompilierte Templates), `template-block`, `template-override`, `texttoimage`, `design_base`,
