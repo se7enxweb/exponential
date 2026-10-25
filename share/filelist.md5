@@ -3431,6 +3431,7 @@ e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-che
 4b54841db2f8a4e700cce6a0884fcb00  doc/eng-us/bc/6.0/frankenphp.md
 f50494600c581d6f79cb3b05c1b6c120  doc/eng-us/bc/6.0/hardening.md
 c096765a30ac8ef624ea0dee89dec81c  doc/eng-us/bc/6.0/help-content-dita-ebooks-reviews.md
+5d6dd4d12e4aaf54a85c75c76ae7fc61  doc/eng-us/bc/6.0/help-content-workflow-feedback.md
 574676e730c70304294db7266381f8b6  doc/eng-us/bc/6.0/http-caching.md
 ac6e038afa43bb7abe89a1cfd1a6533e  doc/eng-us/bc/6.0/http2-and-cache-warming.md
 26385728e213f79942873fc7ea3fabc4  doc/eng-us/bc/6.0/httpcache.md
@@ -12519,6 +12520,7 @@ ea6144326c90e9795e6e5828d13b06fd  doc/ger-de/bc/6.0/ezpsessionhandlerdb-php8-kor
 b8c45092d70c0b14cebc1ddfd4f2ff31  doc/ger-de/bc/6.0/geheimnispruefung-fuer-erweiterungspakete.md
 52b211fd631425615685a4dadf9654d2  doc/ger-de/bc/6.0/haertung.md
 1fb15f8731664c314258588e1c734ea6  doc/ger-de/bc/6.0/hilfeinhalte-dita-ebooks-reviews.md
+4b8c6fad7629b7764d24c95e6ab91153  doc/ger-de/bc/6.0/hilfeinhalte-pruefablauf-rueckmeldung.md
 2f85d280cc30fec78fa498042ebfa2d7  doc/ger-de/bc/6.0/http-caching.md
 43d676b154295b51022f71acc225fb5f  doc/ger-de/bc/6.0/http2-und-cache-vorwaermen.md
 da6858675aab7eefd1c837248cf33a5f  doc/ger-de/bc/6.0/httpcache.md

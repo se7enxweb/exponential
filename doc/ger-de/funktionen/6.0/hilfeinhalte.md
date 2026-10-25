@@ -1,7 +1,10 @@
 # Hilfe als Inhalt gepflegt
 
 Status: Phase 1 in 6.0.15 (18. Oktober 2026); der DITA-Export, die gespeicherten E-Books und die überfälligen Prüfungen
-am 20. Oktober 2026 ([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md)). Der Plan ist
+am 20. Oktober 2026 ([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md)); der Prüfablauf
+am Thema, "War das hilfreich?", Kontexthilfe für Clients mit Token, die Prüfung eines EPUB, die Historie in git, die
+Hilfe auf den eigenen Seiten einer Site und die übrigen Regeln des Styleguides am 25. Oktober 2026
+([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-pruefablauf-rueckmeldung.md)). Der Plan ist
 [help-system.md](../../spezifikationen/6.0/hilfesystem.md), die redaktionellen Regeln stehen im
 [Styleguide der Hilfe](../../spezifikationen/6.0/hilfe-stilrichtlinien.md). Für alle, die die Hilfe schreiben und
 veröffentlichen: [die Hilfe aktuell halten](../../hilfe/hilfethemen-pflegen.md).
@@ -28,7 +31,12 @@ Kontexthilfe in anderen Clients.
 | Die Themen mit überfälliger Prüfung (Prüfdatum überschritten, zu lange in Prüfung) | das Dashboard der Hilfe, `./console exp:help:content review` |
 | Die acht Klassen als Inhaltsklassen-Paket `exp_help_classes` (.ezpkg) und seine Prüfung | `./console exp:help:content package`, `verify-package` ([das Paket](../../spezifikationen/6.0/hilfeklassen-als-paket.md)) |
 | Ein Thema in der Hilfe: `exphelp/topic/<help_id>`; ein Handbuch: `exphelp/manual/<remote_id>`; die Liste der Handbücher: `exphelp/manual` | Admin, Richtlinie `exphelp/read` |
+| Der Prüfablauf am Thema: **Zur Prüfung geben**, **Freigeben**, **Zurück in Prüfung**, **Zurück zum Entwurf**, und die Prüfung des Themas nach dem Styleguide ([unten](#der-prüfablauf)) | Admin, `state/assign` der Hilferollen |
+| "War das hilfreich?" unter jedem veröffentlichten Thema, die Antworten je Thema ([unten](#war-das-hilfreich)) | `exphelp/feedback/<help_id>`, `./console exp:help:content feedback` |
 | Kontexthilfe als JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | Richtlinie `exphelp/context` |
+| Kontexthilfe für Clients mit Token (OAuth oder ein persönlicher API-Schlüssel): `/api/help/v1/topic/<help_id>`, `/api/help/v1/manual/<remote_id>` ([unten](#kontexthilfe-für-clients-mit-token)) | REST, Scope `help` |
+| Die Hilfe auf den eigenen Seiten der Site: die Voll- und Zeilenansichten der Hilfeklassen ([unten](#hilfe-auf-den-seiten-der-site)) | Extension `exphelpsite` |
+| Die Tabellen `exphelp_help_id` (veröffentlichte help_ids) und `exphelp_feedback` in einer Installation, die älter ist als sie | `./console exp:help:content tables` (ein Schritt von `install`) |
 
 Der Plan nennt die Skripte `create_classes.php`, `create_tree.php`, `create_roles.php`, `check_help.php`,
 `seed_glossary.php` und `seed_topics.php`. Sie sind die Aktionen `classes`, `tree`, `roles`, `check`, `seed-glossary`
@@ -273,7 +281,7 @@ Wie im Plan, mit diesen Entscheidungen dort, wo er eine Wahl lässt:
 
 | Rolle | Richtlinien |
 |---|---|
-| Help editor | `content/read`, `versionread`, `create` im Teilbaum `help-root`; `content/edit` und `remove` dort in den Status Entwurf und Prüfung; `state/assign` von Entwurf nach Prüfung; `exphelp/read` |
+| Help editor | `content/read`, `versionread`, `create` im Teilbaum `help-root`; `content/edit` und `remove` dort in den Status Entwurf und Prüfung; `state/assign` von Entwurf nach Prüfung; `exphelp/read`, `exphelp/context` |
 | Help release | `state/assign` in `help-root`, von jedem Status in jeden Status; **zusätzlich** zur Redakteursrolle zugewiesen |
 | Anonymous | **eine** Richtlinie `content/read`, eingeschränkt auf die Sektion `help_public` **und** den Status Veröffentlicht |
 
@@ -281,10 +289,20 @@ Die Rollen werden angelegt, nicht zugewiesen: Weisen Sie sie in der Administrati
 Redakteure zu. Eine Richtlinie wird anhand von Modul, Funktion und Einschränkungswerten verglichen; eine fehlende wird
 hinzugefügt, nichts wird geändert oder entfernt.
 
+**Wer schreibt, gibt nicht frei.** "Wer ein Thema geschrieben hat, gibt es nicht frei" (Plan, "Permissions") ist
+durchgesetzt, nicht nur aufgeschrieben: Beim Zuweisen von Status (`eZContentOperationCollection::updateObjectState()`,
+die der Reiter Objektstatus, Inhaltsjobs und die Schaltflächen der Hilfe alle nutzen) wird der Status Veröffentlicht für
+ein Hilfeobjekt herausgenommen, dessen aktuelle Version der aktuelle Benutzer angelegt hat
+(`expHelpContentWorkflow::refusedStates()`). Jemand anderes mit der Freigaberolle gibt es frei; die übrigen Status der
+Zuweisung bleiben. `exphelp.ini [ContentSettings] ReleaseByAuthor=enabled` schaltet die Regel ab, für eine Site mit nur
+einem Redakteur. Die Kommandozeile (`seed-topics --release`, `build-manuals --release`) weist Status direkt zu: Wer sie
+ausführt, trifft damit die Entscheidung zur Freigabe.
+
 **Opt-in:** `exphelp.ini [ContentSettings] AnonymousContextHelp=enabled` (Standard `disabled`) lässt den Rollenschritt
 Anonymous zusätzlich `exphelp/context` geben, sodass das JSON **öffentlicher, veröffentlichter** Themen ohne Anmeldung
 gelesen werden kann (eine öffentliche Site, eine mobile App). Ohne diese Einstellung braucht der Endpunkt eine Anmeldung
-(Sitzung oder die Token-Anmeldung der Site) und die Richtlinie.
+(Sitzung oder die Token-Anmeldung der Site) und die Richtlinie. `AnonymousFeedback=enabled` (Standard `disabled`) gibt
+Anonymous ebenso `exphelp/feedback`, damit die Leser einer öffentlichen Hilfe "War das hilfreich?" beantworten können.
 
 ## Der Validator
 
@@ -313,17 +331,44 @@ Regeln selbst):
 | ERROR | `figure.image-missing`, `related.target`, `figures.target`, `map.target`, `map.cycle` | Relationen verweisen auf das, worauf sie verweisen sollen |
 | WARNING | `map.empty`, `map.duplicate`, `map.orphan-chapter` | |
 | WARNING | `review-date.past`, `version.format` | (8) |
+| WARNING | `review-date.too-far` | das Prüfdatum liegt mehr als `ReviewMonths` (12) Monate in der Zukunft, für die Bereiche aus `ShortReviewAreas[]` (privacy, account) mehr als `ShortReviewMonths` (6), mit einem Monat Spielraum (8) |
+| WARNING | `version.successor` | `version_to` ist gesetzt, aber kein verwandtes Thema nennt den Nachfolger (7) |
+| ERROR | `help-id.renamed`, `help-id.reused` | das Thema wurde unter einer anderen help_id veröffentlicht; die help_id wurde für ein anderes Objekt veröffentlicht. Eine help_id wird nie umbenannt und nie wiederverwendet (7, [veröffentlichte help_ids](#veröffentlichte-help_ids)) |
+| WARNING | `help-id.gone` | eine veröffentlichte help_id hat kein Thema mehr; Clients erhalten einen 404 (7) |
+| WARNING | `verb.mix` | das Thema verwendet mehr als eines von "click", "tap" und "press" für ein Bedienelement ("press Enter" nennt eine Taste und ist in Ordnung; fette Beschriftungen zählen nicht) (4) |
+| NOTICE | `language.sentence-too-long` | ein Satz hat mehr als `SentenceWordsPublic` (20) Wörter in einem Thema für `PlainLanguageAudiences[]` (Besucher, Mitglieder), sonst mehr als `SentenceWordsTechnical` (25) (3) |
+| NOTICE | `language.paragraph-too-long` | ein Absatz hat mehr als `ParagraphSentencesPublic` (4) Sätze in einem Thema für Besucher oder Mitglieder (3) |
 | NOTICE | `field.recommended` | `platform`, `version_from`, `review_date`, `owner` sind leer (1, 8) |
 | ERROR | `section.mismatch` | die Sektion passt nicht zur Zielgruppe; `--fix` setzt sie |
+
+Die Regeln zu einfacher Sprache und zu den Verben lassen die Themen aus der Markdown-Hilfe aus (remote_id
+`help-gen-...`): Ihr Text wird in `doc/` geschrieben und dort geprüft. Code, Tabellen, Überschriften und Linkziele zählen
+nicht als Sätze; ein Listeneintrag ist ein eigener Absatz. Die Zählungen sind NOTICEs: ein Hinweis für die Prüfung, da
+auch eine Liste von Beschriftungen oder ein langer Produktname als Wörter zählt.
 
 Ein Hinweis ist eine fette Beschriftung mit Doppelpunkt: `**Attention:**`, `**Data protection:**` oder `**Note:**`
 (auch `**Attention**:`), außerhalb von Code. Im Hilfe-Viewer wird ein Blockzitat, das mit einer solchen Beschriftung
 beginnt (`> **Attention:** ...`), oder ein Container (`:::data-protection`) zu einem hervorgehobenen Kasten mit diesem
 Titel; Datenschutz hat ein eigenes Symbol.
 
-Nicht maschinell prüfbar und der Prüfung überlassen: Minimalismus, einfache Sprache, eine Handlung pro Schritt, die
-Länge eines Hinweises innerhalb seines Schritts (Hinweis und Handlung teilen sich den Text des Schritts), ob eine
-Beschriftung zur Oberfläche passt.
+Nicht maschinell prüfbar und der Prüfung überlassen: Minimalismus, die Anrede, eine Handlung pro Schritt, die Länge
+eines Hinweises innerhalb seines Schritts (Hinweis und Handlung teilen sich den Text des Schritts), ob eine Beschriftung
+zur Oberfläche passt, die Titelform eines Thementyps.
+
+`check --fix` erfasst auch die help_ids veröffentlichter Themen, die noch nicht erfasst sind (`help_ids record ...`), so
+dass eine Installation, die Themen vor der Tabelle veröffentlicht hat, sie einmal erfasst bekommt.
+
+### Veröffentlichte help_ids
+
+Clients rufen ein Thema über seine help_id auf, daher gilt "eine help_id wird nie umbenannt und nie wiederverwendet"
+(Styleguide Abschnitt 7). Die Tabelle `exphelp_help_id` hält jede help_id, die veröffentlicht wurde, mit ihrem Objekt
+und der Zeit (`expHelpContentHelpIds`); es kommen nur Zeilen hinzu. Eine help_id wird erfasst, wenn ihr Thema auf
+Veröffentlicht gesetzt wird (die Statuszuweisung, `expHelpContentWorkflow::afterStateAssign()`), von
+`seed-topics --release` und von `check --fix`. Themen aus der Markdown-Hilfe werden nicht erfasst: Ihre help_id folgt dem
+Pfad der Seite. Der Validator meldet dann ein Thema, dessen help_id von der abweicht, mit der es veröffentlicht wurde
+(`help-id.renamed`), eine help_id, die jetzt ein anderes Objekt nutzt (`help-id.reused`), und eine veröffentlichte
+help_id, die kein Thema mehr hat (`help-id.gone`). Der Ausweg, den der Styleguide nennt: die alte help_id zurückgeben,
+oder ein neues Thema anlegen und beim alten `version_to` und einen Verweis setzen.
 
 ## In der Hilfe (exphelp)
 
@@ -331,7 +376,8 @@ Beschriftung zur Oberfläche passt.
   Gültigkeit, die gerenderten Felder (Überschriften Bevor Sie beginnen, Schritte, Ergebnis ... bei Aufgaben;
   Bedingung, Ursache, Abhilfe bei der Fehlerbehebung), seine Abbildungen und verwandten Themen, die Liste der Themen
   und Handbücher. "Dieses Thema bearbeiten" für alle, die es bearbeiten dürfen; "JSON" öffnet die Antwort der
-  Kontexthilfe.
+  Kontexthilfe. Unter dem Thema: "War das hilfreich?" (veröffentlichte Themen) und für alle, die das Thema bearbeiten
+  oder seinen Status zuweisen dürfen, die Karte **Prüfung und Freigabe** ([der Prüfablauf](#der-prüfablauf)).
 - `exphelp/manual/<remote_id>`: das Inhaltsverzeichnis des Handbuchs, Kapitel verschachtelt; `exphelp/manual`: die
   Handbücher.
 - Wer was sieht: allein die Berechtigungen von Exponential. Ein **veröffentlichtes** Thema wird allen angezeigt, die es
@@ -364,6 +410,121 @@ implementiert, darf mit `content/<help_id>` antworten, und das Hilfe-Steuereleme
 dieses Thema. Ein Eintrag der Zuordnung kann nie `content/...` nennen, und ein Provider, der die Schnittstelle nicht
 implementiert, ebenfalls nicht.
 
+### Kontexthilfe für Clients mit Token
+
+Der Plan liefert interne Themen an andere Clients "mit einem Token und einer passenden Rolle". `exphelp/context`
+antwortet einem angemeldeten Browser (der Sitzung) und, wenn eingeschaltet, anonymen Lesern öffentlicher Themen. Eine
+mobile App oder ein Skript ohne Sitzung nutzt den REST-Provider `help` (`rest.ini [ApiProvider]
+ProviderClass[help]=expHelpRestProvider`):
+
+```
+GET /api/help/v1/topic/content.publish-article
+GET /api/help/v1/manual/help-manual-editors
+Authorization: Bearer <OAuth-Token oder ein persönlicher API-Schlüssel expk_...>
+```
+
+Die Antwort ist das JSON von `exphelp/context` (dieselben Felder; Verweise auf andere Themen sind Adressen von
+`exphelp/context`). Die REST-Schicht authentifiziert die Anfrage wie bei jeder REST-Route: ein OAuth-Token des Benutzers
+oder ein persönlicher API-Schlüssel mit dem Scope **help** (`rest.ini [ApiKeySettings] Scopes[help]=exphelp/context`,
+"Read context help"; ein Schlüssel wird auf der Seite der API-Schlüssel des Benutzers angelegt, und nur von einem
+Benutzer, der `exphelp/context` hat). Die Berechtigungen des Benutzers entscheiden, was die Antwort enthält, genau wie
+in der Hilfe: ein veröffentlichtes Thema, das er lesen darf, eine Vorschau für alle, die es bearbeiten dürfen, und
+dasselbe `404 {"error":"not_found"}` für alles andere. Ein Benutzer ohne `exphelp/context` erhält `403 access_denied`.
+Die Antworten werden nie im Anwendungscache von REST gehalten (`[expHelpRestController_CacheSettings]
+ApplicationCache=disabled`): Was ein Benutzer sehen darf, hängt vom Benutzer ab.
+
+## Der Prüfablauf
+
+Die Statusgruppe `help_status` ist der Ablauf: Entwurf, Prüfung, Veröffentlicht. Der Reiter Objektstatus der
+Administrationsoberfläche kann ihn wie jeden Status setzen; die Seite des Themas in der Hilfe (admin und admin4) zeigt
+ihn dort, wo das Thema gelesen wird, in der Karte **Prüfung und Freigabe**, allen, die das Thema bearbeiten oder seinen
+Status zuweisen dürfen:
+
+- die drei Status als Schritte, der aktuelle markiert;
+- die Schritte, die die `state/assign`-Richtlinien des Benutzers erlauben, als Schaltflächen: **Zur Prüfung geben**
+  (Entwurf), **Freigeben** und **Zurück zum Entwurf** (Prüfung), **Zurück in Prüfung** (Veröffentlicht). Ein
+  Hilfe-Redakteur erhält nur Zur Prüfung geben; wer zusätzlich die Rolle Help release hat, auch den Rest. Eine
+  Schaltfläche ist ein POST an `exphelp/state/<help_id>` mit dem Formular-Token des Kernels und läuft über die
+  Statusoperation des Kernels, sodass daran gehängte Workflows wie beim Reiter Objektstatus laufen;
+- wenn der Benutzer die aktuelle Version des Themas geschrieben hat, keine Schaltfläche Freigeben, sondern der Grund:
+  "Sie haben die aktuelle Version geschrieben, deshalb gibt sie jemand anderes mit der Freigaberolle frei"
+  ([wer schreibt, gibt nicht frei](#rollen));
+- nach einem Schritt sein Ergebnis (das Thema ist jetzt in Prüfung, veröffentlicht, wieder ein Entwurf, oder warum sich
+  nichts geändert hat);
+- **Prüfung nach dem Styleguide**: die Befunde des Validators zu diesem Thema (Stufe, Regel, Feld, Befund), geprüft mit
+  dem, was seine Regeln brauchen (die verwandten Themen, die Themen mit seiner help_id, seine Abbildungen, das Glossar,
+  die veröffentlichten help_ids), nicht mit der ganzen Hilfe, sodass die Redakteurin sieht, was `check` melden würde,
+  bevor sie das Thema zur Prüfung gibt;
+- die Antworten auf "War das hilfreich?" zu dem Thema: Ja, Nein und die Gründe für Nein.
+
+Die Karte nutzt die gemeinsamen Komponenten der Admin-Designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-table`, `a4-tag`,
+`a4-btn`), hat kein eigenes CSS außer ihrem Platz in der Spalte (`stylesheets/modules/help.css`) und folgt dem hellen und
+dunklen Modus. Dieselbe Vorlage liegt in design/admin und design/admin4.
+
+## War das hilfreich?
+
+Die Wartungsphase des Plans verlangt "War das hilfreich?" zu jedem Thema und lässt zwei Entscheidungen offen: wo die
+Antworten gehalten werden und was das für den Datenschutz der Leser bedeutet. Exponential entscheidet beides für jede
+Site:
+
+- **Was gespeichert wird**: Ja, oder Nein mit einem Grund aus einer festen Liste (Es ist veraltet, Es ist schwer zu
+  verstehen, Es fehlt etwas, Es ist falsch, Ein anderer Grund), das Thema (Objekt und help_id), seine Sprache und der
+  **Tag**, in der Tabelle `exphelp_feedback`. **Nichts darüber, wer geantwortet hat**: kein Benutzer, keine Adresse,
+  keine Sitzungs-ID, kein freier Text (freier Text lädt zu personenbezogenen Daten ein und bräuchte Moderation). Die
+  Antworten lassen sich zählen, nicht zurückverfolgen.
+- **Eine Antwort je Thema und Sitzung** wird gezählt; die Sitzung merkt sich, welche Themen sie beantwortet hat
+  (höchstens 50), die Tabelle nicht. Für eine zweite Antwort wird gedankt, gespeichert wird sie nicht.
+- **Wie lange**: `FeedbackKeepDays` (730 Tage). Der Cronjob-Teil `exphelp` (Teil von `infrequent`, oder allein:
+  `php runcronjobs.php exphelp`) entfernt ältere Antworten; `./console exp:help:content feedback --prune` tut es von Hand.
+- **Wer antworten darf**: wer ein veröffentlichtes Thema sehen darf und `exphelp/read` hat (die Leser der Hilfe in der
+  Administrationsoberfläche) oder die neue Richtlinienfunktion `exphelp/feedback` (die Leser der öffentlichen Hilfe
+  einer Site). Anonymous erhält `exphelp/feedback` nur mit `AnonymousFeedback=enabled` und dem Rollenschritt. Eine
+  Vorschau kann nicht beantwortet werden.
+
+Die Frage steht unter jedem veröffentlichten Thema in der Hilfe (`exphelp/feedback/<help_id>`, ein POST mit dem
+Formular-Token; zurück zum Thema mit `(helpful)/thanks`) und auf den eigenen Seiten der Site
+([unten](#hilfe-auf-den-seiten-der-site)), wo die Antwort zur Seite des Themas zurückführt (`RedirectURI`, nur ein Pfad
+der Site). Die Zählungen stehen auf der Karte **Prüfung und Freigabe** des Themas und je Thema auf der Kommandozeile,
+das am wenigsten hilfreiche zuerst:
+
+```
+./console exp:help:content feedback -s admin [--prune] [--dry-run] [--json]
+```
+
+`Feedback=disabled` schaltet die Frage ab; ohne die Tabelle ist sie ebenfalls aus.
+
+## Hilfe auf den Seiten der Site
+
+Der erste Auslieferungsweg des Plans ist die öffentliche Site: "templates `full/help_*.tpl` and `line/help_*.tpl` in the
+site design". Der Kernel liefert sie als die Extension **exphelpsite** (`extension/exphelpsite`) aus, nur für den
+öffentlichen Siteaccess aktiviert:
+
+```ini
+# settings/siteaccess/<öffentlicher Siteaccess>/site.ini.append.php
+[ExtensionSettings]
+ActiveAccessExtensions[]=exphelpsite
+```
+
+Aktivieren Sie sie nie für die Administrationsoberfläche (oder in `ActiveExtensions[]`): Dort behalten die
+Hilfeobjekte die eigenen Ansichten der Administrationsoberfläche. Die Überschreibungsregeln der Extension
+(`settings/override.ini.append.php`) geben der Vollansicht der vier Themenklassen die Vorlage `help/full_topic.tpl`, von
+`help_manual` und `help_section` `help/full_map.tpl` und der Zeilenansicht aller sechs `help/line.tpl`. Ein Design einer
+Site mit eigenen Vorlagen für diese Klassen überschreibt die Regeln in seinem Siteaccess.
+
+- Die Seite eines Themas: Titel, Kurzbeschreibung, die gerenderten Felder (das sichere Markdown-Rendering der Hilfe),
+  seine Abbildungen mit Alternativtext und Bildunterschrift, seine verwandten Themen und "War das hilfreich?". Die Seite
+  eines Handbuchs oder Kapitels: Titel, Untertitel, Kurzbeschreibung, Ausgabe und das Inhaltsverzeichnis, zwei Ebenen
+  tief.
+- Die Vorlagen lesen `fetch( 'exphelp', 'site_topic', hash( 'object_id', $node.contentobject_id ) )` und
+  `fetch( 'exphelp', 'site_map', ... )` (`expHelpContentSite`). Zugriff regeln allein die Berechtigungen von Exponential:
+  ein veröffentlichtes Thema, das der Leser lesen darf (Anonymous: `help_public` und Veröffentlicht, die eine Richtlinie
+  des Plans), eine Vorschau für alle, die es bearbeiten dürfen. Verwandte Themen, Abbildungen und die Einträge eines
+  Handbuchs werden nur angezeigt, wenn der Leser sie sehen darf, und ein Verweis `help:<help_id>` im Text wird zu einem
+  Link auf die Seite dieses Themas auf der Site, oder zu einfachem Text, wenn der Leser es nicht sehen darf. Die Vorlagen
+  filtern nicht nach Zielgruppe.
+- Die Wurzel der Hilfe liegt standardmäßig unter Medien und damit in keinem Menü und keiner Liste der Site; eine Site,
+  die ihre Hilfe in der Navigation haben will, verlinkt die Seiten der Handbücher.
+
 ## Einstellungen: exphelp.ini [ContentSettings]
 
 | Einstellung | Standard | |
@@ -381,6 +542,16 @@ implementiert, ebenfalls nicht.
 | `ReviewMaxDays` | `14` | Tage, die ein Thema ohne Änderung in Prüfung bleiben darf, bevor es überfällig ist |
 | `ReviewListLimit` | `10` | höchstens so viele überfällige Themen auf dem Dashboard der Hilfe |
 | `ClientHelpIds[]` | keine (ein auskommentiertes Beispiel in der ausgelieferten Datei; setzen Sie es in einer Überschreibung) | die help_ids, die andere Clients öffnen (eine mobile App, das JavaScript einer Site); `check` meldet eine, die kein Thema hat oder deren Thema nicht veröffentlicht ist |
+| `ReleaseByAuthor` | `disabled` | `enabled`: wer die aktuelle Version eines Themas geschrieben hat, darf es freigeben |
+| `SentenceWordsPublic`, `SentenceWordsTechnical`, `ParagraphSentencesPublic` | `20`, `25`, `4` | die Grenzen des Validators für einfache Sprache; `0` schaltet eine ab |
+| `PlainLanguageAudiences[]` | Visitors, Members | die Zielgruppen mit einfacher Sprache |
+| `ReviewMonths`, `ShortReviewMonths`, `ShortReviewAreas[]` | `12`, `6`, privacy und account | wie weit ein Prüfdatum entfernt sein darf (`review-date.too-far`); `0` schaltet es ab |
+| `Feedback` | `enabled` | "War das hilfreich?" unter jedem veröffentlichten Thema |
+| `FeedbackKeepDays` | `730` | Tage, die die Antworten gehalten werden |
+| `AnonymousFeedback` | `disabled` | `enabled`: der Rollenschritt gibt Anonymous `exphelp/feedback` |
+| `EpubCheckCommand`, `AceCommand` | leer | die Befehle von epubcheck und Ace by DAISY ([Prüfung eines EPUB](#prüfung-eines-epub)) |
+| `BookChecks` | `report` | `required`: ein E-Book, das eine Prüfung nicht besteht, wird nicht gespeichert; `disabled`: keine Prüfung läuft |
+| `DitaHistoryDirectory`, `DitaHistoryLogin`, `DitaHistoryAuthor` | leer, `admin`, leer | die Historie der Hilfe in git ([unten](#die-historie-in-git)) |
 
 ## E-Books
 
@@ -401,8 +572,8 @@ erstellt und nicht aufbewahrt.
   Bildunterschrift, `xml:lang` aus der Sprache des Handbuchs sowie die Barrierefreiheits-Metadaten von EPUB
   Accessibility 1.1 (`schema:accessMode`, `accessModeSufficient`, `accessibilityFeature`, `accessibilityHazard`,
   `accessibilitySummary`, `dcterms:conformsTo`). Links zwischen Themen des Buchs bleiben im Buch; andere Links auf
-  Themen führen zum Thema in der Hilfe. epubcheck und Ace by DAISY werden nicht mitgeliefert: Eine Site, die die Bücher
-  veröffentlicht, lässt sie über die Datei laufen.
+  Themen führen zum Thema in der Hilfe. epubcheck und Ace by DAISY werden nicht mitgeliefert; eine Site, die sie hat,
+  nennt ihre Befehle, und jedes Buch wird geprüft ([Prüfung eines EPUB](#prüfung-eines-epub)).
 - **PDF** (`writePdf()`) verwendet den PDF-Writer der Hilfe (`expHelpPdfWriter`, Druck und PDF-Download von
   Hilfeseiten): ein Dokument mit dem Titelblock des Handbuchs, Kapiteln und Themen als Überschriften, internen Links und
   den Abbildungen. Das Format wird nur angeboten, wo dieser Writer installiert ist (`expHelpContentExport::formats()`).
@@ -446,6 +617,36 @@ seine remote_id `help-ebook-<manual remote_id>-<format>` (`help-ebook-help-manua
 
 Die Download-Schaltflächen oben erstellen ein Buch weiterhin auf Anfrage mit den eigenen Rechten des Lesers; die
 gespeicherten Bücher sind die Ausgaben für alle.
+
+### Prüfung eines EPUB
+
+Der Plan prüft jedes E-Book mit **epubcheck** (dem EPUB-Validator des W3C, Java) und **Ace by DAISY** (der Prüfung der
+Barrierefreiheit nach EPUB Accessibility, Node.js), bevor es veröffentlicht wird. Sie werden nicht mit einer
+PHP-Anwendung ausgeliefert; eine Site, die sie hat, nennt ihre Befehle, und Exponential führt sie aus
+(`expHelpContentBookCheck`):
+
+```ini
+[ContentSettings]
+EpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar
+AceCommand=ace
+BookChecks=report
+```
+
+- Die EPUB-Datei wird als letztes Argument angehängt; Ace erhält davor `--outdir <dir> --force`, und sein `report.json`
+  wird gelesen. epubcheck besteht mit dem Exit-Code 0; Ace besteht, wenn sein Bericht keine fehlgeschlagene Aussage hat
+  (einen Verstoß gegen EPUB Accessibility oder WCAG). Eine Prüfung läuft höchstens 300 Sekunden.
+- `./console exp:help:content export --format=epub --check` gibt das Ergebnis jeder Prüfung aus und endet mit 1, wenn
+  eine nicht besteht. Jedes gespeicherte E-Book (`ebooks` und das Neuerstellen bei der Veröffentlichung) wird geprüft,
+  und das Ergebnis steht bei den Änderungen (`check epubcheck PASS ...`).
+- `BookChecks=report` (Standard) meldet; `required` speichert ein Buch nicht, das eine Prüfung nicht besteht oder dessen
+  Prüfung nicht laufen kann (`error ... not stored`); `disabled` führt nichts aus.
+- Ein Befehl, der nicht gesetzt ist, wird **übersprungen**, nie als bestanden gewertet: Die Angabe
+  `dcterms:conformsTo` des Buchs (EPUB Accessibility 1.1, WCAG 2.2 AA) ist nur durch eine Prüfung belegt, die gelaufen
+  ist.
+
+Den Konverter des Plans, DITA-OT, führt Exponential nicht aus: Es schreibt EPUB und PDF selbst aus demselben
+Inhaltsmodell (die Writer oben), und der DITA-Export ist die Eingabe für eine Site, die stattdessen die Ausgabe von
+DITA-OT möchte.
 
 ## DITA-Export
 
@@ -498,6 +699,23 @@ Download wird vor dem Senden auf dieselbe Weise geprüft. Die DTDs werden nicht 
 nachgeladen: Für eine vollständige DTD-Validierung lassen Sie DITA-OT oder `xmllint --valid` mit dem OASIS-Katalog über
 das Verzeichnis laufen (der Export des Testbestands und der mitgelieferten Startthemen besteht sie).
 
+### Die Historie in git
+
+"The DITA export runs regularly into its own git repository. The content lives in the CMS, the change history still
+ends up in git" (Plan, Auslieferungsweg 4). `exphelp.ini [ContentSettings] DitaHistoryDirectory` nennt dieses
+Verzeichnis, außerhalb des Web-Roots; der Cronjob-Teil `exphelp` (in `infrequent`, oder `php runcronjobs.php exphelp`)
+schreibt dann den DITA-Export jedes Handbuchs hinein und committet, was sich geändert hat (`expHelpContentDitaHistory`):
+
+- der erste Lauf macht das Verzeichnis zu einem Git-Repository (`git init`); ein Lauf ohne Änderung erzeugt keinen
+  Commit;
+- der Export enthält die veröffentlichten Objekte, die `DitaHistoryLogin` (Standard `admin`) lesen darf, auch interne;
+  das Repository ist also so vertraulich wie die interne Hilfe: Behandeln Sie es so;
+- die Commits tragen `DitaHistoryAuthor` ("Name <mail>"), wenn gesetzt, sonst die Git-Konfiguration des Repositorys; der
+  Job pusht nie, ein Remote ist Sache der Site;
+- git läuft ohne Shell, mit dem Verzeichnis als Arbeitsbaum.
+
+Von Hand: `./console exp:help:content dita -s admin --output=<dir> --commit` (mit `--dry-run`: was committet würde).
+
 ## Überfällige Prüfungen
 
 Die Wartungsphase (7) des Plans verlangt "eine Liste veralteter Themen (Prüfdatum überschritten) im Admin-Dashboard".
@@ -540,7 +758,9 @@ die Klassen; Sektionen, Status, Baum und Rollen legt weiterhin `exp:help:content
 Geprüft am 19. Oktober 2026 gegen den [Plan](../../spezifikationen/6.0/hilfesystem.md), den
 [Styleguide](../../spezifikationen/6.0/hilfe-stilrichtlinien.md) und die [Standards](../../spezifikationen/6.0/hilfestandards.md)
 (Pull-Request #288), Punkt für Punkt im Code, nicht anhand dieser Seite. Der DITA-Export, die E-Books als Dateiobjekte,
-die Prüfliste und ihre Übersetzungen, am 19. Oktober noch in Arbeit, folgten am 20. Oktober.
+die Prüfliste und ihre Übersetzungen, am 19. Oktober noch in Arbeit, folgten am 20. Oktober. Erneut geprüft am
+25. Oktober 2026; was damals ausgelassen oder nur eine Absprache war, ist jetzt erledigt oder hat unten seine
+Begründung.
 
 | Spezifikation | Stand |
 |---|---|
@@ -551,25 +771,32 @@ die Prüfliste und ihre Übersetzungen, am 19. Oktober noch in Arbeit, folgten a
 | Sektionen `help_public`/`help_internal` anhand der Zielgruppe gesetzt, nur am Objekt | erledigt: `check --fix`, nach jedem `seed-*` |
 | Objektstatus Entwurf, Prüfung, Veröffentlicht; nur Veröffentlichtes ausgeliefert | erledigt: `help_status`, der Provider zeigt Entwurf und Prüfung nur Redakteuren, als Vorschau |
 | Rollen Help editor, Help release; eine Anonymous-Richtlinie mit beiden Einschränkungen | erledigt: `exp:help:content roles` |
+| "Wer ein Thema geschrieben hat, gibt es nicht frei" | erledigt (25. Oktober): in der Statusoperation für jeden Weg der Statuszuweisung durchgesetzt ([Rollen](#rollen)); `ReleaseByAuthor=enabled` für einen einzigen Redakteur |
+| Der Ablauf Entwurf, Prüfung, Veröffentlicht dort, wo das Thema gelesen wird | erledigt (25. Oktober): die Karte **Prüfung und Freigabe** von `exphelp/topic` in admin und admin4, mit der Prüfung des Themas nach dem Styleguide ([der Prüfablauf](#der-prüfablauf)) |
+| `help_id` nie umbenannt, nie wiederverwendet | erledigt (25. Oktober): `exphelp_help_id`, `help-id.renamed`, `help-id.reused`, `help-id.gone` ([veröffentlichte help_ids](#veröffentlichte-help_ids)) |
+| Grenzen einfacher Sprache, ein Verb je Plattform, Prüfdatum + 12/6 Monate, `version_to` mit Nachfolger (Styleguide Abschnitte 3, 4, 7, 8) | erledigt (25. Oktober): `language.*` (NOTICE), `verb.mix`, `review-date.too-far`, `version.successor` |
 | CLI-Skripte mit `-s`, `--dry-run`, idempotent ("No change.") | erledigt: die Aktionen von `exp:help:content` |
 | Validatorregeln des Plans (Schritte, Alternativtext, `shortdesc`, `help_id`, Glossar, Prüfdatum, Sektion) | erledigt |
 | Hinweisstufen (Abschnitt 5 des Styleguides: Attention, Data protection, Note; im Schritt, zuerst, einer pro Schritt, höchstens drei Sätze) | **jetzt hinzugefügt**: `notice.position`, `notice.before-action`, `notice.per-step`, `notice.too-long`; hervorgehobene Kästen für Attention und Data protection mit eigenem Titel im Viewer. Die Länge eines Hinweises innerhalb eines Schritts bleibt eine Regel für die Prüfung |
 | Schema und Eindeutigkeit der `help_id` | erledigt: `help-id.*` |
 | Kontexthilfe-JSON per `help_id`, ETag, öffentliche Themen ohne Anmeldung | erledigt: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>`; anonymer Zugriff ist Opt-in (`AnonymousContextHelp`) |
+| Interne Themen für Clients "mit einem Token und einer passenden Rolle" | erledigt (25. Oktober): `/api/help/v1/topic/<help_id>` und `/manual/<remote_id>` mit einem OAuth-Token oder einem persönlichen API-Schlüssel mit dem Scope `help` ([Kontexthilfe für Clients mit Token](#kontexthilfe-für-clients-mit-token)) |
 | "Clients führen eine Liste der help_ids, die sie verwenden; ein Test prüft, dass jede existiert" | **jetzt hinzugefügt**: `client.help-id-unknown`, `client.help-id-not-released` über `ContextHelpIds[]` und das neue `ClientHelpIds[]` |
 | E-Book EPUB und PDF eines Handbuchs, Barrierefreiheits-Metadaten | erledigt: `exp:help:content export`, **EPUB/PDF herunterladen** |
-| Export als DITA-Bookmap + DITAVAL, regelmäßiger DITA-Export in ein Git-Repository (Auslieferungswege 3 und 4) | erledigt: `exp:help:content dita`, **DITA herunterladen** ([DITA-Export](#dita-export)); gültig gegen die DTDs von OASIS DITA 1.3. Der regelmäßige Lauf nach Git ist ein Cronjob der Site auf Basis des Exports (nur geänderte Dateien werden geschrieben, daher kann sein Verzeichnis das Git-Repository sein) |
+| Export als DITA-Bookmap + DITAVAL, regelmäßiger DITA-Export in ein Git-Repository (Auslieferungswege 3 und 4) | erledigt: `exp:help:content dita`, **DITA herunterladen** ([DITA-Export](#dita-export)); gültig gegen die DTDs von OASIS DITA 1.3. Der regelmäßige Lauf nach Git (25. Oktober): der Cronjob-Teil `exphelp` mit `DitaHistoryDirectory` und `dita --commit` ([die Historie in git](#die-historie-in-git)) |
+| DITA-OT 4.x als Konverter nach EPUB und PDF | bewusst ausgelassen: Exponential schreibt EPUB und PDF selbst aus demselben Modell, sodass eine PHP-Installation Bücher ohne Java erstellt; der DITA-Export ist die Eingabe für eine Site, die die Ausgabe von DITA-OT möchte |
 | E-Book als Dateiobjekt unter "E-books" (`help-ebooks`) gespeichert | erledigt: `exp:help:content ebooks`, bei der Veröffentlichung neu erstellt, versioniert, Sektion anhand der Zielgruppe ([gespeicherte E-Books](#gespeicherte-e-books)) |
 | Liste der Themen mit überschrittenem Prüfdatum im Dashboard (Phase 7) | erledigt: das Dashboard der Hilfe und `exp:help:content review`, auch Themen, die zu lange in Prüfung sind ([überfällige Prüfungen](#überfällige-prüfungen)) |
-| epubcheck und Ace by DAISY für jedes E-Book | ausgelassen: Java- und Node-Werkzeuge, die nicht mit einer PHP-Anwendung ausgeliefert werden. Eine Site, die Bücher veröffentlicht, lässt sie laufen. Das EPUB trägt `dcterms:conformsTo` EPUB Accessibility 1.1 / WCAG 2.2 AA, obwohl Exponential diese Prüfungen nicht ausführt; siehe [die Standards](../../spezifikationen/6.0/hilfestandards.md#epub-accessibility-11) |
-| Web-Templates `full/help_*.tpl`, `line/help_*.tpl` für die öffentliche Site (Auslieferungsweg 1) | vorerst ausgelassen: Der Kernel hat kein eigenes Design für eine öffentliche Site, in das sie gehören könnten; die Hilfe wird in der Administrationsoberfläche (`exphelp/topic`, `exphelp/manual`) und als JSON ausgeliefert, das das Design einer Site rendern kann. Ein Site-Paket, das öffentliche Hilfeseiten möchte, fügt die Templates in seinem Design hinzu |
-| "War das hilfreich?" bei jedem Thema (Phase 7) | vorerst ausgelassen: Es braucht einen Ort zum Speichern der Antworten und eine Datenschutzentscheidung (wer geantwortet hat, wie lange aufbewahrt) pro Site |
+| epubcheck und Ace by DAISY für jedes E-Book | erledigt (25. Oktober), wo die Site sie hat: Die Werkzeuge sind Java und Node.js und werden nicht mitgeliefert, daher nennt die Site ihre Befehle (`EpubCheckCommand`, `AceCommand`), und jedes gespeicherte E-Book und `export --check` führt sie aus; `BookChecks=required` speichert kein Buch, das nicht besteht. Ohne die Befehle wird eine Prüfung als übersprungen gemeldet, nie als bestanden ([Prüfung eines EPUB](#prüfung-eines-epub)) |
+| Web-Templates `full/help_*.tpl`, `line/help_*.tpl` für die öffentliche Site (Auslieferungsweg 1) | erledigt (25. Oktober): die Extension `exphelpsite`, für den öffentlichen Siteaccess aktiviert, mit `fetch( 'exphelp', 'site_topic' / 'site_map' )` ([Hilfe auf den Seiten der Site](#hilfe-auf-den-seiten-der-site)) |
+| "War das hilfreich?" bei jedem Thema (Phase 7) | erledigt (25. Oktober): Ja oder Nein mit Grund, je Thema und Tag, nichts darüber, wer geantwortet hat, 730 Tage aufbewahrt ([War das hilfreich?](#war-das-hilfreich)) |
 | Hilfe nie Quelle für KI-Antworten (RAG), sofern nicht gewollt | standardmäßig erledigt: Der Kernel hat keine Liste von RAG-Quellen, und die Wurzel der Hilfe liegt unter Medien, nicht im Inhaltsbaum. Eine Extension, die eine solche Liste hinzufügt, muss `help-root` auslassen |
 | Die Hilfeklassen als Paket | **jetzt hinzugefügt**: `exp:help:content package`, `verify-package` (CJW #16564) |
 
 ## Später
 
-"War das hilfreich?", Templates für die öffentliche Site, Komfortfunktionen für Redakteure.
+Komfortfunktionen für Redakteure (ein Bearbeitungsformular je Thementyp, eine Vorschau einer Abbildung im Feld ihres
+Themas).
 
 ## Klassen
 
@@ -580,11 +807,16 @@ aktuelle Benutzer sehen darf, Rendering, JSON, Suche, Kontext), `expHelpContextP
 (das Klassenpaket), `expHelpContentExport` (EPUB, PDF), `expHelpContentDita` (der DITA-Export, seine Prüfung, das
 Schreiben und das Zip), `expHelpDitaMarkup` (das HTML der Hilfe als DITA-Elemente), `expHelpContentEbooks` (die
 gespeicherten E-Books, bei der Veröffentlichung neu erstellt), `expHelpContentEditionProvider` (was in eine gespeicherte
-Ausgabe kommt) und `expHelpContentReview` (überfällige Prüfungen). Ansichten: `Exponential\View\Kernel\Exphelp\Topic`,
-`Manual`, `Context`. Tests (ohne Datenbank):
+Ausgabe kommt), `expHelpContentReview` (überfällige Prüfungen), `expHelpContentWorkflow` (der Prüfablauf, die Regel
+für Autoren), `expHelpContentHelpIds` (veröffentlichte help_ids), `expHelpContentFeedback` ("War das hilfreich?"),
+`expHelpContentTables` (die beiden Tabellen auf jeder Engine), `expHelpContentBookCheck` (epubcheck, Ace),
+`expHelpContentDitaHistory` (die Historie in git), `expHelpContentSite` (die eigenen Seiten der Site) und der
+REST-Provider `expHelpRestProvider`, `expHelpRestController`, `expHelpRestViewController`. Ansichten:
+`Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`, `State`, `Feedback`; Cronjob-Teil
+`Exponential\Cronjob\Kernel\Exphelp`. Tests (ohne Datenbank):
 `tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentPackageTest.php`, `expHelpContentExportTest.php`,
 `expHelpContentDitaTest.php`, `expHelpContentEbooksTest.php`, `expHelpContentReviewTest.php`,
-`expHelpContentTranslationsTest.php`.
+`expHelpContentTranslationsTest.php`, `expHelpContentWorkflowTest.php`.
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
