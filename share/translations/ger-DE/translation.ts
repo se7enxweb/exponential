@@ -4480,7 +4480,7 @@
     </message>
     <message>
         <source>This object is already being edited by you.</source>
-        <translation>Diese Objekt wird bereits von Ihnen bearbeitet.</translation>
+        <translation>Dieses Objekt wird bereits von Ihnen bearbeitet.</translation>
     </message>
     <message>
         <source>Your most recently modified draft is version #%version, last changed: %modified.</source>
@@ -4504,7 +4504,7 @@
     </message>
     <message>
         <source>Cancel the edit operation.</source>
-        <translation>Den akuellen Vorgang abbrechen.</translation>
+        <translation>Den aktuellen Vorgang abbrechen.</translation>
     </message>
     <message>
         <source>Current drafts [%draft_count]</source>
@@ -41299,7 +41299,7 @@ Konto zu aktivieren.</translation>
     </message>
     <message>
         <source>Make sure that the username and password is correct.</source>
-        <translation>Stellen Sie sicher, dass Benutzername und Password richtig sind.</translation>
+        <translation>Stellen Sie sicher, dass Benutzername und Passwort richtig sind.</translation>
     </message>
     <message>
         <source>All letters must be typed in using the correct case.</source>
@@ -41373,7 +41373,7 @@ Konto zu aktivieren.</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Erinnerung</translation>
+        <translation>Angemeldet bleiben</translation>
     </message>
     <message>
         <source>&quot;%user_login&quot; is not allowed to log in because failed login attempts by this user exceeded allowable number of failed login attempts!</source>
