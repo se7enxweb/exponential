@@ -96,7 +96,7 @@ Verwenden Sie die Schulungsinstallation und die Elemente, die Sie in diesem Kurs
 - Schritt 8 hat nichts gefunden, weil Artikel auf einer Standardinstallation nicht in der Sektion *Media* liegen.
 - Der Trainer prüft das, indem er Schritt 7 auf dem Projektor wiederholt.
 
-![Die erweiterte Suche mit ihren Feldern und den Ergebnissen darunter](../../../../../eng-us/help/images/trainers/e101-advanced-search.webp)
+![Die erweiterte Suche mit ihren Feldern und den Ergebnissen darunter](../../../bilder/trainers/e101-advanced-search.webp)
 
 ## Quiz
 

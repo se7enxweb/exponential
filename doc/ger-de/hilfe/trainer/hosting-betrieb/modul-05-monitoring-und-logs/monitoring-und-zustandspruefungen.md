@@ -119,7 +119,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity, und 
 - Schritt 8 zeigt `503` mit einem Header `Retry-After`; Schritt 9 antwortet weiterhin mit `200`.
 - Der Trainer prüft zwei Pläne aus Schritt 11 auf alle vier Schichten.
 
-![Systeminformationen mit den Zustandsprüfungen](../../../../../eng-us/help/images/trainers/ho-sysinfo.webp)
+![Systeminformationen mit den Zustandsprüfungen](../../../bilder/trainers/ho-sysinfo.webp)
 
 ## Quiz
 

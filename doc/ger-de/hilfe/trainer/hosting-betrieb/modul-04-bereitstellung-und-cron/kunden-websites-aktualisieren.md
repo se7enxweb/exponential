@@ -126,7 +126,7 @@ Kunden-Website.
 - Schritt 12: Der Plan nennt jeden Punkt der Checkliste aus *Kunden-Websites aktualisieren*.
 - Der Trainer prüft zwei Pläne anhand dieser Checkliste.
 
-![Die Upgrade-Prüfung einer Kunden-Website](../../../../../eng-us/help/images/trainers/ho-upgrade.webp)
+![Die Upgrade-Prüfung einer Kunden-Website](../../../bilder/trainers/ho-upgrade.webp)
 
 ## Quiz
 

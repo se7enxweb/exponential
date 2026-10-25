@@ -115,7 +115,7 @@ als Benutzer der Website.
 - Schritt 11 gibt `2097152` und `3` aus, sofern nicht überschrieben.
 - Der Trainer prüft das, indem er jede Person nach dem `reason=` ihrer Zeile aus Schritt 2 fragt.
 
-![Zustand der Logs in der Administration](../../../../../eng-us/help/images/trainers/ho-logs.webp)
+![Zustand der Logs in der Administration](../../../bilder/trainers/ho-logs.webp)
 
 ## Quiz
 

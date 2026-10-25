@@ -102,7 +102,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Zwei Entwürfe unter dem Kursordner der Person sind im Tab aufgeführt (sie sind nicht veröffentlicht).
 - Der Trainer prüft das, indem er den Tab einer Person am Beamer öffnet und zeigt, dass die Website unverändert ist.
 
-![Der Tab Intelligence eines Artikels, in dem ein Gespräch über das Element beginnt](../../../../../eng-us/help/images/trainers/ei-tab.webp)
+![Der Tab Intelligence eines Artikels, in dem ein Gespräch über das Element beginnt](../../../bilder/trainers/ei-tab.webp)
 
 ## Quiz
 

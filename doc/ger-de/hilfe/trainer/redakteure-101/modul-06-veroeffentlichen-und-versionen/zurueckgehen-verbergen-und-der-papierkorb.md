@@ -123,7 +123,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Der Trainer prüft das, indem er den Ordner und die Versionsseite einer Teilnehmerin oder eines Teilnehmers auf dem
   Projektor öffnet.
 
-![Der Papierkorb: wie viele Elemente er enthält, und die Filter nach Person, Typ und Datum](../../../../../eng-us/help/images/trainers/e101-trash.webp)
+![Der Papierkorb: wie viele Elemente er enthält, und die Filter nach Person, Typ und Datum](../../../bilder/trainers/e101-trash.webp)
 
 ## Quiz
 

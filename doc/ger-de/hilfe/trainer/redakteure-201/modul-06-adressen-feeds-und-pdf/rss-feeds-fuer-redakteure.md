@@ -94,7 +94,7 @@ Verwenden Sie die Schulungsinstallation. Der Trainer hat einen RSS-2.0-Export an
   verschwunden (verborgene Inhalte werden Besuchern nicht gezeigt).
 - Der Trainer prüft das, indem er den Feed am Beamer öffnet und den Artikel einer Person findet.
 
-![RSS: die Feeds, die die Website exportiert, und die Importe](../../../../../eng-us/help/images/trainers/e201-rss-list.webp)
+![RSS: die Feeds, die die Website exportiert, und die Importe](../../../bilder/trainers/e201-rss-list.webp)
 
 ## Quiz
 

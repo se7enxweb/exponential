@@ -103,7 +103,7 @@ Inhalte.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, den Reiter **Verknüpfungen** auf dem
   Projektor zu zeigen.
 
-![Die Medienbibliothek mit ihren Ordnern als Unterelemente](../../../../../eng-us/help/images/trainers/e101-media-library.webp)
+![Die Medienbibliothek mit ihren Ordnern als Unterelemente](../../../bilder/trainers/e101-media-library.webp)
 
 ## Quiz
 

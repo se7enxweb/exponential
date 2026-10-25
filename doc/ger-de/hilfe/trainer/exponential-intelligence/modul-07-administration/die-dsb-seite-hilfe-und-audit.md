@@ -96,7 +96,7 @@ Verwenden Sie die Schulungsinstallation mit einem Administratorkonto.
 - Der Trainer prüft das, indem er eine Person fragt, welcher Abschnitt „Was schickt die KI-Funktion wohin?“
   beantwortet.
 
-![Die Hilfe von Exponential Intelligence in der Administration](../../../../../eng-us/help/images/trainers/ei-help.webp)
+![Die Hilfe von Exponential Intelligence in der Administration](../../../bilder/trainers/ei-help.webp)
 
 ## Quiz
 

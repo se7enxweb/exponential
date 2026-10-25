@@ -106,7 +106,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner. Fragen Sie den Tra
   erklärt das Ergebnis.
 - Der Trainer prüft das, indem er jede Person nach ihrer Vorhersage in Schritt 4 und dem Ergebnis fragt.
 
-![Der Tab Details mit der Sektion des Elements und der Schaltfläche Setzen, um sie zu ändern](../../../../../eng-us/help/images/trainers/e201-section-set.webp)
+![Der Tab Details mit der Sektion des Elements und der Schaltfläche Setzen, um sie zu ändern](../../../bilder/trainers/e201-section-set.webp)
 
 ## Quiz
 
