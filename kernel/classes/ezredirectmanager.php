@@ -52,6 +52,22 @@ class eZRedirectManager
 
      \sa redirectTo()
     */
+    /**
+     * A page as the session records it (LastAccessesURI, LastAccessedModifyingURI): the front page, whose
+     * requested URI is empty, is the site root '/'. An empty page used to be recorded as '', which safeURI()
+     * refuses, so every reader of the page viewed last lost the front page. Anything else is returned unchanged;
+     * safeURI() decides about it.
+     *
+     * @param mixed $uri
+     * @return mixed
+     */
+    static function pageURI( $uri )
+    {
+        if ( is_string( $uri ) && trim( $uri ) === '' )
+            return '/';
+        return $uri;
+    }
+
     static function redirectURI( $module, $default, $view = true, $disallowed = false, $preferredURI = false )
     {
         $uri = false;
@@ -79,10 +95,11 @@ class eZRedirectManager
             }
         }
 
-        // the front page stores LastAccessesURI = '' (its requested URI is empty), unsafeReason() rejects ''
-        // as 'empty', and views calling redirectTo( $module, false ) did not redirect at all; '' is the site root
-        if ( is_string( $uri ) && trim( $uri, ' ' ) === '' )
-            $uri = '/';
+        // the front page stored LastAccessesURI = '' (its requested URI is empty), unsafeReason() rejects ''
+        // as 'empty', and views calling redirectTo( $module, false ) did not redirect at all; '' is the site root.
+        // Sessions written before pageURI() was used for recording may still carry ''.
+        if ( $uri !== false )
+            $uri = self::pageURI( $uri );
 
         if ( $uri !== false )
             $uri = self::safeURI( $uri );
@@ -189,7 +206,7 @@ class eZRedirectManager
             $http = eZHTTPTool::instance();
             if ( $http->hasSessionVariable( 'LastAccessesURI', false ) )
             {
-                $uri = self::returnCandidate( $module, $http->sessionVariable( 'LastAccessesURI' ), $options );
+                $uri = self::returnCandidate( $module, self::pageURI( $http->sessionVariable( 'LastAccessesURI' ) ), $options );
                 if ( $uri !== false )
                 {
                     $viewable = is_callable( $options['viewable'] ) ? $options['viewable'] : array( __CLASS__, 'isViewable' );

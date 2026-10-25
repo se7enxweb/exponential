@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4d4af226a7cd42840b96466ce7eee6fa  doc/changelogs/6.0/6.0.15.md
+5c38daf987bb491cf4f5d8d9b087f0c7  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6384,7 +6384,7 @@ aa7e8209ebb2327ad5ca7bc222b4d375  doc/eng-us/features/6.0/role-and-policy-templa
 f7cbe38d847fe4d918e89191f4cc6d99  doc/eng-us/features/6.0/role-assignment-paging.md
 dc1fd58d472fa3c3a1c8e324f1cf8729  doc/eng-us/features/6.0/role-policy-order.md
 af2ea1c17487c15b45d19b7ce95ab33d  doc/eng-us/features/6.0/rss-podcast-and-feed-list.md
-136749fff30f5b083e52648257ed2e7d  doc/eng-us/features/6.0/safe-redirects.md
+5a25fab404068e02e43fddfc228ce716  doc/eng-us/features/6.0/safe-redirects.md
 defa3ccdb9844ad78a0df579935f6fea  doc/eng-us/features/6.0/second-factor-on-other-sign-in-paths.md
 feeacad1371c0dcfb7a2afc264bf32bd  doc/eng-us/features/6.0/secret-store.md
 1671b58594af2d53ae16a4bc8b67a51e  doc/eng-us/features/6.0/setup-wizard-and-editor-siteaccess.md
@@ -15258,7 +15258,7 @@ bd98a387efd760a3fc1103edfd794708  doc/ger-de/funktionen/6.0/seite-abgelaufenes-f
 03dad300451b8cbeabb109d4e41b1a7d  doc/ger-de/funktionen/6.0/seitenweise-listen-im-admin.md
 cb3e0b5cb1ea2825bc66bc2d92ea9ce7  doc/ger-de/funktionen/6.0/seitenweise-rollenzuweisungen.md
 3eb0430c6a58116d70ee6b782c34b5d0  doc/ger-de/funktionen/6.0/shop-dashboard.md
-998974bd5b1b15f00006c3d9fc0d6f4e  doc/ger-de/funktionen/6.0/sichere-weiterleitungen.md
+f5fb128cb0497fa6c520ac09a69c23a3  doc/ger-de/funktionen/6.0/sichere-weiterleitungen.md
 78e0706fc58b0124f17252ede606ce78  doc/ger-de/funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md
 048b85449fe4f1d1f763247b12b53ae7  doc/ger-de/funktionen/6.0/soap-client-tls.md
 c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-bestellliste.md
@@ -21858,7 +21858,7 @@ fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
 1ea2938e7fbc417cf09fee2c67d260e7  kernel/classes/ezproductcollection.php
 6dabfe4a7a93996f8b0793801eb9e4b7  kernel/classes/ezproductcollectionitem.php
 2be8eddb0c1fde222c140d80b889bb40  kernel/classes/ezproductcollectionitemoption.php
-7312ebab20b9e371d687eccefb7d9e56  kernel/classes/ezredirectmanager.php
+2d77ef597f0d6aa9c4a546b8ceebf4f7  kernel/classes/ezredirectmanager.php
 ee40d4bfbb75ea5e27606fec42a7eefd  kernel/classes/ezrole.php
 e094631e523211106016c1f6ccd2021e  kernel/classes/ezrssexport.php
 2be618c5672383f41c76aabb6b47016a  kernel/classes/ezrssexportitem.php
@@ -22569,7 +22569,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 28b56f2df1290892158aedc26b81b0c8  kernel/private/classes/ezpkernelredirect.php
 177993fa9e64be25d35ab1bc40e66544  kernel/private/classes/ezpkernelresult.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
-2a7122b05c7c8f75721bdb07343d0828  kernel/private/classes/ezpkernelweb.php
+68a4ae7adbb8b617f4920237bcdb56d3  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
 c40373eb533e1704ca522996e35b8e1e  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -25019,7 +25019,7 @@ c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTempora
 417b58552595f21c5e75b6953d5f1533  tests/tests/kernel/classes/eZProductCollectionTest.php
 b015159dd7d236d4811da57dec408bbb  tests/tests/kernel/classes/eZRSSExportOPMLItemTest.php
 d9f6d3efe5a8afd75e31f0b790fa0cb7  tests/tests/kernel/classes/eZRSSExportTest.php
-c462a65f9bd30849e9a8b3ddd771c099  tests/tests/kernel/classes/eZRedirectManagerSafeURITest.php
+a308c966b0cceea390ea5ae2e302e57b  tests/tests/kernel/classes/eZRedirectManagerSafeURITest.php
 65f754e0181835ae8184974337829ee7  tests/tests/kernel/classes/eZRoleAccessArrayPrefetchLiveTest.php
 a63064e47b622565a9525d6f40914936  tests/tests/kernel/classes/eZRoleAssignmentPageLiveTest.php
 be1aa0e87f92a94fba8582a57d54aca5  tests/tests/kernel/classes/eZRoleAssignmentSortTest.php

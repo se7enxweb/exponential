@@ -17,6 +17,9 @@
  *  RET-02   returnURI(): never the running view (a loop), never a POST-only view, never an unsafe page
  *  RET-03   returnURI(): the page viewed last (LastAccessesURI), only when safe, not the running view and viewable
  *  RED-01   redirectURI(): an empty page viewed last (the front page stores '') is the site root, not "no target"
+ *  RED-02   pageURI(): an empty or blank page is the site root, anything else is left to safeURI()
+ *  RED-03   returnURI(): an empty page viewed last is the site root, not the caller's default
+ *  RED-04   The web kernel records the front page as '/' (pageURI()), not as ''
  *  VIEW-01  The Cancel/Discard target of user/edit, user/password, user/setting, section/edit, state/edit,
  *           state/group_edit, role/edit, class/edit and class/groupedit: the form's page, else their old default
  *  VIEW-02  The same with an unsafe page in the form: their old default
@@ -241,6 +244,45 @@ class eZRedirectManagerSafeURITest extends PHPUnit\Framework\TestCase
         $this->assertFalse( eZRedirectManager::redirectURI( null, false ) );
         // unsafeReason() itself still calls '' empty
         $this->assertSame( 'empty', $this->reason( '' ) );
+    }
+
+    /** RED-02 */
+    public function testPageURIRecordsTheFrontPageAsTheRoot()
+    {
+        $this->assertSame( '/', eZRedirectManager::pageURI( '' ) );
+        $this->assertSame( '/', eZRedirectManager::pageURI( " \t " ) );
+        $this->assertSame( '/', eZRedirectManager::pageURI( '/' ) );
+        $this->assertSame( '/content/view/full/5', eZRedirectManager::pageURI( '/content/view/full/5' ) );
+        // anything else is left to safeURI()
+        $this->assertSame( '//evil.example/x', eZRedirectManager::pageURI( '//evil.example/x' ) );
+        $this->assertFalse( eZRedirectManager::pageURI( false ) );
+        $this->assertNull( eZRedirectManager::pageURI( null ) );
+        $this->assertSame( array( '' ), eZRedirectManager::pageURI( array( '' ) ) );
+    }
+
+    /** RED-03 */
+    public function testReturnURIEmptyPageViewedLastIsTheRoot()
+    {
+        $module = $this->module( 'user', 'edit' );
+        $this->setSessionStarted( true );
+        foreach ( array( '', '   ' ) as $empty )
+        {
+            $_SESSION = array( 'LastAccessesURI' => $empty );
+            $this->assertSame( '/', eZRedirectManager::returnURI( $module, '/d', false, $this->options( array( 'session' => true ) ) ), json_encode( $empty ) );
+            // the form's own frozen page (RedirectIfDiscarded) is the front page too, not ''
+            $this->assertSame( '/', eZRedirectManager::returnURI( $module, '', false, $this->options( array( 'session' => true ) ) ), json_encode( $empty ) );
+        }
+    }
+
+    /** RED-04 */
+    public function testTheWebKernelRecordsThePageThroughPageURI()
+    {
+        $source = file_get_contents( 'kernel/private/classes/ezpkernelweb.php' );
+        $record = strpos( $source, '$http->setSessionVariable( "LastAccessesURI", $currentURI )' );
+        $mapped = strpos( $source, '$currentURI = eZRedirectManager::pageURI( $currentURI );' );
+        $this->assertNotFalse( $record, 'the web kernel records LastAccessesURI' );
+        $this->assertNotFalse( $mapped, 'the recorded page goes through pageURI()' );
+        $this->assertLessThan( $record, $mapped, 'before it is recorded' );
     }
 
     /** the Cancel target of each view for a POST, with no session */
