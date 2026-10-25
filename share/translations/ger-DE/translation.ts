@@ -83048,7 +83048,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Sitzungen von %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Wo Ihr Konto gerade angemeldet ist. Wenn Sie ein Gerät nicht kennen, melden Sie es ab und ändern Sie Ihr Passwort.</translation>
     </message>
     <message>
@@ -83339,7 +83339,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Sitzungen von %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Wo Ihr Konto gerade angemeldet ist. Wenn Sie ein Gerät nicht kennen, melden Sie es ab und ändern Sie Ihr Passwort.</translation>
     </message>
     <message>

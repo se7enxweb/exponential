@@ -828,7 +828,7 @@ d4fd04ff2e30c797b228adfc4f1486d8  design/admin/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin/templates/user/preferences_confirm.tpl
 1ed4a834ffa2cd6dc1460064a4227c63  design/admin/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin/templates/user/register.tpl
-561e3fc3d577fd045b0220e0e8c5984b  design/admin/templates/user/sessions.tpl
+26bf08c374e61457642ee8d83760a8e5  design/admin/templates/user/sessions.tpl
 bd1b035ba64fbf2073d452b0f16c0c72  design/admin/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin/templates/user/success.tpl
 303268b9d53d1effddade2a3b45f8387  design/admin/templates/user/unactivated.tpl
@@ -1635,7 +1635,7 @@ c95c10e6f71a175f38c500e1183a4286  design/admin4/templates/user/password.tpl
 334a71e0270b253897c94e074acd0559  design/admin4/templates/user/preferences_confirm.tpl
 1ed4a834ffa2cd6dc1460064a4227c63  design/admin4/templates/user/reauth.tpl
 d8ec449004bb5e219a602cf6ffa540f7  design/admin4/templates/user/register.tpl
-561e3fc3d577fd045b0220e0e8c5984b  design/admin4/templates/user/sessions.tpl
+26bf08c374e61457642ee8d83760a8e5  design/admin4/templates/user/sessions.tpl
 08301adf55d7ea9d5985d6d76e3c4d62  design/admin4/templates/user/setting.tpl
 201d4d8ba785302b4e8abb1d2dc5275c  design/admin4/templates/user/success.tpl
 2dab3ea9d895ee02b344f1edd2d92d12  design/admin4/templates/user/unactivated.tpl
@@ -3095,7 +3095,7 @@ a31eca132c1aa9d51bcf5825b31dcb5c  design/standard/templates/user/registration.tp
 be1ed870602e97378284d47a65ab8fb5  design/standard/templates/user/registrationapproved.tpl
 291f26bc12b3d0d3e050ee693489fdfe  design/standard/templates/user/registrationfeedback.tpl
 1cfd990147a2ddb88d6e21689efdb4a9  design/standard/templates/user/registrationinfo.tpl
-3db245c57f859f7ec5d7bea976467eee  design/standard/templates/user/sessions.tpl
+02668de0662d2b5cee8b2640038de7f3  design/standard/templates/user/sessions.tpl
 8412dae6c061eee19a51c9769f12f5c8  design/standard/templates/user/setting.tpl
 db5aaf4f1986ccca4a9ec45676077566  design/standard/templates/user/success.tpl
 c75da2a467c7f8a005d4ab7016b0f465  design/standard/templates/user/unactivated.tpl
@@ -6503,7 +6503,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 95dff257fc32bc3ecf19d819d34268c2  doc/eng-us/guides/verify-its-you.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
-ec2af2efe4962f7da5701c817953ba6d  doc/eng-us/guides/your-devices-and-sessions.md
+4cbebf2bd60b1f1a46332294a0844551  doc/eng-us/guides/your-devices-and-sessions.md
 f9f98d742660b857bad3717dc8539aed  doc/eng-us/help/README.md
 c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
@@ -22692,7 +22692,7 @@ f4fdba63ee29eebccf2e14d6e50285ff  kernel/classes/user/expsigninsecondfactorhandl
 7c53bc864f8df0b06c10e73396dd582d  kernel/classes/user/expuseraccountoverview.php
 d14e09a7f3bb40ffa6eaf0dd37dae59a  kernel/classes/user/expuseraccountstatus.php
 a00b5126b750134db4ac1328040c7571  kernel/classes/user/expuseractivation.php
-330f681b93dd4c010ba1ec56509d536e  kernel/classes/user/expuseragent.php
+5ebf6f90b3af07a3e5ba217eb553818c  kernel/classes/user/expuseragent.php
 38eb2dbb8b20f102f9d881a48099b2a7  kernel/classes/user/expuserapproval.php
 7e65d1f34b5fc98561e9390b739c45c2  kernel/classes/user/expuserdeactivation.php
 d443bce0cc7fe5af3714f1828c260934  kernel/classes/user/expuserhygiene.php
@@ -24951,7 +24951,7 @@ d1edfc6fda691f10cf3306642f0eb98f  share/translations/dut-NL/GUIDE.md
 a2b163b1fd63c8bdb24c907d8473ad74  share/translations/ell-GR/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-AU/translation.ts
 456414a9b2c760efed36a667629baa7e  share/translations/eng-NZ/translation.ts
-d5ea10555a5c7918e34e1b7670344053  share/translations/eng-US/translation.ts
+67ef145157e6aa49dfe2c452668d415f  share/translations/eng-US/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
 6551182321d7cbe3663753787b77a63f  share/translations/esl-ES/translation.ts
 99a8b049c3de4158b7de5fc2838ae5f7  share/translations/esl-MX/GUIDE.md
@@ -24964,7 +24964,7 @@ dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-1cb9a76e3529c6f4e951c67f42fde38b  share/translations/ger-DE/translation.ts
+fe5ed772f2559b596fa016c7c7fdc454  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 47faf9a9276b0ae89c78137ddf9df7c0  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -24998,7 +24998,7 @@ e97186d95acc45f8b903c2f6fbf36810  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 025951efa4fa7bff079e333901502cd4  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-b77b4d0f527c2f260cd07bc62afb2d39  share/translations/untranslated/translation.ts
+6c6dbf194dd5ce43db5ffa24acfb4889  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 44e5568bf3339959aeafdbec6bae3246  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt

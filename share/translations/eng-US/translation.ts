@@ -76080,8 +76080,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Sessions of %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
-        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</translation>
     </message>
     <message>
         <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
@@ -76371,8 +76371,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Sessions of %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
-        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</translation>
     </message>
     <message>
         <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
