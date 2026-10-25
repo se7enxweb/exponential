@@ -61,6 +61,11 @@ class eZContentObjectTreeNodeOperations
             return false;
         }
 
+        // A user account (or group) moved into a group whose new accounts need approval: only for someone who would
+        // not wait for that approval when publishing it there (doc/eng-us/bc/6.0/user-account-approval.md)
+        if ( class_exists( 'expUserApproval' ) && !expUserApproval::placementAllowed( $object, $newParentNode ) )
+            return false;
+
         $objectID = $object->attribute( 'id' );
         $oldParentNode = $node->fetchParent();
         $oldParentObject = $oldParentNode->object();

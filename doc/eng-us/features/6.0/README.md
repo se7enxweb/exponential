@@ -164,6 +164,7 @@ nginx with PHP-FPM keep working as before.
 - [Reset a user password from the command line](reset-user-password.md)
 - [Check user accounts](user-hygiene.md)
 - [Signed links in the "New user registered" mail](registration-admin-links.md)
+- [Administrators approve new editor accounts](editor-account-approval.md)
 - [Roles: policy IDs, sorting and order buttons](role-policy-order.md)
 - [The users and groups of a role, a page at a time](role-assignment-paging.md)
 - [Permission checks for users with many role assignments](permission-checks-for-many-assignments.md)

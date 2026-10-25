@@ -1256,6 +1256,10 @@ class eZContentOperationCollection
 
                 $canCreate = ( ( $parentNode->checkAccess( 'create', $class->attribute( 'id' ), $parentNodeObject->attribute( 'contentclass_id' ) ) == 1 ) ||
                                 ( $parentNode->canAddLocation() && $node->canRead() ) );
+                // A location of a user account (or group) in a group whose new accounts need approval: only for
+                // someone who would not wait for that approval (doc/eng-us/bc/6.0/user-account-approval.md)
+                if ( $canCreate && class_exists( 'expUserApproval' ) && !expUserApproval::placementAllowed( $object, $parentNode ) )
+                    $canCreate = false;
 
                 if ( $canCreate )
                 {
