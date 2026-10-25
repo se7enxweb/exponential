@@ -220,7 +220,8 @@ class ezpEvent
      * Notify all listeners of an event
      *
      * @param string $name In the form "content/delete/1", "content/delete", "content/read"
-     * @param array $params The arguments for the specific event as simple array structure (not hash)
+     * @param array $params The arguments for the specific event as simple array structure (not hash). String keys
+     *                      are dropped: the arguments always reach the listeners by position.
      * @return bool True if some listener where called
      */
     public function notify( $name, array $params = array() )
@@ -230,6 +231,10 @@ class ezpEvent
             return false;
         }
 
+        // call_user_func_array() passes string keys as named arguments under PHP 8, and a listener whose
+        // parameters are named differently fails with "Unknown named parameter". An extension that still notifies
+        // with a hash (as content/download did) reaches its listeners by position, as this method documents.
+        $params = array_values( $params );
         foreach ( $this->listeners[$name] as $listener )
         {
             if ( !self::callable( $name, $listener ) )

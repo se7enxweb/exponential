@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-8f7cc10827120b560e4794f17286f8b8  doc/changelogs/6.0/6.0.15.md
+2739a64d0d85fd1434b342904d97e9ee  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -22562,7 +22562,7 @@ c6a557af95f53f503d1c974af308f202  kernel/private/classes/ezpautoloadclioutput.ph
 8283e4f7982e9d1aff4c308f72dd9a18  kernel/private/classes/ezpcontentpublishingprocess.php
 6731f3047691efb02fc335be4f33681e  kernel/private/classes/ezpcontentpublishingqueue.php
 483341cbf4649e24b6f15b0357bc5aee  kernel/private/classes/ezpcontentpublishingqueueprocessor.php
-0776e5d1ac1cb5de51f7dee8b46cf113  kernel/private/classes/ezpevent.php
+8e562b3170263bb1fcdd3b3fbe295b24  kernel/private/classes/ezpevent.php
 93ec1ada8eab0c1428a81264a05a9e2d  kernel/private/classes/ezpextension.php
 24c59d711f2c6e65559f4bc40e57d7d7  kernel/private/classes/ezpformtokenrefusal.php
 cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
@@ -25072,7 +25072,7 @@ e1d9c99f5f0c0a4a5f1dc95cdeae4a5d  tests/tests/kernel/classes/expCronjobRunnerSch
 6a75e222b1f1ace574393f14fca4aba2  tests/tests/kernel/classes/expEditorPoliciesTest.php
 cc80271ba4a3312ad89355b949288fb5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 542c5b062ea819d9409cc7af9d3b4f5a  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php
-3d1e93cbbb5ad74f23989d8ce2a63129  tests/tests/kernel/classes/expKernelCallFixesTest.php
+59410c14cc7dd043faea8eabf885b694  tests/tests/kernel/classes/expKernelCallFixesTest.php
 6713474a81223ee12ca246da2e456df1  tests/tests/kernel/classes/expKernelServicesTest.php
 18616574e32a6b333ae1b334befe921b  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
 629ef4db40bb3ea9ff3f8b56bcae400a  tests/tests/kernel/classes/expLinkCheckTest.php

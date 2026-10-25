@@ -7,7 +7,8 @@
  *          is "not found" instead of a call on null
  *  KC-02 - ezpContentPublishingQueue::init() connects the INI hooks once, not on every add()
  *  KC-03 - content/download announces its event with positional arguments: a listener with other parameter names
- *          is called (string keys became named arguments under PHP 8: "Unknown named parameter")
+ *          is called (string keys became named arguments under PHP 8: "Unknown named parameter"), and ezpEvent::notify()
+ *          passes a hash by position too
  *
  * @copyright Copyright CJW Network and Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -143,7 +144,9 @@ class expKernelCallFixesTest extends PHPUnit\Framework\TestCase
         expKernelCallFixesDownloadListener::$calls = array();
         $event->notify( 'content/download', array( 12, 34 ) );
         $this->assertSame( array( array( 12, 34 ) ), expKernelCallFixesDownloadListener::$calls );
-        $this->expectException( Error::class );
-        $event->notify( 'content/download', array( 'contentObjectID' => 12, 'contentObjectAttributeID' => 34 ) );
+        // a notifier that still passes a hash (an extension's own content/download view) reaches the listener by
+        // position too: ezpEvent::notify() drops the keys, where it ended in "Unknown named parameter"
+        $event->notify( 'content/download', array( 'contentObjectID' => 56, 'contentObjectAttributeID' => 78 ) );
+        $this->assertSame( array( array( 12, 34 ), array( 56, 78 ) ), expKernelCallFixesDownloadListener::$calls );
     }
 }
