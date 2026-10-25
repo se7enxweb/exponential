@@ -3,7 +3,7 @@ title: Workflow event type (Command, plugin)
 audience: developer
 category: standards
 order: 312
-summary: A step of a workflow that runs when a trigger fires (before or after publishing, reading, adding to the basket ...). 12 instances in Exponential.
+summary: A step of a workflow that runs when a trigger fires (before or after publishing, reading, adding to the basket ...). 15 instances in Exponential.
 keywords: design pattern, workflow-event, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A step of a workflow that runs when a trigger fires (before or after publishing,
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 12 |
+| Instances | 15 |
 | Recognized by | Extends eZWorkflowEventType. |
 | Extension point | workflow.ini [EventSettings] ExtensionDirectories[] and AvailableEventTypes[]; triggers connect workflows to module operations. |
 
@@ -39,6 +39,14 @@ A step of a workflow that runs when a trigger fires (before or after publishing,
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `eZReceiptType` | class extends eZWorkflowEventType | `extension/bcwebsitestatistics/workflowtypes/event/ezreceipt/ezreceipttype.php:38` | – | – |
+
+### extension/expai (1)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiTranslationSyncType` | class extends eZWorkflowEventType | `extension/expai/eventtypes/event/expaitranslationsync/expaitranslationsynctype.php:16` | The workflow event "Exponential Intelligence: translation sync" (event_expaitranslationsync). | – |
 
 ### extension/ezflow (1)
 
@@ -65,12 +73,14 @@ A step of a workflow that runs when a trigger fires (before or after publishing,
 | `AutoPriorityType` | class extends eZWorkflowEventType | `extension/swark/eventtypes/event/autopriority/autoprioritytype.php:22` | – | – |
 | `DeferToCronType` | class extends eZWorkflowEventType | `extension/swark/eventtypes/event/defertocron/defertocrontype.php:22` | – | – |
 
-### kernel/classes/workflowtypes (6)
+### kernel/classes/workflowtypes (8)
 
 [All patterns of kernel/classes/workflowtypes](area-kernel-classes-workflowtypes.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expDataTableMirrorType` | class extends eZWorkflowEventType | `kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php:21` | The workflow event "Mirror to data tables" (doc/eng-us/features/6.0/data-tables.md, "Live mirror"): in a workflow on content/publish (after), the pub… | – |
+| `expUserApproveType` | class extends eZApproveType | `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php:36` | The workflow event "Approve user accounts" (doc/eng-us/bc/6.0/user-account-approval.md), modelled on the approval event (ezapprove): on content/publi… | – |
 | `eZApproveType` | class extends eZWorkflowEventType | `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php:24` | – | – |
 | `eZFinishUserRegisterType` | class extends eZWorkflowEventType | `kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php:17` | – | – |
 | `eZMultiplexerType` | class extends eZWorkflowEventType | `kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php:24` | – | – |

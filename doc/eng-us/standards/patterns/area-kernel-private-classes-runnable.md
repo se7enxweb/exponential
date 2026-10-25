@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/runnable
 audience: developer
 category: standards
-order: 522
+order: 531
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/runnable with its design patterns.
 keywords: kernel/private/classes/runnable, design patterns, classes, extension points
 type: catalogue

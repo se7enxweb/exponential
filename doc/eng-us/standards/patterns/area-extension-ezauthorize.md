@@ -2,7 +2,7 @@
 title: Patterns in extension/ezauthorize
 audience: developer
 category: standards
-order: 435
+order: 438
 summary: Every class, view, fetch function, operator and plugin point of extension/ezauthorize with its design patterns.
 keywords: extension/ezauthorize, design patterns, classes, extension points
 type: catalogue

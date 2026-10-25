@@ -3,7 +3,7 @@ title: Interface (contract)
 audience: developer
 category: standards
 order: 326
-summary: A contract that implementations follow; code depends on the interface, not on a class. 72 instances in Exponential.
+summary: A contract that implementations follow; code depends on the interface, not on a class. 95 instances in Exponential.
 keywords: design pattern, interface, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A contract that implementations follow; code depends on the interface, not on a 
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 72 |
+| Instances | 95 |
 | Recognized by | Every interface. |
 | Extension point | Implement the interface and register the class where the interface is used. |
 
@@ -32,6 +32,17 @@ A contract that implementations follow; code depends on the interface, not on a 
 |---|---|---|---|---|
 | `CjwNewsletterScheduleConditionInterface` | interface | `extension/cjw_newsletter/classes/editorial/cjwnewsletterscheduleconditioninterface.php:19` | A condition a recurring send asks before each run (cjwnl_schedule.condition_handler). | – |
 | `CjwNewsletterSmsTransport` | interface | `extension/cjw_newsletter/classes/sms/cjwnewslettersmstransport.php:25` | A way to send SMS and to read the SMS a provider hands back (the provider-neutral part of the SMS channel). | – |
+
+### extension/expai (4)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiFieldAction` | interface | `extension/expai/classes/fieldactions/expaifieldaction.php:16` | An action next to a field of the content edit form (write, rewrite, shorten, translate, suggest, ...). | extension/expai/settings/rad.ini [Registry_expai_field_actions] Entries[Handler]; extension/expai/settings/rad.ini [Registry_expai_presets] Entries[Handler] |
+| `expAiProvider` | interface | `extension/expai/classes/expaiprovider.php:16` | A model backend of expai. | extension/expai/settings/rad.ini [Registry_expai_provider_types] Implements |
+| `expAiRequestApplier` | interface | `extension/expai/classes/queue/expairequestapplier.php:18` | Applies the answer of a queued request (expai.request), e.g. | extension/expai/settings/rad.ini [Registry_expai_appliers] Entries[Appliers] |
+| `expAiSegmenter` | interface | `extension/expai/classes/diff/expaisegmenter.php:28` | Cuts the value of one datatype into blocks and sentences, and puts values together again (doc/diff.md). | extension/expai/settings/rad.ini [Registry_expai_segmenters] Entries[FallbackSegmenter]; extension/expai/settings/rad.ini [Registry_expai_segmenters] Entries[Segmenters] |
 
 ### extension/explayouts (2)
 
@@ -50,6 +61,14 @@ A contract that implementations follow; code depends on the interface, not on a 
 |---|---|---|---|---|
 | `QueryTranslator\Parsing` | interface | `extension/expquery_translator/lib/Parsing.php:10` | Interface for parsing a sequence of tokens into a syntax tree. | – |
 | `QueryTranslator\Tokenizing` | interface | `extension/expquery_translator/lib/Tokenizing.php:8` | Interface for tokenizing a string into a sequence of tokens. | – |
+
+### extension/expqueue (1)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueHandler` | interface | `extension/expqueue/classes/expqueuehandler.php:27` | A job handler: the code that runs the jobs of one type. | extension/expqueue/settings/rad.ini [Registry_expqueue_job_types] Entries[Handler] |
 
 ### extension/exp_oe_tiptap (1)
 
@@ -117,6 +136,27 @@ A contract that implementations follow; code depends on the interface, not on a 
 |---|---|---|---|---|
 | `eZURLMultisiteDataTypeHandler` | interface | `extension/ezurlmultisite/classes/ezurlmultisitedatatypehandler.php:3` | – | – |
 
+### extension/sqliimport (14)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportAiTransport` | interface | `extension/sqliimport/classes/exp/ai/expimportaitransport.php:16` | The way the AI assist of 7x SQLI Import (expImportAi) reaches a model. | – |
+| `expImportBoltTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportbolttransport.php:13` | The byte stream the Bolt client (expImportBoltClient) talks over: a socket (expImportBoltSocket) or a test double. | – |
+| `expImportCassandraTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportcassandratransport.php:21` | The connection the Cassandra/ScyllaDB source reads through: the PHP extension cassandra of DataStax (expImportCassandraExtension) where it is install… | – |
+| `expImportHandlerInterface` | interface | `extension/sqliimport/classes/exp/engine/expimporthandlerinterface.php:21` | A handler of the 2.x engine: it turns records into content. | – |
+| `expImportImapTransport` | interface | `extension/sqliimport/classes/exp/mail/expimportimaptransport.php:15` | The connection to an IMAP mailbox the IMAP source reads: the PHP extension imap where it is installed (expImportImapExtension), else a small client o… | – |
+| `expImportLdapTransport` | interface | `extension/sqliimport/classes/exp/ldap/expimportldaptransport.php:15` | What the LDAP source needs of a directory server: connect, StartTLS, bind and search, nothing that writes. | – |
+| `expImportMongoDbTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportmongodbtransport.php:15` | The connection the MongoDB source reads through: the PHP extension mongodb (expImportMongoDbExtension), or a test double. | – |
+| `expImportRecordProviderInterface` | interface | `extension/sqliimport/classes/exp/engine/expimporthandlerinterface.php:52` | A handler that reads its records itself (a 1.x handler through the adapter): the engine takes the records from it instead of from a source. | – |
+| `expImportRedisTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportredistransport.php:15` | The connection the Redis source reads through: the PHP extension redis (expImportRedisExtension), else a small RESP client of its own over a socket (… | – |
+| `expImportSourceInterface` | interface | `extension/sqliimport/classes/exp/expimportsourceinterface.php:19` | A source type: it reads records from a file (or, for later source types, an endpoint). | – |
+| `expImportTransformInterface` | interface | `extension/sqliimport/classes/exp/expimporttransforminterface.php:18` | A named transform of a mapping line: it turns a source value into the value a class attribute takes (the fromString() form of its datatype). | – |
+| `expImportTriggerCallStore` | interface | `extension/sqliimport/classes/exp/expimporttriggerauth.php:14` | Where the trigger keeps its recent calls: the signatures already used (replay protection) and the calls counted by the rate limit. | – |
+| `ISQLIDiffHandler` | interface | `extension/sqliimport/classes/content/diffhandlers/isqlidiffhandler.php:27` | Interface for diff handlers. | – |
+| `ISQLIImportHandler` | interface | `extension/sqliimport/classes/sourcehandlers/isqliimporthandler.php:11` | Interface for import handlers Must be implemented by all import handlers | – |
+
 ### extension/xrowmetadata (3)
 
 [All patterns of extension/xrowmetadata](area-extension-xrowmetadata.md)
@@ -163,6 +203,14 @@ A contract that implementations follow; code depends on the interface, not on a 
 |---|---|---|---|---|
 | `expContentJobType` | interface | `kernel/classes/contentjob/expcontentjobtype.php:22` | A kind of content job, registered in content.ini [ContentJobSettings] JobTypes[]=. | – |
 
+### kernel/classes/datatable (1)
+
+[All patterns of kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expDataTableFieldSource` | interface | `kernel/classes/datatable/expdatatablefieldsource.php:33` | Something that can hand the fields of a new data table to the module table wizard (doc/eng-us/features/6.0/ data-tables.md, "The module table wizard"… | – |
+
 ### kernel/classes/debugbar (1)
 
 [All patterns of kernel/classes/debugbar](area-kernel-classes-debugbar.md)
@@ -195,7 +243,7 @@ A contract that implementations follow; code depends on the interface, not on a 
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManagerInterface` | interface | `kernel/classes/logviewer/explogmanagerinterface.php:19` | Log management (doc/eng-us/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs" and the log viewer's actions use. | – |
+| `expLogManagerInterface` | interface | `kernel/classes/logviewer/explogmanagerinterface.php:19` | Log management (doc/eng-us/features/6.0/log-rotation.md, "For developers"): what the command line, the cronjob part "logs" and the log viewer's actio… | – |
 
 ### kernel/classes/mailpreferences (1)
 
@@ -214,6 +262,22 @@ A contract that implementations follow; code depends on the interface, not on a 
 | `expRequestRuleSetInterface` | interface | `kernel/classes/requestclassifier/exprequestrulesetinterface.php:24` | A rule set of the request classifier (settings/requestclassifier.ini, RuleSets[] and [RuleSet-] Class=). | – |
 | `expRequestVerdictListenerInterface` | interface | `kernel/classes/requestclassifier/exprequestverdictlistenerinterface.php:18` | Told about every verdict of the request classifier after its security.log line is written (settings/requestclassifier.ini [ClassifierSettings] Listen… | – |
 
+### kernel/classes/syscard (1)
+
+[All patterns of kernel/classes/syscard](area-kernel-classes-syscard.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSysCardProvider` | interface | `kernel/classes/syscard/expsyscardprovider.php:19` | A provider of the system card: one class per group of facts (the machine, PHP, the engine, the database ...). | – |
+
+### kernel/classes/transfer (1)
+
+[All patterns of kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expKernelTransferTask` | interface | `kernel/classes/transfer/expkerneltransfertask.php:38` | The work of one background run of an import or export tool, whatever engine runs it (expKernelTransferRunner: expqueue, the kernel's content jobs, th… | – |
+
 ### kernel/classes/uiswitch (1)
 
 [All patterns of kernel/classes/uiswitch](area-kernel-classes-uiswitch.md)
@@ -221,6 +285,14 @@ A contract that implementations follow; code depends on the interface, not on a 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expUISwitchProviderInterface` | interface | `kernel/classes/uiswitch/expuiswitchproviderinterface.php:19` | One switchable preference of the administration interface (the "UI chrome"): the display language, the design, or what an extension adds. | – |
+
+### kernel/classes/user (1)
+
+[All patterns of kernel/classes/user](area-kernel-classes-user.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSignInSecondFactorHandler` | interface | `kernel/classes/user/expsigninsecondfactorhandler.php:18` | What a two-step sign-in extension tells the kernel about sign-ins outside the web login form (REST with a password, WebDAV, SOAP, the expservices log… | – |
 
 ### kernel/private (24)
 

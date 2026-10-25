@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/commands
 audience: developer
 category: standards
-order: 517
+order: 526
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/commands with its design patterns.
 keywords: kernel/private/classes/commands, design patterns, classes, extension points
 type: catalogue
@@ -15,15 +15,19 @@ type: catalogue
 
 Every class, interface and trait of `kernel/private/classes/commands` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (97)
+## Classes (105)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `CommandLineArguments` | class | [Utility (static helper)](utility.md) | `kernel/private/classes/commands/ezconvertdbcharset.php:31` | Class used to store some of the command line arguments |
 | `Exponential\Command\Kernel\Accesscheck` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/accesscheck.php:16` | – |
+| `Exponential\Command\Kernel\Addanonymouspublicpolicies` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/addanonymouspublicpolicies.php:15` | The code of bin/php/addanonymouspublicpolicies.php. |
 | `Exponential\Command\Kernel\Adddefaultstates` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/adddefaultstates.php:23` | The code of bin/php/adddefaultstates.php, moved into a class (#207 stage 1). |
+| `Exponential\Command\Kernel\Addeditorpolicies` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/addeditorpolicies.php:15` | The code of bin/php/addeditorpolicies.php. |
 | `Exponential\Command\Kernel\Addexphelpreadpolicy` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/addexphelpreadpolicy.php:16` | The code of bin/php/addexphelpreadpolicy.php. |
+| `Exponential\Command\Kernel\Addmembermanagement` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/addmembermanagement.php:15` | The code of bin/php/addmembermanagement.php. |
 | `Exponential\Command\Kernel\Addoauthauthorizepolicy` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/addoauthauthorizepolicy.php:15` | The code of bin/php/addoauthauthorizepolicy.php. |
+| `Exponential\Command\Kernel\Adduserapproval` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/adduserapproval.php:15` | The code of bin/php/adduserapproval.php. |
 | `Exponential\Command\Kernel\Audit` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/audit.php:26` | The audit command, exp:audit: the records of the audit channels and their hash chains. |
 | `Exponential\Command\Kernel\Benchmark` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/benchmark.php:15` | The code of bin/php/benchmark.php (exp:benchmark). |
 | `Exponential\Command\Kernel\Cache` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/cache.php:23` | The code of bin/php/cache.php, moved into a class (#207 stage 1). |
@@ -84,6 +88,7 @@ Every class, interface and trait of `kernel/private/classes/commands` with the p
 | `Exponential\Command\Kernel\I18n` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/i18n.php:18` | – |
 | `Exponential\Command\Kernel\Ini` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/ini.php:18` | – |
 | `Exponential\Command\Kernel\Install` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/install.php:29` | The code of bin/php/install.php, moved into a class (#207 stage 1). |
+| `Exponential\Command\Kernel\Installcrontab` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/installcrontab.php:15` | The code of bin/php/installcrontab.php. |
 | `Exponential\Command\Kernel\Kickstarter` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/kickstarter.php:153` | Runs this script again as a child with the same arguments and PHP settings, shows its output as it comes and copies it to var/log/kickstart.log, afte… |
 | `Exponential\Command\Kernel\Mailbounces` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/mailbounces.php:16` | – |
 | `Exponential\Command\Kernel\Mailconsent` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/mailconsent.php:16` | – |
@@ -103,13 +108,16 @@ Every class, interface and trait of `kernel/private/classes/commands` with the p
 | `Exponential\Command\Kernel\PublishContent` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/publish_content.php:25` | The code of bin/php/publish_content.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Resetuserpassword` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/resetuserpassword.php:27` | The code of bin/php/resetuserpassword.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Runcronjobs` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/runcronjobs.php:91` | The code of runcronjobs.php, moved into a class (#207 stage 1). |
+| `Exponential\Command\Kernel\Services` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/services.php:19` | The code of bin/php/services.php: the kernel service container on the command line. |
 | `Exponential\Command\Kernel\Solr` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/solr.php:190` | Report a result for a person or as JSON, and shut down with $exit. |
+| `Exponential\Command\Kernel\Syscard` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/syscard.php:17` | – |
 | `Exponential\Command\Kernel\Systeminfo` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/systeminfo.php:16` | – |
 | `Exponential\Command\Kernel\Trashpurge` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/trashpurge.php:24` | The code of bin/php/trashpurge.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Updateisbn13` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/updateisbn13.php:24` | The code of bin/php/updateisbn13.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Updateniceurls` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/updateniceurls.php:338` | The code of bin/php/updateniceurls.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Updatesearchindex` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/updatesearchindex.php:42` | The code of bin/php/updatesearchindex.php, moved into a class (#207 stage 1). |
 | `Exponential\Command\Kernel\Userlogincheck` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/userlogincheck.php:18` | – |
+| `Exponential\Command\Kernel\Userpasswordchangerequired` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/userpasswordchangerequired.php:16` | – |
 | `Exponential\Command\Kernel\Velocity` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/velocity.php:262` | Print a settings listing for a person to read. |
 | `Exponential\Command\Kernel\VelocityRouter` | class | [Chain of Responsibility](chain.md) | `kernel/private/classes/commands/velocity-router.php:46` | The code of bin/php/velocity-router.php, moved into a class (#207). |
 | `Exponential\Command\Kernel\VelocityWarmup` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/commands/velocity-warmup.php:40` | The code of bin/php/velocity-warmup.php, moved into a class (#207 stage 1). |

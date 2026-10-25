@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/collaborationhandlers
 audience: developer
 category: standards
-order: 485
+order: 490
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/collaborationhandlers with its design patterns.
 keywords: kernel/classes/collaborationhandlers, design patterns, classes, extension points
 type: catalogue

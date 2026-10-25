@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/urlaliasfilters
 audience: developer
 category: standards
-order: 524
+order: 533
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/urlaliasfilters with its design patterns.
 keywords: kernel/private/classes/urlaliasfilters, design patterns, classes, extension points
 type: catalogue

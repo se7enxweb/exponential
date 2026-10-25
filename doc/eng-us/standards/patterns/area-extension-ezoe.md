@@ -2,7 +2,7 @@
 title: Patterns in extension/ezoe
 audience: developer
 category: standards
-order: 447
+order: 450
 summary: Every class, view, fetch function, operator and plugin point of extension/ezoe with its design patterns.
 keywords: extension/ezoe, design patterns, classes, extension points
 type: catalogue

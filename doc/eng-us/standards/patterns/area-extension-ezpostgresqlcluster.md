@@ -2,7 +2,7 @@
 title: Patterns in extension/ezpostgresqlcluster
 audience: developer
 category: standards
-order: 451
+order: 455
 summary: Every class, view, fetch function, operator and plugin point of extension/ezpostgresqlcluster with its design patterns.
 keywords: extension/ezpostgresqlcluster, design patterns, classes, extension points
 type: catalogue

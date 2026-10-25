@@ -2,7 +2,7 @@
 title: Patterns in extension/ezie
 audience: developer
 category: standards
-order: 442
+order: 445
 summary: Every class, view, fetch function, operator and plugin point of extension/ezie with its design patterns.
 keywords: extension/ezie, design patterns, classes, extension points
 type: catalogue

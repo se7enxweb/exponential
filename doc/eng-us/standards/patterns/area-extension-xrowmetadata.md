@@ -2,7 +2,7 @@
 title: Patterns in extension/xrowmetadata
 audience: developer
 category: standards
-order: 477
+order: 482
 summary: Every class, view, fetch function, operator and plugin point of extension/xrowmetadata with its design patterns.
 keywords: extension/xrowmetadata, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Patterns in extension/ezjscore
 audience: developer
 category: standards
-order: 443
+order: 446
 summary: Every class, view, fetch function, operator and plugin point of extension/ezjscore with its design patterns.
 keywords: extension/ezjscore, design patterns, classes, extension points
 type: catalogue

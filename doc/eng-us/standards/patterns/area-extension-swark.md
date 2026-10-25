@@ -2,7 +2,7 @@
 title: Patterns in extension/swark
 audience: developer
 category: standards
-order: 474
+order: 479
 summary: Every class, view, fetch function, operator and plugin point of extension/swark with its design patterns.
 keywords: extension/swark, design patterns, classes, extension points
 type: catalogue

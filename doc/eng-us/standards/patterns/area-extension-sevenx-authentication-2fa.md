@@ -2,7 +2,7 @@
 title: Patterns in extension/sevenx_authentication_2fa
 audience: developer
 category: standards
-order: 468
+order: 472
 summary: Every class, view, fetch function, operator and plugin point of extension/sevenx_authentication_2fa with its design patterns.
 keywords: extension/sevenx_authentication_2fa, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `extension/sevenx_authentication_2fa` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (19)
+## Classes (21)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -25,15 +25,17 @@ Every class, interface and trait of `extension/sevenx_authentication_2fa` with t
 | `eZInstagramUser` | class extends eZOAuthUser | [Active Record (eZPersistentObject)](active-record.md) | `extension/sevenx_authentication_2fa/login_handler/ezinstagramuser.php:17` | – |
 | `eZMetaUser` | class extends eZFacebookUser | [Active Record (eZPersistentObject)](active-record.md) | `extension/sevenx_authentication_2fa/login_handler/ezmetauser.php:17` | – |
 | `eZOAuthUser` | abstract class extends eZUser | [Active Record (eZPersistentObject)](active-record.md), [Template Method / abstract base class](template-method.md) | `extension/sevenx_authentication_2fa/classes/ezoauthuser.php:26` | – |
-| `eZsevenxUser2faUser` | class extends eZUser | [Active Record (eZPersistentObject)](active-record.md), [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/login_handler/ezsevenxuser2fauser.php:29` | – |
+| `eZsevenxUser2faUser` | class extends eZUser | [Active Record (eZPersistentObject)](active-record.md), [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/login_handler/ezsevenxuser2fauser.php:32` | – |
 | `eZTwitterUser` | class extends eZOAuthUser | [Active Record (eZPersistentObject)](active-record.md) | `extension/sevenx_authentication_2fa/login_handler/eztwitteruser.php:17` | – |
-| `sevenxAuthentication2fa` | class | [Factory and static factory methods](factory.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fa.php:22` | – |
+| `sevenxAuthentication2fa` | class | [Factory and static factory methods](factory.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fa.php:30` | – |
 | `sevenxAuthentication2faAttempts` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2faattempts.php:27` | – |
 | `sevenxAuthentication2faCrypto` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2facrypto.php:27` | – |
 | `sevenxAuthentication2faEmail` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2faemail.php:21` | – |
 | `sevenxAuthentication2faHelper` | class | [Singleton / instance()](singleton.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fahelper.php:23` | – |
+| `sevenxAuthentication2faPolicy` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fapolicy.php:37` | – |
 | `sevenxAuthentication2faQR` | class | – | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2faqr.php:17` | – |
 | `sevenxAuthentication2faRedirect` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2faredirect.php:29` | – |
+| `sevenxAuthentication2faSignIn` | class implements expSignInSecondFactorHandler | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fasignin.php:42` | – |
 | `sevenxAuthentication2faTOTP` | class | [Utility (static helper)](utility.md) | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fatotp.php:24` | – |
 | `sevenxAuthentication2faType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `extension/sevenx_authentication_2fa/datatypes/sevenxauthentication2fa/sevenxauthentication2fatype.php:17` | – |
 | `sevenxPsyonQRCode` | class | – | `extension/sevenx_authentication_2fa/classes/thirdparty/psyonqrcode.php:29` | – |
@@ -62,3 +64,9 @@ Every class, interface and trait of `extension/sevenx_authentication_2fa` with t
 | Cronjob | File | Description |
 |---|---|---|
 | `sevenx2facleanup` | `extension/sevenx_authentication_2fa/cronjobs/sevenx2facleanup.php` | – |
+
+## INI plugin points (1)
+
+| Setting | Class | Set in |
+|---|---|---|
+| `[SignInSecondFactorSettings] Handlers[]` | `sevenxAuthentication2faSignIn` | `extension/sevenx_authentication_2fa/settings/site.ini.append.php:23` |

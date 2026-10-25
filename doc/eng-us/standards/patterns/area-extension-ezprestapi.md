@@ -2,7 +2,7 @@
 title: Patterns in extension/ezprestapi
 audience: developer
 category: standards
-order: 452
+order: 456
 summary: Every class, view, fetch function, operator and plugin point of extension/ezprestapi with its design patterns.
 keywords: extension/ezprestapi, design patterns, classes, extension points
 type: catalogue

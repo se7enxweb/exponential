@@ -3,7 +3,7 @@ title: Decorator / filter
 audience: developer
 category: standards
 order: 331
-summary: Wraps an object or a value to add behavior while keeping its interface: output filters, input filters, pre-/post-processors. 62 instances in Exponential.
+summary: Wraps an object or a value to add behavior while keeping its interface: output filters, input filters, pre-/post-processors. 64 instances in Exponential.
 keywords: design pattern, decorator, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Wraps an object or a value to add behavior while keeping its interface: output f
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 62 |
+| Instances | 64 |
 | Recognized by | Class name contains Decorator or Filter. |
 
 ## Classes by area
@@ -35,6 +35,14 @@ Wraps an object or a value to add behavior while keeping its interface: output f
 | `CjwNewsletterFilterTypeEmail` | class extends CjwNewsletterFilterType | `extension/cjw_newsletter/classes/filtertypes/cjwnewsletterfiltertypeemail.php:19` | Class description here | extension/cjw_newsletter/settings/cjw_newsletter.ini [NewsletterFilterSettings] AvailableFilterTypeClassArray[] |
 | `CjwNewsletterFilterTypeSalutation` | class extends CjwNewsletterFilterType | `extension/cjw_newsletter/classes/filtertypes/cjwnewsletterfiltertypesalutation.php:19` | Class description here | extension/cjw_newsletter/settings/cjw_newsletter.ini [NewsletterFilterSettings] AvailableFilterTypeClassArray[] |
 | `CjwNewsletterListFilter` | class | `extension/cjw_newsletter/extendedattributefilter/cjwnewsletterlistfilter.php:29` | This filter allowed, fetch all lists by a specific siteaccess reserved word "current_siteaccess" == take current siteaccess to match param siteaccess… | extension/cjw_newsletter/settings/extendedattributefilter.ini [CjwNewsletterListFilter] ClassName |
+
+### extension/explayouts_content_browser_core (1)
+
+[All patterns of extension/explayouts_content_browser_core](area-extension-explayouts-content-browser-core.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expLayoutsContentBrowserCoreSearchFilter` | class | `extension/explayouts_content_browser_core/classes/explayoutscontentbrowsercoresearchfilter.php:10` | The extended attribute filter of the content browser's search (extendedattributefilter.ini [explayouts_content_browser_search]): each word must be in… | extension/explayouts_content_browser_core/settings/extendedattributefilter.ini [explayouts_content_browser_search] ClassName |
 
 ### extension/expsite_api (1)
 
@@ -77,6 +85,14 @@ Wraps an object or a value to add behavior while keeping its interface: output f
 | `eZIEImageFilterBW` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_bw.php:12` | – | – |
 | `eZIEImageFilterContrast` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_contrast.php:11` | – | – |
 | `eZIEImageFilterSepia` | class extends eZIEImageAction | `extension/ezie/classes/image_filter_sepia.php:11` | – | – |
+
+### extension/ezodf (1)
+
+[All patterns of extension/ezodf](area-extension-ezodf.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expOdfFilterCatalogue` | class | `extension/ezodf/classes/converter/expodffiltercatalogue.php:16` | The import and export filters of a LibreOffice installation, read from its share/registry/*.xcd files (the type detection's Filters and Types), so th… | – |
 
 ### extension/ezprestapi (1)
 
@@ -151,8 +167,8 @@ Wraps an object or a value to add behavior while keeping its interface: output f
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/eng-us/guides/api-keys.md, "How the REST layer r… | – |
-| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/password_auth_filter.php:19` | Checks a login and password for the REST interface's basic authentication the way the sign-in does. | – |
+| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/eng-us/guides/api-keys.md, "How the REST… | – |
+| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | `kernel/private/rest/classes/auth/password_auth_filter.php:23` | Checks a login and password for the REST interface's basic authentication the way the sign-in does. | – |
 | `ezpAsynchronousPublishingFilter` | abstract class | `kernel/private/classes/ezpasynchronouspublishingfilter.php:24` | This interface is to be used to create accept/reject filters for the Asynchronous Publishing feature Each filter class must implement the accept() me… | – |
 | `ezpAsynchronousPublishingFilterInterface` | interface | `kernel/private/interfaces/asynchronouspublishingfilter.php:17` | Base interface for eZ Asynchronous Publishing filter classes | – |
 | `ezpMobileDeviceDetectFilter` | class | `kernel/private/classes/ezpmobiledevicedetectfilter.php:12` | – | – |

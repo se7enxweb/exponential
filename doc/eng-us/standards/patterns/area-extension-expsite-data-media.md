@@ -2,7 +2,7 @@
 title: Patterns in extension/expsite_data_media
 audience: developer
 category: standards
-order: 429
+order: 432
 summary: Every class, view, fetch function, operator and plugin point of extension/expsite_data_media with its design patterns.
 keywords: extension/expsite_data_media, design patterns, classes, extension points
 type: catalogue

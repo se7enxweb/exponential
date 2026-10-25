@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes
 audience: developer
 category: standards
-order: 478
+order: 483
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes with its design patterns.
 keywords: kernel/classes, design patterns, classes, extension points
 type: catalogue
@@ -15,11 +15,12 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (202)
+## Classes (214)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `expAdminPagination` | class | [Utility (static helper)](utility.md) | `kernel/classes/expadminpagination.php:19` | One place to ask how many rows a list in the administration interface shows. |
+| `expAnonymousPublicPolicies` | class | [Utility (static helper)](utility.md) | `kernel/classes/expanonymouspublicpolicies.php:29` | The policies a visitor who is not signed in needs on a public site, beyond reading content: registering, reading the RSS feeds, the tag pages of ezta… |
 | `expBenchmark` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbenchmark.php:28` | The statistics, the report formats and the regression check of exp:benchmark. |
 | `expBenchmarkHttp` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbenchmarkhttp.php:20` | The HTTP side of exp:benchmark: requests a list of URLs, several at a time, with PHP's own curl (curl_multi), so no external program is needed. |
 | `expBenchmarkKernel` | class | [Utility (static helper)](utility.md) | `kernel/classes/expbenchmarkkernel.php:29` | The in-process side of exp:benchmark: what the kernel spends on the parts of a page, without HTTP, a web server or a response cache in between. |
@@ -38,21 +39,31 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expContentLanguageStates` | class | [Utility (static helper)](utility.md) | `kernel/classes/expcontentlanguagestates.php:26` | The state of each language of one content object, for the language badges of admin4 (design:parts/ language_state_badge.tpl): the main language (the… |
 | `expContentPendingList` | class | [Utility (static helper)](utility.md) | `kernel/classes/expcontentpendinglist.php:21` | What the pending page (content/pendinglist, "My pending items") lists, worked out from plain arrays: the versions the user sent for publishing that a… |
 | `expCronjobPause` | class | [Utility (static helper)](utility.md) | `kernel/classes/expcronjobpause.php:27` | Pauses cronjob parts: one part, or all of them, until someone resumes them. |
+| `expCrontabSetup` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expcrontabsetup.php:47` | The cron job of an installation: the crontab lines that run its cronjob parts (runcronjobs.php), written by the installers and by bin/php/installcron… |
+| `expDemoMode` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/expdemomode.php:38` | Demo mode: the environment variable EXP_DEMO_MODE=1 marks an installation as a public demo. |
+| `expEditorPolicies` | class | [Utility (static helper)](utility.md) | `kernel/classes/expeditorpolicies.php:39` | The policies an editor needs for everyday work and the Editor role of a new installation lacks: hiding and revealing, the trash (looking into it and… |
 | `expErrorHeaderList` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/experrorheaderlist.php:25` | The response headers of an error page, from error.ini [HTTPError-]: |
 | `expExtensionCatalogue` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expextensioncatalogue.php:20` | What Setup › Extensions knows about each extension: its metadata (expInfo), its declared dependencies (extension.xml ), the designs and settings file… |
 | `expExtensionChangePlan` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expextensionchangeplan.php:33` | The change planner of Setup › Extensions: what a list of active extensions becomes when an administrator moves, activates or deactivates one, what di… |
 | `expImageUploadValidator` | class | [Utility (static helper)](utility.md) | `kernel/classes/expimageuploadvalidator.php:35` | Decides whether an uploaded file is an image the site accepts, by what the file contains rather than by its name. |
 | `ExpInstallationDetailsOutputFilter` | class | [Decorator / filter](decorator.md), [Utility (static helper)](utility.md) | `kernel/classes/expinstallationdetailsoutputfilter.php:15` | Installation name output filter. |
 | `ExpInstallationOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/classes/expinstallationoperator.php:10` | Template operators for exposing the installation name to templates: |
+| `expInstallDefaultExtensions` | class | [Utility (static helper)](utility.md) | `kernel/classes/expinstalldefaultextensions.php:33` | The extensions every new installation gets set up, whatever site package it is made from: two-step sign-in (sevenx_authentication_2fa) and imports (s… |
 | `expJsonSchemaValidator` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expjsonschemavalidator.php:20` | Checks decoded JSON (json_decode( ..., true )) against a JSON Schema (draft 2020-12), for the keywords the kernel's own schemas use: type, enum, cons… |
+| `expKernelExtensionOverrideList` | class | [INI plugin point (extension point)](ini-plugin-point.md) | `kernel/classes/expkernelextensionoverridelist.php:21` | The service "extensions.overrides": what the two extension activation passes of the web kernel (eZExtension::activateExtensions() 'default' and 'acce… |
+| `expKernelServiceCompiler` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/expkernelservicecompiler.php:33` | Builds, checks and removes the compiled kernel service container (var/cache/kernelservices/). |
+| `expKernelServiceContainer` | class | – | `kernel/classes/expkernelservicecontainer.php:35` | The service container of the kernel: shared objects by name, made on first use, in their scope. |
+| `expKernelServices` | class | [Utility (static helper)](utility.md) | `kernel/classes/expkernelservices.php:44` | The kernel service container: the static facade, and the compiled boot of the web kernel. |
+| `expKernelServiceScope` | class | – | `kernel/classes/expkernelservicescope.php:31` | The scopes of the kernel service container (expKernelServices), and the store of the worker scope. |
 | `expKickstarter` | class | – | `kernel/classes/expkickstarter.php:12` | – |
 | `expKickstarterIni` | class | – | `kernel/classes/expkickstarterini.php:19` | – |
 | `expLinkCheck` | class | – | `kernel/classes/explinkcheck.php:15` | Decides whether a link of published content works, for the link check cronjob (linkcheck.php) and the link list (url/list). |
 | `expLoveStack` | class | – | `kernel/classes/explovestack.php:29` | Finds what a site coming from LoveStack (mugoweb/Exponential-legacy) brings along that Exponential handles differently: the markers of its database (… |
 | `expMaintenance` | class | [Utility (static helper)](utility.md) | `kernel/classes/expmaintenance.php:29` | Maintenance mode: while var/maintenance.json exists, every request to the front controllers is answered with a maintenance page (503, Retry-After, ne… |
 | `expManagedConfiguration` | class | [Utility (static helper)](utility.md) | `kernel/classes/expmanagedconfiguration.php:25` | site.ini [ConfigurationSettings] ManagedByDeployment=enabled: settings, templates and code come from the deployment only, and the admin interface doe… |
+| `expMemberManagement` | class | [Utility (static helper)](utility.md) | `kernel/classes/expmembermanagement.php:27` | Member management: user groups that manage the accounts of other user groups, set up from membermanagement.ini (doc/eng-us/bc/6.0/member-management.m… |
 | `expNamePatternResolverInterface` | interface | [Interface (contract)](interface.md) | `kernel/classes/expnamepatternresolverinterface.php:27` | A PHP class that makes the name of a content object, or the name its URL alias is made from, instead of the attribute tokens of the class's name patt… |
-| `expNodeQuickPick` | class | [Utility (static helper)](utility.md) | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/eng-us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Websites, M… |
+| `expNodeQuickPick` | class | [Utility (static helper)](utility.md) | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/eng-us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Webs… |
 | `expNotificationJob` | class | [Utility (static helper)](utility.md) | `kernel/classes/expnotificationjob.php:17` | A notification run for the status page ("Run now"), in the background. |
 | `expNotificationService` | class | [Facade / service](facade.md), [Utility (static helper)](utility.md) | `kernel/classes/expnotificationservice.php:26` | The one place that knows how the notification system is run and looked at: the cronjob part, the exp:notification:* commands, the status page and its… |
 | `expPackageConflictReport` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/exppackageconflictreport.php:22` | What installing a package would meet on this installation, by remote id, without writing anything: for every content object of the package whether an… |
@@ -77,7 +88,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expVelocity` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expvelocity.php:38` | Drives the bundled application server as a service. |
 | `expVelocityConfig` | class | – | `kernel/classes/expvelocityconfig.php:36` | Read and write the settings Exponential Velocity actually runs on. |
 | `expVelocityConfigLayout` | class | – | `kernel/classes/expvelocityconfiglayout.php:41` | The server's configuration as a Debian Apache-style tree, and the move to it. |
-| `expVelocityDeploy` | class | – | `kernel/classes/expvelocitydeploy.php:47` | Everything a PHP code change needs before it is live, in the one order that works: exp:velocity deploy. |
+| `expVelocityDeploy` | class | – | `kernel/classes/expvelocitydeploy.php:52` | Everything a PHP code change needs before it is live, in the one order that works: exp:velocity deploy. |
 | `expVelocityFrankenPHP` | class extends expVelocity | – | `kernel/classes/expvelocityfrankenphp.php:34` | Velocity's second engine: FrankenPHP, the Caddy web server with PHP built in. |
 | `expVelocityFrankenPHPInstaller` | class | – | `kernel/classes/expvelocityfrankenphpinstaller.php:28` | Puts the FrankenPHP binary in place for the frankenphp engine: `exp:velocity install`, and start's AutoInstall. |
 | `expVelocityMarkers` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expvelocitymarkers.php:30` | The small state files that say why an engine is not running. |
@@ -85,6 +96,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expVelocityRestartUnit` | class | [Factory and static factory methods](factory.md) | `kernel/classes/expvelocityrestartunit.php:34` | Runs exp:velocity restart as one detached unit: the stop and the start in a process that does not belong to the caller. |
 | `expVelocityWatchdog` | class | – | `kernel/classes/expvelocitywatchdog.php:49` | A safety net that starts the default engine again when it is down and nobody meant it to be: exp:velocity watchdog. |
 | `expViewAccess` | class | [Utility (static helper)](utility.md) | `kernel/classes/expviewaccess.php:25` | Whether a user can open an address of this siteaccess, decided the way the kernel decides a request (ezpKernelWeb): the URL alias (and wildcard) tran… |
+| `expViewParameters` | class | [Utility (static helper)](utility.md) | `kernel/classes/expviewparameters.php:25` | The options of an administration view or endpoint are view parameters, /(name)/value, never GET query parameters (as the help center's, doc/eng-us/fe… |
 | `expWeakPasswordList` | class | [Singleton / instance()](singleton.md) | `kernel/classes/expweakpasswordlist.php:35` | The one list of well-known and common passwords, and the check every place that sets a new password uses: the setup wizard, the kickstarter and exp:i… |
 | `eZAudit` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezaudit.php:20` | The 4.x audit API, kept so every existing call keeps working: eZAudit::writeAudit( $name, $attributes ) is recorded by expAudit (kernel/classes/audit… |
 | `eZBasket` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezbasket.php:20` | – |
@@ -166,7 +178,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `eZPackageRemovalPlan` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/ezpackageremovalplan.php:20` | What removing a selection of packages would do, before it is done: per package its directory, files and size, whether it is installed (its install re… |
 | `eZPackageRequestGuard` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackagerequestguard.php:16` | The checks every package view applies to what a request names before anything is read from disk: a package name, a repository, a view mode and a file… |
 | `eZPackageUploadInspector` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageuploadinspector.php:31` | Looks at a package archive before anything of it is written into a repository. |
-| `eZPackageVersion` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageversion.php:46` | – |
+| `eZPackageVersion` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageversion.php:55` | – |
 | `eZPathElement` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezpathelement.php:23` | – |
 | `eZPDFExport` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/ezpdfexport.php:19` | – |
 | `eZPendingActions` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Utility (static helper)](utility.md) | `kernel/classes/ezpendingactions.php:12` | – |
@@ -222,17 +234,18 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `eZWorkflowProcess` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/ezworkflowprocess.php:19` | – |
 | `eZWorkflowType` | class | [Factory and static factory methods](factory.md), [Registry](registry.md) | `kernel/classes/ezworkflowtype.php:18` | – |
 
-## Event hooks (10)
+## Event hooks (11)
 
 | Event | Kind | Called in |
 |---|---|---|
-| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:703` |
-| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:850` |
-| `user/cache/all` | notify | `kernel/classes/ezcache.php:873` |
-| `content/cache/all` | notify | `kernel/classes/ezcache.php:886` |
-| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:956` |
+| `image/invalidateAliases` | notify | `kernel/classes/ezcache.php:715` |
+| `content/class/cache/all` | notify | `kernel/classes/ezcache.php:862` |
+| `user/cache/all` | notify | `kernel/classes/ezcache.php:885` |
+| `content/cache/all` | notify | `kernel/classes/ezcache.php:898` |
+| `content/state/cache/all` | notify | `kernel/classes/ezcache.php:968` |
 | `content/cache` | notify | `kernel/classes/ezcontentcachemanager.php:818` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:826` |
 | `content/cache/all` | notify | `kernel/classes/ezcontentcachemanager.php:1182` |
-| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6319` |
+| `content/edit/access` | filter | `kernel/classes/ezcontentobject.php:6375` |
+| `content/move` | notify | `kernel/classes/ezcontentobjecttreenode.php:5415` |
 | `content/view/cachekeys` | filter | `kernel/classes/eznodeviewfunctions.php:414` |

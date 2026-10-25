@@ -3,7 +3,7 @@ title: Policy function (access control)
 audience: developer
 category: standards
 order: 317
-summary: A permission a role can grant, optionally limited (by class, section, subtree, siteaccess ...). Views name the functions they need. 232 instances in Exponential.
+summary: A permission a role can grant, optionally limited (by class, section, subtree, siteaccess ...). Views name the functions they need. 259 instances in Exponential.
 keywords: design pattern, policy-function, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,11 +18,11 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 232 |
+| Instances | 259 |
 | Recognized by | An entry of $FunctionList in a module.php. |
 | Extension point | module.php $FunctionList; limitations are functions that list the allowed values. |
 
-## Policy functions (232)
+## Policy functions (259)
 
 ### extension/AdminAid (4)
 
@@ -92,11 +92,35 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 |---|---|---|
 | `osm_proxy/tiles` | – | `extension/cjw_themes_jumper/modules/osm_proxy/module.php:23` |
 
+### extension/expai (13)
+
+| Function | Limitations | Defined in |
+|---|---|---|
+| `expai/write` | – | `extension/expai/modules/expai/module.php:121` |
+| `expai/log` | – | `extension/expai/modules/expai/module.php:122` |
+| `expai/settings` | – | `extension/expai/modules/expai/module.php:123` |
+| `expai/model_use` | Provider | `extension/expai/modules/expai/module.php:124` |
+| `expai/model_manage` | – | `extension/expai/modules/expai/module.php:125` |
+| `expai/lane_fast` | – | `extension/expai/modules/expai/module.php:126` |
+| `expai/mcp` | Server | `extension/expai/modules/expai/module.php:127` |
+| `expai/chain` | – | `extension/expai/modules/expai/module.php:129` |
+| `expai/vector` | – | `extension/expai/modules/expai/module.php:133` |
+| `expai/web` | – | `extension/expai/modules/expai/module.php:140` |
+| `expai/translation_sync` | – | `extension/expai/modules/expai/module.php:145` |
+| `expai/services` | – | `extension/expai/modules/expai/module.php:149` |
+| `expai/summary` | – | `extension/expai/modules/expai/module.php:153` |
+
 ### extension/expchangeclass (1)
 
 | Function | Limitations | Defined in |
 |---|---|---|
 | `changeclass/convert` | – | `extension/expchangeclass/modules/changeclass/module.php:31` |
+
+### extension/expimageeditor (1)
+
+| Function | Limitations | Defined in |
+|---|---|---|
+| `expimageeditor/edit` | – | `extension/expimageeditor/modules/expimageeditor/module.php:20` |
 
 ### extension/explayouts (2)
 
@@ -126,6 +150,13 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 |---|---|---|
 | `explayouts_ui_api/read` | – | `extension/explayouts_ui_api/modules/explayouts_ui_api/module.php:36` |
 | `explayouts_ui_api/edit` | – | `extension/explayouts_ui_api/modules/explayouts_ui_api/module.php:39` |
+
+### extension/expqueue (2)
+
+| Function | Limitations | Defined in |
+|---|---|---|
+| `expqueue/view` | – | `extension/expqueue/modules/expqueue/module.php:48` |
+| `expqueue/manage` | – | `extension/expqueue/modules/expqueue/module.php:49` |
 
 ### extension/exp_oe_tiptap (2)
 
@@ -163,12 +194,13 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `userpaex/password` | – | `extension/ezmbpaex/modules/userpaex/module.php:37` |
 | `userpaex/editpaex` | – | `extension/ezmbpaex/modules/userpaex/module.php:38` |
 
-### extension/ezodf (2)
+### extension/ezodf (3)
 
 | Function | Limitations | Defined in |
 |---|---|---|
-| `ezodf/import` | – | `extension/ezodf/modules/ezodf/module.php:52` |
-| `ezodf/export` | – | `extension/ezodf/modules/ezodf/module.php:53` |
+| `ezodf/import` | – | `extension/ezodf/modules/ezodf/module.php:94` |
+| `ezodf/export` | – | `extension/ezodf/modules/ezodf/module.php:95` |
+| `ezodf/converter` | – | `extension/ezodf/modules/ezodf/module.php:97` |
 
 ### extension/ezoe (7)
 
@@ -279,6 +311,15 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 |---|---|---|
 | `info-collection/read` | – | `extension/sevenx_themes_media/modules/info-collection/module.php:21` |
 
+### extension/sqliimport (4)
+
+| Function | Limitations | Defined in |
+|---|---|---|
+| `sqliimport/manage` | SQLIImport_Type | `extension/sqliimport/modules/sqliimport/module.php:222` |
+| `sqliimport/run` | SQLIImport_Type | `extension/sqliimport/modules/sqliimport/module.php:223` |
+| `sqliimport/listimports` | – | `extension/sqliimport/modules/sqliimport/module.php:225` |
+| `sqliimport/manageimports` | SQLIImport_Type | `extension/sqliimport/modules/sqliimport/module.php:226` |
+
 ### extension/syndication (11)
 
 | Function | Limitations | Defined in |
@@ -308,97 +349,103 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `xrowextract/all_jobs` | – | `extension/xrowextract/modules/xrowextract/module.php:128` |
 | `xrowextract/import` | – | `extension/xrowextract/modules/xrowextract/module.php:130` |
 
-### kernel/modules (87)
+### kernel/modules (93)
 
 | Function | Limitations | Defined in |
 |---|---|---|
 | `apikey/create` | values | `kernel/apikey/module.php:47` |
 | `audit/read` | – | `kernel/audit/module.php:90` |
 | `audit/manage` | – | `kernel/audit/module.php:121` |
-| `content/bookmark` | – | `kernel/content/module.php:661` |
-| `content/move` | – | `kernel/content/module.php:663` |
-| `content/read` | Class, Section, Owner, Group, Node, Subtree | `kernel/content/module.php:665` |
-| `content/diff` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:672` |
-| `content/view_embed` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:677` |
-| `content/create` | Class, Section, ParentOwner, ParentGroup, ParentClass, ParentDepth, Subtree, Language | `kernel/content/module.php:682` |
-| `content/edit` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:692` |
-| `content/publish` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:701` |
-| `content/manage_locations` | Class, Section, Owner, Subtree | `kernel/content/module.php:710` |
-| `content/hide` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:716` |
-| `content/reverserelatedlist` | – | `kernel/content/module.php:724` |
-| `content/translate` | Class, Section, Owner, Node, Subtree, Language | `kernel/content/module.php:726` |
-| `content/remove` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:732` |
-| `content/versionread` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:740` |
-| `content/versionremove` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:747` |
-| `content/pdf` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:754` |
-| `content/translations` | – | `kernel/content/module.php:760` |
-| `content/urltranslator` | – | `kernel/content/module.php:761` |
-| `content/pendinglist` | – | `kernel/content/module.php:762` |
-| `content/restore` | – | `kernel/content/module.php:763` |
-| `content/cleantrash` | – | `kernel/content/module.php:764` |
-| `content/tipafriend` | – | `kernel/content/module.php:765` |
-| `content/dashboard` | – | `kernel/content/module.php:766` |
-| `content/view_system_url` | – | `kernel/content/module.php:770` |
-| `content/jobs` | – | `kernel/content/module.php:772` |
-| `content/publish_without_notification` | – | `kernel/content/module.php:776` |
-| `contentcheck/unreferenced` | – | `kernel/contentcheck/module.php:80` |
-| `contentcheck/trash` | – | `kernel/contentcheck/module.php:82` |
-| `contentcheck/brokenrelations` | – | `kernel/contentcheck/module.php:84` |
-| `contentcheck/fixfiles` | – | `kernel/contentcheck/module.php:87` |
-| `contentcheck/storage` | – | `kernel/contentcheck/module.php:89` |
-| `contentcheck/quarantine` | – | `kernel/contentcheck/module.php:91` |
-| `contentcheck/permissions` | – | `kernel/contentcheck/module.php:93` |
-| `contentfinder/search` | – | `kernel/contentfinder/module.php:39` |
-| `contentfinder/delete` | – | `kernel/contentfinder/module.php:41` |
-| `exphelp/read` | – | `kernel/exphelp/module.php:110` |
-| `exphelp/context` | – | `kernel/exphelp/module.php:112` |
+| `content/bookmark` | – | `kernel/content/module.php:664` |
+| `content/move` | – | `kernel/content/module.php:666` |
+| `content/read` | Class, Section, Owner, Group, Node, Subtree | `kernel/content/module.php:668` |
+| `content/diff` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:675` |
+| `content/view_embed` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:680` |
+| `content/create` | Class, Section, ParentOwner, ParentGroup, ParentClass, ParentDepth, Subtree, Language | `kernel/content/module.php:685` |
+| `content/edit` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:695` |
+| `content/publish` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:704` |
+| `content/manage_locations` | Class, Section, Owner, Subtree | `kernel/content/module.php:713` |
+| `content/hide` | Class, Section, Owner, Group, Node, Subtree, Language | `kernel/content/module.php:719` |
+| `content/reverserelatedlist` | – | `kernel/content/module.php:727` |
+| `content/translate` | Class, Section, Owner, Node, Subtree, Language | `kernel/content/module.php:729` |
+| `content/remove` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:735` |
+| `content/versionread` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:743` |
+| `content/versionremove` | Class, Section, Owner, Status, Node, Subtree | `kernel/content/module.php:750` |
+| `content/pdf` | Class, Section, Owner, Node, Subtree | `kernel/content/module.php:757` |
+| `content/translations` | – | `kernel/content/module.php:763` |
+| `content/urltranslator` | – | `kernel/content/module.php:764` |
+| `content/pendinglist` | – | `kernel/content/module.php:765` |
+| `content/restore` | – | `kernel/content/module.php:766` |
+| `content/cleantrash` | – | `kernel/content/module.php:767` |
+| `content/tipafriend` | – | `kernel/content/module.php:768` |
+| `content/dashboard` | – | `kernel/content/module.php:769` |
+| `content/view_system_url` | – | `kernel/content/module.php:773` |
+| `content/jobs` | – | `kernel/content/module.php:775` |
+| `content/publish_without_notification` | – | `kernel/content/module.php:779` |
+| `contentcheck/unreferenced` | – | `kernel/contentcheck/module.php:89` |
+| `contentcheck/trash` | – | `kernel/contentcheck/module.php:91` |
+| `contentcheck/brokenrelations` | – | `kernel/contentcheck/module.php:93` |
+| `contentcheck/fixfiles` | – | `kernel/contentcheck/module.php:96` |
+| `contentcheck/storage` | – | `kernel/contentcheck/module.php:98` |
+| `contentcheck/quarantine` | – | `kernel/contentcheck/module.php:100` |
+| `contentcheck/permissions` | – | `kernel/contentcheck/module.php:102` |
+| `contentfinder/search` | – | `kernel/contentfinder/module.php:41` |
+| `contentfinder/delete` | – | `kernel/contentfinder/module.php:43` |
+| `datatable/read` | – | `kernel/datatable/module.php:82` |
+| `datatable/manage` | – | `kernel/datatable/module.php:84` |
+| `datatable/connections` | – | `kernel/datatable/module.php:86` |
+| `datatable/sync` | – | `kernel/datatable/module.php:88` |
+| `exphelp/read` | – | `kernel/exphelp/module.php:151` |
+| `exphelp/context` | – | `kernel/exphelp/module.php:153` |
 | `ezinfo/read` | – | `kernel/ezinfo/module.php:33` |
 | `infocollector/read` | – | `kernel/infocollector/module.php:50` |
-| `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:71` |
-| `mailpreferences/export` | – | `kernel/mailpreferences/module.php:72` |
+| `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:72` |
+| `mailpreferences/export` | – | `kernel/mailpreferences/module.php:73` |
 | `notification/use` | – | `kernel/notification/module.php:53` |
 | `notification/administrate` | – | `kernel/notification/module.php:54` |
-| `package/read` | Type | `kernel/package/module.php:170` |
-| `package/list` | Type | `kernel/package/module.php:171` |
-| `package/create` | Type, CreatorType, Role | `kernel/package/module.php:172` |
-| `package/edit` | Type | `kernel/package/module.php:175` |
-| `package/remove` | Type | `kernel/package/module.php:176` |
-| `package/install` | Type | `kernel/package/module.php:177` |
-| `package/import` | Type | `kernel/package/module.php:178` |
-| `package/export` | Type | `kernel/package/module.php:179` |
-| `package/export_extension` | – | `kernel/package/module.php:182` |
-| `pdf/create` | – | `kernel/pdf/module.php:59` |
-| `pdf/edit` | – | `kernel/pdf/module.php:60` |
+| `package/read` | Type | `kernel/package/module.php:179` |
+| `package/list` | Type | `kernel/package/module.php:180` |
+| `package/create` | Type, CreatorType, Role | `kernel/package/module.php:181` |
+| `package/edit` | Type | `kernel/package/module.php:184` |
+| `package/remove` | Type | `kernel/package/module.php:185` |
+| `package/install` | Type | `kernel/package/module.php:186` |
+| `package/import` | Type | `kernel/package/module.php:187` |
+| `package/export` | Type | `kernel/package/module.php:188` |
+| `package/export_extension` | – | `kernel/package/module.php:191` |
+| `pdf/create` | – | `kernel/pdf/module.php:60` |
+| `pdf/edit` | – | `kernel/pdf/module.php:61` |
 | `rss/feed` | – | `kernel/rss/module.php:62` |
 | `rss/edit` | – | `kernel/rss/module.php:63` |
+| `secrets/manage` | – | `kernel/secrets/module.php:28` |
 | `section/assign` | Class, Section, Owner, NewSection | `kernel/section/module.php:79` |
 | `section/edit` | – | `kernel/section/module.php:83` |
 | `section/view` | – | `kernel/section/module.php:84` |
-| `setup/administrate` | – | `kernel/setup/module.php:459` |
-| `setup/install` | – | `kernel/setup/module.php:460` |
-| `setup/logs` | – | `kernel/setup/module.php:462` |
-| `setup/managelogs` | – | `kernel/setup/module.php:463` |
-| `setup/unmasklogs` | – | `kernel/setup/module.php:464` |
-| `setup/managecache` | – | `kernel/setup/module.php:465` |
-| `setup/managecronjobs` | – | `kernel/setup/module.php:466` |
-| `setup/preload` | – | `kernel/setup/module.php:467` |
-| `setup/setup` | – | `kernel/setup/module.php:468` |
-| `setup/system_info` | – | `kernel/setup/module.php:469` |
-| `shop/setup` | – | `kernel/shop/module.php:349` |
-| `shop/administrate` | – | `kernel/shop/module.php:350` |
-| `shop/buy` | – | `kernel/shop/module.php:351` |
-| `shop/edit_status` | – | `kernel/shop/module.php:352` |
-| `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:353` |
+| `setup/administrate` | – | `kernel/setup/module.php:475` |
+| `setup/install` | – | `kernel/setup/module.php:476` |
+| `setup/logs` | – | `kernel/setup/module.php:478` |
+| `setup/managelogs` | – | `kernel/setup/module.php:479` |
+| `setup/unmasklogs` | – | `kernel/setup/module.php:480` |
+| `setup/managecache` | – | `kernel/setup/module.php:481` |
+| `setup/managecronjobs` | – | `kernel/setup/module.php:482` |
+| `setup/preload` | – | `kernel/setup/module.php:483` |
+| `setup/setup` | – | `kernel/setup/module.php:484` |
+| `setup/system_info` | – | `kernel/setup/module.php:485` |
+| `shop/setup` | – | `kernel/shop/module.php:350` |
+| `shop/administrate` | – | `kernel/shop/module.php:351` |
+| `shop/buy` | – | `kernel/shop/module.php:352` |
+| `shop/edit_status` | – | `kernel/shop/module.php:353` |
+| `shop/setstatus` | FromStatus, ToStatus | `kernel/shop/module.php:354` |
 | `state/administrate` | – | `kernel/state/module.php:132` |
 | `state/assign` | Class, Section, Owner, Group, Node, Subtree | `kernel/state/module.php:134` |
-| `user/login` | SiteAccess | `kernel/user/module.php:182` |
-| `user/password` | – | `kernel/user/module.php:183` |
-| `user/preferences` | – | `kernel/user/module.php:184` |
-| `user/register` | – | `kernel/user/module.php:185` |
-| `user/selfedit` | – | `kernel/user/module.php:186` |
-| `user/activation` | – | `kernel/user/module.php:187` |
-| `user/hygiene` | – | `kernel/user/module.php:188` |
-| `user/deactivate` | – | `kernel/user/module.php:189` |
+| `user/login` | SiteAccess | `kernel/user/module.php:195` |
+| `user/password` | – | `kernel/user/module.php:196` |
+| `user/preferences` | – | `kernel/user/module.php:197` |
+| `user/register` | – | `kernel/user/module.php:198` |
+| `user/selfedit` | – | `kernel/user/module.php:199` |
+| `user/activation` | – | `kernel/user/module.php:200` |
+| `user/hygiene` | – | `kernel/user/module.php:201` |
+| `user/deactivate` | – | `kernel/user/module.php:202` |
+| `user/sessions` | – | `kernel/user/module.php:204` |
 
 ### kernel/private (1)
 

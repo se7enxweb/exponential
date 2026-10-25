@@ -2,7 +2,7 @@
 title: Patterns in extension/sevenx_themes_super
 audience: developer
 category: standards
-order: 472
+order: 476
 summary: Every class, view, fetch function, operator and plugin point of extension/sevenx_themes_super with its design patterns.
 keywords: extension/sevenx_themes_super, design patterns, classes, extension points
 type: catalogue

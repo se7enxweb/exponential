@@ -2,7 +2,7 @@
 title: Patterns in extension/exp_enhanced_link
 audience: developer
 category: standards
-order: 433
+order: 436
 summary: Every class, view, fetch function, operator and plugin point of extension/exp_enhanced_link with its design patterns.
 keywords: extension/exp_enhanced_link, design patterns, classes, extension points
 type: catalogue

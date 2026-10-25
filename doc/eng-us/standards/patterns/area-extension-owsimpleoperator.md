@@ -2,7 +2,7 @@
 title: Patterns in extension/owsimpleoperator
 audience: developer
 category: standards
-order: 465
+order: 469
 summary: Every class, view, fetch function, operator and plugin point of extension/owsimpleoperator with its design patterns.
 keywords: extension/owsimpleoperator, design patterns, classes, extension points
 type: catalogue

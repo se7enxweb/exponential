@@ -3,7 +3,7 @@ title: Observer / listener / event
 audience: developer
 category: standards
 order: 327
-summary: Code that reacts to something that happened elsewhere without the source knowing it: ezpEvent listeners, notification handlers, cache listeners. 8 instances in Exponential.
+summary: Code that reacts to something that happened elsewhere without the source knowing it: ezpEvent listeners, notification handlers, cache listeners. 10 instances in Exponential.
 keywords: design pattern, observer, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Code that reacts to something that happened elsewhere without the source knowing
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 8 |
+| Instances | 10 |
 | Recognized by | Class name contains Listener, Observer or Subscriber, or has attach()/notify()/addListener() methods; every ezpEvent notify()/filter() call (see the hooks page). |
 | Extension point | event.ini [Event] Listeners[]=EVENT@CALLBACK; notification.ini [NotificationEventHandlerSettings] AvailableNotificationEventTypes[]. |
 
@@ -33,6 +33,14 @@ Code that reacts to something that happened elsewhere without the source knowing
 | `CjwNewsletterSubscriberExport` | class | `extension/cjw_newsletter/classes/importexport/cjwnewslettersubscriberexport.php:22` | The subscribers of one list as CSV, with filters (subscription status, a date range on a chosen date) and a choice of columns. | – |
 | `Exponential\View\Extension\CjwNewsletter\Newsletter\SubscriberExport` | class extends ModuleView | `extension/cjw_newsletter/classes/runnable/views/newsletter/subscriber_export.php:15` | newsletter/subscriber_export/: the subscribers of a list as a CSV file, with filters (status, a date range) and a choice of columns. | – |
 
+### extension/expai (1)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiPackageDraftListener` | class | `extension/expai/classes/expaipackagedraftlistener.php:21` | Listens to the kernel's event package/install/drafts (eZPackage::notifyDraftsInstalled(): after any install of a package as drafts, in Setup › Packag… | – |
+
 ### extension/explayouts (2)
 
 [All patterns of extension/explayouts](area-extension-explayouts.md)
@@ -41,6 +49,14 @@ Code that reacts to something that happened elsewhere without the source knowing
 |---|---|---|---|---|
 | `expLayoutsSiteBundleEvent` | class | `extension/explayouts/classes/explayoutssitebundleevent.php:4` | – | – |
 | `expLayoutsSiteBundleEventListener` | class | `extension/explayouts/classes/explayoutssitebundleeventlistener.php:4` | – | – |
+
+### kernel/classes/datatable (1)
+
+[All patterns of kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expDataSyncListener` | class | `kernel/classes/datatable/sync/expdatasynclistener.php:20` | The live mirror of the data table synchronisations (doc/eng-us/features/6.0/data-tables.md, "Live mirror"): the kernel notifies content/publish, cont… | – |
 
 ### kernel/classes/requestclassifier (1)
 

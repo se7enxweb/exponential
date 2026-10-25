@@ -2,7 +2,7 @@
 title: Patterns in extension/ezstarrating
 audience: developer
 category: standards
-order: 455
+order: 459
 summary: Every class, view, fetch function, operator and plugin point of extension/ezstarrating with its design patterns.
 keywords: extension/ezstarrating, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `extension/ezstarrating` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (7)
+## Classes (8)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -26,6 +26,7 @@ Every class, interface and trait of `extension/ezstarrating` with the patterns i
 | `ezsrRatingType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `extension/ezstarrating/datatypes/ezsrrating/ezsrratingtype.php:27` | – |
 | `ezsrServerFunctions` | class extends ezjscServerFunctions | [INI plugin point (extension point)](ini-plugin-point.md), [Utility (static helper)](utility.md) | `extension/ezstarrating/classes/ezsrserverfunctions.php:36` | – |
 | `ezsrTemplateOperators` | class | [Template operator (Interpreter plugin)](template-operator.md) | `extension/ezstarrating/autoloads/ezsrtemplateoperators.php:27` | – |
+| `ezstarratingInfo` | class | [Value object / struct](value-object.md) | `extension/ezstarrating/ezinfo.php:7` | – |
 
 ## Template operators (1)
 

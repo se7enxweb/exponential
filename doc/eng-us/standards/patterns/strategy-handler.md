@@ -3,7 +3,7 @@ title: Strategy / handler
 audience: developer
 category: standards
 order: 324
-summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 299 instances in Exponential.
+summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 379 instances in Exponential.
 keywords: design pattern, strategy-handler, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 299 |
+| Instances | 379 |
 | Recognized by | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | Extension point | The INI setting that names the handler (see the INI plugin points page). |
 
@@ -99,7 +99,32 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 |---|---|---|---|---|
 | `cjwTmvEventsBlockHandler` | class | `extension/cjw_tmv/classes/cjwtmveventsblockhandler.php:11` | The Layouts block "tmv_events" (v2: Cjw\TmvBundle TmvEventsHandler): the events of a tmv_container, with the filter toolbar (view type list), only th… | extension/cjw_tmv/settings/siteaccess/cjw_starter/explayouts.ini [BlockDefinition_tmv_events] Handler |
 
-### extension/explayouts (49)
+### extension/expai (18)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiAltTextJobHandler` | class extends expQueueHandlerBase | `extension/expai/classes/alttext/expaialttextjobhandler.php:19` | The job type expai.alttext (expAiAltText::queue(), the "Missing alt text" report): asks a vision model for the alt text of one image and writes it in… | extension/expai/settings/expqueue.ini [JobType_expai.alttext] Handler |
+| `expAiAnthropicProvider` | class extends expAiProviderBase | `extension/expai/classes/expaianthropicprovider.php:16` | The Anthropic Messages API (POST {Endpoint}, default https://api.anthropic.com/v1/messages) with tool use, adaptive thinking at the configured effort… | – |
+| `expAiBatchPollHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expaibatchpollhandler.php:24` | The job type expai.batch.poll (class system): asks the provider for the state of one batch every PollSeconds (deferred in between, without using up a… | extension/expai/settings/expqueue.ini [JobType_expai.batch.poll] Handler |
+| `expAiBatchSubmitHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expaibatchsubmithandler.php:20` | The job type expai.batch.submit (class system): collects the waiting expai.request jobs of one model and batch lane, at most MaxRequestsPerBatch, sub… | extension/expai/settings/expqueue.ini [JobType_expai.batch.submit] Handler |
+| `expAiChainEngine` | class | `extension/expai/classes/chain/expaichainengine.php:24` | Runs AI chains (doc/chains.md) through the job queue. | – |
+| `expAiExchangeRatesHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expaiexchangerateshandler.php:15` | The job type expai.exchange.rates (class system, no model call, #392): fetches the reference rates of the European Central Bank once a day (expAiExch… | extension/expai/settings/expqueue.ini [JobType_expai.exchange.rates] Handler |
+| `expAiModelTestHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expaimodeltesthandler.php:16` | The job type expai.model.test: the "Test prompt" (action test) and "Load model" (action load) of expai/models, run by the worker as the user who clic… | extension/expai/settings/expqueue.ini [JobType_expai.model.test] Handler |
+| `expAiOllamaNativeProvider` | class | `extension/expai/classes/expaiollamanativeprovider.php:20` | A model of a local Ollama server (a provider with Managed=ollama) spoken to through Ollama's own API on the loopback address instead of its OpenAI co… | – |
+| `expAiOpenAiChatProvider` | class extends expAiProviderBase | `extension/expai/classes/expaiopenaichatprovider.php:36` | The OpenAI Chat Completions API and every server that speaks it ([Provider_] Type=openai_chat): OpenAI, Hugging Face Inference Providers (router), Op… | – |
+| `expAiPromptedToolProvider` | class | `extension/expai/classes/expaipromptedtoolprovider.php:21` | Tool use for models without native tool calling ([Model_] ToolUse=prompted): the tools are described in the instructions ("tool protocol") and the mo… | – |
+| `expAiProvider` | interface | `extension/expai/classes/expaiprovider.php:16` | A model backend of expai. | extension/expai/settings/rad.ini [Registry_expai_provider_types] Implements |
+| `expAiProviderBase` | abstract class | `extension/expai/classes/expaiproviderbase.php:16` | What every built-in provider shares: its settings (the [Provider_] values merged with the [Model_] values, see expAiProviderRegistry::settingsFor()),… | – |
+| `expAiRequestHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expairequesthandler.php:28` | The job type expai.request: one call to a model on a lane (expAiQueue::request() queues it). | extension/expai/settings/expqueue.ini [JobType_expai.request] Handler |
+| `expAiThreadItemHandler` | class extends expQueueHandlerBase | `extension/expai/classes/vector/expaithreaditemhandler.php:22` | The job type expai.thread.item: one item of an approved plan as a child run of the thread (doc/parallel-runs.md), side by side with the other items. | extension/expai/settings/expqueue.ini [JobType_expai.thread.item] Handler |
+| `expAiThreadTurnHandler` | class extends expQueueHandlerBase | `extension/expai/classes/vector/expaithreadturnhandler.php:23` | The job type expai.thread.turn: one turn of a thread (the editor's message and every step until the model answers in words) run by the queue worker i… | extension/expai/settings/expqueue.ini [JobType_expai.thread.turn] Handler |
+| `expAiTranslationCheckHandler` | class extends expQueueHandlerBase | `extension/expai/classes/queue/expaitranslationcheckhandler.php:15` | The job type expai.translation.check (class system, no model call): after a source-language version was published, decides for each translation of th… | extension/expai/settings/expqueue.ini [JobType_expai.translation.check] Handler |
+| `expAiUsageRecorder` | class | `extension/expai/classes/expaiusagerecorder.php:16` | A provider that records every request of the provider it wraps in expai_usage_log (expAiUsage) and enforces [Limits] (expAiLimits) before each reques… | – |
+| `expAiWebSearchProvider` | abstract class | `extension/expai/classes/web/expaiwebsearchprovider.php:16` | A web search service for web_search. | extension/expai/settings/rad.ini [Registry_expai_search_providers] Entries[Class] |
+
+### extension/explayouts (50)
 
 [All patterns of extension/explayouts](area-extension-explayouts.md)
 
@@ -115,7 +140,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `expLayoutsCardBlockHandler` | class | `extension/explayouts/classes/explayoutscardblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_card] Handler |
 | `expLayoutsCarouselBlockHandler` | class extends expLayoutsAbstractContentBlockHandler | `extension/explayouts/classes/explayoutscarouselblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_carousel] Handler |
 | `expLayoutsChildrenQueryHandler` | class | `extension/explayouts/classes/explayoutschildrenqueryhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [QueryType_children] Handler |
-| `expLayoutsComponentBlockHandler` | class | `extension/explayouts/classes/explayoutscomponentblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_about] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_features] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_hero] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_lead] Handler |
+| `expLayoutsComponentBlockHandler` | class | `extension/explayouts/classes/explayoutscomponentblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_about] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_hero] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_lead] Handler |
 | `expLayoutsContainerBlockHandler` | class | `extension/explayouts/classes/explayoutscontainerblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_column] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_four_columns] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_three_columns] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_two_columns] Handler |
 | `expLayoutsContentByTopicQueryHandler` | class | `extension/explayouts/classes/explayoutscontentbytopicqueryhandler.php:3` | – | extension/explayouts/settings/explayouts.ini [QueryType_content_by_topic] Handler |
 | `expLayoutsContentComponentBlockHandler` | class | `extension/explayouts/classes/explayoutscontentcomponentblockhandler.php:17` | Handler for the content-backed component blocks (hero, features, about, logos, quote, lead). | extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_about] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_features] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_hero] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_lead] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_logos] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_exp_component_quote] Handler |
@@ -123,6 +148,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `expLayoutsExpContentProvider` | class | `extension/explayouts/classes/explayoutsexpcontentprovider.php:4` | – | – |
 | `expLayoutsExponentialContentSearchQueryHandler` | class | `extension/explayouts/classes/explayoutsexponentialcontentsearchqueryhandler.php:3` | – | extension/explayouts/settings/explayouts.ini [QueryType_exponential_content_search] Handler |
 | `expLayoutsExpSiteApiContentProvider` | class | `extension/explayouts/classes/explayoutsexpsiteapicontentprovider.php:3` | – | – |
+| `expLayoutsFeaturesBlockHandler` | class extends expLayoutsComponentBlockHandler | `extension/explayouts/classes/explayoutsfeaturesblockhandler.php:8` | The features block: the fields of the other component blocks (title, text, image, link) and a list of features, one per line as "Title\|Text", which t… | extension/explayouts/settings/explayouts.ini [BlockDefinition_features] Handler |
 | `expLayoutsFullViewBlockHandler` | class | `extension/explayouts/classes/explayoutsfullviewblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_full_view] Handler |
 | `expLayoutsGalleryBlockHandler` | class | `extension/explayouts/classes/explayoutsgalleryblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_gallery] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_grid_gallery] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_logos] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_slider] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_sushi_bar] Handler; extension/explayouts/settings/explayouts.ini [BlockDefinition_thumb_gallery] Handler |
 | `expLayoutsGridBlockHandler` | class extends expLayoutsAbstractContentBlockHandler | `extension/explayouts/classes/explayoutsgridblockhandler.php:2` | – | extension/explayouts/settings/explayouts.ini [BlockDefinition_grid] Handler |
@@ -219,6 +245,18 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `expLayoutsStandardTitleBlockHandler` | class | `extension/explayouts_standard/classes/explayoutsstandardtitleblockhandler.php:3` | – | – |
 | `expLayoutsStandardVideoBlockHandler` | class | `extension/explayouts_standard/classes/explayoutsstandardvideoblockhandler.php:3` | – | – |
 
+### extension/expqueue (5)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueFailHandler` | class extends expQueueHandlerBase | `extension/expqueue/classes/handlers/expqueuefailhandler.php:16` | expqueue.fail: fails on purpose, to try retries, backoff, the dead letter and the rate-limit adaptation. | extension/expqueue/settings/expqueue.ini [JobType_expqueue.fail] Handler |
+| `expQueueHandler` | interface | `extension/expqueue/classes/expqueuehandler.php:27` | A job handler: the code that runs the jobs of one type. | extension/expqueue/settings/rad.ini [Registry_expqueue_job_types] Entries[Handler] |
+| `expQueueHandlerBase` | abstract class | `extension/expqueue/classes/expqueuehandlerbase.php:12` | A base for handlers with the optional parts: validate() is called when a job is queued (a wrong payload is refused there and then, not at 3 a.m. | – |
+| `expQueueNoopHandler` | class extends expQueueHandlerBase | `extension/expqueue/classes/handlers/expqueuenoophandler.php:12` | expqueue.noop: does nothing and is done. | extension/expqueue/settings/expqueue.ini [JobType_expqueue.noop] Handler |
+| `expQueueSleepHandler` | class extends expQueueHandlerBase | `extension/expqueue/classes/handlers/expqueuesleephandler.php:16` | expqueue.sleep: waits, in steps, reporting progress and honouring a cancel between the steps. | extension/expqueue/settings/expqueue.ini [JobType_expqueue.sleep] Handler |
+
 ### extension/exp_oe_tiptap (5)
 
 [All patterns of extension/exp_oe_tiptap](area-extension-exp-oe-tiptap.md)
@@ -276,12 +314,15 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 |---|---|---|---|---|
 | `eZMultiuploadHandler` | class | `extension/ezmultiupload/classes/ezmultiuploadhandler.php:16` | eZMultiuploadHandler class | – |
 
-### extension/ezodf (3)
+### extension/ezodf (6)
 
 [All patterns of extension/ezodf](area-extension-ezodf.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expOdfConverter` | class | `extension/ezodf/classes/converter/expodfconverter.php:29` | Converts documents. | – |
+| `expOdfPhpConverter` | class | `extension/ezodf/classes/converter/expodfphpconverter.php:25` | The last fallback of the converter: PHP only, no LibreOffice. | – |
+| `expOdfQueueHandler` | class extends expQueueHandlerBase | `extension/ezodf/classes/converter/expodfqueuehandler.php:14` | The expqueue handler of ezodf's jobs (expqueue.ini [JobType_ezodf.*]); the work itself is in expOdfJobs::run(). | extension/ezodf/settings/expqueue.ini [JobType_ezodf.export] Handler; extension/ezodf/settings/expqueue.ini [JobType_ezodf.import] Handler; extension/ezodf/settings/expqueue.ini [JobType_ezodf.install] Handler; extension/ezodf/settings/expqueue.ini [JobType_ezodf.server] Handler; extension/ezodf/settings/expqueue.ini [JobType_ezodf.test] Handler |
 | `eZOOConverter` | class | `extension/ezodf/classes/ezooconverter.php:41` | – | – |
 | `eZOpenofficeUploadHandler` | class extends eZContentUploadHandler | `extension/ezodf/uploadhandlers/ezopenofficeuploadhandler.php:41` | – | – |
 | `eZRESTODFHandler` | class extends eZRESTBaseHandler | `extension/ezodf/classes/ezrestodfhandler.php:46` | – | extension/ezodf/settings/ezrest.ini [RESTSettings] HandlerList[] |
@@ -296,6 +337,15 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `expOEEditorEngineBase` | abstract class | `extension/ezoe/classes/expoeeditorenginebase.php:14` | Convenience base of editor engines: reads the engine's own ezoe.ini block [Engine_] (ToolbarMap[]=, ExternalPlugins[]=, Scripts[], Styles[], Version,… | – |
 | `expOETinyMCE3Engine` | class extends expOEEditorEngineBase | `extension/ezoe/classes/expoetinymce3engine.php:10` | The default engine: eZ Online Editor on TinyMCE 3.5, rendered by ezxmltext_ezoe.tpl itself. | extension/ezoe/settings/ezoe.ini [EditorSettings] Engines[tinymce3] |
 | `expOETinyMCE8Engine` | class extends expOEEditorEngineBase | `extension/ezoe/classes/expoetinymce8engine.php:10` | The opt-in engine: eZ Online Editor on TinyMCE 8 (GPL), rendered by ezxmltext_ezoe_tinymce8.tpl. | extension/ezoe/settings/ezoe.ini [EditorSettings] Engines[tinymce8] |
+
+### extension/ezoracle (2)
+
+[All patterns of extension/ezoracle](area-extension-ezoracle.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `eZDBFileHandlerOracleBackend` | class | `extension/ezoracle/clusterfilehandlers/dbbackends/oracle.php:68` | – | – |
+| `eZDFSFileHandlerOracleBackend` | class | `extension/ezoracle/clusterfilehandlers/dfsbackends/oracle.php:55` | – | – |
 
 ### extension/ezpostgresqlcluster (1)
 
@@ -332,6 +382,14 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `eZURLMultisiteObjectRelationHandler` | class | `extension/ezurlmultisite/classes/ezurlmultisiteobjectrelationhandler.php:3` | – | extension/ezurlmultisite/settings/ezurlmultisite.ini [DataTypeSettings] HandlerList[ezobjectrelation] |
 | `eZURLMultisiteURLHandler` | class | `extension/ezurlmultisite/classes/ezurlmultisiteurlhandler.php:3` | – | extension/ezurlmultisite/settings/ezurlmultisite.ini [DataTypeSettings] HandlerList[ezstring]; extension/ezurlmultisite/settings/ezurlmultisite.ini [DataTypeSettings] HandlerList[ezurl] |
 
+### extension/sevenx_authentication_2fa (1)
+
+[All patterns of extension/sevenx_authentication_2fa](area-extension-sevenx-authentication-2fa.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `sevenxAuthentication2faSignIn` | class | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fasignin.php:42` | – | extension/sevenx_authentication_2fa/settings/site.ini [SignInSecondFactorSettings] Handlers[] |
+
 ### extension/sevenx_dse (11)
 
 [All patterns of extension/sevenx_dse](area-extension-sevenx-dse.md)
@@ -349,6 +407,42 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `AdminNeo\Plugin` | abstract class | `extension/sevenx_dse/adminneo/core/Plugin.php:13` | Plugin parent class. | – |
 | `AdminNeo\SimpleDbDriver` | class extends Driver | `extension/sevenx_dse/adminneo/drivers/simpledb.inc.php:183` | – | – |
 | `AdminNeo\SqliteDriver` | class extends Driver | `extension/sevenx_dse/adminneo/drivers/sqlite.inc.php:174` | – | – |
+
+### extension/sqliimport (29)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportAiExpaiTransport` | class | `extension/sqliimport/classes/exp/ai/expimportaiexpaitransport.php:25` | The AI assist through the extension expai (Exponential Intelligence), the only way it reaches a model. | – |
+| `expImportAiTransport` | interface | `extension/sqliimport/classes/exp/ai/expimportaitransport.php:16` | The way the AI assist of 7x SQLI Import (expImportAi) reaches a model. | – |
+| `expImportBoltSocket` | class | `extension/sqliimport/classes/exp/nosql/expimportbolttransport.php:35` | A TCP connection, with TLS (certificate and name verified) for bolt+s:// and neo4j+s://. | – |
+| `expImportBoltTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportbolttransport.php:13` | The byte stream the Bolt client (expImportBoltClient) talks over: a socket (expImportBoltSocket) or a test double. | – |
+| `expImportCassandraClient` | class | `extension/sqliimport/classes/exp/nosql/expimportcassandraclient.php:23` | A minimal client of the CQL native protocol, version 4 (Cassandra 2.2 and later, ScyllaDB), over a socket (driver "socket"), for a PHP without the ex… | – |
+| `expImportCassandraExtension` | class | `extension/sqliimport/classes/exp/nosql/expimportcassandraextension.php:15` | The Cassandra/ScyllaDB source's connection through the PHP extension cassandra of DataStax (Cassandra\Cluster, Cassandra\SimpleStatement). | – |
+| `expImportCassandraTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportcassandratransport.php:21` | The connection the Cassandra/ScyllaDB source reads through: the PHP extension cassandra of DataStax (expImportCassandraExtension) where it is install… | – |
+| `expImportDataTableHandler` | class | `extension/sqliimport/classes/exp/handlers/expimportdatatablehandler.php:23` | The target "A data table": each record becomes a row of a persistent class (a module's own table, Exponential 6.0.15, Setup › Data tables), written t… | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.handler.datatable] Class |
+| `expImportImapClient` | class | `extension/sqliimport/classes/exp/mail/expimportimapclient.php:20` | A small IMAP4rev1 client (RFC 3501) for PHP without the imap extension: it speaks just what the IMAP source needs, over TLS from the start (port 993)… | – |
+| `expImportImapExtension` | class | `extension/sqliimport/classes/exp/mail/expimportimapextension.php:14` | The IMAP transport of the PHP extension imap (imap_open). | – |
+| `expImportImapTransport` | interface | `extension/sqliimport/classes/exp/mail/expimportimaptransport.php:15` | The connection to an IMAP mailbox the IMAP source reads: the PHP extension imap where it is installed (expImportImapExtension), else a small client o… | – |
+| `expImportJobHandler` | class extends expQueueHandlerBase | `extension/sqliimport/classes/exp/engine/expimportjobhandler.php:19` | The jobs of a run in the job queue (expqueue.ini [JobType_sqliimport.*]): sqliimport.run, sqliimport.chunk and sqliimport.finish (see expImportRunner… | extension/sqliimport/settings/expqueue.ini [JobType_sqliimport.chunk] Handler; extension/sqliimport/settings/expqueue.ini [JobType_sqliimport.finish] Handler; extension/sqliimport/settings/expqueue.ini [JobType_sqliimport.run] Handler |
+| `expImportLdapExtension` | class | `extension/sqliimport/classes/exp/ldap/expimportldapextension.php:15` | The LDAP transport of the PHP extension ldap: LDAPv3, referrals not followed, the certificate of ldaps:// and StartTLS demanded, searches with ldap_s… | – |
+| `expImportLdapTransport` | interface | `extension/sqliimport/classes/exp/ldap/expimportldaptransport.php:15` | What the LDAP source needs of a directory server: connect, StartTLS, bind and search, nothing that writes. | – |
+| `expImportLegacyHandlerAdapter` | class | `extension/sqliimport/classes/exp/handlers/expimportlegacyhandleradapter.php:21` | Runs a handler of sqliimport 1.x (ISQLIImportHandler extending SQLIImportAbstractHandler) in the 2.x engine, untouched: the handler is built with its… | – |
+| `expImportMappingHandler` | class | `extension/sqliimport/classes/exp/handlers/expimportmappinghandler.php:23` | The no-code handler "mapping": it applies the import's mapping (expImportMapper) to each record and publishes the result with the content API of 1.x… | – |
+| `expImportMongoDbExtension` | class | `extension/sqliimport/classes/exp/nosql/expimportmongodbextension.php:15` | The MongoDB source's connection through the PHP extension mongodb (MongoDB\Driver\Manager, without the composer library). | – |
+| `expImportMongoDbTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportmongodbtransport.php:15` | The connection the MongoDB source reads through: the PHP extension mongodb (expImportMongoDbExtension), or a test double. | – |
+| `expImportRedisClient` | class | `extension/sqliimport/classes/exp/nosql/expimportredisclient.php:15` | A minimal Redis client over a socket (driver "socket"), for a PHP without the extension redis: commands as RESP arrays of bulk strings, answers in RE… | – |
+| `expImportRedisExtension` | class | `extension/sqliimport/classes/exp/nosql/expimportredisextension.php:15` | The Redis source's connection through the PHP extension redis (phpredis, driver "phpredis"). | – |
+| `expImportRedisTransport` | interface | `extension/sqliimport/classes/exp/nosql/expimportredistransport.php:15` | The connection the Redis source reads through: the PHP extension redis (expImportRedisExtension), else a small RESP client of its own over a socket (… | – |
+| `expImportUndoHandler` | class | `extension/sqliimport/classes/exp/handlers/expimportundohandler.php:22` | Takes the changes of an earlier run back (an undo run, run_kind undo). | – |
+| `ISQLIDiffHandler` | interface | `extension/sqliimport/classes/content/diffhandlers/isqlidiffhandler.php:27` | Interface for diff handlers. | – |
+| `ISQLIImportHandler` | interface | `extension/sqliimport/classes/sourcehandlers/isqliimporthandler.php:11` | Interface for import handlers Must be implemented by all import handlers | – |
+| `SQLIBinaryFileDiffHandler` | class | `extension/sqliimport/classes/content/diffhandlers/sqlibinaryfilediffhandler.php:17` | Diff handler for ezbinaryfile attributes. | extension/sqliimport/settings/sqliimport.ini [ContentSettings] DiffHandlerMap[ezbinaryfile] |
+| `SQLIDefaultDiffHandler` | class | `extension/sqliimport/classes/content/diffhandlers/sqlidefaultdiffhandler.php:18` | Default diff handler for content fields. | extension/sqliimport/settings/sqliimport.ini [ContentSettings] DefaultDiffHandler |
+| `SQLIImageDiffHandler` | class | `extension/sqliimport/classes/content/diffhandlers/sqliimagediffhandler.php:17` | Diff handler for ezimage attributes. | extension/sqliimport/settings/sqliimport.ini [ContentSettings] DiffHandlerMap[ezimage] |
+| `SQLIImportAbstractHandler` | abstract class | `extension/sqliimport/classes/sourcehandlers/sqliimportabstracthandler.php:13` | Abstract class for all import handlers All import handlers must inherit from this class | – |
+| `SQLIRSSImportHandler` | class extends SQLIImportAbstractHandler | `extension/sqliimport/classes/sourcehandlers/sqlirssimporthandler.php:12` | – | extension/sqliimport/settings/sqliimport.ini [rssimporthandler-HandlerSettings] ClassName |
 
 ### extension/xrowextract (29)
 
@@ -422,7 +516,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expAuditBzip2Format` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditbzip2format.php:11` | The bzip2 archive format (PHP extension bz2): .jsonl.bz2. | settings/audit.ini [AuditArchiveSettings] FormatHandlers[bzip2] |
-| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
+| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stre… | – |
 | `expAuditFormatHandler` | interface | `kernel/classes/audit/expauditformathandler.php:14` | An archive format (gzip, bzip2, xz, zstd, zip), registered in audit.ini: [AuditArchiveSettings] FormatHandlers[]= Counted by the RAD survey (registry… | – |
 | `expAuditGzipFormat` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditgzipformat.php:11` | The gzip archive format (zlib, always available): .jsonl.gz. | settings/audit.ini [AuditArchiveSettings] FormatHandlers[gzip] |
 | `expAuditXzFormat` | class extends expAuditFormatBase | `kernel/classes/audit/format/expauditxzformat.php:11` | The xz archive format: .jsonl.xz, through the xz binary (no PHP extension is commonly available). | settings/audit.ini [AuditArchiveSettings] FormatHandlers[xz] |
@@ -491,12 +585,13 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `eZXMLInputHandler` | class | `kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php:19` | – | – |
 | `eZXMLOutputHandler` | class | `kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php:20` | – | – |
 
-### kernel/classes/help (1)
+### kernel/classes/help (2)
 
 [All patterns of kernel/classes/help](area-kernel-classes-help.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expHelpContentEditionProvider` | class extends expHelpContentProvider | `kernel/classes/help/content/exphelpcontenteditionprovider.php:16` | What goes into a stored edition of a manual (expHelpContentEbooks): every Released object, whoever builds the book, and for a public manual only what… | – |
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… | settings/exphelp.ini [ContextHelp] Providers[] |
 
 ### kernel/classes/ini (3)
@@ -556,6 +651,39 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `eZSimpleShopAccountHandler` | class | `kernel/classes/shopaccounthandlers/ezsimpleshopaccounthandler.php:12` | – | – |
 | `eZUserShopAccountHandler` | class | `kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php:12` | – | – |
 
+### kernel/classes/syscard (18)
+
+[All patterns of kernel/classes/syscard](area-kernel-classes-syscard.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSysCardAboutProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardaboutprovider.php:19` | The project information of exp:about: what Exponential is, the Foundation and 7x, Velocity, the license, the links, how to contribute, the partner pr… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardBaseProvider` | abstract class | `kernel/classes/syscard/expsyscardbaseprovider.php:23` | The usual provider: set the properties, write collect(), and use fact() and the helpers. | – |
+| `expSysCardCacheProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardcacheprovider.php:15` | The caches: which are on (view cache, template compilation, the static cache), and for exp:info the size of the cache directory and of each cache in… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardComposerProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardcomposerprovider.php:16` | Composer: how many packages vendor/ has (vendor/composer/installed.json) and, when the ezupdate extension is active, how many of them do not agree be… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardCronProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardcronprovider.php:14` | The cronjobs: when one last ran (the newest cronjob log or Setup › Cronjobs run) and, for exp:info, every part of cronjob.ini with its scripts. | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardDatabaseProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscarddatabaseprovider.php:15` | The database: its type, the server's version (when syscard.ini [Database] AskVersion=enabled: one connection, one question) and the host it is on. | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardExponentialProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardexponentialprovider.php:14` | Exponential itself: the version and its line, and, for a git checkout, the branch and the commit. | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardExtensionsProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardextensionsprovider.php:14` | exp:info: every active extension with its version, from its extension.xml or ezinfo.php, then its composer.json (the same sources as the about page). | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardHelpProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardhelpprovider.php:15` | The help: how many pages it serves, its languages, and whether its index is current (an index older than the pages is a hint: ./console exp:help inde… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardHostProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardhostprovider.php:14` | The machine: operating system, kernel, host name, uptime, load, CPU, memory, the disk of the installation (exp:info: every local disk), the shell and… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardPhpProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardphpprovider.php:17` | PHP: version and SAPI, how long the branch has security support (syscard.ini [Php] SecuritySupportEnds[]), OPcache and its JIT, the extensions that m… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardProvider` | interface | `kernel/classes/syscard/expsyscardprovider.php:19` | A provider of the system card: one class per group of facts (the machine, PHP, the engine, the database ...). | – |
+| `expSysCardQueueProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardqueueprovider.php:14` | exp:info: the job queue of the expqueue extension, when it is active: its service, how many workers are alive and the last action on it (expQueueServ… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardSettingsProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardsettingsprovider.php:15` | exp:info: the INI settings of an allowlist (syscard.ini [Inventory] Settings[]=//). | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardSiteAccessProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardsiteaccessprovider.php:14` | exp:info: how a request finds its siteaccess (site.ini [SiteAccessSettings] MatchOrder: uri, host, port ...) and, for each siteaccess of AvailableSit… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardSiteProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardsiteprovider.php:14` | The site: the siteaccesses and the default one, the active extensions, demo mode, debug output and the mail transport (its type only: file, sendmail,… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardVelocityProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardvelocityprovider.php:17` | Exponential Velocity, the application server of 6.0.15: its version, whether it runs, the live and configured workers, the ports and TLS, the environ… | settings/syscard.ini [Providers] ProviderClasses[] |
+| `expSysCardWebServerProvider` | class extends expSysCardBaseProvider | `kernel/classes/syscard/providers/expsyscardwebserverprovider.php:15` | The other web servers on the machine: Apache, nginx, Caddy, FrankenPHP, and PHP-FPM with its masters (one per PHP version) and pool workers (exp:info… | settings/syscard.ini [Providers] ProviderClasses[] |
+
+### kernel/classes/transfer (1)
+
+[All patterns of kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expKernelTransferQueueHandler` | class extends expQueueHandlerBase | `kernel/classes/transfer/expkerneltransferqueuehandler.php:37` | The expqueue handler of transfer runs (expKernelTransferRunner, doc/eng-us/features/6.0/transfer-runs.md). | extension/bccie/settings/expqueue.ini [JobType_bccie.export] Handler; extension/xrowextract/settings/expqueue.ini [JobType_xrowextract.run] Handler |
+
 ### kernel/classes/uiswitch (3)
 
 [All patterns of kernel/classes/uiswitch](area-kernel-classes-uiswitch.md)
@@ -565,6 +693,14 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `expUISwitchDesignProvider` | class extends expUISwitchProvider | `kernel/classes/uiswitch/expuiswitchdesignprovider.php:25` | The design of the administration interface (the "UI chrome"): admin4l, admin4, the classic admin design, AdminUI or another installed administration… | settings/uiswitch.ini [UISwitch_design] Class |
 | `expUISwitchLanguageProvider` | class extends expUISwitchProvider | `kernel/classes/uiswitch/expuiswitchlanguageprovider.php:27` | The display language of the administration interface: what site.ini [RegionalSettings] Locale of the siteaccess sets (the translations of the interfa… | settings/uiswitch.ini [UISwitch_language] Class |
 | `expUISwitchProvider` | abstract class | `kernel/classes/uiswitch/expuiswitchprovider.php:18` | The common part of a UI switch provider: its settings group uiswitch.ini [UISwitch_], the allow-list from AllowedValues[] (each value checked by the… | – |
+
+### kernel/classes/user (1)
+
+[All patterns of kernel/classes/user](area-kernel-classes-user.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSignInSecondFactorHandler` | interface | `kernel/classes/user/expsigninsecondfactorhandler.php:18` | What a two-step sign-in extension tells the kernel about sign-ins outside the web login form (REST with a password, WebDAV, SOAP, the expservices log… | – |
 
 ### kernel/classes/vathandlers (1)
 

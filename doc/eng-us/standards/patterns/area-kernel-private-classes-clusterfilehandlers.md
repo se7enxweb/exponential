@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/clusterfilehandlers
 audience: developer
 category: standards
-order: 516
+order: 525
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/clusterfilehandlers with its design patterns.
 keywords: kernel/private/classes/clusterfilehandlers, design patterns, classes, extension points
 type: catalogue

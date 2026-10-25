@@ -2,7 +2,7 @@
 title: Patterns in extension/recaptcha
 audience: developer
 category: standards
-order: 467
+order: 471
 summary: Every class, view, fetch function, operator and plugin point of extension/recaptcha with its design patterns.
 keywords: extension/recaptcha, design patterns, classes, extension points
 type: catalogue

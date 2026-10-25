@@ -2,7 +2,7 @@
 title: Patterns in extension/explayouts_ui
 audience: developer
 category: standards
-order: 422
+order: 424
 summary: Every class, view, fetch function, operator and plugin point of extension/explayouts_ui with its design patterns.
 keywords: extension/explayouts_ui, design patterns, classes, extension points
 type: catalogue

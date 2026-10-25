@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/basketinfohandlers
 audience: developer
 category: standards
-order: 481
+order: 486
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/basketinfohandlers with its design patterns.
 keywords: kernel/classes/basketinfohandlers, design patterns, classes, extension points
 type: catalogue

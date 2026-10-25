@@ -3,7 +3,7 @@ title: Template Method / abstract base class
 audience: developer
 category: standards
 order: 325
-summary: An abstract class that fixes the steps of an algorithm and leaves some of them to its subclasses. 53 instances in Exponential.
+summary: An abstract class that fixes the steps of an algorithm and leaves some of them to its subclasses. 69 instances in Exponential.
 keywords: design pattern, template-method, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 53 |
+| Instances | 69 |
 | Recognized by | An abstract class with both abstract and concrete methods. |
 | Extension point | Extend the base class and implement its abstract methods. |
 
@@ -31,6 +31,19 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `CjwNewsletterSmsTransportBase` | abstract class | `extension/cjw_newsletter/classes/sms/cjwnewslettersmstransportbase.php:29` | What the shipped SMS transports share: the settings with their preset, the generic check of an inbound request (an HMAC of the body with a shared sec… | – |
+
+### extension/expai (6)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiBatchApi` | abstract class | `extension/expai/classes/lanes/expaibatchapi.php:27` | A provider's batch API: submit many requests at once, poll the batch, fetch the results, cancel, delete. | extension/expai/settings/rad.ini [Registry_expai_batch_apis] Implements |
+| `expAiProviderBase` | abstract class | `extension/expai/classes/expaiproviderbase.php:16` | What every built-in provider shares: its settings (the [Provider_] values merged with the [Model_] values, see expAiProviderRegistry::settingsFor()),… | – |
+| `expAiSegmenterBase` | abstract class | `extension/expai/classes/diff/expaisegmenterbase.php:14` | The plain-text segmenters' common part: blocks are pieces of text joined with a separator; merge() and compose() build the list of pieces and join it. | – |
+| `expAiTool` | abstract class | `extension/expai/classes/expaitool.php:16` | A tool the assistant can call. | extension/expai/settings/rad.ini [Registry_expai_tools] Entries[Class] |
+| `expAiWebSearchProvider` | abstract class | `extension/expai/classes/web/expaiwebsearchprovider.php:16` | A web search service for web_search. | extension/expai/settings/rad.ini [Registry_expai_search_providers] Entries[Class] |
+| `expAiWebTool` | abstract class extends expAiTool | `extension/expai/classes/web/expaiwebtool.php:19` | The base of the tools that read outside the content tree (web_fetch, web_search, project_history): - available(): offered only to a user with the pol… | – |
 
 ### extension/explayouts (1)
 
@@ -49,6 +62,14 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 | `QueryTranslator\Languages\Galach\Generators\Lucene\Common\WordBase` | abstract class extends Visitor | `extension/expquery_translator/lib/Languages/Galach/Generators/Lucene/Common/WordBase.php:14` | Base Word Node Visitor implementation. | – |
 | `QueryTranslator\Languages\Galach\TokenExtractor` | abstract class | `extension/expquery_translator/lib/Languages/Galach/TokenExtractor.php:14` | Token extractor is used by Tokenizer to extract tokens from the input string. | – |
 
+### extension/expqueue (1)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueHandlerBase` | abstract class | `extension/expqueue/classes/expqueuehandlerbase.php:12` | A base for handlers with the optional parts: validate() is called when a job is queued (a wrong payload is refused there and then, not at 3 a.m. | – |
+
 ### extension/expservices (5)
 
 [All patterns of extension/expservices](area-extension-expservices.md)
@@ -58,7 +79,7 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 | `expAttrServiceBase` | abstract class extends expServiceBase | `extension/expservices/classes/media/expattrservicebase.php:11` | Shared helpers of the media services (images, files, media): finding a node's attribute of one datatype, absolute URLs, and the paged listing of the… | – |
 | `expCommunityBase` | abstract class extends expServiceBase | `extension/expservices/classes/community/expcommunitybase.php:12` | The shared work of the forum, topic, reply and comment services: they are content services over configurable content classes ([Community] in expservi… | – |
 | `expContentServiceBase` | abstract class extends expServiceBase | `extension/expservices/classes/content/expcontentbase.php:12` | The shared part of the content domains of expservices: fetch helpers with the access checks, the exporters that turn content objects into plain array… | – |
-| `expServiceBase` | abstract class extends ezjscServerFunctions | `extension/expservices/classes/expservicebase.php:29` | – | – |
+| `expServiceBase` | abstract class extends ezjscServerFunctions | `extension/expservices/classes/expservicebase.php:38` | – | – |
 | `expUsersBase` | abstract class extends expServiceBase | `extension/expservices/classes/users/expusersbase.php:21` | The shared part of the users and access domains of expservices: the compact declaration format and the helpers that encode users and groups without e… | – |
 
 ### extension/ezoe (1)
@@ -92,6 +113,21 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 | `AdminNeo\Result` | abstract class | `extension/sevenx_dse/adminneo/core/Result.php:7` | – | – |
 | `AdminNeo\SqLiteConnectionBase` | abstract class extends Connection | `extension/sevenx_dse/adminneo/drivers/sqlite.inc.php:18` | – | – |
 
+### extension/sqliimport (8)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportAbstractSource` | abstract class | `extension/sqliimport/classes/exp/expimportabstractsource.php:14` | The common part of the file sources: the configuration, the record reference from a key field, the sample and the text encoding. | – |
+| `expImportContentLineSource` | abstract class extends expImportAbstractSource | `extension/sqliimport/classes/exp/sources/expimportcontentlinesource.php:21` | The common part of the text formats made of "content lines" (iCalendar, RFC 5545, and vCard, RFC 6350 and 2426): | – |
+| `expImportCrawlSource` | abstract class extends expImportJsonSource | `extension/sqliimport/classes/exp/sources/expimportcrawlsource.php:16` | The common part of the formats that read public web pages (sitemap, webpage). | – |
+| `expImportDataTableFieldSourceBase` | abstract class | `extension/sqliimport/classes/exp/expimportdatatablefieldsourcebase.php:17` | The fields of an import's source for the kernel's "Module table" wizard (Exponential 6.0.15, the data table layer): the card "Create a new table from… | – |
+| `expImportHttpQuerySource` | abstract class extends expImportJsonSource | `extension/sqliimport/classes/exp/sources/expimporthttpquerysource.php:19` | What the sources have in common that send a query in a database's own language to its HTTP API (Neo4j, ArangoDB, ClickHouse, Snowflake, InfluxDB): th… | – |
+| `expImportShopCsvSource` | abstract class extends expImportCsvSource | `extension/sqliimport/classes/exp/sources/expimportshopcsvsource.php:18` | The product exports of shop systems as CSV, where one product may span several rows (its variants, its images): the file is read as the CSV source re… | – |
+| `SQLIImportAbstractHandler` | abstract class | `extension/sqliimport/classes/sourcehandlers/sqliimportabstracthandler.php:13` | Abstract class for all import handlers All import handlers must inherit from this class | – |
+| `SQLIImportOptions` | abstract class extends ezcBaseOptions | `extension/sqliimport/classes/options/sqliimportoptions.php:18` | Base of all options classes for SQLIImport Simple override of ezcBaseOptions from eZComponents, implementing Iterator interface | – |
+
 ### extension/xrowextract (1)
 
 [All patterns of extension/xrowextract](area-extension-xrowextract.md)
@@ -122,8 +158,8 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditAlertRuleBase` | abstract class | `kernel/classes/audit/alerts/expauditalertrulebase.php:13` | Shared code of the built-in alert rule classes: the record fields a rule groups by, the time of a record, and the de-duplication (doc/eng-us/bc/6.0/audit.md… | – |
-| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stream wrap… | – |
+| `expAuditAlertRuleBase` | abstract class | `kernel/classes/audit/alerts/expauditalertrulebase.php:13` | Shared code of the built-in alert rule classes: the record fields a rule groups by, the time of a record, and the de-duplication (doc/eng-us/bc/6.0/a… | – |
+| `expAuditFormatBase` | abstract class | `kernel/classes/audit/format/expauditformatbase.php:14` | Shared code of the archive format handlers (doc/eng-us/bc/6.0/audit.md, "Rotation, archives and retention"): streaming compression through a PHP stre… | – |
 | `expAuditSinkBase` | abstract class | `kernel/classes/audit/sinks/expauditsinkbase.php:14` | Shared code of the audit sinks: the sink's settings block ([AuditSink_]), which records it wants (Events[] patterns and MinSeverity) and whether it d… | – |
 | `expAuditSourceBase` | abstract class | `kernel/classes/audit/console/expauditsourcebase.php:11` | The base of an audit console source (expAuditSource): every method answers "nothing", so a source implements only what it shows. | – |
 
@@ -159,6 +195,14 @@ An abstract class that fixes the steps of an algorithm and leaves some of them t
 |---|---|---|---|---|
 | `expSubitemsColumn` | abstract class | `kernel/classes/subitems/expsubitemscolumn.php:19` | The base class of a column of the admin subitems list ("Table options"). | – |
 | `expSubitemsFieldColumn` | abstract class extends expSubitemsColumn | `kernel/classes/subitems/columns/expsubitemsfieldcolumn.php:22` | The common base of the shipped column families of the admin subitems list. | – |
+
+### kernel/classes/syscard (1)
+
+[All patterns of kernel/classes/syscard](area-kernel-classes-syscard.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSysCardBaseProvider` | abstract class | `kernel/classes/syscard/expsyscardbaseprovider.php:23` | The usual provider: set the properties, write collect(), and use fact() and the helpers. | – |
 
 ### kernel/classes/uiswitch (1)
 

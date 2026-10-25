@@ -3,7 +3,7 @@ title: Chain of Responsibility
 audience: developer
 category: standards
 order: 332
-summary: A request is passed along a list of handlers until one of them takes it: login handlers, URL matchers, router routes. 7 instances in Exponential.
+summary: A request is passed along a list of handlers until one of them takes it: login handlers, URL matchers, router routes. 19 instances in Exponential.
 keywords: design pattern, chain, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,11 +18,30 @@ A request is passed along a list of handlers until one of them takes it: login h
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 7 |
+| Instances | 19 |
 | Recognized by | Class name contains LoginHandler, Chain, Pipeline, Middleware, Router or Matcher. |
 | Extension point | site.ini [UserSettings] LoginHandler[] (tried in order), siteaccess MatchOrder. |
 
 ## Classes by area
+
+### extension/expai (12)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiBatchOpenRouter` | class extends expAiBatchApi | `extension/expai/classes/lanes/expaibatchopenrouter.php:25` | The OpenRouter Batch API (https://openrouter.ai/docs/batch-quickstart and https://openrouter.ai/docs/api/api-reference/batch/get-a-batch, read 2026-1… | – |
+| `expAiChain` | class | `extension/expai/classes/chain/expaichain.php:23` | The definition of an AI chain (doc/chains.md): an ordered list of steps, each one structured call to a model, a human checkpoint or a hand-off, read… | – |
+| `expAiChainApplier` | class | `extension/expai/classes/chain/expaichainapplier.php:14` | The applier "chain" of queued requests ([QueueSettings] Appliers[chain]): hands the stored answer of a chain step to expAiChainEngine::onAnswer(), wh… | extension/expai/settings/expai.ini [QueueSettings] Appliers[chain] |
+| `expAiChainCriteria` | class | `extension/expai/classes/chain/expaichaincriteria.php:23` | The pass criteria of a chain step ([ChainStep_.] PassCriteria[]): each entry is one comparison " ", all of them must hold. | – |
+| `expAiChainEngine` | class | `extension/expai/classes/chain/expaichainengine.php:24` | Runs AI chains (doc/chains.md) through the job queue. | – |
+| `expAiChainFunctionCollection` | class | `extension/expai/classes/chain/expaichainfunctioncollection.php:18` | Template fetch functions of AI chains: | – |
+| `expAiChainPolicy` | class | `extension/expai/classes/chain/expaichainpolicy.php:20` | Access to AI chains: the policy expai/chain (limitation Chain) starts runs and acts on them at the checkpoint. | – |
+| `expAiChainPrompt` | class | `extension/expai/classes/chain/expaichainprompt.php:21` | The prompts of chain steps. | – |
+| `expAiChainRun` | class extends eZPersistentObject | `extension/expai/classes/chain/expaichainrun.php:20` | One run of an AI chain (table expai_chain_run). | – |
+| `expAiChainSchema` | class | `extension/expai/classes/chain/expaichainschema.php:19` | The tables of AI chains, added to expAiSchema::definition() (bin/php/expaischema.php --install creates and upgrades them on every engine like the oth… | – |
+| `expAiChainStep` | class extends eZPersistentObject | `extension/expai/classes/chain/expaichainstep.php:19` | One step of a chain run (table expai_chain_step): each call to a model is one row with its queue job, model, lane, tokens, cost and the usage row; a… | – |
+| `expAiChainTranslateSync` | class | `extension/expai/classes/chain/expaichaintranslatesync.php:20` | The shipped translation hand-off of chains ([ChainSettings] TranslateHandler=expAiChainTranslateSync): the translate step hands the run's object to t… | extension/expai/settings/expai.ini [ChainSettings] TranslateHandler |
 
 ### extension/ezjscore (1)
 

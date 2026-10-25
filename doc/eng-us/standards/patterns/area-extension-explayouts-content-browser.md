@@ -2,7 +2,7 @@
 title: Patterns in extension/explayouts_content_browser
 audience: developer
 category: standards
-order: 414
+order: 416
 summary: Every class, view, fetch function, operator and plugin point of extension/explayouts_content_browser with its design patterns.
 keywords: extension/explayouts_content_browser, design patterns, classes, extension points
 type: catalogue

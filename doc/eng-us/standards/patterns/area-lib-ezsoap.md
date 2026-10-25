@@ -2,7 +2,7 @@
 title: Patterns in lib/ezsoap
 audience: developer
 category: standards
-order: 538
+order: 547
 summary: Every class, view, fetch function, operator and plugin point of lib/ezsoap with its design patterns.
 keywords: lib/ezsoap, design patterns, classes, extension points
 type: catalogue

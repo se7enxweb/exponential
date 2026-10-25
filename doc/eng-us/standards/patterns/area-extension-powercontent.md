@@ -2,7 +2,7 @@
 title: Patterns in extension/powercontent
 audience: developer
 category: standards
-order: 466
+order: 470
 summary: Every class, view, fetch function, operator and plugin point of extension/powercontent with its design patterns.
 keywords: extension/powercontent, design patterns, classes, extension points
 type: catalogue

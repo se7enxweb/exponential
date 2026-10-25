@@ -3,7 +3,7 @@ title: Singleton / instance()
 audience: developer
 category: standards
 order: 320
-summary: A class that hands out one shared instance per key, mostly through a static instance() method (often cached in $GLOBALS). 69 instances in Exponential.
+summary: A class that hands out one shared instance per key, mostly through a static instance() method (often cached in $GLOBALS). 77 instances in Exponential.
 keywords: design pattern, singleton, creation, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class that hands out one shared instance per key, mostly through a static inst
 | | |
 |---|---|
 | Group | Creation |
-| Instances | 69 |
+| Instances | 77 |
 | Recognized by | Has a static instance() or getInstance() method. |
 | Extension point | Call Class::instance(); many of them take the settings file or database as the key. |
 
@@ -40,6 +40,15 @@ A class that hands out one shared instance per key, mostly through a static inst
 |---|---|---|---|---|
 | `CjwNewsletterLog` | class extends ezcLog | `extension/cjw_newsletter/classes/cjwnewsletterlog.php:28` | Log handling of the Cjw Newsletter using ezcLog logmessage time [severity] [source] [category] ( element1: value1, .... | – |
 
+### extension/expai (2)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiConfig` | class | `extension/expai/classes/expaiconfig.php:14` | The settings of expai.ini, read fresh on every call (no static state: Velocity's persistent workers serve many requests and siteaccesses with one pro… | – |
+| `expAiProviderRegistry` | class | `extension/expai/classes/expaiproviderregistry.php:24` | The providers and models of expai.ini: | – |
+
 ### extension/explayouts (1)
 
 [All patterns of extension/explayouts](area-extension-explayouts.md)
@@ -47,6 +56,14 @@ A class that hands out one shared instance per key, mostly through a static inst
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expLayoutsSite` | class | `extension/explayouts/classes/explayoutssite.php:9` | Exponential 4 Site registry compatible with the Exp Site API Site interface. | – |
+
+### extension/expqueue (1)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueConfig` | class | `extension/expqueue/classes/expqueueconfig.php:15` | The settings of expqueue (expqueue.ini), with the defaults that apply when a setting is missing. | – |
 
 ### extension/ezfind (2)
 
@@ -97,6 +114,16 @@ A class that hands out one shared instance per key, mostly through a static inst
 |---|---|---|---|---|
 | `sevenxAuthentication2faHelper` | class | `extension/sevenx_authentication_2fa/classes/sevenxauthentication2fahelper.php:23` | – | – |
 
+### extension/sqliimport (3)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportRegistry` | class | `extension/sqliimport/classes/exp/engine/expimportregistry.php:23` | The catalogue of a site: its sources, handlers and transforms. | extension/sqliimport/settings/kernelservices.ini [Service_sqliimport.registry] Class |
+| `SQLIContentPublisher` | class | `extension/sqliimport/classes/content/sqlicontentpublisher.php:26` | SQLIContentPublisher is a class allowing to publish a content $options = new SQLIContentOptions( array( 'class_identifier' =› 'article', 'remote_id'… | – |
+| `SQLIImportFactory` | class | `extension/sqliimport/classes/sqliimportfactory.php:12` | Import factory Will trigger import for all declared and activated import handlers | – |
+
 ### extension/syndication (1)
 
 [All patterns of extension/syndication](area-extension-syndication.md)
@@ -124,6 +151,14 @@ A class that hands out one shared instance per key, mostly through a static inst
 | `eZScript` | class | `kernel/classes/ezscript.php:49` | – | – |
 | `eZShopAccountHandler` | class | `kernel/classes/ezshopaccounthandler.php:12` | – | – |
 
+### kernel/classes/datatable (1)
+
+[All patterns of kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expDataTableCatalogue` | class | `kernel/classes/datatable/expdatatablecatalogue.php:32` | The catalogue of data tables (doc/eng-us/features/6.0/data-tables.md, "The catalogue"): every persistent class of the installation (an eZPersistentOb… | – |
+
 ### kernel/classes/datatypes (3)
 
 [All patterns of kernel/classes/datatypes](area-kernel-classes-datatypes.md)
@@ -141,9 +176,9 @@ A class that hands out one shared instance per key, mostly through a static inst
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… | settings/exphelp.ini [ContextHelp] Providers[] |
-| `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Reads help maintained as content out of the database into plain arrays (the shapes expHelpContentValidator describes), without any permission filter:… | – |
-| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:44` | Context help: which help page answers "help for this page", for a module, view and design. | – |
-| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:34` | The index of the help pages (doc/eng-us/features/6.0/help-system.md, "The index"): one entry per document of the allowlist (expHelpAllowlist: git-tracked fi… | – |
+| `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Reads help maintained as content out of the database into plain arrays (the shapes expHelpContentValidator describes), without any permission filter:… | settings/site.ini [Cache_exphelpcontent] class; settings/site.ini [Cache_exphelpcontent] purgeClass |
+| `expHelpContextRegistry` | class | `kernel/classes/help/exphelpcontextregistry.php:45` | Context help: which help page answers "help for this page", for a module, view and design. | – |
+| `expHelpDocumentIndex` | class | `kernel/classes/help/exphelpdocumentindex.php:46` | The index of the help pages (doc/eng-us/features/6.0/help-system.md, "The index"): one entry per document of the allowlist (expHelpAllowlist: git-tra… | – |
 
 ### kernel/classes/logviewer (2)
 
@@ -151,7 +186,7 @@ A class that hands out one shared instance per key, mostly through a static inst
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/eng-us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/eng-us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruni… | – |
 | `expLogViewerConfig` | class | `kernel/classes/logviewer/explogviewerconfig.php:11` | The settings of the log viewer (settings/logviewer.ini, doc/eng-us/features/6.0/log-viewer.md, "Settings"), read once per request with safe bounds. | – |
 
 ### kernel/classes/mailpreferences (1)
@@ -185,6 +220,14 @@ A class that hands out one shared instance per key, mostly through a static inst
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expSubitemsColumnRegistry` | class | `kernel/classes/subitems/expsubitemscolumnregistry.php:23` | The registry of the admin subitems list columns ("Table options"). | – |
+
+### kernel/classes/transfer (1)
+
+[All patterns of kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expKernelTransferRegistry` | class | `kernel/classes/transfer/expkerneltransferregistry.php:30` | The transfer registry: every import and export tool of the installation, as each declares itself in kernelservices.ini (a [Service_transfer.] block t… | settings/kernelservices.ini [Service_transfer.registry] Class |
 
 ### kernel/common (1)
 
@@ -296,8 +339,8 @@ A class that hands out one shared instance per key, mostly through a static inst
 | `eZCLI` | class | `lib/ezutils/classes/ezcli.php:31` | – | – |
 | `eZDebug` | class | `lib/ezutils/classes/ezdebug.php:59` | – | – |
 | `eZExpiryHandler` | class | `lib/ezutils/classes/ezexpiryhandler.php:16` | Keeps track of expiry keys and their timestamps | – |
-| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | – |
-| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - new ini setting ext-siteaccess-override - - new ini setting ext-siteaccess… | – |
+| `eZHTTPTool` | class | `lib/ezutils/classes/ezhttptool.php:25` | – | settings/kernelservices.ini [Service_http] Class |
+| `eZINI` | class | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - new ini setting ext-siteaccess-override - - new ini setting ext-siteaccess… | settings/kernelservices.ini [Service_ini.i18n] Class; settings/kernelservices.ini [Service_ini.site] Class |
 | `eZMimeType` | class | `lib/ezutils/classes/ezmimetype.php:34` | – | – |
 | `eZProcess` | class | `lib/ezutils/classes/ezprocess.php:18` | – | – |
 | `eZSys` | class | `lib/ezutils/classes/ezsys.php:33` | Easy access to various system settings | – |

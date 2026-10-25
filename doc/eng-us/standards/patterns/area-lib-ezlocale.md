@@ -2,7 +2,7 @@
 title: Patterns in lib/ezlocale
 audience: developer
 category: standards
-order: 534
+order: 543
 summary: Every class, view, fetch function, operator and plugin point of lib/ezlocale with its design patterns.
 keywords: lib/ezlocale, design patterns, classes, extension points
 type: catalogue

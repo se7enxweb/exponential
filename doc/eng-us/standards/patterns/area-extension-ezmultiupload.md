@@ -2,7 +2,7 @@
 title: Patterns in extension/ezmultiupload
 audience: developer
 category: standards
-order: 445
+order: 448
 summary: Every class, view, fetch function, operator and plugin point of extension/ezmultiupload with its design patterns.
 keywords: extension/ezmultiupload, design patterns, classes, extension points
 type: catalogue

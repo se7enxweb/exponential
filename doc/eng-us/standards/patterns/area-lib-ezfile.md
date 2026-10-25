@@ -2,7 +2,7 @@
 title: Patterns in lib/ezfile
 audience: developer
 category: standards
-order: 531
+order: 540
 summary: Every class, view, fetch function, operator and plugin point of lib/ezfile with its design patterns.
 keywords: lib/ezfile, design patterns, classes, extension points
 type: catalogue

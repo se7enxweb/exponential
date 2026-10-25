@@ -2,7 +2,7 @@
 title: Patterns in extension/str_replace
 audience: developer
 category: standards
-order: 473
+order: 478
 summary: Every class, view, fetch function, operator and plugin point of extension/str_replace with its design patterns.
 keywords: extension/str_replace, design patterns, classes, extension points
 type: catalogue
@@ -20,7 +20,7 @@ Every class, interface and trait of `extension/str_replace` with the patterns it
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `MyStrReplaceOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `extension/str_replace/autoloads/str_replace_controloperator.php:3` | – |
-| `strReplaceInfo` | class | [Value object / struct](value-object.md) | `extension/str_replace/ezinfo.php:2` | – |
+| `str_replaceInfo` | class | [Value object / struct](value-object.md) | `extension/str_replace/ezinfo.php:2` | – |
 
 ## Template operators (1)
 

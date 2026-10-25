@@ -2,7 +2,7 @@
 title: Patterns in lib/eztemplate
 audience: developer
 category: standards
-order: 539
+order: 548
 summary: Every class, view, fetch function, operator and plugin point of lib/eztemplate with its design patterns.
 keywords: lib/eztemplate, design patterns, classes, extension points
 type: catalogue
@@ -58,7 +58,7 @@ Every class, interface and trait of `lib/eztemplate` with the patterns it was re
 | `eZTemplateOptimizer` | class | [Utility (static helper)](utility.md) | `lib/eztemplate/classes/eztemplateoptimizer.php:18` | – |
 | `eZTemplateParser` | class | – | `lib/eztemplate/classes/eztemplateparser.php:18` | – |
 | `eZTemplatePHPOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplatephpoperator.php:30` | – |
-| `eZTemplateRoleOperator` | class | [Factory and static factory methods](factory.md), [Template operator (Interpreter plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplateroleoperator.php:24` | The eZTemplateRoleOperator class provides template operators for checking user role membership |
+| `eZTemplateRoleOperator` | class | [Factory and static factory methods](factory.md), [Template operator (Interpreter plugin)](template-operator.md) | `lib/eztemplate/classes/eztemplateroleoperator.php:29` | The eZTemplateRoleOperator class provides template operators for checking user role membership and policies (doc/eng-us/features/6.0/role-and-policy-… |
 | `eZTemplateRoot` | class | – | `lib/eztemplate/classes/eztemplateroot.php:26` | – |
 | `eZTemplateSectionFunction` | class | [Template function (Interpreter plugin)](template-function.md) | `lib/eztemplate/classes/eztemplatesectionfunction.php:58` | – |
 | `eZTemplateSectionIterator` | class | – | `lib/eztemplate/classes/eztemplatesectioniterator.php:28` | – |

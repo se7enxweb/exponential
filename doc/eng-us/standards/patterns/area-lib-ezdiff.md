@@ -2,7 +2,7 @@
 title: Patterns in lib/ezdiff
 audience: developer
 category: standards
-order: 530
+order: 539
 summary: Every class, view, fetch function, operator and plugin point of lib/ezdiff with its design patterns.
 keywords: lib/ezdiff, design patterns, classes, extension points
 type: catalogue

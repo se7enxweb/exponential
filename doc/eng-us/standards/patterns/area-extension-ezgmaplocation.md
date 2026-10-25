@@ -2,7 +2,7 @@
 title: Patterns in extension/ezgmaplocation
 audience: developer
 category: standards
-order: 441
+order: 444
 summary: Every class, view, fetch function, operator and plugin point of extension/ezgmaplocation with its design patterns.
 keywords: extension/ezgmaplocation, design patterns, classes, extension points
 type: catalogue
@@ -15,11 +15,12 @@ type: catalogue
 
 Every class, interface and trait of `extension/ezgmaplocation` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (3)
+## Classes (4)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `eZGmapLocation` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `extension/ezgmaplocation/classes/ezgmaplocation.php:40` | Helper class used along with the eZGmapLocationType datatype. |
+| `ezgmaplocationInfo` | class | [Value object / struct](value-object.md) | `extension/ezgmaplocation/ezinfo.php:7` | – |
 | `eZGmapLocationType` | class extends eZDataType | [Datatype (Strategy for content fields)](datatype.md) | `extension/ezgmaplocation/datatypes/ezgmaplocation/ezgmaplocationtype.php:39` | Class providing the eZGmapLocationType datatype. |
 | `ezgmlLocationFilter` | class | [Decorator / filter](decorator.md), [INI plugin point (extension point)](ini-plugin-point.md) | `extension/ezgmaplocation/classes/ezgmllocationfilter.php:32` | – |
 

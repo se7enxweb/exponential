@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/mail
 audience: developer
 category: standards
-order: 496
+order: 502
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/mail with its design patterns.
 keywords: kernel/classes/mail, design patterns, classes, extension points
 type: catalogue

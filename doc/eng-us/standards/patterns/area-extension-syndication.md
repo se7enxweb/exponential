@@ -2,7 +2,7 @@
 title: Patterns in extension/syndication
 audience: developer
 category: standards
-order: 475
+order: 480
 summary: Every class, view, fetch function, operator and plugin point of extension/syndication with its design patterns.
 keywords: extension/syndication, design patterns, classes, extension points
 type: catalogue
@@ -96,3 +96,9 @@ Every class, interface and trait of `extension/syndication` with the patterns it
 | `php_import_feed` | `extension/syndication/classes/runnable/cronjobs/php_import_feed.php` | – |
 | `syndication_export` | `extension/syndication/cronjobs/syndication_export.php` | Cronjob part export_feed of the syndication extension. |
 | `syndication_import` | `extension/syndication/cronjobs/syndication_import.php` | Cronjob part import_feed of the syndication extension. |
+
+## INI plugin points (1)
+
+| Setting | Class | Set in |
+|---|---|---|
+| `[Service_transfer.syndication] Class` | `expKernelTransferTool` | `extension/syndication/settings/kernelservices.ini.append.php:10` |

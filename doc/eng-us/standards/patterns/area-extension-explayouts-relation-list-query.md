@@ -2,7 +2,7 @@
 title: Patterns in extension/explayouts_relation_list_query
 audience: developer
 category: standards
-order: 418
+order: 420
 summary: Every class, view, fetch function, operator and plugin point of extension/explayouts_relation_list_query with its design patterns.
 keywords: extension/explayouts_relation_list_query, design patterns, classes, extension points
 type: catalogue

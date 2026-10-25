@@ -2,7 +2,7 @@
 title: Patterns in extension/expsite_api
 audience: developer
 category: standards
-order: 426
+order: 429
 summary: Every class, view, fetch function, operator and plugin point of extension/expsite_api with its design patterns.
 keywords: extension/expsite_api, design patterns, classes, extension points
 type: catalogue

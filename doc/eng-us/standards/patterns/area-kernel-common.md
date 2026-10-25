@@ -2,7 +2,7 @@
 title: Patterns in kernel/common
 audience: developer
 category: standards
-order: 512
+order: 521
 summary: Every class, view, fetch function, operator and plugin point of kernel/common with its design patterns.
 keywords: kernel/common, design patterns, classes, extension points
 type: catalogue
@@ -15,12 +15,15 @@ type: catalogue
 
 Every class, interface and trait of `kernel/common` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (23)
+## Classes (26)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `expContentSecurityPolicyOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/expcontentsecuritypolicyoperator.php:21` | The template operator csp_nonce(): the nonce of the Content Security Policy of this request, for an inline script a template cannot move into a file… |
+| `expDemoModeOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/expdemomodeoperator.php:21` | The template operator exp_demo_mode(): true while demo mode is on (the environment variable EXP_DEMO_MODE=1, expDemoMode). |
 | `expEnvironmentOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/expenvironmentoperator.php:29` | – |
+| `expKernelTransferOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/expkerneltransferoperator.php:29` | The template operators of the transfer registry (expKernelTransferRegistry; doc/eng-us/features/6.0/transfer-registry.md). |
+| `expViewParameterOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/expviewparameteroperator.php:21` | The template operator view_parameter: a value as the value of a view parameter, /(name)/, written as expViewParameters::encode() writes it ("~2F" for… |
 | `eZAlphabetOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/ezalphabetoperator.php:19` | – |
 | `eZAutoLinkOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/ezautolinkoperator.php:12` | – |
 | `eZContentStructureTreeOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/ezcontentstructuretreeoperator.php:17` | – |
@@ -43,7 +46,7 @@ Every class, interface and trait of `kernel/common` with the patterns it was rec
 | `eZURLOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/ezurloperator.php:18` | – |
 | `eZWordToImageOperator` | class | [Template operator (Interpreter plugin)](template-operator.md) | `kernel/common/ezwordtoimageoperator.php:17` | – |
 
-## Template operators (21)
+## Template operators (24)
 
 | Operators | Class | Registered in |
 |---|---|---|
@@ -67,4 +70,7 @@ Every class, interface and trait of `kernel/common` with the patterns it was rec
 | installation_name, is_production_system | `ExpInstallationOperator` | `kernel/common/eztemplateautoload.php:72` |
 | audit_label | `expAuditTemplateOperator` | `kernel/common/eztemplateautoload.php:75` |
 | exp_environment, exp_environment_badge | `expEnvironmentOperator` | `kernel/common/eztemplateautoload.php:78` |
-| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:81` |
+| exp_demo_mode | `expDemoModeOperator` | `kernel/common/eztemplateautoload.php:81` |
+| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:84` |
+| view_parameter | `expViewParameterOperator` | `kernel/common/eztemplateautoload.php:87` |
+| transfer_tools, transfer_actions, transfer_related, transfer_tool | `expKernelTransferOperator` | `kernel/common/eztemplateautoload.php:90` |

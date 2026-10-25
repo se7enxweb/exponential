@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/cronjobs
 audience: developer
 category: standards
-order: 518
+order: 527
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/cronjobs with its design patterns.
 keywords: kernel/private/classes/cronjobs, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/private/classes/cronjobs` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (27)
+## Classes (29)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -25,7 +25,8 @@ Every class, interface and trait of `kernel/private/classes/cronjobs` with the p
 | `Exponential\Cronjob\Kernel\Cleanuprss` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/cleanuprss.php:29` | The code of cronjobs/cleanuprss.php, moved into a class (#207 stage 1). |
 | `Exponential\Cronjob\Kernel\Clusterpurge` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/clusterpurge.php:25` | The code of cronjobs/clusterpurge.php, moved into a class (#207 stage 1). |
 | `Exponential\Cronjob\Kernel\Contentcheck` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/contentcheck.php:18` | The code of cronjobs/contentcheck.php: builds the reference index of the content checks and keeps it in the cache (expContentCheckReferences). |
-| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/contentjobs.php:20` | The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a worker and have none — a running job who… |
+| `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/contentjobs.php:21` | The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a worker and have none — a running job who… |
+| `Exponential\Cronjob\Kernel\Datatablesync` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/datatablesync.php:16` | The cronjob part datatablesync (cronjobs/datatablesync.php, frequent group; doc/eng-us/features/6.0/data-tables.md, "Synchronisation"): starts each e… |
 | `Exponential\Cronjob\Kernel\Explogrotate` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/explogrotate.php:19` | The code of cronjobs/explogrotate.php: the log rotation cronjob part ([CronjobPart-logs], in no default part, so it runs only when a site adds it to… |
 | `Exponential\Cronjob\Kernel\Hide` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/hide.php:25` | The code of cronjobs/hide.php, moved into a class (#207 stage 1). |
 | `Exponential\Cronjob\Kernel\HttpcacheCleanup` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/httpcache_cleanup.php:23` | The code of cronjobs/httpcache_cleanup.php, moved into a class (#207 stage 1). |
@@ -45,4 +46,5 @@ Every class, interface and trait of `kernel/private/classes/cronjobs` with the p
 | `Exponential\Cronjob\Kernel\Unlock` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/unlock.php:93` | The code of cronjobs/unlock.php, moved into a class (#207 stage 1). |
 | `Exponential\Cronjob\Kernel\Unpublish` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/unpublish.php:25` | The code of cronjobs/unpublish.php, moved into a class (#207 stage 1). |
 | `Exponential\Cronjob\Kernel\Updateviewcount` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/updateviewcount.php:25` | The code of cronjobs/updateviewcount.php, moved into a class (#207 stage 1). |
+| `Exponential\Cronjob\Kernel\Usersessions` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/usersessions.php:15` | – |
 | `Exponential\Cronjob\Kernel\Workflow` | class extends CronjobPart | [Command (console, scripts, cronjobs)](command.md) | `kernel/private/classes/cronjobs/workflow.php:25` | The code of cronjobs/workflow.php, moved into a class (#207 stage 1). |

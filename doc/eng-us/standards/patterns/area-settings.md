@@ -2,7 +2,7 @@
 title: Patterns in settings
 audience: developer
 category: standards
-order: 541
+order: 550
 summary: Every class, view, fetch function, operator and plugin point of settings with its design patterns.
 keywords: settings, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `settings` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## INI plugin points (219)
+## INI plugin points (252)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -41,8 +41,10 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[ContentJobSettings] JobTypes[removelocation]` | `expContentJobRemoveLocation` | `settings/content.ini:555` |
 | `[ContentJobSettings] JobTypes[packageinstall]` | `expContentJobPackageInstall` | `settings/content.ini:557` |
 | `[ContentJobSettings] JobTypes[auditexport]` | `expContentJobAuditExport` | `settings/content.ini:559` |
-| `[PublishingSettings] AsynchronousPublishingQueueReader` | `ezpContentPublishingQueue` | `settings/content.ini:685` |
-| `[TestingSettings] MultivariateTestingHandlerClass` | `ezpMultivariateTestHandler` | `settings/content.ini:704` |
+| `[ContentJobSettings] JobTypes[helpmanuals]` | `expContentJobHelpManuals` | `settings/content.ini:561` |
+| `[ContentJobSettings] JobTypes[transfer]` | `expContentJobTransfer` | `settings/content.ini:564` |
+| `[PublishingSettings] AsynchronousPublishingQueueReader` | `ezpContentPublishingQueue` | `settings/content.ini:690` |
+| `[TestingSettings] MultivariateTestingHandlerClass` | `ezpMultivariateTestHandler` | `settings/content.ini:709` |
 | `[MissingFileSettings] Handlers[ezimage]` | `expContentCheckFileImage` | `settings/contentcheck.ini:175` |
 | `[MissingFileSettings] Handlers[ezbinaryfile]` | `expContentCheckFileTable` | `settings/contentcheck.ini:176` |
 | `[MissingFileSettings] Handlers[ezmedia]` | `expContentCheckFileTable` | `settings/contentcheck.ini:177` |
@@ -52,7 +54,7 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[SchemaSettings] SchemaHandlerClasses[sqlite]` | `eZSQLiteSchema` | `settings/dbschema.ini:25` |
 | `[SchemaSettings] SchemaHandlerClasses[sqlite3]` | `eZSQLiteSchema` | `settings/dbschema.ini:26` |
 | `[SchemaSettings] SchemaHandlerClasses[mongo]` | `expMongoSchema` | `settings/dbschema.ini:27` |
-| `[ContextHelp] Providers[]` | `expHelpContentProvider` | `settings/exphelp.ini:607` |
+| `[ContextHelp] Providers[]` | `expHelpContentProvider` | `settings/exphelp.ini:1429` |
 | `[InputSettings] HandlerClass` | `eZSimplifiedXMLInput` | `settings/ezxml.ini:14` |
 | `[OutputSettings] HandlerClass` | `eZXHTMLXMLOutput` | `settings/ezxml.ini:40` |
 | `[OutputSettings] AliasClasses[ezpdf]` | `eZPDFXMLOutput` | `settings/ezxml.ini:43` |
@@ -77,53 +79,68 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[IniCommandSettings] Actions[actions]` | `expIniActionActions` | `settings/ini.ini:33` |
 | `[IniCommandSettings] ScopeProviders[]` | `expIniCoreScopeProvider` | `settings/ini.ini:50` |
 | `[IniCommandSettings] ScopeProviders[]` | `expIniExtensionScopeProvider` | `settings/ini.ini:51` |
+| `[Service_db] Class` | `eZDBInterface` | `settings/kernelservices.ini:76` |
+| `[Service_http] Class` | `eZHTTPTool` | `settings/kernelservices.ini:85` |
+| `[Service_ini.site] Class` | `eZINI` | `settings/kernelservices.ini:92` |
+| `[Service_ini.i18n] Class` | `eZINI` | `settings/kernelservices.ini:102` |
+| `[Service_extensions.overrides] Class` | `expKernelExtensionOverrideList` | `settings/kernelservices.ini:113` |
+| `[Service_transfer.registry] Class` | `expKernelTransferRegistry` | `settings/kernelservices.ini:157` |
+| `[Service_transfer.package] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:164` |
+| `[Service_transfer.rss_import] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:193` |
+| `[Service_transfer.rss_export] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:214` |
+| `[Service_transfer.infocollector] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:237` |
+| `[Service_transfer.audit] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:258` |
+| `[Service_transfer.datatable] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:280` |
+| `[Service_transfer.pdf] Class` | `expKernelTransferTool` | `settings/kernelservices.ini:316` |
 | `[GateSettings] EssentialSenders[]` | `expMailPreferencesService` | `settings/mailpreferences.ini:37` |
 | `[Category_content] HandlerClass` | `expNotificationMailCategoryHandler` | `settings/mailpreferences.ini:91` |
 | `[Category_collaboration] HandlerClass` | `expNotificationMailCategoryHandler` | `settings/mailpreferences.ini:103` |
-| `[PackageSettings] HandlerAlias[ezcontentclass]` | `eZContentClassPackageHandler` | `settings/package.ini:74` |
-| `[PackageSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageHandler` | `settings/package.ini:76` |
-| `[PackageSettings] HandlerAlias[eziniaddon]` | `eZINIAddonPackageHandler` | `settings/package.ini:78` |
-| `[PackageSettings] HandlerAlias[ezfile]` | `eZFilePackageHandler` | `settings/package.ini:80` |
-| `[PackageSettings] HandlerAlias[ezini]` | `eZFilePackageHandler` | `settings/package.ini:81` |
-| `[PackageSettings] HandlerAlias[ezdesign]` | `eZFilePackageHandler` | `settings/package.ini:82` |
-| `[PackageSettings] HandlerAlias[eztemplate]` | `eZFilePackageHandler` | `settings/package.ini:83` |
-| `[PackageSettings] HandlerAlias[ezthumbnail]` | `eZFilePackageHandler` | `settings/package.ini:84` |
-| `[PackageSettings] HandlerAlias[ezsql]` | `eZDBPackageHandler` | `settings/package.ini:86` |
-| `[PackageSettings] HandlerAlias[ezextension]` | `eZExtensionPackageHandler` | `settings/package.ini:88` |
-| `[PackageSettings] HandlerAlias[ezinstallscript]` | `eZInstallScriptPackageHandler` | `settings/package.ini:89` |
-| `[CreationSettings] HandlerAlias[ezcontentclass]` | `eZContentClassPackageCreator` | `settings/package.ini:125` |
-| `[CreationSettings] HandlerAlias[ezstyle]` | `eZStylePackageCreator` | `settings/package.ini:126` |
-| `[CreationSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageCreator` | `settings/package.ini:127` |
-| `[CreationSettings] HandlerAlias[ezextension]` | `eZExtensionPackageCreator` | `settings/package.ini:128` |
-| `[InstallerSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageInstaller` | `settings/package.ini:140` |
-| `[InstallerSettings] HandlerAlias[ezinstallscript]` | `eZInstallScriptPackageInstaller` | `settings/package.ini:141` |
+| `[PackageSettings] HandlerAlias[ezcontentclass]` | `eZContentClassPackageHandler` | `settings/package.ini:89` |
+| `[PackageSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageHandler` | `settings/package.ini:91` |
+| `[PackageSettings] HandlerAlias[eziniaddon]` | `eZINIAddonPackageHandler` | `settings/package.ini:93` |
+| `[PackageSettings] HandlerAlias[ezfile]` | `eZFilePackageHandler` | `settings/package.ini:95` |
+| `[PackageSettings] HandlerAlias[ezini]` | `eZFilePackageHandler` | `settings/package.ini:96` |
+| `[PackageSettings] HandlerAlias[ezdesign]` | `eZFilePackageHandler` | `settings/package.ini:97` |
+| `[PackageSettings] HandlerAlias[eztemplate]` | `eZFilePackageHandler` | `settings/package.ini:98` |
+| `[PackageSettings] HandlerAlias[ezthumbnail]` | `eZFilePackageHandler` | `settings/package.ini:99` |
+| `[PackageSettings] HandlerAlias[ezsql]` | `eZDBPackageHandler` | `settings/package.ini:101` |
+| `[PackageSettings] HandlerAlias[ezextension]` | `eZExtensionPackageHandler` | `settings/package.ini:103` |
+| `[PackageSettings] HandlerAlias[ezinstallscript]` | `eZInstallScriptPackageHandler` | `settings/package.ini:104` |
+| `[CreationSettings] HandlerAlias[ezcontentclass]` | `eZContentClassPackageCreator` | `settings/package.ini:144` |
+| `[CreationSettings] HandlerAlias[ezstyle]` | `eZStylePackageCreator` | `settings/package.ini:145` |
+| `[CreationSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageCreator` | `settings/package.ini:146` |
+| `[CreationSettings] HandlerAlias[ezextension]` | `eZExtensionPackageCreator` | `settings/package.ini:147` |
+| `[InstallerSettings] HandlerAlias[ezcontentobject]` | `eZContentObjectPackageInstaller` | `settings/package.ini:159` |
+| `[InstallerSettings] HandlerAlias[ezinstallscript]` | `eZInstallScriptPackageInstaller` | `settings/package.ini:160` |
 | `[Registry_auditsources] Entries[Sources]` | `expAuditSource` | `settings/rad.ini:77` |
 | `[System] PrefixFilterClass` | `ezpRestDefaultRegexpPrefixFilter` | `settings/rest.ini:13` |
 | `[ApiProvider] ProviderClass[auth]` | `ezpRestAuthProvider` | `settings/rest.ini:18` |
 | `[OutputSettings] RendererClass[xhtml]` | `ezpContentXHTMLRenderer` | `settings/rest.ini:24` |
 | `[Authentication] AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | `settings/rest.ini:69` |
-| `[RouteSettings] RouteSettingImpl` | `ezpRestIniRouteFilter` | `settings/rest.ini:143` |
+| `[RouteSettings] RouteSettingImpl` | `ezpRestIniRouteFilter` | `settings/rest.ini:190` |
 | `[MathSettings] MathHandler` | `eZPHPMath` | `settings/shop.ini:19` |
-| `[Cache_restRoutes] class` | `ezpRestRoutesCacheClear` | `settings/site.ini:58` |
-| `[Cache_restRoutes] purgeClass` | `ezpRestRoutesCacheClear` | `settings/site.ini:59` |
-| `[DatabaseSettings] ImplementationAlias[mysql]` | `eZMySQLiDB` | `settings/site.ini:122` |
-| `[DatabaseSettings] ImplementationAlias[mysqli]` | `eZMySQLiDB` | `settings/site.ini:123` |
-| `[DatabaseSettings] ImplementationAlias[postgresql]` | `eZPostgreSQLDB` | `settings/site.ini:124` |
-| `[DatabaseSettings] ImplementationAlias[ezmysql]` | `eZMySQLiDB` | `settings/site.ini:125` |
-| `[DatabaseSettings] ImplementationAlias[ezmysqli]` | `eZMySQLiDB` | `settings/site.ini:126` |
-| `[DatabaseSettings] ImplementationAlias[ezpostgresql]` | `eZPostgreSQLDB` | `settings/site.ini:127` |
-| `[DatabaseSettings] ImplementationAlias[pgsql]` | `eZPostgreSQLDB` | `settings/site.ini:128` |
-| `[DatabaseSettings] ImplementationAlias[sqlite3]` | `eZSQLite3DB` | `settings/site.ini:129` |
-| `[DatabaseSettings] ImplementationAlias[mongodb]` | `expMongoDB` | `settings/site.ini:130` |
-| `[URLTranslator] FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `settings/site.ini:524` |
-| `[SearchSettings] SearchEngine` | `eZSearchEngine` | `settings/site.ini:720` |
-| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1230` |
-| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1520` |
-| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:1847` |
-| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:1856` |
-| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:1887` |
-| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:1888` |
-| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:1889` |
+| `[Cache_restRoutes] class` | `ezpRestRoutesCacheClear` | `settings/site.ini:59` |
+| `[Cache_restRoutes] purgeClass` | `ezpRestRoutesCacheClear` | `settings/site.ini:60` |
+| `[Cache_exphelpcontent] class` | `expHelpContentRepository` | `settings/site.ini:70` |
+| `[Cache_exphelpcontent] purgeClass` | `expHelpContentRepository` | `settings/site.ini:71` |
+| `[DatabaseSettings] ImplementationAlias[mysql]` | `eZMySQLiDB` | `settings/site.ini:134` |
+| `[DatabaseSettings] ImplementationAlias[mysqli]` | `eZMySQLiDB` | `settings/site.ini:135` |
+| `[DatabaseSettings] ImplementationAlias[postgresql]` | `eZPostgreSQLDB` | `settings/site.ini:136` |
+| `[DatabaseSettings] ImplementationAlias[ezmysql]` | `eZMySQLiDB` | `settings/site.ini:137` |
+| `[DatabaseSettings] ImplementationAlias[ezmysqli]` | `eZMySQLiDB` | `settings/site.ini:138` |
+| `[DatabaseSettings] ImplementationAlias[ezpostgresql]` | `eZPostgreSQLDB` | `settings/site.ini:139` |
+| `[DatabaseSettings] ImplementationAlias[pgsql]` | `eZPostgreSQLDB` | `settings/site.ini:140` |
+| `[DatabaseSettings] ImplementationAlias[sqlite3]` | `eZSQLite3DB` | `settings/site.ini:141` |
+| `[DatabaseSettings] ImplementationAlias[mongodb]` | `expMongoDB` | `settings/site.ini:142` |
+| `[URLTranslator] FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `settings/site.ini:593` |
+| `[SearchSettings] SearchEngine` | `eZSearchEngine` | `settings/site.ini:795` |
+| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1335` |
+| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1625` |
+| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:1952` |
+| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:1961` |
+| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:1992` |
+| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:1993` |
+| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:1994` |
 | `[Column_parentnodeid] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:172` |
 | `[Column_depth] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:183` |
 | `[Column_pathstring] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:194` |
@@ -234,6 +251,22 @@ Every class, interface and trait of `settings` with the patterns it was recogniz
 | `[Column_viewcount] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:1295` |
 | `[Column_languagemask] Class` | `expSubitemsObjectColumn` | `settings/subitemscolumns.ini:1305` |
 | `[Column_attributecount] Class` | `expSubitemsObjectColumn` | `settings/subitemscolumns.ini:1315` |
+| `[Providers] ProviderClasses[]` | `expSysCardExponentialProvider` | `settings/syscard.ini:17` |
+| `[Providers] ProviderClasses[]` | `expSysCardHostProvider` | `settings/syscard.ini:18` |
+| `[Providers] ProviderClasses[]` | `expSysCardPhpProvider` | `settings/syscard.ini:19` |
+| `[Providers] ProviderClasses[]` | `expSysCardVelocityProvider` | `settings/syscard.ini:20` |
+| `[Providers] ProviderClasses[]` | `expSysCardWebServerProvider` | `settings/syscard.ini:21` |
+| `[Providers] ProviderClasses[]` | `expSysCardDatabaseProvider` | `settings/syscard.ini:22` |
+| `[Providers] ProviderClasses[]` | `expSysCardSiteProvider` | `settings/syscard.ini:23` |
+| `[Providers] ProviderClasses[]` | `expSysCardCacheProvider` | `settings/syscard.ini:24` |
+| `[Providers] ProviderClasses[]` | `expSysCardHelpProvider` | `settings/syscard.ini:25` |
+| `[Providers] ProviderClasses[]` | `expSysCardCronProvider` | `settings/syscard.ini:26` |
+| `[Providers] ProviderClasses[]` | `expSysCardComposerProvider` | `settings/syscard.ini:27` |
+| `[Providers] ProviderClasses[]` | `expSysCardExtensionsProvider` | `settings/syscard.ini:28` |
+| `[Providers] ProviderClasses[]` | `expSysCardSiteAccessProvider` | `settings/syscard.ini:29` |
+| `[Providers] ProviderClasses[]` | `expSysCardSettingsProvider` | `settings/syscard.ini:30` |
+| `[Providers] ProviderClasses[]` | `expSysCardQueueProvider` | `settings/syscard.ini:31` |
+| `[Providers] ProviderClasses[]` | `expSysCardAboutProvider` | `settings/syscard.ini:32` |
 | `[AttributeOperator] OutputFormatter[html]` | `ezpAttributeOperatorHTMLFormatter` | `settings/template.ini:111` |
 | `[AttributeOperator] OutputFormatter[text]` | `ezpAttributeOperatorTextFormatter` | `settings/template.ini:112` |
 | `[UISwitch_language] Class` | `expUISwitchLanguageProvider` | `settings/uiswitch.ini:25` |

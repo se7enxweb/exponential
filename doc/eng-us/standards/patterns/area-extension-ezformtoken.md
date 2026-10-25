@@ -2,7 +2,7 @@
 title: Patterns in extension/ezformtoken
 audience: developer
 category: standards
-order: 440
+order: 443
 summary: Every class, view, fetch function, operator and plugin point of extension/ezformtoken with its design patterns.
 keywords: extension/ezformtoken, design patterns, classes, extension points
 type: catalogue

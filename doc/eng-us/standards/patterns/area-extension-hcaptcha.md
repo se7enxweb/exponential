@@ -2,7 +2,7 @@
 title: Patterns in extension/hcaptcha
 audience: developer
 category: standards
-order: 462
+order: 466
 summary: Every class, view, fetch function, operator and plugin point of extension/hcaptcha with its design patterns.
 keywords: extension/hcaptcha, design patterns, classes, extension points
 type: catalogue

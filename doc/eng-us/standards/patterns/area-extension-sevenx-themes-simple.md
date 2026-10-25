@@ -2,7 +2,7 @@
 title: Patterns in extension/sevenx_themes_simple
 audience: developer
 category: standards
-order: 471
+order: 475
 summary: Every class, view, fetch function, operator and plugin point of extension/sevenx_themes_simple with its design patterns.
 keywords: extension/sevenx_themes_simple, design patterns, classes, extension points
 type: catalogue

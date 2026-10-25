@@ -3,7 +3,7 @@ title: Fetch function (Query Object, Facade)
 audience: developer
 category: standards
 order: 315
-summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 319 instances in Exponential.
+summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 351 instances in Exponential.
 keywords: design pattern, fetch-function, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 319 |
+| Instances | 351 |
 | Recognized by | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
 | Extension point | function_definition.php in the module directory of an extension (module.ini ModuleRepositories[]). |
 
@@ -39,6 +39,27 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `cjwTmvFunctionCollection` | class | `extension/cjw_tmv/classes/cjwtmvfunctioncollection.php:10` | The fetch functions of the cjw_tmv module (modules/cjw_tmv/function_definition.php). | – |
+
+### extension/expai (6)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiAltTextFunctionCollection` | class | `extension/expai/classes/alttext/expaialttextfunctioncollection.php:14` | fetch( 'expai', 'alt_text_model', hash( 'object', $object ) ): the vision model the "Write alt text" button uses for the images of this object, or wh… | – |
+| `expAiBudgetFunctionCollection` | class | `extension/expai/classes/budget/expaibudgetfunctioncollection.php:14` | The template fetch function fetch( 'expai', 'budget_status' ): the monthly site budget of queued requests (expAiBudget::status()), for users with exp… | – |
+| `expAiChainFunctionCollection` | class | `extension/expai/classes/chain/expaichainfunctioncollection.php:18` | Template fetch functions of AI chains: | – |
+| `expAiFunctionCollection` | class | `extension/expai/classes/expaifunctioncollection.php:14` | The template fetch functions of expai (modules/expai/function_definition.php). | – |
+| `expAiPresetFunctionCollection` | class | `extension/expai/classes/fieldactions/expaipresetfunctioncollection.php:15` | fetch( 'expai', 'edit_presets', hash( 'object', $object, 'attributes', $content_attributes ) ): the presets, the Improve menu and the defaults line o… | – |
+| `expAiThreadFunctionCollection` | class | `extension/expai/classes/vector/expaithreadfunctioncollection.php:17` | Template fetch functions of threads (function_definition.php): | – |
+
+### extension/expimageeditor (1)
+
+[All patterns of extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImageEditorFunctionCollection` | class | `extension/expimageeditor/classes/expimageeditorfunctioncollection.php:15` | The fetch functions of the expimageeditor module. | – |
 
 ### extension/explayouts (1)
 
@@ -96,6 +117,14 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 |---|---|---|---|---|
 | `eZContentFunctionCollection` | class | `extension/nxc_powercontent/modules/content/ezcontentfunctioncollection.php:20` | – | – |
 
+### extension/sqliimport (1)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportFunctionCollection` | class | `extension/sqliimport/classes/exp/expimportfunctioncollection.php:11` | The template fetch functions of the module sqliimport (modules/sqliimport/function_definition.php). | – |
+
 ### extension/xrowextract (1)
 
 [All patterns of extension/xrowextract](area-extension-xrowextract.md)
@@ -119,6 +148,14 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expAuditFunctionCollection` | class | `kernel/classes/audit/console/expauditfunctioncollection.php:22` | The fetch functions of the audit module (kernel/audit/function_definition.php; doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): | – |
+
+### kernel/classes/datatable (1)
+
+[All patterns of kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expDataTableFunctionCollection` | class | `kernel/classes/datatable/expdatatablefunctioncollection.php:28` | The template fetch functions of the datatable module (kernel/datatable/function_definition.php, doc/eng-us/features/6.0/data-tables.md, "In templates… | – |
 
 ### kernel/classes/help (1)
 
@@ -158,7 +195,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 |---|---|---|---|---|
 | `ezpLanguageSwitcherFunctionCollection` | class | `kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php:14` | – | – |
 
-## Fetch functions (290)
+## Fetch functions (313)
 
 ### extension/cjw_newsletter (16)
 
@@ -190,24 +227,48 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'cjw_tmv', 'places' )` | `cjwTmvFunctionCollection::places()` | `extension/cjw_tmv/modules/cjw_tmv/function_definition.php:32` |
 | `fetch( 'cjw_tmv', 'filter_params' )` | `cjwTmvFunctionCollection::filterParams()` | `extension/cjw_tmv/modules/cjw_tmv/function_definition.php:40` |
 
+### extension/expai (12)
+
+| Fetch | Implemented by | Defined in |
+|---|---|---|
+| `fetch( 'expai', 'my_drafts' )` | `expAiFunctionCollection::fetchMyDrafts()` | `extension/expai/modules/expai/function_definition.php:16` |
+| `fetch( 'expai', 'my_draft_count' )` | `expAiFunctionCollection::fetchMyDraftCount()` | `extension/expai/modules/expai/function_definition.php:22` |
+| `fetch( 'expai', 'waiting_for_my_approval' )` | `expAiFunctionCollection::fetchWaitingForMyApproval()` | `extension/expai/modules/expai/function_definition.php:27` |
+| `fetch( 'expai', 'budget_status' )` | `expAiBudgetFunctionCollection::fetchStatus()` | `extension/expai/modules/expai/function_definition.php:33` |
+| `fetch( 'expai', 'chains' )` | `expAiChainFunctionCollection::fetchChains()` | `extension/expai/modules/expai/function_definition.php:40` |
+| `fetch( 'expai', 'chain_runs' )` | `expAiChainFunctionCollection::fetchRuns()` | `extension/expai/modules/expai/function_definition.php:45` |
+| `fetch( 'expai', 'models' )` | `expAiFunctionCollection::fetchModels()` | `extension/expai/modules/expai/function_definition.php:51` |
+| `fetch( 'expai', 'my_threads' )` | `expAiThreadFunctionCollection::fetchMyThreads()` | `extension/expai/modules/expai/function_definition.php:57` |
+| `fetch( 'expai', 'switched_on' )` | `expAiGate::fetchSwitchedOn()` | `extension/expai/modules/expai/function_definition.php:64` |
+| `fetch( 'expai', 'alt_text_model' )` | `expAiAltTextFunctionCollection::fetchModel()` | `extension/expai/modules/expai/function_definition.php:72` |
+| `fetch( 'expai', 'alt_text_required' )` | `expAiAltTextFunctionCollection::fetchAltTextRequired()` | `extension/expai/modules/expai/function_definition.php:79` |
+| `fetch( 'expai', 'edit_presets' )` | `expAiPresetFunctionCollection::fetchEditPresets()` | `extension/expai/modules/expai/function_definition.php:87` |
+
 ### extension/expchangeclass (1)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
 | `fetch( 'changeclass', 'simple_conversion' )` | `conversionFunctions::fetchSimpleConversionArray()` | `extension/expchangeclass/modules/changeclass/function_definition.php:30` |
 
-### extension/explayouts (8)
+### extension/expimageeditor (1)
+
+| Fetch | Implemented by | Defined in |
+|---|---|---|
+| `fetch( 'expimageeditor', 'aspect_ratios' )` | `expImageEditorFunctionCollection::fetchAspectRatios()` | `extension/expimageeditor/modules/expimageeditor/function_definition.php:13` |
+
+### extension/explayouts (9)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
 | `fetch( 'explayouts', 'layout' )` | `expLayoutsFunctionCollection::fetchLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:4` |
 | `fetch( 'explayouts', 'resolve_layout' )` | `expLayoutsFunctionCollection::resolveLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:18` |
-| `fetch( 'explayouts', 'resolve_admin_layout' )` | `expLayoutsFunctionCollection::resolveAdminLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:32` |
-| `fetch( 'explayouts', 'admin_layout_cache_key' )` | `expLayoutsFunctionCollection::adminLayoutCacheKey()` | `extension/explayouts/modules/explayouts/function_definition.php:47` |
-| `fetch( 'explayouts', 'admin_layouts_enabled' )` | `expLayoutsFunctionCollection::adminLayoutsEnabled()` | `extension/explayouts/modules/explayouts/function_definition.php:62` |
-| `fetch( 'explayouts', 'layout_summary_for_node' )` | `expLayoutsFunctionCollection::layoutSummaryForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:74` |
-| `fetch( 'explayouts', 'resolve_layout_for_node' )` | `expLayoutsFunctionCollection::resolveLayoutForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:88` |
-| `fetch( 'explayouts', 'rules_for_node' )` | `expLayoutsFunctionCollection::rulesForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:102` |
+| `fetch( 'explayouts', 'resolve_route_layout' )` | `expLayoutsFunctionCollection::resolveRouteLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:33` |
+| `fetch( 'explayouts', 'resolve_admin_layout' )` | `expLayoutsFunctionCollection::resolveAdminLayout()` | `extension/explayouts/modules/explayouts/function_definition.php:45` |
+| `fetch( 'explayouts', 'admin_layout_cache_key' )` | `expLayoutsFunctionCollection::adminLayoutCacheKey()` | `extension/explayouts/modules/explayouts/function_definition.php:60` |
+| `fetch( 'explayouts', 'admin_layouts_enabled' )` | `expLayoutsFunctionCollection::adminLayoutsEnabled()` | `extension/explayouts/modules/explayouts/function_definition.php:75` |
+| `fetch( 'explayouts', 'layout_summary_for_node' )` | `expLayoutsFunctionCollection::layoutSummaryForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:87` |
+| `fetch( 'explayouts', 'resolve_layout_for_node' )` | `expLayoutsFunctionCollection::resolveLayoutForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:101` |
+| `fetch( 'explayouts', 'rules_for_node' )` | `expLayoutsFunctionCollection::rulesForNode()` | `extension/explayouts/modules/explayouts/function_definition.php:115` |
 
 ### extension/ezfind (7)
 
@@ -324,6 +385,14 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `extension/nxc_powercontent/modules/content/function_definition.php:1224` |
 | `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `extension/nxc_powercontent/modules/content/function_definition.php:1241` |
 
+### extension/sqliimport (3)
+
+| Fetch | Implemented by | Defined in |
+|---|---|---|
+| `fetch( 'sqliimport', 'recent_runs' )` | `expImportFunctionCollection::fetchRecentRuns()` | `extension/sqliimport/modules/sqliimport/function_definition.php:17` |
+| `fetch( 'sqliimport', 'failed_runs_24h' )` | `expImportFunctionCollection::fetchFailedRuns24h()` | `extension/sqliimport/modules/sqliimport/function_definition.php:22` |
+| `fetch( 'sqliimport', 'notices' )` | `expImportFunctionCollection::fetchNotices()` | `extension/sqliimport/modules/sqliimport/function_definition.php:27` |
+
 ### extension/xrowextract (2)
 
 | Fetch | Implemented by | Defined in |
@@ -331,7 +400,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'xrowextract', 'schedule_alerts' )` | `XrowExtractFunctionCollection::fetchScheduleAlerts()` | `extension/xrowextract/modules/xrowextract/function_definition.php:10` |
 | `fetch( 'xrowextract', 'requirement_notices' )` | `XrowExtractFunctionCollection::fetchRequirementNotices()` | `extension/xrowextract/modules/xrowextract/function_definition.php:17` |
 
-### kernel/modules (173)
+### kernel/modules (179)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
@@ -421,6 +490,11 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'content', 'reverse_related_objects_ids' )` | `eZContentFunctionCollection::fetchReverseRelatedObjectsID()` | `kernel/content/function_definition.php:1302` |
 | `fetch( 'content', 'site_data' )` | `eZContentFunctionCollection::fetchSiteData()` | `kernel/content/function_definition.php:1321` |
 | `fetch( 'content', 'content_tree_menu_expiry' )` | `eZContentFunctionCollection::fetchContentTreeMenuExpiry()` | `kernel/content/function_definition.php:1330` |
+| `fetch( 'datatable', 'list' )` | `expDataTableFunctionCollection::fetchList()` | `kernel/datatable/function_definition.php:13` |
+| `fetch( 'datatable', 'count' )` | `expDataTableFunctionCollection::fetchCount()` | `kernel/datatable/function_definition.php:23` |
+| `fetch( 'datatable', 'row' )` | `expDataTableFunctionCollection::fetchRow()` | `kernel/datatable/function_definition.php:30` |
+| `fetch( 'datatable', 'pointing_at' )` | `expDataTableFunctionCollection::fetchPointingAt()` | `kernel/datatable/function_definition.php:37` |
+| `fetch( 'datatable', 'can' )` | `expDataTableFunctionCollection::fetchCan()` | `kernel/datatable/function_definition.php:44` |
 | `fetch( 'exphelp', 'context' )` | `expHelpFunctionCollection::fetchContext()` | `kernel/exphelp/function_definition.php:16` |
 | `fetch( 'exphelp', 'license' )` | `expHelpFunctionCollection::fetchLicense()` | `kernel/exphelp/function_definition.php:25` |
 | `fetch( 'exphelp', 'context_menu' )` | `expHelpFunctionCollection::fetchContextMenu()` | `kernel/exphelp/function_definition.php:33` |
@@ -475,7 +549,8 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'setup', 'edition' )` | `eZSetupFunctionCollection::fetchEdition()` | `kernel/setup/function_definition.php:70` |
 | `fetch( 'setup', 'extension_counts' )` | `eZSetupFunctionCollection::fetchExtensionCounts()` | `kernel/setup/function_definition.php:76` |
 | `fetch( 'setup', 'cronjob_pauses' )` | `eZSetupFunctionCollection::fetchCronjobPauses()` | `kernel/setup/function_definition.php:86` |
-| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'cronjob_status' )` | `eZSetupFunctionCollection::fetchCronjobStatus()` | `kernel/setup/function_definition.php:94` |
+| `fetch( 'setup', 'log_files' )` | `eZSetupFunctionCollection::fetchLogFiles()` | `kernel/setup/function_definition.php:102` |
 | `fetch( 'shop', 'basket' )` | `eZShopFunctionCollection::fetchBasket()` | `kernel/shop/function_definition.php:11` |
 | `fetch( 'shop', 'best_sell_list' )` | `eZShopFunctionCollection::fetchBestSellList()` | `kernel/shop/function_definition.php:18` |
 | `fetch( 'shop', 'related_purchase' )` | `eZShopFunctionCollection::fetchRelatedPurchaseList()` | `kernel/shop/function_definition.php:54` |

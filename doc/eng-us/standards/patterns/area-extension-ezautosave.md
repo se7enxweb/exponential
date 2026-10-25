@@ -2,7 +2,7 @@
 title: Patterns in extension/ezautosave
 audience: developer
 category: standards
-order: 436
+order: 439
 summary: Every class, view, fetch function, operator and plugin point of extension/ezautosave with its design patterns.
 keywords: extension/ezautosave, design patterns, classes, extension points
 type: catalogue
@@ -15,10 +15,11 @@ type: catalogue
 
 Every class, interface and trait of `extension/ezautosave` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (1)
+## Classes (2)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
+| `ezautosaveInfo` | class | [Value object / struct](value-object.md) | `extension/ezautosave/ezinfo.php:7` | – |
 | `ezjscServerFunctionsAutosave` | class extends ezjscServerFunctions | [INI plugin point (extension point)](ini-plugin-point.md), [Utility (static helper)](utility.md) | `extension/ezautosave/classes/ezjscserverfunctionsautosave.php:16` | This class handles AJAX calls for the autosave feature |
 
 ## Event hooks (1)

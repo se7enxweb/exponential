@@ -3,7 +3,7 @@ title: Facade / service
 audience: developer
 category: standards
 order: 330
-summary: One simple entry point in front of a subsystem, or a service class that holds the operations of one domain. 37 instances in Exponential.
+summary: One simple entry point in front of a subsystem, or a service class that holds the operations of one domain. 39 instances in Exponential.
 keywords: design pattern, facade, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,10 +18,18 @@ One simple entry point in front of a subsystem, or a service class that holds th
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 37 |
+| Instances | 39 |
 | Recognized by | Class name ends in Facade, Service, Manager, API or Api. |
 
 ## Classes by area
+
+### extension/expai (1)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiBatchApi` | abstract class | `extension/expai/classes/lanes/expaibatchapi.php:27` | A provider's batch API: submit many requests at once, poll the batch, fetch the results, cancel, delete. | extension/expai/settings/rad.ini [Registry_expai_batch_apis] Implements |
 
 ### extension/explayouts (2)
 
@@ -52,6 +60,14 @@ One simple entry point in front of a subsystem, or a service class that holds th
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expLayoutsUIApplicationApi` | class | `extension/explayouts_ui_api/classes/explayoutsuiapplicationapi.php:2` | – | – |
+
+### extension/expqueue (1)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueService` | class | `extension/expqueue/classes/expqueueservice.php:22` | The systemd service of the queue's workers: ./console ext:expqueue:service install\|start\|stop\|status\|uninstall. | – |
 
 ### extension/expsite_api (4)
 
@@ -151,7 +167,7 @@ One simple entry point in front of a subsystem, or a service class that holds th
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/eng-us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruning, com… | – |
+| `expLogManager` | class | `kernel/classes/logviewer/explogmanager.php:27` | Log management (doc/eng-us/features/6.0/log-rotation.md): the logs of the installation with their archives, sizes, growth and limits; rotation, pruni… | – |
 
 ### kernel/classes/mailpreferences (1)
 

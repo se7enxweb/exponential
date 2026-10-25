@@ -2,7 +2,7 @@
 title: Patterns in extension/ezwt
 audience: developer
 category: standards
-order: 460
+order: 464
 summary: Every class, view, fetch function, operator and plugin point of extension/ezwt with its design patterns.
 keywords: extension/ezwt, design patterns, classes, extension points
 type: catalogue
@@ -15,13 +15,14 @@ type: catalogue
 
 Every class, interface and trait of `extension/ezwt` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (4)
+## Classes (5)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
 | `Exponential\View\Extension\Ezwt\Websitetoolbar\Sort` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `extension/ezwt/classes/runnable/views/websitetoolbar/sort.php:34` | The code of extension/ezwt/modules/websitetoolbar/sort.php, moved into a class (#207 stage 1). |
 | `Exponential\View\Extension\Ezwt\Websitetoolbar\Websitetoolbar` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `extension/ezwt/classes/runnable/views/websitetoolbar/websitetoolbar.php:33` | The code of extension/ezwt/modules/websitetoolbar/websitetoolbar.php, moved into a class (#207 stage 1). |
 | `eZCreateClassListGroups` | class | [Template operator (Interpreter plugin)](template-operator.md) | `extension/ezwt/autoloads/ezcreateclasslistgroups.php:28` | – |
+| `ezwtInfo` | class | [Value object / struct](value-object.md) | `extension/ezwt/ezinfo.php:7` | – |
 | `ezwtServerCallFunctions` | class | [INI plugin point (extension point)](ini-plugin-point.md) | `extension/ezwt/classes/ezwtservercallfunctions.php:15` | Implements methods called remotely by sending XHR calls |
 
 ## Module views (1)

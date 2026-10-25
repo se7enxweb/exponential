@@ -2,7 +2,7 @@
 title: Patterns in extension/ezfind
 audience: developer
 category: standards
-order: 438
+order: 441
 summary: Every class, view, fetch function, operator and plugin point of extension/ezfind with its design patterns.
 keywords: extension/ezfind, design patterns, classes, extension points
 type: catalogue

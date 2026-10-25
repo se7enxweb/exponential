@@ -2,7 +2,7 @@
 title: Patterns in extension/xrowextract
 audience: developer
 category: standards
-order: 476
+order: 481
 summary: Every class, view, fetch function, operator and plugin point of extension/xrowextract with its design patterns.
 keywords: extension/xrowextract, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `extension/xrowextract` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (91)
+## Classes (94)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -51,7 +51,7 @@ Every class, interface and trait of `extension/xrowextract` with the patterns it
 | `XrowExtractColumns` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractcolumns.php:8` | The columns of an export and their values: the special (non class attribute) columns, a class's attribute columns, and one object as a row of CSV cel… |
 | `XrowExtractCron` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractcron.php:16` | When a schedule runs: the simple choices of the Schedules page (hourly at minute M, daily at HH:MM, weekly on a day at HH:MM, monthly on a day at HH:… |
 | `XrowExtractDestination` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `extension/xrowextract/classes/xrowextractdestination.php:9` | A named, reusable delivery destination (table xrowextract_destination). |
-| `XrowExtractEntry` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractentry.php:12` | The entry parameters of xrowextract/csv: the content tree's Advanced › Export menu opens the CSV form pre-filled for a node with xrowextract/csv/(nod… |
+| `XrowExtractEntry` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractentry.php:14` | The entry parameters of xrowextract/csv: the content tree's Advanced › Export menu opens the CSV form pre-filled for a node with xrowextract/csv/(nod… |
 | `XrowExtractFetchAlias` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractfetchalias.php:18` | Named fetches from fetchalias.ini usable in the extract view and the CLI: a "tree" / "list" / "tree_count" / "list_count" alias's Constant values rea… |
 | `XrowExtractFileModes` | trait | [Trait (mixin)](trait.md) | `extension/xrowextract/classes/xrowextractfilemodes.php:14` | The modes the extension gives its files and directories, within the limits EZP_FILE_MODE_MAX / EZP_DIR_MODE_MAX the kernel reads from config.php (see… |
 | `XrowExtractFilters` | class | [Decorator / filter](decorator.md), [Factory and static factory methods](factory.md) | `extension/xrowextract/classes/xrowextractfilters.php:16` | Filters of an export: a date range (published, modified, or a date attribute of the class; any, today, the last N days, since, before, between, futur… |
@@ -66,12 +66,15 @@ Every class, interface and trait of `extension/xrowextract` with the patterns it
 | `XrowExtractNotifierHttp` | class extends XrowExtractTransport | – | `extension/xrowextract/classes/xrowextractnotifier.php:216` | The webhook's HTTP call: XrowExtractTransport's curl helper with a JSON body. |
 | `XrowExtractPackage` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractpackage.php:18` | Content-package (.ezpkg) support for xrowextract/package: inspecting a package's content classes and content objects before anything is written (the… |
 | `XrowExtractPreset` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractpreset.php:25` | A saved export preset: a complete, named CSV or archive export definition (scope, node(s), class or sets, columns, languages, every filter, sort, out… |
+| `XrowExtractReimport` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractreimport.php:13` | "Re-import this file" on the Jobs and History pages: the file of a finished class export (a CSV, JSON or XML job of the One class view, the command l… |
 | `XrowExtractRelationFilter` | class | [Decorator / filter](decorator.md), [INI plugin point (extension point)](ini-plugin-point.md) | `extension/xrowextract/classes/xrowextractrelationfilter.php:17` | Extended attribute filter "XrowExtractRelation": only objects that relate to a given object (relation_type ignored — any relation counts, including o… |
 | `XrowExtractRequirements` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractrequirements.php:19` | What the extension needs from PHP and the server, in one place: each requirement (a PHP version, a PHP extension, a function a hosting may disable, a… |
 | `XrowExtractSchedule` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `extension/xrowextract/classes/xrowextractschedule.php:20` | A scheduled export or import (table xrowextract_schedule, created lazily by XrowExtractSchema). |
 | `XrowExtractScheduler` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractscheduler.php:15` | Runs schedules: finds the due ones (the cronjob part, cronjobs/xrowextract.php, or bin/php/schedule.php --cron), turns each into an ordinary backgrou… |
 | `XrowExtractSchema` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractschema.php:11` | The extension's own tables (xrowextract_schedule, xrowextract_destination, xrowextract_history), created lazily and idempotently the first time one o… |
 | `XrowExtractSecrets` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextractsecrets.php:15` | Destination credentials at rest: libsodium secretbox (XSalsa20-Poly1305) with a 32 byte key kept in a key file outside the database. |
+| `XrowExtractTransfer` | class | [Utility (static helper)](utility.md) | `extension/xrowextract/classes/xrowextracttransfer.php:20` | Export's part of Exponential's transfer runs (6.0.15 and later): one engine and one run history for every import and export tool of the installation. |
+| `XrowExtractTransferTask` | class implements expKernelTransferTask | – | `extension/xrowextract/classes/xrowextracttransfertask.php:18` | One background job of Export, run by one of the kernel's engines (Exponential 6.0.15 and later): the job queue (expqueue, job type xrowextract.run) o… |
 | `XrowExtractTranslationFilter` | class | [Decorator / filter](decorator.md), [INI plugin point (extension point)](ini-plugin-point.md) | `extension/xrowextract/classes/xrowextracttranslationfilter.php:24` | Extended attribute filter "XrowExtractTranslation": only objects that have a translation in the given language. |
 | `XrowExtractTransport` | abstract class | [Strategy / handler](strategy-handler.md), [Template Method / abstract base class](template-method.md) | `extension/xrowextract/classes/transports/xrowextracttransport.php:10` | One way of delivering a file to (or, for a scheduled import, fetching one from) a destination. |
 | `XrowExtractTransportFtp` | class extends XrowExtractTransport | – | `extension/xrowextract/classes/transports/xrowextracttransportftp.php:9` | FTP and FTPS through the curl extension: plain FTP (unencrypted: user, password and file travel in clear text - the Destinations page says so), expli… |
@@ -152,7 +155,7 @@ Every class, interface and trait of `extension/xrowextract` with the patterns it
 | `xrowextract` | `extension/xrowextract/classes/runnable/cronjobs/xrowextract.php` | The code of extension/xrowextract/cronjobs/xrowextract.php, moved into a class (#207 stage 1). |
 | `xrowextract` | `extension/xrowextract/cronjobs/xrowextract.php` | The xrowextract cronjob part (runcronjobs.php xrowextract): starts every due schedule as a background job through the same runner "Run in the backgro… |
 
-## INI plugin points (33)
+## INI plugin points (35)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -185,7 +188,9 @@ Every class, interface and trait of `extension/xrowextract` with the patterns it
 | `[eztags] HandlerClass` | `XroweZKeywordHandler` | `extension/xrowextract/settings/csv.ini.append.php:173` |
 | `[ezobjectrelation] HandlerClass` | `XroweZObjectRelationHandler` | `extension/xrowextract/settings/csv.ini.append.php:177` |
 | `[xrowmetadata] HandlerClass` | `XrowxrowmetadataHandler` | `extension/xrowextract/settings/csv.ini.append.php:181` |
+| `[JobType_xrowextract.run] Handler` | `expKernelTransferQueueHandler` | `extension/xrowextract/settings/expqueue.ini.append.php:13` |
 | `[XrowExtractTranslation] ClassName` | `XrowExtractTranslationFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:8` |
 | `[XrowExtractHasChildren] ClassName` | `XrowExtractHasChildrenFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:15` |
 | `[XrowExtractRelation] ClassName` | `XrowExtractRelationFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:23` |
 | `[XrowExtractUserStatus] ClassName` | `XrowExtractUserStatusFilter` | `extension/xrowextract/settings/extendedattributefilter.ini.append.php:30` |
+| `[Service_transfer.xrowextract] Class` | `expKernelTransferTool` | `extension/xrowextract/settings/kernelservices.ini.append.php:10` |

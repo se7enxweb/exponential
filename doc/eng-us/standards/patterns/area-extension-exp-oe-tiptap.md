@@ -2,7 +2,7 @@
 title: Patterns in extension/exp_oe_tiptap
 audience: developer
 category: standards
-order: 434
+order: 437
 summary: Every class, view, fetch function, operator and plugin point of extension/exp_oe_tiptap with its design patterns.
 keywords: extension/exp_oe_tiptap, design patterns, classes, extension points
 type: catalogue

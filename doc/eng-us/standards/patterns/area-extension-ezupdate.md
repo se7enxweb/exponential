@@ -2,7 +2,7 @@
 title: Patterns in extension/ezupdate
 audience: developer
 category: standards
-order: 457
+order: 461
 summary: Every class, view, fetch function, operator and plugin point of extension/ezupdate with its design patterns.
 keywords: extension/ezupdate, design patterns, classes, extension points
 type: catalogue

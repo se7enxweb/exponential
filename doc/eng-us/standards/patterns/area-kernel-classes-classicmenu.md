@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/classicmenu
 audience: developer
 category: standards
-order: 483
+order: 488
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/classicmenu with its design patterns.
 keywords: kernel/classes/classicmenu, design patterns, classes, extension points
 type: catalogue

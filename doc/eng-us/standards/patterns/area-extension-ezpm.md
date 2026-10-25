@@ -2,7 +2,7 @@
 title: Patterns in extension/ezpm
 audience: developer
 category: standards
-order: 450
+order: 454
 summary: Every class, view, fetch function, operator and plugin point of extension/ezpm with its design patterns.
 keywords: extension/ezpm, design patterns, classes, extension points
 type: catalogue

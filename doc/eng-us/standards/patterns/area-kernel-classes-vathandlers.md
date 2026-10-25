@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/vathandlers
 audience: developer
 category: standards
-order: 510
+order: 519
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/vathandlers with its design patterns.
 keywords: kernel/classes/vathandlers, design patterns, classes, extension points
 type: catalogue

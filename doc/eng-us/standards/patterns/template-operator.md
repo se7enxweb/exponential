@@ -3,7 +3,7 @@ title: Template operator (Interpreter plugin)
 audience: developer
 category: standards
 order: 313
-summary: A class that adds operators to the template language: it lists them in operatorList() and computes them in modify(). 321 instances in Exponential.
+summary: A class that adds operators to the template language: it lists them in operatorList() and computes them in modify(). 338 instances in Exponential.
 keywords: design pattern, template-operator, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class that adds operators to the template language: it lists them in operatorL
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 321 |
+| Instances | 338 |
 | Recognized by | Registered in an eztemplateautoload.php ($eZTemplateOperatorArray[]), or has operatorList() and modify(). |
 | Extension point | autoloads/eztemplateautoload.php of an extension, enabled by site.ini/template.ini [TemplateSettings] ExtensionAutoloadPath[]. |
 
@@ -49,12 +49,21 @@ A class that adds operators to the template language: it lists them in operatorL
 |---|---|---|---|---|
 | `TemplateParseXMLOperator` | class | `extension/enhancedezbinaryfile/autoloads/templateparsexmloperator.php:18` | – | – |
 
-### extension/explayouts (1)
+### extension/expai (1)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiTemplateOperators` | class | `extension/expai/autoloads/expaitemplateoperators.php:20` | {$amount\|expai_money( $approx )} "$0.06", "‹ $0.01", with "≈" for an approximate cost (expAiCost::money()) {$tokens\|expai_tokens} "950", "21.6k", "1.… | – |
+
+### extension/explayouts (2)
 
 [All patterns of extension/explayouts](area-extension-explayouts.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
+| `expLayoutsSafeValue` | class | `extension/explayouts/classes/explayoutssafevalue.php:22` | The values of a block that go into markup where escaping is not enough: a link or an embed address (\|wash keeps "javascript:" working), a colour insi… | – |
 | `ExplBlockOperator` | class | `extension/explayouts/classes/explblockoperator.php:13` | Template operators for {explblock} extraction. | – |
 
 ### extension/explayouts_ui (1)
@@ -228,16 +237,19 @@ A class that adds operators to the template language: it lists them in operatorL
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expAuditTemplateOperator` | class | `kernel/classes/audit/console/expaudittemplateoperator.php:13` | The template operator audit_label (doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): the human label of an audit event name from the taxonomy regi… | – |
+| `expAuditTemplateOperator` | class | `kernel/classes/audit/console/expaudittemplateoperator.php:13` | The template operator audit_label (doc/eng-us/bc/6.0/audit.md, "Template operator and fetch"): the human label of an audit event name from the taxono… | – |
 
-### kernel/common (19)
+### kernel/common (22)
 
 [All patterns of kernel/common](area-kernel-common.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expContentSecurityPolicyOperator` | class | `kernel/common/expcontentsecuritypolicyoperator.php:21` | The template operator csp_nonce(): the nonce of the Content Security Policy of this request, for an inline script a template cannot move into a file… | – |
+| `expDemoModeOperator` | class | `kernel/common/expdemomodeoperator.php:21` | The template operator exp_demo_mode(): true while demo mode is on (the environment variable EXP_DEMO_MODE=1, expDemoMode). | – |
 | `expEnvironmentOperator` | class | `kernel/common/expenvironmentoperator.php:29` | – | – |
+| `expKernelTransferOperator` | class | `kernel/common/expkerneltransferoperator.php:29` | The template operators of the transfer registry (expKernelTransferRegistry; doc/eng-us/features/6.0/transfer-registry.md). | – |
+| `expViewParameterOperator` | class | `kernel/common/expviewparameteroperator.php:21` | The template operator view_parameter: a value as the value of a view parameter, /(name)/, written as expViewParameters::encode() writes it ("~2F" for… | – |
 | `eZAlphabetOperator` | class | `kernel/common/ezalphabetoperator.php:19` | – | – |
 | `eZAutoLinkOperator` | class | `kernel/common/ezautolinkoperator.php:12` | – | – |
 | `eZContentStructureTreeOperator` | class | `kernel/common/ezcontentstructuretreeoperator.php:17` | – | – |
@@ -291,14 +303,14 @@ A class that adds operators to the template language: it lists them in operatorL
 | `eZTemplateNl2BrOperator` | class | `lib/eztemplate/classes/eztemplatenl2broperator.php:21` | – | – |
 | `eZTemplateOperator` | class | `lib/eztemplate/classes/eztemplateoperator.php:20` | – | – |
 | `eZTemplatePHPOperator` | class | `lib/eztemplate/classes/eztemplatephpoperator.php:30` | – | – |
-| `eZTemplateRoleOperator` | class | `lib/eztemplate/classes/eztemplateroleoperator.php:24` | The eZTemplateRoleOperator class provides template operators for checking user role membership | – |
+| `eZTemplateRoleOperator` | class | `lib/eztemplate/classes/eztemplateroleoperator.php:29` | The eZTemplateRoleOperator class provides template operators for checking user role membership and policies (doc/eng-us/features/6.0/role-and-policy-… | – |
 | `eZTemplateStringOperator` | class | `lib/eztemplate/classes/eztemplatestringoperator.php:22` | – | – |
 | `eZTemplateStringsOperator` | class | `lib/eztemplate/classes/eztemplatestringsoperator.php:80` | – | – |
 | `eZTemplateTextOperator` | class | `lib/eztemplate/classes/eztemplatetextoperator.php:18` | – | – |
 | `eZTemplateTypeOperator` | class | `lib/eztemplate/classes/eztemplatetypeoperator.php:36` | – | – |
 | `eZTemplateUnitOperator` | class | `lib/eztemplate/classes/eztemplateunitoperator.php:39` | – | – |
 
-## Template operators (76)
+## Template operators (80)
 
 ### extension/bcwebsitestatistics (1)
 
@@ -318,6 +330,12 @@ A class that adds operators to the template language: it lists them in operatorL
 | Operators | Class | Registered in |
 |---|---|---|
 | parsexml | `TemplateParseXMLOperator` | `extension/enhancedezbinaryfile/autoloads/eztemplateautoload.php:7` |
+
+### extension/expai (1)
+
+| Operators | Class | Registered in |
+|---|---|---|
+| expai_money, expai_tokens, expai_number, expai_json, expai_retention, expai_help_url | `expAiTemplateOperators` | `extension/expai/autoloads/eztemplateautoload.php:11` |
 
 ### extension/explayouts_ui (1)
 
@@ -431,7 +449,7 @@ A class that adds operators to the template language: it lists them in operatorL
 | xrowmetadata_license | `xrowMetaDataLicenseOperator` | `extension/xrowmetadata/autoloads/eztemplateautoload.php:11` |
 | xrowmetadata_license_enabled, xrowmetadata_license_choices, xrowmetadata_license_info, xrowmetadata_license_inherited, xrowmetadata_license_class_settings | `xrowMetaDataLicensePickerOperator` | `extension/xrowmetadata/autoloads/eztemplateautoload.php:19` |
 
-### kernel/common (21)
+### kernel/common (24)
 
 | Operators | Class | Registered in |
 |---|---|---|
@@ -455,7 +473,10 @@ A class that adds operators to the template language: it lists them in operatorL
 | installation_name, is_production_system | `ExpInstallationOperator` | `kernel/common/eztemplateautoload.php:72` |
 | audit_label | `expAuditTemplateOperator` | `kernel/common/eztemplateautoload.php:75` |
 | exp_environment, exp_environment_badge | `expEnvironmentOperator` | `kernel/common/eztemplateautoload.php:78` |
-| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:81` |
+| exp_demo_mode | `expDemoModeOperator` | `kernel/common/eztemplateautoload.php:81` |
+| csp_nonce | `expContentSecurityPolicyOperator` | `kernel/common/eztemplateautoload.php:84` |
+| view_parameter | `expViewParameterOperator` | `kernel/common/eztemplateautoload.php:87` |
+| transfer_tools, transfer_actions, transfer_related, transfer_tool | `expKernelTransferOperator` | `kernel/common/eztemplateautoload.php:90` |
 
 ### kernel/private (1)
 

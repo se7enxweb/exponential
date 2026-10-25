@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/workflowtypes
 audience: developer
 category: standards
-order: 511
+order: 520
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/workflowtypes with its design patterns.
 keywords: kernel/classes/workflowtypes, design patterns, classes, extension points
 type: catalogue
@@ -15,10 +15,12 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes/workflowtypes` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (9)
+## Classes (11)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
+| `expDataTableMirrorType` | class extends eZWorkflowEventType | [Workflow event type (Command, plugin)](workflow-event.md) | `kernel/classes/workflowtypes/event/expdatatablemirror/expdatatablemirrortype.php:21` | The workflow event "Mirror to data tables" (doc/eng-us/features/6.0/data-tables.md, "Live mirror"): in a workflow on content/publish (after), the pub… |
+| `expUserApproveType` | class extends eZApproveType | [Workflow event type (Command, plugin)](workflow-event.md) | `kernel/classes/workflowtypes/event/expuserapprove/expuserapprovetype.php:36` | The workflow event "Approve user accounts" (doc/eng-us/bc/6.0/user-account-approval.md), modelled on the approval event (ezapprove): on content/publi… |
 | `eZApproveType` | class extends eZWorkflowEventType | [Workflow event type (Command, plugin)](workflow-event.md) | `kernel/classes/workflowtypes/event/ezapprove/ezapprovetype.php:24` | – |
 | `eZFinishUserRegisterType` | class extends eZWorkflowEventType | [Workflow event type (Command, plugin)](workflow-event.md) | `kernel/classes/workflowtypes/event/ezfinishuserregister/ezfinishuserregistertype.php:17` | – |
 | `eZMultiplexerType` | class extends eZWorkflowEventType | [Workflow event type (Command, plugin)](workflow-event.md) | `kernel/classes/workflowtypes/event/ezmultiplexer/ezmultiplexertype.php:24` | – |

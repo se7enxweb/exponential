@@ -3,7 +3,7 @@ title: Exception hierarchy
 audience: developer
 category: standards
 order: 335
-summary: Errors as classes, so callers catch what they can handle. 51 instances in Exponential.
+summary: Errors as classes, so callers catch what they can handle. 73 instances in Exponential.
 keywords: design pattern, exception, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,10 +18,20 @@ Errors as classes, so callers catch what they can handle.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 51 |
+| Instances | 73 |
 | Recognized by | Extends Exception, an *Exception class or Error. |
 
 ## Classes by area
+
+### extension/expai (3)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiConversationBusyException` | class extends expAiException | `extension/expai/classes/expaiconversationlock.php:150` | Another step of the conversation holds its lock (expAiConversationLock). | – |
+| `expAiException` | class extends Exception | `extension/expai/classes/expaiexception.php:15` | A failure of expai. | – |
+| `expAiVetoException` | class extends expAiException | `extension/expai/classes/expaigate.php:14` | A request refused by the veto hook (a rule of [RequestVeto] or a listener of expai/request/veto). | – |
 
 ### extension/expchangeclass (1)
 
@@ -30,6 +40,25 @@ Errors as classes, so callers catch what they can handle.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expChangeClassException` | class extends Exception | `extension/expchangeclass/classes/functions.php:35` | Raised when a conversion cannot be completed. | – |
+
+### extension/expimageeditor (1)
+
+[All patterns of extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImageEditorException` | class extends RuntimeException | `extension/expimageeditor/classes/expimageeditorexception.php:15` | A request the image editor refuses: the message (English, translated when shown) and the HTTP status to answer with. | – |
+
+### extension/expqueue (4)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueCancelledException` | class extends expQueueException | `extension/expqueue/classes/expqueuecancelledexception.php:9` | Thrown by expQueueContext::throwIfCancelled() when the job was cancelled while it ran; the job ends cancelled. | – |
+| `expQueueException` | class extends RuntimeException | `extension/expqueue/classes/expqueueexception.php:9` | An error of the queue itself: an unknown class or type, a quota reached, a job that cannot change state. | – |
+| `expQueuePermanentException` | class extends expQueueException | `extension/expqueue/classes/expqueuepermanentexception.php:12` | Thrown by a handler for an error that another attempt cannot fix (invalid input, a refusal, a missing object): the job goes to the dead letter at onc… | – |
+| `expQueueRetryableException` | class extends expQueueException | `extension/expqueue/classes/expqueueretryableexception.php:13` | Thrown by a handler for an error that may go away: a timeout, a 429 or 5xx answer, a resource that is busy. | – |
 
 ### extension/expservices (1)
 
@@ -56,6 +85,14 @@ Errors as classes, so callers catch what they can handle.
 | `ezfBaseException` | abstract class extends ezcBaseException | `extension/ezfind/classes/exceptions/ezfexception.php:15` | Base exception class for eZ Find | – |
 | `ezfSolrException` | class extends ezfBaseException | `extension/ezfind/classes/exceptions/ezfsolrexception.php:15` | Exception for Solr issues | – |
 
+### extension/ezodf (1)
+
+[All patterns of extension/ezodf](area-extension-ezodf.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expOdfConverterException` | class extends RuntimeException | `extension/ezodf/classes/converter/expodfconverterexception.php:14` | A conversion that failed. | – |
+
 ### extension/ezoe (1)
 
 [All patterns of extension/ezoe](area-extension-ezoe.md)
@@ -71,6 +108,25 @@ Errors as classes, so callers catch what they can handle.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `AdminNeo\EzExit` | class extends RuntimeException | `extension/sevenx_dse/adminneo/core/EzExit.php:13` | Thrown instead of exit() when AdminNeo is embedded inside Exponential. | – |
+
+### extension/sqliimport (12)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportAiException` | class extends expImportException | `extension/sqliimport/classes/exp/ai/expimportaitransport.php:39` | The AI assist could not answer: not available, refused (switch, permission, data policy, budget) or unreadable. | – |
+| `expImportException` | class extends RuntimeException | `extension/sqliimport/classes/exp/expimportexception.php:11` | The base of the exceptions of the 2.x engine. | – |
+| `expImportSourceException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:16` | A source cannot be read (missing file, bad format, network error). | – |
+| `expImportTransformException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:21` | A value cannot be transformed; the record fails with this message. | – |
+| `expImportValidationException` | class extends expImportException | `extension/sqliimport/classes/exp/expimportexception.php:26` | A definition, mapping, schedule or option is not valid. | – |
+| `SQLIContentException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/content/sqlicontentexception.php:15` | This exception is thrown when an issue related to content has been detected | – |
+| `SQLICSVException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/sourcehandlers/csv/sqlicsvexception.php:13` | – | – |
+| `SQLIImportBaseException` | class extends ezcBaseException | `extension/sqliimport/classes/exceptions/sqliimportbaseexception.php:11` | SQLIImportBaseException | – |
+| `SQLIImportConfigException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/exceptions/sqliimportconfigexception.php:14` | This exception is thrown when a config issue has been detected | – |
+| `SQLIImportRuntimeException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/exceptions/sqliimportruntimeexception.php:14` | This exception is thrown when a runtime issue has been detected | – |
+| `SQLILocationException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/location/sqlilocationexception.php:15` | This exception is thrown when an issue related to a location has been detected | – |
+| `SQLIXMLException` | class extends SQLIImportBaseException | `extension/sqliimport/classes/sourcehandlers/xml/sqlixmlexception.php:13` | – | – |
 
 ### kernel/classes/contentjob (1)
 
@@ -95,6 +151,14 @@ Errors as classes, so callers catch what they can handle.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expLogSearchLimitException` | class extends RuntimeException | `kernel/classes/logviewer/explogsearch.php:502` | A regular expression that exceeded pcre.backtrack_limit (or another PCRE limit) on a line. | – |
+
+### kernel/classes/transfer (1)
+
+[All patterns of kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expKernelTransferCancelledException` | class extends RuntimeException | `kernel/classes/transfer/expkerneltransfercancelledexception.php:17` | Thrown by a transfer task (expKernelTransferTask) that stopped because its run was cancelled (expKernelTransferContext::throwIfCancelled()); the run… | – |
 
 ### kernel/private (24)
 

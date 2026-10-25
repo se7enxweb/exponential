@@ -2,7 +2,7 @@
 title: Patterns in extension/expchangeclass
 audience: developer
 category: standards
-order: 411
+order: 412
 summary: Every class, view, fetch function, operator and plugin point of extension/expchangeclass with its design patterns.
 keywords: extension/expchangeclass, design patterns, classes, extension points
 type: catalogue

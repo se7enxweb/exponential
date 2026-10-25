@@ -3,7 +3,7 @@ title: Builder
 audience: developer
 category: standards
 order: 322
-summary: Builds a complex object or text step by step. 9 instances in Exponential.
+summary: Builds a complex object or text step by step. 10 instances in Exponential.
 keywords: design pattern, builder, creation, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Builds a complex object or text step by step.
 | | |
 |---|---|
 | Group | Creation |
-| Instances | 9 |
+| Instances | 10 |
 | Recognized by | Class name contains Builder or Generator. |
 
 ## Classes by area
@@ -71,13 +71,14 @@ Builds a complex object or text step by step.
 |---|---|---|---|---|
 | `xrowMetaDataLicenseCatalogueGenerator` | class | `extension/xrowmetadata/bin/php/xrowmetadatalicenses.php:84` | Builds the license catalogue share/licenses/licenses.json of xrowmetadata from two downloaded files, never from the network: | – |
 
-### kernel/classes/help (1)
+### kernel/classes/help (2)
 
 [All patterns of kernel/classes/help](area-kernel-classes-help.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/eng-us/examples/ (doc/eng-us/examples/README.md, "How the generated pages are made"): one Markdown page per templ… | – |
+| `expHelpExamplesGenerator` | class | `kernel/classes/help/exphelpexamplesgenerator.php:25` | Writes the generated reference examples below doc/eng-us/examples/ (doc/eng-us/examples/README.md, "How the generated pages are made"): one Markdown… | – |
+| `expHelpManualBuilder` | class | `kernel/classes/help/content/exphelpmanualbuilder.php:35` | The manuals of help maintained as content, made from the Markdown help (doc/eng-us/features/6.0/help-content.md, "Manuals from the Markdown help"). | – |
 
 ### kernel/classes/pdfexport (1)
 

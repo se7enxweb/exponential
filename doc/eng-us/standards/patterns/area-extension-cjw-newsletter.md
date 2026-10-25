@@ -142,7 +142,7 @@ Every class, interface and trait of `extension/cjw_newsletter` with the patterns
 | `CjwNewsletterUser` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `extension/cjw_newsletter/classes/cjwnewsletteruser.php:20` | Data management datatyp cjwnewsletterlist |
 | `CjwNewsletterUserInterest` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `extension/cjw_newsletter/classes/rendering/cjwnewsletteruserinterest.php:20` | An interest a newsletter user picked. |
 | `CjwNewsletterUtils` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `extension/cjw_newsletter/classes/cjwnewsletterutils.php:17` | class with some useful functions |
-| `cjw_newsletterInfo` | class | [Utility (static helper)](utility.md), [Value object / struct](value-object.md) | `extension/cjw_newsletter/ezinfo.php:16` | Class description here |
+| `cjw_newsletterInfo` | class | [Utility (static helper)](utility.md), [Value object / struct](value-object.md) | `extension/cjw_newsletter/ezinfo.php:16` | The name, version, copyright, license and project page of the extension, shown on the about page. |
 | `Exponential\Command\Extension\CjwNewsletter\ClassLanguages` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `extension/cjw_newsletter/classes/runnable/commands/php_class_languages.php:15` | ext:cjw_newsletter:class-languages: moves the newsletter content classes from eng-GB to eng-US (4.2.1 upgrade step, idempotent). |
 | `Exponential\Command\Extension\CjwNewsletter\Createoutput` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `extension/cjw_newsletter/classes/runnable/commands/php_createoutput.php:276` | Format all a tags as text links remove all achor tags |
 | `Exponential\Command\Extension\CjwNewsletter\Deliverability` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `extension/cjw_newsletter/classes/runnable/commands/php_deliverability.php:21` | ext:cjw_newsletter:deliverability - the area "deliverability" of cjw_newsletter 4.2.0 on the console. |
@@ -358,7 +358,7 @@ Every class, interface and trait of `extension/cjw_newsletter` with the patterns
 | `cjw_newsletter_mailqueue_create` | `extension/cjw_newsletter/cronjobs/cjw_newsletter_mailqueue_create.php` | Cronjob cjw_newsletter_mailqueue_create.php |
 | `cjw_newsletter_mailqueue_process` | `extension/cjw_newsletter/cronjobs/cjw_newsletter_mailqueue_process.php` | Cronjob cjw_newsletter_create_mailqueue.php |
 
-## INI plugin points (20)
+## INI plugin points (21)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -377,6 +377,7 @@ Every class, interface and trait of `extension/cjw_newsletter` with the patterns
 | `[ExtensionPointSettings] Handlers[]` | `CjwNewsletterImportExportHooks` | `extension/cjw_newsletter/settings/cjw_newsletter.ini:513` |
 | `[CjwNewsletterListFilter] ClassName` | `CjwNewsletterListFilter` | `extension/cjw_newsletter/settings/extendedattributefilter.ini.append.php:23` |
 | `[CjwNewsletterEditionFilter] ClassName` | `CjwNewsletterEditionFilter` | `extension/cjw_newsletter/settings/extendedattributefilter.ini.append.php:34` |
+| `[Service_transfer.newsletter] Class` | `expKernelTransferTool` | `extension/cjw_newsletter/settings/kernelservices.ini.append.php:10` |
 | `[Category_newsletter] HandlerClass` | `CjwNewsletterMailCategoryHandler` | `extension/cjw_newsletter/settings/mailpreferences.ini.append.php:8` |
 | `[SuppressionSettings] Listeners[]` | `CjwNewsletterMailPreferences` | `extension/cjw_newsletter/settings/mailpreferences.ini.append.php:13` |
 | `[BounceSettings] MessageListeners[]` | `CjwNewsletterMailin` | `extension/cjw_newsletter/settings/mailpreferences.ini.append.php:24` |

@@ -2,7 +2,7 @@
 title: Patterns in lib/ezutils
 audience: developer
 category: standards
-order: 540
+order: 549
 summary: Every class, view, fetch function, operator and plugin point of lib/ezutils with its design patterns.
 keywords: lib/ezutils, design patterns, classes, extension points
 type: catalogue
@@ -36,8 +36,8 @@ Every class, interface and trait of `lib/ezutils` with the patterns it was recog
 | `eZFunctionHandler` | class | [Strategy / handler](strategy-handler.md), [Utility (static helper)](utility.md) | `lib/ezutils/classes/ezfunctionhandler.php:18` | – |
 | `eZHTTPFile` | class | – | `lib/ezutils/classes/ezhttpfile.php:23` | – |
 | `eZHTTPPersistence` | class | – | `lib/ezutils/classes/ezhttppersistence.php:21` | Object persistence using HTTP post variables |
-| `eZHTTPTool` | class | [Factory and static factory methods](factory.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezhttptool.php:25` | – |
-| `eZINI` | class | [Factory and static factory methods](factory.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - new ini setting ext-siteaccess-override - - new ini setting ext-siteaccess… |
+| `eZHTTPTool` | class | [Factory and static factory methods](factory.md), [INI plugin point (extension point)](ini-plugin-point.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezhttptool.php:25` | – |
+| `eZINI` | class | [Factory and static factory methods](factory.md), [INI plugin point (extension point)](ini-plugin-point.md), [Singleton / instance()](singleton.md) | `lib/ezutils/classes/ezini.php:53` | ### EXP-MULTI-SITE-OVERRIDE-SETTINGS ### - lib/ezutils/classes/ezini.php - new ini setting ext-siteaccess-override - - new ini setting ext-siteaccess… |
 | `eZInputValidator` | class | – | `lib/ezutils/classes/ezinputvalidator.php:78` | – |
 | `eZIntegerValidator` | class extends eZRegExpValidator | – | `lib/ezutils/classes/ezintegervalidator.php:18` | – |
 | `eZMail` | class | – | `lib/ezutils/classes/ezmail.php:60` | – |

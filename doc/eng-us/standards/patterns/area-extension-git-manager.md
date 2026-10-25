@@ -2,7 +2,7 @@
 title: Patterns in extension/git_manager
 audience: developer
 category: standards
-order: 461
+order: 465
 summary: Every class, view, fetch function, operator and plugin point of extension/git_manager with its design patterns.
 keywords: extension/git_manager, design patterns, classes, extension points
 type: catalogue

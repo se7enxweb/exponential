@@ -2,7 +2,7 @@
 title: Patterns in kernel/private
 audience: developer
 category: standards
-order: 514
+order: 523
 summary: Every class, view, fetch function, operator and plugin point of kernel/private with its design patterns.
 keywords: kernel/private, design patterns, classes, extension points
 type: catalogue
@@ -15,21 +15,25 @@ type: catalogue
 
 Every class, interface and trait of `kernel/private` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (177)
+## Classes (181)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
-| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | [Decorator / filter](decorator.md) | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/eng-us/guides/api-keys.md, "How the REST layer r… |
+| `expApiKeyAuthFilter` | class extends ezcAuthenticationFilter | [Decorator / filter](decorator.md) | `kernel/private/rest/classes/auth/apikey_auth_filter.php:19` | Authentication filter for a personal API key (expApiKey) presented as "Authorization: Bearer expk_..." (doc/eng-us/guides/api-keys.md, "How the REST… |
 | `expApiKeyRest` | class | [Utility (static helper)](utility.md) | `kernel/private/rest/classes/auth/apikey_rest.php:24` | How the REST layer resolves a personal API key (doc/eng-us/guides/api-keys.md, "For developers"). |
 | `expContentAccessReport` | class | [Utility (static helper)](utility.md) | `kernel/private/classes/expcontentaccessreport.php:23` | Answers "may this user do this with this object or node, and if not, which limitation refuses it": the access checks of the kernel made for another u… |
 | `expContentSecurityPolicy` | class | [Utility (static helper)](utility.md) | `kernel/private/classes/expcontentsecuritypolicy.php:39` | The Content Security Policy of a page, from site.ini [ContentSecurityPolicy]. |
-| `expContentSecurityPolicyReport` | class | – | `kernel/private/classes/expcontentsecuritypolicyreport.php:40` | The reports of the Content Security Policy (doc/eng-us/features/6.0/content-security-policy.md, "Reports"): what the view csp/report receives from the brows… |
+| `expContentSecurityPolicyReport` | class | – | `kernel/private/classes/expcontentsecuritypolicyreport.php:40` | The reports of the Content Security Policy (doc/eng-us/features/6.0/content-security-policy.md, "Reports"): what the view csp/report receives from th… |
 | `expFileConsistencyReport` | class | [Factory and static factory methods](factory.md) | `kernel/private/classes/expfileconsistencyreport.php:36` | Compares the files of an installation with the checksum lists that ship with it: share/filelist.md5 of Exponential and the share/filelist.md5 an exte… |
 | `expOAuthAuthorizePolicy` | class | [Utility (static helper)](utility.md) | `kernel/private/rest/classes/oauth/authorize_policy.php:21` | Decides whether a signed in user may authorize an OAuth client in oauth/authorize. |
 | `expOAuthAuthorizePolicyGrant` | class | [Utility (static helper)](utility.md) | `kernel/private/rest/classes/oauth/authorize_policy_grant.php:26` | Plans and applies the upgrade grant of the policy oauth/authorize (bin/php/addoauthauthorizepolicy.php). |
-| `expRestContentPermission` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/eng-us/guides/api-keys.md, "Permis… |
-| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | [Decorator / filter](decorator.md) | `kernel/private/rest/classes/auth/password_auth_filter.php:19` | Checks a login and password for the REST interface's basic authentication the way the sign-in does. |
+| `expOAuthPkce` | class | [Utility (static helper)](utility.md) | `kernel/private/rest/classes/oauth/pkce.php:24` | Proof Key for Code Exchange (PKCE, RFC 7636) for the OAuth authorization code flow. |
+| `expRestContentPermission` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/private/rest/classes/auth/content_permission.php:36` | The current user's rights on the content a REST call reads or writes, checked the way the content module checks them (doc/eng-us/guides/api-keys.md,… |
+| `expRestCors` | class | [Factory and static factory methods](factory.md) | `kernel/private/rest/classes/cors.php:29` | Cross-origin resource sharing (CORS) for the REST interface (index_rest.php: the content API, the OAuth token end point and every other route of a RE… |
+| `expRestPasswordAuthFilter` | class extends ezcAuthenticationFilter | [Decorator / filter](decorator.md) | `kernel/private/rest/classes/auth/password_auth_filter.php:23` | Checks a login and password for the REST interface's basic authentication the way the sign-in does. |
+| `expRestPasswordChangeRequiredStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/password_change_required.php:15` | 403 Forbidden with the error code password_change_required: the credentials are right, but the account is marked "change password at next sign-in" (e… |
 | `expRestRateLimitedStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/rate_limited.php:14` | 429 Too Many Requests with Retry-After, for a personal API key over its rate limit (rest.ini [ApiKeySettings] RateLimitPerMinute). |
+| `expRestSecondFactorRequiredStatus` | class implements ezcMvcResultStatusObject | – | `kernel/private/rest/classes/status/second_factor_required.php:16` | The REST answer to a password that was right for an account that needs a second sign-in step (expSignInSecondFactor): 401 with WWW-Authenticate (an a… |
 | `expSchemaConsistencyReport` | class | [Factory and static factory methods](factory.md) | `kernel/private/classes/expschemaconsistencyreport.php:36` | Compares the database with the schema that ships with Exponential and its active extensions (share/db_schema.dba of the root and of each extension),… |
 | `eZAutoloadGenerator` | class | [Builder](builder.md), [Factory and static factory methods](factory.md) | `kernel/private/classes/ezautoloadgenerator.php:19` | Utility class for generating autoload arrays for Exponential. |
 | `eZClusterFileHandlerInterface` | interface | [Interface (contract)](interface.md) | `kernel/private/interfaces/ezclusterfilehandlerinterface.php:15` | Cluster file handlers interface |
@@ -186,7 +190,7 @@ Every class, interface and trait of `kernel/private` with the patterns it was re
 | `ezpRouteMethodNotAllowedException` | class extends ezcMvcToolsException | [Exception hierarchy](exception.md) | `kernel/private/rest/classes/exceptions/route_method_not_allowed.php:12` | – |
 | `ezpSearchEngine` | interface | [Interface (contract)](interface.md), [Strategy / handler](strategy-handler.md) | `kernel/private/interfaces/ezpsearchengine.php:18` | This interface is used as the basis for the different search engine implementation |
 | `ezpSiteAccessMenu` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/private/classes/ezpsiteaccessmenu.php:48` | The administration's site menu: the siteaccesses of this installation with their front page addresses, for the globe button in the admin4 header. |
-| `ezpSiteAccessURL` | class | [Utility (static helper)](utility.md) | `kernel/private/classes/ezpsiteaccessurl.php:36` | The address of a siteaccess's front page, worked out from the siteaccess settings and the request the visitor is on: the admin's "open the site" link… |
+| `ezpSiteAccessURL` | class | [Utility (static helper)](utility.md) | `kernel/private/classes/ezpsiteaccessurl.php:44` | The address of a siteaccess's front page, worked out from the siteaccess settings and the request the visitor is on: the admin's "open the site" link… |
 | `ezpStaticCache` | interface | [Interface (contract)](interface.md) | `kernel/private/interfaces/ezpstaticcache.php:16` | This interface is used as the basis for the different StaticCache engine implementation |
 | `ezpTemplateOverrides` | class | – | `kernel/private/classes/ezptemplateoverrides.php:33` | Changes the template overrides of one siteaccess, for Design › Templates, in settings/siteaccess//override.ini.append.php and nowhere else. |
 | `ezpTopologicalSort` | class | – | `kernel/private/classes/ezptopologicalsort.php:15` | Sorts a series of dependencies in linear order (topological sort). |
@@ -232,7 +236,7 @@ Every class, interface and trait of `kernel/private` with the patterns it was re
 
 | Event | Kind | Called in |
 |---|---|---|
-| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1649` |
-| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1769` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1653` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1778` |
 | `response/preoutput` | filter | `kernel/private/classes/global_functions.php:83` |
 | `response/output` | filter | `kernel/private/classes/global_functions.php:102` |

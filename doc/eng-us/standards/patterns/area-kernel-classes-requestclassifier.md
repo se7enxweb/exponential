@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/requestclassifier
 audience: developer
 category: standards
-order: 503
+order: 509
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/requestclassifier with its design patterns.
 keywords: kernel/classes/requestclassifier, design patterns, classes, extension points
 type: catalogue

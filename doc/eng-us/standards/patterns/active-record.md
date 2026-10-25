@@ -3,7 +3,7 @@ title: Active Record (eZPersistentObject)
 audience: developer
 category: standards
 order: 310
-summary: A class whose objects are rows of one database table: it describes the table in definition() and loads, stores and removes itself through eZPersistentObject. 194 instances in Exponential.
+summary: A class whose objects are rows of one database table: it describes the table in definition() and loads, stores and removes itself through eZPersistentObject. 231 instances in Exponential.
 keywords: design pattern, active-record, data access, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class whose objects are rows of one database table: it describes the table in 
 | | |
 |---|---|
 | Group | Data access |
-| Instances | 194 |
+| Instances | 231 |
 | Recognized by | Extends eZPersistentObject, directly or through a parent class. |
 | Extension point | A new table: a class that extends eZPersistentObject with a static definition(); schema in the extension's share/db_schema.dba or sql/ENGINE/schema.sql. |
 
@@ -77,6 +77,27 @@ A class whose objects are rows of one database table: it describes the table in 
 |---|---|---|---|---|
 | `SckEnhancedSelection` | class extends eZPersistentObject | `extension/enhancedselection2/classes/sckenhancedselection.php:3` | – | – |
 
+### extension/expai (14)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expAiBatch` | class extends eZPersistentObject | `extension/expai/classes/lanes/expaibatch.php:17` | One provider batch (table expai_batch): which provider, lane and model, the provider's id, the state and counts, when it was submitted, ended, its re… | – |
+| `expAiChainRun` | class extends eZPersistentObject | `extension/expai/classes/chain/expaichainrun.php:20` | One run of an AI chain (table expai_chain_run). | – |
+| `expAiChainStep` | class extends eZPersistentObject | `extension/expai/classes/chain/expaichainstep.php:19` | One step of a chain run (table expai_chain_step): each call to a model is one row with its queue job, model, lane, tokens, cost and the usage row; a… | – |
+| `expAiChange` | class extends eZPersistentObject | `extension/expai/classes/vector/expaichange.php:23` | A staged proposal (table expai_change, doc/review.md): one object x language x attribute that a write tool of a thread with staged review proposed in… | – |
+| `expAiCheckpoint` | class extends eZPersistentObject | `extension/expai/classes/vector/expaicheckpoint.php:28` | Checkpoints of a thread (table expai_checkpoint, doc/checkpoints.md): the state at the start of every turn of the lead run and before staged changes… | – |
+| `expAiConversation` | class extends eZPersistentObject | `extension/expai/classes/expaiconversation.php:16` | The conversation of one user on one node (table expai_conversation). | – |
+| `expAiDraftLog` | class extends eZPersistentObject | `extension/expai/classes/expaidraftlog.php:20` | One version the assistant wrote (table expai_draft_log): the object and version, the user it was written for, when, a summary of the request, the mod… | – |
+| `expAiFollowup` | class extends eZPersistentObject | `extension/expai/classes/vector/expaifollowup.php:16` | A message queued while a run works (table expai_followup). | – |
+| `expAiPlan` | class extends eZPersistentObject | `extension/expai/classes/vector/expaiplan.php:19` | A plan of a thread (table expai_plan, doc/plan-mode.md): what propose_plan stored for the editor to approve. | – |
+| `expAiProbeResult` | class extends eZPersistentObject | `extension/expai/classes/expaiproberesult.php:15` | One run of bin/php/expaiprobe.php (table expai_probe_result): the model alias, provider and model id, the tool mode, live or mock, the tasks, how man… | – |
+| `expAiThread` | class extends eZPersistentObject | `extension/expai/classes/vector/expaithread.php:22` | A thread (table expai_thread): one unit of work of one editor. | – |
+| `expAiThreadEvent` | class extends eZPersistentObject | `extension/expai/classes/vector/expaithreadevent.php:17` | The append-only event stream of a thread (table expai_thread_event). | – |
+| `expAiThreadRun` | class extends eZPersistentObject | `extension/expai/classes/vector/expaithreadrun.php:16` | One agent run of a thread (table expai_thread_run). | – |
+| `expAiUsageLog` | class extends eZPersistentObject | `extension/expai/classes/expaiusagelog.php:17` | One request to the model (table expai_usage_log): when, for whom (user id, never a name), where (node, conversation, turn), what for (action), the mo… | – |
+
 ### extension/explayouts (10)
 
 [All patterns of extension/explayouts](area-extension-explayouts.md)
@@ -93,6 +114,16 @@ A class whose objects are rows of one database table: it describes the table in 
 | `expLayoutsRuleCondition` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutsrulecondition.php:2` | – | – |
 | `expLayoutsRuleTarget` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutsruletarget.php:2` | – | – |
 | `expLayoutsZone` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutszone.php:2` | – | – |
+
+### extension/expqueue (3)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expQueueEvent` | class extends eZPersistentObject | `extension/expqueue/classes/expqueueevent.php:15` | The history of a job (table expqueue_event), append-only, removed with the job. | – |
+| `expQueueGroup` | class extends eZPersistentObject | `extension/expqueue/classes/expqueuegroup.php:15` | A set of jobs that belong together (table expqueue_group): "translate subtree X into ten languages", a package import, a chain run. | – |
+| `expQueueJob` | class extends eZPersistentObject | `extension/expqueue/classes/expqueuejob.php:25` | One job (table expqueue_job). | – |
 
 ### extension/expservices (1)
 
@@ -180,8 +211,28 @@ A class whose objects are rows of one database table: it describes the table in 
 | `eZInstagramUser` | class extends eZOAuthUser | `extension/sevenx_authentication_2fa/login_handler/ezinstagramuser.php:17` | – | – |
 | `eZMetaUser` | class extends eZFacebookUser | `extension/sevenx_authentication_2fa/login_handler/ezmetauser.php:17` | – | – |
 | `eZOAuthUser` | abstract class extends eZUser | `extension/sevenx_authentication_2fa/classes/ezoauthuser.php:26` | – | – |
-| `eZsevenxUser2faUser` | class extends eZUser | `extension/sevenx_authentication_2fa/login_handler/ezsevenxuser2fauser.php:29` | – | – |
+| `eZsevenxUser2faUser` | class extends eZUser | `extension/sevenx_authentication_2fa/login_handler/ezsevenxuser2fauser.php:32` | – | – |
 | `eZTwitterUser` | class extends eZOAuthUser | `extension/sevenx_authentication_2fa/login_handler/eztwitteruser.php:17` | – | – |
+
+### extension/sqliimport (13)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expImportDefinition` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportdefinition.php:24` | An import (sqliimport_definition): where the data comes from, what processes it (the no-code mapping or a handler), where the content goes, how it be… | – |
+| `expImportMapping` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportmapping.php:14` | The no-code mapping of an import (sqliimport_mapping, one row) and its lines (sqliimport_mapping_field). | – |
+| `expImportMappingField` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportmapping.php:128` | One line of a mapping (sqliimport_mapping_field). | – |
+| `expImportNotice` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/engine/expimportnotifier.php:218` | A notice of a run for a user (sqliimport_notice). | – |
+| `expImportRun` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportrun.php:17` | One run of an import (sqliimport_run): who and what started it, its job group in expqueue, its status and counters. | – |
+| `expImportRunLog` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportrun.php:259` | A line of the log of a run (sqliimport_run_log): severity, the record it is about, message, context. | – |
+| `expImportRunRow` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportrun.php:217` | One record of a run (sqliimport_run_row): what was done to which object. | – |
+| `expImportSchedule` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimportschedule.php:18` | When an import runs by itself (sqliimport_schedule). | – |
+| `expImportTrigger` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimporttrigger.php:23` | The webhook / API trigger of an import (sqliimport_trigger), one row per import, off until it is switched on in the schedule step of the editor: | – |
+| `expImportTriggerKey` | class extends eZPersistentObject | `extension/sqliimport/classes/exp/model/expimporttrigger.php:89` | An API key of a trigger (sqliimport_trigger_key): its label, its key id (the part of the key that finds it) and the HMAC of the key (expImportTrigger… | – |
+| `SQLIImportItem` | class extends eZPersistentObject | `extension/sqliimport/classes/sqliimportitem.php:15` | Class handling items Objects of this class are stored in ezpending_actions table and are normally processed by CRON to trigger an import. | – |
+| `SQLIImportToken` | class extends eZPersistentObject | `extension/sqliimport/classes/sqliimporttoken.php:12` | Token class for SQLI Import Handles import status | – |
+| `SQLIScheduledImport` | class extends eZPersistentObject | `extension/sqliimport/classes/sqlischeduledimport.php:11` | – | – |
 
 ### extension/syndication (11)
 
@@ -291,6 +342,17 @@ A class whose objects are rows of one database table: it describes the table in 
 |---|---|---|---|---|
 | `expApiKey` | class extends eZPersistentObject | `kernel/classes/apikey/expapikey.php:31` | A personal API key (publishing key) of a user: one row of expapikey (doc/eng-us/guides/api-keys.md). | – |
 
+### kernel/classes/datatable (4)
+
+[All patterns of kernel/classes/datatable](area-kernel-classes-datatable.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expDataConnection` | class extends eZPersistentObject | `kernel/classes/datatable/expdataconnection.php:19` | A named database connection made in the administration (Setup › Data tables › Connections): a row of exp_data_connection. | – |
+| `expDataSyncConflict` | class extends eZPersistentObject | `kernel/classes/datatable/sync/expdatasyncdefinition.php:140` | A conflict of a two-way synchronisation with the rule "ask" (table exp_data_sync_conflict): both sides changed since the last synchronisation; the va… | – |
+| `expDataSyncDefinition` | class extends eZPersistentObject | `kernel/classes/datatable/sync/expdatasyncdefinition.php:19` | A synchronisation between content and a data table (table exp_data_sync; doc/eng-us/features/6.0/data-tables.md, "Synchronisation"): the persistent c… | – |
+| `expDataSyncLink` | class extends eZPersistentObject | `kernel/classes/datatable/sync/expdatasyncdefinition.php:104` | The pairing of a row and a content object of a synchronisation (table exp_data_sync_link): the row's key, the object, and the hashes and times of bot… | – |
+
 ### kernel/classes/datatypes (16)
 
 [All patterns of kernel/classes/datatypes](area-kernel-classes-datatypes.md)
@@ -339,6 +401,14 @@ A class whose objects are rows of one database table: it describes the table in 
 | `eZNotificationEvent` | class extends eZPersistentObject | `kernel/classes/notification/eznotificationevent.php:17` | – | – |
 | `eZSubtreeNotificationRule` | class extends eZPersistentObject | `kernel/classes/notification/handler/ezsubtree/ezsubtreenotificationrule.php:17` | – | – |
 
+### kernel/classes/secrets (1)
+
+[All patterns of kernel/classes/secrets](area-kernel-classes-secrets.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expSecret` | class extends eZPersistentObject | `kernel/classes/secrets/expsecret.php:18` | One secret of the kernel's secret store (table exp_secret): its name, the tool it belongs to (scope), a description, and its value encrypted with XCh… | – |
+
 ### kernel/classes/subitems (2)
 
 [All patterns of kernel/classes/subitems](area-kernel-classes-subitems.md)
@@ -347,6 +417,22 @@ A class whose objects are rows of one database table: it describes the table in 
 |---|---|---|---|---|
 | `expSubitemsSearchWordLinkRow` | class extends eZPersistentObject | `kernel/classes/subitems/columns/expsubitemscolumntables.php:31` | A row of ezsearch_object_word_link: one indexed word position of an object. | – |
 | `expSubitemsUserVisitRow` | class extends eZPersistentObject | `kernel/classes/subitems/columns/expsubitemscolumntables.php:15` | A row of ezuservisit: a user's visits, logins and failed logins. | – |
+
+### kernel/classes/transfer (1)
+
+[All patterns of kernel/classes/transfer](area-kernel-classes-transfer.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expKernelTransferRun` | class extends eZPersistentObject | `kernel/classes/transfer/expkerneltransferrun.php:26` | One run of an import or export tool: a row of exp_transfer_run (doc/eng-us/features/6.0/transfer-runs.md). | – |
+
+### kernel/classes/user (1)
+
+[All patterns of kernel/classes/user](area-kernel-classes-user.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expUserSession` | class extends eZPersistentObject | `kernel/classes/user/expusersession.php:22` | One sign-in of a user (table expuser_session): when it started and was last used, from where (the address as the request gave it), with what (the Use… | – |
 
 ### kernel/classes/workflowtypes (1)
 

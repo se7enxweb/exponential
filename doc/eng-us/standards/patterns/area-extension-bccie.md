@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `extension/bccie` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (46)
+## Classes (48)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -33,6 +33,8 @@ Every class, interface and trait of `extension/bccie` with the patterns it was r
 | `bccieJob` | class | [Utility (static helper)](utility.md) | `extension/bccie/classes/bccieJob.php:15` | An export in the background, started from the admin: the same console command the shell uses (ext:bccie:export), started with expProcessTools like th… |
 | `bccieJobOutput` | class | – | `extension/bccie/classes/bccieJobOutput.php:13` | Output sink with the two methods of eZCLI the runner uses; a line goes to the terminal and to the log of a job. |
 | `bccieRunner` | class | [Utility (static helper)](utility.md) | `extension/bccie/classes/bccieRunner.php:15` | The work of the exports as methods, so that the admin, the console commands and the cronjob parts do the same thing: validate the options, write an e… |
+| `bccieTransfer` | class | [Utility (static helper)](utility.md) | `extension/bccie/classes/bccieTransfer.php:26` | CIE and the kernel's transfer runs (Exponential 6.0.15 and later, the kernel's doc/eng-us/features/6.0/transfer-runs.md): one engine and one run hist… |
+| `bccieTransferTask` | class implements expKernelTransferTask | – | `extension/bccie/classes/bccieTransferTask.php:25` | One background export of CIE as a transfer task (bccieTransfer): what the job queue (job type bccie.export) and the kernel's content jobs call for a… |
 | `bccieUI` | class | [Utility (static helper)](utility.md) | `extension/bccie/classes/bccieUI.php:13` | Helpers shared by the module views: flash notices and the parameters of a list view (paging, sorting, filter). |
 | `Exponential\Command\Extension\Bccie\Export` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `extension/bccie/classes/runnable/commands/php_export.php:16` | ext:bccie:export - export the collected information of a form to a CSV or SYLK file, or run the scheduled export (the cronjob parts exportcsv and exp… |
 | `Exponential\Command\Extension\Bccie\Purge` | class extends Command | [Command (console, scripts, cronjobs)](command.md) | `extension/bccie/classes/runnable/commands/php_purge.php:14` | ext:bccie:purge - remove the collected information of a form, all of it or what is older than a date. |
@@ -92,7 +94,7 @@ Every class, interface and trait of `extension/bccie` with the patterns it was r
 | `exportcsv` | `extension/bccie/cronjobs/exportcsv.php` | – |
 | `exportsylk` | `extension/bccie/cronjobs/exportsylk.php` | – |
 
-## INI plugin points (42)
+## INI plugin points (44)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -138,3 +140,5 @@ Every class, interface and trait of `extension/bccie` with the patterns it was r
 | `[ezdate] HandlerClass` | `eZDateHandler` | `extension/bccie/settings/export.ini.append.php:95` |
 | `[smileobjectrelationlist] HandlerClass` | `smileobjectrelationlistHandler` | `extension/bccie/settings/export.ini.append.php:99` |
 | `[ezbirthday] HandlerClass` | `eZBirthdayExportHandler` | `extension/bccie/settings/export.ini.append.php:103` |
+| `[JobType_bccie.export] Handler` | `expKernelTransferQueueHandler` | `extension/bccie/settings/expqueue.ini.append.php:9` |
+| `[Service_transfer.bccie] Class` | `expKernelTransferTool` | `extension/bccie/settings/kernelservices.ini.append.php:9` |

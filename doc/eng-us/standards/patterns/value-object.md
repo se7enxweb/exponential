@@ -3,7 +3,7 @@ title: Value object / struct
 audience: developer
 category: standards
 order: 334
-summary: A small object that carries data and has no identity of its own. 95 instances in Exponential.
+summary: A small object that carries data and has no identity of its own. 105 instances in Exponential.
 keywords: design pattern, value-object, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A small object that carries data and has no identity of its own.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 95 |
+| Instances | 105 |
 | Recognized by | Class name ends in Struct, Value, Result, Item, Info or Definition and the class has few methods, or extends ezcBaseStruct. |
 
 ## Classes by area
@@ -77,7 +77,7 @@ A small object that carries data and has no identity of its own.
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `cjw_newsletterInfo` | class | `extension/cjw_newsletter/ezinfo.php:16` | Class description here | – |
+| `cjw_newsletterInfo` | class | `extension/cjw_newsletter/ezinfo.php:16` | The name, version, copyright, license and project page of the extension, shown on the about page. | – |
 
 ### extension/cjw_themes_jumper (1)
 
@@ -111,6 +111,15 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `enhancedselection2Info` | class | `extension/enhancedselection2/ezinfo.php:14` | Enhanced Selection extension | – |
 
+### extension/expai (2)
+
+[All patterns of extension/expai](area-extension-expai.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expaiInfo` | class | `extension/expai/ezinfo.php:7` | – | – |
+| `expAiToolGetClassDefinition` | class extends expAiTool | `extension/expai/classes/tools/expaitoolgetclassdefinition.php:9` | get_class_definition: the fields of a content class | extension/expai/settings/expai.ini [Tool_get_class_definition] Class |
+
 ### extension/expchangeclass (1)
 
 [All patterns of extension/expchangeclass](area-extension-expchangeclass.md)
@@ -118,6 +127,14 @@ A small object that carries data and has no identity of its own.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expchangeclassInfo` | class | `extension/expchangeclass/ezinfo.php:14` | – | – |
+
+### extension/expimageeditor (1)
+
+[All patterns of extension/expimageeditor](area-extension-expimageeditor.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expimageeditorInfo` | class | `extension/expimageeditor/ezinfo.php:9` | – | – |
 
 ### extension/explayouts (2)
 
@@ -225,6 +242,14 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `expquery_translatorInfo` | class | `extension/expquery_translator/ezinfo.php:12` | – | – |
 
+### extension/expqueue (1)
+
+[All patterns of extension/expqueue](area-extension-expqueue.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `expqueueInfo` | class | `extension/expqueue/ezinfo.php:7` | – | – |
+
 ### extension/expservices (1)
 
 [All patterns of extension/expservices](area-extension-expservices.md)
@@ -313,6 +338,14 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `eZAuthorizeInfo` | class | `extension/ezauthorize/classes/ezauthorizeinfo.php:11` | – | – |
 
+### extension/ezautosave (1)
+
+[All patterns of extension/ezautosave](area-extension-ezautosave.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `ezautosaveInfo` | class | `extension/ezautosave/ezinfo.php:7` | – | – |
+
 ### extension/ezdemo (1)
 
 [All patterns of extension/ezdemo](area-extension-ezdemo.md)
@@ -337,6 +370,14 @@ A small object that carries data and has no identity of its own.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `ezflowInfo` | class | `extension/ezflow/ezinfo.php:12` | – | – |
+
+### extension/ezgmaplocation (1)
+
+[All patterns of extension/ezgmaplocation](area-extension-ezgmaplocation.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `ezgmaplocationInfo` | class | `extension/ezgmaplocation/ezinfo.php:7` | – | – |
 
 ### extension/ezie (1)
 
@@ -378,6 +419,14 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `ezodfInfo` | class | `extension/ezodf/ezinfo.php:12` | – | – |
 
+### extension/ezoracle (1)
+
+[All patterns of extension/ezoracle](area-extension-ezoracle.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `ezoracleInfo` | class | `extension/ezoracle/ezinfo.php:11` | – | – |
+
 ### extension/ezownerchange (1)
 
 [All patterns of extension/ezownerchange](area-extension-ezownerchange.md)
@@ -418,6 +467,14 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `ezsspInfo` | class | `extension/ezssp/ezinfo.php:2` | – | – |
 
+### extension/ezstarrating (1)
+
+[All patterns of extension/ezstarrating](area-extension-ezstarrating.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `ezstarratingInfo` | class | `extension/ezstarrating/ezinfo.php:7` | – | – |
+
 ### extension/eztags (1)
 
 [All patterns of extension/eztags](area-extension-eztags.md)
@@ -449,6 +506,14 @@ A small object that carries data and has no identity of its own.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `ezwebinInfo` | class | `extension/ezwebin/ezinfo.php:12` | – | – |
+
+### extension/ezwt (1)
+
+[All patterns of extension/ezwt](area-extension-ezwt.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `ezwtInfo` | class | `extension/ezwt/ezinfo.php:7` | – | – |
 
 ### extension/git_manager (2)
 
@@ -555,13 +620,21 @@ A small object that carries data and has no identity of its own.
 |---|---|---|---|---|
 | `SevenxthemessuperInfo` | class | `extension/sevenx_themes_super/ezinfo.php:13` | What the admin interface reads about this extension. | – |
 
+### extension/sqliimport (1)
+
+[All patterns of extension/sqliimport](area-extension-sqliimport.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `sqliimportInfo` | class | `extension/sqliimport/ezinfo.php:7` | – | – |
+
 ### extension/str_replace (1)
 
 [All patterns of extension/str_replace](area-extension-str-replace.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
-| `strReplaceInfo` | class | `extension/str_replace/ezinfo.php:2` | – | – |
+| `str_replaceInfo` | class | `extension/str_replace/ezinfo.php:2` | – | – |
 
 ### extension/swark (1)
 

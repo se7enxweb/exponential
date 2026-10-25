@@ -2,7 +2,7 @@
 title: Patterns in extension/explayouts_tags_query
 audience: developer
 category: standards
-order: 421
+order: 423
 summary: Every class, view, fetch function, operator and plugin point of extension/explayouts_tags_query with its design patterns.
 keywords: extension/explayouts_tags_query, design patterns, classes, extension points
 type: catalogue
