@@ -38,6 +38,8 @@ an SMTP failure of any kind is a failed send instead of an error page, and MIME 
   sender domain) for each generation. One set with `eZMail::setMessageID()` stays.
 - **A mail without sender.** `eZMail::senderText()` of a mail without a sender gave "Trying to access array offset on
   false" and "mb_encode_mimeheader(): Passing null to parameter #1" (PHP 8.5). It now returns `''` quietly.
+- **Not changed.** The newsletter (`cjw_newsletter`) sends through its own transports and its own return path, and
+  notifications use `EmailSender` as before; for plain sender addresses nothing changes for either.
 
 ## Settings
 

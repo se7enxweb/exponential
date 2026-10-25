@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-12a92a9949ea5348a909878d43ab6e3b  doc/changelogs/6.0/6.0.15.md
+d263a91b18953005ad447fca0a9580f5  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3460,7 +3460,7 @@ e1f4daaa764ddb48b13df1f21f8364b7  doc/eng-us/bc/6.0/love/README.md
 53a73f51f257c2a84ce74357cb5aa859  doc/eng-us/bc/6.0/love/TESTS-MAPPING.md
 e40c1ca0b6538667b83f53bd62fbf28f  doc/eng-us/bc/6.0/lovestack.md
 f054a9274f0d3b50ef6c1d5f52e2dac0  doc/eng-us/bc/6.0/mail-preferences.md
-46c24c7fed6e2458ef7a88681ae951aa  doc/eng-us/bc/6.0/mail-transport-hardening.md
+3d45c53c2a2042c728464efc1b060838  doc/eng-us/bc/6.0/mail-transport-hardening.md
 ca755a95e0c8da57d45ba7a7f6d27be8  doc/eng-us/bc/6.0/member-management.md
 abb94091360a905fee43c0792bbf9d39  doc/eng-us/bc/6.0/middle-out-compression.md
 aaff735877086adc9c6cbbd34c86a4ee  doc/eng-us/bc/6.0/multi-node-edit.md
@@ -12444,14 +12444,14 @@ e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-setti
 284dff665c38187e010417279824d742  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 abcfa2c79b753427744d3e5a2ae440f5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 d2c0ea88c16ae752715acb2e825170e5  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
-bc6ffc2776551da0b2ddfc6cc5b57e2e  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
+b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
 d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-settings-syscard-ini.json
 22d6c9c5408fb8730a53e260be31c8c4  doc/ger-de/.examples/descriptions/12-shell-checkcalltimeref.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-861dde501ff32fe3f864e69410b7552d  doc/ger-de/.paths.json
+b2d83d1acaed9031af3c3f816a24f5d0  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
@@ -12566,6 +12566,7 @@ d8c339136c7125122ef4e3cc9dd2850b  doc/ger-de/bc/6.0/love/roadmap.md
 187e91f2488dd9d32f83f79a6122bb5d  doc/ger-de/bc/6.0/love/testen.md
 8cc58833bc6336ea3bf9d93ba1455d23  doc/ger-de/bc/6.0/love/zuordnung-der-tests.md
 3cb6f2e0c5eb72ecdaaa81a77ec2ee70  doc/ger-de/bc/6.0/lovestack.md
+cb393fa38f17ab5883f9c26f0549c35d  doc/ger-de/bc/6.0/mail-transport-haertung.md
 d7f5ce4b51c75152afaa5ff7563a5b7c  doc/ger-de/bc/6.0/mehrere-elemente-bearbeiten.md
 d5c8b87ad96b7a1bb586d0719143abce  doc/ger-de/bc/6.0/menue-inhalte-exportieren.md
 4f12263b8a31f5bf2435964918d4c6f6  doc/ger-de/bc/6.0/middle-out-kompression.md
@@ -14123,13 +14124,13 @@ d33c71ec43e84b25db821b9c737a93aa  doc/ger-de/beispiele/ini-einstellungen/site/HT
 dd578d74c5b7972527f3cb23ec5b93d3  doc/ger-de/beispiele/ini-einstellungen/site/HTTPHeaderSettings.md
 216fbb61fcde900d8183eeba3094d399  doc/ger-de/beispiele/ini-einstellungen/site/InformationCollectionSettings.md
 e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/LinkCheck.md
-187424d4066d76db01f7b6af434c9515  doc/ger-de/beispiele/ini-einstellungen/site/MailSettings.md
+5f85657bbe3a8043a12391cd8d92ff68  doc/ger-de/beispiele/ini-einstellungen/site/MailSettings.md
 6518716e701cf5e1ebc7ac217aa7e76b  doc/ger-de/beispiele/ini-einstellungen/site/OverrideSettings.md
 a280471e8acb27da52925df21576d309  doc/ger-de/beispiele/ini-einstellungen/site/PasswordChangeRequiredSettings.md
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-2a91f232258c8cd403e3c1a66190b47f  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+3ca6e351baf9745fb0b84e2af4a78f33  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 0c379efcf6aa89dde09c2380f4be2550  doc/ger-de/beispiele/ini-einstellungen/site/RegionalSettings.md
 b1bbd5b632dffcbf06fde8214877c824  doc/ger-de/beispiele/ini-einstellungen/site/RequestLogSettings.md
@@ -16960,7 +16961,7 @@ e3e7c8a245e842e889e8786d2bb833ea  doc/ger-de/hilfe/hosting/betrieb/die-cronjob-k
 b052f1672e00af436c5b92a38caf23e6  doc/ger-de/hilfe/hosting/betrieb/einwilligung-und-bounces-bei-mails.md
 b4e1d23fdf81810fb3a4f6d8e3468f5c  doc/ger-de/hilfe/hosting/betrieb/kunden-websites-aktualisieren.md
 137384384d674f984decff558d53a7ef  doc/ger-de/hilfe/hosting/betrieb/log-viewer-und-log-rotation.md
-d91168edc72b5111a548de158c0574f7  doc/ger-de/hilfe/hosting/betrieb/mailzustellung.md
+e9d97443e558c12a672e9b27c5cf52f6  doc/ger-de/hilfe/hosting/betrieb/mailzustellung.md
 9af1e3e50adc1e55273acb31b96175a8  doc/ger-de/hilfe/hosting/betrieb/mehrere-web-knoten.md
 1148687aa9127815a56f2ad3fe949810  doc/ger-de/hilfe/hosting/betrieb/sicherheitslog.md
 aed400aa8169a9c70a7574d14e6a8805  doc/ger-de/hilfe/hosting/betrieb/systemkarte-fuer-hoster.md
