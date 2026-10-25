@@ -60,6 +60,11 @@ Für Extensions:
   erneute Passworteingabe der Audit-Konsole) erkennt es an.
 - Ein gefragter POST wird nach der Antwort mit seinen eigenen Feldern wiederholt; Dateien nicht (ein Browser kann sie
   nicht zweimal senden), deshalb sollte eine Ansicht mit Upload mit `*` genannt werden.
+- `expReauth::addressedUser( $module, $view, $params, $post )` nimmt den POST als viertes Argument (optional): Ein POST
+  an `collaboration/action`, der ein Element des Workflow-Ereignisses *Approve user accounts* entscheidet, betrifft das
+  wartende Konto, also fragt die Gruppe users vor Freigeben und Ablehnen eines neuen Benutzerkontos
+  ([Freigabe neuer Benutzerkonten](freigabe-von-benutzerkonten.md)). Inhaltsfreigaben betreffen kein Konto und fragen
+  nicht.
 
 ## Audit
 

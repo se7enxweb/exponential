@@ -76629,7 +76629,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
