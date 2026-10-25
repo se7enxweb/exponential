@@ -14,7 +14,7 @@ require_once __DIR__ . '/../eZDatatypeAbstract.php';
 class eZMatrixTypeTest extends eZDatatypeAbstract
 {
 
-    private function defaultDataSet()
+    protected function defaultDataSet()
     {
         $dataSet = new ezpDatatypeTestDataSet();
         $dataSet->fromString = 'col1|col2&valA1|valA2&valB1|valB2';

@@ -132,7 +132,7 @@ abstract class eZDBBasedClusterFileHandlerAbstract extends eZClusterFileHandlerA
         self::assertEquals( "$path.generating", $ch->filePath );
 
         $res = $ch2->startCacheGeneration();
-        self::assertInternalType( 'integer', $res, "Calling startCacheGeneration for the second time should have returned the remaining cache generation time" );
+        self::assertIsInt( $res, "Calling startCacheGeneration for the second time should have returned the remaining cache generation time" );
         self::assertStringEndsNotWith( ".generating.generating", $ch->filePath );
 
         $ch->abortCacheGeneration();
