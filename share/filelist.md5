@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-52de3855343a0ba53dca6785178082d0  doc/changelogs/6.0/6.0.15.md
+64e73eb47c08f5437b71c94def1e4547  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -23479,7 +23479,7 @@ b000afba47c3a090c5e775dd97d36498  lib/ezutils/classes/ezfiletransport.php
 9cba35ad141d582489c58342a5110976  lib/ezutils/classes/ezfunctionhandler.php
 bc562a9b40207fedd00c05e8e70c4fa6  lib/ezutils/classes/ezhttpfile.php
 e0d8ca296bb2d3d0968aa11679a8d064  lib/ezutils/classes/ezhttppersistence.php
-22ced16f31fcbc9ff36db4ccfc78f10b  lib/ezutils/classes/ezhttptool.php
+a8e1c12f218b390383d44da16d24c284  lib/ezutils/classes/ezhttptool.php
 5bbb1b1d33b211b3f1ff047d0c03d5b6  lib/ezutils/classes/ezini.php
 6ee94ad4b0549a535ff40c1dc5e9326d  lib/ezutils/classes/ezinputvalidator.php
 081fb5c82a7fe6ec4e9f97d6fd96c3fa  lib/ezutils/classes/ezintegervalidator.php
@@ -25976,6 +25976,7 @@ e0df258f6fc60a3fcb7ac21bfd0511b1  tests/tests/lib/ezutils/eZExtensionCountsTest.
 d6114e4248b4221f06f138cb33e09dc2  tests/tests/lib/ezutils/eZExtensionNewestFileTimeTest.php
 5e2632f4df904bff687d912cae161989  tests/tests/lib/ezutils/eZExtensionRequiredExtensionsTest.php
 d5d9b75da5c18ad00128dcef87e06b52  tests/tests/lib/ezutils/eZFatalUserErrorTest.php
+743707757a43f71f9cc8ff90510eee36  tests/tests/lib/ezutils/eZHTTPToolGetDataByURLTest.php
 eac43077ae5cd7f561145f492ceece2d  tests/tests/lib/ezutils/eZHTTPToolPostNullTest.php
 3378e66c399d5c5780bf68e83863d413  tests/tests/lib/ezutils/eZHTTPToolRequestTest.php
 941837b4dbd18a37bcb019e8fb86fb9b  tests/tests/lib/ezutils/eZHTTPToolTest.php
@@ -26030,6 +26031,7 @@ ef89659c0b3f7a1a06d873b5c6a4370f  tests/tests/lib/ezutils/ezphpcreator_regressio
 f3a2a3b1a63a674704b84839c3f7870a  tests/tests/lib/ezutils/fixtures/engine_archive_build.php
 42a1aa871e8743927795bebb0178fc9b  tests/tests/lib/ezutils/fixtures/engine_archive_roots.php
 5af0571f8641dc73f1be006a0ac65d6d  tests/tests/lib/ezutils/fixtures/fatal_user_error_child.php
+81aa8e6adb36404b252471482743f50b  tests/tests/lib/ezutils/fixtures/http_status_router.php
 9f3c10075ebe68667bb847d0073e15aa  tests/tests/lib/ezutils/fixtures/sendmail_capture.php
 466cc5fa8a69dfb41333ea86a577b8db  tests/tests/lib/ezutils/fixtures/sendmail_envelope_child.php
 465ea665e5d1916997b6209ae5419b8c  tests/tests/lib/ezutils/fixtures/smtp_fake_server.php
