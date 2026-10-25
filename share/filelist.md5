@@ -1764,7 +1764,7 @@ dfedcf5733bedbb76b25c0eb468fb844  design/base/images/t8/button.gif
 c33fe21ac059c9f7678e091eb09b915c  design/base/images/t9/arrow.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/t9/button.gif
 3a4342c85d1285f8dafedebca047d434  design/base/images/top-logo.gif
-577a6f2c672ef95bc08821f1d0ea2158  design/base/override/templates/collectedinfo/poll_result.tpl
+c1e805b4cd08e6ae8124e3efab768c1e  design/base/override/templates/collectedinfo/poll_result.tpl
 bf67f6fb2f681aceb9e6110064c42c9d  design/base/override/templates/collectedinfomail/feedback_form.tpl
 73322a426ef25d238865dca7bb02be2c  design/base/override/templates/datatype/ezbinaryfile.tpl
 ef44f7a38a71c2c04a7a910260fdfb3e  design/base/override/templates/datatype/ezmatrix/edit.tpl
@@ -1797,7 +1797,7 @@ b8c9ea90a1d25a0795e08507034890c6  design/base/override/templates/embed/forum.tpl
 373f794d7c1148e43f464b23ab5159ec  design/base/override/templates/embed/image.tpl
 34ce36a13dbe30f924eb57f12b3abdeb  design/base/override/templates/embed/multiprice_product.tpl
 898c77bbb4d0c942d506457e22d6ee3d  design/base/override/templates/embed/person.tpl
-0129c128fff534a05ca414e14c3d1003  design/base/override/templates/embed/poll.tpl
+cdf1905594e7a3ae3291e197d591c8b8  design/base/override/templates/embed/poll.tpl
 42eb474b28f7674cab7f7b95ee19bdd5  design/base/override/templates/embed/product.tpl
 08f5319bf48b83fd117d179d55c7c059  design/base/override/templates/embed/quicktime.tpl
 8125d010d8e68690219ab08b550618d4  design/base/override/templates/embed/real_video.tpl
@@ -3116,7 +3116,7 @@ f17bd7f3f6976eb78af8618ada7cfb79  design/standard/templates/visual/templatelist.
 e78712d9a86a9f849587e12a1f174ee4  design/standard/templates/workflow/eventtype/edit/event_ezmultiplexer.tpl
 b784c54fbd9580d9079d75d69a0d58d8  design/standard/templates/workflow/eventtype/edit/event_ezpaymentgateway.tpl
 90767343b82e3d891a9627b0a301bcbe  design/standard/templates/workflow/eventtype/edit/event_ezsimpleshipping.tpl
-0e57a3ba72d5a1afb9bc39e57a249660  design/standard/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
+f46fc596e90dd2153da7f1dea5c95319  design/standard/templates/workflow/eventtype/edit/event_ezwaituntildate.tpl
 4f2d3ac1069d423c50c55d3e327d147c  design/standard/templates/workflow/eventtype/expuserapprove_mail.tpl
 151d23516b02fd33504590041cf5acb2  design/standard/templates/workflow/eventtype/view/event_expdatatablemirror.tpl
 ff8185056ac92c8967923e64640678a6  design/standard/templates/workflow/eventtype/view/event_expuserapprove.tpl
@@ -3124,7 +3124,7 @@ ff8185056ac92c8967923e64640678a6  design/standard/templates/workflow/eventtype/v
 90767343b82e3d891a9627b0a301bcbe  design/standard/templates/workflow/eventtype/view/event_ezfinishuserregister.tpl
 44b0cda310f8a59c8a604b0074e05bd1  design/standard/templates/workflow/eventtype/view/event_ezmultiplexer.tpl
 5dc5bd3cbb83a76a0d17f375b4d5964c  design/standard/templates/workflow/eventtype/view/event_ezpaymentgateway.tpl
-e432f8a170e51c9a682e37199177b897  design/standard/templates/workflow/eventtype/view/event_ezwaituntildate.tpl
+ea6045668ff82eb002c41ed33180dff2  design/standard/templates/workflow/eventtype/view/event_ezwaituntildate.tpl
 728ca03bfc86fb74857ff883e71e92fa  design/standard/templates/workflow/groupedit.tpl
 165af6860e38dc26876722c742ef9310  design/standard/templates/workflow/grouplist.tpl
 6688e7826951fbe4d72c05f2fd34ed29  design/standard/templates/workflow/process.tpl
@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-e98f8e742c30df126865fd8cc83b3d97  doc/changelogs/6.0/6.0.15.md
+97beb67d03e8ef3702b737a025e56fba  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -24635,7 +24635,7 @@ f49ffb34b9d0b45ed1940a7ce8b1bb43  tests/tests/design/ExtensionInlineScriptsTest.
 6e105b5c448762ee4581368f59aff5cf  tests/tests/design/FormSubmitButtonDisableTest.php
 d21601b03696560126cb8441faf9ba78  tests/tests/design/LogViewerCopyMessagesTest.php
 3ded02ca57016d193d7c9df51a8dbe84  tests/tests/design/LogViewerNavTest.php
-900e06a30a94c5a2f566451e710e54d3  tests/tests/design/StandardClassAttributeNameEscapingTest.php
+295eaf509f785e62086efa8aa330141a  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 e5afb96904ddba6129f583e0eb0f3bd6  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 1f2baeab4e97de344ff2a905bdb76154  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
 f3b5318282b84e8fa64775c32a4684de  tests/tests/design/TranslationFilesValidTest.php
