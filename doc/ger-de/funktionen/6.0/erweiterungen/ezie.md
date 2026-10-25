@@ -15,6 +15,19 @@ Exponential 6, PHP 8.1 oder neuer, GD2 oder ImageMagick und ein Bearbeitungsform
 Design, das die Skripte des Bearbeitungsformulars lädt). Er verwendet jQuery, jQuery UI, die Plugins Jcrop und
 colorpicker und die Bildkonvertierung der Zeta Components.
 
+## Installieren
+
+Seit dem 24.10.2026 verlangt das Kernel-Paket ezie nicht mehr, auch nicht die Bildkonvertierung der Zeta Components,
+die er braucht; in admin4 tritt [expimageeditor](expimageeditor.md) an seine Stelle. Eine Site, die ezie behält,
+verlangt beide selbst (ezie gibt die Bildkonvertierung nicht als Abhängigkeit an):
+
+```bash
+composer require se7enxweb/ezie zetacomponents/image-conversion
+```
+
+Dann `ActiveExtensions[]=ezie` statt `expimageeditor` (nur einer der beiden kann die Schaltfläche zeichnen), die
+Autoloads neu erzeugen und die Caches leeren.
+
 ## Verwenden
 
 1. Bearbeiten Sie ein Objekt mit einem Bildattribut und öffnen Sie den Editor aus dem Bildfeld.
