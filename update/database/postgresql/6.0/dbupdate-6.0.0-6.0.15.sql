@@ -437,6 +437,29 @@ CREATE TABLE expbookmark_folder (
 ALTER TABLE ONLY expbookmark_folder ADD CONSTRAINT expbookmark_folder_pkey PRIMARY KEY ( id );
 CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree ( user_id, parent_id );
 
+-- Bookmarks of system pages (doc/eng-us/features/6.0/bookmarks-of-system-pages.md).
+--
+-- A bookmark can point to a page of a module view (setup/systemupgrade, audit/console ...)
+-- instead of a node. Such a bookmark is a row of ezcontentbrowsebookmark with node_id 0, so
+-- it has a name, a folder and a place in its folder like every other; expbookmark_view holds
+-- its address (module_uri, without the siteaccess). New table only: node bookmarks do not
+-- change. Created only when the table is missing (a DO block, PostgreSQL 9.0 or newer), so
+-- running this block again changes nothing.
+DO $$
+BEGIN
+    IF NOT EXISTS ( SELECT 1 FROM information_schema.tables WHERE table_schema = current_schema() AND table_name = 'expbookmark_view' ) THEN
+        CREATE TABLE expbookmark_view (
+          bookmark_id integer DEFAULT 0 NOT NULL,
+          created integer DEFAULT 0 NOT NULL,
+          module_uri text,
+          user_id integer DEFAULT 0 NOT NULL
+        );
+        ALTER TABLE ONLY expbookmark_view ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY ( bookmark_id );
+        CREATE INDEX expbookmark_view_user ON expbookmark_view USING btree ( user_id );
+    END IF;
+END
+$$;
+
 -- E-mail preferences and consent.
 --
 -- New tables only; nothing existing changes. Mail without a category is sent as before, so the update can run

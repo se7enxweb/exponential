@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-7872c25831910ee16ae17047b6e98420  autoload/ezp_kernel.php
+c4805523b8a8d9340a67ef5fa3cec2f7  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -354,7 +354,7 @@ f2ca9f0ba6ba3907c6329fdf324f3b91  design/admin/override/templates/windows_user.t
 ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
-623c9833355a4c65569507e84d4c0a4c  design/admin/stylesheets/modules/content.css
+093b78b2b3dc9453140918b54316f745  design/admin/stylesheets/modules/content.css
 f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
@@ -412,7 +412,7 @@ efe05cae5f2e6da6178454f8b133d7fe  design/admin/templates/collaboration/handlers/
 881cf558f5a24a4b3fea18fe9e942ca9  design/admin/templates/collaboration/message/view/element/ezapprove_comment.tpl
 843ee667523786c1fb95a1473abec47f  design/admin/templates/collaboration/view/summary.tpl
 a8dd06e48594df07847950b72761ab8c  design/admin/templates/content/advancedsearch.tpl
-65b4fb6f0ab9630bd63cb0cb51b06cb9  design/admin/templates/content/bookmark.tpl
+b8adb888c5d5ada647865c2582889d37  design/admin/templates/content/bookmark.tpl
 35b2087a8237fbaf09eae445fa1cb132  design/admin/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/admin/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin/templates/content/browse_bookmark.tpl
@@ -652,7 +652,7 @@ e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-6212876ed4a777ddeddfb96a515df198  design/admin/templates/pagelayout.tpl
+4b5ba1c1de004c8d6d36c6b1bc329257  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 806405f8a2d30391496982a5c36334cb  design/admin/templates/parts/content/menu.tpl
 440d25498d1044ac8599fc479c458323  design/admin/templates/parts/exp_demo_mode_banner.tpl
@@ -802,7 +802,7 @@ d7d4c185fd8ef6486470f3e391a076c7  design/admin/templates/tabs/datatable/node_hea
 445920c068563275e48552d4bf839276  design/admin/templates/tabs/user/policies_header.tpl
 6929c141fc2d6bd43532ae27d17a7707  design/admin/templates/tabs/user/roles.tpl
 237a0259b99105209be9ec58938d7b04  design/admin/templates/tabs/user/roles_header.tpl
-08b7af3fc1601f6fff034ead9b14ca49  design/admin/templates/toolbar/full/admin_bookmarks.tpl
+b0074ff5c1cbb956a8578656bb507c29  design/admin/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin/templates/toolbar/full/admin_clear_cache.tpl
 29fba452da76a6bd02cee4749de1a4a0  design/admin/templates/toolbar/full/admin_current_user.tpl
 78474c135f927b8753f96696b4f0dea0  design/admin/templates/toolbar/full/admin_preferences.tpl
@@ -1106,7 +1106,7 @@ a87bec7d01d40f3de1611df181975ceb  design/admin4/stylesheets/content.css
 ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
-623c9833355a4c65569507e84d4c0a4c  design/admin4/stylesheets/modules/content.css
+093b78b2b3dc9453140918b54316f745  design/admin4/stylesheets/modules/content.css
 f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
@@ -1169,7 +1169,7 @@ f6abd7a9c28105d54f54099bd7f8c318  design/admin4/templates/collaboration/item_lis
 cb9ce70ef90296e96c1fc846fb8e9d3e  design/admin4/templates/collaboration/parts/rows.tpl
 50ad0bf49cddd812799da21930d06b49  design/admin4/templates/collaboration/view/summary.tpl
 af02a9092beb4e1c936a0de224b3944f  design/admin4/templates/content/advancedsearch.tpl
-9d3d7bc5da8f878d5319c7f6d844c490  design/admin4/templates/content/bookmark.tpl
+4704f3e51d616df641b38d5a194e7130  design/admin4/templates/content/bookmark.tpl
 b75fb68bbe77ed31dd3ed149a8bb9135  design/admin4/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/admin4/templates/content/browse_add_locations.tpl
 89b996a34bdb703ef3ea87043b4be6f2  design/admin4/templates/content/browse_bookmark.tpl
@@ -1432,7 +1432,7 @@ ad2b16b7e90d3d850e074f97acd807d4  design/admin4/templates/page_search.tpl
 3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
-cce8b6b3552147a79f0b08014d643742  design/admin4/templates/pagelayout.tpl
+24f1c4a5404bd1328d08b36077e66538  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 b4673e247c3d0aade999bd6f38e6e06d  design/admin4/templates/parts/a4_header_help.tpl
 32a2ced2131b7d1a0aed712e1147485a  design/admin4/templates/parts/a4_header_item.tpl
@@ -1604,7 +1604,7 @@ d7d4c185fd8ef6486470f3e391a076c7  design/admin4/templates/tabs/datatable/node_he
 445920c068563275e48552d4bf839276  design/admin4/templates/tabs/user/policies_header.tpl
 065060c807c55296f3490724ec191c44  design/admin4/templates/tabs/user/roles.tpl
 237a0259b99105209be9ec58938d7b04  design/admin4/templates/tabs/user/roles_header.tpl
-08b7af3fc1601f6fff034ead9b14ca49  design/admin4/templates/toolbar/full/admin_bookmarks.tpl
+b0074ff5c1cbb956a8578656bb507c29  design/admin4/templates/toolbar/full/admin_bookmarks.tpl
 787142d1ca642f0e53c702c289446842  design/admin4/templates/toolbar/full/admin_clear_cache.tpl
 8e8d1455e7c287e05b2a3c72aeb68b51  design/admin4/templates/toolbar/full/admin_current_user.tpl
 b60915914f7647785deb969657ed9089  design/admin4/templates/toolbar/full/admin_preferences.tpl
@@ -1679,7 +1679,7 @@ ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-0deba7bf8b8c928ecc6cc75ee6633168  design/admin4l/templates/pagelayout.tpl
+0c2b09cdb94df5c9a094777d2a7e19ec  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -2150,7 +2150,7 @@ e32666edbca558c70e8bb73676314d61  design/standard/stylesheets/apikey.css
 1ff50dc48e456a76cee9f227d79c3e58  design/standard/stylesheets/content_queued.css
 bca28d129e420ebe0e8a332a15c24fd4  design/standard/stylesheets/core.css
 480210c74d385593961fa435116fa328  design/standard/stylesheets/debug.css
-95aae21af74d28590b2b95defccd916e  design/standard/stylesheets/exp_bookmarks.css
+c46ad217a065dc148fedf226794fda26  design/standard/stylesheets/exp_bookmarks.css
 e893b624988aeccab0abef6a46d6e0fa  design/standard/stylesheets/exp_password_page.css
 66c465fbc3cde32f2e5689f498ec7ace  design/standard/stylesheets/expdebugbar-toolbar.css
 64329dba5639afef8bd574d90fd432ab  design/standard/stylesheets/expdebugbar.css
@@ -2270,7 +2270,7 @@ e11df7849555c5497e019b6233871c49  design/standard/templates/collaboration/view/s
 eeb2fa6f5621444e436ee177d6e799a5  design/standard/templates/content/advancedsearch.tpl
 80f7682f8712c93fc2a91de3d3b3632e  design/standard/templates/content/bookmark.tpl
 dd2d083063d92a1267370c78fde9056d  design/standard/templates/content/bookmark_folder_forms.tpl
-a0ce283f05773a6c73d960b57d16099c  design/standard/templates/content/bookmark_tree.tpl
+ab608f90151f45fc2c382026f8ef0c5c  design/standard/templates/content/bookmark_tree.tpl
 3514af6c300de574c1c6b24adad1a636  design/standard/templates/content/browse.tpl
 49964a603a1121582d590f36389820bc  design/standard/templates/content/browse_add_locations.tpl
 ab6257b41bb7309eaf281abacfbee2b9  design/standard/templates/content/browse_bookmark.tpl
@@ -3256,7 +3256,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-5d274e040de83c32019ca57f2dda0c8b  doc/changelogs/6.0/6.0.15.md
+95542092c9e94ed0d8833be74001fc33  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6201,7 +6201,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-8a1a9d12f5ceb495174093168a1aa341  doc/eng-us/features/6.0/README.md
+94c48d21e397c4bab9370888ff29b697  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6216,7 +6216,7 @@ c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 4e6288e58d6f4884e2c040b863cbb545  doc/eng-us/features/6.0/adminneo-database-manager.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
 ad4b2afdcaccafc35da62044d0a0fc5f  doc/eng-us/features/6.0/benchmark.md
-be725cef453e28da19218485a1062a9a  doc/eng-us/features/6.0/bookmark-folders.md
+457ed37f55792f132d65cf84e8825a68  doc/eng-us/features/6.0/bookmark-folders.md
 73986af5ddf303d1baee0bc49446baf1  doc/eng-us/features/6.0/cache-clear-rename-aside.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
@@ -6399,7 +6399,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 2a6e3f6d1c33d6562e4c57dc308abe0e  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 999db87a75423e3f7ae175009db335cc  doc/eng-us/guides/benchmarking.md
-4c70b2a09bb56e16f8f6c0c158111674  doc/eng-us/guides/bookmarks.md
+8b3a846f7fd5ad263c395ed1be3831d0  doc/eng-us/guides/bookmarks.md
 c5752961abcc29736767f009d11ec545  doc/eng-us/guides/caches.md
 b448ed8a155b834a33e48205b69cbf82  doc/eng-us/guides/changing-owners.md
 3a8ab864a2b8f976a88b4a4db5df7851  doc/eng-us/guides/class-groups.md
@@ -6470,7 +6470,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
-eb5ffb754935beeff276d04045aadd44  doc/eng-us/help/README.md
+f9f98d742660b857bad3717dc8539aed  doc/eng-us/help/README.md
 c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
@@ -7650,7 +7650,7 @@ c5a551b215bec55a858288d4a11849ca  doc/eng-us/help/customers/value/features-custo
 d5394140aa0f893580a2e77c150e9120  doc/eng-us/help/customers/value/roi-example-assumptions.md
 9e3662b84c208fac88b0ad7dc439b659  doc/eng-us/help/customers/value/roi-worksheet.md
 d540ac722870544539a5c7f96833d41e  doc/eng-us/help/customers/what-you-own.md
-73ac62835b33419e0b9f7fa10a121ec3  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
+d71277b2857fc04af4409f294da5ec47  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
 b395e87aace8d32bef3c1dbccce95367  doc/eng-us/help/database-administrators/backups-per-engine.md
 92550e94f1b9bad1263405563fcce995  doc/eng-us/help/database-administrators/character-sets-and-collations.md
 84ceb2f4698993ef3959c4174bf36603  doc/eng-us/help/database-administrators/checking-the-schema-after-an-upgrade.md
@@ -7694,7 +7694,7 @@ dda60ef224226a76a45e340e8f2675dd  doc/eng-us/help/database-administrators/sql-qu
 2b2f3aac251b7d211500ce6dcb6275b9  doc/eng-us/help/database-administrators/sqlite-maintenance.md
 19eb71cb76331670f60c68823c0dc200  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
 4e1a63d9e4ba416b1158ac8c1502d0cc  doc/eng-us/help/database-administrators/supported-engines-and-versions.md
-64cc1fc581fdd39ea35c9ff386fbc286  doc/eng-us/help/database-administrators/tables-you-should-know.md
+f246a7b83afde4f6e471a4c9b2aa1868  doc/eng-us/help/database-administrators/tables-you-should-know.md
 ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-database-layer-in-one-page.md
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
@@ -12405,7 +12405,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-c2a365ea19440622a001edeb7d39f2b0  doc/ger-de/.paths.json
+3987ed187da10e0327518327255257c9  doc/ger-de/.paths.json
 09f90589cd9c1ab8873d64dfb4e58fb2  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 d56e4f2859a0e2f81e132977de54562c  doc/ger-de/anleitungen/README.md
@@ -12434,7 +12434,7 @@ df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-refer
 54e9abc27cfbca244fc3f19ca62eb500  doc/ger-de/anleitungen/inhaltsverlauf.md
 f20f292d44b8cea7e9a3e921f376e99c  doc/ger-de/anleitungen/klassengruppen.md
 cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstellungen.md
-324922b7c60054b067ad3f4cc675d52b  doc/ger-de/anleitungen/lesezeichen.md
+685402cae0368bdb5c5a3f6fcfd71143  doc/ger-de/anleitungen/lesezeichen.md
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
 7d327f243481e36aa04751b585b4b346  doc/ger-de/anleitungen/objektzustaende.md
@@ -15053,7 +15053,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-f6c3b40aa5f7950486d54845affa019e  doc/ger-de/funktionen/6.0/README.md
+c3b290a55e7a0e360769e005af9b07e9  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 daea7f2e38000ce15caa57c898b75b10  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15164,7 +15164,7 @@ a23c82e7bfd15faed6bd3072d4203e4e  doc/ger-de/funktionen/6.0/klassenattribute-an-
 c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-extensions.md
 2c4d56fdc633b7a35390ebf1c5c06270  doc/ger-de/funktionen/6.0/laendergruppen.md
 aded008fb0cb6c843f2caa5ce1fa255f  doc/ger-de/funktionen/6.0/legacy-bridge.md
-6dd5440cb0e6e3cca20bea383e93d7bc  doc/ger-de/funktionen/6.0/lesezeichenordner.md
+da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 3e21e2c7d791d5c588752175514567a0  doc/ger-de/funktionen/6.0/log-rotation.md
 9a05d40030100a3818154e3c0a0ce8a5  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
@@ -15583,7 +15583,7 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 e3ad212462012dd2d97c28fca761abae  doc/ger-de/glossar.md
-1f62393efc9d2bb1cb35424dfa6a31de  doc/ger-de/hilfe/README.md
+c04c26868769ec58190ace43031db627  doc/ger-de/hilfe/README.md
 ce030b6ccdfe4601188003989aa000b7  doc/ger-de/hilfe/administratorpasswort-aendern.md
 1b4ca06dff8c67733d40517a66d087ee  doc/ger-de/hilfe/anmelden-im-editor.md
 039e4ea8ec763a21f6d36e8255d64305  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -15783,7 +15783,7 @@ a50e7721d5d5f8bace14d842bf9e1e26  doc/ger-de/hilfe/cms-entwickler/workflows-und-
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 a0a95170364184e6d1dc3132a010f634  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
-beb3696351ba44b245c50f7bf1178be2  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
+1d8265ec5827a143eeb606047e93ccd8  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
 ced62c6996019200e8471a6a57a4a3d5  doc/ger-de/hilfe/datenbankadministratoren/das-dba-schemaformat.md
 193e59b5ea0c3adbd7db6e84d4099ad7  doc/ger-de/hilfe/datenbankadministratoren/das-schema-nach-einem-upgrade-pruefen.md
 0bfb167a8f44104dcacac8df0bfd7a19  doc/ger-de/hilfe/datenbankadministratoren/datenbankadministratoren-hier-beginnen.md
@@ -15824,7 +15824,7 @@ ff764cf1fcac88544fda7d12d9b99730  doc/ger-de/hilfe/datenbankadministratoren/sqli
 5661419b14a7f4becb4e730fd72534bb  doc/ger-de/hilfe/datenbankadministratoren/sqlite-wartung.md
 d7fc9e07aa9708c2d661ab7292b7947f  doc/ger-de/hilfe/datenbankadministratoren/stand-von-microsoft-sql-server.md
 facff089e557edaf8c306980aa5f184e  doc/ger-de/hilfe/datenbankadministratoren/tabellen-des-suchindex.md
-b8781a9d779bc51eb41529c40384bbc8  doc/ger-de/hilfe/datenbankadministratoren/tabellen-die-sie-kennen-sollten.md
+a8fd5b7d981f7048c3e7c62af80425ff  doc/ger-de/hilfe/datenbankadministratoren/tabellen-die-sie-kennen-sollten.md
 c88039948b5537d5f1da687179d5592d  doc/ger-de/hilfe/datenbankadministratoren/unterstuetzte-engines-und-versionen.md
 0337786a8861a06cf138fc469722ad1f  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
@@ -20712,7 +20712,7 @@ b067c93ed80f7e330bf9e91484167add  extension/expservices/classes/misc/explanguage
 5686a0f6d702734804462d5da7fdcb4d  extension/expservices/classes/misc/expsubitemsservices.php
 8c2e1646ef433a48d69d5c5acbab53e9  extension/expservices/classes/misc/expurlservices.php
 c8a27cf5843713fb790237faf6d191d3  extension/expservices/classes/users/expaccountservices.php
-2072a00345ddc1254f6512b992b70247  extension/expservices/classes/users/expbookmarkservices.php
+e69729d3f553688e800a7935249c0dd4  extension/expservices/classes/users/expbookmarkservices.php
 f878cf749669e547180f8d08bdd7069d  extension/expservices/classes/users/expcollaborationservices.php
 6f9019a2c2b3cc8bc97b142779299677  extension/expservices/classes/users/expnotificationservices.php
 2426fad42228d5da2e077cf640f4d7d1  extension/expservices/classes/users/exppolicyservices.php
@@ -20870,7 +20870,7 @@ b0f5bd88831c7033e2c72319ff3efaa5  extension/ezoe/TODO
 4976171ff2e48212bfe82cc1119d0018  extension/ezoe/classes/expoetinymce8engine.php
 a816b6bff7b91f94b91681927dd330eb  extension/ezoe/classes/expoeurlexception.php
 e1d52c075995457287ece4462015a16e  extension/ezoe/classes/expoeurlfetcher.php
-b672085e6c59a8912a2e69f1c1931089  extension/ezoe/classes/ezoeserverfunctions.php
+d366e7a38857242350a55c81e70d867b  extension/ezoe/classes/ezoeserverfunctions.php
 98f19cad31fa30e8db390293bea76904  extension/ezoe/classes/runnable/views/ezoe/dialog.php
 ea437e7be02cdf619991e0632c319cc0  extension/ezoe/classes/runnable/views/ezoe/embed_view.php
 681c052ee9f666c32ace9864641c503d  extension/ezoe/classes/runnable/views/ezoe/load.php
@@ -21628,7 +21628,8 @@ e024c259b0132ce6c550ebed48974a8b  kernel/classes/expanonymouspublicpolicies.php
 0f21cab2bd8703ec564d77e3042723f2  kernel/classes/expbenchmarkhttp.php
 a2ea960d7ab9f69ae0ed376317e58ebd  kernel/classes/expbenchmarkkernel.php
 0c75a7bca2a0dce8da13908f7a1ee322  kernel/classes/expbenchmarkmicro.php
-ac3eb6ffed0a983ad2838e99457cc40a  kernel/classes/expbookmarkpage.php
+996ddac5e94625098229ed3846d288ad  kernel/classes/expbookmarkpage.php
+e3197bc6f53d6c15e4ee71bb81ff34a1  kernel/classes/expbookmarkview.php
 4c41c074f7ffa8b82424c373c5c80fa9  kernel/classes/expcachecatalogue.php
 c38d493128fc6296be9d66ba02d82e49  kernel/classes/expcachemanager.php
 bcf102d8550fd2f6ed4ceff8e035e572  kernel/classes/expcachewarm.php
@@ -21720,8 +21721,8 @@ d4e5641768c6d52afc4b76fd571f9f8c  kernel/classes/ezcollaborationitemmessagelink.
 b1c9067e57548448916dbd904a6379d8  kernel/classes/ezcollaborationviewhandler.php
 dc91b6f083d6703de83ba6568985266c  kernel/classes/ezconfirmorderhandler.php
 fd7234ade7cf0779c40482df97307d10  kernel/classes/ezcontentbrowse.php
-d32c6962dd7f135b3bd18c0f2d036263  kernel/classes/ezcontentbrowsebookmark.php
-5d417cf9a9b4c176d015b54d94856296  kernel/classes/ezcontentbrowsebookmarkfolder.php
+c6ba16ae48166f82c6e0982a07b825b4  kernel/classes/ezcontentbrowsebookmark.php
+febc8514204b8e9e722c9f7629aee178  kernel/classes/ezcontentbrowsebookmarkfolder.php
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 d54f49848795212a691c9840b37564bd  kernel/classes/ezcontentcachemanager.php
@@ -22147,10 +22148,10 @@ f54eb157a578eb51ecc25bbcebcfbcdc  kernel/content/copy.php
 b7959d6a47645a1610274283d404c746  kernel/content/download.php
 3f03566dd39083dfddaa39a51a78ee37  kernel/content/draft.php
 753c6fb6e051f80440937bda433446df  kernel/content/edit.php
-7242a2aa8933416bead5698c501827b4  kernel/content/ezcontentfunctioncollection.php
+dd44f6336914c08888d4f08f8fa01a79  kernel/content/ezcontentfunctioncollection.php
 e852a481e655aa3ca97ef9c86d41add4  kernel/content/ezcontentoperationcollection.php
 6547d1af2360fb0c8cd643815945d308  kernel/content/ezcontentpublishingbehaviour.php
-074f32b8316642dec7fb5994f0fe42b8  kernel/content/function_definition.php
+7edb958246ed71706fd079c8784754cf  kernel/content/function_definition.php
 bd08bbab6c3e91e233d973d4656c56c9  kernel/content/hide.php
 c6017bce65aa02d0219ece348808551e  kernel/content/history.php
 12c240f04537c49f43ef9dd45f9f8852  kernel/content/job.php
@@ -22550,7 +22551,7 @@ e7563299271b184bcb13cfc88f720e44  kernel/private/classes/views/class/removegroup
 ccefa96914e28491976b457d03a55ba1  kernel/private/classes/views/collaboration/view.php
 0de78f16932a6113689adf19c2fda6e5  kernel/private/classes/views/content/action.php
 58a9443b36a375d365c43bb1aa4cc3ed  kernel/private/classes/views/content/advancedsearch.php
-35048583d2216e32df2eb55fa98d7129  kernel/private/classes/views/content/bookmark.php
+d7a18f14f302f62a7bb633e91917ff33  kernel/private/classes/views/content/bookmark.php
 30c6386008e5ca98774846ae08d7741a  kernel/private/classes/views/content/browse.php
 72a2181eddbf4757bd66224ac5d2f3aa  kernel/private/classes/views/content/collectedinfo.php
 8f366f4cba9319a985b6f3ed7da5f7a4  kernel/private/classes/views/content/collectinformation.php
@@ -23118,12 +23119,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-4ca1f7e3a9cebf51348c657bfd90fc95  kernel/sql/mysql/kernel_schema.sql
-d0efa22f65b17ff75899bc29dd3bca94  kernel/sql/postgresql/kernel_schema.sql
+ddb6645bb040d6b769b369e007807800  kernel/sql/mysql/kernel_schema.sql
+ff62765ad24f20d9b6f0d3763c457075  kernel/sql/postgresql/kernel_schema.sql
 f2ad2f8e1711872bbc2d871d7cc6c76b  kernel/sql/postgresql/sequence.sql.template
 dc9000e227e13b6f42d0379d979aea32  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-d28a125bd10effbd87865765dc5e63ed  kernel/sql/sqlite/schema.sql
+31557bad2d7b5cb76a5a540a52e98b14  kernel/sql/sqlite/schema.sql
 1bb603e51ab28ac0367fb23c71c2648e  kernel/state/assign.php
 58b38e2e4ae8744e1d4418ed6659bc18  kernel/state/edit.php
 dada858accc356c23164e35bcc5d26b1  kernel/state/group.php
@@ -23554,7 +23555,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-b3d21459aef19654c1330383fcc7fa53  share/db_schema.dba
+d7bf75bd3ef737a536995c48668e0e3f  share/db_schema.dba
 0d2dc77620a59815f0f637d7099cc90b  share/help/seed-glossary.json
 e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
@@ -24340,7 +24341,7 @@ dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-00ff54535bf12be403373cfaeadf3c16  share/translations/ger-DE/translation.ts
+2feac60bfc2b43943c5938e9c895f0c6  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 47faf9a9276b0ae89c78137ddf9df7c0  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -24374,7 +24375,7 @@ e97186d95acc45f8b903c2f6fbf36810  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
 025951efa4fa7bff079e333901502cd4  share/translations/ukr-UA/translation.ts
 0b1b76b5ad6b2f923afd6fd9a9937a8b  share/translations/untranslated/readme.txt
-d5f2455a547b3d1722b3a80cee77b790  share/translations/untranslated/translation.ts
+6ae032ba4417c723c2dd908c8fd17eba  share/translations/untranslated/translation.ts
 bae9ff85781e52af001213bdb213a013  shippable.yml
 44e5568bf3339959aeafdbec6bae3246  soap.php
 3b6d156f31df70e093aa1a6d8a525cd3  support/ezlupdate-qt4.5/README.txt
@@ -24792,7 +24793,10 @@ d4cad238dad8d7b326ffbdb4af42308e  tests/tests/kernel/classes/benchmark/ExpBenchm
 18aaa771e4a43688b0c491beef27096e  tests/tests/kernel/classes/benchmark/stub_server.php
 8a01acd9d7c4f0241e600a97c1238dc9  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
 02038e9154fe79a5d2954b16f6ba6612  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
-06ff04e18da0cbbf8445feae6d49a63b  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
+79101a52cabebdfdccdfc84ce58a2940  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
+575393a1e503ed68771d0652d103f4dd  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
+c1c9e79ffa62a9e81808cb1a5ef91681  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
+8ca1b03daadda20f008172fdccf9acd3  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
 9f35d62dea92268419f9f373c661ea91  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 ec49325384c48adf5d56ade86b85d5dd  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 91468a69c1c96cc74112894400196b4f  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
@@ -26022,6 +26026,7 @@ bf625f57144144427b01aecee3a6f9f8  update/common/scripts/5.4/cleanupfieldvaluerel
 895b419a0138eea6b196f43965f519b1  update/common/scripts/5.4/fixtrashedimagereferences.php
 be0ae0aa7baa6e05635c1b233a529337  update/common/scripts/6.0/createapikeytable.php
 f07dfabe3b5632bed2ae68a1977706fb  update/common/scripts/6.0/createaudittables.php
+749f4d771bd5483b6d10264371c8661f  update/common/scripts/6.0/createbookmarkviewtable.php
 b83dbbb08f4886434931632bc5ffefc5  update/common/scripts/6.0/createtransferruntable.php
 a40735b2add3690c0cffe61f7f886270  update/common/scripts/6.0/movetrashrecords.php
 a31b7f17bf452d571ea23b33e005831e  update/common/scripts/cleanup.php
@@ -26089,7 +26094,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-d5978a38e3287b8c1b1421e854c8b2ac  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+3d8b29a73a839f8f68cea2481939b333  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -26148,9 +26153,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-fa5c9cc1cb16633532e8923aca284fd5  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+8e3c49d650e910d4df4378d6543fc028  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-973fdfdf48aeb26906a8ce4cf6cb77ac  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+94ffd6f7d4dbc3da09ea9f704895a50b  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9d82483e7374b4b6f6a7a8547ef8ebd8  webdav.php

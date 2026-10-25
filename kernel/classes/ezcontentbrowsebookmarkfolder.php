@@ -458,6 +458,12 @@ class eZContentBrowseBookmarkFolder extends eZPersistentObject
         if ( $deleteBookmarks )
         {
             $ids = implode( ',', $this->subtreeIDs() );
+            // the addresses of the system page bookmarks in them (expBookmarkView) go with them
+            if ( class_exists( 'expBookmarkView' ) )
+            {
+                $views = $db->arrayQuery( "SELECT id FROM ezcontentbrowsebookmark WHERE user_id=$userID AND node_id=0 AND folder_id IN ($ids)" );
+                expBookmarkView::removeForBookmarks( array_column( is_array( $views ) ? $views : array(), 'id' ) );
+            }
             $db->query( "DELETE FROM ezcontentbrowsebookmark WHERE user_id=$userID AND folder_id IN ($ids)" );
             $db->query( "DELETE FROM expbookmark_folder WHERE user_id=$userID AND id IN ($ids)" );
             return true;

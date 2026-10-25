@@ -2274,7 +2274,59 @@ $schema = array (
       ),
     ),
   ),
-  'ezcontentbrowserecent' => 
+  'expbookmark_view' =>
+  array (
+    'name' => 'expbookmark_view',
+    'fields' =>
+    array (
+      'bookmark_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'created' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'module_uri' =>
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'bookmark_id',
+        ),
+      ),
+      'expbookmark_view_user' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'user_id',
+        ),
+      ),
+    ),
+  ),
+  'ezcontentbrowserecent' =>
   array (
     'name' => 'ezcontentbrowserecent',
     'fields' => 
