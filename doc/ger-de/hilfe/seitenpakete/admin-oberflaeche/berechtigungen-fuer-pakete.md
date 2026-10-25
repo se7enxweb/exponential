@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren, die entscheiden, wer Pakete ansehen, impor
 Installieren eines Pakets ändert Inhalte und Einstellungen; diese Richtlinien gehören also nur zu vertrauenswürdigen Rollen. Die Rolle
 Administrator mit allen Funktionen hat jede davon.
 
-![Rollen, wo die Richtlinien für Pakete vergeben werden](../../../../eng-us/help/images/help/sp-perms.webp)
+![Rollen, wo die Richtlinien für Pakete vergeben werden](../../bilder/help/sp-perms.webp)
 
 ## Inhalt
 

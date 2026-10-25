@@ -14,7 +14,7 @@ oder aus anderen Gründen unter die Datenschutz-Grundverordnung (DSGVO) fallen. 
 Verordnung in einfachen Worten und zeigt für jeden Teil, welche Funktionen von Exponential helfen und was Sie trotzdem
 selbst tun müssen.
 
-![Gesammelte Informationen: was Besucher über Formulare gesendet haben](../../../../eng-us/help/images/help/bu-forms.webp)
+![Gesammelte Informationen: was Besucher über Formulare gesendet haben](../../bilder/help/bu-forms.webp)
 
 > **Warnung**
 > Diese Seite enthält Grundlagen, keine Rechtsberatung. Sie sagt nicht, ob Ihre Website die Vorschriften einhält. Lesen

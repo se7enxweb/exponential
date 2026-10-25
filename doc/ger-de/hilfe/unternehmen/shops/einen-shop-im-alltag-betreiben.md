@@ -13,7 +13,7 @@ Diese Seite richtet sich an Shop-Verantwortliche und Inhaber nach dem Start. Sie
 Woche, jeden Monat und jedes Jahr, damit nichts vergessen wird, wenn im Shop viel los ist oder jemand im Urlaub ist.
 Passen Sie die Listen an Ihren Shop an und bewahren Sie sie dort auf, wo das Team sie sieht.
 
-![Das Shop-Dashboard](../../../../eng-us/help/images/help/bu-store.webp)
+![Das Shop-Dashboard](../../bilder/help/bu-store.webp)
 
 ## Inhalt
 

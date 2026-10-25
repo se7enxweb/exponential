@@ -35,7 +35,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
    Exponential: "its fully customizable and extendable content model."
 4. Ändern Sie vor der Kamera keine Klasse. Quelle: [Das Inhaltsmodell und das Bearbeiten von Inhalten](../../anleitungen/inhaltsmodell-und-bearbeitung.md).
 
-![Setup, Klassen: die Klassengruppen, gezeigt in Teil 1 des Rundgangs für Administratoren](../../../eng-us/help/images/help/pr-admin-classes.webp)
+![Setup, Klassen: die Klassengruppen, gezeigt in Teil 1 des Rundgangs für Administratoren](../bilder/help/pr-admin-classes.webp)
 
 ## Teil 2: Benutzer, Rollen und Sprachen (2 Minuten)
 
@@ -47,7 +47,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
    268 Locale-Dateien können als Inhaltssprachen verwendet werden; es gibt 33 Übersetzungen der Administration, neunzehn
    davon vollständig (19. Oktober 2026) ([Sprachen in Exponential](../../sprachen.md)).
 
-![Rollen, gezeigt in Teil 2](../../../eng-us/help/images/help/pr-admin-roles.webp)
+![Rollen, gezeigt in Teil 2](../bilder/help/pr-admin-roles.webp)
 
 ## Teil 3: Betrieb (3 Minuten)
 
@@ -62,7 +62,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
    Datenbank unkenntlich ([Systeminformationen](../../anleitungen/systeminformationen.md)).
 5. Optional: **Setup > Wartung** ([Wartungsmodus](../../anleitungen/wartungsmodus.md)).
 
-![Cache-Verwaltung, gezeigt in Teil 3](../../../eng-us/help/images/help/pr-admin-cache.webp)
+![Cache-Verwaltung, gezeigt in Teil 3](../bilder/help/pr-admin-cache.webp)
 
 ## Teil 4: Sicherheit (3 Minuten)
 
@@ -82,7 +82,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 Sagen Sie nichts wie „es ist sicher“ oder „es hatte nie eine Sicherheitslücke“. Sagen Sie: „Hier sind der Prozess und
 die Checkliste; Sicherheitslücken werden vertraulich an die Adresse in `SECURITY.md` gemeldet.“
 
-![Das Audit-Dashboard, gezeigt in Teil 4](../../../eng-us/help/images/help/pr-admin-audit.webp)
+![Das Audit-Dashboard, gezeigt in Teil 4](../bilder/help/pr-admin-audit.webp)
 
 ## Bildschirme, die Sorgfalt brauchen
 

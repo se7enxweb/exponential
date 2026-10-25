@@ -50,7 +50,7 @@ Quelle: [Layouts, Zonen und Blöcke](../layout-editor.md#layouts-zonen-und-blöc
 3. Zeigen Sie auf die vier Bereiche: Name und Schaltflächen oben, **Block hinzufügen** links, die Zonen in der Mitte, die
    Eigenschaften rechts (*Select a block to access its properties.*).
 
-![Teil 1: das Layouts-Dashboard mit Neues Layout](../../../eng-us/help/images/help/pr-layouts-dash.webp)
+![Teil 1: das Layouts-Dashboard mit Neues Layout](../bilder/help/pr-layouts-dash.webp)
 
 ## Teil 2: Blöcke (3 Minuten)
 
@@ -75,7 +75,7 @@ Wechseln Sie zu einem vorhandenen Layout, das eine verknüpfte Zone hat (**Layou
 3. Klicken Sie unten links auf **Link zone with shared layout zone**. Zeigen Sie Schritt 1 (**Link zone** bei jeder
    Zone) und sagen Sie, wonach Schritt 2 fragt: nach dem gemeinsamen Layout und seiner Zone. Klicken Sie auf **Back**.
 
-![Teil 3: die gemeinsamen Layouts](../../../eng-us/help/images/help/pr-layouts-shared.webp)
+![Teil 3: die gemeinsamen Layouts](../bilder/help/pr-layouts-shared.webp)
 
 ## Teil 4: veröffentlichen oder verwerfen, und Zuordnungen (2 Minuten)
 
@@ -90,7 +90,7 @@ Wechseln Sie zu einem vorhandenen Layout, das eine verknüpfte Zone hat (**Layou
 Wenn Sie vor der Kamera veröffentlichen und der Editor fragt, ob Caches geleert werden sollen, wählen Sie
 **Caches leeren**, damit die Änderung erscheint.
 
-![Teil 4: die Layout-Zuordnungen](../../../eng-us/help/images/help/pr-layouts-rules.webp)
+![Teil 4: die Layout-Zuordnungen](../bilder/help/pr-layouts-rules.webp)
 
 ## Was Sie nicht behaupten sollten
 

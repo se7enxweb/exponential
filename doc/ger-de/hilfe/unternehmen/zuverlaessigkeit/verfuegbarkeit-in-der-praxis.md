@@ -15,7 +15,7 @@ jeden Schritt. Nichts davon braucht zusätzliche Software: Die Befehle und Seite
 Einzelheiten stehen unter [Betrieb einer Site](../../../anleitungen/betrieb-einer-website.md) und auf den
 [Betriebsseiten für Hoster](../../hosting/betrieb/README.md).
 
-![Systeminformationen, die erste Seite, auf die Sie schauen](../../../../eng-us/help/images/help/bu-uptime.webp)
+![Systeminformationen, die erste Seite, auf die Sie schauen](../../bilder/help/bu-uptime.webp)
 
 ## Inhalt
 

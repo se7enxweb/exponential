@@ -112,7 +112,7 @@ bis Sie auf **Anwenden** klicken.
 | `j` / `k` | Nächste / vorherige Überschrift der Seite, die Sie lesen. |
 | `]` / `[` | Nächste / vorherige Hilfeseite. |
 
-![Eine Seite der Hilfe: das Inhaltsverzeichnis der Hilfe links, die Seite in der Mitte und ihre Überschriften rechts](../../eng-us/help/images/help/help-viewer.webp)
+![Eine Seite der Hilfe: das Inhaltsverzeichnis der Hilfe links, die Seite in der Mitte und ihre Überschriften rechts](bilder/help/help-viewer.webp)
 
 Diese Tasten werden ignoriert, während Sie in einem Feld tippen.
 
