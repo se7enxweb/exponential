@@ -50087,6 +50087,18 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>L&apos;archive a été refusée : l&apos;entrée « %path » pointe hors du paquetage.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>L&apos;archive a été créée au format tar PAX, qui ne peut pas être importé. Créez le paquetage au format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>L&apos;archive a été refusée : l&apos;entrée « %path » est de type tar « %type », et un paquetage ne contient que des fichiers et des répertoires.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>L&apos;archive a été refusée : elle nomme une entrée de plus de %length octets.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>L&apos;archive a été refusée : l&apos;entrée « %path » est un lien ou un périphérique, et un paquetage ne contient que des fichiers et des répertoires.</translation>
     </message>

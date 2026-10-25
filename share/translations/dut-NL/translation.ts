@@ -49893,6 +49893,18 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Het archief is geweigerd: het item &quot;%path&quot; verwijst naar buiten het pakket.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Het archief is ingepakt in de PAX-tar-indeling, die niet kan worden geïmporteerd. Pak het pakket in in de GNU-tar-indeling (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Het archief is geweigerd: het item &quot;%path&quot; heeft het tar-type &quot;%type&quot;, en een pakket bevat alleen bestanden en mappen.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Het archief is geweigerd: het noemt een item dat langer is dan %length bytes.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Het archief is geweigerd: het item &quot;%path&quot; is een link of een apparaat, en een pakket bevat alleen bestanden en mappen.</translation>
     </message>

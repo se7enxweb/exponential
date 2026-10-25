@@ -56964,6 +56964,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; له بستې بهر ته اشاره کوي.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>آرشیف د tar په PAX بڼه بسته شوی، چې نه شي واردېدای. بسته د tar په GNU بڼه بسته کړئ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; د tar ډول &quot;%type&quot; لري، او بسته یوازې دوتنې او فولډرونه لري.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>آرشیف رد شو: د یوې ننوتنې نوم له %length بایټه اوږد دی.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; لینک یا وسیله ده، او بسته یوازې دوتنې او فولډرونه لري.</translation>
     </message>

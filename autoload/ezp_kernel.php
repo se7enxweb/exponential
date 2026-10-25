@@ -1333,6 +1333,8 @@ return array(
       'expPDFExportGenerator'                                        => 'kernel/classes/pdfexport/exppdfexportgenerator.php',
       'expPDFExportInfo'                                             => 'kernel/classes/pdfexport/exppdfexportinfo.php',
       'expPDODB'                                                     => 'lib/ezdb/classes/exppdodb.php',
+      'expPackageArchive'                                            => 'kernel/classes/exppackagearchive.php',
+      'expPackageArchiveModes'                                       => 'kernel/classes/exppackagearchivemodes.php',
       'expPackageConflictReport'                                     => 'kernel/classes/exppackageconflictreport.php',
       'expPackageJson'                                               => 'kernel/classes/exppackagejson.php',
       'expPasskey'                                                   => 'kernel/classes/passkey/exppasskey.php',
