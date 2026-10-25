@@ -1070,7 +1070,9 @@ WHERE user_id = '" . $userID . "' AND
                 return array( 'object' => expAuditHook::user( $user ),
                               'actor' => array( 'user_id' => (int)$userID, 'login' => (string)$user->attribute( 'login' ),
                                                 'roles' => array_values( array_map( 'intval', (array)$user->roleIDList() ) ) ),
-                              'after' => array( 'handler' => $handler === 'eZUser' ? 'standard' : $handler ) );
+                              'after' => array( 'handler' => $handler === 'eZUser' ? 'standard' : $handler )
+                                         + ( class_exists( 'expUserSessionTracker' ) && expUserSessionTracker::currentRowID()
+                                             ? array( 'session' => (int)expUserSessionTracker::currentRowID() ) : array() ) );
             } );
         }
 
@@ -1430,6 +1432,10 @@ WHERE user_id = '" . $userID . "' AND
         // switch does not touch it
         if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'expPasswordPolicy' ) )
             expPasswordPolicy::stampSession( $user );
+        // A sign-in is a session of the user's own (expUserSessionTracker: user/sessions, "Your devices"); a temporary
+        // switch is not
+        if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'expUserSessionTracker' ) )
+            expUserSessionTracker::signedIn( $user );
         self::cleanup();
         // A sign-in regenerates the session; a temporary switch (preview caches) does not.
         if ( !( $flags & self::NO_SESSION_REGENERATE ) && class_exists( 'ezpHttpCacheListener' ) )
@@ -1486,7 +1492,9 @@ WHERE user_id = '" . $userID . "' AND
             self::$recordingLogout = true;
             try
             {
-                expAudit::event( 'access.session.logout', array( 'object' => array( 'type' => 'user', 'id' => (int)$contentObjectID ) ) );
+                $sessionRow = class_exists( 'expUserSessionTracker' ) ? expUserSessionTracker::currentRowID() : null;
+                expAudit::event( 'access.session.logout', array( 'object' => array( 'type' => 'user', 'id' => (int)$contentObjectID ) )
+                                                          + ( $sessionRow ? array( 'after' => array( 'session' => (int)$sessionRow ) ) : array() ) );
             }
             finally
             {
@@ -1501,6 +1509,9 @@ WHERE user_id = '" . $userID . "' AND
         $newUserID = self::anonymousId();
         eZSession::setUserID( $newUserID );
         $http->setSessionVariable( 'eZUserLoggedInID', $newUserID );
+        // the session's row ends as signed out (expUserSessionTracker), unless it was ended already (revoked)
+        if ( class_exists( 'expUserSessionTracker' ) )
+            expUserSessionTracker::signedOut();
         // the password stamp of the sign-in that ends (expPasswordPolicy::stampSession())
         if ( eZSession::hasStarted() )
             eZSession::unsetkey( 'eZUserPasswordStamp', false );
@@ -2263,12 +2274,19 @@ WHERE user_id = '" . $userID . "' AND
         {
             // A session signed in with a password that was changed since ends here
             // ([PasswordSettings] EndOtherSessions; reads only the session and the user cache)
-            if ( !class_exists( 'expPasswordPolicy' ) || expPasswordPolicy::sessionIsCurrent( $user ) )
+            if ( class_exists( 'expPasswordPolicy' ) && !expPasswordPolicy::sessionIsCurrent( $user ) )
             {
-                return $user;
+                expPasswordPolicy::endStaleSession( $user );
+                return self::instance();
             }
-            expPasswordPolicy::endStaleSession( $user );
-            return self::instance();
+            // A session signed out from "Your devices" (user/sessions) or by an administrator ends here
+            // (expUserSessionTracker: one query by the session's token, whatever the session handler)
+            if ( class_exists( 'expUserSessionTracker' ) && !expUserSessionTracker::sessionIsCurrent( $user ) )
+            {
+                expUserSessionTracker::endRevokedSession( $user );
+                return self::instance();
+            }
+            return $user;
         }
         self::logoutCurrent();
         return self::instance();

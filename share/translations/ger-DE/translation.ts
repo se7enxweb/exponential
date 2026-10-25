@@ -20553,6 +20553,10 @@ Hinweis: Die Pakete werden nicht deinstalliert.</translation>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>Benutzerkonten deaktivieren und in die Gruppe der deaktivierten Benutzer verschieben sowie zurückverschieben</translation>
     </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>sehen, wo andere Benutzer angemeldet sind, und sie abmelden</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/role/view</name>
@@ -41290,6 +41294,34 @@ Konto zu aktivieren.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-Mail-Einstellungen öffnen</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sitzungen</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Wo Sie angemeldet sind: Browser, System, Ort und Zeit. Melden Sie ein Gerät ab, das Sie nicht kennen.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Wo dieser Benutzer angemeldet ist, und den Benutzer überall abmelden.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Geräte verwalten</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Sitzungen anzeigen</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count angemeldet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -44042,6 +44074,30 @@ Konto zu aktivieren.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klasse/Attribut Kombination (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Benutzergruppen, deren neue Konten eine Freigabe brauchen</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Ein Konto, das in eine dieser Gruppen oder darunter veröffentlicht wird, wartet, bis ein Freigebender es annimmt. Vorher kann es sich nicht anmelden.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Benutzer, die die Konten freigeben</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Gruppen, die die Konten freigeben</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Benutzergruppen ohne Freigabe (ihre Mitglieder veröffentlichen solche Konten direkt; Freigebende brauchen nie eine)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Den Freigebenden eine E-Mail mit dem Link zur Freigabe senden (sie melden sich an, um freizugeben oder abzulehnen)</translation>
     </message>
 </context>
 <context>
@@ -61799,6 +61855,22 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
         <source>ClassAttribute name</source>
         <translation>Name des Klassenattributs</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konten, die eine Freigabe brauchen</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-Mail an die Freigebenden</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nein</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -63483,6 +63555,14 @@ diesen Fehler. Bitte versuchen Sie nicht, die Zahlung erneut zu senden.</transla
     <message>
         <source>Your comment was added.</source>
         <translation>Ihr Kommentar wurde hinzugefügt.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Das Konto „%1“ wurde freigegeben und veröffentlicht: es kann sich jetzt anmelden.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Das Konto „%1“ wurde abgelehnt. Es ist nicht veröffentlicht und kann sich nicht anmelden; es ist wieder ein Entwurf seines Autors.</translation>
     </message>
 </context>
 <context>
@@ -67731,6 +67811,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>In Datentabellen spiegeln</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Benutzerkonten freigeben</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ein neues Benutzerkonto wartet auf Ihre Freigabe</translation>
     </message>
 </context>
 <context>
@@ -77030,6 +77118,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Die neue E-Mail-Adresse %email wartet auf ihre Bestätigung: Öffnen Sie den Link, den wir dorthin gesendet haben. Bis dahin behält dieses Konto %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Die E-Mail über eine Anmeldung von einem neuen Gerät oder Browser gehört zur Kontosicherheit. Sie schalten sie bei Ihren Geräten ab oder an, wo Sie auch die Sitzungen Ihres Kontos sehen und abmelden.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -82668,6 +82764,672 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Die Tabellen der persistenten Klassen ansehen …</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Neues Benutzerkonto wartet auf Freigabe: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Benutzername</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Angefragt von</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Freigabe öffnen</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Wenn die Schaltfläche nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ein neues Benutzerkonto wartet auf Ihre Freigabe</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester hat das Konto „%name“ in %groups angelegt. Es ist nicht veröffentlicht und kann sich nicht anmelden, bis ein Freigebender es annimmt.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Melden Sie sich in der Administration an und geben Sie es in Ihrer Kollaborationsliste frei oder lehnen Sie es ab. Dieser Link meldet Sie nicht an und entscheidet selbst nichts.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Diese Mail wurde von %site gesendet, weil Sie neue Konten dieser Gruppen freigeben.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Rechner</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet-PC</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm oder App</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatischer Client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unbekanntes Gerät</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passwort und Code der Zwei-Schritt-Anmeldung</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single Sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Angemeldet, bevor Sitzungen aufgezeichnet wurden</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Auf dieser Seite abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Von einem Administrator abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Mit „alle anderen Sitzungen“ abgemeldet</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Durch eine neue Anmeldung ersetzt</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Durch eine Passwortänderung beendet</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Abgelaufen</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sitzungen von %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Wo Ihr Konto gerade angemeldet ist. Wenn Sie ein Gerät nicht kennen, melden Sie es ab und ändern Sie Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Wo dieses Konto gerade angemeldet ist. Das Abmelden beendet jede Sitzung bei ihrer nächsten Anfrage.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zurück zum Konto</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Die Sitzung wurde abgemeldet. Das Gerät muss sich neu anmelden.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andere Sitzungen wurden abgemeldet.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Es gab keine anderen Sitzungen zum Abmelden.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count Sitzungen dieses Benutzers wurden abgemeldet.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Dieser Benutzer hatte keine Sitzungen zum Abmelden.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Das ist die Sitzung, die Sie gerade benutzen. Um sie zu beenden, melden Sie sich ab.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Diese Sitzung war bereits beendet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Sie bekommen eine E-Mail, wenn Ihr Konto sich von einem neuen Gerät anmeldet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Sie bekommen keine E-Mail mehr über Anmeldungen von neuen Geräten.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die Seite war abgelaufen. Es wurde nichts geändert; bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Auf dieser Website werden keine Sitzungen aufgezeichnet (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Die Tabelle expuser_session fehlt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sitzungen werden aufgezeichnet, sobald sie angelegt ist: php update/common/scripts/6.0/createusersessiontable.php oder das Datenbank-Update von 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jetzt angemeldet</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Alle anderen Sitzungen abmelden</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Überall abmelden</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Jedes Gerät außer diesem wird bei seiner nächsten Anfrage abgemeldet, auch die, die mit „Angemeldet bleiben“ angemeldet bleiben.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Jede Sitzung dieses Benutzers wird bei ihrer nächsten Anfrage abgemeldet, auch die, die mit „Angemeldet bleiben“ angemeldet bleiben.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ja, die anderen Sitzungen abmelden</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ja, jede Sitzung abmelden</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dieses Gerät</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Als ihr Netz angezeigt; die vollständige Adresse wird für die Administratoren aufbewahrt.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>angemeldet von %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Angemeldet</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zuletzt aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Jetzt</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Bleibt angemeldet</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Angemeldet bleiben, bis %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Bis der Browser geschlossen wird</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Angemeldet bei</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Kennung des Browsers</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Um diese Sitzung zu beenden, melden Sie sich ab.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Abmelden</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Diese Sitzung abmelden</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Keine Sitzung ist angemeldet.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Hinweise zu Anmeldungen</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Mir eine E-Mail schicken, wenn mein Konto sich von einem neuen Gerät oder Browser anmeldet</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Geht an %email. Sie nennt das Gerät, den ungefähren Ort und die Zeit und verweist auf diese Seite.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Diese Website schickt keine Hinweise zu Anmeldungen.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kürzlich beendet</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sitzungen, die in den letzten %days Tagen geendet haben.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beendet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Wie</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Keine.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Rechner</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet-PC</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm oder App</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatischer Client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unbekanntes Gerät</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passwort</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passwort und Code der Zwei-Schritt-Anmeldung</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-Schnittstelle</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single Sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Angemeldet, bevor Sitzungen aufgezeichnet wurden</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Auf dieser Seite abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Von einem Administrator abgemeldet</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Mit „alle anderen Sitzungen“ abgemeldet</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Durch eine neue Anmeldung ersetzt</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Durch eine Passwortänderung beendet</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Abgelaufen</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sitzungen von %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Wo Ihr Konto gerade angemeldet ist. Wenn Sie ein Gerät nicht kennen, melden Sie es ab und ändern Sie Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Wo dieses Konto gerade angemeldet ist. Das Abmelden beendet jede Sitzung bei ihrer nächsten Anfrage.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Die Sitzung wurde abgemeldet. Das Gerät muss sich neu anmelden.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andere Sitzungen wurden abgemeldet.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Es gab keine anderen Sitzungen zum Abmelden.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count Sitzungen dieses Benutzers wurden abgemeldet.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Dieser Benutzer hatte keine Sitzungen zum Abmelden.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Das ist die Sitzung, die Sie gerade benutzen. Um sie zu beenden, melden Sie sich ab.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Diese Sitzung war bereits beendet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Sie bekommen eine E-Mail, wenn Ihr Konto sich von einem neuen Gerät anmeldet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Sie bekommen keine E-Mail mehr über Anmeldungen von neuen Geräten.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die Seite war abgelaufen. Es wurde nichts geändert; bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Auf dieser Website werden keine Sitzungen aufgezeichnet.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sitzungen werden noch nicht aufgezeichnet: Die Website braucht ihr Datenbank-Update.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jetzt angemeldet</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dieses Gerät</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Angemeldet</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zuletzt aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Jetzt</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Bleibt angemeldet</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Angemeldet bleiben, bis %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Bis der Browser geschlossen wird</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Um diese Sitzung zu beenden, melden Sie sich ab.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Abmelden</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Diese Sitzung abmelden</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Alle anderen Sitzungen abmelden</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Überall abmelden</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Hinweise zu Anmeldungen</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Mir eine E-Mail schicken, wenn mein Konto sich von einem neuen Gerät oder Browser anmeldet</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kürzlich beendet</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beendet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Wie</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Keine in den letzten %days Tagen.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Sehen Sie, wo Ihr Konto angemeldet ist, und melden Sie ein Gerät ab, das Sie nicht kennen.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Geräte verwalten</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Neue Anmeldung bei Ihrem Konto auf %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hallo,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Mit Ihrem Konto %login auf %site hat sich soeben ein Gerät oder Browser angemeldet, das es in letzter Zeit nicht benutzt hat:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Gerät:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Zeit:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Ungefähre Adresse:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Wenn Sie das waren, müssen Sie nichts tun.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Wenn Sie es nicht waren, kennt vielleicht jemand Ihr Passwort. Melden Sie diese Sitzung auf der Seite Ihrer Geräte ab und ändern Sie danach Ihr Passwort:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Auf derselben Seite können Sie diese E-Mails abschalten.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Neue Anmeldung von %login auf %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Das Konto %login hat sich von einem Gerät oder Browser angemeldet, das es in letzter Zeit nicht benutzt hat.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Die Sitzungen dieses Benutzers:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Neue Anmeldung bei Ihrem Konto</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Mit Ihrem Konto %login hat sich am %date %device (%ip) angemeldet.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Wenn Sie das waren, müssen Sie nichts tun. Wenn nicht, melden Sie diese Sitzung unter %url ab und ändern Sie Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Neue Anmeldung von %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Das Konto %login hat sich von einem neuen Gerät angemeldet: %device (%ip) am %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Ihre Geräte</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sitzungen von %name</translation>
     </message>
 </context>
 </TS>

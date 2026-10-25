@@ -400,6 +400,17 @@ class expPasswordPolicy
                 eZSession::regenerate();
             $keepSessionKey = session_id();
         }
+        // the other sessions of "Your devices" (user/sessions) end too, by their own rows: on every session handler
+        try
+        {
+            if ( class_exists( 'expUserSessionTracker' ) && class_exists( 'eZSession' ) && eZSession::hasStarted()
+                 && (int)eZSession::get( 'eZUserLoggedInID', 0 ) === (int)$userID )
+                expUserSessionTracker::endOtherRows( (int)$userID, 'password_change', (int)$userID );
+        }
+        catch ( Throwable $e )
+        {
+            eZDebug::writeError( 'Could not end the other session rows: ' . $e->getMessage(), __METHOD__ );
+        }
         try
         {
             $ended = eZSession::getHandlerInstance()->deleteOtherSessionsOfUser( (int)$userID, (string)$keepSessionKey );

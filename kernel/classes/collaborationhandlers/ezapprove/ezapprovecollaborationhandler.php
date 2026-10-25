@@ -285,6 +285,16 @@ class eZApproveCollaborationHandler extends eZCollaborationItemHandler
             }
         }
         $collaborationItem->sync();
+        // An item of the event "Approve user accounts": recorded, and the workflow continues now instead of at the
+        // next run of the workflow cronjob (doc/eng-us/bc/6.0/user-account-approval.md)
+        if ( isset( $status ) && class_exists( 'expUserApproval' ) )
+        {
+            $resumed = expUserApproval::decided( $collaborationItem, $status == self::STATUS_ACCEPTED );
+            if ( $resumed === 'done' && $status == self::STATUS_ACCEPTED )
+                $notice = array( 'success', ezpI18n::tr( 'kernel/collaboration', 'The account "%1" was approved and published: it can sign in now.', null, array( $title ) ) );
+            else if ( $resumed !== null && $status != self::STATUS_ACCEPTED )
+                $notice = array( 'success', ezpI18n::tr( 'kernel/collaboration', 'The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.', null, array( $title ) ) );
+        }
         if ( $notice )
             expCollaborationGroupManager::setNotice( $notice[0], $notice[1] );
         return $module->redirectToView( $redirectView, $redirectParameters );
