@@ -60739,6 +60739,22 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Sent to the password change</source>
         <translation>pegh mu&apos; choHmeH Daq ngeHlu&apos;</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>cha&apos;DIch mIw Hutlhbogh &apos;elmeH tlhobghach lajQo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>ghun mu&apos;ngaq chenmoHlu&apos;</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ghun mu&apos;ngaq Qaw&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>ghun mu&apos;ngaq lo&apos;lu&apos;</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>

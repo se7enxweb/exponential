@@ -7391,6 +7391,61 @@
     </message>
 </context>
 <context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/drafts</name>
     <message>
         <source>My drafts</source>
@@ -50659,6 +50714,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -60586,6 +60657,22 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Sent to the password change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>App password used</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

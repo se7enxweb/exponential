@@ -2138,7 +2138,8 @@ language_locale='eng-GB'";
 
         // The site packages replace the Editor role's content/* with single functions and leave out hiding, the trash,
         // the list of what uses an object and the multi-upload; plain_site gives the Editors group no role for the
-        // own account. Checked here after the package's roles, for every package and base data
+        // own account and keeps the base data's content/*, which is replaced by the same single functions first.
+        // Checked here after the package's roles, for every package and base data
         // (doc/eng-us/bc/6.0/editor-role-policies.md).
         if ( class_exists( 'expEditorPolicies' ) )
         {

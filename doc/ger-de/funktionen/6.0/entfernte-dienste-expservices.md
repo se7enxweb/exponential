@@ -21,6 +21,12 @@ curl -b jar 'https://<site>/ezjscore/call/expsession::whoami?ContentType=json'
 curl -b jar 'https://<site>/ezjscore/call/expservices::catalog::system?ContentType=json'
 ```
 
+Standardmäßig genügt das Passwort, auch für ein Konto, das die zweistufige Anmeldung verwenden muss. Eine Website,
+die die Anmeldung einbezieht (`sevenxauthentication2fa.ini [OtherSignInPaths] Guard[]=expservices`), verlangt von
+einem solchen Konto (`Enforce2FA`) zusätzlich den aktuellen Code seiner Authenticator-App: `-d 'otp=<code>'` (oder
+den Header `X-Exp-OTP`). Ohne ihn antwortet die Anmeldung dann mit `401` und `error.reason` `second_factor_required`
+([Zweiter Schritt auf den anderen Anmeldewegen](zweiter-schritt-auf-anderen-anmeldewegen.md)).
+
 Die Form der URL ist `<root>/ezjscore/call/exp<domain>::<method>[::<arg>...]`. Antworten verwenden eine Hülle:
 `{"ok":true,"data":...,"meta":{...}}` oder `{"ok":false,"error":{"code":403,"message":"..."}}`; Listen werden mit
 `total`, `offset`, `limit`, `count`, `has_more` seitenweise geliefert.

@@ -49,6 +49,9 @@ class ezpRestAuthConfiguration
         // Nothing of a personal API key of an earlier request of this worker is kept.
         if ( class_exists( 'expApiKeyRest' ) )
             expApiKeyRest::reset();
+        // Nor the password sign-in of an earlier request (signedInWithPassword())
+        expRestPasswordAuthFilter::$user = null;
+        expRestPasswordAuthFilter::$viaAppPassword = false;
 
         // 0. Check if the given route needs authentication.
         if ( !$this->shallAuthenticate() )
@@ -80,6 +83,21 @@ class ezpRestAuthConfiguration
         $user = $this->filter->authenticate( $auth, $this->req );
         if ( $user instanceof eZUser )
         {
+            // A password alone (basic authentication, not a personal API key and not an app password) is not enough
+            // for an account that needs a second sign-in step: 401 second_factor_required, or 403
+            // second_factor_setup_required (expSignInSecondFactor), before the request is signed in
+            if ( class_exists( 'expSignInSecondFactor' ) && self::signedInWithPassword( $this->filter ) )
+            {
+                $refusal = expSignInSecondFactor::check( $user, expSignInSecondFactor::CHANNEL_REST, expSignInSecondFactor::presentedCode() );
+                if ( $refusal !== null )
+                {
+                    $this->req->variables['ezpAuth_redirUrl'] = $this->req->uri;
+                    $this->req->variables['ezpAuth_reason'] = $refusal['reason'];
+                    $this->req->variables['ezpAuth_message'] = $refusal['message'];
+                    $this->req->uri = eZINI::instance( 'rest.ini' )->variable( 'System', 'ApiPrefix' ) . '/auth/oauth/login';
+                    return new ezcMvcInternalRedirect( $this->req );
+                }
+            }
             // An account marked "change password at next sign-in" sets it in the web interface first: 403
             // password_change_required (expPasswordChangeRequired), before the request is signed in
             if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $user, 'rest' ) )
@@ -90,7 +108,12 @@ class ezpRestAuthConfiguration
                 return new ezcMvcInternalRedirect( $this->req );
             }
             $userID = $user->id();
-            if ( $userID != eZUser::currentUserID() )
+            if ( class_exists( 'expSignInSecondFactor' ) && expRestPasswordAuthFilter::$viaAppPassword )
+            {
+                // An app password signs in for this request only: no session, so no cookie comes of it
+                expSignInSecondFactor::signInForRequest( $user );
+            }
+            else if ( $userID != eZUser::currentUserID() )
             {
                 eZUser::setCurrentlyLoggedInUser( $user, $userID );
             }
@@ -113,6 +136,22 @@ class ezpRestAuthConfiguration
         {
             return $user;
         }
+    }
+
+    /**
+     * Whether the request was signed in by a login and password (ezpRestBasicAuthStyle with expRestPasswordAuthFilter),
+     * not by an OAuth token, a personal API key or an app password.
+     *
+     * @param mixed $filter the authentication style of the request
+     * @return bool
+     */
+    public static function signedInWithPassword( $filter )
+    {
+        if ( !$filter instanceof ezpRestBasicAuthStyle )
+            return false;
+        if ( class_exists( 'expApiKeyRest' ) && expApiKeyRest::current() !== null )
+            return false;
+        return expRestPasswordAuthFilter::$user instanceof eZUser && !expRestPasswordAuthFilter::$viaAppPassword;
     }
 
     /**

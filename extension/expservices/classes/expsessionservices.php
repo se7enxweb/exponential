@@ -12,7 +12,8 @@ class expSessionServices extends expServiceBase
 {
     public static $services = array(
         'login' => array( 'summary' => 'Signs in with POST username and password; the session cookie of the response is the session',
-            'access' => 'public', 'write' => false, 'args' => array( 'username' => 'string (POST)', 'password' => 'string (POST)' ),
+            'access' => 'public', 'write' => false, 'args' => array( 'username' => 'string (POST)', 'password' => 'string (POST)',
+                                                                     'otp' => 'string (POST, optional): the code of the authenticator app, for an account that needs a second sign-in step (or the header X-Exp-OTP)' ),
             'returns' => 'the user (whoami) and the form token for writes' ),
         'logout' => array( 'summary' => 'Signs out (POST with the form token)',
             'access' => 'user', 'write' => true, 'args' => array(), 'returns' => 'logged_out' ),
@@ -71,6 +72,26 @@ class expSessionServices extends expServiceBase
         $user = eZUser::loginUser( $username, $password );
         if ( !$user instanceof eZUser )
             throw new expServiceException( 'Wrong user name or password', 401 );
+        // The session this makes is a sign-in the web interface accepts too, so an account that needs a second
+        // sign-in step sends the code of its authenticator app (field otp, or the header X-Exp-OTP); app passwords
+        // are not taken here (expSignInSecondFactor, the handler of the two-step sign-in extension decides)
+        if ( class_exists( 'expSignInSecondFactor' ) )
+        {
+            $source = self::$postData !== null ? self::$postData : $_POST;
+            $refusal = expSignInSecondFactor::check( $user, expSignInSecondFactor::CHANNEL_SERVICES, expSignInSecondFactor::presentedCode( null, $source ) );
+            if ( $refusal !== null )
+            {
+                eZUser::logoutCurrent();
+                throw new expServiceException( $refusal['message'], $refusal['status'], null, $refusal['reason'] );
+            }
+        }
+        // An account marked "change password at next sign-in" sets it in the web interface first
+        if ( class_exists( 'expPasswordChangeRequired' ) && expPasswordChangeRequired::refusesSignIn( $user, 'expservices' ) )
+        {
+            eZUser::logoutCurrent();
+            throw new expServiceException( 'This account must set a new password before it can sign in here. Sign in to the site and change the password (user/password).',
+                                           403, null, expPasswordChangeRequired::REST_ERROR );
+        }
         return self::ok( array( 'user' => self::exportUser( $user ), 'token' => self::formToken(), 'token_field' => 'ezxform_token' ) );
     }
 

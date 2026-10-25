@@ -38,8 +38,29 @@ class eZStepFinal extends eZStepInstaller
     function init()
     {
         eZCache::clearByID( 'global_ini' );
+        $this->setUpCrontab();
         return false; // Always show
     }
+
+    /**
+     * The cron job of the new installation (doc/eng-us/bc/6.0/installer-crontab.md): the crontab lines that run its
+     * cronjob parts, in the crontab of the user that owns the installation, or the lines to add by hand when no
+     * crontab can be written. Never fails the installation; a second call finds the lines there already.
+     *
+     * @return array|null the result of expCrontabSetup::forNewInstallation(), null without the class
+     */
+    function setUpCrontab()
+    {
+        if ( $this->CrontabResult !== null || !class_exists( 'expCrontabSetup' ) )
+            return $this->CrontabResult;
+        $this->CrontabResult = expCrontabSetup::forNewInstallation( expCrontabSetup::root() );
+        foreach ( $this->CrontabResult['lines'] as $line )
+            eZLog::write( 'eZStepFinal: ' . $line, 'setup.log' );
+        return $this->CrontabResult;
+    }
+
+    /** @var array|null what setUpCrontab() did */
+    public $CrontabResult = null;
 
     function display()
     {
@@ -56,6 +77,10 @@ class eZStepFinal extends eZStepInstaller
         $this->Tpl->setVariable( 'site_type', $siteType );
 
         $this->Tpl->setVariable( 'custom_text', $customText );
+
+        $crontab = $this->setUpCrontab();
+        if ( $crontab !== null )
+            $this->Tpl->setVariable( 'crontab', $crontab );
 
         $this->Tpl->setVariable( 'setup_previous_step', 'Final' );
         $this->Tpl->setVariable( 'setup_next_step', 'Final' );

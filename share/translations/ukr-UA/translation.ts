@@ -60736,6 +60736,22 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Sent to the password change</source>
         <translation>Переспрямовано до зміни пароля</translation>
     </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Вхід без другого кроку відхилено</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Пароль застосунку створено</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Пароль застосунку відкликано</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Пароль застосунку використано</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/state/assign</name>

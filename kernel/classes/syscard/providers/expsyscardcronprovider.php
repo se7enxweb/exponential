@@ -38,8 +38,16 @@ class expSysCardCronProvider extends expSysCardBaseProvider
             if ( is_array( $runs ) && isset( $runs[0]['started'] ) )
                 $last = max( $last, (int)$runs[0]['started'] );
         }
+        // the parts runcronjobs.php started (expCrontabSetup::recordRun()); the cron job's lines write no log while quiet
+        foreach ( $context->glob( 'var/log/cronjob-lastrun.json' ) as $file )
+        {
+            $runs = json_decode( (string)$context->file( $file ), true );
+            foreach ( is_array( $runs ) ? $runs : array() as $run )
+                if ( is_array( $run ) && isset( $run['started'] ) )
+                    $last = max( $last, (int)$run['started'] );
+        }
         $parts = array();
-        $global = (array)$context->ini( 'cronjob.ini', 'CronjobSettings', 'Scripts', array() );
+        $global =(array)$context->ini( 'cronjob.ini', 'CronjobSettings', 'Scripts', array() );
         if ( !empty( $global ) )
             $parts['default'] = $global;
         foreach ( $context->iniGroups( 'cronjob.ini' ) as $group )

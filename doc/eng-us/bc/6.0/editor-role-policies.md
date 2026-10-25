@@ -40,6 +40,17 @@ password (`user/password`), edit the own account (`user/edit`, function *selfedi
   `cjw_multisite` add the four policies to their Editor step themselves, and let editors create `geo_article` and
   `video` below a folder (with the website toolbar for both).
 - **`bin/php/addeditorpolicies.php`** completes the role on an installation that exists (below).
+- **plain_site's `content/*` is narrowed** (24 October 2026). Before the policies above are checked, the setup step
+  replaces an Editor role's `content/*` without limitations, which `plain_site` keeps from the base data, by the
+  content functions the site packages give their editors: `create`, `edit`, `read`, `manage_locations`, `diff`,
+  `versionread`, `versionremove`, `remove`, `translate`, `bookmark`, `pendinglist`, `dashboard`, `view_embed`, `hide`,
+  `restore` and `reverserelatedlist` (`expEditorPolicies::narrowPlan()` and `narrow()`). They are added without
+  limitations, so the role's assignment limits them to Content and Media as it limited `content/*`. What an editor of
+  `plain_site` loses is what `content/*` granted beyond them: emptying everybody's trash (`cleantrash`), the
+  installation's languages (`translations`), its URL aliases and wildcards (`urltranslator`), everybody's content jobs
+  (`jobs`), and `move`, `publish`, `pdf`, `tipafriend`, `view_system_url` and `publish_without_notification`, which no
+  view of an editor asks for. The base data is unchanged: the other packages remove `content/*` themselves and find
+  nothing to narrow, and a `content/*` with limitations is the site's choice and left alone.
 
 The policies are added to the Editor role, so they are limited by the role's assignment like the rest of it: for the
 Editors group, to the Content and Media subtrees. Hiding and the reverse related list work there only.
@@ -74,8 +85,9 @@ and never removes anything:
 | git_manager, update | updating the installation |
 
 The base data's `content/*` holds the first four; the subtree limitation of the role's assignment does not limit them,
-since they have no node. The site packages remove `content/*`; on `plain_site` replace it with single functions if
-editors should not have them.
+since they have no node. The site packages remove `content/*`, and since 24 October 2026 the setup step and the script
+replace the one `plain_site` keeps (above), so these lines appear only for a `content/*` with limitations, for one kept
+with `--keep-content-wildcard`, or for a role given these functions by hand.
 
 ## What to do when you upgrade
 
@@ -91,8 +103,27 @@ php bin/php/addeditorpolicies.php
 It adds only what is missing, without limitations, expires the role cache, checks what was stored and prints `PASS`
 or `FAIL`. A second run adds nothing.
 
-- `--skip=<module/function>` leaves a policy out (e.g. `--skip=content/restore`), repeatable.
-- `--only=<module/function>` adds only that policy, repeatable.
+On a role with `content/*` without limitations (an installation of `plain_site`), the script first replaces it, and the
+dry run says exactly what goes and what comes:
+
+```
+would remove content/*                    content/* also grants content/cleantrash, content/translations, content/urltranslator, content/jobs
+would add    content/create               in place of content/*
+would add    content/edit                 in place of content/*
+...
+would add    content/reverserelatedlist   in place of content/*
+...
+PASS: content/* would be replaced by 16 content functions; 0 policies would be added to Editor (3) (dry run, nothing changed)
+```
+
+A function the role holds as a single policy already (also a limited one) is kept and not added again; the stored
+role is checked afterwards (no `content/*` left, every function there). Roles without `content/*` (every other site
+package) are not touched.
+
+- `--keep-content-wildcard` leaves `content/*` as it is.
+- `--skip=<module/function>` leaves a policy out (e.g. `--skip=content/restore`), repeatable; a skipped `content/hide`,
+  `content/restore` or `content/reverserelatedlist` is not added in place of `content/*` either.
+- `--only=<module/function>` adds only that policy, repeatable; `content/*` is then kept.
 - `--role=<name or ID>` completes another role than Editor (a site's own editor role).
 
 The script does not add `geo_article` and `video` to `content/create`: class lists are the site's choice. Add them in
