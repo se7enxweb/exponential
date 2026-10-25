@@ -14,14 +14,14 @@
  * @package kernel
  */
 
+/**
+ * The route's variables come from ezcMvcController::__get() (its properties); a declared property would hide them.
+ *
+ * @property-read string $helpId the route's :helpId
+ * @property-read string $remoteId the route's :remoteId
+ */
 class expHelpRestController extends ezpRestMvcController
 {
-    /** @var string the route's :helpId */
-    public $helpId = '';
-
-    /** @var string the route's :remoteId */
-    public $remoteId = '';
-
     public function doTopic()
     {
         $refusal = $this->refusal();

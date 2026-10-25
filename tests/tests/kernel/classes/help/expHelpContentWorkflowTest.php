@@ -370,10 +370,15 @@ class expHelpContentWorkflowTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'help', $scopes['expHelpRestController_topic'] );
         $this->assertSame( 'help', $scopes['expHelpRestController_manual'] );
         $this->assertSame( 'disabled', $ini->variable( 'expHelpRestController_CacheSettings', 'ApplicationCache' ) );
+        $this->assertFalse( $ini->hasVariable( 'expHelpRestController_CacheSettings', 'RouteApcCache' ), 'the route cache settings stay in [CacheSettings]' );
+        $this->assertSame( 'enabled', $ini->variable( 'CacheSettings', 'RouteApcCache' ) );
         $routes = ( new expHelpRestProvider() )->getRoutes();
         $this->assertSame( array( 'expHelpTopic', 'expHelpManual' ), array_keys( $routes ) );
         $this->assertInstanceOf( 'ezpRestViewControllerInterface', ( new expHelpRestProvider() )->getViewController() );
         $this->assertTrue( method_exists( 'expHelpRestController', 'doTopic' ) && method_exists( 'expHelpRestController', 'doManual' ) );
+        // the route variables come from ezcMvcController::__get(); a declared property would hide them (always '')
+        $this->assertFalse( property_exists( 'expHelpRestController', 'helpId' ) );
+        $this->assertFalse( property_exists( 'expHelpRestController', 'remoteId' ) );
     }
 
     /** HWF-12 */

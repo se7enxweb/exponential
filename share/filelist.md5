@@ -21896,7 +21896,7 @@ d0cacb75ebc33485eb5ff90d9ca42d8f  kernel/classes/help/content/exphelpcontentseed
 a799ad20f40c5c70a6abbe4b69ff1c17  kernel/classes/help/content/exphelpmanualbuilder.php
 d91399e64d489b89bc4efb1b59e9fa1e  kernel/classes/help/content/exphelpmanualsource.php
 c5df49a0b81ad45f4aba981c8377c592  kernel/classes/help/content/exphelpmanualsync.php
-43ee1827768613c8de0368e4c6174022  kernel/classes/help/content/rest/exphelprestcontroller.php
+f78b7a2d27c38a2d187b8b4601760719  kernel/classes/help/content/rest/exphelprestcontroller.php
 e1cf2ed6731faa55a6ae425a4c13754d  kernel/classes/help/content/rest/exphelprestprovider.php
 f2930f5888a3669a5297db3ac470495f  kernel/classes/help/content/rest/exphelprestviewcontroller.php
 085cfc7a0a8c8a953d7d32e051cc002a  kernel/classes/help/exphelp.php
@@ -23535,7 +23535,7 @@ bada4e0f552e8fc8c771aec209487b83  settings/querycache.ini
 21696fbd63b02afd759ad1e39c5a8e8a  settings/rad.ini
 a5de15343b43044c3212fdc6953d813f  settings/requestclassifier.ini
 f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
-ed8015825492dd4a235491c17568fa2e  settings/rest.ini
+4a49683d45ae7f310ff4a342076dfc21  settings/rest.ini
 0e25e6140fca0aab71d94cdb05352146  settings/secrets.ini
 122b02cc3dab8b41bbbce96df60e2642  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
@@ -25152,7 +25152,7 @@ e65692aa5c652521877848dfcbec2000  tests/tests/kernel/classes/help/expHelpContent
 76c79716bf06b3eddb6dc7f5635c7870  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 321f570378477f6d95103cb485707cc9  tests/tests/kernel/classes/help/expHelpContentTest.php
 dac945a9f992111a0078fb7055ae4573  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
-abfa134b93d63a2c6398bf433d53fa9b  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
+7708d14efff93b6488808da256643428  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
 1a6f8d25a51abc94dc6d40460b69c1e0  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
