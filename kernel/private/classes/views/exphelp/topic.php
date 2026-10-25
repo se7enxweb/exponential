@@ -42,7 +42,8 @@ class Topic extends \Exponential\Runnable\ModuleView
         foreach ( $relations['related'] as $item )
             $related[] = \expHelpContentProvider::document( $item );
         $topics = array();
-        foreach ( $provider->topics() as $item )
+        // the list of topics needs no texts
+        foreach ( $provider->topics( false ) as $item )
             $topics[] = \expHelpContentProvider::document( $item );
         usort( $topics, function ( $a, $b ) { return strcasecmp( $a['title'], $b['title'] ); } );
         $manuals = array();

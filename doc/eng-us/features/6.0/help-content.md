@@ -324,6 +324,42 @@ notice inside its step (the notice and the action share the step's text), whethe
   `[ContentSettings] ContextHelpIds[<module>/<view>]=<help_id>`, listed in `[ContextHelp] Providers[]`). They are wired
   into the help's search, dashboard and settings with the second wave of the help system.
 
+### How the help stays fast with thousands of topics
+
+The help objects are read from the database once and kept as plain rows in the cache, not on every request:
+
+- **The rows** (`var/<site>/cache/exphelp/content/repository-<key>.cache`, one per help root, language list and
+  database). Each request first asks the database for a stamp of the help subtree: a few sums over the locations, the
+  objects (modification and publication times, versions, sections, owners, classes, statuses, language masks, parents,
+  main nodes) and their states, plus the help classes and the sections. While the stamp is the same the rows come
+  from the file. When it changes (a publish, a translation added or removed, a move, a new or removed location, a
+  removal, a state or section change) only the objects whose own signature changed are read again; the others are
+  taken from the file. A change of a help class or a section reads every object again. One process reads while the
+  others wait for its file (a lock next to it).
+- **Who sees what** is decided from the rows (`expHelpContentAccess`): the object's class, section, owner, states and
+  locations against the user's `content/read` and `content/edit` policies, the way `eZContentObject::checkAccess()`
+  compares them (Class, ParentClass, ParentDepth, Section, User_Section, Language, Owner, ParentOwner, State,
+  StateGroup_*, Node, Subtree, User_Subtree). Where only the object can tell (a Group limitation, a limitation of an
+  extension, the anonymous "own session" owner, the member management guard) the object is loaded and asked, as
+  before. The answer is the same as before for every user.
+- **The texts** of the topics are a second part of the same file: the dashboard, the lists and the counts read the
+  rows without them; the topic view and the search read them too.
+- **The search words** of every topic (each word and its stem, per field) are kept in `search-<key>.cache` next to
+  it and computed again only for the topics whose texts changed.
+
+The dashboard reads the rows, decides the visibility from them and picks the six newest topics: about a second on a
+site with 5,700 help objects, where it used to load every object (10 to 30 seconds, more than Velocity's 30 second
+limit). Reading every object again (an empty cache) takes a few seconds, the search words of every topic longer, so
+fill the cache after a deploy or after clearing it, once per siteaccess that shows the help (the cache is per
+language list):
+
+```
+./console exp:help:content cache -s admin
+```
+
+The cache needs no clearing after a change. `php bin/php/ezcache.php --clear-id=exphelpcontent` (tag `exphelp`,
+`site.ini [Cache_exphelpcontent]`) removes it; the next help page reads every help object again.
+
 ## Context help by help_id (JSON)
 
 ```
@@ -548,7 +584,8 @@ the review list and their translations, in progress on 19 October, followed on 2
 ## Classes
 
 `expHelpContentSchema` (the model, data only), `expHelpContentInstaller` (classes, tree, roles, report, uninstall,
-section fixes), `expHelpContentRepository` (reads the help objects into arrays), `expHelpContentValidator` (the
+section fixes), `expHelpContentRepository` (reads the help objects into arrays, kept in the cache),
+`expHelpContentAccess` (who may see a help object, from the cached rows), `expHelpContentValidator` (the
 rules, no database), `expHelpContentSeeder`, `expHelpContentProvider` (what the current user may see, rendering,
 JSON, search, context), `expHelpContextPageInterface`, `expHelpContentPackage` (the class package),
 `expHelpContentExport` (EPUB, PDF), `expHelpContentDita` (the DITA export, its check, writing and zip),
@@ -557,7 +594,7 @@ release), `expHelpContentEditionProvider` (what goes into a stored edition) and 
 reviews). Views: `Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`. Tests (no database):
 `tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentPackageTest.php`, `expHelpContentExportTest.php`,
 `expHelpContentDitaTest.php`, `expHelpContentEbooksTest.php`, `expHelpContentReviewTest.php`,
-`expHelpContentTranslationsTest.php`.
+`expHelpContentTranslationsTest.php`, `expHelpContentAccessTest.php`.
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

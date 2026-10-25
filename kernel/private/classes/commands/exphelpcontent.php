@@ -41,6 +41,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the\n" .
                                  "                                              Released manuals and store them as file objects under E-books\n" .
                                  "./console exp:help:content review -s ... [--json]   the topics whose review is overdue\n" .
+                                 "./console exp:help:content cache -s ... [--json]   fill the cache of the help rows and search words of the\n" .
+                                 "                                              siteaccess (after a deploy or ezcache --clear-id=exphelpcontent)\n" .
                                  "./console exp:help:content package -s ... [--output=dir] [--version=6.0.15]   the eight classes as the content\n" .
                                  "                                              class package exp_help_classes (a directory and an .ezpkg)\n" .
                                  "./console exp:help:content verify-package -s ... --file=<.ezpkg or directory>   compare a package with the\n" .
@@ -85,7 +87,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             return;
         }
         $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'build-manuals', 'report', 'uninstall', 'export',
-                        'dita', 'ebooks', 'review', 'package', 'verify-package' );
+                        'dita', 'ebooks', 'review', 'package', 'verify-package', 'cache' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -174,6 +176,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 case 'review':
                     $code = $this->review( $json );
                     break;
+                case 'cache':
+                    $code = $this->fillCache( $json );
+                    break;
                 case 'package':
                 case 'verify-package':
                     $code = $this->package( $action, $options, $dryRun, $json, $user );
@@ -184,7 +189,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review', 'package', 'verify-package' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review', 'package', 'verify-package', 'cache' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -478,6 +483,39 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                        ? 'review date ' . gmdate( 'Y-m-d', $item['since'] ) . ' has passed'
                                        : 'in Review, unchanged since ' . gmdate( 'Y-m-d', $item['since'] ) ) );
         $cli->output( sprintf( '%d topics overdue for review (in Review at most %d days)', count( $items ), \expHelpContentReview::maxDays() ) );
+        return 0;
+    }
+
+    /**
+     * cache: reads the help rows into the cache of this siteaccess (only what changed when the cache is there) and
+     * the search words, so that the next help page does not (doc/eng-us/features/6.0/help-content.md, "How the help
+     * stays fast with thousands of topics")
+     */
+    protected function fillCache( $json )
+    {
+        $cli = $this->cli();
+        if ( !\expHelpContentRepository::isInstalled() )
+        {
+            $cli->error( 'FAIL: help as content is not installed (./console exp:help:content install -s <siteaccess>)' );
+            return 2;
+        }
+        \expHelpContentProvider::resetInstance();
+        $repository = \expHelpContentRepository::instance();
+        $started = microtime( true );
+        $index = $repository->index();
+        $rows = microtime( true ) - $started;
+        $started = microtime( true );
+        $words = $repository->searchWords();
+        $search = microtime( true ) - $started;
+        $root = \expHelpContentRepository::rootNode();
+        $result = array( 'file' => $root !== null ? \expHelpContentRepository::cacheFile( $root ) : null, 'topics' => count( $index['topics'] ),
+                         'maps' => count( $index['maps'] ), 'figures' => count( $index['figures'] ), 'glossary' => count( $index['glossary'] ),
+                         'search_words' => count( $words ), 'rows_seconds' => round( $rows, 2 ), 'search_seconds' => round( $search, 2 ) );
+        if ( $json )
+            $this->printJson( $result );
+        else
+            $cli->output( sprintf( 'Help rows: %d topics, %d manuals and chapters, %d figures, %d glossary entries (%.2f s); search words of %d topics (%.2f s)',
+                                   $result['topics'], $result['maps'], $result['figures'], $result['glossary'], $rows, $result['search_words'], $search ) );
         return 0;
     }
 

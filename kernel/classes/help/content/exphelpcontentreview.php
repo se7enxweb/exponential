@@ -90,7 +90,7 @@ class expHelpContentReview
      */
     public static function all( $now = null )
     {
-        return self::overdue( expHelpContentRepository::instance()->load()['topics'], $now === null ? time() : $now, self::maxDays() );
+        return self::overdue( expHelpContentRepository::instance()->index()['topics'], $now === null ? time() : $now, self::maxDays() );
     }
 
     /**

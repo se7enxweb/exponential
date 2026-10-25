@@ -167,14 +167,23 @@ class Dashboard extends \Exponential\Runnable\ModuleView
         try
         {
             $provider = \expHelpContentProvider::instance();
+            // the newest topics and the count, from the repository's cached rows without the texts (a worker started
+            // before the method existed lists them all)
+            if ( method_exists( $provider, 'newestTopics' ) )
+                $newest = $provider->newestTopics( 6 );
+            else
+            {
+                $all = $provider->topics();
+                usort( $all, function ( $a, $b ) { return $b['modified'] <=> $a['modified']; } );
+                $newest = array( 'topics' => array_slice( $all, 0, 6 ), 'count' => count( $all ) );
+            }
             $topics = array();
-            foreach ( $provider->topics() as $topic )
+            foreach ( $newest['topics'] as $topic )
                 $topics[] = \expHelpContentProvider::document( $topic );
-            usort( $topics, function ( $a, $b ) { return $b['mtime'] <=> $a['mtime']; } );
             $manuals = array();
             foreach ( $provider->manuals() as $manual )
                 $manuals[] = array( 'title' => $manual['title'], 'remote_id' => $manual['remote_id'], 'shortdesc' => $manual['shortdesc'], 'preview' => $manual['preview'] );
-            return array( 'manuals' => $manuals, 'topics' => array_slice( $topics, 0, 6 ), 'count' => count( $topics ) );
+            return array( 'manuals' => $manuals, 'topics' => $topics, 'count' => $newest['count'] );
         }
         catch ( \Exception $e )
         {

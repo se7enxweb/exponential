@@ -1166,6 +1166,7 @@ return array(
       'expHelpAllowlist'                                             => 'kernel/classes/help/exphelpallowlist.php',
       'expHelpAudience'                                              => 'kernel/classes/help/exphelpaudience.php',
       'expHelpCommitFeed'                                            => 'kernel/classes/help/exphelpcommitfeed.php',
+      'expHelpContentAccess'                                         => 'kernel/classes/help/content/exphelpcontentaccess.php',
       'expHelpContentDita'                                           => 'kernel/classes/help/content/exphelpcontentdita.php',
       'expHelpContentEbooks'                                         => 'kernel/classes/help/content/exphelpcontentebooks.php',
       'expHelpContentEditionProvider'                                => 'kernel/classes/help/content/exphelpcontenteditionprovider.php',

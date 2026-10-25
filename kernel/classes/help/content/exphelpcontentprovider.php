@@ -33,8 +33,14 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     /** @var expHelpContentRepository */
     protected $repository;
 
-    /** @var array object id => bool */
+    /** @var array object id => read|preview|none */
     protected $access = array();
+
+    /** @var expHelpContentAccess|false|null */
+    protected $accessChecker = null;
+
+    /** @var array|null releasedHelpIds() of this request (a static property: a persistent worker resets it per request) */
+    protected static $releasedMemo = null;
 
     public function __construct( ?expHelpContentRepository $repository = null )
     {
@@ -98,18 +104,39 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     /**
      * Every topic the current user may see
      *
+     * @param bool $withText false: without the text fields ('fields'), for lists and counts (the texts are not read)
      * @return array
      */
-    public function topics()
+    public function topics( $withText = true )
     {
         $list = array();
-        foreach ( $this->repository()->load()['topics'] as $topic )
+        $repository = $this->repository();
+        foreach ( ( $withText ? $repository->load() : $repository->index() )['topics'] as $topic )
         {
-            $topic = $this->visible( $topic );
-            if ( $topic !== null && $topic['help_id'] !== '' )
+            if ( $topic['help_id'] !== '' && ( $topic = $this->visible( $topic ) ) !== null )
                 $list[] = $topic;
         }
         return $list;
+    }
+
+    /**
+     * The newest topics the current user may see, newest first (by modification; the same time in the order of the
+     * tree), and how many the user may see in all: the dashboard's list, without the texts
+     *
+     * @param int $limit
+     * @return array array( 'topics' => list of at most $limit topics, 'count' => int )
+     */
+    public function newestTopics( $limit )
+    {
+        $topics = $this->topics( false );
+        $order = array_keys( $topics );
+        usort( $order, function ( $a, $b ) use ( $topics ) {
+            return $topics[$b]['modified'] <=> $topics[$a]['modified'] ?: $a <=> $b;
+        } );
+        $newest = array();
+        foreach ( array_slice( $order, 0, max( 0, (int)$limit ) ) as $i )
+            $newest[] = $topics[$i];
+        return array( 'topics' => $newest, 'count' => count( $topics ) );
     }
 
     /**
@@ -120,7 +147,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     public function manuals()
     {
         $list = array();
-        foreach ( $this->repository()->load()['maps'] as $map )
+        foreach ( $this->repository()->index()['maps'] as $map )
         {
             if ( $map['class'] === 'help_manual' && ( $map = $this->visible( $map ) ) !== null )
                 $list[] = $map;
@@ -129,7 +156,22 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     }
 
     /**
+     * The access of the current user to help objects, decided without loading them where it can be
+     *
+     * @return expHelpContentAccess|null
+     */
+    protected function accessChecker()
+    {
+        if ( $this->accessChecker === null )
+            $this->accessChecker = class_exists( 'expHelpContentAccess' ) ? expHelpContentAccess::forCurrentUser() : false;
+        return $this->accessChecker !== false ? $this->accessChecker : null;
+    }
+
+    /**
      * A topic, manual or chapter as the current user may see it: Released and readable, or editable (a preview)
+     *
+     * Decided from the repository's data of the object (expHelpContentAccess) where the user's policies allow it, else
+     * by the object's canRead() and canEdit().
      *
      * @param array $item
      * @return array|null
@@ -139,14 +181,21 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         $id = (int)$item['object_id'];
         if ( !isset( $this->access[$id] ) )
         {
-            $object = $this->repository()->object( $id );
-            $access = 'none';
-            if ( $object instanceof eZContentObject )
+            $released = $item['state'] === expHelpContentSchema::STATE_RELEASED;
+            $data = $this->repository()->accessData( $id );
+            $checker = $data !== null ? $this->accessChecker() : null;
+            $access = $checker !== null ? $checker->decide( $data, $released ) : null;
+            if ( $access === null )
             {
-                if ( $item['state'] === expHelpContentSchema::STATE_RELEASED && $object->canRead() )
-                    $access = 'read';
-                elseif ( $object->canEdit() )
-                    $access = 'preview';
+                $object = $this->repository()->object( $id );
+                $access = 'none';
+                if ( $object instanceof eZContentObject )
+                {
+                    if ( $released && $object->canRead() )
+                        $access = 'read';
+                    elseif ( $object->canEdit() )
+                        $access = 'preview';
+                }
             }
             $this->access[$id] = $access;
         }
@@ -450,29 +499,25 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         foreach ( $terms as $term )
             $stems[$term] = expHelpSearch::stem( $term );
         $hits = array();
+        $weights = array( 'title' => 4.0, 'help_id' => 3.0, 'shortdesc' => 2.0, 'text' => 1.0 );
+        // the words of every topic, kept with the repository's rows (computing them is what a search cost)
+        $repository = $this->repository();
+        $wordSets = method_exists( $repository, 'searchWords' ) ? $repository->searchWords() : array();
         foreach ( $this->topics() as $topic )
         {
             $document = self::document( $topic );
             if ( !self::matchesFilters( $document, $filters ) )
                 continue;
-            $fields = array(
-                'title' => array( $topic['title'], 4.0 ),
-                'help_id' => array( str_replace( array( '.', '-' ), ' ', $topic['help_id'] ), 3.0 ),
-                'shortdesc' => array( $topic['shortdesc'], 2.0 ),
-                'text' => array( expHelpSearch::plain( implode( "\n", $topic['fields'] ) ), 1.0 ),
-            );
+            $sets = isset( $wordSets[$topic['object_id']] ) ? $wordSets[$topic['object_id']] : self::searchWordSets( $topic );
             $score = 0.0;
             $all = true;
             foreach ( $stems as $term => $stem )
             {
                 $best = 0.0;
-                foreach ( $fields as $field )
+                foreach ( $weights as $field => $weight )
                 {
-                    $words = array();
-                    foreach ( expHelpSearch::tokenize( $field[0] ) as $word )
-                        $words[$word] = $words[expHelpSearch::stem( $word )] = true;
-                    if ( isset( $words[$term] ) || isset( $words[$stem] ) )
-                        $best = max( $best, $field[1] );
+                    if ( isset( $sets[$field][$term] ) || isset( $sets[$field][$stem] ) )
+                        $best = max( $best, $weight );
                 }
                 if ( $best === 0.0 )
                     $all = false;
@@ -480,7 +525,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
             }
             if ( !$all || $score <= 0 )
                 continue;
-            $text = $topic['shortdesc'] !== '' ? $topic['shortdesc'] : $fields['text'][0];
+            $text = $topic['shortdesc'] !== '' ? $topic['shortdesc'] : expHelpSearch::plain( implode( "\n", $topic['fields'] ) );
             $parts = expHelpSearch::snippetParts( $text, array_merge( array_keys( $stems ), array_values( $stems ) ) );
             $hits[] = array(
                 'id' => $document['id'],
@@ -503,6 +548,32 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         }
         usort( $hits, function ( $a, $b ) { return $b['score'] <=> $a['score'] ?: strcmp( $a['title'], $b['title'] ); } );
         return array( 'total' => count( $hits ), 'hits' => array_slice( $hits, 0, max( 1, (int)$limit ) ) );
+    }
+
+    /**
+     * The words search() compares the query with, per field of a topic: each word of the field and its stem
+     * (expHelpSearch::tokenize(), stem()), as keys; the text is the topic's text fields as plain text
+     *
+     * @param array $topic a topic with its text fields
+     * @return array array( 'title' => word => true, 'help_id' => ..., 'shortdesc' => ..., 'text' => ... )
+     */
+    public static function searchWordSets( array $topic )
+    {
+        $texts = array(
+            'title' => $topic['title'],
+            'help_id' => str_replace( array( '.', '-' ), ' ', $topic['help_id'] ),
+            'shortdesc' => $topic['shortdesc'],
+            'text' => expHelpSearch::plain( implode( "\n", isset( $topic['fields'] ) ? (array)$topic['fields'] : array() ) ),
+        );
+        $sets = array();
+        foreach ( $texts as $field => $text )
+        {
+            $words = array();
+            foreach ( expHelpSearch::tokenize( $text ) as $word )
+                $words[$word] = $words[expHelpSearch::stem( $word )] = true;
+            $sets[$field] = $words;
+        }
+        return $sets;
     }
 
     /**
@@ -593,7 +664,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
      */
     public static function releasedHelpIds( $refresh = false )
     {
-        static $memo = null;
+        $memo =& self::$releasedMemo;
         if ( $memo !== null && !$refresh )
             return $memo;
         $file = self::cacheFile();
@@ -608,7 +679,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         {
             if ( self::isEnabled() )
             {
-                foreach ( expHelpContentRepository::instance()->load()['topics'] as $topic )
+                foreach ( expHelpContentRepository::instance()->index()['topics'] as $topic )
                 {
                     if ( $topic['state'] === expHelpContentSchema::STATE_RELEASED && $topic['help_id'] !== '' )
                         $ids[$topic['help_id']] = $topic['title'];
@@ -641,6 +712,7 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
         $file = self::cacheFile();
         if ( $file !== null && is_file( $file ) )
             @unlink( $file );
+        self::$releasedMemo = null;
     }
 
     protected static function cacheFile()
