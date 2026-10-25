@@ -376,7 +376,7 @@ e3d02557044b7bc71d9324c6527a42f0  design/admin/templates/audit/alerts.tpl
 6e92135aad2c768ab316315e124ccc0e  design/admin/templates/audit/archives.tpl
 972a5bafc8b01bd48221061ceed29c9f  design/admin/templates/audit/charts.tpl
 d9f071b4ce6023b15350ac10a0da9192  design/admin/templates/audit/console.tpl
-fe9cd74ec8bcabe30893217abea1eff4  design/admin/templates/audit/dashboard.tpl
+7bf0a7c831891010c9d5d27c86d53cd1  design/admin/templates/audit/dashboard.tpl
 df16806da810b6189d6698e67f9b4fc8  design/admin/templates/audit/event.tpl
 fe0d61b17e87d4792be334f5525812e4  design/admin/templates/audit/export.tpl
 e30412269e3a1949f8e0be42fab23608  design/admin/templates/audit/menu.tpl
@@ -1131,7 +1131,7 @@ c20531ad4a051efb351cbda3956a85f9  design/admin4/templates/audit/alerts.tpl
 866efab26bbe4334199c3743b716cdfd  design/admin4/templates/audit/archives.tpl
 58f493eebd69f3e195826abc1c4d8d69  design/admin4/templates/audit/charts.tpl
 953b9598c4462aba83ef3152d8dd2ed3  design/admin4/templates/audit/console.tpl
-06723a5b5c5d8d178671b97d04939934  design/admin4/templates/audit/dashboard.tpl
+217d8c54d70ee0f6c0136ffcafe4492c  design/admin4/templates/audit/dashboard.tpl
 bb4be82737913f6bcac5dd528f603f13  design/admin4/templates/audit/event.tpl
 c7eb61d28396cc970a339e2328834ffc  design/admin4/templates/audit/export.tpl
 e30412269e3a1949f8e0be42fab23608  design/admin4/templates/audit/menu.tpl
@@ -15800,8 +15800,8 @@ f8a5d7511071d6925c06ced91f388227  doc/ger-de/hilfe/bilder/getting-started/sign-o
 6b34bcf24da2b9a662193663b1238321  doc/ger-de/hilfe/bilder/government/gov-about.webp
 fdac1256244d0ae0fc713cb9f0e17186  doc/ger-de/hilfe/bilder/government/gov-access-review.webp
 e4dafdfab781dc0f640041c81373767e  doc/ger-de/hilfe/bilder/government/gov-add-language.webp
-2f7a4b9f25a503471605fedb161e6631  doc/ger-de/hilfe/bilder/government/gov-audit-dash.webp
-1bf39da903ac98ca2de91c38c359ec53  doc/ger-de/hilfe/bilder/government/gov-audit-req.webp
+84d68a2de5110af952036ac859573745  doc/ger-de/hilfe/bilder/government/gov-audit-dash.webp
+3570454eb7e6b46055a15fececfb6f99  doc/ger-de/hilfe/bilder/government/gov-audit-req.webp
 2ac2e4321ec62b14e7a271b31924a2d2  doc/ger-de/hilfe/bilder/government/gov-audit-settings.webp
 530f12e6d56d9657f28487d7b67de000  doc/ger-de/hilfe/bilder/government/gov-backups.webp
 f6fcaa2ad6090f1ecf6dd61397f39c05  doc/ger-de/hilfe/bilder/government/gov-cache.webp
@@ -15827,9 +15827,9 @@ e86444aa5b8067384b770ec2e44a1ad0  doc/ger-de/hilfe/bilder/government/gov-states.
 3844f22f14a1e6fa9b1d9df67faf2e5a  doc/ger-de/hilfe/bilder/government/gov-translations-tab.webp
 bf63ea2af1e7c7881f9f773d7cd1d8b2  doc/ger-de/hilfe/bilder/government/gov-upgrade.webp
 6b34bcf24da2b9a662193663b1238321  doc/ger-de/hilfe/bilder/help/about-page-security.webp
-2ed7f578e96367f0b4dfaeb15d41d4c7  doc/ger-de/hilfe/bilder/help/audit-dashboard-security.webp
-09eccb53fe33f6854867a1c2eb2e1c5c  doc/ger-de/hilfe/bilder/help/bu-audit-ops.webp
-ada63f75f3963a1497b0ccc49eedf4d9  doc/ger-de/hilfe/bilder/help/bu-audit.webp
+d03d5ab9b8c10a9b91fc5854f9959fcd  doc/ger-de/hilfe/bilder/help/audit-dashboard-security.webp
+199e4f7c57a09c49ccc9cff19a50cdc8  doc/ger-de/hilfe/bilder/help/bu-audit-ops.webp
+e3ebb6cdb9d3adcc813bf60dfe9d57e8  doc/ger-de/hilfe/bilder/help/bu-audit.webp
 4ee5040ad50abd1bf59e800fa0fe27ed  doc/ger-de/hilfe/bilder/help/bu-classes.webp
 2288fd0e3341762460cb05e7c8cc30e5  doc/ger-de/hilfe/bilder/help/bu-cron.webp
 f88a34e8cde4444392a6f27e55fd38ef  doc/ger-de/hilfe/bilder/help/bu-dept-sections.webp
@@ -15854,7 +15854,7 @@ aad9338b00daae1d0d191cf022fe24bd  doc/ger-de/hilfe/bilder/help/bu-upgrade.webp
 b5bfb232964a543d13f2a06577490b21  doc/ger-de/hilfe/bilder/help/logs-digest.webp
 f3cef5c0bcf0797c748338bee2dffee3  doc/ger-de/hilfe/bilder/help/pj-item.webp
 36d4ef5806b2e5098d1498192dc219db  doc/ger-de/hilfe/bilder/help/pj-updates.webp
-e6e1985a21e032e8af4dd1f1f62b9d67  doc/ger-de/hilfe/bilder/help/pr-admin-audit.webp
+d03d5ab9b8c10a9b91fc5854f9959fcd  doc/ger-de/hilfe/bilder/help/pr-admin-audit.webp
 fa8567fe34d4aeaf97194819a55511ad  doc/ger-de/hilfe/bilder/help/pr-admin-cache.webp
 c395804541897e8c514b0c34bbe12d05  doc/ger-de/hilfe/bilder/help/pr-admin-classes.webp
 f88a34e8cde4444392a6f27e55fd38ef  doc/ger-de/hilfe/bilder/help/pr-admin-roles.webp
@@ -15886,7 +15886,7 @@ a3f1683c370c63b8c2e99b85b9ba1e57  doc/ger-de/hilfe/bilder/help/sp-servers.webp
 c16a3074f36bfce37a95f355dc8554fc  doc/ger-de/hilfe/bilder/help/sp-sevenx-login.webp
 3f0ee45537d405a253375b2992423260  doc/ger-de/hilfe/bilder/help/sp-sevenx-tree.webp
 c3c9511fb5364f71b833bab30ec1c035  doc/ger-de/hilfe/bilder/help/sp-wizard.webp
-3bc71b3b2f6372afd6bec1f67ca4cb8e  doc/ger-de/hilfe/bilder/hosting/audit-dashboard.webp
+9b3fd09febeb1c0b7c328c727cc9aff4  doc/ger-de/hilfe/bilder/hosting/audit-dashboard.webp
 0a83003ee562f7360aa7b81b025bcfc3  doc/ger-de/hilfe/bilder/hosting/audit-settings.webp
 fcbeede61733aac3773f42bfd998ef0f  doc/ger-de/hilfe/bilder/hosting/cache-from-panel.webp
 3b8b4346368f8e2c749168c0d2686034  doc/ger-de/hilfe/bilder/hosting/cache-management.webp
@@ -16090,7 +16090,7 @@ a903072e3932945321e098fd04f99f6c  doc/ger-de/hilfe/bilder/trainers/nl-safe.webp
 76c7c55f862d58f58f013a4eed5a7b0f  doc/ger-de/hilfe/bilder/trainers/sa-admin-group.webp
 d5f8ba6fb6fd485a64b0de2f94a0e9d6  doc/ger-de/hilfe/bilder/trainers/sa-anonymous.webp
 ca5d339889473746456126e933a3263e  doc/ger-de/hilfe/bilder/trainers/sa-assign-role.webp
-e95dea187d7c08aacc99f3e2acbe51b8  doc/ger-de/hilfe/bilder/trainers/sa-audit-dash.webp
+5c1405415d4a14dcf34b46fbf9fa5784  doc/ger-de/hilfe/bilder/trainers/sa-audit-dash.webp
 9fd19fe6792a692c7e77e061b0e32ab6  doc/ger-de/hilfe/bilder/trainers/sa-audit-settings.webp
 a2079763e11e83b7dd8a2d7f970e2964  doc/ger-de/hilfe/bilder/trainers/sa-backups.webp
 3a281068525269ac6dc62a737ffd37fa  doc/ger-de/hilfe/bilder/trainers/sa-cache-box.webp
@@ -23093,7 +23093,7 @@ c054d3a6d7a159822cee6c72b027aa94  kernel/private/classes/views/audit/alerts.php
 68a5b4209ede7e587c6d9539ecd9335e  kernel/private/classes/views/audit/archives.php
 0516e226d79d6aa03235fb59a496018d  kernel/private/classes/views/audit/charts.php
 7bdf92bb6b6080a4cb91731a9fbd4e5f  kernel/private/classes/views/audit/console.php
-83aa8c871f9bfe41658fbef8f7736f5b  kernel/private/classes/views/audit/dashboard.php
+2e63c3eb1344a5bbd805f90b79418a92  kernel/private/classes/views/audit/dashboard.php
 646c2fbec6618df95e9996bf2347989d  kernel/private/classes/views/audit/event.php
 74f75b666b133a868b6069bf6a103cc2  kernel/private/classes/views/audit/export.php
 73d90a262f60bde4dbfa915da47c0d82  kernel/private/classes/views/audit/recent.php
@@ -24905,7 +24905,7 @@ dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
-46b03aa70cd260a0a2b1240fd90f5113  share/translations/ger-DE/translation.ts
+4ec4ead76f2695161b00fd052cc4f255  share/translations/ger-DE/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 47faf9a9276b0ae89c78137ddf9df7c0  share/translations/heb-IL/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md

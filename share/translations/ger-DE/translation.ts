@@ -72200,6 +72200,26 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Background exports are not available here.</source>
         <translation>Exporte im Hintergrund sind hier nicht verfügbar.</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intakt</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>unterbrochen</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ungeprüft</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>repariert</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leer</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>
