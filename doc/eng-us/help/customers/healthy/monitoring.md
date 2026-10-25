@@ -50,6 +50,8 @@ run them; ask that they are scheduled and that a failure reaches a person.
 | The **Audit** tab | The state of each audit channel, recent events, alerts |
 | **Setup > Cronjobs** | Scheduled jobs, last runs, jobs that need attention |
 
+![Setup, System information: which server answered, the report buttons and the health checks with what to do](../../images/help/bu-sysinfo.webp)
+
 Source: [Health checks and monitoring](../../businesses/reliability/health-checks-and-monitoring.md). If nobody on your
 team reads them, ask your host or partner for a short weekly or monthly summary instead
 ([Monthly operations](../../hosting/checklists/monthly-operations.md) includes a report to the customer).

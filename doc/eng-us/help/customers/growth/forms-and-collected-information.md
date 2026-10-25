@@ -29,6 +29,9 @@ what happens to the submissions is your routine.
 
 - **Setup > Collected information** lists the items that collected, with figures, search, sorting and paging; each
   links to its collections, to the item and to a **CSV export** ([Collected information](../../../guides/collected-information.md)).
+
+  ![Setup, Collected information: the figures, a search for an object and each form with its collections and the CSV export](../../images/creators/collected-information.webp)
+
 - Three form types are known: form, feedback and poll; a poll can be answered once per user, and polls send no mail by
   default (`settings/collect.ini`, see
   [Forms with the information collector](../../creators/website-creators/forms-with-the-information-collector.md)).

@@ -55,6 +55,8 @@ The person doing the update has checks with a clear result
   changes nothing ([The upgrade check](../../../guides/upgrade-check.md)).
 - The front page loads, the administration opens, and a test item can be published.
 
+![Setup, Upgrade check: the version, the file consistency check and the database consistency check, which only read](../../images/creators/upgrade-check.webp)
+
 Ask for these three results in writing after every update.
 
 ## Where to read what changed

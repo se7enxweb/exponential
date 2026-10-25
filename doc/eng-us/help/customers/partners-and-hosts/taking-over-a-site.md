@@ -36,6 +36,8 @@ the [Handover checklist](handover-checklist.md) first.
 | Health warnings | The health checks at the top of **Setup > System information** |
 | Scheduled jobs | **Setup > Cronjobs** |
 
+![Info, About: the extensions loaded by the installation, in loading order, each with its version, license and website](../../images/creators/about-extensions.webp)
+
 Compare the version with the maintained line ([Release line and support](../healthy/release-line-and-support.md)).
 A site on 5.x or older needs an upgrade project ([Upgrading](../../../guides/upgrading.md)).
 
@@ -43,6 +45,8 @@ A site on 5.x or older needs an upgrade project ([Upgrading](../../../guides/upg
 > **Copy report as text** on **Setup > System information** gives a summary for a support request without passwords,
 > keys, tokens or full server paths ([System information](../../../guides/system-information.md)). It is a good first
 > document to give a new partner.
+
+![Setup, System information: the server that answered, Copy report as text and Download report, and the health checks](../../images/help/bu-sysinfo.webp)
 
 ## Week three: history and people
 

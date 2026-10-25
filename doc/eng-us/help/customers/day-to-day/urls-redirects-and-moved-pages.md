@@ -47,6 +47,8 @@ go instead:
 | A whole folder of old pages goes | a wildcard from the old pattern to the new place | **Setup > URL wildcards** |
 | Nothing replaces it | let it answer "not found", deliberately | none |
 
+![Setup, URL wildcards: the form for a new wildcard with its destination and the Redirecting URL choice, and Try an address](../../images/creators/url-wildcards.webp)
+
 Wildcards are only consulted when no alias matches, and **Try an address** on the wildcards page shows which wildcard
 an address matches without changing anything
 ([URL aliases, wildcards and search statistics](../../../guides/urls-and-aliases.md#4-url-wildcards)).

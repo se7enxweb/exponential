@@ -47,6 +47,8 @@ number of results. It filters the phrases that found nothing, orders by count, p
 phrase again with one click. When no siteaccess records searches, the page says so
 ([URL aliases, wildcards and search statistics](../../../guides/urls-and-aliases.md)).
 
+![Setup, Search statistics: the number of phrases and searches, the phrases that found nothing, and the list ordered by count](../../images/creators/search-statistics.webp)
+
 ## Reading the phrases
 
 | What you see | What it usually means | What to do |

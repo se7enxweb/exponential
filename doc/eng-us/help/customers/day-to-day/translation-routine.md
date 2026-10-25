@@ -59,6 +59,9 @@ Ways to keep track:
 
 - **Setup > Languages** shows per language how many items and classes have a translation in it and which
   siteaccesses show it.
+
+  ![Setup, Languages: each content language with its number of items and classes and the siteaccesses that show it](../../images/creators/translations-overview.webp)
+
 - The versions page lets you compare the source's current version with the one the translation was made from
   ([Versions of an object](../../../guides/content-history.md)).
 - A shared list (your [Content calendar](content-calendar.md)) with a "languages" column for every new item.

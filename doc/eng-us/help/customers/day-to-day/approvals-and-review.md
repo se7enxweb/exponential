@@ -79,6 +79,8 @@ the approval holds it ([Exponential Intelligence](../growth/exponential-intellig
 4. Once a week, the editor-in-chief looks at **Setup > Workflow processes**: a process that waits for days usually
    means an approver left or the cronjob stopped ([Workflows](../../../guides/workflows.md)).
 
+   ![Setup, Workflow processes: the processes waiting, what they wait for, and a warning when the workflow cronjob is not scheduled](../../images/creators/workflow-processes.webp)
+
 ## Lighter alternatives
 
 - **Preview before publishing**: the edit form's preview and version preview let a colleague look before the author

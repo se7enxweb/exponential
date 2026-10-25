@@ -34,6 +34,9 @@ From [RSS feeds](../../../guides/rss-feeds.md):
 - The page in the administration (**Setup > RSS**) shows the exports and imports with an overview and a filter for
   those that need attention.
 
+  ![Setup, RSS: the figures of exports and imports, the filter with Need attention, and an export with its feed address](../../images/creators/rss-list.webp)
+
+
 ## Decide per feed
 
 | Question | Example answer |

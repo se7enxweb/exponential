@@ -36,6 +36,9 @@ What this means for you:
   address whenever they or a customer meet an error ([Reporting problems](reporting-problems.md)).
 - **Pass it on unchanged.** An administrator pastes it into **Setup > Log files**, field **Error reference**, and
   sees the entry and every line of the same request.
+
+  ![Setup, Log files, Error digest: the distinct errors of the last 24 hours, each with its count and when it was last seen](../../images/help/bu-logs.webp)
+
 - **Report quickly.** Logs rotate; an old reference may have rotated away (the number of rotations kept is a setting,
   `site.ini [FileSettings] LogFileRotateCount`, same guide).
 

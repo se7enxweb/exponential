@@ -28,6 +28,9 @@ From [Content languages](../../../guides/content-languages.md):
 
 - **Setup > Languages > Add language** adds a content language; 132 locales are in the list on a standard
   installation, and a custom one can be made from a locale file.
+
+  ![Setup, Languages: the content languages with the Add language button above the list](../../images/government/gov-add-language.webp)
+
 - **Adding translates nothing and changes no siteaccess**: no visitor sees anything new yet.
 - What a visitor sees is decided per siteaccess by `SiteLanguageList`: the content languages it shows, most preferred
   first. An item is shown in the first of these it has; items in none of them are hidden unless *always available*
