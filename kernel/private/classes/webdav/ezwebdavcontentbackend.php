@@ -430,8 +430,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         // Handle dead propreties
         if ( $namespace !== 'DAV:' )
         {
-            $properties = $storage->getAllProperties();
-            return $properties[$namespace][$name];
+            return $storage->get( $propertyName, $namespace );
         }
 
         if ( !isset( $this->cachedProperties[$path] ) )
@@ -499,13 +498,17 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
                 break;
 
             case 'lockdiscovery':
-                $property = new ezcWebdavLockDiscoveryProperty();
+                // the locks the lock plugin stored (PROPPATCH), else none
+                $property = $storage->get( 'lockdiscovery', 'DAV:' );
+                if ( $property === null )
+                {
+                    $property = new ezcWebdavLockDiscoveryProperty();
+                }
                 break;
 
             default:
                 // Handle all other live properties like dead properties
-                $properties = $storage->getAllProperties();
-                $property = $properties['DAV:'][$name]; // @as (need to figure $namespace)
+                $property = $storage->get( $propertyName, 'DAV:' );
                 break;
         }
 
@@ -549,8 +552,102 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $storage = new ezcWebdavBasicPropertyStorage();
 
-        // @todo implement property storage
+        $file = self::propertyStorageFile( $path );
+        if ( !is_file( $file ) )
+        {
+            return $storage;
+        }
+
+        $xml = new ezcWebdavXmlTool();
+        $handler = new ezcWebdavPropertyHandler( $xml );
+        try
+        {
+            $doc = $xml->createDom( (string)file_get_contents( $file ) );
+        }
+        catch ( ezcWebdavInvalidXmlException $e )
+        {
+            eZDebug::writeWarning( "Unreadable WebDAV property storage $file for '$path', ignored", __METHOD__ );
+            return $storage;
+        }
+        if ( $doc === false || !( $properties = $doc->getElementsByTagName( 'properties' )->item( 0 ) ) )
+        {
+            return $storage;
+        }
+        $handler->extractProperties( $properties->childNodes, $storage );
+
         return $storage;
+    }
+
+    /**
+     * The path of a resource as the property storage keys it: one leading and no trailing slash.
+     *
+     * @param string $path
+     * @return string
+     */
+    public static function propertyStoragePath( $path )
+    {
+        return '/' . trim( (string)$path, '/' );
+    }
+
+    /**
+     * The file that holds the stored (dead) properties of the resource at $path, the lock plugin's lock
+     * discovery and lock information among them: var/<site>/webdav/properties/<sha1 of the path>.xml.
+     *
+     * @param string $path
+     * @return string
+     */
+    protected static function propertyStorageFile( $path )
+    {
+        return eZSys::varDirectory() . '/webdav/properties/' . sha1( self::propertyStoragePath( $path ) ) . '.xml';
+    }
+
+    /**
+     * Removes the stored properties of $path and, for a collection, of everything below it.
+     *
+     * @param string $path
+     */
+    protected function removeStoredProperties( $path )
+    {
+        $key = self::propertyStoragePath( $path );
+        $dir = eZSys::varDirectory() . '/webdav/properties';
+        foreach ( glob( $dir . '/*.xml' ) ?: array() as $file )
+        {
+            $doc = new DOMDocument();
+            if ( !@$doc->load( $file ) || !$doc->documentElement )
+            {
+                continue;
+            }
+            $stored = $doc->documentElement->getAttribute( 'path' );
+            if ( $stored === $key || strpos( $stored, rtrim( $key, '/' ) . '/' ) === 0 )
+            {
+                unlink( $file );
+            }
+        }
+    }
+
+    /**
+     * Makes every client configuration of $server use expWebDAVPathFactory: paths stay plain text inside the
+     * server, URIs in responses are encoded.
+     *
+     * @param ezcWebdavServer $server
+     */
+    public static function usePathFactory( ezcWebdavServer $server )
+    {
+        foreach ( $server->configurations as $configuration )
+        {
+            $configuration->pathFactory = new expWebDAVPathFactory();
+        }
+    }
+
+    /**
+     * Forgets what nodeExists(), isCollection() and getProperty() found so far: a PUT, DELETE, COPY, MOVE or MKCOL
+     * changed the tree, and a request handled after it in the same process (the lock plugin locks a resource it
+     * has just created with a PUT) must see the change.
+     */
+    protected function forgetCachedNodes()
+    {
+        $this->cachedNodes = array();
+        $this->cachedProperties = array();
     }
 
     /**
@@ -658,46 +755,18 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      * {@link ezcWebdavSimpleBackend} to perform the operation and releases the
      * lock afterwards.
      *
-     * This method is an overwrite of the propFind method from
-     * ezcWebdavSimpleBackend, a hack necessary to permit correct
-     * output of eZ Publish nodes. The array of ezcWebdavPropFindResponse
-     * objects returned by ezcWebdavSimpleBackend::propFind is iterated and
-     * the paths of the nodes in the ezcWebdavPropFindResponse objects
-     * are encoded properly, in order to be displayed correctly in WebDAV
-     * clients. The encoding is from the ini setting Charset in
-     * [CharacterSettings] in i18n.ini.
+     * The paths of the responses stay plain (decoded) text: the lock plugin
+     * compares them with request paths and sends its own requests to them.
+     * The URIs written for the client are encoded by expWebDAVPathFactory,
+     * which webdav.php sets as the server's path factory.
      *
      * @param ezcWebdavPropFindRequest $request
      * @return ezcWebdavResponse
      */
     public function propFind( ezcWebdavPropFindRequest $request )
     {
-        $ini = eZINI::instance( 'i18n.ini' );
-        $dataCharset = $ini->variable( 'CharacterSettings', 'Charset' );
-        $xmlCharset = 'utf-8';
-
         $this->acquireLock( true );
         $return = parent::propFind( $request );
-        if ( isset( $return->responses ) && is_array( $return->responses ) )
-        {
-            foreach ( $return->responses as $response )
-            {
-                $href = $response->node->path;
-                $pathArray = explode( '/', self::recode( $href, $dataCharset, $xmlCharset ) );
-                $encodedPath = '/';
-
-                foreach ( $pathArray as $pathElement )
-                {
-                    if ( $pathElement != '' )
-                    {
-                        $encodedPath .= rawurlencode( $pathElement );
-                        $encodedPath .= '/';
-                    }
-                }
-                $encodedPath = rtrim( $encodedPath, '/' );
-                $response->node->path = $encodedPath;
-            }
-        }
         $this->freeLock();
 
         return $return;
@@ -742,7 +811,52 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      */
     protected function storeProperties( $path, ezcWebdavBasicPropertyStorage $storage )
     {
-        // @as @todo implement storing properties
+        // Live properties are computed on each request, only the lock discovery of the lock plugin is stored
+        $stored = new ezcWebdavBasicPropertyStorage();
+        foreach ( $storage->getAllProperties() as $namespace => $properties )
+        {
+            foreach ( $properties as $name => $property )
+            {
+                if ( $namespace === 'DAV:' && in_array( $name, $this->handledLiveProperties, true ) && $name !== 'lockdiscovery' )
+                {
+                    continue;
+                }
+                if ( $name === 'lockdiscovery' && $namespace === 'DAV:' && count( $property->activeLock ) === 0 )
+                {
+                    continue;
+                }
+                $stored->attach( $property );
+            }
+        }
+
+        $file = self::propertyStorageFile( $path );
+        if ( count( $stored ) === 0 )
+        {
+            if ( is_file( $file ) )
+            {
+                unlink( $file );
+            }
+            return true;
+        }
+
+        $doc = new DOMDocument( '1.0', 'utf-8' );
+        $properties = $doc->createElement( 'properties' );
+        $properties->setAttribute( 'path', self::propertyStoragePath( $path ) );
+        $doc->appendChild( $properties );
+        $handler = new ezcWebdavPropertyHandler( new ezcWebdavXmlTool() );
+        $handler->serializeProperties( $stored, $properties );
+
+        if ( !is_dir( dirname( $file ) ) )
+        {
+            eZDir::mkdir( dirname( $file ), eZDir::directoryPermission(), true );
+        }
+        // written to a temporary file and renamed, so a reader never sees half a file
+        $temp = $file . '.' . getmypid() . '.tmp';
+        if ( file_put_contents( $temp, $doc->saveXML() ) === false || !rename( $temp, $file ) )
+        {
+            eZDebug::writeError( "Could not store the WebDAV properties of '$path' in $file", __METHOD__ );
+            return false;
+        }
         return true;
     }
 
@@ -757,34 +871,19 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      */
     public function setProperty( $path, ezcWebdavProperty $property )
     {
-        if ( !in_array( $property->name, $this->handledLiveProperties, true ) )
+        // Live properties are computed from the content and cannot be set, except the lock discovery, which the
+        // lock plugin keeps up to date on LOCK and UNLOCK
+        if ( $property->namespace === 'DAV:' &&
+             in_array( $property->name, $this->handledLiveProperties, true ) &&
+             $property->name !== 'lockdiscovery' )
         {
             return false;
         }
 
-        // @as @todo implement setting properties
-        // @todo implement locking and unlocking based on the code
-        // lock:
-        // replace 30607 with your object ID
-        // $object = eZContentObject::fetch( 30607 );
-        // $stateGroup = eZContentObjectStateGroup::fetchByIdentifier( 'ez_lock' );
-        // $state = eZContentObjectState::fetchByIdentifier( 'locked', $stateGroup->attribute( 'id' ) );
-        // $object->assignState( $state );
-
-        // unlock:
-        // $state = eZContentObjectState::fetchByIdentifier( 'not_locked', $stateGroup->attribute( 'id' ) );
-        // $object->assignState( $state );
-
-        // Get namespace property storage
-        $storage = new ezcWebdavBasicPropertyStorage();
-
-        // Attach property to store
+        $storage = $this->getPropertyStorage( $path );
         $storage->attach( $property );
 
-        // Store document back
-        $this->storeProperties( $path, $storage );
-
-        return true;
+        return $this->storeProperties( $path, $storage );
     }
 
     /**
@@ -798,8 +897,16 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      */
     public function removeProperty( $path, ezcWebdavProperty $property )
     {
-        // @as @todo implement removing properties
-        return true;
+        // Live properties may not be removed
+        if ( $property instanceof ezcWebdavLiveProperty && $property->name !== 'lockdiscovery' )
+        {
+            return false;
+        }
+
+        $storage = $this->getPropertyStorage( $path );
+        $storage->detach( $property->name, $property->namespace );
+
+        return $this->storeProperties( $path, $storage );
     }
 
     /**
@@ -814,7 +921,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      */
     public function resetProperties( $path, ezcWebdavPropertyStorage $storage )
     {
-        $this->storeProperties( $path, $storage );
+        return $this->storeProperties( $path, $storage );
     }
 
     /**
@@ -836,6 +943,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $this->acquireLock();
         $return = parent::put( $request );
+        $this->forgetCachedNodes();
         $this->freeLock();
 
         return $return;
@@ -912,6 +1020,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $this->acquireLock();
         $return = parent::delete( $request );
+        $this->forgetCachedNodes();
         $this->freeLock();
 
         return $return;
@@ -1006,6 +1115,9 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $status = $this->deleteVirtualFolder( $currentSite, $target );
         // @as @todo return based on $status
 
+        // The stored properties (locks) of the deleted resources go with them
+        $this->removeStoredProperties( $fullPath );
+
         // Return success
         return null;
     }
@@ -1030,6 +1142,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $this->acquireLock();
         $return = parent::copy( $request );
+        $this->forgetCachedNodes();
         $this->freeLock();
 
         return $return;
@@ -1265,6 +1378,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $this->acquireLock();
         $return = parent::move( $request );
+        $this->forgetCachedNodes();
         $this->freeLock();
 
         return $return;
@@ -1289,6 +1403,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     {
         $this->acquireLock();
         $return = parent::makeCollection( $request );
+        $this->forgetCachedNodes();
         $this->freeLock();
 
         return $return;
@@ -1862,40 +1977,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             return false; // self::FAILED_NOT_FOUND;
         }
 
-        // added by @ds 2008-12-07 to fix problems with IE6 SP2
-        $ini = eZINI::instance();
-        $prefixAdded = false;
-        $prefix = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) &&
-                      $ini->variable( 'SiteAccessSettings', 'PathPrefix' ) != '' ? eZURLAliasML::cleanURL( $ini->variable( 'SiteAccessSettings', 'PathPrefix' ) ) : false;
-
-        if ( $prefix )
-        {
-            $escapedPrefix = preg_quote( $prefix, '#' );
-            // Only prepend the path prefix if it's not already the first element of the url.
-            if ( !preg_match( "#^$escapedPrefix(/.*)?$#i", $collection )  )
-            {
-                $exclude = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' )
-                           ? $ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' )
-                           : false;
-                $breakInternalURI = false;
-                foreach ( $exclude as $item )
-                {
-                    $escapedItem = preg_quote( $item, '#' );
-                    if ( preg_match( "#^$escapedItem(/.*)?$#i", $collection )  )
-                    {
-                        $breakInternalURI = true;
-                        break;
-                    }
-                }
-
-                if ( !$breakInternalURI )
-                {
-                    $collection = $prefix . '/' . $collection;
-                    $prefixAdded = true;
-                }
-            }
-        }
-
+        // The siteaccess's PathPrefix is applied by internalNodePath(), for every operation alike
         return $this->getContentTreeCollection( $currentSite, $virtualFolder, $collection, $fullPath, $depth, $properties );
     }
 
@@ -3007,9 +3089,64 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         }
         else
         {
-            $nodePath = $collection;
+            $nodePath = self::withPathPrefix( $collection );
         }
         return $nodePath;
+    }
+
+    /**
+     * Returns the path $collection below the Content folder as a URL alias path of the current siteaccess:
+     * with its [SiteAccessSettings] PathPrefix in front (unless the path starts with the prefix already or with
+     * one of PathPrefixExclude), as the site's own URLs are. Listing, reading, writing, copying, moving and
+     * deleting all resolve their paths with it, so a file written to /<siteaccess>/Content/name is read back
+     * from the same place on a siteaccess with a PathPrefix.
+     *
+     * @param string $collection Eg. 'Folder1/file1'
+     * @return string Eg. 'site-root/Folder1/file1'
+     */
+    public static function withPathPrefix( $collection )
+    {
+        $ini = eZINI::instance();
+        $prefix = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefix' ) &&
+                  $ini->variable( 'SiteAccessSettings', 'PathPrefix' ) != ''
+                  ? eZURLAliasML::cleanURL( $ini->variable( 'SiteAccessSettings', 'PathPrefix' ) )
+                  : '';
+        $exclude = $ini->hasVariable( 'SiteAccessSettings', 'PathPrefixExclude' )
+                   ? (array)$ini->variable( 'SiteAccessSettings', 'PathPrefixExclude' )
+                   : array();
+        return self::pathWithPrefix( $collection, $prefix, $exclude );
+    }
+
+    /**
+     * withPathPrefix() for a given (cleaned) $prefix and PathPrefixExclude list. Pure.
+     *
+     * @param string $collection Eg. 'Folder1/file1'
+     * @param string $prefix Eg. 'site-root', '' for none
+     * @param array(string) $exclude Eg. array( 'media' )
+     * @return string
+     */
+    public static function pathWithPrefix( $collection, $prefix, array $exclude = array() )
+    {
+        if ( (string)$prefix === '' )
+        {
+            return $collection;
+        }
+
+        $collection = trim( (string)$collection, '/' );
+        // Only prepend the path prefix if it's not already the first element of the url.
+        if ( preg_match( '#^' . preg_quote( $prefix, '#' ) . '(/.*)?$#i', $collection ) )
+        {
+            return $collection;
+        }
+        foreach ( $exclude as $item )
+        {
+            if ( $item !== '' && preg_match( '#^' . preg_quote( $item, '#' ) . '(/.*)?$#i', $collection ) )
+            {
+                return $collection;
+            }
+        }
+
+        return $collection === '' ? $prefix : $prefix . '/' . $collection;
     }
 
     /**
