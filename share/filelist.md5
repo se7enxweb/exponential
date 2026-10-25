@@ -357,7 +357,7 @@ ce90ff045aa9ad5f6b74ebb4adb49d1f  design/admin/stylesheets/content.css
 58851bdc6d2ec7bd80b0e822175ac466  design/admin/stylesheets/core.css
 62734b59f14ab1cb473727176f810806  design/admin/stylesheets/ezinfo.css
 093b78b2b3dc9453140918b54316f745  design/admin/stylesheets/modules/content.css
-f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin/stylesheets/modules/help.css
+3aaa42a98504b4b2616a24623806d5d3  design/admin/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin/stylesheets/modules/structure.css
@@ -1113,7 +1113,7 @@ ef343d78f55b56d838a8af7c8f4a5a5d  design/admin4/stylesheets/core.css
 79bfd7f0041431e3d99f1f446678dbc0  design/admin4/stylesheets/editor_content.css
 01f2edc08922c1da1e00b33fe6cf1a5c  design/admin4/stylesheets/ezinfo.css
 093b78b2b3dc9453140918b54316f745  design/admin4/stylesheets/modules/content.css
-f384c9d9a5f3d22ce6b96a3f3bcf852b  design/admin4/stylesheets/modules/help.css
+3aaa42a98504b4b2616a24623806d5d3  design/admin4/stylesheets/modules/help.css
 db74c893b35ab6d545afb385c3c98c6e  design/admin4/stylesheets/modules/people.css
 3cef57a0793ffc9916d5463630a1f6a3  design/admin4/stylesheets/modules/setup.css
 c34f91ab4574d20b218dabe48383162d  design/admin4/stylesheets/modules/structure.css
@@ -24775,7 +24775,7 @@ e346ed955a8e8ed87acad81858095cfb  tests/tests/design/AdminFormErrorsTest.php
 32f9d6fe78017afe3382814f71cb124e  tests/tests/design/AdminFormLabelsTest.php
 df72bc7f8d64d49076979980d0eb6b61  tests/tests/design/AdminHeaderTabOrderTest.php
 7642606f7a33782201324a3fb2068773  tests/tests/design/AdminHeaderTest.php
-8aa3887e5c845ddb8c8d3b843b2b4e65  tests/tests/design/AdminHelpFrameClassScopeTest.php
+4f83c10c7d0a6129ab7827a08f5631e8  tests/tests/design/AdminHelpFrameClassScopeTest.php
 c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.php
 3db40fcd5528d2caec0149d7ed92795b  tests/tests/design/AdminHelpScriptTest.php
 4a5fcc0b1d057a2dda804741118daea8  tests/tests/design/AdminHelpViewParametersOnlyTest.php

@@ -13,10 +13,15 @@
 
 /* ---- page frame and shared parts ----------------------------------------------------------------------------- */
 
+/* The frame takes the width it is given, up to its maximum, also as the item of a flex column with centred items
+   (the Admin UI's .main-content): there an item with auto side margins takes the width of its content, and a
+   container's content (container-type below) has none, so the page shrank to a few pixels. */
 .a4-help-frame {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--a4-space-5);
+  box-sizing: border-box;
+  width: 100%;
   min-width: 0;
   max-width: var(--a4-content-max);
   margin: 0 auto;

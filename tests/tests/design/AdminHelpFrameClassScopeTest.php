@@ -65,6 +65,23 @@ class AdminHelpFrameClassScopeTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * The frame fills the width it is given (up to its maximum) also as an item of a flex column with centred items,
+     * the Admin UI's .main-content: with only "margin: 0 auto" and container-type: inline-size it measured a few
+     * pixels there and every help page ran one word, then one letter, per line.
+     *
+     * @dataProvider designs
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'designs' )]
+    public function testHelpFrameTakesTheWidthItIsGiven( $design )
+    {
+        $css = preg_replace( '#/\*.*?\*/#s', '', file_get_contents( self::root() . '/design/' . $design . '/stylesheets/modules/help.css' ) );
+        $this->assertSame( 1, preg_match( '/(?:^|\})\s*\.a4-help-frame \{([^}]*)\}/', $css, $m ), $design . ': no .a4-help-frame rule' );
+        $this->assertMatchesRegularExpression( '/(^|;)\s*width: 100%;/', $m[1], $design . ': the frame has no width: 100%' );
+        $this->assertMatchesRegularExpression( '/box-sizing: border-box;/', $m[1], $design . ': the frame has no box-sizing: border-box' );
+        $this->assertMatchesRegularExpression( '/max-width: var\(--a4-content-max\);/', $m[1], $design . ': the frame lost its maximum width' );
+    }
+
+    /**
      * The package wizard's tiles keep their description as a block of text that fills the tile.
      *
      * @dataProvider designs
