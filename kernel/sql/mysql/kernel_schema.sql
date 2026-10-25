@@ -1249,6 +1249,31 @@ CREATE TABLE expapikey (
 
 
 
+CREATE TABLE exppasskey (
+  aaguid varchar(36) NOT NULL default '',
+  algorithm int(11) NOT NULL default '0',
+  backup_eligible int(11) NOT NULL default '0',
+  backup_state int(11) NOT NULL default '0',
+  created int(11) NOT NULL default '0',
+  credential_hash varchar(64) NOT NULL default '',
+  credential_id longtext,
+  id int(11) NOT NULL auto_increment,
+  last_ip varchar(64) NOT NULL default '',
+  last_used int(11) NOT NULL default '0',
+  name varchar(255) NOT NULL default '',
+  public_key longtext,
+  sign_count bigint(20) NOT NULL default '0',
+  transports varchar(255) NOT NULL default '',
+  user_handle varchar(128) NOT NULL default '',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (id),
+  UNIQUE KEY exppasskey_credential (credential_hash),
+  KEY exppasskey_user (user_id)
+) ENGINE=InnoDB;
+
+
+
+
 
 CREATE TABLE exp_transfer_run (
   bytes bigint(20) NOT NULL default '0',

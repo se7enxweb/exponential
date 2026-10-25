@@ -727,6 +727,24 @@ CREATE TABLE `expapikey` (
 ,  `secret_hash` varchar(128) NOT NULL DEFAULT ''
 ,  `user_id` integer NOT NULL DEFAULT '0'
 );
+CREATE TABLE `exppasskey` (
+  `aaguid` varchar(36) NOT NULL DEFAULT ''
+,  `algorithm` integer NOT NULL DEFAULT '0'
+,  `backup_eligible` integer NOT NULL DEFAULT '0'
+,  `backup_state` integer NOT NULL DEFAULT '0'
+,  `created` integer NOT NULL DEFAULT '0'
+,  `credential_hash` varchar(64) NOT NULL DEFAULT ''
+,  `credential_id` longtext
+,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `last_ip` varchar(64) NOT NULL DEFAULT ''
+,  `last_used` integer NOT NULL DEFAULT '0'
+,  `name` varchar(255) NOT NULL DEFAULT ''
+,  `public_key` longtext
+,  `sign_count` integer NOT NULL DEFAULT '0'
+,  `transports` varchar(255) NOT NULL DEFAULT ''
+,  `user_handle` varchar(128) NOT NULL DEFAULT ''
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
 CREATE TABLE `exp_transfer_run` (
   `bytes` integer NOT NULL DEFAULT '0'
 ,  `created` integer NOT NULL DEFAULT '0'
@@ -1363,6 +1381,8 @@ CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_l
 CREATE INDEX "idx_ezprest_token_token_client_id" ON "ezprest_token" (`client_id`);
 CREATE UNIQUE INDEX expapikey_prefix ON expapikey ( key_prefix );
 CREATE INDEX expapikey_user ON expapikey ( user_id );
+CREATE UNIQUE INDEX exppasskey_credential ON exppasskey ( credential_hash );
+CREATE INDEX exppasskey_user ON exppasskey ( user_id );
 CREATE INDEX exp_transfer_run_started ON exp_transfer_run ( started );
 CREATE INDEX exp_transfer_run_tool ON exp_transfer_run ( tool, started );
 CREATE INDEX exp_transfer_run_toolref ON exp_transfer_run ( tool, tool_ref );

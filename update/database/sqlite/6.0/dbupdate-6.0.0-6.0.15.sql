@@ -578,3 +578,32 @@ CREATE INDEX IF NOT EXISTS expuser_session_active ON expuser_session ( ended, la
 --
 -- DROP INDEX ezuser_login;
 -- CREATE UNIQUE INDEX ezuser_login ON ezuser ( login );
+
+-- Passkeys (doc/eng-us/guides/passkeys.md).
+--
+-- One row per passkey (WebAuthn credential) a user registered on user/passkeys. credential_id
+-- and public_key are base64url (the COSE key the authenticator sent); credential_hash is the
+-- SHA-256 (hex) of the credential id, what a sign-in looks the passkey up by. user_handle is
+-- the random handle the browser keeps with the passkey (never the user id). sign_count is the
+-- authenticator's signature counter; created and last_used are timestamps (0 = not yet).
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exppasskey (
+  aaguid varchar(36) NOT NULL DEFAULT '',
+  algorithm integer NOT NULL DEFAULT 0,
+  backup_eligible integer NOT NULL DEFAULT 0,
+  backup_state integer NOT NULL DEFAULT 0,
+  created integer NOT NULL DEFAULT 0,
+  credential_hash varchar(64) NOT NULL DEFAULT '',
+  credential_id longtext,
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  last_ip varchar(64) NOT NULL DEFAULT '',
+  last_used integer NOT NULL DEFAULT 0,
+  name varchar(255) NOT NULL DEFAULT '',
+  public_key longtext,
+  sign_count integer NOT NULL DEFAULT 0,
+  transports varchar(255) NOT NULL DEFAULT '',
+  user_handle varchar(128) NOT NULL DEFAULT '',
+  user_id integer NOT NULL DEFAULT 0
+);
+CREATE UNIQUE INDEX IF NOT EXISTS exppasskey_credential ON exppasskey ( credential_hash );
+CREATE INDEX IF NOT EXISTS exppasskey_user ON exppasskey ( user_id );
