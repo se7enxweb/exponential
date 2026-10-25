@@ -1465,6 +1465,7 @@ return array(
       'expViewParameterOperator'                                     => 'kernel/common/expviewparameteroperator.php',
       'expViewParameters'                                            => 'kernel/classes/expviewparameters.php',
       'expWeakPasswordList'                                          => 'kernel/classes/expweakpasswordlist.php',
+      'expWebDAVPathFactory'                                         => 'kernel/private/classes/webdav/expwebdavpathfactory.php',
       'expWorkflowEventWizard'                                       => 'kernel/setup/expworkfloweventwizard.php',
       'ezpAccessDenied'                                              => 'kernel/private/classes/exceptions/kernel/accessdenied.php',
       'ezpActiveExtensions'                                          => 'kernel/private/classes/ezpactiveextensions.php',

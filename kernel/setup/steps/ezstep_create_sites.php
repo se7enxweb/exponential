@@ -2324,6 +2324,17 @@ language_locale='eng-GB'";
             foreach ( expInstallDefaultExtensions::ensureDatabase( array_merge( $installActiveExtensions, $adminAccess ),
                                                                    $primaryLanguageLocaleCode, eZExtension::baseDirectory() ) as $line )
                 eZLog::write( "eZStepCreateSites: $line", 'setup.log' );
+            // Every other active extension with a share/db_schema.dba gets the tables it lacks (none dropped or
+            // changed): the legacy site packages (ezwebin_site, ezflow_site, ezdemo_site) switch on extensions such
+            // as eztags and xrowextract without creating their tables.
+            foreach ( array_unique( array_merge( $installActiveExtensions, $adminAccess, eZExtension::activeExtensions() ) ) as $extension )
+            {
+                if ( !is_string( $extension ) || $extension === '' || !file_exists( eZExtension::baseDirectory() . "/$extension/share/db_schema.dba" ) )
+                    continue;
+                $line = expInstallDefaultExtensions::ensureExtensionTables( $extension, eZExtension::baseDirectory() );
+                if ( substr( $line, -15 ) !== 'tables present' )
+                    eZLog::write( "eZStepCreateSites: $line", 'setup.log' );
+            }
         }
 
         // exp_adminui in the admin siteaccess when the installation has it (activateAdminUIAccessExtension()): AdminUI

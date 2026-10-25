@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 22d70be706e37bc04d9fdfe7a0a36b4c  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-7eb2685b601dccc6b4bc8e2fc08ba07b  autoload/ezp_kernel.php
+c1e48f191f89ff2e1f36da3368215ae3  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -197,7 +197,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-10a63d120fc09654605e55f8c7eff655  composer.json
+51f201ff4bc8d8989b67658711fa6286  composer.json
 f60cfd01b06c68d9a61b6b15e1dc7fda  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 3d99e63d5759aceeb885e366929fa8c7  config.php-RECOMMENDED
@@ -3256,7 +3256,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-e79773a19ec7d9632bfd7fa417f55724  doc/changelogs/6.0/6.0.15.md
+b837619eaf6ef9d00068876f225e5d41  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3442,6 +3442,7 @@ e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands
 09126e5f8caee5c1c7e418680e6f5e4f  doc/eng-us/bc/6.0/oauth-authorize-policy.md
 5915e407aa7a9cce550d626cc726e267  doc/eng-us/bc/6.0/oauth-pkce.md
 2beb9bafc183d1f77b22b02c7a9b7eb8  doc/eng-us/bc/6.0/opml.md
+6d5afc9f15682d0a04fa6715ff862161  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
 b3ddabe744f64d13e2ecce43ee3c732e  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
@@ -21976,7 +21977,7 @@ b427d6c90f94788d54c369d9e1c15295  kernel/classes/packagecreators/ezcontentobject
 235431d938443cab609c0b539f871da2  kernel/classes/packagehandlers/ezcontentclass/ezcontentclasspackagehandler.php
 7f52b8ed6e4c0bca419915f16389ccd9  kernel/classes/packagehandlers/ezcontentobject/ezcontentobjectpackagehandler.php
 9a6101de5a469ab5ae14a33de85b2836  kernel/classes/packagehandlers/ezdb/ezdbpackagehandler.php
-dd0547219a65f68dd74cd5150452a203  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
+fd95bf6807a1c5d8ac0e1203191b29be  kernel/classes/packagehandlers/ezextension/ezextensionpackagehandler.php
 6a2e81e1729f301ffbccceafdb77679f  kernel/classes/packagehandlers/ezfile/ezfilepackagehandler.php
 66050e29e89a2fdfada84320696ce531  kernel/classes/packagehandlers/eziniaddon/eziniaddonpackagehandler.php
 9293334bc191a66cd75a0f72469ac6ef  kernel/classes/packagehandlers/ezinstallscript/ezinstallscriptpackagehandler.php
@@ -22793,8 +22794,9 @@ cbad7ff8cbff9c9526c8e5b03afc52d7  kernel/private/classes/views/workflow/processl
 07fc8f15e41acbe83186035ff726db16  kernel/private/classes/views/workflow/run.php
 db2a22f8e4fb77185b39ae42170e9fed  kernel/private/classes/views/workflow/view.php
 87156798d6fdd3cbc3e11b0eb02909ee  kernel/private/classes/views/workflow/workflowlist.php
-7622995da12caef232035cb7ff544f67  kernel/private/classes/webdav/ezwebdavcontentbackend.php
-07f83d92db15b1978da8744cb8744513  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
+ac7f0afbf35787c24fb3bac4c8a49ac8  kernel/private/classes/webdav/expwebdavpathfactory.php
+84ae480f2f10f52fc17ffa347a205aa2  kernel/private/classes/webdav/ezwebdavcontentbackend.php
+31c010d3f43e635c29a4ed88aa0d5044  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
 6d252912d19edc3b3120b059668fbe59  kernel/private/eztemplate/ezpattributeoperatorformatter.php
 b8448bbe375187aaa67945e723b56cbe  kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php
 526e26493424e1bad115463e1689d166  kernel/private/eztemplate/ezpattributeoperatorhtmlformatter.php
@@ -23028,7 +23030,7 @@ dbb6944605f9a85624cdea87d250e3a7  kernel/setup/settingstoolbar.php
 d0f0035e31be1c14f09689697e83c198  kernel/setup/setupmenu.php
 609997eec8eb7fb4199bdad2c7b61145  kernel/setup/sitedata.php
 43596548856cbf1657013d4ae36e1873  kernel/setup/staticcachestream.php
-2c9e54f01f9361310d72bbcba00cfc52  kernel/setup/steps/ezstep_create_sites.php
+3d88401e2ab6cd6a3ac0071f64a08a0c  kernel/setup/steps/ezstep_create_sites.php
 40b8cdc431decbff0728f58d0664a850  kernel/setup/steps/ezstep_data.php
 b9fd62b91d08d970060f9290870a9d53  kernel/setup/steps/ezstep_database_choice.php
 159e6d92aa4c98ea6d19e6c8f2299379  kernel/setup/steps/ezstep_database_init.php
@@ -25249,6 +25251,7 @@ b26468a072e87640022ee9fe0bbb360e  tests/tests/kernel/classes/setup/EditorSiteacc
 728b364a823ae2d29c689cdff5b1c557  tests/tests/kernel/classes/setup/EditorSiteaccessTabsTest.php
 66e7e5299d742825ba0fc98478401837  tests/tests/kernel/classes/setup/ExtensionChangePlanTest.php
 56cb7815ef06c0e7a095668c99ff57c8  tests/tests/kernel/classes/setup/ExtensionDownloadTest.php
+2c7af335b2e799767b29009792d3fa47  tests/tests/kernel/classes/setup/ExtensionKeepNewerTest.php
 84a806754eee94940f2ff8fab608690f  tests/tests/kernel/classes/setup/KickstarterFailureReasonTest.php
 b9ab3dc75242d91d9686047634059862  tests/tests/kernel/classes/setup/KickstarterIniDefaultsTest.php
 2e4f85464804cc2fe00e7e80aa8a3a24  tests/tests/kernel/classes/setup/KickstarterOptionsTest.php
@@ -25477,6 +25480,7 @@ ada54e8051171910973a08eeae662617  tests/tests/kernel/logviewer/expLogWebServerFo
 e981df770682f6c07e03c3f510b90f7a  tests/tests/kernel/private/autoload/eZAutoloadGeneratorTest.php
 aacd59cd6ae767b5d328aefe72aec97e  tests/tests/kernel/private/classes/ContentSearchPathPrefixSubTreeTest.php
 60f8f3fb91c8a7da7e20ca1f9c518136  tests/tests/kernel/private/classes/ContentSearchRequestTest.php
+0a2d91e4f143843749b34411356aecf3  tests/tests/kernel/private/classes/WebDAVPathsTest.php
 d74dbdb50cbaeff996f841e63a2de9c8  tests/tests/kernel/private/classes/expContentSecurityPolicyReportTest.php
 1b02f4ed24a2eb1c795a5baeb4308753  tests/tests/kernel/private/classes/expContentSecurityPolicyTest.php
 b6656c954acf5e5f6db1a2607a7564e4  tests/tests/kernel/private/classes/expUpgradeCheckReportsTest.php
@@ -26147,4 +26151,4 @@ fa5c9cc1cb16633532e8923aca284fd5  update/database/postgresql/6.0/dbupdate-6.0.0-
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 973fdfdf48aeb26906a8ce4cf6cb77ac  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
-9e2db96d75614e14c654a873ac90fdd6  webdav.php
+9d82483e7374b4b6f6a7a8547ef8ebd8  webdav.php

@@ -166,7 +166,7 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
             }
         }
 
-        if ( $target === '' && $access = self::ACCESS_WRITE )
+        if ( $target === '' && $access === self::ACCESS_WRITE )
         {
             // writing to second-level paths (/plain_site_user/) is not allowed
             return false;
@@ -232,7 +232,12 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
      */
     public function assignLock( $user, $lockToken )
     {
-        // @as @todo implement
+        $tokens = self::lockTokens( $user );
+        if ( !in_array( $lockToken, $tokens, true ) )
+        {
+            $tokens[] = $lockToken;
+        }
+        self::storeLockTokens( $user, $tokens );
     }
 
     /**
@@ -246,7 +251,7 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
      */
     public function ownsLock( $user, $lockToken )
     {
-        // @as @todo implement
+        return in_array( $lockToken, self::lockTokens( $user ), true );
     }
 
     /**
@@ -262,7 +267,75 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
      */
     public function releaseLock( $user, $lockToken )
     {
-        // @as @todo implement
+        $tokens = self::lockTokens( $user );
+        $kept = array_values( array_diff( $tokens, array( $lockToken ) ) );
+        if ( $kept !== $tokens )
+        {
+            self::storeLockTokens( $user, $kept );
+        }
+    }
+
+    /**
+     * The most lock tokens kept per user: a lock that ran out without an UNLOCK leaves its token behind, the
+     * oldest are dropped first.
+     */
+    const MAX_LOCK_TOKENS_PER_USER = 500;
+
+    /**
+     * The file holding the lock tokens of $user: var/<site>/webdav/locks/<sha1 of the user name>.json.
+     *
+     * @param string $user
+     * @return string
+     */
+    protected static function lockTokenFile( $user )
+    {
+        return eZSys::varDirectory() . '/webdav/locks/' . sha1( strtolower( (string)$user ) ) . '.json';
+    }
+
+    /**
+     * The lock tokens assigned to $user.
+     *
+     * @param string $user
+     * @return array(string)
+     */
+    public static function lockTokens( $user )
+    {
+        $file = self::lockTokenFile( $user );
+        if ( !is_file( $file ) )
+        {
+            return array();
+        }
+        $tokens = json_decode( (string)file_get_contents( $file ), true );
+        return is_array( $tokens ) ? array_values( array_filter( $tokens, 'is_string' ) ) : array();
+    }
+
+    /**
+     * Stores the lock tokens of $user (the file is removed when none are left).
+     *
+     * @param string $user
+     * @param array(string) $tokens
+     */
+    protected static function storeLockTokens( $user, array $tokens )
+    {
+        $file = self::lockTokenFile( $user );
+        if ( count( $tokens ) === 0 )
+        {
+            if ( is_file( $file ) )
+            {
+                unlink( $file );
+            }
+            return;
+        }
+        $tokens = array_slice( array_values( $tokens ), -self::MAX_LOCK_TOKENS_PER_USER );
+        if ( !is_dir( dirname( $file ) ) )
+        {
+            eZDir::mkdir( dirname( $file ), eZDir::directoryPermission(), true );
+        }
+        $temp = $file . '.' . getmypid() . '.tmp';
+        if ( file_put_contents( $temp, json_encode( $tokens ) ) === false || !rename( $temp, $file ) )
+        {
+            eZDebug::writeError( "Could not store the WebDAV lock tokens in $file", __METHOD__ );
+        }
     }
 
     /**
