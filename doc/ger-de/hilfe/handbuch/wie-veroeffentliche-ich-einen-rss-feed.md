@@ -31,7 +31,7 @@ Benutzer, deren Rolle `rss/edit` hat.
 6. Markieren Sie **Aktiv** und klicken Sie auf **OK**.
 7. Klicken Sie in der Liste auf **Feed öffnen**, um ihn zu prüfen.
 
-![RSS-Feeds mit den Listen RSS Exporte und RSS Importe und den Schaltflächen Neuer Export und Neuer Import](../../../eng-us/help/manual/images/rss-feeds.webp)
+![RSS-Feeds mit den Listen RSS Exporte und RSS Importe und den Schaltflächen Neuer Export und Neuer Import](bilder/rss-feeds.webp)
 
 ## Was schiefgehen kann
 

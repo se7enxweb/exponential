@@ -33,7 +33,7 @@ Benutzer, deren Rolle `notification/use` hat.
    optionalen E-Mails ausschalten**, oder entfernen Sie die Häkchen bei Kategorien und klicken Sie auf **Meine Auswahl
    speichern**.
 
-![Meine Benachrichtigungen mit den Kästen Einträge, denen ich folge, E-Mail-Digest und Benachrichtigung zur Zusammenarbeit](../../../eng-us/help/manual/images/notification-settings.webp)
+![Meine Benachrichtigungen mit den Kästen Einträge, denen ich folge, E-Mail-Digest und Benachrichtigung zur Zusammenarbeit](bilder/notification-settings.webp)
 
 ## Was schiefgehen kann
 

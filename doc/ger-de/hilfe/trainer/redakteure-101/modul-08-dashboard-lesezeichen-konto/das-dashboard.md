@@ -98,7 +98,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - **Dateien hochladen** hat die Upload-Seite mit einem Zielort in der Medienbibliothek geöffnet.
 - Alle Teilnehmenden haben eine Routinekarte, die der Trainer für zwei oder drei von ihnen vorliest.
 
-![Das Dashboard: Schnellaktionen, die Zähler und die Listen der neuesten Inhalte mit ihren Autoren](../../../../../eng-us/help/images/trainers/e101-dashboard-blocks.webp)
+![Das Dashboard: Schnellaktionen, die Zähler und die Listen der neuesten Inhalte mit ihren Autoren](../../../bilder/trainers/e101-dashboard-blocks.webp)
 
 ## Quiz
 

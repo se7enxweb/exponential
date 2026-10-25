@@ -114,9 +114,9 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Schritt 8 nennt das Konto der Teilnehmerin oder des Teilnehmers.
 - Der Trainer prüft die Ergebnismeldung bei einer Person und fragt, welchen Shell-Befehl sie gezeigt hat.
 
-![Cache-Verwaltung: alles leeren, den Cache der Inhaltsansichten, die INI- und Template-Caches oder gewählte Caches](../../../../../eng-us/help/images/trainers/sa-cache-page.webp)
+![Cache-Verwaltung: alles leeren, den Cache der Inhaltsansichten, die INI- und Template-Caches oder gewählte Caches](../../../bilder/trainers/sa-cache-page.webp)
 
-![Der Kasten Cache leeren oben in der rechten Spalte](../../../../../eng-us/help/images/trainers/sa-cache-box.webp)
+![Der Kasten Cache leeren oben in der rechten Spalte](../../../bilder/trainers/sa-cache-box.webp)
 
 ## Quiz
 

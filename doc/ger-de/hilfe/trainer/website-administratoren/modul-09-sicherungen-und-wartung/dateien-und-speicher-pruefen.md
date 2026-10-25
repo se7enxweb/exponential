@@ -128,7 +128,7 @@ Installation.
 - Der Trainer prüft, dass alle Teilnehmenden die Datei aus Schritt 3 und die Datei aus Schritt 6 wiederhergestellt
   haben.
 
-![Speicherdateien: Dateien, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten](../../../../../eng-us/help/images/trainers/sa-storage.webp)
+![Speicherdateien: Dateien, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten](../../../bilder/trainers/sa-storage.webp)
 
 ## Quiz
 

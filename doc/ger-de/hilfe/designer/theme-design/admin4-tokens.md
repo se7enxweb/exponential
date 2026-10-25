@@ -41,9 +41,9 @@ diese Seite ist die Zusammenfassung für Designer.
 
 Die hellen Werte stehen auf `:root`. Die dunklen Werte stehen in einem einzigen Block:
 
-![Die Karten des Dashboards im hellen Modus, gezeichnet mit den hellen Werten der admin4-Token](../../../../eng-us/help/images/designers/admin4-tokens-light.webp)
+![Die Karten des Dashboards im hellen Modus, gezeichnet mit den hellen Werten der admin4-Token](../../bilder/designers/admin4-tokens-light.webp)
 
-![Dieselben Karten im dunklen Modus, gezeichnet mit den dunklen Werten derselben Token](../../../../eng-us/help/images/designers/admin4-tokens-dark.webp)
+![Dieselben Karten im dunklen Modus, gezeichnet mit den dunklen Werten derselben Token](../../bilder/designers/admin4-tokens-dark.webp)
 
 ```css
 html[data-a4-theme="dark"]:not(:where([data-a4-modes="light"])) {

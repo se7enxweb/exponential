@@ -15,7 +15,7 @@ in einer Karte ab, zeigt Fehler an ihren Feldern und lässt Sie das ganze Paket 
 er schreibt, hat sich nicht geändert. Die vollständige Beschreibung, mit jedem Template und jedem gesendeten Namen, ist
 [Der Paketassistent](../../../funktionen/6.0/paketassistent.md); diese Seite ist die Kurzanleitung.
 
-![Paket erstellen: die vier Assistenten](../../../../eng-us/help/images/help/sp-wizard.webp)
+![Paket erstellen: die vier Assistenten](../../bilder/help/sp-wizard.webp)
 
 ## Inhalt
 

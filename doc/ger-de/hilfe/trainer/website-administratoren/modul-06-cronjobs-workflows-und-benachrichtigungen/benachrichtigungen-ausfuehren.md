@@ -135,7 +135,7 @@ alle Testkonten verwenden Adressen unter `example.invalid`.
 - Schritt 8 gab Zeilen *Would remove* aus und änderte nichts.
 - Der Trainer prüft die Liste **Letzte Läufe** einer Teilnehmerin oder eines Teilnehmers am Beamer.
 
-![Benachrichtigungsstatus: wartende Benachrichtigungen und die letzten Läufe](../../../../../eng-us/help/images/trainers/sa-notifications.webp)
+![Benachrichtigungsstatus: wartende Benachrichtigungen und die letzten Läufe](../../../bilder/trainers/sa-notifications.webp)
 
 ## Quiz
 

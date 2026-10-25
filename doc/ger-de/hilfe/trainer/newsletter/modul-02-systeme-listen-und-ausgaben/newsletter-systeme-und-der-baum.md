@@ -109,7 +109,7 @@ Ihren Vornamen.
   funktioniert.
 - Der Trainer prüft das, indem er die Wurzel öffnet und pro Person ein neues System zählt.
 
-![Die Einstellungsseite des Newsletters](../../../../../eng-us/help/images/trainers/nl-settings.webp)
+![Die Einstellungsseite des Newsletters](../../../bilder/trainers/nl-settings.webp)
 
 ## Quiz
 

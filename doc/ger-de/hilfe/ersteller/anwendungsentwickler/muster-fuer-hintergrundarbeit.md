@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Anwendungsentwickler, die entscheiden, wo Arbeit läuft. Eine Web-Anfrage sollte schnell antworten;
 alles, was langsam, regelmäßig oder umfangreich ist, gehört woandershin. Exponential bietet dafür vier Orte.
 
-![Das Dashboard der Job-Warteschlange, in dem die von einer Anwendung eingereihte Hintergrundarbeit erscheint](../../../../eng-us/help/images/creators/job-queue-dashboard.webp)
+![Das Dashboard der Job-Warteschlange, in dem die von einer Anwendung eingereihte Hintergrundarbeit erscheint](../../bilder/creators/job-queue-dashboard.webp)
 
 ## Inhalt
 

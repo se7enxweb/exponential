@@ -33,7 +33,7 @@ Ihrer Rolle ab: Die meisten Redakteure sehen nur **Look And Feel** und **Missing
 3. Prüfen Sie die Website nach einer Änderung in einem privaten Fenster: Besucher sehen eine kurze Zeit lang vielleicht
    eine Seite aus dem Cache.
 
-![Der Tab Design mit seinem linken Menü: Look And Feel, Werkzeugleisten Verwaltung, Menüs (klassisch), Template-Editor und Missing alt text](../../../eng-us/help/manual/images/design-tab.webp)
+![Der Tab Design mit seinem linken Menü: Look And Feel, Werkzeugleisten Verwaltung, Menüs (klassisch), Template-Editor und Missing alt text](bilder/design-tab.webp)
 
 ## Was schiefgehen kann
 

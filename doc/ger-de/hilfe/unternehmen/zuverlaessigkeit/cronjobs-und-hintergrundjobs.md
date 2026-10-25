@@ -16,7 +16,7 @@ versenden, Sitemaps erstellen. Wenn diese Arbeit stoppt, geht zunächst nichts s
 sie Aufmerksamkeit. Die vollständige Anleitung ist
 [Cronjobs: ausführen, planen und verfolgen](../../../anleitungen/cronjobs.md).
 
-![Die Seite Cronjobs](../../../../eng-us/help/images/help/bu-cron.webp)
+![Die Seite Cronjobs](../../bilder/help/bu-cron.webp)
 
 ## Inhalt
 

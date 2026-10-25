@@ -14,9 +14,9 @@ Stelle, jedes Quartal. Menschen wechseln die Stelle und gehen; ihr Zugang muss f
 aus [Rollen, Richtlinien und nicht aktivierte Benutzer](../../../anleitungen/rollen-und-richtlinien.md),
 [Benutzerkonten prüfen](../../../funktionen/6.0/benutzerpflege.md) und [Sicherheit und Audit](../../../anleitungen/sicherheit-und-audit.md).
 
-![Benutzerkonten prüfen: nie angemeldet, seit 180 Tagen nicht gesehen, deaktivierte und gesperrte Konten, der Ausgangspunkt einer Zugriffsprüfung](../../../../eng-us/help/images/government/gov-access-review.webp)
+![Benutzerkonten prüfen: nie angemeldet, seit 180 Tagen nicht gesehen, deaktivierte und gesperrte Konten, der Ausgangspunkt einer Zugriffsprüfung](../../bilder/government/gov-access-review.webp)
 
-![Die Rollen der Installation mit ihren Richtlinien und Zuweisungen](../../../../eng-us/help/images/government/gov-roles.webp)
+![Die Rollen der Installation mit ihren Richtlinien und Zuweisungen](../../bilder/government/gov-roles.webp)
 
 ## Inhalt
 

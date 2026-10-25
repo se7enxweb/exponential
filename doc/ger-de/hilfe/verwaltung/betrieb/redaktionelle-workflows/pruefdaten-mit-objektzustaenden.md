@@ -14,7 +14,7 @@ veraltete Informationen nicht online bleiben. Exponential hat **kein eingebautes
 sind Objektzustände, Datumsfelder, auf die Cronjobs reagieren, und Fetches; diese Seite zeigt, wie Sie sie kombinieren. Quellen:
 [Objektzustände](../../../../anleitungen/objektzustaende.md), `settings/content.ini` und die Cronjobs in `cronjobs/`.
 
-![Objektzustandsgruppen und ihre Zustände, verwendet für Prüfphasen](../../../../../eng-us/help/images/government/gov-states.webp)
+![Objektzustandsgruppen und ihre Zustände, verwendet für Prüfphasen](../../../bilder/government/gov-states.webp)
 
 ## Inhalt
 1. [Was es gibt](#was-es-gibt)

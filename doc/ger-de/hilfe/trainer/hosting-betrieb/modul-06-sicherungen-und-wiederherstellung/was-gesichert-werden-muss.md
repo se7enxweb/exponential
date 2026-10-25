@@ -114,7 +114,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Benutzer der Website, und b
   ausgeschlossenen Caches.
 - Der Trainer prüft die Archivliste einer Person am Beamer, ohne Dateiinhalte zu zeigen.
 
-![Sicherungen in der Administration](../../../../../eng-us/help/images/trainers/ho-backups.webp)
+![Sicherungen in der Administration](../../../bilder/trainers/ho-backups.webp)
 
 ## Quiz
 

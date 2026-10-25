@@ -59,9 +59,9 @@ In der Administration führt **Profil bearbeiten** in der linken Spalte des Dash
 zu **Mein Konto**: Ihr Konto auf einen Blick (Login, E-Mail-Adresse, Gruppen, Rollen, letzte Anmeldung) und alle
 Seiten, auf denen Sie es ändern können.
 
-![Mein Konto in der Administration](../../eng-us/help/images/my-account.webp)
+![Mein Konto in der Administration](bilder/my-account.webp)
 
-![Der Kasten Aktueller Benutzer in der rechten Spalte mit Informationen ändern und, umrandet, Passwort ändern](../../eng-us/help/images/accounts/current-user-box.webp)
+![Der Kasten Aktueller Benutzer in der rechten Spalte mit Informationen ändern und, umrandet, Passwort ändern](bilder/accounts/current-user-box.webp)
 
 | Karte | Was Sie tun können |
 |---|---|
@@ -85,7 +85,7 @@ Ihre Entwürfe, Ihre wartenden Objekte und Ihre Benachrichtigungseinstellungen.
    Passwort erzeugen** erstellt eines für Sie; **Anzeigen** zeigt, was Sie eingegeben haben.
 3. Klicken Sie auf **Passwort ändern**.
 
-![Das Formular Passwort ändern mit dem alten Passwort, dem neuen Passwort und seiner Bestätigung](../../eng-us/help/images/accounts/change-password-form.webp)
+![Das Formular Passwort ändern mit dem alten Passwort, dem neuen Passwort und seiner Bestätigung](bilder/accounts/change-password-form.webp)
 
 Verwenden Sie ein Passwort, das Sie nirgendwo sonst benutzen. Ein Passwortmanager merkt es sich für Sie.
 
@@ -109,7 +109,7 @@ erfährt, kommt trotzdem nicht hinein.
    zeigt** ein. Solange dieser Code nicht stimmt, ändert sich nichts.
 4. Klicken Sie auf **Einstellungen speichern**. Die neue Einstellung gilt ab Ihrer nächsten Anmeldung.
 
-![Den zweiten Schritt wählen](../../eng-us/help/images/two-step-setup.webp)
+![Den zweiten Schritt wählen](bilder/two-step-setup.webp)
 
 ### Damit anmelden
 
@@ -139,9 +139,9 @@ dem Passwort aufgefordert, sie einzurichten.
   Benachrichtigungen hinzufügen** oder auf der Einstellungsseite **Einträge hinzufügen**. Eine **Zusammenfassung**
   sammelt die Nachrichten in einer E-Mail pro Tag, Woche oder Monat statt einer pro Änderung.
 
-![Meine E-Mail-Einstellungen: die Arten von E-Mails und ob Sie sie jeweils erhalten](../../eng-us/help/images/accounts/email-preferences.webp)
+![Meine E-Mail-Einstellungen: die Arten von E-Mails und ob Sie sie jeweils erhalten](bilder/accounts/email-preferences.webp)
 
-![Meine Benachrichtigungseinstellungen: die Bereiche der Site, denen Sie folgen, und wie oft Sie E-Mails dazu bekommen](../../eng-us/help/images/accounts/notification-settings.webp)
+![Meine Benachrichtigungseinstellungen: die Bereiche der Site, denen Sie folgen, und wie oft Sie E-Mails dazu bekommen](bilder/accounts/notification-settings.webp)
 
 **Auf einer öffentlichen Demo** (ein Hinweisbalken **Demo-Modus** in der Administration) lassen sich die Passwörter von Administratorkonten weder ändern noch zurücksetzen; andere Konten funktionieren wie gewohnt. [Demo-Modus](demomodus.md).
 

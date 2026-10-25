@@ -15,7 +15,7 @@ ein Produktions-Pool setzen sollte, welche PHP-Funktionen Funktionen von Exponen
 funktioniert, wenn ein Hoster sie deaktiviert) und wo die Einstellungen liegen, wenn Velocity oder FrankenPHP statt
 PHP-FPM PHP ausführt.
 
-![Setup, INI-Einstellungen: die INI-Einstellungen eines Siteaccess lesen und woher jeder Wert kommt](../../../../eng-us/help/images/hosting/ini-settings.webp)
+![Setup, INI-Einstellungen: die INI-Einstellungen eines Siteaccess lesen und woher jeder Wert kommt](../../bilder/hosting/ini-settings.webp)
 
 ## Inhalt
 

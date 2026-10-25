@@ -32,7 +32,7 @@ Benutzerobjekt; die meisten Rollen haben das.
    - **Benachrichtigungen**: **Benachrichtigungseinstellungen**, die Inhalte, denen Sie folgen.
    - **E-Mail-Einstellungen**: welche E-Mails Sie bekommen.
 
-![Mein Konto mit der Zusammenfassung des Kontos und der Liste Ihr Konto verwalten](../../../eng-us/help/manual/images/my-account.webp)
+![Mein Konto mit der Zusammenfassung des Kontos und der Liste Ihr Konto verwalten](bilder/my-account.webp)
 
 ## Was schiefgehen kann
 

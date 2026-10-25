@@ -114,7 +114,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Trainer prüft die Rollenseite auf dem Bildschirm einer Person und fragt, warum die Rolle noch niemandem etwas
   gibt.
 
-![Die Seite einer Rolle: ihre Richtlinien mit Modul, Funktion und Einschränkungen](../../../../../eng-us/help/images/trainers/sa-editor-role.webp)
+![Die Seite einer Rolle: ihre Richtlinien mit Modul, Funktion und Einschränkungen](../../../bilder/trainers/sa-editor-role.webp)
 
 ## Quiz
 

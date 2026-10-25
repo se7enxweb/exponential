@@ -36,9 +36,9 @@ Ein guter Umschalter bietet drei Möglichkeiten: hell, dunkel und „System“ (
 sich ändert, während die Seite offen ist). Ohne jede Auswahl kann ein öffentliches Design dem System allein mit
 `prefers-color-scheme` folgen ([Dunkler Modus mit prefers-color-scheme](dunkelmodus-mit-prefers-color-scheme.md)).
 
-![Die Administration im hellen Modus: das Dashboard mit Kopfbereich, linker Spalte und Karten](../../../../eng-us/help/images/designers/dashboard-light.webp)
+![Die Administration im hellen Modus: das Dashboard mit Kopfbereich, linker Spalte und Karten](../../bilder/designers/dashboard-light.webp)
 
-![Dasselbe Dashboard im dunklen Modus: Jede Karte, jeder Text und jedes Bedienelement übernimmt seinen dunklen Token-Wert](../../../../eng-us/help/images/designers/dashboard-dark.webp)
+![Dasselbe Dashboard im dunklen Modus: Jede Karte, jeder Text und jedes Bedienelement übernimmt seinen dunklen Token-Wert](../../bilder/designers/dashboard-dark.webp)
 
 ## Wie admin4 es macht
 

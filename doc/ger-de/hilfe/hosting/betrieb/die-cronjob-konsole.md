@@ -33,7 +33,7 @@ der Funktion ist [Cronjob-Konsole](../../../funktionen/6.0/cronjobs-in-der-konso
 
 **Setup > Cronjobs** (`/setup/cronjobs`) zeigt eine Karte oder Zeile pro Teil:
 
-![Setup, Cronjobs: die Cronjob-Teile mit ihren Skripten, dem letzten Lauf und den Schaltflächen zum Starten oder Anhalten](../../../../eng-us/help/images/hosting/cronjobs-console.webp)
+![Setup, Cronjobs: die Cronjob-Teile mit ihren Skripten, dem letzten Lauf und den Schaltflächen zum Starten oder Anhalten](../../bilder/hosting/cronjobs-console.webp)
 
 - ob die Crontab ihn ausführt, seinen Zeitplan in Worten, seinen nächsten und letzten Lauf;
 - den Shell-Befehl, der ihn ausführt, mit einer Schaltfläche **Kopieren**;

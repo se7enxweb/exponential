@@ -120,7 +120,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Schritt 10: Der Terminalbericht zeigt die Kommandozeilen-SAPI `cli`, oft mit ausgeschaltetem OPcache.
 - Der Trainer prüft das, indem er alle Teilnehmenden nach einer Zustandsprüfung und ihrem Rat fragt.
 
-![Systeminformationen mit den Zustandsprüfungen für PHP, die Datenbank und den Server](../../../../../eng-us/help/images/trainers/sa-system-info.webp)
+![Systeminformationen mit den Zustandsprüfungen für PHP, die Datenbank und den Server](../../../bilder/trainers/sa-system-info.webp)
 
 ## Quiz
 

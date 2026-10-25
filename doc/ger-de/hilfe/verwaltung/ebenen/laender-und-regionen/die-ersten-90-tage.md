@@ -13,7 +13,7 @@ Diese Seite richtet sich an Projektverantwortliche und Administratorinnen und Ad
 eines Landes oder einer Region mit Exponential leiten. Sie folgt drei Phasen von jeweils etwa 30 Tagen. Sie setzt voraus,
 dass eine Installation existiert ([Erste Schritte](../../../../anleitungen/erste-schritte.md)).
 
-![Das Dashboard der Administration nach der ersten Anmeldung](../../../../../eng-us/help/images/government/gov-dashboard.webp)
+![Das Dashboard der Administration nach der ersten Anmeldung](../../../bilder/government/gov-dashboard.webp)
 
 ## Inhalt
 

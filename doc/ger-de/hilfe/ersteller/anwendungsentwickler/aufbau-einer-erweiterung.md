@@ -14,7 +14,7 @@ ist ein Verzeichnis unter `extension/` (oder in einem zusätzlichen Erweiterungs
 Teile über Verzeichnisnamen und über die Einstellungen, die die Erweiterung mitbringt
 ([Erweiterungen](../../../anleitungen/extensions.md)).
 
-![Die Seite "Über" der Administration, auf der Version und Lizenz einer Erweiterung erscheinen](../../../../eng-us/help/images/creators/about-extensions.webp)
+![Die Seite "Über" der Administration, auf der Version und Lizenz einer Erweiterung erscheinen](../../bilder/creators/about-extensions.webp)
 
 ## Inhalt
 

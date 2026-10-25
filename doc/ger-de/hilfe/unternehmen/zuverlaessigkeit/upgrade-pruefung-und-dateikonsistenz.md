@@ -15,7 +15,7 @@ erklärt, was die Upgrade-Prüfung vergleicht, was jeder Befund für ein Unterne
 Die vollständige Anleitung ist [Die Upgrade-Prüfung](../../../anleitungen/upgrade-pruefung.md); das Manifest dahinter beschreibt
 [Prüfung der Dateikonsistenz](../../../funktionen/6.0/dateikonsistenzpruefung.md).
 
-![Die Upgrade-Prüfung mit den Prüfungen der Datei- und Datenbankkonsistenz](../../../../eng-us/help/images/help/bu-upgrade.webp)
+![Die Upgrade-Prüfung mit den Prüfungen der Datei- und Datenbankkonsistenz](../../bilder/help/bu-upgrade.webp)
 
 ## Inhalt
 

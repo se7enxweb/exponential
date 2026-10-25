@@ -15,7 +15,7 @@ Maßnahme für Zuverlässigkeit ist, welche Schichten Exponential bietet, was ab
 Regeln verhindern, dass Caches selbst Probleme verursachen. Die vollständige technische Übersicht finden Sie unter
 [Cache-Schichten](../../hosting/leistung/cache-schichten.md) und [Caches](../../../anleitungen/caches.md).
 
-![Systeminformationen mit den Zustandsprüfungen](../../../../eng-us/help/images/help/bu-sysinfo.webp)
+![Systeminformationen mit den Zustandsprüfungen](../../bilder/help/bu-sysinfo.webp)
 
 ## Inhalt
 

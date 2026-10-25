@@ -114,7 +114,7 @@ Der [Lesepfad](lesepfad-fuer-nicht-technische-menschen.md) bringt alle Seiten in
 | [Lokale Unternehmen](../../../eng-us/help/local-businesses/local-businesses-start-here.md) | Geschäfte, Handwerk und Praxen mit einem Standort |
 | [Gemeinnützige Organisationen](../../../eng-us/help/non-profits/non-profits-start-here.md) | Wohltätige Vereine, Stiftungen und Gruppen von Ehrenamtlichen |
 
-![Das Dashboard der Administration von Exponential](../../../eng-us/help/images/admin-dashboard.webp)
+![Das Dashboard der Administration von Exponential](../bilder/admin-dashboard.webp)
 
 ## Verwandte Seiten
 

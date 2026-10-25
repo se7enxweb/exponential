@@ -80,7 +80,7 @@ die Name, Version, Lizenz und Website Ihres Themes unter **Setup > Über** (`/ez
 - **Die Lizenzzeile muss zur Datei `LICENSE` passen.** Steht das Theme unter der GPL, schreiben Sie den vollen Namen der
   Lizenz wie oben.
 
-![Die Seite Über der Administration, die jede Erweiterung mit der Version, der Lizenz und der Website aus ihrer ezinfo.php oder extension.xml auflistet](../../../../eng-us/help/images/designers/about-page.webp)
+![Die Seite Über der Administration, die jede Erweiterung mit der Version, der Lizenz und der Website aus ihrer ezinfo.php oder extension.xml auflistet](../../bilder/designers/about-page.webp)
 
 ## Verwandte Seiten
 

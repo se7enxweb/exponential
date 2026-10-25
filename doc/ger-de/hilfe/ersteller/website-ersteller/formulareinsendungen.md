@@ -14,7 +14,7 @@ Einsendung eines Formulars des Informationssammlers wird als **Sammlung** gespei
 **Setup > Gesammelte Informationen** (`/infocollector/overview`) aufgelistet. Vollständige Referenz:
 [Gesammelte Informationen](../../../anleitungen/gesammelte-informationen.md).
 
-![Gesammelte Informationen: die Formulare der Website und was Besucher darüber gesendet haben](../../../../eng-us/help/images/creators/collected-information.webp)
+![Gesammelte Informationen: die Formulare der Website und was Besucher darüber gesendet haben](../../bilder/creators/collected-information.webp)
 
 ## Inhalt
 

@@ -13,9 +13,9 @@ Diese Seite beantwortet die Supportfragen öffentlicher Stellen zu Exponential. 
 [Support erhalten](../../projekt/unterstuetzung-erhalten.md),
 [Supportstufen und Reaktionszeiten](../../partner/support-stufen-und-reaktionszeiten.md) und `SECURITY.md`.
 
-![Das Hilfezentrum in der Administration, mit der Hilfe für Verwaltungen unter den Zielgruppen](../../../../eng-us/help/images/government/gov-help.webp)
+![Das Hilfezentrum in der Administration, mit der Hilfe für Verwaltungen unter den Zielgruppen](../../bilder/government/gov-help.webp)
 
-![Fehler melden: wohin jede Art von Problem gehört, und eine sichere Zusammenfassung der Installation](../../../../eng-us/help/images/government/gov-report.webp)
+![Fehler melden: wohin jede Art von Problem gehört, und eine sichere Zusammenfassung der Installation](../../bilder/government/gov-report.webp)
 
 ## Inhalt
 

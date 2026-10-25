@@ -109,7 +109,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Trainer prüft nach Schritt 9 die Rolle Anonymous auf dem Bildschirm einer Person: Es ist keine Richtlinie
   `user / register` mehr übrig.
 
-![Die Richtlinien der Rolle Anonymous: was nicht angemeldete Besucher lesen dürfen](../../../../../eng-us/help/images/trainers/sa-anonymous.webp)
+![Die Richtlinien der Rolle Anonymous: was nicht angemeldete Besucher lesen dürfen](../../../bilder/trainers/sa-anonymous.webp)
 
 ## Quiz
 

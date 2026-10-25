@@ -140,7 +140,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, in einem Terminal im Wurzelverz
 - Der Trainer prüft die Datei `.mail` einer Teilnehmerin oder eines Teilnehmers am Beamer: Die Fußzeile nennt die
   Schulungsorganisation.
 
-![E-Mail-Einstellungen: die E-Mail-Kategorien und die Mail-Sperre](../../../../../eng-us/help/images/trainers/sa-mail-prefs.webp)
+![E-Mail-Einstellungen: die E-Mail-Kategorien und die Mail-Sperre](../../../bilder/trainers/sa-mail-prefs.webp)
 
 ## Quiz
 

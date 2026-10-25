@@ -96,7 +96,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner (mit mindestens vie
 - Schritt 9 hat gezeigt, dass ein Klick auf eine Spalte die Sortierung des Ordners nicht ändert.
 - Der Trainer prüft das, indem er eine Person bittet, am Beamer eine Zeile nur mit der Tastatur zu bewegen.
 
-![Der Tab Sortierung: das Feld und die Richtung, nach denen die Unterelemente sortiert werden, und Setzen](../../../../../eng-us/help/images/trainers/e201-sorting.webp)
+![Der Tab Sortierung: das Feld und die Richtung, nach denen die Unterelemente sortiert werden, und Setzen](../../../bilder/trainers/e201-sorting.webp)
 
 ## Quiz
 

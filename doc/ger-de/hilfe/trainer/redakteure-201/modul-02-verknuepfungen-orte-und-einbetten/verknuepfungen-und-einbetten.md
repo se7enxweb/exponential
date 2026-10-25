@@ -114,7 +114,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
   (möglicherweise keine).
 - Der Trainer prüft das, indem er den Tab **Verknüpfungen** des eingebetteten Bildes am Beamer öffnet.
 
-![Der Tab Verknüpfungen: verknüpfte Objekte und rückwärts verknüpfte Objekte](../../../../../eng-us/help/images/trainers/e201-relations-tab.webp)
+![Der Tab Verknüpfungen: verknüpfte Objekte und rückwärts verknüpfte Objekte](../../../bilder/trainers/e201-relations-tab.webp)
 
 ## Quiz
 
