@@ -2506,6 +2506,74 @@
         <source>%count selected.</source>
         <translation>%count selected.</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>This page is in your bookmarks. Open to change its name or folder.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Add this page to your bookmarks.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Bookmarked</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bookmark this page</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>The bookmark keeps the address of this page with its parameters: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Save bookmark</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Add bookmark</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>My bookmarks</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>System page</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>System pages</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>You may no longer open this page.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>The address of this page is missing. Remove the bookmark and bookmark the page again.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Module and view</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -57073,6 +57141,38 @@ your account.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Added %count bookmark(s).</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>System page</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>System pages cannot be bookmarked yet: the database update of this version has not been run.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>This page cannot be bookmarked: it is not a page of a module view.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>This page cannot be bookmarked: you may not open it.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>The page could not be bookmarked.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>The page "%name" is in your bookmarks.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>The bookmark could not be renamed: it needs a name.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>The bookmark was renamed to "%name".</translation>
     </message>
 </context>
 <context>
