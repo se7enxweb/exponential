@@ -3280,7 +3280,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-1bc1ccf798691c89c6632b236bb80536  doc/changelogs/6.0/6.0.15.md
+993a8e8502c9f1bcaeccb613fa7b454f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -22884,8 +22884,8 @@ cbad7ff8cbff9c9526c8e5b03afc52d7  kernel/private/classes/views/workflow/processl
 db2a22f8e4fb77185b39ae42170e9fed  kernel/private/classes/views/workflow/view.php
 87156798d6fdd3cbc3e11b0eb02909ee  kernel/private/classes/views/workflow/workflowlist.php
 ac7f0afbf35787c24fb3bac4c8a49ac8  kernel/private/classes/webdav/expwebdavpathfactory.php
-84ae480f2f10f52fc17ffa347a205aa2  kernel/private/classes/webdav/ezwebdavcontentbackend.php
-31c010d3f43e635c29a4ed88aa0d5044  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
+9505033890d20cf998174326b9b5ee29  kernel/private/classes/webdav/ezwebdavcontentbackend.php
+58bfa419ff9c37595d50cae0aa42015c  kernel/private/classes/webdav/ezwebdavcontentbackendauth.php
 6d252912d19edc3b3120b059668fbe59  kernel/private/eztemplate/ezpattributeoperatorformatter.php
 b8448bbe375187aaa67945e723b56cbe  kernel/private/eztemplate/ezpattributeoperatorformatterinterface.php
 526e26493424e1bad115463e1689d166  kernel/private/eztemplate/ezpattributeoperatorhtmlformatter.php
@@ -25602,6 +25602,8 @@ ccedf985750dd7fe3adf44e8e474cdc3  tests/tests/kernel/private/contentapi/ezpConte
 6b7f3234a135dd559ce03c87c04cd259  tests/tests/kernel/private/expAdminViewsDebugCleanTest.php
 851bc8e31554933c96549ffcfdb15a4b  tests/tests/kernel/private/expGlobalFunctionCollisionTest.php
 69ed472b64dcf9aa536c72dc727301ee  tests/tests/kernel/private/expTreeMenuErrorStatusTest.php
+a78a4e2fe294915b07d65af9d98d599e  tests/tests/kernel/private/expWebdavAuthorizeTest.php
+57cc173e4d084a960d4643268599f3fd  tests/tests/kernel/private/expWebdavBackendRefusalTest.php
 b6b6e540825226d42728ede902f6b71e  tests/tests/kernel/private/ezp_api/ezpcontent_regression.php
 d99d278d87120c88f0d79c961fc6ccdc  tests/tests/kernel/private/ezp_api/suite.php
 4da85a88c01da664a6eee41080c9ed23  tests/tests/kernel/private/ezpautoloadgenerator_test.php
@@ -26262,4 +26264,4 @@ ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 fb435fb35c8082f6f419c824fbc14cf0  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
-9d82483e7374b4b6f6a7a8547ef8ebd8  webdav.php
+1d8a3b4f06940a3e1c110786b909946f  webdav.php

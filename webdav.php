@@ -139,6 +139,9 @@ if ( $enable === 'true' )
         eZWebDAVContentBackend::usePathFactory( $server );
 
         $backend = new eZWebDAVContentBackend();
+        // without an authorizer nothing checked what a request for the root could list; with it the
+        // children of the root go through eZWebDAVContentBackendAuth::authorize() (user/login policy) too.
+        $server->auth = new eZWebDAVContentBackendAuth();
         $server->handle( $backend );
     }
     // Else: need to login with username/password:
