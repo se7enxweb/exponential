@@ -2287,6 +2287,74 @@
         <source>Open or close the folder</source>
         <translation>Åpne eller lukk mappen</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Denne siden er i bokmerkene dine. Åpne for å endre navnet eller mappen.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Legg til denne siden i bokmerkene dine.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Bokmerket</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bokmerk denne siden</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Bokmerket tar vare på adressen til denne siden med parameterne: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Lagre bokmerke</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Legg til bokmerke</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mine bokmerker</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemside</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemsider</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Du har ikke lenger lov til å åpne denne siden.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åpne</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adressen til denne siden mangler. Fjern bokmerket, og bokmerk siden på nytt.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du har ikke lenger lov til å åpne denne siden. Fjern bokmerket, eller be en administrator om tilgang.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul og visning</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Systemsider kan også bokmerkes: åpne siden (Oppsett, revisjonssporet, en liste over brukere ...) og velg Bokmerk denne siden over den. Slike bokmerker har et tannhjulikon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7813,6 +7881,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>De nyeste foruminnleggene kunne ikke lastes inn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobber</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ingen cronjobbdel har kjørt ennå: jobbkøen, importene, varslene og søkeindeksen venter. Kjør php bin/php/installcrontab.php --add, eller legg linjene fra --show til i crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>En cronjobbdel har ikke kjørt på lengre tid enn tidsplanen tillater: kontroller crontab (php bin/php/installcrontab.php --show) og loggene var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Tidsplan</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Sist startet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldri</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>i tide</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>forsinket</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>aldri kjørt</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Installasjonen har ingen cronjobbdel som cronjobben kan kjøre.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Oppsett &gt; Cronjobber</translation>
     </message>
 </context>
 <context>
@@ -18403,6 +18526,10 @@ Merk: Pakkene blir ikke avinstallert.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktivere brukerkontoer og flytte dem til gruppen for deaktiverte brukere, og flytte dem tilbake</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>se hvor andre brukere er logget inn, og logge dem ut</translation>
     </message>
 </context>
 <context>
@@ -38653,6 +38780,58 @@ kontoen din.</translation>
         <source>Open e-mail preferences</source>
         <translation>Åpne e-postinnstillinger</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enhetene dine</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Økter</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Hvor du er logget inn: nettleser, system, sted og tid. Logg ut en enhet du ikke kjenner igjen.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Hvor denne brukeren er logget inn, og utlogging av brukeren overalt.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Administrer enheter</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Vis økter</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count logget inn</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Tilgangsnøkler</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Logg inn med fingeravtrykk, ansikt, skjermlås eller sikkerhetsnøkkel i stedet for passordet.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Administrer tilgangsnøkler</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Legg til en tilgangsnøkkel</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count tilgangsnøkler</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Ingen ennå</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -40621,6 +40800,30 @@ kontoen din.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klasse/attributt-kombinasjoner (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Brukergrupper der nye kontoer må godkjennes</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>En konto som publiseres i en av disse gruppene, eller under en av dem, venter til en godkjenner godtar den. Før det kan den ikke logge inn.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Brukere som godkjenner kontoene</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupper som godkjenner kontoene</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Brukergrupper som ikke trenger godkjenning (medlemmene publiserer slike kontoer direkte; godkjennere trenger det aldri)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Send godkjennerne en e-post med lenken til godkjenningen (de logger inn for å godkjenne eller avvise)</translation>
     </message>
 </context>
 <context>
@@ -44882,6 +45085,14 @@ Hvis du vil sende en kommentar til den som skal godkjenne, eller se på status, 
     <message>
         <source>required</source>
         <translation>Påkrevet</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Endre passord ved neste innlogging</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Etter innlogging må brukeren velge et nytt passord før noe annet kan gjøres. Bruk dette når du gir noen et midlertidig passord.</translation>
     </message>
 </context>
 <context>
@@ -51967,6 +52178,22 @@ Se siden med krav for mer informasjon.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Miljøvariabelen EXP_DEMO_MODE=1 merker denne installasjonen som en offentlig demo: et velkjent administratorpassord godtas, og administratorpassord kan ikke endres eller nullstilles senere. Bruk aldri demomodus for et produksjonsnettsted.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobber</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cronjobbene kjøres fra crontab til brukeren %user, som eier installasjonen.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Installasjonen har ingen cronjobbdel å planlegge.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab ble ikke skrevet (%reason). Legg til disse linjene i crontab til brukeren nettstedet kjører som, ellers kjøres aldri køen, importene, varslene og søkeindeksen:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54550,6 +54777,10 @@ kontoen din.</translation>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Velg et nytt passord før du fortsetter: en administrator har bedt deg om å erstatte passordet du har nå.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -55501,6 +55732,22 @@ kontoen din.</translation>
     <message>
         <source>ClassAttribute name</source>
         <translation>Navn på klasseattributt</translation>
+    </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Kontoer som må godkjennes</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-post til godkjennerne</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
     </message>
 </context>
 <context>
@@ -56920,6 +57167,14 @@ denne feilen. Ikke prøv å sende betalingen på nytt.</translation>
         <source>Your comment was added.</source>
         <translation>Kommentaren din ble lagt til.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Kontoen &quot;%1&quot; ble godkjent og publisert: den kan logge inn nå.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Kontoen &quot;%1&quot; ble avvist. Den er ikke publisert og kan ikke logge inn; den er igjen et utkast hos forfatteren.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -57230,6 +57485,38 @@ denne feilen. Ikke prøv å sende betalingen på nytt.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>La til %count bokmerke(r).</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemside</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemsider kan ikke bokmerkes ennå: databaseoppdateringen for denne versjonen er ikke kjørt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Denne siden kan ikke bokmerkes: den er ikke en side i en modulvisning.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Denne siden kan ikke bokmerkes: du har ikke lov til å åpne den.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Siden kunne ikke bokmerkes.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Siden &quot;%name&quot; er i bokmerkene dine.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Bokmerket kunne ikke gis nytt navn: det må ha et navn.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Bokmerket fikk det nye navnet &quot;%name&quot;.</translation>
     </message>
 </context>
 <context>
@@ -59323,6 +59610,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Speil til datatabeller</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Godkjenn brukerkontoer</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>En ny brukerkonto venter på din godkjenning</translation>
     </message>
 </context>
 <context>
@@ -61976,6 +62271,34 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Manglende fil merket som gjennomgått</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Passordendring ved neste innlogging satt</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Passordendring ved neste innlogging fjernet</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Sendt til passordendring</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Innlogging uten det andre trinnet avvist</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Apppassord opprettet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Apppassord tilbakekalt</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Apppassord brukt</translation>
     </message>
 </context>
 <context>
@@ -65439,6 +65762,26 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The audit trail of this node</source>
         <translation>Revisjonssporet for denne noden</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intakt</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>brutt</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ikke kontrollert</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>reparert</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tom</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -68828,6 +69171,10 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Du ble logget ut på de andre enhetene dine.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Velg et nytt passord før du fortsetter: en administrator har bedt deg om å erstatte passordet du har nå.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70930,6 +71277,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Den nye e-postadressen %email venter på bekreftelse: åpne lenken vi sendte dit. Inntil da beholder denne kontoen %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-posten om en innlogging fra en ny enhet eller nettleser er en del av kontosikkerheten. Du slår den av eller på under enhetene dine, der du også ser og logger ut øktene til kontoen din.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enhetene dine</translation>
     </message>
 </context>
 <context>
@@ -76965,6 +77320,1160 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Bla igjennom tabellene til de persistente klassene…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Ny brukerkonto venter på godkjenning: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Brukernavn</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Forespurt av</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Åpne godkjenningen</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Hvis knappen ikke virker, kopierer du denne adressen inn i nettleseren: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>En ny brukerkonto venter på din godkjenning</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester opprettet kontoen &quot;%name&quot; i %groups. Den er ikke publisert og kan ikke logge inn før en godkjenner godtar den.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Logg inn i administrasjonen, og godkjenn eller avvis den i samarbeidslisten din. Denne lenken logger deg ikke inn og avgjør ingenting av seg selv.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Denne e-posten ble sendt av %site fordi du godkjenner nye kontoer i disse gruppene.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Datamaskin</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Nettbrett</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatisert klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ukjent enhet</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passord og totrinnskode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-grensesnitt</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-grensesnitt</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enkel pålogging</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Logget inn før økter ble registrert</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ut</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Logget ut fra denne siden</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Logget ut av en administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Logget ut med &quot;alle andre økter&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Erstattet av en ny innlogging</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Avsluttet av en passordendring</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Utløpt</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enhetene dine</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Økter for %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hvor kontoen din er logget inn akkurat nå. Hvis du ikke kjenner igjen en enhet, logger du den ut og endrer passordet.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvor denne kontoen er logget inn akkurat nå. Når brukeren logges ut, avsluttes hver økt ved neste forespørsel.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tilbake til kontoen</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Økten ble logget ut. Enheten må logge inn på nytt.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andre økter ble logget ut.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Det var ingen andre økter å logge ut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count økter for denne brukeren ble logget ut.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Denne brukeren hadde ingen økter å logge ut.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dette er økten du bruker. Logg ut for å avslutte den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den økten var allerede avsluttet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får en e-post når kontoen din logger inn fra en ny enhet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får ikke lenger e-post om innlogginger fra nye enheter.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var utløpt. Ingenting ble endret; prøv igjen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Økter registreres ikke på dette nettstedet (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabellen expuser_session mangler</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Økter registreres når den er opprettet: php update/common/scripts/6.0/createusersessiontable.php, eller databaseoppdateringen for 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Logget inn nå</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logg ut alle andre økter</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logg ut overalt</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Alle enheter unntatt denne logges ut ved neste forespørsel, også de som forblir innlogget med Husk meg.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Hver økt for denne brukeren logges ut ved neste forespørsel, også de som forblir innlogget med Husk meg.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ja, logg ut de andre øktene</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ja, logg ut hver økt</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Denne enheten</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhet</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Vises som nettverket sitt; den fullstendige adressen tas vare på for administratorene.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>logget inn fra %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget inn</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Sist aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nå</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Forblir innlogget</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Husk meg, til %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Til nettleseren lukkes</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Logget inn på</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Nettleseridentifikasjon</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Logg ut for å avslutte denne økten.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logg ut</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logg ut denne økten</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ingen økt er logget inn.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Innloggingsvarsler</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Send meg en e-post når kontoen min logger inn fra en ny enhet eller nettleser</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Sendes til %email. Den oppgir enheten, omtrentlig sted og tidspunkt, og lenker til denne siden.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Dette nettstedet sender ikke innloggingsvarsler.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nylig avsluttet</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Økter som ble avsluttet de siste %days dagene.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avsluttet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvordan</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Ingen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Datamaskin</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Nettbrett</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatisert klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ukjent enhet</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Passord og totrinnskode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-grensesnitt</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-grensesnitt</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enkel pålogging</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Logget inn før økter ble registrert</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ut</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Logget ut fra denne siden</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Logget ut av en administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Logget ut med &quot;alle andre økter&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Erstattet av en ny innlogging</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Avsluttet av en passordendring</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Utløpt</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Enhetene dine</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Økter for %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hvor kontoen din er logget inn akkurat nå. Hvis du ikke kjenner igjen en enhet, logger du den ut og endrer passordet.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvor denne kontoen er logget inn akkurat nå. Når brukeren logges ut, avsluttes hver økt ved neste forespørsel.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Økten ble logget ut. Enheten må logge inn på nytt.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andre økter ble logget ut.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Det var ingen andre økter å logge ut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count økter for denne brukeren ble logget ut.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Denne brukeren hadde ingen økter å logge ut.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dette er økten du bruker. Logg ut for å avslutte den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den økten var allerede avsluttet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får en e-post når kontoen din logger inn fra en ny enhet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får ikke lenger e-post om innlogginger fra nye enheter.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var utløpt. Ingenting ble endret; prøv igjen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Økter registreres ikke på dette nettstedet.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Økter registreres ikke ennå: nettstedet trenger databaseoppdateringen sin.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Logget inn nå</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Denne enheten</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhet</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget inn</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Sist aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nå</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Forblir innlogget</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Husk meg, til %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Til nettleseren lukkes</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Logg ut for å avslutte denne økten.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logg ut</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logg ut denne økten</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logg ut alle andre økter</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logg ut overalt</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Innloggingsvarsler</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Send meg en e-post når kontoen min logger inn fra en ny enhet eller nettleser</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nylig avsluttet</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avsluttet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvordan</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Ingen de siste %days dagene.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Se hvor kontoen din er logget inn, og logg ut en enhet du ikke kjenner igjen.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Administrer enheter</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Ny innlogging på kontoen din på %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hei,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Kontoen din %login på %site ble nettopp brukt til å logge inn fra en enhet eller nettleser den ikke har brukt i det siste:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Enhet:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tid:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Omtrentlig adresse:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Hvis dette var deg, trenger du ikke gjøre noe.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Hvis det ikke var deg, kan noen kjenne passordet ditt. Logg ut den økten på siden for enhetene dine, og endre deretter passordet:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Du kan slå av disse e-postene på samme side.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Ny innlogging for %login på %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Kontoen %login logget inn fra en enhet eller nettleser den ikke har brukt i det siste.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Øktene til denne brukeren:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ny innlogging på kontoen din</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Kontoen din %login ble brukt til å logge inn fra %device (%ip) %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Hvis dette var deg, trenger du ikke gjøre noe. Hvis ikke, logg ut denne økten på %url og endre passordet.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Ny innlogging for %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Kontoen %login logget inn fra en ny enhet: %device (%ip) %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Enhetene dine</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Økter for %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Tilgangsnøkler</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>En tilgangsnøkkel logger deg inn med fingeravtrykk, ansikt, skjermlås eller sikkerhetsnøkkel i stedet for passordet. Den lagres på enheten din eller i passordbehandleren din; dette nettstedet tar bare vare på den offentlige nøkkelen, så en lekkasje her kan ikke avsløre den.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Tilgangsnøkler er slått av på dette nettstedet.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Tilgangsnøkler kan ikke brukes på dette nettstedet ennå: administratoren må først kjøre databaseoppdateringen.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Vil du fjerne tilgangsnøkkelen &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Den kan ikke lenger logge inn på denne kontoen. Fjern den også fra enheten eller passordbehandleren din.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Fjern tilgangsnøkkelen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Tilgangsnøklene dine</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count av maksimalt %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Du har ingen tilgangsnøkkel ennå. Legg til en nedenfor: neste gang du logger inn, velger du &quot;Logg inn med en tilgangsnøkkel&quot;.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lagt til</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Sist brukt</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Type</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ikke ennå</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synkronisert</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Denne enheten eller nøkkelen</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Gi nytt navn</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nytt navn</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Lagre navnet</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Legg til en tilgangsnøkkel</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Følg trinnene i nettleseren eller på enheten.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialogboksen for tilgangsnøkkelen ble lukket. Ingenting ble endret.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Tilgangsnøkkelen kunne ikke opprettes. Prøv igjen.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Denne nettleseren kan ikke opprette tilgangsnøkler. Bruk en oppdatert nettleser, eller logg inn med passordet.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>For eksempel enheten eller passordbehandleren den ligger i, slik at du kan skille tilgangsnøklene fra hverandre.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Denne kontoen har så mange tilgangsnøkler som den kan ha (%max). Fjern en for å legge til en ny.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Tilgangsnøkkelen kunne ikke brukes. Prøv igjen.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Min konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialogboksen for tilgangsnøkkelen ble lukket. Du kan logge inn med passordet i stedet.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Tilgangsnøkkelen kunne ikke brukes. Prøv igjen, eller logg inn med passordet.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Logg inn med en tilgangsnøkkel</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Kunne ikke logge inn med tilgangsnøkkelen</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>logg inn med fingeravtrykk, ansikt, skjermlås eller sikkerhetsnøkkel i stedet for passordet.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Tilgangsnøkkelen &quot;%name&quot; er lagt til. Du kan logge inn med den fra nå av.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Tilgangsnøkkelen heter nå &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Tilgangsnøkkelen &quot;%name&quot; er fjernet. Den kan ikke lenger logge inn på denne kontoen.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Tilgangsnøkkel fra %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Denne kontoen har så mange tilgangsnøkler som den kan ha. Fjern en først.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Databasen var opptatt, og ingenting ble lagret. Prøv igjen.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Denne tilgangsnøkkelen er allerede registrert.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Forespørselen tok for lang tid eller er allerede brukt. Prøv igjen.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Tilgangsnøkkelen kontrollerte ikke hvem du er (PIN-kode, fingeravtrykk eller ansikt). Prøv igjen, og bekreft på enheten.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Denne autentiseringsenheten bruker en nøkkeltype som dette nettstedet ikke godtar.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Tilgangsnøkkelen ble opprettet for en annen adresse enn dette nettstedet.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Denne tilgangsnøkkelen er ikke registrert for noen konto her. Logg inn med passordet, og legg den til under Min konto, Tilgangsnøkler.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Denne kontoen kan ikke logge inn akkurat nå. Kontakt administratoren for nettstedet.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Tilgangsnøkkelen kunne ikke kontrolleres. Prøv igjen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Du er i ferd med å endre hvordan du logger inn eller sikkerheten for kontoen din.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Du er i ferd med å administrere brukere, roller eller tilgangsregler.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Du er i ferd med å endre systeminnstillinger eller kjøre en oppsettshandling.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Du er i ferd med å eksportere data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Du er i ferd med å fjerne eller publisere innhold.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Denne handlingen krever at du bekrefter hvem du er.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Bekreft at det er deg, logget inn som %login. Du blir ikke spurt igjen på %minutes minutter.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Passordet er ikke riktig.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koden er ikke riktig, eller den er allerede brukt.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Velg en av måtene nedenfor.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Tilgangsnøkkelen kunne ikke kontrolleres.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>%count forsøk gjenstår før du blir logget ut.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Filene du valgte, kan ikke sendes på nytt: velg dem en gang til etter at du har bekreftet.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Med passordet ditt</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Med en tilgangsnøkkel</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Passord</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bekreft</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Bruk en tilgangsnøkkel</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Med en kode fra autentiseringsappen din</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kode</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Denne kontoen har ingen måte å bekrefte hvem du er på (ikke noe passord, ingen tilgangsnøkkel eller autentiseringsapp). Logg ut og inn igjen, eller spør en administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekreft at det er deg</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kode fra autentiseringsappen din</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Din egen konto</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Endre sitt eget passord, sin e-postadresse, tilgangsnøkler, totrinnsinnlogging eller API-nøkler.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Brukere, roller og tilgangsregler</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Opprette og redigere brukere, kontoinnstillinger, godkjenne eller avvise nye brukerkontoer, tilordne roller og redigere tilgangsregler.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systeminnstillinger og oppsettshandlinger</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Redigere innstillinger, utvidelser, cache og vedlikehold, pakker og oppdateringer, sikkerhetskopier og git-behandleren.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Eksportere data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Eksporter av innsamlet informasjon, brukere, nyhetsbrevabonnenter og revisjonen.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Fjerne og publisere innhold</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Fjerne innhold (også til papirkurven), tømme papirkurven og publisere. Av som standard.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Før en sensitiv handling bekrefter en innlogget bruker på nytt hvem vedkommende er, med passordet sitt, en tilgangsnøkkel eller koden fra autentiseringsappen sin. Bare nettsidene spør: REST-grensesnittet, SOAP, WebDAV, expservices-innloggingen og kommandolinjen gjør det aldri.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Generelt</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minutter en bekreftelse gjelder</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Når det spørres</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count regler i site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Lagres i settings/override/site.ini.append.php. Når du lagrer, blir du bedt om å bekrefte at det er deg.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekreft at det er deg</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Spør &quot;Bekreft at det er deg&quot; før handlingene i gruppene som er slått på nedenfor</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Innstillingene er lagret.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Innstillingene kunne ikke lagres: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ny</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rader</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ny rad</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Raden ble lagret.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Søk</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediger</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ingen rader ennå.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adresse: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>En node-ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Objekt-ID-en til en bruker</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>En innholdsobjekt-ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rad %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Raden ble ikke lagret</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Vil du fjerne rad %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Raden fjernes fra tabellen og kan ikke hentes tilbake.</translation>
     </message>
 </context>
 </TS>

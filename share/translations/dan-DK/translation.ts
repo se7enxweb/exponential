@@ -2259,6 +2259,74 @@
         <source>Open or close the folder</source>
         <translation>Åbn eller luk mappen</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Denne side er i dine bogmærker. Åbn for at ændre dens navn eller mappe.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Føj denne side til dine bogmærker.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Bogmærket</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Sæt bogmærke ved denne side</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Bogmærket gemmer adressen på denne side med dens parametre: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Gem bogmærke</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Tilføj bogmærke</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mine bogmærker</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemside</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemsider</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Du må ikke længere åbne denne side.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åbn</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adressen på denne side mangler. Fjern bogmærket, og sæt bogmærke ved siden igen.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du må ikke længere åbne denne side. Fjern bogmærket, eller bed en administrator om adgang.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul og visning</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Der kan også sættes bogmærke ved systemsider: åbn siden (Opsætning, revisionssporet, en liste over brugere ...), og vælg Sæt bogmærke ved denne side over den. Sådanne bogmærker har et tandhjulsikon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7564,6 +7632,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>De seneste forumindlæg kunne ikke indlæses.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ingen cronjob-del er kørt endnu: jobkøen, importerne, notifikationerne og søgeindekset venter. Kør php bin/php/installcrontab.php --add, eller føj linjerne fra --show til crontabben.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>En cronjob-del er ikke kørt i længere tid, end dens tidsplan tillader: kontrollér crontabben (php bin/php/installcrontab.php --show) og logfilerne var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Tidsplan</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Senest startet</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrig</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>til tiden</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>forsinket</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>aldrig kørt</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Installationen har ingen cronjob-del, som cronjobbet kan køre.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Opsætning &gt; Cronjobs</translation>
     </message>
 </context>
 <context>
@@ -17852,6 +17975,10 @@ Navigeringsdel</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktivere brugerkonti og flytte dem til gruppen af deaktiverede brugere og flytte dem tilbage</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>se, hvor andre brugere er logget ind, og logge dem ud</translation>
     </message>
 </context>
 <context>
@@ -37972,6 +38099,58 @@ din konto.</translation>
         <source>Open e-mail preferences</source>
         <translation>Åbn e-mailpræferencer</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioner</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Hvor du er logget ind: browser, system, sted og tidspunkt. Log en enhed ud, som du ikke kender.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Hvor denne bruger er logget ind, og udlogning af brugeren overalt.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Administrer enheder</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Vis sessioner</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count logget ind</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Adgangsnøgler</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Log ind med dit fingeraftryk, ansigt, din skærmlås eller sikkerhedsnøgle i stedet for din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Administrer adgangsnøgler</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Tilføj en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count adgangsnøgler</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Ingen endnu</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39916,6 +40095,30 @@ din konto.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinationer af klasse/attribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Brugergrupper, hvis nye konti kræver godkendelse</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>En konto, der publiceres i en af disse grupper eller under en af dem, venter, indtil en godkender accepterer den. Før da kan den ikke logge ind.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Brugere, der godkender kontiene</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupper, der godkender kontiene</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Brugergrupper, der ikke kræver godkendelse (deres medlemmer publicerer sådanne konti direkte; godkendere kræver den aldrig)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Send godkenderne en e-mail med linket til godkendelsen (de logger ind for at godkende eller afvise)</translation>
     </message>
 </context>
 <context>
@@ -44118,6 +44321,14 @@ Hvis du vil sende kommentarer til godkenderen eller se status, kan du bruge URL'
     <message>
         <source>Add object</source>
         <translation type="obsolete">Tilføj objekt</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Skift adgangskode ved næste login</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Efter login skal brugeren vælge en ny adgangskode, før der kan gøres andet. Brug det, når du giver nogen en midlertidig adgangskode.</translation>
     </message>
 </context>
 <context>
@@ -51109,6 +51320,22 @@ Se siden med krav for at få flere oplysninger.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Miljøvariablen EXP_DEMO_MODE=1 markerer denne installation som en offentlig demo: en velkendt administratoradgangskode accepteres, og administratoradgangskoder kan ikke ændres eller nulstilles senere. Brug aldrig demotilstand til et produktionssite.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cronjobbene kører fra crontabben for brugeren %user, som ejer installationen.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Installationen har ingen cronjob-del at planlægge.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontabben blev ikke skrevet (%reason). Føj disse linjer til crontabben for den bruger, sitet kører som, ellers kører køen, importerne, notifikationerne og søgeindekset aldrig:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53705,6 +53932,10 @@ din konto.</translation>
         <source>Cancel</source>
         <translation>Annuller</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Vælg en ny adgangskode, før du fortsætter: en administrator har bedt dig om at erstatte din nuværende adgangskode.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -54656,6 +54887,22 @@ din konto.</translation>
     <message>
         <source>ClassAttribute name</source>
         <translation>Navn på klasseattribut</translation>
+    </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konti, der kræver godkendelse</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail til godkenderne</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
     </message>
 </context>
 <context>
@@ -56075,6 +56322,14 @@ din konto.</translation>
         <source>Your comment was added.</source>
         <translation>Din kommentar blev tilføjet.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Kontoen &quot;%1&quot; blev godkendt og publiceret: den kan logge ind nu.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Kontoen &quot;%1&quot; blev afvist. Den er ikke publiceret og kan ikke logge ind; den er igen et udkast hos sin forfatter.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56381,6 +56636,38 @@ din konto.</translation>
     <message>
         <source>Differences</source>
         <translation type="obsolete">Forskelle</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemside</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Der kan endnu ikke sættes bogmærke ved systemsider: databaseopdateringen for denne version er ikke kørt.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Der kan ikke sættes bogmærke ved denne side: den er ikke en side i en modulvisning.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Der kan ikke sættes bogmærke ved denne side: du må ikke åbne den.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Der kunne ikke sættes bogmærke ved siden.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Siden &quot;%name&quot; er i dine bogmærker.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Bogmærket kunne ikke omdøbes: det skal have et navn.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Bogmærket blev omdøbt til &quot;%name&quot;.</translation>
     </message>
 </context>
 <context>
@@ -57456,6 +57743,18 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Package</source>
         <translation>Pakke</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arkivet blev pakket i PAX-tar-formatet, som ikke kan importeres. Pak pakken i GNU-tar-formatet (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>Arkivet blev afvist: posten &quot;%path&quot; har tar-typen &quot;%type&quot;, og en pakke indeholder kun filer og mapper.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivet blev afvist: det nævner en post, der er længere end %length byte.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58455,6 +58754,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Spejl til datatabeller</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Godkend brugerkonti</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>En ny brugerkonto venter på din godkendelse</translation>
     </message>
 </context>
 <context>
@@ -61108,6 +61415,34 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Manglende fil markeret som gennemgået</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Skift af adgangskode ved næste login angivet</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Skift af adgangskode ved næste login fjernet</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Sendt til skift af adgangskode</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Login uden andet trin afvist</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Appadgangskode oprettet</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Appadgangskode tilbagekaldt</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Appadgangskode brugt</translation>
     </message>
 </context>
 <context>
@@ -64571,6 +64906,26 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The audit trail of this node</source>
         <translation>Revisionssporet for denne knude</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intakt</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>brudt</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ikke kontrolleret</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>repareret</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tom</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -67960,6 +68315,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Du er blevet logget ud på dine andre enheder.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Vælg en ny adgangskode, før du fortsætter: en administrator har bedt dig om at erstatte din nuværende adgangskode.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70062,6 +70421,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Den nye e-mailadresse %email venter på bekræftelse: åbn det link, vi har sendt dertil. Indtil da beholder denne konto %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-mailen om et login fra en ny enhed eller browser er en del af kontosikkerheden. Du slår den til eller fra under dine enheder, hvor du også ser og logger dine kontos sessioner ud.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
     </message>
 </context>
 <context>
@@ -76375,6 +76742,1160 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Gennemse tabellerne for de persistente klasser…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Ny brugerkonto venter på godkendelse: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Brugernavn</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Anmodet af</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Åbn godkendelsen</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Hvis knappen ikke virker, kan du kopiere denne adresse ind i din browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>En ny brugerkonto venter på din godkendelse</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester oprettede kontoen &quot;%name&quot; i %groups. Den er ikke publiceret og kan ikke logge ind, før en godkender accepterer den.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Log ind i administrationen, og godkend eller afvis den i din samarbejdsliste. Dette link logger dig ikke ind og afgør intet af sig selv.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Denne e-mail blev sendt af %site, fordi du godkender nye konti i disse grupper.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiseret klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ukendt enhed</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Adgangskode</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Adgangskode og totrinskode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-grænseflade</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-grænseflade</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Fælles login</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Logget ind, før sessioner blev registreret</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ud</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Logget ud fra denne side</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Logget ud af en administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Logget ud med &quot;alle andre sessioner&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Erstattet af et nyt login</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Afsluttet af et skift af adgangskode</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Udløbet</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner for %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hvor din konto er logget ind lige nu. Hvis du ikke kender en enhed, så log den ud, og skift din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvor denne konto er logget ind lige nu. Når brugeren logges ud, afsluttes hver session ved dens næste anmodning.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tilbage til kontoen</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessionen blev logget ud. Enheden skal logge ind igen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andre sessioner blev logget ud.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Der var ingen andre sessioner at logge ud.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessioner for denne bruger blev logget ud.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Denne bruger havde ingen sessioner at logge ud.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dette er den session, du bruger. Log ud for at afslutte den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den session var allerede afsluttet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får en e-mail, når din konto logger ind fra en ny enhed.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får ikke længere e-mails om login fra nye enheder.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var udløbet. Intet blev ændret; prøv igen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessioner registreres ikke på dette site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabellen expuser_session mangler</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessioner registreres, når den er oprettet: php update/common/scripts/6.0/createusersessiontable.php eller databaseopdateringen for 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Logget ind nu</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Log alle andre sessioner ud</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Log ud overalt</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Alle enheder undtagen denne logges ud ved deres næste anmodning, også dem, der forbliver logget ind med Husk mig.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Hver session for denne bruger logges ud ved sin næste anmodning, også dem, der forbliver logget ind med Husk mig.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ja, log de andre sessioner ud</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ja, log hver session ud</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Denne enhed</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhed</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Vises som sit netværk; den fulde adresse gemmes til administratorerne.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>logget ind fra %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget ind</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Senest aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Forbliver logget ind</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Husk mig, indtil %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Indtil browseren lukkes</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Logget ind på</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Browseridentifikation</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Log ud for at afslutte denne session.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Log ud</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Log denne session ud</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ingen session er logget ind.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Loginadvarsler</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Send mig en e-mail, når min konto logger ind fra en ny enhed eller browser</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Sendes til %email. Den angiver enheden, det omtrentlige sted og tidspunktet og linker til denne side.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Dette site sender ikke loginadvarsler.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>For nylig afsluttet</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessioner, der er afsluttet inden for de seneste %days dage.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Afsluttet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvordan</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Ingen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiseret klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ukendt enhed</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Adgangskode</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Adgangskode og totrinskode</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-grænseflade</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-grænseflade</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Fælles login</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Logget ind, før sessioner blev registreret</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Logget ud</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Logget ud fra denne side</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Logget ud af en administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Logget ud med &quot;alle andre sessioner&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Erstattet af et nyt login</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Afsluttet af et skift af adgangskode</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Udløbet</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner for %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hvor din konto er logget ind lige nu. Hvis du ikke kender en enhed, så log den ud, og skift din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvor denne konto er logget ind lige nu. Når brugeren logges ud, afsluttes hver session ved dens næste anmodning.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessionen blev logget ud. Enheden skal logge ind igen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andre sessioner blev logget ud.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Der var ingen andre sessioner at logge ud.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessioner for denne bruger blev logget ud.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Denne bruger havde ingen sessioner at logge ud.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dette er den session, du bruger. Log ud for at afslutte den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den session var allerede afsluttet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får en e-mail, når din konto logger ind fra en ny enhed.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får ikke længere e-mails om login fra nye enheder.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Siden var udløbet. Intet blev ændret; prøv igen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sessioner registreres ikke på dette site.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessioner registreres endnu ikke: sitet mangler sin databaseopdatering.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Logget ind nu</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Denne enhed</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhed</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresse</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Logget ind</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Senest aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Forbliver logget ind</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Husk mig, indtil %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Indtil browseren lukkes</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Log ud for at afslutte denne session.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Log ud</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Log denne session ud</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Log alle andre sessioner ud</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Log ud overalt</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Loginadvarsler</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Send mig en e-mail, når min konto logger ind fra en ny enhed eller browser</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>For nylig afsluttet</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Afsluttet</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvordan</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Ingen inden for de seneste %days dage.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Se, hvor din konto er logget ind, og log en enhed ud, som du ikke kender.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Administrer enheder</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nyt login på din konto på %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hej</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Din konto %login på %site blev netop brugt til at logge ind fra en enhed eller browser, den ikke har brugt for nylig:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Enhed:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tidspunkt:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Omtrentlig adresse:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Hvis det var dig, behøver du ikke at gøre noget.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Hvis det ikke var dig, kender nogen måske din adgangskode. Log den session ud på siden med dine enheder, og skift derefter din adgangskode:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Du kan slå disse e-mails fra på samme side.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nyt login for %login på %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Kontoen %login loggede ind fra en enhed eller browser, den ikke har brugt for nylig.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Denne brugers sessioner:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nyt login på din konto</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Din konto %login blev brugt til at logge ind fra %device (%ip) %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Hvis det var dig, behøver du ikke at gøre noget. Hvis ikke, så log denne session ud på %url, og skift din adgangskode.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nyt login for %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Kontoen %login loggede ind fra en ny enhed: %device (%ip) %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Dine enheder</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner for %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Adgangsnøgler</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>En adgangsnøgle logger dig ind med dit fingeraftryk, ansigt, din skærmlås eller sikkerhedsnøgle i stedet for din adgangskode. Den gemmes på din enhed eller i din adgangskodeadministrator; dette site gemmer kun dens offentlige nøgle, så et læk her kan ikke afsløre den.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Adgangsnøgler er slået fra på dette site.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Adgangsnøgler kan endnu ikke bruges på dette site: administratoren skal først køre databaseopdateringen.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Vil du fjerne adgangsnøglen &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Den kan ikke længere logge ind på denne konto. Fjern den også fra din enhed eller adgangskodeadministrator.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Fjern adgangsnøglen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Dine adgangsnøgler</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count af højst %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Du har endnu ingen adgangsnøgle. Tilføj en nedenfor: næste gang du logger ind, vælger du &quot;Log ind med en adgangsnøgle&quot;.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Tilføjet</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Senest brugt</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Art</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ikke endnu</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synkroniseret</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Denne enhed eller nøgle</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Omdøb</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nyt navn</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Gem navnet</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Tilføj en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Følg trinnene i din browser eller på din enhed.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialogboksen til adgangsnøglen blev lukket. Intet blev ændret.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Adgangsnøglen kunne ikke oprettes. Prøv igen.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Denne browser kan ikke oprette adgangsnøgler. Brug en opdateret browser, eller log ind med din adgangskode.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>For eksempel den enhed eller adgangskodeadministrator, den ligger i, så du kan kende dine adgangsnøgler fra hinanden.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Denne konto har så mange adgangsnøgler, som den må have (%max). Fjern en for at tilføje en ny.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Adgangsnøglen kunne ikke bruges. Prøv igen.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Min konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialogboksen til adgangsnøglen blev lukket. Du kan logge ind med din adgangskode i stedet.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Adgangsnøglen kunne ikke bruges. Prøv igen, eller log ind med din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Log ind med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Kunne ikke logge ind med adgangsnøglen</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>log ind med dit fingeraftryk, ansigt, din skærmlås eller sikkerhedsnøgle i stedet for din adgangskode.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Adgangsnøglen &quot;%name&quot; er tilføjet. Du kan logge ind med den fra nu af.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Adgangsnøglen hedder nu &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Adgangsnøglen &quot;%name&quot; er fjernet. Den kan ikke længere logge ind på denne konto.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Adgangsnøgle fra %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Denne konto har så mange adgangsnøgler, som den må have. Fjern en først.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Databasen var optaget, og intet blev gemt. Prøv igen.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Denne adgangsnøgle er allerede registreret.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Anmodningen tog for lang tid eller er allerede brugt. Prøv igen.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Adgangsnøglen kontrollerede ikke, hvem du er (pinkode, fingeraftryk eller ansigt). Prøv igen, og bekræft på din enhed.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Denne godkendelsesenhed bruger en nøgletype, som dette site ikke accepterer.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Adgangsnøglen blev oprettet til en anden adresse end dette site.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Denne adgangsnøgle er ikke registreret til nogen konto her. Log ind med din adgangskode, og tilføj den under Min konto, Adgangsnøgler.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Denne konto kan ikke logge ind i øjeblikket. Kontakt sitets administrator.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Adgangsnøglen kunne ikke kontrolleres. Prøv igen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Du er ved at ændre, hvordan du logger ind, eller sikkerheden for din konto.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Du er ved at administrere brugere, roller eller politikker.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Du er ved at ændre systemindstillinger eller køre en opsætningshandling.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Du er ved at eksportere data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Du er ved at fjerne eller publicere indhold.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Denne handling kræver, at du bekræfter, hvem du er.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Bekræft, at det er dig, logget ind som %login. Du bliver ikke spurgt igen i %minutes minutter.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Adgangskoden er ikke rigtig.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koden er ikke rigtig, eller den er allerede brugt.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Vælg en af måderne nedenfor.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Adgangsnøglen kunne ikke kontrolleres.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Der er %count forsøg tilbage, før du bliver logget ud.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>De filer, du valgte, kan ikke sendes igen: vælg dem en gang til, når du har bekræftet.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Med din adgangskode</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Med en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Adgangskode</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bekræft</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Brug en adgangsnøgle</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Med en kode fra din godkendelsesapp</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kode</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Denne konto har ingen måde at bekræfte, hvem du er (ingen adgangskode, adgangsnøgle eller godkendelsesapp). Log ud og ind igen, eller spørg en administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekræft, at det er dig</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kode fra din godkendelsesapp</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Din egen konto</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Ændre sin egen adgangskode, e-mailadresse, adgangsnøgler, totrinslogin eller API-nøgler.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Brugere, roller og politikker</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Oprette og redigere brugere, kontoindstillinger, godkende eller afvise nye brugerkonti, tildele roller og redigere politikker.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systemindstillinger og opsætningshandlinger</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Redigere indstillinger, udvidelser, cache og vedligeholdelse, pakker og opdateringer, sikkerhedskopier og git-administratoren.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Eksportere data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Eksport af indsamlede oplysninger, brugere, nyhedsbrevsabonnenter og revisionen.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Fjerne og publicere indhold</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Fjerne indhold (også til papirkurven), tømme papirkurven og publicere. Slået fra som standard.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Før en følsom handling bekræfter en bruger, der er logget ind, igen, hvem vedkommende er, med sin adgangskode, en adgangsnøgle eller koden fra sin godkendelsesapp. Kun websiderne spørger: REST-grænsefladen, SOAP, WebDAV, expservices-login og kommandolinjen gør det aldrig.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Generelt</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minutter, en bekræftelse gælder</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Hvornår der spørges</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count regler i site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Gemmes i settings/override/site.ini.append.php. Når du gemmer, bliver du bedt om at bekræfte, at det er dig.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekræft, at det er dig</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Spørg &quot;Bekræft, at det er dig&quot; før handlingerne i de grupper, der er slået til nedenfor</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Indstillingerne er gemt.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Indstillingerne kunne ikke gemmes: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Opsætning</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ny</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rækker</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ny række</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rækken blev gemt.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Søg</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Handlinger</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediger</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ingen rækker endnu.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adresse: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Et knude-id</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>En brugers objekt-id</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Et indholdsobjekt-id</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Række %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Rækken blev ikke gemt</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gem</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuller</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Vil du fjerne række %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rækken fjernes fra tabellen og kan ikke hentes tilbage.</translation>
     </message>
 </context>
 </TS>

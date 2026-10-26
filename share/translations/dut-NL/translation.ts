@@ -2238,6 +2238,74 @@
         <source>Open or close the folder</source>
         <translation>De map openen of sluiten</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Deze pagina staat in je favorieten. Open hem om de naam of de map te wijzigen.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Deze pagina aan je favorieten toevoegen.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>In favorieten</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Pagina aan favorieten toevoegen</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>De favoriet bewaart het adres van deze pagina met de parameters: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Favoriet opslaan</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Favoriet toevoegen</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mijn favorieten</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systeempagina</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systeempagina&apos;s</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Je mag deze pagina niet meer openen.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Openen</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Het adres van deze pagina ontbreekt. Verwijder de favoriet en voeg de pagina opnieuw toe aan je favorieten.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Je mag deze pagina niet meer openen. Verwijder de favoriet of vraag een beheerder om toegang.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Module en view</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Ook systeempagina&apos;s kun je aan je favorieten toevoegen: open de pagina (Setup, de audittrail, een lijst met gebruikers ...) en kies daarboven Pagina aan favorieten toevoegen. Zulke favorieten hebben een tandwielpictogram.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7583,6 +7651,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>De nieuwste forumberichten konden niet worden geladen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Er is nog geen enkel deel van de cronjob uitgevoerd: de takenwachtrij, de imports, de notificaties en de zoekindex wachten. Voer php bin/php/installcrontab.php --add uit, of zet de regels van --show in de crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Een deel van de cronjob is langer niet uitgevoerd dan het schema toestaat: controleer de crontab (php bin/php/installcrontab.php --show) en de logs var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Deel</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Laatst gestart</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nooit</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>op tijd</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>te laat</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nooit uitgevoerd</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>De installatie heeft geen deel van de cronjob dat de cron kan uitvoeren.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Naar Setup &gt; Cronjobs</translation>
     </message>
 </context>
 <context>
@@ -32511,6 +32634,30 @@ te activeren.</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Combinaties van klasse en attribuut (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Gebruikersgroepen waarvan nieuwe accounts goedkeuring nodig hebben</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Een account dat in een van deze groepen of daaronder wordt gepubliceerd, wacht tot een goedkeurder het accepteert. Tot die tijd kan het niet inloggen.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Gebruikers die de accounts goedkeuren</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Groepen die de accounts goedkeuren</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Gebruikersgroepen die geen goedkeuring nodig hebben (hun leden publiceren zulke accounts direct; goedkeurders hebben die nooit nodig)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>De goedkeurders een e-mail sturen met de link naar de goedkeuring (ze loggen in om goed te keuren of af te wijzen)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -36729,6 +36876,14 @@ Als je opmerkingen naar de goedkeurder wilt sturen of de status wilt bekijken, g
     <message>
         <source>required</source>
         <translation>verplicht</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Wachtwoord wijzigen bij de volgende keer inloggen</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Na het inloggen moet de gebruiker een nieuw wachtwoord kiezen voordat hij iets anders kan doen. Gebruik dit als je iemand een tijdelijk wachtwoord geeft.</translation>
     </message>
 </context>
 <context>
@@ -43820,6 +43975,22 @@ Zie de pagina met systeemeisen voor meer informatie.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>De omgevingsvariabele EXP_DEMO_MODE=1 markeert deze installatie als openbare demo: een algemeen bekend beheerderswachtwoord wordt geaccepteerd, en beheerderswachtwoorden kunnen later niet worden gewijzigd of teruggezet. Gebruik de demomodus nooit voor een productiesite.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>De cronjobs draaien vanuit de crontab van de gebruiker %user, de eigenaar van de installatie.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>De installatie heeft geen deel van de cronjob om in te plannen.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>De crontab is niet geschreven (%reason). Zet deze regels in de crontab van de gebruiker waaronder de site draait, anders worden de wachtrij, de imports, de notificaties en de zoekindex nooit uitgevoerd:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -47209,6 +47380,22 @@ te activeren.</translation>
         <source>ClassAttribute name</source>
         <translation>Naam van klasse-attribuut</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Accounts die goedkeuring nodig hebben</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail aan de goedkeurders</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -48627,6 +48814,14 @@ te activeren.</translation>
         <source>Your comment was added.</source>
         <translation>Je opmerking is toegevoegd.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Het account &quot;%1&quot; is goedgekeurd en gepubliceerd: het kan nu inloggen.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Het account &quot;%1&quot; is afgewezen. Het is niet gepubliceerd en kan niet inloggen; het is weer een concept van de auteur.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -48933,6 +49128,38 @@ te activeren.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count favoriet(en) toegevoegd.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systeempagina</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systeempagina&apos;s kunnen nog niet aan favorieten worden toegevoegd: de database-update van deze versie is nog niet uitgevoerd.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Deze pagina kan niet aan favorieten worden toegevoegd: het is geen pagina van een moduleview.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Deze pagina kan niet aan favorieten worden toegevoegd: je mag hem niet openen.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>De pagina kon niet aan favorieten worden toegevoegd.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>De pagina &quot;%name&quot; staat in je favorieten.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>De favoriet kon niet worden hernoemd: er is een naam nodig.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>De favoriet is hernoemd naar &quot;%name&quot;.</translation>
     </message>
 </context>
 <context>
@@ -50924,6 +51151,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Mirror to data tables</source>
         <translation>Spiegelen naar datatabellen</translation>
     </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Gebruikersaccounts goedkeuren</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Een nieuw gebruikersaccount wacht op je goedkeuring</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -51729,6 +51964,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>gebruikersaccounts deactiveren en naar de groep gedeactiveerde gebruikers verplaatsen, en ze terugzetten</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>zien waar andere gebruikers ingelogd zijn, en hen uitloggen</translation>
     </message>
 </context>
 <context>
@@ -58755,6 +58994,58 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-mailvoorkeuren openen</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessies</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Waar je ingelogd bent: browser, systeem, plaats en tijd. Log een apparaat uit dat je niet kent.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Waar deze gebruiker ingelogd is, en de gebruiker overal uitloggen.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Apparaten beheren</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Sessies tonen</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ingelogd</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Toegangssleutels</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Log in met je vingerafdruk, gezicht, schermvergrendeling of beveiligingssleutel in plaats van je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Toegangssleutels beheren</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Toegangssleutel toevoegen</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count toegangssleutels</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Nog geen</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -59264,6 +59555,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Cancel</source>
         <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Kies een nieuw wachtwoord voordat je verdergaat: een beheerder heeft je gevraagd je huidige wachtwoord te vervangen.</translation>
     </message>
 </context>
 <context>
@@ -61943,6 +62238,34 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Ontbrekend bestand gemarkeerd als beoordeeld</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Wachtwoordwijziging bij volgende keer inloggen ingesteld</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Wachtwoordwijziging bij volgende keer inloggen opgeheven</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Naar de wachtwoordwijziging gestuurd</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Inloggen zonder de tweede stap geweigerd</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>App-wachtwoord aangemaakt</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-wachtwoord ingetrokken</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>App-wachtwoord gebruikt</translation>
     </message>
 </context>
 <context>
@@ -65406,6 +65729,26 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The audit trail of this node</source>
         <translation>De audittrail van deze node</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intact</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>verbroken</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>niet gecontroleerd</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>hersteld</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>leeg</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -68795,6 +69138,10 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Je bent op je andere apparaten uitgelogd.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Kies een nieuw wachtwoord voordat je verdergaat: een beheerder heeft je gevraagd je huidige wachtwoord te vervangen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70897,6 +71244,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Het nieuwe e-mailadres %email wacht op bevestiging: open de link die we daarheen hebben gestuurd. Tot dan houdt dit account %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>De e-mail over inloggen vanaf een nieuw apparaat of een nieuwe browser hoort bij de accountbeveiliging. Je zet hem aan of uit bij je apparaten, waar je ook de sessies van je account ziet en uitlogt.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
     </message>
 </context>
 <context>
@@ -76932,6 +77287,1160 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Door de tabellen van de persistente klassen bladeren…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nieuw gebruikersaccount wacht op goedkeuring: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Gebruikersnaam</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Groep</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Aangevraagd door</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Goedkeuring openen</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Als de knop niet werkt, kopieer dan dit adres naar je browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Een nieuw gebruikersaccount wacht op je goedkeuring</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester heeft het account &quot;%name&quot; aangemaakt in %groups. Het is niet gepubliceerd en kan niet inloggen tot een goedkeurder het accepteert.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Log in op het beheer en keur het goed of wijs het af in je samenwerkingslijst. Deze link logt je niet in en beslist zelf niets.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Deze e-mail is verstuurd door %site omdat je nieuwe accounts van deze groepen goedkeurt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefoon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma of app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Geautomatiseerde client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Onbekend apparaat</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Wachtwoord en code van inloggen in twee stappen</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Eenmalige aanmelding (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ingelogd voordat sessies werden vastgelegd</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uitgelogd</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Uitgelogd vanaf deze pagina</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Uitgelogd door een beheerder</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Uitgelogd met &quot;alle andere sessies&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Vervangen door een nieuwe aanmelding</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Beëindigd door een wachtwoordwijziging</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Verlopen</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessies van %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Waar je account op dit moment ingelogd is. Herken je een apparaat niet, log het dan uit en wijzig je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Waar dit account op dit moment ingelogd is. Als je de gebruiker uitlogt, eindigt elke sessie bij het volgende verzoek.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Terug naar het account</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>De sessie is uitgelogd. Het apparaat moet opnieuw inloggen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andere sessies zijn uitgelogd.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Er waren geen andere sessies om uit te loggen.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessies van deze gebruiker zijn uitgelogd.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Deze gebruiker had geen sessies om uit te loggen.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dit is de sessie die je nu gebruikt. Log uit om hem te beëindigen.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Die sessie was al beëindigd.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Je krijgt een e-mail als je account inlogt vanaf een nieuw apparaat.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Je krijgt geen e-mail meer over aanmeldingen vanaf nieuwe apparaten.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De pagina was verlopen. Er is niets gewijzigd; probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Op deze site worden geen sessies vastgelegd (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>De tabel expuser_session ontbreekt</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessies worden vastgelegd zodra die is aangemaakt: php update/common/scripts/6.0/createusersessiontable.php, of de database-update van 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nu ingelogd</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Alle andere sessies uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Overal uitloggen</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Elk apparaat behalve dit wordt bij het volgende verzoek uitgelogd, ook apparaten die ingelogd blijven met Onthoud mij.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Elke sessie van deze gebruiker wordt bij het volgende verzoek uitgelogd, ook sessies die ingelogd blijven met Onthoud mij.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ja, de andere sessies uitloggen</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ja, elke sessie uitloggen</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dit apparaat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparaat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Getoond als het netwerk; het volledige adres wordt bewaard voor de beheerders.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>ingelogd vanaf %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Laatst actief</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Blijft ingelogd</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Onthoud mij, tot %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tot de browser wordt gesloten</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Ingelogd op</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Browseridentificatie</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Log uit om deze sessie te beëindigen.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Deze sessie uitloggen</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Er is geen sessie ingelogd.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Inlogmeldingen</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Mij een e-mail sturen als mijn account inlogt vanaf een nieuw apparaat of een nieuwe browser</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Gaat naar %email. Daarin staan het apparaat, de geschatte plaats en de tijd, met een link naar deze pagina.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Deze site verstuurt geen inlogmeldingen.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Onlangs beëindigd</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessies die in de afgelopen %days dagen zijn beëindigd.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beëindigd</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hoe</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Geen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefoon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma of app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Geautomatiseerde client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Onbekend apparaat</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Wachtwoord en code van inloggen in twee stappen</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Eenmalige aanmelding (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ingelogd voordat sessies werden vastgelegd</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Uitgelogd</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Uitgelogd vanaf deze pagina</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Uitgelogd door een beheerder</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Uitgelogd met &quot;alle andere sessies&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Vervangen door een nieuwe aanmelding</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Beëindigd door een wachtwoordwijziging</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Verlopen</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessies van %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Waar je account op dit moment ingelogd is. Herken je een apparaat niet, log het dan uit en wijzig je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Waar dit account op dit moment ingelogd is. Als je de gebruiker uitlogt, eindigt elke sessie bij het volgende verzoek.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>De sessie is uitgelogd. Het apparaat moet opnieuw inloggen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andere sessies zijn uitgelogd.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Er waren geen andere sessies om uit te loggen.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessies van deze gebruiker zijn uitgelogd.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Deze gebruiker had geen sessies om uit te loggen.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dit is de sessie die je nu gebruikt. Log uit om hem te beëindigen.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Die sessie was al beëindigd.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Je krijgt een e-mail als je account inlogt vanaf een nieuw apparaat.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Je krijgt geen e-mail meer over aanmeldingen vanaf nieuwe apparaten.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>De pagina was verlopen. Er is niets gewijzigd; probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Op deze site worden geen sessies vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessies worden nog niet vastgelegd: de site heeft de database-update nodig.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nu ingelogd</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dit apparaat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparaat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ingelogd</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Laatst actief</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Blijft ingelogd</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Onthoud mij, tot %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tot de browser wordt gesloten</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Log uit om deze sessie te beëindigen.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Deze sessie uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Alle andere sessies uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Overal uitloggen</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Inlogmeldingen</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Mij een e-mail sturen als mijn account inlogt vanaf een nieuw apparaat of een nieuwe browser</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Onlangs beëindigd</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beëindigd</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hoe</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Geen in de afgelopen %days dagen.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Bekijk waar je account ingelogd is en log een apparaat uit dat je niet kent.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Apparaten beheren</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nieuwe aanmelding op je account op %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hallo,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Met je account %login op %site is zojuist ingelogd vanaf een apparaat of browser die het de laatste tijd niet heeft gebruikt:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Apparaat:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tijd:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Geschat adres:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Was jij dit, dan hoef je niets te doen.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Was jij het niet, dan kent iemand misschien je wachtwoord. Log die sessie uit op de pagina van je apparaten en wijzig daarna je wachtwoord:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Op dezelfde pagina kun je deze e-mails uitzetten.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nieuwe aanmelding van %login op %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Het account %login heeft ingelogd vanaf een apparaat of browser die het de laatste tijd niet heeft gebruikt.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>De sessies van deze gebruiker:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nieuwe aanmelding op je account</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Met je account %login is op %date ingelogd vanaf %device (%ip).</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Was jij dit, dan hoef je niets te doen. Zo niet, log deze sessie dan uit op %url en wijzig je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nieuwe aanmelding van %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Het account %login heeft ingelogd vanaf een nieuw apparaat: %device (%ip) op %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Je apparaten</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessies van %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Toegangssleutels</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Met een toegangssleutel log je in met je vingerafdruk, gezicht, schermvergrendeling of beveiligingssleutel in plaats van je wachtwoord. Hij staat op je apparaat of in je wachtwoordmanager; deze site bewaart alleen de openbare sleutel, dus een datalek hier kan hem niet prijsgeven.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Toegangssleutels zijn op deze site uitgeschakeld.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Toegangssleutels kunnen op deze site nog niet worden gebruikt: de beheerder moet eerst de database-update uitvoeren.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>De toegangssleutel &quot;%name&quot; verwijderen?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Hij kan dan niet meer inloggen op dit account. Verwijder hem ook van je apparaat of uit je wachtwoordmanager.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Toegangssleutel verwijderen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Je toegangssleutels</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count van maximaal %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Je hebt nog geen toegangssleutel. Voeg er hieronder een toe: kies de volgende keer dat je inlogt &quot;Inloggen met een toegangssleutel&quot;.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Toegevoegd</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Laatst gebruikt</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Soort</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Nog niet</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Gesynchroniseerd</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Dit apparaat of deze sleutel</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Hernoemen</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nieuwe naam</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Naam opslaan</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Toegangssleutel toevoegen</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Volg de stappen van je browser of apparaat.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Het venster van de toegangssleutel is gesloten. Er is niets gewijzigd.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>De toegangssleutel kon niet worden aangemaakt. Probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Deze browser kan geen toegangssleutels aanmaken. Gebruik een actuele browser of log in met je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Bijvoorbeeld het apparaat of de wachtwoordmanager waarop hij staat, zodat je je toegangssleutels uit elkaar kunt houden.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Dit account heeft het maximale aantal toegangssleutels (%max). Verwijder er een om een andere toe te voegen.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>De toegangssleutel kon niet worden gebruikt. Probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mijn account</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Het venster van de toegangssleutel is gesloten. Je kunt in plaats daarvan met je wachtwoord inloggen.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>De toegangssleutel kon niet worden gebruikt. Probeer het opnieuw of log in met je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Inloggen met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Inloggen met de toegangssleutel is mislukt</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>log in met je vingerafdruk, gezicht, schermvergrendeling of beveiligingssleutel in plaats van je wachtwoord.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>De toegangssleutel &quot;%name&quot; is toegevoegd. Je kunt er vanaf nu mee inloggen.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>De toegangssleutel heet nu &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>De toegangssleutel &quot;%name&quot; is verwijderd. Hij kan niet meer inloggen op dit account.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Toegangssleutel van %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Dit account heeft het maximale aantal toegangssleutels. Verwijder er eerst een.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>De database was bezet en er is niets opgeslagen. Probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Deze toegangssleutel is al geregistreerd.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Het verzoek duurde te lang of is al gebruikt. Probeer het opnieuw.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>De toegangssleutel heeft niet gecontroleerd wie je bent (pincode, vingerafdruk of gezicht). Probeer het opnieuw en bevestig op je apparaat.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Deze authenticator gebruikt een soort sleutel die deze site niet accepteert.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>De toegangssleutel is gemaakt voor een ander adres dan deze site.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Deze toegangssleutel is hier voor geen enkel account geregistreerd. Log in met je wachtwoord en voeg hem toe onder Mijn account, Toegangssleutels.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Dit account kan op dit moment niet inloggen. Neem contact op met de beheerder van de site.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>De toegangssleutel kon niet worden gecontroleerd. Probeer het opnieuw.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Je staat op het punt te wijzigen hoe je inlogt of hoe je account is beveiligd.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Je staat op het punt gebruikers, rollen of beleidsregels te beheren.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Je staat op het punt systeeminstellingen te wijzigen of een setupactie uit te voeren.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Je staat op het punt gegevens te exporteren.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Je staat op het punt inhoud te verwijderen of te publiceren.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Voor deze actie moet je bevestigen wie je bent.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Bevestig dat jij het bent, ingelogd als %login. Je wordt %minutes minuten lang niet opnieuw gevraagd.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Dat wachtwoord klopt niet.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Die code klopt niet of is al gebruikt.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Kies hieronder een van de manieren.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>De toegangssleutel kon niet worden gecontroleerd.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Nog %count pogingen voordat je wordt uitgelogd.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>De bestanden die je hebt gekozen kunnen niet opnieuw worden verzonden: kies ze na het bevestigen nog een keer.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Met je wachtwoord</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Met een toegangssleutel</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Wachtwoord</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bevestigen</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Toegangssleutel gebruiken</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Met een code uit je authenticator-app</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Dit account heeft geen manier om te bevestigen wie je bent (geen wachtwoord, toegangssleutel of authenticator-app). Log uit en opnieuw in, of vraag het een beheerder.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bevestig dat jij het bent</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Code uit je authenticator-app</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Het eigen account</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Het eigen wachtwoord, e-mailadres, toegangssleutels, inloggen in twee stappen of API-sleutels wijzigen.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Gebruikers, rollen en beleidsregels</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Gebruikers aanmaken en bewerken, accountinstellingen, nieuwe gebruikersaccounts goedkeuren of afwijzen, rollen toewijzen en beleidsregels bewerken.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systeeminstellingen en setupacties</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Instellingen bewerken, extensies, caches en onderhoud, pakketten en updates, back-ups en de git-manager.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Gegevens exporteren</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exports van verzamelde informatie, gebruikers, nieuwsbriefabonnees en de audit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Inhoud verwijderen en publiceren</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Inhoud verwijderen (ook naar de prullenbak), de prullenbak legen en publiceren. Standaard uit.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Voor een gevoelige actie bevestigt een ingelogde gebruiker opnieuw wie hij is: met zijn wachtwoord, een toegangssleutel of de code van zijn authenticator-app. Alleen de webpagina&apos;s vragen dit: de REST-interface, SOAP, WebDAV, de expservices-aanmelding en de opdrachtregel vragen het nooit.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Algemeen</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuten dat een bevestiging geldig is</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Wanneer vragen</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count regels in site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Opgeslagen in settings/override/site.ini.append.php. Bij het opslaan wordt je gevraagd te bevestigen dat jij het bent.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bevestig dat jij het bent</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Vóór de acties van de hieronder ingeschakelde groepen &quot;Bevestig dat jij het bent&quot; vragen</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>De instellingen zijn opgeslagen.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>De instellingen konden niet worden opgeslagen: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nieuw</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rijen</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nieuwe rij</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>De rij is opgeslagen.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Zoeken</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acties</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerken</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Nog geen rijen.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adres: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Een node-ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Het object-ID van een gebruiker</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Een inhoudsobject-ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rij %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>De rij is niet opgeslagen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Opslaan</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Rij %id verwijderen?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>De rij wordt uit de tabel verwijderd en kan niet worden teruggehaald.</translation>
     </message>
 </context>
 </TS>

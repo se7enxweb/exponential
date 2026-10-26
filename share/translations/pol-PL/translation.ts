@@ -2237,6 +2237,74 @@
         <source>Open or close the folder</source>
         <translation>Otworzyć lub zamknąć folder</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ta strona jest w zakładkach. Otwarcie zakładki pozwala zmienić jej nazwę lub folder.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Dodać tę stronę do zakładek.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>W zakładkach</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Dodać stronę do zakładek</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Zakładka przechowuje adres tej strony wraz z jej parametrami: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Zapisać zakładkę</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Dodać zakładkę</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Moje zakładki</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Strona systemowa</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Strony systemowe</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Otwieranie tej strony nie jest już dozwolone.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otworzyć</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Brak adresu tej strony. Należy usunąć zakładkę i ponownie dodać stronę do zakładek.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Otwieranie tej strony nie jest już dozwolone. Należy usunąć zakładkę lub poprosić administratora o dostęp.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Moduł i widok</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Do zakładek można dodawać także strony systemowe: należy otworzyć stronę (Konfiguracja, dziennik audytu, lista użytkowników ...) i wybrać nad nią „Dodać stronę do zakładek”. Takie zakładki mają ikonę koła zębatego.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7551,6 +7619,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>Nie udało się wczytać najnowszych wpisów z forum.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Zadania cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Żadna część zadań cron nie została jeszcze uruchomiona: kolejka zadań, importy, powiadomienia i indeks wyszukiwania czekają. Należy uruchomić php bin/php/installcrontab.php --add lub dodać wiersze z --show do crontaba.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Jedna z części zadań cron nie była uruchamiana dłużej, niż pozwala jej harmonogram: należy sprawdzić crontab (php bin/php/installcrontab.php --show) i dzienniki var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Część</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Harmonogram</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Ostatnie uruchomienie</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stan</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nigdy</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>na czas</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>opóźnione</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nigdy nie uruchomiono</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalacja nie ma żadnej części zadań cron, którą zadanie cron mogłoby uruchomić.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Konfiguracja &gt; Zadania cron</translation>
     </message>
 </context>
 <context>
@@ -32551,6 +32674,30 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinacje klasa/atrybut (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Grupy użytkowników, których nowe konta wymagają zatwierdzenia</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Konto opublikowane w jednej z tych grup lub poniżej niej czeka, aż zatwierdzający je przyjmie. Wcześniej nie może się zalogować.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Użytkownicy zatwierdzający konta</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupy zatwierdzające konta</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Grupy użytkowników, które nie wymagają zatwierdzenia (ich członkowie publikują takie konta bezpośrednio; zatwierdzający nigdy go nie potrzebują)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Wysyłać zatwierdzającym wiadomość e-mail z odnośnikiem do zatwierdzenia (logują się, aby zatwierdzić lub odrzucić)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -36773,6 +36920,14 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     <message>
         <source>required</source>
         <translation>wymagane</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Zmienić hasło przy następnym logowaniu</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Po zalogowaniu użytkownik musi wybrać nowe hasło, zanim zrobi cokolwiek innego. Opcja przydaje się przy przekazywaniu komuś hasła tymczasowego.</translation>
     </message>
 </context>
 <context>
@@ -43814,6 +43969,22 @@ Więcej informacji zawiera strona z wymaganiami.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Zmienna środowiskowa EXP_DEMO_MODE=1 oznacza tę instalację jako publiczną wersję demonstracyjną: akceptowane jest powszechnie znane hasło administratora, a haseł administratorów nie można później zmienić ani zresetować. Nigdy nie należy używać trybu demonstracyjnego dla witryny produkcyjnej.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Zadania cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Zadania cron są uruchamiane z crontaba użytkownika %user, który jest właścicielem instalacji.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalacja nie ma żadnej części zadań cron do zaplanowania.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab nie został zapisany (%reason). Należy dodać te wiersze do crontaba użytkownika, na którego koncie działa witryna, w przeciwnym razie kolejka, importy, powiadomienia i indeks wyszukiwania nigdy nie zostaną uruchomione:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -47196,6 +47367,22 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
         <source>ClassAttribute name</source>
         <translation>Nazwa atrybutu klasy</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konta wymagające zatwierdzenia</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Wiadomość e-mail do zatwierdzających</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -48614,6 +48801,14 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
         <source>Your comment was added.</source>
         <translation>Dodano komentarz.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Konto „%1” zostało zatwierdzone i opublikowane: może się teraz zalogować.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Konto „%1” zostało odrzucone. Nie jest opublikowane i nie może się zalogować; znów jest wersją roboczą swojego autora.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -48920,6 +49115,38 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Dodane zakładki: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Strona systemowa</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Stron systemowych nie można jeszcze dodawać do zakładek: aktualizacja bazy danych dla tej wersji nie została uruchomiona.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Tej strony nie można dodać do zakładek: nie jest stroną widoku modułu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Tej strony nie można dodać do zakładek: jej otwieranie nie jest dozwolone.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Nie udało się dodać strony do zakładek.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Strona „%name” jest w zakładkach.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Nie udało się zmienić nazwy zakładki: zakładka musi mieć nazwę.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Zmieniono nazwę zakładki na „%name”.</translation>
     </message>
 </context>
 <context>
@@ -50911,6 +51138,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Mirror to data tables</source>
         <translation>Odzwierciedlać w tabelach danych</translation>
     </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Zatwierdzanie kont użytkowników</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nowe konto użytkownika czeka na zatwierdzenie</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -51716,6 +51951,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>dezaktywować konta użytkowników i przenosić je do grupy dezaktywowanych użytkowników oraz z powrotem</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>widzieć, gdzie są zalogowani inni użytkownicy, i wylogowywać ich</translation>
     </message>
 </context>
 <context>
@@ -58742,6 +58981,58 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Open e-mail preferences</source>
         <translation>Otworzyć preferencje e-mail</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesje</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Gdzie konto jest zalogowane: przeglądarka, system, miejsce i czas. Nieznane urządzenie należy wylogować.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Gdzie ten użytkownik jest zalogowany oraz wylogowanie go wszędzie.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Zarządzać urządzeniami</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Pokazać sesje</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Zalogowane: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Klucze dostępu</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Logowanie odciskiem palca, twarzą, blokadą ekranu lub kluczem bezpieczeństwa zamiast hasła.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Zarządzać kluczami dostępu</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Dodać klucz dostępu</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Klucze dostępu: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Jeszcze brak</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -59251,6 +59542,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Cancel</source>
         <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Przed kontynuowaniem należy wybrać nowe hasło: administrator poprosił o zastąpienie obecnego hasła.</translation>
     </message>
 </context>
 <context>
@@ -61930,6 +62225,34 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Oznaczenie brakującego pliku jako sprawdzonego</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Ustawiono zmianę hasła przy następnym logowaniu</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Wycofano zmianę hasła przy następnym logowaniu</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Przekierowano do zmiany hasła</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Odrzucono logowanie bez drugiego etapu</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Utworzono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Unieważniono hasło aplikacji</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Użyto hasła aplikacji</translation>
     </message>
 </context>
 <context>
@@ -65393,6 +65716,26 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The audit trail of this node</source>
         <translation>Dziennik audytu tego węzła</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>nienaruszony</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>przerwany</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>niesprawdzony</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>naprawiony</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>pusty</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -68782,6 +69125,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Nastąpiło wylogowanie na pozostałych urządzeniach.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Przed kontynuowaniem należy wybrać nowe hasło: administrator poprosił o zastąpienie obecnego hasła.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70884,6 +71231,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Nowy adres e-mail %email oczekuje na potwierdzenie: należy otworzyć link wysłany na ten adres. Do tego czasu konto zachowuje adres %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Wiadomość e-mail o logowaniu z nowego urządzenia lub przeglądarki jest częścią bezpieczeństwa konta. Włącza się ją i wyłącza na stronie urządzeń, gdzie można też zobaczyć sesje konta i je wylogować.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
     </message>
 </context>
 <context>
@@ -76919,6 +77274,1160 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Przeglądać tabele klas trwałych…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nowe konto użytkownika czeka na zatwierdzenie: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nazwa użytkownika</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupa</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Zgłaszający</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Otworzyć zatwierdzenie</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jeśli przycisk nie działa, należy skopiować ten adres do przeglądarki: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nowe konto użytkownika czeka na zatwierdzenie</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Użytkownik %requester utworzył konto „%name” w grupach %groups. Konto nie jest opublikowane i nie może się zalogować, dopóki zatwierdzający go nie przyjmie.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Należy zalogować się do administracji i zatwierdzić lub odrzucić konto na liście współpracy. Ten odnośnik nie loguje i sam niczego nie rozstrzyga.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Tę wiadomość wysłała witryna %site, ponieważ ten adres należy do osoby zatwierdzającej nowe konta tych grup.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Komputer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program lub aplikacja</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klient automatyczny</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nieznane urządzenie</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Hasło i kod logowania dwuetapowego</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfejs REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfejs SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Logowanie jednokrotne</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Zalogowano, zanim zaczęto rejestrować sesje</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wylogowano</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Wylogowano na tej stronie</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Wylogowano przez administratora</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Wylogowano opcją „wszystkie inne sesje”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Zastąpiono nowym logowaniem</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Zakończono zmianą hasła</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Wygasła</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesje użytkownika %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Gdzie konto jest teraz zalogowane. Jeśli któreś urządzenie jest nieznane, należy je wylogować i zmienić hasło.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Gdzie to konto jest teraz zalogowane. Wylogowanie użytkownika kończy każdą sesję przy jej następnym żądaniu.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Powrót do konta</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesja została wylogowana. Urządzenie musi zalogować się ponownie.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Wylogowane inne sesje: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nie było innych sesji do wylogowania.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Wylogowane sesje tego użytkownika: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ten użytkownik nie miał sesji do wylogowania.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To jest bieżąca sesja. Aby ją zakończyć, należy się wylogować.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ta sesja była już zakończona.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Przy logowaniu na konto z nowego urządzenia zostanie wysłana wiadomość e-mail.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Wiadomości e-mail o logowaniach z nowych urządzeń nie będą już wysyłane.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona wygasła. Niczego nie zmieniono; proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ta witryna nie rejestruje sesji (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Brak tabeli expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesje są rejestrowane, gdy tylko tabela zostanie utworzona: php update/common/scripts/6.0/createusersessiontable.php lub aktualizacja bazy danych wersji 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Zalogowane teraz</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Wylogować wszystkie inne sesje</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wylogować wszędzie</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Każde urządzenie oprócz tego zostanie wylogowane przy swoim następnym żądaniu, także te, które pozostają zalogowane dzięki opcji „Zapamiętać mnie”.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Każda sesja tego użytkownika zostanie wylogowana przy swoim następnym żądaniu, także te, które pozostają zalogowane dzięki opcji „Zapamiętać mnie”.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Tak, wylogować inne sesje</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Tak, wylogować wszystkie sesje</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>To urządzenie</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Urządzenie</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Wyświetlany jako jego sieć; pełny adres jest przechowywany dla administratorów.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>zalogowano z %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Zalogowano</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ostatnia aktywność</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Teraz</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Pozostaje zalogowane</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapamiętać mnie, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zamknięcia przeglądarki</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Zalogowano w</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identyfikator przeglądarki</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Aby zakończyć tę sesję, należy się wylogować.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wylogować</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Wylogować tę sesję</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Żadna sesja nie jest zalogowana.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Powiadomienia o logowaniu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Wysyłać wiadomość e-mail, gdy konto zaloguje się z nowego urządzenia lub przeglądarki</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Wysyłane na adres %email. Podaje urządzenie, przybliżone miejsce i czas oraz odsyła do tej strony.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Zapisać</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Ta witryna nie wysyła powiadomień o logowaniu.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Ostatnio zakończone</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sesje zakończone w ostatnich dniach (liczba dni: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Zakończono</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Sposób</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Brak.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Komputer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program lub aplikacja</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klient automatyczny</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nieznane urządzenie</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Hasło i kod logowania dwuetapowego</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfejs REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfejs SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Logowanie jednokrotne</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Zalogowano, zanim zaczęto rejestrować sesje</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wylogowano</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Wylogowano na tej stronie</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Wylogowano przez administratora</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Wylogowano opcją „wszystkie inne sesje”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Zastąpiono nowym logowaniem</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Zakończono zmianą hasła</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Wygasła</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesje użytkownika %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Gdzie konto jest teraz zalogowane. Jeśli któreś urządzenie jest nieznane, należy je wylogować i zmienić hasło.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Gdzie to konto jest teraz zalogowane. Wylogowanie użytkownika kończy każdą sesję przy jej następnym żądaniu.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesja została wylogowana. Urządzenie musi zalogować się ponownie.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Wylogowane inne sesje: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nie było innych sesji do wylogowania.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Wylogowane sesje tego użytkownika: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ten użytkownik nie miał sesji do wylogowania.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To jest bieżąca sesja. Aby ją zakończyć, należy się wylogować.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ta sesja była już zakończona.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Przy logowaniu na konto z nowego urządzenia zostanie wysłana wiadomość e-mail.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Wiadomości e-mail o logowaniach z nowych urządzeń nie będą już wysyłane.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona wygasła. Niczego nie zmieniono; proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Ta witryna nie rejestruje sesji.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sesje nie są jeszcze rejestrowane: witryna wymaga aktualizacji bazy danych.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Zalogowane teraz</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>To urządzenie</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Urządzenie</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Zalogowano</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ostatnia aktywność</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Teraz</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Pozostaje zalogowane</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapamiętać mnie, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zamknięcia przeglądarki</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Aby zakończyć tę sesję, należy się wylogować.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wylogować</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Wylogować tę sesję</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Wylogować wszystkie inne sesje</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wylogować wszędzie</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Powiadomienia o logowaniu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Wysyłać wiadomość e-mail, gdy konto zaloguje się z nowego urządzenia lub przeglądarki</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Zapisać</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Ostatnio zakończone</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Zakończono</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Sposób</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Brak w ostatnich dniach (liczba dni: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Można zobaczyć, gdzie konto jest zalogowane, i wylogować nieznane urządzenie.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Zarządzać urządzeniami</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nowe logowanie na konto w witrynie %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Dzień dobry,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Konto %login w witrynie %site zostało właśnie użyte do zalogowania z urządzenia lub przeglądarki, z których ostatnio nie korzystało:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Urządzenie:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Czas:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Przybliżony adres:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Jeśli było to własne logowanie, nie trzeba nic robić.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>W przeciwnym razie ktoś może znać hasło. Należy wylogować tę sesję na stronie urządzeń, a następnie zmienić hasło:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Na tej samej stronie można wyłączyć te wiadomości e-mail.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nowe logowanie konta %login w witrynie %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Konto %login zalogowało się z urządzenia lub przeglądarki, z których ostatnio nie korzystało.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Sesje tego użytkownika:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nowe logowanie na konto</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Konto %login zostało użyte do zalogowania z urządzenia %device (%ip) dnia %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Jeśli było to własne logowanie, nie trzeba nic robić. W przeciwnym razie należy wylogować tę sesję pod adresem %url i zmienić hasło.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nowe logowanie konta %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Konto %login zalogowało się z nowego urządzenia: %device (%ip) dnia %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Urządzenia</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesje użytkownika %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Klucze dostępu</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Klucz dostępu umożliwia logowanie odciskiem palca, twarzą, blokadą ekranu lub kluczem bezpieczeństwa zamiast hasła. Jest przechowywany na urządzeniu lub w menedżerze haseł; ta witryna przechowuje tylko jego klucz publiczny, więc wyciek danych tutaj nie może go ujawnić.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Klucze dostępu są w tej witrynie wyłączone.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Kluczy dostępu nie można jeszcze używać w tej witrynie: administrator musi najpierw uruchomić aktualizację bazy danych.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Usunąć klucz dostępu „%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Nie będzie można się już nim zalogować na to konto. Należy go usunąć także z urządzenia lub menedżera haseł.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Usunąć klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Klucze dostępu</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count z maksymalnie %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Brak kluczy dostępu. Można dodać klucz poniżej: przy następnym logowaniu należy wybrać „Zalogować się kluczem dostępu”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nazwa</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Dodano</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ostatnie użycie</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rodzaj</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcje</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Jeszcze nie</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synchronizowany</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>To urządzenie lub klucz</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Zmienić nazwę</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nowa nazwa</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Zapisać nazwę</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Usunąć</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Dodać klucz dostępu</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Należy postępować zgodnie z krokami przeglądarki lub urządzenia.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Okno klucza dostępu zostało zamknięte. Niczego nie zmieniono.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Nie udało się utworzyć klucza dostępu. Proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ta przeglądarka nie potrafi tworzyć kluczy dostępu. Należy użyć aktualnej przeglądarki lub zalogować się hasłem.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Na przykład urządzenie lub menedżer haseł, w którym się znajduje, aby odróżnić od siebie klucze dostępu.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>To konto ma już maksymalną dozwoloną liczbę kluczy dostępu (%max). Aby dodać kolejny, należy usunąć jeden z nich.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Nie udało się użyć klucza dostępu. Proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Moje konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Okno klucza dostępu zostało zamknięte. Zamiast tego można zalogować się hasłem.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Nie udało się użyć klucza dostępu. Proszę spróbować ponownie lub zalogować się hasłem.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Zalogować się kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Nie udało się zalogować kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>logowanie odciskiem palca, twarzą, blokadą ekranu lub kluczem bezpieczeństwa zamiast hasła.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Dodano klucz dostępu „%name”. Od teraz można się nim logować.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Klucz dostępu nazywa się teraz „%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Usunięto klucz dostępu „%name”. Nie można się już nim zalogować na to konto.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Klucz dostępu z %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>To konto ma już maksymalną dozwoloną liczbę kluczy dostępu. Należy najpierw usunąć jeden z nich.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Baza danych była zajęta i niczego nie zapisano. Proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Ten klucz dostępu jest już zarejestrowany.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Żądanie trwało zbyt długo lub zostało już użyte. Proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Klucz dostępu nie sprawdził tożsamości (PIN, odcisk palca lub twarz). Proszę spróbować ponownie i potwierdzić na urządzeniu.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Ten moduł uwierzytelniający używa rodzaju klucza, którego ta witryna nie akceptuje.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Klucz dostępu został utworzony dla innego adresu niż ta witryna.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Ten klucz dostępu nie jest tu zarejestrowany dla żadnego konta. Należy zalogować się hasłem i dodać go w sekcji Moje konto, Klucze dostępu.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>To konto nie może się obecnie zalogować. Proszę skontaktować się z administratorem witryny.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Nie udało się sprawdzić klucza dostępu. Proszę spróbować ponownie.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Za chwilę zostanie zmieniony sposób logowania lub zabezpieczenia konta.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Za chwilę nastąpi zarządzanie użytkownikami, rolami lub zasadami.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Za chwilę zostaną zmienione ustawienia systemu lub uruchomiona akcja konfiguracji.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Za chwilę nastąpi eksport danych.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Za chwilę treść zostanie usunięta lub opublikowana.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Ta akcja wymaga potwierdzenia tożsamości.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Należy potwierdzić tożsamość (zalogowano jako %login). Przez następne %minutes min pytanie nie pojawi się ponownie.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>To hasło jest nieprawidłowe.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ten kod jest nieprawidłowy lub został już użyty.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Należy wybrać jeden ze sposobów poniżej.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Nie udało się sprawdzić klucza dostępu.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Pozostałe próby przed wylogowaniem: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Wybranych plików nie można wysłać ponownie: po potwierdzeniu należy wybrać je jeszcze raz.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Hasłem</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Kluczem dostępu</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potwierdzić</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Użyć klucza dostępu</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Kodem z aplikacji uwierzytelniającej</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kod</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>To konto nie ma żadnego sposobu potwierdzenia tożsamości (brak hasła, klucza dostępu i aplikacji uwierzytelniającej). Należy wylogować się i zalogować ponownie lub zwrócić się do administratora.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Potwierdzenie tożsamości</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kod z aplikacji uwierzytelniającej</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Własne konto</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Zmiana własnego hasła, adresu e-mail, kluczy dostępu, logowania dwuetapowego lub kluczy API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Użytkownicy, role i zasady</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Tworzenie i edycja użytkowników, ustawienia kont, zatwierdzanie lub odrzucanie nowych kont użytkowników, przypisywanie ról i edycja zasad.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Ustawienia systemu i akcje konfiguracji</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Edycja ustawień, rozszerzenia, pamięć podręczna i konserwacja, pakiety i aktualizacje, kopie zapasowe oraz menedżer gita.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Eksport danych</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Eksporty zebranych informacji, użytkowników, subskrybentów biuletynu i audytu.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Usuwanie i publikowanie treści</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Usuwanie treści (także do kosza), opróżnianie kosza i publikowanie. Domyślnie wyłączone.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Przed wrażliwą akcją zalogowany użytkownik ponownie potwierdza tożsamość: hasłem, kluczem dostępu lub kodem z aplikacji uwierzytelniającej. Pytają tylko strony internetowe: interfejs REST, SOAP, WebDAV, logowanie expservices i wiersz poleceń nigdy nie pytają.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Ogólne</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Czas ważności potwierdzenia w minutach</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kiedy pytać</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Reguły w site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Zapisywane w settings/override/site.ini.append.php. Zapisanie wymaga potwierdzenia tożsamości.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Zapisać</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Potwierdzenie tożsamości</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Pytać o „Potwierdzenie tożsamości” przed akcjami grup włączonych poniżej</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Ustawienia zostały zapisane.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nie udało się zapisać ustawień: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguracja</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguracja</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nowy</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Usunąć</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Wiersze: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nowy wiersz</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Wiersz został zapisany.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wyszukać</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcje</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edytować</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Brak wierszy.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adres JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tak</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID węzła</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID obiektu użytkownika</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID obiektu treści</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Wiersz %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Wiersz nie został zapisany</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Zapisać</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulować</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Usunąć wiersz %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Wiersz zostanie usunięty z tabeli i nie będzie można go przywrócić.</translation>
     </message>
 </context>
 </TS>

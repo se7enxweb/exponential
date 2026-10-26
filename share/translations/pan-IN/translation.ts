@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>ਫੋਲਡਰ ਖੋਲ੍ਹੋ ਜਾਂ ਬੰਦ ਕਰੋ</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>ਇਹ ਸਫ਼ਾ ਤੁਹਾਡੇ ਬੁੱਕਮਾਰਕਾਂ ਵਿੱਚ ਹੈ। ਇਸਦਾ ਨਾਂ ਜਾਂ ਫੋਲਡਰ ਬਦਲਣ ਲਈ ਖੋਲ੍ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਨੂੰ ਆਪਣੇ ਬੁੱਕਮਾਰਕਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਇਸ ਸਫ਼ੇ ਦਾ ਪਤਾ ਇਸਦੇ ਪੈਰਾਮੀਟਰਾਂ ਸਮੇਤ ਰੱਖਦਾ ਹੈ: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਸ਼ਾਮਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>ਮੇਰੇ ਬੁੱਕਮਾਰਕ</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>ਸਿਸਟਮ ਸਫ਼ਾ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>ਸਿਸਟਮ ਸਫ਼ੇ</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>ਤੁਸੀਂ ਹੁਣ ਇਹ ਸਫ਼ਾ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੇ।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ਖੋਲ੍ਹੋ</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਦਾ ਪਤਾ ਗੁੰਮ ਹੈ। ਬੁੱਕਮਾਰਕ ਹਟਾਓ ਅਤੇ ਸਫ਼ੇ ਨੂੰ ਮੁੜ ਬੁੱਕਮਾਰਕ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ਤੁਸੀਂ ਹੁਣ ਇਹ ਸਫ਼ਾ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੇ। ਬੁੱਕਮਾਰਕ ਹਟਾਓ, ਜਾਂ ਕਿਸੇ ਪ੍ਰਸ਼ਾਸਕ ਤੋਂ ਪਹੁੰਚ ਮੰਗੋ।</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ਪਤਾ</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ਮੌਡਿਊਲ ਅਤੇ ਵਿਊ</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>ਸਿਸਟਮ ਸਫ਼ਿਆਂ ਨੂੰ ਵੀ ਬੁੱਕਮਾਰਕ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ: ਸਫ਼ਾ ਖੋਲ੍ਹੋ (ਸੈੱਟਅੱਪ, ਆਡਿਟ ਟ੍ਰੇਲ, ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਸੂਚੀ ...) ਅਤੇ ਉਸਦੇ ਉੱਪਰ “ਇਸ ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਕਰੋ” ਚੁਣੋ। ਅਜਿਹੇ ਬੁੱਕਮਾਰਕਾਂ ਦਾ ਗੇਅਰ ਆਈਕਾਨ ਹੁੰਦਾ ਹੈ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>ਨਵੀਨਤਮ ਫੋਰਮ ਪੋਸਟਾਂ ਲੋਡ ਨਹੀਂ ਕੀਤੀਆਂ ਜਾ ਸਕੀਆਂ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ਕਰੋਨ ਜੌਬ</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>ਅਜੇ ਤੱਕ ਕੋਈ ਕਰੋਨ ਜੌਬ ਹਿੱਸਾ ਨਹੀਂ ਚੱਲਿਆ: ਜੌਬ ਕਤਾਰ, ਇੰਪੋਰਟ, ਸੂਚਨਾਵਾਂ ਅਤੇ ਖੋਜ ਇੰਡੈਕਸ ਉਡੀਕ ਕਰ ਰਹੇ ਹਨ। php bin/php/installcrontab.php --add ਚਲਾਓ, ਜਾਂ --show ਦੀਆਂ ਲਾਈਨਾਂ crontab ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>ਇੱਕ ਕਰੋਨ ਜੌਬ ਹਿੱਸਾ ਆਪਣੀ ਸਮਾਂ-ਸਾਰਣੀ ਦੀ ਇਜਾਜ਼ਤ ਨਾਲੋਂ ਵੱਧ ਸਮੇਂ ਤੋਂ ਨਹੀਂ ਚੱਲਿਆ: crontab (php bin/php/installcrontab.php --show) ਅਤੇ ਲਾਗ var/log/cronjob-*.log ਜਾਂਚੋ।</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ਹਿੱਸਾ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ਸਮਾਂ-ਸਾਰਣੀ</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>ਆਖਰੀ ਵਾਰ ਸ਼ੁਰੂ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ਸਥਿਤੀ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ਕਦੇ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>ਸਮੇਂ ਸਿਰ</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ਦੇਰੀ ਨਾਲ</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ਕਦੇ ਨਹੀਂ ਚੱਲਿਆ</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਕਰੋਨ ਜੌਬ ਲਈ ਚਲਾਉਣ ਵਾਸਤੇ ਕੋਈ ਕਰੋਨ ਜੌਬ ਹਿੱਸਾ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>ਸੈੱਟਅੱਪ &gt; ਕਰੋਨ ਜੌਬ</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>ਵਰਤੋਂਕਾਰ ਖਾਤਿਆਂ ਨੂੰ ਨਿਸ਼ਕਿਰਿਆ ਕਰੋ ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਨਿਸ਼ਕਿਰਿਆ ਕੀਤੇ ਵਰਤੋਂਕਾਰਾਂ ਦੇ ਗਰੁੱਪ ਵਿੱਚ ਭੇਜੋ, ਅਤੇ ਵਾਪਸ ਭੇਜੋ</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ਵੇਖੋ ਕਿ ਹੋਰ ਵਰਤੋਂਕਾਰ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹਨ, ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>ਈਮੇਲ ਪਸੰਦਾਂ ਖੋਲ੍ਹੋ</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਡਿਵਾਈਸਾਂ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ਸੈਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>ਤੁਸੀਂ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੋ: ਬਰਾਊਜ਼ਰ, ਸਿਸਟਮ, ਥਾਂ ਅਤੇ ਸਮਾਂ। ਜਿਸ ਡਿਵਾਈਸ ਨੂੰ ਤੁਸੀਂ ਨਹੀਂ ਪਛਾਣਦੇ ਉਸਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>ਇਹ ਵਰਤੋਂਕਾਰ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ, ਅਤੇ ਵਰਤੋਂਕਾਰ ਨੂੰ ਹਰ ਥਾਂ ਤੋਂ ਸਾਈਨ ਆਉਟ ਕਰਨਾ।</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ਡਿਵਾਈਸਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>ਸੈਸ਼ਨ ਵਿਖਾਓ</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>ਪਾਸਕੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ਆਪਣੇ ਪਾਸਵਰਡ ਦੀ ਬਜਾਏ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ, ਚਿਹਰੇ, ਸਕ੍ਰੀਨ ਲਾਕ ਜਾਂ ਸੁਰੱਖਿਆ ਕੁੰਜੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>ਪਾਸਕੀਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ਪਾਸਕੀ ਸ਼ਾਮਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count ਪਾਸਕੀਆਂ</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>ਅਜੇ ਕੋਈ ਨਹੀਂ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>ਕਲਾਸ/ਗੁਣ ਸੰਜੋਗ (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>ਵਰਤੋਂਕਾਰ ਗਰੁੱਪ ਜਿਨ੍ਹਾਂ ਦੇ ਨਵੇਂ ਖਾਤਿਆਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਦੀ ਲੋੜ ਹੈ</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ਇਹਨਾਂ ਵਿੱਚੋਂ ਕਿਸੇ ਗਰੁੱਪ ਵਿੱਚ, ਜਾਂ ਉਸਦੇ ਹੇਠਾਂ, ਛਾਪਿਆ ਗਿਆ ਖਾਤਾ ਤਦ ਤੱਕ ਉਡੀਕ ਕਰਦਾ ਹੈ ਜਦ ਤੱਕ ਕੋਈ ਮਨਜ਼ੂਰਕਰਤਾ ਇਸਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕਰਦਾ। ਉਸ ਤੋਂ ਪਹਿਲਾਂ ਇਹ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦਾ।</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>ਖਾਤੇ ਮਨਜ਼ੂਰ ਕਰਨ ਵਾਲੇ ਵਰਤੋਂਕਾਰ</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>ਖਾਤੇ ਮਨਜ਼ੂਰ ਕਰਨ ਵਾਲੇ ਗਰੁੱਪ</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>ਵਰਤੋਂਕਾਰ ਗਰੁੱਪ ਜਿਨ੍ਹਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਦੀ ਲੋੜ ਨਹੀਂ (ਉਹਨਾਂ ਦੇ ਮੈਂਬਰ ਅਜਿਹੇ ਖਾਤੇ ਸਿੱਧੇ ਛਾਪਦੇ ਹਨ; ਮਨਜ਼ੂਰਕਰਤਾਵਾਂ ਨੂੰ ਕਦੇ ਇਸਦੀ ਲੋੜ ਨਹੀਂ)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ਮਨਜ਼ੂਰਕਰਤਾਵਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਦੇ ਲਿੰਕ ਵਾਲੀ ਈ-ਮੇਲ ਭੇਜੋ (ਮਨਜ਼ੂਰ ਜਾਂ ਰੱਦ ਕਰਨ ਲਈ ਉਹ ਸਾਈਨ ਇਨ ਕਰਦੇ ਹਨ)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>ਵਾਤਾਵਰਨ ਵੇਰੀਏਬਲ EXP_DEMO_MODE=1 ਇਸ ਇੰਸਟਾਲੇਸ਼ਨ ਨੂੰ ਜਨਤਕ ਡੈਮੋ ਵਜੋਂ ਚਿੰਨ੍ਹਿਤ ਕਰਦਾ ਹੈ: ਇੱਕ ਜਾਣਿਆ-ਪਛਾਣਿਆ ਪ੍ਰਸ਼ਾਸਕ ਪਾਸਵਰਡ ਸਵੀਕਾਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਪ੍ਰਸ਼ਾਸਕ ਪਾਸਵਰਡ ਬਾਅਦ ਵਿੱਚ ਬਦਲੇ ਜਾਂ ਰੀਸੈੱਟ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕਦੇ। ਪ੍ਰੋਡਕਸ਼ਨ ਸਾਈਟ ਲਈ ਕਦੇ ਵੀ ਡੈਮੋ ਮੋਡ ਨਾ ਵਰਤੋ।</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ਕਰੋਨ ਜੌਬ</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>ਕਰੋਨ ਜੌਬ ਵਰਤੋਂਕਾਰ %user ਦੀ crontab ਤੋਂ ਚੱਲਦੇ ਹਨ, ਜੋ ਇੰਸਟਾਲੇਸ਼ਨ ਦਾ ਮਾਲਕ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>ਇੰਸਟਾਲੇਸ਼ਨ ਵਿੱਚ ਸਮਾਂ-ਸਾਰਣੀ ਵਿੱਚ ਰੱਖਣ ਲਈ ਕੋਈ ਕਰੋਨ ਜੌਬ ਹਿੱਸਾ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab ਨਹੀਂ ਲਿਖੀ ਗਈ (%reason)। ਇਹ ਲਾਈਨਾਂ ਉਸ ਵਰਤੋਂਕਾਰ ਦੀ crontab ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ ਜਿਸ ਵਜੋਂ ਸਾਈਟ ਚੱਲਦੀ ਹੈ, ਨਹੀਂ ਤਾਂ ਕਤਾਰ, ਇੰਪੋਰਟ, ਸੂਚਨਾਵਾਂ ਅਤੇ ਖੋਜ ਇੰਡੈਕਸ ਕਦੇ ਨਹੀਂ ਚੱਲਣਗੇ:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute ਨਾਂ</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>ਖਾਤੇ ਜਿਨ੍ਹਾਂ ਨੂੰ ਮਨਜ਼ੂਰੀ ਦੀ ਲੋੜ ਹੈ</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ਮਨਜ਼ੂਰਕਰਤਾਵਾਂ ਨੂੰ ਈ-ਮੇਲ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ਹਾਂ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ਨਹੀਂ</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>ਤੁਹਾਡੀ ਟਿੱਪਣੀ ਸ਼ਾਮਲ ਕਰ ਦਿੱਤੀ ਗਈ।</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>ਖਾਤਾ “%1” ਮਨਜ਼ੂਰ ਕਰਕੇ ਛਾਪਿਆ ਗਿਆ: ਇਹ ਹੁਣ ਸਾਈਨ ਇਨ ਕਰ ਸਕਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>ਖਾਤਾ “%1” ਰੱਦ ਕੀਤਾ ਗਿਆ। ਇਹ ਛਾਪਿਆ ਨਹੀਂ ਗਿਆ ਅਤੇ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦਾ; ਇਹ ਮੁੜ ਆਪਣੇ ਲੇਖਕ ਦਾ ਖਰੜਾ ਹੈ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count ਬੁੱਕਮਾਰਕ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ।</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>ਸਿਸਟਮ ਸਫ਼ਾ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>ਸਿਸਟਮ ਸਫ਼ਿਆਂ ਨੂੰ ਅਜੇ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਇਸ ਵਰਜ਼ਨ ਦਾ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਨਹੀਂ ਚਲਾਇਆ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਇਹ ਕਿਸੇ ਮੌਡਿਊਲ ਵਿਊ ਦਾ ਸਫ਼ਾ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ: ਤੁਸੀਂ ਇਸਨੂੰ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੇ।</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>ਸਫ਼ੇ ਨੂੰ ਬੁੱਕਮਾਰਕ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>ਸਫ਼ਾ “%name” ਤੁਹਾਡੇ ਬੁੱਕਮਾਰਕਾਂ ਵਿੱਚ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਦਾ ਨਾਂ ਨਹੀਂ ਬਦਲਿਆ ਜਾ ਸਕਿਆ: ਇਸਨੂੰ ਨਾਂ ਦੀ ਲੋੜ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>ਬੁੱਕਮਾਰਕ ਦਾ ਨਾਂ ਬਦਲ ਕੇ “%name” ਕੀਤਾ ਗਿਆ।</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>ਪੈਕੇਜ</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>ਪੁਰਾਲੇਖ PAX tar ਫਾਰਮੈਟ ਵਿੱਚ ਪੈਕ ਕੀਤਾ ਗਿਆ ਸੀ, ਜਿਸਨੂੰ ਇੰਪੋਰਟ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ। ਪੈਕੇਜ ਨੂੰ GNU tar ਫਾਰਮੈਟ ਵਿੱਚ ਪੈਕ ਕਰੋ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)।</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>ਪੁਰਾਲੇਖ ਰੱਦ ਕੀਤਾ ਗਿਆ: ਐਂਟਰੀ “%path” ਦੀ tar ਕਿਸਮ “%type” ਹੈ, ਅਤੇ ਪੈਕੇਜ ਵਿੱਚ ਸਿਰਫ਼ ਫਾਇਲਾਂ ਅਤੇ ਡਾਇਰੈਕਟਰੀਆਂ ਹੁੰਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ਪੁਰਾਲੇਖ ਰੱਦ ਕੀਤਾ ਗਿਆ: ਇਸ ਵਿੱਚ %length ਬਾਈਟ ਤੋਂ ਲੰਬੀ ਐਂਟਰੀ ਦਾ ਨਾਂ ਹੈ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>ਡਾਟਾ ਟੇਬਲਾਂ ਵਿੱਚ ਮਿਰਰ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਮਨਜ਼ੂਰ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ਇੱਕ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਖਾਤਾ ਤੁਹਾਡੀ ਮਨਜ਼ੂਰੀ ਦੀ ਉਡੀਕ ਕਰ ਰਿਹਾ ਹੈ</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>ਪਾਸਵਰਡ ਬਦਲਣ ਵਾਲੇ ਸਫ਼ੇ ਉੱਤੇ ਭੇਜਿਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>ਦੂਜੇ ਪੜਾਅ ਤੋਂ ਬਿਨਾਂ ਸਾਈਨ ਇਨ ਰੱਦ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>ਐਪ ਪਾਸਵਰਡ ਬਣਾਇਆ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ਐਪ ਪਾਸਵਰਡ ਵਾਪਸ ਲਿਆ</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>ਐਪ ਪਾਸਵਰਡ ਵਰਤਿਆ</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>ਇਸ ਨੋਡ ਦਾ ਆਡਿਟ ਟ੍ਰੇਲ</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>ਸਹੀ-ਸਲਾਮਤ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ਟੁੱਟਿਆ</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ਜਾਂਚਿਆ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>ਮੁਰੰਮਤ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ਖਾਲੀ</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>ਨਵਾਂ ਈ-ਮੇਲ ਪਤਾ %email ਆਪਣੀ ਪੁਸ਼ਟੀ ਦੀ ਉਡੀਕ ਵਿੱਚ ਹੈ: ਉੱਥੇ ਭੇਜਿਆ ਲਿੰਕ ਖੋਲ੍ਹੋ। ਉਦੋਂ ਤੱਕ ਇਹ ਖਾਤਾ %current ਰੱਖੇਗਾ।</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>ਨਵੀਂ ਡਿਵਾਈਸ ਜਾਂ ਬਰਾਊਜ਼ਰ ਤੋਂ ਸਾਈਨ ਇਨ ਬਾਰੇ ਈ-ਮੇਲ ਖਾਤੇ ਦੀ ਸੁਰੱਖਿਆ ਦਾ ਹਿੱਸਾ ਹੈ। ਤੁਸੀਂ ਇਸਨੂੰ ਆਪਣੀਆਂ ਡਿਵਾਈਸਾਂ ਵਿੱਚ ਬੰਦ ਜਾਂ ਚਾਲੂ ਕਰਦੇ ਹੋ, ਜਿੱਥੇ ਤੁਸੀਂ ਆਪਣੇ ਖਾਤੇ ਦੇ ਸੈਸ਼ਨ ਵੇਖ ਅਤੇ ਸਾਈਨ ਆਉਟ ਵੀ ਕਰ ਸਕਦੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਡਿਵਾਈਸਾਂ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>ਹੋਰ ਦਰਸ਼ਕ</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>ਸਮੀਖਿਆ ਅਤੇ ਜਾਰੀ ਕਰਨਾ</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>ਵਿਸ਼ਾ ਹੁਣ ਸਮੀਖਿਆ ਵਿੱਚ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>ਵਿਸ਼ਾ ਜਾਰੀ ਕੀਤਾ ਗਿਆ ਹੈ: ਪਾਠਕ ਹੁਣ ਇਸਨੂੰ ਵੇਖਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>ਵਿਸ਼ਾ ਮੁੜ ਖਰੜਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>ਮੌਜੂਦਾ ਵਰਜ਼ਨ ਤੁਸੀਂ ਲਿਖਿਆ ਹੈ, ਇਸ ਲਈ ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਰੋਲ ਵਾਲਾ ਕੋਈ ਹੋਰ ਇਸਨੂੰ ਜਾਰੀ ਕਰੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>ਸਥਿਤੀ ਨਹੀਂ ਬਦਲੀ ਗਈ: ਤੁਹਾਡਾ ਰੋਲ ਇਸ ਪੜਾਅ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਦਿੰਦਾ।</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>ਸਮੀਖਿਆ ਵਰਕਫਲੋ</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ਖਰੜਾ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ਸਮੀਖਿਆ</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>ਸਮੀਖਿਆ ਵਿੱਚ ਵਾਪਸ</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>ਸਮੀਖਿਆ ਲਈ ਭੇਜੋ</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>ਜਾਰੀ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>ਖਰੜੇ ਵਿੱਚ ਵਾਪਸ</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>ਸ਼ੈਲੀ ਗਾਈਡ ਜਾਂਚ</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>ਸ਼ੈਲੀ ਗਾਈਡ ਜਾਂਚ ਵਿੱਚ ਕੁਝ ਨਹੀਂ ਮਿਲਿਆ।</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors ਗਲਤੀਆਂ, %warnings ਚੇਤਾਵਨੀਆਂ, %notices ਨੋਟਿਸ। ਇੱਕ ਗਲਤੀ ./console exp:help:content check ਨੂੰ ਪਾਸ ਹੋਣ ਤੋਂ ਰੋਕਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>ਪੱਧਰ</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>ਨਿਯਮ</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ਖੇਤਰ</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>ਨਤੀਜਾ</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ਕੀ ਇਹ ਮਦਦਗਾਰ ਸੀ?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>ਪਾਠਕਾਂ ਨੇ %yes ਵਾਰ ਹਾਂ ਅਤੇ %no ਵਾਰ ਨਹੀਂ ਜਵਾਬ ਦਿੱਤਾ।</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>ਨਹੀਂ ਲਈ ਦਿੱਤੇ ਕਾਰਨ:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>ਧੰਨਵਾਦ। ਤੁਹਾਡਾ ਜਵਾਬ ਮਦਦ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਵਿੱਚ ਸਾਡੀ ਮਦਦ ਕਰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ਹਾਂ</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>ਜੇ ਨਹੀਂ, ਤਾਂ ਕੀ ਗਲਤ ਸੀ?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>ਕੋਈ ਕਾਰਨ ਨਹੀਂ ਦਿੱਤਾ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>ਸਿਰਫ਼ ਤੁਹਾਡਾ ਜਵਾਬ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ, ਤੁਸੀਂ ਕੌਣ ਹੋ ਇਹ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ਇਹ ਪੁਰਾਣਾ ਹੋ ਗਿਆ ਹੈ</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>ਇਹ ਸਮਝਣਾ ਔਖਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ਕੁਝ ਗੁੰਮ ਹੈ</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>ਇਹ ਗਲਤ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>ਕੋਈ ਹੋਰ ਕਾਰਨ</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ਇਹ ਵਿਸ਼ਾ ਜਾਰੀ ਨਹੀਂ ਕੀਤਾ ਗਿਆ; ਪਾਠਕ ਇਸਨੂੰ ਨਹੀਂ ਵੇਖਦੇ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>ਪਰਸਿਸਟੈਂਟ ਕਲਾਸਾਂ ਦੀਆਂ ਸਾਰਣੀਆਂ ਬਰਾਊਜ਼ ਕਰੋ…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>ਮਨਜ਼ੂਰੀ ਦੀ ਉਡੀਕ ਕਰ ਰਿਹਾ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਖਾਤਾ: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ਖਾਤਾ</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>ਵਰਤੋਂਕਾਰ-ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ਗਰੁੱਪ</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>ਬੇਨਤੀਕਰਤਾ</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>ਮਨਜ਼ੂਰੀ ਖੋਲ੍ਹੋ</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ਜੇ ਬਟਨ ਕੰਮ ਨਹੀਂ ਕਰਦਾ, ਤਾਂ ਇਹ ਪਤਾ ਆਪਣੇ ਬਰਾਊਜ਼ਰ ਵਿੱਚ ਕਾਪੀ ਕਰੋ: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ਇੱਕ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਖਾਤਾ ਤੁਹਾਡੀ ਮਨਜ਼ੂਰੀ ਦੀ ਉਡੀਕ ਕਰ ਰਿਹਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester ਨੇ %groups ਵਿੱਚ ਖਾਤਾ “%name” ਬਣਾਇਆ। ਜਦ ਤੱਕ ਕੋਈ ਮਨਜ਼ੂਰਕਰਤਾ ਇਸਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕਰਦਾ, ਇਹ ਛਾਪਿਆ ਨਹੀਂ ਜਾਂਦਾ ਅਤੇ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦਾ।</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>ਪ੍ਰਸ਼ਾਸਨ ਵਿੱਚ ਸਾਈਨ ਇਨ ਕਰੋ ਅਤੇ ਆਪਣੀ ਸਹਿਯੋਗ ਸੂਚੀ ਵਿੱਚ ਇਸਨੂੰ ਮਨਜ਼ੂਰ ਜਾਂ ਰੱਦ ਕਰੋ। ਇਹ ਲਿੰਕ ਤੁਹਾਨੂੰ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰਦਾ ਅਤੇ ਆਪਣੇ ਆਪ ਕੁਝ ਤੈਅ ਨਹੀਂ ਕਰਦਾ।</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>ਇਹ ਮੇਲ %site ਵੱਲੋਂ ਭੇਜੀ ਗਈ ਹੈ ਕਿਉਂਕਿ ਤੁਸੀਂ ਇਹਨਾਂ ਗਰੁੱਪਾਂ ਦੇ ਨਵੇਂ ਖਾਤੇ ਮਨਜ਼ੂਰ ਕਰਦੇ ਹੋ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ਕੰਪਿਊਟਰ</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ਫ਼ੋਨ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ਟੈਬਲੈੱਟ</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ਪ੍ਰੋਗਰਾਮ ਜਾਂ ਐਪ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ਸਵੈਚਲਿਤ ਕਲਾਇੰਟ</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ਅਣਜਾਣ ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ਪਾਸਵਰਡ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ਪਾਸਵਰਡ ਅਤੇ ਦੋ-ਪੜਾਵੀ ਕੋਡ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ਇੰਟਰਫੇਸ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ਇੰਟਰਫੇਸ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ਸਿੰਗਲ ਸਾਈਨ-ਆਨ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ਸੈਸ਼ਨ ਦਰਜ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਸਾਈਨ ਇਨ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਤੋਂ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ਪ੍ਰਸ਼ਾਸਕ ਵੱਲੋਂ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“ਬਾਕੀ ਸਾਰੇ ਸੈਸ਼ਨ” ਨਾਲ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>ਨਵੇਂ ਸਾਈਨ ਇਨ ਨਾਲ ਬਦਲਿਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>ਪਾਸਵਰਡ ਬਦਲਣ ਨਾਲ ਖਤਮ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ਮਿਆਦ ਪੁੱਗ ਗਈ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਡਿਵਾਈਸਾਂ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ਦੇ ਸੈਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ਤੁਹਾਡਾ ਖਾਤਾ ਇਸ ਵੇਲੇ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ। ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਡਿਵਾਈਸ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ, ਤਾਂ ਉਸਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰੋ ਅਤੇ ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲੋ।</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ਇਹ ਖਾਤਾ ਇਸ ਵੇਲੇ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ। ਵਰਤੋਂਕਾਰ ਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰਨ ਨਾਲ ਹਰ ਸੈਸ਼ਨ ਆਪਣੀ ਅਗਲੀ ਬੇਨਤੀ &apos;ਤੇ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ਖਾਤੇ &apos;ਤੇ ਵਾਪਸ</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤਾ ਗਿਆ। ਡਿਵਾਈਸ ਨੂੰ ਮੁੜ ਸਾਈਨ ਇਨ ਕਰਨਾ ਪਵੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ਹੋਰ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤੇ ਗਏ।</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਕਰਨ ਲਈ ਕੋਈ ਹੋਰ ਸੈਸ਼ਨ ਨਹੀਂ ਸਨ।</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦੇ %count ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤੇ ਗਏ।</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦਾ ਸਾਈਨ ਆਉਟ ਕਰਨ ਲਈ ਕੋਈ ਸੈਸ਼ਨ ਨਹੀਂ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ਇਹ ਉਹ ਸੈਸ਼ਨ ਹੈ ਜੋ ਤੁਸੀਂ ਵਰਤ ਰਹੇ ਹੋ। ਇਸਨੂੰ ਖਤਮ ਕਰਨ ਲਈ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ਉਹ ਸੈਸ਼ਨ ਪਹਿਲਾਂ ਹੀ ਖਤਮ ਹੋ ਚੁੱਕਾ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ਜਦੋਂ ਤੁਹਾਡਾ ਖਾਤਾ ਕਿਸੇ ਨਵੀਂ ਡਿਵਾਈਸ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਵੇਗਾ ਤਾਂ ਤੁਹਾਨੂੰ ਈ-ਮੇਲ ਮਿਲੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ਤੁਹਾਨੂੰ ਹੁਣ ਨਵੀਆਂ ਡਿਵਾਈਸਾਂ ਤੋਂ ਸਾਈਨ ਇਨ ਬਾਰੇ ਈ-ਮੇਲ ਨਹੀਂ ਮਿਲੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ਸਫ਼ੇ ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ ਸੀ। ਕੁਝ ਨਹੀਂ ਬਦਲਿਆ ਗਿਆ; ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ਇਸ ਸਾਈਟ &apos;ਤੇ ਸੈਸ਼ਨ ਦਰਜ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ (site.ini [UserSessionSettings] Tracking=disabled)।</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ਸਾਰਣੀ expuser_session ਗੁੰਮ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ਇਸਦੇ ਬਣਨ ਤੋਂ ਬਾਅਦ ਸੈਸ਼ਨ ਦਰਜ ਹੁੰਦੇ ਹਨ: php update/common/scripts/6.0/createusersessiontable.php, ਜਾਂ 6.0.15 ਦਾ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ।</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ਹੁਣ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ਬਾਕੀ ਸਾਰੇ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ਹਰ ਥਾਂ ਤੋਂ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ਇਸ ਤੋਂ ਇਲਾਵਾ ਹਰ ਡਿਵਾਈਸ ਆਪਣੀ ਅਗਲੀ ਬੇਨਤੀ &apos;ਤੇ ਸਾਈਨ ਆਉਟ ਹੋ ਜਾਂਦੀ ਹੈ, ਉਹ ਵੀ ਜੋ “ਮੈਨੂੰ ਯਾਦ ਰੱਖੋ” ਨਾਲ ਸਾਈਨ ਇਨ ਰਹਿੰਦੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦਾ ਹਰ ਸੈਸ਼ਨ ਆਪਣੀ ਅਗਲੀ ਬੇਨਤੀ &apos;ਤੇ ਸਾਈਨ ਆਉਟ ਹੋ ਜਾਂਦਾ ਹੈ, ਉਹ ਵੀ ਜੋ “ਮੈਨੂੰ ਯਾਦ ਰੱਖੋ” ਨਾਲ ਸਾਈਨ ਇਨ ਰਹਿੰਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>ਹਾਂ, ਬਾਕੀ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>ਹਾਂ, ਹਰ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ਇਹ ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ਪਤਾ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>ਇਸਦੇ ਨੈੱਟਵਰਕ ਵਜੋਂ ਵਿਖਾਇਆ ਗਿਆ; ਪੂਰਾ ਪਤਾ ਪ੍ਰਸ਼ਾਸਕਾਂ ਲਈ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip ਤੋਂ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ਆਖਰੀ ਵਾਰ ਸਰਗਰਮ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ਹੁਣ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ਸਾਈਨ ਇਨ ਰਹਿੰਦਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ਮੈਨੂੰ ਯਾਦ ਰੱਖੋ, %date ਤੱਕ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ਬਰਾਊਜ਼ਰ ਬੰਦ ਹੋਣ ਤੱਕ</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>ਸਾਈਨ ਇਨ ਦਾ ਸਮਾਂ</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>ਬਰਾਊਜ਼ਰ ਪਛਾਣ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਖਤਮ ਕਰਨ ਲਈ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ਇਹ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ਕੋਈ ਸੈਸ਼ਨ ਸਾਈਨ ਇਨ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ਸਾਈਨ-ਇਨ ਚੇਤਾਵਨੀਆਂ</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ਜਦੋਂ ਮੇਰਾ ਖਾਤਾ ਕਿਸੇ ਨਵੀਂ ਡਿਵਾਈਸ ਜਾਂ ਬਰਾਊਜ਼ਰ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਵੇ ਤਾਂ ਮੈਨੂੰ ਈ-ਮੇਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email &apos;ਤੇ ਭੇਜੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਤੁਹਾਨੂੰ ਡਿਵਾਈਸ, ਅੰਦਾਜ਼ਨ ਥਾਂ ਅਤੇ ਸਮਾਂ ਦੱਸਦੀ ਹੈ, ਅਤੇ ਇਸ ਸਫ਼ੇ ਦਾ ਲਿੰਕ ਦਿੰਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>ਇਹ ਸਾਈਟ ਸਾਈਨ-ਇਨ ਚੇਤਾਵਨੀਆਂ ਨਹੀਂ ਭੇਜਦੀ।</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ਹਾਲ ਹੀ ਵਿੱਚ ਖਤਮ</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>ਪਿਛਲੇ %days ਦਿਨਾਂ ਵਿੱਚ ਖਤਮ ਹੋਏ ਸੈਸ਼ਨ।</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ਖਤਮ</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ਕਿਵੇਂ</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>ਕੋਈ ਨਹੀਂ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ਕੰਪਿਊਟਰ</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ਫ਼ੋਨ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ਟੈਬਲੈੱਟ</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ਪ੍ਰੋਗਰਾਮ ਜਾਂ ਐਪ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ਸਵੈਚਲਿਤ ਕਲਾਇੰਟ</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ਅਣਜਾਣ ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ਪਾਸਵਰਡ</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ਪਾਸਵਰਡ ਅਤੇ ਦੋ-ਪੜਾਵੀ ਕੋਡ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ਇੰਟਰਫੇਸ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ਇੰਟਰਫੇਸ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ਸਿੰਗਲ ਸਾਈਨ-ਆਨ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ਸੈਸ਼ਨ ਦਰਜ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਸਾਈਨ ਇਨ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ਇਸ ਸਫ਼ੇ ਤੋਂ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ਪ੍ਰਸ਼ਾਸਕ ਵੱਲੋਂ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“ਬਾਕੀ ਸਾਰੇ ਸੈਸ਼ਨ” ਨਾਲ ਸਾਈਨ ਆਉਟ ਕੀਤਾ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>ਨਵੇਂ ਸਾਈਨ ਇਨ ਨਾਲ ਬਦਲਿਆ ਗਿਆ</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>ਪਾਸਵਰਡ ਬਦਲਣ ਨਾਲ ਖਤਮ ਹੋਇਆ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ਮਿਆਦ ਪੁੱਗ ਗਈ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਡਿਵਾਈਸਾਂ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ਦੇ ਸੈਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ਤੁਹਾਡਾ ਖਾਤਾ ਇਸ ਵੇਲੇ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ। ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਡਿਵਾਈਸ ਨੂੰ ਨਹੀਂ ਪਛਾਣਦੇ, ਤਾਂ ਉਸਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰੋ ਅਤੇ ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲੋ।</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ਇਹ ਖਾਤਾ ਇਸ ਵੇਲੇ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ। ਵਰਤੋਂਕਾਰ ਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰਨ ਨਾਲ ਹਰ ਸੈਸ਼ਨ ਆਪਣੀ ਅਗਲੀ ਬੇਨਤੀ &apos;ਤੇ ਖਤਮ ਹੋ ਜਾਂਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤਾ ਗਿਆ। ਡਿਵਾਈਸ ਨੂੰ ਮੁੜ ਸਾਈਨ ਇਨ ਕਰਨਾ ਪਵੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ਹੋਰ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤੇ ਗਏ।</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਕਰਨ ਲਈ ਕੋਈ ਹੋਰ ਸੈਸ਼ਨ ਨਹੀਂ ਸਨ।</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦੇ %count ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕੀਤੇ ਗਏ।</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦਾ ਸਾਈਨ ਆਉਟ ਕਰਨ ਲਈ ਕੋਈ ਸੈਸ਼ਨ ਨਹੀਂ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ਇਹ ਉਹ ਸੈਸ਼ਨ ਹੈ ਜੋ ਤੁਸੀਂ ਵਰਤ ਰਹੇ ਹੋ। ਇਸਨੂੰ ਖਤਮ ਕਰਨ ਲਈ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ਉਹ ਸੈਸ਼ਨ ਪਹਿਲਾਂ ਹੀ ਖਤਮ ਹੋ ਚੁੱਕਾ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ਜਦੋਂ ਤੁਹਾਡਾ ਖਾਤਾ ਕਿਸੇ ਨਵੀਂ ਡਿਵਾਈਸ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਵੇਗਾ ਤਾਂ ਤੁਹਾਨੂੰ ਈ-ਮੇਲ ਮਿਲੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ਤੁਹਾਨੂੰ ਹੁਣ ਨਵੀਆਂ ਡਿਵਾਈਸਾਂ ਤੋਂ ਸਾਈਨ ਇਨ ਬਾਰੇ ਈ-ਮੇਲ ਨਹੀਂ ਮਿਲੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ਸਫ਼ੇ ਦੀ ਮਿਆਦ ਪੁੱਗ ਗਈ ਸੀ। ਕੁਝ ਨਹੀਂ ਬਦਲਿਆ ਗਿਆ; ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>ਇਸ ਸਾਈਟ &apos;ਤੇ ਸੈਸ਼ਨ ਦਰਜ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>ਸੈਸ਼ਨ ਅਜੇ ਦਰਜ ਨਹੀਂ ਕੀਤੇ ਜਾਂਦੇ: ਸਾਈਟ ਨੂੰ ਆਪਣੇ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਦੀ ਲੋੜ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ਹੁਣ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ਇਹ ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ਡਿਵਾਈਸ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ਪਤਾ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ਆਖਰੀ ਵਾਰ ਸਰਗਰਮ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ਹੁਣ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ਸਾਈਨ ਇਨ ਰਹਿੰਦਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ਮੈਨੂੰ ਯਾਦ ਰੱਖੋ, %date ਤੱਕ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ਬਰਾਊਜ਼ਰ ਬੰਦ ਹੋਣ ਤੱਕ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ਇਸ ਸੈਸ਼ਨ ਨੂੰ ਖਤਮ ਕਰਨ ਲਈ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ਇਹ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ਬਾਕੀ ਸਾਰੇ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ਹਰ ਥਾਂ ਤੋਂ ਸਾਈਨ ਆਉਟ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ਸਾਈਨ-ਇਨ ਚੇਤਾਵਨੀਆਂ</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ਜਦੋਂ ਮੇਰਾ ਖਾਤਾ ਕਿਸੇ ਨਵੀਂ ਡਿਵਾਈਸ ਜਾਂ ਬਰਾਊਜ਼ਰ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਵੇ ਤਾਂ ਮੈਨੂੰ ਈ-ਮੇਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ਹਾਲ ਹੀ ਵਿੱਚ ਖਤਮ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ਖਤਮ</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ਕਿਵੇਂ</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>ਪਿਛਲੇ %days ਦਿਨਾਂ ਵਿੱਚ ਕੋਈ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>ਵੇਖੋ ਕਿ ਤੁਹਾਡਾ ਖਾਤਾ ਕਿੱਥੇ ਸਾਈਨ ਇਨ ਹੈ, ਅਤੇ ਜਿਸ ਡਿਵਾਈਸ ਨੂੰ ਤੁਸੀਂ ਨਹੀਂ ਪਛਾਣਦੇ ਉਸਨੂੰ ਸਾਈਨ ਆਉਟ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ਡਿਵਾਈਸਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰੋ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site &apos;ਤੇ ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਨਵਾਂ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site &apos;ਤੇ ਤੁਹਾਡੇ ਖਾਤੇ %login ਨੂੰ ਹੁਣੇ ਇੱਕ ਅਜਿਹੀ ਡਿਵਾਈਸ ਜਾਂ ਬਰਾਊਜ਼ਰ ਤੋਂ ਸਾਈਨ ਇਨ ਕਰਨ ਲਈ ਵਰਤਿਆ ਗਿਆ ਜੋ ਇਸਨੇ ਹਾਲ ਹੀ ਵਿੱਚ ਨਹੀਂ ਵਰਤੀ:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>ਡਿਵਾਈਸ:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>ਸਮਾਂ:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>ਅੰਦਾਜ਼ਨ ਪਤਾ:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ਜੇ ਇਹ ਤੁਸੀਂ ਸੀ, ਤਾਂ ਤੁਹਾਨੂੰ ਕੁਝ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>ਜੇ ਇਹ ਤੁਸੀਂ ਨਹੀਂ ਸੀ, ਤਾਂ ਹੋ ਸਕਦਾ ਹੈ ਕਿਸੇ ਨੂੰ ਤੁਹਾਡਾ ਪਾਸਵਰਡ ਪਤਾ ਹੋਵੇ। ਆਪਣੀਆਂ ਡਿਵਾਈਸਾਂ ਵਾਲੇ ਸਫ਼ੇ &apos;ਤੇ ਉਹ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ, ਫਿਰ ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲੋ:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>ਤੁਸੀਂ ਇਸੇ ਸਫ਼ੇ &apos;ਤੇ ਇਹ ਈ-ਮੇਲਾਂ ਬੰਦ ਕਰ ਸਕਦੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site &apos;ਤੇ %login ਦਾ ਨਵਾਂ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>ਖਾਤਾ %login ਇੱਕ ਅਜਿਹੀ ਡਿਵਾਈਸ ਜਾਂ ਬਰਾਊਜ਼ਰ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਇਆ ਜੋ ਇਸਨੇ ਹਾਲ ਹੀ ਵਿੱਚ ਨਹੀਂ ਵਰਤੀ।</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>ਇਸ ਵਰਤੋਂਕਾਰ ਦੇ ਸੈਸ਼ਨ:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ਤੁਹਾਡੇ ਖਾਤੇ ਵਿੱਚ ਨਵਾਂ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>ਤੁਹਾਡੇ ਖਾਤੇ %login ਨੂੰ %date ਨੂੰ %device (%ip) ਤੋਂ ਸਾਈਨ ਇਨ ਕਰਨ ਲਈ ਵਰਤਿਆ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ਜੇ ਇਹ ਤੁਸੀਂ ਸੀ, ਤਾਂ ਤੁਹਾਨੂੰ ਕੁਝ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ। ਜੇ ਨਹੀਂ, ਤਾਂ %url &apos;ਤੇ ਇਹ ਸੈਸ਼ਨ ਸਾਈਨ ਆਉਟ ਕਰੋ ਅਤੇ ਆਪਣਾ ਪਾਸਵਰਡ ਬਦਲੋ।</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login ਦਾ ਨਵਾਂ ਸਾਈਨ ਇਨ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>ਖਾਤਾ %login ਇੱਕ ਨਵੀਂ ਡਿਵਾਈਸ ਤੋਂ ਸਾਈਨ ਇਨ ਹੋਇਆ: %device (%ip), %date ਨੂੰ।</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਡਿਵਾਈਸਾਂ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ਦੇ ਸੈਸ਼ਨ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>ਪਾਸਕੀਆਂ</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>ਪਾਸਕੀ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਪਾਸਵਰਡ ਦੀ ਬਜਾਏ ਤੁਹਾਡੇ ਫਿੰਗਰਪ੍ਰਿੰਟ, ਚਿਹਰੇ, ਸਕ੍ਰੀਨ ਲਾਕ ਜਾਂ ਸੁਰੱਖਿਆ ਕੁੰਜੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰਵਾਉਂਦੀ ਹੈ। ਇਹ ਤੁਹਾਡੀ ਡਿਵਾਈਸ &apos;ਤੇ ਜਾਂ ਤੁਹਾਡੇ ਪਾਸਵਰਡ ਮੈਨੇਜਰ ਵਿੱਚ ਸਟੋਰ ਹੁੰਦੀ ਹੈ; ਇਹ ਸਾਈਟ ਸਿਰਫ਼ ਇਸਦੀ ਜਨਤਕ ਕੁੰਜੀ ਰੱਖਦੀ ਹੈ, ਇਸ ਲਈ ਇੱਥੇ ਕੋਈ ਲੀਕ ਇਸਨੂੰ ਜ਼ਾਹਰ ਨਹੀਂ ਕਰ ਸਕਦਾ।</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>ਇਸ ਸਾਈਟ &apos;ਤੇ ਪਾਸਕੀਆਂ ਬੰਦ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>ਇਸ ਸਾਈਟ &apos;ਤੇ ਅਜੇ ਪਾਸਕੀਆਂ ਨਹੀਂ ਵਰਤੀਆਂ ਜਾ ਸਕਦੀਆਂ: ਪ੍ਰਸ਼ਾਸਕ ਨੂੰ ਪਹਿਲਾਂ ਡਾਟਾਬੇਸ ਅੱਪਡੇਟ ਚਲਾਉਣਾ ਪਵੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>ਕੀ ਪਾਸਕੀ “%name” ਹਟਾਉਣੀ ਹੈ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>ਇਹ ਹੁਣ ਇਸ ਖਾਤੇ ਵਿੱਚ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕੇਗੀ। ਇਸਨੂੰ ਆਪਣੀ ਡਿਵਾਈਸ ਜਾਂ ਪਾਸਵਰਡ ਮੈਨੇਜਰ ਤੋਂ ਵੀ ਹਟਾਓ।</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>ਪਾਸਕੀ ਹਟਾਓ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ਰੱਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਪਾਸਕੀਆਂ</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>ਵੱਧ ਤੋਂ ਵੱਧ %max ਵਿੱਚੋਂ %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ਤੁਹਾਡੇ ਕੋਲ ਅਜੇ ਕੋਈ ਪਾਸਕੀ ਨਹੀਂ ਹੈ। ਹੇਠਾਂ ਇੱਕ ਸ਼ਾਮਲ ਕਰੋ: ਅਗਲੀ ਵਾਰ ਸਾਈਨ ਇਨ ਕਰਦੇ ਸਮੇਂ “ਪਾਸਕੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ” ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ਸ਼ਾਮਲ ਕੀਤੀ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ਆਖਰੀ ਵਾਰ ਵਰਤੀ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ਕਿਸਮ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ਕਾਰਵਾਈਆਂ</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ਅਜੇ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>ਸਿੰਕ ਕੀਤੀ</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>ਇਹ ਡਿਵਾਈਸ ਜਾਂ ਕੁੰਜੀ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>ਨਾਂ ਬਦਲੋ</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>ਨਵਾਂ ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>ਨਾਂ ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ਹਟਾਓ</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ਪਾਸਕੀ ਸ਼ਾਮਲ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>ਆਪਣੇ ਬਰਾਊਜ਼ਰ ਜਾਂ ਡਿਵਾਈਸ ਦੇ ਪੜਾਵਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>ਪਾਸਕੀ ਡਾਇਲਾਗ ਬੰਦ ਕੀਤਾ ਗਿਆ। ਕੁਝ ਨਹੀਂ ਬਦਲਿਆ ਗਿਆ।</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>ਪਾਸਕੀ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕੀ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>ਇਹ ਬਰਾਊਜ਼ਰ ਪਾਸਕੀਆਂ ਨਹੀਂ ਬਣਾ ਸਕਦਾ। ਕੋਈ ਮੌਜੂਦਾ ਬਰਾਊਜ਼ਰ ਵਰਤੋ, ਜਾਂ ਆਪਣੇ ਪਾਸਵਰਡ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ਉਦਾਹਰਨ ਲਈ ਉਹ ਡਿਵਾਈਸ ਜਾਂ ਪਾਸਵਰਡ ਮੈਨੇਜਰ ਜਿਸ &apos;ਤੇ ਇਹ ਹੈ, ਤਾਂ ਜੋ ਤੁਸੀਂ ਆਪਣੀਆਂ ਪਾਸਕੀਆਂ ਨੂੰ ਵੱਖ ਪਛਾਣ ਸਕੋ।</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>ਇਸ ਖਾਤੇ ਵਿੱਚ ਜਿੰਨੀਆਂ ਪਾਸਕੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ ਓਨੀਆਂ ਹਨ (%max)। ਹੋਰ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਇੱਕ ਹਟਾਓ।</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>ਪਾਸਕੀ ਨਹੀਂ ਵਰਤੀ ਜਾ ਸਕੀ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>ਮੇਰਾ ਖਾਤਾ</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>ਪਾਸਕੀ ਡਾਇਲਾਗ ਬੰਦ ਕੀਤਾ ਗਿਆ। ਤੁਸੀਂ ਇਸਦੀ ਬਜਾਏ ਆਪਣੇ ਪਾਸਵਰਡ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰ ਸਕਦੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>ਪਾਸਕੀ ਨਹੀਂ ਵਰਤੀ ਜਾ ਸਕੀ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ, ਜਾਂ ਆਪਣੇ ਪਾਸਵਰਡ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>ਪਾਸਕੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>ਪਾਸਕੀ ਨਾਲ ਸਾਈਨ ਇਨ ਨਹੀਂ ਹੋ ਸਕਿਆ</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ਆਪਣੇ ਪਾਸਵਰਡ ਦੀ ਬਜਾਏ ਆਪਣੇ ਫਿੰਗਰਪ੍ਰਿੰਟ, ਚਿਹਰੇ, ਸਕ੍ਰੀਨ ਲਾਕ ਜਾਂ ਸੁਰੱਖਿਆ ਕੁੰਜੀ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>ਪਾਸਕੀ “%name” ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ। ਹੁਣ ਤੋਂ ਤੁਸੀਂ ਇਸ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰ ਸਕਦੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>ਪਾਸਕੀ ਦਾ ਨਾਂ ਹੁਣ “%name” ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>ਪਾਸਕੀ “%name” ਹਟਾ ਦਿੱਤੀ ਗਈ। ਇਹ ਹੁਣ ਇਸ ਖਾਤੇ ਵਿੱਚ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦੀ।</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date ਦੀ ਪਾਸਕੀ</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>ਇਸ ਖਾਤੇ ਵਿੱਚ ਜਿੰਨੀਆਂ ਪਾਸਕੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ ਓਨੀਆਂ ਹਨ। ਪਹਿਲਾਂ ਇੱਕ ਹਟਾਓ।</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>ਡਾਟਾਬੇਸ ਰੁੱਝਿਆ ਹੋਇਆ ਸੀ ਅਤੇ ਕੁਝ ਨਹੀਂ ਸੰਭਾਲਿਆ ਗਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>ਇਹ ਪਾਸਕੀ ਪਹਿਲਾਂ ਹੀ ਰਜਿਸਟਰ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>ਬੇਨਤੀ ਨੂੰ ਬਹੁਤ ਸਮਾਂ ਲੱਗਿਆ ਜਾਂ ਇਹ ਪਹਿਲਾਂ ਹੀ ਵਰਤੀ ਜਾ ਚੁੱਕੀ ਸੀ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>ਪਾਸਕੀ ਨੇ ਇਹ ਨਹੀਂ ਜਾਂਚਿਆ ਕਿ ਤੁਸੀਂ ਕੌਣ ਹੋ (PIN, ਫਿੰਗਰਪ੍ਰਿੰਟ ਜਾਂ ਚਿਹਰਾ)। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ ਅਤੇ ਆਪਣੀ ਡਿਵਾਈਸ &apos;ਤੇ ਪੁਸ਼ਟੀ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>ਇਹ ਪ੍ਰਮਾਣਕ ਇੱਕ ਅਜਿਹੀ ਕਿਸਮ ਦੀ ਕੁੰਜੀ ਵਰਤਦਾ ਹੈ ਜੋ ਇਹ ਸਾਈਟ ਸਵੀਕਾਰ ਨਹੀਂ ਕਰਦੀ।</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>ਪਾਸਕੀ ਇਸ ਸਾਈਟ ਤੋਂ ਇਲਾਵਾ ਕਿਸੇ ਹੋਰ ਪਤੇ ਲਈ ਬਣਾਈ ਗਈ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>ਇਹ ਪਾਸਕੀ ਇੱਥੇ ਕਿਸੇ ਖਾਤੇ ਲਈ ਰਜਿਸਟਰ ਨਹੀਂ ਹੈ। ਆਪਣੇ ਪਾਸਵਰਡ ਨਾਲ ਸਾਈਨ ਇਨ ਕਰੋ ਅਤੇ ਇਸਨੂੰ ਮੇਰਾ ਖਾਤਾ, ਪਾਸਕੀਆਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>ਇਹ ਖਾਤਾ ਇਸ ਵੇਲੇ ਸਾਈਨ ਇਨ ਨਹੀਂ ਕਰ ਸਕਦਾ। ਕਿਰਪਾ ਕਰਕੇ ਸਾਈਟ ਪ੍ਰਸ਼ਾਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>ਪਾਸਕੀ ਦੀ ਜਾਂਚ ਨਹੀਂ ਹੋ ਸਕੀ। ਕਿਰਪਾ ਕਰਕੇ ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>ਤੁਸੀਂ ਸਾਈਨ ਇਨ ਕਰਨ ਦਾ ਤਰੀਕਾ ਜਾਂ ਆਪਣੇ ਖਾਤੇ ਦੀ ਸੁਰੱਖਿਆ ਬਦਲਣ ਵਾਲੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>ਤੁਸੀਂ ਵਰਤੋਂਕਾਰਾਂ, ਰੋਲਾਂ ਜਾਂ ਪਾਲਸੀਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰਨ ਵਾਲੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>ਤੁਸੀਂ ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਬਦਲਣ ਜਾਂ ਕੋਈ ਸੈੱਟਅੱਪ ਕਾਰਵਾਈ ਚਲਾਉਣ ਵਾਲੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>ਤੁਸੀਂ ਡਾਟਾ ਐਕਸਪੋਰਟ ਕਰਨ ਵਾਲੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>ਤੁਸੀਂ ਸਮੱਗਰੀ ਹਟਾਉਣ ਜਾਂ ਛਾਪਣ ਵਾਲੇ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>ਇਸ ਕਾਰਵਾਈ ਲਈ ਤੁਹਾਨੂੰ ਪੁਸ਼ਟੀ ਕਰਨੀ ਪਵੇਗੀ ਕਿ ਤੁਸੀਂ ਕੌਣ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਇਹ ਤੁਸੀਂ ਹੋ, %login ਵਜੋਂ ਸਾਈਨ ਇਨ। ਤੁਹਾਨੂੰ %minutes ਮਿੰਟਾਂ ਲਈ ਮੁੜ ਨਹੀਂ ਪੁੱਛਿਆ ਜਾਵੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>ਇਹ ਪਾਸਵਰਡ ਸਹੀ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>ਇਹ ਕੋਡ ਸਹੀ ਨਹੀਂ ਹੈ, ਜਾਂ ਇਹ ਪਹਿਲਾਂ ਹੀ ਵਰਤਿਆ ਜਾ ਚੁੱਕਾ ਸੀ।</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>ਹੇਠਾਂ ਦਿੱਤੇ ਤਰੀਕਿਆਂ ਵਿੱਚੋਂ ਇੱਕ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>ਪਾਸਕੀ ਦੀ ਜਾਂਚ ਨਹੀਂ ਹੋ ਸਕੀ।</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>ਤੁਹਾਨੂੰ ਸਾਈਨ ਆਉਟ ਕੀਤੇ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ %count ਕੋਸ਼ਿਸ਼ਾਂ ਬਾਕੀ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਚੁਣੀਆਂ ਫਾਇਲਾਂ ਮੁੜ ਨਹੀਂ ਭੇਜੀਆਂ ਜਾ ਸਕਦੀਆਂ: ਪੁਸ਼ਟੀ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਉਹਨਾਂ ਨੂੰ ਇੱਕ ਵਾਰ ਫਿਰ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>ਆਪਣੇ ਪਾਸਵਰਡ ਨਾਲ</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>ਪਾਸਕੀ ਨਾਲ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ਪਾਸਵਰਡ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ਪੁਸ਼ਟੀ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>ਪਾਸਕੀ ਵਰਤੋ</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>ਆਪਣੀ ਪ੍ਰਮਾਣਕ ਐਪ ਦੇ ਕੋਡ ਨਾਲ</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>ਕੋਡ</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>ਇਸ ਖਾਤੇ ਕੋਲ ਇਹ ਪੁਸ਼ਟੀ ਕਰਨ ਦਾ ਕੋਈ ਤਰੀਕਾ ਨਹੀਂ ਕਿ ਤੁਸੀਂ ਕੌਣ ਹੋ (ਕੋਈ ਪਾਸਵਰਡ, ਪਾਸਕੀ ਜਾਂ ਪ੍ਰਮਾਣਕ ਐਪ ਨਹੀਂ)। ਸਾਈਨ ਆਉਟ ਕਰਕੇ ਮੁੜ ਸਾਈਨ ਇਨ ਕਰੋ, ਜਾਂ ਕਿਸੇ ਪ੍ਰਸ਼ਾਸਕ ਨੂੰ ਪੁੱਛੋ।</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ਰੱਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਇਹ ਤੁਸੀਂ ਹੋ</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>ਤੁਹਾਡੀ ਪ੍ਰਮਾਣਕ ਐਪ ਦਾ ਕੋਡ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>ਤੁਹਾਡਾ ਆਪਣਾ ਖਾਤਾ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>ਆਪਣਾ ਪਾਸਵਰਡ, ਈ-ਮੇਲ ਪਤਾ, ਪਾਸਕੀਆਂ, ਦੋ-ਪੜਾਵੀ ਸਾਈਨ ਇਨ ਜਾਂ API ਕੁੰਜੀਆਂ ਬਦਲਣਾ।</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>ਵਰਤੋਂਕਾਰ, ਰੋਲ ਅਤੇ ਪਾਲਸੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ਵਰਤੋਂਕਾਰ ਬਣਾਉਣਾ ਅਤੇ ਸੋਧਣਾ, ਖਾਤਾ ਸੈਟਿੰਗਾਂ, ਨਵੇਂ ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਮਨਜ਼ੂਰ ਜਾਂ ਰੱਦ ਕਰਨਾ, ਰੋਲ ਸੌਂਪਣਾ ਅਤੇ ਪਾਲਸੀਆਂ ਸੋਧਣਾ।</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>ਸਿਸਟਮ ਸੈਟਿੰਗਾਂ ਅਤੇ ਸੈੱਟਅੱਪ ਕਾਰਵਾਈਆਂ</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>ਸੈਟਿੰਗਾਂ, ਐਕਸਟੈਂਸ਼ਨਾਂ, ਕੈਸ਼ ਅਤੇ ਰੱਖ-ਰਖਾਅ, ਪੈਕੇਜ ਅਤੇ ਅੱਪਡੇਟ, ਬੈਕਅੱਪ ਅਤੇ git ਮੈਨੇਜਰ ਸੋਧਣਾ।</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>ਡਾਟਾ ਐਕਸਪੋਰਟ ਕਰਨਾ</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>ਇਕੱਤਰ ਕੀਤੀ ਜਾਣਕਾਰੀ, ਵਰਤੋਂਕਾਰਾਂ, ਨਿਊਜ਼ਲੈਟਰ ਗਾਹਕਾਂ ਅਤੇ ਆਡਿਟ ਦੇ ਐਕਸਪੋਰਟ।</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>ਸਮੱਗਰੀ ਹਟਾਉਣਾ ਅਤੇ ਛਾਪਣਾ</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>ਸਮੱਗਰੀ ਹਟਾਉਣਾ (ਰੱਦੀ ਵਿੱਚ ਵੀ), ਰੱਦੀ ਖਾਲੀ ਕਰਨਾ ਅਤੇ ਛਾਪਣਾ। ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ।</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ਕਿਸੇ ਸੰਵੇਦਨਸ਼ੀਲ ਕਾਰਵਾਈ ਤੋਂ ਪਹਿਲਾਂ ਸਾਈਨ ਇਨ ਕੀਤਾ ਵਰਤੋਂਕਾਰ ਆਪਣੇ ਪਾਸਵਰਡ, ਪਾਸਕੀ ਜਾਂ ਆਪਣੀ ਪ੍ਰਮਾਣਕ ਐਪ ਦੇ ਕੋਡ ਨਾਲ ਮੁੜ ਪੁਸ਼ਟੀ ਕਰਦਾ ਹੈ ਕਿ ਉਹ ਕੌਣ ਹੈ। ਸਿਰਫ਼ ਵੈੱਬ ਸਫ਼ੇ ਪੁੱਛਦੇ ਹਨ: REST ਇੰਟਰਫੇਸ, SOAP, WebDAV, expservices ਲਾਗਇਨ ਅਤੇ ਕਮਾਂਡ ਲਾਈਨ ਕਦੇ ਨਹੀਂ ਪੁੱਛਦੇ।</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>ਆਮ</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>ਪੁਸ਼ਟੀ ਕਿੰਨੇ ਮਿੰਟ ਮੰਨੀ ਜਾਂਦੀ ਹੈ</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>ਕਦੋਂ ਪੁੱਛਣਾ ਹੈ</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] ਵਿੱਚ %count ਨਿਯਮ।</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php ਵਿੱਚ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ। ਸੰਭਾਲਣ ਵੇਲੇ ਤੁਹਾਨੂੰ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾਂਦਾ ਹੈ ਕਿ ਇਹ ਤੁਸੀਂ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਇਹ ਤੁਸੀਂ ਹੋ</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>ਹੇਠਾਂ ਚਾਲੂ ਕੀਤੇ ਗਰੁੱਪਾਂ ਦੀਆਂ ਕਾਰਵਾਈਆਂ ਤੋਂ ਪਹਿਲਾਂ “ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਇਹ ਤੁਸੀਂ ਹੋ” ਪੁੱਛੋ</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>ਸੈਟਿੰਗਾਂ ਸੰਭਾਲੀਆਂ ਗਈਆਂ।</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>ਸੈਟਿੰਗਾਂ ਸੰਭਾਲੀਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ਸੈੱਟਅੱਪ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>ਸੈੱਟਅੱਪ</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ਨਵਾਂ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ਹਟਾਓ</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count ਕਤਾਰਾਂ</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>ਨਵੀਂ ਕਤਾਰ</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>ਕਤਾਰ ਸੰਭਾਲੀ ਗਈ।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ਖੋਜੋ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ਕਾਰਵਾਈਆਂ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ਸੋਧੋ</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਕਤਾਰ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ਹਾਂ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ਇੱਕ ਨੋਡ ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ਕਿਸੇ ਵਰਤੋਂਕਾਰ ਦਾ ਆਬਜੈਕਟ ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ਇੱਕ ਸਮੱਗਰੀ ਆਬਜੈਕਟ ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>ਕਤਾਰ %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>ਕਤਾਰ ਨਹੀਂ ਸੰਭਾਲੀ ਗਈ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ਸੰਭਾਲੋ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ਰੱਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>ਕੀ ਕਤਾਰ %id ਹਟਾਉਣੀ ਹੈ?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>ਕਤਾਰ ਸਾਰਣੀ ਵਿੱਚੋਂ ਹਟਾ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ ਅਤੇ ਵਾਪਸ ਨਹੀਂ ਲਿਆਂਦੀ ਜਾ ਸਕਦੀ।</translation>
     </message>
 </context>
 </TS>

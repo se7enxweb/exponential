@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>ఫోల్డర్‌ను తెరవండి లేదా మూసివేయండి</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>ఈ పేజీ మీ బుక్‌మార్క్‌లలో ఉంది. దాని పేరు లేదా ఫోల్డర్‌ను మార్చడానికి తెరవండి.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>ఈ పేజీని మీ బుక్‌మార్క్‌లకు జోడించండి.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>బుక్‌మార్క్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>ఈ పేజీని బుక్‌మార్క్ చేయండి</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>బుక్‌మార్క్ ఈ పేజీ చిరునామాను దాని పరామితులతో సహా నిల్వ చేస్తుంది: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>బుక్‌మార్క్‌ను సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>బుక్‌మార్క్ జోడించండి</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>నా బుక్‌మార్క్‌లు</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>సిస్టమ్ పేజీ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>సిస్టమ్ పేజీలు</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>మీరు ఇకపై ఈ పేజీని తెరవలేరు.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరవండి</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>ఈ పేజీ చిరునామా లేదు. బుక్‌మార్క్‌ను తీసివేసి, పేజీని మళ్లీ బుక్‌మార్క్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>మీరు ఇకపై ఈ పేజీని తెరవలేరు. బుక్‌మార్క్‌ను తీసివేయండి లేదా యాక్సెస్ కోసం నిర్వాహకుడిని అడగండి.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>చిరునామా</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>మాడ్యూల్ మరియు వీక్షణ</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>సిస్టమ్ పేజీలను కూడా బుక్‌మార్క్ చేయవచ్చు: పేజీని తెరవండి (సెటప్, ఆడిట్ ట్రెయిల్, వినియోగదారుల జాబితా ...) మరియు దాని పైన ఉన్న “ఈ పేజీని బుక్‌మార్క్ చేయండి”ని ఎంచుకోండి. అటువంటి బుక్‌మార్క్‌లకు గేర్ చిహ్నం ఉంటుంది.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>తాజా ఫోరమ్ పోస్ట్‌లను లోడ్ చేయడం సాధ్యపడలేదు.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>క్రాన్ జాబ్‌లు</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>ఇంకా ఏ క్రాన్ జాబ్ భాగం కూడా అమలు కాలేదు: జాబ్ క్యూ, దిగుమతులు, నోటిఫికేషన్‌లు మరియు శోధన సూచిక వేచి ఉన్నాయి. php bin/php/installcrontab.php --add అమలు చేయండి, లేదా --show చూపే పంక్తులను crontabకు జోడించండి.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>ఒక క్రాన్ జాబ్ భాగం దాని షెడ్యూల్ అనుమతించిన దానికంటే ఎక్కువ కాలంగా అమలు కాలేదు: crontab (php bin/php/installcrontab.php --show) మరియు లాగ్‌లు var/log/cronjob-*.log తనిఖీ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>భాగం</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>షెడ్యూల్</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>చివరిగా ప్రారంభమైనది</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ఎప్పుడూ లేదు</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>సమయానికి</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ఆలస్యం</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ఎప్పుడూ అమలు కాలేదు</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>క్రాన్ జాబ్ అమలు చేయడానికి ఈ ఇన్‌స్టాలేషన్‌లో ఏ క్రాన్ జాబ్ భాగం లేదు.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>సెటప్ &gt; క్రాన్ జాబ్‌లు</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>వినియోగదారు ఖాతాలను నిష్క్రియం చేసి, వాటిని నిష్క్రియం చేసిన వినియోగదారుల సమూహానికి తరలించండి, మరియు తిరిగి వెనుకకు తరలించండి</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ఇతర వినియోగదారులు ఎక్కడ సైన్ ఇన్ అయ్యారో చూసి, వారిని సైన్ అవుట్ చేయడం</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>ఇ-మెయిల్ ప్రాధాన్యతలను తెరవండి</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>మీరు ఎక్కడ సైన్ ఇన్ అయ్యారు: బ్రౌజర్, సిస్టమ్, స్థలం మరియు సమయం. మీకు తెలియని పరికరాన్ని సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>ఈ వినియోగదారు ఎక్కడ సైన్ ఇన్ అయ్యారు, మరియు వినియోగదారును అన్నిచోట్లా సైన్ అవుట్ చేయడం.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>పరికరాలను నిర్వహించండి</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>సెషన్‌లను చూపండి</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count సైన్ ఇన్ అయ్యాయి</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>పాస్‌కీలు</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>మీ పాస్‌వర్డ్‌కు బదులుగా మీ వేలిముద్ర, ముఖం, స్క్రీన్ లాక్ లేదా సెక్యూరిటీ కీతో సైన్ ఇన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>పాస్‌కీలను నిర్వహించండి</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>పాస్‌కీని జోడించండి</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count పాస్‌కీలు</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>ఇంకా ఏదీ లేదు</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>క్లాస్/లక్షణం కలయికలు (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>కొత్త ఖాతాలకు ఆమోదం అవసరమైన వినియోగదారు సమూహాలు</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ఈ సమూహాలలో ఒకదానిలో లేదా వాటి కింద ప్రచురించబడిన ఖాతా, ఆమోదకుడు అంగీకరించే వరకు వేచి ఉంటుంది. అంతకు ముందు అది సైన్ ఇన్ చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>ఖాతాలను ఆమోదించే వినియోగదారులు</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>ఖాతాలను ఆమోదించే సమూహాలు</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>ఆమోదం అవసరం లేని వినియోగదారు సమూహాలు (వాటి సభ్యులు అటువంటి ఖాతాలను నేరుగా ప్రచురిస్తారు; ఆమోదకులకు ఎప్పుడూ అవసరం లేదు)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ఆమోదానికి లింక్‌తో ఆమోదకులకు ఇ-మెయిల్ పంపండి (ఆమోదించడానికి లేదా తిరస్కరించడానికి వారు సైన్ ఇన్ చేస్తారు)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>EXP_DEMO_MODE=1 అనే ఎన్విరాన్‌మెంట్ వేరియబుల్ ఈ ఇన్‌స్టాలేషన్‌ను పబ్లిక్ డెమోగా గుర్తిస్తుంది: బాగా తెలిసిన నిర్వాహకుడి పాస్‌వర్డ్ ఆమోదించబడుతుంది, మరియు నిర్వాహకుల పాస్‌వర్డ్‌లను తర్వాత మార్చడం లేదా రీసెట్ చేయడం సాధ్యం కాదు. ప్రొడక్షన్ సైట్ కోసం డెమో మోడ్‌ను ఎప్పుడూ ఉపయోగించవద్దు.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>క్రాన్ జాబ్‌లు</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>క్రాన్ జాబ్‌లు ఇన్‌స్టాలేషన్ యజమాని అయిన %user వినియోగదారు crontab నుండి అమలవుతాయి.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>షెడ్యూల్ చేయడానికి ఈ ఇన్‌స్టాలేషన్‌లో ఏ క్రాన్ జాబ్ భాగం లేదు.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab రాయబడలేదు (%reason). సైట్ ఏ వినియోగదారుగా నడుస్తుందో ఆ వినియోగదారు crontabకు ఈ పంక్తులను జోడించండి, లేకపోతే క్యూ, దిగుమతులు, నోటిఫికేషన్‌లు మరియు శోధన సూచిక ఎప్పటికీ అమలు కావు:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute పేరు</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>ఆమోదం అవసరమైన ఖాతాలు</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ఆమోదకులకు ఇ-మెయిల్</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>కాదు</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>మీ వ్యాఖ్య జోడించబడింది.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>“%1” ఖాతా ఆమోదించబడి ప్రచురించబడింది: ఇప్పుడు అది సైన్ ఇన్ చేయగలదు.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>“%1” ఖాతా తిరస్కరించబడింది. అది ప్రచురించబడలేదు మరియు సైన్ ఇన్ చేయలేదు; అది మళ్లీ దాని రచయిత డ్రాఫ్ట్‌గా మారింది.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count బుక్‌మార్క్(లు) జోడించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>సిస్టమ్ పేజీ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>సిస్టమ్ పేజీలను ఇంకా బుక్‌మార్క్ చేయలేరు: ఈ వెర్షన్ డేటాబేస్ అప్‌డేట్ ఇంకా అమలు చేయబడలేదు.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>ఈ పేజీని బుక్‌మార్క్ చేయలేరు: ఇది మాడ్యూల్ వీక్షణ యొక్క పేజీ కాదు.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>ఈ పేజీని బుక్‌మార్క్ చేయలేరు: దీన్ని తెరవడానికి మీకు అనుమతి లేదు.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>పేజీని బుక్‌మార్క్ చేయడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>“%name” పేజీ మీ బుక్‌మార్క్‌లలో ఉంది.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>బుక్‌మార్క్ పేరు మార్చడం సాధ్యం కాలేదు: దానికి పేరు అవసరం.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>బుక్‌మార్క్ పేరు “%name”గా మార్చబడింది.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>ప్యాకేజీ</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>ఆర్కైవ్ PAX tar ఫార్మాట్‌లో ప్యాక్ చేయబడింది, దాన్ని దిగుమతి చేయలేరు. ప్యాకేజీని GNU tar ఫార్మాట్‌లో ప్యాక్ చేయండి (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>ఆర్కైవ్ తిరస్కరించబడింది: “%path” ఎంట్రీకి tar రకం “%type” ఉంది, కానీ ప్యాకేజీలో ఫైల్‌లు మరియు డైరెక్టరీలు మాత్రమే ఉంటాయి.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ఆర్కైవ్ తిరస్కరించబడింది: అది %length బైట్‌ల కంటే పొడవైన ఎంట్రీని కలిగి ఉంది.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>డేటా పట్టికలకు మిర్రర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>వినియోగదారు ఖాతాలను ఆమోదించండి</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ఒక కొత్త వినియోగదారు ఖాతా మీ ఆమోదం కోసం వేచి ఉంది</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>పాస్‌వర్డ్ మార్పు పేజీకి పంపబడింది</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>రెండవ దశ లేకుండా సైన్ ఇన్ తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>యాప్ పాస్‌వర్డ్ సృష్టించబడింది</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>యాప్ పాస్‌వర్డ్ ఉపసంహరించబడింది</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>యాప్ పాస్‌వర్డ్ ఉపయోగించబడింది</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>ఈ నోడ్ యొక్క ఆడిట్ ట్రెయిల్</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>చెక్కుచెదరలేదు</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>విరిగింది</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>తనిఖీ చేయబడలేదు</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>మరమ్మతు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ఖాళీ</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>కొత్త ఇ-మెయిల్ చిరునామా %email నిర్ధారణ కోసం వేచి ఉంది: అక్కడికి మేము పంపిన లింక్‌ను తెరవండి. అప్పటి వరకు ఈ ఖాతా %currentను కొనసాగిస్తుంది.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>కొత్త పరికరం లేదా బ్రౌజర్ నుండి సైన్ ఇన్ గురించిన ఇ-మెయిల్ ఖాతా భద్రతలో భాగం. దాన్ని మీ పరికరాలు పేజీలో ఆఫ్ లేదా ఆన్ చేస్తారు, అక్కడ మీ ఖాతా సెషన్‌లను చూసి సైన్ అవుట్ కూడా చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>మరిన్ని ప్రేక్షకులు</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>సమీక్ష మరియు విడుదల</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>అంశం ఇప్పుడు సమీక్షలో ఉంది.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>అంశం విడుదల చేయబడింది: పాఠకులు ఇప్పుడు దాన్ని చూస్తారు.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>అంశం మళ్లీ డ్రాఫ్ట్‌గా మారింది.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>ప్రస్తుత వెర్షన్‌ను మీరే రాశారు, కాబట్టి విడుదల పాత్ర ఉన్న మరొకరు దాన్ని విడుదల చేస్తారు.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>స్థితి మార్చబడలేదు: మీ పాత్ర ఈ దశను అనుమతించదు.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>సమీక్ష వర్క్‌ఫ్లో</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>డ్రాఫ్ట్</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>సమీక్ష</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>సమీక్షకు తిరిగి</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>సమీక్షకు పంపండి</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>విడుదల చేయండి</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>డ్రాఫ్ట్‌కు తిరిగి</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>శైలి మార్గదర్శి తనిఖీ</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>శైలి మార్గదర్శి తనిఖీలో ఏమీ కనుగొనబడలేదు.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors లోపాలు, %warnings హెచ్చరికలు, %notices సూచనలు. ఒక లోపం ఉన్నా ./console exp:help:content check ఉత్తీర్ణం కాదు.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>స్థాయి</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>నియమం</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ఫీల్డ్</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>కనుగొన్నది</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ఇది ఉపయోగకరంగా ఉందా?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>పాఠకులు %yes సార్లు అవును అని, %no సార్లు కాదు అని సమాధానమిచ్చారు.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>కాదు అనడానికి ఇచ్చిన కారణాలు:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>ధన్యవాదాలు. మీ సమాధానం సహాయాన్ని మెరుగుపరచడానికి మాకు సహాయపడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>కాకపోతే, ఏమి తప్పుగా ఉంది?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>కారణం ఇవ్వలేదు</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>మీ సమాధానం మాత్రమే నిల్వ చేయబడుతుంది, మీరు ఎవరో కాదు.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ఇది పాతబడిపోయింది</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>ఇది అర్థం చేసుకోవడం కష్టం</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ఏదో లోపించింది</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>ఇది తప్పు</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>మరొక కారణం</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ఈ అంశం విడుదల చేయబడలేదు; పాఠకులు దీన్ని చూడరు.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>పర్సిస్టెంట్ క్లాస్‌ల పట్టికలను బ్రౌజ్ చేయండి…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>ఆమోదం కోసం వేచి ఉన్న కొత్త వినియోగదారు ఖాతా: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ఖాతా</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>వినియోగదారు పేరు</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>సమూహం</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>అభ్యర్థించినవారు</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>ఆమోదాన్ని తెరవండి</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>బటన్ పని చేయకపోతే, ఈ చిరునామాను మీ బ్రౌజర్‌లోకి కాపీ చేయండి: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ఒక కొత్త వినియోగదారు ఖాతా మీ ఆమోదం కోసం వేచి ఉంది</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester “%name” ఖాతాను %groupsలో సృష్టించారు. ఆమోదకుడు అంగీకరించే వరకు అది ప్రచురించబడదు మరియు సైన్ ఇన్ చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>అడ్మిన్ ఇంటర్‌ఫేస్‌కు సైన్ ఇన్ చేసి, మీ సహకార జాబితాలో దాన్ని ఆమోదించండి లేదా తిరస్కరించండి. ఈ లింక్ మిమ్మల్ని సైన్ ఇన్ చేయదు మరియు స్వయంగా ఏదీ నిర్ణయించదు.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>మీరు ఈ సమూహాల కొత్త ఖాతాలను ఆమోదిస్తున్నందున ఈ మెయిల్‌ను %site పంపింది.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>కంప్యూటర్</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ఫోన్</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>టాబ్లెట్</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ప్రోగ్రామ్ లేదా యాప్</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ఆటోమేటెడ్ క్లయింట్</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>తెలియని పరికరం</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>పాస్‌వర్డ్</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>పాస్‌వర్డ్ మరియు రెండు-దశల కోడ్</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>సింగిల్ సైన్-ఆన్</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>సెషన్‌లు నమోదు చేయబడక ముందే సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>సైన్ అవుట్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ఈ పేజీ నుండి సైన్ అవుట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>నిర్వాహకుడు సైన్ అవుట్ చేశారు</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“అన్ని ఇతర సెషన్‌లు”తో సైన్ అవుట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>కొత్త సైన్ ఇన్‌తో భర్తీ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>పాస్‌వర్డ్ మార్పుతో ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>గడువు ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ప్రస్తుతం మీ ఖాతా ఎక్కడ సైన్ ఇన్ అయి ఉందో ఇక్కడ ఉంది. మీరు ఏదైనా పరికరాన్ని గుర్తించకపోతే, దాన్ని సైన్ అవుట్ చేసి మీ పాస్‌వర్డ్‌ను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ప్రస్తుతం ఈ ఖాతా ఎక్కడ సైన్ ఇన్ అయి ఉందో ఇక్కడ ఉంది. వినియోగదారును సైన్ అవుట్ చేస్తే ప్రతి సెషన్ దాని తదుపరి అభ్యర్థనలో ముగుస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ఖాతాకు తిరిగి</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>సెషన్ సైన్ అవుట్ చేయబడింది. పరికరం మళ్లీ సైన్ ఇన్ చేయాలి.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ఇతర సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>సైన్ అవుట్ చేయడానికి ఇతర సెషన్‌లు ఏవీ లేవు.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ఈ వినియోగదారు %count సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ఈ వినియోగదారుకు సైన్ అవుట్ చేయడానికి సెషన్‌లు ఏవీ లేవు.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ఇది మీరు ఉపయోగిస్తున్న సెషన్. దీన్ని ముగించడానికి, సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ఆ సెషన్ ఇప్పటికే ముగిసింది.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>మీ ఖాతా కొత్త పరికరం నుండి సైన్ ఇన్ అయినప్పుడు మీకు ఇ-మెయిల్ వస్తుంది.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>కొత్త పరికరాల నుండి సైన్ ఇన్‌ల గురించి మీకు ఇకపై ఇ-మెయిల్ రాదు.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>పేజీ గడువు ముగిసింది. ఏదీ మార్చబడలేదు; దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ఈ సైట్‌లో సెషన్‌లు నమోదు చేయబడవు (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session పట్టిక లేదు</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>అది సృష్టించబడిన తర్వాత సెషన్‌లు నమోదు చేయబడతాయి: php update/common/scripts/6.0/createusersessiontable.php, లేదా 6.0.15 డేటాబేస్ అప్‌డేట్.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ఇప్పుడు సైన్ ఇన్ అయి ఉంది</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>అన్ని ఇతర సెషన్‌లను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>అన్నిచోట్లా సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ఈ పరికరం తప్ప ప్రతి పరికరం దాని తదుపరి అభ్యర్థనలో సైన్ అవుట్ చేయబడుతుంది, “నన్ను గుర్తుంచుకో”తో సైన్ ఇన్ అయి ఉండేవి కూడా.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ఈ వినియోగదారు ప్రతి సెషన్ దాని తదుపరి అభ్యర్థనలో సైన్ అవుట్ చేయబడుతుంది, “నన్ను గుర్తుంచుకో”తో సైన్ ఇన్ అయి ఉండేవి కూడా.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>అవును, ఇతర సెషన్‌లను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>అవును, ప్రతి సెషన్‌ను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ఈ పరికరం</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>పరికరం</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>చిరునామా</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>దాని నెట్‌వర్క్‌గా చూపబడింది; పూర్తి చిరునామా నిర్వాహకుల కోసం నిల్వ చేయబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip నుండి సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>చివరిగా సక్రియంగా ఉన్నది</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ఇప్పుడు</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>సైన్ ఇన్ అయి ఉంటుంది</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>నన్ను గుర్తుంచుకో, %date వరకు</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>బ్రౌజర్ మూసివేసే వరకు</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>సైన్ ఇన్ సమయం</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>బ్రౌజర్ గుర్తింపు</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ఈ సెషన్‌ను ముగించడానికి, సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ఈ సెషన్‌ను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ఏ సెషన్ కూడా సైన్ ఇన్ అయి లేదు.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>సైన్ ఇన్ హెచ్చరికలు</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>నా ఖాతా కొత్త పరికరం లేదా బ్రౌజర్ నుండి సైన్ ఇన్ అయినప్పుడు నాకు ఇ-మెయిల్ పంపండి</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%emailకు పంపబడుతుంది. ఇది పరికరం, సుమారు స్థలం మరియు సమయాన్ని తెలియజేస్తుంది, మరియు ఈ పేజీకి లింక్ ఇస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>ఈ సైట్ సైన్ ఇన్ హెచ్చరికలను పంపదు.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ఇటీవల ముగిసినవి</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>గత %days రోజులలో ముగిసిన సెషన్‌లు.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ముగిసింది</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ఎలా</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>ఏదీ లేదు.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>కంప్యూటర్</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ఫోన్</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>టాబ్లెట్</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ప్రోగ్రామ్ లేదా యాప్</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ఆటోమేటెడ్ క్లయింట్</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>తెలియని పరికరం</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>పాస్‌వర్డ్</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>పాస్‌వర్డ్ మరియు రెండు-దశల కోడ్</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ఇంటర్‌ఫేస్</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>సింగిల్ సైన్-ఆన్</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>సెషన్‌లు నమోదు చేయబడక ముందే సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>సైన్ అవుట్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ఈ పేజీ నుండి సైన్ అవుట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>నిర్వాహకుడు సైన్ అవుట్ చేశారు</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“అన్ని ఇతర సెషన్‌లు”తో సైన్ అవుట్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>కొత్త సైన్ ఇన్‌తో భర్తీ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>పాస్‌వర్డ్ మార్పుతో ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>గడువు ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name సెషన్‌లు</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ప్రస్తుతం మీ ఖాతా ఎక్కడ సైన్ ఇన్ అయి ఉందో ఇక్కడ ఉంది. మీరు ఏదైనా పరికరాన్ని గుర్తించకపోతే, దాన్ని సైన్ అవుట్ చేసి మీ పాస్‌వర్డ్‌ను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ప్రస్తుతం ఈ ఖాతా ఎక్కడ సైన్ ఇన్ అయి ఉందో ఇక్కడ ఉంది. వినియోగదారును సైన్ అవుట్ చేస్తే ప్రతి సెషన్ దాని తదుపరి అభ్యర్థనలో ముగుస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>సెషన్ సైన్ అవుట్ చేయబడింది. పరికరం మళ్లీ సైన్ ఇన్ చేయాలి.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ఇతర సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>సైన్ అవుట్ చేయడానికి ఇతర సెషన్‌లు ఏవీ లేవు.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ఈ వినియోగదారు %count సెషన్‌లు సైన్ అవుట్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ఈ వినియోగదారుకు సైన్ అవుట్ చేయడానికి సెషన్‌లు ఏవీ లేవు.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ఇది మీరు ఉపయోగిస్తున్న సెషన్. దీన్ని ముగించడానికి, సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ఆ సెషన్ ఇప్పటికే ముగిసింది.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>మీ ఖాతా కొత్త పరికరం నుండి సైన్ ఇన్ అయినప్పుడు మీకు ఇ-మెయిల్ వస్తుంది.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>కొత్త పరికరాల నుండి సైన్ ఇన్‌ల గురించి మీకు ఇకపై ఇ-మెయిల్ రాదు.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>పేజీ గడువు ముగిసింది. ఏదీ మార్చబడలేదు; దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>ఈ సైట్‌లో సెషన్‌లు నమోదు చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>సెషన్‌లు ఇంకా నమోదు చేయబడటం లేదు: సైట్‌కు దాని డేటాబేస్ అప్‌డేట్ అవసరం.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ఇప్పుడు సైన్ ఇన్ అయి ఉంది</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ఈ పరికరం</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>పరికరం</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>చిరునామా</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>సైన్ ఇన్ అయ్యారు</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>చివరిగా సక్రియంగా ఉన్నది</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ఇప్పుడు</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>సైన్ ఇన్ అయి ఉంటుంది</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>నన్ను గుర్తుంచుకో, %date వరకు</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>బ్రౌజర్ మూసివేసే వరకు</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ఈ సెషన్‌ను ముగించడానికి, సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ఈ సెషన్‌ను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>అన్ని ఇతర సెషన్‌లను సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>అన్నిచోట్లా సైన్ అవుట్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>సైన్ ఇన్ హెచ్చరికలు</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>నా ఖాతా కొత్త పరికరం లేదా బ్రౌజర్ నుండి సైన్ ఇన్ అయినప్పుడు నాకు ఇ-మెయిల్ పంపండి</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ఇటీవల ముగిసినవి</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ముగిసింది</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ఎలా</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>గత %days రోజులలో ఏదీ లేదు.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>మీ ఖాతా ఎక్కడ సైన్ ఇన్ అయి ఉందో చూడండి, మీకు తెలియని పరికరాన్ని సైన్ అవుట్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>పరికరాలను నిర్వహించండి</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%siteలో మీ ఖాతాకు కొత్త సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>నమస్కారం,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%siteలోని మీ ఖాతా %login ఇటీవల ఉపయోగించని పరికరం లేదా బ్రౌజర్ నుండి ఇప్పుడే సైన్ ఇన్ చేయడానికి ఉపయోగించబడింది:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>పరికరం:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>సమయం:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>సుమారు చిరునామా:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ఇది మీరే అయితే, మీరు ఏమీ చేయనవసరం లేదు.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>ఇది మీరు కాకపోతే, ఎవరికైనా మీ పాస్‌వర్డ్ తెలిసి ఉండవచ్చు. మీ పరికరాల పేజీలో ఆ సెషన్‌ను సైన్ అవుట్ చేసి, ఆపై మీ పాస్‌వర్డ్‌ను మార్చండి:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>అదే పేజీలో మీరు ఈ ఇ-మెయిల్‌లను ఆఫ్ చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%siteలో %login కొత్త సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login ఖాతా ఇటీవల ఉపయోగించని పరికరం లేదా బ్రౌజర్ నుండి సైన్ ఇన్ అయింది.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>ఈ వినియోగదారు సెషన్‌లు:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>మీ ఖాతాకు కొత్త సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>మీ ఖాతా %login, %dateన %device (%ip) నుండి సైన్ ఇన్ చేయడానికి ఉపయోగించబడింది.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ఇది మీరే అయితే, మీరు ఏమీ చేయనవసరం లేదు. కాకపోతే, %url వద్ద ఈ సెషన్‌ను సైన్ అవుట్ చేసి మీ పాస్‌వర్డ్‌ను మార్చండి.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login కొత్త సైన్ ఇన్</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login ఖాతా కొత్త పరికరం నుండి సైన్ ఇన్ అయింది: %device (%ip), %dateన.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>మీ పరికరాలు</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name సెషన్‌లు</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>పాస్‌కీలు</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>పాస్‌కీ మీ పాస్‌వర్డ్‌కు బదులుగా మీ వేలిముద్ర, ముఖం, స్క్రీన్ లాక్ లేదా సెక్యూరిటీ కీతో మిమ్మల్ని సైన్ ఇన్ చేస్తుంది. అది మీ పరికరంలో లేదా మీ పాస్‌వర్డ్ మేనేజర్‌లో నిల్వ చేయబడుతుంది; ఈ సైట్ దాని పబ్లిక్ కీని మాత్రమే ఉంచుతుంది, కాబట్టి ఇక్కడ లీక్ అయినా అది బహిర్గతం కాదు.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>ఈ సైట్‌లో పాస్‌కీలు ఆఫ్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>ఈ సైట్‌లో పాస్‌కీలను ఇంకా ఉపయోగించలేరు: నిర్వాహకుడు ముందుగా డేటాబేస్ అప్‌డేట్‌ను అమలు చేయాలి.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>“%name” పాస్‌కీని తీసివేయాలా?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>అది ఇకపై ఈ ఖాతాకు సైన్ ఇన్ చేయలేదు. దాన్ని మీ పరికరం లేదా పాస్‌వర్డ్ మేనేజర్ నుండి కూడా తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>పాస్‌కీని తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>మీ పాస్‌కీలు</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>గరిష్టంగా %maxలో %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>మీకు ఇంకా పాస్‌కీ లేదు. కింద ఒకటి జోడించండి: తదుపరిసారి సైన్ ఇన్ చేసేటప్పుడు, “పాస్‌కీతో సైన్ ఇన్ చేయండి” ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>పేరు</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>జోడించబడింది</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>చివరిగా ఉపయోగించినది</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>రకం</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ఇంకా లేదు</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>సమకాలీకరించబడింది</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>ఈ పరికరం లేదా కీ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>పేరు మార్చండి</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>కొత్త పేరు</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>పేరును సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>పాస్‌కీని జోడించండి</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>మీ బ్రౌజర్ లేదా పరికరం చూపే దశలను అనుసరించండి.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>పాస్‌కీ డైలాగ్ మూసివేయబడింది. ఏదీ మార్చబడలేదు.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>పాస్‌కీని సృష్టించడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>ఈ బ్రౌజర్ పాస్‌కీలను సృష్టించలేదు. ప్రస్తుత బ్రౌజర్‌ను ఉపయోగించండి, లేదా మీ పాస్‌వర్డ్‌తో సైన్ ఇన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ఉదాహరణకు అది ఉన్న పరికరం లేదా పాస్‌వర్డ్ మేనేజర్, తద్వారా మీరు మీ పాస్‌కీలను వేరు చేసి గుర్తించగలరు.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>ఈ ఖాతాకు అనుమతించబడినన్ని పాస్‌కీలు (%max) ఇప్పటికే ఉన్నాయి. మరొకటి జోడించడానికి ఒకదాన్ని తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>పాస్‌కీని ఉపయోగించడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>నా ఖాతా</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>పాస్‌కీ డైలాగ్ మూసివేయబడింది. బదులుగా మీరు మీ పాస్‌వర్డ్‌తో సైన్ ఇన్ చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>పాస్‌కీని ఉపయోగించడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి, లేదా మీ పాస్‌వర్డ్‌తో సైన్ ఇన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>పాస్‌కీతో సైన్ ఇన్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>పాస్‌కీతో సైన్ ఇన్ చేయడం సాధ్యం కాలేదు</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>మీ పాస్‌వర్డ్‌కు బదులుగా మీ వేలిముద్ర, ముఖం, స్క్రీన్ లాక్ లేదా సెక్యూరిటీ కీతో సైన్ ఇన్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>“%name” పాస్‌కీ జోడించబడింది. ఇప్పటి నుండి మీరు దానితో సైన్ ఇన్ చేయవచ్చు.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>పాస్‌కీ పేరు ఇప్పుడు “%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>“%name” పాస్‌కీ తీసివేయబడింది. అది ఇకపై ఈ ఖాతాకు సైన్ ఇన్ చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date నాటి పాస్‌కీ</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>ఈ ఖాతాకు అనుమతించబడినన్ని పాస్‌కీలు ఇప్పటికే ఉన్నాయి. ముందుగా ఒకదాన్ని తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>డేటాబేస్ బిజీగా ఉంది, ఏదీ సేవ్ కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>ఈ పాస్‌కీ ఇప్పటికే నమోదు చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>అభ్యర్థనకు చాలా సమయం పట్టింది లేదా అది ఇప్పటికే ఉపయోగించబడింది. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>పాస్‌కీ మీరు ఎవరో తనిఖీ చేయలేదు (PIN, వేలిముద్ర లేదా ముఖం). దయచేసి మళ్లీ ప్రయత్నించి మీ పరికరంలో నిర్ధారించండి.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>ఈ ప్రమాణీకరణ సాధనం ఈ సైట్ అంగీకరించని రకమైన కీని ఉపయోగిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>పాస్‌కీ ఈ సైట్ కాకుండా మరొక చిరునామా కోసం సృష్టించబడింది.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>ఈ పాస్‌కీ ఇక్కడ ఏ ఖాతాకూ నమోదు కాలేదు. మీ పాస్‌వర్డ్‌తో సైన్ ఇన్ చేసి, నా ఖాతా, పాస్‌కీలు వద్ద దాన్ని జోడించండి.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>ఈ ఖాతా ప్రస్తుతం సైన్ ఇన్ చేయలేదు. దయచేసి సైట్ నిర్వాహకుడిని సంప్రదించండి.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>పాస్‌కీని తనిఖీ చేయడం సాధ్యం కాలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>మీరు సైన్ ఇన్ చేసే విధానాన్ని లేదా మీ ఖాతా భద్రతను మార్చబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>మీరు వినియోగదారులు, పాత్రలు లేదా విధానాలను నిర్వహించబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>మీరు సిస్టమ్ సెట్టింగ్‌లను మార్చబోతున్నారు లేదా సెటప్ చర్యను అమలు చేయబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>మీరు డేటాను ఎగుమతి చేయబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>మీరు కంటెంట్‌ను తీసివేయబోతున్నారు లేదా ప్రచురించబోతున్నారు.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>ఈ చర్యకు మీరు ఎవరో నిర్ధారించడం అవసరం.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%loginగా సైన్ ఇన్ అయిన మీరే అని నిర్ధారించండి. %minutes నిమిషాల పాటు మిమ్మల్ని మళ్లీ అడగరు.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>ఆ పాస్‌వర్డ్ సరైనది కాదు.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>ఆ కోడ్ సరైనది కాదు, లేదా అది ఇప్పటికే ఉపయోగించబడింది.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>కింది మార్గాలలో ఒకదాన్ని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>పాస్‌కీని తనిఖీ చేయడం సాధ్యం కాలేదు.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>మిమ్మల్ని సైన్ అవుట్ చేయడానికి ముందు %count ప్రయత్నాలు మిగిలి ఉన్నాయి.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>మీరు ఎంచుకున్న ఫైల్‌లను మళ్లీ పంపలేరు: నిర్ధారించిన తర్వాత, వాటిని మరోసారి ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>మీ పాస్‌వర్డ్‌తో</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>పాస్‌కీతో</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>పాస్‌వర్డ్</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>నిర్ధారించండి</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>పాస్‌కీని ఉపయోగించండి</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>మీ ప్రమాణీకరణ యాప్ నుండి కోడ్‌తో</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>కోడ్</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>మీరు ఎవరో నిర్ధారించడానికి ఈ ఖాతాకు ఏ మార్గమూ లేదు (పాస్‌వర్డ్, పాస్‌కీ లేదా ప్రమాణీకరణ యాప్ లేదు). సైన్ అవుట్ చేసి మళ్లీ సైన్ ఇన్ చేయండి, లేదా నిర్వాహకుడిని అడగండి.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ఇది మీరే అని ధృవీకరించండి</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>మీ ప్రమాణీకరణ యాప్ నుండి కోడ్</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>మీ స్వంత ఖాతా</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>స్వంత పాస్‌వర్డ్, ఇ-మెయిల్ చిరునామా, పాస్‌కీలు, రెండు-దశల సైన్ ఇన్ లేదా API కీలను మార్చడం.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>వినియోగదారులు, పాత్రలు మరియు విధానాలు</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>వినియోగదారులను సృష్టించడం మరియు సవరించడం, ఖాతా సెట్టింగ్‌లు, కొత్త వినియోగదారు ఖాతాలను ఆమోదించడం లేదా తిరస్కరించడం, పాత్రలను కేటాయించడం మరియు విధానాలను సవరించడం.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>సిస్టమ్ సెట్టింగ్‌లు మరియు సెటప్ చర్యలు</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>సెట్టింగ్‌లు, ఎక్స్‌టెన్షన్‌లు, కాష్‌లు మరియు నిర్వహణ, ప్యాకేజీలు మరియు అప్‌డేట్‌లు, బ్యాకప్‌లు మరియు git manager సవరించడం.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>డేటాను ఎగుమతి చేయడం</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>సేకరించిన సమాచారం, వినియోగదారులు, వార్తాలేఖ సభ్యులు మరియు ఆడిట్ ఎగుమతులు.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>కంటెంట్‌ను తీసివేయడం మరియు ప్రచురించడం</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>కంటెంట్‌ను తీసివేయడం (ట్రాష్‌కు కూడా), ట్రాష్ ఖాళీ చేయడం మరియు ప్రచురించడం. డిఫాల్ట్‌గా ఆఫ్.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>సున్నితమైన చర్యకు ముందు, సైన్ ఇన్ అయిన వినియోగదారు తమ పాస్‌వర్డ్, పాస్‌కీ లేదా ప్రమాణీకరణ యాప్ కోడ్‌తో తాము ఎవరో మళ్లీ నిర్ధారిస్తారు. వెబ్ పేజీలు మాత్రమే అడుగుతాయి: REST ఇంటర్‌ఫేస్, SOAP, WebDAV, expservices లాగిన్ మరియు కమాండ్ లైన్ ఎప్పుడూ అడగవు.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>సాధారణం</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>నిర్ధారణ చెల్లుబాటు అయ్యే నిమిషాలు</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>ఎప్పుడు అడగాలి</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name]లో %count నియమాలు.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.phpలో సేవ్ చేయబడుతుంది. సేవ్ చేసేటప్పుడు ఇది మీరే అని నిర్ధారించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ఇది మీరే అని ధృవీకరించండి</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>కింద ఆన్ చేసిన సమూహాల చర్యలకు ముందు “ఇది మీరే అని ధృవీకరించండి” అని అడగండి</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>సెట్టింగ్‌లు సేవ్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>సెట్టింగ్‌లను సేవ్ చేయడం సాధ్యం కాలేదు: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>కొత్త</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>తీసివేయండి</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count అడ్డు వరుసలు</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>కొత్త అడ్డు వరుస</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>అడ్డు వరుస సేవ్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>శోధన</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>చర్యలు</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>సవరించండి</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>ఇంకా అడ్డు వరుసలు లేవు.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>అవును</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>కాదు</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ఒక నోడ్ ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ఒక వినియోగదారు ఆబ్జెక్ట్ ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ఒక కంటెంట్ ఆబ్జెక్ట్ ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>అడ్డు వరుస %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>అడ్డు వరుస సేవ్ కాలేదు</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>సేవ్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>అడ్డు వరుస %idని తీసివేయాలా?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>అడ్డు వరుస పట్టిక నుండి తీసివేయబడుతుంది మరియు తిరిగి తీసుకురాలేరు.</translation>
     </message>
 </context>
 </TS>

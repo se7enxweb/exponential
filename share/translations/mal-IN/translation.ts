@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>ഫോൾഡർ തുറക്കുക അല്ലെങ്കിൽ അടയ്ക്കുക</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>ഈ പേജ് നിങ്ങളുടെ ബുക്ക്മാർക്കുകളിലുണ്ട്. അതിന്റെ പേരോ ഫോൾഡറോ മാറ്റാൻ തുറക്കുക.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>ഈ പേജ് നിങ്ങളുടെ ബുക്ക്മാർക്കുകളിലേക്ക് ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>ബുക്ക്മാർക്ക് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>ഈ പേജ് ബുക്ക്മാർക്ക് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>ബുക്ക്മാർക്ക് ഈ പേജിന്റെ വിലാസം അതിന്റെ പാരാമീറ്ററുകൾ സഹിതം സൂക്ഷിക്കുന്നു: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ബുക്ക്മാർക്ക് സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>ബുക്ക്മാർക്ക് ചേർക്കുക</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>എന്റെ ബുക്ക്മാർക്കുകൾ</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>സിസ്റ്റം പേജ്</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>സിസ്റ്റം പേജുകൾ</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>നിങ്ങൾക്ക് ഇനി ഈ പേജ് തുറക്കാൻ അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>ഈ പേജിന്റെ വിലാസം കാണുന്നില്ല. ബുക്ക്മാർക്ക് നീക്കം ചെയ്ത് പേജ് വീണ്ടും ബുക്ക്മാർക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>നിങ്ങൾക്ക് ഇനി ഈ പേജ് തുറക്കാൻ അനുമതിയില്ല. ബുക്ക്മാർക്ക് നീക്കം ചെയ്യുക, അല്ലെങ്കിൽ ആക്സസിനായി ഒരു അഡ്മിനിസ്ട്രേറ്ററോട് ആവശ്യപ്പെടുക.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>വിലാസം</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>മോഡ്യൂളും വ്യൂവും</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>സിസ്റ്റം പേജുകളും ബുക്ക്മാർക്ക് ചെയ്യാം: പേജ് തുറന്ന് (സജ്ജീകരണം, ഓഡിറ്റ് ട്രെയിൽ, ഉപയോക്താക്കളുടെ ലിസ്റ്റ് ...) അതിന് മുകളിലുള്ള “ഈ പേജ് ബുക്ക്മാർക്ക് ചെയ്യുക” തിരഞ്ഞെടുക്കുക. അത്തരം ബുക്ക്മാർക്കുകൾക്ക് ഒരു ഗിയർ ഐക്കൺ ഉണ്ടാകും.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>ഏറ്റവും പുതിയ ഫോറം പോസ്റ്റുകൾ ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ക്രോൺ ജോബുകൾ</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>ഇതുവരെ ഒരു ക്രോൺ ജോബ് ഭാഗവും പ്രവർത്തിച്ചിട്ടില്ല: ജോബ് ക്യൂ, ഇറക്കുമതികൾ, അറിയിപ്പുകൾ, തിരയൽ സൂചിക എന്നിവ കാത്തിരിക്കുന്നു. php bin/php/installcrontab.php --add പ്രവർത്തിപ്പിക്കുക, അല്ലെങ്കിൽ --show നൽകുന്ന വരികൾ crontab-ൽ ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>ഒരു ക്രോൺ ജോബ് ഭാഗം അതിന്റെ ഷെഡ്യൂൾ അനുവദിക്കുന്നതിലും കൂടുതൽ സമയമായി പ്രവർത്തിച്ചിട്ടില്ല: crontab (php bin/php/installcrontab.php --show), ലോഗുകൾ var/log/cronjob-*.log എന്നിവ പരിശോധിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ഭാഗം</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ഷെഡ്യൂൾ</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>അവസാനം ആരംഭിച്ചത്</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ഒരിക്കലുമില്ല</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>സമയത്ത്</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>വൈകി</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ഒരിക്കലും പ്രവർത്തിച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>ക്രോൺ ജോബിന് പ്രവർത്തിപ്പിക്കാൻ ഇൻസ്റ്റലേഷനിൽ ഒരു ക്രോൺ ജോബ് ഭാഗവുമില്ല.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>സജ്ജീകരണം &gt; ക്രോൺ ജോബുകൾ</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>ഉപയോക്തൃ അക്കൗണ്ടുകൾ നിർജീവമാക്കി നിർജീവമാക്കിയ ഉപയോക്താക്കളുടെ ഗ്രൂപ്പിലേക്ക് നീക്കുക, തിരികെ നീക്കുക</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>മറ്റ് ഉപയോക്താക്കൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ടെന്ന് കാണുക, അവരെ സൈൻ ഔട്ട് ചെയ്യുക</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>ഇമെയിൽ മുൻഗണനകൾ തുറക്കുക</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>നിങ്ങൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്: ബ്രൗസർ, സിസ്റ്റം, സ്ഥലം, സമയം. നിങ്ങൾക്ക് അറിയാത്ത ഒരു ഉപകരണം സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>ഈ ഉപയോക്താവ് എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്, ഉപയോക്താവിനെ എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യൽ.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ഉപകരണങ്ങൾ നിയന്ത്രിക്കുക</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>സെഷനുകൾ കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count എണ്ണം സൈൻ ഇൻ ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>പാസ്കീകൾ</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡിന് പകരം വിരലടയാളം, മുഖം, സ്ക്രീൻ ലോക്ക് അല്ലെങ്കിൽ സുരക്ഷാ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>പാസ്കീകൾ നിയന്ത്രിക്കുക</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ഒരു പാസ്കീ ചേർക്കുക</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count പാസ്കീകൾ</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>ഇതുവരെ ഒന്നുമില്ല</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>ക്ലാസ്/ആട്രിബ്യൂട്ട് കോമ്പിനേഷനുകൾ (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>പുതിയ അക്കൗണ്ടുകൾക്ക് അംഗീകാരം ആവശ്യമുള്ള ഉപയോക്തൃ ഗ്രൂപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ഈ ഗ്രൂപ്പുകളിലൊന്നിലോ അതിന് താഴെയോ പ്രസിദ്ധീകരിക്കുന്ന അക്കൗണ്ട് ഒരു അംഗീകാരകൻ അത് സ്വീകരിക്കുന്നതുവരെ കാത്തിരിക്കും. അതിനുമുമ്പ് അതിന് സൈൻ ഇൻ ചെയ്യാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>അക്കൗണ്ടുകൾ അംഗീകരിക്കുന്ന ഉപയോക്താക്കൾ</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>അക്കൗണ്ടുകൾ അംഗീകരിക്കുന്ന ഗ്രൂപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>അംഗീകാരം ആവശ്യമില്ലാത്ത ഉപയോക്തൃ ഗ്രൂപ്പുകൾ (അവയിലെ അംഗങ്ങൾ അത്തരം അക്കൗണ്ടുകൾ നേരിട്ട് പ്രസിദ്ധീകരിക്കുന്നു; അംഗീകാരകർക്ക് ഇത് ഒരിക്കലും ആവശ്യമില്ല)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>അംഗീകാരത്തിലേക്കുള്ള ലിങ്കുള്ള ഒരു ഇമെയിൽ അംഗീകാരകർക്ക് അയയ്ക്കുക (അംഗീകരിക്കാനോ നിരസിക്കാനോ അവർ സൈൻ ഇൻ ചെയ്യും)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>EXP_DEMO_MODE=1 എന്ന എൻവയോൺമെന്റ് വേരിയബിൾ ഈ ഇൻസ്റ്റാളേഷനെ ഒരു പൊതു ഡെമോ ആയി അടയാളപ്പെടുത്തുന്നു: സുപരിചിതമായ ഒരു അഡ്മിനിസ്ട്രേറ്റർ പാസ്വേഡ് സ്വീകരിക്കപ്പെടും, പിന്നീട് അഡ്മിനിസ്ട്രേറ്റർ പാസ്വേഡുകൾ മാറ്റാനോ പുനഃസജ്ജമാക്കാനോ കഴിയില്ല. പ്രൊഡക്ഷൻ സൈറ്റിന് ഒരിക്കലും ഡെമോ മോഡ് ഉപയോഗിക്കരുത്.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ക്രോൺ ജോബുകൾ</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>ഇൻസ്റ്റലേഷന്റെ ഉടമയായ %user എന്ന ഉപയോക്താവിന്റെ crontab-ൽ നിന്നാണ് ക്രോൺ ജോബുകൾ പ്രവർത്തിക്കുന്നത്.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>ഷെഡ്യൂൾ ചെയ്യാൻ ഇൻസ്റ്റലേഷനിൽ ഒരു ക്രോൺ ജോബ് ഭാഗവുമില്ല.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab എഴുതിയില്ല (%reason). സൈറ്റ് ഏത് ഉപയോക്താവായി പ്രവർത്തിക്കുന്നുവോ ആ ഉപയോക്താവിന്റെ crontab-ൽ ഈ വരികൾ ചേർക്കുക, അല്ലെങ്കിൽ ക്യൂ, ഇറക്കുമതികൾ, അറിയിപ്പുകൾ, തിരയൽ സൂചിക എന്നിവ ഒരിക്കലും പ്രവർത്തിക്കില്ല:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute പേര്</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>അംഗീകാരം ആവശ്യമുള്ള അക്കൗണ്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>അംഗീകാരകർക്കുള്ള ഇമെയിൽ</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ഇല്ല</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>നിങ്ങളുടെ അഭിപ്രായം ചേർത്തു.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>“%1” എന്ന അക്കൗണ്ട് അംഗീകരിച്ച് പ്രസിദ്ധീകരിച്ചു: അതിന് ഇപ്പോൾ സൈൻ ഇൻ ചെയ്യാം.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>“%1” എന്ന അക്കൗണ്ട് നിരസിച്ചു. അത് പ്രസിദ്ധീകരിച്ചിട്ടില്ല, സൈൻ ഇൻ ചെയ്യാനുമാവില്ല; അത് വീണ്ടും അതിന്റെ രചയിതാവിന്റെ ഡ്രാഫ്റ്റാണ്.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count ബുക്ക്മാർക്ക്(കൾ) ചേർത്തു.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>സിസ്റ്റം പേജ്</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>സിസ്റ്റം പേജുകൾ ഇതുവരെ ബുക്ക്മാർക്ക് ചെയ്യാനാവില്ല: ഈ പതിപ്പിന്റെ ഡാറ്റാബേസ് അപ്ഡേറ്റ് ഇതുവരെ പ്രവർത്തിപ്പിച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>ഈ പേജ് ബുക്ക്മാർക്ക് ചെയ്യാനാവില്ല: ഇത് ഒരു മോഡ്യൂൾ വ്യൂവിന്റെ പേജല്ല.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>ഈ പേജ് ബുക്ക്മാർക്ക് ചെയ്യാനാവില്ല: നിങ്ങൾക്ക് ഇത് തുറക്കാൻ അനുമതിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>പേജ് ബുക്ക്മാർക്ക് ചെയ്യാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>“%name” എന്ന പേജ് നിങ്ങളുടെ ബുക്ക്മാർക്കുകളിലുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>ബുക്ക്മാർക്കിന്റെ പേര് മാറ്റാനായില്ല: അതിന് ഒരു പേര് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>ബുക്ക്മാർക്കിന്റെ പേര് “%name” എന്നാക്കി മാറ്റി.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>പാക്കേജ്</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>ആർക്കൈവ് PAX tar ഫോർമാറ്റിലാണ് പാക്ക് ചെയ്തത്, അത് ഇറക്കുമതി ചെയ്യാനാവില്ല. പാക്കേജ് GNU tar ഫോർമാറ്റിൽ പാക്ക് ചെയ്യുക (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>ആർക്കൈവ് നിരസിച്ചു: “%path” എന്ന എൻട്രിയുടെ tar തരം “%type” ആണ്, ഒരു പാക്കേജിൽ ഫയലുകളും ഡയറക്ടറികളും മാത്രമേ ഉണ്ടാകൂ.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ആർക്കൈവ് നിരസിച്ചു: അതിൽ %length ബൈറ്റിനേക്കാൾ നീളമുള്ള ഒരു എൻട്രിയുടെ പേരുണ്ട്.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>ഡാറ്റ ടേബിളുകളിലേക്ക് മിറർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>ഉപയോക്തൃ അക്കൗണ്ടുകൾ അംഗീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ഒരു പുതിയ ഉപയോക്തൃ അക്കൗണ്ട് നിങ്ങളുടെ അംഗീകാരത്തിനായി കാത്തിരിക്കുന്നു</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>പാസ്വേഡ് മാറ്റത്തിലേക്ക് അയച്ചു</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>രണ്ടാം ഘട്ടമില്ലാത്ത സൈൻ ഇൻ നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>ആപ്പ് പാസ്വേഡ് സൃഷ്ടിച്ചു</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ആപ്പ് പാസ്വേഡ് അസാധുവാക്കി</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>ആപ്പ് പാസ്വേഡ് ഉപയോഗിച്ചു</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>ഈ നോഡിന്റെ ഓഡിറ്റ് ട്രെയിൽ</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>കേടുകൂടാത്തത്</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>തകർന്നത്</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>പരിശോധിക്കാത്തത്</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>നന്നാക്കിയത്</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ശൂന്യം</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>പുതിയ ഇ-മെയിൽ വിലാസം %email സ്ഥിരീകരണത്തിനായി കാത്തിരിക്കുന്നു: അവിടേക്ക് ഞങ്ങൾ അയച്ച ലിങ്ക് തുറക്കുക. അതുവരെ ഈ അക്കൗണ്ട് %current നിലനിർത്തും.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>ഒരു പുതിയ ഉപകരണത്തിൽ നിന്നോ ബ്രൗസറിൽ നിന്നോ ഉള്ള സൈൻ ഇന്നിനെക്കുറിച്ചുള്ള ഇമെയിൽ അക്കൗണ്ട് സുരക്ഷയുടെ ഭാഗമാണ്. “നിങ്ങളുടെ ഉപകരണങ്ങൾ” എന്നതിലാണ് നിങ്ങൾ അത് ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുന്നത്, അവിടെ നിങ്ങളുടെ അക്കൗണ്ടിന്റെ സെഷനുകൾ കാണാനും സൈൻ ഔട്ട് ചെയ്യാനും കഴിയും.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>കൂടുതൽ പ്രേക്ഷകർ</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>അവലോകനവും റിലീസും</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>വിഷയം ഇപ്പോൾ അവലോകനത്തിലാണ്.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>വിഷയം റിലീസ് ചെയ്തു: വായനക്കാർക്ക് ഇപ്പോൾ അത് കാണാം.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>വിഷയം വീണ്ടും ഡ്രാഫ്റ്റാണ്.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>നിലവിലെ പതിപ്പ് എഴുതിയത് നിങ്ങളാണ്, അതിനാൽ റിലീസ് റോളുള്ള മറ്റൊരാൾ അത് റിലീസ് ചെയ്യും.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>നില മാറ്റിയില്ല: നിങ്ങളുടെ റോൾ ഈ ഘട്ടം അനുവദിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>അവലോകന വർക്ക്ഫ്ലോ</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ഡ്രാഫ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>അവലോകനം</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>വീണ്ടും അവലോകനത്തിലേക്ക്</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>അവലോകനത്തിന് അയയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>റിലീസ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>വീണ്ടും ഡ്രാഫ്റ്റിലേക്ക്</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>സ്റ്റൈൽ ഗൈഡ് പരിശോധന</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>സ്റ്റൈൽ ഗൈഡ് പരിശോധനയിൽ ഒന്നും കണ്ടെത്തിയില്ല.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors പിശകുകൾ, %warnings മുന്നറിയിപ്പുകൾ, %notices അറിയിപ്പുകൾ. ഒരു പിശക് ഉണ്ടെങ്കിൽ ./console exp:help:content check വിജയിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>ലെവൽ</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>നിയമം</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ഫീൽഡ്</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>കണ്ടെത്തൽ</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ഇത് സഹായകരമായിരുന്നോ?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>വായനക്കാർ %yes തവണ അതെ എന്നും %no തവണ ഇല്ല എന്നും ഉത്തരം നൽകി.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>ഇല്ല എന്നതിന് നൽകിയ കാരണങ്ങൾ:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>നന്ദി. നിങ്ങളുടെ ഉത്തരം സഹായം മെച്ചപ്പെടുത്താൻ ഞങ്ങളെ സഹായിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>ഇല്ലെങ്കിൽ, എന്തായിരുന്നു പ്രശ്നം?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>കാരണമൊന്നും നൽകിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>നിങ്ങളുടെ ഉത്തരം മാത്രമേ സൂക്ഷിക്കൂ, നിങ്ങൾ ആരാണെന്നല്ല.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ഇത് കാലഹരണപ്പെട്ടതാണ്</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>ഇത് മനസ്സിലാക്കാൻ പ്രയാസമാണ്</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>എന്തോ വിട്ടുപോയിട്ടുണ്ട്</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>ഇത് തെറ്റാണ്</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>മറ്റൊരു കാരണം</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ഈ വിഷയം റിലീസ് ചെയ്തിട്ടില്ല; വായനക്കാർ ഇത് കാണുന്നില്ല.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>പെർസിസ്റ്റന്റ് ക്ലാസുകളുടെ പട്ടികകൾ ബ്രൗസ് ചെയ്യുക…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>അംഗീകാരത്തിനായി കാത്തിരിക്കുന്ന പുതിയ ഉപയോക്തൃ അക്കൗണ്ട്: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>അക്കൗണ്ട്</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>ഉപയോക്തൃനാമം</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ഗ്രൂപ്പ്</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>അഭ്യർത്ഥിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>അംഗീകാരം തുറക്കുക</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ബട്ടൺ പ്രവർത്തിക്കുന്നില്ലെങ്കിൽ, ഈ വിലാസം നിങ്ങളുടെ ബ്രൗസറിലേക്ക് പകർത്തുക: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ഒരു പുതിയ ഉപയോക്തൃ അക്കൗണ്ട് നിങ്ങളുടെ അംഗീകാരത്തിനായി കാത്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester %groups എന്നതിൽ “%name” എന്ന അക്കൗണ്ട് സൃഷ്ടിച്ചു. ഒരു അംഗീകാരകൻ അത് സ്വീകരിക്കുന്നതുവരെ അത് പ്രസിദ്ധീകരിക്കപ്പെടില്ല, സൈൻ ഇൻ ചെയ്യാനുമാവില്ല.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>അഡ്മിൻ ഇന്റർഫേസിൽ സൈൻ ഇൻ ചെയ്ത് നിങ്ങളുടെ സഹകരണ ലിസ്റ്റിൽ അത് അംഗീകരിക്കുകയോ നിരസിക്കുകയോ ചെയ്യുക. ഈ ലിങ്ക് നിങ്ങളെ സൈൻ ഇൻ ചെയ്യിക്കുന്നില്ല, സ്വയം ഒന്നും തീരുമാനിക്കുന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>നിങ്ങൾ ഈ ഗ്രൂപ്പുകളുടെ പുതിയ അക്കൗണ്ടുകൾ അംഗീകരിക്കുന്നതിനാൽ %site ആണ് ഈ മെയിൽ അയച്ചത്.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>കമ്പ്യൂട്ടർ</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ഫോൺ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ടാബ്‌ലെറ്റ്</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>പ്രോഗ്രാം അല്ലെങ്കിൽ ആപ്പ്</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>സ്വയമേവയുള്ള ക്ലയന്റ്</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>അജ്ഞാത ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>പാസ്വേഡ്</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>പാസ്വേഡും ടു-സ്റ്റെപ്പ് കോഡും</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>സിംഗിൾ സൈൻ-ഓൺ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>സെഷനുകൾ രേഖപ്പെടുത്തുന്നതിന് മുമ്പ് സൈൻ ഇൻ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ഈ പേജിൽ നിന്ന് സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ഒരു അഡ്മിനിസ്ട്രേറ്റർ സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“മറ്റെല്ലാ സെഷനുകളും” വഴി സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>പുതിയ സൈൻ ഇൻ വഴി മാറ്റിസ്ഥാപിച്ചു</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>പാസ്വേഡ് മാറ്റം വഴി അവസാനിച്ചു</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>കാലഹരണപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name എന്നയാളുടെ സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ഇപ്പോൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്. ഒരു ഉപകരണം നിങ്ങൾ തിരിച്ചറിയുന്നില്ലെങ്കിൽ, അത് സൈൻ ഔട്ട് ചെയ്ത് നിങ്ങളുടെ പാസ്വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ഈ അക്കൗണ്ട് ഇപ്പോൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്. ഉപയോക്താവിനെ സൈൻ ഔട്ട് ചെയ്താൽ ഓരോ സെഷനും അതിന്റെ അടുത്ത അഭ്യർത്ഥനയിൽ അവസാനിക്കും.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>അക്കൗണ്ടിലേക്ക് തിരികെ</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>സെഷൻ സൈൻ ഔട്ട് ചെയ്തു. ഉപകരണം വീണ്ടും സൈൻ ഇൻ ചെയ്യേണ്ടിവരും.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>മറ്റ് %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യാൻ മറ്റ് സെഷനുകളൊന്നും ഉണ്ടായിരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ഈ ഉപയോക്താവിന്റെ %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ഈ ഉപയോക്താവിന് സൈൻ ഔട്ട് ചെയ്യാൻ സെഷനുകളൊന്നും ഉണ്ടായിരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>നിങ്ങൾ ഉപയോഗിക്കുന്ന സെഷനാണിത്. അത് അവസാനിപ്പിക്കാൻ സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ആ സെഷൻ ഇതിനകം അവസാനിച്ചിരുന്നു.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ഒരു പുതിയ ഉപകരണത്തിൽ നിന്ന് സൈൻ ഇൻ ചെയ്യുമ്പോൾ നിങ്ങൾക്ക് ഒരു ഇമെയിൽ ലഭിക്കും.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>പുതിയ ഉപകരണങ്ങളിൽ നിന്നുള്ള സൈൻ ഇന്നുകളെക്കുറിച്ച് നിങ്ങൾക്ക് ഇനി ഇമെയിൽ ലഭിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>പേജ് കാലഹരണപ്പെട്ടിരുന്നു. ഒന്നും മാറ്റിയിട്ടില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ഈ സൈറ്റിൽ സെഷനുകൾ രേഖപ്പെടുത്തുന്നില്ല (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session എന്ന പട്ടിക കാണുന്നില്ല</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>അത് സൃഷ്ടിച്ചാലുടൻ സെഷനുകൾ രേഖപ്പെടുത്തും: php update/common/scripts/6.0/createusersessiontable.php, അല്ലെങ്കിൽ 6.0.15-ന്റെ ഡാറ്റാബേസ് അപ്ഡേറ്റ്.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ഇപ്പോൾ സൈൻ ഇൻ ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>മറ്റെല്ലാ സെഷനുകളും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ഇതൊഴികെയുള്ള ഓരോ ഉപകരണവും അതിന്റെ അടുത്ത അഭ്യർത്ഥനയിൽ സൈൻ ഔട്ട് ചെയ്യപ്പെടും, “എന്നെ ഓർമ്മിക്കുക” വഴി സൈൻ ഇൻ ചെയ്ത നിലയിൽ തുടരുന്നവയും.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ഈ ഉപയോക്താവിന്റെ ഓരോ സെഷനും അതിന്റെ അടുത്ത അഭ്യർത്ഥനയിൽ സൈൻ ഔട്ട് ചെയ്യപ്പെടും, “എന്നെ ഓർമ്മിക്കുക” വഴി സൈൻ ഇൻ ചെയ്ത നിലയിൽ തുടരുന്നവയും.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>അതെ, മറ്റ് സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>അതെ, എല്ലാ സെഷനുകളും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ഈ ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>വിലാസം</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>അതിന്റെ നെറ്റ്വർക്കായി കാണിക്കുന്നു; പൂർണ്ണ വിലാസം അഡ്മിനിസ്ട്രേറ്റർമാർക്കായി സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip-ൽ നിന്ന് സൈൻ ഇൻ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>അവസാനം സജീവമായത്</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ഇപ്പോൾ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്ത നിലയിൽ തുടരുന്നു</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>എന്നെ ഓർമ്മിക്കുക, %date വരെ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ബ്രൗസർ അടയ്ക്കുന്നതുവരെ</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>സൈൻ ഇൻ ചെയ്ത സ്ഥലം</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>ബ്രൗസർ തിരിച്ചറിയൽ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ഈ സെഷൻ അവസാനിപ്പിക്കാൻ സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ഈ സെഷൻ സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ഒരു സെഷനും സൈൻ ഇൻ ചെയ്തിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>സൈൻ ഇൻ അലേർട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>എന്റെ അക്കൗണ്ട് ഒരു പുതിയ ഉപകരണത്തിൽ നിന്നോ ബ്രൗസറിൽ നിന്നോ സൈൻ ഇൻ ചെയ്യുമ്പോൾ എനിക്ക് ഇമെയിൽ അയയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email എന്നതിലേക്ക് അയയ്ക്കുന്നു. ഉപകരണം, ഏകദേശ സ്ഥലം, സമയം എന്നിവ അതിൽ പറയുന്നു, ഈ പേജിലേക്കുള്ള ലിങ്കും ഉണ്ട്.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>ഈ സൈറ്റ് സൈൻ ഇൻ അലേർട്ടുകൾ അയയ്ക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>അടുത്തിടെ അവസാനിച്ചവ</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>കഴിഞ്ഞ %days ദിവസങ്ങളിൽ അവസാനിച്ച സെഷനുകൾ.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>അവസാനിച്ചത്</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>എങ്ങനെ</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>ഒന്നുമില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>കമ്പ്യൂട്ടർ</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ഫോൺ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ടാബ്‌ലെറ്റ്</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>പ്രോഗ്രാം അല്ലെങ്കിൽ ആപ്പ്</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>സ്വയമേവയുള്ള ക്ലയന്റ്</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>അജ്ഞാത ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>പാസ്വേഡ്</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>പാസ്വേഡും ടു-സ്റ്റെപ്പ് കോഡും</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ഇന്റർഫേസ്</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>സിംഗിൾ സൈൻ-ഓൺ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>സെഷനുകൾ രേഖപ്പെടുത്തുന്നതിന് മുമ്പ് സൈൻ ഇൻ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ഈ പേജിൽ നിന്ന് സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ഒരു അഡ്മിനിസ്ട്രേറ്റർ സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“മറ്റെല്ലാ സെഷനുകളും” വഴി സൈൻ ഔട്ട് ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>പുതിയ സൈൻ ഇൻ വഴി മാറ്റിസ്ഥാപിച്ചു</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>പാസ്വേഡ് മാറ്റം വഴി അവസാനിച്ചു</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>കാലഹരണപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name എന്നയാളുടെ സെഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ഇപ്പോൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്. ഒരു ഉപകരണം നിങ്ങൾ തിരിച്ചറിയുന്നില്ലെങ്കിൽ, അത് സൈൻ ഔട്ട് ചെയ്ത് നിങ്ങളുടെ പാസ്വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ഈ അക്കൗണ്ട് ഇപ്പോൾ എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ട്. ഉപയോക്താവിനെ സൈൻ ഔട്ട് ചെയ്താൽ ഓരോ സെഷനും അതിന്റെ അടുത്ത അഭ്യർത്ഥനയിൽ അവസാനിക്കും.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>സെഷൻ സൈൻ ഔട്ട് ചെയ്തു. ഉപകരണം വീണ്ടും സൈൻ ഇൻ ചെയ്യേണ്ടിവരും.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>മറ്റ് %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യാൻ മറ്റ് സെഷനുകളൊന്നും ഉണ്ടായിരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ഈ ഉപയോക്താവിന്റെ %count സെഷനുകൾ സൈൻ ഔട്ട് ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ഈ ഉപയോക്താവിന് സൈൻ ഔട്ട് ചെയ്യാൻ സെഷനുകളൊന്നും ഉണ്ടായിരുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>നിങ്ങൾ ഉപയോഗിക്കുന്ന സെഷനാണിത്. അത് അവസാനിപ്പിക്കാൻ സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ആ സെഷൻ ഇതിനകം അവസാനിച്ചിരുന്നു.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് ഒരു പുതിയ ഉപകരണത്തിൽ നിന്ന് സൈൻ ഇൻ ചെയ്യുമ്പോൾ നിങ്ങൾക്ക് ഒരു ഇമെയിൽ ലഭിക്കും.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>പുതിയ ഉപകരണങ്ങളിൽ നിന്നുള്ള സൈൻ ഇന്നുകളെക്കുറിച്ച് നിങ്ങൾക്ക് ഇനി ഇമെയിൽ ലഭിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>പേജ് കാലഹരണപ്പെട്ടിരുന്നു. ഒന്നും മാറ്റിയിട്ടില്ല; ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>ഈ സൈറ്റിൽ സെഷനുകൾ രേഖപ്പെടുത്തുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>സെഷനുകൾ ഇതുവരെ രേഖപ്പെടുത്തുന്നില്ല: സൈറ്റിന് അതിന്റെ ഡാറ്റാബേസ് അപ്ഡേറ്റ് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ഇപ്പോൾ സൈൻ ഇൻ ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ഈ ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>വിലാസം</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്തത്</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>അവസാനം സജീവമായത്</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ഇപ്പോൾ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>സൈൻ ഇൻ ചെയ്ത നിലയിൽ തുടരുന്നു</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>എന്നെ ഓർമ്മിക്കുക, %date വരെ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ബ്രൗസർ അടയ്ക്കുന്നതുവരെ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ഈ സെഷൻ അവസാനിപ്പിക്കാൻ സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ഈ സെഷൻ സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>മറ്റെല്ലാ സെഷനുകളും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>എല്ലായിടത്തുനിന്നും സൈൻ ഔട്ട് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>സൈൻ ഇൻ അലേർട്ടുകൾ</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>എന്റെ അക്കൗണ്ട് ഒരു പുതിയ ഉപകരണത്തിൽ നിന്നോ ബ്രൗസറിൽ നിന്നോ സൈൻ ഇൻ ചെയ്യുമ്പോൾ എനിക്ക് ഇമെയിൽ അയയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>അടുത്തിടെ അവസാനിച്ചവ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>അവസാനിച്ചത്</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>എങ്ങനെ</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>കഴിഞ്ഞ %days ദിവസങ്ങളിൽ ഒന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് എവിടെയൊക്കെ സൈൻ ഇൻ ചെയ്തിട്ടുണ്ടെന്ന് കാണുക, നിങ്ങൾക്ക് അറിയാത്ത ഒരു ഉപകരണം സൈൻ ഔട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ഉപകരണങ്ങൾ നിയന്ത്രിക്കുക</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site-ലെ നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് പുതിയ സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>നമസ്കാരം,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site-ലെ നിങ്ങളുടെ അക്കൗണ്ട് %login അടുത്തിടെ ഉപയോഗിക്കാത്ത ഒരു ഉപകരണത്തിൽ നിന്നോ ബ്രൗസറിൽ നിന്നോ സൈൻ ഇൻ ചെയ്യാൻ ഇപ്പോൾ ഉപയോഗിച്ചു:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>ഉപകരണം:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>സമയം:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>ഏകദേശ വിലാസം:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ഇത് നിങ്ങളായിരുന്നെങ്കിൽ, നിങ്ങൾ ഒന്നും ചെയ്യേണ്ടതില്ല.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>ഇത് നിങ്ങളല്ലെങ്കിൽ, ആർക്കെങ്കിലും നിങ്ങളുടെ പാസ്വേഡ് അറിയാമായിരിക്കാം. നിങ്ങളുടെ ഉപകരണങ്ങളുടെ പേജിൽ ആ സെഷൻ സൈൻ ഔട്ട് ചെയ്യുക, തുടർന്ന് നിങ്ങളുടെ പാസ്വേഡ് മാറ്റുക:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>അതേ പേജിൽ നിങ്ങൾക്ക് ഈ ഇമെയിലുകൾ ഓഫാക്കാം.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site-ൽ %login-ന്റെ പുതിയ സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login എന്ന അക്കൗണ്ട് അടുത്തിടെ ഉപയോഗിക്കാത്ത ഒരു ഉപകരണത്തിൽ നിന്നോ ബ്രൗസറിൽ നിന്നോ സൈൻ ഇൻ ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>ഈ ഉപയോക്താവിന്റെ സെഷനുകൾ:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് പുതിയ സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ട് %login %date-ന് %device (%ip)-ൽ നിന്ന് സൈൻ ഇൻ ചെയ്യാൻ ഉപയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ഇത് നിങ്ങളായിരുന്നെങ്കിൽ, നിങ്ങൾ ഒന്നും ചെയ്യേണ്ടതില്ല. അല്ലെങ്കിൽ, %url എന്നതിൽ ഈ സെഷൻ സൈൻ ഔട്ട് ചെയ്ത് നിങ്ങളുടെ പാസ്വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login-ന്റെ പുതിയ സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login എന്ന അക്കൗണ്ട് ഒരു പുതിയ ഉപകരണത്തിൽ നിന്ന് സൈൻ ഇൻ ചെയ്തു: %device (%ip), %date-ന്.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name എന്നയാളുടെ സെഷനുകൾ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>പാസ്കീകൾ</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡിന് പകരം വിരലടയാളം, മുഖം, സ്ക്രീൻ ലോക്ക് അല്ലെങ്കിൽ സുരക്ഷാ കീ ഉപയോഗിച്ച് ഒരു പാസ്കീ നിങ്ങളെ സൈൻ ഇൻ ചെയ്യിക്കുന്നു. അത് നിങ്ങളുടെ ഉപകരണത്തിലോ പാസ്വേഡ് മാനേജറിലോ സംഭരിക്കുന്നു; ഈ സൈറ്റ് അതിന്റെ പബ്ലിക് കീ മാത്രമേ സൂക്ഷിക്കൂ, അതിനാൽ ഇവിടെ ഒരു ചോർച്ച ഉണ്ടായാലും അത് വെളിപ്പെടില്ല.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>ഈ സൈറ്റിൽ പാസ്കീകൾ ഓഫാക്കിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>ഈ സൈറ്റിൽ ഇതുവരെ പാസ്കീകൾ ഉപയോഗിക്കാനാവില്ല: അഡ്മിനിസ്ട്രേറ്റർ ആദ്യം ഡാറ്റാബേസ് അപ്ഡേറ്റ് പ്രവർത്തിപ്പിക്കണം.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>“%name” എന്ന പാസ്കീ നീക്കം ചെയ്യണോ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>അതിന് ഇനി ഈ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാനാവില്ല. നിങ്ങളുടെ ഉപകരണത്തിൽ നിന്നോ പാസ്വേഡ് മാനേജറിൽ നിന്നോ കൂടി അത് നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>പാസ്കീ നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>നിങ്ങളുടെ പാസ്കീകൾ</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>പരമാവധി %max-ൽ %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>നിങ്ങൾക്ക് ഇതുവരെ പാസ്കീ ഇല്ല. താഴെ ഒന്ന് ചേർക്കുക: അടുത്ത തവണ സൈൻ ഇൻ ചെയ്യുമ്പോൾ “പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക” തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ചേർത്തത്</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>അവസാനം ഉപയോഗിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>തരം</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ഇതുവരെയില്ല</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>സമന്വയിപ്പിച്ചത്</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>ഈ ഉപകരണം അല്ലെങ്കിൽ കീ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>പേര് മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>പുതിയ പേര്</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>പേര് സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ഒരു പാസ്കീ ചേർക്കുക</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>നിങ്ങളുടെ ബ്രൗസറിന്റെയോ ഉപകരണത്തിന്റെയോ ഘട്ടങ്ങൾ പിന്തുടരുക.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>പാസ്കീ ഡയലോഗ് അടച്ചു. ഒന്നും മാറ്റിയിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>പാസ്കീ സൃഷ്ടിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>ഈ ബ്രൗസറിന് പാസ്കീകൾ സൃഷ്ടിക്കാനാവില്ല. ഒരു നിലവിലെ ബ്രൗസർ ഉപയോഗിക്കുക, അല്ലെങ്കിൽ നിങ്ങളുടെ പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ഉദാഹരണത്തിന് അത് ഉള്ള ഉപകരണമോ പാസ്വേഡ് മാനേജറോ, അങ്ങനെ നിങ്ങളുടെ പാസ്കീകൾ വേർതിരിച്ചറിയാം.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>ഈ അക്കൗണ്ടിന് അനുവദനീയമായത്ര പാസ്കീകൾ (%max) ഉണ്ട്. മറ്റൊന്ന് ചേർക്കാൻ ഒന്ന് നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>പാസ്കീ ഉപയോഗിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>എന്റെ അക്കൗണ്ട്</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>പാസ്കീ ഡയലോഗ് അടച്ചു. പകരം നിങ്ങൾക്ക് പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യാം.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>പാസ്കീ ഉപയോഗിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക, അല്ലെങ്കിൽ നിങ്ങളുടെ പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>പാസ്കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യാനായില്ല</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡിന് പകരം വിരലടയാളം, മുഖം, സ്ക്രീൻ ലോക്ക് അല്ലെങ്കിൽ സുരക്ഷാ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>“%name” എന്ന പാസ്കീ ചേർത്തു. ഇനി മുതൽ നിങ്ങൾക്ക് അത് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യാം.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>പാസ്കീയുടെ പേര് ഇപ്പോൾ “%name” ആണ്.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>“%name” എന്ന പാസ്കീ നീക്കം ചെയ്തു. അതിന് ഇനി ഈ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യാനാവില്ല.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date-ലെ പാസ്കീ</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>ഈ അക്കൗണ്ടിന് അനുവദനീയമായത്ര പാസ്കീകൾ ഉണ്ട്. ആദ്യം ഒന്ന് നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>ഡാറ്റാബേസ് തിരക്കിലായിരുന്നു, ഒന്നും സംരക്ഷിച്ചില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>ഈ പാസ്കീ ഇതിനകം രജിസ്റ്റർ ചെയ്തിട്ടുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>അഭ്യർത്ഥനയ്ക്ക് വളരെയധികം സമയമെടുത്തു അല്ലെങ്കിൽ അത് ഇതിനകം ഉപയോഗിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>നിങ്ങൾ ആരാണെന്ന് (PIN, വിരലടയാളം അല്ലെങ്കിൽ മുഖം) പാസ്കീ പരിശോധിച്ചില്ല. ദയവായി വീണ്ടും ശ്രമിച്ച് നിങ്ങളുടെ ഉപകരണത്തിൽ സ്ഥിരീകരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>ഈ ഓതന്റിക്കേറ്റർ ഈ സൈറ്റ് സ്വീകരിക്കാത്ത തരം കീ ഉപയോഗിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>ഈ സൈറ്റല്ലാത്ത മറ്റൊരു വിലാസത്തിനായാണ് പാസ്കീ സൃഷ്ടിച്ചത്.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>ഈ പാസ്കീ ഇവിടെ ഒരു അക്കൗണ്ടിനും രജിസ്റ്റർ ചെയ്തിട്ടില്ല. നിങ്ങളുടെ പാസ്വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്ത് “എന്റെ അക്കൗണ്ട്”, “പാസ്കീകൾ” എന്നതിൽ അത് ചേർക്കുക.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>ഈ അക്കൗണ്ടിന് ഇപ്പോൾ സൈൻ ഇൻ ചെയ്യാനാവില്ല. ദയവായി സൈറ്റ് അഡ്മിനിസ്ട്രേറ്ററെ ബന്ധപ്പെടുക.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>പാസ്കീ പരിശോധിക്കാനായില്ല. ദയവായി വീണ്ടും ശ്രമിക്കുക.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>നിങ്ങൾ സൈൻ ഇൻ ചെയ്യുന്ന രീതിയോ നിങ്ങളുടെ അക്കൗണ്ടിന്റെ സുരക്ഷയോ മാറ്റാൻ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>നിങ്ങൾ ഉപയോക്താക്കളെയോ റോളുകളെയോ പോളിസികളെയോ നിയന്ത്രിക്കാൻ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>നിങ്ങൾ സിസ്റ്റം ക്രമീകരണങ്ങൾ മാറ്റാനോ ഒരു സജ്ജീകരണ പ്രവർത്തനം നടത്താനോ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>നിങ്ങൾ ഡാറ്റ കയറ്റുമതി ചെയ്യാൻ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>നിങ്ങൾ ഉള്ളടക്കം നീക്കം ചെയ്യാനോ പ്രസിദ്ധീകരിക്കാനോ പോകുകയാണ്.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>ഈ പ്രവർത്തനത്തിന് നിങ്ങൾ ആരാണെന്ന് സ്ഥിരീകരിക്കേണ്ടതുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login ആയി സൈൻ ഇൻ ചെയ്തിരിക്കുന്നത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക. %minutes മിനിറ്റ് നേരത്തേക്ക് നിങ്ങളോട് വീണ്ടും ചോദിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>ആ പാസ്വേഡ് ശരിയല്ല.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>ആ കോഡ് ശരിയല്ല, അല്ലെങ്കിൽ അത് ഇതിനകം ഉപയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>താഴെയുള്ള രീതികളിൽ ഒന്ന് തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>പാസ്കീ പരിശോധിക്കാനായില്ല.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>നിങ്ങൾ സൈൻ ഔട്ട് ചെയ്യപ്പെടുന്നതിന് മുമ്പ് %count ശ്രമങ്ങൾ ബാക്കിയുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>നിങ്ങൾ തിരഞ്ഞെടുത്ത ഫയലുകൾ വീണ്ടും അയയ്ക്കാനാവില്ല: സ്ഥിരീകരിച്ച ശേഷം അവ ഒരിക്കൽ കൂടി തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>നിങ്ങളുടെ പാസ്വേഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>ഒരു പാസ്കീ ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>പാസ്വേഡ്</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>സ്ഥിരീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>ഒരു പാസ്കീ ഉപയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പിൽ നിന്നുള്ള കോഡ് ഉപയോഗിച്ച്</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>കോഡ്</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>നിങ്ങൾ ആരാണെന്ന് സ്ഥിരീകരിക്കാൻ ഈ അക്കൗണ്ടിന് ഒരു മാർഗവുമില്ല (പാസ്വേഡോ പാസ്കീയോ ഓതന്റിക്കേറ്റർ ആപ്പോ ഇല്ല). സൈൻ ഔട്ട് ചെയ്ത് വീണ്ടും സൈൻ ഇൻ ചെയ്യുക, അല്ലെങ്കിൽ ഒരു അഡ്മിനിസ്ട്രേറ്ററോട് ചോദിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ ആപ്പിൽ നിന്നുള്ള കോഡ്</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>നിങ്ങളുടെ സ്വന്തം അക്കൗണ്ട്</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>സ്വന്തം പാസ്വേഡ്, ഇമെയിൽ വിലാസം, പാസ്കീകൾ, ടു-സ്റ്റെപ്പ് സൈൻ ഇൻ അല്ലെങ്കിൽ API കീകൾ മാറ്റൽ.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>ഉപയോക്താക്കൾ, റോളുകൾ, പോളിസികൾ</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ഉപയോക്താക്കളെ സൃഷ്ടിക്കലും എഡിറ്റ് ചെയ്യലും, അക്കൗണ്ട് ക്രമീകരണങ്ങൾ, പുതിയ ഉപയോക്തൃ അക്കൗണ്ടുകൾ അംഗീകരിക്കലോ നിരസിക്കലോ, റോളുകൾ നിയോഗിക്കൽ, പോളിസികൾ എഡിറ്റ് ചെയ്യൽ.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>സിസ്റ്റം ക്രമീകരണങ്ങളും സജ്ജീകരണ പ്രവർത്തനങ്ങളും</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>ക്രമീകരണങ്ങൾ, എക്സ്റ്റൻഷനുകൾ, കാഷെകളും പരിപാലനവും, പാക്കേജുകളും അപ്ഡേറ്റുകളും, ബാക്കപ്പുകൾ, git മാനേജർ എന്നിവ എഡിറ്റ് ചെയ്യൽ.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>ഡാറ്റ കയറ്റുമതി ചെയ്യൽ</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>ശേഖരിച്ച വിവരങ്ങൾ, ഉപയോക്താക്കൾ, വാർത്താക്കുറിപ്പ് വരിക്കാർ, ഓഡിറ്റ് എന്നിവയുടെ കയറ്റുമതികൾ.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>ഉള്ളടക്കം നീക്കം ചെയ്യലും പ്രസിദ്ധീകരിക്കലും</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>ഉള്ളടക്കം നീക്കം ചെയ്യൽ (ട്രാഷിലേക്കും), ട്രാഷ് ശൂന്യമാക്കൽ, പ്രസിദ്ധീകരിക്കൽ. സ്ഥിരസ്ഥിതിയായി ഓഫ്.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ഒരു സെൻസിറ്റീവ് പ്രവർത്തനത്തിന് മുമ്പ്, സൈൻ ഇൻ ചെയ്ത ഉപയോക്താവ് തന്റെ പാസ്വേഡ്, ഒരു പാസ്കീ അല്ലെങ്കിൽ ഓതന്റിക്കേറ്റർ ആപ്പിലെ കോഡ് ഉപയോഗിച്ച് താൻ ആരാണെന്ന് വീണ്ടും സ്ഥിരീകരിക്കുന്നു. വെബ് പേജുകൾ മാത്രമേ ചോദിക്കൂ: REST ഇന്റർഫേസ്, SOAP, WebDAV, expservices ലോഗിൻ, കമാൻഡ് ലൈൻ എന്നിവ ഒരിക്കലും ചോദിക്കില്ല.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>പൊതുവായത്</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>ഒരു സ്ഥിരീകരണം സാധുവായ മിനിറ്റുകൾ</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>എപ്പോൾ ചോദിക്കണം</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] എന്നതിൽ %count നിയമങ്ങൾ.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php എന്നതിലേക്ക് സംരക്ഷിക്കുന്നു. സംരക്ഷിക്കുമ്പോൾ ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>താഴെ ഓണാക്കിയ ഗ്രൂപ്പുകളുടെ പ്രവർത്തനങ്ങൾക്ക് മുമ്പ് “ഇത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കുക” എന്ന് ചോദിക്കുക</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>ക്രമീകരണങ്ങൾ സംരക്ഷിച്ചു.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>ക്രമീകരണങ്ങൾ സംരക്ഷിക്കാനായില്ല: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>പുതിയത്</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count വരികൾ</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>പുതിയ വരി</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>വരി സംരക്ഷിച്ചു.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>തിരയുക</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>എഡിറ്റ് ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>ഇതുവരെ വരികളൊന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>അതെ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ഇല്ല</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ഒരു നോഡ് ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ഒരു ഉപയോക്താവിന്റെ ഒബ്ജക്റ്റ് ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ഒരു ഉള്ളടക്ക ഒബ്ജക്റ്റ് ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>വരി %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>വരി സംരക്ഷിച്ചില്ല</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>സംരക്ഷിക്കുക</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>%id എന്ന വരി നീക്കം ചെയ്യണോ?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>വരി പട്ടികയിൽ നിന്ന് നീക്കം ചെയ്യപ്പെടും, അത് തിരികെ കൊണ്ടുവരാനാവില്ല.</translation>
     </message>
 </context>
 </TS>

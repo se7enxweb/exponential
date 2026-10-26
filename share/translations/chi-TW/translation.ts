@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>開啟或關閉資料夾</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>此頁面已在您的書籤中。開啟即可變更其名稱或資料夾。</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>將此頁面加入書籤。</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>已加入書籤</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>將此頁面加入書籤</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>書籤會保留此頁面的位址及其參數：/%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>儲存書籤</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>新增書籤</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>我的書籤</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>系統頁面</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>系統頁面</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>您已無權開啟此頁面。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>此頁面的位址遺失。請移除書籤，然後再次將頁面加入書籤。</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>您已無權開啟此頁面。請移除書籤，或向系統管理員要求存取權。</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>模組和檢視</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>系統頁面也可以加入書籤：開啟該頁面（設定、稽核記錄、使用者清單等），然後選擇其上方的「將此頁面加入書籤」。這類書籤會顯示齒輪圖示。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>無法載入最新的論壇貼文。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron 工作</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>尚未執行任何 cron 工作部分：工作佇列、匯入、通知和搜尋索引都在等候。請執行 php bin/php/installcrontab.php --add，或將 --show 列出的行加入 crontab。</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>有 cron 工作部分未執行的時間已超過其排程允許的範圍：請檢查 crontab（php bin/php/installcrontab.php --show）和日誌 var/log/cronjob-*.log。</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>部分</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>排程</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>上次啟動</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>準時</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>已延遲</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>從未執行</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>此安裝沒有可供 cron 工作執行的 cron 工作部分。</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>設定 &gt; cron 工作</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>停用使用者帳號並將其移至已停用使用者的群組，以及將其移回</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>查看其他使用者在何處登入，並將其登出</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>開啟電子郵件偏好設定</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>工作階段</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>您在何處登入：瀏覽器、系統、地點和時間。若有不認得的裝置，請將其登出。</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>此使用者在何處登入，以及將該使用者從所有裝置登出。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>管理裝置</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>顯示工作階段</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count 個已登入</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>使用指紋、臉部、螢幕鎖定或安全性金鑰登入，無須輸入密碼。</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>管理密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>新增密碼金鑰</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count 個密碼金鑰</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>尚無</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>類別／屬性組合（%count）</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>新帳號需要核准的使用者群組</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>發佈到這些群組或其下層群組的帳號，會一直等候，直到核准者接受為止。在此之前，該帳號無法登入。</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>核准帳號的使用者</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>核准帳號的群組</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>不需核准的使用者群組（其成員可直接發佈這類帳號；核准者一律不需核准）</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>傳送含核准連結的電子郵件給核准者（他們登入後即可核准或拒絕）</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>環境變數 EXP_DEMO_MODE=1 會將此安裝標示為公開示範：系統接受眾所周知的系統管理員密碼，且之後無法變更或重設系統管理員密碼。請勿在正式網站使用示範模式。</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron 工作</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>cron 工作從擁有此安裝的使用者 %user 的 crontab 執行。</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>此安裝沒有需要排程的 cron 工作部分。</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>未寫入 crontab（%reason）。請將以下各行加入執行網站之使用者的 crontab，否則佇列、匯入、通知和搜尋索引永遠不會執行：</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>類別屬性名稱</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>需要核准的帳號</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>寄給核准者的電子郵件</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>已新增您的留言。</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>帳號「%1」已核准並發佈：現在可以登入。</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>帳號「%1」已遭拒絕。它未發佈，無法登入；它已再次成為其作者的草稿。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>已新增 %count 個書籤。</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>系統頁面</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>系統頁面目前還無法加入書籤：尚未執行此版本的資料庫更新。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>無法將此頁面加入書籤：它不是模組檢視的頁面。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>無法將此頁面加入書籤：您無權開啟它。</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>無法將此頁面加入書籤。</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>頁面「%name」已在您的書籤中。</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>無法重新命名書籤：書籤必須有名稱。</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>書籤已重新命名為「%name」。</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>套件</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>此壓縮檔是以 PAX tar 格式封裝，無法匯入。請以 GNU tar 格式封裝套件（GNU tar：tar --format=gnu，bsdtar/macOS：tar --format=gnutar）。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>已拒絕此壓縮檔：項目「%path」的 tar 類型為「%type」，而套件只能包含檔案和目錄。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>已拒絕此壓縮檔：其中有項目名稱的長度超過 %length 個位元組。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>鏡像到資料表</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>核准使用者帳號</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>有新的使用者帳號正在等候您核准</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>已導向至變更密碼</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>已拒絕未完成第二步驟的登入</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>已建立應用程式密碼</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤銷應用程式密碼</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>已使用應用程式密碼</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>此節點的稽核記錄</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>完整</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>已中斷</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>未檢查</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>已修復</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>空白</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>新的電子郵件地址 %email 正在等待確認：請開啟我們寄到該處的連結。在此之前，此帳號仍使用 %current。</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>有關從新裝置或瀏覽器登入的電子郵件屬於帳號安全的一部分。您可以在「您的裝置」頁面開啟或關閉它，也可以在那裡查看並登出帳號的工作階段。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>更多讀者群</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>檢閱與發佈</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>此主題目前處於檢閱階段。</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>此主題已發佈：讀者現在可以看到它。</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>此主題已再次成為草稿。</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>目前的版本是您撰寫的，因此須由具有發佈角色的其他人來發佈。</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>狀態未變更：您的角色不允許執行此步驟。</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>檢閱工作流程</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>草稿</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>檢閱</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>退回檢閱</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>送出檢閱</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>發佈</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>退回草稿</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>風格指南檢查</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>風格指南檢查未發現任何問題。</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors 個錯誤、%warnings 個警告、%notices 個提示。只要有錯誤，./console exp:help:content check 就無法通過。</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>層級</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>規則</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>欄位</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>檢查結果</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>這對您有幫助嗎？</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>讀者回答「是」%yes 次，回答「否」%no 次。</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>回答「否」的原因：</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>謝謝。您的回答能幫助我們改善說明內容。</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>如果沒有幫助，問題出在哪裡？</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>未提供原因</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>只會保留您的回答，不會保留您的身分。</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>內容已過時</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>難以理解</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>缺少內容</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>內容有誤</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>其他原因</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>此主題尚未發佈；讀者看不到它。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>瀏覽持續性類別的資料表…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>新的使用者帳號等候核准：%name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帳號</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>使用者名稱</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>群組</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>申請者</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>開啟核准項目</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>如果按鈕無法運作，請將此位址複製到瀏覽器中：%url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>有新的使用者帳號正在等候您核准</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester 在 %groups 中建立了帳號「%name」。在核准者接受之前，該帳號不會發佈，也無法登入。</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>請登入管理介面，在您的協作清單中核准或拒絕它。此連結不會讓您登入，本身也不會做出任何決定。</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>此郵件由 %site 寄出，因為您負責核准這些群組的新帳號。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>電腦</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>手機</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>平板電腦</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>程式或應用程式</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自動化用戶端</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>未知的裝置</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密碼</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密碼和兩步驟驗證碼</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 介面</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 介面</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>單一登入</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在開始記錄工作階段之前登入</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已登出</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>從此頁面登出</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>由系統管理員登出</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>透過「所有其他工作階段」登出</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>已被新的登入取代</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>因變更密碼而結束</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>已過期</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的工作階段</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>您的帳號目前在以下位置登入。若有不認得的裝置，請將其登出並變更密碼。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>此帳號目前在以下位置登入。將該使用者登出後，每個工作階段都會在下一次要求時結束。</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>返回帳號</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>此工作階段已登出。該裝置必須重新登入。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>已登出 %count 個其他工作階段。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>沒有其他需要登出的工作階段。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>已登出此使用者的 %count 個工作階段。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>此使用者沒有需要登出的工作階段。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>這是您正在使用的工作階段。若要結束，請登出。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>該工作階段已經結束。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>當您的帳號從新裝置登入時，您會收到電子郵件。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>您將不會再收到有關從新裝置登入的電子郵件。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>頁面已過期。未變更任何內容；請再試一次。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>此網站不會記錄工作階段（site.ini [UserSessionSettings] Tracking=disabled）。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>缺少資料表 expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>建立該資料表後就會開始記錄工作階段：php update/common/scripts/6.0/createusersessiontable.php，或執行 6.0.15 的資料庫更新。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>目前已登入</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>登出所有其他工作階段</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>從所有裝置登出</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>除了此裝置以外，所有裝置都會在下一次要求時登出，包括透過「記住我」保持登入的裝置。</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>此使用者的每個工作階段都會在下一次要求時登出，包括透過「記住我」保持登入的工作階段。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>是，登出其他工作階段</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>是，登出所有工作階段</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此裝置</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>裝置</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>顯示為其所屬網路；完整位址會保留供系統管理員查看。</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>從 %ip 登入</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>登入時間</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活動</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>現在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>保持登入</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>記住我，直到 %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>直到關閉瀏覽器</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>登入網站</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>瀏覽器識別資訊</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>若要結束此工作階段，請登出。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>登出</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>登出此工作階段</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>沒有已登入的工作階段。</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>登入通知</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>當我的帳號從新裝置或瀏覽器登入時，寄電子郵件給我</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>寄至 %email。郵件會告訴您裝置、大概地點和時間，並附上此頁面的連結。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>此網站不會傳送登入通知。</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近結束</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>過去 %days 天內結束的工作階段。</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>結束時間</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>結束方式</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>無。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>電腦</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>手機</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>平板電腦</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>程式或應用程式</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自動化用戶端</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>未知的裝置</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密碼</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密碼和兩步驟驗證碼</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 介面</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 介面</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>單一登入</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在開始記錄工作階段之前登入</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已登出</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>從此頁面登出</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>由系統管理員登出</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>透過「所有其他工作階段」登出</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>已被新的登入取代</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>因變更密碼而結束</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>已過期</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的工作階段</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>您的帳號目前在以下位置登入。若有不認得的裝置，請將其登出並變更密碼。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>此帳號目前在以下位置登入。將該使用者登出後，每個工作階段都會在下一次要求時結束。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>此工作階段已登出。該裝置必須重新登入。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>已登出 %count 個其他工作階段。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>沒有其他需要登出的工作階段。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>已登出此使用者的 %count 個工作階段。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>此使用者沒有需要登出的工作階段。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>這是您正在使用的工作階段。若要結束，請登出。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>該工作階段已經結束。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>當您的帳號從新裝置登入時，您會收到電子郵件。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>您將不會再收到有關從新裝置登入的電子郵件。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>頁面已過期。未變更任何內容；請再試一次。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>此網站不會記錄工作階段。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>尚未記錄工作階段：網站需要先執行資料庫更新。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>目前已登入</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此裝置</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>裝置</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>位址</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>登入時間</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活動</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>現在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>保持登入</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>記住我，直到 %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>直到關閉瀏覽器</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>若要結束此工作階段，請登出。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>登出</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>登出此工作階段</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>登出所有其他工作階段</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>從所有裝置登出</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>登入通知</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>當我的帳號從新裝置或瀏覽器登入時，寄電子郵件給我</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近結束</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>結束時間</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>結束方式</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>過去 %days 天內沒有。</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>查看您的帳號在何處登入，並登出不認得的裝置。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>管理裝置</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>您在 %site 的帳號有新的登入</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>您好：</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>您在 %site 的帳號 %login 剛剛從一部最近未使用過的裝置或瀏覽器登入：</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>裝置：</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>時間：</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>大概位址：</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>如果這是您本人，則無須採取任何動作。</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>如果不是您本人，可能有人知道您的密碼。請在「您的裝置」頁面登出該工作階段，然後變更密碼：</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>您可以在同一頁面關閉這些電子郵件。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%login 在 %site 有新的登入</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>帳號 %login 從一部最近未使用過的裝置或瀏覽器登入。</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>此使用者的工作階段：</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>您的帳號有新的登入</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>您的帳號 %login 已於 %date 從 %device（%ip）登入。</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>如果這是您本人，則無須採取任何動作。否則，請在 %url 登出該工作階段，並變更密碼。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login 有新的登入</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>帳號 %login 從新裝置登入：%device（%ip），時間 %date。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>您的裝置</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的工作階段</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>密碼金鑰</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>密碼金鑰可讓您使用指紋、臉部、螢幕鎖定或安全性金鑰登入，無須輸入密碼。它儲存在您的裝置或密碼管理員中；此網站只保留其公開金鑰，因此即使這裡發生資料外洩，也無法洩露密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>此網站已關閉密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>此網站目前還無法使用密碼金鑰：系統管理員必須先執行資料庫更新。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>確定要移除密碼金鑰「%name」嗎？</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>它將無法再登入此帳號。請一併從您的裝置或密碼管理員中移除。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>移除密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>您的密碼金鑰</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count 個，最多 %max 個</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>您還沒有密碼金鑰。請在下方新增一個：下次登入時，選擇「使用密碼金鑰登入」。</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>新增時間</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>上次使用</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>類型</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>尚未使用</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>已同步</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>此裝置或金鑰</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>重新命名</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>新名稱</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>儲存名稱</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>新增密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>請依照瀏覽器或裝置的步驟操作。</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>密碼金鑰對話方塊已關閉。未變更任何內容。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>無法建立密碼金鑰。請再試一次。</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>此瀏覽器無法建立密碼金鑰。請使用最新版的瀏覽器，或使用密碼登入。</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>例如它所在的裝置或密碼管理員，方便您區分各個密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>此帳號的密碼金鑰數量已達上限（%max 個）。請先移除一個，才能新增另一個。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>無法使用此密碼金鑰。請再試一次。</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>我的帳號</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>密碼金鑰對話方塊已關閉。您可以改用密碼登入。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>無法使用此密碼金鑰。請再試一次，或使用密碼登入。</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>使用密碼金鑰登入</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>無法使用密碼金鑰登入</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>使用指紋、臉部、螢幕鎖定或安全性金鑰登入，無須輸入密碼。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>已新增密碼金鑰「%name」。從現在起，您可以使用它登入。</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>密碼金鑰已重新命名為「%name」。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>已移除密碼金鑰「%name」。它將無法再登入此帳號。</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date 的密碼金鑰</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>此帳號的密碼金鑰數量已達上限。請先移除一個。</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>資料庫忙碌中，未儲存任何內容。請再試一次。</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>此密碼金鑰已註冊。</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>要求花費的時間過長或已被使用。請再試一次。</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>密碼金鑰未驗證您的身分（PIN、指紋或臉部）。請再試一次，並在裝置上確認。</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>此驗證器使用的金鑰類型不被此網站接受。</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>此密碼金鑰是為其他位址而非此網站建立的。</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>此密碼金鑰未在這裡的任何帳號註冊。請使用密碼登入，然後在「我的帳號」&gt;「密碼金鑰」中新增它。</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>此帳號目前無法登入。請聯絡網站的系統管理員。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>無法驗證此密碼金鑰。請再試一次。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>您即將變更登入方式或帳號的安全性設定。</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>您即將管理使用者、角色或原則。</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>您即將變更系統設定或執行設定動作。</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>您即將匯出資料。</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>您即將移除或發佈內容。</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>此動作需要您確認身分。</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>請確認是您本人，目前以 %login 身分登入。在 %minutes 分鐘內不會再次詢問您。</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>密碼不正確。</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>此代碼不正確，或已被使用。</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>請選擇以下其中一種方式。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>無法驗證此密碼金鑰。</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>還剩 %count 次嘗試機會，之後您將被登出。</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>無法再次傳送您選擇的檔案：確認後，請重新選擇這些檔案。</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>使用密碼</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>使用密碼金鑰</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密碼</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>使用密碼金鑰</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>使用驗證器應用程式中的代碼</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>代碼</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>此帳號沒有任何確認身分的方式（沒有密碼、密碼金鑰或驗證器應用程式）。請登出後再重新登入，或詢問系統管理員。</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>驗證是您本人</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>驗證器應用程式中的代碼</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>您自己的帳號</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>變更自己的密碼、電子郵件地址、密碼金鑰、兩步驟驗證或 API 金鑰。</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>使用者、角色和原則</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>建立和編輯使用者、帳號設定、核准或拒絕新的使用者帳號、指派角色，以及編輯原則。</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>系統設定和設定動作</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>編輯設定、擴充功能、快取和維護、套件和更新、備份，以及 Git 管理員。</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>匯出資料</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>匯出已收集的資訊、使用者、電子報訂閱者和稽核記錄。</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>移除和發佈內容</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>移除內容（包括移至垃圾桶）、清空垃圾桶以及發佈。預設為關閉。</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>在執行敏感動作之前，已登入的使用者必須再次確認身分：使用密碼、密碼金鑰或驗證器應用程式中的代碼。只有網頁會詢問：REST 介面、SOAP、WebDAV、expservices 登入和命令列一律不會詢問。</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>一般</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>確認的有效時間（分鐘）</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>詢問時機</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] 中有 %count 條規則。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>儲存至 settings/override/site.ini.append.php。儲存時會要求您確認是您本人。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>驗證是您本人</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>在下方已開啟之群組的動作之前，詢問「驗證是您本人」</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>設定已儲存。</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>無法儲存設定：%reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>設定</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>新增</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count 列</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>新增列</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>已儲存此列。</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜尋</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>動作</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>編輯</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>尚無任何列。</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON 位址：%url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>節點 ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>使用者的物件 ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>內容物件 ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>列 %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>未儲存此列</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>儲存</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>確定要移除列 %id 嗎？</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>此列將從資料表中移除，且無法復原。</translation>
     </message>
 </context>
 </TS>

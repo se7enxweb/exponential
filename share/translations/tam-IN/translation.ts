@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>கோப்புறையைத் திற அல்லது மூடு</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>இந்தப் பக்கம் உங்கள் புத்தகக்குறிகளில் உள்ளது. அதன் பெயரையோ கோப்புறையையோ மாற்றத் திறக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>இந்தப் பக்கத்தை உங்கள் புத்தகக்குறிகளில் சேர்க்கவும்.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>புத்தகக்குறியிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>இந்தப் பக்கத்தைப் புத்தகக்குறியிடு</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>புத்தகக்குறி இந்தப் பக்கத்தின் முகவரியை அதன் அளபுருக்களுடன் சேமிக்கிறது: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>புத்தகக்குறியைச் சேமி</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>புத்தகக்குறியைச் சேர்</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>எனது புத்தகக்குறிகள்</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>கணினிப் பக்கம்</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>கணினிப் பக்கங்கள்</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>இந்தப் பக்கத்தை இனி நீங்கள் திறக்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திற</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>இந்தப் பக்கத்தின் முகவரி இல்லை. புத்தகக்குறியை அகற்றி, பக்கத்தை மீண்டும் புத்தகக்குறியிடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>இந்தப் பக்கத்தை இனி நீங்கள் திறக்க முடியாது. புத்தகக்குறியை அகற்றுங்கள், அல்லது அணுகலுக்கு ஒரு நிர்வாகியைக் கேளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>முகவரி</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>தொகுதிக்கூறும் காட்சியும்</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>கணினிப் பக்கங்களையும் புத்தகக்குறியிடலாம்: பக்கத்தைத் திறந்து (அமைவு, தணிக்கைப் பதிவு, பயனர்களின் பட்டியல் ...) அதன் மேலே உள்ள “இந்தப் பக்கத்தைப் புத்தகக்குறியிடு” என்பதைத் தேர்ந்தெடுங்கள். அத்தகைய புத்தகக்குறிகளுக்கு ஒரு பல்சக்கரச் சின்னம் இருக்கும்.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>சமீபத்திய மன்ற இடுகைகளை ஏற்ற முடியவில்லை.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>க்ரான் பணிகள்</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>எந்த க்ரான் பணிப் பகுதியும் இன்னும் இயங்கவில்லை: பணி வரிசை, இறக்குமதிகள், அறிவிப்புகள் மற்றும் தேடல் அட்டவணை காத்திருக்கின்றன. php bin/php/installcrontab.php --add ஐ இயக்குங்கள், அல்லது --show காட்டும் வரிகளை crontab இல் சேருங்கள்.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>ஒரு க்ரான் பணிப் பகுதி அதன் அட்டவணை அனுமதிப்பதை விட நீண்ட காலமாக இயங்கவில்லை: crontab (php bin/php/installcrontab.php --show) மற்றும் var/log/cronjob-*.log பதிவுகளைச் சரிபாருங்கள்.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>பகுதி</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>அட்டவணை</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>கடைசியாகத் தொடங்கியது</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ஒருபோதும் இல்லை</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>சரியான நேரத்தில்</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>தாமதம்</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ஒருபோதும் இயங்கவில்லை</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>க்ரான் பணி இயக்குவதற்கு இந்த நிறுவலில் எந்த க்ரான் பணிப் பகுதியும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>அமைவு &gt; க்ரான் பணிகள்</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>பயனர் கணக்குகளைச் செயலிழக்கச்செய்து செயலிழக்கச் செய்யப்பட்ட பயனர்கள் குழுவுக்கு நகர்த்து, மீண்டும் திரும்ப நகர்த்து</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>பிற பயனர்கள் எங்கே உள்நுழைந்துள்ளனர் என்பதைப் பார்த்து, அவர்களை வெளியேற்றுதல்</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>மின்னஞ்சல் விருப்பத்தேர்வுகளைத் திற</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>நீங்கள் எங்கே உள்நுழைந்துள்ளீர்கள்: உலாவி, கணினி, இடம் மற்றும் நேரம். உங்களுக்குத் தெரியாத சாதனத்தை வெளியேற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>இந்தப் பயனர் எங்கே உள்நுழைந்துள்ளார், மேலும் பயனரை எல்லா இடங்களிலிருந்தும் வெளியேற்றுதல்.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>சாதனங்களை நிர்வகி</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>அமர்வுகளைக் காட்டு</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count உள்நுழைந்துள்ளன</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>கடவுச்சாவிகள்</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>உங்கள் கடவுச்சொல்லுக்குப் பதிலாக உங்கள் கைரேகை, முகம், திரைப் பூட்டு அல்லது பாதுகாப்பு விசை மூலம் உள்நுழையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>கடவுச்சாவிகளை நிர்வகி</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>கடவுச்சாவியைச் சேர்</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count கடவுச்சாவிகள்</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>இன்னும் எதுவுமில்லை</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>வகுப்பு/பண்பு சேர்க்கைகள் (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>புதிய கணக்குகளுக்கு ஒப்புதல் தேவைப்படும் பயனர் குழுக்கள்</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>இந்தக் குழுக்களில் ஒன்றில் அல்லது அதன் கீழ் வெளியிடப்படும் கணக்கு, ஒப்புதல் அளிப்பவர் ஏற்கும் வரை காத்திருக்கும். அதற்கு முன் அது உள்நுழைய முடியாது.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>கணக்குகளுக்கு ஒப்புதல் அளிக்கும் பயனர்கள்</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>கணக்குகளுக்கு ஒப்புதல் அளிக்கும் குழுக்கள்</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>ஒப்புதல் தேவையில்லாத பயனர் குழுக்கள் (அவற்றின் உறுப்பினர்கள் அத்தகைய கணக்குகளை நேரடியாக வெளியிடுவார்கள்; ஒப்புதல் அளிப்பவர்களுக்கு ஒருபோதும் தேவையில்லை)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ஒப்புதலுக்கான இணைப்புடன் ஒப்புதல் அளிப்பவர்களுக்கு மின்னஞ்சல் அனுப்பு (அங்கீகரிக்க அல்லது நிராகரிக்க அவர்கள் உள்நுழைவார்கள்)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>EXP_DEMO_MODE=1 என்ற சூழல் மாறி இந்த நிறுவலை பொது டெமோவாகக் குறிக்கிறது: நன்கு அறியப்பட்ட நிர்வாகி கடவுச்சொல் ஏற்றுக்கொள்ளப்படும், மேலும் நிர்வாகி கடவுச்சொற்களைப் பின்னர் மாற்றவோ மீட்டமைக்கவோ முடியாது. உற்பத்தித் தளத்திற்கு ஒருபோதும் டெமோ பயன்முறையைப் பயன்படுத்த வேண்டாம்.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>க்ரான் பணிகள்</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>க்ரான் பணிகள் நிறுவலின் உரிமையாளரான %user பயனரின் crontab இலிருந்து இயங்குகின்றன.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>அட்டவணையிட இந்த நிறுவலில் எந்த க்ரான் பணிப் பகுதியும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab எழுதப்படவில்லை (%reason). தளம் எந்தப் பயனராக இயங்குகிறதோ அந்தப் பயனரின் crontab இல் இந்த வரிகளைச் சேருங்கள், இல்லையெனில் வரிசை, இறக்குமதிகள், அறிவிப்புகள் மற்றும் தேடல் அட்டவணை ஒருபோதும் இயங்காது:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute பெயர்</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>ஒப்புதல் தேவைப்படும் கணக்குகள்</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ஒப்புதல் அளிப்பவர்களுக்கு மின்னஞ்சல்</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>இல்லை</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>உங்கள் கருத்து சேர்க்கப்பட்டது.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>“%1” கணக்கு அங்கீகரிக்கப்பட்டு வெளியிடப்பட்டது: அது இப்போது உள்நுழையலாம்.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>“%1” கணக்கு நிராகரிக்கப்பட்டது. அது வெளியிடப்படவில்லை, உள்நுழையவும் முடியாது; அது மீண்டும் அதன் ஆசிரியரின் வரைவாக உள்ளது.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count புத்தகக்குறி(கள்) சேர்க்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>கணினிப் பக்கம்</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>கணினிப் பக்கங்களை இன்னும் புத்தகக்குறியிட முடியாது: இந்தப் பதிப்பின் தரவுத்தளப் புதுப்பிப்பு இன்னும் இயக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>இந்தப் பக்கத்தைப் புத்தகக்குறியிட முடியாது: இது ஒரு தொகுதிக்கூறு காட்சியின் பக்கம் அல்ல.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>இந்தப் பக்கத்தைப் புத்தகக்குறியிட முடியாது: இதைத் திறக்க உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>பக்கத்தைப் புத்தகக்குறியிட முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>“%name” பக்கம் உங்கள் புத்தகக்குறிகளில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>புத்தகக்குறியின் பெயரை மாற்ற முடியவில்லை: அதற்கு ஒரு பெயர் தேவை.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>புத்தகக்குறியின் பெயர் “%name” என மாற்றப்பட்டது.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>தொகுப்பு</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>காப்பகம் PAX tar வடிவத்தில் தொகுக்கப்பட்டுள்ளது, அதை இறக்குமதி செய்ய முடியாது. தொகுப்பை GNU tar வடிவத்தில் தொகுங்கள் (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>காப்பகம் மறுக்கப்பட்டது: “%path” உள்ளீட்டின் tar வகை “%type”, ஆனால் ஒரு தொகுப்பில் கோப்புகளும் அடைவுகளும் மட்டுமே இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>காப்பகம் மறுக்கப்பட்டது: அது %length பைட்டுகளை விட நீளமான ஓர் உள்ளீட்டைக் குறிப்பிடுகிறது.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>தரவு அட்டவணைகளுக்கு பிரதிபலி</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>பயனர் கணக்குகளை அங்கீகரி</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ஒரு புதிய பயனர் கணக்கு உங்கள் ஒப்புதலுக்காகக் காத்திருக்கிறது</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>கடவுச்சொல் மாற்றத்திற்கு அனுப்பப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>இரண்டாம் படி இல்லாத உள்நுழைவு மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>செயலி கடவுச்சொல் உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>செயலி கடவுச்சொல் திரும்பப்பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>செயலி கடவுச்சொல் பயன்படுத்தப்பட்டது</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>இந்த முனையின் தணிக்கைத் தடம்</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>சேதமில்லை</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>உடைந்தது</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>சரிபார்க்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>சரிசெய்யப்பட்டது</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>காலி</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>புதிய மின்னஞ்சல் முகவரி %email உறுதிப்படுத்தலுக்காகக் காத்திருக்கிறது: அங்கு நாங்கள் அனுப்பிய இணைப்பைத் திறக்கவும். அதுவரை இந்தப் பயனர் கணக்கு %current முகவரியையே வைத்திருக்கும்.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>புதிய சாதனம் அல்லது உலாவியிலிருந்து உள்நுழைவு பற்றிய மின்னஞ்சல் கணக்குப் பாதுகாப்பின் ஒரு பகுதி. அதை உங்கள் சாதனங்கள் பக்கத்தில் முடக்கலாம் அல்லது இயக்கலாம்; அங்கே உங்கள் கணக்கின் அமர்வுகளைப் பார்த்து வெளியேற்றவும் முடியும்.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>மேலும் பார்வையாளர்கள்</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>மதிப்பாய்வும் வெளியீடும்</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>தலைப்பு இப்போது மதிப்பாய்வில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>தலைப்பு வெளியிடப்பட்டது: வாசகர்கள் இப்போது அதைப் பார்க்கிறார்கள்.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>தலைப்பு மீண்டும் வரைவாக உள்ளது.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>தற்போதைய பதிப்பை நீங்களே எழுதியதால், வெளியீட்டுப் பங்கு உள்ள வேறொருவர் அதை வெளியிடுவார்.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>நிலை மாற்றப்படவில்லை: உங்கள் பங்கு இந்தப் படியை அனுமதிக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>மதிப்பாய்வுப் பணிப்பாய்வு</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>வரைவு</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>மதிப்பாய்வு</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>மதிப்பாய்வுக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>மதிப்பாய்வுக்கு அனுப்பு</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>வெளியிடு</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>வரைவுக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>நடை வழிகாட்டிச் சரிபார்ப்பு</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>நடை வழிகாட்டிச் சரிபார்ப்பில் எதுவும் கண்டறியப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors பிழைகள், %warnings எச்சரிக்கைகள், %notices அறிவிப்புகள். ஒரு பிழை இருந்தாலும் ./console exp:help:content check தேர்ச்சி பெறாது.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>விதி</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>புலம்</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>கண்டறிவு</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>இது உதவியாக இருந்ததா?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>வாசகர்கள் %yes முறை ஆம் என்றும் %no முறை இல்லை என்றும் பதிலளித்தனர்.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>இல்லை என்பதற்குக் கொடுக்கப்பட்ட காரணங்கள்:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>நன்றி. உங்கள் பதில் உதவியை மேம்படுத்த எங்களுக்கு உதவுகிறது.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>இல்லையெனில், என்ன தவறு?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>காரணம் கொடுக்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>உங்கள் பதில் மட்டுமே வைக்கப்படும், நீங்கள் யார் என்பது அல்ல.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>இது காலாவதியானது</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>இதைப் புரிந்துகொள்வது கடினம்</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ஏதோ விடுபட்டுள்ளது</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>இது தவறானது</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>வேறு காரணம்</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>இந்தத் தலைப்பு வெளியிடப்படவில்லை; வாசகர்கள் இதைப் பார்க்க மாட்டார்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>நிலைத்த வகுப்புகளின் அட்டவணைகளை உலாவு…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>ஒப்புதலுக்காகக் காத்திருக்கும் புதிய பயனர் கணக்கு: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>கணக்கு</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>பயனர்பெயர்</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>குழு</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>கோரியவர்</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>ஒப்புதலைத் திற</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>பொத்தான் வேலை செய்யவில்லை என்றால், இந்த முகவரியை உங்கள் உலாவியில் நகலெடுங்கள்: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ஒரு புதிய பயனர் கணக்கு உங்கள் ஒப்புதலுக்காகக் காத்திருக்கிறது</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester “%name” கணக்கை %groups இல் உருவாக்கினார். ஒப்புதல் அளிப்பவர் ஏற்கும் வரை அது வெளியிடப்படாது, உள்நுழையவும் முடியாது.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>நிர்வாக இடைமுகத்தில் உள்நுழைந்து, உங்கள் கூட்டுப்பணிப் பட்டியலில் அதை அங்கீகரியுங்கள் அல்லது நிராகரியுங்கள். இந்த இணைப்பு உங்களை உள்நுழைய வைக்காது, தானாக எதையும் முடிவு செய்யாது.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>இந்தக் குழுக்களின் புதிய கணக்குகளுக்கு நீங்கள் ஒப்புதல் அளிப்பதால் இந்த மின்னஞ்சலை %site அனுப்பியது.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>கணினி</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>தொலைபேசி</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>டேப்லெட்</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>நிரல் அல்லது செயலி</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>தானியங்கு கிளையன்ட்</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>தெரியாத சாதனம்</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>கடவுச்சொல்</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>கடவுச்சொல்லும் இருபடிக் குறியீடும்</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ஒற்றை உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>அமர்வுகள் பதிவுசெய்யப்படுவதற்கு முன்பே உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>வெளியேறியது</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>இந்தப் பக்கத்திலிருந்து வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ஒரு நிர்வாகியால் வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“பிற அனைத்து அமர்வுகள்” மூலம் வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>புதிய உள்நுழைவால் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>கடவுச்சொல் மாற்றத்தால் முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>காலாவதியானது</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name இன் அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>உங்கள் கணக்கு தற்போது எங்கே உள்நுழைந்துள்ளது. ஒரு சாதனத்தை நீங்கள் அடையாளம் காணவில்லை என்றால், அதை வெளியேற்றி உங்கள் கடவுச்சொல்லை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>இந்தக் கணக்கு தற்போது எங்கே உள்நுழைந்துள்ளது. பயனரை வெளியேற்றினால் ஒவ்வொரு அமர்வும் அதன் அடுத்த கோரிக்கையில் முடிவடையும்.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>கணக்குக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>அமர்வு வெளியேற்றப்பட்டது. சாதனம் மீண்டும் உள்நுழைய வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count பிற அமர்வுகள் வெளியேற்றப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>வெளியேற்றுவதற்குப் பிற அமர்வுகள் எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>இந்தப் பயனரின் %count அமர்வுகள் வெளியேற்றப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>இந்தப் பயனருக்கு வெளியேற்றுவதற்கு அமர்வுகள் எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>இது நீங்கள் பயன்படுத்தும் அமர்வு. இதை முடிக்க, வெளியேறுங்கள்.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>அந்த அமர்வு ஏற்கனவே முடிந்துவிட்டது.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>உங்கள் கணக்கு புதிய சாதனத்திலிருந்து உள்நுழையும்போது உங்களுக்கு மின்னஞ்சல் வரும்.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>புதிய சாதனங்களிலிருந்து உள்நுழைவுகள் பற்றி இனி உங்களுக்கு மின்னஞ்சல் வராது.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>பக்கம் காலாவதியானது. எதுவும் மாற்றப்படவில்லை; மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>இந்தத் தளத்தில் அமர்வுகள் பதிவுசெய்யப்படுவதில்லை (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session அட்டவணை இல்லை</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>அது உருவாக்கப்பட்டவுடன் அமர்வுகள் பதிவுசெய்யப்படும்: php update/common/scripts/6.0/createusersessiontable.php, அல்லது 6.0.15 இன் தரவுத்தளப் புதுப்பிப்பு.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>இப்போது உள்நுழைந்துள்ளது</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>பிற அனைத்து அமர்வுகளையும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>எல்லா இடங்களிலிருந்தும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>இதைத் தவிர ஒவ்வொரு சாதனமும் அதன் அடுத்த கோரிக்கையில் வெளியேற்றப்படும், “என்னை நினைவில் கொள்” மூலம் உள்நுழைந்திருப்பவையும் கூட.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>இந்தப் பயனரின் ஒவ்வொரு அமர்வும் அதன் அடுத்த கோரிக்கையில் வெளியேற்றப்படும், “என்னை நினைவில் கொள்” மூலம் உள்நுழைந்திருப்பவையும் கூட.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>ஆம், பிற அமர்வுகளை வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>ஆம், ஒவ்வொரு அமர்வையும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>இந்தச் சாதனம்</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>சாதனம்</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>முகவரி</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>அதன் பிணையமாகக் காட்டப்படுகிறது; முழு முகவரி நிர்வாகிகளுக்காக வைக்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip இலிருந்து உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>கடைசியாகச் செயலில் இருந்தது</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>இப்போது</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>உள்நுழைந்தே இருக்கும்</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>என்னை நினைவில் கொள், %date வரை</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>உலாவி மூடப்படும் வரை</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>உள்நுழைந்த நேரம்</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>உலாவி அடையாளம்</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>இந்த அமர்வை முடிக்க, வெளியேறுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>வெளியேறு</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>இந்த அமர்வை வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>எந்த அமர்வும் உள்நுழைந்திருக்கவில்லை.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>உள்நுழைவு விழிப்பூட்டல்கள்</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>என் கணக்கு புதிய சாதனம் அல்லது உலாவியிலிருந்து உள்நுழையும்போது எனக்கு மின்னஞ்சல் அனுப்பு</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email க்கு அனுப்பப்படும். இது சாதனம், தோராயமான இடம் மற்றும் நேரத்தைத் தெரிவித்து, இந்தப் பக்கத்துக்கான இணைப்பைத் தரும்.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>இந்தத் தளம் உள்நுழைவு விழிப்பூட்டல்களை அனுப்புவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>சமீபத்தில் முடிந்தவை</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>கடந்த %days நாட்களில் முடிந்த அமர்வுகள்.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>எப்படி</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>எதுவுமில்லை.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>கணினி</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>தொலைபேசி</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>டேப்லெட்</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>நிரல் அல்லது செயலி</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>தானியங்கு கிளையன்ட்</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>தெரியாத சாதனம்</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>கடவுச்சொல்</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>கடவுச்சொல்லும் இருபடிக் குறியீடும்</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP இடைமுகம்</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ஒற்றை உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>அமர்வுகள் பதிவுசெய்யப்படுவதற்கு முன்பே உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>வெளியேறியது</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>இந்தப் பக்கத்திலிருந்து வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ஒரு நிர்வாகியால் வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“பிற அனைத்து அமர்வுகள்” மூலம் வெளியேற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>புதிய உள்நுழைவால் மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>கடவுச்சொல் மாற்றத்தால் முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>காலாவதியானது</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name இன் அமர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>உங்கள் கணக்கு தற்போது எங்கே உள்நுழைந்துள்ளது. ஒரு சாதனத்தை நீங்கள் அடையாளம் காணவில்லை என்றால், அதை வெளியேற்றி உங்கள் கடவுச்சொல்லை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>இந்தக் கணக்கு தற்போது எங்கே உள்நுழைந்துள்ளது. பயனரை வெளியேற்றினால் ஒவ்வொரு அமர்வும் அதன் அடுத்த கோரிக்கையில் முடிவடையும்.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>அமர்வு வெளியேற்றப்பட்டது. சாதனம் மீண்டும் உள்நுழைய வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count பிற அமர்வுகள் வெளியேற்றப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>வெளியேற்றுவதற்குப் பிற அமர்வுகள் எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>இந்தப் பயனரின் %count அமர்வுகள் வெளியேற்றப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>இந்தப் பயனருக்கு வெளியேற்றுவதற்கு அமர்வுகள் எதுவும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>இது நீங்கள் பயன்படுத்தும் அமர்வு. இதை முடிக்க, வெளியேறுங்கள்.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>அந்த அமர்வு ஏற்கனவே முடிந்துவிட்டது.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>உங்கள் கணக்கு புதிய சாதனத்திலிருந்து உள்நுழையும்போது உங்களுக்கு மின்னஞ்சல் வரும்.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>புதிய சாதனங்களிலிருந்து உள்நுழைவுகள் பற்றி இனி உங்களுக்கு மின்னஞ்சல் வராது.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>பக்கம் காலாவதியானது. எதுவும் மாற்றப்படவில்லை; மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>இந்தத் தளத்தில் அமர்வுகள் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>அமர்வுகள் இன்னும் பதிவுசெய்யப்படவில்லை: தளத்துக்கு அதன் தரவுத்தளப் புதுப்பிப்பு தேவை.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>இப்போது உள்நுழைந்துள்ளது</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>இந்தச் சாதனம்</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>சாதனம்</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>முகவரி</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>உள்நுழைந்தது</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>கடைசியாகச் செயலில் இருந்தது</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>இப்போது</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>உள்நுழைந்தே இருக்கும்</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>என்னை நினைவில் கொள், %date வரை</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>உலாவி மூடப்படும் வரை</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>இந்த அமர்வை முடிக்க, வெளியேறுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>வெளியேறு</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>இந்த அமர்வை வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>பிற அனைத்து அமர்வுகளையும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>எல்லா இடங்களிலிருந்தும் வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>உள்நுழைவு விழிப்பூட்டல்கள்</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>என் கணக்கு புதிய சாதனம் அல்லது உலாவியிலிருந்து உள்நுழையும்போது எனக்கு மின்னஞ்சல் அனுப்பு</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>சமீபத்தில் முடிந்தவை</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>எப்படி</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>கடந்த %days நாட்களில் எதுவுமில்லை.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>உங்கள் கணக்கு எங்கே உள்நுழைந்துள்ளது என்பதைப் பார்த்து, உங்களுக்குத் தெரியாத சாதனத்தை வெளியேற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>சாதனங்களை நிர்வகி</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site இல் உங்கள் கணக்கில் புதிய உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>வணக்கம்,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site இல் உள்ள உங்கள் கணக்கு %login, சமீபத்தில் பயன்படுத்தாத ஒரு சாதனம் அல்லது உலாவியிலிருந்து இப்போது உள்நுழையப் பயன்படுத்தப்பட்டது:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>சாதனம்:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>நேரம்:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>தோராயமான முகவரி:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>இது நீங்கள்தான் என்றால், நீங்கள் எதுவும் செய்ய வேண்டியதில்லை.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>இது நீங்கள் இல்லையென்றால், யாரோ உங்கள் கடவுச்சொல்லை அறிந்திருக்கலாம். உங்கள் சாதனங்கள் பக்கத்தில் அந்த அமர்வை வெளியேற்றி, பின்னர் உங்கள் கடவுச்சொல்லை மாற்றுங்கள்:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>அதே பக்கத்தில் இந்த மின்னஞ்சல்களை முடக்கலாம்.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site இல் %login இன் புதிய உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login கணக்கு சமீபத்தில் பயன்படுத்தாத ஒரு சாதனம் அல்லது உலாவியிலிருந்து உள்நுழைந்தது.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>இந்தப் பயனரின் அமர்வுகள்:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>உங்கள் கணக்கில் புதிய உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>உங்கள் கணக்கு %login, %date அன்று %device (%ip) இலிருந்து உள்நுழையப் பயன்படுத்தப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>இது நீங்கள்தான் என்றால், நீங்கள் எதுவும் செய்ய வேண்டியதில்லை. இல்லையென்றால், %url இல் இந்த அமர்வை வெளியேற்றி உங்கள் கடவுச்சொல்லை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login இன் புதிய உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login கணக்கு ஒரு புதிய சாதனத்திலிருந்து உள்நுழைந்தது: %device (%ip), %date அன்று.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>உங்கள் சாதனங்கள்</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name இன் அமர்வுகள்</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>கடவுச்சாவிகள்</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>கடவுச்சாவி உங்கள் கடவுச்சொல்லுக்குப் பதிலாக உங்கள் கைரேகை, முகம், திரைப் பூட்டு அல்லது பாதுகாப்பு விசை மூலம் உங்களை உள்நுழைய வைக்கிறது. அது உங்கள் சாதனத்தில் அல்லது உங்கள் கடவுச்சொல் நிர்வாகியில் சேமிக்கப்படும்; இந்தத் தளம் அதன் பொது விசையை மட்டுமே வைத்திருக்கும், எனவே இங்கே கசிவு ஏற்பட்டாலும் அது வெளிப்படாது.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>இந்தத் தளத்தில் கடவுச்சாவிகள் முடக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>இந்தத் தளத்தில் கடவுச்சாவிகளை இன்னும் பயன்படுத்த முடியாது: நிர்வாகி முதலில் தரவுத்தளப் புதுப்பிப்பை இயக்க வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>“%name” கடவுச்சாவியை அகற்றவா?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>அது இனி இந்தக் கணக்கில் உள்நுழைய முடியாது. அதை உங்கள் சாதனம் அல்லது கடவுச்சொல் நிர்வாகியிலிருந்தும் அகற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>கடவுச்சாவியை அகற்று</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>உங்கள் கடவுச்சாவிகள்</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>அதிகபட்சம் %max இல் %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>உங்களிடம் இன்னும் கடவுச்சாவி இல்லை. கீழே ஒன்றைச் சேருங்கள்: அடுத்த முறை உள்நுழையும்போது “கடவுச்சாவி மூலம் உள்நுழை” என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>சேர்க்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>கடைசியாகப் பயன்படுத்தியது</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>வகை</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>ஒத்திசைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>இந்தச் சாதனம் அல்லது விசை</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>மறுபெயரிடு</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>புதிய பெயர்</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>பெயரைச் சேமி</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>அகற்று</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>கடவுச்சாவியைச் சேர்</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>உங்கள் உலாவி அல்லது சாதனம் காட்டும் படிகளைப் பின்பற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>கடவுச்சாவி உரையாடல் மூடப்பட்டது. எதுவும் மாற்றப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>கடவுச்சாவியை உருவாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>இந்த உலாவியால் கடவுச்சாவிகளை உருவாக்க முடியாது. தற்போதைய உலாவியைப் பயன்படுத்துங்கள், அல்லது உங்கள் கடவுச்சொல் மூலம் உள்நுழையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>எடுத்துக்காட்டாக அது உள்ள சாதனம் அல்லது கடவுச்சொல் நிர்வாகி, இதனால் உங்கள் கடவுச்சாவிகளை வேறுபடுத்தி அறியலாம்.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>இந்தக் கணக்கில் அனுமதிக்கப்பட்ட அளவு கடவுச்சாவிகள் (%max) ஏற்கனவே உள்ளன. இன்னொன்றைச் சேர்க்க ஒன்றை அகற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>கடவுச்சாவியைப் பயன்படுத்த முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>எனது கணக்கு</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>கடவுச்சாவி உரையாடல் மூடப்பட்டது. அதற்குப் பதிலாக உங்கள் கடவுச்சொல் மூலம் உள்நுழையலாம்.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>கடவுச்சாவியைப் பயன்படுத்த முடியவில்லை. மீண்டும் முயற்சிக்கவும், அல்லது உங்கள் கடவுச்சொல் மூலம் உள்நுழையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>கடவுச்சாவி மூலம் உள்நுழை</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>கடவுச்சாவி மூலம் உள்நுழைய முடியவில்லை</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>உங்கள் கடவுச்சொல்லுக்குப் பதிலாக உங்கள் கைரேகை, முகம், திரைப் பூட்டு அல்லது பாதுகாப்பு விசை மூலம் உள்நுழையுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>“%name” கடவுச்சாவி சேர்க்கப்பட்டது. இனி அதைக் கொண்டு உள்நுழையலாம்.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>கடவுச்சாவியின் பெயர் இப்போது “%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>“%name” கடவுச்சாவி அகற்றப்பட்டது. அது இனி இந்தக் கணக்கில் உள்நுழைய முடியாது.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date தேதியிட்ட கடவுச்சாவி</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>இந்தக் கணக்கில் அனுமதிக்கப்பட்ட அளவு கடவுச்சாவிகள் ஏற்கனவே உள்ளன. முதலில் ஒன்றை அகற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>தரவுத்தளம் பரபரப்பாக இருந்ததால் எதுவும் சேமிக்கப்படவில்லை. மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>இந்தக் கடவுச்சாவி ஏற்கனவே பதிவுசெய்யப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>கோரிக்கை அதிக நேரம் எடுத்தது அல்லது ஏற்கனவே பயன்படுத்தப்பட்டது. மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>நீங்கள் யார் என்பதைக் கடவுச்சாவி சரிபார்க்கவில்லை (PIN, கைரேகை அல்லது முகம்). மீண்டும் முயற்சித்து உங்கள் சாதனத்தில் உறுதிப்படுத்துங்கள்.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>இந்த அங்கீகரிப்பான் இந்தத் தளம் ஏற்காத ஒரு வகை விசையைப் பயன்படுத்துகிறது.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>கடவுச்சாவி இந்தத் தளத்துக்கு அல்லாமல் வேறொரு முகவரிக்காக உருவாக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>இந்தக் கடவுச்சாவி இங்கே எந்தக் கணக்குக்கும் பதிவுசெய்யப்படவில்லை. உங்கள் கடவுச்சொல் மூலம் உள்நுழைந்து, எனது கணக்கு, கடவுச்சாவிகள் என்பதில் அதைச் சேருங்கள்.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>இந்தக் கணக்கு தற்போது உள்நுழைய முடியாது. தள நிர்வாகியைத் தொடர்புகொள்ளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>கடவுச்சாவியைச் சரிபார்க்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>நீங்கள் உள்நுழையும் முறையை அல்லது உங்கள் கணக்கின் பாதுகாப்பை மாற்றப் போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>நீங்கள் பயனர்கள், பங்குகள் அல்லது கொள்கைகளை நிர்வகிக்கப் போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>நீங்கள் கணினி அமைப்புகளை மாற்றப் போகிறீர்கள் அல்லது ஓர் அமைவுச் செயலை இயக்கப் போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>நீங்கள் தரவை ஏற்றுமதி செய்யப் போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>நீங்கள் உள்ளடக்கத்தை அகற்றப் போகிறீர்கள் அல்லது வெளியிடப் போகிறீர்கள்.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>இந்தச் செயலுக்கு நீங்கள் யார் என்பதை உறுதிப்படுத்த வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login ஆக உள்நுழைந்திருப்பது நீங்கள்தான் என்பதை உறுதிப்படுத்துங்கள். %minutes நிமிடங்களுக்கு மீண்டும் கேட்கப்படாது.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>அந்தக் கடவுச்சொல் சரியில்லை.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>அந்தக் குறியீடு சரியில்லை, அல்லது ஏற்கனவே பயன்படுத்தப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>கீழே உள்ள வழிகளில் ஒன்றைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>கடவுச்சாவியைச் சரிபார்க்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>நீங்கள் வெளியேற்றப்படுவதற்கு முன் %count முயற்சிகள் மீதமுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>நீங்கள் தேர்ந்தெடுத்த கோப்புகளை மீண்டும் அனுப்ப முடியாது: உறுதிப்படுத்திய பிறகு, அவற்றை மீண்டும் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>உங்கள் கடவுச்சொல் மூலம்</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>கடவுச்சாவி மூலம்</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>கடவுச்சொல்</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>உறுதிப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>கடவுச்சாவியைப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>உங்கள் அங்கீகரிப்புச் செயலியின் குறியீடு மூலம்</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>குறியீடு</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>நீங்கள் யார் என்பதை உறுதிப்படுத்த இந்தக் கணக்குக்கு எந்த வழியும் இல்லை (கடவுச்சொல், கடவுச்சாவி அல்லது அங்கீகரிப்புச் செயலி இல்லை). வெளியேறி மீண்டும் உள்நுழையுங்கள், அல்லது ஒரு நிர்வாகியைக் கேளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>இது நீங்கள்தான் எனச் சரிபாருங்கள்</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>உங்கள் அங்கீகரிப்புச் செயலியின் குறியீடு</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>உங்கள் சொந்தக் கணக்கு</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>சொந்தக் கடவுச்சொல், மின்னஞ்சல் முகவரி, கடவுச்சாவிகள், இருபடி உள்நுழைவு அல்லது API விசைகளை மாற்றுதல்.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>பயனர்கள், பங்குகள் மற்றும் கொள்கைகள்</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>பயனர்களை உருவாக்குதல் மற்றும் திருத்துதல், கணக்கு அமைப்புகள், புதிய பயனர் கணக்குகளை அங்கீகரித்தல் அல்லது நிராகரித்தல், பங்குகளை ஒதுக்குதல் மற்றும் கொள்கைகளைத் திருத்துதல்.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>கணினி அமைப்புகளும் அமைவுச் செயல்களும்</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>அமைப்புகள், நீட்சிகள், தற்காலிகச் சேமிப்புகள் மற்றும் பராமரிப்பு, தொகுப்புகள் மற்றும் புதுப்பிப்புகள், காப்புப்பிரதிகள் மற்றும் git manager ஆகியவற்றைத் திருத்துதல்.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>தரவை ஏற்றுமதி செய்தல்</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>சேகரிக்கப்பட்ட தகவல், பயனர்கள், செய்திமடல் சந்தாதாரர்கள் மற்றும் தணிக்கை ஆகியவற்றின் ஏற்றுமதிகள்.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>உள்ளடக்கத்தை அகற்றுதலும் வெளியிடுதலும்</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>உள்ளடக்கத்தை அகற்றுதல் (குப்பைக்கும் கூட), குப்பையைக் காலிசெய்தல் மற்றும் வெளியிடுதல். இயல்புநிலையில் முடக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ஒரு முக்கியமான செயலுக்கு முன், உள்நுழைந்த பயனர் தங்கள் கடவுச்சொல், கடவுச்சாவி அல்லது அங்கீகரிப்புச் செயலியின் குறியீடு மூலம் தாங்கள் யார் என்பதை மீண்டும் உறுதிப்படுத்துகிறார். வலைப் பக்கங்கள் மட்டுமே கேட்கும்: REST இடைமுகம், SOAP, WebDAV, expservices உள்நுழைவு மற்றும் கட்டளை வரி ஒருபோதும் கேட்காது.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>பொது</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>உறுதிப்படுத்தல் செல்லுபடியாகும் நிமிடங்கள்</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>எப்போது கேட்க வேண்டும்</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] இல் %count விதிகள்.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php இல் சேமிக்கப்படும். சேமிக்கும்போது இது நீங்கள்தான் என உறுதிப்படுத்தக் கேட்கும்.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>இது நீங்கள்தான் எனச் சரிபாருங்கள்</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>கீழே இயக்கப்பட்ட குழுக்களின் செயல்களுக்கு முன் “இது நீங்கள்தான் எனச் சரிபாருங்கள்” எனக் கேள்</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>அமைப்புகள் சேமிக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>அமைப்புகளைச் சேமிக்க முடியவில்லை: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>புதியது</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>அகற்று</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count கிடைவரிசைகள்</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>புதிய கிடைவரிசை</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>கிடைவரிசை சேமிக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>தேடு</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>செயல்கள்</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>திருத்து</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>இன்னும் கிடைவரிசைகள் இல்லை.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ஆம்</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>இல்லை</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ஒரு முனை ஐடி</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ஒரு பயனரின் பொருள் ஐடி</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ஓர் உள்ளடக்கப் பொருள் ஐடி</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>கிடைவரிசை %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>கிடைவரிசை சேமிக்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>சேமி</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>கிடைவரிசை %id ஐ அகற்றவா?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>கிடைவரிசை அட்டவணையிலிருந்து அகற்றப்படும், அதை மீண்டும் கொண்டுவர முடியாது.</translation>
     </message>
 </context>
 </TS>

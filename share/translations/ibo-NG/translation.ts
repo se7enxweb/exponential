@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Mepee ma ọ bụ mechie folda ahụ</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ibe a dị n&apos;akara ibe gị. Mepee ya ka ị gbanwee aha ya ma ọ bụ folda ya.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Tinye ibe a n&apos;akara ibe gị.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Etinyela akara ibe</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Tinye akara ibe n&apos;ibe a</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Akara ibe ahụ na-echekwa adreesị ibe a na paramita ya: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Chekwaa akara ibe</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Tinye akara ibe</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Akara ibe m</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Ibe sistemụ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Ibe sistemụ</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Ị nweghịzi ike imepe ibe a.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Mepee</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adreesị ibe a adịghị. Wepụ akara ibe ahụ ma tinyeghachi akara ibe n&apos;ibe ahụ ọzọ.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ị nweghịzi ike imepe ibe a. Wepụ akara ibe ahụ, ma ọ bụ rịọ onye nchịkwa ka o nye gị nnweta.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreesị</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul na nlele</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Ị nwekwara ike itinye akara ibe n&apos;ibe sistemụ: mepee ibe ahụ (Nrụnye, ndekọ nyocha, ndepụta ndị ọrụ ...) ma họrọ Tinye akara ibe n&apos;ibe a n&apos;elu ya. Akara ibe ndị dị otu a nwere akara giya.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>Enweghị ike ibudata ozi ikpo okwu kachasị ọhụrụ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Ọrụ cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ọ dịbeghị akụkụ ọrụ cron gbaworo: ahịrị ọrụ, mbubata, ọkwa na ndepụta nchọ na-eche. Gbaa php bin/php/installcrontab.php --add, ma ọ bụ tinye ahịrị nke --show na crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Akụkụ ọrụ cron agbaghị ogologo oge karịa ka nhazi oge ya kwere: lelee crontab (php bin/php/installcrontab.php --show) na faịlụ ndekọ var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Akụkụ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Nhazi oge</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Malitere ikpeazụ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ọ dịghị mgbe</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>n&apos;oge</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>egbuola oge</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>agbabeghị</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Nrụnye ahụ enweghị akụkụ ọrụ cron ọ bụla ọrụ cron ga-agba.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Nrụnye &gt; Ọrụ cron</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>kwụsị ọrụ akaụntụ ndị ọrụ ma kpugharịa ha na otu ndị ọrụ a kwụsịrị ọrụ, ma kpugharịa ha azụ</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>hụ ebe ndị ọrụ ndị ọzọ banyere, ma wepụta ha</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ akaụntụ gị rụọ ọrụ.</translation>
         <source>Open e-mail preferences</source>
         <translation>Mepee nhọrọ imeela</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Ebe ị banyere: nchọgharị, sistemụ, ebe na oge. Wepụta ngwaọrụ ị na-amaghị.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Ebe onye ọrụ a banyere, na iwepụta onye ọrụ ahụ ebe niile.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Jikwaa ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Gosi oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count abanyela</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Igodo nbanye (passkeys)</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Jiri mkpịsị aka gị, ihu gị, mkpọchi ihuenyo ma ọ bụ igodo nchekwa banye kama okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Jikwaa igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Tinye igodo nbanye</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Igodo nbanye %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Ọ dịbeghị</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ akaụntụ gị rụọ ọrụ.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Njikọ Klasị/Njirimara (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Otu ndị ọrụ nke akaụntụ ọhụrụ ha chọrọ nkwenye</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Akaụntụ ebipụtara n&apos;otu n&apos;ime otu ndị a, ma ọ bụ n&apos;okpuru otu, na-eche ruo mgbe onye nkwenye nabatara ya. Ọ gaghị enwe ike ịbanye tupu mgbe ahụ.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Ndị ọrụ na-akwado akaụntụ ndị ahụ</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Otu na-akwado akaụntụ ndị ahụ</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Otu ndị ọrụ na-achọghị nkwenye (ndị otu ha na-ebipụta akaụntụ ndị dị otu a ozugbo; ndị nkwenye anaghị achọ ya)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Zigara ndị nkwenye ozi-e nwere njikọ na nkwenye ahụ (ha na-abanye iji kwenye ma ọ bụ jụ)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ Hụ ibe ihe ndị a chọrọ maka ozi ndị ọzọ.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Mgbanwe gburugburu EXP_DEMO_MODE=1 na-akọwa nrụnye a dị ka ngosi ọha: a na-anabata okwuntughe onye nchịkwa a maara nke ọma, a pụghịkwa ịgbanwe ma ọ bụ tọgharịa okwuntughe onye nchịkwa ma emechaa. Ejila ọnọdụ ngosi mee ihe maka saịtị mmepụta.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Ọrụ cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Ọrụ cron na-agba site na crontab nke onye ọrụ %user, onye nwe nrụnye ahụ.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Nrụnye ahụ enweghị akụkụ ọrụ cron ọ bụla a ga-ahazi oge ya.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Edeghị crontab ahụ (%reason). Tinye ahịrị ndị a na crontab nke onye ọrụ saịtị ahụ na-agba dịka ya, ma ọ bụghị ya ahịrị ọrụ, mbubata, ọkwa na ndepụta nchọ agaghị agba mgbe ọ bụla:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ akaụntụ gị rụọ ọrụ.</translation>
         <source>ClassAttribute name</source>
         <translation>Aha ClassAttribute</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Akaụntụ chọrọ nkwenye</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Ozi-e nye ndị nkwenye</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ee</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Mba</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ akaụntụ gị rụọ ọrụ.</translation>
         <source>Your comment was added.</source>
         <translation>Etinyela nkọwa gị.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Akaụntụ “%1” ka ekwenyela ma bipụta ya: ọ nwere ike ịbanye ugbu a.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Ajụla akaụntụ “%1”. Ebipụtaghị ya, ọ gaghịkwa enwe ike ịbanye; ọ bụ ndepụta mbụ nke onye dere ya ọzọ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ akaụntụ gị rụọ ọrụ.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Atinyela Akara ibe %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Ibe sistemụ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Enweghị ike itinye akara ibe n&apos;ibe sistemụ ugbu a: agbabeghị mmelite ebe nchekwa data nke ụdị a.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Enweghị ike itinye akara ibe n&apos;ibe a: ọ bụghị ibe nke nlele modul.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Enweghị ike itinye akara ibe n&apos;ibe a: ị nweghị ike imepe ya.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Enweghị ike itinye akara ibe n&apos;ibe ahụ.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Ibe “%name” dị n&apos;akara ibe gị.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Enweghị ike ịgbanwe aha akara ibe ahụ: ọ chọrọ aha.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Agbanweela aha akara ibe ahụ ka ọ bụrụ “%name”.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Package</source>
         <translation>Mpakị</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Ejiri usoro PAX tar kwakọọ faịlụ nchekwa ahụ, nke a na-enweghị ike iwebata. Jiri usoro GNU tar kwakọọ mpakị ahụ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>Ajụla faịlụ nchekwa ahụ: ihe edepụtara “%path” nwere ụdị tar “%type”, mpakị na-enwekwa naanị faịlụ na folda.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Ajụla faịlụ nchekwa ahụ: ọ kpọrọ ihe edepụtara karịrị bytes %length n&apos;ogologo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Mirror to data tables</source>
         <translation>Detuo na tebụl data</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Kwenye akaụntụ ndị ọrụ</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Akaụntụ onye ọrụ ọhụrụ na-eche nkwenye gị</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Sent to the password change</source>
         <translation>Ezigara ya na mgbanwe Okwuntughe</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Ajụla nbanye na-enweghị nzọụkwụ nke abụọ</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Emepụtara okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Akagburu okwuntughe ngwa</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Ejiri okwuntughe ngwa</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The audit trail of this node</source>
         <translation>Ndekọ nyocha nke Nọdụ a</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>zuru oke</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>gbajiri</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>elebeghị anya</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>edoziela</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>efu</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Adreesị e-mail ọhụrụ %email na-eche nkwenye ya: Biko mepee njikọ anyị zigara n&apos;ebe ahụ. Ruo mgbe ahụ, akaụntụ a ga-ejigide %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Ozi-e gbasara nbanye site na ngwaọrụ ọhụrụ ma ọ bụ nchọgharị ọhụrụ bụ akụkụ nchekwa akaụntụ. Ị na-agbanyụ ma ọ bụ kpọghee ya n&apos;ebe ngwaọrụ gị dị, ebe ị na-ahụkwa oge nnọdụ akaụntụ gị ma wepụta ha.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>More audiences</source>
         <translation>Ndị na-ege ntị ndị ọzọ</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Nyocha na ntọhapụ</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Isiokwu ahụ nọ na Nyocha ugbu a.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Atọhapụla isiokwu ahụ: ndị na-agụ ya na-ahụ ya ugbu a.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Isiokwu ahụ bụ Ndepụta mbụ ọzọ.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Ọ bụ gị dere ụdị nke ugbu a, ya mere onye ọzọ nwere ọrụ ntọhapụ ga-atọhapụ ya.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Agbanweghị ọnọdụ ahụ: ọrụ gị ekweghị nzọụkwụ a.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Usoro ọrụ nyocha</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ndepụta mbụ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Nyocha</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Laghachi na Nyocha</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Ziga na Nyocha</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Tọhapụ</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Laghachi na Ndepụta mbụ</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Nlele ntụziaka ụdị ide</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Nlele ntụziaka ụdị ide achọtaghị ihe ọ bụla.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Njehie %errors, ịdọ aka na ntị %warnings, ọkwa %notices. Njehie na-egbochi ./console exp:help:content check ịgafe.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Ọkwa</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Iwu</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Ubi</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Ihe achọtara</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Ọ nyere aka?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Ndị na-agụ ya zara ee ugboro %yes na mba ugboro %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Ihe kpatara e ji zaa mba:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Daalụ. Azịza gị na-enyere anyị aka imeziwanye enyemaka ahụ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ee</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ọ bụrụ na ọ bụghị, gịnị mehiere?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Enyeghị ihe kpatara ya</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Mba</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Naanị azịza gị ka a na-echekwa, ọ bụghị onye ị bụ.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Ọ dịghịzi ọhụrụ</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>O siri ike ịghọta</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Ihe na-efu</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Ọ dị njọ</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Ihe ọzọ kpatara ya</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Atọhapụbeghị isiokwu a; ndị na-agụ ya anaghị ahụ ya.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Chọgharịa Tebụl nke klaasị ndị na-adịgide adịgide…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Akaụntụ onye ọrụ ọhụrụ na-eche nkwenye: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Akaụntụ</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Aha onye ọrụ</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Otu</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Onye rịọrọ</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Mepee nkwenye ahụ</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ọ bụrụ na bọtịnụ ahụ arụghị ọrụ, detuo adreesị a n&apos;ime nchọgharị gị: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Akaụntụ onye ọrụ ọhụrụ na-eche nkwenye gị</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester mepụtara akaụntụ “%name” na %groups. Ebipụtaghị ya, ọ gaghịkwa enwe ike ịbanye ruo mgbe onye nkwenye nabatara ya.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Banye na ntanetị nchịkwa ma kwenye ma ọ bụ jụ ya na ndepụta mmekọrịta gị. Njikọ a anaghị abanye gị, ọ naghịkwa ekpebi ihe ọ bụla n&apos;onwe ya.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>%site zitere ozi-e a n&apos;ihi na ị na-akwado akaụntụ ọhụrụ nke otu ndị a.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kọmputa</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Ekwentị</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Kọmputa mbadamba</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Mmemme ma ọ bụ ngwa</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Onye ahịa akpaaka</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ngwaọrụ amaghị</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Okwuntughe</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Okwuntughe na koodu nzọụkwụ abụọ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ntanetị REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ntanetị SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Otu nbanye (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Banyere tupu e malite idekọ oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Apụọla</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Esitere n&apos;ibe a pụọ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Onye nchịkwa mere ka ọ pụọ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Esitere na “oge nnọdụ ndị ọzọ niile” pụọ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nbanye ọhụrụ dochiri ya</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Mgbanwe okwuntughe kwụsịrị ya</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Agwụla oge ya</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Oge nnọdụ nke %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Ebe akaụntụ gị banyere ugbu a. Ọ bụrụ na ị maghị otu ngwaọrụ, mee ka ọ pụọ ma gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ebe akaụntụ a banyere ugbu a. Ime ka onye ọrụ ahụ pụọ na-akwụsị oge nnọdụ ọ bụla n&apos;arịrịọ ya ọzọ.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Laghachi na akaụntụ ahụ</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Emeela ka oge nnọdụ ahụ pụọ. Ngwaọrụ ahụ ga-abanye ọzọ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Emeela ka oge nnọdụ ndị ọzọ %count pụọ.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Enweghị oge nnọdụ ndị ọzọ a ga-eme ka ha pụọ.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Emeela ka oge nnọdụ %count nke onye ọrụ a pụọ.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Onye ọrụ a enweghị oge nnọdụ a ga-eme ka ọ pụọ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Nke a bụ oge nnọdụ ị na-eji. Iji kwụsị ya, pụọ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Oge nnọdụ ahụ akwụsịlarị.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ị ga-enweta ozi-e mgbe akaụntụ gị banyere site na ngwaọrụ ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ị gaghịzi enweta ozi-e gbasara nbanye site na ngwaọrụ ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Oge ibe ahụ agwụla. Agbanweghị ihe ọ bụla; biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>A naghị edekọ oge nnọdụ na saịtị a (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tebụl expuser_session adịghị</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A ga-edekọ oge nnọdụ ozugbo emepụtara ya: php update/common/scripts/6.0/createusersessiontable.php, ma ọ bụ mmelite ebe nchekwa data nke 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Abanyela ugbu a</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mee ka oge nnọdụ ndị ọzọ niile pụọ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Pụọ ebe niile</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Ngwaọrụ ọ bụla ma e wezụga nke a ga-apụ n&apos;arịrịọ ya ọzọ, tinyere ndị na-anọgide n&apos;ime site na Cheta m.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Oge nnọdụ ọ bụla nke onye ọrụ a ga-apụ n&apos;arịrịọ ya ọzọ, tinyere ndị na-anọgide n&apos;ime site na Cheta m.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ee, mee ka oge nnọdụ ndị ọzọ pụọ</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ee, mee ka oge nnọdụ niile pụọ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ngwaọrụ a</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreesị</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Egosiri ya dịka netwọk ya; a na-echekwa adreesị zuru ezu maka ndị nchịkwa.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>banyere site na %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Arụ ọrụ ikpeazụ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Ugbu a</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Na-anọgide n&apos;ime</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Cheta m, ruo %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Ruo mgbe emechiri nchọgharị</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Banyere na</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Njirimara nchọgharị</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Iji kwụsị oge nnọdụ a, pụọ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Pụọ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mee ka oge nnọdụ a pụọ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Enweghị oge nnọdụ banyere.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Ọkwa nbanye</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Zitere m ozi-e mgbe akaụntụ m banyere site na ngwaọrụ ọhụrụ ma ọ bụ nchọgharị ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>A na-eziga ya na %email. Ọ na-agwa gị ngwaọrụ ahụ, ebe ọ dị ihe dị ka na oge ahụ, ma jikọọ na ibe a.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Chekwaa</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Saịtị a anaghị eziga ọkwa nbanye.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kwụsịrị n&apos;oge na-adịbeghị anya</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Oge nnọdụ kwụsịrị n&apos;ime ụbọchị %days gara aga.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kwụsịrị</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Otú o si mee</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Enweghị.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kọmputa</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Ekwentị</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Kọmputa mbadamba</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Mmemme ma ọ bụ ngwa</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Onye ahịa akpaaka</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ngwaọrụ amaghị</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Okwuntughe</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Okwuntughe na koodu nzọụkwụ abụọ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ntanetị REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ntanetị SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Otu nbanye (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Banyere tupu e malite idekọ oge nnọdụ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Apụọla</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Esitere n&apos;ibe a pụọ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Onye nchịkwa mere ka ọ pụọ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Esitere na “oge nnọdụ ndị ọzọ niile” pụọ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nbanye ọhụrụ dochiri ya</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Mgbanwe okwuntughe kwụsịrị ya</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Agwụla oge ya</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Oge nnọdụ nke %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Ebe akaụntụ gị banyere ugbu a. Ọ bụrụ na ị maghị otu ngwaọrụ, mee ka ọ pụọ ma gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ebe akaụntụ a banyere ugbu a. Ime ka onye ọrụ ahụ pụọ na-akwụsị oge nnọdụ ọ bụla n&apos;arịrịọ ya ọzọ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Emeela ka oge nnọdụ ahụ pụọ. Ngwaọrụ ahụ ga-abanye ọzọ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Emeela ka oge nnọdụ ndị ọzọ %count pụọ.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Enweghị oge nnọdụ ndị ọzọ a ga-eme ka ha pụọ.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Emeela ka oge nnọdụ %count nke onye ọrụ a pụọ.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Onye ọrụ a enweghị oge nnọdụ a ga-eme ka ọ pụọ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Nke a bụ oge nnọdụ ị na-eji. Iji kwụsị ya, pụọ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Oge nnọdụ ahụ akwụsịlarị.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ị ga-enweta ozi-e mgbe akaụntụ gị banyere site na ngwaọrụ ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ị gaghịzi enweta ozi-e gbasara nbanye site na ngwaọrụ ọhụrụ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Oge ibe ahụ agwụla. Agbanweghị ihe ọ bụla; biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>A naghị edekọ oge nnọdụ na saịtị a.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>A naghị edekọ oge nnọdụ ugbu a: saịtị ahụ chọrọ mmelite ebe nchekwa data ya.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Abanyela ugbu a</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ngwaọrụ a</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreesị</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Abanyela</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Arụ ọrụ ikpeazụ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Ugbu a</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Na-anọgide n&apos;ime</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Cheta m, ruo %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Ruo mgbe emechiri nchọgharị</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Iji kwụsị oge nnọdụ a, pụọ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Pụọ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mee ka oge nnọdụ a pụọ</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mee ka oge nnọdụ ndị ọzọ niile pụọ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Pụọ ebe niile</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Ọkwa nbanye</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Zitere m ozi-e mgbe akaụntụ m banyere site na ngwaọrụ ọhụrụ ma ọ bụ nchọgharị ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Chekwaa</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kwụsịrị n&apos;oge na-adịbeghị anya</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kwụsịrị</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Otú o si mee</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Enweghị n&apos;ime ụbọchị %days gara aga.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Hụ ebe akaụntụ gị banyere, ma mee ka ngwaọrụ ị na-amaghị pụọ.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Jikwaa ngwaọrụ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nbanye ọhụrụ n&apos;akaụntụ gị na %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Ndewo,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>E jiri akaụntụ gị %login na %site banye ugbu a site na ngwaọrụ ma ọ bụ nchọgharị nke o jibeghị n&apos;oge na-adịbeghị anya:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Ngwaọrụ:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Oge:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Adreesị ihe dị ka:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Ọ bụrụ na ọ bụ gị, ọ dịghị ihe ị ga-eme.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Ọ bụrụ na ọ bụghị gị, mmadụ nwere ike ịma okwuntughe gị. Mee ka oge nnọdụ ahụ pụọ n&apos;ibe ngwaọrụ gị, wee gbanwee okwuntughe gị:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Ị nwere ike ịgbanyụ ozi-e ndị a n&apos;otu ibe ahụ.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nbanye ọhụrụ nke %login na %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Akaụntụ %login banyere site na ngwaọrụ ma ọ bụ nchọgharị nke o jibeghị n&apos;oge na-adịbeghị anya.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Oge nnọdụ nke onye ọrụ a:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nbanye ọhụrụ n&apos;akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>E jiri akaụntụ gị %login banye site na %device (%ip) na %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Ọ bụrụ na ọ bụ gị, ọ dịghị ihe ị ga-eme. Ọ bụrụ na ọ bụghị, mee ka oge nnọdụ a pụọ na %url ma gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nbanye ọhụrụ nke %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Akaụntụ %login banyere site na ngwaọrụ ọhụrụ: %device (%ip) na %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Oge nnọdụ nke %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Igodo nbanye (passkeys)</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Igodo nbanye na-eme ka ị banye site na mkpịsị aka gị, ihu gị, mkpọchi ihuenyo ma ọ bụ igodo nchekwa kama okwuntughe gị. A na-echekwa ya na ngwaọrụ gị ma ọ bụ na njikwa okwuntughe gị; saịtị a na-echekwa naanị igodo ọha ya, ya mere ntapụ data ebe a enweghị ike ikpughe ya.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Agbanyụla igodo nbanye na saịtị a.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Enweghị ike iji igodo nbanye na saịtị a ugbu a: onye nchịkwa ga-ebu ụzọ gbaa mmelite ebe nchekwa data.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Wepụ igodo nbanye “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ọ gaghịzi enwe ike ịbanye n&apos;akaụntụ a. Wepụkwa ya na ngwaọrụ gị ma ọ bụ na njikwa okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Wepụ igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Igodo nbanye gị</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count n&apos;ime %max kacha</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ị nwebeghị igodo nbanye. Tinye otu n&apos;okpuru: mgbe ọzọ ị banyere, họrọ “Banye site na igodo nbanye”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Aha</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Etinyere</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ejiri ikpeazụ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ụdị</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ọ bụbeghị</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Emekọrịtara</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Ngwaọrụ ma ọ bụ igodo a</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Gbanwee aha</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Aha ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Chekwaa aha ahụ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wepụ</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Tinye igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Soro nzọụkwụ nchọgharị gị ma ọ bụ ngwaọrụ gị.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Emechiela igbe mkparịta ụka igodo nbanye. Agbanweghị ihe ọ bụla.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Enweghị ike imepụta igodo nbanye ahụ. Biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Nchọgharị a enweghị ike imepụta igodo nbanye. Jiri nchọgharị ọhụrụ, ma ọ bụ jiri okwuntughe gị banye.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Dịka ọmụmaatụ ngwaọrụ ma ọ bụ njikwa okwuntughe ọ dị na ya, ka i nwee ike ịmata igodo nbanye gị iche iche.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Akaụntụ a nwere igodo nbanye ole ọ ga-enwe kacha (%max). Wepụ otu iji tinye ọzọ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Enweghị ike iji igodo nbanye ahụ. Biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Akaụntụ m</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Emechiela igbe mkparịta ụka igodo nbanye. Ị nwere ike iji okwuntughe gị banye kama.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Enweghị ike iji igodo nbanye ahụ. Biko nwaa ọzọ, ma ọ bụ jiri okwuntughe gị banye.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Banye site na igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Enweghị ike ịbanye site na igodo nbanye ahụ</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>banye site na mkpịsị aka gị, ihu gị, mkpọchi ihuenyo ma ọ bụ igodo nchekwa kama okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Etinyela igodo nbanye “%name”. Ị nwere ike iji ya banye site ugbu a gaa n&apos;ihu.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Aha igodo nbanye ahụ bụ “%name” ugbu a.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Ewepụla igodo nbanye “%name”. Ọ gaghịzi enwe ike ịbanye n&apos;akaụntụ a.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Igodo nbanye nke %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Akaụntụ a nwere igodo nbanye ole ọ ga-enwe kacha. Buru ụzọ wepụ otu.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Ebe nchekwa data ahụ nọ n&apos;ọrụ, echekwaghịkwa ihe ọ bụla. Biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Edebanyelarị igodo nbanye a.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Arịrịọ ahụ were ogologo oge ma ọ bụ ejirila ya mee ihe. Biko nwaa ọzọ.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Igodo nbanye ahụ enyochaghị onye ị bụ (PIN, mkpịsị aka ma ọ bụ ihu). Biko nwaa ọzọ ma kwenye na ngwaọrụ gị.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Ngwa nkwenye njirimara a na-eji ụdị igodo saịtị a na-anaghị anabata.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Emepụtara igodo nbanye ahụ maka adreesị ọzọ na-abụghị saịtị a.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Edebanyeghị igodo nbanye a maka akaụntụ ọ bụla ebe a. Jiri okwuntughe gị banye ma tinye ya na Akaụntụ m, Igodo nbanye.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Akaụntụ a enweghị ike ịbanye ugbu a. Biko kpọtụrụ onye nchịkwa saịtị ahụ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Enweghị ike inyocha igodo nbanye ahụ. Biko nwaa ọzọ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Ị na-achọ ịgbanwe otú i si abanye ma ọ bụ nchekwa akaụntụ gị.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Ị na-achọ ijikwa ndị ọrụ, ọrụ ma ọ bụ iwu.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Ị na-achọ ịgbanwe ntọala sistemụ ma ọ bụ mee omume nrụnye.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Ị na-achọ ibupụ data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Ị na-achọ iwepụ ma ọ bụ bipụta ọdịnaya.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Omume a chọrọ ka i kwenye onye ị bụ.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Kwenye na ọ bụ gị, onye banyere dịka %login. A gaghị ajụ gị ọzọ maka nkeji %minutes.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Okwuntughe ahụ ezighị ezi.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koodu ahụ ezighị ezi, ma ọ bụ ejirila ya mee ihe.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Họrọ otu n&apos;ime ụzọ ndị dị n&apos;okpuru.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Enweghị ike inyocha igodo nbanye ahụ.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Mgbalị %count fọdụrụ tupu e mee ka ị pụọ.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Enweghị ike iziga faịlụ ndị ị họrọ ọzọ: mgbe i kwenyechara, họrọ ha ọzọ.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Site na okwuntughe gị</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Site na igodo nbanye</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Okwuntughe</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kwenye</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Jiri igodo nbanye</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Site na koodu sitere na ngwa nkwenye njirimara gị</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Koodu</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Akaụntụ a enweghị ụzọ ọ bụla iji kwenye onye ị bụ (enweghị okwuntughe, igodo nbanye ma ọ bụ ngwa nkwenye njirimara). Pụọ ma banye ọzọ, ma ọ bụ jụọ onye nchịkwa.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Kwenye na ọ bụ gị</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Koodu sitere na ngwa nkwenye njirimara gị</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Akaụntụ nke gị</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Ịgbanwe okwuntughe nke onwe, adreesị ozi-e, igodo nbanye, nbanye nzọụkwụ abụọ ma ọ bụ isi API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Ndị ọrụ, ọrụ na iwu</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Imepụta na idezi ndị ọrụ, ntọala akaụntụ, ikwenye ma ọ bụ ịjụ akaụntụ ndị ọrụ ọhụrụ, ikenye ọrụ na idezi iwu.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Ntọala sistemụ na omume nrụnye</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Idezi ntọala, mgbatị, cache na nlekọta, mpakị na mmelite, nkwado na njikwa git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Ibupụ data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Mbupụ nke ozi e chịkọtara, ndị ọrụ, ndị debanyere aha akwụkwọ ozi na ndekọ nyocha.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Iwepụ na ibipụta ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Iwepụ ọdịnaya (gụnyere n&apos;ime mkpọkọta ahịhịa), imepụ mkpọkọta ahịhịa na ibipụta. Agbanyụrụ ya na ndabara.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Tupu omume dị mkpa, onye ọrụ banyere na-ekwenye ọzọ onye ọ bụ, site na okwuntughe ya, igodo nbanye ma ọ bụ koodu nke ngwa nkwenye njirimara ya. Naanị ibe webụ na-ajụ: ntanetị REST, SOAP, WebDAV, nbanye expservices na ahịrị iwu anaghị ajụ mgbe ọ bụla.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Izugbe</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Nkeji nkwenye ga-adị irè</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Mgbe a ga-ajụ</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Iwu %count na site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Echekwara na settings/override/site.ini.append.php. Ichekwa na-arịọ gị ka i kwenye na ọ bụ gị.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Chekwaa</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Kwenye na ọ bụ gị</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Jụọ “Kwenye na ọ bụ gị” tupu omume nke otu ndị a kpọghere n&apos;okpuru</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Echekwala ntọala ndị ahụ.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Enweghị ike ichekwa ntọala ndị ahụ: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wepụ</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Ahịrị %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ahịrị ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Echekwala ahịrị ahụ.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Chọọ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Dezie</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ahịrị ọ bụla adịbeghị.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adreesị JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ee</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>mba</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID nọdụ</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID ihe nke onye ọrụ</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID ihe ọdịnaya</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ahịrị %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Echekwaghị ahịrị ahụ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Chekwaa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Wepụ ahịrị %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>A na-ewepụ ahịrị ahụ na tebụl ahụ, enweghịkwa ike iweghachi ya.</translation>
     </message>
 </context>
 </TS>

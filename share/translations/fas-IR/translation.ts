@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>باز یا بسته کردن پوشه</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>این صفحه در نشانک‌های شماست. برای تغییر نام یا پوشهٔ آن، نشانک را باز کنید.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>افزودن این صفحه به نشانک‌های شما.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>در نشانک‌ها</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>نشانک‌گذاری این صفحه</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>نشانک نشانی این صفحه را همراه با پارامترهای آن نگه می‌دارد: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ذخیرهٔ نشانک</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>افزودن نشانک</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>نشانک‌های من</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>صفحهٔ سیستم</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>صفحه‌های سیستم</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>شما دیگر اجازهٔ باز کردن این صفحه را ندارید.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>باز کردن</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>نشانی این صفحه موجود نیست. نشانک را بردارید و صفحه را دوباره نشانک‌گذاری کنید.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>شما دیگر اجازهٔ باز کردن این صفحه را ندارید. نشانک را بردارید، یا از یک مدیر دسترسی بخواهید.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>نشانی</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ماژول و نما</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>صفحه‌های سیستم را هم می‌توان نشانک‌گذاری کرد: صفحه را باز کنید (راه‌اندازی، ردگیری ممیزی، فهرستی از کاربران ...) و در بالای آن «نشانک‌گذاری این صفحه» را انتخاب کنید. این نشانک‌ها نماد چرخ‌دنده دارند.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>آخرین نوشته‌های انجمن بارگیری نشد.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>کارهای زمان‌بندی‌شده</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>هنوز هیچ قسمت کار زمان‌بندی‌شده‌ای اجرا نشده است: صف کارها، درون‌ریزی‌ها، اعلان‌ها و نمایهٔ جستجو در انتظارند. php bin/php/installcrontab.php --add را اجرا کنید، یا سطرهای --show را به crontab بیفزایید.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>یک قسمت کار زمان‌بندی‌شده بیش از آنچه زمان‌بندی‌اش اجازه می‌دهد اجرا نشده است: crontab (php bin/php/installcrontab.php --show) و گزارش‌های var/log/cronjob-*.log را بررسی کنید.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>قسمت</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>زمان‌بندی</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>آخرین شروع</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هرگز</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>به‌موقع</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>با تأخیر</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>هرگز اجرا نشده</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>این نصب هیچ قسمت کار زمان‌بندی‌شده‌ای برای اجرا ندارد.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>راه‌اندازی &gt; کارهای زمان‌بندی‌شده</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>غیرفعال کردن حساب‌های کاربری و انتقال آن‌ها به گروه کاربران غیرفعال‌شده، و بازگرداندن آن‌ها</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>دیدن اینکه کاربران دیگر کجا وارد شده‌اند، و خارج کردن آن‌ها</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>باز کردن ترجیحات ایمیل</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>جاهایی که در آن وارد شده‌اید: مرورگر، سیستم، مکان و زمان. دستگاهی را که نمی‌شناسید خارج کنید.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>جاهایی که این کاربر در آن وارد شده است، و خارج کردن کاربر از همه‌جا.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>مدیریت دستگاه‌ها</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>نمایش نشست‌ها</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count وارد شده</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>کلیدهای عبور</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>به‌جای گذرواژه، با اثر انگشت، چهره، قفل صفحه یا کلید امنیتی خود وارد شوید.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>مدیریت کلیدهای عبور</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>افزودن کلید عبور</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count کلید عبور</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>هنوز هیچ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>ترکیب‌های کلاس/ویژگی (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>گروه‌های کاربری که حساب‌های جدیدشان نیاز به تأیید دارد</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>حسابی که در یکی از این گروه‌ها یا زیر یکی از آن‌ها منتشر شود، تا زمانی که یک تأییدکننده آن را بپذیرد در انتظار می‌ماند. پیش از آن نمی‌تواند وارد شود.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>کاربرانی که حساب‌ها را تأیید می‌کنند</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>گروه‌هایی که حساب‌ها را تأیید می‌کنند</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>گروه‌های کاربری که نیازی به تأیید ندارند (اعضای آن‌ها چنین حساب‌هایی را مستقیماً منتشر می‌کنند؛ تأییدکنندگان هرگز به آن نیاز ندارند)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ارسال ایمیلی با پیوند تأیید به تأییدکنندگان (آن‌ها برای تأیید یا رد وارد می‌شوند)</translation>
     </message>
 </context>
 <context>
@@ -43876,6 +44079,14 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>required</source>
         <translation>الزامی</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>تغییر گذرواژه در ورود بعدی</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>کاربر پس از ورود باید پیش از هر کار دیگری گذرواژهٔ جدیدی انتخاب کند. هنگامی که به کسی گذرواژهٔ موقت می‌دهید از این گزینه استفاده کنید.</translation>
     </message>
 </context>
 <context>
@@ -50776,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>متغیر محیطی EXP_DEMO_MODE=1 این نصب را به‌عنوان نسخهٔ نمایشی عمومی علامت‌گذاری می‌کند: یک گذرواژهٔ شناخته‌شدهٔ مدیر پذیرفته می‌شود، و گذرواژه‌های مدیران بعداً قابل تغییر یا بازنشانی نیستند. هرگز از حالت نمایشی برای سایت تولید استفاده نکنید.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>کارهای زمان‌بندی‌شده</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>کارهای زمان‌بندی‌شده از crontab کاربر %user، که مالک این نصب است، اجرا می‌شوند.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>این نصب هیچ قسمت کار زمان‌بندی‌شده‌ای برای زمان‌بندی ندارد.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab نوشته نشد (%reason). این سطرها را به crontab کاربری که سایت با آن اجرا می‌شود بیفزایید، وگرنه صف، درون‌ریزی‌ها، اعلان‌ها و نمایهٔ جستجو هرگز اجرا نمی‌شوند:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53336,6 +53563,10 @@ your account.</source>
         <source>Cancel</source>
         <translation>لغو</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>پیش از ادامه، گذرواژهٔ جدیدی انتخاب کنید: یک مدیر از شما خواسته است گذرواژهٔ کنونی خود را جایگزین کنید.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -54287,6 +54518,22 @@ your account.</source>
     <message>
         <source>ClassAttribute name</source>
         <translation>نام ویژگی کلاس</translation>
+    </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>حساب‌هایی که نیاز به تأیید دارند</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ایمیل به تأییدکنندگان</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>خیر</translation>
     </message>
 </context>
 <context>
@@ -55698,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>نظر شما افزوده شد.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>حساب «%1» تأیید و منتشر شد: اکنون می‌تواند وارد شود.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>حساب «%1» رد شد. منتشر نشده است و نمی‌تواند وارد شود؛ دوباره پیش‌نویسی از آنِ نویسنده‌اش است.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -55996,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>تعداد %count نشانک افزوده شد.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>صفحهٔ سیستم</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>صفحه‌های سیستم هنوز قابل نشانک‌گذاری نیستند: به‌روزرسانی پایگاه دادهٔ این نسخه هنوز اجرا نشده است.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>این صفحه را نمی‌توان نشانک‌گذاری کرد: صفحهٔ نمای یک ماژول نیست.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>این صفحه را نمی‌توان نشانک‌گذاری کرد: شما اجازهٔ باز کردن آن را ندارید.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>صفحه نشانک‌گذاری نشد.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>صفحهٔ «%name» در نشانک‌های شماست.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>نام نشانک تغییر نکرد: نشانک به یک نام نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>نام نشانک به «%name» تغییر کرد.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>بازتاب در جدول‌های داده</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>تأیید حساب‌های کاربری</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>یک حساب کاربری جدید در انتظار تأیید شماست</translation>
     </message>
 </context>
 <context>
@@ -60723,6 +61018,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Missing file review mark</source>
         <translation>علامت‌گذاری فایل گم‌شده برای بررسی</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>تغییر گذرواژه در ورود بعدی تنظیم شد</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>تغییر گذرواژه در ورود بعدی برداشته شد</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>به تغییر گذرواژه فرستاده شد</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>ورود بدون مرحلهٔ دوم رد شد</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>گذرواژهٔ برنامه ساخته شد</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>گذرواژهٔ برنامه باطل شد</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>گذرواژهٔ برنامه استفاده شد</translation>
     </message>
 </context>
 <context>
@@ -64186,6 +64509,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The audit trail of this node</source>
         <translation>ردگیری ممیزی این گره</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>سالم</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>شکسته</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>بررسی‌نشده</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>ترمیم‌شده</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>خالی</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -67575,6 +67918,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>You were signed out on your other devices.</source>
         <translation>از دستگاه‌های دیگر خود خارج شدید.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>پیش از ادامه، گذرواژهٔ جدیدی انتخاب کنید: یک مدیر از شما خواسته است گذرواژهٔ کنونی خود را جایگزین کنید.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -69677,6 +70024,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>نشانی ایمیل جدید %email در انتظار تأیید است: پیوندی را که به آنجا فرستادیم باز کنید. تا آن زمان این حساب %current را حفظ می‌کند.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>ایمیل دربارهٔ ورود از یک دستگاه یا مرورگر جدید بخشی از امنیت حساب است. آن را در صفحهٔ دستگاه‌های خود خاموش یا روشن می‌کنید، جایی که نشست‌های حساب خود را نیز می‌بینید و از آن‌ها خارج می‌کنید.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
     </message>
 </context>
 <context>
@@ -75705,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>مرور جدول‌های کلاس‌های ماندگار…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>حساب کاربری جدید در انتظار تأیید: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>نام کاربری</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>گروه</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>درخواست‌شده توسط</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>باز کردن تأیید</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>اگر دکمه کار نمی‌کند، این نشانی را در مرورگر خود کپی کنید: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>یک حساب کاربری جدید در انتظار تأیید شماست</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester حساب «%name» را در %groups ایجاد کرد. این حساب منتشر نشده است و تا زمانی که یک تأییدکننده آن را بپذیرد نمی‌تواند وارد شود.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>به پنل مدیریت وارد شوید و آن را در فهرست همکاری خود تأیید یا رد کنید. این پیوند شما را وارد نمی‌کند و به‌تنهایی دربارهٔ چیزی تصمیم نمی‌گیرد.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>این ایمیل را %site فرستاده است، زیرا شما حساب‌های جدید این گروه‌ها را تأیید می‌کنید.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>رایانه</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>تلفن همراه</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>تبلت</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>برنامه یا اپلیکیشن</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>کلاینت خودکار</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>دستگاه ناشناخته</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>گذرواژه</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>گذرواژه و کد ورود دومرحله‌ای</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>رابط REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>رابط SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ورود یکپارچه (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>پیش از ثبت نشست‌ها وارد شده است</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>از این صفحه خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>توسط یک مدیر خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>با «همهٔ نشست‌های دیگر» خارج شد</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>با یک ورود جدید جایگزین شد</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>با تغییر گذرواژه پایان یافت</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>منقضی‌شده</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>نشست‌های %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>جاهایی که حساب شما هم‌اکنون در آن وارد شده است. اگر دستگاهی را نمی‌شناسید، آن را خارج کنید و گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>جاهایی که این حساب هم‌اکنون در آن وارد شده است. خارج کردن کاربر، هر نشست را در درخواست بعدی‌اش پایان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>بازگشت به حساب</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>نشست خارج شد. دستگاه باید دوباره وارد شود.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count نشست دیگر خارج شدند.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>نشست دیگری برای خارج کردن وجود نداشت.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count نشست این کاربر خارج شدند.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>این کاربر نشستی برای خارج کردن نداشت.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>این نشستی است که از آن استفاده می‌کنید. برای پایان دادن به آن، خارج شوید.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>آن نشست پیش‌تر پایان یافته بود.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>هنگامی که حساب شما از یک دستگاه جدید وارد شود، ایمیلی دریافت خواهید کرد.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>دیگر ایمیلی دربارهٔ ورود از دستگاه‌های جدید دریافت نخواهید کرد.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحه منقضی شده بود. چیزی تغییر نکرد؛ لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>نشست‌ها در این سایت ثبت نمی‌شوند (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>جدول expuser_session موجود نیست</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>نشست‌ها پس از ایجاد آن ثبت می‌شوند: php update/common/scripts/6.0/createusersessiontable.php، یا به‌روزرسانی پایگاه دادهٔ 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اکنون وارد شده</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>خارج کردن همهٔ نشست‌های دیگر</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>خروج از همه‌جا</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>هر دستگاهی جز این یکی در درخواست بعدی‌اش خارج می‌شود، از جمله دستگاه‌هایی که با «مرا به خاطر بسپار» وارد می‌مانند.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>هر نشست این کاربر در درخواست بعدی‌اش خارج می‌شود، از جمله نشست‌هایی که با «مرا به خاطر بسپار» وارد می‌مانند.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>بله، خارج کردن نشست‌های دیگر</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>بله، خارج کردن همهٔ نشست‌ها</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>این دستگاه</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>دستگاه</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>نشانی</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>به‌صورت شبکهٔ آن نمایش داده می‌شود؛ نشانی کامل برای مدیران نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>وارد شده از %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>زمان ورود</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخرین فعالیت</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>اکنون</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ماندن در حالت ورود</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>مرا به خاطر بسپار، تا %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>تا بسته شدن مرورگر</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>زمان ورود</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>شناسهٔ مرورگر</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>برای پایان دادن به این نشست، خارج شوید.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>خارج کردن این نشست</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>هیچ نشستی وارد نشده است.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>اخطارهای ورود</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ارسال ایمیل به من هنگامی که حسابم از یک دستگاه یا مرورگر جدید وارد می‌شود</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>به %email فرستاده می‌شود. دستگاه، مکان تقریبی و زمان را به شما می‌گوید و به این صفحه پیوند می‌دهد.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>این سایت اخطار ورود نمی‌فرستد.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>به‌تازگی پایان‌یافته</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>نشست‌هایی که در %days روز گذشته پایان یافته‌اند.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>زمان پایان</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>روش</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>هیچ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>رایانه</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>تلفن همراه</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>تبلت</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>برنامه یا اپلیکیشن</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>کلاینت خودکار</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>دستگاه ناشناخته</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>گذرواژه</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>گذرواژه و کد ورود دومرحله‌ای</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>رابط REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>رابط SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ورود یکپارچه (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>پیش از ثبت نشست‌ها وارد شده است</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>از این صفحه خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>توسط یک مدیر خارج شد</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>با «همهٔ نشست‌های دیگر» خارج شد</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>با یک ورود جدید جایگزین شد</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>با تغییر گذرواژه پایان یافت</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>منقضی‌شده</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>نشست‌های %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>جاهایی که حساب شما هم‌اکنون در آن وارد شده است. اگر دستگاهی را نمی‌شناسید، آن را خارج کنید و گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>جاهایی که این حساب هم‌اکنون در آن وارد شده است. خارج کردن کاربر، هر نشست را در درخواست بعدی‌اش پایان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>نشست خارج شد. دستگاه باید دوباره وارد شود.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count نشست دیگر خارج شدند.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>نشست دیگری برای خارج کردن وجود نداشت.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count نشست این کاربر خارج شدند.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>این کاربر نشستی برای خارج کردن نداشت.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>این نشستی است که از آن استفاده می‌کنید. برای پایان دادن به آن، خارج شوید.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>آن نشست پیش‌تر پایان یافته بود.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>هنگامی که حساب شما از یک دستگاه جدید وارد شود، ایمیلی دریافت خواهید کرد.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>دیگر ایمیلی دربارهٔ ورود از دستگاه‌های جدید دریافت نخواهید کرد.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحه منقضی شده بود. چیزی تغییر نکرد؛ لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>نشست‌ها در این سایت ثبت نمی‌شوند.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>نشست‌ها هنوز ثبت نمی‌شوند: سایت به به‌روزرسانی پایگاه داده نیاز دارد.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اکنون وارد شده</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>این دستگاه</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>دستگاه</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>نشانی</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>زمان ورود</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخرین فعالیت</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>اکنون</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ماندن در حالت ورود</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>مرا به خاطر بسپار، تا %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>تا بسته شدن مرورگر</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>برای پایان دادن به این نشست، خارج شوید.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>خروج</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>خارج کردن این نشست</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>خارج کردن همهٔ نشست‌های دیگر</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>خروج از همه‌جا</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>اخطارهای ورود</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ارسال ایمیل به من هنگامی که حسابم از یک دستگاه یا مرورگر جدید وارد می‌شود</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>به‌تازگی پایان‌یافته</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>زمان پایان</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>روش</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>هیچ موردی در %days روز گذشته.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>ببینید حساب شما کجا وارد شده است، و دستگاهی را که نمی‌شناسید خارج کنید.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>مدیریت دستگاه‌ها</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>ورود جدید به حساب شما در %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>سلام،</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>حساب %login شما در %site هم‌اکنون برای ورود از دستگاه یا مرورگری به کار رفت که اخیراً از آن استفاده نکرده است:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>دستگاه:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>زمان:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>نشانی تقریبی:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>اگر این خود شما بودید، لازم نیست کاری انجام دهید.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>اگر شما نبودید، ممکن است کسی گذرواژهٔ شما را بداند. آن نشست را در صفحهٔ دستگاه‌های خود خارج کنید، سپس گذرواژهٔ خود را تغییر دهید:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>می‌توانید این ایمیل‌ها را در همان صفحه خاموش کنید.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>ورود جدید %login در %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>حساب %login از دستگاه یا مرورگری وارد شد که اخیراً از آن استفاده نکرده است.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>نشست‌های این کاربر:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ورود جدید به حساب شما</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>حساب %login شما در %date برای ورود از %device (%ip) به کار رفت.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>اگر این خود شما بودید، لازم نیست کاری انجام دهید. در غیر این صورت، این نشست را در %url خارج کنید و گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>ورود جدید %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>حساب %login از یک دستگاه جدید وارد شد: %device (%ip) در %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>نشست‌های %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>کلیدهای عبور</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>کلید عبور شما را به‌جای گذرواژه با اثر انگشت، چهره، قفل صفحه یا کلید امنیتی‌تان وارد می‌کند. این کلید روی دستگاه شما یا در مدیر گذرواژهٔ شما ذخیره می‌شود؛ این سایت فقط کلید عمومی آن را نگه می‌دارد، بنابراین نشت اطلاعات در اینجا نمی‌تواند آن را فاش کند.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>کلیدهای عبور در این سایت خاموش هستند.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>هنوز نمی‌توان در این سایت از کلید عبور استفاده کرد: مدیر سایت باید ابتدا به‌روزرسانی پایگاه داده را اجرا کند.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>کلید عبور «%name» برداشته شود؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>دیگر نمی‌تواند به این حساب وارد شود. آن را از دستگاه یا مدیر گذرواژهٔ خود نیز بردارید.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>برداشتن کلید عبور</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>کلیدهای عبور شما</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count از حداکثر %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>هنوز هیچ کلید عبوری ندارید. یکی را در پایین اضافه کنید: دفعهٔ بعد که وارد می‌شوید، «ورود با کلید عبور» را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>تاریخ افزودن</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>آخرین استفاده</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>نوع</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>اقدامات</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>هنوز نه</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>همگام‌سازی‌شده</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>این دستگاه یا کلید</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>تغییر نام</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>نام جدید</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>ذخیرهٔ نام</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>برداشتن</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>افزودن کلید عبور</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>مراحل مرورگر یا دستگاه خود را دنبال کنید.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>پنجرهٔ کلید عبور بسته شد. چیزی تغییر نکرد.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>کلید عبور ساخته نشد. لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>این مرورگر نمی‌تواند کلید عبور بسازد. از یک مرورگر به‌روز استفاده کنید، یا با گذرواژهٔ خود وارد شوید.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>برای نمونه دستگاه یا مدیر گذرواژه‌ای که کلید روی آن است، تا بتوانید کلیدهای عبور خود را از هم تشخیص دهید.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>این حساب به حداکثر تعداد مجاز کلید عبور (%max) رسیده است. برای افزودن کلیدی دیگر، یکی را بردارید.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>از کلید عبور نمی‌شد استفاده کرد. لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>حساب من</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>پنجرهٔ کلید عبور بسته شد. می‌توانید به‌جای آن با گذرواژهٔ خود وارد شوید.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>از کلید عبور نمی‌شد استفاده کرد. لطفاً دوباره تلاش کنید، یا با گذرواژهٔ خود وارد شوید.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>ورود با کلید عبور</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>ورود با کلید عبور ممکن نشد</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>به‌جای گذرواژه، با اثر انگشت، چهره، قفل صفحه یا کلید امنیتی خود وارد شوید.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>کلید عبور «%name» افزوده شد. از این پس می‌توانید با آن وارد شوید.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>نام کلید عبور اکنون «%name» است.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>کلید عبور «%name» برداشته شد. دیگر نمی‌تواند به این حساب وارد شود.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>کلید عبور %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>این حساب به حداکثر تعداد مجاز کلید عبور رسیده است. ابتدا یکی را بردارید.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>پایگاه داده مشغول بود و چیزی ذخیره نشد. لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>این کلید عبور پیش‌تر ثبت شده است.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>درخواست بیش از حد طول کشید یا پیش‌تر استفاده شده بود. لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>کلید عبور هویت شما را بررسی نکرد (PIN، اثر انگشت یا چهره). لطفاً دوباره تلاش کنید و روی دستگاه خود تأیید کنید.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>این احرازکننده از نوعی کلید استفاده می‌کند که این سایت نمی‌پذیرد.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>کلید عبور برای نشانی دیگری جز این سایت ساخته شده است.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>این کلید عبور برای هیچ حسابی در اینجا ثبت نشده است. با گذرواژهٔ خود وارد شوید و آن را در حساب من، کلیدهای عبور اضافه کنید.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>این حساب در حال حاضر نمی‌تواند وارد شود. لطفاً با مدیر سایت تماس بگیرید.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>کلید عبور بررسی نشد. لطفاً دوباره تلاش کنید.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>شما در آستانهٔ تغییر روش ورود یا امنیت حساب خود هستید.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>شما در آستانهٔ مدیریت کاربران، نقش‌ها یا خط‌مشی‌ها هستید.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>شما در آستانهٔ تغییر تنظیمات سیستم یا اجرای یک اقدام راه‌اندازی هستید.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>شما در آستانهٔ برون‌بری داده‌ها هستید.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>شما در آستانهٔ حذف یا انتشار محتوا هستید.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>این اقدام نیاز دارد که هویت خود را تأیید کنید.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>تأیید کنید که خودتان هستید، واردشده با نام %login. تا %minutes دقیقه دوباره از شما پرسیده نخواهد شد.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>این گذرواژه درست نیست.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>این کد درست نیست، یا پیش‌تر استفاده شده است.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>یکی از روش‌های زیر را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>کلید عبور بررسی نشد.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>%count تلاش دیگر تا خارج شدن شما باقی مانده است.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>فایل‌هایی که انتخاب کرده بودید دوباره فرستاده نمی‌شوند: پس از تأیید، آن‌ها را یک بار دیگر انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>با گذرواژه</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>با کلید عبور</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>گذرواژه</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تأیید</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>استفاده از کلید عبور</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>با کدی از برنامهٔ احراز هویت</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>کد</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>این حساب هیچ راهی برای تأیید هویت شما ندارد (نه گذرواژه، نه کلید عبور و نه برنامهٔ احراز هویت). خارج شوید و دوباره وارد شوید، یا از یک مدیر کمک بخواهید.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>تأیید هویت</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>کد برنامهٔ احراز هویت</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>حساب خودتان</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>تغییر گذرواژه، نشانی ایمیل، کلیدهای عبور، ورود دومرحله‌ای یا کلیدهای API خود.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>کاربران، نقش‌ها و خط‌مشی‌ها</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ایجاد و ویرایش کاربران، تنظیمات حساب، تأیید یا رد حساب‌های کاربری جدید، تخصیص نقش‌ها و ویرایش خط‌مشی‌ها.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>تنظیمات سیستم و اقدامات راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>ویرایش تنظیمات، افزونه‌ها، حافظهٔ پنهان و نگهداری، بسته‌ها و به‌روزرسانی‌ها، پشتیبان‌گیری‌ها و مدیر git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>برون‌بری داده‌ها</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>برون‌بری اطلاعات گردآوری‌شده، کاربران، مشترکان خبرنامه و ممیزی.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>حذف و انتشار محتوا</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>حذف محتوا (از جمله به سطل زباله)، خالی کردن سطل زباله و انتشار. به‌طور پیش‌فرض خاموش.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>پیش از یک اقدام حساس، کاربر واردشده دوباره هویت خود را تأیید می‌کند: با گذرواژه، کلید عبور یا کد برنامهٔ احراز هویت خود. فقط صفحه‌های وب این را می‌پرسند: رابط REST، SOAP، WebDAV، ورود expservices و خط فرمان هرگز نمی‌پرسند.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>عمومی</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>مدت اعتبار تأیید (دقیقه)</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>زمان پرسیدن</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count قاعده در site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>در settings/override/site.ini.append.php ذخیره می‌شود. ذخیره کردن از شما می‌خواهد هویت خود را تأیید کنید.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>تأیید هویت</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>پرسیدن «تأیید هویت» پیش از اقدامات گروه‌هایی که در زیر روشن شده‌اند</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>تنظیمات ذخیره شد.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>تنظیمات ذخیره نشد: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>جدید</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>برداشتن</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count سطر</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>سطر جدید</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>سطر ذخیره شد.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>جستجو</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>اقدامات</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ویرایش</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>هنوز هیچ سطری وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>خروجی JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>خیر</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>یک شناسهٔ گره</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>شناسهٔ شیء یک کاربر</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>یک شناسهٔ شیء محتوا</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>سطر %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>سطر ذخیره نشد</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ذخیره</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>سطر %id برداشته شود؟</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>سطر از جدول برداشته می‌شود و قابل بازگرداندن نیست.</translation>
     </message>
 </context>
 </TS>

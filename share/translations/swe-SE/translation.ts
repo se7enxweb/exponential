@@ -2237,6 +2237,74 @@
         <source>Open or close the folder</source>
         <translation>Öppna eller stäng mappen</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Den här sidan finns i dina bokmärken. Öppna för att ändra dess namn eller mapp.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Lägg till den här sidan i dina bokmärken.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Bokmärkt</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bokmärk den här sidan</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Bokmärket sparar adressen till den här sidan med dess parametrar: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Spara bokmärke</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Lägg till bokmärke</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mina bokmärken</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemsida</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemsidor</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Du får inte längre öppna den här sidan.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Öppna</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adressen till den här sidan saknas. Ta bort bokmärket och bokmärk sidan igen.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Du får inte längre öppna den här sidan. Ta bort bokmärket eller be en administratör om åtkomst.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul och vy</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Systemsidor kan också bokmärkas: öppna sidan (Konfiguration, granskningsloggen, en lista med användare ...) och välj Bokmärk den här sidan ovanför den. Sådana bokmärken har en kugghjulsikon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7579,6 +7647,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>De senaste foruminläggen kunde inte läsas in.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobb</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ingen cronjobbsdel har körts ännu: jobbkön, importerna, aviseringarna och sökindexet väntar. Kör php bin/php/installcrontab.php --add, eller lägg till raderna från --show i crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>En cronjobbsdel har inte körts på längre tid än schemat tillåter: kontrollera crontab (php bin/php/installcrontab.php --show) och loggarna var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Schema</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Senast startad</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tillstånd</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrig</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>i tid</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>försenad</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>har aldrig körts</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Installationen har ingen cronjobbsdel för cronjobbet att köra.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Konfiguration &gt; Cronjobb</translation>
     </message>
 </context>
 <context>
@@ -32587,6 +32710,30 @@ ditt konto.</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klass/attribut-kombinationer (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Användargrupper vars nya konton kräver godkännande</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Ett konto som publiceras i en av de här grupperna, eller under en av dem, väntar tills en godkännare accepterar det. Innan dess kan det inte logga in.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Användare som godkänner kontona</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupper som godkänner kontona</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Användargrupper som inte behöver godkännande (deras medlemmar publicerar sådana konton direkt; godkännare behöver det aldrig)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Skicka ett e-postmeddelande till godkännarna med länken till godkännandet (de loggar in för att godkänna eller avslå)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -36813,6 +36960,14 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     <message>
         <source>required</source>
         <translation>krävs</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Byt lösenord vid nästa inloggning</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Efter inloggningen måste användaren välja ett nytt lösenord innan något annat kan göras. Använd det när du ger någon ett tillfälligt lösenord.</translation>
     </message>
 </context>
 <context>
@@ -43898,6 +44053,22 @@ Se sidan med krav för mer information.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Miljövariabeln EXP_DEMO_MODE=1 markerar den här installationen som en offentlig demo: ett välkänt administratörslösenord godtas, och administratörslösenord kan inte ändras eller återställas senare. Använd aldrig demoläget för en produktionswebbplats.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobb</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cronjobben körs från crontab för användaren %user, som äger installationen.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Installationen har ingen cronjobbsdel att schemalägga.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab skrevs inte (%reason). Lägg till de här raderna i crontab för användaren som webbplatsen körs som, annars körs kön, importerna, aviseringarna och sökindexet aldrig:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -47287,6 +47458,22 @@ ditt konto.</translation>
         <source>ClassAttribute name</source>
         <translation>Namn på klassattribut</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konton som kräver godkännande</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-post till godkännarna</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -48705,6 +48892,14 @@ det här felet. Försök inte skicka betalningen igen.</translation>
         <source>Your comment was added.</source>
         <translation>Din kommentar har lagts till.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Kontot &quot;%1&quot; godkändes och publicerades: det kan logga in nu.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Kontot &quot;%1&quot; avslogs. Det är inte publicerat och kan inte logga in; det är åter ett utkast hos sin författare.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -49011,6 +49206,38 @@ det här felet. Försök inte skicka betalningen igen.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count bokmärke(n) lades till.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemsida</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemsidor kan inte bokmärkas ännu: databasuppdateringen för den här versionen har inte körts.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Den här sidan kan inte bokmärkas: den är inte en sida i en modulvy.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Den här sidan kan inte bokmärkas: du får inte öppna den.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Sidan kunde inte bokmärkas.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Sidan &quot;%name&quot; finns i dina bokmärken.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Bokmärket kunde inte byta namn: det behöver ett namn.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Bokmärket bytte namn till &quot;%name&quot;.</translation>
     </message>
 </context>
 <context>
@@ -51002,6 +51229,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Mirror to data tables</source>
         <translation>Spegla till datatabeller</translation>
     </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Godkänn användarkonton</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ett nytt användarkonto väntar på ditt godkännande</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -51807,6 +52042,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>inaktivera användarkonton och flytta dem till gruppen för inaktiverade användare, och flytta tillbaka dem</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>se var andra användare är inloggade och logga ut dem</translation>
     </message>
 </context>
 <context>
@@ -58833,6 +59072,58 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Open e-mail preferences</source>
         <translation>Öppna e-postinställningar</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dina enheter</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioner</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Var du är inloggad: webbläsare, system, plats och tid. Logga ut en enhet som du inte känner igen.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Var den här användaren är inloggad, och utloggning av användaren överallt.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Hantera enheter</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Visa sessioner</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count inloggade</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Lösennycklar</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Logga in med ditt fingeravtryck, ansikte, skärmlås eller din säkerhetsnyckel i stället för ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Hantera lösennycklar</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lägg till en lösennyckel</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count lösennycklar</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Inga än</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -59342,6 +59633,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Cancel</source>
         <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Välj ett nytt lösenord innan du fortsätter: en administratör har bett dig att byta ut ditt nuvarande lösenord.</translation>
     </message>
 </context>
 <context>
@@ -62021,6 +62316,34 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Saknad fil markerad för granskning</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Lösenordsbyte vid nästa inloggning har ställts in</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Lösenordsbyte vid nästa inloggning har tagits bort</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Skickad till lösenordsbytet</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Inloggning utan det andra steget nekades</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Applösenord skapat</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Applösenord återkallat</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Applösenord använt</translation>
     </message>
 </context>
 <context>
@@ -65484,6 +65807,26 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The audit trail of this node</source>
         <translation>Den här nodens granskningslogg</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intakt</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>bruten</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>okontrollerad</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>reparerad</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tom</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -68873,6 +69216,10 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Du loggades ut på dina andra enheter.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Välj ett nytt lösenord innan du fortsätter: en administratör har bett dig att byta ut ditt nuvarande lösenord.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70975,6 +71322,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Den nya e-postadressen %email väntar på sin bekräftelse: öppna länken som vi skickade dit. Tills dess behåller det här kontot %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-postmeddelandet om en inloggning från en ny enhet eller webbläsare är en del av kontosäkerheten. Du stänger av eller sätter på det under dina enheter, där du också ser och loggar ut ditt kontos sessioner.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dina enheter</translation>
     </message>
 </context>
 <context>
@@ -77010,6 +77365,1160 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Bläddra bland tabellerna för de persistenta klasserna…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nytt användarkonto väntar på godkännande: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Användarnamn</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupp</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Begärt av</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Öppna godkännandet</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Om knappen inte fungerar kopierar du den här adressen till din webbläsare: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ett nytt användarkonto väntar på ditt godkännande</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester skapade kontot &quot;%name&quot; i %groups. Det är inte publicerat och kan inte logga in förrän en godkännare accepterar det.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Logga in i administrationen och godkänn eller avslå det i din samarbetslista. Den här länken loggar inte in dig och avgör ingenting på egen hand.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Det här meddelandet skickades av %site eftersom du godkänner nya konton i de här grupperna.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Dator</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Surfplatta</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiserad klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Okänd enhet</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lösenord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Lösenord och tvåstegskod</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-gränssnitt</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-gränssnitt</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enkel inloggning</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Inloggad innan sessioner registrerades</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Utloggad</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Utloggad från den här sidan</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Utloggad av en administratör</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Utloggad med &quot;alla andra sessioner&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ersatt av en ny inloggning</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Avslutad av ett lösenordsbyte</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Har gått ut</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dina enheter</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner för %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Var ditt konto är inloggat just nu. Om du inte känner igen en enhet loggar du ut den och byter lösenord.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Var det här kontot är inloggat just nu. När användaren loggas ut avslutas varje session vid dess nästa förfrågan.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tillbaka till kontot</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessionen loggades ut. Enheten måste logga in igen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andra sessioner loggades ut.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Det fanns inga andra sessioner att logga ut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessioner för den här användaren loggades ut.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Den här användaren hade inga sessioner att logga ut.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Det här är sessionen du använder. Logga ut för att avsluta den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den sessionen var redan avslutad.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får ett e-postmeddelande när ditt konto loggar in från en ny enhet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får inte längre e-post om inloggningar från nya enheter.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sidan hade gått ut. Ingenting ändrades; försök igen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessioner registreras inte på den här webbplatsen (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabellen expuser_session saknas</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessioner registreras när den har skapats: php update/common/scripts/6.0/createusersessiontable.php, eller databasuppdateringen för 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Inloggad nu</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logga ut alla andra sessioner</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logga ut överallt</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Alla enheter utom den här loggas ut vid sin nästa förfrågan, även de som förblir inloggade med Kom ihåg mig.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Varje session för den här användaren loggas ut vid sin nästa förfrågan, även de som förblir inloggade med Kom ihåg mig.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ja, logga ut de andra sessionerna</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ja, logga ut varje session</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Den här enheten</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhet</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Visas som sitt nätverk; den fullständiga adressen sparas för administratörerna.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>inloggad från %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Inloggad</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Senast aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Förblir inloggad</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Kom ihåg mig, till %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tills webbläsaren stängs</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Inloggad på</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Webbläsaridentifiering</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Logga ut för att avsluta den här sessionen.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logga ut</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logga ut den här sessionen</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ingen session är inloggad.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Inloggningsvarningar</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Skicka e-post till mig när mitt konto loggar in från en ny enhet eller webbläsare</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Skickas till %email. Det anger enheten, ungefärlig plats och tid, och länkar till den här sidan.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Den här webbplatsen skickar inga inloggningsvarningar.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nyligen avslutade</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessioner som avslutades under de senaste %days dagarna.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avslutad</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hur</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Inga.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Dator</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Surfplatta</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program eller app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiserad klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Okänd enhet</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lösenord</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Lösenord och tvåstegskod</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-gränssnitt</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-gränssnitt</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enkel inloggning</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Inloggad innan sessioner registrerades</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Utloggad</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Utloggad från den här sidan</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Utloggad av en administratör</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Utloggad med &quot;alla andra sessioner&quot;</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ersatt av en ny inloggning</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Avslutad av ett lösenordsbyte</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Har gått ut</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dina enheter</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner för %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Var ditt konto är inloggat just nu. Om du inte känner igen en enhet loggar du ut den och byter lösenord.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Var det här kontot är inloggat just nu. När användaren loggas ut avslutas varje session vid dess nästa förfrågan.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessionen loggades ut. Enheten måste logga in igen.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count andra sessioner loggades ut.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Det fanns inga andra sessioner att logga ut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessioner för den här användaren loggades ut.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Den här användaren hade inga sessioner att logga ut.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Det här är sessionen du använder. Logga ut för att avsluta den.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Den sessionen var redan avslutad.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Du får ett e-postmeddelande när ditt konto loggar in från en ny enhet.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Du får inte längre e-post om inloggningar från nya enheter.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sidan hade gått ut. Ingenting ändrades; försök igen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sessioner registreras inte på den här webbplatsen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessioner registreras inte ännu: webbplatsen behöver sin databasuppdatering.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Inloggad nu</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Den här enheten</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhet</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adress</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Inloggad</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Senast aktiv</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Förblir inloggad</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Kom ihåg mig, till %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tills webbläsaren stängs</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Logga ut för att avsluta den här sessionen.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logga ut</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logga ut den här sessionen</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logga ut alla andra sessioner</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logga ut överallt</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Inloggningsvarningar</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Skicka e-post till mig när mitt konto loggar in från en ny enhet eller webbläsare</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nyligen avslutade</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Avslutad</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hur</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Inga under de senaste %days dagarna.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Se var ditt konto är inloggat, och logga ut en enhet som du inte känner igen.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Hantera enheter</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Ny inloggning på ditt konto på %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hej,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Ditt konto %login på %site användes nyss för att logga in från en enhet eller webbläsare som det inte har använt på senare tid:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Enhet:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tid:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Ungefärlig adress:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Om det var du behöver du inte göra något.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Om det inte var du kan någon känna till ditt lösenord. Logga ut den sessionen på sidan för dina enheter och byt sedan lösenord:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Du kan stänga av de här e-postmeddelandena på samma sida.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Ny inloggning för %login på %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Kontot %login loggade in från en enhet eller webbläsare som det inte har använt på senare tid.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Den här användarens sessioner:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ny inloggning på ditt konto</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Ditt konto %login användes för att logga in från %device (%ip) %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Om det var du behöver du inte göra något. Om inte, logga ut den här sessionen på %url och byt lösenord.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Ny inloggning för %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Kontot %login loggade in från en ny enhet: %device (%ip) %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Dina enheter</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessioner för %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Lösennycklar</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>En lösennyckel loggar in dig med ditt fingeravtryck, ansikte, skärmlås eller din säkerhetsnyckel i stället för ditt lösenord. Den lagras på din enhet eller i din lösenordshanterare; den här webbplatsen sparar bara dess publika nyckel, så en läcka här kan inte avslöja den.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Lösennycklar är avstängda på den här webbplatsen.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Lösennycklar kan inte användas på den här webbplatsen ännu: administratören måste först köra databasuppdateringen.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Ta bort lösennyckeln &quot;%name&quot;?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Den kan inte längre logga in på det här kontot. Ta bort den från din enhet eller lösenordshanterare också.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Ta bort lösennyckeln</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Dina lösennycklar</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count av högst %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Du har ingen lösennyckel än. Lägg till en nedan: nästa gång du loggar in väljer du &quot;Logga in med en lösennyckel&quot;.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Tillagd</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Senast använd</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Sort</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Inte än</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synkroniserad</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Den här enheten eller nyckeln</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Byt namn</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nytt namn</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Spara namnet</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lägg till en lösennyckel</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Följ stegen i din webbläsare eller på din enhet.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialogrutan för lösennyckeln stängdes. Ingenting ändrades.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Lösennyckeln kunde inte skapas. Försök igen.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Den här webbläsaren kan inte skapa lösennycklar. Använd en aktuell webbläsare eller logga in med ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Till exempel enheten eller lösenordshanteraren den finns i, så att du kan skilja dina lösennycklar åt.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Det här kontot har så många lösennycklar som det får ha (%max). Ta bort en för att lägga till en ny.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Lösennyckeln kunde inte användas. Försök igen.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mitt konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialogrutan för lösennyckeln stängdes. Du kan logga in med ditt lösenord i stället.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Lösennyckeln kunde inte användas. Försök igen eller logga in med ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Logga in med en lösennyckel</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Det gick inte att logga in med lösennyckeln</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>logga in med ditt fingeravtryck, ansikte, skärmlås eller din säkerhetsnyckel i stället för ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Lösennyckeln &quot;%name&quot; har lagts till. Du kan logga in med den från och med nu.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Lösennyckeln heter nu &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Lösennyckeln &quot;%name&quot; har tagits bort. Den kan inte längre logga in på det här kontot.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Lösennyckel från %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Det här kontot har så många lösennycklar som det får ha. Ta bort en först.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Databasen var upptagen och ingenting sparades. Försök igen.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Den här lösennyckeln är redan registrerad.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Begäran tog för lång tid eller har redan använts. Försök igen.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Lösennyckeln kontrollerade inte vem du är (pinkod, fingeravtryck eller ansikte). Försök igen och bekräfta på din enhet.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Den här autentiseraren använder en nyckeltyp som den här webbplatsen inte accepterar.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Lösennyckeln skapades för en annan adress än den här webbplatsen.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Den här lösennyckeln är inte registrerad för något konto här. Logga in med ditt lösenord och lägg till den under Mitt konto, Lösennycklar.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Det här kontot kan inte logga in just nu. Kontakta webbplatsens administratör.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Lösennyckeln kunde inte kontrolleras. Försök igen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Du håller på att ändra hur du loggar in eller säkerheten för ditt konto.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Du håller på att hantera användare, roller eller policyer.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Du håller på att ändra systeminställningar eller köra en konfigurationsåtgärd.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Du håller på att exportera data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Du håller på att ta bort eller publicera innehåll.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Den här åtgärden kräver att du bekräftar vem du är.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Bekräfta att det är du, inloggad som %login. Du tillfrågas inte igen på %minutes minuter.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Lösenordet är inte rätt.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koden är inte rätt, eller så har den redan använts.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Välj ett av sätten nedan.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Lösennyckeln kunde inte kontrolleras.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>%count försök återstår innan du loggas ut.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Filerna du valde kan inte skickas igen: välj dem en gång till när du har bekräftat.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Med ditt lösenord</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Med en lösennyckel</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Lösenord</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bekräfta</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Använd en lösennyckel</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Med en kod från din autentiseringsapp</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kod</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Det här kontot har inget sätt att bekräfta vem du är (inget lösenord, ingen lösennyckel eller autentiseringsapp). Logga ut och in igen, eller fråga en administratör.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekräfta att det är du</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kod från din autentiseringsapp</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Ditt eget konto</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Ändra sitt eget lösenord, sin e-postadress, lösennycklar, tvåstegsinloggning eller API-nycklar.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Användare, roller och policyer</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Skapa och redigera användare, kontoinställningar, godkänna eller avslå nya användarkonton, tilldela roller och redigera policyer.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systeminställningar och konfigurationsåtgärder</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Redigera inställningar, tillägg, cachar och underhåll, paket och uppdateringar, säkerhetskopior och git-hanteraren.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Exportera data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exporter av insamlad information, användare, nyhetsbrevsprenumeranter och granskningen.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Ta bort och publicera innehåll</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Ta bort innehåll (även till papperskorgen), tömma papperskorgen och publicera. Avstängt som standard.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Före en känslig åtgärd bekräftar en inloggad användare igen vem hen är, med sitt lösenord, en lösennyckel eller koden från sin autentiseringsapp. Bara webbsidorna frågar: REST-gränssnittet, SOAP, WebDAV, expservices-inloggningen och kommandoraden gör det aldrig.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Allmänt</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuter som en bekräftelse gäller</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>När frågan ställs</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count regler i site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Sparas i settings/override/site.ini.append.php. När du sparar ombeds du bekräfta att det är du.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Bekräfta att det är du</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Fråga &quot;Bekräfta att det är du&quot; före åtgärderna i grupperna som är påslagna nedan</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Inställningarna har sparats.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Inställningarna kunde inte sparas: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguration</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ny</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rader</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ny rad</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Raden sparades.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Sök</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Åtgärder</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redigera</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Inga rader än.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adress: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nej</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Ett nod-ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Objekt-ID för en användare</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Ett innehållsobjekt-ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rad %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Raden sparades inte</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Ta bort rad %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Raden tas bort från tabellen och kan inte återställas.</translation>
     </message>
 </context>
 </TS>

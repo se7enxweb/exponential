@@ -262,7 +262,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name, kept as code",
-        "xmlUrl": "OPML attribute name, kept as code"
+        "xmlUrl": "OPML attribute name, kept as code",
+        "Tablet": "the Croatian word for a tablet",
+        "WebDAV": "protocol name"
     },
     "cze-CZ": {
         "#level1 - #level2": "code, unit, key name or product name",
@@ -403,7 +405,9 @@
         "top": "code, unit, key name or product name",
         "url": "code, unit, key name or product name",
         "vertScrollState": "code, unit, key name or product name",
-        "xmlUrl": "code, unit, key name or product name"
+        "xmlUrl": "code, unit, key name or product name",
+        "Tablet": "the Czech word for a tablet",
+        "WebDAV": "protocol name"
     },
     "dan-DK": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -639,7 +643,10 @@
         "version %version": "Danish word version and a placeholder",
         "vertScrollState": "OPML attribute name, code identifier",
         "xmlUrl": "OPML attribute name, code identifier",
-        "Integration": "Danish word spelled the same"
+        "Integration": "Danish word spelled the same",
+        "Computer": "standard Danish word",
+        "Tablet": "standard Danish word",
+        "WebDAV": "protocol name"
     },
     "dut-NL": {
         "#level1 - #level2": "code, file or setting name",
@@ -991,7 +998,11 @@
         "vertScrollState": "OPML attribute name (code)",
         "week": "Dutch uses the same word (common in Dutch software)",
         "xmlUrl": "OPML attribute name (code)",
-        "E-commerce": "Dutch spells e-commerce the same; the catalogue uses it throughout"
+        "E-commerce": "Dutch spells e-commerce the same; the catalogue uses it throughout",
+        "intact": "the Dutch word for an unbroken chain",
+        "Computer": "the Dutch word for a computer",
+        "Tablet": "the Dutch word for the device",
+        "WebDAV": "protocol name"
     },
     "esl-ES": {
         "#level1 - #level2": "format placeholders only",
@@ -1412,7 +1423,8 @@
         "title": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "WebDAV": "protocol name"
     },
     "fre-FR": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -2185,7 +2197,10 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "xmlUrl": "OPML attribute name",
-        "Community": "established Italian loanword, used throughout this catalogue (community di Exponential)"
+        "Community": "established Italian loanword, used throughout this catalogue (community di Exponential)",
+        "Computer": "the word Italian uses for a computer",
+        "Tablet": "the word Italian uses for the device",
+        "WebDAV": "protocol name"
     },
     "kur-TR": {
         "#level1 - #level2": "format placeholders only",
@@ -2280,7 +2295,9 @@
         "title": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "loanword used in Kurmanji for the device",
+        "WebDAV": "protocol name"
     },
     "lat-VA": {
         "#level1 - #level2": "only PDF level placeholders and a separator; nothing to translate",
@@ -2560,7 +2577,8 @@
         "under node %parent": "Norwegian words (under, node)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "pol-PL": {
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
@@ -2690,7 +2708,9 @@
         "title": "code, setting, file name, unit or placeholder text without words to translate",
         "url": "code, setting, file name, unit or placeholder text without words to translate",
         "vertScrollState": "code, setting, file name, unit or placeholder text without words to translate",
-        "xmlUrl": "code, setting, file name, unit or placeholder text without words to translate"
+        "xmlUrl": "code, setting, file name, unit or placeholder text without words to translate",
+        "Tablet": "the Polish word for a tablet",
+        "WebDAV": "protocol name"
     },
     "por-BR": {
         "#level1 - #level2": "code, setting, unit or placeholder text without words to translate",
@@ -2882,7 +2902,9 @@
         "title": "code, setting, unit or placeholder text without words to translate",
         "url": "code, setting, unit or placeholder text without words to translate",
         "vertScrollState": "code, setting, unit or placeholder text without words to translate",
-        "xmlUrl": "code, setting, unit or placeholder text without words to translate"
+        "xmlUrl": "code, setting, unit or placeholder text without words to translate",
+        "Tablet": "the device name Brazilian Portuguese uses",
+        "WebDAV": "protocol name"
     },
     "pus-AF": {
         "#level1 - #level2": "format placeholders only",
@@ -2964,7 +2986,8 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "WebDAV": "protocol name"
     },
     "swa-KE": {
         "#level1 - #level2": "format placeholders only",
@@ -3051,7 +3074,9 @@
         "title": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name JSON plus placeholder"
     },
     "swe-SE": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -3245,7 +3270,8 @@
         "version %version": "placeholder and unit text, the same in Swedish",
         "vertScrollState": "OPML attribute name, code identifier",
         "xmlUrl": "OPML attribute name, code identifier",
-        "Integration": "Swedish word spelled the same"
+        "Integration": "Swedish word spelled the same",
+        "WebDAV": "protocol name"
     },
     "tlh-QO": {
         "%ms ms": "SI unit symbol for milliseconds after a number placeholder",
@@ -3394,7 +3420,9 @@
         "title": "product name, code, file name, setting or format without translatable words",
         "url": "product name, code, file name, setting or format without translatable words",
         "vertScrollState": "product name, code, file name, setting or format without translatable words",
-        "xmlUrl": "product name, code, file name, setting or format without translatable words"
+        "xmlUrl": "product name, code, file name, setting or format without translatable words",
+        "Tablet": "standard Turkish word (TDK: tablet)",
+        "WebDAV": "protocol name"
     },
     "ukr-UA": {
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
@@ -6591,7 +6619,8 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "urd-PK": {
         "#level1 - #level2": "template code",
@@ -6702,7 +6731,9 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name plus placeholder"
     },
     "mar-IN": {
         "#level1 - #level2": "template code",
@@ -6806,7 +6837,8 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "tel-IN": {
         "#level1 - #level2": "template code",
@@ -6911,7 +6943,9 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name and placeholder only"
     },
     "tam-IN": {
         "#level1 - #level2": "template code",
@@ -7032,7 +7066,9 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "viewmode": "code identifier",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name and placeholder only"
     },
     "hau-NG": {
         "#level1 - #level2": "template code",
@@ -7210,7 +7246,8 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "guj-IN": {
         "#level1 - #level2": "template code",
@@ -7329,7 +7366,9 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "viewmode": "code identifier",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name plus placeholder"
     },
     "kan-IN": {
         "#level1 - #level2": "template code",
@@ -7443,7 +7482,9 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "viewmode": "code identifier",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name followed by placeholder only"
     },
     "amh-ET": {
         "#level1 - #level2": "template code",
@@ -7548,7 +7589,9 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name plus placeholder only"
     },
     "yor-NG": {
         "#level1 - #level2": "template code",
@@ -7701,7 +7744,8 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "mal-IN": {
         "#level1 - #level2": "template code",
@@ -7813,7 +7857,9 @@
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
         "viewmode": "code identifier",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name followed by placeholder only"
     },
     "pan-IN": {
         "#level1 - #level2": "template code",
@@ -7925,7 +7971,9 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name plus placeholder"
     },
     "ori-IN": {
         "#level1 - #level2": "template code",
@@ -8046,7 +8094,8 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "ibo-NG": {
         "#level1 - #level2": "template code",
@@ -8246,7 +8295,8 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "zul-ZA": {
         "#level1 - #level2": "template code",
@@ -8390,7 +8440,8 @@
         "triggers": "glossary term (trigger)",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "som-SO": {
         "#level1 - #level2": "template code",
@@ -8581,7 +8632,9 @@
         "shell": "technical term, kept as in English",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name",
+        "JSON: %url": "format name plus placeholder only"
     },
     "xho-ZA": {
         "#level1 - #level2": "template code",
@@ -8733,7 +8786,8 @@
         "shell": "technical term, kept as in English",
         "url": "OPML attribute name",
         "vertScrollState": "OPML attribute name",
-        "xmlUrl": "OPML attribute name"
+        "xmlUrl": "OPML attribute name",
+        "WebDAV": "protocol name"
     },
     "chi-CN": {
         "#level1 - #level2": "format placeholders only",
@@ -8810,7 +8864,8 @@
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
         "viewmode": "template parameter name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "WebDAV": "protocol name"
     },
     "chi-TW": {
         "#level1 - #level2": "format placeholders only",
@@ -8889,6 +8944,7 @@
         "shell": "Unix shell, kept as the English technical name",
         "vertScrollState": "OPML attribute name (code identifier)",
         "viewmode": "template parameter name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "WebDAV": "protocol name"
     }
 }

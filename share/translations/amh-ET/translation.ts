@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>አቃፊውን ክፈት ወይም ዝጋ</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>ይህ ገጽ በዕልባቶችዎ ውስጥ አለ። ስሙን ወይም አቃፊውን ለመለወጥ ይክፈቱት።</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>ይህን ገጽ ወደ ዕልባቶችዎ ያክሉ።</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>በዕልባት ተይዟል</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>ይህን ገጽ በዕልባት ያዝ</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>ዕልባቱ የዚህን ገጽ አድራሻ ከግቤቶቹ ጋር ይይዛል፦ /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ዕልባት አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>ዕልባት ጨምር</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>የእኔ ዕልባቶች</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>የስርዓት ገጽ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>የስርዓት ገጾች</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>ይህን ገጽ ከአሁን በኋላ መክፈት አይችሉም።</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ክፈት</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>የዚህ ገጽ አድራሻ ጠፍቷል። ዕልባቱን ያስወግዱና ገጹን እንደገና በዕልባት ይያዙ።</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ይህን ገጽ ከአሁን በኋላ መክፈት አይችሉም። ዕልባቱን ያስወግዱ፣ ወይም አስተዳዳሪን መዳረሻ ይጠይቁ።</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>አድራሻ</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ሞጁል እና እይታ</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>የስርዓት ገጾችም በዕልባት ሊያዙ ይችላሉ፦ ገጹን ይክፈቱ (ዝግጅት፣ የኦዲት መዝገብ፣ የተጠቃሚዎች ዝርዝር ...) እና ከላዩ «ይህን ገጽ በዕልባት ያዝ»ን ይምረጡ። እንደዚህ ያሉ ዕልባቶች የማርሽ አዶ አላቸው።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>የቅርብ ጊዜ የመድረክ ልጥፎችን መጫን አልተቻለም።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>እስካሁን ምንም የcronjob ክፍል አልሰራም፦ የሥራ ወረፋው፣ ማስመጣቶቹ፣ ማሳወቂያዎቹ እና የፍለጋ ማውጫው እየጠበቁ ነው። php bin/php/installcrontab.php --add ን ያሂዱ፣ ወይም የ--show መስመሮችን ወደ crontab ያክሉ።</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>አንድ የcronjob ክፍል መርሐ ግብሩ ከሚፈቅደው በላይ አልሰራም፦ crontabን (php bin/php/installcrontab.php --show) እና የምዝግብ ማስታወሻዎቹን var/log/cronjob-*.log ያረጋግጡ።</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ክፍል</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>መርሐ ግብር</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>ለመጨረሻ ጊዜ የተጀመረው</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>በጭራሽ</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>በሰዓቱ</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ዘግይቷል</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>በጭራሽ አልሰራም</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>ጭነቱ የክሮን ሥራው የሚያሂደው ምንም የcronjob ክፍል የለውም።</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>ዝግጅት &gt; Cronjobs</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>የተጠቃሚ መለያዎችን አቦዝን እና ወደ የታቦዘኑ ተጠቃሚዎች ቡድን ውሰድ፣ እንዲሁም መልሰህ ውሰድ</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ሌሎች ተጠቃሚዎች የት እንደገቡ ማየት እና ማስወጣት</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>የኢሜይል ምርጫዎችን ክፈት</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>የገቡበት ቦታ፦ አሳሽ፣ ስርዓት፣ ቦታ እና ሰዓት። የማያውቁትን መሣሪያ ያስወጡ።</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>ይህ ተጠቃሚ የገባበት ቦታ፣ እና ተጠቃሚውን ከሁሉም ቦታ ማስወጣት።</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>መሣሪያዎችን አስተዳድር</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>ክፍለ ጊዜዎችን አሳይ</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ገብተዋል</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>የይለፍ ቁልፎች</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ከይለፍ ቃልዎ ይልቅ በጣት አሻራዎ፣ በፊትዎ፣ በማያ ገጽ መቆለፊያ ወይም በደህንነት ቁልፍ ይግቡ።</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>የይለፍ ቁልፎችን አስተዳድር</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>የይለፍ ቁልፍ ጨምር</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count የይለፍ ቁልፎች</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>እስካሁን የለም</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>የክፍል/ባህሪ ጥምረቶች (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>አዲስ መለያዎቻቸው ማጽደቅ የሚያስፈልጋቸው የተጠቃሚ ቡድኖች</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ወደ እነዚህ ቡድኖች ወይም ከአንዱ በታች የሚታተም መለያ አጽዳቂ እስኪቀበለው ድረስ ይጠብቃል። ከዚያ በፊት መግባት አይችልም።</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>መለያዎቹን የሚያጸድቁ ተጠቃሚዎች</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>መለያዎቹን የሚያጸድቁ ቡድኖች</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>ማጽደቅ የማያስፈልጋቸው የተጠቃሚ ቡድኖች (አባሎቻቸው እንደዚህ ያሉ መለያዎችን በቀጥታ ያትማሉ፤ አጽዳቂዎች በጭራሽ አያስፈልጋቸውም)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ለአጽዳቂዎቹ ወደ ማጽደቁ የሚወስድ አገናኝ ያለው ኢሜይል ላክ (ለማጽደቅ ወይም ውድቅ ለማድረግ ይገባሉ)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>የአካባቢ ተለዋዋጭ EXP_DEMO_MODE=1 ይህን ጭነት እንደ ይፋዊ ማሳያ ይመድባል፦ የታወቀ የአስተዳዳሪ የይለፍ ቃል ተቀባይነት ያገኛል፣ የአስተዳዳሪ የይለፍ ቃሎችም በኋላ ሊቀየሩ ወይም ዳግም ሊቀናበሩ አይችሉም። የማሳያ ሁነታን ለምርት ጣቢያ በፍጹም አይጠቀሙ።</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>የcronjob ሥራዎቹ የሚሰሩት ጭነቱ ባለቤት ከሆነው ከተጠቃሚው %user crontab ነው።</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>ጭነቱ በመርሐ ግብር የሚያስቀምጠው ምንም የcronjob ክፍል የለውም።</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab አልተጻፈም (%reason)። እነዚህን መስመሮች ጣቢያው በሚሰራበት ተጠቃሚ crontab ውስጥ ያክሉ፣ አለበለዚያ ወረፋው፣ ማስመጣቶቹ፣ ማሳወቂያዎቹ እና የፍለጋ ማውጫው በጭራሽ አይሰሩም፦</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>የClassAttribute ስም</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>ማጽደቅ የሚያስፈልጋቸው መለያዎች</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ለአጽዳቂዎቹ ኢሜይል</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>አይ</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>አስተያየትዎ ተጨምሯል።</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>መለያው «%1» ጸድቆ ታትሟል፦ አሁን መግባት ይችላል።</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>መለያው «%1» ውድቅ ተደርጓል። አልታተመም እና መግባት አይችልም፤ እንደገና የደራሲው ረቂቅ ሆኗል።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count ዕልባት(ዕልባቶች) ተጨምረዋል።</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>የስርዓት ገጽ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>የስርዓት ገጾች ገና በዕልባት ሊያዙ አይችሉም፦ የዚህ ስሪት የውሂብ ጎታ ማዘመኛ ገና አልተሄደም።</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>ይህ ገጽ በዕልባት ሊያዝ አይችልም፦ የሞጁል እይታ ገጽ አይደለም።</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>ይህ ገጽ በዕልባት ሊያዝ አይችልም፦ እሱን መክፈት አይፈቀድልዎትም።</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>ገጹ በዕልባት ሊያዝ አልቻለም።</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>ገጹ «%name» በዕልባቶችዎ ውስጥ አለ።</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>ዕልባቱ ዳግም ሊሰየም አልቻለም፦ ስም ያስፈልገዋል።</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>ዕልባቱ ወደ «%name» ዳግም ተሰይሟል።</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>ጥቅል</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>ማህደሩ በPAX tar ቅርጸት ተጠቅሏል፣ ይህም ሊመጣ አይችልም። ጥቅሉን በGNU tar ቅርጸት ይጠቅሉት (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)።</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>ማህደሩ ውድቅ ተደርጓል፦ ግቤቱ «%path» የtar ዓይነት «%type» አለው፣ ጥቅል ደግሞ ፋይሎችንና ማውጫዎችን ብቻ ይይዛል።</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ማህደሩ ውድቅ ተደርጓል፦ ከ%length ባይቶች በላይ የሚረዝም ግቤት ይጠቅሳል።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>ወደ ውሂብ ሰንጠረዦች አንጸባርቅ</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>የተጠቃሚ መለያዎችን አጽድቅ</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>አዲስ የተጠቃሚ መለያ ማጽደቅዎን እየጠበቀ ነው</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>ወደ የይለፍ ቃል መቀየሪያ ተላከ</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>ያለ ሁለተኛው ደረጃ መግባት ውድቅ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተፈጥሯል</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ተሽሯል</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>የመተግበሪያ የይለፍ ቃል ጥቅም ላይ ውሏል</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>የዚህ መስቀለኛ ነጥብ የኦዲት ዱካ</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>ያልተነካ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>የተቋረጠ</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ያልተረጋገጠ</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>የተጠገነ</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ባዶ</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>አዲሱ ኢሜይል አድራሻ %email ማረጋገጫውን እየጠበቀ ነው፦ ወደዚያ የላክነውን አገናኝ ይክፈቱ። እስከዚያው ድረስ ይህ መለያ %currentን ይይዛል።</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>ከአዲስ መሣሪያ ወይም አሳሽ ስለመግባት የሚላከው ኢሜይል የመለያ ደህንነት አካል ነው። በመሣሪያዎችዎ ገጽ ያጠፉታል ወይም ያበሩታል፤ እዚያም የመለያዎን ክፍለ ጊዜዎች ያያሉ እና ያስወጣሉ።</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>ተጨማሪ ታዳሚዎች</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>ግምገማ እና መልቀቅ</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>ርዕሱ አሁን በግምገማ ላይ ነው።</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>ርዕሱ ተለቋል፦ አንባቢዎች አሁን ያዩታል።</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>ርዕሱ እንደገና ረቂቅ ሆኗል።</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>የአሁኑን ስሪት የጻፉት እርስዎ ነዎት፣ ስለዚህ የመልቀቅ ሚና ያለው ሌላ ሰው ይለቀዋል።</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>ሁኔታው አልተለወጠም፦ ሚናዎ ይህን ደረጃ አይፈቅድም።</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>የግምገማ የሥራ ፍሰት</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ረቂቅ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ግምገማ</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>ወደ ግምገማ ተመለስ</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>ለግምገማ ላክ</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>ልቀቅ</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>ወደ ረቂቅ ተመለስ</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>የቅጥ መመሪያ ምርመራ</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>የቅጥ መመሪያ ምርመራው ምንም አላገኘም።</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors ስህተቶች፣ %warnings ማስጠንቀቂያዎች፣ %notices ማሳሰቢያዎች። አንድ ስህተት ./console exp:help:content check እንዳያልፍ ያደርገዋል።</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>ደረጃ</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>ደንብ</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>መስክ</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>ግኝት</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ይህ ጠቃሚ ነበር?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>አንባቢዎች %yes ጊዜ አዎ፣ %no ጊዜ አይ ብለው መልሰዋል።</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>ለአይ የተሰጡ ምክንያቶች፦</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>እናመሰግናለን። መልስዎ እገዛውን እንድናሻሽል ይረዳናል።</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>ካልሆነ፣ ምን ችግር ነበረው?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>ምንም ምክንያት አልተሰጠም</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>የሚቀመጠው መልስዎ ብቻ ነው፣ ማንነትዎ አይደለም።</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ጊዜው ያለፈበት ነው</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>ለመረዳት አስቸጋሪ ነው</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>አንድ ነገር ይጎድላል</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>የተሳሳተ ነው</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>ሌላ ምክንያት</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ይህ ርዕስ አልተለቀቀም፤ አንባቢዎች አያዩትም።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>የቋሚ ክፍሎች ሠንጠረዦችን ያስሱ…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>ማጽደቅ የሚጠብቅ አዲስ የተጠቃሚ መለያ፦ %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>የተጠቃሚ ስም</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ቡድን</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>የጠየቀው</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>ማጽደቁን ክፈት</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>አዝራሩ የማይሰራ ከሆነ ይህን አድራሻ ቅድተው በአሳሽዎ ውስጥ ያስገቡ፦ %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>አዲስ የተጠቃሚ መለያ ማጽደቅዎን እየጠበቀ ነው</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester መለያውን «%name» በ%groups ውስጥ ፈጥሯል። አጽዳቂ እስኪቀበለው ድረስ አይታተምም እና መግባት አይችልም።</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>ወደ አስተዳደሩ ይግቡ እና በትብብር ዝርዝርዎ ውስጥ ያጽድቁት ወይም ውድቅ ያድርጉት። ይህ አገናኝ አያስገባዎትም፣ በራሱም ምንም አይወስንም።</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>ይህ ደብዳቤ የተላከው በ%site ነው፣ ምክንያቱም የእነዚህን ቡድኖች አዲስ መለያዎች የሚያጸድቁት እርስዎ ስለሆኑ ነው።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ኮምፒውተር</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ስልክ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ታብሌት</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ፕሮግራም ወይም መተግበሪያ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>አውቶማቲክ ደንበኛ</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ያልታወቀ መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>የይለፍ ቃል</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>የይለፍ ቃል እና የሁለተኛ ደረጃ ኮድ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>የREST በይነገጽ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>የSOAP በይነገጽ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ነጠላ መግቢያ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ክፍለ ጊዜዎች መመዝገብ ከመጀመራቸው በፊት የገባ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ከዚህ ገጽ ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>በአስተዳዳሪ እንዲወጣ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>በ«ሁሉም ሌሎች ክፍለ ጊዜዎች» እንዲወጣ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>በአዲስ መግቢያ ተተክቷል</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>በይለፍ ቃል ለውጥ አብቅቷል</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ጊዜው ያለፈበት</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>የ%name ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>መለያዎ አሁን የገባባቸው ቦታዎች። አንድን መሣሪያ ካላወቁት ያስወጡት እና የይለፍ ቃልዎን ይለውጡ።</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ይህ መለያ አሁን የገባባቸው ቦታዎች። ተጠቃሚውን ማስወጣት እያንዳንዱን ክፍለ ጊዜ በቀጣዩ ጥያቄው ያበቃዋል።</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ወደ መለያው ተመለስ</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ክፍለ ጊዜው እንዲወጣ ተደርጓል። መሣሪያው እንደገና መግባት አለበት።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ሌሎች ክፍለ ጊዜዎች እንዲወጡ ተደርጓል።</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>የሚወጡ ሌሎች ክፍለ ጊዜዎች አልነበሩም።</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>የዚህ ተጠቃሚ %count ክፍለ ጊዜዎች እንዲወጡ ተደርጓል።</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ይህ ተጠቃሚ የሚወጣ ክፍለ ጊዜ አልነበረውም።</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ይህ እርስዎ እየተጠቀሙበት ያለው ክፍለ ጊዜ ነው። ለማብቃት ይውጡ።</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ያ ክፍለ ጊዜ አስቀድሞ አብቅቷል።</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>መለያዎ ከአዲስ መሣሪያ ሲገባ ኢሜይል ይደርስዎታል።</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ከአዲስ መሣሪያዎች ስለመግባት ከአሁን በኋላ ኢሜይል አይደርስዎትም።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>የገጹ ጊዜ አልፎ ነበር። ምንም አልተለወጠም፤ እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>በዚህ ጣቢያ ላይ ክፍለ ጊዜዎች አይመዘገቡም (site.ini [UserSessionSettings] Tracking=disabled)።</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>ሠንጠረዡ expuser_session ይጎድላል</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ሠንጠረዡ ሲፈጠር ክፍለ ጊዜዎች ይመዘገባሉ፦ php update/common/scripts/6.0/createusersessiontable.php፣ ወይም የ6.0.15 የውሂብ ጎታ ማዘመኛ።</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>አሁን ገብቷል</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ሁሉንም ሌሎች ክፍለ ጊዜዎች አስወጣ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ከሁሉም ቦታ አስወጣ</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ከዚህ በስተቀር እያንዳንዱ መሣሪያ በቀጣዩ ጥያቄው ይወጣል፣ በ«አስታውሰኝ» ገብተው የሚቆዩትም ጭምር።</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>የዚህ ተጠቃሚ እያንዳንዱ ክፍለ ጊዜ በቀጣዩ ጥያቄው ይወጣል፣ በ«አስታውሰኝ» ገብተው የሚቆዩትም ጭምር።</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>አዎ፣ ሌሎቹን ክፍለ ጊዜዎች አስወጣ</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>አዎ፣ እያንዳንዱን ክፍለ ጊዜ አስወጣ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ይህ መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>አድራሻ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>እንደ አውታረ መረቡ ይታያል፤ ሙሉው አድራሻ ለአስተዳዳሪዎቹ ይቀመጣል።</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>ከ%ip ገብቷል</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>የገባው</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ለመጨረሻ ጊዜ ንቁ የነበረው</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>አሁን</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ገብቶ ይቆያል</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>አስታውሰኝ፣ እስከ %date ድረስ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>አሳሹ እስኪዘጋ ድረስ</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>የገባበት ሰዓት</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>የአሳሽ መለያ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ይህን ክፍለ ጊዜ ለማብቃት ይውጡ።</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ውጣ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ይህን ክፍለ ጊዜ አስወጣ</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ምንም ክፍለ ጊዜ አልገባም።</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>የመግቢያ ማንቂያዎች</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>መለያዬ ከአዲስ መሣሪያ ወይም አሳሽ ሲገባ ኢሜይል ላክልኝ</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>ወደ %email ይላካል። መሣሪያውን፣ ግምታዊ ቦታውን እና ሰዓቱን ይነግርዎታል፣ ወደዚህ ገጽም ያገናኛል።</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>ይህ ጣቢያ የመግቢያ ማንቂያዎችን አይልክም።</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>በቅርቡ ያበቁ</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>ባለፉት %days ቀናት ያበቁ ክፍለ ጊዜዎች።</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ያበቃው</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>እንዴት</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>ምንም።</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ኮምፒውተር</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ስልክ</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ታብሌት</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ፕሮግራም ወይም መተግበሪያ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>አውቶማቲክ ደንበኛ</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ያልታወቀ መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>የይለፍ ቃል</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>የይለፍ ቃል እና የሁለተኛ ደረጃ ኮድ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>የREST በይነገጽ</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>የSOAP በይነገጽ</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ነጠላ መግቢያ</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ክፍለ ጊዜዎች መመዝገብ ከመጀመራቸው በፊት የገባ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ከዚህ ገጽ ወጥቷል</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>በአስተዳዳሪ እንዲወጣ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>በ«ሁሉም ሌሎች ክፍለ ጊዜዎች» እንዲወጣ ተደርጓል</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>በአዲስ መግቢያ ተተክቷል</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>በይለፍ ቃል ለውጥ አብቅቷል</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ጊዜው ያለፈበት</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>የ%name ክፍለ ጊዜዎች</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>መለያዎ አሁን የገባባቸው ቦታዎች። አንድን መሣሪያ ካላወቁት ያስወጡት እና የይለፍ ቃልዎን ይለውጡ።</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ይህ መለያ አሁን የገባባቸው ቦታዎች። ተጠቃሚውን ማስወጣት እያንዳንዱን ክፍለ ጊዜ በቀጣዩ ጥያቄው ያበቃዋል።</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ክፍለ ጊዜው እንዲወጣ ተደርጓል። መሣሪያው እንደገና መግባት አለበት።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ሌሎች ክፍለ ጊዜዎች እንዲወጡ ተደርጓል።</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>የሚወጡ ሌሎች ክፍለ ጊዜዎች አልነበሩም።</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>የዚህ ተጠቃሚ %count ክፍለ ጊዜዎች እንዲወጡ ተደርጓል።</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ይህ ተጠቃሚ የሚወጣ ክፍለ ጊዜ አልነበረውም።</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ይህ እርስዎ እየተጠቀሙበት ያለው ክፍለ ጊዜ ነው። ለማብቃት ይውጡ።</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ያ ክፍለ ጊዜ አስቀድሞ አብቅቷል።</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>መለያዎ ከአዲስ መሣሪያ ሲገባ ኢሜይል ይደርስዎታል።</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ከአዲስ መሣሪያዎች ስለመግባት ከአሁን በኋላ ኢሜይል አይደርስዎትም።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>የገጹ ጊዜ አልፎ ነበር። ምንም አልተለወጠም፤ እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>በዚህ ጣቢያ ላይ ክፍለ ጊዜዎች አይመዘገቡም።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>ክፍለ ጊዜዎች ገና አይመዘገቡም፦ ጣቢያው የውሂብ ጎታ ማዘመኛውን ይፈልጋል።</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>አሁን ገብቷል</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ይህ መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>መሣሪያ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>አድራሻ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>የገባው</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ለመጨረሻ ጊዜ ንቁ የነበረው</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>አሁን</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ገብቶ ይቆያል</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>አስታውሰኝ፣ እስከ %date ድረስ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>አሳሹ እስኪዘጋ ድረስ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ይህን ክፍለ ጊዜ ለማብቃት ይውጡ።</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ውጣ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ይህን ክፍለ ጊዜ አስወጣ</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ሁሉንም ሌሎች ክፍለ ጊዜዎች አስወጣ</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ከሁሉም ቦታ አስወጣ</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>የመግቢያ ማንቂያዎች</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>መለያዬ ከአዲስ መሣሪያ ወይም አሳሽ ሲገባ ኢሜይል ላክልኝ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>በቅርቡ ያበቁ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ያበቃው</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>እንዴት</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>ባለፉት %days ቀናት ምንም የለም።</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>መለያዎ የት እንደገባ ይመልከቱ፣ እና የማያውቁትን መሣሪያ ያስወጡ።</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>መሣሪያዎችን አስተዳድር</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>በ%site ላይ ወደ መለያዎ አዲስ መግቢያ</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>ሰላም፣</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>በ%site ላይ ያለው መለያዎ %login በቅርቡ ካልተጠቀመበት መሣሪያ ወይም አሳሽ ለመግባት አሁን ጥቅም ላይ ውሏል፦</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>መሣሪያ፦</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>ሰዓት፦</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>ግምታዊ አድራሻ፦</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ይህ እርስዎ ከነበሩ ምንም ማድረግ አያስፈልግዎትም።</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>እርስዎ ካልነበሩ ሌላ ሰው የይለፍ ቃልዎን ሊያውቅ ይችላል። ያንን ክፍለ ጊዜ በመሣሪያዎችዎ ገጽ ላይ ያስወጡት፣ ከዚያም የይለፍ ቃልዎን ይለውጡ፦</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>እነዚህን ኢሜይሎች በዚያው ገጽ ላይ ማጥፋት ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>በ%site ላይ የ%login አዲስ መግቢያ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>መለያው %login በቅርቡ ካልተጠቀመበት መሣሪያ ወይም አሳሽ ገብቷል።</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>የዚህ ተጠቃሚ ክፍለ ጊዜዎች፦</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ወደ መለያዎ አዲስ መግቢያ</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>መለያዎ %login በ%date ከ%device (%ip) ለመግባት ጥቅም ላይ ውሏል።</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ይህ እርስዎ ከነበሩ ምንም ማድረግ አያስፈልግዎትም። ካልሆነ ይህን ክፍለ ጊዜ በ%url ያስወጡት እና የይለፍ ቃልዎን ይለውጡ።</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>የ%login አዲስ መግቢያ</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>መለያው %login በ%date ከአዲስ መሣሪያ ገብቷል፦ %device (%ip)።</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>መሣሪያዎችዎ</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>የ%name ክፍለ ጊዜዎች</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>የይለፍ ቁልፎች</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>የይለፍ ቁልፍ ከይለፍ ቃልዎ ይልቅ በጣት አሻራዎ፣ በፊትዎ፣ በማያ ገጽ መቆለፊያ ወይም በደህንነት ቁልፍ ያስገባዎታል። በመሣሪያዎ ወይም በይለፍ ቃል አስተዳዳሪዎ ውስጥ ይቀመጣል፤ ይህ ጣቢያ የሚይዘው ይፋዊ ቁልፉን ብቻ ነው፣ ስለዚህ እዚህ የሚከሰት ፍሰት ሊገልጠው አይችልም።</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>በዚህ ጣቢያ ላይ የይለፍ ቁልፎች ጠፍተዋል።</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>የይለፍ ቁልፎች በዚህ ጣቢያ ላይ ገና ጥቅም ላይ ሊውሉ አይችሉም፦ አስተዳዳሪው መጀመሪያ የውሂብ ጎታ ማዘመኛውን ማሄድ አለበት።</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>የይለፍ ቁልፉ «%name» ይወገድ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>ከዚህ በኋላ ወደዚህ መለያ ማስገባት አይችልም። ከመሣሪያዎ ወይም ከይለፍ ቃል አስተዳዳሪዎም ያስወግዱት።</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>የይለፍ ቁልፉን አስወግድ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>የእርስዎ የይለፍ ቁልፎች</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>ቢበዛ ከ%max ውስጥ %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>እስካሁን ምንም የይለፍ ቁልፍ የለዎትም። ከታች አንዱን ያክሉ፦ በሚቀጥለው ጊዜ ሲገቡ «በይለፍ ቁልፍ ግባ»ን ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>የታከለው</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ለመጨረሻ ጊዜ የተጠቀሙት</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ድርጊቶች</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ገና አልተጠቀሙበትም</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>የተመሳሰለ</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>ይህ መሣሪያ ወይም ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>ዳግም ሰይም</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>አዲስ ስም</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>ስሙን አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>አስወግድ</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>የይለፍ ቁልፍ ጨምር</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>የአሳሽዎን ወይም የመሣሪያዎን ደረጃዎች ይከተሉ።</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>የይለፍ ቁልፍ የመገናኛ ሳጥኑ ተዘግቷል። ምንም አልተለወጠም።</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>የይለፍ ቁልፉ ሊፈጠር አልቻለም። እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>ይህ አሳሽ የይለፍ ቁልፎችን መፍጠር አይችልም። ወቅታዊ አሳሽ ይጠቀሙ፣ ወይም በይለፍ ቃልዎ ይግቡ።</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ለምሳሌ የሚገኝበት መሣሪያ ወይም የይለፍ ቃል አስተዳዳሪ፣ የይለፍ ቁልፎችዎን ለመለየት እንዲችሉ።</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>ይህ መለያ ሊኖረው የሚችለውን ያህል የይለፍ ቁልፎች (%max) አሉት። ሌላ ለመጨመር አንዱን ያስወግዱ።</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>የይለፍ ቁልፉ ጥቅም ላይ ሊውል አልቻለም። እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>የእኔ መለያ</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>የይለፍ ቁልፍ የመገናኛ ሳጥኑ ተዘግቷል። በምትኩ በይለፍ ቃልዎ መግባት ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>የይለፍ ቁልፉ ጥቅም ላይ ሊውል አልቻለም። እባክዎ እንደገና ይሞክሩ፣ ወይም በይለፍ ቃልዎ ይግቡ።</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>በይለፍ ቁልፍ ግባ</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>በይለፍ ቁልፉ መግባት አልተቻለም</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ከይለፍ ቃልዎ ይልቅ በጣት አሻራዎ፣ በፊትዎ፣ በማያ ገጽ መቆለፊያ ወይም በደህንነት ቁልፍ ይግቡ።</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>የይለፍ ቁልፉ «%name» ታክሏል። ከአሁን ጀምሮ በእሱ መግባት ይችላሉ።</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>የይለፍ ቁልፉ አሁን «%name» ተብሎ ይጠራል።</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>የይለፍ ቁልፉ «%name» ተወግዷል። ከዚህ በኋላ ወደዚህ መለያ ማስገባት አይችልም።</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>የ%date የይለፍ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>ይህ መለያ ሊኖረው የሚችለውን ያህል የይለፍ ቁልፎች አሉት። መጀመሪያ አንዱን ያስወግዱ።</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>የውሂብ ጎታው ሥራ በዝቶበት ነበር እና ምንም አልተቀመጠም። እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>ይህ የይለፍ ቁልፍ አስቀድሞ ተመዝግቧል።</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>ጥያቄው በጣም ረጅም ጊዜ ወስዷል ወይም አስቀድሞ ጥቅም ላይ ውሏል። እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>የይለፍ ቁልፉ ማንነትዎን አላረጋገጠም (ፒን፣ የጣት አሻራ ወይም ፊት)። እባክዎ እንደገና ይሞክሩ እና በመሣሪያዎ ላይ ያረጋግጡ።</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>ይህ አረጋጋጭ ይህ ጣቢያ የማይቀበለውን የቁልፍ ዓይነት ይጠቀማል።</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>የይለፍ ቁልፉ የተፈጠረው ከዚህ ጣቢያ ሌላ ለሆነ አድራሻ ነው።</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>ይህ የይለፍ ቁልፍ እዚህ ላለ መለያ አልተመዘገበም። በይለፍ ቃልዎ ይግቡ እና በየእኔ መለያ፣ የይለፍ ቁልፎች ላይ ያክሉት።</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>ይህ መለያ በአሁኑ ጊዜ መግባት አይችልም። እባክዎ የጣቢያውን አስተዳዳሪ ያነጋግሩ።</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>የይለፍ ቁልፉ ሊረጋገጥ አልቻለም። እባክዎ እንደገና ይሞክሩ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>እንዴት እንደሚገቡ ወይም የመለያዎን ደህንነት ሊለውጡ ነው።</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>ተጠቃሚዎችን፣ ሚናዎችን ወይም ፖሊሲዎችን ሊያስተዳድሩ ነው።</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>የስርዓት ቅንብሮችን ሊለውጡ ወይም የዝግጅት ድርጊት ሊያሄዱ ነው።</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>ውሂብ ሊልኩ ነው።</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>ይዘትን ሊያስወግዱ ወይም ሊያትሙ ነው።</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>ይህ ድርጊት ማንነትዎን እንዲያረጋግጡ ይጠይቃል።</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>እንደ %login የገቡት እርስዎ መሆንዎን ያረጋግጡ። ለ%minutes ደቂቃዎች እንደገና አይጠየቁም።</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>ያ የይለፍ ቃል ትክክል አይደለም።</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>ያ ኮድ ትክክል አይደለም፣ ወይም አስቀድሞ ጥቅም ላይ ውሏል።</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>ከታች ካሉት መንገዶች አንዱን ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>የይለፍ ቁልፉ ሊረጋገጥ አልቻለም።</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>እንዲወጡ ከመደረግዎ በፊት %count ሙከራዎች ቀርተዋል።</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>የመረጧቸው ፋይሎች እንደገና ሊላኩ አይችሉም፦ ካረጋገጡ በኋላ እንደገና ይምረጧቸው።</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>በይለፍ ቃልዎ</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>በይለፍ ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>የይለፍ ቃል</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>አረጋግጥ</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>የይለፍ ቁልፍ ተጠቀም</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>ከማረጋገጫ መተግበሪያዎ በሚገኝ ኮድ</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>ኮድ</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>ይህ መለያ ማንነትዎን የሚያረጋግጥበት መንገድ የለውም (የይለፍ ቃል፣ የይለፍ ቁልፍ ወይም የማረጋገጫ መተግበሪያ የለም)። ይውጡ እና እንደገና ይግቡ፣ ወይም አስተዳዳሪን ይጠይቁ።</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>እርስዎ መሆንዎን ያረጋግጡ</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>ከማረጋገጫ መተግበሪያዎ የሚገኝ ኮድ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>የራስዎ መለያ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>የራስን የይለፍ ቃል፣ የኢሜይል አድራሻ፣ የይለፍ ቁልፎች፣ ባለ ሁለት ደረጃ መግቢያ ወይም የኤፒአይ ቁልፎች መለወጥ።</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>ተጠቃሚዎች፣ ሚናዎች እና ፖሊሲዎች</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ተጠቃሚዎችን መፍጠር እና ማርትዕ፣ የመለያ ቅንብሮች፣ አዲስ የተጠቃሚ መለያዎችን ማጽደቅ ወይም ውድቅ ማድረግ፣ ሚናዎችን መመደብ እና ፖሊሲዎችን ማርትዕ።</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>የስርዓት ቅንብሮች እና የዝግጅት ድርጊቶች</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>ቅንብሮችን፣ ቅጥያዎችን፣ መሸጎጫዎችን እና ጥገናን፣ ጥቅሎችን እና ማዘመኛዎችን፣ ምትኬዎችን እና የgit አስተዳዳሪውን ማርትዕ።</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>ውሂብ መላክ</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>የተሰበሰበ መረጃ፣ የተጠቃሚዎች፣ የጋዜጣ ተመዝጋቢዎች እና የኦዲቱ ወደ ውጭ መላኪያዎች።</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>ይዘትን ማስወገድ እና ማተም</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>ይዘትን ማስወገድ (ወደ ቆሻሻም ጭምር)፣ ቆሻሻውን ባዶ ማድረግ እና ማተም። በነባሪ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ከስሱ ድርጊት በፊት የገባ ተጠቃሚ ማንነቱን እንደገና ያረጋግጣል፣ በይለፍ ቃሉ፣ በይለፍ ቁልፍ ወይም በማረጋገጫ መተግበሪያው ኮድ። የሚጠይቁት የድር ገጾቹ ብቻ ናቸው፦ የREST በይነገጽ፣ SOAP፣ WebDAV፣ የexpservices መግቢያ እና የትዕዛዝ መስመሩ በጭራሽ አይጠይቁም።</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>አጠቃላይ</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>አንድ ማረጋገጫ የሚቆጠርባቸው ደቂቃዎች</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>መቼ እንደሚጠየቅ</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>በsite.ini [ReauthGroup_%name] ውስጥ %count ደንቦች።</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>ወደ settings/override/site.ini.append.php ተቀምጧል። ማስቀመጥ እርስዎ መሆንዎን እንዲያረጋግጡ ይጠይቃል።</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>እርስዎ መሆንዎን ያረጋግጡ</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>ከታች የበሩት ቡድኖች ድርጊቶች በፊት «እርስዎ መሆንዎን ያረጋግጡ» ይጠየቅ</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>ቅንብሮቹ ተቀምጠዋል።</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>ቅንብሮቹ ሊቀመጡ አልቻሉም፦ %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ዝግጅት</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>ዝግጅት</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>አዲስ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>አስወግድ</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count ረድፎች</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>አዲስ ረድፍ</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>ረድፉ ተቀምጧል።</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ፈልግ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ድርጊቶች</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>አርትዕ</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>እስካሁን ምንም ረድፍ የለም።</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>የመስቀለኛ ነጥብ መታወቂያ</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>የተጠቃሚ የነገር መታወቂያ</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>የይዘት ነገር መታወቂያ</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>ረድፍ %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>ረድፉ አልተቀመጠም</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>አስቀምጥ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>ረድፍ %id ይወገድ?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>ረድፉ ከሠንጠረዡ ይወገዳል እና መልሶ ማምጣት አይቻልም።</translation>
     </message>
 </context>
 </TS>

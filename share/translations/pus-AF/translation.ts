@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>فولډر پرانیستل یا تړل</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>دا پاڼه ستاسو په نښو کې ده. د نوم یا فولډر د بدلولو لپاره یې پرانیزئ.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>دا پاڼه خپلو نښو ته زیاته کړئ.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>نښه شوې</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>دا پاڼه نښو ته زیاتول</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>نښه د دغې پاڼې پته د هغې له پارامیټرونو سره ساتي: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>نښه خوندي کول</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>نښه زیاتول</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>زما نښې</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>سیستمي پاڼه</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>سیستمي پاڼې</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>تاسو نور دا پاڼه نه شئ پرانیستلی.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>پرانیستل</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>د دغې پاڼې پته نشته. نښه لرې کړئ او پاڼه بیا نښو ته زیاته کړئ.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>تاسو نور دا پاڼه نه شئ پرانیستلی. نښه لرې کړئ، یا له یوه مدیر څخه د لاسرسي غوښتنه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پته</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ماډیول او لید</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>سیستمي پاڼې هم نښو ته زیاتېدای شي: پاڼه پرانیزئ (جوړونه، د پلټنې رېکارډ، د کارنانو لېست ...) او له هغې پورته «دا پاڼه نښو ته زیاتول» وټاکئ. داسې نښې د ګیئر نښان لري.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>د فورم وروستۍ لیکنې بار نه شوې.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>مهالوېشلې دندې</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>تر اوسه د مهالوېشلو دندو هېڅ برخه نه ده چلېدلې: د دندو کتار، واردول، خبرتیاوې او د لټون لړلیک په تمه دي. php bin/php/installcrontab.php --add وچلوئ، یا د --show کرښې crontab ته زیاتې کړئ.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>د مهالوېشلو دندو یوه برخه د خپل مهالوېش له اجازې ډېر وخت نه ده چلېدلې: crontab (php bin/php/installcrontab.php --show) او لاګونه var/log/cronjob-*.log وګورئ.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>مهالوېش</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>وروستی پیل</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هېڅکله</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>په وخت</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ځنډېدلی</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>هېڅکله نه دی چلېدلی</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>په نصب کې د مهالوېشلو دندو هېڅ برخه نشته چې مهالوېشلې دنده یې وچلوي.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>جوړونه &gt; مهالوېشلې دندې</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>د کارنانو حسابونه غیرفعال کړي او د غیرفعالو کارنانو ډلې ته یې ولېږدوي، او بېرته یې ولېږدوي</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ولیدل شي چې نور کارنان چېرته ننوتي دي، او هغوی ووېستل شي</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>د برېښنالیک غوره‌توبونه پرانیستل</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسیلې</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ناستې</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>چېرته چې تاسو ننوتي یاست: براوزر، سیستم، ځای او وخت. هغه وسیله چې نه یې پېژنئ، ترې ووځئ.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>دغه کارن چېرته ننوتی دی، او له هر ځای څخه د کارن ایستل.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>د وسیلو مدیریت</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>ناستې ښودل</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ننوتي</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>پاس‌کي</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>د خپل پټنوم پر ځای د ګوتې نښې، مخ، د سکرین قلف یا امنیتي کیلي په مرسته ننوځئ.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>د پاس‌کي مدیریت</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>پاس‌کي زیاتول</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count پاس‌کي</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>تر اوسه هېڅ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>د کلاس/ځانګړنې ترکیبونه (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>د کارنانو هغه ډلې چې نوي حسابونه یې منظورۍ ته اړتیا لري</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>هغه حساب چې په دغو ډلو کې یا له هغو لاندې خپرېږي، تر هغه په تمه پاتې کېږي چې یو منظوروونکی یې ومني. له دې مخکې نه شي ننوتلی.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>هغه کارنان چې حسابونه منظوروي</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>هغه ډلې چې حسابونه منظوروي</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>د کارنانو هغه ډلې چې منظورۍ ته اړتیا نه لري (غړي یې داسې حسابونه مستقیم خپروي؛ منظوروونکي هېڅکله ورته اړتیا نه لري)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>منظوروونکو ته د منظورۍ له لینک سره برېښنالیک لېږل (هغوی د منظورولو یا ردولو لپاره ننوځي)</translation>
     </message>
 </context>
 <context>
@@ -43876,6 +44079,14 @@ If you want to send comments to the approver or view the status use the URL belo
     <message>
         <source>required</source>
         <translation>اړین</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>په راتلونکي ننوتلو کې د پټنوم بدلول</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>له ننوتلو وروسته، کارن باید له هر بل کار مخکې نوی پټنوم وټاکي. دا هغه وخت وکاروئ چې یو چا ته لنډمهاله پټنوم ورکوئ.</translation>
     </message>
 </context>
 <context>
@@ -50776,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>د چاپېریال متغیر EXP_DEMO_MODE=1 دا نصب د عمومي ډیمو په توګه نښه کوي: د مدیر یو پېژندل شوی پټنوم منل کېږي، او د مدیرانو پټنومونه وروسته نه بدلېدای شي او نه بېرته تنظیمېدای شي. د ډیمو حالت هېڅکله د تولیدي سایټ لپاره مه کاروئ.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>مهالوېشلې دندې</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>مهالوېشلې دندې د کارن %user له crontab څخه چلېږي، چې د نصب خاوند دی.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>په نصب کې د مهالوېشلو دندو هېڅ برخه نشته چې مهالوېش یې شي.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab ونه لیکل شو (%reason). دا کرښې د هغه کارن crontab ته زیاتې کړئ چې سایټ یې په نوم چلېږي، کنه کتار، واردول، خبرتیاوې او د لټون لړلیک به هېڅکله ونه چلېږي:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53336,6 +53563,10 @@ your account.</source>
         <source>Cancel</source>
         <translation>لغوه کول</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>مخکې له دې چې دوام ورکړئ، نوی پټنوم وټاکئ: یوه مدیر له تاسو غوښتي چې خپل اوسنی پټنوم بدل کړئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -54287,6 +54518,22 @@ your account.</source>
     <message>
         <source>ClassAttribute name</source>
         <translation>د کلاس د ځانګړنې نوم</translation>
+    </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>هغه حسابونه چې منظورۍ ته اړتیا لري</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>منظوروونکو ته برېښنالیک</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
     </message>
 </context>
 <context>
@@ -55698,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>ستاسو تبصره زیاته شوه.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>حساب &quot;%1&quot; منظور او خپور شو: اوس ننوتلی شي.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>حساب &quot;%1&quot; رد شو. خپور شوی نه دی او نه شي ننوتلی؛ بیا د خپل لیکوال مسوده ده.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -55996,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>نښې زیاتې شوې: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>سیستمي پاڼه</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>سیستمي پاڼې تر اوسه نښو ته نه شي زیاتېدای: د دغې نسخې د ډېټابېس تازه کول نه دي چلول شوي.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>دا پاڼه نښو ته نه شي زیاتېدای: د یوه ماډیول د لید پاڼه نه ده.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>دا پاڼه نښو ته نه شي زیاتېدای: تاسو یې د پرانیستلو اجازه نه لرئ.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>پاڼه نښو ته زیاته نه شوه.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>پاڼه &quot;%name&quot; ستاسو په نښو کې ده.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>د نښې نوم بدل نه شو: نوم ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>د نښې نوم &quot;%name&quot; ته بدل شو.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>د ډېټا جدولونو ته انعکاس</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>د کارنانو حسابونه منظورول</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>یو نوی کارن حساب ستاسو منظورۍ ته په تمه دی</translation>
     </message>
 </context>
 <context>
@@ -60723,6 +61018,34 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Missing file review mark</source>
         <translation>ورکه دوتنه د کتنې لپاره نښه شوه</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>په راتلونکي ننوتلو کې د پټنوم بدلون وټاکل شو</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>په راتلونکي ننوتلو کې د پټنوم بدلون لرې شو</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>د پټنوم بدلون ته ولېږل شو</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>له دویم ګام پرته ننوتل رد شول</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>د اپ پټنوم جوړ شو</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>د اپ پټنوم لغوه شو</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>د اپ پټنوم وکارول شو</translation>
     </message>
 </context>
 <context>
@@ -64186,6 +64509,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The audit trail of this node</source>
         <translation>د دغې غوټې د پلټنې رېکارډ</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>روغ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>مات</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>نه دی کتل شوی</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>ترمیم شوی</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>تش</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -67575,6 +67918,10 @@ You will need to change the class of the node by using the swap functionality.</
         <source>You were signed out on your other devices.</source>
         <translation>تاسو په خپلو نورو وسایلو کې ووتلئ.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>مخکې له دې چې دوام ورکړئ، نوی پټنوم وټاکئ: یوه مدیر له تاسو غوښتي چې خپل اوسنی پټنوم بدل کړئ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -69677,6 +70024,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>نوې برېښنالیک پته %email د خپل تایید په تمه ده: هغه لینک پرانیزئ چې موږ هلته لېږلی دی. تر هغه وخته دغه حساب %current ساتي.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>د نوې وسیلې یا براوزر څخه د ننوتلو په اړه برېښنالیک د حساب د امنیت برخه ده. تاسو یې په خپلو وسیلو کې بندوئ یا فعالوئ، چېرته چې د خپل حساب ناستې هم وینئ او ترې وځئ.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسیلې</translation>
     </message>
 </context>
 <context>
@@ -75705,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>د دوامداره کلاسونو جدولونه کتل…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>نوی کارن حساب منظورۍ ته په تمه دی: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>حساب</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>کارن‌نوم</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ډله</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>غوښتونکی</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>منظوري پرانیستل</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>که تڼۍ کار نه کوي، دا پته خپل براوزر ته کاپي کړئ: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>یو نوی کارن حساب ستاسو منظورۍ ته په تمه دی</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester په %groups کې حساب &quot;%name&quot; جوړ کړ. خپور شوی نه دی او تر هغه نه شي ننوتلی چې یو منظوروونکی یې ومني.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>د مدیریت پینل ته ننوځئ او په خپل د همکارۍ لېست کې یې منظور یا رد کړئ. دا لینک تاسو نه ننباسي او پخپله هېڅ پرېکړه نه کوي.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>دا برېښنالیک %site ولېږه ځکه چې تاسو د دغو ډلو نوي حسابونه منظوروئ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>کمپیوټر</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ټیلیفون</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ټابلېټ</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>پروګرام یا اپ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>خپلکاره پیرودونکی پروګرام</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ناپېژندل شوې وسیله</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>پټنوم</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>پټنوم او د دوه‌ګامه ننوتلو کوډ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>د REST انټرفېس</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>د SOAP انټرفېس</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>یو ځل ننوتل (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>د ناستو له ثبتولو مخکې ننوتی</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>وتلی</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>له دې پاڼې څخه وایستل شو</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>د یوه مدیر له خوا وایستل شو</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>د «نورې ټولې ناستې» له لارې وایستل شو</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>د نوي ننوتلو له خوا ځای یې ونیول شو</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>د پټنوم د بدلون له امله پای ته ورسېده</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ختم شوی</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسیلې</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>د %name ناستې</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ستاسو حساب همدا اوس چېرته ننوتی دی. که یوه وسیله نه پېژنئ، هغه وباسئ او خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>دا حساب همدا اوس چېرته ننوتی دی. د کارن ایستل هره ناسته په راتلونکې غوښتنه کې پای ته رسوي.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>حساب ته بېرته</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ناسته وایستل شوه. وسیله باید بیا ننوځي.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count نورې ناستې وایستل شوې.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>د ایستلو لپاره بله ناسته نه وه.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>د دغه کارن %count ناستې وایستل شوې.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>دغه کارن د ایستلو لپاره هېڅ ناسته نه درلوده.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>دا هغه ناسته ده چې تاسو یې کاروئ. د پای ته رسولو لپاره یې ووځئ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>هغه ناسته مخکې پای ته رسېدلې وه.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>کله چې ستاسو حساب له نوې وسیلې ننوځي، تاسو ته به برېښنالیک درشي.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>تاسو ته به نور د نویو وسیلو څخه د ننوتلو په اړه برېښنالیک نه درځي.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>د پاڼې وخت ختم شوی و. هېڅ شی بدل نه شو؛ مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>په دې سایټ کې ناستې نه ثبتېږي (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>د expuser_session جدول نشته</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ناستې هغه وخت ثبتېږي چې جدول جوړ شي: php update/common/scripts/6.0/createusersessiontable.php، یا د 6.0.15 د ډېټابېس تازه کول.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اوس ننوتی</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>له نورو ټولو ناستو ایستل</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>له هر ځای څخه وتل</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>پرته له دې وسیلې، هره وسیله په خپله راتلونکې غوښتنه کې ایستل کېږي، هغه هم چې د «ما په یاد ولرئ» له لارې ننوتې پاتې کېږي.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>د دغه کارن هره ناسته په خپله راتلونکې غوښتنه کې ایستل کېږي، هغه هم چې د «ما په یاد ولرئ» له لارې ننوتې پاتې کېږي.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>هو، نورې ناستې وباسئ</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>هو، هره ناسته وباسئ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>دا وسیله</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پته</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>د هغې د شبکې په توګه ښودل کېږي؛ بشپړه پته د مدیرانو لپاره ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>له %ip څخه ننوتی</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>وروستی فعالیت</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>اوس</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ننوتی پاتې کېږي</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ما په یاد ولرئ، تر %date پورې</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>تر هغه چې براوزر وتړل شي</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>د ننوتلو وخت</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>د براوزر پېژندنه</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>د دغې ناستې د پای ته رسولو لپاره، ووځئ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>وتل</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>دا ناسته ایستل</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>هېڅ ناسته ننوتې نه ده.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>د ننوتلو خبرتیاوې</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>کله چې زما حساب له نوې وسیلې یا براوزر څخه ننوځي، ما ته برېښنالیک ولېږئ</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email ته لېږل کېږي. تاسو ته وسیله، نږدې ځای او وخت ښيي، او دې پاڼې ته لینک لري.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>دا سایټ د ننوتلو خبرتیاوې نه لېږي.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>په دې وروستیو کې پای ته رسېدلې</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>هغه ناستې چې په وروستیو %days ورځو کې پای ته رسېدلې.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>پای ته رسېدلې</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>څنګه</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>هېڅ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>کمپیوټر</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ټیلیفون</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ټابلېټ</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>پروګرام یا اپ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>خپلکاره پیرودونکی پروګرام</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ناپېژندل شوې وسیله</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>پټنوم</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>پټنوم او د دوه‌ګامه ننوتلو کوډ</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>د REST انټرفېس</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>د SOAP انټرفېس</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>یو ځل ننوتل (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>د ناستو له ثبتولو مخکې ننوتی</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>وتلی</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>له دې پاڼې څخه وایستل شو</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>د یوه مدیر له خوا وایستل شو</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>د «نورې ټولې ناستې» له لارې وایستل شو</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>د نوي ننوتلو له خوا ځای یې ونیول شو</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>د پټنوم د بدلون له امله پای ته ورسېده</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ختم شوی</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسیلې</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>د %name ناستې</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ستاسو حساب همدا اوس چېرته ننوتی دی. که یوه وسیله نه پېژنئ، هغه وباسئ او خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>دا حساب همدا اوس چېرته ننوتی دی. د کارن ایستل هره ناسته په راتلونکې غوښتنه کې پای ته رسوي.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ناسته وایستل شوه. وسیله باید بیا ننوځي.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count نورې ناستې وایستل شوې.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>د ایستلو لپاره بله ناسته نه وه.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>د دغه کارن %count ناستې وایستل شوې.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>دغه کارن د ایستلو لپاره هېڅ ناسته نه درلوده.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>دا هغه ناسته ده چې تاسو یې کاروئ. د پای ته رسولو لپاره یې ووځئ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>هغه ناسته مخکې پای ته رسېدلې وه.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>کله چې ستاسو حساب له نوې وسیلې ننوځي، تاسو ته به برېښنالیک درشي.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>تاسو ته به نور د نویو وسیلو څخه د ننوتلو په اړه برېښنالیک نه درځي.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>د پاڼې وخت ختم شوی و. هېڅ شی بدل نه شو؛ مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>په دې سایټ کې ناستې نه ثبتېږي.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>ناستې تر اوسه نه ثبتېږي: سایټ خپل د ډېټابېس تازه کولو ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>اوس ننوتی</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>دا وسیله</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>پته</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ننوتی</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>وروستی فعالیت</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>اوس</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ننوتی پاتې کېږي</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ما په یاد ولرئ، تر %date پورې</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>تر هغه چې براوزر وتړل شي</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>د دغې ناستې د پای ته رسولو لپاره، ووځئ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>وتل</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>دا ناسته ایستل</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>له نورو ټولو ناستو ایستل</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>له هر ځای څخه وتل</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>د ننوتلو خبرتیاوې</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>کله چې زما حساب له نوې وسیلې یا براوزر څخه ننوځي، ما ته برېښنالیک ولېږئ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>په دې وروستیو کې پای ته رسېدلې</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>پای ته رسېدلې</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>څنګه</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>په وروستیو %days ورځو کې هېڅ.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>وګورئ چې ستاسو حساب چېرته ننوتی دی، او هغه وسیله چې نه یې پېژنئ وباسئ.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>د وسیلو مدیریت</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>په %site کې ستاسو حساب ته نوی ننوتل</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>سلام،</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>په %site کې ستاسو حساب %login همدا اوس د داسې وسیلې یا براوزر څخه د ننوتلو لپاره وکارول شو چې په دې وروستیو کې یې نه دی کارولی:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>وسیله:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>وخت:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>نږدې پته:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>که دا تاسو وئ، هېڅ کار ته اړتیا نه شته.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>که تاسو نه وئ، کېدای شي څوک ستاسو پټنوم پېژني. هغه ناسته د خپلو وسیلو په پاڼه کې وباسئ، بیا خپل پټنوم بدل کړئ:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>تاسو کولای شئ په همدې پاڼه کې دا برېښنالیکونه بند کړئ.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>په %site کې د %login نوی ننوتل</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>حساب %login د داسې وسیلې یا براوزر څخه ننوت چې په دې وروستیو کې یې نه دی کارولی.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>د دغه کارن ناستې:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ستاسو حساب ته نوی ننوتل</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>ستاسو حساب %login په %date د %device (%ip) څخه د ننوتلو لپاره وکارول شو.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>که دا تاسو وئ، هېڅ کار ته اړتیا نه شته. که نه، دا ناسته په %url کې وباسئ او خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>د %login نوی ننوتل</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>حساب %login له یوې نوې وسیلې څخه ننوت: %device (%ip) په %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>ستاسو وسیلې</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>د %name ناستې</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>پاس‌کي</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>پاس‌کي تاسو د پټنوم پر ځای د ګوتې نښې، مخ، د سکرین قلف یا امنیتي کیلي په مرسته ننباسي. دا ستاسو په وسیله یا د پټنوم په مدیر کې ساتل کېږي؛ دا سایټ یوازې د هغې عامه کیلي ساتي، نو دلته یوه افشا کېدنه یې نه شي ښکاره کولی.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>په دې سایټ کې پاس‌کي بند دي.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>پاس‌کي تر اوسه په دې سایټ کې نه شي کارېدای: مدیر باید لومړی د ډېټابېس تازه کول وچلوي.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>پاس‌کي &quot;%name&quot; لرې شي؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>دا به نور دې حساب ته ننوتلی نه شي. هغه له خپلې وسیلې یا د پټنوم له مدیر څخه هم لرې کړئ.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>پاس‌کي لرې کول</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>ستاسو پاس‌کي</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count له تر ټولو ډېر %max څخه</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>تاسو تر اوسه پاس‌کي نه لرئ. لاندې یو زیات کړئ: بل ځل چې ننوځئ، «د پاس‌کي په مرسته ننوتل» وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>زیات شوی</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>وروستی کارول</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ډول</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>تر اوسه نه</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>همغږي شوی</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>دا وسیله یا کیلي</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>نوم بدلول</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>نوی نوم</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>نوم خوندي کول</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>پاس‌کي زیاتول</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>د خپل براوزر یا وسیلې ګامونه تعقیب کړئ.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>د پاس‌کي ډیالوګ وتړل شو. هېڅ شی بدل نه شو.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>پاس‌کي جوړ نه شو. مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>دا براوزر پاس‌کي نه شي جوړولی. یو تازه براوزر وکاروئ، یا په خپل پټنوم ننوځئ.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>د بېلګې په توګه هغه وسیله یا د پټنوم مدیر چې پر هغه دی، څو خپل پاس‌کي سره بېل کړای شئ.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>دا حساب هغومره پاس‌کي لري چې یې لرلی شي (%max). د بل زیاتولو لپاره یو لرې کړئ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>پاس‌کي ونه کارول شو. مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>زما حساب</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>د پاس‌کي ډیالوګ وتړل شو. تاسو کولای شئ پر ځای یې په خپل پټنوم ننوځئ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>پاس‌کي ونه کارول شو. مهرباني وکړئ بیا هڅه وکړئ، یا په خپل پټنوم ننوځئ.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>د پاس‌کي په مرسته ننوتل</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>د پاس‌کي په مرسته ننوتل ونه شول</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>د خپل پټنوم پر ځای د ګوتې نښې، مخ، د سکرین قلف یا امنیتي کیلي په مرسته ننوځئ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>پاس‌کي &quot;%name&quot; زیات شو. له اوس وروسته په هغه ننوتلی شئ.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>د پاس‌کي نوم اوس &quot;%name&quot; دی.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>پاس‌کي &quot;%name&quot; لرې شو. هغه نور دې حساب ته ننوتلی نه شي.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>د %date پاس‌کي</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>دا حساب هغومره پاس‌کي لري چې یې لرلی شي. لومړی یو لرې کړئ.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>ډېټابېس بوخت و او هېڅ شی خوندي نه شو. مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>دا پاس‌کي دمخه ثبت شوی دی.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>غوښتنې ډېر وخت ونیو یا دمخه کارول شوې وه. مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>پاس‌کي ونه کتل چې تاسو څوک یاست (PIN، د ګوتې نښه یا مخ). مهرباني وکړئ بیا هڅه وکړئ او په خپله وسیله کې یې تایید کړئ.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>دا تصدیقوونکی د کیلي داسې ډول کاروي چې دا سایټ یې نه مني.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>پاس‌کي د دې سایټ پرته د بلې پتې لپاره جوړ شوی و.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>دا پاس‌کي دلته د هېڅ حساب لپاره نه دی ثبت شوی. په خپل پټنوم ننوځئ او په «زما حساب، پاس‌کي» کې یې زیات کړئ.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>دا حساب اوس مهال نه شي ننوتلی. مهرباني وکړئ د سایټ له مدیر سره اړیکه ونیسئ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>پاس‌کي ونه کتل شو. مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>تاسو د دې په درشل کې یاست چې د ننوتلو طریقه یا د خپل حساب امنیت بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>تاسو د دې په درشل کې یاست چې کارنان، رولونه یا تګلارې مدیریت کړئ.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>تاسو د دې په درشل کې یاست چې د سیستم امستنې بدلې کړئ یا د جوړونې یوه کړنه وچلوئ.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>تاسو د دې په درشل کې یاست چې ډېټا صادره کړئ.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>تاسو د دې په درشل کې یاست چې منځپانګه لرې یا خپره کړئ.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>دا کړنه اړتیا لري چې تاسو تایید کړئ چې څوک یاست.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>تایید کړئ چې دا تاسو یاست، د %login په توګه ننوتي. تر %minutes دقیقو پورې به بیا ونه پوښتل شئ.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>دا پټنوم سم نه دی.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>دا کوډ سم نه دی، یا دمخه کارول شوی دی.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>له لاندې لارو څخه یوه وټاکئ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>پاس‌کي ونه کتل شو.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>مخکې له دې چې وایستل شئ، %count هڅې پاتې دي.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>هغه دوتنې چې تاسو ټاکلې دي بیا نه شي لېږل کېدای: له تایید وروسته یې یو ځل بیا وټاکئ.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>په خپل پټنوم</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>د پاس‌کي په مرسته</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>پټنوم</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تاییدول</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>پاس‌کي کارول</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>ستاسو د تصدیق له اپ څخه د کوډ په مرسته</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>کوډ</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>دا حساب د دې تایید لپاره هېڅ لاره نه لري چې تاسو څوک یاست (نه پټنوم، نه پاس‌کي او نه د تصدیق اپ). ووځئ او بیا ننوځئ، یا له یوه مدیر څخه وپوښتئ.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>تایید کړئ چې دا تاسو یاست</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>ستاسو د تصدیق له اپ څخه کوډ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>خپل حساب</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>د خپل پټنوم، برېښنالیک پتې، پاس‌کي، دوه‌ګامه ننوتلو یا د API کیلیو بدلول.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>کارنان، رولونه او تګلارې</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>د کارنانو جوړول او سمول، د حساب امستنې، د نویو کارن حسابونو منظورول یا ردول، د رولونو ګمارل او د تګلارو سمول.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>د سیستم امستنې او د جوړونې کړنې</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>د امستنو سمول، غځونې، کش او ساتنه، بستې او تازه کول، بیک‌اپونه او د git مدیر.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>د ډېټا صادرول</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>د راټولو شویو معلوماتو، کارنانو، د خبرپاڼې ګډون‌والو او پلټنې صادرول.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>د منځپانګې لرې کول او خپرول</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>د منځپانګې لرې کول (کثافت‌دانۍ ته هم)، د کثافت‌دانۍ تشول او خپرول. په تلواله توګه بند.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>له یوې حساسې کړنې مخکې، ننوتی کارن بیا تاییدوي چې څوک دی، په خپل پټنوم، پاس‌کي یا د خپل تصدیق اپ په کوډ. یوازې وېب پاڼې پوښتنه کوي: د REST انټرفېس، SOAP، WebDAV، د expservices ننوتل او کمانډ لاین هېڅکله پوښتنه نه کوي.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>عمومي</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>هغه دقیقې چې یو تایید یې اعتبار لري</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>کله پوښتنه وشي</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>په site.ini [ReauthGroup_%name] کې %count قاعدې.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>په settings/override/site.ini.append.php کې خوندي کېږي. د خوندي کولو پر مهال له تاسو غوښتل کېږي چې تایید کړئ چې دا تاسو یاست.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>تایید کړئ چې دا تاسو یاست</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>د هغو ډلو له کړنو مخکې چې لاندې فعالې شوې دي، «تایید کړئ چې دا تاسو یاست» پوښتل</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>امستنې خوندي شوې.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>امستنې خوندي نه شوې: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>نوی</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count قطارونه</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>نوی قطار</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>قطار خوندي شو.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>لټون</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>سمول</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>تر اوسه هېڅ قطار نشته.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>د JSON پته: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>د غوټې پېژند</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>د یوه کارن د څیز پېژند</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>د منځپانګې د څیز پېژند</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>قطار %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>قطار خوندي نه شو</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>خوندي کول</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>قطار %id لرې شي؟</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>قطار له جدول څخه لرې کېږي او بېرته نه شي راګرځول کېدای.</translation>
     </message>
 </context>
 </TS>

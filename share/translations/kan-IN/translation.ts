@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>ಫೋಲ್ಡರ್ ತೆರೆಯಿರಿ ಅಥವಾ ಮುಚ್ಚಿರಿ</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>ಈ ಪುಟ ನಿಮ್ಮ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳಲ್ಲಿದೆ. ಅದರ ಹೆಸರು ಅಥವಾ ಫೋಲ್ಡರ್ ಬದಲಾಯಿಸಲು ತೆರೆಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>ಈ ಪುಟವನ್ನು ನಿಮ್ಮ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳಿಗೆ ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>ಈ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಈ ಪುಟದ ವಿಳಾಸವನ್ನು ಅದರ ಪ್ಯಾರಾಮೀಟರ್‌ಗಳೊಂದಿಗೆ ಇರಿಸಿಕೊಳ್ಳುತ್ತದೆ: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಸೇರಿಸು</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>ನನ್ನ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>ಸಿಸ್ಟಮ್ ಪುಟ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>ಸಿಸ್ಟಮ್ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>ನೀವು ಇನ್ನು ಮುಂದೆ ಈ ಪುಟವನ್ನು ತೆರೆಯುವಂತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ತೆರೆ</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>ಈ ಪುಟದ ವಿಳಾಸ ಕಾಣೆಯಾಗಿದೆ. ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ ಮತ್ತು ಪುಟವನ್ನು ಮತ್ತೆ ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>ನೀವು ಇನ್ನು ಮುಂದೆ ಈ ಪುಟವನ್ನು ತೆರೆಯುವಂತಿಲ್ಲ. ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು ತೆಗೆದುಹಾಕಿ, ಅಥವಾ ಪ್ರವೇಶಕ್ಕಾಗಿ ನಿರ್ವಾಹಕರನ್ನು ಕೇಳಿ.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ಮಾಡ್ಯೂಲ್ ಮತ್ತು ನೋಟ</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>ಸಿಸ್ಟಮ್ ಪುಟಗಳನ್ನೂ ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಬಹುದು: ಪುಟವನ್ನು ತೆರೆಯಿರಿ (ಸೆಟಪ್, ಆಡಿಟ್ ಟ್ರೇಲ್, ಬಳಕೆದಾರರ ಪಟ್ಟಿ ...) ಮತ್ತು ಅದರ ಮೇಲಿರುವ “ಈ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡು” ಆರಿಸಿ. ಅಂತಹ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳಿಗೆ ಗೇರ್ ಐಕಾನ್ ಇರುತ್ತದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>ಇತ್ತೀಚಿನ ಫೋರಂ ಪೋಸ್ಟ್‌ಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ಕ್ರಾನ್ ಜಾಬ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಕ್ರಾನ್ ಜಾಬ್ ಭಾಗ ಚಾಲನೆಯಾಗಿಲ್ಲ: ಜಾಬ್ ಸರತಿ, ಆಮದುಗಳು, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ಹುಡುಕಾಟ ಸೂಚಿ ಕಾಯುತ್ತಿವೆ. php bin/php/installcrontab.php --add ಚಲಾಯಿಸಿ, ಅಥವಾ --show ನ ಸಾಲುಗಳನ್ನು crontab ಗೆ ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>ಒಂದು ಕ್ರಾನ್ ಜಾಬ್ ಭಾಗ ಅದರ ವೇಳಾಪಟ್ಟಿ ಅನುಮತಿಸುವುದಕ್ಕಿಂತ ಹೆಚ್ಚು ಕಾಲ ಚಾಲನೆಯಾಗಿಲ್ಲ: crontab (php bin/php/installcrontab.php --show) ಮತ್ತು ಲಾಗ್‌ಗಳು var/log/cronjob-*.log ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>ಭಾಗ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ವೇಳಾಪಟ್ಟಿ</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಪ್ರಾರಂಭಿಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ಎಂದಿಗೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ತಡವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ಎಂದಿಗೂ ಚಾಲನೆಯಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>ಕ್ರಾನ್ ಜಾಬ್ ಚಲಾಯಿಸಬಹುದಾದ ಯಾವುದೇ ಕ್ರಾನ್ ಜಾಬ್ ಭಾಗ ಸ್ಥಾಪನೆಯಲ್ಲಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>ಸೆಟಪ್ &gt; ಕ್ರಾನ್ ಜಾಬ್‌ಗಳು</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>ಬಳಕೆದಾರ ಖಾತೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ ಮತ್ತು ಅವುಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿದ ಬಳಕೆದಾರರ ಗುಂಪಿಗೆ ಸರಿಸಿ, ಹಾಗೂ ಮರಳಿ ಸರಿಸಿ</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ಇತರ ಬಳಕೆದಾರರು ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದ್ದಾರೆ ಎಂದು ನೋಡುವುದು ಮತ್ತು ಅವರನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡುವುದು</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>ಇ-ಮೇಲ್ ಆದ್ಯತೆಗಳನ್ನು ತೆರೆ</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>ನೀವು ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದ್ದೀರಿ: ಬ್ರೌಸರ್, ಸಿಸ್ಟಮ್, ಸ್ಥಳ ಮತ್ತು ಸಮಯ. ನಿಮಗೆ ಗೊತ್ತಿಲ್ಲದ ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>ಈ ಬಳಕೆದಾರ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದ್ದಾರೆ, ಮತ್ತು ಬಳಕೆದಾರರನ್ನು ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡುವುದು.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸು</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ಸೈನ್ ಇನ್ ಆಗಿವೆ</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>ಪಾಸ್‌ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಿಗೆ ನಿಮ್ಮ ಬೆರಳಚ್ಚು, ಮುಖ, ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಅಥವಾ ಭದ್ರತಾ ಕೀ ಬಳಸಿ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>ಪಾಸ್‌ಕೀಗಳನ್ನು ನಿರ್ವಹಿಸು</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೇರಿಸು</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count ಪಾಸ್‌ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>ವರ್ಗ/ಗುಣಲಕ್ಷಣ ಸಂಯೋಜನೆಗಳು (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>ಹೊಸ ಖಾತೆಗಳಿಗೆ ಅನುಮೋದನೆ ಬೇಕಾಗಿರುವ ಬಳಕೆದಾರ ಗುಂಪುಗಳು</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ಈ ಗುಂಪುಗಳಲ್ಲಿ ಒಂದರಲ್ಲಿ ಅಥವಾ ಅದರ ಕೆಳಗೆ ಪ್ರಕಟಿಸಲಾದ ಖಾತೆಯು ಅನುಮೋದಕರು ಅದನ್ನು ಸ್ವೀಕರಿಸುವವರೆಗೆ ಕಾಯುತ್ತದೆ. ಅದಕ್ಕೂ ಮೊದಲು ಅದು ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸುವ ಬಳಕೆದಾರರು</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸುವ ಗುಂಪುಗಳು</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>ಅನುಮೋದನೆ ಅಗತ್ಯವಿಲ್ಲದ ಬಳಕೆದಾರ ಗುಂಪುಗಳು (ಅವುಗಳ ಸದಸ್ಯರು ಅಂತಹ ಖಾತೆಗಳನ್ನು ನೇರವಾಗಿ ಪ್ರಕಟಿಸುತ್ತಾರೆ; ಅನುಮೋದಕರಿಗೆ ಇದು ಎಂದಿಗೂ ಅಗತ್ಯವಿಲ್ಲ)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>ಅನುಮೋದಕರಿಗೆ ಅನುಮೋದನೆಯ ಲಿಂಕ್ ಇರುವ ಇಮೇಲ್ ಕಳುಹಿಸು (ಅನುಮೋದಿಸಲು ಅಥವಾ ನಿರಾಕರಿಸಲು ಅವರು ಸೈನ್ ಇನ್ ಮಾಡುತ್ತಾರೆ)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>ಪರಿಸರ ವೇರಿಯೇಬಲ್ EXP_DEMO_MODE=1 ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಅನ್ನು ಸಾರ್ವಜನಿಕ ಡೆಮೊ ಎಂದು ಗುರುತಿಸುತ್ತದೆ: ಚಿರಪರಿಚಿತ ನಿರ್ವಾಹಕ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ನಿರ್ವಾಹಕ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ನಂತರ ಬದಲಾಯಿಸಲು ಅಥವಾ ಮರುಹೊಂದಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಪ್ರೊಡಕ್ಷನ್ ಸೈಟ್‌ಗೆ ಎಂದಿಗೂ ಡೆಮೊ ಮೋಡ್ ಬಳಸಬೇಡಿ.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>ಕ್ರಾನ್ ಜಾಬ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>ಕ್ರಾನ್ ಜಾಬ್‌ಗಳು ಸ್ಥಾಪನೆಯ ಮಾಲೀಕರಾದ ಬಳಕೆದಾರ %user ಅವರ crontab ನಿಂದ ಚಾಲನೆಯಾಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>ಸ್ಥಾಪನೆಯಲ್ಲಿ ವೇಳಾಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಕ್ರಾನ್ ಜಾಬ್ ಭಾಗ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab ಬರೆಯಲಾಗಿಲ್ಲ (%reason). ಸೈಟ್ ಯಾವ ಬಳಕೆದಾರರಾಗಿ ಚಾಲನೆಯಾಗುತ್ತದೆಯೋ ಆ ಬಳಕೆದಾರರ crontab ಗೆ ಈ ಸಾಲುಗಳನ್ನು ಸೇರಿಸಿ, ಇಲ್ಲದಿದ್ದರೆ ಸರತಿ, ಆಮದುಗಳು, ಅಧಿಸೂಚನೆಗಳು ಮತ್ತು ಹುಡುಕಾಟ ಸೂಚಿ ಎಂದಿಗೂ ಚಾಲನೆಯಾಗುವುದಿಲ್ಲ:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute ಹೆಸರು</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>ಅನುಮೋದನೆ ಬೇಕಾಗಿರುವ ಖಾತೆಗಳು</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>ಅನುಮೋದಕರಿಗೆ ಇಮೇಲ್</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>ನಿಮ್ಮ ಕಾಮೆಂಟ್ ಅನ್ನು ಸೇರಿಸಲಾಗಿದೆ.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>“%1” ಖಾತೆಯನ್ನು ಅನುಮೋದಿಸಿ ಪ್ರಕಟಿಸಲಾಗಿದೆ: ಅದು ಈಗ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>“%1” ಖಾತೆಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ. ಅದು ಪ್ರಕಟವಾಗಿಲ್ಲ ಮತ್ತು ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ; ಅದು ಮತ್ತೆ ಅದರ ಲೇಖಕರ ಕರಡು ಆಗಿದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count ಬುಕ್‌ಮಾರ್ಕ್(ಗಳನ್ನು) ಸೇರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>ಸಿಸ್ಟಮ್ ಪುಟ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>ಸಿಸ್ಟಮ್ ಪುಟಗಳನ್ನು ಇನ್ನೂ ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ: ಈ ಆವೃತ್ತಿಯ ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್ ಅನ್ನು ಇನ್ನೂ ಚಲಾಯಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>ಈ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ: ಇದು ಮಾಡ್ಯೂಲ್ ನೋಟದ ಪುಟವಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>ಈ ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ: ನೀವು ಇದನ್ನು ತೆರೆಯುವಂತಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>ಪುಟವನ್ನು ಬುಕ್‌ಮಾರ್ಕ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>“%name” ಪುಟ ನಿಮ್ಮ ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳಲ್ಲಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು ಮರುಹೆಸರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: ಅದಕ್ಕೆ ಹೆಸರು ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>ಬುಕ್‌ಮಾರ್ಕ್ ಅನ್ನು “%name” ಎಂದು ಮರುಹೆಸರಿಸಲಾಗಿದೆ.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>ಪ್ಯಾಕೇಜ್</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>ಆರ್ಕೈವ್ ಅನ್ನು PAX tar ಸ್ವರೂಪದಲ್ಲಿ ಪ್ಯಾಕ್ ಮಾಡಲಾಗಿದೆ, ಅದನ್ನು ಆಮದು ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಪ್ಯಾಕೇಜ್ ಅನ್ನು GNU tar ಸ್ವರೂಪದಲ್ಲಿ ಪ್ಯಾಕ್ ಮಾಡಿ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>ಆರ್ಕೈವ್ ಅನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ: “%path” ಎಂಟ್ರಿಯ tar ಪ್ರಕಾರ “%type”, ಮತ್ತು ಪ್ಯಾಕೇಜ್‌ನಲ್ಲಿ ಫೈಲ್‌ಗಳು ಮತ್ತು ಡೈರೆಕ್ಟರಿಗಳು ಮಾತ್ರ ಇರುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ಆರ್ಕೈವ್ ಅನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ: ಅದು %length ಬೈಟ್‌ಗಳಿಗಿಂತ ಉದ್ದದ ಎಂಟ್ರಿಯನ್ನು ಹೆಸರಿಸುತ್ತದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>ಡೇಟಾ ಕೋಷ್ಟಕಗಳಿಗೆ ಮಿರರ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>ಬಳಕೆದಾರ ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸು</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ಹೊಸ ಬಳಕೆದಾರ ಖಾತೆಯೊಂದು ನಿಮ್ಮ ಅನುಮೋದನೆಗಾಗಿ ಕಾಯುತ್ತಿದೆ</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾವಣೆಗೆ ಕಳುಹಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>ಎರಡನೇ ಹಂತವಿಲ್ಲದ ಸೈನ್ ಇನ್ ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ರಚಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ಹಿಂಪಡೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>ಆ್ಯಪ್ ಪಾಸ್‌ವರ್ಡ್ ಬಳಸಲಾಗಿದೆ</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>ಈ ನೋಡ್‌ನ ಆಡಿಟ್ ಟ್ರೇಲ್</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>ಅಖಂಡ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ಮುರಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ಪರಿಶೀಲಿಸಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>ಸರಿಪಡಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ಖಾಲಿ</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>ಹೊಸ ಇಮೇಲ್ ವಿಳಾಸ %email ತನ್ನ ದೃಢೀಕರಣಕ್ಕಾಗಿ ಕಾಯುತ್ತಿದೆ: ಅಲ್ಲಿಗೆ ನಾವು ಕಳುಹಿಸಿದ ಲಿಂಕ್ ತೆರೆಯಿರಿ. ಅಲ್ಲಿಯವರೆಗೆ ಈ ಖಾತೆಯು %current ಅನ್ನು ಉಳಿಸಿಕೊಳ್ಳುತ್ತದೆ.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>ಹೊಸ ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಕುರಿತ ಇಮೇಲ್ ಖಾತೆ ಭದ್ರತೆಯ ಭಾಗವಾಗಿದೆ. ನೀವು ಅದನ್ನು “ನಿಮ್ಮ ಸಾಧನಗಳು” ಪುಟದಲ್ಲಿ ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡುತ್ತೀರಿ, ಅಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಯ ಸೆಷನ್‌ಗಳನ್ನು ನೋಡಬಹುದು ಮತ್ತು ಸೈನ್ ಔಟ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>ಇನ್ನಷ್ಟು ಪ್ರೇಕ್ಷಕರು</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>ಪರಿಶೀಲನೆ ಮತ್ತು ಬಿಡುಗಡೆ</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>ವಿಷಯಾಂಶ ಈಗ ಪರಿಶೀಲನೆಯಲ್ಲಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>ವಿಷಯಾಂಶ ಬಿಡುಗಡೆಯಾಗಿದೆ: ಓದುಗರು ಈಗ ಅದನ್ನು ನೋಡುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>ವಿಷಯಾಂಶ ಮತ್ತೆ ಕರಡು ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>ಪ್ರಸ್ತುತ ಆವೃತ್ತಿಯನ್ನು ನೀವು ಬರೆದಿದ್ದೀರಿ, ಆದ್ದರಿಂದ ಬಿಡುಗಡೆ ಪಾತ್ರ ಹೊಂದಿರುವ ಬೇರೊಬ್ಬರು ಅದನ್ನು ಬಿಡುಗಡೆ ಮಾಡುತ್ತಾರೆ.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ: ನಿಮ್ಮ ಪಾತ್ರ ಈ ಹಂತವನ್ನು ಅನುಮತಿಸುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>ಪರಿಶೀಲನಾ ಕಾರ್ಯಪ್ರವಾಹ</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ಕರಡು</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ಪರಿಶೀಲನೆ</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>ಮತ್ತೆ ಪರಿಶೀಲನೆಗೆ</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>ಪರಿಶೀಲನೆಗೆ ಕಳುಹಿಸು</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>ಬಿಡುಗಡೆ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>ಮತ್ತೆ ಕರಡಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>ಶೈಲಿ ಮಾರ್ಗದರ್ಶಿ ಪರಿಶೀಲನೆ</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>ಶೈಲಿ ಮಾರ್ಗದರ್ಶಿ ಪರಿಶೀಲನೆಯಲ್ಲಿ ಏನೂ ಕಂಡುಬಂದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors ದೋಷಗಳು, %warnings ಎಚ್ಚರಿಕೆಗಳು, %notices ಸೂಚನೆಗಳು. ಒಂದು ದೋಷವಿದ್ದರೂ ./console exp:help:content check ಉತ್ತೀರ್ಣವಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>ಮಟ್ಟ</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>ನಿಯಮ</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ಕ್ಷೇತ್ರ</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>ಪತ್ತೆ</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ಇದು ಸಹಾಯಕವಾಗಿತ್ತೇ?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>ಓದುಗರು %yes ಬಾರಿ ಹೌದು ಮತ್ತು %no ಬಾರಿ ಇಲ್ಲ ಎಂದು ಉತ್ತರಿಸಿದ್ದಾರೆ.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>ಇಲ್ಲ ಎಂಬುದಕ್ಕೆ ನೀಡಿದ ಕಾರಣಗಳು:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ಉತ್ತರ ಸಹಾಯವನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ನೆರವಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>ಇಲ್ಲದಿದ್ದರೆ, ಏನು ತಪ್ಪಾಗಿತ್ತು?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>ಯಾವುದೇ ಕಾರಣ ನೀಡಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>ನಿಮ್ಮ ಉತ್ತರವನ್ನು ಮಾತ್ರ ಇರಿಸಲಾಗುತ್ತದೆ, ನೀವು ಯಾರು ಎಂಬುದನ್ನಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ಇದು ಹಳೆಯದಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>ಇದನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಕಷ್ಟ</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ಏನೋ ಕಾಣೆಯಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>ಇದು ತಪ್ಪಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>ಬೇರೆ ಕಾರಣ</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ಈ ವಿಷಯಾಂಶ ಬಿಡುಗಡೆಯಾಗಿಲ್ಲ; ಓದುಗರು ಇದನ್ನು ನೋಡುವುದಿಲ್ಲ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>ಪರ್ಸಿಸ್ಟೆಂಟ್ ಕ್ಲಾಸ್‌ಗಳ ಟೇಬಲ್‌ಗಳನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>ಅನುಮೋದನೆಗಾಗಿ ಕಾಯುತ್ತಿರುವ ಹೊಸ ಬಳಕೆದಾರ ಖಾತೆ: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>ಖಾತೆ</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>ಬಳಕೆದಾರಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ಗುಂಪು</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>ವಿನಂತಿಸಿದವರು</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>ಅನುಮೋದನೆಯನ್ನು ತೆರೆ</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ಬಟನ್ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ, ಈ ವಿಳಾಸವನ್ನು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ಗೆ ನಕಲಿಸಿ: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>ಹೊಸ ಬಳಕೆದಾರ ಖಾತೆಯೊಂದು ನಿಮ್ಮ ಅನುಮೋದನೆಗಾಗಿ ಕಾಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester ಅವರು %groups ನಲ್ಲಿ “%name” ಖಾತೆಯನ್ನು ರಚಿಸಿದ್ದಾರೆ. ಅನುಮೋದಕರು ಅದನ್ನು ಸ್ವೀಕರಿಸುವವರೆಗೆ ಅದು ಪ್ರಕಟವಾಗುವುದಿಲ್ಲ ಮತ್ತು ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>ನಿರ್ವಾಹಕ ಇಂಟರ್‌ಫೇಸ್‌ಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಸಹಯೋಗ ಪಟ್ಟಿಯಲ್ಲಿ ಅದನ್ನು ಅನುಮೋದಿಸಿ ಅಥವಾ ನಿರಾಕರಿಸಿ. ಈ ಲಿಂಕ್ ನಿಮ್ಮನ್ನು ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ ಮತ್ತು ತಾನಾಗಿಯೇ ಏನನ್ನೂ ನಿರ್ಧರಿಸುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>ನೀವು ಈ ಗುಂಪುಗಳ ಹೊಸ ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸುವುದರಿಂದ ಈ ಮೇಲ್ ಅನ್ನು %site ಕಳುಹಿಸಿದೆ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ಕಂಪ್ಯೂಟರ್</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ಫೋನ್</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ಟ್ಯಾಬ್ಲೆಟ್</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ಪ್ರೋಗ್ರಾಂ ಅಥವಾ ಆ್ಯಪ್</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ಸ್ವಯಂಚಾಲಿತ ಕ್ಲೈಂಟ್</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ಅಜ್ಞಾತ ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ಎರಡು-ಹಂತದ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ಸಿಂಗಲ್ ಸೈನ್-ಆನ್</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸುವ ಮೊದಲು ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ಈ ಪುಟದಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ನಿರ್ವಾಹಕರು ಸೈನ್ ಔಟ್ ಮಾಡಿದ್ದಾರೆ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“ಇತರ ಎಲ್ಲಾ ಸೆಷನ್‌ಗಳು” ಮೂಲಕ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>ಹೊಸ ಸೈನ್ ಇನ್‌ನಿಂದ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾವಣೆಯಿಂದ ಕೊನೆಗೊಂಡಿದೆ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ಅವಧಿ ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ಅವರ ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಈಗ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ. ನೀವು ಸಾಧನವನ್ನು ಗುರುತಿಸದಿದ್ದರೆ, ಅದನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ಈ ಖಾತೆ ಈಗ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ. ಬಳಕೆದಾರರನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿದರೆ ಪ್ರತಿ ಸೆಷನ್ ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>ಖಾತೆಗೆ ಹಿಂತಿರುಗಿ</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ. ಸಾಧನವು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ಇತರ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡಲು ಬೇರೆ ಯಾವುದೇ ಸೆಷನ್‌ಗಳಿರಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ಈ ಬಳಕೆದಾರರ %count ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ಈ ಬಳಕೆದಾರರಿಗೆ ಸೈನ್ ಔಟ್ ಮಾಡಲು ಯಾವುದೇ ಸೆಷನ್‌ಗಳಿರಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ಇದು ನೀವು ಬಳಸುತ್ತಿರುವ ಸೆಷನ್. ಅದನ್ನು ಕೊನೆಗೊಳಿಸಲು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ಆ ಸೆಷನ್ ಈಗಾಗಲೇ ಕೊನೆಗೊಂಡಿತ್ತು.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಹೊಸ ಸಾಧನದಿಂದ ಸೈನ್ ಇನ್ ಆದಾಗ ನಿಮಗೆ ಇಮೇಲ್ ಬರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ಹೊಸ ಸಾಧನಗಳಿಂದ ಸೈನ್ ಇನ್‌ಗಳ ಕುರಿತು ನಿಮಗೆ ಇನ್ನು ಮುಂದೆ ಇಮೇಲ್ ಬರುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ಪುಟದ ಅವಧಿ ಮುಗಿದಿತ್ತು. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ; ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session ಟೇಬಲ್ ಕಾಣೆಯಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>ಅದನ್ನು ರಚಿಸಿದ ತಕ್ಷಣ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುತ್ತದೆ: php update/common/scripts/6.0/createusersessiontable.php, ಅಥವಾ 6.0.15 ರ ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ಈಗ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ಇತರ ಎಲ್ಲಾ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ಈ ಸಾಧನವನ್ನು ಹೊರತುಪಡಿಸಿ ಪ್ರತಿ ಸಾಧನವೂ ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಸೈನ್ ಔಟ್ ಆಗುತ್ತದೆ, “ನನ್ನನ್ನು ನೆನಪಿಡಿ” ಮೂಲಕ ಸೈನ್ ಇನ್ ಆಗಿ ಉಳಿಯುವವೂ ಸಹ.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>ಈ ಬಳಕೆದಾರರ ಪ್ರತಿ ಸೆಷನ್ ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಸೈನ್ ಔಟ್ ಆಗುತ್ತದೆ, “ನನ್ನನ್ನು ನೆನಪಿಡಿ” ಮೂಲಕ ಸೈನ್ ಇನ್ ಆಗಿ ಉಳಿಯುವವೂ ಸಹ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>ಹೌದು, ಇತರ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>ಹೌದು, ಪ್ರತಿ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ಈ ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>ಅದರ ನೆಟ್‌ವರ್ಕ್ ಆಗಿ ತೋರಿಸಲಾಗಿದೆ; ಪೂರ್ಣ ವಿಳಾಸವನ್ನು ನಿರ್ವಾಹಕರಿಗಾಗಿ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip ನಿಂದ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಸಕ್ರಿಯ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ಈಗ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿಯೇ ಇರುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ನನ್ನನ್ನು ನೆನಪಿಡಿ, %date ವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ಬ್ರೌಸರ್ ಮುಚ್ಚುವವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>ಸೈನ್ ಇನ್ ಆದ ಸ್ಥಳ</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>ಬ್ರೌಸರ್ ಗುರುತಿಸುವಿಕೆ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ಈ ಸೆಷನ್ ಅನ್ನು ಕೊನೆಗೊಳಿಸಲು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ಈ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ಯಾವುದೇ ಸೆಷನ್ ಸೈನ್ ಇನ್ ಆಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ಸೈನ್ ಇನ್ ಎಚ್ಚರಿಕೆಗಳು</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ನನ್ನ ಖಾತೆ ಹೊಸ ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆದಾಗ ನನಗೆ ಇಮೇಲ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ. ಅದು ಸಾಧನ, ಅಂದಾಜು ಸ್ಥಳ ಮತ್ತು ಸಮಯವನ್ನು ತಿಳಿಸುತ್ತದೆ ಮತ್ತು ಈ ಪುಟಕ್ಕೆ ಲಿಂಕ್ ನೀಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>ಈ ಸೈಟ್ ಸೈನ್ ಇನ್ ಎಚ್ಚರಿಕೆಗಳನ್ನು ಕಳುಹಿಸುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ಇತ್ತೀಚೆಗೆ ಕೊನೆಗೊಂಡವು</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳಲ್ಲಿ ಕೊನೆಗೊಂಡ ಸೆಷನ್‌ಗಳು.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ಕೊನೆಗೊಂಡಿದೆ</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ಹೇಗೆ</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>ಕಂಪ್ಯೂಟರ್</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ಫೋನ್</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>ಟ್ಯಾಬ್ಲೆಟ್</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ಪ್ರೋಗ್ರಾಂ ಅಥವಾ ಆ್ಯಪ್</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>ಸ್ವಯಂಚಾಲಿತ ಕ್ಲೈಂಟ್</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>ಅಜ್ಞಾತ ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮತ್ತು ಎರಡು-ಹಂತದ ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP ಇಂಟರ್‌ಫೇಸ್</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>ಸಿಂಗಲ್ ಸೈನ್-ಆನ್</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸುವ ಮೊದಲು ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>ಈ ಪುಟದಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>ನಿರ್ವಾಹಕರು ಸೈನ್ ಔಟ್ ಮಾಡಿದ್ದಾರೆ</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>“ಇತರ ಎಲ್ಲಾ ಸೆಷನ್‌ಗಳು” ಮೂಲಕ ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>ಹೊಸ ಸೈನ್ ಇನ್‌ನಿಂದ ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾವಣೆಯಿಂದ ಕೊನೆಗೊಂಡಿದೆ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>ಅವಧಿ ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ಅವರ ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಈಗ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ. ನೀವು ಸಾಧನವನ್ನು ಗುರುತಿಸದಿದ್ದರೆ, ಅದನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>ಈ ಖಾತೆ ಈಗ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ. ಬಳಕೆದಾರರನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿದರೆ ಪ್ರತಿ ಸೆಷನ್ ಅದರ ಮುಂದಿನ ವಿನಂತಿಯಲ್ಲಿ ಕೊನೆಗೊಳ್ಳುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ. ಸಾಧನವು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಬೇಕಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count ಇತರ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡಲು ಬೇರೆ ಯಾವುದೇ ಸೆಷನ್‌ಗಳಿರಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>ಈ ಬಳಕೆದಾರರ %count ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>ಈ ಬಳಕೆದಾರರಿಗೆ ಸೈನ್ ಔಟ್ ಮಾಡಲು ಯಾವುದೇ ಸೆಷನ್‌ಗಳಿರಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>ಇದು ನೀವು ಬಳಸುತ್ತಿರುವ ಸೆಷನ್. ಅದನ್ನು ಕೊನೆಗೊಳಿಸಲು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>ಆ ಸೆಷನ್ ಈಗಾಗಲೇ ಕೊನೆಗೊಂಡಿತ್ತು.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಹೊಸ ಸಾಧನದಿಂದ ಸೈನ್ ಇನ್ ಆದಾಗ ನಿಮಗೆ ಇಮೇಲ್ ಬರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>ಹೊಸ ಸಾಧನಗಳಿಂದ ಸೈನ್ ಇನ್‌ಗಳ ಕುರಿತು ನಿಮಗೆ ಇನ್ನು ಮುಂದೆ ಇಮೇಲ್ ಬರುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ಪುಟದ ಅವಧಿ ಮುಗಿದಿತ್ತು. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ; ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಸೆಷನ್‌ಗಳನ್ನು ದಾಖಲಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>ಸೆಷನ್‌ಗಳನ್ನು ಇನ್ನೂ ದಾಖಲಿಸಲಾಗುತ್ತಿಲ್ಲ: ಸೈಟ್‌ಗೆ ಅದರ ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್ ಅಗತ್ಯವಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>ಈಗ ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>ಈ ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಸಕ್ರಿಯ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>ಈಗ</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ಸೈನ್ ಇನ್ ಆಗಿಯೇ ಇರುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ನನ್ನನ್ನು ನೆನಪಿಡಿ, %date ವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ಬ್ರೌಸರ್ ಮುಚ್ಚುವವರೆಗೆ</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>ಈ ಸೆಷನ್ ಅನ್ನು ಕೊನೆಗೊಳಿಸಲು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ಈ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ಇತರ ಎಲ್ಲಾ ಸೆಷನ್‌ಗಳನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ಎಲ್ಲೆಡೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ಸೈನ್ ಇನ್ ಎಚ್ಚರಿಕೆಗಳು</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>ನನ್ನ ಖಾತೆ ಹೊಸ ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆದಾಗ ನನಗೆ ಇಮೇಲ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>ಇತ್ತೀಚೆಗೆ ಕೊನೆಗೊಂಡವು</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ಕೊನೆಗೊಂಡಿದೆ</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>ಹೇಗೆ</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>ಕಳೆದ %days ದಿನಗಳಲ್ಲಿ ಯಾವುದೂ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ ಎಲ್ಲಿ ಸೈನ್ ಇನ್ ಆಗಿದೆ ಎಂದು ನೋಡಿ, ಮತ್ತು ನಿಮಗೆ ಗೊತ್ತಿಲ್ಲದ ಸಾಧನವನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸು</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site ನಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಗೆ ಹೊಸ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>ನಮಸ್ಕಾರ,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site ನಲ್ಲಿನ ನಿಮ್ಮ ಖಾತೆ %login ಅನ್ನು ಇತ್ತೀಚೆಗೆ ಬಳಸದ ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಮಾಡಲು ಈಗಷ್ಟೇ ಬಳಸಲಾಗಿದೆ:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>ಸಾಧನ:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>ಸಮಯ:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>ಅಂದಾಜು ವಿಳಾಸ:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ಇದು ನೀವೇ ಆಗಿದ್ದರೆ, ನೀವು ಏನನ್ನೂ ಮಾಡಬೇಕಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>ಇದು ನೀವಲ್ಲದಿದ್ದರೆ, ಯಾರಿಗಾದರೂ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ತಿಳಿದಿರಬಹುದು. ನಿಮ್ಮ ಸಾಧನಗಳ ಪುಟದಲ್ಲಿ ಆ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ, ನಂತರ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>ಅದೇ ಪುಟದಲ್ಲಿ ನೀವು ಈ ಇಮೇಲ್‌ಗಳನ್ನು ಆಫ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site ನಲ್ಲಿ %login ಅವರ ಹೊಸ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login ಖಾತೆ ಇತ್ತೀಚೆಗೆ ಬಳಸದ ಸಾಧನ ಅಥವಾ ಬ್ರೌಸರ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>ಈ ಬಳಕೆದಾರರ ಸೆಷನ್‌ಗಳು:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗೆ ಹೊಸ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆ %login ಅನ್ನು %date ರಂದು %device (%ip) ನಿಂದ ಸೈನ್ ಇನ್ ಮಾಡಲು ಬಳಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ಇದು ನೀವೇ ಆಗಿದ್ದರೆ, ನೀವು ಏನನ್ನೂ ಮಾಡಬೇಕಾಗಿಲ್ಲ. ಇಲ್ಲದಿದ್ದರೆ, %url ನಲ್ಲಿ ಈ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login ಅವರ ಹೊಸ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login ಖಾತೆ ಹೊಸ ಸಾಧನದಿಂದ ಸೈನ್ ಇನ್ ಆಗಿದೆ: %device (%ip), %date ರಂದು.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name ಅವರ ಸೆಷನ್‌ಗಳು</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>ಪಾಸ್‌ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>ಪಾಸ್‌ಕೀ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಿಗೆ ನಿಮ್ಮ ಬೆರಳಚ್ಚು, ಮುಖ, ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಅಥವಾ ಭದ್ರತಾ ಕೀ ಮೂಲಕ ನಿಮ್ಮನ್ನು ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ. ಅದನ್ನು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಅಥವಾ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ನಿರ್ವಾಹಕದಲ್ಲಿ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ; ಈ ಸೈಟ್ ಅದರ ಸಾರ್ವಜನಿಕ ಕೀಯನ್ನು ಮಾತ್ರ ಇರಿಸಿಕೊಳ್ಳುತ್ತದೆ, ಆದ್ದರಿಂದ ಇಲ್ಲಿ ಸೋರಿಕೆಯಾದರೂ ಅದು ಬಹಿರಂಗವಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಪಾಸ್‌ಕೀಗಳನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>ಈ ಸೈಟ್‌ನಲ್ಲಿ ಇನ್ನೂ ಪಾಸ್‌ಕೀಗಳನ್ನು ಬಳಸಲಾಗುವುದಿಲ್ಲ: ನಿರ್ವಾಹಕರು ಮೊದಲು ಡೇಟಾಬೇಸ್ ಅಪ್‌ಡೇಟ್ ಚಲಾಯಿಸಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>“%name” ಪಾಸ್‌ಕೀಯನ್ನು ತೆಗೆದುಹಾಕಬೇಕೇ?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>ಅದು ಇನ್ನು ಮುಂದೆ ಈ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಅದನ್ನು ನಿಮ್ಮ ಸಾಧನ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ನಿರ್ವಾಹಕದಿಂದಲೂ ತೆಗೆದುಹಾಕಿ.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>ಗರಿಷ್ಠ %max ರಲ್ಲಿ %count</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>ನಿಮ್ಮ ಬಳಿ ಇನ್ನೂ ಯಾವುದೇ ಪಾಸ್‌ಕೀ ಇಲ್ಲ. ಕೆಳಗೆ ಒಂದನ್ನು ಸೇರಿಸಿ: ಮುಂದಿನ ಬಾರಿ ಸೈನ್ ಇನ್ ಮಾಡುವಾಗ “ಪಾಸ್‌ಕೀ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡಿ” ಆರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ಸೇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ಕೊನೆಯದಾಗಿ ಬಳಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ಇನ್ನೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>ಸಿಂಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>ಈ ಸಾಧನ ಅಥವಾ ಕೀ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>ಮರುಹೆಸರಿಸು</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>ಹೊಸ ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>ಹೆಸರನ್ನು ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸೇರಿಸು</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>ನಿಮ್ಮ ಬ್ರೌಸರ್ ಅಥವಾ ಸಾಧನದ ಹಂತಗಳನ್ನು ಅನುಸರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸಂವಾದವನ್ನು ಮುಚ್ಚಲಾಗಿದೆ. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>ಪಾಸ್‌ಕೀ ರಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>ಈ ಬ್ರೌಸರ್ ಪಾಸ್‌ಕೀಗಳನ್ನು ರಚಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಪ್ರಸ್ತುತ ಬ್ರೌಸರ್ ಬಳಸಿ, ಅಥವಾ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ಉದಾಹರಣೆಗೆ ಅದು ಇರುವ ಸಾಧನ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ನಿರ್ವಾಹಕ, ಇದರಿಂದ ನಿಮ್ಮ ಪಾಸ್‌ಕೀಗಳನ್ನು ಬೇರ್ಪಡಿಸಿ ಗುರುತಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>ಈ ಖಾತೆಯು ಹೊಂದಬಹುದಾದಷ್ಟು ಪಾಸ್‌ಕೀಗಳನ್ನು (%max) ಹೊಂದಿದೆ. ಇನ್ನೊಂದನ್ನು ಸೇರಿಸಲು ಒಂದನ್ನು ತೆಗೆದುಹಾಕಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>ಪಾಸ್‌ಕೀ ಬಳಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>ನನ್ನ ಖಾತೆ</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>ಪಾಸ್‌ಕೀ ಸಂವಾದವನ್ನು ಮುಚ್ಚಲಾಗಿದೆ. ಬದಲಿಗೆ ನೀವು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>ಪಾಸ್‌ಕೀ ಬಳಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ, ಅಥವಾ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಿಗೆ ನಿಮ್ಮ ಬೆರಳಚ್ಚು, ಮುಖ, ಸ್ಕ್ರೀನ್ ಲಾಕ್ ಅಥವಾ ಭದ್ರತಾ ಕೀ ಬಳಸಿ ಸೈನ್ ಇನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>“%name” ಪಾಸ್‌ಕೀಯನ್ನು ಸೇರಿಸಲಾಗಿದೆ. ಇನ್ನು ಮುಂದೆ ನೀವು ಅದರೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>ಪಾಸ್‌ಕೀಯ ಹೆಸರು ಈಗ “%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>“%name” ಪಾಸ್‌ಕೀಯನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ. ಅದು ಇನ್ನು ಮುಂದೆ ಈ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date ರ ಪಾಸ್‌ಕೀ</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>ಈ ಖಾತೆಯು ಹೊಂದಬಹುದಾದಷ್ಟು ಪಾಸ್‌ಕೀಗಳನ್ನು ಹೊಂದಿದೆ. ಮೊದಲು ಒಂದನ್ನು ತೆಗೆದುಹಾಕಿ.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>ಡೇಟಾಬೇಸ್ ಕಾರ್ಯನಿರತವಾಗಿತ್ತು ಮತ್ತು ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>ಈ ಪಾಸ್‌ಕೀ ಈಗಾಗಲೇ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>ವಿನಂತಿಗೆ ತುಂಬಾ ಸಮಯ ತೆಗೆದುಕೊಂಡಿತು ಅಥವಾ ಅದನ್ನು ಈಗಾಗಲೇ ಬಳಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>ಪಾಸ್‌ಕೀ ನೀವು ಯಾರು ಎಂಬುದನ್ನು (PIN, ಬೆರಳಚ್ಚು ಅಥವಾ ಮುಖ) ಪರಿಶೀಲಿಸಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ದೃಢೀಕರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>ಈ ದೃಢೀಕರಣಕಾರಕ ಈ ಸೈಟ್ ಸ್ವೀಕರಿಸದ ರೀತಿಯ ಕೀಯನ್ನು ಬಳಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>ಪಾಸ್‌ಕೀಯನ್ನು ಈ ಸೈಟ್ ಅಲ್ಲದೆ ಬೇರೆ ವಿಳಾಸಕ್ಕಾಗಿ ರಚಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>ಈ ಪಾಸ್‌ಕೀ ಇಲ್ಲಿನ ಯಾವುದೇ ಖಾತೆಗೆ ನೋಂದಾಯಿಸಲ್ಪಟ್ಟಿಲ್ಲ. ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ ಮತ್ತು ಅದನ್ನು “ನನ್ನ ಖಾತೆ”, “ಪಾಸ್‌ಕೀಗಳು” ನಲ್ಲಿ ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>ಈ ಖಾತೆಯು ಸದ್ಯಕ್ಕೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ದಯವಿಟ್ಟು ಸೈಟ್ ನಿರ್ವಾಹಕರನ್ನು ಸಂಪರ್ಕಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>ಪಾಸ್‌ಕೀಯನ್ನು ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>ನೀವು ಸೈನ್ ಇನ್ ಮಾಡುವ ವಿಧಾನವನ್ನು ಅಥವಾ ನಿಮ್ಮ ಖಾತೆಯ ಭದ್ರತೆಯನ್ನು ಬದಲಾಯಿಸಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>ನೀವು ಬಳಕೆದಾರರು, ಪಾತ್ರಗಳು ಅಥವಾ ನೀತಿಗಳನ್ನು ನಿರ್ವಹಿಸಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>ನೀವು ಸಿಸ್ಟಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸಲಿದ್ದೀರಿ ಅಥವಾ ಸೆಟಪ್ ಕ್ರಿಯೆಯನ್ನು ಚಲಾಯಿಸಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>ನೀವು ಡೇಟಾವನ್ನು ರಫ್ತು ಮಾಡಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>ನೀವು ವಿಷಯವನ್ನು ತೆಗೆದುಹಾಕಲಿದ್ದೀರಿ ಅಥವಾ ಪ್ರಕಟಿಸಲಿದ್ದೀರಿ.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>ಈ ಕ್ರಿಯೆಗಾಗಿ ನೀವು ಯಾರು ಎಂಬುದನ್ನು ದೃಢೀಕರಿಸಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login ಆಗಿ ಸೈನ್ ಇನ್ ಆಗಿರುವುದು ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಿ. %minutes ನಿಮಿಷಗಳವರೆಗೆ ನಿಮ್ಮನ್ನು ಮತ್ತೆ ಕೇಳಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>ಆ ಪಾಸ್‌ವರ್ಡ್ ಸರಿಯಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>ಆ ಕೋಡ್ ಸರಿಯಾಗಿಲ್ಲ, ಅಥವಾ ಅದನ್ನು ಈಗಾಗಲೇ ಬಳಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>ಕೆಳಗಿನ ವಿಧಾನಗಳಲ್ಲಿ ಒಂದನ್ನು ಆರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>ಪಾಸ್‌ಕೀಯನ್ನು ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>ನೀವು ಸೈನ್ ಔಟ್ ಆಗುವ ಮೊದಲು %count ಪ್ರಯತ್ನಗಳು ಉಳಿದಿವೆ.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>ನೀವು ಆರಿಸಿದ ಫೈಲ್‌ಗಳನ್ನು ಮತ್ತೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ: ದೃಢೀಕರಿಸಿದ ನಂತರ ಅವುಗಳನ್ನು ಇನ್ನೊಮ್ಮೆ ಆರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀಯೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ದೃಢೀಕರಿಸು</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>ಪಾಸ್‌ಕೀ ಬಳಸು</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>ನಿಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್‌ನೊಂದಿಗೆ</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>ಕೋಡ್</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>ನೀವು ಯಾರು ಎಂಬುದನ್ನು ದೃಢೀಕರಿಸಲು ಈ ಖಾತೆಗೆ ಯಾವುದೇ ವಿಧಾನವಿಲ್ಲ (ಪಾಸ್‌ವರ್ಡ್, ಪಾಸ್‌ಕೀ ಅಥವಾ ದೃಢೀಕರಣ ಆ್ಯಪ್ ಇಲ್ಲ). ಸೈನ್ ಔಟ್ ಮಾಡಿ ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಿ, ಅಥವಾ ನಿರ್ವಾಹಕರನ್ನು ಕೇಳಿ.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ಇದು ನೀವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>ನಿಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>ನಿಮ್ಮ ಸ್ವಂತ ಖಾತೆ</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>ಸ್ವಂತ ಪಾಸ್‌ವರ್ಡ್, ಇಮೇಲ್ ವಿಳಾಸ, ಪಾಸ್‌ಕೀಗಳು, ಎರಡು-ಹಂತದ ಸೈನ್ ಇನ್ ಅಥವಾ API ಕೀಗಳನ್ನು ಬದಲಾಯಿಸುವುದು.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>ಬಳಕೆದಾರರು, ಪಾತ್ರಗಳು ಮತ್ತು ನೀತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ಬಳಕೆದಾರರನ್ನು ರಚಿಸುವುದು ಮತ್ತು ಸಂಪಾದಿಸುವುದು, ಖಾತೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಹೊಸ ಬಳಕೆದಾರ ಖಾತೆಗಳನ್ನು ಅನುಮೋದಿಸುವುದು ಅಥವಾ ನಿರಾಕರಿಸುವುದು, ಪಾತ್ರಗಳನ್ನು ನಿಯೋಜಿಸುವುದು ಮತ್ತು ನೀತಿಗಳನ್ನು ಸಂಪಾದಿಸುವುದು.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>ಸಿಸ್ಟಮ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮತ್ತು ಸೆಟಪ್ ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ವಿಸ್ತರಣೆಗಳು, ಕ್ಯಾಷ್‌ಗಳು ಮತ್ತು ನಿರ್ವಹಣೆ, ಪ್ಯಾಕೇಜ್‌ಗಳು ಮತ್ತು ಅಪ್‌ಡೇಟ್‌ಗಳು, ಬ್ಯಾಕಪ್‌ಗಳು ಮತ್ತು git ಮ್ಯಾನೇಜರ್ ಅನ್ನು ಸಂಪಾದಿಸುವುದು.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>ಡೇಟಾ ರಫ್ತು ಮಾಡುವುದು</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಮಾಹಿತಿ, ಬಳಕೆದಾರರು, ಸುದ್ದಿಪತ್ರ ಚಂದಾದಾರರು ಮತ್ತು ಆಡಿಟ್‌ನ ರಫ್ತುಗಳು.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>ವಿಷಯವನ್ನು ತೆಗೆದುಹಾಕುವುದು ಮತ್ತು ಪ್ರಕಟಿಸುವುದು</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>ವಿಷಯವನ್ನು ತೆಗೆದುಹಾಕುವುದು (ಕಸದ ಬುಟ್ಟಿಗೆ ಹಾಕುವುದೂ ಸೇರಿ), ಕಸದ ಬುಟ್ಟಿಯನ್ನು ಖಾಲಿಮಾಡುವುದು ಮತ್ತು ಪ್ರಕಟಿಸುವುದು. ಡೀಫಾಲ್ಟ್ ಆಗಿ ಆಫ್.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>ಸೂಕ್ಷ್ಮ ಕ್ರಿಯೆಯ ಮೊದಲು ಸೈನ್ ಇನ್ ಆಗಿರುವ ಬಳಕೆದಾರರು ತಮ್ಮ ಪಾಸ್‌ವರ್ಡ್, ಪಾಸ್‌ಕೀ ಅಥವಾ ತಮ್ಮ ದೃಢೀಕರಣ ಆ್ಯಪ್‌ನ ಕೋಡ್ ಮೂಲಕ ತಾವು ಯಾರು ಎಂಬುದನ್ನು ಮತ್ತೆ ದೃಢೀಕರಿಸುತ್ತಾರೆ. ವೆಬ್ ಪುಟಗಳು ಮಾತ್ರ ಕೇಳುತ್ತವೆ: REST ಇಂಟರ್‌ಫೇಸ್, SOAP, WebDAV, expservices ಲಾಗಿನ್ ಮತ್ತು ಕಮಾಂಡ್ ಲೈನ್ ಎಂದಿಗೂ ಕೇಳುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>ಸಾಮಾನ್ಯ</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>ದೃಢೀಕರಣ ಮಾನ್ಯವಾಗಿರುವ ನಿಮಿಷಗಳು</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>ಯಾವಾಗ ಕೇಳಬೇಕು</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] ನಲ್ಲಿ %count ನಿಯಮಗಳು.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php ಗೆ ಉಳಿಸಲಾಗುತ್ತದೆ. ಉಳಿಸುವಾಗ ಇದು ನೀವೇ ಎಂದು ದೃಢೀಕರಿಸಲು ಕೇಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>ಇದು ನೀವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>ಕೆಳಗೆ ಆನ್ ಮಾಡಿದ ಗುಂಪುಗಳ ಕ್ರಿಯೆಗಳ ಮೊದಲು “ಇದು ನೀವೇ ಎಂದು ಪರಿಶೀಲಿಸಿ” ಎಂದು ಕೇಳು</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>ಹೊಸ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ತೆಗೆದುಹಾಕು</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>ಹೊಸ ಸಾಲು</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>ಸಾಲನ್ನು ಉಳಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>ಹುಡುಕು</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>ಸಂಪಾದಿಸು</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಸಾಲುಗಳಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ನೋಡ್ ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ಬಳಕೆದಾರರ ವಸ್ತು ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ವಿಷಯ ವಸ್ತು ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>ಸಾಲು %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>ಸಾಲನ್ನು ಉಳಿಸಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>%id ಸಾಲನ್ನು ತೆಗೆದುಹಾಕಬೇಕೇ?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>ಸಾಲನ್ನು ಟೇಬಲ್‌ನಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ ಮತ್ತು ಅದನ್ನು ಮರಳಿ ತರಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
     </message>
 </context>
 </TS>

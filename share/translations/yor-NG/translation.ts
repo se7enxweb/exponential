@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Ṣí tàbí padé fóldà náà</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ojú ìwé yìí wà nínú àwọn àmì ojú ìwé yín. Ẹ ṣí i láti yí orúkọ rẹ̀ tàbí fóldà rẹ̀ padà.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Ẹ fi ojú ìwé yìí kún àwọn àmì ojú ìwé yín.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>A ti fi àmì sí i</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Fi àmì sí ojú ìwé yìí</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Àmì ojú ìwé náà ń pa àdírẹ́sì ojú ìwé yìí mọ́ pẹ̀lú àwọn pàrámítà rẹ̀: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Fi àmì ojú ìwé pamọ́</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Fikún àmì ojú ìwé</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Àwọn àmì ojú ìwé mi</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Ojú ìwé ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Àwọn ojú ìwé ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Ẹ kò lè ṣí ojú ìwé yìí mọ́.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ṣí</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Àdírẹ́sì ojú ìwé yìí kò sí. Ẹ yọ àmì ojú ìwé náà kúrò, kí ẹ sì tún fi àmì sí ojú ìwé náà.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ẹ kò lè ṣí ojú ìwé yìí mọ́. Ẹ yọ àmì ojú ìwé náà kúrò, tàbí kí ẹ béèrè ìwọlé lọ́wọ́ alákòóso.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Mọ́dùùlù àti ìwòran</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Ẹ tún lè fi àmì sí àwọn ojú ìwé ẹ̀rọ: ẹ ṣí ojú ìwé náà (Ìgbékalẹ̀, àkọsílẹ̀ àyẹ̀wò, àtòjọ àwọn olùlò ...) kí ẹ sì yan Fi àmì sí ojú ìwé yìí lókè rẹ̀. Irú àwọn àmì ojú ìwé bẹ́ẹ̀ ní àmì gíà.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>Kò ṣeé ṣe láti gbé àwọn ìfiránṣẹ́ fóòrùmù tuntun jùlọ wọlé.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Àwọn iṣẹ́ cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Kò sí apá iṣẹ́ cron kankan tí ó ti ṣiṣẹ́ síbẹ̀: ìtẹ̀léra iṣẹ́, àwọn ìgbéwọlé, àwọn ìfitónilétí àti atọ́ka ìwádìí ń dúró. Ẹ ṣiṣẹ́ php bin/php/installcrontab.php --add, tàbí kí ẹ fi àwọn ìlà --show kún crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Apá iṣẹ́ cron kan kò tí ì ṣiṣẹ́ fún àkókò tí ó gùn ju ohun tí ètò àkókò rẹ̀ gbà lọ: ẹ ṣàyẹ̀wò crontab (php bin/php/installcrontab.php --show) àti àwọn fáìlì àkọsílẹ̀ var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Apá</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ètò àkókò</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Ìbẹ̀rẹ̀ tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>rárá</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>ní àkókò</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>ti pẹ́</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>kò ṣiṣẹ́ rí</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Ìfisórí ẹ̀rọ náà kò ní apá iṣẹ́ cron kankan fún iṣẹ́ cron láti ṣiṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Ìgbékalẹ̀ &gt; Àwọn iṣẹ́ cron</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>dáwọ́ iṣẹ́ àwọn àkọọ́lẹ̀ olùlò dúró kí ẹ sì gbé wọn lọ sí ẹgbẹ́ àwọn olùlò tí a dáwọ́ iṣẹ́ wọn dúró, kí ẹ sì gbé wọn padà</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>rí ibi tí àwọn olùlò mìíràn ti wọlé, kí ó sì mú wọn jáde</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>Ṣí àwọn ìfẹ́ ímeèlì</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Àwọn ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Ibi tí ẹ ti wọlé: aṣàwárí wẹ́ẹ̀bù, ẹ̀rọ ìṣiṣẹ́, ibi àti àkókò. Ẹ mú ẹ̀rọ tí ẹ kò mọ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Ibi tí olùlò yìí ti wọlé, àti mímú olùlò náà jáde níbi gbogbo.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Ṣàkóso àwọn ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Fi àwọn ìgbà ìwọlé hàn</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count ti wọlé</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Àwọn kọ́kọ́rọ́ ìwọlé (passkeys)</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Ẹ wọlé pẹ̀lú ìka ọwọ́ yín, ojú yín, títì ojú ẹ̀rọ tàbí kọ́kọ́rọ́ ààbò dípò ọ̀rọ̀ aṣínà yín.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Ṣàkóso àwọn kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Fikún kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Kọ́kọ́rọ́ ìwọlé %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Kò sí síbẹ̀</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Àwọn àpapọ̀ Kíláàsì/Ìhùwà (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Àwọn ẹgbẹ́ olùlò tí àwọn àkáǹtì tuntun wọn nílò ìfọwọ́sí</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Àkáǹtì tí a tẹ̀jáde sínú ọ̀kan nínú àwọn ẹgbẹ́ wọ̀nyí, tàbí lábẹ́ ọ̀kan, yóò dúró títí olùfọwọ́sí yóò fi gbà á. Kò lè wọlé ṣáájú ìgbà náà.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Àwọn olùlò tí ń fọwọ́ sí àwọn àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Àwọn ẹgbẹ́ tí ń fọwọ́ sí àwọn àkáǹtì</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Àwọn ẹgbẹ́ olùlò tí kò nílò ìfọwọ́sí (àwọn ọmọ ẹgbẹ́ wọn ń tẹ irú àwọn àkáǹtì bẹ́ẹ̀ jáde tààrà; àwọn olùfọwọ́sí kò nílò rẹ̀ rárá)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Fi í-meèlì ránṣẹ́ sí àwọn olùfọwọ́sí pẹ̀lú ìjápọ̀ sí ìfọwọ́sí náà (wọ́n á wọlé láti fọwọ́ sí i tàbí kọ̀ ọ́)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Olùyípadà àyíká EXP_DEMO_MODE=1 fi hàn pé ìfisórí ẹ̀rọ yìí jẹ́ àfihàn gbangba: a gba ọ̀rọ̀ aṣínà alákòóso tí a mọ̀ dáadáa, a kò sì lè yí ọ̀rọ̀ aṣínà alákòóso padà tàbí tún un ṣe lẹ́yìn náà. Ẹ má ṣe lo ipò àfihàn fún sáìtì iṣẹ́ gidi.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Àwọn iṣẹ́ cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Àwọn iṣẹ́ cron ń ṣiṣẹ́ láti inú crontab ti olùlò %user, tí ó ni ìfisórí ẹ̀rọ náà.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Ìfisórí ẹ̀rọ náà kò ní apá iṣẹ́ cron kankan láti ṣètò àkókò fún.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>A kò kọ crontab náà (%reason). Ẹ fi àwọn ìlà wọ̀nyí kún crontab ti olùlò tí sáìtì náà ń ṣiṣẹ́ lábẹ́ rẹ̀, bí bẹ́ẹ̀ kọ́ ìtẹ̀léra iṣẹ́, àwọn ìgbéwọlé, àwọn ìfitónilétí àti atọ́ka ìwádìí kò ní ṣiṣẹ́ láéláé:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>Orúkọ ClassAttribute</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Àwọn àkáǹtì tí ó nílò ìfọwọ́sí</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Í-meèlì sí àwọn olùfọwọ́sí</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bẹ́ẹ̀ni</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Bẹ́ẹ̀kọ́</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>A ti fi àsọyé yín kún un.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>A ti fọwọ́ sí àkáǹtì “%1” a sì ti tẹ̀ ẹ́ jáde: ó lè wọlé báyìí.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>A ti kọ àkáǹtì “%1”. A kò tẹ̀ ẹ́ jáde, kò sì lè wọlé; ó tún di àkọsílẹ̀ àkọ́kọ́ ti òǹkọ̀wé rẹ̀.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>A fi àmì ojú ìwé %count kún un.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Ojú ìwé ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>A kò tí ì lè fi àmì sí àwọn ojú ìwé ẹ̀rọ: a kò tí ì ṣe ìmúdójúìwọ̀n ibùdó dátà ti ẹ̀dà yìí.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>A kò lè fi àmì sí ojú ìwé yìí: kì í ṣe ojú ìwé ìwòran mọ́dùùlù.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>A kò lè fi àmì sí ojú ìwé yìí: ẹ kò lè ṣí i.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>A kò lè fi àmì sí ojú ìwé náà.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Ojú ìwé “%name” wà nínú àwọn àmì ojú ìwé yín.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>A kò lè yí orúkọ àmì ojú ìwé náà padà: ó nílò orúkọ.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>A ti yí orúkọ àmì ojú ìwé náà padà sí “%name”.</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>Àpò</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>A di ìpamọ́ náà ní ọ̀nà kíkọ PAX tar, tí a kò lè gbé wọlé. Ẹ di àpò náà ní ọ̀nà kíkọ GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>A kọ ìpamọ́ náà: ohun inú rẹ̀ “%path” ní irú tar “%type”, àpò kan sì ní fáìlì àti fóldà nìkan.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>A kọ ìpamọ́ náà: ó dárúkọ ohun inú kan tí ó gùn ju byte %length lọ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Ṣe àwòrán sí àwọn tábìlì dátà</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Fọwọ́ sí àwọn àkáǹtì olùlò</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Àkáǹtì olùlò tuntun kan ń dúró de ìfọwọ́sí yín</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>A darí ẹni sí ojú ìwé àtúnṣe ọ̀rọ̀ aṣínà</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>A kọ ìwọlé láìsí ìgbésẹ̀ kejì</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>A ṣẹ̀dá ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>A fagilé ọ̀rọ̀ aṣínà áàpù</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>A lo ọ̀rọ̀ aṣínà áàpù</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>Àkọsílẹ̀ ìṣàyẹ̀wò ti Ọ̀pá ìsopọ̀ yìí</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>pé</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ti já</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>a kò tí ì ṣàyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>a ti tún un ṣe</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>òfo</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Àdírẹ́sì ímeèlì tuntun %email ń dúró de ìfìdímúlẹ̀ rẹ̀: ẹ ṣí ìjápọ̀ tí a fi ránṣẹ́ sibẹ. Títí di ìgbà náà, àkáǹtì yìí yóò máa lo %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Í-meèlì nípa ìwọlé láti ẹ̀rọ tuntun tàbí aṣàwárí wẹ́ẹ̀bù tuntun jẹ́ apá kan ààbò àkáǹtì. Ẹ ń pa á tàbí tàn án níbi àwọn ẹ̀rọ yín, níbi tí ẹ ti ń rí àwọn ìgbà ìwọlé àkáǹtì yín tí ẹ sì ń mú wọn jáde.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>Àwọn olùgbọ́ sí i</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Àtúnyẹ̀wò àti ìtúsílẹ̀</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Kókó ọ̀rọ̀ náà wà ní Àtúnyẹ̀wò báyìí.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>A ti Tú kókó ọ̀rọ̀ náà sílẹ̀: àwọn òǹkàwé ń rí i báyìí.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Kókó ọ̀rọ̀ náà tún di Àkọsílẹ̀ àkọ́kọ́.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Ẹ̀yin ni ẹ kọ ẹ̀dà lọ́wọ́lọ́wọ́, nítorí náà ẹlòmíràn tí ó ní ipa ìtúsílẹ̀ ni yóò tú u sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>A kò yí ipò náà padà: ipa yín kò gba ìgbésẹ̀ yìí láàyè.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Ìṣàn iṣẹ́ àtúnyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Àkọsílẹ̀ àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Àtúnyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Padà sí Àtúnyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Fi ránṣẹ́ fún Àtúnyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Tú sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Padà sí Àkọsílẹ̀ àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Àyẹ̀wò ìtọ́sọ́nà ara kíkọ</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Àyẹ̀wò ìtọ́sọ́nà ara kíkọ kò rí nǹkan kan.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Àṣìṣe %errors, ìkìlọ̀ %warnings, ìkíyèsí %notices. Àṣìṣe kan ń dí ./console exp:help:content check lọ́wọ́ láti yege.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Ìpele</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Òfin</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pápá</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Ohun tí a rí</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Ṣé èyí wúlò?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Àwọn òǹkàwé dáhùn bẹ́ẹ̀ni ní ìgbà %yes àti bẹ́ẹ̀kọ́ ní ìgbà %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Àwọn ìdí tí a fún bẹ́ẹ̀kọ́:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Ẹ ṣé. Ìdáhùn yín ń ràn wá lọ́wọ́ láti mú ìrànlọ́wọ́ náà dára sí i.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bẹ́ẹ̀ni</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Bí kò bá rí bẹ́ẹ̀, kí ni ó ṣe àṣìṣe?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>A kò fún ìdí kankan</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Bẹ́ẹ̀kọ́</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Ìdáhùn yín nìkan ni a ń pa mọ́, kì í ṣe ẹni tí ẹ jẹ́.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Ó ti di àtijọ́</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Ó ṣòro láti yé ni</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Nǹkan kan kù</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Kò tọ̀nà</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Ìdí mìíràn</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>A kò tí ì Tú kókó ọ̀rọ̀ yìí sílẹ̀; àwọn òǹkàwé kò rí i.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Ṣàwárí àwọn tábìlì ti àwọn kílásì ìtẹpẹ́mọ́…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Àkáǹtì olùlò tuntun ń dúró de ìfọwọ́sí: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Àkáǹtì</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Orúkọ olùlò</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ẹgbẹ́</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Ẹni tí ó béèrè</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Ṣí ìfọwọ́sí náà</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Bí bọ́tìnnì náà kò bá ṣiṣẹ́, ẹ ṣe ẹ̀dà àdírẹ́sì yìí sínú aṣàwárí wẹ́ẹ̀bù yín: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Àkáǹtì olùlò tuntun kan ń dúró de ìfọwọ́sí yín</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester ṣẹ̀dá àkáǹtì “%name” nínú %groups. A kò tẹ̀ ẹ́ jáde, kò sì lè wọlé títí olùfọwọ́sí yóò fi gbà á.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Ẹ wọlé sí ojúùwò alákòóso kí ẹ sì fọwọ́ sí i tàbí kọ̀ ọ́ nínú àtòjọ ìfọwọ́sowọ́pọ̀ yín. Ìjápọ̀ yìí kò mú yín wọlé, kò sì pinnu nǹkan kan fúnra rẹ̀.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>%site ni ó fi í-meèlì yìí ránṣẹ́ nítorí pé ẹ ń fọwọ́ sí àwọn àkáǹtì tuntun ti àwọn ẹgbẹ́ wọ̀nyí.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kọ̀ǹpútà</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Fóònù</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tábúlẹ́ẹ̀tì</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ètò tàbí áàpù</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Oníbàárà aládàáṣe</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ẹ̀rọ àìmọ̀</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Ọ̀rọ̀ aṣínà</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ọ̀rọ̀ aṣínà àti kóòdù ìgbésẹ̀ méjì</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ojúùwò REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ojúùwò SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ìwọlé ẹ̀ẹ̀kan (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ó wọlé ṣáájú kí a tó máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ti jáde</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>A mú jáde láti ojú ìwé yìí</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Alákòóso ni ó mú jáde</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>A mú jáde pẹ̀lú “gbogbo ìgbà ìwọlé mìíràn”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ìwọlé tuntun ti rọ́pò rẹ̀</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ìyípadà ọ̀rọ̀ aṣínà ti parí rẹ̀</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Àwọn ìgbà ìwọlé ti %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Ibi tí àkáǹtì yín ti wọlé báyìí. Bí ẹ kò bá dá ẹ̀rọ kan mọ̀, ẹ mú un jáde kí ẹ sì yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ibi tí àkáǹtì yìí ti wọlé báyìí. Mímú olùlò náà jáde ń parí gbogbo ìgbà ìwọlé ní ìbéèrè rẹ̀ tó kàn.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Padà sí àkáǹtì náà</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A ti mú ìgbà ìwọlé náà jáde. Ẹ̀rọ náà gbọdọ̀ tún wọlé.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>A ti mú ìgbà ìwọlé mìíràn %count jáde.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Kò sí ìgbà ìwọlé mìíràn láti mú jáde.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>A ti mú ìgbà ìwọlé %count ti olùlò yìí jáde.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Olùlò yìí kò ní ìgbà ìwọlé kankan láti mú jáde.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Èyí ni ìgbà ìwọlé tí ẹ ń lò. Láti parí rẹ̀, ẹ jáde.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ìgbà ìwọlé yẹn ti parí tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ẹ ó gba í-meèlì nígbà tí àkáǹtì yín bá wọlé láti ẹ̀rọ tuntun.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ẹ kò ní gba í-meèlì mọ́ nípa ìwọlé láti àwọn ẹ̀rọ tuntun.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ojú ìwé náà ti parí. A kò yí nǹkan kan padà; ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>A kò ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé lórí sáìtì yìí (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tábìlì expuser_session kò sí</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A ó máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé ní kété tí a bá ṣẹ̀dá rẹ̀: php update/common/scripts/6.0/createusersessiontable.php, tàbí ìmúdójúìwọ̀n ibùdó dátà ti 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ti wọlé báyìí</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mú gbogbo ìgbà ìwọlé mìíràn jáde</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Jáde níbi gbogbo</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Gbogbo ẹ̀rọ àyàfi èyí ni a ó mú jáde ní ìbéèrè rẹ̀ tó kàn, àti àwọn tí ó dúró ní wíwọlé pẹ̀lú Rántí mi.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Gbogbo ìgbà ìwọlé olùlò yìí ni a ó mú jáde ní ìbéèrè rẹ̀ tó kàn, àti àwọn tí ó dúró ní wíwọlé pẹ̀lú Rántí mi.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Bẹ́ẹ̀ni, mú àwọn ìgbà ìwọlé mìíràn jáde</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Bẹ́ẹ̀ni, mú gbogbo ìgbà ìwọlé jáde</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ẹ̀rọ yìí</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>A fi hàn gẹ́gẹ́ bí nẹ́tíwọ̀ọ̀kì rẹ̀; a pa àdírẹ́sì kíkún mọ́ fún àwọn alákòóso.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>wọlé láti %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ìgbà ìkẹyìn tí ó ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Báyìí</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Ó dúró ní wíwọlé</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Rántí mi, títí di %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Títí a ó fi pa aṣàwárí wẹ́ẹ̀bù dé</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Wọlé ní</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Ìdánimọ̀ aṣàwárí wẹ́ẹ̀bù</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Láti parí ìgbà ìwọlé yìí, ẹ jáde.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Jáde</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mú ìgbà ìwọlé yìí jáde</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Kò sí ìgbà ìwọlé kankan tí ó wọlé.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Àwọn ìkìlọ̀ ìwọlé</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Fi í-meèlì ránṣẹ́ sí mi nígbà tí àkáǹtì mi bá wọlé láti ẹ̀rọ tuntun tàbí aṣàwárí wẹ́ẹ̀bù tuntun</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>A ń fi ránṣẹ́ sí %email. Ó sọ ẹ̀rọ náà, ibi tí ó fẹ́rẹ̀ẹ́ jẹ́ àti àkókò fún yín, ó sì ní ìjápọ̀ sí ojú ìwé yìí.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Sáìtì yìí kò fi ìkìlọ̀ ìwọlé ránṣẹ́.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Tí ó parí láìpẹ́</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Àwọn ìgbà ìwọlé tí ó parí láàrin ọjọ́ %days tó kọjá.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Bí ó ṣe ṣẹlẹ̀</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Kò sí.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kọ̀ǹpútà</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Fóònù</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tábúlẹ́ẹ̀tì</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ètò tàbí áàpù</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Oníbàárà aládàáṣe</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ẹ̀rọ àìmọ̀</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Ọ̀rọ̀ aṣínà</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Ọ̀rọ̀ aṣínà àti kóòdù ìgbésẹ̀ méjì</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ojúùwò REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ojúùwò SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ìwọlé ẹ̀ẹ̀kan (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Ó wọlé ṣáájú kí a tó máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ti jáde</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>A mú jáde láti ojú ìwé yìí</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Alákòóso ni ó mú jáde</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>A mú jáde pẹ̀lú “gbogbo ìgbà ìwọlé mìíràn”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ìwọlé tuntun ti rọ́pò rẹ̀</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ìyípadà ọ̀rọ̀ aṣínà ti parí rẹ̀</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Àwọn ìgbà ìwọlé ti %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Ibi tí àkáǹtì yín ti wọlé báyìí. Bí ẹ kò bá dá ẹ̀rọ kan mọ̀, ẹ mú un jáde kí ẹ sì yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ibi tí àkáǹtì yìí ti wọlé báyìí. Mímú olùlò náà jáde ń parí gbogbo ìgbà ìwọlé ní ìbéèrè rẹ̀ tó kàn.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A ti mú ìgbà ìwọlé náà jáde. Ẹ̀rọ náà gbọdọ̀ tún wọlé.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>A ti mú ìgbà ìwọlé mìíràn %count jáde.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Kò sí ìgbà ìwọlé mìíràn láti mú jáde.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>A ti mú ìgbà ìwọlé %count ti olùlò yìí jáde.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Olùlò yìí kò ní ìgbà ìwọlé kankan láti mú jáde.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Èyí ni ìgbà ìwọlé tí ẹ ń lò. Láti parí rẹ̀, ẹ jáde.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ìgbà ìwọlé yẹn ti parí tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ẹ ó gba í-meèlì nígbà tí àkáǹtì yín bá wọlé láti ẹ̀rọ tuntun.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ẹ kò ní gba í-meèlì mọ́ nípa ìwọlé láti àwọn ẹ̀rọ tuntun.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ojú ìwé náà ti parí. A kò yí nǹkan kan padà; ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>A kò ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé lórí sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>A kò tí ì máa ṣe àkọsílẹ̀ àwọn ìgbà ìwọlé: sáìtì náà nílò ìmúdójúìwọ̀n ibùdó dátà rẹ̀.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Ti wọlé báyìí</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ẹ̀rọ yìí</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Ti wọlé</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ìgbà ìkẹyìn tí ó ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Báyìí</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Ó dúró ní wíwọlé</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Rántí mi, títí di %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Títí a ó fi pa aṣàwárí wẹ́ẹ̀bù dé</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Láti parí ìgbà ìwọlé yìí, ẹ jáde.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Jáde</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mú ìgbà ìwọlé yìí jáde</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mú gbogbo ìgbà ìwọlé mìíràn jáde</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Jáde níbi gbogbo</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Àwọn ìkìlọ̀ ìwọlé</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Fi í-meèlì ránṣẹ́ sí mi nígbà tí àkáǹtì mi bá wọlé láti ẹ̀rọ tuntun tàbí aṣàwárí wẹ́ẹ̀bù tuntun</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Tí ó parí láìpẹ́</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Bí ó ṣe ṣẹlẹ̀</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Kò sí láàrin ọjọ́ %days tó kọjá.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Ẹ wo ibi tí àkáǹtì yín ti wọlé, kí ẹ sì mú ẹ̀rọ tí ẹ kò mọ̀ jáde.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Ṣàkóso àwọn ẹ̀rọ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Ìwọlé tuntun sí àkáǹtì yín lórí %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Ẹ n lẹ́,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>A ṣẹ̀ṣẹ̀ lo àkáǹtì yín %login lórí %site láti wọlé láti ẹ̀rọ tàbí aṣàwárí wẹ́ẹ̀bù tí kò tí ì lò láìpẹ́ yìí:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Ẹ̀rọ:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Àkókò:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Àdírẹ́sì ìfojúdíwọ̀n:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Bí ó bá jẹ́ ẹ̀yin ni, ẹ kò nílò láti ṣe nǹkan kan.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Bí kì í bá ṣe ẹ̀yin, ó ṣeé ṣe kí ẹnìkan mọ ọ̀rọ̀ aṣínà yín. Ẹ mú ìgbà ìwọlé yẹn jáde lórí ojú ìwé àwọn ẹ̀rọ yín, lẹ́yìn náà ẹ yí ọ̀rọ̀ aṣínà yín padà:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Ẹ lè pa àwọn í-meèlì wọ̀nyí lórí ojú ìwé kan náà.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Ìwọlé tuntun ti %login lórí %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Àkáǹtì %login wọlé láti ẹ̀rọ tàbí aṣàwárí wẹ́ẹ̀bù tí kò tí ì lò láìpẹ́ yìí.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Àwọn ìgbà ìwọlé ti olùlò yìí:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ìwọlé tuntun sí àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>A lo àkáǹtì yín %login láti wọlé láti %device (%ip) ní %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Bí ó bá jẹ́ ẹ̀yin ni, ẹ kò nílò láti ṣe nǹkan kan. Bí kò bá rí bẹ́ẹ̀, ẹ mú ìgbà ìwọlé yìí jáde ní %url kí ẹ sì yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Ìwọlé tuntun ti %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Àkáǹtì %login wọlé láti ẹ̀rọ tuntun: %device (%ip) ní %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Àwọn ìgbà ìwọlé ti %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Àwọn kọ́kọ́rọ́ ìwọlé (passkeys)</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Kọ́kọ́rọ́ ìwọlé ń mú yín wọlé pẹ̀lú ìka ọwọ́ yín, ojú yín, títì ojú ẹ̀rọ tàbí kọ́kọ́rọ́ ààbò dípò ọ̀rọ̀ aṣínà yín. A tọ́jú rẹ̀ sórí ẹ̀rọ yín tàbí sínú alákòóso ọ̀rọ̀ aṣínà yín; sáìtì yìí ń pa kọ́kọ́rọ́ gbangba rẹ̀ nìkan mọ́, nítorí náà jíjò dátà níbí kò lè ṣí i payá.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>A ti pa àwọn kọ́kọ́rọ́ ìwọlé lórí sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>A kò tí ì lè lo àwọn kọ́kọ́rọ́ ìwọlé lórí sáìtì yìí: alákòóso gbọdọ̀ kọ́kọ́ ṣe ìmúdójúìwọ̀n ibùdó dátà.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Ṣé kí a yọ kọ́kọ́rọ́ ìwọlé “%name” kúrò?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Kò ní lè wọlé sí àkáǹtì yìí mọ́. Ẹ yọ ọ́ kúrò lórí ẹ̀rọ yín tàbí nínú alákòóso ọ̀rọ̀ aṣínà yín pẹ̀lú.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Yọ kọ́kọ́rọ́ ìwọlé kúrò</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Àwọn kọ́kọ́rọ́ ìwọlé yín</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count nínú %max ní púpọ̀ jùlọ</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Ẹ kò tí ì ní kọ́kọ́rọ́ ìwọlé kankan. Ẹ fi ọ̀kan kún un nísàlẹ̀: nígbà míì tí ẹ bá wọlé, ẹ yan “Wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Orúkọ</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ìgbà tí a fikún</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ìgbà ìkẹyìn tí a lò ó</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Irú</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn ìṣe</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Kò tí ì ṣẹlẹ̀</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Ti múṣiṣẹ́pọ̀</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Ẹ̀rọ tàbí kọ́kọ́rọ́ yìí</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Yí orúkọ padà</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Orúkọ tuntun</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Fi orúkọ náà pamọ́</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Yọ kúrò</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Fikún kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Ẹ tẹ̀lé àwọn ìgbésẹ̀ aṣàwárí wẹ́ẹ̀bù tàbí ẹ̀rọ yín.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>A ti pa àpótí ìjíròrò kọ́kọ́rọ́ ìwọlé dé. A kò yí nǹkan kan padà.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>A kò lè ṣẹ̀dá kọ́kọ́rọ́ ìwọlé náà. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Aṣàwárí wẹ́ẹ̀bù yìí kò lè ṣẹ̀dá kọ́kọ́rọ́ ìwọlé. Ẹ lo aṣàwárí wẹ́ẹ̀bù tuntun, tàbí kí ẹ wọlé pẹ̀lú ọ̀rọ̀ aṣínà yín.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Fún àpẹẹrẹ ẹ̀rọ tàbí alákòóso ọ̀rọ̀ aṣínà tí ó wà lórí rẹ̀, kí ẹ lè dá àwọn kọ́kọ́rọ́ ìwọlé yín mọ̀ yàtọ̀ síra.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Àkáǹtì yìí ní iye kọ́kọ́rọ́ ìwọlé tí ó pọ̀ jùlọ tí ó lè ní (%max). Ẹ yọ ọ̀kan kúrò láti fi òmíràn kún un.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>A kò lè lo kọ́kọ́rọ́ ìwọlé náà. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Àkáǹtì mi</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>A ti pa àpótí ìjíròrò kọ́kọ́rọ́ ìwọlé dé. Ẹ lè wọlé pẹ̀lú ọ̀rọ̀ aṣínà yín dípò rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>A kò lè lo kọ́kọ́rọ́ ìwọlé náà. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i, tàbí kí ẹ wọlé pẹ̀lú ọ̀rọ̀ aṣínà yín.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>A kò lè wọlé pẹ̀lú kọ́kọ́rọ́ ìwọlé náà</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>ẹ wọlé pẹ̀lú ìka ọwọ́ yín, ojú yín, títì ojú ẹ̀rọ tàbí kọ́kọ́rọ́ ààbò dípò ọ̀rọ̀ aṣínà yín.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>A ti fi kọ́kọ́rọ́ ìwọlé “%name” kún un. Ẹ lè wọlé pẹ̀lú rẹ̀ láti ìsinsìnyí lọ.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Orúkọ kọ́kọ́rọ́ ìwọlé náà ti di “%name” báyìí.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>A ti yọ kọ́kọ́rọ́ ìwọlé “%name” kúrò. Kò lè wọlé sí àkáǹtì yìí mọ́.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Kọ́kọ́rọ́ ìwọlé ti %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Àkáǹtì yìí ní iye kọ́kọ́rọ́ ìwọlé tí ó pọ̀ jùlọ tí ó lè ní. Ẹ kọ́kọ́ yọ ọ̀kan kúrò.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Ibùdó dátà náà ní iṣẹ́ púpọ̀, a kò sì fi nǹkan kan pamọ́. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>A ti forúkọ kọ́kọ́rọ́ ìwọlé yìí sílẹ̀ tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Ìbéèrè náà pẹ́ jù tàbí a ti lò ó tẹ́lẹ̀. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Kọ́kọ́rọ́ ìwọlé náà kò ṣàyẹ̀wò ẹni tí ẹ jẹ́ (PIN, ìka ọwọ́ tàbí ojú). Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i kí ẹ sì jẹ́rìí sí i lórí ẹ̀rọ yín.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Olùfìdí-ẹni-múlẹ̀ yìí ń lo irú kọ́kọ́rọ́ tí sáìtì yìí kò gbà.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>A ṣẹ̀dá kọ́kọ́rọ́ ìwọlé náà fún àdírẹ́sì mìíràn yàtọ̀ sí sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>A kò forúkọ kọ́kọ́rọ́ ìwọlé yìí sílẹ̀ fún àkáǹtì kankan níbí. Ẹ wọlé pẹ̀lú ọ̀rọ̀ aṣínà yín kí ẹ sì fi í kún un ní Àkáǹtì mi, Àwọn kọ́kọ́rọ́ ìwọlé.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Àkáǹtì yìí kò lè wọlé ní àkókò yìí. Ẹ jọ̀wọ́ kàn sí alákòóso sáìtì náà.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>A kò lè ṣàyẹ̀wò kọ́kọ́rọ́ ìwọlé náà. Ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Ẹ fẹ́ yí bí ẹ ṣe ń wọlé tàbí ààbò àkáǹtì yín padà.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Ẹ fẹ́ ṣàkóso àwọn olùlò, ipa tàbí ìlànà.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Ẹ fẹ́ yí ètò ẹ̀rọ padà tàbí ṣe ìṣe ìgbékalẹ̀ kan.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Ẹ fẹ́ gbé dátà jáde.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Ẹ fẹ́ yọ àkóónú kúrò tàbí tẹ̀ ẹ́ jáde.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Ìṣe yìí nílò kí ẹ jẹ́rìí sí ẹni tí ẹ jẹ́.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Ẹ jẹ́rìí pé ẹ̀yin ni, tí ẹ wọlé gẹ́gẹ́ bí %login. A kò ní tún béèrè lọ́wọ́ yín fún ìṣẹ́jú %minutes.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Ọ̀rọ̀ aṣínà yẹn kò tọ̀nà.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Kóòdù yẹn kò tọ̀nà, tàbí a ti lò ó tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Ẹ yan ọ̀kan nínú àwọn ọ̀nà tí ó wà nísàlẹ̀.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>A kò lè ṣàyẹ̀wò kọ́kọ́rọ́ ìwọlé náà.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Ìgbìyànjú %count ló kù kí a tó mú yín jáde.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>A kò lè tún fi àwọn fáìlì tí ẹ yàn ránṣẹ́: lẹ́yìn ìjẹ́rìí, ẹ tún yàn wọ́n lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Pẹ̀lú ọ̀rọ̀ aṣínà yín</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Pẹ̀lú kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Ọ̀rọ̀ aṣínà</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Jẹ́rìí</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Lo kọ́kọ́rọ́ ìwọlé</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Pẹ̀lú kóòdù láti inú áàpù ìfìdí-ẹni-múlẹ̀ yín</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kóòdù</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Àkáǹtì yìí kò ní ọ̀nà kankan láti jẹ́rìí sí ẹni tí ẹ jẹ́ (kò sí ọ̀rọ̀ aṣínà, kọ́kọ́rọ́ ìwọlé tàbí áàpù ìfìdí-ẹni-múlẹ̀). Ẹ jáde kí ẹ sì tún wọlé, tàbí kí ẹ béèrè lọ́wọ́ alákòóso.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Ẹ jẹ́rìí pé ẹ̀yin ni</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kóòdù láti inú áàpù ìfìdí-ẹni-múlẹ̀ yín</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Àkáǹtì tiyín</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Yíyí ọ̀rọ̀ aṣínà ẹni, àdírẹ́sì í-meèlì, àwọn kọ́kọ́rọ́ ìwọlé, ìwọlé onígbésẹ̀ méjì tàbí àwọn kọ́kọ́rọ́ API padà.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Àwọn olùlò, ipa àti ìlànà</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ṣíṣẹ̀dá àti ṣíṣàtúnṣe àwọn olùlò, ètò àkáǹtì, fífọwọ́ sí tàbí kíkọ àwọn àkáǹtì olùlò tuntun, yíyan ipa àti ṣíṣàtúnṣe ìlànà.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Ètò ẹ̀rọ àti àwọn ìṣe ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Ṣíṣàtúnṣe ètò, àwọn àfikún, kásẹ̀ àti ìtọ́jú, àwọn àpò àti ìmúdójúìwọ̀n, ẹ̀dà ìpamọ́ àti alákòóso git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Gbígbé dátà jáde</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Gbígbé ìwífún tí a kójọ, àwọn olùlò, àwọn olùforúkọsílẹ̀ ìwé ìròyìn àti àkọsílẹ̀ àyẹ̀wò jáde.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Yíyọ àkóónú kúrò àti títẹ̀ ẹ́ jáde</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Yíyọ àkóónú kúrò (bákan náà sí àpótí ìdọ̀tí), sísọ àpótí ìdọ̀tí di òfo àti títẹ̀jáde. Ó wà ní pípa gẹ́gẹ́ bí àìyípadà.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ṣáájú ìṣe tí ó ṣe pàtàkì, olùlò tí ó ti wọlé tún jẹ́rìí sí ẹni tí ó jẹ́, pẹ̀lú ọ̀rọ̀ aṣínà rẹ̀, kọ́kọ́rọ́ ìwọlé tàbí kóòdù áàpù ìfìdí-ẹni-múlẹ̀ rẹ̀. Àwọn ojú ìwé wẹ́ẹ̀bù nìkan ni ó ń béèrè: ojúùwò REST, SOAP, WebDAV, ìwọlé expservices àti ìlà àṣẹ kò béèrè rárá.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Gbogbogbò</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Ìṣẹ́jú tí ìjẹ́rìí kan fi wúlò</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Ìgbà láti béèrè</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Òfin %count nínú site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>A fi pamọ́ sí settings/override/site.ini.append.php. Fífi pamọ́ ń béèrè kí ẹ jẹ́rìí pé ẹ̀yin ni.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Ẹ jẹ́rìí pé ẹ̀yin ni</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Béèrè “Ẹ jẹ́rìí pé ẹ̀yin ni” ṣáájú àwọn ìṣe ti àwọn ẹgbẹ́ tí a tàn nísàlẹ̀</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>A ti fi ètò náà pamọ́.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>A kò lè fi ètò náà pamọ́: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Tuntun</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Yọ kúrò</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Ìlà %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ìlà tuntun</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>A ti fi ìlà náà pamọ́.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Wá</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Àwọn ìṣe</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Ṣàtúnṣe</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Kò sí ìlà kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Àdírẹ́sì JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>bẹ́ẹ̀ni</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>bẹ́ẹ̀kọ́</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID ọ̀pá ìsopọ̀ kan</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID ohun ti olùlò kan</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID ohun àkóónú kan</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ìlà %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>A kò fi ìlà náà pamọ́</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Yọ ìlà %id kúrò?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>A yọ ìlà náà kúrò nínú tábìlì, a kò sì lè dá a padà.</translation>
     </message>
 </context>
 </TS>

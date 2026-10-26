@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>打开或关闭文件夹</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>此页面已在您的书签中。打开可更改其名称或文件夹。</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>将此页面添加到书签。</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>已添加书签</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>将此页面加入书签</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>书签会保存此页面的地址及其参数：/%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>保存书签</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>添加书签</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>我的书签</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>系统页面</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>系统页面</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>您已无权打开此页面。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>打开</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>缺少此页面的地址。请移除该书签，然后重新将页面加入书签。</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>您已无权打开此页面。请移除该书签，或向管理员申请访问权限。</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>模块和视图</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>系统页面也可以加入书签：打开该页面（设置、审计记录、用户列表等），然后选择其上方的“将此页面加入书签”。此类书签带有齿轮图标。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>无法加载最新论坛帖子。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron 任务</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>尚未运行过任何 cron 任务部分：作业队列、导入、通知和搜索索引都在等待。请运行 php bin/php/installcrontab.php --add，或将 --show 输出的行添加到 crontab 中。</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>某个 cron 任务部分未运行的时间已超出其计划允许的范围：请检查 crontab（php bin/php/installcrontab.php --show）和日志 var/log/cronjob-*.log。</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>部分</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>计划</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>上次启动</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状态</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>从未</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>准时</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>已延迟</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>从未运行</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>此安装没有可供 cron 任务运行的 cron 任务部分。</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>设置 &gt; cron 任务</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>停用用户帐户并将其移到已停用用户组，以及将其移回</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>查看其他用户在何处登录，并使其退出登录</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>打开电子邮件首选项</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>会话</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>您在何处登录：浏览器、系统、地点和时间。如有不认识的设备，请使其退出登录。</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>此用户在何处登录，以及让该用户在所有设备上退出登录。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>管理设备</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>显示会话</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count 个已登录</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>通行密钥</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>使用指纹、面容、屏幕锁定或安全密钥登录，而无需输入密码。</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>管理通行密钥</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>添加通行密钥</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count 个通行密钥</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>暂无</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>类/属性组合（%count）</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>新帐户需要审批的用户组</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>发布到这些组或其下级组中的帐户，会一直等待，直到审批人接受它。在此之前，该帐户无法登录。</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>审批帐户的用户</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>审批帐户的组</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>无需审批的用户组（其成员直接发布此类帐户；审批人始终无需审批）</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>向审批人发送包含审批链接的电子邮件（他们登录后即可批准或拒绝）</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50987,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>环境变量 EXP_DEMO_MODE=1 将此安装标记为公开演示：系统接受众所周知的管理员密码，且之后无法更改或重置管理员密码。切勿将演示模式用于生产站点。</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron 任务</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>cron 任务从拥有此安装的用户 %user 的 crontab 运行。</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>此安装没有需要计划的 cron 任务部分。</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>未能写入 crontab（%reason）。请将以下各行添加到运行站点的用户的 crontab 中，否则队列、导入、通知和搜索索引将永远不会运行：</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54519,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>类属性名称</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>需要审批的帐户</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>发送给审批人的电子邮件</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55945,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>已添加您的评论。</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>帐户“%1”已获批准并发布：现在可以登录。</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>帐户“%1”已被拒绝。它未发布，无法登录；它重新成为其作者的草稿。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56251,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>已添加 %count 个书签。</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>系统页面</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>系统页面暂时无法加入书签：尚未运行此版本的数据库更新。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>无法将此页面加入书签：它不是模块视图的页面。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>无法将此页面加入书签：您无权打开它。</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>无法将此页面加入书签。</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>页面“%name”已在您的书签中。</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>无法重命名书签：书签必须有名称。</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>书签已重命名为“%name”。</translation>
     </message>
 </context>
 <context>
@@ -57079,6 +57354,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>软件包</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>该压缩包是以 PAX tar 格式打包的，无法导入。请以 GNU tar 格式打包软件包（GNU tar：tar --format=gnu，bsdtar/macOS：tar --format=gnutar）。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>已拒绝该压缩包：条目“%path”的 tar 类型为“%type”，而软件包只能包含文件和目录。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>已拒绝该压缩包：其中有一个条目名称长度超过 %length 字节。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -58070,6 +58357,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>镜像到数据表</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>审批用户帐户</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>有一个新用户帐户正在等待您审批</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +61030,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>已转到更改密码</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>已拒绝未完成第二步的登录</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>已创建应用密码</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>已撤销应用密码</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>已使用应用密码</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64508,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>此节点的审计跟踪</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>完整</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>已中断</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>未检查</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>已修复</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>空</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71475,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>新的电子邮件地址 %email 正在等待确认：请打开我们发送到该地址的链接。在此之前，此帐户仍使用 %current。</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>关于从新设备或浏览器登录的电子邮件属于帐户安全的一部分。您可以在“您的设备”页面开启或关闭它，在那里还可以查看帐户的会话并使其退出登录。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75465,6 +75804,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>更多受众</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>审阅与发布</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>该主题现处于审阅阶段。</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>该主题已发布：读者现在可以看到它。</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>该主题已重新成为草稿。</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>当前版本是您编写的，因此需由拥有发布角色的其他人来发布。</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>状态未更改：您的角色不允许执行此步骤。</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>审阅工作流</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>草稿</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>审阅</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>退回审阅</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>提交审阅</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>发布</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>退回草稿</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>风格指南检查</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>风格指南检查未发现任何问题。</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors 个错误，%warnings 个警告，%notices 个提示。只要有错误，./console exp:help:content check 就无法通过。</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>级别</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>规则</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>字段</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>检查结果</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>这对您有帮助吗？</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>读者回答“是” %yes 次，回答“否” %no 次。</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>回答“否”的原因：</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>谢谢。您的回答有助于我们改进帮助。</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>如果没有帮助，问题出在哪里？</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>未提供原因</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>只保存您的回答，不保存您的身份。</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>内容已过时</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>难以理解</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>缺少内容</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>内容有误</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>其他原因</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>此主题尚未发布；读者看不到它。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75581,6 +76060,1160 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>浏览持久化类的数据表…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>新用户帐户等待审批：%name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>帐户</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>用户名</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>组</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>申请人</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>打开审批</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>如果按钮不起作用，请将此地址复制到浏览器中：%url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>有一个新用户帐户正在等待您审批</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester 在 %groups 中创建了帐户“%name”。在审批人接受之前，该帐户不会发布，也无法登录。</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>请登录管理界面，在您的协作列表中批准或拒绝它。此链接不会让您登录，本身也不做任何决定。</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>此邮件由 %site 发送，因为您负责审批这些组的新帐户。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>计算机</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>手机</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>平板电脑</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>程序或应用</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自动化客户端</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>未知设备</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密码和两步验证码</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 接口</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 接口</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>单点登录</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在开始记录会话之前登录</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>从此页面退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>由管理员退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>通过“所有其他会话”退出登录</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>被新的登录取代</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>因更改密码而结束</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>已过期</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的会话</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>您的帐户当前在以下位置登录。如有不认识的设备，请使其退出登录并更改密码。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>此帐户当前在以下位置登录。让该用户退出登录后，每个会话都会在其下一次请求时结束。</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>返回帐户</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>该会话已退出登录。该设备必须重新登录。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>已让 %count 个其他会话退出登录。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>没有其他需要退出登录的会话。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>已让此用户的 %count 个会话退出登录。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>此用户没有需要退出登录的会话。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>这是您正在使用的会话。要结束它，请退出登录。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>该会话已经结束。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>当您的帐户从新设备登录时，您将收到一封电子邮件。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>您将不再收到有关从新设备登录的电子邮件。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>页面已过期。未做任何更改；请重试。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>此站点不记录会话（site.ini [UserSessionSettings] Tracking=disabled）。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>缺少数据表 expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>创建该数据表后即开始记录会话：php update/common/scripts/6.0/createusersessiontable.php，或运行 6.0.15 的数据库更新。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>当前已登录</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>让所有其他会话退出登录</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>在所有设备上退出登录</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>除此设备外，其他所有设备都会在下一次请求时退出登录，包括通过“记住我”保持登录的设备。</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>此用户的每个会话都会在下一次请求时退出登录，包括通过“记住我”保持登录的会话。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>是，让其他会话退出登录</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>是，让所有会话退出登录</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此设备</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>设备</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>显示为其所属网络；完整地址保留供管理员查看。</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>从 %ip 登录</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>登录时间</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活动</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>现在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>保持登录</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>记住我，直到 %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>直到关闭浏览器</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>登录站点</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>浏览器标识</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>要结束此会话，请退出登录。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>退出登录</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>让此会话退出登录</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>没有已登录的会话。</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>登录提醒</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>当我的帐户从新设备或浏览器登录时给我发送电子邮件</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>发送至 %email。邮件会告诉您设备、大致地点和时间，并附有指向此页面的链接。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>此站点不发送登录提醒。</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近结束</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>最近 %days 天内结束的会话。</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>结束时间</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>结束方式</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>无。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>计算机</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>手机</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>平板电脑</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>程序或应用</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自动化客户端</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>未知设备</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>密码和两步验证码</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 接口</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 接口</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>单点登录</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>在开始记录会话之前登录</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>已退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>从此页面退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>由管理员退出登录</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>通过“所有其他会话”退出登录</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>被新的登录取代</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>因更改密码而结束</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>已过期</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的会话</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>您的帐户当前在以下位置登录。如有不认识的设备，请使其退出登录并更改密码。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>此帐户当前在以下位置登录。让该用户退出登录后，每个会话都会在其下一次请求时结束。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>该会话已退出登录。该设备必须重新登录。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>已让 %count 个其他会话退出登录。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>没有其他需要退出登录的会话。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>已让此用户的 %count 个会话退出登录。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>此用户没有需要退出登录的会话。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>这是您正在使用的会话。要结束它，请退出登录。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>该会话已经结束。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>当您的帐户从新设备登录时，您将收到一封电子邮件。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>您将不再收到有关从新设备登录的电子邮件。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>页面已过期。未做任何更改；请重试。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>此站点不记录会话。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>尚未记录会话：站点需要先运行数据库更新。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>当前已登录</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>此设备</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>设备</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>地址</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>登录时间</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>上次活动</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>现在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>保持登录</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>记住我，直到 %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>直到关闭浏览器</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>要结束此会话，请退出登录。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>退出登录</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>让此会话退出登录</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>让所有其他会话退出登录</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>在所有设备上退出登录</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>登录提醒</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>当我的帐户从新设备或浏览器登录时给我发送电子邮件</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近结束</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>结束时间</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>结束方式</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>最近 %days 天内没有。</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>查看您的帐户在何处登录，并让不认识的设备退出登录。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>管理设备</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>您在 %site 上的帐户有新的登录</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>您好：</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>您在 %site 上的帐户 %login 刚刚被用于从一台最近未使用过的设备或浏览器登录：</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>设备：</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>时间：</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>大致地址：</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>如果这是您本人的操作，则无需执行任何操作。</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>如果不是您本人，可能有人知道了您的密码。请在“您的设备”页面上让该会话退出登录，然后更改密码：</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>您可以在同一页面上关闭这些电子邮件。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%login 在 %site 上有新的登录</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>帐户 %login 从一台最近未使用过的设备或浏览器登录。</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>此用户的会话：</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>您的帐户有新的登录</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>您的帐户 %login 于 %date 从 %device（%ip）登录。</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>如果这是您本人的操作，则无需执行任何操作。否则，请在 %url 让该会话退出登录，并更改密码。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login 有新的登录</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>帐户 %login 从新设备登录：%device（%ip），时间 %date。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>您的设备</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name 的会话</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>通行密钥</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>通行密钥让您使用指纹、面容、屏幕锁定或安全密钥登录，而无需输入密码。它存储在您的设备或密码管理器中；此站点只保存其公钥，因此即使此处发生数据泄露，也无法泄露通行密钥。</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>此站点已关闭通行密钥。</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>此站点暂时无法使用通行密钥：管理员需要先运行数据库更新。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>确定要移除通行密钥“%name”吗？</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>它将无法再登录此帐户。请同时从您的设备或密码管理器中将其移除。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>移除通行密钥</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>您的通行密钥</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count 个，最多 %max 个</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>您还没有通行密钥。请在下方添加一个：下次登录时，选择“使用通行密钥登录”。</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>添加时间</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>上次使用</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>类型</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>尚未使用</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>已同步</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>此设备或密钥</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>重命名</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>新名称</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>保存名称</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>添加通行密钥</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>请按照浏览器或设备的步骤操作。</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>通行密钥对话框已关闭。未做任何更改。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>无法创建通行密钥。请重试。</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>此浏览器无法创建通行密钥。请使用最新版浏览器，或使用密码登录。</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>例如它所在的设备或密码管理器，以便区分您的各个通行密钥。</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>此帐户的通行密钥数已达上限（%max 个）。请先移除一个，再添加新的。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>无法使用该通行密钥。请重试。</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>我的帐户</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>通行密钥对话框已关闭。您可以改用密码登录。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>无法使用该通行密钥。请重试，或使用密码登录。</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>使用通行密钥登录</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>无法使用通行密钥登录</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>使用指纹、面容、屏幕锁定或安全密钥登录，而无需输入密码。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>已添加通行密钥“%name”。从现在起，您可以使用它登录。</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>通行密钥已重命名为“%name”。</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>已移除通行密钥“%name”。它将无法再登录此帐户。</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date 的通行密钥</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>此帐户的通行密钥数已达上限。请先移除一个。</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>数据库繁忙，未保存任何内容。请重试。</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>此通行密钥已注册。</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>请求耗时过长或已被使用。请重试。</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>通行密钥未验证您的身份（PIN、指纹或面容）。请重试，并在设备上确认。</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>此身份验证器使用的密钥类型不被此站点接受。</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>此通行密钥是为其他地址而非此站点创建的。</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>此通行密钥未在此处的任何帐户中注册。请使用密码登录，然后在“我的帐户”&gt;“通行密钥”中添加它。</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>此帐户暂时无法登录。请联系站点管理员。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>无法验证该通行密钥。请重试。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>您即将更改登录方式或帐户安全设置。</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>您即将管理用户、角色或策略。</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>您即将更改系统设置或执行设置操作。</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>您即将导出数据。</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>您即将移除或发布内容。</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>此操作需要您确认身份。</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>请确认是您本人，当前以 %login 身份登录。在 %minutes 分钟内不会再次询问您。</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>密码不正确。</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>该代码不正确，或已被使用。</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>请选择以下方式之一。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>无法验证该通行密钥。</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>还剩 %count 次尝试机会，之后您将被退出登录。</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>无法再次发送您选择的文件：确认后，请重新选择这些文件。</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>使用密码</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>使用通行密钥</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>确认</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>使用通行密钥</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>使用身份验证器应用中的代码</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>代码</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>此帐户没有任何确认身份的方式（没有密码、通行密钥或身份验证器应用）。请退出登录后重新登录，或联系管理员。</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>验证是您本人</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>身份验证器应用中的代码</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>您自己的帐户</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>更改自己的密码、电子邮件地址、通行密钥、两步验证或 API 密钥。</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>用户、角色和策略</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>创建和编辑用户、帐户设置、批准或拒绝新用户帐户、分配角色以及编辑策略。</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>系统设置和设置操作</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>编辑设置、扩展、缓存和维护、软件包和更新、备份以及 Git 管理器。</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>导出数据</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>导出已收集的信息、用户、新闻通讯订阅者和审计记录。</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>移除和发布内容</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>移除内容（包括移到回收站）、清空回收站以及发布。默认关闭。</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>在执行敏感操作之前，已登录的用户需要再次确认身份：使用密码、通行密钥或身份验证器应用中的代码。只有网页会询问：REST 接口、SOAP、WebDAV、expservices 登录和命令行从不询问。</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>常规</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>确认的有效时长（分钟）</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>何时询问</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] 中有 %count 条规则。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>保存到 settings/override/site.ini.append.php。保存时会要求您确认是您本人。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>验证是您本人</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>在下方已开启的组的操作之前询问“验证是您本人”</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>设置已保存。</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>无法保存设置：%reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>设置</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>设置</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>新建</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count 行</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>新建行</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>已保存该行。</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>搜索</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>编辑</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>暂无行。</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON 地址：%url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>是</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>否</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>节点 ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>用户的对象 ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>内容对象 ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>行 %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>未保存该行</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>确定要移除行 %id 吗？</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>该行将从数据表中移除，且无法恢复。</translation>
     </message>
 </context>
 </TS>

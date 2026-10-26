@@ -2229,6 +2229,74 @@
         <source>Open or close the folder</source>
         <translation>Otevřít nebo zavřít složku</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Tato stránka je ve vašich záložkách. Otevřením záložky můžete změnit její název nebo složku.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Přidat tuto stránku do záložek.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>V záložkách</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Přidat stránku do záložek</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Záložka uchovává adresu této stránky i s jejími parametry: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Uložit záložku</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Přidat záložku</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Moje záložky</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systémová stránka</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systémové stránky</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Tuto stránku již nesmíte otevřít.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otevřít</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adresa této stránky chybí. Odstraňte záložku a přidejte stránku do záložek znovu.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Tuto stránku již nesmíte otevřít. Odstraňte záložku, nebo požádejte správce o přístup.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul a zobrazení</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Do záložek lze přidat i systémové stránky: otevřete stránku (Nastavení, auditní stopu, seznam uživatelů ...) a nad ní zvolte „Přidat stránku do záložek“. Takové záložky mají ikonu ozubeného kola.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7586,6 +7654,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>Nejnovější příspěvky z fóra se nepodařilo načíst.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Úlohy cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Zatím neběžela žádná část úloh cron: fronta úloh, importy, oznámení a vyhledávací index čekají. Spusťte php bin/php/installcrontab.php --add, nebo přidejte řádky z --show do crontabu.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Některá část úloh cron neběžela déle, než její plán dovoluje: zkontrolujte crontab (php bin/php/installcrontab.php --show) a protokoly var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Část</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Plán</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Naposledy spuštěno</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikdy</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>včas</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>zpožděno</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nikdy neběželo</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalace nemá žádnou část úloh cron, kterou by úloha cron mohla spustit.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Nastavení &gt; Úlohy cron</translation>
     </message>
 </context>
 <context>
@@ -32558,6 +32681,30 @@ Tlačítko registrovat</translation>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinace třída/atribut (%count)</translation>
     </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Skupiny uživatelů, jejichž nové účty vyžadují schválení</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Účet publikovaný do některé z těchto skupin nebo pod ni čeká, dokud jej schvalovatel nepřijme. Do té doby se nemůže přihlásit.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Uživatelé, kteří účty schvalují</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Skupiny, které účty schvalují</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Skupiny uživatelů, které schválení nepotřebují (jejich členové takové účty publikují přímo; schvalovatelé je nepotřebují nikdy)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Poslat schvalovatelům e-mail s odkazem na schválení (pro schválení nebo zamítnutí se přihlásí)</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/workflow/groupedit</name>
@@ -36788,6 +36935,14 @@ Chcete-li schvalovateli poslat komentáře nebo zobrazit stav, použijte níže 
     <message>
         <source>required</source>
         <translation>povinné</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Změnit heslo při příštím přihlášení</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Po přihlášení musí uživatel zvolit nové heslo, než může dělat cokoli jiného. Použijte to, když někomu dáváte dočasné heslo.</translation>
     </message>
 </context>
 <context>
@@ -43877,6 +44032,22 @@ Další informace najdete na stránce požadavků.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Proměnná prostředí EXP_DEMO_MODE=1 označuje tuto instalaci jako veřejnou ukázku: přijímá se všeobecně známé heslo správce a hesla správců nelze později změnit ani obnovit. Ukázkový režim nikdy nepoužívejte pro produkční web.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Úlohy cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Úlohy cron běží z crontabu uživatele %user, kterému instalace patří.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalace nemá žádnou část úloh cron k naplánování.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab nebyl zapsán (%reason). Přidejte tyto řádky do crontabu uživatele, pod kterým web běží, jinak fronta, importy, oznámení a vyhledávací index nikdy nepoběží:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -47266,6 +47437,22 @@ a aktivujte svůj účet.</translation>
         <source>ClassAttribute name</source>
         <translation>Název atributu třídy</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Účty, které vyžadují schválení</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail schvalovatelům</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -48684,6 +48871,14 @@ a aktivujte svůj účet.</translation>
         <source>Your comment was added.</source>
         <translation>Váš komentář byl přidán.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>Účet „%1“ byl schválen a publikován: nyní se může přihlásit.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Účet „%1“ byl zamítnut. Není publikován a nemůže se přihlásit; je opět konceptem svého autora.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -48990,6 +49185,38 @@ a aktivujte svůj účet.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Přidané záložky: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systémová stránka</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systémové stránky zatím nelze přidat do záložek: aktualizace databáze pro tuto verzi ještě nebyla spuštěna.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Tuto stránku nelze přidat do záložek: není to stránka zobrazení modulu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Tuto stránku nelze přidat do záložek: nesmíte ji otevřít.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Stránku se nepodařilo přidat do záložek.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>Stránka „%name“ je ve vašich záložkách.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Záložku se nepodařilo přejmenovat: potřebuje název.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Záložka byla přejmenována na „%name“.</translation>
     </message>
 </context>
 <context>
@@ -50053,6 +50280,18 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Package</source>
         <translation>Balíček</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archiv byl zabalen ve formátu PAX tar, který nelze importovat. Zabalte balíček ve formátu GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
+        <translation>Archiv byl odmítnut: položka „%path“ má typ tar „%type“ a balíček obsahuje pouze soubory a adresáře.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archiv byl odmítnut: uvádí položku delší než %length bajtů.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -50969,6 +51208,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Mirror to data tables</source>
         <translation>Zrcadlit do datových tabulek</translation>
     </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Schvalování uživatelských účtů</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nový uživatelský účet čeká na vaše schválení</translation>
+    </message>
 </context>
 <context>
     <name>kernel/workflow/group</name>
@@ -51774,6 +52021,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktivovat uživatelské účty a přesouvat je do skupiny deaktivovaných uživatelů a zpět</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>vidět, kde jsou přihlášeni jiní uživatelé, a odhlásit je</translation>
     </message>
 </context>
 <context>
@@ -58800,6 +59051,58 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Open e-mail preferences</source>
         <translation>Otevřít předvolby e-mailů</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Relace</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kde jste přihlášeni: prohlížeč, systém, místo a čas. Odhlaste zařízení, které neznáte.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Kde je tento uživatel přihlášen a jeho odhlášení všude.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Spravovat zařízení</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Zobrazit relace</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Přihlášeno: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Přístupové klíče</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Přihlašujte se místo hesla otiskem prstu, obličejem, zámkem obrazovky nebo bezpečnostním klíčem.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Spravovat přístupové klíče</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Přidat přístupový klíč</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Přístupové klíče: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Zatím žádné</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/unactivated</name>
@@ -59309,6 +59612,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Cancel</source>
         <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Než budete pokračovat, zvolte nové heslo: správce vás požádal, abyste své současné heslo nahradili.</translation>
     </message>
 </context>
 <context>
@@ -61988,6 +62295,34 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Missing file review mark</source>
         <translation>Označení chybějícího souboru jako zkontrolovaného</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Nastavena změna hesla při příštím přihlášení</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Zrušena změna hesla při příštím přihlášení</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Přesměrován na změnu hesla</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Přihlášení bez druhého kroku odmítnuto</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Heslo aplikace vytvořeno</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Heslo aplikace odvoláno</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Heslo aplikace použito</translation>
     </message>
 </context>
 <context>
@@ -65451,6 +65786,26 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The audit trail of this node</source>
         <translation>Auditní stopa tohoto uzlu</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>neporušeno</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>přerušeno</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>nezkontrolováno</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>opraveno</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>prázdné</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -68840,6 +69195,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>You were signed out on your other devices.</source>
         <translation>Na ostatních zařízeních jste byli odhlášeni.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Než budete pokračovat, zvolte nové heslo: správce vás požádal, abyste své současné heslo nahradili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -70942,6 +71301,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Nová e-mailová adresa %email čeká na potvrzení: otevřete odkaz, který jsme na ni poslali. Do té doby si tento účet ponechává adresu %current.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-mail o přihlášení z nového zařízení nebo prohlížeče patří k zabezpečení účtu. Zapínáte a vypínáte jej u svých zařízení, kde také vidíte relace svého účtu a můžete je odhlásit.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
     </message>
 </context>
 <context>
@@ -76981,6 +77348,1160 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Procházet tabulky perzistentních tříd…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nový uživatelský účet čeká na schválení: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Účet</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Uživatelské jméno</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Skupina</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Vyžádal(a)</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Otevřít schválení</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Pokud tlačítko nefunguje, zkopírujte tuto adresu do prohlížeče: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nový uživatelský účet čeká na vaše schválení</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Uživatel %requester vytvořil účet „%name“ ve skupinách %groups. Účet není publikován a nemůže se přihlásit, dokud jej schvalovatel nepřijme.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Přihlaste se do administrace a schvalte nebo zamítněte jej ve svém seznamu spolupráce. Tento odkaz vás nepřihlásí a sám nic nerozhoduje.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Tento e-mail odeslal web %site, protože schvalujete nové účty těchto skupin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Počítač</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program nebo aplikace</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizovaný klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Neznámé zařízení</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Heslo</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Heslo a kód dvoustupňového přihlášení</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Rozhraní REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Rozhraní SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jednotné přihlášení</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Přihlášeno dříve, než se začaly zaznamenávat relace</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odhlášeno</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Odhlášeno na této stránce</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Odhlášeno správcem</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Odhlášeno volbou „všechny ostatní relace“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nahrazeno novým přihlášením</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ukončeno změnou hesla</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Vypršelo</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Relace uživatele %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Kde je váš účet právě přihlášen. Pokud některé zařízení nepoznáváte, odhlaste ho a změňte si heslo.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kde je tento účet právě přihlášen. Odhlášení uživatele ukončí každou relaci při jejím dalším požadavku.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Zpět na účet</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Relace byla odhlášena. Zařízení se musí znovu přihlásit.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Odhlášené ostatní relace: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebyly žádné další relace k odhlášení.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Odhlášené relace tohoto uživatele: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Tento uživatel neměl žádné relace k odhlášení.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Toto je relace, kterou právě používáte. Chcete-li ji ukončit, odhlaste se.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tato relace již byla ukončena.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Když se váš účet přihlásí z nového zařízení, dostanete e-mail.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>E-maily o přihlášeních z nových zařízení již nebudete dostávat.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnost stránky vypršela. Nic nebylo změněno; zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Na tomto webu se relace nezaznamenávají (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabulka expuser_session chybí</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Relace se začnou zaznamenávat, jakmile bude vytvořena: php update/common/scripts/6.0/createusersessiontable.php nebo aktualizace databáze verze 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Právě přihlášeno</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Odhlásit všechny ostatní relace</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Odhlásit všude</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Každé zařízení kromě tohoto bude odhlášeno při svém dalším požadavku, i ta, která zůstávají přihlášena volbou „Zapamatovat si mě“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Každá relace tohoto uživatele bude odhlášena při svém dalším požadavku, i ty, které zůstávají přihlášeny volbou „Zapamatovat si mě“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ano, odhlásit ostatní relace</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ano, odhlásit všechny relace</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Toto zařízení</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zařízení</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Zobrazeno jako její síť; úplná adresa se uchovává pro správce.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>přihlášeno z %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Přihlášeno</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Naposledy aktivní</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nyní</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Zůstává přihlášeno</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapamatovat si mě, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zavření prohlížeče</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Přihlášeno na</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identifikace prohlížeče</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Chcete-li tuto relaci ukončit, odhlaste se.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odhlásit</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Odhlásit tuto relaci</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Není přihlášena žádná relace.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Upozornění na přihlášení</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Poslat mi e-mail, když se můj účet přihlásí z nového zařízení nebo prohlížeče</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Posílá se na %email. Uvádí zařízení, přibližné místo a čas a odkazuje na tuto stránku.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Tento web upozornění na přihlášení neposílá.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nedávno ukončené</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Relace ukončené v posledních dnech (počet dní: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ukončeno</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Způsob</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Žádné.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Počítač</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program nebo aplikace</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizovaný klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Neznámé zařízení</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Heslo</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Heslo a kód dvoustupňového přihlášení</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Rozhraní REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Rozhraní SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jednotné přihlášení</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Přihlášeno dříve, než se začaly zaznamenávat relace</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odhlášeno</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Odhlášeno na této stránce</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Odhlášeno správcem</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>Odhlášeno volbou „všechny ostatní relace“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nahrazeno novým přihlášením</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ukončeno změnou hesla</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Vypršelo</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Relace uživatele %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Kde je váš účet právě přihlášen. Pokud některé zařízení nepoznáváte, odhlaste ho a změňte si heslo.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kde je tento účet právě přihlášen. Odhlášení uživatele ukončí každou relaci při jejím dalším požadavku.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Relace byla odhlášena. Zařízení se musí znovu přihlásit.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Odhlášené ostatní relace: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebyly žádné další relace k odhlášení.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Odhlášené relace tohoto uživatele: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Tento uživatel neměl žádné relace k odhlášení.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Toto je relace, kterou právě používáte. Chcete-li ji ukončit, odhlaste se.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tato relace již byla ukončena.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Když se váš účet přihlásí z nového zařízení, dostanete e-mail.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>E-maily o přihlášeních z nových zařízení již nebudete dostávat.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnost stránky vypršela. Nic nebylo změněno; zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Na tomto webu se relace nezaznamenávají.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Relace se zatím nezaznamenávají: web potřebuje aktualizaci databáze.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Právě přihlášeno</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Toto zařízení</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zařízení</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Přihlášeno</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Naposledy aktivní</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nyní</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Zůstává přihlášeno</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapamatovat si mě, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zavření prohlížeče</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Chcete-li tuto relaci ukončit, odhlaste se.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odhlásit</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Odhlásit tuto relaci</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Odhlásit všechny ostatní relace</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Odhlásit všude</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Upozornění na přihlášení</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Poslat mi e-mail, když se můj účet přihlásí z nového zařízení nebo prohlížeče</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nedávno ukončené</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ukončeno</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Způsob</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>V posledních dnech žádné (počet dní: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Podívejte se, kde je váš účet přihlášen, a odhlaste zařízení, které neznáte.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Spravovat zařízení</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nové přihlášení k vašemu účtu na webu %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Dobrý den,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Váš účet %login na webu %site byl právě použit k přihlášení ze zařízení nebo prohlížeče, které v poslední době nepoužíval:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Zařízení:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Čas:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Přibližná adresa:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Pokud jste to byli vy, nemusíte nic dělat.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Pokud jste to nebyli vy, možná někdo zná vaše heslo. Odhlaste tuto relaci na stránce svých zařízení a potom si změňte heslo:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Na stejné stránce můžete tyto e-maily vypnout.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nové přihlášení účtu %login na webu %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Účet %login se přihlásil ze zařízení nebo prohlížeče, které v poslední době nepoužíval.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Relace tohoto uživatele:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nové přihlášení k vašemu účtu</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Váš účet %login byl použit k přihlášení ze zařízení %device (%ip) dne %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Pokud jste to byli vy, nemusíte nic dělat. Pokud ne, odhlaste tuto relaci na adrese %url a změňte si heslo.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nové přihlášení účtu %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Účet %login se přihlásil z nového zařízení: %device (%ip) dne %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše zařízení</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Relace uživatele %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Přístupové klíče</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Přístupový klíč vás místo hesla přihlásí otiskem prstu, obličejem, zámkem obrazovky nebo bezpečnostním klíčem. Je uložen ve vašem zařízení nebo ve správci hesel; tento web uchovává pouze jeho veřejný klíč, takže jej únik dat zde nemůže prozradit.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Přístupové klíče jsou na tomto webu vypnuté.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Přístupové klíče zatím na tomto webu nelze používat: správce musí nejprve spustit aktualizaci databáze.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>Odstranit přístupový klíč „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Poté se jím již nebude možné k tomuto účtu přihlásit. Odstraňte jej také ze svého zařízení nebo správce hesel.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Odstranit přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Vaše přístupové klíče</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count z nejvýše %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Zatím nemáte žádný přístupový klíč. Přidejte jej níže: při příštím přihlášení zvolte „Přihlásit se přístupovým klíčem“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Přidáno</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Naposledy použito</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Druh</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Zatím ne</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synchronizovaný</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Toto zařízení nebo klíč</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Přejmenovat</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nový název</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Uložit název</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Přidat přístupový klíč</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Postupujte podle kroků svého prohlížeče nebo zařízení.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialog přístupového klíče byl zavřen. Nic nebylo změněno.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Přístupový klíč se nepodařilo vytvořit. Zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Tento prohlížeč neumí vytvářet přístupové klíče. Použijte aktuální prohlížeč, nebo se přihlaste heslem.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Například zařízení nebo správce hesel, ve kterém je uložen, abyste své přístupové klíče rozlišili.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Tento účet má tolik přístupových klíčů, kolik smí mít (%max). Chcete-li přidat další, jeden odstraňte.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Přístupový klíč se nepodařilo použít. Zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Můj účet</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialog přístupového klíče byl zavřen. Místo toho se můžete přihlásit heslem.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Přístupový klíč se nepodařilo použít. Zkuste to prosím znovu, nebo se přihlaste heslem.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Přihlásit se přístupovým klíčem</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Přihlášení přístupovým klíčem se nezdařilo</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>přihlašujte se místo hesla otiskem prstu, obličejem, zámkem obrazovky nebo bezpečnostním klíčem.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>Přístupový klíč „%name“ byl přidán. Od této chvíle se jím můžete přihlašovat.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Přístupový klíč se nyní jmenuje „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>Přístupový klíč „%name“ byl odstraněn. Už se jím k tomuto účtu nelze přihlásit.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Přístupový klíč z %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Tento účet má tolik přístupových klíčů, kolik smí mít. Nejprve jeden odstraňte.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Databáze byla zaneprázdněna a nic nebylo uloženo. Zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Tento přístupový klíč je již zaregistrován.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Požadavek trval příliš dlouho nebo již byl použit. Zkuste to prosím znovu.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Přístupový klíč neověřil, kdo jste (PIN, otisk prstu nebo obličej). Zkuste to prosím znovu a potvrďte to ve svém zařízení.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Tento autentizátor používá druh klíče, který tento web nepřijímá.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Přístupový klíč byl vytvořen pro jinou adresu než pro tento web.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Tento přístupový klíč zde není zaregistrován k žádnému účtu. Přihlaste se heslem a přidejte jej v části Můj účet, Přístupové klíče.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Tento účet se momentálně nemůže přihlásit. Obraťte se prosím na správce webu.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Přístupový klíč se nepodařilo ověřit. Zkuste to prosím znovu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Chystáte se změnit způsob přihlašování nebo zabezpečení svého účtu.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Chystáte se spravovat uživatele, role nebo zásady.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Chystáte se změnit nastavení systému nebo spustit akci nastavení.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Chystáte se exportovat data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Chystáte se odstranit nebo publikovat obsah.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Tato akce vyžaduje, abyste potvrdili, kdo jste.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Potvrďte, že jste to vy (přihlášeni jako %login). Dalších %minutes min se vás už nikdo nezeptá.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Toto heslo není správné.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Tento kód není správný, nebo již byl použit.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Zvolte jeden ze způsobů níže.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Přístupový klíč se nepodařilo ověřit.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Zbývající pokusy před odhlášením: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Vybrané soubory nelze odeslat znovu: po potvrzení je vyberte ještě jednou.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Heslem</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Přístupovým klíčem</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Heslo</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potvrdit</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Použít přístupový klíč</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Kódem z ověřovací aplikace</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kód</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Tento účet nemá žádný způsob, jak potvrdit, kdo jste (žádné heslo, přístupový klíč ani ověřovací aplikaci). Odhlaste se a znovu se přihlaste, nebo se obraťte na správce.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Ověřte, že jste to vy</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kód z ověřovací aplikace</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Vlastní účet</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Změna vlastního hesla, e-mailové adresy, přístupových klíčů, dvoustupňového přihlášení nebo klíčů API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Uživatelé, role a zásady</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Vytváření a úpravy uživatelů, nastavení účtů, schvalování nebo zamítání nových uživatelských účtů, přiřazování rolí a úpravy zásad.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Nastavení systému a akce nastavení</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Úpravy nastavení, rozšíření, mezipaměti a údržba, balíčky a aktualizace, zálohy a správce gitu.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Export dat</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exporty shromážděných informací, uživatelů, odběratelů zpravodaje a auditu.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Odstraňování a publikování obsahu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Odstraňování obsahu (i do koše), vysypání koše a publikování. Ve výchozím stavu vypnuto.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Před citlivou akcí přihlášený uživatel znovu potvrdí, kdo je: heslem, přístupovým klíčem nebo kódem z ověřovací aplikace. Ptají se pouze webové stránky: rozhraní REST, SOAP, WebDAV, přihlášení expservices ani příkazový řádek se neptají nikdy.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Obecné</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Platnost potvrzení v minutách</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kdy se ptát</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Pravidla v site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Ukládá se do settings/override/site.ini.append.php. Při ukládání budete požádáni o potvrzení, že jste to vy.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Ověřte, že jste to vy</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Před akcemi skupin zapnutých níže se ptát „Ověřte, že jste to vy“</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Nastavení bylo uloženo.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nastavení se nepodařilo uložit: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavení</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nový</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Řádky: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nový řádek</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Řádek byl uložen.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hledat</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akce</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Upravit</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Zatím žádné řádky.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adresa JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ano</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID uzlu</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID objektu uživatele</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID objektu obsahu</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Řádek %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Řádek nebyl uložen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložit</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušit</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Odstranit řádek %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Řádek bude z tabulky odstraněn a nelze jej obnovit.</translation>
     </message>
 </context>
 </TS>

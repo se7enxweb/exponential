@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Klasörü aç veya kapat</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Bu sayfa yer işaretlerinizde. Adını veya klasörünü değiştirmek için açın.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Bu sayfayı yer işaretlerinize ekleyin.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Yer işaretlerinde</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bu sayfaya yer işareti koy</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Yer işareti, bu sayfanın adresini parametreleriyle birlikte saklar: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Yer işaretini kaydet</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Yer işareti ekle</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Yer işaretlerim</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistem sayfası</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Sistem sayfaları</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Bu sayfayı artık açamazsınız.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Bu sayfanın adresi eksik. Yer işaretini kaldırın ve sayfaya yeniden yer işareti koyun.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Bu sayfayı artık açamazsınız. Yer işaretini kaldırın veya bir yöneticiden erişim isteyin.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modül ve görünüm</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Sistem sayfalarına da yer işareti konabilir: sayfayı açın (Kurulum, denetim izi, bir kullanıcı listesi ...) ve üstündeki Bu sayfaya yer işareti koy seçeneğini seçin. Bu tür yer işaretlerinde bir dişli simgesi bulunur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -7388,6 +7456,61 @@
     <message>
         <source>The latest forum posts could not be loaded.</source>
         <translation>Son forum gönderileri yüklenemedi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron işleri</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Henüz hiçbir cron işi bölümü çalışmadı: iş kuyruğu, içe aktarmalar, bildirimler ve arama dizini bekliyor. php bin/php/installcrontab.php --add komutunu çalıştırın veya --show çıktısındaki satırları crontab&apos;a ekleyin.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Bir cron işi bölümü, zamanlamasının izin verdiğinden daha uzun süredir çalışmadı: crontab&apos;ı (php bin/php/installcrontab.php --show) ve var/log/cronjob-*.log günlüklerini denetleyin.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Bölüm</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Zamanlama</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Son başlatılma</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiçbir zaman</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>zamanında</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>gecikmiş</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>hiç çalışmadı</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Kurulumda cron işinin çalıştıracağı bir cron işi bölümü yok.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Kurulum &gt; Cron işleri</translation>
     </message>
 </context>
 <context>
@@ -17638,6 +17761,10 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>kullanıcı hesaplarını devre dışı bırakıp devre dışı bırakılmış kullanıcılar grubuna taşıma ve geri taşıma</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>diğer kullanıcıların nerede oturum açtığını görmek ve oturumlarını kapatmak</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37870,58 @@ o e-postadaki yönergeleri izleyin.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-posta tercihlerini aç</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Oturumlar</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Oturum açtığınız yerler: tarayıcı, sistem, konum ve saat. Tanımadığınız bir cihazın oturumunu kapatın.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Bu kullanıcının nerede oturum açtığı ve kullanıcının her yerde oturumunun kapatılması.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Cihazları yönet</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Oturumları göster</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count oturum açık</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Geçiş anahtarları</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Parolanız yerine parmak izinizle, yüzünüzle, ekran kilidinizle veya bir güvenlik anahtarıyla oturum açın.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Geçiş anahtarlarını yönet</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Geçiş anahtarı ekle</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count geçiş anahtarı</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Henüz yok</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39861,30 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Sınıf/öznitelik birleşimleri (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Yeni hesapları onay gerektiren kullanıcı grupları</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Bu gruplardan birine veya birinin altına yayımlanan bir hesap, bir onaylayan kabul edene kadar bekler. O zamana kadar oturum açamaz.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Hesapları onaylayan kullanıcılar</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Hesapları onaylayan gruplar</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Onay gerektirmeyen kullanıcı grupları (üyeleri bu tür hesapları doğrudan yayımlar; onaylayanların hiçbir zaman onaya ihtiyacı yoktur)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Onaylayanlara onay bağlantısını içeren bir e-posta gönder (onaylamak veya reddetmek için oturum açarlar)</translation>
     </message>
 </context>
 <context>
@@ -43876,6 +44079,14 @@ Onaylayana yorum göndermek veya durumu görüntülemek istiyorsanız aşağıda
     <message>
         <source>required</source>
         <translation>gerekli</translation>
+    </message>
+    <message>
+        <source>Change password at next sign-in</source>
+        <translation>Sonraki oturum açışta parolayı değiştir</translation>
+    </message>
+    <message>
+        <source>After signing in, the user must choose a new password before doing anything else. Use it when you give someone a temporary password.</source>
+        <translation>Kullanıcı, oturum açtıktan sonra başka bir şey yapmadan önce yeni bir parola seçmelidir. Birine geçici bir parola verdiğinizde bunu kullanın.</translation>
     </message>
 </context>
 <context>
@@ -50776,6 +50987,22 @@ Daha fazla bilgi için gereksinimler sayfasına bakın.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>EXP_DEMO_MODE=1 ortam değişkeni bu kurulumu herkese açık bir demo olarak işaretler: Herkesçe bilinen bir yönetici parolası kabul edilir ve yönetici parolaları daha sonra değiştirilemez veya sıfırlanamaz. Demo modunu asla canlı bir site için kullanmayın.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron işleri</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron işleri, kurulumun sahibi olan %user kullanıcısının crontab&apos;ından çalışır.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Kurulumda zamanlanacak bir cron işi bölümü yok.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab yazılamadı (%reason). Bu satırları sitenin çalıştığı kullanıcının crontab&apos;ına ekleyin, aksi takdirde kuyruk, içe aktarmalar, bildirimler ve arama dizini hiçbir zaman çalışmaz:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -53336,6 +53563,10 @@ o e-postadaki yönergeleri izleyin.</translation>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Devam etmeden önce yeni bir parola seçin: bir yönetici, şu anki parolanızı değiştirmenizi istedi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/register</name>
@@ -54287,6 +54518,22 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>ClassAttribute name</source>
         <translation>Sınıf özniteliği adı</translation>
+    </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Onay gerektiren hesaplar</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Onaylayanlara e-posta</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
     </message>
 </context>
 <context>
@@ -55698,6 +55945,14 @@ o e-postadaki yönergeleri izleyin.</translation>
         <source>Your comment was added.</source>
         <translation>Yorumunuz eklendi.</translation>
     </message>
+    <message>
+        <source>The account &quot;%1&quot; was approved and published: it can sign in now.</source>
+        <translation>&quot;%1&quot; hesabı onaylandı ve yayımlandı: artık oturum açabilir.</translation>
+    </message>
+    <message>
+        <source>The account &quot;%1&quot; was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>&quot;%1&quot; hesabı reddedildi. Yayımlanmadı ve oturum açamaz; yeniden yazarının taslağı oldu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -55996,6 +56251,38 @@ o e-postadaki yönergeleri izleyin.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count yer işareti eklendi.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistem sayfası</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Sistem sayfalarına henüz yer işareti konamaz: bu sürümün veritabanı güncellemesi çalıştırılmadı.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Bu sayfaya yer işareti konamaz: bir modül görünümünün sayfası değil.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Bu sayfaya yer işareti konamaz: bu sayfayı açma izniniz yok.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Sayfaya yer işareti konamadı.</translation>
+    </message>
+    <message>
+        <source>The page &quot;%name&quot; is in your bookmarks.</source>
+        <translation>&quot;%name&quot; sayfası yer işaretlerinizde.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Yer işaretinin adı değiştirilemedi: bir ad gerekli.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to &quot;%name&quot;.</source>
+        <translation>Yer işaretinin adı &quot;%name&quot; olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58357,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Mirror to data tables</source>
         <translation>Veri tablolarına yansıt</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Kullanıcı hesaplarını onayla</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Yeni bir kullanıcı hesabı onayınızı bekliyor</translation>
     </message>
 </context>
 <context>
@@ -60723,6 +61018,34 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Missing file review mark</source>
         <translation>Eksik dosyayı incelendi olarak işaretleme</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in set</source>
+        <translation>Sonraki oturum açışta parola değişikliği ayarlandı</translation>
+    </message>
+    <message>
+        <source>Password change at next sign-in cleared</source>
+        <translation>Sonraki oturum açışta parola değişikliği kaldırıldı</translation>
+    </message>
+    <message>
+        <source>Sent to the password change</source>
+        <translation>Parola değişikliğine yönlendirildi</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>İkinci adım olmadan oturum açma reddedildi</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Uygulama parolası oluşturuldu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Uygulama parolası iptal edildi</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Uygulama parolası kullanıldı</translation>
     </message>
 </context>
 <context>
@@ -64186,6 +64509,26 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The audit trail of this node</source>
         <translation>Bu düğümün denetim izi</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>sağlam</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>bozuk</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>denetlenmedi</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>onarıldı</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>boş</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -67575,6 +67918,10 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>You were signed out on your other devices.</source>
         <translation>Diğer cihazlarınızda oturumunuz kapatıldı.</translation>
     </message>
+    <message>
+        <source>Choose a new password before you continue: an administrator asked you to replace the password you have now.</source>
+        <translation>Devam etmeden önce yeni bir parola seçin: bir yönetici, şu anki parolanızı değiştirmenizi istedi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/hygiene</name>
@@ -69677,6 +70024,14 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Yeni e-posta adresi %email onay bekliyor: oraya gönderdiğimiz bağlantıyı açın. O zamana kadar bu hesap %current adresini korur.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Yeni bir cihazdan veya tarayıcıdan oturum açıldığına ilişkin e-posta, hesap güvenliğinin bir parçasıdır. Bunu, hesabınızın oturumlarını da görüp kapatabildiğiniz Cihazlarınız sayfasında açar veya kapatırsınız.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
     </message>
 </context>
 <context>
@@ -75712,6 +76067,1160 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Kalıcı sınıfların tablolarına göz at…</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Onay bekleyen yeni kullanıcı hesabı: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Hesap</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Kullanıcı adı</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>İsteyen</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Onayı aç</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Düğme çalışmazsa bu adresi tarayıcınıza kopyalayın: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Yeni bir kullanıcı hesabı onayınızı bekliyor</translation>
+    </message>
+    <message>
+        <source>%requester created the account &quot;%name&quot; in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester, %groups içinde &quot;%name&quot; hesabını oluşturdu. Bir onaylayan kabul edene kadar yayımlanmaz ve oturum açamaz.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Yönetim paneline oturum açın ve işbirliği listenizde onaylayın veya reddedin. Bu bağlantı sizin için oturum açmaz ve kendi başına hiçbir şeye karar vermez.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Bu e-posta, bu grupların yeni hesaplarını onayladığınız için %site tarafından gönderildi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Bilgisayar</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program veya uygulama</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Otomatik istemci</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Bilinmeyen cihaz</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parola ve iki adımlı kod</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST arayüzü</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP arayüzü</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Çoklu oturum açma</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Oturumlar kaydedilmeye başlanmadan önce oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Bu sayfadan oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Bir yönetici tarafından oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>&quot;Diğer tüm oturumlar&quot; ile oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Yeni bir oturum açma ile değiştirildi</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Bir parola değişikliğiyle sonlandırıldı</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Süresi doldu</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name oturumları</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hesabınızın şu anda oturum açık olduğu yerler. Bir cihazı tanımıyorsanız oturumunu kapatın ve parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Bu hesabın şu anda oturum açık olduğu yerler. Kullanıcının oturumunu kapatmak, her oturumu bir sonraki isteğinde sonlandırır.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Hesaba geri dön</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Oturum kapatıldı. Cihazın yeniden oturum açması gerekiyor.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Diğer %count oturum kapatıldı.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Kapatılacak başka oturum yoktu.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Bu kullanıcının %count oturumu kapatıldı.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Bu kullanıcının kapatılacak oturumu yoktu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu, şu anda kullandığınız oturumdur. Sonlandırmak için oturumu kapatın.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bu oturum zaten sonlanmıştı.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Hesabınızda yeni bir cihazdan oturum açıldığında bir e-posta alacaksınız.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Yeni cihazlardan oturum açılmasıyla ilgili artık e-posta almayacaksınız.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sayfanın süresi dolmuştu. Hiçbir şey değiştirilmedi; lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Bu sitede oturumlar kaydedilmiyor (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session tablosu eksik</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Tablo oluşturulduğunda oturumlar kaydedilir: php update/common/scripts/6.0/createusersessiontable.php veya 6.0.15 veritabanı güncellemesi.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Şu anda oturum açık</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Diğer tüm oturumları kapat</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Her yerde oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Bu cihaz dışındaki her cihazın oturumu, Beni hatırla ile oturum açık kalanlar da dahil, bir sonraki isteğinde kapatılır.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Bu kullanıcının her oturumu, Beni hatırla ile oturum açık kalanlar da dahil, bir sonraki isteğinde kapatılır.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Evet, diğer oturumları kapat</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Evet, tüm oturumları kapat</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Bu cihaz</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Ağı olarak gösterilir; tam adres yöneticiler için saklanır.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip adresinden oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Oturum açılma</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Son etkinlik</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Şimdi</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Oturum açık kalır</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Beni hatırla, %date tarihine kadar</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tarayıcı kapatılana kadar</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Oturum açılan yer</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Tarayıcı kimliği</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Bu oturumu sonlandırmak için oturumu kapatın.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Bu oturumu kapat</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Açık oturum yok.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Oturum açma uyarıları</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Hesabımda yeni bir cihazdan veya tarayıcıdan oturum açıldığında bana e-posta gönder</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email adresine gönderilir. Cihazı, yaklaşık konumu ve saati bildirir ve bu sayfaya bağlantı verir.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Bu site oturum açma uyarıları göndermiyor.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Yakın zamanda sonlananlar</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Son %days gün içinde sonlanan oturumlar.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Sonlanma</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Nasıl</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Yok.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Bilgisayar</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program veya uygulama</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Otomatik istemci</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Bilinmeyen cihaz</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parola ve iki adımlı kod</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST arayüzü</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP arayüzü</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Çoklu oturum açma</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Oturumlar kaydedilmeye başlanmadan önce oturum açıldı</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Bu sayfadan oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Bir yönetici tarafından oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Signed out with &quot;all other sessions&quot;</source>
+        <translation>&quot;Diğer tüm oturumlar&quot; ile oturum kapatıldı</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Yeni bir oturum açma ile değiştirildi</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Bir parola değişikliğiyle sonlandırıldı</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Süresi doldu</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name oturumları</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
+        <translation>Hesabınızın şu anda oturum açık olduğu yerler. Bir cihazı tanımıyorsanız oturumunu kapatın ve parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Bu hesabın şu anda oturum açık olduğu yerler. Kullanıcının oturumunu kapatmak, her oturumu bir sonraki isteğinde sonlandırır.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Oturum kapatıldı. Cihazın yeniden oturum açması gerekiyor.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Diğer %count oturum kapatıldı.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Kapatılacak başka oturum yoktu.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Bu kullanıcının %count oturumu kapatıldı.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Bu kullanıcının kapatılacak oturumu yoktu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Bu, şu anda kullandığınız oturumdur. Sonlandırmak için oturumu kapatın.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bu oturum zaten sonlanmıştı.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Hesabınızda yeni bir cihazdan oturum açıldığında bir e-posta alacaksınız.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Yeni cihazlardan oturum açılmasıyla ilgili artık e-posta almayacaksınız.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sayfanın süresi dolmuştu. Hiçbir şey değiştirilmedi; lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Bu sitede oturumlar kaydedilmiyor.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Oturumlar henüz kaydedilmiyor: sitenin veritabanı güncellemesi gerekiyor.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Şu anda oturum açık</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Bu cihaz</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Cihaz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adres</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Oturum açılma</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Son etkinlik</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Şimdi</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Oturum açık kalır</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Beni hatırla, %date tarihine kadar</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Tarayıcı kapatılana kadar</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Bu oturumu sonlandırmak için oturumu kapatın.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Bu oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Diğer tüm oturumları kapat</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Her yerde oturumu kapat</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Oturum açma uyarıları</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Hesabımda yeni bir cihazdan veya tarayıcıdan oturum açıldığında bana e-posta gönder</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Yakın zamanda sonlananlar</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Sonlanma</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Nasıl</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Son %days gün içinde yok.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Hesabınızın nerede oturum açık olduğunu görün ve tanımadığınız bir cihazın oturumunu kapatın.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Cihazları yönet</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site üzerindeki hesabınızda yeni oturum açma</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Merhaba,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site üzerindeki %login hesabınız, son zamanlarda kullanmadığı bir cihazdan veya tarayıcıdan oturum açmak için az önce kullanıldı:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Cihaz:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Saat:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Yaklaşık adres:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Bu sizseniz herhangi bir şey yapmanız gerekmez.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Siz değilseniz, birisi parolanızı biliyor olabilir. Cihazlarınız sayfasında bu oturumu kapatın, ardından parolanızı değiştirin:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Bu e-postaları aynı sayfada kapatabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site üzerinde %login için yeni oturum açma</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login hesabı, son zamanlarda kullanmadığı bir cihazdan veya tarayıcıdan oturum açtı.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Bu kullanıcının oturumları:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Hesabınızda yeni oturum açma</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>%login hesabınızla %date tarihinde %device (%ip) üzerinden oturum açıldı.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Bu sizseniz herhangi bir şey yapmanız gerekmez. Değilseniz, bu oturumu %url adresinde kapatın ve parolanızı değiştirin.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login için yeni oturum açma</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login hesabı yeni bir cihazdan oturum açtı: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Cihazlarınız</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name oturumları</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Geçiş anahtarları</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Geçiş anahtarı, parolanız yerine parmak iziniz, yüzünüz, ekran kilidiniz veya bir güvenlik anahtarıyla oturum açmanızı sağlar. Cihazınızda veya parola yöneticinizde saklanır; bu site yalnızca ortak anahtarını tutar, bu nedenle buradaki bir sızıntı onu açığa çıkaramaz.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Geçiş anahtarları bu sitede kapalı.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Geçiş anahtarları bu sitede henüz kullanılamıyor: yöneticinin önce veritabanı güncellemesini çalıştırması gerekiyor.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey &quot;%name&quot;?</source>
+        <translation>&quot;%name&quot; geçiş anahtarı kaldırılsın mı?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Artık bu hesapta oturum açamaz. Onu cihazınızdan veya parola yöneticinizden de kaldırın.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Geçiş anahtarını kaldır</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Geçiş anahtarlarınız</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count / en fazla %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose &quot;Sign in with a passkey&quot;.</source>
+        <translation>Henüz geçiş anahtarınız yok. Aşağıdan bir tane ekleyin: bir sonraki oturum açışınızda &quot;Geçiş anahtarıyla oturum aç&quot; seçeneğini seçin.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Eklenme</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Son kullanım</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Henüz değil</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Eşitlenmiş</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Bu cihaz veya anahtar</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Yeniden adlandır</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Yeni ad</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Adı kaydet</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Geçiş anahtarı ekle</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Tarayıcınızın veya cihazınızın adımlarını izleyin.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Geçiş anahtarı iletişim kutusu kapatıldı. Hiçbir şey değiştirilmedi.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Geçiş anahtarı oluşturulamadı. Lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Bu tarayıcı geçiş anahtarı oluşturamıyor. Güncel bir tarayıcı kullanın veya parolanızla oturum açın.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Örneğin üzerinde bulunduğu cihaz veya parola yöneticisi; böylece geçiş anahtarlarınızı birbirinden ayırt edebilirsiniz.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Bu hesap, sahip olabileceği kadar geçiş anahtarına (%max) sahip. Başka bir tane eklemek için birini kaldırın.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Geçiş anahtarı kullanılamadı. Lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Hesabım</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Geçiş anahtarı iletişim kutusu kapatıldı. Bunun yerine parolanızla oturum açabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Geçiş anahtarı kullanılamadı. Lütfen yeniden deneyin veya parolanızla oturum açın.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Geçiş anahtarıyla oturum aç</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Geçiş anahtarıyla oturum açılamadı</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>parolanız yerine parmak iziniz, yüzünüz, ekran kilidiniz veya bir güvenlik anahtarıyla oturum açın.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is added. You can sign in with it from now on.</source>
+        <translation>&quot;%name&quot; geçiş anahtarı eklendi. Bundan sonra onunla oturum açabilirsiniz.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called &quot;%name&quot;.</source>
+        <translation>Geçiş anahtarının yeni adı: &quot;%name&quot;.</translation>
+    </message>
+    <message>
+        <source>The passkey &quot;%name&quot; is removed. It cannot sign in to this account any more.</source>
+        <translation>&quot;%name&quot; geçiş anahtarı kaldırıldı. Artık bu hesapta oturum açamaz.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date tarihli geçiş anahtarı</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Bu hesap, sahip olabileceği kadar geçiş anahtarına sahip. Önce birini kaldırın.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Veritabanı meşguldü ve hiçbir şey kaydedilmedi. Lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Bu geçiş anahtarı zaten kayıtlı.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>İstek çok uzun sürdü veya zaten kullanılmıştı. Lütfen yeniden deneyin.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Geçiş anahtarı kim olduğunuzu doğrulamadı (PIN, parmak izi veya yüz). Lütfen yeniden deneyin ve cihazınızda onaylayın.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Bu kimlik doğrulayıcı, bu sitenin kabul etmediği bir anahtar türü kullanıyor.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Geçiş anahtarı bu siteden farklı bir adres için oluşturulmuş.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Bu geçiş anahtarı burada hiçbir hesap için kayıtlı değil. Parolanızla oturum açın ve Hesabım, Geçiş anahtarları altında ekleyin.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Bu hesap şu anda oturum açamıyor. Lütfen site yöneticisine başvurun.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Geçiş anahtarı denetlenemedi. Lütfen yeniden deneyin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Oturum açma şeklinizi veya hesabınızın güvenliğini değiştirmek üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Kullanıcıları, rolleri veya ilkeleri yönetmek üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Sistem ayarlarını değiştirmek veya bir kurulum işlemi çalıştırmak üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Veri dışa aktarmak üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>İçerik kaldırmak veya yayımlamak üzeresiniz.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Bu işlem için kim olduğunuzu doğrulamanız gerekiyor.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login olarak oturum açan kişinin siz olduğunuzu doğrulayın. %minutes dakika boyunca yeniden sorulmayacaktır.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Bu parola doğru değil.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Bu kod doğru değil veya zaten kullanılmış.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Aşağıdaki yollardan birini seçin.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Geçiş anahtarı denetlenemedi.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Oturumunuz kapatılmadan önce %count deneme hakkınız kaldı.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Seçtiğiniz dosyalar yeniden gönderilemez: doğruladıktan sonra onları bir kez daha seçin.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Parolanızla</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Geçiş anahtarıyla</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Onayla</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Geçiş anahtarı kullan</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Kimlik doğrulama uygulamanızdan bir kodla</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kod</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Bu hesabın kim olduğunuzu doğrulamak için bir yolu yok (parola, geçiş anahtarı veya kimlik doğrulama uygulaması yok). Oturumu kapatıp yeniden açın veya bir yöneticiye başvurun.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Siz olduğunuzu doğrulayın</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kimlik doğrulama uygulamanızdaki kod</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Kendi hesabınız</translation>
+    </message>
+    <message>
+        <source>Changing one&apos;s own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Kişinin kendi parolasını, e-posta adresini, geçiş anahtarlarını, iki adımlı oturum açmasını veya API anahtarlarını değiştirmesi.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Kullanıcılar, roller ve ilkeler</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kullanıcı oluşturma ve düzenleme, hesap ayarları, yeni kullanıcı hesaplarını onaylama veya reddetme, rol atama ve ilke düzenleme.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Sistem ayarları ve kurulum işlemleri</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Ayarları, uzantıları, önbellekleri ve bakımı, paketleri ve güncellemeleri, yedekleri ve git yöneticisini düzenleme.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Veri dışa aktarma</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Toplanan bilgilerin, kullanıcıların, bülten abonelerinin ve denetimin dışa aktarılması.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>İçerik kaldırma ve yayımlama</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>İçerik kaldırma (çöp kutusuna da), çöp kutusunu boşaltma ve yayımlama. Varsayılan olarak kapalı.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Hassas bir işlemden önce, oturum açmış bir kullanıcı kim olduğunu parolası, bir geçiş anahtarı veya kimlik doğrulama uygulamasının koduyla yeniden doğrular. Yalnızca web sayfaları sorar: REST arayüzü, SOAP, WebDAV, expservices oturum açma ve komut satırı hiçbir zaman sormaz.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Genel</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Bir doğrulamanın geçerli olduğu dakika</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Ne zaman sorulacağı</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] içinde %count kural.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php dosyasına kaydedilir. Kaydederken siz olduğunuzu doğrulamanız istenir.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Verify it&apos;s you</source>
+        <translation>Siz olduğunuzu doğrulayın</translation>
+    </message>
+    <message>
+        <source>Ask &quot;Verify it&apos;s you&quot; before the actions of the groups switched on below</source>
+        <translation>Aşağıda açılan grupların işlemlerinden önce &quot;Siz olduğunuzu doğrulayın&quot; diye sor</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Ayarlar kaydedildi.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Ayarlar kaydedilemedi: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Yeni</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count satır</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Yeni satır</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Satır kaydedildi.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Düzenle</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Henüz satır yok.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON adresi: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>evet</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Bir düğüm kimliği</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Bir kullanıcının nesne kimliği</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Bir içerik nesnesi kimliği</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Satır %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Satır kaydedilmedi</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Kaydet</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>%id satırı kaldırılsın mı?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Satır tablodan kaldırılır ve geri getirilemez.</translation>
     </message>
 </context>
 </TS>
