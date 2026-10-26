@@ -95,6 +95,7 @@ PRESSE         info@se7enx.com   Pressekit: exponential.earth/about/press-kit
 
 ## Verwandte Seiten
 
+- [Unsere Ziele](../../ziele.md): das Warum hinter den Fakten, warum es das Projekt gibt und wie 7x seinen Lebensunterhalt verdient
 - [Exponential in Kürze](exponential-in-kuerze.md)
 - [Exponential in Zahlen](exponential-in-zahlen.md)
 - [Leitfaden: Faktenprüfung](leitfaden-faktenpruefung.md)
