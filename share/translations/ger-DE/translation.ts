@@ -84037,8 +84037,8 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Benutzer, Rollen und Richtlinien</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Benutzer anlegen und bearbeiten, Kontoeinstellungen, Rollen zuweisen und Richtlinien bearbeiten.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Benutzer anlegen und bearbeiten, Kontoeinstellungen, neue Benutzerkonten freigeben oder ablehnen, Rollen zuweisen und Richtlinien bearbeiten.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>

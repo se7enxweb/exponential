@@ -77069,8 +77069,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Users, roles and policies</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Creating and editing users, account settings, assigning roles and editing policies.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>

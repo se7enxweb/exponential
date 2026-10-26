@@ -3,7 +3,7 @@
    components.css; the same file is in design/admin. Variables: settings (enabled, minutes, groups: name, enabled,
    rule_count), message (kind, text). *}
 {def $texts = hash( 'account', hash( 'title', 'Your own account'|i18n( 'design/admin/setup/reauth' ), 'text', 'Changing one\'s own password, e-mail address, passkeys, two-step sign-in or API keys.'|i18n( 'design/admin/setup/reauth' ) ),
-                    'users', hash( 'title', 'Users, roles and policies'|i18n( 'design/admin/setup/reauth' ), 'text', 'Creating and editing users, account settings, assigning roles and editing policies.'|i18n( 'design/admin/setup/reauth' ) ),
+                    'users', hash( 'title', 'Users, roles and policies'|i18n( 'design/admin/setup/reauth' ), 'text', 'Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.'|i18n( 'design/admin/setup/reauth' ) ),
                     'system', hash( 'title', 'System settings and setup actions'|i18n( 'design/admin/setup/reauth' ), 'text', 'Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.'|i18n( 'design/admin/setup/reauth' ) ),
                     'export', hash( 'title', 'Exporting data'|i18n( 'design/admin/setup/reauth' ), 'text', 'Exports of collected information, users, newsletter subscribers and the audit.'|i18n( 'design/admin/setup/reauth' ) ),
                     'content', hash( 'title', 'Removing and publishing content'|i18n( 'design/admin/setup/reauth' ), 'text', 'Removing content (also to the trash), emptying the trash and publishing. Off by default.'|i18n( 'design/admin/setup/reauth' ) ) )}

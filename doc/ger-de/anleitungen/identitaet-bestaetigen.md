@@ -60,13 +60,21 @@ So, wie sie in `settings/site.ini` ausgeliefert werden:
 | Gruppe | An | Regeln |
 |---|---|---|
 | `account`: die Sicherheit des eigenen Kontos | ja | `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton` |
-| `users`: Benutzer, Rollen und Richtlinien | ja | `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `role/*`, `oauthadmin/*` |
+| `users`: Benutzer, Rollen und Richtlinien, neue Benutzerkonten freigeben | ja | `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny CollaborationAction_Defer`, `role/*`, `oauthadmin/*` |
 | `system`: Systemeinstellungen und Setup-Aktionen | ja | `setup/*` außer `setup/info`, `logs`, `logshealth`, `logsdigest`, `logsfeed`, `templatelist`, `templateview`, `menu` und den drei Streams; `settings/edit`, `package/*`, `package/upload *`, `secrets/*`, `update/*`, `git_manager/*` |
 | `export`: Daten exportieren | ja | `infocollector/export *`, `audit/export *`, `content/subitemsexport *`, `mailpreferences/export *`, `bccie/export *`, `bccie/doexport *`, `newsletter/subscription_list_csvexport *`, `newsletter/subscriber_export *`, `newsletter/statistics_export *` |
 | `content`: Inhalte entfernen und veröffentlichen | nein | `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton` |
 
 Die eigene E-Mail-Adresse zu ändern fragt also (sie ändert Zugangsdaten), den eigenen Namen zu ändern nicht; das Konto
 eines anderen Benutzers zu bearbeiten fragt immer.
+
+**Freigeben** und **Ablehnen** eines neuen Benutzerkontos, das auf seine Freigabe wartet (ein Element des
+Workflow-Ereignisses *Approve user accounts*, siehe [Neue Redakteurskonten freigeben](neue-redakteurskonten-freigeben.md)),
+fragen ebenfalls: Das Element betrifft dieses Konto, also greift die Regel `collaboration/action other ...` der Gruppe
+users. Die Entscheidung wird angehalten, bis der Freigebende geantwortet hat, und dann genau so ausgeführt, wie sie
+gedrückt wurde. Eine gewöhnliche Inhaltsfreigabe betrifft kein Konto und fragt hier nie, auch nicht, wenn der Inhalt
+ein Benutzerobjekt ist; die Gruppe content hat ebenfalls keine Regel für Freigaben, ihr Einschalten ändert für sie also
+nichts. Einen Kommentar hinzufügen und das Element öffnen fragen nie.
 
 ## 3. Gruppen ein- und ausschalten
 
@@ -88,7 +96,7 @@ Eine Regel ist `modul/ansicht [Token ...]`:
 | `modul/ansicht` | die Ansicht; `modul/*` jede Ansicht des Moduls. Ein POST an sie fragt |
 | `*` | jede Anfrage fragt, auch GET: eine Seite, die herunterlädt, oder ein Formular mit Datei-Upload |
 | `Name` | nur ein POST mit diesem Feld (einem von mehreren Namen), meist die Schaltfläche der Aktion |
-| `self`, `other` | nur wenn das Konto, um das es geht, das eigene oder das eines anderen Benutzers ist (`content/edit` eines Benutzerobjekts, `user/password`, `user/setting`, `user/edit`, `user/sessions`) |
+| `self`, `other` | nur wenn das Konto, um das es geht, das eigene oder das eines anderen Benutzers ist (`content/edit` eines Benutzerobjekts, `user/password`, `user/setting`, `user/edit`, `user/sessions`; `collaboration/action` betrifft das wartende Konto eines Elements von *Approve user accounts*) |
 | `credentials` | nur wenn der POST Login, E-Mail-Adresse oder Passwort eines Benutzers ändert |
 | `!modul/ansicht` | eine Ausnahme: die Ansicht fragt in dieser Gruppe nie (gewinnt gegen `modul/*`) |
 
