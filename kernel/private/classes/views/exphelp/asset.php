@@ -26,7 +26,7 @@ class Asset extends \Exponential\Runnable\ModuleView
             return $Module->handleError( \eZError::KERNEL_MODULE_NOT_FOUND, 'kernel' );
 
         $id = \expHelp::requestedId( $Params );
-        $file = $id === '' ? null : \expHelpDocumentIndex::instance()->asset( $id );
+        $file = $id === '' ? null : self::file( $id, \expHelpDocumentIndex::instance() );
         $type = self::contentType( (string)$file );
         if ( $file === null || $type === null || !is_file( $file ) )
             return $Module->handleError( \eZError::KERNEL_NOT_FOUND, 'kernel' );
@@ -38,6 +38,33 @@ class Asset extends \Exponential\Runnable\ModuleView
         header( "Content-Security-Policy: default-src 'none'" );
         readfile( $file );
         \eZExecution::cleanExit();
+    }
+
+    /**
+     * The file of an image id: from the reader's index, else from the index of another help language. A page shown
+     * in another language than the reader's (/(lang)/ger-de for a reader whose language is English, or the English
+     * original for a German reader) names its own language's images (hilfe/.../bilder/x.webp), which the reader's
+     * index does not list; each index still allows only its own git-tracked files.
+     *
+     * @param string $id
+     * @param \expHelpDocumentIndex $readerIndex
+     * @return string|null
+     */
+    public static function file( $id, \expHelpDocumentIndex $readerIndex )
+    {
+        $file = $readerIndex->asset( $id );
+        if ( $file !== null )
+            return $file;
+        $languages = $readerIndex->languages();
+        foreach ( $languages->directories() as $directory )
+        {
+            if ( $directory === $readerIndex->language() )
+                continue;
+            $file = \expHelpDocumentIndex::forLanguage( $directory, $languages )->asset( $id );
+            if ( $file !== null )
+                return $file;
+        }
+        return null;
     }
 
     /**
