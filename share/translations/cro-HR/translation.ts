@@ -77782,6 +77782,11 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>Sessions of %name</source>
         <translation>Sesije korisnika %name</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser na %os</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

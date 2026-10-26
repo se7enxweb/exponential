@@ -76727,6 +76727,11 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Sessions of %name</source>
         <translation>Is-sessjonijiet ta' %name</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser fuq %os</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

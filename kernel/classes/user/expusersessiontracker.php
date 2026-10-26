@@ -352,9 +352,23 @@ class expUserSessionTracker
         $interval = max( 0, (int)self::setting( 'TouchInterval', 300 ) );
         if ( $now - (int)$row->attribute( 'last_active' ) < $interval && $ip === (string)$row->attribute( 'last_ip' ) )
             return;
-        $row->setAttribute( 'last_active', $now );
-        $row->setAttribute( 'last_ip', $ip );
-        $row->store( array( 'last_active', 'last_ip' ) );
+        $db = eZPersistentObject::dbFor( expUserSession::definition() );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            $row->setAttribute( 'last_active', $now );
+            $row->setAttribute( 'last_ip', $ip );
+            $row->store( array( 'last_active', 'last_ip' ) );
+            return;
+        }
+        // The last use is left out while another write holds the database (SQLite: one writer at a time), so a
+        // page view does not wait for a publish and fail with "database is locked"; the next request writes it
+        $written = $db->queryUnlessBusy( 'UPDATE ' . expUserSession::TABLE . ' SET last_active=' . (int)$now .
+            ", last_ip='" . $db->escapeString( $ip ) . "' WHERE id=" . (int)$row->attribute( 'id' ) );
+        if ( $written )
+        {
+            $row->setAttribute( 'last_active', $now );
+            $row->setAttribute( 'last_ip', $ip );
+        }
     }
 
     /**

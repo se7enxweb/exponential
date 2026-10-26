@@ -76727,6 +76727,11 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Sessions of %name</source>
         <translation>Seje uporabnika %name</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser v sistemu %os</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

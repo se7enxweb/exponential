@@ -76727,6 +76727,11 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Sessions of %name</source>
         <translation>Vipindi vya %name</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser kwenye %os</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

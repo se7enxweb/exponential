@@ -76730,6 +76730,11 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Sessions of %name</source>
         <translation>%name poHmey</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%os Daq %browser</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>
