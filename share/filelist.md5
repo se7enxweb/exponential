@@ -2715,7 +2715,7 @@ a068012bff60924dd7a29b9d7415edfa  design/standard/templates/gui/delete.tpl
 a35b8c33e69b1fb1baacd7e1de2df542  design/standard/templates/image/layer.tpl
 0cd819e05fb4827025954b9c5680789f  design/standard/templates/link.tpl
 4774287900b516aebb5e1ef8e83f3e43  design/standard/templates/loginpagelayout.tpl
-492c67b4a561df75dd41bacaf1ea705e  design/standard/templates/mail/layout.tpl
+9d5749fc8d6e8a0bd3b3c5ac99edc491  design/standard/templates/mail/layout.tpl
 303a0862c895235db66384dc912d1477  design/standard/templates/mail/layout_text.tpl
 038a22c7143b460f65a6f72195bdaa1d  design/standard/templates/mailpreferences/admin/categories.tpl
 e7f7072d5affbe8aff519a2b5a365b3c  design/standard/templates/mailpreferences/admin/consent.tpl

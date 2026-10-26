@@ -7,7 +7,7 @@
     (design:mail/layout.tpl) with the same inputs to give mails its own look and logo.
 
     Inline styles are required here: mail programs drop style sheets and <link>s, so the administration's rule of
-    "no inline CSS, tokens only" (doc/bc/6.0/admin4-styling.md) is for the pages of the administration and does not
+    "no inline CSS, tokens only" (doc/eng-us/bc/6.0/admin4-styling.md) is for the pages of the administration and does not
     apply to mail bodies. The one <style> block below only adds the dark colors for the mail programs that honor
     prefers-color-scheme (Apple Mail, iOS, Outlook for Mac); every other program shows the light colors, which are
     set inline on every element, so a program that inverts colors by itself (Gmail app, Outlook.com) still gets
