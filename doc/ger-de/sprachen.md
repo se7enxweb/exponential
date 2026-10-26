@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **71**, davon 71 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **73**, davon 73 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **68** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **80** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **70** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **78** |
 | Länder und Gebiete der Locales | **158** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **132** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **134** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
 
-![Weltkarte: 132 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 134 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 132 Länder und Gebiete in Grün</summary>
+<details><summary>Die 134 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -72,6 +72,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Honduras | HN | `esl-HN` → `esl-ES` |
 | Hongkong | HK | `chi-HK` → `chi-TW` |
 | Indien | IN | `asm-IN` (nicht übersetzt), `ben-IN` → `ben-BD`, `bho-IN` (nicht übersetzt), `brx-IN` (nicht übersetzt), `doi-IN` (nicht übersetzt), `eng-IN` (Quelltexte), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (nicht übersetzt), `kok-IN` (nicht übersetzt), `mai-IN` (nicht übersetzt), `mal-IN`, `mar-IN`, `mni-IN` (nicht übersetzt), `ori-IN`, `pan-IN`, `san-IN` (nicht übersetzt), `sat-IN` (nicht übersetzt), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
+| Indonesien | ID | `ind-ID`, `jav-ID` (nicht übersetzt), `sun-ID` (nicht übersetzt) |
 | Irak | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (nicht übersetzt), `syr-IQ` (nicht übersetzt) |
 | Iran (Islamische Republik) | IR | `fas-IR` |
 | Irland | IE | `eng-IE` (Quelltexte), `gle-IE` |
@@ -159,12 +160,13 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Venezuela | VE | `esl-VE` → `esl-ES` |
 | Vereinigte Arabische Emirate | AE | `ara-AE` → `ara-SA` |
 | Vereinigtes Königreich | GB | `cym-GB` (nicht übersetzt), `eng-GB` (Quelltexte), `gla-GB` (nicht übersetzt) |
+| Vietnam | VN | `vie-VN` |
 | Zaire | CD | `fre-CD` → `fre-FR`, `lin-CD` (nicht übersetzt) |
 | Zentralafrikanische Republik | CF | `fre-CF` → `fre-FR` |
 
 </details>
 
-<details><summary>Die 26 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 24 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
@@ -177,7 +179,6 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Ehemalige jugoslawische Republik Mazedonien | MK | `mkd-MK` |
 | Färöer-Inseln | FO | `fao-FO` |
 | Georgien | GE | `kat-GE` |
-| Indonesien | ID | `ind-ID`, `jav-ID`, `sun-ID` |
 | Kambodscha | KH | `khm-KH` |
 | Kasachstan | KZ | `kaz-KZ` |
 | Kirgistan | KG | `kir-KG` |
@@ -193,7 +194,6 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Turkmenistan | TM | `tuk-TM` |
 | Uganda | UG | `lug-UG` |
 | Usbekistan | UZ | `uzb-UZ` |
-| Vietnam | VN | `vie-VN` |
 
 </details>
 
@@ -205,7 +205,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 26. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **71 Übersetzungen
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **73 Übersetzungen
 der Administrationsoberfläche**, alle vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
 Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **68** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **70** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **80** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **78** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 80 nicht übersetzten Sprachen</summary>
+<details><summary>Die 78 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -272,7 +272,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
 | Georgian | ქართული | `kat` | `kat-GE` (Georgien) |
 | Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (USA) |
-| Indonesian | Indonesian | `ind` | `ind-ID` (Indonesien) |
 | Javanese | Jawa | `jav` | `jav-ID` (Indonesien) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algerien) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (Indien) |
@@ -320,7 +319,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Upper Sorbian | Hornjoserbšćina | `hsb` | `hsb-DE` (Deutschland) |
 | Uyghur | ئۇيغۇرچە | `uig` | `uig-CN` (China) |
 | Uzbek | O‘zbek | `uzb` | `uzb-UZ` (Usbekistan) |
-| Vietnamese | Tiếng Việt | `vie` | `vie-VN` (Vietnam) |
 | Welsh | Cymraeg | `cym` | `cym-GB` (Vereinigtes Königreich) |
 | Western Frisian | Frysk | `fry` | `fry-NL` (Niederlande) |
 | Western Punjabi | پنجابی | `pnb` | `pnb-PK` (Pakistan) |
@@ -760,7 +758,7 @@ klingonische Schrift pIqaD wird nie verwendet (siehe Klingonisch oben).
 
 ## 4. Alle Übersetzungen der Administrationsoberfläche
 
-Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet). Am 26. Oktober 2026 wurde jede Übersetzung erneut gegen die 18.811 aktuellen Texte gemessen: Alle 71 übersetzen mindestens 99 % davon, 36 jeden einzelnen (Jiddisch, am selben Tag hinzugekommen, gegen 18.812); den übrigen 35 fehlen nur die 22 Texte des Moduls für Datentabellen (`kernel/datatable/module`), und `kal-GL` lässt zusätzlich 25 längere Sätze unfertig:
+Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet). Am 26. Oktober 2026 wurde jede Übersetzung erneut gegen die 18.811 aktuellen Texte gemessen: Alle 73 übersetzen mindestens 99 % davon, 38 jeden einzelnen (Jiddisch, Vietnamesisch und Indonesisch, am selben Tag hinzugekommen, gegen 18.812); den übrigen 35 fehlen nur die 22 Texte des Moduls für Datentabellen (`kernel/datatable/module`), und `kal-GL` lässt zusätzlich 25 längere Sätze unfertig:
 
 - **Eigene Datei fertig**: fertige Meldungen der Datei geteilt durch alle ihre Meldungen, veraltete nicht
   mitgerechnet, jede Kombination aus Kontext, Quelle und Kommentar einmal gezählt.
@@ -1170,7 +1168,7 @@ Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche 
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
 Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa 10.000) sind die nützlichste Arbeit für jede Sprache außer den
-einundsiebzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
+dreiundsiebzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
 Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.

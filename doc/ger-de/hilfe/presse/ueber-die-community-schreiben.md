@@ -39,7 +39,7 @@ wie Sie fair über Menschen schreiben.
   (`git log --grep="Merge pull request"`, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - Vor 2016 erscheinen in der Geschichte 194 verschiedene Commit-Autoren.
 - Unternehmen, deren Open-Source-Arbeit verwendet wird, werden namentlich genannt ([Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)).
-- Übersetzer pflegen 71 Übersetzungen der Administration, alle vollständig (26. Oktober 2026)
+- Übersetzer pflegen 73 Übersetzungen der Administration, alle vollständig (26. Oktober 2026)
   ([Sprachen in Exponential](../../sprachen.md)).
 
 ## Wie mit Beiträgen umgegangen wird

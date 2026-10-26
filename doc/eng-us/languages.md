@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **71**, 71 of them complete |
+| Languages of the administration: translations in `share/translations` | **73**, 73 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **68** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **80** |
+| of them shown translated by the administration (own translation, fallback or English) | **70** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **78** |
 | Countries and territories of the locales | **158** |
-| of them with the administration in their language (green on the map) | **132** |
+| of them with the administration in their language (green on the map) | **134** |
 | Locales written right to left | **40** |
 
-![World map: 132 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 134 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 132 countries and territories in green</summary>
+<details><summary>The 134 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -88,6 +88,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Hungary | HU | `hun-HU` |
 | Iceland | IS | `isl-IS` |
 | India | IN | `asm-IN` (untranslated), `ben-IN` → `ben-BD`, `bho-IN` (untranslated), `brx-IN` (untranslated), `doi-IN` (untranslated), `eng-IN` (source texts), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (untranslated), `kok-IN` (untranslated), `mai-IN` (untranslated), `mal-IN`, `mar-IN`, `mni-IN` (untranslated), `ori-IN`, `pan-IN`, `san-IN` (untranslated), `sat-IN` (untranslated), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
+| Indonesia | ID | `ind-ID`, `jav-ID` (untranslated), `sun-ID` (untranslated) |
 | Iran, Islamic Republic of | IR | `fas-IR` |
 | Iraq | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (untranslated), `syr-IQ` (untranslated) |
 | Ireland | IE | `eng-IE` (source texts), `gle-IE` |
@@ -160,11 +161,12 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
 | Venezuela | VE | `esl-VE` → `esl-ES` |
+| Viet Nam | VN | `vie-VN` |
 | Yemen | YE | `ara-YE` → `ara-SA` |
 
 </details>
 
-<details><summary>The 26 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 24 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -176,7 +178,6 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Cambodia | KH | `khm-KH` |
 | Faroe Islands | FO | `fao-FO` |
 | Georgia | GE | `kat-GE` |
-| Indonesia | ID | `ind-ID`, `jav-ID`, `sun-ID` |
 | Kazakhstan | KZ | `kaz-KZ` |
 | Kyrgyzstan | KG | `kir-KG` |
 | Lao People's Democratic Republic | LA | `lao-LA` |
@@ -192,7 +193,6 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Turkmenistan | TM | `tuk-TM` |
 | Uganda | UG | `lug-UG` |
 | Uzbekistan | UZ | `uzb-UZ` |
-| Viet Nam | VN | `vie-VN` |
 | Zimbabwe | ZW | `sna-ZW` |
 
 </details>
@@ -204,7 +204,7 @@ The one place that says which languages Exponential supports, at which level, an
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
-right to left) can be chosen as content languages and siteaccess locales; **71 administration translations**
+right to left) can be chosen as content languages and siteaccess locales; **73 administration translations**
 exist, all of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, French, Ukrainian, Hebrew, Arabic,
 Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Persian,
 Pashto, Kurdish (Kurmanji), Swahili, Hindi, Korean, Japanese, Greek, Finnish, Hungarian, Romanian, Slovak, Slovenian,
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **68** of them translated: at least one of their locales has a translation of its
+administration shows **70** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **80** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **78** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 80 languages not translated</summary>
+<details><summary>The 78 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -270,7 +270,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
 | Georgian | ქართული | `kat` | `kat-GE` (Georgia) |
 | Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (United States of America) |
-| Indonesian | Indonesian | `ind` | `ind-ID` (Indonesia) |
 | Javanese | Jawa | `jav` | `jav-ID` (Indonesia) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
@@ -318,7 +317,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Upper Sorbian | Hornjoserbšćina | `hsb` | `hsb-DE` (Germany) |
 | Uyghur | ئۇيغۇرچە | `uig` | `uig-CN` (China) |
 | Uzbek | O‘zbek | `uzb` | `uzb-UZ` (Uzbekistan) |
-| Vietnamese | Tiếng Việt | `vie` | `vie-VN` (Viet Nam) |
 | Welsh | Cymraeg | `cym` | `cym-GB` (United Kingdom) |
 | Western Frisian | Frysk | `fry` | `fry-NL` (Netherlands) |
 | Western Punjabi | پنجابی | `pnb` | `pnb-PK` (Pakistan) |
@@ -748,7 +746,7 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day, Swahili, added on 23 October 2026, against the 18,404 strings of that day, the eighteen added or completed on 24 October 2026 against the 18,411 strings of that day), in two ways (both rounded down). On 26 October 2026 every translation was measured again against the 18,811 current strings: all 71 translate at least 99% of them, 36 every one (Yiddish, added the same day, against 18,812); the other 35 lack only the 22 strings of the data table module (`kernel/datatable/module`), and `kal-GL` also leaves 25 longer sentences unfinished:
+Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day, Swahili, added on 23 October 2026, against the 18,404 strings of that day, the eighteen added or completed on 24 October 2026 against the 18,411 strings of that day), in two ways (both rounded down). On 26 October 2026 every translation was measured again against the 18,811 current strings: all 73 translate at least 99% of them, 38 every one (Yiddish, Vietnamese and Indonesian, added the same day, against 18,812); the other 35 lack only the 22 strings of the data table module (`kernel/datatable/module`), and `kal-GL` also leaves 25 longer sentences unfinished:
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
@@ -1159,10 +1157,10 @@ ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login
 the allowlist's `ger-DE` list.
 
 Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the
-seventy-one complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
+seventy-three complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
 Klingon, Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Czech, Croatian, Persian, Pashto,
-Kurdish, Swahili, the eighteen languages added or completed on 24 October 2026 and the nine completed or added on
-25 October 2026) is the quickest win.
+Kurdish, Swahili, the eighteen languages added or completed on 24 October 2026, the nine completed or added on
+25 October 2026 and the three added on 26 October 2026) is the quickest win.
 
 ## 9. Right-to-left languages
 
