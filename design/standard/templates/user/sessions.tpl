@@ -23,7 +23,7 @@
 <div class="us-page" id="exp-user-sessions">
 
 <h1>{if $sessions_own}{'Your devices'|i18n( 'design/standard/user/sessions' )}{else}{'Sessions of %name'|i18n( 'design/standard/user/sessions',, hash( '%name', $sessions_user_name ) )|wash}{/if}</h1>
-<p class="us-intro">{if $sessions_own}{'Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.'|i18n( 'design/standard/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/standard/user/sessions' )}{/if}</p>
+<p class="us-intro">{if $sessions_own}{'Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.'|i18n( 'design/standard/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/standard/user/sessions' )}{/if}</p>
 
 {if $sessions_message}
 <div class="us-notice is-{$sessions_message.level|wash}" role="status"><p>{switch match=$sessions_message.key}

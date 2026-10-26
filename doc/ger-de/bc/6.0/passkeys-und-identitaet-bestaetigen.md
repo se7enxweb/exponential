@@ -62,6 +62,11 @@ Für Extensions:
   nicht zweimal senden), deshalb sollte eine Ansicht mit Upload mit `*` genannt werden. Ein POST mit einer tatsächlich
   gewählten Datei öffnet das Formular nach der Antwort wieder; leer gebliebene Dateifelder sind kein Upload
   (`expReauth::hasUploads()`), und ein solches Formular wird wiederholt.
+- `expReauth::addressedUser( $module, $view, $params, $post )` nimmt den POST als viertes Argument (optional): Ein POST
+  an `collaboration/action`, der ein Element des Workflow-Ereignisses *Approve user accounts* entscheidet, betrifft das
+  wartende Konto, also fragt die Gruppe users vor Freigeben und Ablehnen eines neuen Benutzerkontos
+  ([Freigabe neuer Benutzerkonten](freigabe-von-benutzerkonten.md)). Inhaltsfreigaben betreffen kein Konto und fragen
+  nicht.
 
 ## Audit
 

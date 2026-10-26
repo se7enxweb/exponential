@@ -87,15 +87,18 @@ Endung `-<digit>.<digits>-<digit>.ezpkg` vom Dateinamen, wenn es meldet, was es 
 
 `eZPackage::import()` (und `importUnaudited()` dahinter) arbeitet in dieser Reihenfolge:
 
-1. Das Archiv über `compress.zlib://` öffnen, als GNU-tar-Archiv, wenn sein erster Kopf die Kennung `ustar` trägt, und als altes
-   V7-tar-Archiv, wenn nicht (`eZPackage::archiveTarType()`): Pakete, die von den Releases 3.x geschrieben wurden, sind V7-Archive.
+1. Die tar-Köpfe prüfen (`expPackageArchive::scan()`, nächster Abschnitt), dann das Archiv über `compress.zlib://` öffnen, als
+   GNU-tar-Archiv, wenn sein erster Kopf die Kennung `ustar` trägt, und als altes V7-tar-Archiv, wenn nicht
+   (`eZPackage::archiveTarType()`): Pakete, die von den Releases 3.x geschrieben wurden, sind V7-Archive.
 2. Nur `package.xml` und `package.json` (nur einfache Dateien, nie ein Link) in ein temporäres Verzeichnis unter dem Cache-Verzeichnis
    (`packages/import/`) entpacken, die Definition lesen und die temporäre Kopie löschen.
 3. Das Paket abweisen, wenn sein Name nicht gültig ist (`STATUS_INVALID_NAME`) oder wenn ein Paket dieses Namens bereits im Repository
    existiert (`STATUS_ALREADY_EXISTS`).
 4. Das Repository wählen: das übergebene, sonst das aus `<vendor>` gebildete Verzeichnis.
 5. Jeden Eintrag des Archivs prüfen (nächster Abschnitt).
-6. Das ganze Archiv nach `var/storage/packages/<repository>/<name>/` entpacken und das Paket erneut lesen.
+6. Das ganze Archiv nach `var/storage/packages/<repository>/<name>/` entpacken und das Paket erneut lesen. Jede entpackte
+   Datei erhält den Modus 0644 und jedes Verzeichnis 0755 (innerhalb der Grenzen der Installation für Dateimodi), was immer das
+   Archiv angibt (`expPackageArchiveModes`).
 
 Der Import eines Archivs wird im Prüfprotokoll als `system.package.import` festgehalten, mit dem SHA-256 des Archivs und nie seinem Inhalt
 (siehe `doc/eng-us/bc/6.0/audit.md`).
@@ -107,6 +110,10 @@ Der Import eines Archivs wird im Prüfprotokoll als `system.package.import` fest
 
 | Prüfung | Code der Abweisung | Grenze |
 |---|---|---|
+| Jeder tar-Kopf lesbar, seine Prüfsumme richtig, keine Daten abgeschnitten | `unreadable` | |
+| Kein PAX-Archiv (tar-Typen `x` und `g`); packen mit `tar --format=gnu` (GNU tar) oder `tar --format=gnutar` (bsdtar, macOS) | `tar_pax` | |
+| Nur die tar-Typen, die der Leser verarbeitet: `0`, `5` und ein GNU-Langname `L`; `\0` in einem V7-Archiv; Links und Geräte werden unten als `unsafe_type` abgewiesen | `tar_entry_type` | |
+| Ein GNU-Langname höchstens 4096 Bytes lang und kein Vielfaches von 512 Bytes | `tar_long_name` | |
 | Höchstens `MaxEntries` Einträge | `too_many_entries` | `50000` |
 | Jeder Pfad relativ, ohne `..`, umgekehrten Schrägstrich, NUL oder Steuerzeichen | `unsafe_path` | |
 | Jeder Eintrag eine einfache Datei oder ein Verzeichnis (keine Links, keine Geräte) | `unsafe_type` | |
@@ -121,6 +128,16 @@ Die Seite zum Hochladen in der Administration (`package/upload`) führt zuerst d
 | Die Datei hat höchstens `MaxArchiveSize` Bytes | `too_large` | `268435456` (256 MiB) |
 | Die Datei beginnt mit der gzip-Signatur | `not_gzip` | |
 | Eine Definitionsdatei oben, wohlgeformt, höchstens 16 MiB, mit gültigem Namen | `no_definition`, `definition_malformed`, ... | |
+
+Die Prüfungen der tar-Köpfe (die ersten vier Zeilen) laufen, bevor die Archivbibliothek einen einzigen Eintrag liest,
+Kopf für Kopf, wobei die Datenblöcke anhand ihrer Größe übersprungen werden: Der GNU-Leser der Bibliothek lief bei einem
+Kopftyp, den er nicht kennt, bis `max_execution_time` in einer Schleife (ein PAX-Archiv, das Pythons `tarfile` seit 3.8
+standardmäßig schreibt und `bsdtar` für Namen, die nicht ASCII sind), und las einen Langnamen in der Größe, die der Kopf
+angab, in den Speicher. Ein Langname, dessen Größe ein Vielfaches von 512 Bytes ist, wird abgewiesen, weil der Leser dann
+den echten Eintragskopf überspringt; GNU tar speichert den Namen mit abschließendem NUL, ein Name von 511, 1023, ... oder
+4095 Bytes kann also nicht importiert werden (die Meldung nennt in diesem Fall ebenfalls die Grenze von 4096 Bytes). Ein
+Paket, das mit GNU tar, mit bsdtar und `--format=gnutar` oder `--format=ustar` oder vom Export von Exponential gepackt
+wurde, besteht die Prüfung.
 
 Die Grenzen stehen in `settings/package.ini [UploadSettings]`; ändern Sie sie in `settings/override/package.ini.append.php`.
 

@@ -42,6 +42,10 @@ class Removeeditversion extends \Exponential\Runnable\ModuleView
         if ( $http->hasSessionVariable( "DiscardConfirm" ) )
         {
             $discardConfirm = $http->sessionVariable( "DiscardConfirm" );
+            // the value stayed in the session, so any later GET of this view discarded the version in
+            // DiscardObjectID/DiscardObjectVersion without asking (a new draft can get the number of a discarded one).
+            // It is set by the Discard action of content/edit for the redirect that follows, and counts for that one only.
+            $http->removeSessionVariable( "DiscardConfirm" );
             if ( !$discardConfirm )
                 $isConfirmed = true;
         }

@@ -26,6 +26,17 @@ class expHelpContentTranslationsTest extends PHPUnit\Framework\TestCase
         'Before you begin', 'Steps', 'Result', 'What to do next', 'Condition', 'Cause', 'Remedy',
         // the manual pages while the background job builds the manuals from the Markdown help
         'Manuals are being built (%1 of %2)',
+        // the review workflow, the style guide check and "Was this helpful?" of a topic (parts/topic_workflow.tpl,
+        // parts/topic_feedback.tpl, parts/feedback_reason.tpl, the templates of the extension exphelpsite)
+        'Review and release', 'The topic is in Review now.', 'The topic is Released: readers see it now.', 'The topic is a Draft again.',
+        'You wrote the current version, so someone else with the release role releases it.',
+        'The state was not changed: your role does not allow this step.', 'Review workflow', 'Draft', 'Review', 'Back to Review',
+        'Send to Review', 'Release', 'Back to Draft', 'Style guide check', 'The style guide check found nothing.',
+        '%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.',
+        'Level', 'Rule', 'Field', 'Finding', 'Was this helpful?', 'Readers answered yes %yes times and no %no times.',
+        'Reasons given for no:', 'Thank you. Your answer helps us improve the help.', 'Yes', 'If not, what was wrong?',
+        'No reason given', 'No', 'Only your answer is kept, not who you are.', 'It is out of date', 'It is hard to understand',
+        'Something is missing', 'It is wrong', 'Another reason', 'This topic is not Released; readers do not see it.',
     );
 
     private static function root()

@@ -149,6 +149,9 @@ print(get('/content/node/2')['metadata']['objectName'])
 | `[Authentication] AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | OAuth oder `ezpRestBasicAuthStyle`; API-Schlüssel funktionieren mit beiden |
 | `[Authentication] RequireHTTPS` | `disabled` | Reines HTTP ablehnen |
 | `[OAuthSettings] TokenTTL` | `3600` | Lebensdauer eines OAuth-Tokens |
+| `[OAuthSettings] RefreshTokenTTL` | `2592000` | Lebensdauer eines Refresh-Tokens ab der Erneuerung, die es ausgestellt hat; `0` = kein Ablauf |
+| `[OAuthSettings] AllowTokenInQuery` | `disabled` | `enabled` nimmt auch `?oauth_token=` aus der Adresse |
+| `[OAuthSettings] AllowTokenInBody` | `enabled` | `oauth_token` aus einem POST-Formular nehmen |
 | `[CacheSettings] ApplicationCache` | | Der Antwort-Cache: eine Antwort je Benutzer, nur `GET` und `HEAD` |
 
 Leeren Sie nach einer Änderung den INI-Cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`), laden Sie

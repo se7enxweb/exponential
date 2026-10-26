@@ -38,6 +38,30 @@ To deal with a topic:
 
 The person who wrote a change is not the person who releases it.
 
+## Send a topic to review and release it
+
+Below each topic in the help, the card **Review and release** shows where the topic stands and what you may do next.
+You see it when you may edit the topic or change its state.
+
+1. Open the topic in the help.
+2. Read **Style guide check**. It lists what the style guide's check finds in this topic: an error stops the
+   release check of the site, a warning or notice is a hint for you and the reviewer.
+3. Click **Send to Review** when the topic is ready.
+   The card says that the topic is in Review now.
+
+A release manager then opens the topic and clicks **Release**, or **Back to Draft** to send it back. A Released topic
+goes back with **Back to Review** before anyone changes it again.
+
+If you wrote the current version of a topic, the card shows no **Release** button but the reason: someone else with
+the release role releases it. The same rule applies on the **Object states** tab of the administration.
+
+## What readers say: Was this helpful?
+
+Under every Released topic, readers answer **Was this helpful?** with **Yes**, or with **No** and a reason (out of date,
+hard to understand, something missing, wrong, another reason). Only the answer is kept, never who gave it. The card
+**Review and release** shows how often readers answered yes and no, and the reasons they gave. A topic with many
+answers **No** is a good candidate for the next review.
+
 ## E-books of the manuals
 
 Each manual of the help is also an e-book, as EPUB and PDF. You find the e-books on the manual's page in the help,

@@ -58,7 +58,7 @@ As shipped in `settings/site.ini`:
 | Group | On | Rules |
 |---|---|---|
 | `account`: the security of one's own account | yes | `user/password self`, `user/passkeys *`, `user2fa/setup`, `apikey/list`, `content/edit self credentials`, `user/sessions self SaveMailButton` |
-| `users`: users, roles and policies | yes | `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `role/*`, `oauthadmin/*` |
+| `users`: users, roles and policies, approving new user accounts | yes | `content/edit other`, `user/password other`, `user/sessions other RevokeSessionButton RevokeOthersButton`, `user/setting`, `user/unactivated`, `user/hygiene`, `user/deactivate`, `user/registration`, `content/removeuserobject ConfirmButton`, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny CollaborationAction_Defer`, `role/*`, `oauthadmin/*` |
 | `system`: system settings and setup actions | yes | `setup/*` except `setup/info`, `logs`, `logshealth`, `logsdigest`, `logsfeed`, `templatelist`, `templateview`, `menu` and the three streams; `settings/edit`, `package/*`, `package/upload *`, `secrets/*`, `update/*`, `git_manager/*` |
 | `export`: exporting data | yes | `infocollector/export *`, `audit/export *`, `content/subitemsexport *`, `mailpreferences/export *`, `bccie/export *`, `bccie/doexport *`, `newsletter/subscription_list_csvexport *`, `newsletter/subscriber_export *`, `newsletter/statistics_export *` |
 | `content`: removing and publishing content | no | `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton` |
@@ -68,6 +68,13 @@ user's account always asks. Creating an account below a user group counts as edi
 user management, as the login, e-mail address, password and group of an account decide who can sign in with which
 rights, whether or not a field of it changed. The question comes once, when the form is published (or stored), and
 the answer runs the form as it was sent (see "What happens to the request").
+
+**Approve** and **Deny** of a new user account waiting for approval (an item of the workflow event *Approve user
+accounts*, see [Approving new editor accounts](approving-new-editor-accounts.md)) ask too: the item addresses that
+account, so the rule `collaboration/action other ...` of the users group matches. The decision is held until the
+approver has answered and is then carried out exactly as pressed. An ordinary content approval addresses no account and
+never asks here, not even when the content is a user object; the content group has no rule for approvals either, so
+switching it on changes nothing for them. Adding a comment and opening the item never ask.
 
 ## 3. Switching groups on and off
 
@@ -88,7 +95,7 @@ A rule is `module/view [token ...]`:
 | `module/view` | the view; `module/*` every view of the module. A POST to it asks |
 | `*` | every request asks, GET too: a page that downloads, or a form with a file upload |
 | `Name` | only a POST that carries this field (one of several names), usually the action's button |
-| `self`, `other` | only when the account the request addresses is the user's own, or another user's (`content/edit` of a user object, `user/password`, `user/setting`, `user/edit`, `user/sessions`) |
+| `self`, `other` | only when the account the request addresses is the user's own, or another user's (`content/edit` of a user object, `user/password`, `user/setting`, `user/edit`, `user/sessions`; `collaboration/action` addresses the pending account of an item of *Approve user accounts*) |
 | `credentials` | only when the POST changes the login, e-mail address or password of a user |
 | `!module/view` | an exception: the view never asks in this group (wins over `module/*`) |
 

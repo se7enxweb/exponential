@@ -296,6 +296,9 @@ class expHelpContentSeeder
             $this->change( 'release', 'object ' . $object->attribute( 'id' ) . ' (' . $object->attribute( 'remote_id' ) . ')' );
             eZContentCacheManager::clearContentCacheIfNeeded( (int)$object->attribute( 'id' ) );
         }
+        // a released help_id is never renamed or reused: recorded as the operation records it
+        if ( class_exists( 'expHelpContentWorkflow' ) )
+            expHelpContentWorkflow::recordHelpId( $object );
     }
 
     protected function folderNode( $remoteId )

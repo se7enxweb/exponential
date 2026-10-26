@@ -305,14 +305,14 @@ class expReauth
         $post = is_array( $_POST ) ? $_POST : array();
         $userID = (int)$user->attribute( 'contentobject_id' );
 
-        $whose = function () use ( $moduleName, $view, $params, $userID ) {
-            $addressed = self::addressedUser( $moduleName, $view, (array)$params );
+        $whose = function () use ( $moduleName, $view, $params, $userID, $post ) {
+            $addressed = self::addressedUser( $moduleName, $view, (array)$params, self::withoutOwnFields( $post ) );
             if ( $addressed === null )
                 return null;
             return $addressed === $userID ? 'self' : 'other';
         };
         $credentials = function () use ( $moduleName, $view, $params, $post ) {
-            $target = self::addressedUser( $moduleName, $view, (array)$params );
+            $target = self::addressedUser( $moduleName, $view, (array)$params, self::withoutOwnFields( $post ) );
             $account = $target ? eZUser::fetch( $target ) : null;
             if ( !$account instanceof eZUser )
                 return expReauthRules::changesCredentials( $post, '', '' );
@@ -398,17 +398,29 @@ class expReauth
 
     /**
      * The account a request addresses, for the rules "self" and "other": the user object edited (content/edit, a
-     * class with a user account field), the account of user/password, user/setting, user/edit, user/sessions; null for none.
+     * class with a user account field), the account of user/password, user/setting, user/edit, user/sessions, and the
+     * pending account of an approval item of the event "Approve user accounts" (collaboration/action, the approve and
+     * deny of a new editor account, expUserApproval); null for none. An ordinary content approval addresses no account,
+     * even when the content is a user object.
      *
      * @param string $module
      * @param string $view
      * @param array $params ordered view parameters
+     * @param array $post the POST fields (collaboration/action names its item there)
      * @return int|null the content object id of the account
      */
-    public static function addressedUser( $module, $view, array $params )
+    public static function addressedUser( $module, $view, array $params, array $post = array() )
     {
         $first = isset( $params[0] ) && is_numeric( $params[0] ) ? (int)$params[0] : 0;
         $where = $module . '/' . $view;
+        $itemID = self::approvalItemID( $module, $view, $post );
+        if ( $itemID > 0 )
+        {
+            if ( !class_exists( 'expUserApproval' ) || expUserApproval::processOfItem( $itemID ) === null )
+                return null;
+            $item = eZCollaborationItem::fetch( $itemID );
+            return $item instanceof eZCollaborationItem && (int)$item->attribute( 'data_int1' ) > 0 ? (int)$item->attribute( 'data_int1' ) : null;
+        }
         if ( in_array( $where, array( 'user/password', 'user/setting', 'user/edit', 'user/sessions' ), true ) )
             return $first > 0 ? $first : (int)eZUser::currentUserID();
         if ( $where === 'content/edit' && $first > 0 )
@@ -425,6 +437,25 @@ class expReauth
             return null;
         }
         return null;
+    }
+
+    /**
+     * The approval item a POST to collaboration/action decides on (the approval type ezapprove, CollaborationItemID),
+     * 0 for none. Pure: no database.
+     *
+     * @param string $module
+     * @param string $view
+     * @param array $post
+     * @return int
+     */
+    public static function approvalItemID( $module, $view, array $post )
+    {
+        if ( $module . '/' . $view !== 'collaboration/action' )
+            return 0;
+        if ( !isset( $post['CollaborationTypeIdentifier'] ) || $post['CollaborationTypeIdentifier'] !== 'ezapprove' )
+            return 0;
+        $id = isset( $post['CollaborationItemID'] ) && is_scalar( $post['CollaborationItemID'] ) ? (string)$post['CollaborationItemID'] : '';
+        return ctype_digit( $id ) ? (int)$id : 0;
     }
 
     /**

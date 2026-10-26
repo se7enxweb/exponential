@@ -2249,6 +2249,74 @@
         <source>Open or close the folder</source>
         <translation>פתיחה או סגירה של התיקייה</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>עמוד זה נמצא בסימניות שלך. יש לפתוח את הסימנייה כדי לשנות את שמה או את התיקייה שלה.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>הוספת עמוד זה לסימניות שלך.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>בסימניות</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>הוספת העמוד לסימניות</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>הסימנייה שומרת את כתובת העמוד יחד עם הפרמטרים שלו: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>שמירת סימנייה</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>הוספת סימנייה</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>הסימניות שלי</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>עמוד מערכת</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>עמודי מערכת</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>אין עוד הרשאה לפתוח עמוד זה.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>פתיחה</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>כתובת העמוד חסרה. יש להסיר את הסימנייה ולהוסיף את העמוד לסימניות מחדש.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>אין עוד הרשאה לפתוח עמוד זה. יש להסיר את הסימנייה או לבקש גישה ממנהל מערכת.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>כתובת</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>מודול ותצוגה</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>ניתן להוסיף לסימניות גם עמודי מערכת: יש לפתוח את העמוד (הגדרות, יומן הביקורת, רשימת משתמשים ...) ולבחור מעליו "הוספת העמוד לסימניות". לסימניות כאלה יש סמל של גלגל שיניים.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17640,6 +17708,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>להשבית חשבונות משתמשים ולהעביר אותם לקבוצת המשתמשים המושבתים, ולהחזיר אותם</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>לראות היכן משתמשים אחרים מחוברים, ולנתק אותם</translation>
     </message>
 </context>
 <context>
@@ -37745,6 +37817,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>פתיחת העדפות הדוא&quot;ל</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>הפעלות</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>היכן החשבון מחובר: דפדפן, מערכת, מקום ושעה. יש לנתק מכשיר לא מוכר.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>היכן משתמש זה מחובר, וניתוק המשתמש בכל המקומות.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ניהול מכשירים</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>הצגת הפעלות</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count מחוברים</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>מפתחות גישה</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>כניסה באמצעות טביעת אצבע, זיהוי פנים, נעילת מסך או מפתח אבטחה במקום הסיסמה.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>ניהול מפתחות גישה</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>הוספת מפתח גישה</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count מפתחות גישה</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>עדיין אין</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39684,6 +39808,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>צירופי מחלקה/מאפיין (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>קבוצות משתמשים שחשבונות חדשים בהן דורשים אישור</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>חשבון שמתפרסם באחת מקבוצות אלה, או מתחתיה, ממתין עד שמאשר יקבל אותו. לפני כן הוא אינו יכול להתחבר.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>משתמשים שמאשרים את החשבונות</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>קבוצות שמאשרות את החשבונות</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>קבוצות משתמשים שאינן דורשות אישור (חבריהן מפרסמים חשבונות כאלה ישירות; מאשרים לעולם אינם זקוקים לאישור)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>שליחת דוא"ל למאשרים עם קישור לאישור (הם מתחברים כדי לאשר או לדחות)</translation>
     </message>
 </context>
 <context>
@@ -50786,6 +50934,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>משתנה הסביבה EXP_DEMO_MODE=1 מסמן התקנה זו כהדגמה ציבורית: סיסמת מנהל מערכת ידועה מתקבלת, ולא ניתן יהיה לשנות או לאפס סיסמאות של מנהלי מערכת בהמשך. לעולם אין להשתמש במצב הדגמה עבור אתר ייצור.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>משימות מתוזמנות</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>המשימות המתוזמנות רצות מתוך ה־crontab של המשתמש %user, שהוא הבעלים של ההתקנה.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>בהתקנה אין חלק של משימות מתוזמנות לתזמון.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>ה־crontab לא נכתב (%reason). יש להוסיף שורות אלה ל־crontab של המשתמש שתחתיו האתר רץ, אחרת התור, הייבוא, ההתראות ואינדקס החיפוש לעולם לא ירוצו:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54302,6 +54466,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>שם מאפיין המחלקה</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>חשבונות הדורשים אישור</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>דוא"ל למאשרים</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55712,6 +55892,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>ההערה שלך נוספה.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>החשבון "%1" אושר ופורסם: הוא יכול להתחבר כעת.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>החשבון "%1" נדחה. הוא אינו מפורסם ואינו יכול להתחבר; הוא שוב טיוטה של המחבר שלו.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56010,6 +56198,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>סימניות שנוספו: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>עמוד מערכת</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>עדיין לא ניתן להוסיף עמודי מערכת לסימניות: עדכון מסד הנתונים של גרסה זו לא הורץ.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>לא ניתן להוסיף עמוד זה לסימניות: הוא אינו עמוד של תצוגת מודול.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>לא ניתן להוסיף עמוד זה לסימניות: אין הרשאה לפתוח אותו.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>לא ניתן היה להוסיף את העמוד לסימניות.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>העמוד "%name" נמצא בסימניות שלך.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>לא ניתן היה לשנות את שם הסימנייה: נדרש שם.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>שם הסימנייה שונה ל־"%name".</translation>
     </message>
 </context>
 <context>
@@ -56976,6 +57196,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The archive was refused: the entry "%path" points outside the package.</source>
         <translation>הארכיון נדחה: הרשומה &quot;%path&quot; מפנה אל מחוץ לחבילה.</translation>
+    </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>הארכיון נארז בתבנית PAX של tar, שלא ניתן לייבא. יש לארוז את החבילה בתבנית GNU של tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>הארכיון נדחה: לרשומה &quot;%path&quot; יש סוג tar &quot;%type&quot;, וחבילה מכילה רק קבצים ותיקיות.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>הארכיון נדחה: הוא מציין רשומה ארוכה מ־%length בתים.</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
@@ -58072,6 +58304,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>שיקוף לטבלאות נתונים</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>אישור חשבונות משתמש</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>חשבון משתמש חדש ממתין לאישורך</translation>
     </message>
 </context>
 <context>
@@ -64216,6 +64456,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The audit trail of this node</source>
         <translation>מסלול הביקורת של צומת זה</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>תקין</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>שבור</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>לא נבדק</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>תוקן</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>ריק</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -69712,6 +69972,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>כתובת הדוא&quot;ל החדשה %email ממתינה לאישור: יש לפתוח את הקישור שנשלח אליה. עד אז החשבון שומר על %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>הודעת הדוא"ל על התחברות ממכשיר או מדפדפן חדש היא חלק מאבטחת החשבון. ניתן להפעיל או לכבות אותה בעמוד המכשירים שלך, שבו ניתן גם לראות את ההפעלות של החשבון ולנתק אותן.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -73814,6 +74082,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Build the help manuals from the Markdown help</source>
         <translation>בניית מדריכי העזרה מתוך עזרת ה־Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>סקירה ושחרור</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>הנושא נמצא כעת בסקירה.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>הנושא שוחרר: הקוראים רואים אותו כעת.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>הנושא חזר להיות טיוטה.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>את הגרסה הנוכחית כתבת את/ה, ולכן מישהו אחר עם תפקיד השחרור משחרר אותה.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>המצב לא השתנה: התפקיד שלך אינו מאפשר שלב זה.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>תהליך הסקירה</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>טיוטה</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>חזרה לסקירה</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>שליחה לסקירה</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>שחרור</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>חזרה לטיוטה</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>בדיקת מדריך הסגנון</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>בדיקת מדריך הסגנון לא מצאה דבר.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors שגיאות, %warnings אזהרות, %notices הערות. שגיאה גורמת לכישלון של ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>רמה</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>כלל</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>שדה</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>ממצא</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>האם זה עזר?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>הקוראים ענו כן %yes פעמים ולא %no פעמים.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>סיבות שניתנו ללא:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>תודה. התשובה שלך עוזרת לנו לשפר את העזרה.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>אם לא, מה היה שגוי?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>לא ניתנה סיבה</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>נשמרת רק התשובה שלך, לא מי את/ה.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>זה לא עדכני</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>קשה להבין את זה</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>משהו חסר</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>זה שגוי</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>סיבה אחרת</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>נושא זה לא שוחרר; הקוראים אינם רואים אותו.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -75599,6 +76007,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>דפדוף בטבלאות של המחלקות המתמידות…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>משימות מתוזמנות</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>אף חלק של המשימות המתוזמנות עדיין לא רץ: תור המשימות, הייבוא, ההתראות ואינדקס החיפוש ממתינים. יש להריץ php bin/php/installcrontab.php --add, או להוסיף ל־crontab את השורות של --show.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>חלק של המשימות המתוזמנות לא רץ זמן רב יותר ממה שלוח הזמנים שלו מאפשר: יש לבדוק את ה־crontab (php bin/php/installcrontab.php --show) ואת היומנים var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>חלק</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>לוח זמנים</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>התחלה אחרונה</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>בזמן</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>באיחור</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>לא רץ אף פעם</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>בהתקנה אין חלק של משימות מתוזמנות שהמשימה המתוזמנת יכולה להריץ.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>הגדרות &gt; משימות מתוזמנות</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>חשבון משתמש חדש ממתין לאישור: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>חשבון</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>שם משתמש</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>קבוצה</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>התבקש על ידי</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>פתיחת האישור</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>אם הכפתור אינו פועל, יש להעתיק כתובת זו לדפדפן: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>חשבון משתמש חדש ממתין לאישורך</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester יצר את החשבון "%name" ב־%groups. הוא אינו מפורסם ואינו יכול להתחבר עד שמאשר יקבל אותו.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>יש להתחבר לממשק הניהול ולאשר או לדחות אותו ברשימת שיתוף הפעולה. קישור זה אינו מבצע התחברות ואינו מחליט דבר בעצמו.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>הודעה זו נשלחה על ידי %site מכיוון שחשבונות חדשים בקבוצות אלה מחכים לאישורך.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>מחשב</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>טלפון</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>טאבלט</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>תוכנה או אפליקציה</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>לקוח אוטומטי</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>מכשיר לא ידוע</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>סיסמה</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>סיסמה וקוד אימות דו־שלבי</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ממשק REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ממשק SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>כניסה יחידה</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>החלה לפני שהפעלות נרשמו</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>נותקה</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>נותקה מעמוד זה</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>נותקה על ידי מנהל מערכת</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>נותקה באמצעות "כל ההפעלות האחרות"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>הוחלפה בהתחברות חדשה</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>הסתיימה עקב שינוי סיסמה</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>פג תוקף</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>ההפעלות של %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>היכן החשבון שלך מחובר כרגע. אם מכשיר אינו מוכר, יש לנתק אותו ולשנות את הסיסמה.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>היכן חשבון זה מחובר כרגע. ניתוק המשתמש מסיים כל הפעלה בבקשה הבאה שלה.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>חזרה לחשבון</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ההפעלה נותקה. על המכשיר להתחבר מחדש.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count הפעלות אחרות נותקו.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>לא היו הפעלות אחרות לניתוק.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count הפעלות של משתמש זה נותקו.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>למשתמש זה לא היו הפעלות לניתוק.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>זו ההפעלה שבה נעשה שימוש כעת. כדי לסיים אותה, יש להתנתק.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>הפעלה זו כבר הסתיימה.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>הודעת דוא"ל תישלח כאשר החשבון שלך מתחבר ממכשיר חדש.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>לא יישלחו עוד הודעות דוא"ל על התחברויות ממכשירים חדשים.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>תוקף העמוד פג. דבר לא שונה; יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>הפעלות אינן נרשמות באתר זה (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>הטבלה expuser_session חסרה</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>הפעלות יירשמו לאחר שהטבלה תיווצר: php update/common/scripts/6.0/createusersessiontable.php, או עדכון מסד הנתונים של 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>מחובר כעת</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ניתוק כל ההפעלות האחרות</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ניתוק מכל המקומות</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>כל מכשיר מלבד זה ינותק בבקשה הבאה שלו, גם מכשירים שנשארים מחוברים באמצעות "זכור אותי".</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>כל הפעלה של משתמש זה תנותק בבקשה הבאה שלה, גם הפעלות שנשארות מחוברות באמצעות "זכור אותי".</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>כן, לנתק את ההפעלות האחרות</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>כן, לנתק כל הפעלה</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>מכשיר זה</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>כתובת</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>מוצגת כרשת שלה; הכתובת המלאה נשמרת עבור מנהלי המערכת.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>התחברות מ־%ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>פעילות אחרונה</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>כעת</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>נשאר מחובר</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>זכור אותי, עד %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>עד לסגירת הדפדפן</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>מקום ההתחברות</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>זיהוי הדפדפן</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>כדי לסיים הפעלה זו, יש להתנתק.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ניתוק הפעלה זו</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>אין הפעלה מחוברת.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>התראות התחברות</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>שליחת דוא"ל אליי כאשר החשבון שלי מתחבר ממכשיר או מדפדפן חדש</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>נשלח אל %email. ההודעה מציינת את המכשיר, את המקום המשוער ואת השעה, ומקשרת לעמוד זה.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>אתר זה אינו שולח התראות התחברות.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>הסתיימו לאחרונה</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>הפעלות שהסתיימו ב־%days הימים האחרונים.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>סיום</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>אופן</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>אין.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>מחשב</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>טלפון</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>טאבלט</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>תוכנה או אפליקציה</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>לקוח אוטומטי</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>מכשיר לא ידוע</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>סיסמה</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>סיסמה וקוד אימות דו־שלבי</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>ממשק REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>ממשק SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>כניסה יחידה</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>החלה לפני שהפעלות נרשמו</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>נותקה</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>נותקה מעמוד זה</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>נותקה על ידי מנהל מערכת</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>נותקה באמצעות "כל ההפעלות האחרות"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>הוחלפה בהתחברות חדשה</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>הסתיימה עקב שינוי סיסמה</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>פג תוקף</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>ההפעלות של %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>היכן החשבון שלך מחובר כרגע. אם מכשיר אינו מוכר, יש לנתק אותו ולשנות את הסיסמה.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>היכן חשבון זה מחובר כרגע. ניתוק המשתמש מסיים כל הפעלה בבקשה הבאה שלה.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>ההפעלה נותקה. על המכשיר להתחבר מחדש.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count הפעלות אחרות נותקו.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>לא היו הפעלות אחרות לניתוק.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count הפעלות של משתמש זה נותקו.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>למשתמש זה לא היו הפעלות לניתוק.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>זו ההפעלה שבה נעשה שימוש כעת. כדי לסיים אותה, יש להתנתק.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>הפעלה זו כבר הסתיימה.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>הודעת דוא"ל תישלח כאשר החשבון שלך מתחבר ממכשיר חדש.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>לא יישלחו עוד הודעות דוא"ל על התחברויות ממכשירים חדשים.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>תוקף העמוד פג. דבר לא שונה; יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>הפעלות אינן נרשמות באתר זה.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>הפעלות עדיין אינן נרשמות: האתר זקוק לעדכון מסד הנתונים שלו.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>מחובר כעת</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>מכשיר זה</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>מכשיר</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>כתובת</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>התחברות</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>פעילות אחרונה</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>כעת</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>נשאר מחובר</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>זכור אותי, עד %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>עד לסגירת הדפדפן</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>כדי לסיים הפעלה זו, יש להתנתק.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>התנתקות</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>ניתוק הפעלה זו</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>ניתוק כל ההפעלות האחרות</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>ניתוק מכל המקומות</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>התראות התחברות</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>שליחת דוא"ל אליי כאשר החשבון שלי מתחבר ממכשיר או מדפדפן חדש</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>הסתיימו לאחרונה</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>סיום</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>אופן</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>אין ב־%days הימים האחרונים.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>צפייה במקומות שבהם החשבון שלך מחובר, וניתוק מכשיר לא מוכר.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>ניהול מכשירים</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>התחברות חדשה לחשבון שלך ב־%site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>שלום,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>החשבון שלך %login ב־%site שימש זה עתה להתחברות ממכשיר או מדפדפן שלא נעשה בו שימוש לאחרונה:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>מכשיר:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>שעה:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>כתובת משוערת:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>אם ההתחברות הזו הייתה שלך, אין צורך לעשות דבר.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>אם ההתחברות לא הייתה שלך, ייתכן שמישהו יודע את הסיסמה שלך. יש לנתק את ההפעלה הזו בעמוד המכשירים שלך, ולאחר מכן לשנות את הסיסמה:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>ניתן לכבות הודעות דוא"ל אלה באותו עמוד.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>התחברות חדשה של %login ב־%site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>החשבון %login התחבר ממכשיר או מדפדפן שלא נעשה בו שימוש לאחרונה.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>ההפעלות של משתמש זה:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>התחברות חדשה לחשבון שלך</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>החשבון שלך %login שימש להתחברות מ־%device (%ip) בתאריך %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>אם ההתחברות הזו הייתה שלך, אין צורך לעשות דבר. אחרת, יש לנתק הפעלה זו בכתובת %url ולשנות את הסיסמה.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>התחברות חדשה של %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>החשבון %login התחבר ממכשיר חדש: %device (%ip) בתאריך %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>המכשירים שלך</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>ההפעלות של %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>מפתחות גישה</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>מפתח גישה מאפשר כניסה באמצעות טביעת אצבע, זיהוי פנים, נעילת מסך או מפתח אבטחה במקום הסיסמה. הוא מאוחסן במכשיר שלך או במנהל הסיסמאות שלך; אתר זה שומר רק את המפתח הציבורי שלו, כך שדליפה כאן אינה יכולה לחשוף אותו.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>מפתחות גישה כבויים באתר זה.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>עדיין לא ניתן להשתמש במפתחות גישה באתר זה: על מנהל המערכת להריץ קודם את עדכון מסד הנתונים.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>האם להסיר את מפתח הגישה "%name"?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>הוא לא יוכל עוד להתחבר לחשבון זה. יש להסיר אותו גם מהמכשיר או ממנהל הסיסמאות.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>הסרת מפתח הגישה</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>מפתחות הגישה שלך</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count מתוך %max לכל היותר</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>עדיין אין לך מפתח גישה. ניתן להוסיף אחד למטה: בכניסה הבאה יש לבחור "כניסה באמצעות מפתח גישה".</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>נוסף</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>שימוש אחרון</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>סוג</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>עדיין לא</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>מסונכרן</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>מכשיר או מפתח זה</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>שינוי שם</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>שם חדש</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>שמירת השם</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>הוספת מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>יש לפעול לפי השלבים של הדפדפן או המכשיר.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>חלון מפתח הגישה נסגר. דבר לא שונה.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>לא ניתן היה ליצור את מפתח הגישה. יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>דפדפן זה אינו יכול ליצור מפתחות גישה. יש להשתמש בדפדפן עדכני או להתחבר באמצעות הסיסמה.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>לדוגמה המכשיר או מנהל הסיסמאות שבו הוא נמצא, כדי שניתן יהיה להבחין בין מפתחות הגישה.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>לחשבון זה יש המספר המרבי המותר של מפתחות גישה (%max). יש להסיר אחד כדי להוסיף אחר.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>לא ניתן היה להשתמש במפתח הגישה. יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>החשבון שלי</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>חלון מפתח הגישה נסגר. ניתן להתחבר באמצעות הסיסמה במקום זאת.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>לא ניתן היה להשתמש במפתח הגישה. יש לנסות שוב או להתחבר באמצעות הסיסמה.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>כניסה באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>לא ניתן היה להתחבר באמצעות מפתח הגישה</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>כניסה באמצעות טביעת אצבע, זיהוי פנים, נעילת מסך או מפתח אבטחה במקום הסיסמה.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>מפתח הגישה "%name" נוסף. מעתה ניתן להתחבר באמצעותו.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>שמו של מפתח הגישה הוא כעת "%name".</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>מפתח הגישה "%name" הוסר. הוא אינו יכול עוד להתחבר לחשבון זה.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>מפתח גישה מתאריך %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>לחשבון זה יש המספר המרבי המותר של מפתחות גישה. יש להסיר אחד קודם.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>מסד הנתונים היה עמוס ודבר לא נשמר. יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>מפתח גישה זה כבר רשום.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>הבקשה ארכה זמן רב מדי או שכבר נעשה בה שימוש. יש לנסות שוב.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>מפתח הגישה לא אימת את הזהות (PIN, טביעת אצבע או זיהוי פנים). יש לנסות שוב ולאשר במכשיר.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>מאמת זה משתמש בסוג מפתח שאתר זה אינו מקבל.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>מפתח הגישה נוצר עבור כתובת אחרת מזו של אתר זה.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>מפתח גישה זה אינו רשום לאף חשבון כאן. יש להתחבר באמצעות הסיסמה ולהוסיף אותו תחת החשבון שלי, מפתחות גישה.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>חשבון זה אינו יכול להתחבר כרגע. נא לפנות למנהל המערכת של האתר.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>לא ניתן היה לבדוק את מפתח הגישה. יש לנסות שוב.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>פעולה זו משנה את אופן ההתחברות או את האבטחה של החשבון שלך.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>פעולה זו כוללת ניהול של משתמשים, תפקידים או מדיניות.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>פעולה זו משנה הגדרות מערכת או מריצה פעולת הגדרה.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>פעולה זו מייצאת נתונים.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>פעולה זו מסירה או מפרסמת תוכן.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>פעולה זו דורשת אימות זהות.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>יש לאשר את הזהות, כמשתמש המחובר בשם %login. השאלה לא תוצג שוב במשך %minutes דקות.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>הסיסמה שגויה.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>הקוד שגוי, או שכבר נעשה בו שימוש.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>יש לבחור באחת מהדרכים שלהלן.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>לא ניתן היה לבדוק את מפתח הגישה.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>נותרו %count ניסיונות לפני ההתנתקות.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>לא ניתן לשלוח שוב את הקבצים שנבחרו: לאחר האישור יש לבחור אותם שוב.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>באמצעות הסיסמה</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>באמצעות מפתח גישה</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>סיסמה</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>אישור</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>שימוש במפתח גישה</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>באמצעות קוד מאפליקציית האימות</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>קוד</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>לחשבון זה אין דרך לאמת את הזהות (אין סיסמה, מפתח גישה או אפליקציית אימות). יש להתנתק ולהתחבר מחדש, או לפנות למנהל מערכת.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>אימות זהות</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>קוד מאפליקציית האימות</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>החשבון האישי</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>שינוי הסיסמה, כתובת הדוא"ל, מפתחות הגישה, האימות הדו־שלבי או מפתחות ה־API של החשבון האישי.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>משתמשים, תפקידים ומדיניות</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>יצירה ועריכה של משתמשים, הגדרות חשבון, הקצאת תפקידים ועריכת מדיניות.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>הגדרות מערכת ופעולות הגדרה</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>עריכת הגדרות, הרחבות, מטמונים ותחזוקה, חבילות ועדכונים, גיבויים ומנהל ה־git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>ייצוא נתונים</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>ייצוא של מידע שנאסף, משתמשים, מנויי ניוזלטר ויומן הביקורת.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>הסרה ופרסום של תוכן</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>הסרת תוכן (גם לסל המחזור), ריקון סל המחזור ופרסום. כבוי כברירת מחדל.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>לפני פעולה רגישה, משתמש מחובר מאשר שוב את זהותו באמצעות הסיסמה, מפתח גישה או קוד מאפליקציית האימות. רק עמודי האינטרנט שואלים: ממשק ה־REST, SOAP, WebDAV, ההתחברות של expservices ושורת הפקודה לעולם אינם שואלים.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>כללי</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>מספר הדקות שאישור תקף</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>מתי לשאול</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count כללים ב־site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>נשמר ב־settings/override/site.ini.append.php. השמירה דורשת אימות זהות.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>אימות זהות</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>הצגת "אימות זהות" לפני הפעולות של הקבוצות המופעלות למטה</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>ההגדרות נשמרו.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>לא ניתן היה לשמור את ההגדרות: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
     </message>
 </context>
 </TS>

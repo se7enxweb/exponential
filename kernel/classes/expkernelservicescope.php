@@ -59,6 +59,8 @@ class expKernelServiceScope
         'requestlog'  => array( 'expRequestLog', 'reset' ),
         // and the classifier is built again from this request's siteaccess settings when it is first asked
         'classifier'  => array( 'expRequestClassifier', 'reset' ),
+        // the configurations of the "Approve user accounts" events are read again: a changed workflow counts at once
+        'userapproval' => array( 'expUserApproval', 'resetRequest' ),
     );
 
     /**

@@ -1,7 +1,10 @@
 # Help maintained as content
 
 Status: phase 1 in 6.0.15 (18 October 2026); the DITA export, the stored e-books and the overdue reviews on 20 October
-2026 ([upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md)). The plan is
+2026 ([upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md)); the review workflow at the topic, "Was this
+helpful?", context help for clients with a token, the checks of an EPUB, the history in git, the help on a site's own
+pages and the rest of the style guide's rules on 25 October 2026
+([upgrade note](../../bc/6.0/help-content-workflow-feedback.md)). The plan is
 [help-system.md](../../specifications/6.0/help-system.md), the editorial rules are the
 [help style guide](../../specifications/6.0/help-style-guide.md). For the people who write and release the help:
 [keeping the help up to date](../../help/maintaining-help-topics.md).
@@ -27,7 +30,12 @@ administration like any other content, and delivered into the help of the admini
 | The topics overdue for review (review date passed, too long in Review) | the help's dashboard, `./console exp:help:content review` |
 | The eight classes as the content class package `exp_help_classes` (.ezpkg), and its check | `./console exp:help:content package`, `verify-package` ([the package](../../specifications/6.0/help-content-package.md)) |
 | A topic in the help: `exphelp/topic/<help_id>`; a manual: `exphelp/manual/<remote_id>`; the list of manuals: `exphelp/manual` | admin, policy `exphelp/read` |
+| The review workflow at the topic: **Send to Review**, **Release**, **Back to Review**, **Back to Draft**, and the style guide check of the topic ([below](#the-review-workflow)) | admin, `state/assign` of the help roles |
+| "Was this helpful?" under each Released topic, the answers per topic ([below](#was-this-helpful)) | `exphelp/feedback/<help_id>`, `./console exp:help:content feedback` |
 | Context help as JSON: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>` | policy `exphelp/context` |
+| Context help for clients with a token (OAuth or a personal API key): `/api/help/v1/topic/<help_id>`, `/api/help/v1/manual/<remote_id>` ([below](#context-help-for-clients-with-a-token)) | REST, scope `help` |
+| The help on the site's own pages: the full and line views of the help classes ([below](#help-on-the-sites-pages)) | extension `exphelpsite` |
+| The tables `exphelp_help_id` (released help_ids) and `exphelp_feedback` on an installation made before them | `./console exp:help:content tables` (a step of `install`) |
 
 The plan names the scripts `create_classes.php`, `create_tree.php`, `create_roles.php`, `check_help.php`,
 `seed_glossary.php` and `seed_topics.php`. They are the actions `classes`, `tree`, `roles`, `check`, `seed-glossary`
@@ -41,7 +49,7 @@ plan says:
 
 ```
 ./console exp:help:content install -s admin --dry-run      # the plan
-./console exp:help:content install -s admin                # classes, tree, roles
+./console exp:help:content install -s admin                # tables, classes, tree, roles
 ./console exp:help:content install -s admin                # No change.
 ./console exp:help:content seed-glossary -s admin
 ./console exp:help:content seed-topics -s admin --release  # the style guide's templates, Released
@@ -251,7 +259,9 @@ As the plan says, with these decisions where it leaves a choice:
   PublicAudiences[]`, default Visitors); otherwise, and without audience, it is **internal** (`help_internal`).
   Figures are public as soon as one public topic refers to them; chapters as soon as a public manual lists them
   (directly or through chapters); the glossary is always internal. The folders are internal.
-- The section is set by `check --fix` (and after every `seed-*`), on the **object only**, never on a subtree.
+- The section is set by `check --fix` (and after every `seed-*`), on the **object only**, never on a subtree. A
+  topic also gets the section of its audience whenever a state of `help_status` is assigned to it (Send to Review,
+  Release ...), so a new topic is never released in its folder's section.
   Moving an object gives it the section of its new parent: run `check --fix` afterwards.
 - `help_status` is Draft (the default of every new object), Review, Released. Only Released is delivered. The
   first state of the new group is given to every object of the installation once (one INSERT; only help policies
@@ -261,16 +271,27 @@ As the plan says, with these decisions where it leaves a choice:
 
 | Role | Policies |
 |---|---|
-| Help editor | `content/read`, `versionread`, `create` in the subtree `help-root`; `content/edit` and `remove` there in the states Draft and Review; `state/assign` from Draft to Review; `exphelp/read` |
+| Help editor | `content/read`, `versionread`, `create` in the subtree `help-root`; `content/edit` and `remove` there in the states Draft and Review; `state/assign` from Draft to Review; `exphelp/read`, `exphelp/context` |
 | Help release | `state/assign` in `help-root`, every state to every state; assigned **in addition** to the editor role |
 | Anonymous | **one** `content/read` policy limited to section `help_public` **and** state Released |
 
 The roles are created, not assigned: assign them to the editors' user groups in the administration. A policy is
 compared by module, function and limitation values; a missing one is added, nothing is changed or removed.
 
+**The author does not release.** "The person who wrote a topic is not the person who releases it" (plan,
+"Permissions") is enforced, not only written down: when states are assigned (`eZContentOperationCollection::
+updateObjectState()`, which the Object states tab, content jobs and the help's buttons all use), the state Released
+is taken out for a help object whose current version the current user created (`expHelpContentWorkflow::
+refusedStates()`). Someone else with the release role releases it; the other states of the assignment go on.
+`exphelp.ini [ContentSettings] ReleaseByAuthor=enabled` switches the rule off, for a site with a single editor. The
+command line (`seed-topics --release`, `build-manuals --release`) assigns states directly: running it is the release
+decision of whoever runs it.
+
 **Opt-in:** `exphelp.ini [ContentSettings] AnonymousContextHelp=enabled` (default `disabled`) makes the roles step
 also give Anonymous `exphelp/context`, so the JSON of **public, Released** topics can be read without login (a public
 site, a mobile app). Without it the endpoint needs a login (session or the site's token login) and the policy.
+`AnonymousFeedback=enabled` (default `disabled`) likewise gives Anonymous `exphelp/feedback`, so the readers of a public
+help can answer "Was this helpful?".
 
 ## The validator
 
@@ -298,22 +319,50 @@ glossary entry below `help-root` (`expHelpContentValidator`, no database in the 
 | ERROR | `figure.image-missing`, `related.target`, `figures.target`, `map.target`, `map.cycle` | relations name what they should |
 | WARNING | `map.empty`, `map.duplicate`, `map.orphan-chapter` | |
 | WARNING | `review-date.past`, `version.format` | (8) |
+| WARNING | `review-date.too-far` | the review date is more than `ReviewMonths` (12) months away, for the areas of `ShortReviewAreas[]` (privacy, account) more than `ShortReviewMonths` (6), with a month of grace (8) |
+| WARNING | `version.successor` | `version_to` is set but no related topic names the successor (7) |
+| ERROR | `help-id.renamed`, `help-id.reused` | the topic was Released under another help_id; the help_id was Released for another object. A help_id is never renamed and never reused (7, [released help_ids](#released-help_ids)) |
+| WARNING | `help-id.gone` | a released help_id has no topic any more; clients get a 404 (7) |
+| WARNING | `verb.mix` | the topic uses more than one of "click", "tap" and "press" for a control ("press Enter" names a key and is fine; bold labels are not counted) (4) |
+| NOTICE | `language.sentence-too-long` | a sentence has more than `SentenceWordsPublic` (20) words in a topic for `PlainLanguageAudiences[]` (visitors, members), more than `SentenceWordsTechnical` (25) otherwise (3) |
+| NOTICE | `language.paragraph-too-long` | a paragraph has more than `ParagraphSentencesPublic` (4) sentences in a topic for visitors or members (3) |
 | NOTICE | `field.recommended` | `platform`, `version_from`, `review_date`, `owner` are empty (1, 8) |
 | ERROR | `section.mismatch` | the section does not match the audience; `--fix` sets it |
+
+The plain language and verb rules leave out the topics made from the Markdown help (remote_id `help-gen-...`): their
+text is written, and checked, in `doc/`. Code, tables, headings and link targets are not counted as sentences; a list
+item is a paragraph of its own. The counts are NOTICEs: a hint for the review, since a list of labels or a long
+product name is counted as words too.
 
 A notice is a bold label with a colon: `**Attention:**`, `**Data protection:**` or `**Note:**` (also `**Attention**:`),
 outside code. In the help viewer, a block quote that starts with one (`> **Attention:** ...`) or a container
 (`:::data-protection`) is a callout with that title; Data protection has its own icon.
 
-Not machine-checkable and left to the review: minimalism, plain language, one action per step, the length of a
-notice inside its step (the notice and the action share the step's text), whether a label matches the interface.
+Not machine-checkable and left to the review: minimalism, the form of address, one action per step, the length of a
+notice inside its step (the notice and the action share the step's text), whether a label matches the interface, the
+title form of a topic type.
+
+`check --fix` also records the help_ids of Released topics that are not recorded yet (`help_ids record ...`), so an
+installation that released topics before the table existed gets them recorded once.
+
+### Released help_ids
+
+Clients call a topic by its help_id, so "a help_id is never renamed and never reused" (style guide section 7). The
+table `exphelp_help_id` keeps every help_id that was Released, with its object and the time
+(`expHelpContentHelpIds`); rows are only added. A help_id is recorded when its topic is set to Released (the state
+assignment, `expHelpContentWorkflow::afterStateAssign()`), by `seed-topics --release`, and by `check --fix`. Topics made
+from the Markdown help are not recorded: their help_id follows the page's path. The validator then reports a topic
+whose help_id differs from the one it was Released with (`help-id.renamed`), a help_id that another object uses now
+(`help-id.reused`), and a released help_id that no topic has any more (`help-id.gone`). The way out the style guide
+names: give the old help_id back, or make a new topic and set `version_to` and a related link on the old one.
 
 ## In the help (exphelp)
 
 - `exphelp/topic/<help_id>`: the topic in the layout of the help viewer, its type, audiences, platform, validity,
   the rendered fields (headings Before you begin, Steps, Result ... for tasks; Condition, Cause, Remedy for
   troubleshooting), its figures and related topics, the list of topics and manuals. "Edit this topic" for those who
-  may edit it; "JSON" opens the context help answer.
+  may edit it; "JSON" opens the context help answer. Under the topic: "Was this helpful?" (Released topics), and for
+  who may edit the topic or assign its state the card **Review and release** ([the review workflow](#the-review-workflow)).
 - `exphelp/manual/<remote_id>`: the manual's table of contents, chapters nested; `exphelp/manual`: the manuals.
 - Who sees what: Exponential permissions alone. A **Released** topic is shown to who may read it (`content/read`,
   with its section and state limitations). A Draft or Review topic is shown only to who may **edit** it (help
@@ -393,6 +442,108 @@ Authorization`. Unknown, internal without access, or not Released: the same `404
 may answer with `content/<help_id>`, and the "?" Help control of an admin page then opens that topic. A map entry
 can never name `content/...`, and a provider that does not implement the interface cannot either.
 
+### Context help for clients with a token
+
+The plan delivers internal topics to other clients "with a token and a matching role". `exphelp/context` answers a
+signed-in browser (the session) and, opted in, anonymous readers of public topics. A mobile app or a script without a
+session uses the REST provider `help` (`rest.ini [ApiProvider] ProviderClass[help]=expHelpRestProvider`):
+
+```
+GET /api/help/v1/topic/content.publish-article
+GET /api/help/v1/manual/help-manual-editors
+Authorization: Bearer <OAuth token, or a personal API key expk_...>
+```
+
+The answer is the JSON of `exphelp/context` (the same fields; links to other topics are `exphelp/context` addresses).
+The REST layer authenticates the request as for every REST route: an OAuth token of the user, or a personal API key
+with the scope **help** (`rest.ini [ApiKeySettings] Scopes[help]=exphelp/context`, "Read context help"; a key is made
+on the user's API keys page, and only by a user who holds `exphelp/context`). The user's permissions decide what the
+answer holds, exactly as in the help: a Released topic they may read, a preview for who may edit it, and the same
+`404 {"error":"not_found"}` for anything else. A user without `exphelp/context` gets `403 access_denied`. The answers
+are never kept in the REST application cache (`[expHelpRestController_CacheSettings] ApplicationCache=disabled`):
+what a user may see depends on the user.
+
+## The review workflow
+
+The state group `help_status` is the workflow: Draft, Review, Released. The administration's Object states tab can set
+it like any state; the topic's page in the help (admin and admin4) shows it where the topic is read, in the card
+**Review and release**, to who may edit the topic or assign its state:
+
+- the three states as steps, the current one marked;
+- the steps the user's `state/assign` policies allow as buttons: **Send to Review** (Draft), **Release** and
+  **Back to Draft** (Review), **Back to Review** (Released). A help editor gets Send to Review only; who has the role
+  Help release in addition gets the rest. A button is a POST to `exphelp/state/<help_id>` with the kernel's form
+  token, and goes through the kernel's state operation, so workflows attached to it run as for the Object states tab;
+- when the user wrote the topic's current version, no Release button but the reason: "You wrote the current version,
+  so someone else with the release role releases it" ([the author does not release](#roles));
+- after a step, its result (the topic is in Review now, Released, a Draft again, or why nothing changed);
+- **Style guide check**: the validator's findings of this topic (level, rule, field, finding), checked with what its
+  rules need (the topics it relates to, the topics with its help_id, its figures, the glossary, the released
+  help_ids), not the whole help, so the editor sees what `check` would report before sending the topic to Review;
+- the answers to "Was this helpful?" of the topic: yes, no, and the reasons given for no.
+
+The card uses the shared components of the admin designs (`a4-card`, `a4-steps`, `a4-notice`, `a4-table`, `a4-tag`,
+`a4-btn`), has no CSS of its own but its place in the column (`stylesheets/modules/help.css`), and follows the light
+and dark mode. The same template is in design/admin and design/admin4.
+
+## Was this helpful?
+
+The plan's maintenance phase asks for "Was this helpful?" on each topic, and leaves two decisions open: where the
+answers are kept, and what that means for the readers' privacy. Exponential decides both for every site:
+
+- **What is kept**: yes, or no with one reason from a fixed list (It is out of date, It is hard to understand,
+  Something is missing, It is wrong, Another reason), the topic (object and help_id), its language and the **day**,
+  in the table `exphelp_feedback`. **Nothing about who answered**: no user, no address, no session id, no free text
+  (free text invites personal data and would need moderation). The answers can be counted, not traced back.
+- **One answer per topic and session** is counted; the session remembers which topics it answered (at most 50), the
+  table does not. A second answer is thanked for and not stored.
+- **How long**: `FeedbackKeepDays` (730 days). The cronjob part `exphelp` (part of `infrequent`, or on its own:
+  `php runcronjobs.php exphelp`) removes older answers; `./console exp:help:content feedback --prune` does it by hand.
+- **Who may answer**: whoever may see a Released topic and holds `exphelp/read` (the readers of the help in the
+  administration) or the new policy function `exphelp/feedback` (the readers of a site's public help). Anonymous gets
+  `exphelp/feedback` only with `AnonymousFeedback=enabled` and the roles step. A preview cannot be answered.
+
+The question is under each Released topic in the help (`exphelp/feedback/<help_id>`, a POST with the form token; back
+to the topic with `(helpful)/thanks`), and on the site's own pages ([below](#help-on-the-sites-pages)), where the
+answer returns to the topic's page (`RedirectURI`, a path of the site only). The counts are on the topic's
+**Review and release** card, and per topic on the command line, least helpful first:
+
+```
+./console exp:help:content feedback -s admin [--prune] [--dry-run] [--json]
+```
+
+`Feedback=disabled` switches the question off; without the table it is off as well.
+
+## Help on the site's pages
+
+The plan's first delivery path is the public site: "templates `full/help_*.tpl` and `line/help_*.tpl` in the site
+design". The kernel ships them as the extension **exphelpsite** (`extension/exphelpsite`), activated for the public
+siteaccess only:
+
+```ini
+# settings/siteaccess/<public siteaccess>/site.ini.append.php
+[ExtensionSettings]
+ActiveAccessExtensions[]=exphelpsite
+```
+
+Never activate it for the administration (or in `ActiveExtensions[]`): there the help objects keep the administration's
+own views. The extension's override rules (`settings/override.ini.append.php`) give the full view of the four topic
+classes the template `help/full_topic.tpl`, of `help_manual` and `help_section` `help/full_map.tpl`, and the line view
+of all six `help/line.tpl`. A site design with its own templates for these classes overrides the rules in its
+siteaccess.
+
+- A topic's page: title, short description, the rendered fields (the help's safe Markdown rendering), its figures with
+  alt text and caption, its related topics, and "Was this helpful?". A manual's or chapter's page: title, subtitle,
+  short description, edition and the contents, two levels deep.
+- The templates read `fetch( 'exphelp', 'site_topic', hash( 'object_id', $node.contentobject_id ) )` and
+  `fetch( 'exphelp', 'site_map', ... )` (`expHelpContentSite`). Access is Exponential permissions alone: a Released
+  topic the reader may read (Anonymous: `help_public` and Released, the plan's one policy), a preview for who may edit
+  it. Related topics, figures and the entries of a manual are shown only if the reader may see them, and a
+  `help:<help_id>` link in the text becomes a link to that topic's page on the site, or plain text when the reader may
+  not see it. The templates do not filter by audience.
+- The help root is below Media by default and so in no menu or listing of the site; a site that wants its help in
+  its navigation links the manuals' pages.
+
 ## Settings: exphelp.ini [ContentSettings]
 
 | Setting | Default | |
@@ -410,6 +561,16 @@ can never name `content/...`, and a provider that does not implement the interfa
 | `ReviewMaxDays` | `14` | days a topic may stay in Review without a change before it is overdue |
 | `ReviewListLimit` | `10` | at most this many overdue topics on the help's dashboard |
 | `ClientHelpIds[]` | none (a commented example in the shipped file; set it in an override) | the help_ids other clients open (a mobile app, a site's JavaScript); `check` reports one no topic has, or whose topic is not Released |
+| `ReleaseByAuthor` | `disabled` | `enabled`: the author of a topic's current version may release it |
+| `SentenceWordsPublic`, `SentenceWordsTechnical`, `ParagraphSentencesPublic` | `20`, `25`, `4` | the plain language limits of the validator; `0` switches one off |
+| `PlainLanguageAudiences[]` | Visitors, Members | the audiences that get plain language |
+| `ReviewMonths`, `ShortReviewMonths`, `ShortReviewAreas[]` | `12`, `6`, privacy and account | how far away a review date may be (`review-date.too-far`); `0` switches it off |
+| `Feedback` | `enabled` | "Was this helpful?" under each Released topic |
+| `FeedbackKeepDays` | `730` | days the answers are kept |
+| `AnonymousFeedback` | `disabled` | `enabled`: the roles step gives Anonymous `exphelp/feedback` |
+| `EpubCheckCommand`, `AceCommand` | empty | the commands of epubcheck and Ace by DAISY ([checks of an EPUB](#checks-of-an-epub)) |
+| `BookChecks` | `report` | `required`: a stored e-book that fails a check is not stored; `disabled`: no check runs |
+| `DitaHistoryDirectory`, `DitaHistoryLogin`, `DitaHistoryAuthor` | empty, `admin`, empty | the history of the help in git ([below](#the-history-in-git)) |
 
 ## E-books
 
@@ -429,8 +590,8 @@ default `admin`); a preview never goes into a book. The default file of the comm
   `xml:lang` from the language of the manual, and the accessibility metadata of EPUB Accessibility 1.1
   (`schema:accessMode`, `accessModeSufficient`, `accessibilityFeature`, `accessibilityHazard`,
   `accessibilitySummary`, `dcterms:conformsTo`). Links between topics of the book stay inside the book; other topic
-  links go to the topic in the help. epubcheck and Ace by DAISY are not shipped: a site that publishes the books
-  runs them on the file.
+  links go to the topic in the help. epubcheck and Ace by DAISY are not shipped; a site that has them names their
+  commands and every book is checked ([checks of an EPUB](#checks-of-an-epub)).
 - **PDF** (`writePdf()`) uses the help's PDF writer (`expHelpPdfWriter`, the print and PDF download of help pages):
   one document with the manual's title block, chapters and topics as headings, internal links and the figures. The
   format is offered only where that writer is installed (`expHelpContentExport::formats()`).
@@ -474,6 +635,33 @@ the class **file** below the folder E-books (remote_id `help-ebooks`), found by 
 
 The download buttons above still make a book on request with the reader's own rights; the stored books are the
 editions for everyone.
+
+### Checks of an EPUB
+
+The plan checks every e-book with **epubcheck** (the W3C's EPUB validator, Java) and **Ace by DAISY** (the
+accessibility checker of EPUB Accessibility, Node.js) before it is published. They are not shipped with a PHP
+application; a site that has them names their commands, and Exponential runs them (`expHelpContentBookCheck`):
+
+```ini
+[ContentSettings]
+EpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar
+AceCommand=ace
+BookChecks=report
+```
+
+- The EPUB file is added as the last argument; Ace gets `--outdir <dir> --force` before it and its `report.json` is
+  read. epubcheck passes with exit code 0; Ace passes when its report has no failed assertion (a violation of EPUB
+  Accessibility or WCAG). A check runs at most 300 seconds.
+- `./console exp:help:content export --format=epub --check` prints the result of each check and exits 1 when one
+  fails. Every stored e-book (`ebooks`, and the rebuild on release) is checked, and the result is listed with the
+  changes (`check epubcheck PASS ...`).
+- `BookChecks=report` (the default) reports; `required` does not store a book that fails a check or whose check
+  cannot run (`error ... not stored`); `disabled` runs nothing.
+- A command that is not set is **skipped**, never passed: the book's `dcterms:conformsTo` claim (EPUB Accessibility 1.1,
+  WCAG 2.2 AA) is verified only by a check that ran.
+
+The plan's converter, DITA-OT, is not run: Exponential writes the EPUB and PDF itself from the same content model
+(the writers above), and the DITA export is the input for a site that wants DITA-OT's output instead.
 
 ## DITA export
 
@@ -523,6 +711,23 @@ the same way before it is sent. The DTDs are not shipped and nothing is fetched:
 DITA-OT, or `xmllint --valid` with the OASIS catalog, on the directory (the export of the test set and of the
 shipped seed topics pass it).
 
+### The history in git
+
+"The DITA export runs regularly into its own git repository. The content lives in the CMS, the change history still
+ends up in git" (plan, delivery path 4). `exphelp.ini [ContentSettings] DitaHistoryDirectory` names that directory,
+outside the web root; the cronjob part `exphelp` (in `infrequent`, or `php runcronjobs.php exphelp`) then writes the
+DITA export of every manual into it and commits what changed (`expHelpContentDitaHistory`):
+
+- the first run makes the directory a git repository (`git init`); a run that changed nothing makes no commit;
+- the export holds the Released objects that `DitaHistoryLogin` (default `admin`) may read, internal ones included,
+  so the repository is as confidential as the internal help: keep it so;
+- the commits carry `DitaHistoryAuthor` ("Name <mail>") when it is set, else the repository's git configuration; the
+  job never pushes, a remote is the site's business;
+- git runs without a shell, with the directory as its working tree.
+
+By hand: `./console exp:help:content dita -s admin --output=<dir> --commit` (with `--dry-run`: what would be
+committed).
+
 ## Overdue reviews
 
 The plan's maintenance phase (7) asks for "a list of outdated topics (review date passed) in the admin dashboard".
@@ -564,7 +769,8 @@ handoff: [the help classes as a package](../../specifications/6.0/help-content-p
 Checked on 19 October 2026 against the [plan](../../specifications/6.0/help-system.md), the
 [style guide](../../specifications/6.0/help-style-guide.md) and the [standards](../../specifications/6.0/help-standards.md)
 (pull request #288), item by item in the code, not from this page. The DITA export, the e-books as file objects,
-the review list and their translations, in progress on 19 October, followed on 20 October.
+the review list and their translations, in progress on 19 October, followed on 20 October. Checked again on 25 October
+2026; what was left out or only a convention then is now done, or has its reason below.
 
 | Specification | State |
 |---|---|
@@ -575,25 +781,31 @@ the review list and their translations, in progress on 19 October, followed on 2
 | Sections `help_public`/`help_internal` set from the audience, on the object only | done: `check --fix`, after every `seed-*` |
 | Object states Draft, Review, Released; only Released delivered | done: `help_status`, the provider shows Draft and Review only to editors, as a preview |
 | Roles Help editor, Help release; one Anonymous policy with both limitations | done: `exp:help:content roles` |
+| "The person who wrote a topic is not the person who releases it" | done (25 October): enforced in the state operation for every way of assigning states ([roles](#roles)); `ReleaseByAuthor=enabled` for a single editor |
+| The workflow Draft, Review, Released where the topic is read | done (25 October): the card **Review and release** of `exphelp/topic` in admin and admin4, with the style guide check of the topic ([the review workflow](#the-review-workflow)) |
+| `help_id` never renamed, never reused | done (25 October): `exphelp_help_id`, `help-id.renamed`, `help-id.reused`, `help-id.gone` ([released help_ids](#released-help_ids)) |
+| Plain language limits, one verb per platform, review date + 12/6 months, `version_to` with a successor (style guide sections 3, 4, 7, 8) | done (25 October): `language.*` (NOTICE), `verb.mix`, `review-date.too-far`, `version.successor` |
 | CLI scripts with `-s`, `--dry-run`, idempotent ("No change.") | done: the actions of `exp:help:content` |
 | Validator rules of the plan (steps, alt text, `shortdesc`, `help_id`, glossary, review date, section) | done |
 | Notice levels (style guide section 5: Attention, Data protection, Note; in the step, first, one per step, at most three sentences) | **added now**: `notice.position`, `notice.before-action`, `notice.per-step`, `notice.too-long`; Attention and Data protection callouts with their own title in the viewer. The length of a notice inside a step stays a review rule |
 | `help_id` schema and uniqueness | done: `help-id.*` |
 | Context help JSON by `help_id`, ETag, public topics without login | done: `exphelp/context/<help_id>`, `exphelp/context/manual/<remote_id>`; anonymous access is opt-in (`AnonymousContextHelp`) |
+| Internal topics for clients "with a token and a matching role" | done (25 October): `/api/help/v1/topic/<help_id>` and `/manual/<remote_id>` with an OAuth token or a personal API key with the scope `help` ([context help for clients with a token](#context-help-for-clients-with-a-token)) |
 | "Clients keep a list of the help_ids they use; a test checks each exists" | **added now**: `client.help-id-unknown`, `client.help-id-not-released` over `ContextHelpIds[]` and the new `ClientHelpIds[]` |
 | E-book EPUB and PDF of a manual, accessibility metadata | done: `exp:help:content export`, **Download EPUB/PDF** |
-| DITA bookmap + DITAVAL export, regular DITA export into a git repository (delivery paths 3 and 4) | done: `exp:help:content dita`, **Download DITA** ([DITA export](#dita-export)); valid against the OASIS DITA 1.3 DTDs. The regular run into git is a cron job of the site on top of the export (only changed files are written, so its directory can be the git repository) |
+| DITA bookmap + DITAVAL export, regular DITA export into a git repository (delivery paths 3 and 4) | done: `exp:help:content dita`, **Download DITA** ([DITA export](#dita-export)); valid against the OASIS DITA 1.3 DTDs. The regular run into git (25 October): the cronjob part `exphelp` with `DitaHistoryDirectory`, and `dita --commit` ([the history in git](#the-history-in-git)) |
+| DITA-OT 4.x as the converter to EPUB and PDF | left out on purpose: Exponential writes EPUB and PDF itself from the same model, so a PHP installation makes books without Java; the DITA export is the input for a site that wants DITA-OT's output |
 | E-book stored as a file object under "E-books" (`help-ebooks`) | done: `exp:help:content ebooks`, rebuilt on release, versioned, section from the audience ([stored e-books](#stored-e-books)) |
 | List of topics whose review date has passed, in the dashboard (phase 7) | done: the help's dashboard and `exp:help:content review`, also topics too long in Review ([overdue reviews](#overdue-reviews)) |
-| epubcheck and Ace by DAISY on every e-book | left out: Java and Node tools, not shipped with a PHP application. A site that publishes books runs them. The EPUB carries `dcterms:conformsTo` EPUB Accessibility 1.1 / WCAG 2.2 AA although Exponential does not run these checks; see [the standards](../../specifications/6.0/help-standards.md#epub-accessibility-11) |
-| Web templates `full/help_*.tpl`, `line/help_*.tpl` for the public site (delivery path 1) | left out for now: the kernel has no public site design of its own to put them in; the help is delivered in the administration (`exphelp/topic`, `exphelp/manual`) and as JSON, which a site's design can render. A site package that wants public help pages adds the templates in its design |
-| "Was this helpful?" on each topic (phase 7) | left out for now: it needs a place to store answers and a privacy decision (who answered, kept how long) per site |
+| epubcheck and Ace by DAISY on every e-book | done (25 October) where the site has them: the tools are Java and Node.js and not shipped, so the site names their commands (`EpubCheckCommand`, `AceCommand`) and every stored e-book and `export --check` runs them; `BookChecks=required` stores no failing book. Without the commands a check is reported as skipped, never as passed ([checks of an EPUB](#checks-of-an-epub)) |
+| Web templates `full/help_*.tpl`, `line/help_*.tpl` for the public site (delivery path 1) | done (25 October): the extension `exphelpsite`, activated for the public siteaccess, with `fetch( 'exphelp', 'site_topic' / 'site_map' )` ([help on the site's pages](#help-on-the-sites-pages)) |
+| "Was this helpful?" on each topic (phase 7) | done (25 October): yes or no with a reason, per topic and day, nothing about who answered, kept 730 days ([was this helpful?](#was-this-helpful)) |
 | Help never a source of AI answers (RAG) unless wanted | done by default: the kernel has no RAG source list, and the help root is below Media, not the content tree. An extension that adds one must leave `help-root` out |
 | The help classes as a package | **added now**: `exp:help:content package`, `verify-package` (CJW #16564) |
 
 ## Later
 
-"Was this helpful?", public site templates, editor conveniences.
+Editor conveniences (an editing form laid out per topic type, a preview of a figure in its topic's field).
 
 ## Classes
 
@@ -604,11 +816,16 @@ rules, no database), `expHelpContentSeeder`, `expHelpContentProvider` (what the 
 JSON, search, context), `expHelpContextPageInterface`, `expHelpContentPackage` (the class package),
 `expHelpContentExport` (EPUB, PDF), `expHelpContentDita` (the DITA export, its check, writing and zip),
 `expHelpDitaMarkup` (the help's HTML as DITA elements), `expHelpContentEbooks` (the stored e-books, rebuilt on
-release), `expHelpContentEditionProvider` (what goes into a stored edition) and `expHelpContentReview` (overdue
-reviews). Views: `Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`. Tests (no database):
+release), `expHelpContentEditionProvider` (what goes into a stored edition), `expHelpContentReview` (overdue
+reviews), `expHelpContentWorkflow` (the review workflow, the author rule), `expHelpContentHelpIds` (released
+help_ids), `expHelpContentFeedback` ("Was this helpful?"), `expHelpContentTables` (the two tables on any engine),
+`expHelpContentBookCheck` (epubcheck, Ace), `expHelpContentDitaHistory` (the history in git), `expHelpContentSite`
+(the site's own pages) and the REST provider `expHelpRestProvider`, `expHelpRestController`,
+`expHelpRestViewController`. Views: `Exponential\View\Kernel\Exphelp\Topic`, `Manual`, `Context`, `State`,
+`Feedback`; cronjob part `Exponential\Cronjob\Kernel\Exphelp`. Tests (no database):
 `tests/tests/kernel/classes/help/expHelpContentTest.php`, `expHelpContentPackageTest.php`, `expHelpContentExportTest.php`,
 `expHelpContentDitaTest.php`, `expHelpContentEbooksTest.php`, `expHelpContentReviewTest.php`,
-`expHelpContentTranslationsTest.php`, `expHelpContentAccessTest.php`.
+`expHelpContentTranslationsTest.php`, `expHelpContentAccessTest.php`, `expHelpContentWorkflowTest.php`.
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

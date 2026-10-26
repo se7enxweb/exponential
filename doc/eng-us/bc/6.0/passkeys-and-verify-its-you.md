@@ -56,6 +56,10 @@ For extensions:
 - A POST that is asked is replayed with its own fields after the answer; files are not (a browser cannot send them
   twice), so a view with an upload should be named with `*`. A POST with a file actually chosen opens the form again
   after the answer; file inputs left empty are no upload (`expReauth::hasUploads()`), and such a form is replayed.
+- `expReauth::addressedUser( $module, $view, $params, $post )` takes the POST as a fourth argument (optional): a POST
+  to `collaboration/action` that decides an item of the workflow event *Approve user accounts* addresses the pending
+  account, so the users group asks before Approve and Deny of a new user account
+  ([Approval of new user accounts](user-account-approval.md)). Content approvals address no account and are not asked.
 
 ## Audit
 
