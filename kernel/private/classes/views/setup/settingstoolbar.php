@@ -31,7 +31,11 @@ class Settingstoolbar extends \Exponential\Runnable\ModuleView
         $http = \eZHTTPTool::instance();
         $module = $Params['Module'];
 
-        $allSettingsList = $module->actionParameter( 'AllSettingsList' );
+        // Opened by its address (no form posted): the quick settings on a page of their own, to be set from there.
+        // Without this the view ran its save on nothing and ended the request with a fatal error.
+        $allSettingsList = $module->isCurrentAction( 'Set' ) ? $module->actionParameter( 'AllSettingsList' ) : null;
+        if ( !is_array( $allSettingsList ) )
+            return $this->viewResult( $this->page(), null );
 
         if ( $module->hasActionParameter( 'SelectedList' ) )
             $selectedList = $module->actionParameter( 'SelectedList' );
@@ -103,10 +107,33 @@ class Settingstoolbar extends \Exponential\Runnable\ModuleView
             }
         }
 
+        // The saved values take effect on the next request only when the INI cache is rebuilt: an installation that
+        // sets EZP_INI_FILEMTIME_CHECK to false (alpha, the demo sites) never notices the changed file, so the
+        // setting seemed to be forgotten (after "Verify it's you" too, which replays this form unchanged).
+        \eZCache::clearByTag( 'ini' );
+
         $uri = $http->postVariable( 'RedirectURI', $http->sessionVariable( 'LastAccessedModifyingURI', '/' ) );
         $module->redirectTo( $uri );
 
         return $this->viewResult( isset( $Result ) ? $Result : null, null );
+    }
+
+    /**
+     * The page of setup/settingstoolbar opened by its address: the quick settings form (setup/quick_settings.tpl)
+     * for the siteaccess last chosen there, which comes back to this page after Set.
+     */
+    protected function page()
+    {
+        $tpl = \eZTemplate::factory();
+        $siteAccess = \eZPreferences::value( 'admin_quicksettings_siteaccess' );
+        $tpl->setVariable( 'siteaccess', $siteAccess ? $siteAccess : 'global_override' );
+        $tpl->setVariable( 'select_siteaccess', true );
+        $tpl->setVariable( 'redirect_uri', '/setup/settingstoolbar' );
+
+        $Result = array();
+        $Result['content'] = $tpl->fetch( 'design:setup/settingstoolbar.tpl' );
+        $Result['path'] = array( array( 'url' => false, 'text' => \ezpI18n::tr( 'design/admin/pagelayout', 'Quick settings' ) ) );
+        return $Result;
     }
 }
 
