@@ -354,8 +354,11 @@ class expMultiuploadQuickLocationsTest extends PHPUnit\Framework\TestCase
         foreach ( array( "setAttribute('aria-pressed'", "setQueueLocation(loc)", "field.value = String(queueLocation.id)", "data-exp-mu-quick-more" ) as $needle )
             $this->assertStringContainsString( $needle, $page );
         $old = (string)file_get_contents( $root . '/design/standard/javascript/ezmultiupload_upload.js' );
-        foreach ( array( "setAttribute('aria-pressed'", 'up.options.url = uploadBase', "\$('#ezmultiupload-location')" ) as $needle )
+        foreach ( array( "setAttribute('aria-pressed'", 'up.options.url = uploadBase' ) as $needle )
             $this->assertStringContainsString( $needle, $old );
+        // the shown location follows the target: by jQuery (6.1.13 and before) or in plain JavaScript (6.1.14 on)
+        $this->assertMatchesRegularExpression( "/\\$\\('#ezmultiupload-location'\\)|(byId|getElementById)\\('ezmultiupload-location'\\)/", $old,
+                                               'the classic script updates the shown location' );
         foreach ( array( $page, $old ) as $script )
             $this->assertDoesNotMatchRegularExpression( '/\.style\.|cssText|innerHTML\s*=\s*loc/', $script );
     }

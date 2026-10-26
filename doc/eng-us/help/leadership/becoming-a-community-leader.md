@@ -103,7 +103,7 @@ Each step builds on the one before. You can stay on any step as long as you like
   ([The help system](../../features/6.0/help-system.md)).
 - A documentation change is accepted under the GNU Free Documentation License 1.3 or any later version, so it stays
   free for everyone ([Free documentation](../free-documentation.md#help-others)).
-- Translations count: the administration has 71 translations, all of them complete (26 October 2026), and content can be written in
+- Translations count: the administration has 73 translations, all of them complete (26 October 2026), and content can be written in
   268 locales ([Languages in Exponential](../../languages.md)). Completing a translation is a contribution any
   bilingual editor can make.
 - Good first documentation tasks: a page that confused you, a missing example, a screenshot-free step-by-step for a
