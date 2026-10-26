@@ -365,7 +365,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `vie-VN` | Vietnamese | Tiếng Việt | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `wol-SN` | Wolof | Wolof | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `xho-ZA` | Xhosa | IsiXhosa | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `yid-US` | Yiddish | ייִדיש | Americas | RTL | Hebrew (`Hebr`) | CLDR 44 | — |
+| `yid-US` | Yiddish | ייִדיש | Americas | RTL | Hebrew (`Hebr`) | CLDR 44 | 100% |
 | `yor-NG` | Yoruba | Èdè Yorùbá | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `zgh-MA` | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | Africa | LTR | Tifinagh (`Tfng`) | CLDR 44 | — |
 | `zul-ZA` | Zulu | IsiZulu | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -539,6 +539,7 @@ source text, and the interface language choice counts English as 100%.
 | `chi-CN` | 100% (18,415 of 18,415) | 100% (18,415 of 18,415) |
 | `chi-HK` | falls back to `chi-TW` | 100% (falls back to `chi-TW`) |
 | `chi-TW` | 100% (18,415 of 18,415) | 100% (18,415 of 18,415) |
+| `yid-US` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 
 Notes:
 
