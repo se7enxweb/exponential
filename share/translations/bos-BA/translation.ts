@@ -77126,6 +77126,97 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Broj redova: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Novi red</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Red je sačuvan.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pretraži</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Radnje</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Još nema redova.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON adresa: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID čvora</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID objekta korisnika</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID objekta sadržaja</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Red %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Red nije sačuvan</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sačuvaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Otkaži</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Ukloniti red %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Red se uklanja iz tabele i ne može se vratiti.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

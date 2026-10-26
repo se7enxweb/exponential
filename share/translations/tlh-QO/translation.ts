@@ -77129,6 +77129,97 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>chu'</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>tetlh tlheghmey: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>tlhegh chu'</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>tetlh tlhegh pollu'ta'.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>yInej</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>yIchoH</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>tetlh tlheghmey wej tu'lu'.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON Daq: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Sor Daq ngu'meH mI'</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>lo'wI' Doch ngu'meH mI'</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>De' Doch ngu'meH mI'</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>tetlh tlhegh %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>tetlh tlhegh pollu'be'pu'</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>tetlh tlhegh %id Dateqqang'a'?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>tetlhvo' tetlh tlhegh teqlu', 'ej cheghmoHlu'laHbe'.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

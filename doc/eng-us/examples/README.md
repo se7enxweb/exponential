@@ -78,6 +78,10 @@ explanation first and the reference second.
   It is real code, but not always the simplest example.
 - **Only the shipped code.** Only files tracked in the repository are read: the kernel, its libraries and the
   bundled extensions. Other installed extensions, local overrides and the database are left out.
+  This holds for settings a source asks for while it is read (a `module.php` that lists the values of an INI
+  setting, the PHP operators of `template.ini`): they come from `settings/` and the bundled extensions' settings,
+  never from an override, a siteaccess, the INI cache or an extension outside the repository, so an installation,
+  a git worktree and CI get the same pages.
   The object state limitations are the one place where the kernel would read the database. Their pages say where
   those limitations come from instead.
 

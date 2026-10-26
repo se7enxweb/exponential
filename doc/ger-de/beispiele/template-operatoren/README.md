@@ -12,7 +12,7 @@ generated: exp:help:examples
 
 Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweiterungen registrieren (das `$eZTemplateOperatorArray` jeder `eztemplateautoload.php` und `settings/template.ini` `[PHP] PHPOperatorList[]`), mit seinen Parametern und einem Beispiel. „Verwendet in“ gibt an, ob ein ausgeliefertes Template ihn verwendet; seine Seite zitiert die erste Verwendung.
 
-244 Operatoren.
+241 Operatoren.
 
 | Operator | Klasse | Parameter | In einem ausgelieferten Template verwendet |
 |---|---|---|---|
@@ -102,7 +102,6 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [ge](ge.md) | eZTemplateLogicOperator | 1 | ja |
 | [get_class](get_class.md) | eZTemplateTypeOperator | 0 | ja |
 | [get_type](get_type.md) | eZTemplateTypeOperator | 0 |  |
-| [getenv](getenv.md) | eZTemplatePHPOperator | ? |  |
 | [gettime](gettime.md) | eZTemplateLocaleOperator | 1 |  |
 | [gt](gt.md) | eZTemplateLogicOperator | 1 | ja |
 | [has_access_to_limitation](has_access_to_limitation.md) | ezjscAccessTemplateFunctions | 4 |  |
@@ -164,7 +163,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [month_overview](month_overview.md) | eZDateOperatorCollection | 3 |  |
 | [mul](mul.md) | eZTemplateArithmeticOperator | 0 | ja |
 | [ne](ne.md) | eZTemplateLogicOperator | 0 | ja |
-| [nl2br](nl2br.md) | eZTemplatePHPOperator | ? | ja |
+| [nl2br](nl2br.md) | eZTemplateNl2BrOperator | 0 | ja |
 | [node_encode](node_encode.md) | ezjscEncodingTemplateFunctions | 3 |  |
 | [not](not.md) | eZTemplateLogicOperator | 0 | ja |
 | [null](null.md) | eZTemplateLogicOperator | 0 | ja |
@@ -190,7 +189,6 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [round](round.md) | eZTemplateArithmeticOperator | 0 | ja |
 | [rstring](rstring.md) | eZTemplateStringsOperator | ? |  |
 | [rtrim](rtrim.md) | eZTemplateStringsOperator | ? |  |
-| [serialize](serialize.md) | eZTemplatePHPOperator | ? |  |
 | [shorten](shorten.md) | eZTemplateStringOperator | 3 | ja |
 | [si](si.md) | eZTemplateUnitOperator | 5 | ja |
 | [similar_text](similar_text.md) | eZTemplateStringsOperator | ? |  |
@@ -212,7 +210,7 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [strcmp](strcmp.md) | eZTemplateStringsOperator | ? |  |
 | [strcoll](strcoll.md) | eZTemplateStringsOperator | ? |  |
 | [strcspn](strcspn.md) | eZTemplateStringsOperator | ? |  |
-| [strip_tags](strip_tags.md) | eZTemplatePHPOperator | ? | ja |
+| [strip_tags](strip_tags.md) | eZTemplateStringsOperator | ? | ja |
 | [stripcslashes](stripcslashes.md) | eZTemplateStringsOperator | ? |  |
 | [stripos](stripos.md) | eZTemplateStringsOperator | ? |  |
 | [stripslashes](stripslashes.md) | eZTemplateStringsOperator | ? |  |
@@ -247,7 +245,6 @@ Jeder Operator, den der Kernel, seine Bibliotheken und die mitgelieferten Erweit
 | [trim](trim.md) | eZTemplateStringOperator | 1 | ja |
 | [true](true.md) | eZTemplateLogicOperator | 0 | ja |
 | [unique](unique.md) | eZTemplateArrayOperator | 0 | ja |
-| [unserialize](unserialize.md) | eZTemplatePHPOperator | ? |  |
 | [upcase](upcase.md) | eZTemplateStringOperator | 0 | ja |
 | [upfirst](upfirst.md) | eZTemplateStringOperator | 0 | ja |
 | [upword](upword.md) | eZTemplateStringOperator | 0 |  |

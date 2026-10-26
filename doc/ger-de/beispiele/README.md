@@ -85,7 +85,11 @@ seit der Übersetzung geändert hat, erscheint auf Englisch.
   der Reihenfolge der Pfade. Es ist echter Code, aber nicht immer das einfachste Beispiel.
 - **Nur der ausgelieferte Code.** Gelesen werden nur Dateien, die im Repository versioniert sind: der Kernel, seine
   Bibliotheken und die mitgelieferten Erweiterungen. Andere installierte Erweiterungen, lokale Overrides und die
-  Datenbank bleiben außen vor. Die Einschränkungen nach Objektzuständen sind die einzige Stelle, an der der Kernel die
+  Datenbank bleiben außen vor. Das gilt auch für Einstellungen, die eine Quelle beim Lesen abfragt (eine
+  `module.php`, die die Werte einer INI-Einstellung auflistet, die PHP-Operatoren der `template.ini`): Sie kommen aus
+  `settings/` und den Einstellungen der mitgelieferten Erweiterungen, nie aus einem Override, einem Siteaccess, dem
+  INI-Cache oder einer Erweiterung außerhalb des Repositorys. So erhalten eine Installation, ein Git-Worktree und die
+  CI dieselben Seiten. Die Einschränkungen nach Objektzuständen sind die einzige Stelle, an der der Kernel die
   Datenbank lesen würde. Ihre Seiten sagen stattdessen, woher diese Einschränkungen kommen.
 
 ## So entstehen die generierten Seiten

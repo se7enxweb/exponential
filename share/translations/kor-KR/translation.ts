@@ -77126,6 +77126,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>설정</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>새로 만들기</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>제거</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>행 %count개</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>새 행</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>행이 저장되었습니다.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>검색</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>편집</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>아직 행이 없습니다.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON 주소: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>노드 ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>사용자의 개체 ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>콘텐츠 개체 ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>행 %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>행이 저장되지 않았습니다</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>ID가 %id인 행을 제거하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>행이 테이블에서 제거되며 되돌릴 수 없습니다.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

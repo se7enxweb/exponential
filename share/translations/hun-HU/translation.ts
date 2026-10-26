@@ -77126,6 +77126,97 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Új</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eltávolítás</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count sor</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Új sor</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>A sor mentése megtörtént.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Keresés</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Szerkesztés</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Még nincsenek sorok.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-cím: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>igen</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Csomópont-azonosító</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Egy felhasználó objektumazonosítója</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Tartalomobjektum-azonosító</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Sor: %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>A sor nincs mentve</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Eltávolítja a(z) %id azonosítójú sort?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>A sor eltávolításra kerül a táblából, és nem hozható vissza.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

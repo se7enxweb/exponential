@@ -77126,6 +77126,97 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>I ri</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hiq</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Rreshta: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Rresht i ri</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rreshti u ruajt.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Kërko</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redakto</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Nuk ka ende rreshta.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adresa JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID e një nyjeje</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID-ja e objektit të një përdoruesi</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID e një objekti përmbajtjeje</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rreshti %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Rreshti nuk u ruajt</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Dëshironi vërtet ta hiqni rreshtin %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rreshti hiqet nga tabela dhe nuk mund të rikthehet.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

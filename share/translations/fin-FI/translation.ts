@@ -77126,6 +77126,97 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Uusi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Rivejä: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Uusi rivi</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rivi tallennettiin.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hae</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Muokkaa</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ei vielä rivejä.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-osoite: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>kyllä</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Solmun tunnus</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Käyttäjän objektin tunnus</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Sisältöobjektin tunnus</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rivi %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Riviä ei tallennettu</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Poistetaanko rivi %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rivi poistetaan taulusta, eikä sitä voi palauttaa.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

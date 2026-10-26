@@ -77126,6 +77126,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Настройка</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Новый</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Убрать</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Строк: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Новая строка</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Строка сохранена.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Найти</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Действия</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Изменить</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Строк пока нет.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Адрес JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>нет</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID узла</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID объекта пользователя</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID объекта содержимого</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Строка %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Строка не сохранена</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Убрать строку %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Строка будет удалена из таблицы, и восстановить ее будет невозможно.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

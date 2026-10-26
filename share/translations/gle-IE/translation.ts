@@ -77126,6 +77126,97 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Socrú</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nua</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bain</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Rónna: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ró nua</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Sábháladh an ró.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cuardaigh</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gníomhartha</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Cuir in eagar</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Gan ró ar bith fós.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Seoladh JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>tá</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>níl</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Aitheantas nóid</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Aitheantas oibiachta úsáideora</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Aitheantas oibiachta ábhair</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ró %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Níor sábháladh an ró</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sábháil</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>An bhfuil tú cinnte gur mian leat ró %id a bhaint?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Baintear an ró den tábla agus ní féidir é a thabhairt ar ais.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

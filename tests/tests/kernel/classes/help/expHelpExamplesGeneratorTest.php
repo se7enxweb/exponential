@@ -16,6 +16,8 @@
  *         while its English text is current, links the language's pages and lists them in its path map
  *  HE-09  the English pages are byte for byte those of the generator before translations, with or without a
  *         translation built in the same run
+ *  HE-10  a source that asks eZINI while it is read (module.php, a template autoload file) gets the shipped settings
+ *         only: no override, no extension outside the repository, nothing injected, no INI cache; eZINI is put back
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -252,6 +254,42 @@ class expHelpExamplesGeneratorTest extends PHPUnit\Framework\TestCase
     /** sha1 of the fixture's English pages, built with the generator of before the translations (6.0.15) */
     const ENGLISH_FIRST_PAGE_SHA1 = '9e51fd7b90d1b1a57e16ec7925d390aeb12095c3';
     const ENGLISH_PAGES_SHA1 = 'b646d6a31b50120e40f7abb92ecc3959df7cbb11';
+
+    /** HE-10 a source that asks eZINI while it is read gets the shipped settings only, and eZINI is put back afterwards */
+    public function testSourcesReadTheShippedSettingsOnly()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            $this->markTestSkipped( 'eZINI is not loadable here' );
+        $files = array(
+            'extension/helpsample/settings/helpsample.ini' => "[Sample]\nValues[]\nValues[]=shipped\n",
+            'kernel/inisample/module.php' => "<?php\n\$Module = array( 'name' => 'Inisample' );\n\$ViewList = array();\n\$values = array();\nforeach ( (array)eZINI::instance( 'helpsample.ini' )->variable( 'Sample', 'Values' ) as \$value )\n    \$values[] = array( 'Name' => \$value, 'value' => \$value );\n\$FunctionList = array( 'use' => array( 'Kind' => array( 'name' => 'Kind', 'values' => \$values ) ) );\n",
+        );
+        foreach ( $files as $path => $content )
+        {
+            mkdir( dirname( $this->root . '/' . $path ), 0777, true );
+            file_put_contents( $this->root . '/' . $path, $content );
+        }
+        $generator = new expHelpExamplesGenerator( $this->root, 'doc/eng-us/examples', array_keys( $files ) );
+
+        // an installation's own value (an override, an active extension outside the repository) is not shipped
+        eZINI::injectMergeSettings( array( 'helpsample.ini' => array( 'Sample' => array( 'Values' => array( 'local' ) ) ) ) );
+        try
+        {
+            $before = eZINI::instance( 'helpsample.ini' );
+            $pages = $generator->build( array( 'policies' ) );
+            $policy = $pages['doc/eng-us/examples/policies/inisample.md'];
+            $this->assertStringContainsString( '| Kind | fixed: shipped (shipped) |', $policy );
+            $this->assertStringNotContainsString( 'local', $policy );
+            // the instances built before are the ones handed out after
+            $this->assertSame( $before, eZINI::instance( 'helpsample.ini' ) );
+            $this->assertSame( $pages, $generator->build( array( 'policies' ) ) );
+        }
+        finally
+        {
+            eZINI::injectMergeSettings( array() );
+            eZINI::resetInstance( 'helpsample.ini' );
+        }
+    }
 
     /** HE-07 the page titles every admin page includes for its Help menu leave the generated pages out */
     public function testPageTitlesLeaveGeneratedPagesOut()
