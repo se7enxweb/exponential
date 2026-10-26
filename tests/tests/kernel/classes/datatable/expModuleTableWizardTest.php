@@ -176,6 +176,14 @@ class expModuleTableWizardTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( 'IDENTITY(1,1)', $files['sql/sqlserver/schema.sql'] );
         $this->assertStringContainsString( 'CREATE SEQUENCE', $files['sql/oracle/schema.sql'] );
         $this->assertStringContainsString( '$FunctionList[\'edit\']', $files['modules/demo/module.php'] );
+        // the texts every generated module shares are in the kernel context, which the kernel catalogues translate;
+        // the title stays in the extension's own context
+        $this->assertStringContainsString( "{'New row'|i18n( 'kernel/datatable/module' )}", $files['design/admin4/templates/demo/list.tpl'] );
+        $this->assertStringContainsString( "{'Save'|i18n( 'kernel/datatable/module' )}", $files['design/admin4/templates/demo/edit.tpl'] );
+        $this->assertStringContainsString( "{'Remove'|i18n( 'kernel/datatable/module' )}", $files['design/admin4/templates/demo/remove.tpl'] );
+        $this->assertStringContainsString( "ezpI18n::tr( 'kernel/datatable/module', 'Setup' )", $files['modules/demo/list.php'] );
+        $this->assertStringContainsString( "|i18n( 'extension/" . $s['name'] . "' )}</h1>", $files['design/admin4/templates/demo/list.tpl'] );
+        $this->assertStringNotContainsString( "'New row'|i18n( 'extension/", $files['design/admin4/templates/demo/list.tpl'] );
 
         // only some parts; an existing extension
         $s = expModuleTableWizard::settings( self::input( array( 'module' => 'demo', 'table' => 't691_demo', 'class' => 't691DemoRow', 'parts' => array( 'class', 'readme', 'ezinfo', 'licence' ) ) ) );

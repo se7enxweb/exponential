@@ -83973,4 +83973,95 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <translation>Setup</translation>
     </message>
 </context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Neu</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count Zeilen</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Neue Zeile</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Die Zeile wurde gespeichert.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suchen</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktionen</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Noch keine Zeilen.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nein</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Eine Knoten-ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Die Objekt-ID eines Benutzers</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Eine Inhaltsobjekt-ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Zeile %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Die Zeile wurde nicht gespeichert</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Zeile %id entfernen?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Die Zeile wird aus der Tabelle entfernt und kann nicht wiederhergestellt werden.</translation>
+    </message>
+</context>
 </TS>
