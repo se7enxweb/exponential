@@ -96,7 +96,7 @@ wird. Ändern Sie ihn in `package.xml` und im Ordnernamen zusammen:
 
 | Feld | Regel | Warum |
 |---|---|---|
-| `<name>` | nur Kleinbuchstaben, Ziffern und `_`; `eZPackage::isValidName()` akzeptiert einen Namen nur, wenn die Transformation `identifier` ihn unverändert lässt | die Seite zum Hochladen und `eZPackage::import()` weisen andere Namen ab |
+| `<name>` | nur Buchstaben, Ziffern, `_` und `-`, nicht mit `-` beginnend (`eZPackage::isValidName()`); Kleinbuchstaben, Ziffern und `_` sind die Konvention | die Seite zum Hochladen und `eZPackage::import()` weisen andere Namen ab |
 | `<name>` | eindeutig: nicht der Name eines Pakets von 7x | ein Name bedeutet für eine Installation ein Paket: Der Kickstarter nutzt ein bereits importiertes Paket, statt es herunterzuladen, der Setup-Assistent im Browser entfernt ein importiertes Seitenpaket dieses Namens und lädt es erneut herunter, ein verlangtes Paket dieses Namens wird behalten, wenn seine Version hoch genug ist (`downloadAndImportPackage()` und `downloadDependantPackages()` in `kernel/setup/steps/ezstep_site_types.php`), und ein Hochladen eines vorhandenen Namens wird abgewiesen (existiert bereits) |
 | `<vendor>` | Ihre Organisation | der Import legt das Paket in `var/storage/packages/<vendor>/`, den Hersteller in einen Verzeichnisnamen umgewandelt (`eZ systems` wurde zu `ez-systems`) |
 | `<summary>` | eine Zeile | der Setup-Assistent zeigt sie unter dem Vorschaubild |

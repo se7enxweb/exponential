@@ -9,7 +9,7 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **77**, 77 of them complete |
+| Languages of the administration: translations in `share/translations` | **77**, 76 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
 | of them shown translated by the administration (own translation, fallback or English) | **74** |

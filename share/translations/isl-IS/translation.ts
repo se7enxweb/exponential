@@ -44879,6 +44879,14 @@ Ef þú vilt senda samþykkjandanum athugasemdir eða skoða stöðuna skaltu no
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Athugasemd frá „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Þér var bent á síðu</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Þú færð þennan tölvupóst vegna þess að einhver sló inn netfangið þitt á %site til að deila síðu með þér.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Til þess þarftu að breyta %chown-skipununum undir „Aðrar skeljarskipanir�
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Tilraun: %attempt af %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Skoða kvittunina</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ reikninginn þinn.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Tengillinn virkar aðeins einu sinni og aðeins í %1 mín.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Endurstilling aðgangsorðs</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Einhver bað um að aðgangsorð reikningsins þíns á %site yrði endurstillt. Staðfestu með hnappnum og við sendum þér nýtt aðgangsorð í öðrum tölvupósti.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Endurstilla aðgangsorðið mitt</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ef þú baðst ekki um þetta geturðu hunsað þennan tölvupóst: aðgangsorðið þitt helst óbreytt.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Nýja aðgangsorðið þitt</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Aðgangsorðið þitt á %site var endurstillt. Skráðu þig inn með þessu nýja aðgangsorði og breyttu því síðan í þitt eigið.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ef þú endurstilltir ekki aðgangsorðið þitt skaltu skrá þig inn með þessu og breyta því strax.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Endurstilling aðgangsorðs á %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Nýja aðgangsorðið þitt á %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Pakki</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Safnskránni var pakkað á PAX tar-sniði, sem ekki er hægt að flytja inn. Pakkaðu pakkanum á GNU tar-sniði (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Safninu var hafnað: færslan „%path“ hefur skráar- eða möppuheiti lengra en %length bæti, sem ekkert skráakerfi geymir.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Safnskránni var hafnað: færslan „%path“ er af tar-gerðinni „%type“, en pakki inniheldur aðeins skrár og möppur.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar út fyrir pakkann (%target) og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar á „%target“, sem er ekki í pakkanum, og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar á möppuna „%target“ og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Færslan „%path“ er tæki eða nefnd pípa (tar-gerð „%type“) og var ekki flutt inn.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Færslan „%path“ er af tar-gerðinni „%type“, sem pakki notar ekki, og var ekki flutt inn.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>Tækin þín</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Einhver bað um að nota %email fyrir reikning á %site. Staðfestu að þetta netfang sé þitt.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Þú (eða einhver sem sló inn netfangið þitt) baðst um tengil til að stjórna tölvupóstinum sem %site sendir á %email. Á þeirri síðu geturðu kveikt eða slökkt á hverri tegund tölvupósts eða stöðvað allan valfrjálsan tölvupóst.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ef þú gerðir ekki þessa breytingu gæti einhver annar vitað aðgangsorðið þitt: endurstilltu það strax með „%forgot“ á innskráningarsíðunni og hafðu samband við okkur.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Aðgangsorðinu þínu var breytt</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>Setur þessa notanda:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ný innskráning á reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Tæki</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tími</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Áætlað vistfang</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ef þetta varst ekki þú gæti einhver vitað aðgangsorðið þitt: skráðu þá setu út á tækjasíðunni þinni og breyttu síðan aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Fara yfir tækin þín</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Skoða setur þessa notanda</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>Senda í bálk</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ef hnappurinn virkar ekki skaltu afrita þetta vistfang í vafrann þinn: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Opna síðuna</translation>
     </message>
 </context>
 </TS>

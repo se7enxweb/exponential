@@ -217,7 +217,7 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
                 if ( $mailtpl->hasVariable( 'content_type' ) )
                     $mail->setContentType( $mailtpl->variable( 'content_type' ) );
 
-                $mail->setBody( $mailtext );
+                \expMailTemplateBody::apply( $mail, $mailtpl, $mailtext );
 
                 // mail was sent ok
                 if ( \eZMailTransport::send( $mail ) )

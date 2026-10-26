@@ -58,8 +58,10 @@ Was Sie sehen sollten, und warum:
 - [ ] Nur die Verzeichnisse, die das Paket nutzt: `documents/`, `files/`, `settings/`, `simplefiles/` und die Unterverzeichnisse seiner
       Installationselemente (`ezcontentclass/`, `ezcontentobject/`, `ezextension/`).
 - [ ] Kein `.git`, `.DS_Store`, keine Backups von Editoren, kein `node_modules`: `build.sh` lässt sie mit seiner Liste `EXCLUDES` weg.
-- [ ] `find -type l` gibt nichts aus. Ein symbolischer Link, harter Link oder ein Gerät im Archiv lässt jeden Import es abweisen
-      (`unsafe_type`), ebenso ein Eintrag mit `..` oder einem absoluten Pfad (`unsafe_path`).
+- [ ] `find -type l` gibt nichts aus. Ein Link auf eine Datei des Pakets wird als Kopie davon importiert, aber ein Link aus dem
+      Paket heraus, auf ein Verzeichnis oder ins Leere, ein Gerät oder eine FIFO wird mit einem Hinweis weggelassen (`link_outside`,
+      `link_directory`, `link_missing`, `special_file`), sodass fehlt, was das Paket braucht; ein Eintrag mit `..` oder einem
+      absoluten Pfad lässt jeden Import das Paket abweisen (`unsafe_path`).
 
 > **Warnung**
 > Dateien oben in einem Paket neben `package.xml` überstehen `build.sh`, das den ganzen Ordner archiviert, aber keinen Export aus der

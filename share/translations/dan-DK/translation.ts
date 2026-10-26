@@ -45176,6 +45176,14 @@ Hvis du vil sende kommentarer til godkenderen eller se status, kan du bruge URL'
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Kommentar fra &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>En side er blevet anbefalet til dig</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Du får denne e-mail, fordi nogen har indtastet din adresse på %site for at dele en side med dig.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52806,6 +52814,10 @@ Det gør du ved at ændre %chown-kommandoerne under Alternative shell-kommandoer
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Forsøg: %attempt af %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Se din kvittering</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53856,6 +53868,42 @@ din konto.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Linket virker kun én gang og kun i %1 minutter.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Nulstilling af adgangskode</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Nogen har bedt om at nulstille adgangskoden til din konto på %site. Bekræft med knappen, så sender vi dig en ny adgangskode i en anden e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Nulstil min adgangskode</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Hvis du ikke har bedt om dette, kan du ignorere denne e-mail: din adgangskode forbliver uændret.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Din nye adgangskode</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Din adgangskode på %site er blevet nulstillet. Log ind med denne nye adgangskode, og skift den derefter til din egen.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Hvis du ikke selv har nulstillet din adgangskode, så log ind med denne, og skift den med det samme.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Nulstil din adgangskode til %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Din nye adgangskode til %site</translation>
     </message>
 </context>
 <context>
@@ -57744,12 +57792,28 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <translation>Pakke</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkivet blev pakket i PAX-tar-formatet, som ikke kan importeres. Pak pakken i GNU-tar-formatet (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkivet blev afvist: posten &quot;%path&quot; har et fil- eller mappenavn længere end %length byte, som intet filsystem gemmer.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>Arkivet blev afvist: posten &quot;%path&quot; har tar-typen &quot;%type&quot;, og en pakke indeholder kun filer og mapper.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Linket &quot;%path&quot; peger uden for pakken (%target) og blev ikke importeret.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Linket &quot;%path&quot; peger på &quot;%target&quot;, som pakken ikke indeholder, og blev ikke importeret.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Linket &quot;%path&quot; peger på mappen &quot;%target&quot; og blev ikke importeret.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Posten &quot;%path&quot; er en enhed eller et navngivet rør (tar-type &quot;%type&quot;) og blev ikke importeret.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Posten &quot;%path&quot; har tar-typen &quot;%type&quot;, som en pakke ikke bruger, og blev ikke importeret.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -70430,6 +70494,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Your devices</source>
         <translation>Dine enheder</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Nogen har bedt om at bruge %email til en konto på %site. Bekræft, at denne adresse er din.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Du (eller nogen, der har skrevet din adresse) har bedt om et link til at administrere de e-mails, som %site sender til %email. På den side kan du slå hver type e-mail til eller fra eller stoppe alle valgfrie e-mails.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70790,6 +70862,10 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with &quot;%forgot&quot; on the login page, and contact us.</source>
         <translation>Hvis du ikke har foretaget denne ændring, kender en anden måske din adgangskode: nulstil den straks med &quot;%forgot&quot; på login-siden, og kontakt os.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Din adgangskode er blevet ændret</translation>
     </message>
 </context>
 <context>
@@ -77375,6 +77451,34 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The sessions of this user:</source>
         <translation>Denne brugers sessioner:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nyt login på din konto</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Enhed</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Omtrentlig adresse</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Hvis det ikke var dig, kender nogen måske din adgangskode: log den session ud på siden med dine enheder, og skift derefter din adgangskode.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Gennemgå dine enheder</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Vis denne brugers sessioner</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77901,6 +78005,17 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Rækken fjernes fra tabellen og kan ikke hentes tilbage.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Hvis knappen ikke virker, kan du kopiere denne adresse ind i din browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Åbn siden</translation>
     </message>
 </context>
 </TS>

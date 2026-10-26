@@ -749,16 +749,19 @@ class expPackageJson
 
     /**
      * Extracts a package archive (.ezpkg: gzip compressed tar) into a directory, after the same checks
-     * eZPackage::import() makes (only plain files and directories with safe relative paths).
+     * eZPackage::import() makes (safe relative paths; links to a file of the package as copies, other links,
+     * devices and fifos passed over with a notice).
      *
      * @param string $archivePath
      * @param string $dir created when missing
      * @param string|null $error
+     * @param array|null $notices set to the entries passed over (see expPackageArchive::noticeText())
      * @return bool
      */
-    static function extractArchive( $archivePath, $dir, &$error = null )
+    static function extractArchive( $archivePath, $dir, &$error = null, &$notices = null )
     {
         $error = null;
+        $notices = array();
         if ( !is_file( $archivePath ) )
         {
             $error = 'no file ' . $archivePath;
@@ -767,7 +770,8 @@ class expPackageJson
         try
         {
             // tar headers scanned before ezcArchive reads them, extracted with modes 0644/0755 (expPackageArchive)
-            $archive = expPackageArchive::open( $archivePath, $tarProblem );
+            $archive = expPackageArchive::open( $archivePath, $tarProblem, array(), $notices );
+            $notices = (array)$notices;
             if ( !$archive )
             {
                 $error = 'the archive was refused (' . expPackageArchive::problemText( $tarProblem ) . ')';

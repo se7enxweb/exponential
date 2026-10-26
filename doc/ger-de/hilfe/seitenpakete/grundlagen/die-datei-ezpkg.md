@@ -87,9 +87,13 @@ Endung `-<digit>.<digits>-<digit>.ezpkg` vom Dateinamen, wenn es meldet, was es 
 
 `eZPackage::import()` (und `importUnaudited()` dahinter) arbeitet in dieser Reihenfolge:
 
-1. Die tar-Köpfe prüfen (`expPackageArchive::scan()`, nächster Abschnitt), dann das Archiv über `compress.zlib://` öffnen, als
-   GNU-tar-Archiv, wenn sein erster Kopf die Kennung `ustar` trägt, und als altes V7-tar-Archiv, wenn nicht
-   (`eZPackage::archiveTarType()`): Pakete, die von den Releases 3.x geschrieben wurden, sind V7-Archive.
+1. Die tar-Köpfe prüfen (`expPackageArchive::index()`, nächster Abschnitt), dann das Archiv über `compress.zlib://` öffnen
+   (ein gzip-komprimiertes Archiv oder ein unkomprimiertes tar-Archiv, so wie es ist). Ein Archiv, das die Archivbibliothek
+   so liest, wie es ist (die Kennung `ustar` in jedem Kopf, nur Dateien, Verzeichnisse und GNU-Langnamen, wie der Export von
+   Exponential schreibt), wird direkt geöffnet. Jedes andere wird zuerst in diese Form umgeschrieben, in eine temporäre Datei
+   unter dem Cache-Verzeichnis, die entfernt wird, sobald sie geöffnet ist: die V7-Archive, die eZ Publish 3.x schrieb,
+   PAX-Archive (bsdtar unter macOS und den BSDs, GNU tar `--format=posix`, Pythons `tarfile`), mit GNU tar neu gepackte
+   Archive (`./` vor jedem Namen, harte und symbolische Links) und jedes mit einem tar-Typ, den die Bibliothek nicht liest.
 2. Nur `package.xml` und `package.json` (nur einfache Dateien, nie ein Link) in ein temporäres Verzeichnis unter dem Cache-Verzeichnis
    (`packages/import/`) entpacken, die Definition lesen und die temporäre Kopie löschen.
 3. Das Paket abweisen, wenn sein Name nicht gültig ist (`STATUS_INVALID_NAME`) oder wenn ein Paket dieses Namens bereits im Repository
@@ -110,15 +114,30 @@ Der Import eines Archivs wird im Prüfprotokoll als `system.package.import` fest
 
 | Prüfung | Code der Abweisung | Grenze |
 |---|---|---|
-| Jeder tar-Kopf lesbar, seine Prüfsumme richtig, keine Daten abgeschnitten | `unreadable` | |
-| Kein PAX-Archiv (tar-Typen `x` und `g`); packen mit `tar --format=gnu` (GNU tar) oder `tar --format=gnutar` (bsdtar, macOS) | `tar_pax` | |
-| Nur die tar-Typen, die der Leser verarbeitet: `0`, `5` und ein GNU-Langname `L`; `\0` in einem V7-Archiv; Links und Geräte werden unten als `unsafe_type` abgewiesen | `tar_entry_type` | |
-| Ein GNU-Langname höchstens 4096 Bytes lang und kein Vielfaches von 512 Bytes | `tar_long_name` | |
+| Jeder tar-Kopf lesbar, seine Prüfsumme richtig, keine Daten abgeschnitten, jeder PAX-Kopf wohlgeformt | `unreadable` | |
+| Ein Langname (GNU `L`/`K`, PAX `path`/`linkpath`) höchstens 4096 Bytes lang, ein PAX-Kopf höchstens 64 KiB | `tar_long_name` | |
+| Kein Datei- oder Verzeichnisname in einem Pfad länger als 255 Bytes (kein Dateisystem speichert ihn) | `tar_name_segment` | |
 | Höchstens `MaxEntries` Einträge | `too_many_entries` | `50000` |
 | Jeder Pfad relativ, ohne `..`, umgekehrten Schrägstrich, NUL oder Steuerzeichen | `unsafe_path` | |
-| Jeder Eintrag eine einfache Datei oder ein Verzeichnis (keine Links, keine Geräte) | `unsafe_type` | |
-| Entpackte Größe höchstens `MaxUnpackedSize` | `too_large_unpacked` | `2147483648` (2 GiB) |
+| Entpackte Größe höchstens `MaxUnpackedSize` (Kopien von Links zählen mit) | `too_large_unpacked` | `2147483648` (2 GiB) |
 | Der Hersteller ergibt einen brauchbaren Verzeichnisnamen für das Repository | (Import abgewiesen) | |
+
+Was ein Paket nicht enthalten kann, weist das Paket nicht ab. Es wird mit einem Hinweis übergangen, und der Rest des Pakets
+wird importiert; die Hinweise stehen im Debug-Log und unter den Warnungen der Validierung auf der Seite zum Hochladen:
+
+| Eintrag | Was geschieht | Hinweis |
+|---|---|---|
+| Ein harter oder symbolischer Link auf eine Datei des Pakets | Als Kopie dieser Datei importiert | |
+| Ein symbolischer Link mit absolutem Ziel oder einem, dessen `..` das Paket verlässt | Übergangen | `link_outside` |
+| Ein symbolischer Link auf ein Verzeichnis | Übergangen | `link_directory` |
+| Ein Link auf einen Pfad, den das Paket nicht enthält (oder Links, die im Kreis zeigen) | Übergangen | `link_missing` |
+| Ein Zeichen- oder Blockgerät, eine Fifo (tar-Typen `3`, `4`, `6`) | Übergangen | `special_file` |
+| Eine Sparse-Datei (`S`, PAX `GNU.sparse`) oder ein tar-Typ, den kein Paketwerkzeug schreibt | Übergangen | `unsupported_entry` |
+
+Ohne Hinweis gelesen werden: Dateien der Typen `0`, `\0` (V7, eZ Publish 3.x) und `7`; Verzeichnisse `5`, das GNU-Dump-Verzeichnis
+`D` und ein Dateieintrag, dessen Name auf `/` endet; GNU-Langnamen `L` und `K` (auch mit einer Größe, die ein Vielfaches von
+512 Bytes ist); erweiterte PAX-Köpfe (`path`, `linkpath`, `size`, `mtime`; erweiterte Attribute und die übrigen Einträge werden
+nicht beachtet); der globale PAX-Kopf `g` und die GNU-Datenträgerbezeichnung `V`, die keinen Eintrag benennen; der Eintrag `./` selbst.
 
 Die Seite zum Hochladen in der Administration (`package/upload`) führt zuerst das vollständige `inspect()` aus, das hinzufügt:
 
@@ -126,18 +145,18 @@ Die Seite zum Hochladen in der Administration (`package/upload`) führt zuerst d
 |---|---|---|
 | Der hochgeladene Name endet auf eine erlaubte Endung | `suffix` | `AllowedSuffixes[]`: `ezpkg`, `tar.gz`, `tgz` |
 | Die Datei hat höchstens `MaxArchiveSize` Bytes | `too_large` | `268435456` (256 MiB) |
-| Die Datei beginnt mit der gzip-Signatur | `not_gzip` | |
+| Die Datei beginnt mit der gzip-Signatur oder ist ein unkomprimiertes tar-Archiv | `not_gzip` | |
 | Eine Definitionsdatei oben, wohlgeformt, höchstens 16 MiB, mit gültigem Namen | `no_definition`, `definition_malformed`, ... | |
 
-Die Prüfungen der tar-Köpfe (die ersten vier Zeilen) laufen, bevor die Archivbibliothek einen einzigen Eintrag liest,
-Kopf für Kopf, wobei die Datenblöcke anhand ihrer Größe übersprungen werden: Der GNU-Leser der Bibliothek lief bei einem
-Kopftyp, den er nicht kennt, bis `max_execution_time` in einer Schleife (ein PAX-Archiv, das Pythons `tarfile` seit 3.8
-standardmäßig schreibt und `bsdtar` für Namen, die nicht ASCII sind), und las einen Langnamen in der Größe, die der Kopf
-angab, in den Speicher. Ein Langname, dessen Größe ein Vielfaches von 512 Bytes ist, wird abgewiesen, weil der Leser dann
-den echten Eintragskopf überspringt; GNU tar speichert den Namen mit abschließendem NUL, ein Name von 511, 1023, ... oder
-4095 Bytes kann also nicht importiert werden (die Meldung nennt in diesem Fall ebenfalls die Grenze von 4096 Bytes). Ein
-Paket, das mit GNU tar, mit bsdtar und `--format=gnutar` oder `--format=ustar` oder vom Export von Exponential gepackt
-wurde, besteht die Prüfung.
+Die Prüfungen der tar-Köpfe laufen, bevor die Archivbibliothek einen einzigen Eintrag liest, Kopf für Kopf, wobei die
+Datenblöcke anhand ihrer Größe übersprungen werden, und die Archivbibliothek bekommt nur ein Archiv in der Form, die sie
+liest: Ihr GNU-Leser lief bei einem Kopftyp, den er nicht kennt (ein PAX-Kopf, eine mit `\0` typisierte Datei mit der
+Kennung `ustar`), bis `max_execution_time` in einer Schleife, las einen Langnamen in der Größe, die der Kopf angab, in den
+Speicher, und las nach einem Langnamen, dessen Größe ein Vielfaches von 512 Bytes ist, einen Block zu viel. Die Pakete jeder
+Generation werden importiert: die V7-Archive von eZ Publish 3.x, die ustar-Archive der Exporte von 4.x und 5.x und Pakete, die
+mit GNU tar (in jedem seiner Formate), bsdtar oder Pythons `tarfile` neu gepackt wurden. Die Archive, mit denen die Tests des
+Kernels das prüfen, liegen in `tests/tests/kernel/classes/packages/fixtures/legacy/`, gebaut von
+`build-legacy-package-fixtures.php` daneben.
 
 Die Grenzen stehen in `settings/package.ini [UploadSettings]`; ändern Sie sie in `settings/override/package.ini.append.php`.
 

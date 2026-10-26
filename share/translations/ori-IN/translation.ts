@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” ଙ୍କ ଦ୍ୱାରା ମନ୍ତବ୍ୟ</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ଆପଣଙ୍କୁ ଏକ ପୃଷ୍ଠା ସୁପାରିଶ କରାଯାଇଛି</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>ଆପଣଙ୍କ ସହ ଏକ ପୃଷ୍ଠା ସେୟାର୍ କରିବା ପାଇଁ କେହି ଜଣେ %site ରେ ଆପଣଙ୍କ ଠିକଣା ଦେଇଥିବାରୁ ଆପଣ ଏହି ଇ-ମେଲ୍ ପାଇଛନ୍ତି।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ପୁନଃ ଚେଷ୍ଟା: %max ମଧ୍ୟରୁ %attempt)।</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ଆପଣଙ୍କ ରସିଦ ଦେଖନ୍ତୁ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ଲିଙ୍କ୍ କେବଳ ଥରେ ଏବଂ କେବଳ %1 ମିନିଟ୍ ପର୍ଯ୍ୟନ୍ତ କାମ କରେ।</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>ପାସୱାର୍ଡ ରିସେଟ୍</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>କେହି ଜଣେ %site ରେ ଆପଣଙ୍କ ଖାତାର ପାସୱାର୍ଡ ରିସେଟ୍ କରିବାକୁ ଅନୁରୋଧ କରିଛନ୍ତି। ବଟନ୍ ଦ୍ୱାରା ନିଶ୍ଚିତ କରନ୍ତୁ, ଏବଂ ଆମେ ଆପଣଙ୍କୁ ଦ୍ୱିତୀୟ ଇ-ମେଲରେ ଏକ ନୂଆ ପାସୱାର୍ଡ ପଠାଇବୁ।</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>ମୋ ପାସୱାର୍ଡ ରିସେଟ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>ଯଦି ଆପଣ ଏହା ଅନୁରୋଧ କରିନାହାଁନ୍ତି, ତେବେ ଆପଣ ଏହି ଇ-ମେଲ୍ ଅଣଦେଖା କରିପାରିବେ: ଆପଣଙ୍କ ପାସୱାର୍ଡ ଯେମିତି ଅଛି ସେମିତି ରହିବ।</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>ଆପଣଙ୍କ ନୂଆ ପାସୱାର୍ଡ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site ରେ ଆପଣଙ୍କ ପାସୱାର୍ଡ ରିସେଟ୍ କରାଯାଇଛି। ଏହି ନୂଆ ପାସୱାର୍ଡ ସହିତ ସାଇନ୍ ଇନ୍ କରନ୍ତୁ, ତାପରେ ଏହାକୁ ଆପଣଙ୍କ ନିଜର ଏକ ପାସୱାର୍ଡରେ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>ଯଦି ଆପଣ ନିଜ ପାସୱାର୍ଡ ରିସେଟ୍ କରିନାହାଁନ୍ତି, ତେବେ ଏହା ସହିତ ସାଇନ୍ ଇନ୍ କରନ୍ତୁ ଏବଂ ତୁରନ୍ତ ଏହାକୁ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site ପାଇଁ ପାସୱାର୍ଡ ରିସେଟ୍</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site ପାଇଁ ଆପଣଙ୍କ ନୂଆ ପାସୱାର୍ଡ</translation>
     </message>
 </context>
 <context>
@@ -57355,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ପ୍ୟାକେଜ୍</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>ଅଭିଲେଖ ଫାଇଲ୍‌ଟି PAX tar ଫର୍ମାଟରେ ପ୍ୟାକ୍ କରାଯାଇଥିଲା, ଯାହା ଆମଦାନି କରାଯାଇପାରିବ ନାହିଁ। ପ୍ୟାକେଜ୍‌କୁ GNU tar ଫର୍ମାଟରେ ପ୍ୟାକ୍ କରନ୍ତୁ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)।</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ଆର୍କାଇଭ୍ ପ୍ରତ୍ୟାଖ୍ୟାନ ହେଲା: ପ୍ରବିଷ୍ଟି “%path” ରେ %length ବାଇଟ୍‌ରୁ ଲମ୍ବା ଫାଇଲ୍ ବା ଡିରେକ୍ଟୋରୀ ନାମ ଅଛି, ଯାହାକୁ କୌଣସି ଫାଇଲ୍ ସିଷ୍ଟମ୍ ସଂରକ୍ଷଣ କରେ ନାହିଁ।</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>ଅଭିଲେଖ ଫାଇଲ୍ ପ୍ରତ୍ୟାଖ୍ୟାନ କରାଗଲା: ଏଣ୍ଟ୍ରି “%path” ର tar ପ୍ରକାର “%type”, ଏବଂ ଏକ ପ୍ୟାକେଜ୍‌ରେ କେବଳ ଫାଇଲ୍ ଓ ଡିରେକ୍ଟୋରୀ ରହେ।</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>ଲିଙ୍କ୍ “%path” ପ୍ୟାକେଜ୍ ବାହାରକୁ ସୂଚାଏ (%target) ଏବଂ ଆମଦାନୀ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>ଲିଙ୍କ୍ “%path” ପ୍ୟାକେଜ୍‌ରେ ନଥିବା “%target” କୁ ସୂଚାଏ ଏବଂ ଆମଦାନୀ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>ଲିଙ୍କ୍ “%path” ଡିରେକ୍ଟୋରୀ “%target” କୁ ସୂଚାଏ ଏବଂ ଆମଦାନୀ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>ପ୍ରବିଷ୍ଟି “%path” ଏକ ଡିଭାଇସ୍ ବା ନାମିତ ପାଇପ୍ (tar ପ୍ରକାର “%type”) ଏବଂ ଆମଦାନୀ ହୋଇନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>ପ୍ରବିଷ୍ଟି “%path” ର tar ପ୍ରକାର “%type”, ଯାହା ପ୍ୟାକେଜ୍ ବ୍ୟବହାର କରେ ନାହିଁ, ଏବଂ ଆମଦାନୀ ହୋଇନାହିଁ।</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71483,6 +71547,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>ଆପଣଙ୍କ ଡିଭାଇସ୍</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>କେହି ଜଣେ %site ରେ ଏକ ଖାତା ପାଇଁ %email ବ୍ୟବହାର କରିବାକୁ ଅନୁରୋଧ କରିଛନ୍ତି। ଦୟାକରି ନିଶ୍ଚିତ କରନ୍ତୁ ଯେ ଏହି ଠିକଣା ଆପଣଙ୍କର।</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>ଆପଣ (କିମ୍ବା ଆପଣଙ୍କ ଠିକଣା ଟାଇପ୍ କରିଥିବା କେହି) %site %email କୁ ପଠାଉଥିବା ଇ-ମେଲ୍ ପରିଚାଳନା କରିବା ପାଇଁ ଏକ ଲିଙ୍କ୍ ଅନୁରୋଧ କରିଛନ୍ତି। ସେହି ପୃଷ୍ଠାରେ ଆପଣ ପ୍ରତ୍ୟେକ ପ୍ରକାରର ଇ-ମେଲ୍ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରିପାରିବେ, କିମ୍ବା ସମସ୍ତ ବୈକଳ୍ପିକ ଇ-ମେଲ୍ ବନ୍ଦ କରିପାରିବେ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71911,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ଯଦି ଆପଣ ଏହି ପରିବର୍ତ୍ତନ କରିନାହାଁନ୍ତି, ତେବେ ଅନ୍ୟ କେହି ଆପଣଙ୍କ ପାସୱାର୍ଡ ଜାଣିଥାଇପାରନ୍ତି: ଲଗଇନ୍ ପୃଷ୍ଠାରେ “%forgot” ବ୍ୟବହାର କରି ତୁରନ୍ତ ଏହାକୁ ରିସେଟ୍ କରନ୍ତୁ ଏବଂ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାଯାଇଛି</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ଏହି ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ସତ୍ର:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ଆପଣଙ୍କ ଖାତାକୁ ନୂଆ ସାଇନ୍ ଇନ୍</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ଡିଭାଇସ୍</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ସମୟ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ଆନୁମାନିକ ଠିକଣା</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>ଯଦି ଏହା ଆପଣ ନଥିଲେ, ତେବେ କେହି ଆପଣଙ୍କ ପାସୱାର୍ଡ ଜାଣିଥାଇପାରନ୍ତି: ଆପଣଙ୍କ ଡିଭାଇସ୍ ପୃଷ୍ଠାରେ ସେହି ସତ୍ରକୁ ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ, ତାପରେ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ଆପଣଙ୍କ ଡିଭାଇସ୍ ସମୀକ୍ଷା କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ଏହି ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ସତ୍ର ଦେଖନ୍ତୁ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77323,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>ଧାଡ଼ିଟି ଟେବୁଲ୍‌ରୁ ହଟାଯାଏ ଏବଂ ଏହାକୁ ଆଉ ଫେରାଇ ଅଣାଯାଇପାରିବ ନାହିଁ।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ଯଦି ବଟନ୍ କାମ କରୁନାହିଁ, ଏହି ଠିକଣା ଆପଣଙ୍କ ବ୍ରାଉଜର୍‌ରେ କପି କରନ୍ତୁ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>ପୃଷ୍ଠା ଖୋଲନ୍ତୁ</translation>
     </message>
 </context>
 </TS>

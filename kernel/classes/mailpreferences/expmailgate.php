@@ -34,6 +34,8 @@
 class expMailGate
 {
     const HEADER = 'X-Exp-Mail-Category';
+    /** The place of the footer in an HTML mail made with design:mail/layout.tpl */
+    const HTML_FOOTER_MARK = '<!-- exp-mail-footer -->';
 
     /** @var array|null the result of the last dispatch() */
     protected static $lastResult = null;
@@ -174,6 +176,15 @@ class expMailGate
             $links['unsubscribe'] = expMailToken::url( 'unsubscribe', expMailToken::create( $recipient, 'unsubscribe', $category->identifier, self::footerTTL( 'unsubscribe' ) ) );
             $mail->setExtraHeader( 'List-Unsubscribe', '<' . $links['unsubscribe'] . '>' );
             $mail->setExtraHeader( 'List-Unsubscribe-Post', 'List-Unsubscribe=One-Click' );
+        }
+        if ( is_array( $mail->AlternativeParts ) && class_exists( 'expMailTemplateBody' ) )
+        {
+            // a multipart/alternative body made by expMailTemplateBody: the text footer goes into the text part, the
+            // HTML footer before </body> of the HTML part, and the body (raw and ezcMail) is built again from both
+            expMailTemplateBody::setAlternative( $mail,
+                self::appendFooter( (string)$mail->AlternativeParts['text'], self::footer( $category, $links, false ), false ) . "\n",
+                self::appendFooter( (string)$mail->AlternativeParts['html'], self::footer( $category, $links, true ), true ) );
+            return;
         }
         $isHTML = stripos( (string)$mail->contentType(), 'html' ) !== false;
         $footer = self::footer( $category, $links, $isHTML );
@@ -553,6 +564,10 @@ class expMailGate
     {
         if ( $isHTML )
         {
+            // design:mail/layout.tpl marks the place inside its card, so the footer is part of the mail, not below it
+            $pos = strpos( $body, self::HTML_FOOTER_MARK );
+            if ( $pos !== false )
+                return substr( $body, 0, $pos ) . $footer . substr( $body, $pos );
             $pos = strripos( $body, '</body>' );
             if ( $pos !== false )
                 return substr( $body, 0, $pos ) . $footer . substr( $body, $pos );
