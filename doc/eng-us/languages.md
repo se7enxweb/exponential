@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **70**, 70 of them complete |
+| Languages of the administration: translations in `share/translations` | **71**, 71 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **67** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **81** |
+| of them shown translated by the administration (own translation, fallback or English) | **68** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **80** |
 | Countries and territories of the locales | **158** |
 | of them with the administration in their language (green on the map) | **132** |
 | Locales written right to left | **40** |
@@ -156,7 +156,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
 | United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` (untranslated) |
-| United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` (untranslated) |
+| United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
 | Venezuela | VE | `esl-VE` → `esl-ES` |
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **67** of them translated: at least one of their locales has a translation of its
+administration shows **68** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **81** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **80** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 81 languages not translated</summary>
+<details><summary>The 80 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -323,7 +323,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Western Frisian | Frysk | `fry` | `fry-NL` (Netherlands) |
 | Western Punjabi | پنجابی | `pnb` | `pnb-PK` (Pakistan) |
 | Wolof | Wolof | `wol` | `wol-SN` (Senegal) |
-| Yiddish | ייִדיש | `yid` | `yid-US` (United States of America) |
 
 </details>
 <!-- generated: exp:i18n coverage languages (end) -->
