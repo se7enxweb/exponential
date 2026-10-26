@@ -1234,6 +1234,7 @@ return array(
       'expI18nFallbackResolver'                                      => 'lib/ezi18n/classes/expi18nfallbackresolver.php',
       'expI18nFallbackRuleInterface'                                 => 'lib/ezi18n/classes/expi18nfallbackruleinterface.php',
       'expI18nFallbackSameLanguageRule'                              => 'lib/ezi18n/classes/expi18nfallbacksamelanguagerule.php',
+      'expI18nTranslationWaves'                                      => 'kernel/classes/i18n/expi18ntranslationwaves.php',
       'expImageUploadValidator'                                      => 'kernel/classes/expimageuploadvalidator.php',
       'expInfo'                                                      => 'lib/ezutils/classes/expinfo.php',
       'expIniAction'                                                 => 'kernel/classes/ini/actions/expiniaction.php',

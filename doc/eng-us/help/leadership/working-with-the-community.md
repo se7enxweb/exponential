@@ -185,7 +185,7 @@ Good first documentation contributions for a project team:
 - a correction where a page did not match what you saw;
 - a worked example from your project, with the customer's details removed.
 
-**Translations.** The administration has 71 translations, all of them complete (26 October 2026), and 268 locale files exist
+**Translations.** The administration has 73 translations, all of them complete (26 October 2026), and 268 locale files exist
 ([Languages](../../languages.md)). How to add or complete an administration translation is in
 [section 8 of Languages](../../languages.md#8-adding-or-completing-an-administration-translation). A team that
 builds a site in a language whose administration translation is partial can complete it for everyone.

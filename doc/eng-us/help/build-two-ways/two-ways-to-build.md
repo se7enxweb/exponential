@@ -15,7 +15,7 @@ Exponential 6.0.15+ gives a site two ways of being built, and most real sites us
 | | 1. Templates in a design extension | 2. The Layouts editor |
 |---|---|---|
 | What you make | `.tpl` files, stylesheets, settings, in your own extension | Layouts: zones filled with blocks, stored in the database |
-| Tool | an editor, a terminal, git | the administration: **Layouts** |
+| Tool | an editor, a terminal, git | the administration's **Layouts** tab (in the top menu, or under **More** when the menu has no room for it) |
 | Who | designers, developers | website creators, editors, administrators |
 | Changes go live | after deploy and a cache clear | when you press **Publish layout** |
 | Versioned | in git with your extension | drafts and published versions in the database; export and import as `.zip` (`exp:layouts`) |
@@ -47,11 +47,15 @@ fetches its items, markup that must be the same on every page.
 
 ## Way 2: the Layouts editor
 
-**Layouts** in the administration builds pages from blocks, by drag and drop. A **layout** has a type (its zones: for
-example `header`, `post_header`, `main`, `pre_footer`, `footer`) and holds **blocks** in its zones. The editor offers
-the block types defined in `explayouts.ini` (Title, Text, Rich text, Image, Button, List, Grid, Gallery, Slider, Hero,
-Card, Columns and more), each with its **view types** and options. **Layout mappings** decide which layout a page gets
-(by node, subtree, path or content class).
+**Layouts** in the administration builds pages from blocks, by drag and drop. The **Layouts** tab of the top menu
+(under **More** when the menu has no room for it) opens the Layouts dashboard; its left menu has **Layout mappings**,
+**Layouts**, **Shared layouts**, **Components**, **Export**, **Import** and **Template editor**, and **New layout** on
+the dashboard opens the editor. A **layout** has a type (its zones: for example `header`, `post_header`, `main`,
+`pre_footer`, `footer`) and holds **blocks** in its zones. The editor offers the block types defined in
+`explayouts.ini` (Title, Text, Rich text, Image, Button / Link, List, Grid, Gallery, Slider, Hero, Card, Two columns,
+Three columns, Four columns and more), each with its **view types** and options. **Layout mappings** decide which layout
+a page gets: by node, subtree, path or route, narrowed if needed by conditions such as the content class, the
+siteaccess or a time span.
 
 Choose it for page composition: landing pages, campaign pages, a hero and three teasers, a list of the newest articles,
 the blocks above the footer, anything an editor should be able to rearrange without a release.
@@ -73,8 +77,20 @@ The two ways are one system:
 ## A third tool: settings
 
 Some things are neither: the header menu of this theme is a list of node IDs in `menu.ini`, read by the header
-template. Settings are changed in **Setup > Ini settings** or with `./console exp:ini`, no code
-([Add a header menu item](add-a-header-menu-item.md)).
+template. Settings are changed in **Setup > Ini settings** (the group *System* of the Setup menu) or with
+`./console exp:ini`, no code ([Add a header menu item](add-a-header-menu-item.md)).
+
+Three things of the administration come up on almost every page of this guide:
+
+- The right column has the **Clear cache** box (choose, for example, **Template & content**, then **Clear**) and,
+  further down, **Quick settings** for the debug switches such as **List of used templates**, with a **Siteaccess**
+  choice and **Set**. The address `setup/settingstoolbar` of the administration shows the same switches as a page of
+  its own, **Quick settings**.
+- Content is added in **Content structure** (or **Media** for the footer links): open the parent and press
+  **Create new** above its sub items; the menu lists the classes by group (*Netgen* holds Landing page and Menu item,
+  *Content* holds Folder).
+- The **?** button in the top bar has **Help for this page** and **Open the Help center**, where this guide and the
+  rest of the help can be searched.
 
 ## Which way when
 

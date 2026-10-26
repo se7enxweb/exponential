@@ -4,7 +4,7 @@ audience: businesses, project-manager, admin
 category: business-solutions
 order: 20
 summary: Was Exponential bei Sprachen unterstützt, erklärt für Entscheider – Locales, Inhaltssprachen, Übersetzungen der Administration und Website-Locales, die drei Unterstützungsstufen, die Grenze von 62 Sprachen und wie Sie eine Sprache prüfen, bevor Sie sich auf einen Markt festlegen.
-keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 268 Locales, 71 Übersetzungen, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
+keywords: Sprachen, Locales, Inhaltssprachen, Übersetzung der Administration, Sprache der Oberfläche, Unterstützungsstufen, 268 Locales, 73 Übersetzungen, Grenze von 62 Sprachen, Ausweichsprache, Unternehmen, languages, locales, content languages, administration translation, interface language, support levels, limit of 62 languages, fallback, business
 type: help
 ---
 # Sprachen und Locales
@@ -47,7 +47,7 @@ Gezählt in [Sprachen in Exponential](../../../sprachen.md) (Exponential 6.0.15,
 - **32 Schriftsysteme**, von Lateinisch, Kyrillisch und Griechisch bis Arabisch, Hebräisch, Devanagari, Chinesisch und
   viele weitere.
 - **40 Locales mit Rechts-nach-links-Schrift** ([Märkte mit Rechts-nach-links-Schrift](maerkte-mit-rechts-nach-links-schrift.md)).
-- **71 Übersetzungen der Administration**, alle vollständig (Stand 26. Oktober 2026), aufgeführt in
+- **73 Übersetzungen der Administration**, alle vollständig (Stand 26. Oktober 2026), aufgeführt in
   [Sprachen in Exponential](../../../sprachen.md).
 - **Zur Laufzeit ist keine PHP-Erweiterung nötig**: Locales sind einfache INI-Dateien
   ([Sprachen, Abschnitt 10](../../../sprachen.md#10-keine-php-extension-zur-laufzeit)).

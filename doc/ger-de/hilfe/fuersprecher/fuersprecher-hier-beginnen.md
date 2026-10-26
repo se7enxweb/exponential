@@ -125,6 +125,7 @@ Folgen Sie dann [Ihre erste Woche als Fürsprecher](ihre-erste-woche.md).
 | [Einwände als Fürsprecher beantworten](einwaende-beantworten.md) | Eine Methode für jeden Zweifel, öffentlich oder vertraulich |
 | [„Lebt es noch?“](einwand-lebt-es-noch.md), [„PHP und moderne Technik“](einwand-php-und-moderne-technik.md), [„Finden wir Leute?“](einwand-fachkraefte.md) | Die drei häufigsten Zweifel |
 | [„Warum nicht ein anderes CMS?“](einwand-warum-nicht-ein-anderes-cms.md), [„Ist Open Source sicher?“](einwand-sicherheit-von-open-source.md), [„Was ist mit den KI-Funktionen?“](einwand-ki-funktionen.md) | Vergleiche, Sicherheit und KI, fair beantwortet |
+| [Unsere Ziele](../../ziele.md) | Zweifel an den Absichten beantworten („Wo ist der Haken?“, „Bleibt es frei?“, „Wem gehört der Code?“, „Was passiert, wenn 7x aufhört?“), mit den Antworten des Projekts und ihren Quellen |
 | [Mit feindseligen Diskussionen umgehen](feindselige-diskussionen.md) | Ruhig und sachlich bleiben, wenn eine Diskussion kippt |
 
 ### Demos und Präsentationen

@@ -54,7 +54,7 @@ Sources: `README.md` ("What does Exponential provide", "License", "Requirements"
 | Six supported databases: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Database support](../database-support.md) |
 | "almost any" operating system "that runs PHP 8.0 or later" | [Operating system support](../os-support.md) |
 | PHP 8.0 to 8.5 supported | `README.md`, "What version of PHP is required" |
-| 268 locale files, 40 of them right to left; 71 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
+| 268 locale files, 40 of them right to left; 73 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
 | "The recommended way is to get the kernel and every se7enxweb extension as Git clones with their full history" | `README.md`, "Installation"; [Develop with Git](../develop-with-git.md) |
 | "A published tag is never changed" | `SECURITY.md` |
 | The documentation is free documentation under the GNU FDL 1.3 or later | [Free documentation](../free-documentation.md) |
