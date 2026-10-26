@@ -171,14 +171,16 @@ Dateien aus einem Paket (Herunterladen im Inhalt) kommen auf dieselbe Weise von
 **Neues Paket importieren** in der Liste öffnet `/package/upload`. Wählen Sie eine `.ezpkg`-, `.tar.gz`- oder
 `.tgz`-Datei und drücken Sie **Importiere Paket**. Bevor irgendetwas geschrieben wird, wird das Archiv geprüft:
 
-1. sein Name endet auf eine erlaubte Endung, und die Datei beginnt mit der gzip-Signatur;
+1. sein Name endet auf eine erlaubte Endung, und die Datei beginnt mit der gzip-Signatur (oder ist ein
+   unkomprimiertes tar-Archiv);
 2. es ist höchstens `MaxArchiveSize` Bytes groß und hat höchstens `MaxEntries` Einträge, die entpackt höchstens
    `MaxUnpackedSize` Bytes ergeben;
-3. seine tar-Köpfe sind von einer Art, die der Archivleser verarbeitet: Ein PAX-Archiv wird abgewiesen (packen Sie es
-   mit `tar --format=gnu` oder mit bsdtar, dem tar von macOS, mit `tar --format=gnutar`), ebenso ein Kopftyp außer
-   einer Datei, einem Verzeichnis oder einem GNU-Langnamen von höchstens 4096 Bytes;
-4. jeder Eintrag ist eine einfache Datei oder ein Verzeichnis mit einem relativen Pfad: kein `..`, kein absoluter
-   Pfad, kein Backslash, kein Steuerzeichen, kein symbolischer oder harter Link, kein Gerät und keine FIFO;
+3. seine tar-Köpfe lassen sich lesen: Die V7-Archive von eZ Publish 3.x, die ustar- und GNU-Archive von 4.x und 5.x
+   und von GNU tar sowie PAX-Archive (bsdtar unter macOS, GNU tar `--format=posix`) werden alle importiert;
+4. jeder Eintrag hat einen relativen Pfad: kein `..`, kein absoluter Pfad, kein Backslash, kein Steuerzeichen. Ein
+   harter oder symbolischer Link auf eine Datei des Pakets wird als Kopie davon importiert; ein Link aus dem Paket
+   heraus, auf ein Verzeichnis oder ins Leere, ein Gerät und eine FIFO werden mit einem Hinweis übergangen (unter den
+   Warnungen der Validierung aufgeführt), und der Rest des Pakets wird importiert;
 5. es hat auf oberster Ebene eine `package.xml`, die wohlgeformt ist, `<package>` als Wurzel und keinen Dokumenttyp
    hat, ein gültiges Paket nennt (Kleinbuchstaben, Ziffern und `_`) und ihre Versions- und Paketierungsangaben enthält,
    und deren Hersteller einen Repository-Namen ergibt;

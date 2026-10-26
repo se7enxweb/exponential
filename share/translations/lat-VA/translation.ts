@@ -57199,12 +57199,28 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Archivum recusatum est: elementum &quot;%path&quot; extra sarcinam spectat.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Archivum forma tar PAX confectum est, quae importari non potest. Sarcinam forma tar GNU confice (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Archivum recusatum est: elementum &quot;%path&quot; nomen fasciculi vel directorii longius quam %length octetos habet, quod nullum systema fasciculorum servat.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Archivum recusatum est: elementum &quot;%path&quot; genus tar &quot;%type&quot; habet, sarcina autem solos fasciculos et directoria continet.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Nexus &quot;%path&quot; extra sarcinam monstrat (%target) neque importatus est.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Nexus &quot;%path&quot; ad &quot;%target&quot; monstrat, quod sarcina non continet, neque importatus est.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Nexus &quot;%path&quot; ad directorium &quot;%target&quot; monstrat neque importatus est.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Elementum &quot;%path&quot; instrumentum vel tubus nominatus est (genus tar &quot;%type&quot;) neque importatum est.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Elementum &quot;%path&quot; genus tar &quot;%type&quot; habet, quo sarcina non utitur, neque importatum est.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

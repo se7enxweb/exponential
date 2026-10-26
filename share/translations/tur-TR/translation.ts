@@ -57251,12 +57251,28 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <translation>Arşiv reddedildi: &quot;%path&quot; girdisi paketin dışını gösteriyor.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arşiv PAX tar biçiminde paketlenmiş; bu biçim içe aktarılamaz. Paketi GNU tar biçiminde paketleyin (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arşiv reddedildi: &quot;%path&quot; girdisinde %length bayttan uzun bir dosya ya da dizin adı var; hiçbir dosya sistemi bunu saklamaz.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arşiv reddedildi: &quot;%path&quot; girdisinin tar türü &quot;%type&quot;; paket yalnızca dosya ve dizin içerir.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>&quot;%path&quot; bağlantısı paketin dışını gösteriyor (%target) ve içe aktarılmadı.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>&quot;%path&quot; bağlantısı, pakette bulunmayan &quot;%target&quot; hedefini gösteriyor ve içe aktarılmadı.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>&quot;%path&quot; bağlantısı &quot;%target&quot; dizinini gösteriyor ve içe aktarılmadı.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>&quot;%path&quot; girdisi bir aygıt ya da adlandırılmış boru (tar türü &quot;%type&quot;) ve içe aktarılmadı.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>&quot;%path&quot; girdisinin tar türü &quot;%type&quot;; paketler bu türü kullanmaz, girdi içe aktarılmadı.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

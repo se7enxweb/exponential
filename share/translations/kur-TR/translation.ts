@@ -57251,12 +57251,28 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; nîşanî derveyî pakêtê dide.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arşîv bi formata PAX ya tar hatiye pakêtkirin, ku nayê îthalkirin. Pakêtê bi formata GNU ya tar pakêt bikin (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arşîv hate redkirin: navê pel an peldankekê di tomara &quot;%path&quot; de ji %length baytan dirêjtir e, û tu pergala pelan wî hilnagire.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arşîv hate redkirin: cureyê tar ê tomara &quot;%path&quot; &quot;%type&quot; e, û pakêt tenê pel û peldankan digire.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Girêdana &quot;%path&quot; nîşanî derveyî pakêtê dide (%target) û nehat hawirdekirin.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Girêdana &quot;%path&quot; nîşanî &quot;%target&quot; dide, ku di pakêtê de tune ye, û nehat hawirdekirin.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Girêdana &quot;%path&quot; nîşanî peldanka &quot;%target&quot; dide û nehat hawirdekirin.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Tomara &quot;%path&quot; amûrek an boriyeke bi nav e (cureyê tar &quot;%type&quot;) û nehat hawirdekirin.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Cureyê tar ê tomara &quot;%path&quot; &quot;%type&quot; e, ku pakêt bi kar nayîne, û nehat hawirdekirin.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

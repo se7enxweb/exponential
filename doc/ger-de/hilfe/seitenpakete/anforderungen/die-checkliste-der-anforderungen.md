@@ -33,7 +33,7 @@ dieses Teils erklären jeden Punkt im Detail.
 | [ ] | Dateiname endet auf `.ezpkg`, `.tar.gz` oder `.tgz` (`[UploadSettings] AllowedSuffixes[]`) | Erzwungen bei `package/upload` | `eZPackageUploadInspector::hasAllowedSuffix()` |
 | [ ] | Dateiname ist `<name>.ezpkg`, der Name aus `<name>` | Konvention | Jede `url` der `index.xml` von 6.0.15 endet auf `<name>.ezpkg` |
 | [ ] | `package.xml` (oder `package.json`) ist eine einfache Datei oben, nicht in einem Ordner | Erzwungen | `eZPackage::importUnaudited()` |
-| [ ] | Jeder Eintrag ist eine einfache Datei oder ein Verzeichnis: kein symbolischer Link, kein harter Link, kein Gerät | Erzwungen | `eZPackageUploadInspector::entriesProblem()` (`unsafe_type`) |
+| [ ] | Jeder Eintrag ist eine einfache Datei oder ein Verzeichnis: Ein Link auf eine Datei des Pakets wird als Kopie importiert, andere Links, Geräte und FIFOs werden mit einem Hinweis übergangen | Konvention: das Paket wird trotzdem importiert | `expPackageArchive::index()` (`link_outside`, `link_directory`, `link_missing`, `special_file`) |
 | [ ] | Kein Pfad eines Eintrags mit `..`, führendem `/`, Laufwerksbuchstaben, umgekehrtem Schrägstrich oder Steuerzeichen | Erzwungen | `eZPackageUploadInspector::safeEntryPath()` (`unsafe_path`) |
 | [ ] | Höchstens 256 MiB gepackt, 2 GiB entpackt, 50000 Einträge (Standards von `[UploadSettings]`) | Erzwungen (gepackte Größe: nur `package/upload`) | `eZPackageUploadInspector::limits()` |
 | [ ] | Kein `.git`, keine Backups von Editoren, kein `node_modules` | Konvention | Die Liste `EXCLUDES` von `packages/build.sh` |

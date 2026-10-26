@@ -50302,12 +50302,28 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; punta all&apos;esterno del pacchetto.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>L&apos;archivio è stato creato nel formato tar PAX, che non può essere importato. Crea il pacchetto nel formato tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; ha un nome di file o directory più lungo di %length byte, che nessun file system memorizza.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>L&apos;archivio è stato rifiutato: la voce &quot;%path&quot; è di tipo tar &quot;%type&quot;, e un pacchetto contiene solo file e directory.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Il collegamento &quot;%path&quot; punta fuori dal pacchetto (%target) e non è stato importato.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Il collegamento &quot;%path&quot; punta a &quot;%target&quot;, che il pacchetto non contiene, e non è stato importato.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Il collegamento &quot;%path&quot; punta alla directory &quot;%target&quot; e non è stato importato.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>La voce &quot;%path&quot; è un dispositivo o una named pipe (tipo tar &quot;%type&quot;) e non è stata importata.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>La voce &quot;%path&quot; è di tipo tar &quot;%type&quot;, che un pacchetto non usa, e non è stata importata.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

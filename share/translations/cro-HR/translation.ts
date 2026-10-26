@@ -49963,12 +49963,28 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Arhiva je odbijena: unos &quot;%path&quot; upućuje izvan paketa.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arhiva je zapakirana u formatu PAX tar, koji se ne može uvesti. Zapakirajte paket u formatu GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arhiva je odbijena: unos &quot;%path&quot; ima naziv datoteke ili direktorija dulji od %length bajtova, koji nijedan datotečni sustav ne pohranjuje.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arhiva je odbijena: unos &quot;%path&quot; ima tar vrstu &quot;%type&quot;, a paket sadrži samo datoteke i direktorije.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Poveznica &quot;%path&quot; pokazuje izvan paketa (%target) i nije uvezena.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Poveznica &quot;%path&quot; pokazuje na &quot;%target&quot;, kojeg nema u paketu, i nije uvezena.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Poveznica &quot;%path&quot; pokazuje na direktorij &quot;%target&quot; i nije uvezena.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Unos &quot;%path&quot; je uređaj ili imenovana cijev (tar vrsta &quot;%type&quot;) i nije uvezen.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Unos &quot;%path&quot; ima tar vrstu &quot;%type&quot;, koju paket ne koristi, i nije uvezen.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

@@ -58184,12 +58184,28 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; peker utenfor pakken.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkivet er pakket i PAX-tar-formatet, som ikke kan importeres. Pakk pakken i GNU-tar-formatet (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; har et fil- eller katalognavn lengre enn %length byte, som ingen filsystemer lagrer.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; har tar-typen &quot;%type&quot;, og en pakke inneholder bare filer og kataloger.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Lenken &quot;%path&quot; peker ut av pakken (%target) og ble ikke importert.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Lenken &quot;%path&quot; peker til &quot;%target&quot;, som pakken ikke inneholder, og ble ikke importert.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Lenken &quot;%path&quot; peker til katalogen &quot;%target&quot; og ble ikke importert.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Oppføringen &quot;%path&quot; er en enhet eller et navngitt rør (tar-type &quot;%type&quot;) og ble ikke importert.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Oppføringen &quot;%path&quot; har tar-typen &quot;%type&quot;, som en pakke ikke bruker, og ble ikke importert.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

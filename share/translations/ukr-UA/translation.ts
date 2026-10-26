@@ -57196,12 +57196,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Архів відхилено: запис «%path» вказує за межі пакета.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Архів запаковано у форматі PAX tar, який не можна імпортувати. Запакуйте пакет у форматі GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Архів відхилено: запис «%path» має назву файлу чи каталогу, довшу за %length байтів, якої не зберігає жодна файлова система.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Архів відхилено: запис «%path» має тип tar «%type», а пакет містить лише файли й каталоги.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Посилання «%path» вказує за межі пакета (%target) і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Посилання «%path» вказує на «%target», якого немає в пакеті, і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Посилання «%path» вказує на каталог «%target» і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Запис «%path» є пристроєм або іменованим каналом (тип tar «%type») і не був імпортований.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Запис «%path» має тип tar «%type», якого пакет не використовує, і не був імпортований.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

@@ -57199,12 +57199,28 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: &apos;aplo&apos; Hur &apos;agh Doch &quot;%path&quot;.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>PAX tar mIw lo&apos;lu&apos;pu&apos;; ghItlh ngaSwI&apos; lI&apos;laHbe&apos;lu&apos;. GNU tar mIw yIlo&apos; (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: %length bayt tIq law&apos; ghItlh pong tIq puS Doch &quot;%path&quot;; pong ngaSlaHbe&apos; pa&apos; pat.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: tar Segh &quot;%type&quot; ghaj Doch &quot;%path&quot;; ghItlhmey ghItlh pa&apos;mey je neH ngaS &apos;aplo&apos;.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>ngaS &apos;aplo&apos; Hur ghoS rar &quot;%path&quot; (%target); ghItlh lu&apos;elqangbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>&quot;%target&quot; ghoS rar &quot;%path&quot;, &apos;ach ngaSbe&apos; &apos;aplo&apos;; ghItlh lu&apos;elqangbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>pa&apos; &quot;%target&quot; ghoS rar &quot;%path&quot;; ghItlh lu&apos;elqangbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>jan ghap ngoD pong ghaj Doch &quot;%path&quot; (tar Segh &quot;%type&quot;); ghItlh lu&apos;elqangbe&apos;.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>tar Segh &quot;%type&quot; ghaj Doch &quot;%path&quot;, &apos;aplo&apos; lo&apos;be&apos;; ghItlh lu&apos;elqangbe&apos;.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

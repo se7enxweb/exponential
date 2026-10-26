@@ -161,14 +161,15 @@ Content-Security-Policy.
 **Import new package** on the list opens `/package/upload`. Choose an `.ezpkg`, `.tar.gz` or `.tgz` file and
 press **Import package**. Before anything is written, the archive is inspected:
 
-1. its name ends in an allowed suffix and the file starts with the gzip signature;
+1. its name ends in an allowed suffix and the file starts with the gzip signature (or is a plain tar archive);
 2. it is at most `MaxArchiveSize` bytes and has at most `MaxEntries` entries that unpack to at most
    `MaxUnpackedSize` bytes;
-3. its tar headers are of a kind the archive reader handles: a PAX archive is refused (pack it with
-   `tar --format=gnu`, or `tar --format=gnutar` with bsdtar, the tar of macOS), and so is a header type other
-   than a file, a directory or a GNU long name of at most 4096 bytes;
-4. every entry is a plain file or directory with a relative path: no `..`, no absolute path, no back slash, no
-   control character, no symbolic or hard link, no device or fifo;
+3. its tar headers can be read: the V7 archives of eZ Publish 3.x, the ustar and GNU archives of 4.x and 5.x and of
+   GNU tar, and PAX archives (bsdtar on macOS, GNU tar `--format=posix`) all import;
+4. every entry has a relative path: no `..`, no absolute path, no back slash, no control character. A hard or
+   symbolic link to a file of the package is imported as a copy of it; a link out of the package, to a directory
+   or to nothing, a device and a fifo are passed over with a notice (listed among the validation warnings), and the
+   rest of the package is imported;
 5. it has a `package.xml` at its top that is well formed, has `<package>` as its root and no document type, names a
    valid package (lower case letters, digits and `_`) and has its version and packaging information, and its vendor
    gives a repository name;

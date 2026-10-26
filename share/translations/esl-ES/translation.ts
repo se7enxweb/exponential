@@ -58333,12 +58333,28 @@ Tendrás que cambiar la clase del nudo mediante la función de intercambio.</tra
         <translation>Se ha rechazado el archivo comprimido: la entrada &quot;%path&quot; apunta fuera del paquete.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>El archivo comprimido se ha empaquetado en el formato tar PAX, que no se puede importar. Empaqueta el paquete en el formato tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Se ha rechazado el archivo comprimido: la entrada &quot;%path&quot; tiene un nombre de archivo o directorio de más de %length bytes, que ningún sistema de archivos almacena.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Se ha rechazado el archivo comprimido: la entrada &quot;%path&quot; tiene el tipo tar &quot;%type&quot;, y un paquete solo contiene archivos y directorios.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>El enlace &quot;%path&quot; apunta fuera del paquete (%target) y no se ha importado.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>El enlace &quot;%path&quot; apunta a &quot;%target&quot;, que el paquete no contiene, y no se ha importado.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>El enlace &quot;%path&quot; apunta al directorio &quot;%target&quot; y no se ha importado.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>La entrada &quot;%path&quot; es un dispositivo o una tubería con nombre (tipo tar &quot;%type&quot;) y no se ha importado.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>La entrada &quot;%path&quot; tiene el tipo tar &quot;%type&quot;, que un paquete no usa, y no se ha importado.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
