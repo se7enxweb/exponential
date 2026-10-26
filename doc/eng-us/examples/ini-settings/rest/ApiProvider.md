@@ -19,7 +19,10 @@ Never edit `settings/rest.ini` itself: an update replaces it. Put the settings y
 
 ## ProviderClass
 
-Default: a hash of 1: `auth=ezpRestAuthProvider`.
+> Context help of help maintained as content for clients with a token (an OAuth token or a personal API key with  
+> the scope help): /api/help/v1/topic/<help\_id>, /api/help/v1/manual/<remote\_id> (doc/eng-us/features/6.0/help-content.md)  
+
+Default: a hash of 2: `auth=ezpRestAuthProvider`, `help=expHelpRestProvider`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -28,6 +31,7 @@ Default: a hash of 1: `auth=ezpRestAuthProvider`.
 # an empty "ProviderClass[]" first replaces the shipped list; without it the items are added
 ProviderClass[]
 ProviderClass[auth]=ezpRestAuthProvider
+ProviderClass[help]=expHelpRestProvider
 */ ?>
 ```
 

@@ -16,7 +16,8 @@ The block `[ReauthGroup_account]` of `settings/site.ini`, with 2 setting(s).
 >   \*              every request, GET too (a page that downloads, or a form with a file upload)  
 >   Name           only a POST that carries this field (any of several names)  
 >   self, other    only when the account addressed is the user's own / another user's  
->                  (content/edit of a user object, user/password, user/setting)  
+>                  (content/edit of a user object, user/password, user/setting; the  
+>                  pending account of an approval item of "Approve user accounts")  
 >   credentials    only when the POST changes the login, e-mail or password of a user  
 >   !module/view   never asked for this view (an exception to a module/\* rule)  
 

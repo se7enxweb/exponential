@@ -14,8 +14,10 @@ Eine Ansicht des Moduls `exphelp`, definiert in `kernel/exphelp/module.php` und 
 ## Adresse
 
 ```text
-/exphelp/topic
+/exphelp/topic/(step)/<Step>/(helpful)/<Helpful>
 ```
+
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(step)` setzt `Step`, `(helpful)` setzt `Helpful`.
 
 ## Wer sie öffnen darf
 
@@ -37,6 +39,7 @@ Ein Link in einem Template (`ezurl` ergänzt den Siteaccess und setzt die Adress
 
 ```tpl
 <a href={'/exphelp/topic'|ezurl}>exphelp/topic</a>
+<a href={concat( '/exphelp/topic/(step)/', 1 )|ezurl}>exphelp/topic</a>
 ```
 
 Aus PHP die Weiterleitung, die eine Ansicht nach getaner Arbeit gibt:

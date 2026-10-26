@@ -28,7 +28,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/audit/dashboard.tpl` Zeile 39:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/audit/dashboard.tpl` Zeile 41:
 
 ```tpl
 <p class="a4-audit-sub">{'Signing key %id, fingerprint %fp'|i18n( 'design/admin/audit',, hash( '%id', $health.key.id, '%fp', $health.key.fingerprint ) )|wash}{if is_null( $health.key.age_days )|not}, {'%n days old'|i18n( 'design/admin/audit',, hash( '%n', $health.key.age_days ) )}{/if}</p>

@@ -32,7 +32,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |
 | [country.ini](country/README.md) | Kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | Kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | Kernel | 22 |
+| [cronjob.ini](cronjob/README.md) | Kernel | 23 |
 | [dashboard.ini](dashboard/README.md) | Kernel | 8 |
 | [datatable.ini](datatable/README.md) | Kernel | 3 |
 | [datatype.ini](datatype/README.md) | Kernel | 5 |
@@ -71,7 +71,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [rad.ini](rad/README.md) | Kernel | 4 |
 | [requestclassifier.ini](requestclassifier/README.md) | Kernel | 7 |
 | [requestrules.ini](requestrules/README.md) | Kernel | 4 |
-| [rest.ini](rest/README.md) | Kernel | 16 |
+| [rest.ini](rest/README.md) | Kernel | 17 |
 | [secrets.ini](secrets/README.md) | Kernel | 1 |
 | [setup.ini](setup/README.md) | Kernel | 24 |
 | [shop.ini](shop/README.md) | Kernel | 10 |

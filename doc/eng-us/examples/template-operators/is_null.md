@@ -28,7 +28,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/audit/dashboard.tpl` line 39:
+The first use in the templates of this installation, `design/admin/templates/audit/dashboard.tpl` line 41:
 
 ```tpl
 <p class="a4-audit-sub">{'Signing key %id, fingerprint %fp'|i18n( 'design/admin/audit',, hash( '%id', $health.key.id, '%fp', $health.key.fingerprint ) )|wash}{if is_null( $health.key.age_days )|not}, {'%n days old'|i18n( 'design/admin/audit',, hash( '%n', $health.key.age_days ) )}{/if}</p>

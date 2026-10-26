@@ -2,7 +2,7 @@
 title: Policies of the exphelp module
 audience: developer, admin
 category: examples
-summary: The policy functions of the exphelp module (2) and their limitations.
+summary: The policy functions of the exphelp module (3) and their limitations.
 keywords: exphelp, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -29,9 +29,27 @@ $role->appendPolicy( 'exphelp', 'context' );
 {/if}
 ```
 
+## feedback
+
+Checked by the views: [feedback](../module-views/exphelp/feedback.md).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'exphelp', 'feedback' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'feedback' ) )}
+    ...
+{/if}
+```
+
 ## read
 
-Checked by the views: [asset](../module-views/exphelp/asset.md), [audience](../module-views/exphelp/audience.md), [contents](../module-views/exphelp/contents.md), [dashboard](../module-views/exphelp/dashboard.md), [extensions](../module-views/exphelp/extensions.md), [image](../module-views/exphelp/image.md), [manual](../module-views/exphelp/manual.md), [pdf](../module-views/exphelp/pdf.md), [report](../module-views/exphelp/report.md), [search](../module-views/exphelp/search.md), [topic](../module-views/exphelp/topic.md), [viewer](../module-views/exphelp/viewer.md).
+Checked by the views: [asset](../module-views/exphelp/asset.md), [audience](../module-views/exphelp/audience.md), [contents](../module-views/exphelp/contents.md), [dashboard](../module-views/exphelp/dashboard.md), [extensions](../module-views/exphelp/extensions.md), [feedback](../module-views/exphelp/feedback.md), [image](../module-views/exphelp/image.md), [manual](../module-views/exphelp/manual.md), [pdf](../module-views/exphelp/pdf.md), [report](../module-views/exphelp/report.md), [search](../module-views/exphelp/search.md), [state](../module-views/exphelp/state.md), [topic](../module-views/exphelp/topic.md), [viewer](../module-views/exphelp/viewer.md).
 
 No limitations: the policy is all or nothing.
 

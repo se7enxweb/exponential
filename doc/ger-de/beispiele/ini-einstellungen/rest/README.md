@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # rest.ini
 
-Die ausgelieferten Einstellungen von `settings/rest.ini`: 16 Blöcke, 50 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/rest.ini`: 17 Blöcke, 51 Einstellungen.
 
 > Exponential-Konfigurationsdatei für Module  
 >
@@ -31,6 +31,7 @@ Die ausgelieferten Einstellungen von `settings/rest.ini`: 16 Blöcke, 50 Einstel
 | [ezpRestContentController_viewContent_OutputSettings](ezpRestContentController_viewContent_OutputSettings.md) | 1 |
 | [ezp7xRestContentController_viewContent_OutputSettings](ezp7xRestContentController_viewContent_OutputSettings.md) | 1 |
 | [CacheSettings](CacheSettings.md) | 5 |
+| [expHelpRestController_CacheSettings](expHelpRestController_CacheSettings.md) | 1 |
 | [Authentication](Authentication.md) | 4 |
 | [OAuthSettings](OAuthSettings.md) | 8 |
 | [CorsSettings](CorsSettings.md) | 7 |

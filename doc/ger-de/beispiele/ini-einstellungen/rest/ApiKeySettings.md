@@ -134,7 +134,7 @@ RateLimitPerMinute=120
 > Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,  
 > geprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage.  
 
-Standard: ein Hash mit 4: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`.
+Standard: ein Hash mit 5: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -146,12 +146,13 @@ Scopes[read]=content/read
 Scopes[publish]=content/create
 Scopes[edit]=content/edit
 Scopes[remove]=content/remove
+Scopes[help]=exphelp/context
 */ ?>
 ```
 
 ## ScopeNames
 
-Standard: ein Hash mit 4: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`.
+Standard: ein Hash mit 5: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -163,6 +164,7 @@ ScopeNames[read]=Read content
 ScopeNames[publish]=Create and publish content
 ScopeNames[edit]=Edit content
 ScopeNames[remove]=Remove content
+ScopeNames[help]=Read context help
 */ ?>
 ```
 
@@ -183,7 +185,7 @@ DefaultReadScope=read
 
 ## RouteScopes
 
-Standard: ein Hash mit 3: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`.
+Standard: ein Hash mit 5: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -194,6 +196,8 @@ RouteScopes[]
 RouteScopes[ezp7xRestContentController_CreateContentNode]=publish
 RouteScopes[ezp7xRestContentController_UpdateContentNode]=edit
 RouteScopes[ezp7xRestContentController_DeleteContentNode]=remove
+RouteScopes[expHelpRestController_topic]=help
+RouteScopes[expHelpRestController_manual]=help
 */ ?>
 ```
 

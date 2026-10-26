@@ -30,7 +30,7 @@ Built from the parameter list above; the values are placeholders (the operator's
 
 ## In a shipped template
 
-The first use in the templates of this installation, `design/admin/templates/audit/dashboard.tpl` line 116:
+The first use in the templates of this installation, `design/admin/templates/audit/dashboard.tpl` line 118:
 
 ```tpl
 <ul class="a4-audit-list">{foreach $activity.latest as $e}<li><span><span class="a4-audit-result {if $e.severity_number|le( 3 )}failed{else}refused{/if}">{$e.severity|wash}</span> <a href={concat( 'audit/event/', $e.id )|ezurl} title="{$e.name|wash}">{$e.label|wash}</a></span><span class="a4-audit-sub a4-audit-n">{$e.time|wash}</span></li>{/foreach}</ul>

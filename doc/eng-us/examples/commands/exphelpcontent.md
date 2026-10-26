@@ -24,7 +24,9 @@ php bin/php/exphelpcontent.php --help
 ```text
 Help maintained as content (topics, manuals, glossary in the content tree)
 
-./console exp:help:content install -s <admin siteaccess> [--dry-run]   classes, tree and roles (all three steps)
+./console exp:help:content install -s <admin siteaccess> [--dry-run]   tables, classes, tree and roles (all four steps)
+./console exp:help:content tables -s ...     the tables exphelp_help_id (released help_ids) and exphelp_feedback
+                                              ("Was this helpful?"), when an older installation lacks them
 ./console exp:help:content classes -s ...    the eight help_* classes in the class group Help (create_classes.php)
 ./console exp:help:content tree -s ...       sections, the state group help_status, the folder tree (create_tree.php)
 ./console exp:help:content roles -s ...      the roles Help editor, Help release and the Anonymous policy (create_roles.php)
@@ -35,11 +37,14 @@ Help maintained as content (topics, manuals, glossary in the content tree)
                                               the manuals of the Markdown help (exphelp.ini [ManualSettings]):
                                               made, updated and removed so they match the pages (help-gen-...)
 ./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state
-./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=]
-                                              an e-book of the Released topics of a manual (export_manual.php)
-./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]
+./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=] [--check]
+                                              an e-book of the Released topics of a manual (export_manual.php);
+                                              --check runs epubcheck and Ace by DAISY where the site has them
+./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run] [--commit]
                                               the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a
-                                              directory, checked after writing (also: export --format=dita)
+                                              directory, checked after writing (also: export --format=dita);
+                                              --commit records it in git (the cronjob part exphelp does it regularly)
+./console exp:help:content feedback -s ... [--prune] [--json]   the answers to "Was this helpful?" per topic
 ./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the
                                               Released manuals and store them as file objects under E-books
 ./console exp:help:content review -s ... [--json]   the topics whose review is overdue
@@ -62,7 +67,10 @@ Exit code: 0 fine, 1 check found an ERROR (or a step could not be done), 2 error
 | Option | Value | Help |
 |---|---|---|
 | `--dry-run` |  | Show what would change, change nothing |
-| `--fix` |  | check: set the section of each topic, figure, chapter and manual from the audience |
+| `--check` |  | export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails |
+| `--prune` |  | feedback: remove the answers older than [ContentSettings] FeedbackKeepDays |
+| `--commit` |  | dita: commit the written files when the directory is a git repository (the history of delivery path 4) |
+| `--fix` |  | check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics |
 | `--file` | required | seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json) |
 | `--update` |  | seed-*: also update existing objects that differ from the file |
 | `--release` |  | seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released |

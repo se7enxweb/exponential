@@ -17,6 +17,8 @@ Definiert in `kernel/exphelp/function_definition.php`. Ein mit * markierter Para
 | [context](context.md) | `module`, `view`, `design` |
 | [context_menu](context_menu.md) | `module`, `view`, `design` |
 | [license](license.md) | `id` |
+| [site_map](site_map.md) | `object_id`* |
+| [site_topic](site_topic.md) | `object_id`* |
 
 - [Alle Beispiele](../../README.md)
 

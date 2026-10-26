@@ -113,7 +113,7 @@ FallbackMode=first
 
 ## FallbackLanguages
 
-Standard: ein Hash mit 100: `ger-CH=ger-DE`, `ger-AT=ger-DE`, `eng-US=eng-GB`, `eng-CA=eng-GB`, `fre-CA=fre-FR`, `fre-BE=fre-FR`, `hin-IN=untranslated`, `hun-HU=untranslated`, `ind-ID=untranslated`, `kor-KR=untranslated`, `por-MZ=por-BR`, `por-PT=por-BR` ....
+Standard: ein Hash mit 101: `ger-CH=ger-DE`, `ger-AT=ger-DE`, `eng-US=eng-GB`, `eng-CA=eng-GB`, `fre-CA=fre-FR`, `fre-BE=fre-FR`, `hin-IN=untranslated`, `hun-HU=untranslated`, `ind-ID=untranslated`, `kor-KR=untranslated`, `por-MZ=por-PT`, `slk-SK=untranslated` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -131,8 +131,7 @@ FallbackLanguages[hin-IN]=untranslated
 FallbackLanguages[hun-HU]=untranslated
 FallbackLanguages[ind-ID]=untranslated
 FallbackLanguages[kor-KR]=untranslated
-FallbackLanguages[por-MZ]=por-BR
-FallbackLanguages[por-PT]=por-BR
+FallbackLanguages[por-MZ]=por-PT
 FallbackLanguages[slk-SK]=untranslated
 FallbackLanguages[tur-TR]=untranslated
 FallbackLanguages[ukr-UA]=untranslated
@@ -141,7 +140,8 @@ FallbackLanguages[fre-CH]=fre-FR
 FallbackLanguages[fre-CI]=fre-FR
 FallbackLanguages[fre-CM]=fre-FR
 FallbackLanguages[fre-MA]=fre-FR
-# ... 80 weitere in der ausgelieferten Datei
+FallbackLanguages[fre-SN]=fre-FR
+# ... 81 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

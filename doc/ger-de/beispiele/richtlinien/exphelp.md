@@ -2,7 +2,7 @@
 title: Richtlinien des Moduls exphelp
 audience: developer, admin
 category: examples
-summary: Die Richtlinienfunktionen des Moduls exphelp (2) und ihre Einschränkungen.
+summary: Die Richtlinienfunktionen des Moduls exphelp (3) und ihre Einschränkungen.
 keywords: Richtlinie, Richtlinien, Rolle, Einschränkung, Berechtigung, exphelp, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -29,9 +29,27 @@ $role->appendPolicy( 'exphelp', 'context' );
 {/if}
 ```
 
+## feedback
+
+Geprüft von den Ansichten: [feedback](../modulansichten/exphelp/feedback.md).
+
+Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
+
+```php
+// Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'exphelp', 'feedback' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'exphelp', 'function', 'feedback' ) )}
+    ...
+{/if}
+```
+
 ## read
 
-Geprüft von den Ansichten: [asset](../modulansichten/exphelp/asset.md), [audience](../modulansichten/exphelp/audience.md), [contents](../modulansichten/exphelp/contents.md), [dashboard](../modulansichten/exphelp/dashboard.md), [extensions](../modulansichten/exphelp/extensions.md), [image](../modulansichten/exphelp/image.md), [manual](../modulansichten/exphelp/manual.md), [pdf](../modulansichten/exphelp/pdf.md), [report](../modulansichten/exphelp/report.md), [search](../modulansichten/exphelp/search.md), [topic](../modulansichten/exphelp/topic.md), [viewer](../modulansichten/exphelp/viewer.md).
+Geprüft von den Ansichten: [asset](../modulansichten/exphelp/asset.md), [audience](../modulansichten/exphelp/audience.md), [contents](../modulansichten/exphelp/contents.md), [dashboard](../modulansichten/exphelp/dashboard.md), [extensions](../modulansichten/exphelp/extensions.md), [feedback](../modulansichten/exphelp/feedback.md), [image](../modulansichten/exphelp/image.md), [manual](../modulansichten/exphelp/manual.md), [pdf](../modulansichten/exphelp/pdf.md), [report](../modulansichten/exphelp/report.md), [search](../modulansichten/exphelp/search.md), [state](../modulansichten/exphelp/state.md), [topic](../modulansichten/exphelp/topic.md), [viewer](../modulansichten/exphelp/viewer.md).
 
 Keine Einschränkungen: Die Richtlinie gilt ganz oder gar nicht.
 

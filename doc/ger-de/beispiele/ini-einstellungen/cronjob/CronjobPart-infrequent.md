@@ -21,8 +21,10 @@ Bearbeiten Sie `settings/cronjob.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 > E-mail preferences retention (mailpreferences.ini \[ConsentSettings\], \[SuppressionSettings\])  
 > Signed-in sessions: expired ones end, ended ones go after site.ini \[UserSessionSettings\] RetentionDays  
+> Help maintained as content: old answers to "Was this helpful?" go after exphelp.ini \[ContentSettings\] FeedbackKeepDays,  
+> and with DitaHistoryDirectory set the DITA export of the help is recorded in git (doc/eng-us/features/6.0/help-content.md)  
 
-Standard: eine Liste mit 4: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`, `usersessions.php`.
+Standard: eine Liste mit 5: `basket_cleanup.php`, `linkcheck.php`, `mailpreferences.php`, `usersessions.php`, `exphelp.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -34,6 +36,7 @@ Scripts[]=basket_cleanup.php
 Scripts[]=linkcheck.php
 Scripts[]=mailpreferences.php
 Scripts[]=usersessions.php
+Scripts[]=exphelp.php
 */ ?>
 ```
 

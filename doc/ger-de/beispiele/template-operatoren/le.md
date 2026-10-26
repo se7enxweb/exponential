@@ -30,7 +30,7 @@ Aus der Parameterliste oben gebildet; die Werte sind Platzhalter (die Template-H
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/audit/dashboard.tpl` Zeile 116:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/audit/dashboard.tpl` Zeile 118:
 
 ```tpl
 <ul class="a4-audit-list">{foreach $activity.latest as $e}<li><span><span class="a4-audit-result {if $e.severity_number|le( 3 )}failed{else}refused{/if}">{$e.severity|wash}</span> <a href={concat( 'audit/event/', $e.id )|ezurl} title="{$e.name|wash}">{$e.label|wash}</a></span><span class="a4-audit-sub a4-audit-n">{$e.time|wash}</span></li>{/foreach}</ul>

@@ -24,7 +24,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [csp](csp.md) | (none: `csp/*`) |
 | [datatable](datatable.md) | `connections`, `manage`, `read`, `sync` |
 | [error](error.md) | (none: `error/*`) |
-| [exphelp](exphelp.md) | `context`, `read` |
+| [exphelp](exphelp.md) | `context`, `feedback`, `read` |
 | [expimageeditor](expimageeditor.md) | `edit` |
 | [ezinfo](ezinfo.md) | `read` |
 | [ezjscore](ezjscore.md) | `call`, `run` |

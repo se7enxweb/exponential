@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in exphelp.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von exphelp.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (1, am Namen erkannt).
+summary: Einstellungen von exphelp.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (2, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, exphelp.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -22,6 +22,18 @@ Ausgeliefert: eine Liste mit 1: `expHelpContentProvider`. [Die Einstellung](../i
 # extension/expexample/settings/exphelp.ini.append.php
 [ContextHelp]
 Providers[]=expExampleProvider    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
+*/ ?>
+```
+
+## ContentSettings BookChecks
+
+Ausgeliefert: `report`. [Die Einstellung](../ini-einstellungen/exphelp/ContentSettings.md#bookchecks).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/exphelp.ini.append.php
+[ContentSettings]
+BookChecks=report    # durch Ihre Klasse oder Ihren Wert ersetzen
 */ ?>
 ```
 

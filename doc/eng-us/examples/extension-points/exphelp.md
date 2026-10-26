@@ -2,7 +2,7 @@
 title: Extension points in exphelp.ini
 audience: developer, admin
 category: examples
-summary: Settings of exphelp.ini that list handlers, classes or directories an extension can add to (1, found by name).
+summary: Settings of exphelp.ini that list handlers, classes or directories an extension can add to (2, found by name).
 keywords: exphelp.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -22,6 +22,18 @@ Shipped: a list of 1: `expHelpContentProvider`. [The setting](../ini-settings/ex
 # extension/expexample/settings/exphelp.ini.append.php
 [ContextHelp]
 Providers[]=expExampleProvider    # your class or value, added to the list
+*/ ?>
+```
+
+## ContentSettings BookChecks
+
+Shipped: `report`. [The setting](../ini-settings/exphelp/ContentSettings.md#bookchecks).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/exphelp.ini.append.php
+[ContentSettings]
+BookChecks=report    # replace with your class or value
 */ ?>
 ```
 

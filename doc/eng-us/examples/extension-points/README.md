@@ -28,7 +28,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [datatable.ini](datatable.md) | kernel | 1 | IgnoreClasses |
 | [dbschema.ini](dbschema.md) | kernel | 1 | SchemaHandlerClasses |
 | [error.ini](error.md) | kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
-| [exphelp.ini](exphelp.md) | kernel | 1 | Providers |
+| [exphelp.ini](exphelp.md) | kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |
 | [file.ini](file.md) | kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
 | [image.ini](image.md) | kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |

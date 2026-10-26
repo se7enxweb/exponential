@@ -28,7 +28,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [datatable.ini](datatable.md) | Kernel | 1 | IgnoreClasses |
 | [dbschema.ini](dbschema.md) | Kernel | 1 | SchemaHandlerClasses |
 | [error.ini](error.md) | Kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
-| [exphelp.ini](exphelp.md) | Kernel | 1 | Providers |
+| [exphelp.ini](exphelp.md) | Kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | Kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |
 | [file.ini](file.md) | Kernel | 5 | Handler, SystemUserCheck, Handlers, FileHandler, Listener |
 | [image.ini](image.md) | Kernel | 15 | Filters, Filters, Filters, Filters, Filters, Filters ... |

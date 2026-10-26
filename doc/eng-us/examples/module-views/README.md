@@ -24,7 +24,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [csp](csp/README.md) | 1 | `kernel/csp/module.php` |
 | [datatable](datatable/README.md) | 9 | `kernel/datatable/module.php` |
 | [error](error/README.md) | 1 | `kernel/error/module.php` |
-| [exphelp](exphelp/README.md) | 13 | `kernel/exphelp/module.php` |
+| [exphelp](exphelp/README.md) | 15 | `kernel/exphelp/module.php` |
 | [expimageeditor](expimageeditor/README.md) | 1 | `extension/expimageeditor/modules/expimageeditor/module.php` |
 | [ezinfo](ezinfo/README.md) | 3 | `kernel/ezinfo/module.php` |
 | [ezjscore](ezjscore/README.md) | 3 | `extension/ezjscore/modules/ezjscore/module.php` |

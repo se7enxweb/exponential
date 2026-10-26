@@ -3,13 +3,13 @@ title: exphelp.ini [ContentSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [ContentSettings] in exphelp.ini: Enabled, CachePhpBinary, CacheSiteAccessList, ParentNode, Audiences, PublicAudiences, Platforms, Areas ..."
-keywords: exphelp.ini, ContentSettings, INI, setting, Enabled, CachePhpBinary, CacheSiteAccessList, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp, EbooksOnRelease, ReviewMaxDays, ReviewListLimit
+keywords: exphelp.ini, ContentSettings, INI, setting, Enabled, CachePhpBinary, CacheSiteAccessList, ParentNode, Audiences, PublicAudiences, Platforms, Areas, AudienceMap, ContextHelpIds, AnonymousContextHelp, EbooksOnRelease, ReviewMaxDays, ReviewListLimit, ReleaseByAuthor, SentenceWordsPublic, SentenceWordsTechnical, ParagraphSentencesPublic, PlainLanguageAudiences, ReviewMonths, ShortReviewMonths, ShortReviewAreas, Feedback, FeedbackKeepDays, AnonymousFeedback, EpubCheckCommand, AceCommand, BookChecks, DitaHistoryDirectory, DitaHistoryLogin
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [ContentSettings]
 
-The block `[ContentSettings]` of `settings/exphelp.ini`, with 14 setting(s).
+The block `[ContentSettings]` of `settings/exphelp.ini`, with 31 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -295,6 +295,246 @@ Default: `10`.
 # settings/override/exphelp.ini.append.php
 [ContentSettings]
 ReviewListLimit=10
+*/ ?>
+```
+
+## ReleaseByAuthor
+
+> The review workflow (Draft, Review, Released): the person who wrote a topic's current version does not release it,  
+> whatever their roles (the Object states tab, the content job and the help's buttons alike). enabled allows it, for a  
+> site with a single editor. The command line (seed-topics --release, build-manuals --release) is not limited.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ReleaseByAuthor=disabled
+*/ ?>
+```
+
+## SentenceWordsPublic
+
+> The style guide's plain language (section 3), checked as NOTICE by exp:help:content check and on the topic's page:  
+> words per sentence for the audiences of PlainLanguageAudiences\[\] and for the others, sentences per paragraph for the  
+> plain ones. 0 switches a check off. A site with readers who need shorter limits sets them here (15 and 3).  
+
+Default: `20`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+SentenceWordsPublic=20
+*/ ?>
+```
+
+## SentenceWordsTechnical
+
+Default: `25`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+SentenceWordsTechnical=25
+*/ ?>
+```
+
+## ParagraphSentencesPublic
+
+Default: `4`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ParagraphSentencesPublic=4
+*/ ?>
+```
+
+## PlainLanguageAudiences
+
+Default: a list of 2: `Visitors`, `Members`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+# an empty "PlainLanguageAudiences[]" first replaces the shipped list; without it the items are added
+PlainLanguageAudiences[]
+PlainLanguageAudiences[]=Visitors
+PlainLanguageAudiences[]=Members
+*/ ?>
+```
+
+## ReviewMonths
+
+> The longest a review date may be away (style guide section 8: release + 12 months; the areas of ShortReviewAreas\[\]  
+> + 6 months); a date further away is a WARNING (review-date.too-far). 0 switches it off.  
+
+Default: `12`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ReviewMonths=12
+*/ ?>
+```
+
+## ShortReviewMonths
+
+Default: `6`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+ShortReviewMonths=6
+*/ ?>
+```
+
+## ShortReviewAreas
+
+Default: a list of 2: `privacy`, `account`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+# an empty "ShortReviewAreas[]" first replaces the shipped list; without it the items are added
+ShortReviewAreas[]
+ShortReviewAreas[]=privacy
+ShortReviewAreas[]=account
+*/ ?>
+```
+
+## Feedback
+
+> "Was this helpful?" under each Released topic: yes, or no with a reason from a fixed list, counted per topic (table  
+> exphelp\_feedback). Nothing about who answered is kept: no user, no address, no free text; one answer per topic and  
+> session counts. Answers older than FeedbackKeepDays are removed by the cronjob part exphelp.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+Feedback=enabled
+*/ ?>
+```
+
+## FeedbackKeepDays
+
+Default: `730`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+FeedbackKeepDays=730
+*/ ?>
+```
+
+## AnonymousFeedback
+
+> enabled: the roles step of exp:help:content also gives Anonymous exphelp/feedback, for a site that shows its help  
+> publicly (the templates of the extension exphelpsite). Off by default.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+AnonymousFeedback=disabled
+*/ ?>
+```
+
+## EpubCheckCommand
+
+> The checks of an EPUB (epubcheck, Ace by DAISY) are not shipped; a site that has them names their commands. The  
+> EPUB file is added as the last argument; Ace gets --outdir <dir> --force first. Empty: the check is skipped.  
+> EpubCheckCommand=java -jar /opt/epubcheck/epubcheck.jar  
+> AceCommand=ace  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+EpubCheckCommand=
+*/ ?>
+```
+
+## AceCommand
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+AceCommand=
+*/ ?>
+```
+
+## BookChecks
+
+> report: run the configured checks and report them; required: an e-book that fails one is not stored; disabled  
+
+Default: `report`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+BookChecks=report
+*/ ?>
+```
+
+## DitaHistoryDirectory
+
+> The history of the help in git (delivery path 4): the cronjob part exphelp writes the DITA export of every manual  
+> into this directory (outside the web root) and commits what changed; the first run makes it a git repository. Empty:  
+> off. The export holds the Released objects that DitaHistoryLogin may read. DitaHistoryAuthor: "Name <mail>" of the  
+> commits, else the repository's git configuration.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+DitaHistoryDirectory=
+*/ ?>
+```
+
+## DitaHistoryLogin
+
+Default: `admin`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+DitaHistoryLogin=admin
+*/ ?>
+```
+
+## DitaHistoryAuthor
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[ContentSettings]
+DitaHistoryAuthor=
 */ ?>
 ```
 
