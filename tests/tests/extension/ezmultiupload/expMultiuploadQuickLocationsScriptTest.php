@@ -10,7 +10,8 @@
  *         exp-mu-location-id 51, the link "Media / Images", the change announced and remembered, the new target
  *         checked on the server; the current button again changes nothing
  *  QJ-03  a click on a site: Websites within, Media no longer, hidden field and link follow
- *  QJ-04  the classic page (ezmultiupload_upload.js on a jQuery-like stand-in for Exp.ready): the upload address,
+ *  QJ-04  the classic page (ezmultiupload_upload.js on a stand-in for Exp.upload, Exp.util and Exp.ready, without
+ *         jQuery on the page; a jQuery-like stand-in for the releases before 6.1.14): the upload address,
  *         the shown location, aria-pressed and within follow a click (also one on the button's inner span); a click
  *         during an upload changes nothing
  *

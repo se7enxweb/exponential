@@ -1,7 +1,8 @@
 // Runs the quick location buttons of ezmultiupload's upload page (ezmultiupload/quick_locations.tpl) against the
 // mini DOM (mini_dom.js): the new page of admin4, admin4l and adminui (expmultiupload.js, upload_body.tpl) and the
-// classic page (ezmultiupload_upload.js, design/standard ezmultiupload/upload.tpl, on a small jQuery-like stand-in
-// for Exp.ready). The service's check answers with the location asked about. Prints one line per check, "PASS ..."
+// classic page (ezmultiupload_upload.js, design/standard ezmultiupload/upload.tpl, on a stand-in for Exp.upload,
+// Exp.util and Exp.ready; plain JavaScript from 6.1.14 on, so no jQuery is on the page unless an older release asks
+// for it through Exp.ready's argument). The service's check answers with the location asked about. Prints one line per check, "PASS ..."
 // or "FAIL ...", and a last line "PASS" or "FAIL".
 // Usage: node multiupload_quick_locations.js [path to expmultiupload.js] [path to ezmultiupload_upload.js]
 // (by default the files of extension/ezmultiupload in the root this test lies in)
@@ -184,8 +185,34 @@ async function newPage() {
 
 // ---- the classic page (ezmultiupload_upload.js) -----------------------------------------------------------------
 
-// as much of jQuery as the classic script uses
-function jq(doc) {
+// an uploader as Exp.upload.create() (or $(el).expUpload()) sets one up: its options (the url is read when a file is
+// sent), enabled, enable(), disable(), cancel(), progress(); kept per element in uploads
+function makeUpload(uploads, el, options) {
+    if (!uploads.has(el)) {
+        uploads.set(el, { options: Object.assign({}, options), enabled: true, enable() { this.enabled = true; }, disable() { this.enabled = false; },
+                          cancel() {}, progress() { return { percent: 0 }; } });
+    }
+    return uploads.get(el);
+}
+
+// Exponential UI as much as the classic script uses: Exp.upload.create() and Exp.util (6.1.14 on, plain JavaScript)
+function expStandIn(doc, uploads, $) {
+    return {
+        // the callback of a release before 6.1.14 takes jQuery ($); the plain JavaScript one takes nothing and gets none
+        ready(fn) { if (fn.length) { fn($); } else { fn(); } },
+        reducedMotion: true,
+        upload: {
+            create(el, options) {
+                el = typeof el === 'string' ? doc.querySelector(el) : el;
+                return el ? makeUpload(uploads, el, options) : null;
+            },
+        },
+        util: { css() {}, animate() {}, stop() {} },
+    };
+}
+
+// as much of jQuery as the classic script of a release before 6.1.14 uses
+function jq(doc, uploads) {
     const data = new WeakMap();
     function Q(list) { this.length = list.length; list.forEach((e, i) => { this[i] = e; }); this.list = list; }
     function $(sel) {
@@ -218,8 +245,7 @@ function jq(doc) {
         },
         expUpload(options) {
             this.list.forEach((el) => {
-                const up = { options: Object.assign({}, options), enabled: true, enable() { this.enabled = true; }, disable() { this.enabled = false; },
-                             cancel() {}, progress() { return { percent: 0 }; } };
+                const up = makeUpload(uploads, el, options);
                 data.set(el, Object.assign(data.get(el) || {}, { expUpload: up }));
             });
             return this;
@@ -240,8 +266,10 @@ function classicPage() {
         + '<p id="multiuploadProgressMessage"></p><div id="multiuploadProgressBarOutline"><div id="multiuploadProgressBar"></div></div></div>'
         + '<div id="thumbnails"></div><p class="a4-sr-only" id="ezmultiupload-status" role="status" aria-live="polite"></p>');
     patch(doc);
-    const $ = jq(doc);
-    const sandbox = { document: doc, console, Exp: { ready(fn) { fn($); }, reducedMotion: true } };
+    const uploads = new Map();
+    const $ = jq(doc, uploads);
+    // no jQuery on the page: the script finds only Exponential UI (and jQuery through Exp.ready if it asks for it)
+    const sandbox = { document: doc, console, Exp: expStandIn(doc, uploads, $) };
     sandbox.window = sandbox;
     vm.createContext(sandbox);
     try {
@@ -250,7 +278,8 @@ function classicPage() {
         check('classic page: the script runs', false, String(e && e.stack));
         return;
     }
-    const up = $('#uploadButtonOverlay').data('expUpload');
+    const up = uploads.get(doc.getElementById('uploadButtonOverlay'));
+    check('classic page: one uploader, on the drop zone #uploadButtonOverlay', uploads.size === 1 && !!up, uploads.size);
     check('classic page: the uploader is set up on the configured address', !!up && up.options.url === '/ezmultiupload/upload/43', up && up.options.url);
     if (!up) { return; }
 
