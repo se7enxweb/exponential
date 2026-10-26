@@ -10740,7 +10740,7 @@ e92965e48cede364e728e349b97f172d  doc/eng-us/help/press/covering-a-release.md
 2e0cc3e43dd3df553830194dc4c4266d  doc/eng-us/help/press/covering-an-extension-release.md
 ff0a32e50419e10a6ecbed7c9d7c9854  doc/eng-us/help/press/covering-platform-releases.md
 9144d779e012e2311616eeb208c3c062  doc/eng-us/help/press/covering-security-fixes.md
-fa1054735de626a91b20ea7cab02df5d  doc/eng-us/help/press/covering-velocity-releases.md
+7dc805f14a64243e8875c0c54772d3a9  doc/eng-us/help/press/covering-velocity-releases.md
 5942508952791f198a67f324aef2ac2a  doc/eng-us/help/press/creator-checklist.md
 b85253934a80f6a93819709035a4a66f  doc/eng-us/help/press/creator-faq.md
 3d893c8a044916b4504532284c142f3a  doc/eng-us/help/press/creators-and-influencers-start-here.md
@@ -10751,7 +10751,7 @@ b6bf1615f972e17779e22b80ed5352e5  doc/eng-us/help/press/demo-script-exponential-
 ab321bc064eeaa1bb073d8604627d643  doc/eng-us/help/press/demo-script-five-minute-overview.md
 7df1d61c31adf4375aefe42983ccf94a  doc/eng-us/help/press/demo-script-install-from-zero.md
 c7c9d6c982dfa5d3f954c2b161df5e60  doc/eng-us/help/press/demo-script-layouts.md
-be95901b9a8ffc3f4e7a2f595bf9d58f  doc/eng-us/help/press/demo-script-velocity.md
+5f72ccef7a0dd9d952d14e93e141ea21  doc/eng-us/help/press/demo-script-velocity.md
 0229098e42e5e875ea956a81ee2c9faf  doc/eng-us/help/press/disclosure-and-sponsorship-ethics.md
 bef1104aced6962e4c83982257d8b0e2  doc/eng-us/help/press/earlier-press-releases-and-coverage.md
 561a2d22e003637966a5cc495c1462a4  doc/eng-us/help/press/embargoes-and-timing.md
@@ -18613,7 +18613,7 @@ e373ef6c0d67aae0b7e53d0237cd6636  doc/ger-de/hilfe/presse/demo-skript-exponentia
 b66cb08bf41c64f021fdb328378a702a  doc/ger-de/hilfe/presse/demo-skript-rundgang-fuer-administratoren.md
 7a4b38c3ec3ea3ec8fd8f16e76c27d0c  doc/ger-de/hilfe/presse/demo-skript-rundgang-fuer-redakteure.md
 e77f30cbfdaf11105434b0a1e4102a74  doc/ger-de/hilfe/presse/demo-skript-ueberblick-in-fuenf-minuten.md
-12f7344bcb0c15b6c21f666b38395ac9  doc/ger-de/hilfe/presse/demo-skript-velocity.md
+7e4701f270ec4ca19283a5554269145f  doc/ger-de/hilfe/presse/demo-skript-velocity.md
 a4a6413dac281b01242e8c1a9b42c0a0  doc/ger-de/hilfe/presse/die-6-0-x-releases-auf-einen-blick.md
 803bf7346d97049542654eb567284718  doc/ger-de/hilfe/presse/die-dokumentation-zitieren-und-wiederverwenden.md
 b8586ed88f6bdbc819ae69aaaea48a1c  doc/ger-de/hilfe/presse/die-foundation-fuer-reporter.md
@@ -18724,7 +18724,7 @@ fd9107cd1899bc3419b7d44b9b59acb6  doc/ger-de/hilfe/presse/ueber-6-0-15-in-entwic
 326074303d10058fcd2084cf147c706e  doc/ger-de/hilfe/presse/ueber-finanzierung-und-sponsoren-schreiben.md
 64e5ecdc571ae45437dffbce8b6e272d  doc/ger-de/hilfe/presse/ueber-platform-releases-berichten.md
 ffc46a3e5b33efb3aba7c2404f6b4204  doc/ger-de/hilfe/presse/ueber-sicherheitskorrekturen-berichten.md
-4d1d7bfbfd6ede8ae402201d54de40db  doc/ger-de/hilfe/presse/ueber-velocity-releases-berichten.md
+4c527633d117267fb3a55e28d9e8b65c  doc/ger-de/hilfe/presse/ueber-velocity-releases-berichten.md
 7877e894d409f18b32eb9f1ad32a9962  doc/ger-de/hilfe/presse/ueberschriften-was-geht-und-was-nicht.md
 a19f2e2aac7906e3b4639f43d0ca5892  doc/ger-de/hilfe/presse/untertitel-und-barrierefreie-videos.md
 8d58f0dbb4202ff210a27cffac1a9410  doc/ger-de/hilfe/presse/veroeffentlichte-versionen-aendern-sich-nie.md

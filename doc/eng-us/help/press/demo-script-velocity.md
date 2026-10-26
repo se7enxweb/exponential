@@ -36,8 +36,8 @@ php bin/php/console exp:velocity ext check                         # missing PHP
 php bin/php/console exp:velocity config set ServerSettings Engine qbix
 ```
 
-Read the version from the `require` block of the kernel's `composer.json`: on 25 October 2026 it was `~0.0.4.55`, while
-the README and the installation book show `~0.0.4.54`. The tilde accepts every later 0.0.4.x.
+Read the version from the `require` block of the kernel's `composer.json`: on 25 October 2026 it was `~0.0.4.55`, as
+the README and the installation book show. The tilde accepts every later 0.0.4.x.
 
 The shipped default engine is `php` (PHP's built-in server, for development only); `qbix` is the recommended engine
 and FrankenPHP the production-ready alternative. Shipped ports: `qbix` 8088 (HTTP) and 8080 (HTTPS), `frankenphp` 8089

@@ -37,7 +37,7 @@ php bin/php/console exp:velocity config set ServerSettings Engine qbix
 ```
 
 Lesen Sie die Version aus dem Block `require` der `composer.json` des Kernels ab: Am 25. Oktober 2026 war es
-`~0.0.4.55`, während die README und das Installationshandbuch `~0.0.4.54` zeigen. Die Tilde akzeptiert jedes spätere 0.0.4.x.
+`~0.0.4.55`, wie die README und das Installationshandbuch zeigen. Die Tilde akzeptiert jedes spätere 0.0.4.x.
 
 Die ausgelieferte Standard-Engine ist `php` (der eingebaute Server von PHP, nur für die Entwicklung); `qbix` ist die
 empfohlene Engine und FrankenPHP die produktionsreife Alternative. Ausgelieferte Ports: `qbix` 8088 (HTTP) und 8080
