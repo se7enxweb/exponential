@@ -10774,7 +10774,7 @@ e0031cdb871f84503f8a2a6e2bffe656  doc/eng-us/help/press/glossary-for-journalists
 59f76f1acc7a1a5574f73af59b90733f  doc/eng-us/help/press/if-you-find-a-vulnerability.md
 608f0f0483d2fbbe39b876e3827954cc  doc/eng-us/help/press/interview-question-bank.md
 752e6257d089f3e8162543053cd76c95  doc/eng-us/help/press/keeping-secrets-off-screen.md
-7529dc6ae9924b001fa4e99a5d8edeca  doc/eng-us/help/press/licenses-explained-for-reporters.md
+73e4a91519878d0015f3e45ef27d353f  doc/eng-us/help/press/licenses-explained-for-reporters.md
 fc4ca0a12aea735573d98286313b51e3  doc/eng-us/help/press/live-stream-guide.md
 c225b916196faa24f4b2518fa3d02e67  doc/eng-us/help/press/logos-and-brand-assets.md
 4cf86a512b0f9bf79ff3016ea02085bf  doc/eng-us/help/press/making-your-coverage-accessible.md
@@ -10873,7 +10873,7 @@ b5a203d8b33bbfd147b163fb93bef09c  doc/eng-us/help/press/verifying-quotes.md
 5f3ef805775bcdb3dce4e881dfabadf6  doc/eng-us/help/press/where-changelogs-and-release-notes-live.md
 39a89ecb2c389766fba8a2e64ca49f6c  doc/eng-us/help/press/where-the-facts-live-for-press.md
 c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponential.md
-fca3c7bbd07a4519ce91bf76e06541c7  doc/eng-us/help/press/writing-a-fair-review.md
+3c069937e31b170d3b20ad14322560c0  doc/eng-us/help/press/writing-a-fair-review.md
 0f29e522057b0fac13c4aa217a6291c0  doc/eng-us/help/press/writing-about-funding-and-sponsors.md
 cc2317ca4d3158c242fbfb8296c33c1d  doc/eng-us/help/press/writing-about-the-community.md
 3d1e47b6b2c52a73bbb582ae17937106  doc/eng-us/help/press/writing-about-the-ez-publish-years.md
@@ -10888,7 +10888,7 @@ cc2317ca4d3158c242fbfb8296c33c1d  doc/eng-us/help/press/writing-about-the-commun
 f6229d8d02e7f289999e42ec6567e9bc  doc/eng-us/help/project/faq.md
 41934db57b1ecbc2400e1854e3ada66e  doc/eng-us/help/project/getting-support.md
 1200d882566c888a6e20b01114ba8bb4  doc/eng-us/help/project/give-and-donate.md
-21f20175cb9d6fec6d97c0aa257abb6b  doc/eng-us/help/project/licensing-faq.md
+f59ae61774766313dd1b9935e9605a9c  doc/eng-us/help/project/licensing-faq.md
 b45f7db3afc468216730c3e5e8bcffec  doc/eng-us/help/project/roadmap.md
 50da3ae7b9a1de071a0189a761db8aa5  doc/eng-us/help/publishing-and-versions.md
 754b44ed76cc7e5ab984dd4faf3daa35  doc/eng-us/help/reading-help-in-other-languages.md
@@ -18642,7 +18642,7 @@ e5660c9791007cf20594182725eaa77b  doc/ger-de/hilfe/presse/ein-changelog-lesen.md
 98ab987827aa6179466adf7a66ce9324  doc/ger-de/hilfe/presse/ein-release-selbst-pruefen.md
 6ff4c87122d9086fe6949fcaccdd04ea  doc/ger-de/hilfe/presse/ein-video-oder-einen-beitrag-korrigieren.md
 fecdf6cb78bd671af2bf4632b5d33177  doc/ger-de/hilfe/presse/eine-demo-installation-einrichten.md
-dee2c83cac169d3fa28ff231e2c74c5f  doc/ger-de/hilfe/presse/eine-faire-rezension-schreiben.md
+a1c0cbab8bf2115f9aea82b4231e7608  doc/ger-de/hilfe/presse/eine-faire-rezension-schreiben.md
 2aae7ce2f435670eb82d8218cb40d840  doc/ger-de/hilfe/presse/exponential-in-kuerze.md
 6b70826e27546fb2846ca616d27323e1  doc/ger-de/hilfe/presse/exponential-in-zahlen.md
 6182a066c755b826f5d38bff05978ed0  doc/ger-de/hilfe/presse/faire-vergleiche.md
@@ -18665,7 +18665,7 @@ f7991f704e6bba5347f803d0e82e1225  doc/ger-de/hilfe/presse/kurzvideos.md
 b57d988762860154a70730aaf594713c  doc/ger-de/hilfe/presse/leitfaden-fuer-livestreams.md
 e0e42fd8cf576f6a6b38095e4ffc9a40  doc/ger-de/hilfe/presse/leitfaden-fuer-video-rundgaenge.md
 df38ea49003fc3c1da27eb8b0a72e0cb  doc/ger-de/hilfe/presse/lesepfad-fuer-die-presse.md
-799dbad37ca1291e2d69b45d5896f917  doc/ger-de/hilfe/presse/lizenzen-fuer-reporter-erklaert.md
+d027c1a5dbdd15d5fc3826fcd8f79122  doc/ger-de/hilfe/presse/lizenzen-fuer-reporter-erklaert.md
 dfb56720c1e43ae30dff18f3b0cc77e3  doc/ger-de/hilfe/presse/logos-und-markenmaterial.md
 89fc22c269723e657fefff2d9872c295  doc/ger-de/hilfe/presse/marke-und-namen-fuer-medien.md
 8a12e3008db494204cd85aeca6b780b3  doc/ger-de/hilfe/presse/mit-kommentaren-und-fragen-umgehen.md
@@ -18814,7 +18814,7 @@ a77a3eb970907ffb52d048db9af3b2b1  doc/ger-de/hilfe/privatpersonen/vereinsseiten/
 3d66aad19e958427806e3afae5cd0c39  doc/ger-de/hilfe/projekt/community-kanaele.md
 76ced160bc8406c9f0e9e95caf44fac2  doc/ger-de/hilfe/projekt/faq.md
 3d40985756abb05bf26f0b41eda2f46a  doc/ger-de/hilfe/projekt/geben-und-spenden.md
-ab8346975ba7956f26fe68dab16d2d5d  doc/ger-de/hilfe/projekt/lizenz-faq.md
+2f15345e033464652c69c2d127949898  doc/ger-de/hilfe/projekt/lizenz-faq.md
 97572b4dca4026adce48a2451cfedd31  doc/ger-de/hilfe/projekt/mit-exponential-bauen.md
 0578aec406fed8cc2628d06053292e19  doc/ger-de/hilfe/projekt/quellen-der-dokumentation.md
 fe8820676579d4c377024e2f470eeada  doc/ger-de/hilfe/projekt/roadmap.md

@@ -40,7 +40,9 @@ Anyone may use the software for any purpose, study and change its code, and pass
 copies. Whoever distributes the software or a changed version must pass on the same freedoms and the source code.
 Running it on your own server for your own site does not require publishing your changes under GPL v2. This is the
 license that let 7x carry the code forward after its original developer stopped
-([Story: open source and licenses](story-open-source-and-licenses.md)).
+([Story: open source and licenses](story-open-source-and-licenses.md)). What passing it on requires, how the license is
+broken in practice, and why not giving changes back to the project is not a violation:
+[License violations](../project/licensing-faq.md#license-violations).
 
 ## The GFDL in plain words
 

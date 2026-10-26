@@ -72,7 +72,7 @@ Ihre Methode ([Benchmarking](../../anleitungen/benchmarking.md)).
 | Freiheit beim Hosting | Datenbanken, Betriebssysteme | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Sicherheit | Zweistufige Anmeldung, Prüfprotokoll, Härtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Dokumentation | Antworten in der eingebauten Hilfe finden | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
-| Lizenz | GPL für den Code, GNU FDL für die Dokumentation | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
+| Lizenz | GPL für den Code, GNU FDL für die Dokumentation; was die Weitergabe verlangt | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen); [Lizenzverstöße](../projekt/lizenz-faq.md#lizenzverstöße) |
 | Support und Kontinuität | Was zugesagt ist, und von wem | [Die Zusage zur Unterstützung](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 
 ## Grenzen und Lücken, die einen Bericht wert sind
