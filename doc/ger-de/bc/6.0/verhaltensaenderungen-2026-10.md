@@ -121,6 +121,16 @@ ein solcher Aufruf als Klartext an den TLS-Port, den kein HTTPS-Server mit einer
 `php -m | grep curl` (und im PHP des Webservers), dass curl überall geladen ist, wo SOAP-Aufrufe über HTTPS gemacht
 werden. Aufrufe über HTTP sind unverändert. Siehe [SOAP-Aufrufe über HTTPS](../../funktionen/6.0/soap-client-tls.md).
 
+## Composer-Abhängigkeiten, Bildeditor und Tests (24. und 25. Oktober 2026)
+
+| Änderung | Wie prüfen | Was tun |
+|---|---|---|
+| `composer.json` verlangt `zetacomponents/authentication-database-tiein`, `zetacomponents/mvc-authentication-tiein` (beide `require`) und `zetacomponents/php-generator` (`require-dev`) nicht mehr. Kein Code des Kernels oder der Pakete, die er verlangt, verwendet sie. `zetacomponents/configuration` bleibt verlangt, solange 7x SQLI Import 2.0.x eine seiner Ausnahmen wirft; `se7enxweb/ezie` und `zetacomponents/image-conversion` bleiben ebenfalls verlangt. | `grep -rE 'ezc(AuthenticationDatabase\|MvcAuthentication\|PhpGenerator)' extension/ <Ihr Code>` | Eigener Code, der eine der drei verwendet, verlangt sie in der `composer.json` Ihres Projekts (`composer require zetacomponents/php-generator`); sonst entfernt das nächste `composer update` sie. |
+| Der Setup-Assistent und der Kickstarter aktivieren für eine neue Installation `expimageeditor`, wo sie `ezie` aktivierten. Bestehende Installationen behalten ihre `ActiveExtensions`; ezie bleibt installiert. | `ActiveExtensions[]` in `settings/override/site.ini.append.php` einer neuen Installation. | Nichts. Eine bestehende Site auf expimageeditor umstellen: `ActiveExtensions[]=expimageeditor` statt `ezie`, dann `php bin/php/addeditorpolicies.php --only=expimageeditor/edit` ([expimageeditor](../../funktionen/6.0/erweiterungen/expimageeditor.md)). |
+| Das Protokoll der Inhaltsjobs schreibt seine Zahlen mit Punkt, welche Locale `config.php` auch setzt („in 0.01 s, peak 30.0 MB“; unter einer deutschen Locale war es „0,01“). | Das Protokoll eines Jobs unter **Setup > Inhaltsjobs**. | Ein Skript, das die Form mit Komma las, liest den Punkt. |
+| Mit dem MySQLi-Cluster-Backend (`eZDFSFileHandlerMySQLiBackend`) unter PHP 8.1 und neuer wird auf eine Cache-Datei, die ein anderer Prozess erzeugt, wieder gewartet, statt sie ein zweites Mal zu erzeugen: `startCacheGeneration()` gibt die verbleibende Erzeugungszeit zurück, und eine abgelaufene Erzeugung wird übernommen. Ein fehlgeschlagenes `SELECT ... FOR UPDATE` am Ende einer Erzeugung rollt zurück und meldet den Fehler statt eines `TypeError`. | Sites im Cluster unter Last: weniger doppelte Erzeugungen desselben View-Caches. | Nichts. |
+| Die Tests der Gruppe `database` laufen auf Wegwerf-Datenbanken `exp_test_<pid>_<hex>` unter MySQL/MariaDB, und die Live-Tests verwenden `EXP_TEST_SITEACCESS` oder `DefaultAccess` (sie verwendeten `admin`). `tests/runtests.php --db-per-test --dsn=…` leert nur eine Datenbank mit `test`, `tests` oder `testdb` als Wort des Namens. | `vendor/bin/phpunit --group database` ohne ein Konto mit `CREATE` und `DROP` auf `exp\_test\_%` überspringt mit dem Grund. | Für die Testläufe: `EXP_TEST_DB_USER` und `EXP_TEST_DB_PASSWORD`, siehe [Testen](love/testen.md). |
+
 ## Verwandte Seiten
 
 - [Chronik vom Oktober 2026](../../geschichte/2026/2026-10.md)

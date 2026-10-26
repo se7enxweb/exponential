@@ -27,6 +27,11 @@ class ezpTestDatabaseHelper
      */
     public static function create( ezpDsn $dsn )
     {
+        // create() empties an existing database (for Oracle: the schema of the account); only a test database
+        $name = $dsn->parts['phptype'] === 'oracle' ? $dsn->user : $dsn->database;
+        if ( !self::isSetUpDatabaseName( $name ) )
+            throw new RuntimeException( "refusing to set up the database '" . $name . "' for tests: \"test\" is not a word of its name" );
+
         //oracle unit test doesn't support creating database, just use database string
         if ( $dsn->parts['phptype'] === 'oracle' )
         {
@@ -66,6 +71,21 @@ class ezpTestDatabaseHelper
     }
 
     /**
+     * Whether create() and clean() may empty the database $name: a plain identifier with "test", "tests" or
+     * "testdb" (optionally numbered) as one of its "_"-separated words, as the database jobs of CI name theirs
+     * (testdb) and as the throwaway databases are named (exp_test_<pid>_<random>). A substring is not enough: "test"
+     * is part of latest, contest or pkgtest, words the databases of real installations carry.
+     *
+     * @param mixed $name
+     * @return bool
+     */
+    public static function isSetUpDatabaseName( $name )
+    {
+        return is_string( $name ) && preg_match( '/^[A-Za-z0-9_]{1,64}$/D', $name ) === 1
+            && preg_match( '/(^|_)test(s|db)?[0-9]*(_|$)/iD', $name ) === 1;
+    }
+
+    /**
      * Removes everything inside a database
      *
      * @param eZDBInterface $db
@@ -73,6 +93,10 @@ class ezpTestDatabaseHelper
      */
     public static function clean( eZDBInterface $db )
     {
+        // removes every table; only in a test database
+        if ( !self::isSetUpDatabaseName( $db->DB ) )
+            throw new RuntimeException( "refusing to empty the database '" . $db->DB . "': \"test\" is not a word of its name" );
+
         $supportedRelationTypes = $db->supportedRelationTypes();
         foreach( $supportedRelationTypes as $type )
         {

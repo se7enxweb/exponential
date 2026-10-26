@@ -30,7 +30,7 @@ and the content classes of the shipped site packages. "Ships" means it is part o
 | Drafts, versions, scheduled publication | kernel; `README.md` "Main Exponential features" | [Publishing and versions](../publishing-and-versions.md) |
 | RSS 1.0, RSS 2.0, Atom, OPML and podcast feeds | kernel module `rss` | [RSS feeds for your blog](blogs/rss-feeds-for-your-blog.md) |
 | Image variations (thumbnails and sizes) | `settings/image.ini` | [Image variations for portfolios](portfolios/image-variations-for-portfolios.md) |
-| Image editor in the edit form | `se7enxweb/ezie` in `composer.json` | [Editing images with ezie](portfolios/editing-images-with-ezie.md) |
+| Image editor in the edit form | `expimageeditor` in the kernel repository (admin4); `se7enxweb/ezie` in `composer.json` (classic admin designs) | [expimageeditor](../../features/6.0/extensions/expimageeditor.md), [Editing images with ezie](portfolios/editing-images-with-ezie.md) |
 | Multi-file upload | `se7enxweb/ezmultiupload` | [Uploading many images](portfolios/uploading-many-images.md) |
 | Tags | `se7enxweb/eztags` | [Tags and categories](blogs/tags-and-categories.md) |
 | Star rating field | `se7enxweb/ezstarrating`; the *Gallery* and *Image* classes have a `rating` field | [ezstarrating](../../features/6.0/extensions/ezstarrating.md) |

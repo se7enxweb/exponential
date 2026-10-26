@@ -14,7 +14,7 @@ require_once __DIR__ . '/../eZDatatypeAbstract.php';
 class eZStringTypeTest extends eZDatatypeAbstract
 {
 
-    private function defaultDataSet()
+    protected function defaultDataSet()
     {
         $dataSet = new ezpDatatypeTestDataSet();
         $dataSet->fromString = 'this is a string';

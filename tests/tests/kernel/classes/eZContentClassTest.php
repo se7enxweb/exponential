@@ -15,6 +15,13 @@ class eZContentClassTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 
+    /** The INI values a test changed are put back here, also after a failed assertion */
+    public function tearDown(): void
+    {
+        ezpINIHelper::restoreINISettings();
+        parent::tearDown();
+    }
+
     /*public function __construct()
     {
         parent::__construct();
@@ -23,8 +30,8 @@ class eZContentClassTest extends ezpDatabaseTestCase
 
     /**
      * Unit test for eZContentClass::classIDByIdentifier()
-     * @dataProvider providerForTestClassIDByIdentifier
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestClassIDByIdentifier')]
     public function testClassIDByIdentifier( $sourceArray, $expectedArray )
     {
         $transformedClassArray = eZContentClass::classIDByIdentifier( $sourceArray );
@@ -45,8 +52,8 @@ class eZContentClassTest extends ezpDatabaseTestCase
 
     /**
      * Unit test for eZContentClass::versionHistoryLimit()
-     * @dataProvider providerForTestVersionHistoryLimit
      */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerForTestVersionHistoryLimit')]
     public function testVersionHistoryLimit( $INISettings, $class, $expectedLimit )
     {
         // change the INI limit settings
@@ -58,8 +65,6 @@ class eZContentClassTest extends ezpDatabaseTestCase
 
         $limit = eZContentClass::versionHistoryLimit( $class );
         $this->assertEquals( $expectedLimit, $limit );
-
-        ezpINIHelper::restoreINISettings();
     }
 
     /**
@@ -68,15 +73,15 @@ class eZContentClassTest extends ezpDatabaseTestCase
     public static function providerForTestVersionHistoryLimit()
     {
         return array(
-            // default limit with the article ID as string
+            // default limit with the article ID as string (the default of content.ini, whatever the site sets)
             array(
-                array(),
+                array( array( 'DefaultVersionHistoryLimit', 10 ), array( 'VersionHistoryClass', array() ) ),
                 'article', 10
             ),
 
             // custom default limit (15) with the article ID as INT
             array(
-                array( array( 'DefaultVersionHistoryLimit', 15 ) ),
+                array( array( 'DefaultVersionHistoryLimit', 15 ), array( 'VersionHistoryClass', array() ) ),
                 2, 15
             ),
 
@@ -88,7 +93,7 @@ class eZContentClassTest extends ezpDatabaseTestCase
 
             // error case, unknown class, should return the default limit
             array(
-                array(),
+                array( array( 'DefaultVersionHistoryLimit', 10 ) ),
                 'foobaredclassname', 10
             ),
 
@@ -123,8 +128,6 @@ class eZContentClassTest extends ezpDatabaseTestCase
 
         $limit = eZContentClass::versionHistoryLimit( $class );
         self::assertEquals( $expectedLimit, $limit );
-
-        ezpINIHelper::restoreINISettings();
     }
 }
 

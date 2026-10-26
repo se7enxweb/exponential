@@ -13,6 +13,13 @@
 
 class eZContentObjectStateGroupTest extends ezpDatabaseTestCase
 {
+    /** The locale of a language of the test database (the base data may not have eng-GB) */
+    private static function locale()
+    {
+        $languages = eZContentLanguage::fetchList();
+        return reset( $languages )->attribute( 'locale' );
+    }
+
     public static function providerCreateWithInvalidIdentifier()
     {
         return array(
@@ -21,14 +28,12 @@ class eZContentObjectStateGroupTest extends ezpDatabaseTestCase
         );
     }
 
-    /**
-     * @dataProvider providerCreateWithInvalidIdentifier
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithInvalidIdentifier')]
     public function testCreateWithInvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );
         $stateGroup = new eZContentObjectStateGroup( $row );
-        $trans = $stateGroup->translationByLocale( 'eng-GB' );
+        $trans = $stateGroup->translationByLocale( self::locale() );
         $trans->setAttribute( 'name', $identifier );
         $messages = array();
         $this->assertFalse( $stateGroup->isValid( $messages ), "Invalid state group identifier '$identifier' was accepted" );
@@ -42,14 +47,12 @@ class eZContentObjectStateGroupTest extends ezpDatabaseTestCase
         );
     }
 
-    /**
-     * @dataProvider providerCreateWithValidIdentifier
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('providerCreateWithValidIdentifier')]
     public function testCreateWithvalidIdentifier( $identifier )
     {
         $row = array( 'identifier' => $identifier );
         $stateGroup = new eZContentObjectStateGroup( $row );
-        $trans = $stateGroup->translationByLocale( 'eng-GB' );
+        $trans = $stateGroup->translationByLocale( self::locale() );
         $trans->setAttribute( 'name', $identifier );
         $messages = array();
         $this->assertTrue( $stateGroup->isValid( $messages ), "Valid state group identifier '$identifier' was refused, " . var_export( $messages, true ) );

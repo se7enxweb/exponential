@@ -120,7 +120,12 @@ class eZUserTypePasswordDraftLiveTest extends PHPUnit\Framework\TestCase
         $this->assertIsArray( $draft, 'the account details are kept in data_text' );
         $this->assertSame( $newHash, $draft['password_hash'] );
         $this->assertSame( $after->attribute( 'login' ), $draft['login'] );
-        $this->assertSame( json_decode( eZUserType::serializeDraft( $after ), true ), $draft );
+        // The hash type is a number in the draft (the operation writes it from the account in memory) and a string
+        // in the account read back from the database; unserializeDraft() takes either, so the type is not compared
+        $expected = json_decode( eZUserType::serializeDraft( $after ), true );
+        $expected['password_hash_type'] = (int)$expected['password_hash_type'];
+        $draft['password_hash_type'] = (int)$draft['password_hash_type'];
+        $this->assertSame( $expected, $draft );
     }
 
     /** PW-03 */

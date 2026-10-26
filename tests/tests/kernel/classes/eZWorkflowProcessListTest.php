@@ -19,10 +19,13 @@ class eZWorkflowProcessListTest extends ezpDatabaseTestCase
 {
     protected $backupGlobals = false;
 
+    /** The trigger content/publish/before; the base data may have it already, and only one may exist */
     private function storeTrigger()
     {
-        $trigger = eZTrigger::createNew( 'content', 'publish', 'b', 1 );
-        return $trigger;
+        $triggers = eZTrigger::fetchList( array( 'module' => 'content', 'function' => 'publish', 'connectType' => 'b' ) );
+        if ( $triggers )
+            return $triggers[0];
+        return eZTrigger::createNew( 'content', 'publish', 'b', 1 );
     }
 
     private function storeChildMemento( $key )

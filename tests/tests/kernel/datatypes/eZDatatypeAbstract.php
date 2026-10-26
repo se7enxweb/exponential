@@ -65,6 +65,15 @@ abstract class eZDatatypeAbstract extends ezpDatabaseTestCase
      */
     public function setUp(): void
     {
+        // The children set the datatype and their default data set in their constructor, which PHPUnit 10 made final
+        // and the migration removed: without them $this->datatype stayed null and every test failed with "Call to a
+        // member function initializeClassAttribute() on null". They come from the class name (eZStringTypeTest:
+        // ezstring) and the child's defaultDataSet() now.
+        if ( $this->datatype === null && preg_match( '/^eZ([A-Za-z0-9]+)TypeTest$/', static::class, $m ) )
+            $this->setDatatype( 'ez' . strtolower( $m[1] ) );
+        if ( !isset( $this->dataSets['default'] ) && method_exists( $this, 'defaultDataSet' ) )
+            $this->setDataSet( 'default', $this->defaultDataSet() );
+
         // create a content class with this datatype
         // @todo Add naming pattern handling
         parent::setUp();

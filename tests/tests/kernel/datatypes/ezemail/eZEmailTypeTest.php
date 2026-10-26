@@ -14,7 +14,7 @@ require_once __DIR__ . '/../eZDatatypeAbstract.php';
 class eZEmailTypeTest extends eZDatatypeAbstract
 {
 
-    private function defaultDataSet()
+    protected function defaultDataSet()
     {
         $dataSet = new ezpDatatypeTestDataSet();
         $dataSet->fromString = 'test.user@ez.no';

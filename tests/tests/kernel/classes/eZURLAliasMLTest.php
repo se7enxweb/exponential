@@ -24,8 +24,22 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
         $GLOBALS['eZTextCodecInternalCharsetReal'] = 'utf-8';
     }
 
+    /** @var eZContentLanguage|null eng-GB, when testChoosePrioritizedRow() had to add it */
+    private $addedLanguage = null;
+
     public function tearDown(): void
     {
+        // INI values, the prioritized languages and a language a test added are put back here, also after a
+        // failed assertion
+        ezpINIHelper::restoreINISettings();
+        eZContentLanguage::clearPrioritizedLanguages();
+        if ( $this->addedLanguage )
+        {
+            $languageID = (int)$this->addedLanguage->attribute( 'id' );
+            eZDB::instance()->query( "DELETE FROM ezurlalias_ml WHERE lang_mask = $languageID" );
+            eZContentLanguage::removeLanguage( $languageID );
+            $this->addedLanguage = null;
+        }
         $GLOBALS['eZTextCodecInternalCharsetReal'] = $this->charset;
         eZContentLanguage::removeLanguage( $this->language->ID );
         parent::tearDown();
@@ -81,6 +95,10 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
 
     public function testGetChildren()
     {
+        // Only the languages of SiteLanguageList count; with ShowUntranslatedObjects all languages would
+        ezpINIHelper::setINISetting( 'site.ini', 'RegionalSettings', 'ShowUntranslatedObjects', 'disabled' );
+        eZContentLanguage::clearPrioritizedLanguages();
+
         $action = "eznode:" . mt_rand();
 
         $parent = eZURLAliasML::create( __FUNCTION__ . "Parent", $action, 1, 2 );
@@ -192,7 +210,13 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
         $action = "eznode:" . mt_rand();
         $name = __FUNCTION__ . mt_rand();
         
+        // The base data may have neither language; nor-NO comes from setUp()
         $engGB = eZContentLanguage::fetchByLocale( 'eng-GB' );
+        if ( !$engGB )
+        {
+            $engGB = eZContentLanguage::addLanguage( 'eng-GB', 'English (United Kingdom)' );
+            $this->addedLanguage = $engGB;
+        }
         $norNO = eZContentLanguage::fetchByLocale( 'nor-NO' );
 
         // Create an english entry
@@ -237,10 +261,6 @@ class eZURLAliasMLTest extends ezpDatabaseTestCase
         self::assertEquals( $norNO->attribute( 'id' ), $row["lang_mask"] );
         // -------------------------------------------------------------------
 
-
-        // TEST TEAR DOWN ----------------------------------------------------
-        ezpINIHelper::restoreINISettings();
-        // -------------------------------------------------------------------
     }
 
     public function testActionToURL()

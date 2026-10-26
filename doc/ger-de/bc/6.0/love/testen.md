@@ -19,6 +19,16 @@ zurückgerollt wird, und werden übersprungen, wenn es keine Installation gibt:
 php vendor/bin/phpunit --group database tests/tests/kernel/content/eZAuditLocationTest.php
 ```
 
+Die Installation ist der Siteaccess aus `EXP_TEST_SITEACCESS`, sonst `DefaultAccess`. Tests schreiben nur in eine
+Datenbank, deren Name `test` als Wort enthält (`site_test`, nicht `latest`): Ist die Datenbank des Siteaccess keine
+solche, laufen sie auf einer Wegwerf-Datenbank `exp_test_*` (Kernel-Schema und saubere Daten), die am Ende gelöscht
+wird. Angelegt wird sie mit dem Konto aus `EXP_TEST_DB_USER`/`EXP_TEST_DB_PASSWORD` (Standard: die
+Datenbankeinstellungen des Siteaccess), das CREATE und DROP auf `exp\_test\_%` braucht. `EXP_TEST_KEEP_DATABASES=1`
+behält sie und listet sie in `var/log/test-databases.log`. Ohne ein solches Konto werden die Tests übersprungen, und die
+Meldung nennt den Siteaccess, die Datenbank und den Grund. Die Testklassen auf `ezpDatabaseTestCase` bekommen immer eine
+eigene Wegwerf-Datenbank. `tests/runtests.php --db-per-test --dsn=…` leert nur eine Datenbank mit `test`, `tests` oder
+`testdb` als Wort des Namens (`testdb`, nicht `expdemolatest`).
+
 Um nur die Tests der Dateien auszuführen, die eine Änderung berührt hat (statt der ganzen Suite), siehe
 [nur die Tests einer Änderung ausführen](../../../funktionen/6.0/qualitaetspruefungen.md#nur-die-tests-einer-änderung-ausführen):
 `tests/test-map.json` ordnet Quelldateien, Templates und Skripte den Tests zu, die sie abdecken.

@@ -460,7 +460,12 @@ class eZContentObjectTest extends ezpDatabaseTestCase
         {
             self::assertArrayHasKey( $key, $fetchedObject, "eZContentObject::fetchByNodeID() with \$asObject=false must return an array with '$key' key" );
         }
-        $this->assertEquals( 'eZ Publish', $fetchedObject['name'] );
+        // The name of the object at node 2 in the test database, not that of a particular data set
+        $rows = eZDB::instance()->arrayQuery(
+            "SELECT o.id, o.name FROM ezcontentobject o, ezcontentobject_tree t WHERE t.contentobject_id = o.id AND t.node_id = 2"
+        );
+        $this->assertEquals( $rows[0]['id'], $fetchedObject['id'] );
+        $this->assertEquals( $rows[0]['name'], $fetchedObject['name'] );
     }
 
     /**

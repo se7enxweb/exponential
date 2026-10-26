@@ -141,7 +141,7 @@ adapter is needed.
   `license`: `GPL-2.0-or-later` (an SPDX identifier).
 - `require` pins every `se7enxweb/*` extension with a tilde constraint (`~6.0.28`, `~1.4.43`, `~1.0.0.50`): the last
   position floats, the positions above it do not.
-- `require-dev`: `phpunit/phpunit` `^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4` and `zetacomponents/php-generator`.
+- `require-dev`: `phpunit/phpunit` `^9.6 || ^10.5 || ^11.5 || ^12.0 || ^13.4`, nothing else.
 - `extra.branch-alias`: `"dev-main": "6.0.x-dev"`, so packages that require `se7enxweb/exponential: ^6.0.14` can
   resolve against `main`. CI sets `COMPOSER_ROOT_VERSION=dev-main` for the same reason.
 - `config.allow-plugins` allows only the legacy installer plugins.
