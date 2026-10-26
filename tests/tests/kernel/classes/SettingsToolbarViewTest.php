@@ -1,11 +1,13 @@
 <?php
 /**
- * setup/settingstoolbar, the view behind the administration's Quick settings:
- *  - opened by its address (no form posted) it shows the quick settings on a page of their own instead of running its
- *    save on nothing (a fatal error on PHP 8: foreach over null);
- *  - after a save it rebuilds the INI cache, so the setting takes effect on the next request also where
- *    EZP_INI_FILEMTIME_CHECK is false (alpha, the demo sites), where it seemed to be forgotten;
- *  - the form of every design can come back to the page (RedirectURI).
+ * setup/settingstoolbar, the view behind the administration's Quick settings. Every request ends in a page or a
+ * redirect, never in an error, whatever it sends:
+ *  - opened by its address (no form) it shows the quick settings on a page of their own;
+ *  - a form may switch only the settings of site.ini [DebugSettings] QuickSettingsList[], and only in settings/override
+ *    or the settings of a siteaccess the installation has: no other setting, no other file, no path in the siteaccess;
+ *  - values of the wrong type (a string for a list, a list for a string, entries without ";") are left out;
+ *  - Set goes back only to a path inside the site;
+ *  - after a save the INI cache is rebuilt, so the setting takes effect where EZP_INI_FILEMTIME_CHECK is false.
  *
  * Run: php vendor/bin/phpunit tests/tests/kernel/classes/SettingsToolbarViewTest.php
  *
@@ -14,33 +16,97 @@
  * @package tests
  */
 
+require_once dirname( __DIR__, 4 ) . '/kernel/private/classes/runnable/moduleview.php';
+require_once dirname( __DIR__, 4 ) . '/kernel/private/classes/views/setup/settingstoolbar.php';
+
+use Exponential\View\Kernel\Setup\Settingstoolbar;
+
 class SettingsToolbarViewTest extends PHPUnit\Framework\TestCase
 {
+    const QUICK = array( '', 'DebugSettings;DebugOutput;site.ini;Debug output', 'TemplateSettings;Debug;site.ini;Template debug',
+                         'DatabaseSettings;SQLOutput;site.ini;SQL debug output', 'broken', 'X;Y;../../etc/passwd.ini;Z' );
+
     private static function read( $path )
     {
         return file_get_contents( dirname( __DIR__, 4 ) . '/' . $path );
     }
 
-    public function testWithoutAFormTheViewShowsAPage()
+    private static function parse( $all, $selected, $siteAccess )
     {
-        $view = self::read( 'kernel/private/classes/views/setup/settingstoolbar.php' );
-        $guard = strpos( $view, "\$allSettingsList = \$module->isCurrentAction( 'Set' ) ? \$module->actionParameter( 'AllSettingsList' ) : null;" );
-        $this->assertNotFalse( $guard, 'the list is read only for the Set action' );
-        $page = strpos( $view, 'if ( !is_array( $allSettingsList ) )', $guard );
-        $this->assertNotFalse( $page );
-        $this->assertLessThan( strpos( $view, 'foreach( $allSettingsList' ), $page, 'the page is returned before the list is walked' );
-        $this->assertStringContainsString( "\$tpl->fetch( 'design:setup/settingstoolbar.tpl' )", $view );
-        $tpl = self::read( 'design/standard/templates/setup/settingstoolbar.tpl' );
-        $this->assertStringContainsString( "{include uri='design:setup/quick_settings.tpl'", $tpl );
+        return Settingstoolbar::parseRequest( $all, $selected, $siteAccess, Settingstoolbar::allowedSettings( self::QUICK ), array( 'admin', 'site' ) );
     }
 
-    public function testASaveRebuildsTheIniCacheBeforeRedirecting()
+    public function testOnlyWellFormedQuickSettingsAreAllowed()
+    {
+        $this->assertSame( array( 'DebugSettings;DebugOutput;site.ini', 'TemplateSettings;Debug;site.ini', 'DatabaseSettings;SQLOutput;site.ini' ),
+                           array_keys( Settingstoolbar::allowedSettings( self::QUICK ) ) );
+        $this->assertSame( array(), Settingstoolbar::allowedSettings( 'not a list' ) );
+    }
+
+    public function testTheSidebarFormIsTakenAsItIs()
+    {
+        $r = self::parse( array( 'DebugSettings;DebugOutput;site.ini', 'TemplateSettings;Debug;site.ini' ), array( '0' ), 'global_override' );
+        $this->assertSame( array(), $r['problems'] );
+        $this->assertSame( 'global_override', $r['siteaccess'] );
+        $this->assertSame( array( 'site' => array( array( 'DebugSettings', 'DebugOutput', true ), array( 'TemplateSettings', 'Debug', false ) ) ), $r['settings'] );
+        $r = self::parse( array( 'DebugSettings;DebugOutput;site.ini' ), array(), 'admin' );
+        $this->assertSame( 'admin', $r['siteaccess'] );
+        $this->assertSame( array( array( 'DebugSettings', 'DebugOutput', false ) ), $r['settings']['site'] );
+    }
+
+    public static function badForms()
+    {
+        return array(
+            'no list'                 => array( null, array(), '', array( 'no-form' ) ),
+            'a string for the list'   => array( 'DebugSettings;DebugOutput;site.ini', array(), '', array( 'no-form' ) ),
+            'an empty list'           => array( array(), array(), '', array( 'no-form' ) ),
+            'a path as siteaccess'    => array( array( 'DebugSettings;DebugOutput;site.ini' ), array( '0' ), '../../var', array( 'siteaccess' ) ),
+            'an unknown siteaccess'   => array( array( 'DebugSettings;DebugOutput;site.ini' ), array( '0' ), 'nosuchsite', array( 'siteaccess' ) ),
+            'a list as siteaccess'    => array( array( 'DebugSettings;DebugOutput;site.ini' ), array( '0' ), array( 'admin' ), array() ),
+            'another setting'         => array( array( 'DatabaseSettings;Password;site.ini' ), array( '0' ), '', array( 'setting' ) ),
+            'another file'            => array( array( 'DebugSettings;DebugOutput;../../config.ini' ), array(), '', array( 'setting' ) ),
+            'an entry without ;'      => array( array( 'garbage' ), array(), '', array( 'setting' ) ),
+            'a list as an entry'      => array( array( array( 'x' ) ), array(), '', array( 'setting' ) ),
+        );
+    }
+
+    /**
+     * @dataProvider badForms
+     */
+    #[PHPUnit\Framework\Attributes\DataProvider( 'badForms' )]
+    public function testABadFormChangesNothingAndNeverFails( $all, $selected, $siteAccess, array $problems )
+    {
+        $r = self::parse( $all, $selected, $siteAccess );
+        $this->assertSame( $problems, $r['problems'] );
+        if ( $problems )
+            $this->assertSame( array(), $r['settings'], 'nothing is written' );
+        $this->assertContains( $r['siteaccess'], array( 'global_override', 'admin', 'site' ) );
+    }
+
+    public function testAMixedFormKeepsOnlyTheQuickSettings()
+    {
+        $r = self::parse( array( 'DatabaseSettings;Password;site.ini', 'DebugSettings;DebugOutput;site.ini' ), array( '1', 'x', array() ), '' );
+        $this->assertSame( array( 'setting' ), $r['problems'] );
+        $this->assertSame( array( 'site' => array( array( 'DebugSettings', 'DebugOutput', true ) ) ), $r['settings'] );
+    }
+
+    public function testSetGoesBackOnlyInsideTheSite()
+    {
+        $this->assertSame( '/setup/settingstoolbar', Settingstoolbar::redirectTarget( '/setup/settingstoolbar', '/x' ) );
+        $this->assertSame( '/content/dashboard', Settingstoolbar::redirectTarget( 'https://evil.example/', '/content/dashboard' ) );
+        $this->assertSame( '/content/dashboard', Settingstoolbar::redirectTarget( '//evil.example/', '/content/dashboard' ) );
+        $this->assertSame( '/', Settingstoolbar::redirectTarget( array( 'x' ), "/a\r\nLocation: x" ) );
+    }
+
+    public function testTheViewRoutesEveryRequestToAPageOrASave()
     {
         $view = self::read( 'kernel/private/classes/views/setup/settingstoolbar.php' );
+        $this->assertStringContainsString( "if ( !\$module->isCurrentAction( 'Set' ) )\n            return \$this->viewResult( \$this->page(), null );", $view );
+        $this->assertStringContainsString( "if ( !\$request['settings'] )\n            return \$this->viewResult( \$this->page( \$request['problems'] ), null );", $view );
         $clear = strpos( $view, "\\eZCache::clearByTag( 'ini' );" );
         $this->assertNotFalse( $clear, 'the INI cache is rebuilt after a save' );
-        $this->assertGreaterThan( strrpos( $view, '$ini->save()' ), $clear, 'after the files are saved' );
-        $this->assertLessThan( strpos( $view, '$module->redirectTo( $uri );' ), $clear, 'before the redirect' );
+        $this->assertGreaterThan( strrpos( $view, '$ini->save()' ), $clear );
+        $this->assertStringContainsString( "{include uri='design:setup/quick_settings.tpl'", self::read( 'design/standard/templates/setup/settingstoolbar.tpl' ) );
     }
 
     public function testEveryFormCanComeBackToThePage()
