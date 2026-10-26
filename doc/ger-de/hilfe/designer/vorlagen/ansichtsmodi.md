@@ -14,7 +14,7 @@ Diese Seite ist für Designer, die die Templates eines Designs planen. Derselbe 
 einer Liste, als Teaser in einem Block, als Einbettung in einem anderen Text. Jedes davon ist ein **Ansichtsmodus**, und jeder hat
 sein eigenes Template.
 
-![Der Reiter Ansicht eines Artikels in der Administration, seine Vollansicht von den Templates des Administrationsdesigns gezeichnet](../../../../eng-us/help/images/designers/admin-full-view.webp)
+![Der Reiter Ansicht eines Artikels in der Administration, seine Vollansicht von den Templates des Administrationsdesigns gezeichnet](../../bilder/designers/admin-full-view.webp)
 
 ## Inhalt
 

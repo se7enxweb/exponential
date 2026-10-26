@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Projektleitungen, die eine Insta
 zum Beispiel ein nationales Portal oder viele Websites, die sich eine Installation teilen. Die Fakten stammen aus
 [Sprachen in Exponential, Abschnitt 11](../../../sprachen.md#11-die-grenze-von-62-inhaltssprachen).
 
-![Der Zähler der Inhaltssprachen: wie viele genutzt werden und wie viele noch hinzugefügt werden können](../../../../eng-us/help/images/government/gov-languages-limit.webp)
+![Der Zähler der Inhaltssprachen: wie viele genutzt werden und wie viele noch hinzugefügt werden können](../../bilder/government/gov-languages-limit.webp)
 
 ## Inhalt
 

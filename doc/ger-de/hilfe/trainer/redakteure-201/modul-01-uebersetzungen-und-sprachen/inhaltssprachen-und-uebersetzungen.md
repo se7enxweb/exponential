@@ -109,7 +109,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Editor-Schulungskonto.
   vorbereitet).
 - Der Trainer prüft das, indem er eine Person bittet, die beiden Arten von Kennzeichen zu erklären.
 
-![Der Tab Übersetzungen eines Artikels: seine Sprachen, die Hauptsprache und Immer verfügbar](../../../../../eng-us/help/images/trainers/e201-translations-tab.webp)
+![Der Tab Übersetzungen eines Artikels: seine Sprachen, die Hauptsprache und Immer verfügbar](../../../bilder/trainers/e201-translations-tab.webp)
 
 ## Quiz
 

@@ -14,7 +14,7 @@ Botschaft, die jeden Schnitt Ihres Videos überstehen muss: **Er schreibt nur En
 und mit dessen Rechten, und veröffentlicht nie von sich aus (`README.md`, „Exponential Intelligence“;
 [Exponential Intelligence](../../funktionen/6.0/erweiterungen/expai.md)).
 
-Es ist die Erweiterung `se7enxweb/expai`, Release 0.0.1.0, die seit 6.0.15 in `composer.json` verlangt wird, das in
+Es ist die Erweiterung `se7enxweb/expai`, die seit 6.0.15 in `composer.json` verlangt wird (am 25. Oktober 2026 in `~0.0.1.18`), das in
 Entwicklung ist. Sagen Sie das: „die Entwicklungslinie 6.0.15“ oder die Version, die Sie wirklich verwenden. Das Skript
 dauert etwa sechs Minuten; die Einrichtung geschieht **außerhalb der Kamera**.
 

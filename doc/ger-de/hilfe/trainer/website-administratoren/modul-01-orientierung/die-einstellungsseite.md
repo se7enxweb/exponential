@@ -117,7 +117,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Die öffentliche Website zeigt nach Schritt 9 den neuen Namen und nach Schritt 12 den früheren Namen.
 - Der Trainer prüft das, indem er die Teilnehmenden fragt, woher `SiteName` vor und nach Schritt 9 stammt.
 
-![Die Einstellungsseite: einen Siteaccess und eine INI-Datei wählen, um deren Einstellungen zu lesen](../../../../../eng-us/help/images/trainers/sa-settings-page.webp)
+![Die Einstellungsseite: einen Siteaccess und eine INI-Datei wählen, um deren Einstellungen zu lesen](../../../bilder/trainers/sa-settings-page.webp)
 
 ## Quiz
 

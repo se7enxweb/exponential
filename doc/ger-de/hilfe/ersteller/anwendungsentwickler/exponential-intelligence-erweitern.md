@@ -14,7 +14,7 @@ Ihrer eigenen Erweiterung hinzugefügt, über Einstellungen und kleine Klassen. 
 deren Beispiele für expai 0.0.1.0 ausgeführt wurden; die Beispielerweiterung liegt in
 `extension/expai/doc/examples/expaiexample`.
 
-![Exponential Intelligence, Modelle: die Modelle, die jeder Anbieter bereitstellt, welches der Standard ist und was jedes tun darf](../../../../eng-us/help/images/creators/ai-models.webp)
+![Exponential Intelligence, Modelle: die Modelle, die jeder Anbieter bereitstellt, welches der Standard ist und was jedes tun darf](../../bilder/creators/ai-models.webp)
 
 ## Inhalt
 

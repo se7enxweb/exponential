@@ -124,7 +124,7 @@ Sie die Adresse durch Ihre eigene.
 - Der Trainer prüft **Letzte Änderungen** auf der Seite einer Person: zwei Wartungsfenster, jedes ein- und
   ausgeschaltet.
 
-![Setup, Wartung: ein Wartungsfenster planen und starten](../../../../../eng-us/help/images/trainers/sa-maintenance.webp)
+![Setup, Wartung: ein Wartungsfenster planen und starten](../../../bilder/trainers/sa-maintenance.webp)
 
 ## Quiz
 

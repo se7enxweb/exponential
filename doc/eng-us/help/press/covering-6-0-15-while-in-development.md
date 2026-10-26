@@ -45,7 +45,7 @@ Layouts, Exponential Intelligence, the help system and much more". The history a
 | July 2026 | "The command line grew up": `ezpm` in the console, the Kickstarter, a password reset tool | [July 2026](../../history/2026/2026-07.md) |
 | August 2026 | Template debugging, six security patches, tests on every change | [August 2026](../../history/2026/2026-08.md) |
 | September 2026 | Paged long lists, Velocity (from 22 September), a one-command install, a hardening sweep | [First half](../../history/2026/2026-09a.md), [second half](../../history/2026/2026-09b.md) |
-| October 2026 | "jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8" | [October 2026](../../history/2026/2026-10.md) |
+| October 2026 | jQuery 4 and admin4, an audit trail, `exp:ini`, a debug bar, content jobs and TinyMCE 8 | [October 2026](../../history/2026/2026-10.md) |
 
 Exponential Intelligence and the job queue arrive in the distribution "inactive" and are switched on by the site
 owner ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#12-october-2026-exponential-intelligence-in-the-distribution)).

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren, die eine Sprache hinzufügen, in de
 zum Beispiel eine zweite Amtssprache. Die Schritte und Meldungen stammen aus
 [Inhaltssprachen, Abschnitt 4](../../../anleitungen/inhaltssprachen.md#4-eine-sprache-hinzufügen).
 
-![Inhaltssprachen: die Sprachen, in denen Inhalte geschrieben werden können, mit „Sprache hinzufügen“](../../../../eng-us/help/images/government/gov-add-language.webp)
+![Inhaltssprachen: die Sprachen, in denen Inhalte geschrieben werden können, mit „Sprache hinzufügen“](../../bilder/government/gov-add-language.webp)
 
 ## Inhalt
 

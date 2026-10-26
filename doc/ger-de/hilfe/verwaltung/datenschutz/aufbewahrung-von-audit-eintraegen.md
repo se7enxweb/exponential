@@ -14,7 +14,7 @@ dienen der Rechenschaft und der Sicherheit, und sie enthalten personenbezogene D
 Abwägung, die Ihre Organisation trifft. Exponential entfernt sie automatisch nach Einstellungen pro Kanal
 ([4.3 Aufbewahrung](../../../bc/6.0/audit.md#43-aufbewahrung)).
 
-![Die Audit-Einstellungen: Index, pseudonymisiert nach und im Index aufbewahrt, Schlüssel, Senken und Archivformate](../../../../eng-us/help/images/government/gov-audit-settings.webp)
+![Die Audit-Einstellungen: Index, pseudonymisiert nach und im Index aufbewahrt, Schlüssel, Senken und Archivformate](../../bilder/government/gov-audit-settings.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

@@ -42,7 +42,7 @@ Zugangsdaten; wählen Sie danach, für wen das Programm handelt.
 4. Sie sendet `Authorization: OAuth <token>`; nach `TokenTTL` (standardmäßig eine Stunde) verwendet sie
    `grant_type=refresh_token`.
 
-![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../../../eng-us/help/images/creators/oauth-admin.webp)
+![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../bilder/creators/oauth-admin.webp)
 
 Das Client-Geheimnis gehört auf einen Server. Eine App, die kein Geheimnis bewahren kann (eine mobile oder
 Browser-App), ist ein öffentlicher Client: Sie wird ohne Geheimnis gespeichert, sendet keines und muss PKCE mit

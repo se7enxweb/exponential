@@ -58,7 +58,7 @@ Category=listing
 | components | hero, about, features, logos, quote, lead und die Blöcke `exp_component_*` |
 | placeholders | tpl_block (ein Template-Teil der Seite), full_view (der eigene Inhalt der Seite) |
 
-![Layouts, Komponenten: die Layouttypen, Zonen und Blockdefinitionen, die die Installation anbietet](../../../../eng-us/help/images/layouts/layout-components.webp)
+![Layouts, Komponenten: die Layouttypen, Zonen und Blockdefinitionen, die die Installation anbietet](../../bilder/layouts/layout-components.webp)
 
 Die genaue Liste und die Kategorien stehen in der INI-Datei; `doc/eng-us/bc/6.0/LAYOUTS.md` hat einen Blockkatalog mit Parametern.
 

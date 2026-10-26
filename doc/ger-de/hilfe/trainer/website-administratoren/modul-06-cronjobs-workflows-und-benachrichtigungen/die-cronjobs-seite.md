@@ -126,7 +126,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator in der Admini
 - Der Trainer prüft das, indem er den Abschnitt **Pausen** einer Teilnehmerin oder eines Teilnehmers am Beamer
   öffnet: Er zeigt das Anhalten und das Fortsetzen mit der Notiz.
 
-![Die Cronjob-Seite: jeder Teil mit seinen Skripten, dem letzten Lauf und Jetzt starten oder Anhalten](../../../../../eng-us/help/images/trainers/sa-cronjobs.webp)
+![Die Cronjob-Seite: jeder Teil mit seinen Skripten, dem letzten Lauf und Jetzt starten oder Anhalten](../../../bilder/trainers/sa-cronjobs.webp)
 
 ## Quiz
 

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Anwendungsentwickler, die Inhaltsklassen oder Starti
 oder sie zwischen Entwicklung und Produktion übertragen. Ein **Paket** ist ein Verzeichnis mit einer `package.xml` und
 den darin genannten Dateien; exportiert ist es eine einzelne `.ezpkg`-Datei ([Pakete](../../../anleitungen/pakete.md)).
 
-![Setup, Pakete: die Pakete in den Repositories der Installation, mit Import und Export](../../../../eng-us/help/images/creators/packages-list.webp)
+![Setup, Pakete: die Pakete in den Repositories der Installation, mit Import und Export](../../bilder/creators/packages-list.webp)
 
 ## Inhalt
 

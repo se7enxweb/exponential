@@ -350,7 +350,7 @@ Tabelle, einem Feed, einer API, einer anderen Datenbank), mit demselben Editor, 
 Laufseiten wie ein Inhaltsimport. Ihre Zeilen gehen wie oben durch `expDataTableWriter`. Die Gruppe **Data tables**
 ihres **Catalogue** (`sqliimport/catalogue`) bietet die drei Wege an:
 
-![Die Gruppe Data tables im Katalog von Imports: Import into a data table mit der Schaltfläche New import, Create a new table from an import mit Open the module table wizard, und Content and data tables in sync mit den fünf Arten der Synchronisation, einer Datentabelle und einer Inhaltsklasse zur Auswahl, New synchronisation, Synchronisations und Conflicts](../../../eng-us/help/images/sqli-import/sqli-import-datatable-cards.webp)
+![Die Gruppe Data tables im Katalog von Imports: Import into a data table mit der Schaltfläche New import, Create a new table from an import mit Open the module table wizard, und Content and data tables in sync mit den fünf Arten der Synchronisation, einer Datentabelle und einer Inhaltsklasse zur Auswahl, New synchronisation, Synchronisations und Conflicts](../../hilfe/bilder/sqli-import/sqli-import-datatable-cards.webp)
 
 **In eine Datentabelle importieren.** Beispiel: drei Bücher aus einer CSV-Datei in die Tabelle `datatabledemo_book`
 des Demo-Moduls `datatabledemo` (Klasse `datatableDemoBook`):
@@ -370,12 +370,12 @@ Old test notes,SQ688-0003,4.00,0,Out of print
 3. **Dry run**: 3 würden angelegt, nichts wird geschrieben. **Save and run**: 3 angelegt.
 4. Einen Titel in der Datei ändern und erneut laufen lassen: 1 aktualisiert, 2 unverändert.
 
-![Lauf 119 von Demo: Books into a data table: Completed, 3 von 3 Datensätzen, 0 angelegt, 1 aktualisiert, 2 unverändert, das Protokoll mit run started: 3 records, handler datatable](../../../eng-us/help/images/sqli-import/sqli-import-run-datatable.webp)
+![Lauf 119 von Demo: Books into a data table: Completed, 3 von 3 Datensätzen, 0 angelegt, 1 aktualisiert, 2 unverändert, das Protokoll mit run started: 3 records, handler datatable](../../hilfe/bilder/sqli-import/sqli-import-run-datatable.webp)
 
 Die Zeilen stehen dann in der Tabelle, hier auf der eigenen Listenseite des Moduls (`datatabledemo/list`) und unter
 **Setup > Datentabellen**, `datatable/rows/datatableDemoBook`:
 
-![Die Seite Data tables demo: books mit fünf Zeilen, darunter Old test notes, Tea for testers und The test garden (second edition) mit ihren ISBN SQ688-0001 bis SQ688-0003, Preisen und in_print](../../../eng-us/help/images/sqli-import/sqli-import-datatable-rows.webp)
+![Die Seite Data tables demo: books mit fünf Zeilen, darunter Old test notes, Tea for testers und The test garden (second edition) mit ihren ISBN SQ688-0001 bis SQ688-0003, Preisen und in_print](../../hilfe/bilder/sqli-import/sqli-import-datatable-rows.webp)
 
 Eine Beziehungsspalte (Objekt, Knoten, Benutzer) nimmt statt einer ID einen Verweis: `@object:<remote id>`,
 `@node:<remote id>` oder `@path:<url alias>`.
@@ -386,7 +386,7 @@ Quelle `sqliimport` und der ID des Imports. Der Assistent schätzt jede Spalte a
 Typ, Länge, Pflicht, eindeutig); **Copy its fields into the list** macht daraus die bearbeitbare Liste, in der Sie die
 Schätzungen korrigieren, bevor der Assistent Klasse, Tabelle und Seiten schreibt:
 
-![Der Abschnitt The fields des Assistenten für Modultabellen, aus Import 76 geöffnet: Where the fields come from sqliimport, Which one 76, Copy its fields into the list und die geschätzten Felder id, title, isbn, price, in_print und summary mit ihren Typen, dazu created und modified](../../../eng-us/help/images/sqli-import/sqli-import-moduletable-wizard.webp)
+![Der Abschnitt The fields des Assistenten für Modultabellen, aus Import 76 geöffnet: Where the fields come from sqliimport, Which one 76, Copy its fields into the list und die geschätzten Felder id, title, isbn, price, in_print und summary mit ihren Typen, dazu created und modified](../../hilfe/bilder/sqli-import/sqli-import-moduletable-wizard.webp)
 
 **Inhalte und Tabellen abgleichen.** Die dritte Karte öffnet [eine Synchronisation](#synchronisation) mit der
 Datentabelle und der Inhaltsklasse ausgefüllt. Imports kopiert hier selbst nichts; der Kernel führt die

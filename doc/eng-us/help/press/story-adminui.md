@@ -30,7 +30,7 @@ kernel requires the package since the 6.0.15 line ([The product family at a glan
 
 | Fact | Source |
 |---|---|
-| Package `exp_adminui`, required as `~1.0.0.46` in the 6.0.15 line | [The product family at a glance](../who-is-the-exponential-foundation.md#the-product-family-at-a-glance) |
+| Package `exp_adminui`, required as `~1.0.0.50` in the 6.0.15 line (25 October 2026) | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | A port of the Netgen AdminUI | repository description |
 | Needs Exponential 6.0.15 or greater | same |
 | Feature page | [Exponential AdminUI](../../features/6.0/exp-adminui.md) |

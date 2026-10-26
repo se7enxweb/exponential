@@ -33,7 +33,7 @@ Benutzer, deren Rolle die Richtlinie `shop/administrate` hat. Ohne sie wird der 
    **Produkt-Statistiken**, **Kunden**, **Ermäßigung**, **Archiv**, **Bestellstatus**, **USt-Typen**, **USt-Regeln**
    und **Währungen**.
 
-![Das Shop-Dashboard mit den Abschnitten Auf einen Blick und Bestellungen und dem Menü Shop links](../../../eng-us/help/manual/images/store-dashboard.webp)
+![Das Shop-Dashboard mit den Abschnitten Auf einen Blick und Bestellungen und dem Menü Shop links](bilder/store-dashboard.webp)
 
 ## Was schiefgehen kann
 

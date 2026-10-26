@@ -37,7 +37,7 @@ aber nicht `access`), sodass Sie nur die Ereignisse sehen, die Ihre Rolle erlaub
 7. Um zu prüfen, dass niemand die Aufzeichnung verändert hat, klicken Sie auf **Jetzt prüfen**. Jeder Kanal sollte
    „intact“ zeigen.
 
-![Die Audit-Konsole mit dem Filterformular und der Liste der Ereignisse mit Zeit, Ereignis, Akteur, Objekt, Ergebnis und Anfrage](../../../eng-us/help/manual/images/audit-console.webp)
+![Die Audit-Konsole mit dem Filterformular und der Liste der Ereignisse mit Zeit, Ereignis, Akteur, Objekt, Ergebnis und Anfrage](bilder/audit-console.webp)
 
 ## Was schiefgehen kann
 

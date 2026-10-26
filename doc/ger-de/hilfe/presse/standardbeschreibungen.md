@@ -57,7 +57,8 @@ Entwicklung, und die Exponential Foundation, eine 2026 gegründete gemeinnützig
 
 ```text
 Exponential ist ein freies Open-Source-Content-Management-System und Anwendungs-Framework, geschrieben in PHP.
-Seine README nennt es "a professional PHP application framework with advanced CMS functionality", dessen
+Seine README nennt es "a professional PHP application framework with advanced CMS (content management system)
+functionality", dessen
 bemerkenswerteste Eigenschaft "its fully customizable and extendable content model" ist. Organisationen nutzen es,
 um ihre eigenen Inhaltstypen festzulegen, sie im Browser mit Versionen, Freigabe und zeitgesteuerter
 Veröffentlichung zu bearbeiten und sie auf mehreren Websites in vielen Sprachen zu veröffentlichen, auch in

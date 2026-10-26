@@ -30,7 +30,7 @@ und Funktionen; wer sie regelmäßig einspielt, hält jedes einzelne klein. Das 
 | Velocity | das Engine-Paket, dann `exp:velocity restart` |
 | PHP | das Betriebssystem |
 
-![Updates und Pakete: wie viele Pakete Composer installiert hat, welche Aufmerksamkeit brauchen und wann zuletzt nach Updates gesucht wurde](../../../../eng-us/help/images/creators/update-overview.webp)
+![Updates und Pakete: wie viele Pakete Composer installiert hat, welche Aufmerksamkeit brauchen und wann zuletzt nach Updates gesucht wurde](../../bilder/creators/update-overview.webp)
 
 Veröffentlichte Versionen sind dauerhaft: Eine Korrektur kommt als nächste Version, nie als geänderte alte.
 
@@ -64,7 +64,7 @@ Verwenden Sie für den Datenbankschritt den Wartungsmodus ([Wartungsmodus](wartu
   aus.
 - Beobachten Sie einen Tag lang das Fehlerlog.
 
-![Setup, Upgrade-Prüfung: die Konsistenzprüfungen für Dateien und Datenbank, die nach einem Update laufen sollten](../../../../eng-us/help/images/creators/upgrade-check.webp)
+![Setup, Upgrade-Prüfung: die Konsistenzprüfungen für Dateien und Datenbank, die nach einem Update laufen sollten](../../bilder/creators/upgrade-check.webp)
 
 ## PHP-Versionen
 

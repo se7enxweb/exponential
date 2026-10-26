@@ -146,7 +146,7 @@ in einer Shell im Stammverzeichnis der Installation. `<site>` ist Ihr öffentlic
 - Schritt 12: Die Administration ist unverändert.
 - Der Trainer prüft den Seitenquelltext einer Person am Projektor.
 
-![Der Assistent für Design-Erweiterungen](../../../../../eng-us/help/images/trainers/td-design-wizard.webp)
+![Der Assistent für Design-Erweiterungen](../../../bilder/trainers/td-design-wizard.webp)
 
 ## Quiz
 

@@ -24,7 +24,7 @@ beantwortet: wie der Fokus aussehen muss, wie er sich bewegen muss und welche El
 
 Jedes Element, das den Fokus erhalten kann, muss ihn zeigen. Die Regel von admin4 (`components.css`):
 
-![Der Theme-Umschalter im Kopfbereich mit dem Tastatur-Fokusring darum](../../../../eng-us/help/images/designers/focus-ring.webp)
+![Der Theme-Umschalter im Kopfbereich mit dem Tastatur-Fokusring darum](../../bilder/designers/focus-ring.webp)
 
 ```css
 .a4-page :focus-visible,

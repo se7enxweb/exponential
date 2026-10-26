@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation und den Artikel aus Lektion 3.2.
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, auf ihren Bildschirmen auf **Derzeitiger Entwurf** und
   **Vorschau** zu zeigen.
 
-![Das Bearbeitungsformular eines Artikels: die Schaltflächen, die Titelzeile mit Typ und Sprache, die Feldleiste und die ersten Felder mit ihrer Art](../../../../../eng-us/help/images/trainers/e101-edit-form.webp)
+![Das Bearbeitungsformular eines Artikels: die Schaltflächen, die Titelzeile mit Typ und Sprache, die Feldleiste und die ersten Felder mit ihrer Art](../../../bilder/trainers/e101-edit-form.webp)
 
 ## Quiz
 

@@ -14,7 +14,7 @@ Diese Seite richtet sich an Website-Ersteller, die wissen wollen, was sie vom In
 Einstellungen in einem Paket. Ein **Theme** ist der Designteil, eine Erweiterung, die Sie nach der Installation
 weiterverwenden können.
 
-![Die Seite Über: die Erweiterungen der Installation, darunter die mitgelieferten Themes](../../../../eng-us/help/images/creators/about-extensions.webp)
+![Die Seite Über: die Erweiterungen der Installation, darunter die mitgelieferten Themes](../../bilder/creators/about-extensions.webp)
 
 ## Inhalt
 

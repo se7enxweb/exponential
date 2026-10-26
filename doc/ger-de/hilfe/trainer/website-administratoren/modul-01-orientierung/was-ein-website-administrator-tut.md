@@ -138,7 +138,7 @@ vorbereitet hat.
 - Der Siteaccess `editor` zeigt keinen Setup-Bereich.
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, ihre Setup-Seite und ihre Aufgabenliste zu zeigen.
 
-![Das Dashboard eines Website-Administrators mit dem Systemkasten und den Schnelllinks](../../../../../eng-us/help/images/trainers/sa-dashboard.webp)
+![Das Dashboard eines Website-Administrators mit dem Systemkasten und den Schnelllinks](../../../bilder/trainers/sa-dashboard.webp)
 
 ## Quiz
 

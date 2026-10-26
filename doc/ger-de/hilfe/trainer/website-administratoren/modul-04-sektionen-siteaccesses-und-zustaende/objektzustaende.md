@@ -112,7 +112,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem private
 - Der Trainer prüft die Karte der Gruppe und das private Fenster auf der Website einer Teilnehmerin oder eines
   Teilnehmers.
 
-![Objektzustandsgruppen und ihre Zustände, mit den Rollen, die sie verwenden](../../../../../eng-us/help/images/trainers/sa-states.webp)
+![Objektzustandsgruppen und ihre Zustände, mit den Rollen, die sie verwenden](../../../bilder/trainers/sa-states.webp)
 
 ## Quiz
 

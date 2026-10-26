@@ -32,7 +32,7 @@ Kurzreferenz ist [Das Prüfprotokoll](../../../funktionen/6.0/pruefprotokoll.md)
 Jeder Eintrag ist eine JSON-Zeile in einer Datei pro Kanal und Tag, `var/<site>/log/audit/<channel>-<YYYY-MM-DD>.jsonl`, und jede Zeile
 trägt den Hash der Zeile davor, sodass eine geänderte, entfernte oder eingefügte Zeile sichtbar wird.
 
-![Das Prüfprotokoll in der Administration: wer was wann geändert hat, mit Filtern](../../../../eng-us/help/images/hosting/audit-dashboard.webp)
+![Das Prüfprotokoll in der Administration: wer was wann geändert hat, mit Filtern](../../bilder/hosting/audit-dashboard.webp)
 
 | Kanal | Beispiele | Aktuell / archiviert (Tage) |
 |---|---|---|
@@ -82,7 +82,7 @@ warnt, wenn der Teil seit einer Stunde nicht gelaufen ist. Planung pro Kunde: [C
 
 `exp:audit verify` endet mit 0 (unversehrt), 1 (gebrochen) oder 2 (Fehler), passt also zu jedem Überwachungssystem:
 
-![Die Einstellungen des Audits: was festgehalten wird, die Archive und die Prüfung der Kette](../../../../eng-us/help/images/hosting/audit-settings.webp)
+![Die Einstellungen des Audits: was festgehalten wird, die Archive und die Prüfung der Kette](../../bilder/hosting/audit-settings.webp)
 
 ```bash
 ./console exp:audit verify -q --allow-root-user || <your alert command>

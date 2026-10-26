@@ -14,9 +14,9 @@ aktuellen Releases halten. Sie beantwortet: wie Sie herausfinden, welches Releas
 Kunden hinweg planen, welche Schritte ein Upgrade innerhalb der Linie 6.0 umfasst, wie Sie das Ergebnis prüfen und wie Sie sich
 erholen, wenn ein Schritt scheitert.
 
-![Setup, Upgrade-Prüfung: die Dateien und die Datenbank mit diesem Release vergleichen](../../../../eng-us/help/images/hosting/upgrade-check.webp)
+![Setup, Upgrade-Prüfung: die Dateien und die Datenbank mit diesem Release vergleichen](../../bilder/hosting/upgrade-check.webp)
 
-![Git Manager: der Git-Checkout der Installation, sein Branch, die wartenden Commits und die Schaltflächen zum Aktualisieren](../../../../eng-us/help/images/hosting/git-manager.webp)
+![Git Manager: der Git-Checkout der Installation, sein Branch, die wartenden Commits und die Schaltflächen zum Aktualisieren](../../bilder/hosting/git-manager.webp)
 
 Das Verfahren ist [Kapitel 11, Upgrade](../../../installation/11-aktualisieren.md) des Installationsbuchs und die Anleitung
 [Upgrade](../../../anleitungen/aktualisieren.md); diese Seite ordnet es für einen Hoster. Kunden, die von älteren Hauptversionen oder anderen

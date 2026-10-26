@@ -14,7 +14,7 @@ und Nachrichtenaggregatoren, in Podcast-Verzeichnisse, auf Partnerwebsites oder 
 Exponential-Installationen. Sie erklärt die Möglichkeiten in geschäftlichen Begriffen und verlinkt die Anleitungen für
 die Personen, die sie einrichten.
 
-![RSS: die Feeds, die die Website exportiert](../../../../eng-us/help/images/help/bu-rss.webp)
+![RSS: die Feeds, die die Website exportiert](../../bilder/help/bu-rss.webp)
 
 ## Inhalt
 

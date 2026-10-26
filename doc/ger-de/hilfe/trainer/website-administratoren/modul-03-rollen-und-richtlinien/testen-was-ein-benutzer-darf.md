@@ -105,7 +105,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
   Eigentümer *Self* eingeschränkt war.
 - Der Trainer prüft die Liste einer Person aus Schritt 9.
 
-![Der Reiter Benutzer, wo ein Testkonto in jeder Gruppe der Weg ist, um auszuprobieren, was eine Rolle erlaubt](../../../../../eng-us/help/images/trainers/sa-access-check.webp)
+![Der Reiter Benutzer, wo ein Testkonto in jeder Gruppe der Weg ist, um auszuprobieren, was eine Rolle erlaubt](../../../bilder/trainers/sa-access-check.webp)
 
 ## Quiz
 

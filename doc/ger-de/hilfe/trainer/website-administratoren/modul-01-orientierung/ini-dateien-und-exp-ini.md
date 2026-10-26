@@ -142,7 +142,7 @@ In einem Terminal, im Wurzelverzeichnis Ihrer Schulungsinstallation:
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, die Ausgabe von `where` laut
   vorzulesen.
 
-![Setup, Ini Einstellungen: der Wert einer Einstellung pro Siteaccess und die Datei, aus der er stammt](../../../../../eng-us/help/images/trainers/sa-ini-settings.webp)
+![Setup, Ini Einstellungen: der Wert einer Einstellung pro Siteaccess und die Datei, aus der er stammt](../../../bilder/trainers/sa-ini-settings.webp)
 
 ## Quiz
 

@@ -98,7 +98,7 @@ Trainer hat ihn eingerichtet).
   kann.
 - Der Trainer prüft das, indem er **Meine Warteliste** einer Person am Beamer öffnet.
 
-![Meine Warteliste, in der eine Version aufgeführt ist, die auf ihre Freigabe wartet](../../../../../eng-us/help/images/trainers/e201-pending.webp)
+![Meine Warteliste, in der eine Version aufgeführt ist, die auf ihre Freigabe wartet](../../../bilder/trainers/e201-pending.webp)
 
 ## Quiz
 

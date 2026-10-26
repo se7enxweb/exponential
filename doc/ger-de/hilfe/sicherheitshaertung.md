@@ -76,7 +76,7 @@ durchkommt.
 **Das Risiko.** `/user/login` und `/admin/user/login` sind die am häufigsten angegriffenen URLs jeder Site. Geleakte
 Passwörter anderer Dienste funktionieren überall dort, wo Menschen sie wiederverwenden.
 
-![Die Anmeldeseite der Administration, die Seite, auf die Brute-Force-Angriffe zielen](../../eng-us/help/images/help/sign-in-hardening.webp)
+![Die Anmeldeseite der Administration, die Seite, auf die Brute-Force-Angriffe zielen](bilder/help/sign-in-hardening.webp)
 
 **Eingebaut.** Passwörter werden als bcrypt-Hashes gespeichert (`HashType=php_default`). Die Anmeldung kostet bei einem
 unbekannten Login genauso viel wie bei einem falschen Passwort, und **Passwort vergessen?** antwortet für jede Adresse
@@ -255,7 +255,7 @@ anderen Host als dem der Site selbst oder `[SiteSettings] AllowedRedirectHosts` 
 **Das Risiko.** Eine bekannte Schwachstelle in einem alten Release des Kernels, einer Erweiterung, einer
 Composer-Abhängigkeit, von PHP oder der Datenbank; eine manipulierte Datei auf dem Server.
 
-![Die Version der Installation oben auf der Seite „Über“, das Erste, was Sie mit dem neuesten Release vergleichen](../../eng-us/help/images/help/about-page-security.webp)
+![Die Version der Installation oben auf der Seite „Über“, das Erste, was Sie mit dem neuesten Release vergleichen](bilder/help/about-page-security.webp)
 
 **Eingebaut.** Releases sind unveränderliche Tags auf Packagist und GitHub, mit Changelogs. **Setup** >
 **Upgrade-Prüfung** vergleicht jede Datei mit der `share/filelist.md5` des Release („Überprüfe Dateikonsistenz“) und das
@@ -427,7 +427,7 @@ Bibliothek.
 
 Härtung ohne Beobachtung verzögert nur den Moment, in dem Sie von einem Angriff erfahren.
 
-![Das Audit-Protokoll: wer wann was getan hat, mit Filtern nach Akteur, Aktion und Zeit](../../eng-us/help/images/help/audit-dashboard-security.webp)
+![Das Audit-Protokoll: wer wann was getan hat, mit Filtern nach Akteur, Aktion und Zeit](bilder/help/audit-dashboard-security.webp)
 
 | Quelle | Was sie aufzeichnet | Wo Sie sie lesen |
 |---|---|---|

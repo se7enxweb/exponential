@@ -29,7 +29,7 @@ Ansehen ändert nichts; nur die Schaltflächen tun das.
 `/package/list/7x`. Sie brauchen `package/list`; die Schaltflächen brauchen eigene Richtlinien
 ([Berechtigungen für Pakete](berechtigungen-fuer-pakete.md)).
 
-![Die Paketliste des Repositorys 7x im Design admin4: die Zahlen (Pakete, installiert, nicht installiert, nur importiert, Installer-Quellen, Größe) und die Kacheln der Repositorys, wobei 7x als Repository des Setup-Assistenten markiert ist](../../../../eng-us/help/images/site-packages-package-list.webp)
+![Die Paketliste des Repositorys 7x im Design admin4: die Zahlen (Pakete, installiert, nicht installiert, nur importiert, Installer-Quellen, Größe) und die Kacheln der Repositorys, wobei 7x als Repository des Setup-Assistenten markiert ist](../../bilder/site-packages-package-list.webp)
 
 ## Die Übersicht und die Repositorys
 
@@ -83,7 +83,7 @@ eines davon eine zusätzliche Bestätigung braucht.
 
 `/package/view/full/<name>` (außerhalb von `local` mit angehängtem `/<repository>`).
 
-![Die Seite des Pakets sevenx_multisite: seine Version, Typ site, die Markierungen Importiert und Installer-Quelle, die Schaltflächen Herunterladen, Als JSON herunterladen, Prüfen und Entfernen, ein Hinweis, dass es nichts zu installieren gibt, weil der Installationstyp import ist, und warum es eine Installer-Quelle ist](../../../../eng-us/help/images/site-packages-package-page.webp)
+![Die Seite des Pakets sevenx_multisite: seine Version, Typ site, die Markierungen Importiert und Installer-Quelle, die Schaltflächen Herunterladen, Als JSON herunterladen, Prüfen und Entfernen, ein Hinweis, dass es nichts zu installieren gibt, weil der Installationstyp import ist, und warum es eine Installer-Quelle ist](../../bilder/site-packages-package-page.webp)
 
 Die Seite zeigt:
 

@@ -172,7 +172,7 @@ Arbeiten Sie im Wurzelverzeichnis der Installation.
 - Der Trainer prüft vor dem Beginn von Modul 2 die Seite der Einstellungsansicht und die Liste der Testadressen jeder
   Person.
 
-![Das Abzeichen Schreibt Mails in Dateien auf dem Newsletter-Dashboard: Eine Schulungsinstallation sendet keine echte Mail](../../../../../eng-us/help/images/trainers/nl-safe.webp)
+![Das Abzeichen Schreibt Mails in Dateien auf dem Newsletter-Dashboard: Eine Schulungsinstallation sendet keine echte Mail](../../../bilder/trainers/nl-safe.webp)
 
 ## Quiz
 

@@ -109,7 +109,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 - Schritt 9: Deutsch lässt sich nicht entfernen, solange der Artikel eine deutsche Übersetzung hat.
 - Der Trainer prüft die Karte für Deutsch auf der Website einer Teilnehmerin oder eines Teilnehmers.
 
-![Die Sprachen, in denen Inhalte verfasst werden können, mit der Zahl der Elemente in jeder](../../../../../eng-us/help/images/trainers/sa-languages.webp)
+![Die Sprachen, in denen Inhalte verfasst werden können, mit der Zahl der Elemente in jeder](../../../bilder/trainers/sa-languages.webp)
 
 ## Quiz
 

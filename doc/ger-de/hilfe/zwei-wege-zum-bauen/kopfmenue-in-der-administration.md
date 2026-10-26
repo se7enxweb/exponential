@@ -26,7 +26,7 @@ Das Beispiel fügt die Seite **Showcase** zum Kopfmenü der Site Fit & Healthy h
 Öffnen Sie die Seite in der **Inhaltsstruktur**. Die Zeile unter den Schaltflächen zeigt `Knoten 192`: Das ist die Zahl,
 die das Menü braucht (nicht die Objektnummer daneben).
 
-![Die Ansicht der Seite Showcase in der Administration; die Zeile unter den Schaltflächen lautet Knoten 192 und Objekt 190](../../../eng-us/help/build-two-ways/images/hm-02-find-node-id.webp)
+![Die Ansicht der Seite Showcase in der Administration; die Zeile unter den Schaltflächen lautet Knoten 192 und Objekt 190](bilder/hm-02-find-node-id.webp)
 
 Andere Wege, sie zu finden, stehen unter [Eine Knoten-ID finden](knoten-id-finden.md).
 
@@ -35,14 +35,14 @@ Andere Wege, sie zu finden, stehen unter [Eine Knoten-ID finden](knoten-id-finde
 Gehen Sie zu **Setup > INI-Einstellungen** (Bereich *System*). Wählen Sie als **INI-Datei** `menu.ini` und als
 **Siteaccess** `site` und klicken Sie dann auf **Einstellungen anzeigen**.
 
-![Die Seite Einstellungen mit der Auswahl von INI-Datei und Siteaccess und der Schaltfläche Einstellungen anzeigen](../../../eng-us/help/build-two-ways/images/hm-11-settings-pick-file.webp)
+![Die Seite Einstellungen mit der Auswahl von INI-Datei und Siteaccess und der Schaltfläche Einstellungen anzeigen](bilder/hm-11-settings-pick-file.webp)
 
 Suchen Sie den Block `[SiteInfo]` und die Einstellung `MainMenuID[]`. Sie listet die Menüeinträge in ihrer Reihenfolge.
 Öffnen Sie **In 2 Dateien gesetzt, 1 überschrieben**, um zu sehen, woher die Liste kommt: Die Theme-Erweiterung
 `sevenx_themes_media` bringt eine Liste mit, und die Datei `settings/siteaccess/site/menu.ini.append.php` der Installation
 leert sie (`MainMenuID[]`) und setzt eine eigene. Die zweite Datei gewinnt, also ist sie die, die zu ändern ist.
 
-![Die Einstellung MainMenuID mit sechs Knoten-IDs und den beiden Dateien, die sie setzen](../../../eng-us/help/build-two-ways/images/hm-03-settings-mainmenuid.webp)
+![Die Einstellung MainMenuID mit sechs Knoten-IDs und den beiden Dateien, die sie setzen](bilder/hm-03-settings-mainmenuid.webp)
 
 ## 3. MainMenuID bearbeiten
 
@@ -55,7 +55,7 @@ Klicken Sie in der Zeile `MainMenuID[]` auf **Bearbeiten**. Die Bearbeitungsseit
 Fügen Sie an der Stelle, an der der Eintrag erscheinen soll, eine Zeile hinzu. Damit Showcase der letzte Eintrag wird,
 fügen Sie am Ende `=192` hinzu.
 
-![Das Feld Wert mit den Zeilen =92, =130, =144, =163, =164, =26210 und der neuen Zeile =192](../../../eng-us/help/build-two-ways/images/hm-04-settings-edit-add-192.webp)
+![Das Feld Wert mit den Zeilen =92, =130, =144, =163, =164, =26210 und der neuen Zeile =192](bilder/hm-04-settings-edit-add-192.webp)
 
 **Speichern in** bleibt auf *Nur Siteaccess site* (`settings/siteaccess/site/menu.ini.append.php`), der Datei, die die
 Liste bereits enthält.
@@ -76,7 +76,7 @@ mit der Liste darin kompiliert.
 Wählen Sie im Kasten **Cache leeren** rechts **Template & Inhalt** und klicken Sie auf **Leeren**. Das leert die
 kompilierten Templates, die Template-Blöcke, den View-Cache der Inhalte und den Seiten-Cache (HTTP) zusammen.
 
-![Der Kasten Cache leeren der Administration mit seiner Auswahlliste und der Schaltfläche Leeren](../../../eng-us/help/build-two-ways/images/hm-07-clear-cache-panel.webp)
+![Der Kasten Cache leeren der Administration mit seiner Auswahlliste und der Schaltfläche Leeren](bilder/hm-07-clear-cache-panel.webp)
 
 Die Auswahlmöglichkeiten dieses Kastens sind: Alle Caches, Inhalte, Inhalt - Knoten, Inhalt - Teil der Baumstruktur,
 Template, Template & Inhalt, INI-Einstellungen und Statisch.
