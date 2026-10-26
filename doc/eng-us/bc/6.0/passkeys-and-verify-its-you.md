@@ -54,7 +54,8 @@ For extensions:
 - `expReauth::isFresh( $user )` tells whether the user confirmed within the minutes; `expAuditReauth` (the audit
   console's password re-entry) accepts it.
 - A POST that is asked is replayed with its own fields after the answer; files are not (a browser cannot send them
-  twice), so a view with an upload should be named with `*`.
+  twice), so a view with an upload should be named with `*`. A POST with a file actually chosen opens the form again
+  after the answer; file inputs left empty are no upload (`expReauth::hasUploads()`), and such a form is replayed.
 - `expReauth::addressedUser( $module, $view, $params, $post )` takes the POST as a fourth argument (optional): a POST
   to `collaboration/action` that decides an item of the workflow event *Approve user accounts* addresses the pending
   account, so the users group asks before Approve and Deny of a new user account
