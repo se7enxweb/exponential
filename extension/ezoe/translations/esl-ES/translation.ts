@@ -1396,6 +1396,10 @@ Do you want more information about this issue?</source>
         <source>Upload new</source>
         <translation type="obsolete">Cargar nuevo</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Este sitio usa %engine para todos los editores; tu propia elección no se aplica aquí.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

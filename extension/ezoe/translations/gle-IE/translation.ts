@@ -1364,6 +1364,10 @@ Ar mhaith leat tuilleadh faisnéise faoin bhfadhb seo?</translation>
         <source>required</source>
         <translation>riachtanach</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Úsáideann an suíomh seo %engine do gach eagarthóir; ní bhaineann do rogha féin anseo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

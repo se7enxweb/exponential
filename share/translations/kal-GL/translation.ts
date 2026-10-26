@@ -57299,6 +57299,18 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Package</source>
         <translation>Poortugaq</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation type="unfinished">Arkivfiili PAX tar-ip ilusaani poortorneqarpoq, eqqunneqarsinnaanngitsumi. Poortugaq GNU tar-ip ilusaani poortoruk (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation type="unfinished">Arkivfiili itigartinneqarpoq: allattugaq »%path« tar-ip suussusaanik »%type«-mik suussuseqarpoq, poortugarli fiilinik mappinillu kisiannik imaqartarpoq.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation type="unfinished">Arkivfiili itigartinneqarpoq: allattugaq byte-init %length-init takinerusoq taavaa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>More audiences</source>
         <translation>Siunniussat allat</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Misissuineq saqqummersitsinerlu</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Sammisaq maannakkut Misissuinermiippoq.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Sammisaq Saqqummersinneqarpoq: atuartut maannakkut takusinnaavaat.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Sammisaq Missingiutinngoqqippoq.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation type="unfinished">Versioni maannakkut atuuttoq illit allappat, taamaattumik allap saqqummersitsisartutut atuuffeqartup saqqummiussavaa.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Qanoq innera allanngortinneqanngilaq: atuuffiit alloriarneq una akuerinngilaa.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Misissuinerup ingerlanera</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Missingiut</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Misissuineq</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Misissuinermut uterit</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Misissuinermut nassiuguk</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Saqqummiuguk</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Missingiummut uterit</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation type="unfinished">Allannermut maleruagassanik misissuineq</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation type="unfinished">Allannermut maleruagassanik misissuinermi nassaartoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Kukkunerit: %errors, mianersoqqussutit: %warnings, malugisassat: %notices. Kukkuneqarpat ./console exp:help:content check akuerineqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Qaffasissusaa</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Malittarisassaq</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Immersugassaq</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Nassaat</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Iluaqutaava?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Atuartut akissutaat: aap %yes, naamik %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Naamik pissutigineqartut:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Qujanaq. Akissutit ikiuutinik pitsanngorsaanissatsinnut iluaqutaavoq.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Aap</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Naamippat, suna kukkusimava?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Pissutaa taaneqanngilaq</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Naamik</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Akissutit kisiat toqqorneqartarpoq, kinaanerit pinnani.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Nutaajunnaarsimavoq</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Paasiuminaappoq</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Amigaateqarpoq</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Kukkuvoq</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Pissutaa allaq</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Sammisaq una Saqqummersinneqanngilaq; atuartut takusinnaanngilaat.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Isersimanerit, atuisoq: %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kontuutit massakkut sumi isersimanersoq. Atortoq ilisarinngikkukku anitsiguk isissutissallu allanngortiguk.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Isersimanerit, atuisoq: %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kontuutit massakkut sumi isersimanersoq. Atortoq ilisarinngikkukku anitsiguk isissutissallu allanngortiguk.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Atuisut, atuuffiit maleruagassallu</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Atuisunik pilersitsineq aaqqissuinerlu, kontomut aaqqissuussinerit, atuuffinnik tunniussineq maleruagassanillu aaqqissuineq.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Atuisunik pilersitsineq aaqqissuinerlu, kontomut aaqqissuussinerit, atuisut kontoinik nutaanik akuersineq itigartitsinerluunniit, atuuffinnik tunniussineq maleruagassanillu aaqqissuineq.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Setup</source>
         <translation>Aaqqissuussineq</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation type="unfinished">RSS nammineersoq</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Paasissutissaateqarfiup aaqqissuisarfia</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation type="unfinished">Paasissutissaateqarfiup aallaaviata aaqqissuisarfia</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation type="unfinished">Ataaniittut tamarmik saneqqutaannik saqqummersitsisartoq</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Blokkimut nassiuguk</translation>
     </message>
 </context>
 </TS>

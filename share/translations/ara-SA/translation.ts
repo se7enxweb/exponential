@@ -76200,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جلسات %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>أين حسابك مسجّل الدخول الآن. إذا لم تتعرّف على جهاز، فسجّل خروجه وغيّر كلمة المرور.</translation>
     </message>
     <message>
@@ -76491,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جلسات %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>أين حسابك مسجّل الدخول الآن. إذا لم تتعرّف على جهاز، فسجّل خروجه وغيّر كلمة المرور.</translation>
     </message>
     <message>
@@ -77049,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>المستخدمون والأدوار والسياسات</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>إنشاء المستخدمين وتحريرهم، وإعدادات الحسابات، وتعيين الأدوار، وتحرير السياسات.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>إنشاء المستخدمين وتحريرهم، وإعدادات الحسابات، والموافقة على حسابات المستخدمين الجديدة أو رفضها، وتعيين الأدوار، وتحرير السياسات.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -77123,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>الإعداد</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS التلقائي</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>محرر قاعدة البيانات</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>محرر مصدر قاعدة البيانات</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>ناشر هيكل الشجرة الفرعية</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>الإرسال إلى الكتلة</translation>
     </message>
 </context>
 </TS>

@@ -1364,6 +1364,10 @@ Dëshironi më shumë informacion për këtë problem?</translation>
         <source>required</source>
         <translation>i detyrueshëm</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Ky sajt përdor %engine për të gjithë redaktuesit; një zgjedhje e juaja nuk vlen këtu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

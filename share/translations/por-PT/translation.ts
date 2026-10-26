@@ -57299,6 +57299,18 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Package</source>
         <translation>Pacote</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>O arquivo foi compactado no formato tar PAX, que não pode ser importado. Compacte o pacote no formato tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>O arquivo foi recusado: a entrada «%path» tem o tipo tar «%type», e um pacote contém apenas ficheiros e diretórios.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>O arquivo foi recusado: indica uma entrada com mais de %length bytes.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>More audiences</source>
         <translation>Mais públicos</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Revisão e publicação</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>O tópico está agora em Revisão.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>O tópico está Publicado: os leitores já o veem.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>O tópico voltou a ser um Rascunho.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Escreveu a versão atual, pelo que outra pessoa com a função de publicação a publica.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>O estado não foi alterado: a sua função não permite este passo.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Fluxo de revisão</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Rascunho</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Revisão</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Voltar a Revisão</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Enviar para Revisão</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Publicar</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Voltar a Rascunho</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Verificação do guia de estilo</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>A verificação do guia de estilo não encontrou nada.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors erros, %warnings avisos, %notices notas. Um erro impede que ./console exp:help:content check seja aprovado.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nível</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regra</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campo</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Constatação</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Isto foi útil?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Os leitores responderam sim %yes vezes e não %no vezes.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Motivos indicados para não:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Obrigado. A sua resposta ajuda-nos a melhorar a ajuda.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sim</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Se não, o que estava errado?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nenhum motivo indicado</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Não</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Apenas a sua resposta é guardada, não a sua identidade.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Está desatualizado</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>É difícil de compreender</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Falta alguma coisa</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Está errado</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Outro motivo</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Este tópico não está Publicado; os leitores não o veem.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>Sessões de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Onde a sua conta tem sessão iniciada neste momento. Se não reconhecer um dispositivo, termine a sessão dele e altere a palavra-passe.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>Sessões de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Onde a sua conta tem sessão iniciada neste momento. Se não reconhecer um dispositivo, termine a sessão dele e altere a palavra-passe.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>Utilizadores, funções e políticas</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Criar e editar utilizadores, definições de conta, atribuir funções e editar políticas.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Criar e editar utilizadores, definições de conta, aprovar ou recusar novas contas de utilizador, atribuir funções e editar políticas.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Setup</source>
         <translation>Configuração</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automático</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor de bases de dados</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor de código-fonte de bases de dados</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publicador de esqueletos de subárvores</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Enviar para bloco</translation>
     </message>
 </context>
 </TS>

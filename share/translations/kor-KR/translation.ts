@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>패키지</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>아카이브 파일이 가져올 수 없는 PAX tar 형식으로 압축되었습니다. 패키지를 GNU tar 형식으로 압축하세요(GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>아카이브 파일이 거부되었습니다. 항목 "%path"의 tar 유형이 "%type"이지만 패키지에는 파일과 디렉터리만 포함할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>아카이브 파일이 거부되었습니다. %length바이트보다 긴 항목 이름이 있습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>기타 대상</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>검토 및 릴리스</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>주제가 이제 검토 상태입니다.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>주제가 릴리스되었습니다. 이제 독자에게 표시됩니다.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>주제가 다시 초안 상태입니다.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>현재 버전을 직접 작성했으므로 릴리스 역할이 있는 다른 사람이 릴리스합니다.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>상태가 변경되지 않았습니다. 역할에서 이 단계를 허용하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>검토 워크플로</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>초안</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>검토</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>검토로 되돌리기</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>검토 요청</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>릴리스</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>초안으로 되돌리기</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>스타일 가이드 검사</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>스타일 가이드 검사에서 발견된 항목이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>오류 %errors개, 경고 %warnings개, 알림 %notices개. 오류가 있으면 ./console exp:help:content check가 통과하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>수준</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>규칙</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>필드</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>발견 사항</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>도움이 되었나요?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>독자가 예 %yes회, 아니요 %no회로 응답했습니다.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>아니요를 선택한 이유:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>감사합니다. 응답은 도움말을 개선하는 데 도움이 됩니다.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>그렇지 않다면 무엇이 문제였나요?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>이유 없음</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>아니요</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>응답만 저장되며 응답한 사람은 저장되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>오래된 내용입니다</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>이해하기 어렵습니다</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>빠진 내용이 있습니다</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>잘못된 내용입니다</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>기타 이유</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>이 주제는 릴리스되지 않았으므로 독자에게 표시되지 않습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name의 세션</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>계정이 현재 로그인되어 있는 위치입니다. 알 수 없는 장치가 있으면 로그아웃하고 암호를 변경하십시오.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name의 세션</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>계정이 현재 로그인되어 있는 위치입니다. 알 수 없는 장치가 있으면 로그아웃하고 암호를 변경하십시오.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>사용자, 역할 및 정책</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>사용자 만들기 및 편집, 계정 설정, 역할 할당 및 정책 편집.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>사용자 만들기 및 편집, 계정 설정, 새 사용자 계정 승인 또는 거부, 역할 할당 및 정책 편집.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>설정</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>자동 RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>데이터베이스 편집기</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>데이터베이스 소스 편집기</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>하위 트리 골격 게시 도구</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>블록으로 보내기</translation>
     </message>
 </context>
 </TS>

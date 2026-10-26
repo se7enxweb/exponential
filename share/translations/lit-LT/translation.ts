@@ -57299,6 +57299,18 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Package</source>
         <translation>Paketas</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archyvas supakuotas PAX tar formatu, kurio importuoti negalima. Supakuokite paketą GNU tar formatu (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Archyvas atmestas: įrašo „%path“ tar tipas yra „%type“, o pakete gali būti tik failai ir katalogai.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archyvas atmestas: jame yra įrašas, ilgesnis nei %length baitų.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>More audiences</source>
         <translation>Daugiau auditorijų</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Peržiūra ir išleidimas</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tema dabar yra peržiūroje.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tema išleista: skaitytojai ją dabar mato.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Tema vėl yra juodraštis.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Dabartinę versiją parašėte jūs, todėl ją išleidžia kitas asmuo, turintis išleidimo vaidmenį.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Būsena nepakeista: jūsų vaidmuo neleidžia šio veiksmo.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Peržiūros eiga</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Juodraštis</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Peržiūra</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Grąžinti į peržiūrą</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Siųsti peržiūrai</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Išleisti</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Grąžinti į juodraštį</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Stiliaus vadovo patikra</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Stiliaus vadovo patikra nieko nerado.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Klaidų: %errors, įspėjimų: %warnings, pastabų: %notices. Dėl klaidos ./console exp:help:content check nepavyksta.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Lygis</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Taisyklė</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Laukas</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Radinys</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Ar tai buvo naudinga?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Skaitytojai atsakė „taip“ %yes k. ir „ne“ %no k.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Atsakymo „ne“ priežastys:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Ačiū. Jūsų atsakymas padeda mums tobulinti žinyną.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Taip</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Jei ne, kas buvo negerai?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Priežastis nenurodyta</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Išsaugomas tik jūsų atsakymas, o ne tai, kas jūs esate.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Tai pasenę</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Sunku suprasti</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Kažko trūksta</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Tai neteisinga</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Kita priežastis</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ši tema neišleista; skaitytojai jos nemato.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>%name seansai</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kur jūsų paskyra prisijungusi šiuo metu. Jei neatpažįstate įrenginio, atjunkite jį ir pakeiskite slaptažodį.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>%name seansai</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kur jūsų paskyra prisijungusi šiuo metu. Jei neatpažįstate įrenginio, atjunkite jį ir pakeiskite slaptažodį.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <translation>Naudotojai, vaidmenys ir politikos</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Naudotojų kūrimas ir redagavimas, paskyrų nustatymai, vaidmenų priskyrimas ir politikų redagavimas.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Naudotojų kūrimas ir redagavimas, paskyrų nustatymai, naujų naudotojų paskyrų patvirtinimas arba atmetimas, vaidmenų priskyrimas ir politikų redagavimas.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Setup</source>
         <translation>Sąranka</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Automatinis RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Duomenų bazės redaktorius</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Duomenų bazės išeities kodo redaktorius</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Pomedžio karkasų publikavimo priemonė</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Perkelti į bloką</translation>
     </message>
 </context>
 </TS>

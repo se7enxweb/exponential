@@ -77652,7 +77652,7 @@ Gracias por tu feedback</translation>
         <translation>Sesiones de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Dónde está conectada tu cuenta ahora mismo. Si no reconoces un dispositivo, desconéctalo y cambia tu contraseña.</translation>
     </message>
     <message>
@@ -77943,7 +77943,7 @@ Gracias por tu feedback</translation>
         <translation>Sesiones de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Dónde está conectada tu cuenta ahora mismo. Si no reconoces un dispositivo, desconéctalo y cambia tu contraseña.</translation>
     </message>
     <message>
@@ -78501,8 +78501,8 @@ Gracias por tu feedback</translation>
         <translation>Usuarios, roles y políticas</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Crear y editar usuarios, la configuración de la cuenta, asignar roles y editar políticas.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear y editar usuarios, la configuración de la cuenta, aprobar o rechazar nuevas cuentas de usuario, asignar roles y editar políticas.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -78575,6 +78575,38 @@ Gracias por tu feedback</translation>
     <message>
         <source>Setup</source>
         <translation>Configuración</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automático</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor de base de datos</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor de código fuente de base de datos</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publicador de esqueletos de subárbol</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Enviar al bloque</translation>
     </message>
 </context>
 </TS>

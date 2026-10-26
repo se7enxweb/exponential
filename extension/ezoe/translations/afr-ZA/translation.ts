@@ -1364,6 +1364,10 @@ Wil u meer inligting oor hierdie kwessie hê?</translation>
         <source>required</source>
         <translation>vereis</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Hierdie werf gebruik %engine vir elke redakteur; u eie keuse geld nie hier nie.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>
