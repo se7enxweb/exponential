@@ -77126,6 +77126,97 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Zarědowanje</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nowy</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wótpóraś</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Smužki: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nowa smužka</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Smužka jo se składowała.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pytaś</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Wobźěłaś</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Hyšći žedne smužki.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adresa: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ně</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID suka</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID objekta wužywarja</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID objekta wopśimjeśa</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Smužka %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Smužka njejo se składowała</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Pśetergnuś</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Cośo smužku %id napšawdu wótpóraś?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Smužka se z tabele wótpórajo a njedajo se wótnowiś.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

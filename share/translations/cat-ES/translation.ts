@@ -77126,6 +77126,97 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nou</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Treu</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count files</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Fila nova</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>S'ha desat la fila.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Cerca</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Accions</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edita</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Encara no hi ha cap fila.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adreça JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Un ID de node</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>L'ID d'objecte d'un usuari</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Un ID d'objecte de contingut</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Fila %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>No s'ha desat la fila</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Desa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Vols treure la fila %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>La fila es treu de la taula i no es pot recuperar.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

@@ -77126,6 +77126,97 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavenie</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nové</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrániť</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Riadky: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nový riadok</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Riadok bol uložený.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Hľadať</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcie</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Upraviť</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Zatiaľ žiadne riadky.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adresa JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>áno</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID uzla</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID objektu používateľa</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID objektu obsahu</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Riadok %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Riadok nebol uložený</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Uložiť</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušiť</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Odstrániť riadok %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Riadok sa odstráni z tabuľky a nebude ho možné obnoviť.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>
