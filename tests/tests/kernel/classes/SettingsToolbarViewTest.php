@@ -109,6 +109,14 @@ class SettingsToolbarViewTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "{include uri='design:setup/quick_settings.tpl'", self::read( 'design/standard/templates/setup/settingstoolbar.tpl' ) );
     }
 
+    public function testThePageBelongsToTheSetupTab()
+    {
+        $module = self::read( 'kernel/setup/module.php' );
+        $start = strpos( $module, "\$ViewList['settingstoolbar']" );
+        $view = substr( $module, $start, strpos( $module, "\$ViewList[", $start + 10 ) - $start );
+        $this->assertStringContainsString( "'default_navigation_part' => 'ezsetupnavigationpart'", $view );
+    }
+
     public function testEveryFormCanComeBackToThePage()
     {
         foreach ( array( 'admin', 'admin4', 'standard' ) as $design )
