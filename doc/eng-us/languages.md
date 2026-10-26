@@ -1,4 +1,204 @@
+---
+summary: The one place that says which languages Exponential supports, at which level, and how to add more, with the totals of a default installation and a world map of the countries whose language the administration shows.
+---
 # Languages in Exponential
+
+<!-- generated: exp:i18n coverage 2026-10-26 (start) -->
+**At a glance, on 26 October 2026.** A default installation (the shipped `share/locale`, `share/translations`
+and `settings/i18n.ini`, no extension) has:
+
+| What | How many |
+|---|---:|
+| Languages of the administration: translations in `share/translations` | **70**, 70 of them complete |
+| Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
+| Known languages: the language codes of the locales (variants and the test language left out) | **148** |
+| of them shown translated by the administration (own translation, fallback or English) | **67** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **81** |
+| Countries and territories of the locales | **158** |
+| of them with the administration in their language (green on the map) | **132** |
+| Locales written right to left | **40** |
+
+![World map: 132 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+
+A country is green when a locale ships for it whose language the administration shows translated: with a
+translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
+`FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
+language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
+
+<details><summary>The 132 countries and territories in green</summary>
+
+| Country or territory | Code | Locales and the translation they show |
+|---|---|---|
+| Afghanistan | AF | `fas-AF` → `fas-IR`, `pus-AF` |
+| Albania | AL | `sqi-AL` |
+| Algeria | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` (untranslated) |
+| Angola | AO | `por-AO` → `por-PT` |
+| Argentina | AR | `esl-AR` → `esl-ES` |
+| Australia | AU | `eng-AU` |
+| Austria | AT | `ger-AT` → `ger-DE` |
+| Bahrain | BH | `ara-BH` → `ara-SA` |
+| Bangladesh | BD | `ben-BD` |
+| Belgium | BE | `dut-BE` → `dut-NL`, `fre-BE` → `fre-FR`, `ger-BE` → `ger-DE` |
+| Benin | BJ | `fre-BJ` → `fre-FR` |
+| Bolivia | BO | `esl-BO` → `esl-ES` |
+| Bosnia and Herzegovina | BA | `bos-BA` |
+| Brazil | BR | `por-BR` |
+| Bulgaria | BG | `bul-BG` |
+| Burkina Faso | BF | `fre-BF` → `fre-FR` |
+| Burundi | BI | `fre-BI` → `fre-FR`, `run-BI` (untranslated) |
+| Cabo Verde | CV | `por-CV` → `por-PT` |
+| Cameroon | CM | `fre-CM` → `fre-FR` |
+| Canada | CA | `eng-CA` (source texts), `fre-CA` → `fre-FR` |
+| Central African Republic | CF | `fre-CF` → `fre-FR` |
+| Chad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
+| Chile | CL | `esl-CL` → `esl-ES` |
+| China | CN | `bod-CN` (untranslated), `chi-CN`, `uig-CN` (untranslated) |
+| Colombia | CO | `esl-CO` → `esl-ES` |
+| Comoros | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
+| Congo | CG | `fre-CG` → `fre-FR` |
+| Congo, The Democratic Republic Of The | CD | `fre-CD` → `fre-FR`, `lin-CD` (untranslated) |
+| Costa Rica | CR | `esl-CR` → `esl-ES` |
+| Côte d'Ivoire | CI | `fre-CI` → `fre-FR` |
+| Croatia | HR | `cro-HR` |
+| Cuba | CU | `esl-CU` → `esl-ES` |
+| Czechia | CZ | `cze-CZ` |
+| Denmark | DK | `dan-DK` |
+| Djibouti | DJ | `ara-DJ` → `ara-SA`, `fre-DJ` → `fre-FR` |
+| Dominican Republic | DO | `esl-DO` → `esl-ES` |
+| Ecuador | EC | `esl-EC` → `esl-ES` |
+| Egypt | EG | `ara-EG` → `ara-SA` |
+| El Salvador | SV | `esl-SV` → `esl-ES` |
+| Equatorial Guinea | GQ | `esl-GQ` → `esl-ES`, `fre-GQ` → `fre-FR` |
+| Eritrea | ER | `ara-ER` → `ara-SA` |
+| Estonia | EE | `est-EE` |
+| Ethiopia | ET | `amh-ET`, `orm-ET` (untranslated), `tir-ET` (untranslated) |
+| Finland | FI | `fin-FI` |
+| France | FR | `bre-FR` (untranslated), `fre-FR`, `oci-FR` (untranslated) |
+| Gabon | GA | `fre-GA` → `fre-FR` |
+| Germany | DE | `dsb-DE`, `ger-DE`, `hsb-DE` (untranslated) |
+| Ghana | GH | `aka-GH` (untranslated), `eng-GH` (source texts), `ewe-GH` (untranslated) |
+| Greece | GR | `ell-GR` |
+| Greenland | GL | `kal-GL` |
+| Guatemala | GT | `esl-GT` → `esl-ES` |
+| Guinea | GN | `fre-GN` → `fre-FR`, `nqo-GN` (untranslated) |
+| Haiti | HT | `fre-HT` → `fre-FR` |
+| Holy See (Vatican City State) | VA | `lat-VA` |
+| Honduras | HN | `esl-HN` → `esl-ES` |
+| Hong Kong | HK | `chi-HK` → `chi-TW` |
+| Hungary | HU | `hun-HU` |
+| Iceland | IS | `isl-IS` |
+| India | IN | `asm-IN` (untranslated), `ben-IN` → `ben-BD`, `bho-IN` (untranslated), `brx-IN` (untranslated), `doi-IN` (untranslated), `eng-IN` (source texts), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (untranslated), `kok-IN` (untranslated), `mai-IN` (untranslated), `mal-IN`, `mar-IN`, `mni-IN` (untranslated), `ori-IN`, `pan-IN`, `san-IN` (untranslated), `sat-IN` (untranslated), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
+| Iran, Islamic Republic of | IR | `fas-IR` |
+| Iraq | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (untranslated), `syr-IQ` (untranslated) |
+| Ireland | IE | `eng-IE` (source texts), `gle-IE` |
+| Israel | IL | `heb-IL` |
+| Italy | IT | `ita-IT` |
+| Japan | JP | `jpn-JP` |
+| Jordan | JO | `ara-JO` → `ara-SA` |
+| Kenya | KE | `eng-KE` (source texts), `kik-KE` (untranslated), `swa-KE` |
+| Korea, Republic of | KR | `kor-KR` |
+| Kuwait | KW | `ara-KW` → `ara-SA` |
+| Latvia | LV | `lav-LV` |
+| Lebanon | LB | `ara-LB` → `ara-SA` |
+| Libya | LY | `ara-LY` → `ara-SA` |
+| Liechtenstein | LI | `ger-LI` → `ger-DE` |
+| Lithuania | LT | `lit-LT` |
+| Luxembourg | LU | `fre-LU` → `fre-FR`, `ger-LU` → `ger-DE`, `ltz-LU` (untranslated) |
+| Madagascar | MG | `fre-MG` → `fre-FR`, `mlg-MG` (untranslated) |
+| Mali | ML | `bam-ML` (untranslated), `fre-ML` → `fre-FR` |
+| Malta | MT | `mlt-MT` |
+| Mauritania | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
+| Mauritius | MU | `fre-MU` → `fre-FR` |
+| Mexico | MX | `esl-MX` |
+| Monaco | MC | `fre-MC` → `fre-FR` |
+| Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (untranslated) |
+| Mozambique | MZ | `por-MZ` → `por-PT` |
+| Netherlands | NL | `dut-NL`, `fry-NL` (untranslated) |
+| New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
+| Nicaragua | NI | `esl-NI` → `esl-ES` |
+| Niger | NE | `fre-NE` → `fre-FR` |
+| Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG` (untranslated), `yor-NG` |
+| Norway | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` (untranslated) |
+| Oman | OM | `ara-OM` → `ara-SA` |
+| Pakistan | PK | `eng-PK` (source texts), `pnb-PK` (untranslated), `snd-PK` (untranslated), `urd-PK` |
+| Palestinian Territory, Occupied | PS | `ara-PS` → `ara-SA` |
+| Panama | PA | `esl-PA` → `esl-ES` |
+| Paraguay | PY | `esl-PY` → `esl-ES` |
+| Peru | PE | `esl-PE` → `esl-ES`, `que-PE` (untranslated) |
+| Philippines | PH | `ceb-PH` (untranslated), `eng-PH` (source texts), `fil-PH` (untranslated) |
+| Poland | PL | `pol-PL` |
+| Portugal | PT | `por-PT` |
+| Puerto Rico | PR | `esl-PR` → `esl-ES` |
+| Qatar | QA | `ara-QA` → `ara-SA` |
+| Romania | RO | `ron-RO` |
+| Russian Federation | RU | `che-RU` (untranslated), `rus-RU`, `tat-RU` (untranslated) |
+| Rwanda | RW | `fre-RW` → `fre-FR`, `kin-RW` (untranslated) |
+| Saudi Arabia | SA | `ara-SA` |
+| Senegal | SN | `fre-SN` → `fre-FR`, `ful-SN` (untranslated), `wol-SN` (untranslated) |
+| Serbia | RS | `ser-SR`, `srp-RS` |
+| Seychelles | SC | `fre-SC` → `fre-FR` |
+| Singapore | SG | `chi-SG` → `chi-CN`, `eng-SG` (source texts), `msa-SG` (untranslated), `tam-SG` → `tam-IN` |
+| Slovakia | SK | `slk-SK` |
+| Slovenia | SI | `slv-SI` |
+| Somalia | SO | `ara-SO` → `ara-SA`, `som-SO` |
+| South Africa | ZA | `afr-ZA`, `eng-ZA` (source texts), `xho-ZA`, `zul-ZA` |
+| Spain | ES | `ast-ES` (untranslated), `cat-ES`, `esl-ES`, `eus-ES` (untranslated), `glg-ES` (untranslated) |
+| Sri Lanka | LK | `sin-LK` (untranslated), `tam-LK` → `tam-IN` |
+| Sudan | SD | `ara-SD` → `ara-SA` |
+| Sweden | SE | `swe-SE` |
+| Switzerland | CH | `fre-CH` → `fre-FR`, `ger-CH` → `ger-DE`, `ita-CH` → `ita-IT`, `roh-CH` (untranslated) |
+| Syrian Arab Republic | SY | `ara-SY` → `ara-SA`, `syr-SY` (untranslated) |
+| Taiwan | TW | `chi-TW` |
+| Tanzania, United Republic of | TZ | `swa-TZ` → `swa-KE` |
+| Togo | TG | `fre-TG` → `fre-FR` |
+| Tunisia | TN | `ara-TN` → `ara-SA`, `fre-TN` → `fre-FR` |
+| Türkiye | TR | `kur-TR`, `tur-TR` |
+| Ukraine | UA | `ukr-UA` |
+| United Arab Emirates | AE | `ara-AE` → `ara-SA` |
+| United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` (untranslated) |
+| United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` (untranslated) |
+| Uruguay | UY | `esl-UY` → `esl-ES` |
+| Vanuatu | VU | `fre-VU` → `fre-FR` |
+| Venezuela | VE | `esl-VE` → `esl-ES` |
+| Yemen | YE | `ara-YE` → `ara-SA` |
+
+</details>
+
+<details><summary>The 26 countries and territories with a locale but the administration in English</summary>
+
+| Country or territory | Code | Locales |
+|---|---|---|
+| Armenia | AM | `hye-AM` |
+| Azerbaijan | AZ | `aze-AZ` |
+| Belarus | BY | `bel-BY` |
+| Bhutan | BT | `dzo-BT` |
+| Brunei Darussalam | BN | `msa-BN` |
+| Cambodia | KH | `khm-KH` |
+| Faroe Islands | FO | `fao-FO` |
+| Georgia | GE | `kat-GE` |
+| Indonesia | ID | `ind-ID`, `jav-ID`, `sun-ID` |
+| Kazakhstan | KZ | `kaz-KZ` |
+| Kyrgyzstan | KG | `kir-KG` |
+| Lao People's Democratic Republic | LA | `lao-LA` |
+| Malaysia | MY | `msa-MY` |
+| Maldives | MV | `div-MV` |
+| Mongolia | MN | `mon-MN` |
+| Myanmar | MM | `mya-MM` |
+| Nepal | NP | `nep-NP` |
+| North Macedonia | MK | `mkd-MK` |
+| Tajikistan | TJ | `tgk-TJ` |
+| Thailand | TH | `tha-TH` |
+| Tonga | TO | `ton-TO` |
+| Turkmenistan | TM | `tuk-TM` |
+| Uganda | UG | `lug-UG` |
+| Uzbekistan | UZ | `uzb-UZ` |
+| Viet Nam | VN | `vie-VN` |
+| Zimbabwe | ZW | `sna-ZW` |
+
+</details>
+
+Made by `./console exp:i18n coverage` from the shipped files; `./console exp:i18n coverage --check` and the test `expI18nCoverageMapTest` fail when the figures or the map are out of date.
+<!-- generated: exp:i18n coverage (end) -->
 
 The one place that says which languages Exponential supports, at which level, and how to add more. The figures
 were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
@@ -28,6 +228,105 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 11. [The limit of 62 content languages](#11-the-limit-of-62-content-languages)
 12. [Test languages: Lorem Ipsum](#12-test-languages-lorem-ipsum)
 13. [Translation fallbacks](#13-translation-fallbacks)
+
+<!-- generated: exp:i18n coverage languages (start) -->
+## The languages not translated yet
+
+Exponential knows **148 languages**: that many different language codes (the three letters before the
+dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
+administration shows **67** of them translated: at least one of their locales has a translation of its
+own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
+source texts. For the other **81** it shows the source texts in English; each is a candidate for a new
+translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
+
+<details><summary>The 81 languages not translated</summary>
+
+| Language | Own name | Code | Locales (countries) |
+|---|---|---|---|
+| Akan | Akan | `aka` | `aka-GH` (Ghana) |
+| Armenian | Հայերեն | `hye` | `hye-AM` (Armenia) |
+| Assamese | অসমীয়া | `asm` | `asm-IN` (India) |
+| Asturian | Asturianu | `ast` | `ast-ES` (Spain) |
+| Azerbaijani | Azərbaycan | `aze` | `aze-AZ` (Azerbaijan) |
+| Bambara | Bamanakan | `bam` | `bam-ML` (Mali) |
+| Basque | Euskara | `eus` | `eus-ES` (Spain) |
+| Belarusian | Беларуская | `bel` | `bel-BY` (Belarus) |
+| Bhojpuri | भोजपुरी | `bho` | `bho-IN` (India) |
+| Bodo | बर’ | `brx` | `brx-IN` (India) |
+| Breton | Brezhoneg | `bre` | `bre-FR` (France) |
+| Burmese | မြန်မာ | `mya` | `mya-MM` (Myanmar) |
+| Cebuano | Cebuano | `ceb` | `ceb-PH` (Philippines) |
+| Central Kurdish | کوردیی ناوەندی | `ckb` | `ckb-IQ` (Iraq) |
+| Chechen | Нохчийн | `che` | `che-RU` (Russian Federation) |
+| Dhivehi | ދިވެހި | `div` | `div-MV` (Maldives) |
+| Dogri | डोगरी | `doi` | `doi-IN` (India) |
+| Dzongkha | རྫོང་ཁ | `dzo` | `dzo-BT` (Bhutan) |
+| Esperanto | Esperanto | `epo` | `epo-EO` |
+| Ewe | Eʋegbe | `ewe` | `ewe-GH` (Ghana) |
+| Faroese | Føroyskt | `fao` | `fao-FO` (Faroe Islands) |
+| Filipino | Filipino | `fil` | `fil-PH` (Philippines) |
+| Fula | Pulaar | `ful` | `ful-SN` (Senegal) |
+| Galician | Galego | `glg` | `glg-ES` (Spain) |
+| Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
+| Georgian | ქართული | `kat` | `kat-GE` (Georgia) |
+| Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (United States of America) |
+| Indonesian | Indonesian | `ind` | `ind-ID` (Indonesia) |
+| Javanese | Jawa | `jav` | `jav-ID` (Indonesia) |
+| Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
+| Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
+| Kazakh | Қазақ тілі | `kaz` | `kaz-KZ` (Kazakhstan) |
+| Khmer | ខ្មែរ | `khm` | `khm-KH` (Cambodia) |
+| Kikuyu | Gikuyu | `kik` | `kik-KE` (Kenya) |
+| Kinyarwanda | Kinyarwanda | `kin` | `kin-RW` (Rwanda) |
+| Kirundi | Ikirundi | `run` | `run-BI` (Burundi) |
+| Konkani | कोंकणी | `kok` | `kok-IN` (India) |
+| Kyrgyz | Кыргызча | `kir` | `kir-KG` (Kyrgyzstan) |
+| Lao | ລາວ | `lao` | `lao-LA` (Lao People's Democratic Republic) |
+| Lingala | Lingála | `lin` | `lin-CD` (Congo, The Democratic Republic Of The) |
+| Luxembourgish | Lëtzebuergesch | `ltz` | `ltz-LU` (Luxembourg) |
+| Macedonian | Македонски | `mkd` | `mkd-MK` (North Macedonia) |
+| Maithili | मैथिली | `mai` | `mai-IN` (India) |
+| Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagascar) |
+| Malay | Melayu | `msa` | `msa-BN` (Brunei Darussalam), `msa-MY` (Malaysia), `msa-SG` (Singapore) |
+| Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
+| Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
+| Mongolian | Монгол | `mon` | `mon-MN` (Mongolia) |
+| Nepali | नेपाली | `nep` | `nep-NP` (Nepal) |
+| Nigerian Pidgin | Naijíriá Píjin | `pcm` | `pcm-NG` (Nigeria) |
+| Northern Sami | Davvisámegiella | `sme` | `sme-NO` (Norway) |
+| N’Ko | ߒߞߏ | `nqo` | `nqo-GN` (Guinea) |
+| Occitan | Occitan | `oci` | `oci-FR` (France) |
+| Oromo | Oromoo | `orm` | `orm-ET` (Ethiopia) |
+| Quechua | Runasimi | `que` | `que-PE` (Peru) |
+| Romansh | Rumantsch | `roh` | `roh-CH` (Switzerland) |
+| Sanskrit | संस्कृत भाषा | `san` | `san-IN` (India) |
+| Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (India) |
+| Scottish Gaelic | Gàidhlig | `gla` | `gla-GB` (United Kingdom) |
+| Shona | ChiShona | `sna` | `sna-ZW` (Zimbabwe) |
+| Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
+| Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
+| Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
+| Sundanese | Basa Sunda | `sun` | `sun-ID` (Indonesia) |
+| Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Iraq), `syr-SY` (Syrian Arab Republic) |
+| Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
+| Tatar | Татар | `tat` | `tat-RU` (Russian Federation) |
+| Thai | ไทย | `tha` | `tha-TH` (Thailand) |
+| Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
+| Tigrinya | ትግርኛ | `tir` | `tir-ET` (Ethiopia) |
+| Tongan | Lea fakatonga | `ton` | `ton-TO` (Tonga) |
+| Turkmen | Türkmen dili | `tuk` | `tuk-TM` (Turkmenistan) |
+| Upper Sorbian | Hornjoserbšćina | `hsb` | `hsb-DE` (Germany) |
+| Uyghur | ئۇيغۇرچە | `uig` | `uig-CN` (China) |
+| Uzbek | O‘zbek | `uzb` | `uzb-UZ` (Uzbekistan) |
+| Vietnamese | Tiếng Việt | `vie` | `vie-VN` (Viet Nam) |
+| Welsh | Cymraeg | `cym` | `cym-GB` (United Kingdom) |
+| Western Frisian | Frysk | `fry` | `fry-NL` (Netherlands) |
+| Western Punjabi | پنجابی | `pnb` | `pnb-PK` (Pakistan) |
+| Wolof | Wolof | `wol` | `wol-SN` (Senegal) |
+| Yiddish | ייִדיש | `yid` | `yid-US` (United States of America) |
+
+</details>
+<!-- generated: exp:i18n coverage languages (end) -->
 
 ## 1. Locales, translations, content languages and siteaccesses
 
@@ -1048,6 +1347,7 @@ of the locales that fall back to it.
 ./console exp:i18n fallbacks --locale=esl-AR,ger-AT  # each step with its rule, and every extension
 ./console exp:i18n fallbacks --format=json
 ./console exp:i18n check [--strict]                  # exit 1 on a problem: for CI
+./console exp:i18n coverage [--check]                # the totals and the map at the top of this page
 ```
 
 `check` reports as errors a cycle, a chain longer than `FallbackMaxDepth`, a target that is no locale code or has
