@@ -23111,7 +23111,7 @@ cecedcc8d3f8f0c9cd7745fb3a8c67db  kernel/private/classes/ezpkernel.php
 e6ce6d62141661a4cf4b57a97febf591  kernel/private/classes/ezpkerneltreemenu.php
 2a7122b05c7c8f75721bdb07343d0828  kernel/private/classes/ezpkernelweb.php
 2b8a42157ac99a624a5cd28409ac43d6  kernel/private/classes/ezplanguageswitcher.php
-f20c7a17b7fd059a0014e7aa192733cd  kernel/private/classes/ezpmail.php
+f6e46cc093f91fc0a5398d5c6fba53d4  kernel/private/classes/ezpmail.php
 0548609342e2db364a28094abfb637a8  kernel/private/classes/ezpmobiledevicedetect.php
 2624f73f09c71233ff19dfbd28ff79b5  kernel/private/classes/ezpmobiledevicedetectfilter.php
 b6faff304d7afedf043b946e2b2104fb  kernel/private/classes/ezpmobiledevicedetectfilterinterface.php

@@ -58,10 +58,11 @@ class ezpMail extends ezcMail
         // Without a Message-Id of its own a mail gets a random one for this generation only.
         // ezcMailTools::generateMessageId() builds it from date( 'YmdGHjs' ), getmypid() and a counter: measured, every
         // mail sent by SMTP carried the PHP process id. One set with eZMail::setMessageID() stays as it is.
+        // Written through the properties array: ezcMail declares messageId read-only (what its __set() does as well).
         $generatedMessageId = false;
         if ( $this->messageId === null )
         {
-            $this->messageId = '<' . bin2hex( random_bytes( 16 ) ) . '@' . $this->messageIdHost() . '>';
+            $this->properties['messageId'] = '<' . bin2hex( random_bytes( 16 ) ) . '@' . $this->messageIdHost() . '>';
             $generatedMessageId = true;
         }
         try
@@ -71,7 +72,7 @@ class ezpMail extends ezcMail
         finally
         {
             if ( $generatedMessageId )
-                $this->messageId = null;
+                $this->properties['messageId'] = null;
         }
         return $headers;
     }
