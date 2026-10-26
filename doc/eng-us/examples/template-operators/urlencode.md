@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Registered in `kernel/common/eztemplateautoload.php` by the class `eZTemplatePHPOperator` (`lib/eztemplate/classes/eztemplatephpoperator.php`).
 It calls the PHP function `urlencode()`, listed in `settings/template.ini` `[PHP] PHPOperatorList[]`.
-The same class also registers: [urldecode](urldecode.md), [rawurlencode](rawurlencode.md), [rawurldecode](rawurldecode.md), [getenv](getenv.md), [serialize](serialize.md), [unserialize](unserialize.md), [nl2br](nl2br.md), [strip_tags](strip_tags.md).
+The same class also registers: [urldecode](urldecode.md), [rawurlencode](rawurlencode.md), [rawurldecode](rawurldecode.md).
 
 ## Parameters
 

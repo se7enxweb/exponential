@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # fetch( 'collaboration', 'tree_count' )
 
-Definiert in `kernel/collaboration/function_definition.php`; sie ruft `eZContentFunctionCollection::fetchObjectTreeCount()` auf (`kernel/content/ezcontentfunctioncollection.php`).
+Definiert in `kernel/collaboration/function_definition.php`; sie ruft `eZCollaborationFunctionCollection::fetchObjectTreeCount()` auf (`kernel/collaboration/ezcollaborationfunctioncollection.php`).
 Operationstyp: read.
 
 ## Parameter
@@ -48,4 +48,4 @@ $result = eZFunctionHandler::execute( 'collaboration', 'tree_count', array( 'par
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/collaboration/function_definition.php`, `kernel/content/ezcontentfunctioncollection.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `kernel/collaboration/function_definition.php`, `kernel/collaboration/ezcollaborationfunctioncollection.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../../hilfe/freie-dokumentation.md).

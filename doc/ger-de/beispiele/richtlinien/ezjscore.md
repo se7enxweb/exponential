@@ -17,7 +17,7 @@ Geprüft von den Ansichten: [call](../modulansichten/ezjscore/call.md).
 
 | Einschränkung | Werte stammen aus |
 |---|---|
-| FunctionList | fest: sqliimport (sqliimport), expai (expai), ezjsctags (ezjsctags), ezjsctagschildren (ezjsctagschildren), ezstarrating_rate (ezstarrating_rate), ezstarrating_user_has_rated (ezstarrating_user_has_rated), loadMore (loadMore), ezjsctemplate (ezjsctemplate), ezjscnode (ezjscnode), ezajaxuploader (ezajaxuploader) |
+| FunctionList | fest: ezjsctemplate (ezjsctemplate), ezjscnode (ezjscnode), ezajaxuploader (ezajaxuploader) |
 
 ```php
 // Einer Rolle die Richtlinie geben (eZRole::appendPolicy( $module, $function, $limitations ))

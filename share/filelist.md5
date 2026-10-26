@@ -3520,7 +3520,7 @@ e45848cf4009e8515ef6ed6775a40b07  doc/eng-us/bc/6.0/view_full_security.md
 d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
-c8313ef8e05aa1b5e159a0c323eaddb6  doc/eng-us/examples/README.md
+95bc38bf0cec95ddc63f35b731feea0c  doc/eng-us/examples/README.md
 a5c1b81f27ae1cff52d25bc09c7a8a2e  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 ca451509860b006764d3be9be20e8417  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
@@ -3788,7 +3788,7 @@ e765a1e5f51b186fcd1ad4af5fa9148a  doc/eng-us/examples/fetch-functions/collaborat
 2da5bc7f7efadedd6092ae8cd4690b84  doc/eng-us/examples/fetch-functions/collaboration/participant.md
 2f28aa88e5f9379453927ec309b8ba0e  doc/eng-us/examples/fetch-functions/collaboration/participant_list.md
 701ebccc60298efc37333f580d92312d  doc/eng-us/examples/fetch-functions/collaboration/participant_map.md
-4cda85e46a46fd44a0dcd56fd0c9635f  doc/eng-us/examples/fetch-functions/collaboration/tree_count.md
+84aca00d200a8ec140063da229304678  doc/eng-us/examples/fetch-functions/collaboration/tree_count.md
 6cb9a2b13377f20fa0cff02468090402  doc/eng-us/examples/fetch-functions/content/README.md
 d59b0ba643d9f0bc6106cc0f393e5557  doc/eng-us/examples/fetch-functions/content/access.md
 0b2deaf5b05a8e6ad7f897afc9e207d8  doc/eng-us/examples/fetch-functions/content/assigned_node_count.md
@@ -5771,7 +5771,7 @@ da3f6b188f8bfe1a5d48526cbdadd4ea  doc/eng-us/examples/module-views/workflow/up.m
 4e143b7538150947bd49ffe07e447116  doc/eng-us/examples/module-views/workflow/view.md
 558cfcb3e3b7699f8c12670e98944a72  doc/eng-us/examples/module-views/workflow/workflowlist.md
 e97e6a2073b683b3baf6ff62d0d52513  doc/eng-us/examples/policies/README.md
-37fc4ab547a673f5437fb1a2b6a4b659  doc/eng-us/examples/policies/apikey.md
+d8d17e29f4cd02a4406cb732cf4a0406  doc/eng-us/examples/policies/apikey.md
 d6ec3bba02deac72d2831972526df59a  doc/eng-us/examples/policies/audit.md
 ad10095b797f6b5becb28574a063235d  doc/eng-us/examples/policies/class.md
 603182180d85ceca82756313d39c4670  doc/eng-us/examples/policies/collaboration.md
@@ -5784,7 +5784,7 @@ cfe02eeaad7061acafdb5345ff965ce4  doc/eng-us/examples/policies/error.md
 dac62d545c22287538ba00181971963d  doc/eng-us/examples/policies/exphelp.md
 757cd993ffc80806b40b30b902c8073f  doc/eng-us/examples/policies/expimageeditor.md
 9144d7efd9e1cd3a30ca18dcb618b4be  doc/eng-us/examples/policies/ezinfo.md
-cf982eb1c18140f107bd1c0e01c42ef6  doc/eng-us/examples/policies/ezjscore.md
+cfc42a445d5cccc488f5f3a55f6dbd9f  doc/eng-us/examples/policies/ezjscore.md
 a38a2809f56141f2e50c63775ea38c90  doc/eng-us/examples/policies/ezoe.md
 d504a2276d957d6bad5038d2c69f55e8  doc/eng-us/examples/policies/infocollector.md
 bcb111c6e85fd10d990b70f94da5a9c3  doc/eng-us/examples/policies/layout.md
@@ -5857,7 +5857,7 @@ f75c6717404d181c69a0f42a30bc82e4  doc/eng-us/examples/template-functions/shop_ac
 79ac0e4658285cc066b118bdf7484718  doc/eng-us/examples/template-functions/tool_bar.md
 eb53f689889b090a6a6decbed5277d91  doc/eng-us/examples/template-functions/undef.md
 e5355c40fe515527462c85a880edcf0a  doc/eng-us/examples/template-functions/while.md
-b8aadfc154df74d6db8d7a48947d8cc8  doc/eng-us/examples/template-operators/README.md
+c964f72668fc0e6816081d87c3febb34  doc/eng-us/examples/template-operators/README.md
 94284652ab561535f9c054c1aff5639f  doc/eng-us/examples/template-operators/abs.md
 6339c9515ce47d063fccf61d1a758040  doc/eng-us/examples/template-operators/action_icon.md
 1fa93d6ac83b522d8c35b316154ce5cc  doc/eng-us/examples/template-operators/addcslashes.md
@@ -5944,7 +5944,6 @@ dac8b3e4ab4d46916cc71936605fed96  doc/eng-us/examples/template-operators/floor.m
 4530e9177200c88530eaf7dd02338789  doc/eng-us/examples/template-operators/ge.md
 890c5a9b2df18a5d34ef565a5fbb253d  doc/eng-us/examples/template-operators/get_class.md
 08066aa4c7555176009a76ee5e4ac638  doc/eng-us/examples/template-operators/get_type.md
-c18058e7e9736a9adb5765aeba072116  doc/eng-us/examples/template-operators/getenv.md
 eaabf75d2671323ea17b04c32c01d90d  doc/eng-us/examples/template-operators/gettime.md
 48213a3bafdef11e5a9f8c873bd979ab  doc/eng-us/examples/template-operators/gt.md
 f98ca34eb9aa91e1c388a95fac8f8930  doc/eng-us/examples/template-operators/has_access_to_limitation.md
@@ -6006,7 +6005,7 @@ edb39fe7583da662603be0c49ce7154b  doc/eng-us/examples/template-operators/module_
 c7f4a66a550ac2859e87f8a0b12eb5ba  doc/eng-us/examples/template-operators/month_overview.md
 8fa4ee997db602ff4009292ba22a5f68  doc/eng-us/examples/template-operators/mul.md
 ba0fa282fe5fa490804b5c440a6fea61  doc/eng-us/examples/template-operators/ne.md
-792d6ac0377d49476927c04e91c6b50e  doc/eng-us/examples/template-operators/nl2br.md
+11372fbffaf19f459d2ec0e77337c9dd  doc/eng-us/examples/template-operators/nl2br.md
 515d50ff1ff86178be33df2f2e7d24e4  doc/eng-us/examples/template-operators/node_encode.md
 eb3a83d4132f0177a392584593d46e34  doc/eng-us/examples/template-operators/not.md
 4df854765161f7ea8b84eaa232b20eb0  doc/eng-us/examples/template-operators/null.md
@@ -6020,8 +6019,8 @@ f19847138a5ba32678b9a13db3afb371  doc/eng-us/examples/template-operators/prepend
 5a27a93a715938986e7d908628eb4f24  doc/eng-us/examples/template-operators/quoted_printable_encode.md
 03a12072d1e3058a182a62cd93c7b418  doc/eng-us/examples/template-operators/quotemeta.md
 469cce0861acab0256482c97f8aae7f5  doc/eng-us/examples/template-operators/rand.md
-10e7a721b6f7594810feccc5cb31d99d  doc/eng-us/examples/template-operators/rawurldecode.md
-8deb7754d20d6d0f947e133e7b70acad  doc/eng-us/examples/template-operators/rawurlencode.md
+d5a944f8a1f28f41e539308ab29aa3e7  doc/eng-us/examples/template-operators/rawurldecode.md
+471bec0a7fdd82f899c354fd50918922  doc/eng-us/examples/template-operators/rawurlencode.md
 658d25cc41135653103694a319d4b20a  doc/eng-us/examples/template-operators/remove.md
 aa528acab6cee21e1dd3ac562e85c820  doc/eng-us/examples/template-operators/repeat.md
 dbcd9261a7a9574b309544be3eca5e54  doc/eng-us/examples/template-operators/replace.md
@@ -6032,7 +6031,6 @@ d27a616faa6cb0c4b73e03e6bf644313  doc/eng-us/examples/template-operators/roman.m
 b451ec885315dab162aeba8db1053858  doc/eng-us/examples/template-operators/round.md
 1e8a39243c2786dcd19a1b07b110291c  doc/eng-us/examples/template-operators/rstring.md
 dbb6e32430c1bc0baf6e1b212d146c59  doc/eng-us/examples/template-operators/rtrim.md
-0fbd30d0b98e4432de5ec756604a13ed  doc/eng-us/examples/template-operators/serialize.md
 2358649432c25e0e3ec98d3666ab14e2  doc/eng-us/examples/template-operators/shorten.md
 80d5e415d1796d34a93ddeb2d786c039  doc/eng-us/examples/template-operators/si.md
 bd5baf42c609efbf12b61d213a653c42  doc/eng-us/examples/template-operators/similar_text.md
@@ -6054,7 +6052,7 @@ fd5bc6514b028c5f218ed826e73067c2  doc/eng-us/examples/template-operators/strcase
 c75a16049567762ec3031f1c3e21313c  doc/eng-us/examples/template-operators/strcmp.md
 a5c87ad36e99dc1cd6d61bfd4e7841b8  doc/eng-us/examples/template-operators/strcoll.md
 429f618bce7713b167efee175eaeb8d5  doc/eng-us/examples/template-operators/strcspn.md
-f8e4596f5797dbf6c54a99ca230d19b7  doc/eng-us/examples/template-operators/strip_tags.md
+6bacfb321b68b67e42a028045c9f385f  doc/eng-us/examples/template-operators/strip_tags.md
 c3da99066ba6c5ea6f0e0a904b9b1646  doc/eng-us/examples/template-operators/stripcslashes.md
 fa70de4b1bcd6f502554dc2623b5af45  doc/eng-us/examples/template-operators/stripos.md
 5c3c3e2acd1f0e056d92a04626620fa5  doc/eng-us/examples/template-operators/stripslashes.md
@@ -6089,12 +6087,11 @@ f1191c7e487e52522cfcda7bbdd0eaef  doc/eng-us/examples/template-operators/treemen
 3444a9150ea4d04ee6a8bd3a67a015ef  doc/eng-us/examples/template-operators/trim.md
 dbc2b504acaef807e8de91e953167077  doc/eng-us/examples/template-operators/true.md
 d21a3faa73e18bf294987ca7cb63cc9a  doc/eng-us/examples/template-operators/unique.md
-8b09aff8ae5e94282a12c543188859cf  doc/eng-us/examples/template-operators/unserialize.md
 4b0ebe25c4440a4744e0f4f93d131362  doc/eng-us/examples/template-operators/upcase.md
 8cc6d847642acb18a6000a1805f6090e  doc/eng-us/examples/template-operators/upfirst.md
 b6cbf1ec51993aa42844bba5c095aa69  doc/eng-us/examples/template-operators/upword.md
-dbab68df6a14634d46f17c5375b2088c  doc/eng-us/examples/template-operators/urldecode.md
-ac3c0bb67e72d67e2f6ee26a1701505b  doc/eng-us/examples/template-operators/urlencode.md
+00b138d3d00796174ad24e5ec677e96a  doc/eng-us/examples/template-operators/urldecode.md
+08dc2e1bb2a90d7cc6bde2bac80a66c0  doc/eng-us/examples/template-operators/urlencode.md
 ee4898e722304b608f10324122e09fdf  doc/eng-us/examples/template-operators/view_parameter.md
 4ec8689913c7293d1db95fa472f87109  doc/eng-us/examples/template-operators/vsprintf.md
 4d6d1172f2414cfe360a6996c2e7af7d  doc/eng-us/examples/template-operators/wash.md
@@ -12580,7 +12577,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-062d361723910b564be75219bcced98a  doc/ger-de/.paths.json
+e52413ffe386e7e90439780bbfd3e46b  doc/ger-de/.paths.json
 8711f537a8d8be14952a796ca3992b04  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
@@ -12773,7 +12770,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 5a1298d4fd011fce58a72f9df8dff74f  doc/ger-de/bc/6.0/yui-entfernung.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 0ad668da2bd726246806af66e6fd019b  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
-8bcf8c2fce0f295fd2977bc68d23bb1d  doc/ger-de/beispiele/README.md
+bb96faa8eec1f544d841b3d0c1b4cf44  doc/ger-de/beispiele/README.md
 63c12a0332bdf6e06d94c5983393b4dc  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 2e4f2be27f67f022cfc113dd9a6f0d52  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
@@ -13017,7 +13014,7 @@ c234c0c37cfcaa9cf66b1bdb9aa33af7  doc/ger-de/beispiele/fetch-funktionen/collabor
 dabc7db6fedb639fd4ba3922237b8e1a  doc/ger-de/beispiele/fetch-funktionen/collaboration/participant.md
 b561addc94dd5fac2740621e3f7da76b  doc/ger-de/beispiele/fetch-funktionen/collaboration/participant_list.md
 f3cdbae1457c6c7579ed3a52a9c50ebd  doc/ger-de/beispiele/fetch-funktionen/collaboration/participant_map.md
-dd704b75041158eddb8e95c842f69597  doc/ger-de/beispiele/fetch-funktionen/collaboration/tree_count.md
+875b42fba657826eb879e5b778b6f420  doc/ger-de/beispiele/fetch-funktionen/collaboration/tree_count.md
 a182f10f31a9d064d1201c3a0f91a577  doc/ger-de/beispiele/fetch-funktionen/content/README.md
 defdd71b8d3ea60dc5252e687834e99d  doc/ger-de/beispiele/fetch-funktionen/content/access.md
 2749788cc07f02f43b40bd4193536e60  doc/ger-de/beispiele/fetch-funktionen/content/assigned_node_count.md
@@ -15013,7 +15010,7 @@ dfbb5d08aaf825faa97a904a2c359739  doc/ger-de/beispiele/modulansichten/workflow/p
 f6af3b6f80fefcc5b7a37789483b310b  doc/ger-de/beispiele/modulansichten/workflow/view.md
 00a9a60724a1c13c31a2a16aaf4f4224  doc/ger-de/beispiele/modulansichten/workflow/workflowlist.md
 f4b59ede4f80e10c75b3ec2980630279  doc/ger-de/beispiele/richtlinien/README.md
-21c3f25952f349ca1cc1228d90ef984a  doc/ger-de/beispiele/richtlinien/apikey.md
+a9ed54c55189deecc17bbc989f837a1f  doc/ger-de/beispiele/richtlinien/apikey.md
 4852b4071c26b46cb6a29a2d519058a6  doc/ger-de/beispiele/richtlinien/audit.md
 aac0b1c0ca8a8a16ea8a21fa3c436046  doc/ger-de/beispiele/richtlinien/class.md
 f4f3d2d5da99df070a85b9eb48bcd8f7  doc/ger-de/beispiele/richtlinien/collaboration.md
@@ -15026,7 +15023,7 @@ c4200e915aacb101779dc17485fd7355  doc/ger-de/beispiele/richtlinien/error.md
 362228d75449280b0d2b473c6d017f49  doc/ger-de/beispiele/richtlinien/exphelp.md
 ac8787b02ed65cc1f0498128af5a6587  doc/ger-de/beispiele/richtlinien/expimageeditor.md
 738dcc50e83ca25dcaf229d502886ed1  doc/ger-de/beispiele/richtlinien/ezinfo.md
-bfcd49d00f7fa39a667ecef548800b5b  doc/ger-de/beispiele/richtlinien/ezjscore.md
+7cd6ea0beef2e1b7dee000fee3dc4268  doc/ger-de/beispiele/richtlinien/ezjscore.md
 ea8162d3edd81dfb9ae000481f618045  doc/ger-de/beispiele/richtlinien/ezoe.md
 f69d248d2a9c59b3223495edd476956e  doc/ger-de/beispiele/richtlinien/infocollector.md
 1fccd807e427e5e8beefde195a00b8ed  doc/ger-de/beispiele/richtlinien/layout.md
@@ -15098,7 +15095,7 @@ fe3d5c331c6a5a8c1f389b536a63713c  doc/ger-de/beispiele/template-funktionen/set.m
 78ea0116c845fb4f8bd0426c2a195cf8  doc/ger-de/beispiele/template-funktionen/tool_bar.md
 1ba2e1857a0ba2493c968dee2b8bf579  doc/ger-de/beispiele/template-funktionen/undef.md
 e98d6ebabc6727998bd863284f809a63  doc/ger-de/beispiele/template-funktionen/while.md
-1095cf8cb299985468b3fd21ae183fbe  doc/ger-de/beispiele/template-operatoren/README.md
+b130cfb7639ec5502ed0fca5b15c2045  doc/ger-de/beispiele/template-operatoren/README.md
 8cfd3af6a328b63da96036d39ae7b081  doc/ger-de/beispiele/template-operatoren/abs.md
 3cc870fe8dc1a50bed27def6c4195c00  doc/ger-de/beispiele/template-operatoren/action_icon.md
 1a425f5fc4a47ff1cb57710e0e4c7442  doc/ger-de/beispiele/template-operatoren/addcslashes.md
@@ -15185,7 +15182,6 @@ c0394eb2f12cf7cd157ff386971b4e8f  doc/ger-de/beispiele/template-operatoren/float
 ebb5dfafbfbb4c3106104223199e7bb0  doc/ger-de/beispiele/template-operatoren/ge.md
 9b3dbd0c87cca7946a9c4d5a6dbd127e  doc/ger-de/beispiele/template-operatoren/get_class.md
 ed4f7574dfa0d5c3d41e879fab70e935  doc/ger-de/beispiele/template-operatoren/get_type.md
-6daab7ad0bf336db963b6a33cfdb14db  doc/ger-de/beispiele/template-operatoren/getenv.md
 e33b9a8e55045a26912e2a48e9e0b10e  doc/ger-de/beispiele/template-operatoren/gettime.md
 a52ebde1ba405233218b07a634e886af  doc/ger-de/beispiele/template-operatoren/gt.md
 1c04734af64255b805c1350423910c56  doc/ger-de/beispiele/template-operatoren/has_access_to_limitation.md
@@ -15247,7 +15243,7 @@ f040a61e3a358d6ce7e9618482b4d3b0  doc/ger-de/beispiele/template-operatoren/mimet
 5f8f7510a6f2a83309a33fb3722a20ae  doc/ger-de/beispiele/template-operatoren/month_overview.md
 98c86fafc9524069339d076feb521bff  doc/ger-de/beispiele/template-operatoren/mul.md
 f60caf9de42946e20c37f4fe8532e814  doc/ger-de/beispiele/template-operatoren/ne.md
-714ec89f7a50e07f975d1703e68347fb  doc/ger-de/beispiele/template-operatoren/nl2br.md
+a177020ca67b1532c27a38395c6e5c03  doc/ger-de/beispiele/template-operatoren/nl2br.md
 0974e3e848e2b8d47047998a1dc468d0  doc/ger-de/beispiele/template-operatoren/node_encode.md
 444b03dad786f14b90fb5dde6f3d1028  doc/ger-de/beispiele/template-operatoren/not.md
 66b56dd3e21ba7654174e495e9a18def  doc/ger-de/beispiele/template-operatoren/null.md
@@ -15261,8 +15257,8 @@ acc0eaacf5ccdf5512f5cf3490edc8e1  doc/ger-de/beispiele/template-operatoren/pdf.m
 80d687e1cffcbb3086e00d07be8df77c  doc/ger-de/beispiele/template-operatoren/quoted_printable_encode.md
 045497d3d47649f59c8beac90b2373dd  doc/ger-de/beispiele/template-operatoren/quotemeta.md
 4c3ae50134ec58bc0ce63044f6bc8887  doc/ger-de/beispiele/template-operatoren/rand.md
-fd46ad8d196c63354ef96cd8e2c4725b  doc/ger-de/beispiele/template-operatoren/rawurldecode.md
-1fd9f9c8fe4e3db53ec6316ebf3006b4  doc/ger-de/beispiele/template-operatoren/rawurlencode.md
+4594e29b1013fe3f77d99cba371c1623  doc/ger-de/beispiele/template-operatoren/rawurldecode.md
+4cc237384d2beb439679007c85262452  doc/ger-de/beispiele/template-operatoren/rawurlencode.md
 7192e6b0730be24a5884a826fcc875df  doc/ger-de/beispiele/template-operatoren/remove.md
 607c3fff08329c63140b421e1c880b3d  doc/ger-de/beispiele/template-operatoren/repeat.md
 c5420c5ca56a61689f542e8f71bf4b7d  doc/ger-de/beispiele/template-operatoren/replace.md
@@ -15273,7 +15269,6 @@ c5420c5ca56a61689f542e8f71bf4b7d  doc/ger-de/beispiele/template-operatoren/repla
 024f7b2d131da5a0ff3733650e73e396  doc/ger-de/beispiele/template-operatoren/round.md
 46e53f9ba3e0dc94626d5293a279385a  doc/ger-de/beispiele/template-operatoren/rstring.md
 e7fa3ca14108953f244dc1806af45d20  doc/ger-de/beispiele/template-operatoren/rtrim.md
-b3919c6add4240bb896439245f9c3789  doc/ger-de/beispiele/template-operatoren/serialize.md
 7c28edfdc890488f3e66b22e6bbc61d5  doc/ger-de/beispiele/template-operatoren/shorten.md
 0ea8baab0ca6aaf534aa7c940b6ffe4c  doc/ger-de/beispiele/template-operatoren/si.md
 0b69af953c5082c5c41a9291edf2509c  doc/ger-de/beispiele/template-operatoren/similar_text.md
@@ -15295,7 +15290,7 @@ a588967ac061196e2d7b7077826ff80f  doc/ger-de/beispiele/template-operatoren/strca
 9f075ae920049671b2e8c6aeb0ab93d0  doc/ger-de/beispiele/template-operatoren/strcmp.md
 a27f42f090bd2fc5bf255a8dcea49422  doc/ger-de/beispiele/template-operatoren/strcoll.md
 22c9a4b0d9234a861031195a4bb9841b  doc/ger-de/beispiele/template-operatoren/strcspn.md
-8b43cc903e1be3517b6884e7a924712d  doc/ger-de/beispiele/template-operatoren/strip_tags.md
+df07b38906e14c315d5fd55b123800d2  doc/ger-de/beispiele/template-operatoren/strip_tags.md
 c8f30ccc80335bcb32f88b03cce03795  doc/ger-de/beispiele/template-operatoren/stripcslashes.md
 ec27ea0f22a9d86853d4563d1ec1496a  doc/ger-de/beispiele/template-operatoren/stripos.md
 dc426c93a384a2c2fea97bff16bf0f7c  doc/ger-de/beispiele/template-operatoren/stripslashes.md
@@ -15330,12 +15325,11 @@ d2547a9d951fe9ae0122899bd7a669d7  doc/ger-de/beispiele/template-operatoren/trans
 f446e16adce912db428617a1513dff4a  doc/ger-de/beispiele/template-operatoren/trim.md
 21de9fee6bbc0eb94033ea97198414b0  doc/ger-de/beispiele/template-operatoren/true.md
 c6cf1e13d6573126165bdba1a2bb8b5b  doc/ger-de/beispiele/template-operatoren/unique.md
-462fa7a6a66141eadfefc318e8821f5a  doc/ger-de/beispiele/template-operatoren/unserialize.md
 6d66c7ec47789125176990f770f55ea0  doc/ger-de/beispiele/template-operatoren/upcase.md
 6b970599fc82cfc7862666b696b1556b  doc/ger-de/beispiele/template-operatoren/upfirst.md
 0d24cb33e4be58c5458008e7be002fb9  doc/ger-de/beispiele/template-operatoren/upword.md
-33754b4779edfb16480ef5270e5c96fd  doc/ger-de/beispiele/template-operatoren/urldecode.md
-401ecbf67d62557a1e2bb2e80343b13f  doc/ger-de/beispiele/template-operatoren/urlencode.md
+b1738d0a2cb69a1864eda16ab0dfe886  doc/ger-de/beispiele/template-operatoren/urldecode.md
+47395cf1967455cf32f5c04fa820e297  doc/ger-de/beispiele/template-operatoren/urlencode.md
 32407bc9b0ac558100a8472bb468350e  doc/ger-de/beispiele/template-operatoren/view_parameter.md
 82dd58fe632913ab445cce8ea18fd5ca  doc/ger-de/beispiele/template-operatoren/vsprintf.md
 927c6fcc2bbfc21e0ac31641463ce5dc  doc/ger-de/beispiele/template-operatoren/wash.md
@@ -22862,7 +22856,7 @@ b9abbada4676605e209c224dfdede8a2  kernel/classes/help/exphelpcommitfeed.php
 da78b86ed90c629ace76091014cec601  kernel/classes/help/exphelpcontextproviderinterface.php
 b17ef905d0c43e86aa71cd3decc3d67f  kernel/classes/help/exphelpcontextregistry.php
 c7a21d5f72fa0a60277c0806e25fcdea  kernel/classes/help/exphelpdocumentindex.php
-0776ecdb29ca13a41bb6b72c3cabee52  kernel/classes/help/exphelpexamplesgenerator.php
+79bfc60a262644fb962a6c0a4bd942c0  kernel/classes/help/exphelpexamplesgenerator.php
 3e79654e800bcb6b79ad95a0b8b736b5  kernel/classes/help/exphelpexamplestranslation.php
 7943d5e887c68ecec49867260aa31677  kernel/classes/help/exphelpfrontmatter.php
 cacb4dd0200663075cdb0198b9709a47  kernel/classes/help/exphelpfunctioncollection.php
@@ -26220,7 +26214,7 @@ dac945a9f992111a0078fb7055ae4573  tests/tests/kernel/classes/help/expHelpContent
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 985cf720ea21f49a1577289ddd974bbb  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
-a2e86a2b851afeb667709ff2f4303754  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
+485ccc8b099c728050a1759baf2f815f  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 95a5d76568a80713a3816488278d36bc  tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php
 ba2166460a45a76fe3478f8edaaf33ac  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php
 8ba594728201045e0f0a28545381fbca  tests/tests/kernel/classes/help/expHelpFrontMatterQuotingTest.php

@@ -207,16 +207,69 @@ class expHelpExamplesGenerator
         $this->pathMap = array();
         if ( $this->translation !== null )
             $this->translation->resetMissing();
-        foreach ( array_keys( self::AREAS ) as $area )
+        $restore = $this->useShippedSettings();
+        try
         {
-            if ( $areas !== null && !in_array( $area, $areas, true ) )
-                continue;
-            $method = 'area' . str_replace( ' ', '', ucwords( str_replace( '-', ' ', $area ) ) );
-            $this->counts[$area] = 0;
-            $this->$method();
+            foreach ( array_keys( self::AREAS ) as $area )
+            {
+                if ( $areas !== null && !in_array( $area, $areas, true ) )
+                    continue;
+                $method = 'area' . str_replace( ' ', '', ucwords( str_replace( '-', ' ', $area ) ) );
+                $this->counts[$area] = 0;
+                $this->$method();
+            }
+        }
+        finally
+        {
+            $restore();
         }
         ksort( $this->pages, SORT_STRING );
         return $this->pages;
+    }
+
+    /**
+     * Makes eZINI read the shipped settings only while the pages are built, and returns the function that puts the
+     * previous state back.
+     *
+     * Some sources ask eZINI for their values when they are read: the PHP operators of settings/template.ini
+     * (kernel/common/eztemplateautoload.php), the ezjscore FunctionList (its module.php) and the API key scopes of
+     * rest.ini (kernel/apikey/module.php). Through eZINI those values depend on the installation: settings/override,
+     * the siteaccess, every active extension (also those that are not part of the repository), the environment
+     * variant (EXP_ENV), settings injected at runtime and the INI cache, which need not be current when file times
+     * are not checked. The same sources then gave different pages in the installation, in a git worktree and in CI.
+     * While building, eZINI reads settings/ and the settings/ of the tracked extensions (by name), with no cache;
+     * afterwards its state is exactly what it was.
+     *
+     * @return callable
+     */
+    protected function useShippedSettings()
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return function () {};
+
+        $dirs = array();
+        foreach ( $this->files as $file )
+            if ( preg_match( '#^extension/([^/]+)/settings/[^/]+\.ini(\.append(\.php)?)?$#', $file, $m ) )
+                $dirs[$m[1]] = array( $this->root . '/extension/' . $m[1] . '/settings', true, 'extension:' . $m[1] );
+        ksort( $dirs, SORT_STRING );
+        $shipped = array( 'sa-extension' => array(), 'siteaccess' => array(), 'extension' => array_values( $dirs ), 'override' => array() );
+
+        $state = Closure::bind( function ( $set = null )
+        {
+            $old = array( self::$instances, self::$GlobalOverrideDirArray, self::$sharedState, self::$cacheEnabled,
+                          self::$injectedSettings, self::$injectedMergeSettings, self::$environment );
+            if ( $set !== null )
+                list( self::$instances, self::$GlobalOverrideDirArray, self::$sharedState, self::$cacheEnabled,
+                      self::$injectedSettings, self::$injectedMergeSettings, self::$environment ) = $set;
+            return $old;
+        }, null, 'eZINI' );
+
+        // no instance, the shipped directories, no worker store, no cache, nothing injected, no environment variant
+        $saved = $state( array( array(), $shipped, null, false, array(), array(), false ) );
+        return function () use ( $state, $saved )
+        {
+            $state( $saved );
+        };
     }
 
     /** @return array area => number of item pages (index pages not counted) */
