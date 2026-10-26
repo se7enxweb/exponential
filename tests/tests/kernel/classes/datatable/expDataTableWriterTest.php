@@ -170,16 +170,18 @@ class expDataTableWriterTest extends PHPUnit\Framework\TestCase
     }
 
     /** DW-07 (the kernel's SQLite insert) */
-    public function testSqliteInsertReplacesOnAUniqueConflict()
+    public function testSqliteInsertRefusesAUniqueConflict()
     {
-        // documents eZPersistentObject's INSERT OR REPLACE on SQLite: a row whose unique column another row has
-        // replaces that row (MySQL and PostgreSQL refuse it); match on the unique column to avoid it
+        // documents eZPersistentObject's insert on SQLite: a row whose unique column another row has is refused, as
+        // MySQL and PostgreSQL refuse it (it no longer replaces that row; kernel commit 85332302b6); match on the
+        // unique column to update the row instead
         $writer = new expDataTableWriter( 'expDTFixtureRow', array( 'keys' => array( 'title' ) ) );
         $result = $writer->write( array( array( 'remote_id' => 'same', 'title' => 'one' ), array( 'remote_id' => 'same', 'title' => 'two' ) ) );
-        $this->assertSame( 2, $result['inserted'] );
+        $this->assertSame( 1, $result['inserted'], json_encode( $result ) );
+        $this->assertSame( 1, $result['failed'], json_encode( $result ) );
         $rows = self::fixtureRows();
         $this->assertCount( 1, $rows );
-        $this->assertSame( 'two', $rows['same']['title'] );
+        $this->assertSame( 'one', $rows['same']['title'] );
     }
 
     /** DW-08 */
