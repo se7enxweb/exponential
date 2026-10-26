@@ -39,8 +39,10 @@ Zugangsdaten; wählen Sie danach, für wen das Programm handelt.
    `error=access_denied` weiter ([Richtlinie OAuth authorize](../../../bc/6.0/oauth-autorisierungsrichtlinie.md)).
 3. Die App tauscht den Code bei `POST /api/auth/v1/oauth/token` ein (`grant_type=authorization_code`, dazu
    `code_verifier`, wenn sie eine Challenge gesendet hat).
-4. Sie sendet `Authorization: OAuth <token>`; nach `TokenTTL` (standardmäßig eine Stunde) verwendet sie
-   `grant_type=refresh_token`.
+4. Sie sendet `Authorization: OAuth <token>` (ein Token in der Adresse, `?oauth_token=`, wird abgelehnt, außer bei
+   `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`); nach `TokenTTL` (standardmäßig eine Stunde) verwendet sie
+   `grant_type=refresh_token`. Ein Refresh-Token gilt `RefreshTokenTTL` (standardmäßig 30 Tage) ab der Erneuerung,
+   die es ausgestellt hat ([Härtung der OAuth-Tokens](../../../bc/6.0/oauth-token-haertung.md)).
 
 ![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../bilder/creators/oauth-admin.webp)
 

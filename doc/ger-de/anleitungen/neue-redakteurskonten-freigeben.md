@@ -80,6 +80,12 @@ Den Link in einem Browser öffnen, in dem Sie nicht angemeldet sind. Die Adminis
 - Oder **Ablehnen** drücken und bestätigen. Das Konto ist nicht veröffentlicht und kann sich nicht anmelden; der
   Redakteur findet es in *Meine Entwürfe*.
 
+Bevor die Entscheidung ausgeführt wird, fragt **Identität bestätigen** (die Gruppe *users*, standardmäßig an): das
+Passwort eingeben (oder einen Passkey oder den Code der Authenticator-App verwenden) und **Bestätigen** drücken. Ein
+falsches Passwort wird abgewiesen, die Seite fragt erneut, und nichts wird entschieden; das richtige führt genau das
+gedrückte Freigeben oder Ablehnen aus. In den nächsten zehn Minuten (`[ReauthSettings] Minutes`) fragt eine weitere
+Entscheidung nicht erneut. Siehe [Identität bestätigen](identitaet-bestaetigen.md).
+
 Die Entscheidung wirkt sofort; der Workflow-Cronjob wird dafür nicht gebraucht.
 
 ## 6. Was verweigert wird
@@ -110,6 +116,7 @@ als Editors brauchen die Anfragenden dort auch `content/create`: geben Sie ihrer
 | Das Konto wurde ohne Freigabe veröffentlicht | Der Redakteur gibt selbst frei oder ist in einer Gruppe ohne Freigabe, oder das Ereignis steht nicht im Workflow, den content/publish (vorher) ausführt: Setup > Trigger und das Ereignis prüfen |
 | Keine Mail | Freigebende ohne E-Mail-Adresse bekommen keine; der Transport in `[MailSettings]`; ist die E-Mail aus, gibt es keine. Das Freigabeelement ist trotzdem da |
 | Der Link zeigt auf den falschen Host | `[UserSettings] RegistrationAdminBaseURL` setzen |
+| Nach *Freigeben* oder *Ablehnen* erscheint *Identität bestätigen* | So gewollt: Die Gruppe users fragt, bevor ein Konto freigegeben oder abgelehnt wird. Bestätigen, dann wird die Entscheidung ausgeführt. Ein Administrator kann die Gruppe unter Setup > Verify it's you ausschalten |
 | Nach *Freigeben* wartet es weiter | Ein anderes Ereignis des Workflows wartet (zum Beispiel eine Inhaltsfreigabe); der Workflow-Cronjob setzt fort |
 
 Mehr: [Freigabe neuer Benutzerkonten](../bc/6.0/freigabe-von-benutzerkonten.md) (die technische Notiz),

@@ -49971,6 +49971,18 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <translation>Arkivet vägrades: posten &quot;%path&quot; pekar utanför paketet.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arkivet är packat i PAX-tar-formatet, som inte kan importeras. Packa paketet i GNU-tar-formatet (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkivet vägrades: posten &quot;%path&quot; har tar-typen &quot;%type&quot;, och ett paket innehåller bara filer och kataloger.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivet vägrades: det innehåller en post med ett namn som är längre än %length byte.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arkivet vägrades: posten &quot;%path&quot; är en länk eller en enhet, och ett paket innehåller bara filer och kataloger.</translation>
     </message>
@@ -75291,6 +75303,146 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Bygg hjälphandböckerna från Markdown-hjälpen</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Granskning och frisläppning</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Ämnet granskas nu.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Ämnet är frisläppt: läsarna ser det nu.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Ämnet är ett utkast igen.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Du skrev den aktuella versionen, så någon annan med frisläppningsrollen släpper den.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Tillståndet ändrades inte: din roll tillåter inte det här steget.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Granskningsflöde</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Utkast</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Granskning</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Tillbaka till granskning</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Skicka till granskning</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Släpp</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Tillbaka till utkast</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontroll enligt stilguiden</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrollen enligt stilguiden hittade inget.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors fel, %warnings varningar, %notices anmärkningar. Ett fel gör att ./console exp:help:content check misslyckas.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivå</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Fält</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Fynd</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Var detta till hjälp?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Läsarna svarade ja %yes gånger och nej %no gånger.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Angivna skäl för nej:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Tack. Ditt svar hjälper oss att förbättra hjälpen.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Om inte, vad var fel?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Inget skäl angivet</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Bara ditt svar sparas, inte vem du är.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Det är inaktuellt</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Det är svårt att förstå</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Något saknas</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Det är fel</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Ett annat skäl</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Det här ämnet är inte frisläppt; läsarna ser det inte.</translation>
     </message>
 </context>
 <context>

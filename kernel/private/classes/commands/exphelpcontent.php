@@ -22,7 +22,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             array(
                 'description' => "Help maintained as content (topics, manuals, glossary in the content tree)\n" .
                                  "\n" .
-                                 "./console exp:help:content install -s <admin siteaccess> [--dry-run]   classes, tree and roles (all three steps)\n" .
+                                 "./console exp:help:content install -s <admin siteaccess> [--dry-run]   tables, classes, tree and roles (all four steps)\n" .
+                                 "./console exp:help:content tables -s ...     the tables exphelp_help_id (released help_ids) and exphelp_feedback\n" .
+                                 "                                              (\"Was this helpful?\"), when an older installation lacks them\n" .
                                  "./console exp:help:content classes -s ...    the eight help_* classes in the class group Help (create_classes.php)\n" .
                                  "./console exp:help:content tree -s ...       sections, the state group help_status, the folder tree (create_tree.php)\n" .
                                  "./console exp:help:content roles -s ...      the roles Help editor, Help release and the Anonymous policy (create_roles.php)\n" .
@@ -33,11 +35,14 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                  "                                              the manuals of the Markdown help (exphelp.ini [ManualSettings]):\n" .
                                  "                                              made, updated and removed so they match the pages (help-gen-...)\n" .
                                  "./console exp:help:content report -s ...     what is installed, the roles' assignments, the content by state\n" .
-                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=]\n" .
-                                 "                                              an e-book of the Released topics of a manual (export_manual.php)\n" .
-                                 "./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run]\n" .
+                                 "./console exp:help:content export -s ... --manual=help-manual-editors --format=epub|pdf [--output=file] [--language=] [--check]\n" .
+                                 "                                              an e-book of the Released topics of a manual (export_manual.php);\n" .
+                                 "                                              --check runs epubcheck and Ace by DAISY where the site has them\n" .
+                                 "./console exp:help:content dita -s ... [--manual=<remote_id>] [--output=dir] [--dry-run] [--commit]\n" .
                                  "                                              the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary) into a\n" .
-                                 "                                              directory, checked after writing (also: export --format=dita)\n" .
+                                 "                                              directory, checked after writing (also: export --format=dita);\n" .
+                                 "                                              --commit records it in git (the cronjob part exphelp does it regularly)\n" .
+                                 "./console exp:help:content feedback -s ... [--prune] [--json]   the answers to \"Was this helpful?\" per topic\n" .
                                  "./console exp:help:content ebooks -s ... [--manual=<remote_id>] [--language=ger-DE] [--dry-run]   build the e-books of the\n" .
                                  "                                              Released manuals and store them as file objects under E-books\n" .
                                  "./console exp:help:content review -s ... [--json]   the topics whose review is overdue\n" .
@@ -58,10 +63,10 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[dry-run][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:][queue]', '', array(
+        $options = $this->startup( '[dry-run][check][prune][commit][fix][file:][update][release][with-content][login:][json][manual:][format:][output:][version:][language:][queue]', '', array(
             'queue'        => 'build-manuals: queue the build as a background content job (helpmanuals) and return at once; nothing is queued while one runs',
             'dry-run'      => 'Show what would change, change nothing',
-            'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience',
+            'fix'          => 'check: set the section of each topic, figure, chapter and manual from the audience, and record the help_ids of Released topics',
             'file'         => 'seed-glossary, seed-topics: the data file (default share/help/seed-glossary.json, share/help/seed-topics.json)',
             'update'       => 'seed-*: also update existing objects that differ from the file',
             'release'      => 'seed-topics: set new topics, chapters and manuals to Released; build-manuals: set every generated one to Released',
@@ -71,6 +76,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             'json'         => 'Print one JSON document instead of the text',
             'manual'       => 'export, dita, ebooks: the remote_id of the manual (help-manual-...); dita and ebooks without it: every manual; build-manuals: the key of one manual of [ManualSettings] Manuals[]',
             'format'       => 'export: epub, pdf or dita',
+            'check'        => 'export: check the EPUB with epubcheck and Ace by DAISY ([ContentSettings] EpubCheckCommand, AceCommand); exit 1 when one fails',
+            'prune'        => 'feedback: remove the answers older than [ContentSettings] FeedbackKeepDays',
+            'commit'       => 'dita: commit the written files when the directory is a git repository (the history of delivery path 4)',
             'output'       => 'export: the file to write (default <cache>/exphelp/ebooks/<remote_id>.<format>); dita: the directory (default <cache>/exphelp/dita/all or /<remote_id>); package: the directory (default <cache>/exphelp/packages)',
             'version'      => 'package: the release, MAJOR.MINOR.PATCH (default: the version of this installation)',
         ) );
@@ -86,8 +94,8 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             $this->shutdown( 2 );
             return;
         }
-        $known = array( 'install', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'build-manuals', 'report', 'uninstall', 'export',
-                        'dita', 'ebooks', 'review', 'package', 'verify-package', 'cache' );
+        $known = array( 'install', 'tables', 'classes', 'tree', 'roles', 'check', 'seed-glossary', 'seed-topics', 'build-manuals', 'report', 'uninstall', 'export',
+                        'dita', 'ebooks', 'review', 'feedback', 'package', 'verify-package', 'cache' );
         if ( !in_array( $action, $known, true ) )
         {
             $cli->error( "Unknown action \"$action\": " . implode( ', ', $known ) . ' (./console exp:help:content --help)' );
@@ -119,11 +127,12 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             switch ( $action )
             {
                 case 'install':
+                case 'tables':
                 case 'classes':
                 case 'tree':
                 case 'roles':
                     $installer = new \expHelpContentInstaller( $common );
-                    $installer->install( $action === 'install' ? array( 'classes', 'tree', 'roles' ) : array( $action ) );
+                    $installer->install( $action === 'install' ? array( 'tables', 'classes', 'tree', 'roles' ) : array( $action ) );
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
                 case 'seed-glossary':
@@ -173,6 +182,9 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                             $cli->output( sprintf( '%-8s %-8s %s', $change['step'], $change['action'], $change['what'] ) );
                     }
                     break;
+                case 'feedback':
+                    $code = $this->feedback( $options, $dryRun, $json );
+                    break;
                 case 'review':
                     $code = $this->review( $json );
                     break;
@@ -189,7 +201,7 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                     $code = $this->printChanges( $installer->changes(), $json );
                     break;
             }
-            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review', 'package', 'verify-package', 'cache' ), true ) )
+            if ( !$dryRun && !in_array( $action, array( 'report', 'export', 'dita', 'ebooks', 'review', 'feedback', 'package', 'verify-package', 'cache' ), true ) )
                 \expHelpContentProvider::clearCache();
         }
         catch ( \Exception $e )
@@ -409,11 +421,27 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             return $topics ? 0 : 1;
         }
         $result = $format === 'epub' ? $export->writeEpub( $file ) : $export->writePdf( $file );
+        $code = 0;
+        if ( !empty( $options['check'] ) && $format === 'epub' )
+        {
+            // epubcheck and Ace by DAISY, as the site configured them ([ContentSettings] EpubCheckCommand, AceCommand)
+            $checker = new \expHelpContentBookCheck();
+            $result['checks'] = $checker->check( $result['file'] );
+            foreach ( $result['checks'] as $check )
+            {
+                if ( in_array( $check['status'], array( \expHelpContentBookCheck::FAIL, \expHelpContentBookCheck::ERROR ), true ) )
+                    $code = 1;
+            }
+        }
         if ( $json )
             $this->printJson( $result );
         else
+        {
             $cli->output( sprintf( 'PASS wrote %s (%d bytes, %d topics)', $result['file'], $result['bytes'], $result['topics'] ) );
-        return 0;
+            foreach ( isset( $result['checks'] ) ? \expHelpContentBookCheck::lines( $result['checks'] ) : array() as $line )
+                $cli->output( 'check    ' . $line );
+        }
+        return $code;
     }
 
     /**
@@ -437,12 +465,20 @@ class Exphelpcontent extends \Exponential\Runnable\Command
         $result = \expHelpContentDita::write( $export, $dir, $dryRun || $problems );
         if ( !$dryRun && !$problems )
             $problems = \expHelpContentDita::validate( $dir );
+        // the history in git (delivery path 4): a commit of what changed, the directory made a repository first
+        $commit = null;
+        if ( !empty( $options['commit'] ) && !$problems )
+            $commit = ( new \expHelpContentDitaHistory( $dir ) )->commit( 'Help export of ' . gmdate( 'Y-m-d H:i' ) . ' UTC', true, $dryRun );
+        if ( $commit !== null && $commit['status'] === 'error' )
+            $problems[] = array( 'file' => $dir, 'message' => $commit['message'] );
         if ( $json )
         {
             $this->printJson( array( 'directory' => $dir, 'counts' => $export['counts'], 'written' => $result['written'], 'unchanged' => $result['unchanged'],
-                                     'removed' => $result['removed'], 'dry_run' => $dryRun, 'problems' => $problems ) );
+                                     'removed' => $result['removed'], 'dry_run' => $dryRun, 'problems' => $problems, 'commit' => $commit ) );
             return $problems ? 1 : 0;
         }
+        if ( $commit !== null && $commit['status'] !== 'error' )
+            $cli->output( sprintf( '%-8s %s%s', 'git', $commit['status'] . ': ' . $commit['message'], $commit['commit'] !== '' ? ' (' . $commit['commit'] . ')' : '' ) );
         foreach ( $result['written'] as $path )
             $cli->output( sprintf( '%-8s %s', $dryRun ? 'would' : 'write', $path ) );
         foreach ( $result['removed'] as $path )
@@ -456,6 +492,44 @@ class Exphelpcontent extends \Exponential\Runnable\Command
                                $problems ? 'FAIL' : 'PASS', $dir, $counts['manuals'], $counts['chapters'], $counts['topics'], $counts['figures'],
                                $counts['glossary'], $result['unchanged'] ) );
         return $problems ? 1 : 0;
+    }
+
+    /**
+     * The answers to "Was this helpful?" (doc/eng-us/features/6.0/help-content.md, "Was this helpful?"): per topic yes,
+     * no and the reasons, the least helpful first; --prune removes the answers older than FeedbackKeepDays first.
+     */
+    protected function feedback( array $options, $dryRun, $json )
+    {
+        $cli = $this->cli();
+        if ( !\expHelpContentTables::available( \expHelpContentTables::FEEDBACK ) )
+        {
+            $cli->error( 'FAIL: the table exphelp_feedback is missing (./console exp:help:content tables -s <siteaccess>)' );
+            return 2;
+        }
+        $pruned = !empty( $options['prune'] ) ? \expHelpContentFeedback::prune( null, $dryRun ) : 0;
+        $summary = \expHelpContentFeedback::summary();
+        uasort( $summary, function ( $a, $b ) {
+            $shareA = $a['yes'] + $a['no'] ? $a['no'] / ( $a['yes'] + $a['no'] ) : 0;
+            $shareB = $b['yes'] + $b['no'] ? $b['no'] / ( $b['yes'] + $b['no'] ) : 0;
+            return array( $shareB, $b['no'], $a['help_id'] ) <=> array( $shareA, $a['no'], $b['help_id'] );
+        } );
+        if ( $json )
+        {
+            $this->printJson( array( 'keep_days' => \expHelpContentFeedback::keepDays(), 'pruned' => $pruned, 'dry_run' => $dryRun, 'topics' => $summary ) );
+            return 0;
+        }
+        if ( !empty( $options['prune'] ) )
+            $cli->output( sprintf( '%-8s %d answers older than %d days', $dryRun ? 'would rm' : 'removed', $pruned, \expHelpContentFeedback::keepDays() ) );
+        foreach ( $summary as $objectId => $item )
+        {
+            $reasons = array();
+            foreach ( $item['reasons'] as $reason => $count )
+                $reasons[] = "$reason $count";
+            $cli->output( sprintf( '%-32s %5d yes %5d no  %s', $item['help_id'] !== '' ? $item['help_id'] : '#' . $objectId, $item['yes'], $item['no'],
+                                   implode( ', ', $reasons ) ) );
+        }
+        $cli->output( sprintf( '%d topics answered (answers are kept %d days)', count( $summary ), \expHelpContentFeedback::keepDays() ) );
+        return 0;
     }
 
     /**
@@ -587,15 +661,22 @@ class Exphelpcontent extends \Exponential\Runnable\Command
             return 2;
         }
         $set = \expHelpContentRepository::instance()->load();
-        $validator = new \expHelpContentValidator();
-        $findings = $validator->validate( $set['topics'], $set['figures'], $set['maps'], $set['glossary'] );
         $fixed = 0;
         $changes = array();
         if ( $fix )
         {
+            // the Released topics whose help_id is not recorded yet (Released before the table existed, or by a
+            // seed): recorded first, so the rename and reuse checks see them
+            foreach ( \expHelpContentHelpIds::recordReleased( $set['topics'], !empty( $common['dry_run'] ) ) as $helpId )
+                $changes[] = array( 'step' => 'help_ids', 'action' => 'record', 'what' => "released help_id $helpId" );
+        }
+        $validator = new \expHelpContentValidator( array( 'released_ids' => \expHelpContentHelpIds::registry() ) );
+        $findings = $validator->validate( $set['topics'], $set['figures'], $set['maps'], $set['glossary'] );
+        if ( $fix )
+        {
             $installer = new \expHelpContentInstaller( $common );
             $fixed = $installer->fixSections( $findings );
-            $changes = $installer->changes();
+            $changes = array_merge( $changes, $installer->changes() );
             if ( $fixed > 0 && empty( $common['dry_run'] ) )
             {
                 \expHelpContentRepository::resetInstance();

@@ -21,10 +21,24 @@ unset( $expAdminTranslationsRoot );
 class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
 {
     /** The complete administration translations besides English (doc/eng-us/languages.md, section 4). */
-    const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA', 'ara-SA' );
+    const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA', 'ara-SA',
+        'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN',
+        'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
+        'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
-    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL' );
+    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL',
+        'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN',
+        'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
+        'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS' );
+
+    /**
+     * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
+     * list of "All languages" (AllLanguages=enabled), as every locale with a file in share/locale.
+     */
+    const ALL_LANGUAGES_ONLY = array( 'lat-VA', 'tlh-QO', 'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR',
+        'est-EE', 'fin-FI', 'gle-IE', 'hun-HU', 'isl-IS', 'kal-GL', 'lav-LV', 'lit-LT', 'mlt-MT', 'ron-RO', 'ser-SR',
+        'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS' );
 
     /** @var string the repository */
     protected $root;
@@ -80,7 +94,8 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         $this->assertNotSame( '', $values['ContentLanguage'] ?? '', "$code: ContentLanguage" );
         // the catalogue names its language by the HTTP code (uk-UA in the locale, uk_UA in the catalogue) or by the
         // locale code (heb-IL); the attribute is optional, but the French and Ukrainian catalogues carry it
-        $language = strtolower( $this->catalogueLanguage( $ts ) );
+        // a script subtag between language and region names the script (Serbian Latin: sr_Latn_RS for sr-RS)
+        $language = preg_replace( '/^([a-z]{2,3})_[a-z]{4}_/', '$1_', strtolower( $this->catalogueLanguage( $ts ) ) );
         if ( $language === '' && !in_array( $code, self::WITH_EXTENSION_CATALOGUES, true ) )
             return;
         $this->assertContains( $language, array( strtolower( str_replace( '-', '_', $values['ContentLanguage'] ) ), strtolower( $code ) ),
@@ -106,9 +121,9 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         foreach ( $m as $row )
             $groups[$row[2]][] = $row[1];
         preg_match_all( '/^GroupList\[\]=(\S+)\s*$/m', $text, $listed );
-        if ( in_array( $code, array( 'lat-VA', 'tlh-QO' ), true ) )
+        if ( in_array( $code, self::ALL_LANGUAGES_ONLY, true ) )
         {
-            // Latin and Klingon are offered by "All languages" only.
+            // Latin, Klingon and the languages of no ranked group are offered by "All languages" only.
             $this->assertMatchesRegularExpression( '/^AllLanguages=enabled\s*$/m', $text );
             return;
         }

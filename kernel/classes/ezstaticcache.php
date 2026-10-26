@@ -916,6 +916,8 @@ class eZStaticCache implements ezpStaticCache
                                            CURLOPT_CONNECTTIMEOUT => $connectTimeout,
                                            CURLOPT_TIMEOUT => 60,
                                            CURLOPT_USERAGENT => self::USER_AGENT ) );
+            // http and https only, also after a redirect, as eZHTTPTool::getDataByURL() fetches the single pages
+            eZHTTPTool::limitCurlToHTTP( $ch );
             if ( $proxy )
             {
                 curl_setopt( $ch, CURLOPT_PROXY, $proxy );

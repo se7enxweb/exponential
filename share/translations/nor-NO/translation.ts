@@ -57897,6 +57897,18 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; peker utenfor pakken.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arkivet er pakket i PAX-tar-formatet, som ikke kan importeres. Pakk pakken i GNU-tar-formatet (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; har tar-typen &quot;%type&quot;, og en pakke inneholder bare filer og kataloger.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivet ble avvist: det inneholder en oppføring med et navn som er lengre enn %length byte.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arkivet ble avvist: oppføringen &quot;%path&quot; er en lenke eller en enhet, og en pakke inneholder bare filer og kataloger.</translation>
     </message>
@@ -75246,6 +75258,146 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Bygg hjelpehåndbøkene fra Markdown-hjelpen</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Gjennomgang og frigivelse</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Emnet er nå til gjennomgang.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Emnet er frigitt: leserne ser det nå.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Emnet er et utkast igjen.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Du skrev den gjeldende versjonen, så en annen med frigivelsesrollen frigir den.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Tilstanden ble ikke endret: rollen din tillater ikke dette trinnet.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Gjennomgangsflyt</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Utkast</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gjennomgang</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Tilbake til gjennomgang</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Send til gjennomgang</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Frigi</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Tilbake til utkast</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontroll etter stilguiden</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrollen etter stilguiden fant ingenting.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors feil, %warnings advarsler, %notices merknader. En feil gjør at ./console exp:help:content check mislykkes.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivå</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Felt</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Funn</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Var dette nyttig?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Leserne svarte ja %yes ganger og nei %no ganger.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Oppgitte grunner til nei:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Takk. Svaret ditt hjelper oss å forbedre hjelpen.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Hvis ikke, hva var galt?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Ingen grunn oppgitt</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Bare svaret ditt lagres, ikke hvem du er.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Det er utdatert</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Det er vanskelig å forstå</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Noe mangler</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Det er feil</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>En annen grunn</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Dette emnet er ikke frigitt; leserne ser det ikke.</translation>
     </message>
 </context>
 <context>

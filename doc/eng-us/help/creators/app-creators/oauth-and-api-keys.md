@@ -39,7 +39,10 @@ the program acts for.
    ([OAuth authorize policy](../../../bc/6.0/oauth-authorize-policy.md)).
 3. The app exchanges the code at `POST /api/auth/v1/oauth/token` (`grant_type=authorization_code`, and
    `code_verifier` when it sent a challenge).
-4. It sends `Authorization: OAuth <token>`; after `TokenTTL` (one hour by default) it uses `grant_type=refresh_token`.
+4. It sends `Authorization: OAuth <token>` (a token in the address, `?oauth_token=`, is refused unless
+   `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`); after `TokenTTL` (one hour by default) it uses
+   `grant_type=refresh_token`. A refresh token lasts `RefreshTokenTTL` (30 days by default) from the refresh that
+   issued it ([OAuth token hardening](../../../bc/6.0/oauth-token-hardening.md)).
 
 ![oAuth admin: the OAuth clients of the installation and their access](../../images/creators/oauth-admin.webp)
 

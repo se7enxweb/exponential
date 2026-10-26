@@ -49880,6 +49880,18 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; wskazuje poza pakiet.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archiwum zostało spakowane w formacie PAX tar, którego nie można zaimportować. Należy spakować pakiet w formacie GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; ma typ tar &quot;%type&quot;, a pakiet może zawierać tylko pliki i katalogi.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archiwum zostało odrzucone: zawiera wpis o nazwie dłuższej niż %length bajtów.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Archiwum zostało odrzucone: wpis &quot;%path&quot; jest linkiem lub urządzeniem, a pakiet może zawierać tylko pliki i katalogi.</translation>
     </message>
@@ -75200,6 +75212,146 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Utworzyć podręczniki pomocy z pomocy w formacie Markdown</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Przegląd i wydanie</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Temat jest teraz w przeglądzie.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Temat jest wydany: czytelnicy go teraz widzą.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Temat jest znowu szkicem.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Napisałeś bieżącą wersję, więc wydaje ją ktoś inny z rolą wydawania.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Stan nie został zmieniony: twoja rola nie pozwala na ten krok.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Proces przeglądu</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Szkic</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Przegląd</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Z powrotem do przeglądu</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Wyślij do przeglądu</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Wydaj</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Z powrotem do szkicu</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrola według przewodnika stylu</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrola według przewodnika stylu niczego nie znalazła.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors błędów, %warnings ostrzeżeń, %notices uwag. Błąd sprawia, że ./console exp:help:content check kończy się niepowodzeniem.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Poziom</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Reguła</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Ustalenie</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Czy to było pomocne?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Czytelnicy odpowiedzieli tak %yes razy i nie %no razy.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Podane powody odpowiedzi nie:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Dziękujemy. Twoja odpowiedź pomaga nam ulepszać pomoc.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Jeśli nie, co było nie tak?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nie podano powodu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Zapisywana jest tylko twoja odpowiedź, a nie to, kim jesteś.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Jest nieaktualne</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Jest trudne do zrozumienia</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Czegoś brakuje</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Jest błędne</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Inny powód</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ten temat nie jest wydany; czytelnicy go nie widzą.</translation>
     </message>
 </context>
 <context>
