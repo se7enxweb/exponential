@@ -77131,6 +77131,97 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Opstelling</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nuut</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwyder</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rye</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nuwe ry</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Die ry is gestoor.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Soek</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aksies</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Wysig</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Nog geen rye nie.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-adres: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>'n Nodus-ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Die objek-ID van 'n gebruiker</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>'n Inhoudobjek-ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ry %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Die ry is nie gestoor nie</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Stoor</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselleer</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Verwyder ry %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Die ry word uit die tabel verwyder en kan nie teruggebring word nie.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

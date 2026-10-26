@@ -17,7 +17,7 @@ Checked by the views: [call](../module-views/ezjscore/call.md).
 
 | Limitation | Values come from |
 |---|---|
-| FunctionList | fixed: sqliimport (sqliimport), expai (expai), ezjsctags (ezjsctags), ezjsctagschildren (ezjsctagschildren), ezstarrating_rate (ezstarrating_rate), ezstarrating_user_has_rated (ezstarrating_user_has_rated), loadMore (loadMore), ezjsctemplate (ezjsctemplate), ezjscnode (ezjscnode), ezajaxuploader (ezajaxuploader) |
+| FunctionList | fixed: ezjsctemplate (ezjsctemplate), ezjscnode (ezjscnode), ezajaxuploader (ezajaxuploader) |
 
 ```php
 // Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))

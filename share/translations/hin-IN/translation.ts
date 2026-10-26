@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>नया</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>निकालें</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>पंक्तियाँ: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>नई पंक्ति</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>पंक्ति सहेजी गई।</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>खोजें</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>क्रियाएँ</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>संपादित करें</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>अभी तक कोई पंक्ति नहीं।</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON पता: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>हाँ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नहीं</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>एक नोड ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>किसी उपयोगकर्ता की ऑब्जेक्ट ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>एक सामग्री ऑब्जेक्ट ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>पंक्ति %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>पंक्ति सहेजी नहीं गई</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>सहेजें</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करें</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>क्या आप वाकई पंक्ति %id को निकालना चाहते हैं?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>पंक्ति तालिका से निकाल दी जाती है और उसे वापस नहीं लाया जा सकता।</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

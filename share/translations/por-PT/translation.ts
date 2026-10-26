@@ -77131,6 +77131,97 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Configuração</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remover</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count linhas</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nova linha</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>A linha foi guardada.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Pesquisar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ações</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ainda não há linhas.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Endereço JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sim</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>não</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Um ID de nó</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>O ID de objeto de um utilizador</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Um ID de objeto de conteúdo</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Linha %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>A linha não foi guardada</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Guardar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Remover a linha %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>A linha é removida da tabela e não pode ser recuperada.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

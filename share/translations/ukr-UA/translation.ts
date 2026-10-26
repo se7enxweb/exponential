@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Новий</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Рядків: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Новий рядок</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Рядок збережено.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Пошук</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Редагувати</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Рядків ще немає.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Адреса JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>так</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID вузла</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID об'єкта користувача</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID об'єкта вмісту</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Рядок %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Рядок не збережено</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Вилучити рядок %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Рядок буде вилучено з таблиці, і відновити його неможливо.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

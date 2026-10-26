@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Uppsetning</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nýtt</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjarlægja</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Línur: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ný lína</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Línan var vistuð.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Leita</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aðgerðir</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Breyta</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Engar línur enn.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-vistfang: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>já</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Kenni hnúts</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Kenni hlutar notanda</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Kenni efnishlutar</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Lína %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Línan var ekki vistuð</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Viltu fjarlægja línu %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Línan er fjarlægð úr töflunni og ekki er hægt að fá hana aftur.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

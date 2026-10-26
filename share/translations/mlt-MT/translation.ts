@@ -77131,6 +77131,97 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Ġdid</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Ringieli: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Ringiela ġdida</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Ir-ringiela ġiet issalvata.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Fittex</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azzjonijiet</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editja</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Għad m'hemm l-ebda ringiela.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Indirizz JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>iva</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>le</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID ta' nodu</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>L-ID tal-oġġett ta' utent</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID ta' oġġett tal-kontenut</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ringiela %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Ir-ringiela ma ġietx issalvata</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Żgur li trid tneħħi r-ringiela %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Ir-ringiela titneħħa mit-tabella u ma tistax tiġi rrestawrata.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

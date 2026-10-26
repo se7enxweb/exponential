@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>システム設定</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>新規</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count 行</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>新規行</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>行は保存されました。</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>検索</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>編集</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>まだ行はありません。</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSONアドレス: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ノードID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ユーザーのオブジェクトID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>コンテンツオブジェクトID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>行 %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>行は保存されませんでした</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>行 %id を削除してもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>行はテーブルから削除され、元に戻すことはできません。</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

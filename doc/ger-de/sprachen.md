@@ -7,11 +7,11 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **70 Übersetzungen
 der Administrationsoberfläche**, alle vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
-Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien und Portugal),
+Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
 (Kurmandschi), Suaheli, Hindi, Koreanisch, Japanisch, Griechisch, Finnisch, Ungarisch, Rumänisch, Slowakisch,
 Slowenisch, Bosnisch, Albanisch, Estnisch, Lettisch, Isländisch, Irisch, Maltesisch, Niedersorbisch, Grönländisch, Chinesisch (vereinfacht und traditionell),
-Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Afrikaans, Englisch (Australien), Bengalisch, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharisch, Yoruba, Malayalam, Punjabi (Gurmukhi), Oriya, Igbo, isiZulu, Somali, isiXhosa,
+Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Portugiesisch (Portugal), Afrikaans, Englisch (Australien), Bengalisch, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharisch, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa,
 Latein und, zum Spaß, Klingonisch).
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 

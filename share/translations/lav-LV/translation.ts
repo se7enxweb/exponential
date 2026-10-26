@@ -77131,6 +77131,97 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Iestatīšana</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Jauns</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Noņemt</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Rindas: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Jauna rinda</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rinda tika saglabāta.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Meklēt</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Darbības</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Rediģēt</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Vēl nav rindu.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON adrese: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jā</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nē</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Mezgla ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Lietotāja objekta ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Satura objekta ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rinda %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Rinda netika saglabāta</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Vai noņemt rindu %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rinda tiek noņemta no tabulas, un to nevar atjaunot.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

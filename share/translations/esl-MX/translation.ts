@@ -81360,6 +81360,97 @@ Gracias por la retroalimentación</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Configuración</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nuevo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count filas</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nueva fila</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Se guardó la fila.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Buscar</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acciones</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Todavía no hay filas.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Dirección JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>sí</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Un ID de nudo</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>El ID de objeto de un usuario</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Un ID de objeto de contenido</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Fila %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>No se guardó la fila</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Guardar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancelar</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>¿Eliminar la fila %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>La fila se elimina de la tabla y no se puede recuperar.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

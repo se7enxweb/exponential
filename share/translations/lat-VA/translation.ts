@@ -77134,6 +77134,97 @@ Classem nodi functione permutandi mutare debebis.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novum</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Removere</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Versus: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Novus versus</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Versus servatus est.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Quaerere</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Recensere</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Nulli versus adhuc.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Inscriptio JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ita</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID nodi</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID rei usoris</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID rei contenti</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Versus %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Versus servatus non est</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Visne vere versum %id removere?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Versus e tabula removetur neque restitui potest.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

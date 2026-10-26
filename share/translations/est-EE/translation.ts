@@ -77131,6 +77131,97 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Häälestus</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Uus</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Ridu: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Uus rida</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rida on salvestatud.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Otsi</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toimingud</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redigeeri</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Ridu veel pole.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-aadress: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jah</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ei</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Sõlme ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Kasutaja objekti ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Sisuobjekti ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rida %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Rida ei salvestatud</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Kas eemaldada rida %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rida eemaldatakse tabelist ja seda ei saa taastada.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

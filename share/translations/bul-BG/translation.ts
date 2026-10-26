@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Инсталация</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Нов</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Премахни</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Редове: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Нов ред</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Редът беше записан.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Търси</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Действия</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Редактирай</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Все още няма редове.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON адрес: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID на възел</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID на обекта на потребител</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID на обект на съдържание</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ред %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Редът не беше записан</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Запиши</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отказ</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Да се премахне ли ред %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Редът се премахва от таблицата и не може да бъде възстановен.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Подешавање</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Нови</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Уклони</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Редова: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Нови ред</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Ред је сачуван.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Претражи</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Радње</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Измени</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Још нема редова.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON адреса: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID чвора</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID објекта корисника</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID објекта садржаја</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ред %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Ред није сачуван</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сачувај</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Одустани</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Уклонити ред %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Ред се уклања из табеле и не може се вратити.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

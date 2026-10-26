@@ -77131,6 +77131,97 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Naujas</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Šalinti</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Eilučių: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nauja eilutė</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Eilutė įrašyta.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ieškoti</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Redaguoti</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Eilučių dar nėra.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON adresas: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>taip</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Mazgo ID</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Naudotojo objekto ID</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Turinio objekto ID</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Eilutė %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Eilutė neįrašyta</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Šalinti eilutę %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Eilutė pašalinama iš lentelės, ir jos nebus galima atkurti.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

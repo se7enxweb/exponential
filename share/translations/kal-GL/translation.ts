@@ -37849,7 +37849,7 @@ ilitsersuutit malikkit.</translation>
     </message>
     <message>
         <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Isissutissat taarsiullugu fingeraftrykit, kiinat, saqqap parnaarutaa imaluunniit isumannaallisaanermut matuersaat atorlugu iserit.</translation>
     </message>
     <message>
         <source>Manage passkeys</source>
@@ -39829,7 +39829,7 @@ ilitsersuutit malikkit.</translation>
     </message>
     <message>
         <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
-        <translation type="unfinished"></translation>
+        <translation>Akuersisunut e-mail akuerinninnissamut innersuussummik imalik nassiuguk (akueriniarlutik itigartitsiniarlutilluunniit iserput)</translation>
     </message>
 </context>
 <context>
@@ -57301,15 +57301,15 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation type="unfinished">Arkivfiili PAX tar-ip ilusaani poortorneqarpoq, eqqunneqarsinnaanngitsumi. Poortugaq GNU tar-ip ilusaani poortoruk (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <translation>Arkivfiili PAX tar-ip ilusaani poortorneqarpoq, isertinneqarsinnaanngitsumi. Poortugaq GNU tar-ip ilusaani poortoruk (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation type="unfinished">Arkivfiili itigartinneqarpoq: allattugaq »%path« tar-ip suussusaanik »%type«-mik suussuseqarpoq, poortugarli fiilinik mappinillu kisiannik imaqartarpoq.</translation>
+        <translation>Arkivfiili itigartinneqarpoq: allattugaq »%path« tar-ip suussusaanik »%type« suussuseqarpoq, poortugarli fiilinik mappinillu kisiannik imaqartarpoq.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
-        <translation type="unfinished">Arkivfiili itigartinneqarpoq: allattugaq byte-init %length-init takinerusoq taavaa.</translation>
+        <translation>Arkivfiili itigartinneqarpoq: allattugaata aqqa takivallaarpoq (byte-it amerlanerpaamik: %length).</translation>
     </message>
 </context>
 <context>
@@ -71422,7 +71422,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-mail atortumit browserimilluunniit nutaamit isernermik nalunaarutaasoq kontup isumannaatsuunissaanut ilaavoq. Atortutit qupperneranni atuutilersissinnaavat atorunnaarsissinnaavalluunniit; tassani aamma kontup isersimanerii takusinnaavatit anitsisinnaallugillu.</translation>
     </message>
     <message>
         <source>Your devices</source>
@@ -75767,7 +75767,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>You wrote the current version, so someone else with the release role releases it.</source>
-        <translation type="unfinished">Versioni maannakkut atuuttoq illit allappat, taamaattumik allap saqqummersitsisartutut atuuffeqartup saqqummiussavaa.</translation>
+        <translation>Versioni maannakkut atuuttoq illit allappat, taamaattumik allap saqqummersitsisartutut atuuffeqartup saqqummiussavaa.</translation>
     </message>
     <message>
         <source>The state was not changed: your role does not allow this step.</source>
@@ -75803,11 +75803,11 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Style guide check</source>
-        <translation type="unfinished">Allannermut maleruagassanik misissuineq</translation>
+        <translation>Allannermut maleruagassanik misissuineq</translation>
     </message>
     <message>
         <source>The style guide check found nothing.</source>
-        <translation type="unfinished">Allannermut maleruagassanik misissuinermi nassaartoqanngilaq.</translation>
+        <translation>Allannermut maleruagassanik misissuinermi nassaartoqanngilaq.</translation>
     </message>
     <message>
         <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
@@ -76102,7 +76102,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aqutsinermut saqqamut iserit suleqatigiinnermilu allattorsimaffinni akueriuk itigartiguluunniit. Innersuussut una atorlugu iserneqanngilaq, nammineerlunilu sumik aalajangiinngilaq.</translation>
     </message>
     <message>
         <source>This mail was sent by %site because you approve new accounts of these groups.</source>
@@ -76161,7 +76161,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Signed in before sessions were recorded</source>
-        <translation type="unfinished"></translation>
+        <translation>Isersimanerit nalunaarsorneqartalernginnerini iserpoq</translation>
     </message>
     <message>
         <source>Signed out</source>
@@ -76365,7 +76365,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>E-mail me when my account signs in from a new device or browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontomut atortumit browserimilluunniit nutaamit isertoqarpat e-mail-ikkut nalunaarfigisinga</translation>
     </message>
     <message>
         <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
@@ -76452,7 +76452,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Signed in before sessions were recorded</source>
-        <translation type="unfinished"></translation>
+        <translation>Isersimanerit nalunaarsorneqartalernginnerini iserpoq</translation>
     </message>
     <message>
         <source>Signed out</source>
@@ -76612,7 +76612,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>E-mail me when my account signs in from a new device or browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontomut atortumit browserimilluunniit nutaamit isertoqarpat e-mail-ikkut nalunaarfigisinga</translation>
     </message>
     <message>
         <source>Save</source>
@@ -76741,7 +76741,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Passkey atorlugu isissutissat taarsiullugu fingeraftrykit, kiinat, saqqap parnaarutaa imaluunniit isumannaallisaanermut matuersaat atorlugu isertarputit. Atortunni imaluunniit isissutissanut aqutsissutinni toqqorneqartarpoq; nittartagaq una matuersaataanik tamanut ammasumik kisiat toqqortaqarmat, maaniit paasissutissanik siammarteriaasoqaraluarpat passkey ersersinneqarsinnaanngilaq.</translation>
     </message>
     <message>
         <source>Passkeys are switched off on this site.</source>
@@ -76849,7 +76849,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
-        <translation type="unfinished"></translation>
+        <translation>Assersuutigalugu atortoq isissutissanulluunniit aqutsissut passkey-mik toqqortoq, passkey-itit immikkoortissinnaaqqullugit.</translation>
     </message>
     <message>
         <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
@@ -76881,7 +76881,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
-        <translation type="unfinished"></translation>
+        <translation>isissutissat taarsiullugu fingeraftrykit, kiinat, saqqap parnaarutaa imaluunniit isumannaallisaanermut matuersaat atorlugu iserit.</translation>
     </message>
     <message>
         <source>The passkey "%name" is added. You can sign in with it from now on.</source>
@@ -76917,11 +76917,11 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Passkey-p kinaassutsit misissunngilaa (PIN, fingeraftryki imaluunniit kiinat). Misileqqigit atortunnilu uppernarsaruk.</translation>
     </message>
     <message>
         <source>This authenticator uses a kind of key this site does not accept.</source>
-        <translation type="unfinished"></translation>
+        <translation>Authenticator una matuersaammik nittartakkap matuma akuerinngisaanik suussusilimmik atuivoq.</translation>
     </message>
     <message>
         <source>The passkey was made for another address than this site.</source>
@@ -76988,7 +76988,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>%count tries are left before you are signed out.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anitinneqannginnerit misiliinerit atorsinnaasatit: %count.</translation>
     </message>
     <message>
         <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
@@ -77024,7 +77024,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontoq una atorlugu kinaassutsit uppernarsarneqarsinnaanngilaq (isissutissaqanngilaq, passkey-qanngilaq authenticator-illu app-ianik peqanngilaq). Anigit iseqqillutillu, imaluunniit aqutsisoq aperiuk.</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -77047,7 +77047,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nammineq isissutissap, e-mail-imut najukkap, passkey-it, marlunnik alloriarluni isernerup API-mulluunniit kodit allanngortinnerat.</translation>
     </message>
     <message>
         <source>Users, roles and policies</source>
@@ -77063,7 +77063,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aaqqissuussinerit, ilassutit, cache-it aserfallatsaaliuinerlu, poortukkat nutarterinerillu, toqqorsiviit git-illu aqutsissutaata aaqqissornerat.</translation>
     </message>
     <message>
         <source>Exporting data</source>
@@ -77083,7 +77083,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
-        <translation type="unfinished"></translation>
+        <translation>Iliuuseq mianernartoq sioqqullugu atuisoq isersimasoq kinaassutsiminik uppernarsaaqqittarpoq, isissutissaminik, passkey-mik imaluunniit authenticator-ip app-ianit kodimik atuilluni. Nittartakkap quppernerisa kisimik apersuisarput: REST-imut atassut, SOAP, WebDAV, expservices-imut iserneq kommandolinjilu apersuisanngillat.</translation>
     </message>
     <message>
         <source>General</source>
@@ -77115,7 +77115,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
-        <translation type="unfinished"></translation>
+        <translation>Eqimattat ataani atuutilersitat iliuusii sioqqullugit »Kinaassutsit uppernarsaruk« apeqqutigiuk</translation>
     </message>
     <message>
         <source>The settings are saved.</source>
@@ -77131,10 +77131,101 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nutaaq</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Peeruk</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Titarnerit: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Titarneq nutaaq</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Titarneq toqqorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Ujarlerit</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliuusissat</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Aaqqissoruk</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Suli titarnernik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON-itut: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aap</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Inissisimaffiup ID-ia</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Atuisup objektiata ID-ia</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Objektip ID-ia</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Titarneq %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Titarneq toqqorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Titarneq %id peerusuppiuk?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Titarneq tabelimit peerneqassaaq utertinneqarsinnaanngilarlu.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>
-        <translation type="unfinished">RSS nammineersoq</translation>
+        <translation>RSS nammineersoq</translation>
     </message>
 </context>
 <context>
@@ -77145,14 +77236,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
     <message>
         <source>Database Source Editor</source>
-        <translation type="unfinished">Paasissutissaateqarfiup aallaaviata aaqqissuisarfia</translation>
+        <translation>Paasissutissaateqarfiup aallaaviata aaqqissuisarfia</translation>
     </message>
 </context>
 <context>
     <name>extension/ezssp</name>
     <message>
         <source>Subtree Skeleton Publisher</source>
-        <translation type="unfinished">Ataaniittut tamarmik saneqqutaannik saqqummersitsisartoq</translation>
+        <translation>Ataaniittut tamarmik saneqqutaannik saqqummersitsisartoq</translation>
     </message>
 </context>
 <context>

@@ -77131,6 +77131,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>جديد</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>عدد الصفوف: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>صف جديد</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>حُفظ الصف.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>بحث</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>تحرير</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>لا توجد صفوف بعد.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>عنوان JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>معرّف عقدة</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>معرّف كائن المستخدم</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>معرّف كائن محتوى</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>الصف %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>لم يُحفظ الصف</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>هل تريد بالتأكيد إزالة الصف %id؟</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>يُزال الصف من الجدول ولا يمكن استعادته.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

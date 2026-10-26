@@ -77133,6 +77133,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>הגדרות</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>חדש</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count שורות</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>שורה חדשה</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>השורה נשמרה.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>חיפוש</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>פעולות</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>עריכה</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>אין עדיין שורות.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>כתובת JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>מזהה צומת</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>מזהה האובייקט של משתמש</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>מזהה אובייקט תוכן</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>שורה %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>השורה לא נשמרה</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>שמירה</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ביטול</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>האם להסיר את שורה %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>השורה מוסרת מהטבלה ולא ניתן לשחזר אותה.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>
