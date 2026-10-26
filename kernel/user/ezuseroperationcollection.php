@@ -31,6 +31,13 @@ class eZUserOperationCollection
     static public function setSettings( $userID, $isEnabled, $maxLogin )
     {
         $userSetting = eZUserSetting::fetch( $userID );
+        // an account without its ezuser_setting row is not enabled (eZUser::isEnabled(), loginUser()); the
+        // row is created here, disabled, so that enabling such an account repairs it instead of doing nothing
+        if ( !$userSetting && eZUser::fetch( $userID ) instanceof eZUser )
+        {
+            $userSetting = eZUserSetting::create( $userID, 0 );
+            $userSetting->setAttribute( 'max_login', 0 );
+        }
 
         if ( $userSetting )
         {

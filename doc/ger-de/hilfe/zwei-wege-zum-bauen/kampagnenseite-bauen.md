@@ -31,7 +31,7 @@ und keinen Code. Die zweite Hälfte baut dieselbe Seite mit Templates.
 von Fit & Healthy: Zonen `header`, `post_header`, `main`, `pre_footer`, `footer`), geben Sie einen **Name** und einen
 **Bezeichner** an und klicken Sie auf **Layout anlegen**.
 
-![Das Formular Layout anlegen: Layouttypen, Header / Main / Footer ausgewählt, Name Spring campaign, Bezeichner spring_campaign](../../../eng-us/help/build-two-ways/images/nl-01-create-layout-form.webp)
+![Das Formular Layout anlegen: Layouttypen, Header / Main / Footer ausgewählt, Name Spring campaign, Bezeichner spring_campaign](bilder/nl-01-create-layout-form.webp)
 
 Der Editor öffnet sich mit fünf leeren Zonen.
 
@@ -39,24 +39,24 @@ Der Editor öffnet sich mit fünf leeren Zonen.
 
 Klicken Sie unten links im Editor auf die Verknüpfungs-Schaltfläche. Jede Zone bekommt **Zone verknüpfen**.
 
-![Der Editor im Verknüpfungsmodus: Jede Zone hat eine Schaltfläche Zone verknüpfen](../../../eng-us/help/build-two-ways/images/zl-01-linking-mode.webp)
+![Der Editor im Verknüpfungsmodus: Jede Zone hat eine Schaltfläche Zone verknüpfen](bilder/zl-01-linking-mode.webp)
 
 **Zone verknüpfen** bei HEADER zeigt die gemeinsamen Layouts. Wählen Sie **Header / Footer** und klicken Sie bei dessen Zone
 HEADER auf **Zone auswählen**.
 
-![Eines der gemeinsamen Layouts wählen und dann eine Zielzone auswählen: Header / Footer mit seinen Zonen und Schaltflächen Zone auswählen](../../../eng-us/help/build-two-ways/images/zl-02-link-zone-dialog.webp)
+![Eines der gemeinsamen Layouts wählen und dann eine Zielzone auswählen: Header / Footer mit seinen Zonen und Schaltflächen Zone auswählen](bilder/zl-02-link-zone-dialog.webp)
 
 Der Editor kehrt mit verknüpfter Zone header zurück: Er zeigt die gemeinsamen Blöcke gestreift, da sie nicht die eigenen
 dieses Layouts sind. Machen Sie dasselbe für FOOTER.
 
-![Die Zone header verknüpft: die Template-Blöcke header und breadcrumb gestreift dargestellt](../../../eng-us/help/build-two-ways/images/zl-03-header-linked.webp)
+![Die Zone header verknüpft: die Template-Blöcke header und breadcrumb gestreift dargestellt](bilder/zl-03-header-linked.webp)
 
 ## 3. Den Hero hinzufügen
 
 Öffnen Sie die Blockpalette (**+** oben links), ziehen Sie **Hero** (Gruppe *Components*) in MAIN, wählen Sie ihn aus und
 füllen Sie seine Felder aus: **Title**, **Content**, **Image URL**, **Image alt text**, **Link text**, **Link URL**.
 
-![Der Hero-Block mit Title Spring training plans, Inhalt, Bild-URL, Alternativtext, Linktext See the plans und Link-URL /fitness](../../../eng-us/help/build-two-ways/images/cp-01-hero-in-draft.webp)
+![Der Hero-Block mit Title Spring training plans, Inhalt, Bild-URL, Alternativtext, Linktext See the plans und Link-URL /fitness](bilder/cp-01-hero-in-draft.webp)
 
 ## 4. Das Layout veröffentlichen
 
@@ -73,7 +73,7 @@ Veröffentlichung schicken**. Ihre URL ist `/spring-2027`.
 Zuordnungen, die die Seite sonst übernehmen würden (hier 2500). Ziel **Pfad** `spring-2027`, **Ziel hinzufügen**.
 **Zuordnung hinzufügen**.
 
-![Das Feld Neue Zuordnung: Layout verknüpfen Spring campaign, Priorität 2500, ein Ziel Pfad spring-2027](../../../eng-us/help/build-two-ways/images/cp-02-mapping-form.webp)
+![Das Feld Neue Zuordnung: Layout verknüpfen Spring campaign, Priorität 2500, ein Ziel Pfad spring-2027](bilder/cp-02-mapping-form.webp)
 
 ## 7. Das Ergebnis
 

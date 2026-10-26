@@ -77610,7 +77610,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Sessions de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Où votre compte est connecté en ce moment. Si vous ne reconnaissez pas un appareil, déconnectez-le et changez votre mot de passe.</translation>
     </message>
     <message>
@@ -77901,7 +77901,7 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Sessions de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Où votre compte est connecté en ce moment. Si vous ne reconnaissez pas un appareil, déconnectez-le et changez votre mot de passe.</translation>
     </message>
     <message>
@@ -78459,8 +78459,8 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <translation>Utilisateurs, rôles et règles</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Créer et modifier des utilisateurs, les paramètres des comptes, attribuer des rôles et modifier des règles.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Créer et modifier des utilisateurs, les paramètres des comptes, approuver ou refuser les nouveaux comptes utilisateur, attribuer des rôles et modifier des règles.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -78533,6 +78533,38 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     <message>
         <source>Setup</source>
         <translation>Administration</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automatique</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Éditeur de base de données</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Éditeur du code source de la base de données</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publication de squelettes de sous-arborescence</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Envoyer vers un bloc</translation>
     </message>
 </context>
 </TS>

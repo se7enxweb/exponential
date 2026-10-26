@@ -2243,8 +2243,10 @@ WHERE user_id = '" . $userID . "' AND
             return $this->UserCache['info'][$this->ContentObjectID]['is_enabled'];
         }
 
+        // no ezuser_setting row means not enabled, as loginUser() decides. This answered true for such an
+        // account, so a session, API key or OAuth token of an account that cannot sign in kept working.
         $setting = eZUserSetting::fetch( $this->attribute( 'contentobject_id' ) );
-        if ( $setting and !$setting->attribute( 'is_enabled' ) )
+        if ( !$setting or !$setting->attribute( 'is_enabled' ) )
         {
             return false;
         }
@@ -3631,7 +3633,10 @@ WHERE user_id = '" . $userID . "' AND
         $userContentClassIDs = array();
         foreach ( $userDatatypes as $datatypeIdentifier )
         {
-            $userContentClassIDs = array_merge( $userContentClassIDs, eZContentClass::fetchIDListContainingDatatype( $datatypeIdentifier ) );
+            // a failed query answers false: no classes from it, not a stopped request
+            $classIDs = eZContentClass::fetchIDListContainingDatatype( $datatypeIdentifier );
+            if ( is_array( $classIDs ) )
+                $userContentClassIDs = array_merge( $userContentClassIDs, $classIDs );
         }
 
         return $userContentClassIDs;

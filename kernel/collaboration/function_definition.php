@@ -166,9 +166,11 @@ $FunctionList['group_tree'] = array( 'name' => 'group_tree',
                                                              'required' => false,
                                                              'default' => false ) ) );
 
+// this named eZContentFunctionCollection::fetchObjectTreeCount() (13 parameters) with these 4, and every
+// fetch( 'collaboration', 'tree_count' ) ended in an ArgumentCountError; the 4-parameter method is the one below.
 $FunctionList['tree_count'] = array( 'name' => 'tree_count',
                                      'operation_types' => array( 'read' ),
-                                     'call_method' => array( 'class' => 'eZContentFunctionCollection',
+                                     'call_method' => array( 'class' => 'eZCollaborationFunctionCollection',
                                                              'method' => 'fetchObjectTreeCount' ),
                                      'parameter_type' => 'standard',
                                      'parameters' => array( array( 'name' => 'parent_node_id',

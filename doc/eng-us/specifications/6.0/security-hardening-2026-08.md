@@ -25,7 +25,7 @@ manifest `d889a8abc6`; jQuery `f7c57376aa`.
 | F-02 | Guessable account activation link | 330 | `kernel/user/ezuseroperationcollection.php` | The activation hash is `bin2hex( random_bytes( 16 ) )` instead of `md5( mt_rand() . time() . $userID )` |
 | F-03 | HTTP header injection (CRLF) | 93 | `extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php` | `\r` and `\n` are removed from the `url` parameter before it becomes part of the hand-built request to the After the Deadline server. The post text is initialised, so a GET no longer reads an undefined variable. Removed in 6.0.15 (16 October 2026): the view, its class and the AtD plugin are gone, see the [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-online-editor-hardening) |
 | F-05 | OS command injection | 78 | `kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php`, `ezwordparser.php` | The extraction tool goes through `escapeshellcmd()`; file names, including the temporary output file, go through `escapeshellarg()`. A file name with shell characters can no longer add a command |
-| F-06 | Fail open on login | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | At sign-in an account without an `ezuser_setting` row counts as disabled; it counted as enabled. `eZUser::isEnabled()` itself still returns true for such an account; it is the login that fails closed. Disabling a user keeps the row with `is_enabled = 0`, so only accounts without a row are affected |
+| F-06 | Fail open on login | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | At sign-in an account without an `ezuser_setting` row counts as disabled; it counted as enabled. Since 6.0.15 (24 October 2026) `eZUser::isEnabled()` agrees: an account without a row is not enabled, so its session, API key or OAuth token no longer works either, the user hygiene and deactivation pages list it as disabled, and enabling it (`eZUserOperationCollection::setSettings()`) creates the missing row. Disabling a user keeps the row with `is_enabled = 0`, so only accounts without a row are affected |
 | H-06 | Scripts over plain HTTP | 829, 319 | `extension/ezjscore/settings/ezjscore.ini` | `ExternalScripts[...]` URLs use `https://`. Prefer `LoadFromCDN=disabled` (local scripts) or subresource integrity. The Yahoo CDN of YUI is end of life and may not answer |
 
 F-03 note: the view `extension/ezoe/modules/ezoe/atd_rpc.php` is now an entry point that calls the class above. Both files were removed in 6.0.15 with the After the Deadline spell checker.
@@ -44,7 +44,8 @@ WHERE s.user_id IS NULL;
 ```
 
 Each row is an account without settings. An empty result means every account can sign in. To let such an
-account sign in, create its row:
+account sign in, enable it in the administration (user settings or the user hygiene page), which creates the row
+since 6.0.15, or create its row:
 
 ```sql
 INSERT INTO ezuser_setting ( user_id, is_enabled, max_login ) VALUES ( <contentobject_id>, 1, 1000 );
@@ -52,6 +53,20 @@ INSERT INTO ezuser_setting ( user_id, is_enabled, max_login ) VALUES ( <contento
 
 `max_login` is the allowed number of simultaneous logins; use the value your other accounts have. Package and
 migration importers should create this row when they create a user.
+
+Since 6.0.15 an upgrade script creates the rows of all such accounts at once, on every database engine. Until 6.0.15
+these accounts counted as enabled everywhere but at the sign-in, and the script gives them back that state: an
+enabled row, or a disabled one for an account waiting for its activation mail; an account whose content object is not
+published (a draft held for approval) is left alone. Rows that exist are never changed, so it can be run again:
+
+```sh
+php update/common/scripts/6.0/createmissingusersettings.php --dry-run    # lists the ids and what each would get
+php update/common/scripts/6.0/createmissingusersettings.php              # creates the rows
+php update/common/scripts/6.0/createmissingusersettings.php --disabled   # creates every row disabled
+```
+
+Run it before or right after updating to 6.0.15: from that release on an account without its row is not enabled
+anywhere, so its open session, API key or OAuth token stops working as well.
 
 ## jQuery 3.7.1 and jQuery Migrate 3.4.1
 

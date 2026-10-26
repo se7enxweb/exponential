@@ -57299,6 +57299,18 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Package</source>
         <translation>Paketë</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arkivi u paketua në formatin tar PAX, i cili nuk mund të importohet. Paketojeni paketën në formatin tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkivi u refuzua: hyrja „%path“ ka llojin tar „%type“, ndërsa një paketë përmban vetëm skedarë dhe dosje.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkivi u refuzua: përmban një hyrje më të gjatë se %length bajt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>More audiences</source>
         <translation>Më shumë audienca</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Rishikimi dhe publikimi</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tema është tani në Rishikim.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tema është Publikuar: lexuesit e shohin tani.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Tema është sërish Skicë.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Ju e shkruat versionin aktual, prandaj e publikon dikush tjetër me rolin e publikimit.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Gjendja nuk u ndryshua: roli juaj nuk e lejon këtë hap.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Rrjedha e rishikimit</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Skicë</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Rishikim</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Kthe në Rishikim</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Dërgo në Rishikim</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Publiko</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Kthe në Skicë</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrolli sipas udhëzuesit të stilit</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrolli sipas udhëzuesit të stilit nuk gjeti asgjë.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors gabime, %warnings paralajmërime, %notices njoftime. Një gabim e pengon ./console exp:help:content check të kalojë.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Niveli</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Rregulli</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Fusha</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Gjetja</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>A ju ndihmoi kjo?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lexuesit u përgjigjën po %yes herë dhe jo %no herë.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Arsyet e dhëna për jo:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Faleminderit. Përgjigjja juaj na ndihmon ta përmirësojmë ndihmën.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Nëse jo, çfarë nuk shkonte?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nuk është dhënë arsye</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Ruhet vetëm përgjigjja juaj, jo se kush jeni.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Është e vjetëruar</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Është e vështirë për t'u kuptuar</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Mungon diçka</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Është e gabuar</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Arsye tjetër</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Kjo temë nuk është Publikuar; lexuesit nuk e shohin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Seancat e përdoruesit %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ku është identifikuar llogaria juaj tani. Nëse nuk e njihni një pajisje, mbyllni seancën e saj dhe ndryshoni fjalëkalimin.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Seancat e përdoruesit %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ku është identifikuar llogaria juaj tani. Nëse nuk e njihni një pajisje, mbyllni seancën e saj dhe ndryshoni fjalëkalimin.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Përdoruesit, rolet dhe politikat</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Krijimi dhe redaktimi i përdoruesve, cilësimet e llogarive, caktimi i roleve dhe redaktimi i politikave.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Krijimi dhe redaktimi i përdoruesve, cilësimet e llogarive, miratimi ose refuzimi i llogarive të reja të përdoruesve, caktimi i roleve dhe redaktimi i politikave.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Setup</source>
         <translation>Konfigurimi</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automatik</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Redaktuesi i bazës së të dhënave</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Redaktuesi i burimit të bazës së të dhënave</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publikuesi i skeletit të nënpemës</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Dërgo në bllok</translation>
     </message>
 </context>
 </TS>

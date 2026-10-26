@@ -45,15 +45,15 @@ der einen zur anderen. Dateipfade sind relativ zur Wurzel der Installation.
 | `post_header`, `main`, `pre_footer` | nichts |
 | `footer` | Template-Block `footer` |
 
-![Das Layout Header / Footer im Editor mit den Template-Blöcken header und breadcrumb in der Zone header](../../../eng-us/help/build-two-ways/images/hm-08-layout-2-header-template-block.webp)
+![Das Layout Header / Footer im Editor mit den Template-Blöcken header und breadcrumb in der Zone header](bilder/hm-08-layout-2-header-template-block.webp)
 
-Die Auswahl des header-Blocks zeigt seine Eigenschaften. Der Reiter **Inhalt** hat nur die Blockbezeichnung; der Reiter
-**Design** zeigt den **Template name** (`header`, der Parameter `block_name`), den der Block auch auf sich selbst zeigt,
-„Template block: **header**“.
+Die Auswahl des header-Blocks zeigt seine Eigenschaften. Der Reiter **Inhalt** hat die Blockbezeichnung und den
+**Template-Namen** (`header`, der Parameter `block_name`), den der Block auch auf sich selbst zeigt,
+„Template block: **header**“; der Reiter **Design** hat die gemeinsamen Optionen.
 
-![Der Template-Block header ausgewählt; das Eigenschaftenfeld zeigt die Reiter Inhalt und Design und das Feld Blockbezeichnung](../../../eng-us/help/build-two-ways/images/hm-09-header-block-properties.webp)
+![Der Template-Block header ausgewählt; das Eigenschaftenfeld zeigt die Reiter Inhalt und Design, die Blockbezeichnung und den Template-Namen header](bilder/hm-09-header-block-properties.webp)
 
-![Der Reiter Design des Template-Blocks header: Blockbezeichnung, Template name header, Use vertical whitespace, CSS class, CSS ID, Wrap in container](../../../eng-us/help/build-two-ways/images/tb-01-template-block-design-tab.webp)
+![Der Reiter Design des Template-Blocks header: Blockbezeichnung, Vertikalen Leerraum verwenden, CSS-Klasse, CSS-ID, In Container einbetten](bilder/tb-01-template-block-design-tab.webp)
 
 Achtzehn weitere Layouts der Site verknüpfen ihre Zonen `header` und `footer` mit diesem Layout; deshalb bedient eine einzige
 Kopfzeile die ganze Site. Die Blockdefinition steht in `extension/explayouts/settings/explayouts.ini.append.php`:

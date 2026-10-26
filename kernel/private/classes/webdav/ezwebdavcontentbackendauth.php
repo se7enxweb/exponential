@@ -145,44 +145,37 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
             $fullPath = '/';
         }
 
-        if ( $access === self::ACCESS_READ )
+        // The root (/) is the list of sites and needs no policy for reading. Everything below it, also
+        // reading /site/path, is checked against the policies; writing to the root is refused below.
+        if ( $access === self::ACCESS_READ && trim( $fullPath, '/' ) === '' )
         {
-            // reading the root (/) is allowed
             return true;
         }
 
         $target = $this->splitFirstPathElement( $fullPath, $site );
-        if ( $target === ''
-             && $access === self::ACCESS_READ )
+        if ( $target !== '' )
         {
-            // reading the site list is allowed
-            return true;
-        }
-        else
-        {
-            if ( $target !== '' )
-            {
-                $target = $this->splitFirstPathElement( $target, $element );
-            }
+            $target = $this->splitFirstPathElement( $target, $element );
         }
 
-        if ( $target === '' && $access === self::ACCESS_WRITE )
+        // Writing to the first two levels (/ and /site/) is not allowed; reading the second level lists the
+        // site's folders.
+        if ( $access === self::ACCESS_WRITE && $target === '' )
         {
-            // writing to second-level paths (/plain_site_user/) is not allowed
             return false;
         }
 
-        $user = eZUser::currentUser();
-        $result = $user->hasAccessTo( 'user', 'login' );
-        $accessWord = $result['accessWord'];
+        // The same rule as the web login: user/login with the siteaccess policy. What a user may do with a node
+        // (content/read, edit, create) is checked by eZWebDAVContentBackend on the node itself.
+        $result = $this->loginAccess();
+        $accessWord = $result['accessWord'] ?? 'no';
+        $hasAccess = false;
 
         if ( $accessWord == 'limited' )
         {
-            $hasAccess = false;
             $policyChecked = false;
-            foreach ( array_keys( $result['policies'] ) as $key )
+            foreach ( $result['policies'] as $policy )
             {
-                $policy =& $result['policies'][$key];
                 if ( isset( $policy['SiteAccess'] ) )
                 {
                     $policyChecked = true;
@@ -191,10 +184,6 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
                         $hasAccess = true;
                         break;
                     }
-                }
-                if ( $hasAccess )
-                {
-                    break;
                 }
             }
             if ( !$policyChecked )
@@ -206,11 +195,17 @@ class eZWebDAVContentBackendAuth implements ezcWebdavAnonymousAuthenticator, ezc
         {
             $hasAccess = true;
         }
-        else if ( $accessWord == 'no' )
-        {
-            $hasAccess = false;
-        }
         return $hasAccess;
+    }
+
+    /**
+     * The result of hasAccessTo( 'user', 'login' ) for the current user.
+     *
+     * @return array
+     */
+    protected function loginAccess()
+    {
+        return eZUser::currentUser()->hasAccessTo( 'user', 'login' );
     }
 
     /**

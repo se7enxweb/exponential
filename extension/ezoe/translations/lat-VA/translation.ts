@@ -1367,6 +1367,10 @@ Visne plura de hac re scire?</translation>
         <source>required</source>
         <translation>necessarium</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Hic situs %engine omnibus redactoribus adhibet; electio tua propria hic non valet.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

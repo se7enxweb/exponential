@@ -67,6 +67,7 @@ class eZContentObjectDraftAccessLiveTest extends PHPUnit\Framework\TestCase
             {
                 eZUser::removeUser( $userID );
             }
+            eZUserSetting::removeByUserID( $userID );
             eZUser::purgeUserCacheByUserId( $userID );
         }
         eZRole::expireCache();
@@ -99,6 +100,11 @@ class eZContentObjectDraftAccessLiveTest extends PHPUnit\Framework\TestCase
         $user->setAttribute( 'password_hash', eZUser::createHash( $login, bin2hex( random_bytes( 12 ) ), eZUser::site(), eZUser::hashType() ) );
         $user->setAttribute( 'password_hash_type', eZUser::hashType() );
         $user->store();
+        // an account without an active ezuser_setting row is not enabled, and signing it in falls back to
+        // anonymous; instantiate() normally creates the row, this does not rely on it
+        $setting = eZUserSetting::fetch( $userID ) ?: eZUserSetting::create( $userID, 1 );
+        $setting->setAttribute( 'is_enabled', 1 );
+        $setting->store();
 
         $role = eZRole::create( 'X1 draft access ' . $login );
         $role->store();
