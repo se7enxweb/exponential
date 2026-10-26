@@ -20828,6 +20828,8 @@ f33ac4a3cc763a561ce98f122d9eaaa6  extension/ezjscore/translations/amh-ET/transla
 ec0aff9737893c15a4281fed3076a065  extension/ezjscore/translations/bos-BA/translation.ts
 708e7c78b30d1884ca7f9964d4378659  extension/ezjscore/translations/bul-BG/translation.ts
 2c6b2ee542b2f814097b2ca296a8f320  extension/ezjscore/translations/cat-ES/translation.ts
+250d2d3ad5de3849ae2ce30d2f88f880  extension/ezjscore/translations/chi-CN/translation.ts
+4c24277f0686ca95e839d15a986de32b  extension/ezjscore/translations/chi-TW/translation.ts
 ebdacf3cfa657c97c7e627fe408a4046  extension/ezjscore/translations/cro-HR/translation.ts
 cfc92acb730777a3064214d3c4afd624  extension/ezjscore/translations/cze-CZ/translation.ts
 0718e60d65e60dbf5306cc59b7a52070  extension/ezjscore/translations/dan-DK/translation.ts
@@ -21390,6 +21392,8 @@ e63a3c9bb7c1c0771983a23a0dd1859b  extension/ezoe/translations/ben-BD/translation
 d45eab386709b9f59ac756233b581ae8  extension/ezoe/translations/bos-BA/translation.ts
 de4c847fa303ddcb30d05f29533a0d9f  extension/ezoe/translations/bul-BG/translation.ts
 661ffae7d174822f52044b964d517197  extension/ezoe/translations/cat-ES/translation.ts
+362bc6a8a8c23ff563603e0f1d5d8600  extension/ezoe/translations/chi-CN/translation.ts
+9f4574346d5907b69425fe4c3976d488  extension/ezoe/translations/chi-TW/translation.ts
 be6118e7dd254c76cffd06ebe3e7a2a3  extension/ezoe/translations/cze-CZ/translation.ts
 f56b9b62342f95517a9db9f002fe26b5  extension/ezoe/translations/dan-DK/translation.ts
 726d6b8fd2ccc36ea432222c115e4f29  extension/ezoe/translations/dsb-DE/translation.ts
@@ -24391,9 +24395,10 @@ d8451103e07a111eefaa17525b2eb8e4  share/translations/bos-BA/GUIDE.md
 57cd9327e50ec53f17b1cc671aba14e3  share/translations/bul-BG/translation.ts
 0bf0b442683dfc6d5a3bea03d607e630  share/translations/cat-ES/GUIDE.md
 a6d7868e90355f895a484cd9cdae320d  share/translations/cat-ES/translation.ts
-4dcdb5420060fd1ad57bac9a985509af  share/translations/chi-CN/translation.ts
-dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-HK/translation.ts
-dee1439bfaf68fc5f026df35f4f0397f  share/translations/chi-TW/translation.ts
+581dc12ebd173ba58e107682c0deb23f  share/translations/chi-CN/GUIDE.md
+77ab1be34c7dda5ba475a255e1b34c56  share/translations/chi-CN/translation.ts
+2cb5980e3f7f96b11987f08d7332fa8b  share/translations/chi-TW/GUIDE.md
+433bee257e282581524886f466f45888  share/translations/chi-TW/translation.ts
 88af612789cbcccf1de7f498da1a99eb  share/translations/cro-HR/GUIDE.md
 8d54befe4f370aa883378b844aad28e4  share/translations/cro-HR/translation.ts
 d03c1a747553b8951ecfdda1c6a71938  share/translations/cze-CZ/GUIDE.md
