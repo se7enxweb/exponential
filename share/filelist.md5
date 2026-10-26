@@ -23917,7 +23917,7 @@ b04fcbcf55bb615fce083e7d78e4d6fa  kernel/private/rest/classes/exceptions/rest_ex
 a7a3a48e8aa0ffa966c7745b1ba7747f  kernel/private/rest/classes/exceptions/route_method_not_allowed.php
 eea847e390dc5e21472d82ff300dc73d  kernel/private/rest/classes/exceptions/route_security_filter_not_found.php
 921db2077b416e88d0cba7479a2927d0  kernel/private/rest/classes/exceptions/user_not_found.php
-91df1cdf81adb89ed34ba9ead1e9db39  kernel/private/rest/classes/ezpkernelrest.php
+b6460970e9384e5d0d096f1387bd1ba3  kernel/private/rest/classes/ezpkernelrest.php
 56513fc16a223f6494dff2b9529218fa  kernel/private/rest/classes/http_response_codes.php
 849fec2e35afcb50302dc0bb5000a358  kernel/private/rest/classes/interfaces/content_renderer.php
 138b0dfa23a5968c02dea3d43ff692bd  kernel/private/rest/classes/interfaces/prerouting_filter.php
@@ -23946,7 +23946,7 @@ ac570c24c81bad138fa6f3fa2e697f12  kernel/private/rest/classes/renderers/xhtml_co
 e3d2254fb755ce7c408a9081a4fc9622  kernel/private/rest/classes/request/http_parser.php
 53ab35357ac7d16aead82cbd8183b34b  kernel/private/rest/classes/request/rest_request.php
 89619ee6e4b602264ee80b8b8549a693  kernel/private/rest/classes/response/result.php
-462e34f0ae451134464422b9d9bb2968  kernel/private/rest/classes/rest_http_response_writer.php
+8504f65d66f74f426c823e72b1f96d16  kernel/private/rest/classes/rest_http_response_writer.php
 26c2759fd6653c01d00aebf8d7a89255  kernel/private/rest/classes/rest_provider.php
 504675901b71ac3a29f70e7c5bc9307f  kernel/private/rest/classes/restkernel_functions.php
 ce5786e66258b4b9f154e89763581e35  kernel/private/rest/classes/router.php
@@ -26659,6 +26659,7 @@ ff5fd6c8ea38ccd01786dc6beab3d757  tests/tests/kernel/private/rest/abstract_test.
 7374c5861a8fe2feadb136468fb39a0d  tests/tests/kernel/private/rest/application_cache_test.php
 d4f322bfaa51c8aa4da2382f366dcb40  tests/tests/kernel/private/rest/controller_test.php
 df3c98744f98f633a523eee1023b4bbc  tests/tests/kernel/private/rest/ezpRestHttpRequestParserRecordedRequestsTest.php
+f7b838bf544790b1b6716bd98fb43715  tests/tests/kernel/private/rest/ezpRestHttpResponseWriterStatusLineTest.php
 c08d6203f3477043cd4ec4c4f3dab156  tests/tests/kernel/private/rest/ezprest_request_parser_regression.php
 6d6b681d463f03666ce88ec57130e3b5  tests/tests/kernel/private/rest/railsroute_test.php
 c0ac18081b161e9ff499bae50819b2ce  tests/tests/kernel/private/rest/regexproute_test.php
@@ -26678,6 +26679,7 @@ c4284cf39989b5df7de097b8f30a2d6c  tests/tests/kernel/private/rest/request_parser
 cb03165c75d5bae854a4602fb41692d4  tests/tests/kernel/private/rest/suite.php
 3013b456947228eeecfbd9a6e02df513  tests/tests/kernel/private/rest/testfiles/controller.php
 149203a3554b279242b3a0b2a2c78584  tests/tests/kernel/private/rest/testfiles/rest_provider.php
+b07410b0821aaf1aa91cca68baf74f5c  tests/tests/kernel/private/rest/testfiles/status_line_router.php
 58d85671f9161547dbf3c50eb39defa4  tests/tests/kernel/private/rest/tools/generate_test_data.php
 411503c060f24286fc314cd792b2f1bb  tests/tests/kernel/private/restapi/expRestContentPermissionTest.php
 230a02440109a6c210b1a3195241ac4f  tests/tests/kernel/private/restapi/expRestCorsTest.php

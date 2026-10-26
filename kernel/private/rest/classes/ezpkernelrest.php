@@ -111,7 +111,9 @@ class ezpKernelRest implements ezpKernelHandler
             {
                 if ( !headers_sent() )
                 {
-                    header( $_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error' );
+                    // http_response_code() writes the request's protocol under every SAPI;
+                    // SERVER_PROTOCOL is not set on the command line
+                    http_response_code( 500 );
                 }
             }
         );
