@@ -76,14 +76,15 @@ SetupTabs[]
 > abschnitts), geladen von user/megamenu/<tab>, wenn es zum ersten Mal geöffnet wird. Ein Reitername besteht aus Klein-  
 > buchstaben, Ziffern und \_; ein Reiter mit Mega-Menü sollte zugriffsgeprüft sein (PolicyList\[\] oder seine URL unter  
 > CheckViewAccess). Angezeigt ab 576px, wo  
-> das Hauptmenü eine Zeile ist (nicht im Telefonmenü). Standardmäßig leer: keine Schaltfläche, kein Skript. Zum Einschalten, in einer  
-> menu.ini.append.php eines Siteaccess oder eines Overrides:  
+> das Hauptmenü eine Zeile ist (nicht im Telefonmenü). Standardmäßig für Setup, Benutzer und Dashboard eingeschaltet. Zum Ausschalten,  
+> in einer menu.ini.append.php eines Siteaccess oder eines Overrides (eine leere Liste: keine Schaltfläche, kein Skript):  
+>   MegaMenuTabs\[\]  
+> oder um nur einige Reiter zu behalten, die leere Liste gefolgt von diesen, z. B.:  
+>   MegaMenuTabs\[\]  
 >   MegaMenuTabs\[\]=setup  
->   MegaMenuTabs\[\]=users  
->   MegaMenuTabs\[\]=dashboard  
 > (doc/eng-us/features/6.0/admin4-design.md, "Mega menu")  
 
-Standard: eine leere Liste.
+Standard: eine Liste mit 3: `setup`, `users`, `dashboard`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -91,6 +92,9 @@ Standard: eine leere Liste.
 [TopAdminMenu]
 # ein leeres "MegaMenuTabs[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 MegaMenuTabs[]
+MegaMenuTabs[]=setup
+MegaMenuTabs[]=users
+MegaMenuTabs[]=dashboard
 */ ?>
 ```
 

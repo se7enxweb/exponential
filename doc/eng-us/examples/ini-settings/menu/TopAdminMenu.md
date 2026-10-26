@@ -76,14 +76,15 @@ SetupTabs[]
 > section), loaded from user/megamenu/<tab> when it is first opened. A tab name is lower case  
 > letters, digits and \_; a tab with a mega menu should be access checked (PolicyList\[\], or its URL under  
 > CheckViewAccess). Shown from 576px, where  
-> the main menu is one line (not in the phone menu). Empty by default: no button, no script. To switch it on, in a  
-> siteaccess or override menu.ini.append.php:  
+> the main menu is one line (not in the phone menu). On by default for Setup, Users and Dashboard. To switch it off,  
+> in a siteaccess or override menu.ini.append.php (an empty list: no button, no script):  
+>   MegaMenuTabs\[\]  
+> or to keep only some tabs, the empty list followed by those, e.g.:  
+>   MegaMenuTabs\[\]  
 >   MegaMenuTabs\[\]=setup  
->   MegaMenuTabs\[\]=users  
->   MegaMenuTabs\[\]=dashboard  
 > (doc/eng-us/features/6.0/admin4-design.md, "Mega menu")  
 
-Default: an empty list.
+Default: a list of 3: `setup`, `users`, `dashboard`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -91,6 +92,9 @@ Default: an empty list.
 [TopAdminMenu]
 # an empty "MegaMenuTabs[]" first replaces the shipped list; without it the items are added
 MegaMenuTabs[]
+MegaMenuTabs[]=setup
+MegaMenuTabs[]=users
+MegaMenuTabs[]=dashboard
 */ ?>
 ```
 

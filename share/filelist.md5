@@ -4619,7 +4619,7 @@ bf32564c7a1a92b4de72ca42c5a07e96  doc/eng-us/examples/ini-settings/file/PassThro
 d244fe70d76dae352601fba62c14d807  doc/eng-us/examples/ini-settings/httpcache/README.md
 eed63982fe34e9b64c9c374ecb284e5f  doc/eng-us/examples/ini-settings/i18n/CharacterSettings.md
 276e9baf0c2a264278721582e262a6e4  doc/eng-us/examples/ini-settings/i18n/README.md
-5e7e774bd33981711b00db48022baa0f  doc/eng-us/examples/ini-settings/i18n/TranslationSettings.md
+bbd5d11eaa3ac32a04364b5c5215d1a3  doc/eng-us/examples/ini-settings/i18n/TranslationSettings.md
 18d783d360e9fa91400be39113ad20e2  doc/eng-us/examples/ini-settings/icon/ExtensionSettings.md
 c02534996936a3ba602251ab2b8901ac  doc/eng-us/examples/ini-settings/icon/FlagIcons.md
 b2387d8109c7068982688ba185649c55  doc/eng-us/examples/ini-settings/icon/IconSettings.md
@@ -4727,7 +4727,7 @@ af20f5a9a359ddbbcefbd5c11923a8f3  doc/eng-us/examples/ini-settings/menu/MenuCont
 264a258b2c9c41d391327fd7954b11cc  doc/eng-us/examples/ini-settings/menu/NavigationPart.md
 d6327584b9878419e797fc40282d7f44  doc/eng-us/examples/ini-settings/menu/README.md
 79d221630e57232e13f4cd63e345c325  doc/eng-us/examples/ini-settings/menu/SelectedMenu.md
-59819afc569a93b78970b7cee5014c2e  doc/eng-us/examples/ini-settings/menu/TopAdminMenu.md
+2a5ddc50ed27e3621011b4b753b32914  doc/eng-us/examples/ini-settings/menu/TopAdminMenu.md
 3801f05fa5941fcbd899696a788e6cca  doc/eng-us/examples/ini-settings/menu/TopOnly.md
 4acce9c77aaae15cf7a9fe8ac60e11a3  doc/eng-us/examples/ini-settings/menu/Topmenu_audit.md
 f470bf460df7255be59ed02d02d2ed41  doc/eng-us/examples/ini-settings/menu/Topmenu_content.md
@@ -12571,7 +12571,7 @@ fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 a2cdb6d91f08e7a03fa339d5428ce4a6  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 284dff665c38187e010417279824d742  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
-abcfa2c79b753427744d3e5a2ae440f5  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
+c71a7c1ca3fbbbe8c6c831752fb2f394  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 d2c0ea88c16ae752715acb2e825170e5  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 c278fda159a7fda59b2deed36dbd8176  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
@@ -13847,7 +13847,7 @@ d4a5456dd3b5df504250b4c930ca1d1e  doc/ger-de/beispiele/ini-einstellungen/httpcac
 7104d2b912e12f6a5a216abacaadd136  doc/ger-de/beispiele/ini-einstellungen/httpcache/README.md
 8a52650b2fb15ea0a492e8650b7166bc  doc/ger-de/beispiele/ini-einstellungen/i18n/CharacterSettings.md
 cf20842b86820420d9f42c6efb7aa2d0  doc/ger-de/beispiele/ini-einstellungen/i18n/README.md
-f560038efb3e6f761461af09963f7e93  doc/ger-de/beispiele/ini-einstellungen/i18n/TranslationSettings.md
+239c002a04b83103dd35907c47183678  doc/ger-de/beispiele/ini-einstellungen/i18n/TranslationSettings.md
 ff82abef5ad2370a30d933c5d02c11fa  doc/ger-de/beispiele/ini-einstellungen/icon/ExtensionSettings.md
 525332d3e37f70b1bc5c6b6a3ebbc44f  doc/ger-de/beispiele/ini-einstellungen/icon/FlagIcons.md
 5398082912d34155e307b7384d7cf162  doc/ger-de/beispiele/ini-einstellungen/icon/IconSettings.md
@@ -13955,7 +13955,7 @@ c8ee492ab6fc341fa8dc1a3c2f371333  doc/ger-de/beispiele/ini-einstellungen/menu/Me
 58e43072377f3ad4e9a2937c9592b04c  doc/ger-de/beispiele/ini-einstellungen/menu/NavigationPart.md
 4347065a2314f65a7c16e2c7dd4ae287  doc/ger-de/beispiele/ini-einstellungen/menu/README.md
 479d4db7b96a15f76eeb00d723ea8fc1  doc/ger-de/beispiele/ini-einstellungen/menu/SelectedMenu.md
-0c3ac4cb3b3ce2998c38d6324d6bd366  doc/ger-de/beispiele/ini-einstellungen/menu/TopAdminMenu.md
+59c9f70f52f1adc1665176356c23157a  doc/ger-de/beispiele/ini-einstellungen/menu/TopAdminMenu.md
 1e3888f0973c91073183039614f14c92  doc/ger-de/beispiele/ini-einstellungen/menu/TopOnly.md
 4f2020f0f47a52c22ab0e23b2b3074a4  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_audit.md
 03d57bb548a44490138f0a1ba310c752  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_content.md
