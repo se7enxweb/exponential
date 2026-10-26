@@ -793,7 +793,7 @@ class expI18nCoverageMap
             if ( @file_get_contents( $file ) === $content )
                 continue;
             if ( !is_dir( dirname( $file ) ) )
-                mkdir( dirname( $file ), 0775, true );
+                eZDir::mkdir( dirname( $file ), false, true );
             file_put_contents( $file, $content );
             $written[] = $path;
         }
