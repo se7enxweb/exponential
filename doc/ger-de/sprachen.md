@@ -9,11 +9,11 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **76**, davon 76 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **77**, davon 77 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **73** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **75** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **74** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **74** |
 | Länder und Gebiete der Locales | **158** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **138** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **73** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **74** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **75** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **74** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 75 nicht übersetzten Sprachen</summary>
+<details><summary>Die 74 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -272,7 +272,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
 | Georgian | ქართული | `kat` | `kat-GE` (Georgien) |
 | Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (USA) |
-| Javanese | Jawa | `jav` | `jav-ID` (Indonesien) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algerien) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (Indien) |
 | Kazakh | Қазақ тілі | `kaz` | `kaz-KZ` (Kasachstan) |
