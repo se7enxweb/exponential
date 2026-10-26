@@ -4,18 +4,28 @@
     its line breaks become spaces, so a value the user typed (a name) cannot add lines that look like the mail's own
     "Label: URL" links.
     A value that is not a string (a number, or nothing) is written as text, so the line never stops the mail.
+    The code (mail_code) stands on a line of its own, indented, so it is easy to select; mail_preheader is only for
+    the HTML part. A paragraph made of parts writes its links as bare addresses.
 
     Line breaks: the template parser drops one newline right after a tag and one right before a tag, so the blank
     lines below are deliberate (a text between two tags needs three newlines to print one).
 *}
 {def $mt_title = first_set( $mail_title, '' )
      $mt_intro = first_set( $mail_intro, '' )
+     $mt_code = first_set( $mail_code, '' )
+     $mt_code_label = first_set( $mail_code_label, '' )
+     $mt_paragraphs = first_set( $mail_paragraphs, array() )
      $mt_rows = first_set( $mail_rows, array() )
      $mt_notice = first_set( $mail_notice, '' )
      $mt_buttons = first_set( $mail_buttons, array() )
      $mt_links = first_set( $mail_links, array() )
      $mt_links_note = first_set( $mail_links_note, '' )
-     $mt_footer = first_set( $mail_footer, ezini( 'SiteSettings', 'SiteName' ) )}
+     $mt_outro = first_set( $mail_outro, array() )
+     $mt_footer = first_set( $mail_footer, '' )}
+{if $mt_footer|eq( '' )}{set $mt_footer = first_set( $mail_site_name, '' )}{/if}
+{if $mt_footer|eq( '' )}{set $mt_footer = ezini( 'SiteSettings', 'SiteName' )}{/if}
+{if $mt_paragraphs|is_array|not}{set $mt_paragraphs = array( $mt_paragraphs )}{/if}
+{if $mt_outro|is_array|not}{set $mt_outro = array( $mt_outro )}{/if}
 {if $mt_title|ne( '' )}
 {$mt_title}
 
@@ -23,6 +33,15 @@
 {/if}
 {if $mt_intro|ne( '' )}
 {$mt_intro}
+
+
+{/if}
+{if $mt_code|ne( '' )}
+{if $mt_code_label|ne( '' )}
+{$mt_code_label}
+
+{/if}
+    {$mt_code}
 
 
 {/if}
@@ -34,6 +53,17 @@
 
 
 {/if}
+{foreach $mt_paragraphs as $mt_paragraph}
+{if $mt_paragraph|is_array}
+{foreach $mt_paragraph as $mt_part}{if is_set( $mt_part.break )}{"\n"}{elseif is_set( $mt_part.url )}{$mt_part.url}{else}{first_set( $mt_part.text, '' )}{/if}{/foreach}
+
+
+{elseif $mt_paragraph|ne( '' )}
+{$mt_paragraph}
+
+
+{/if}
+{/foreach}
 {if $mt_notice|ne( '' )}
 {$mt_notice}
 
@@ -56,7 +86,19 @@
 
 
 {/if}
+{foreach $mt_outro as $mt_line}
+{if $mt_line|is_array}
+{foreach $mt_line as $mt_part}{if is_set( $mt_part.break )}{"\n"}{elseif is_set( $mt_part.url )}{$mt_part.url}{else}{first_set( $mt_part.text, '' )}{/if}{/foreach}
+
+
+{elseif $mt_line|ne( '' )}
+{$mt_line}
+
+
+{/if}
+{/foreach}
 --
 {$mt_footer}
 
-{undef $mt_title $mt_intro $mt_rows $mt_notice $mt_buttons $mt_links $mt_links_note $mt_footer}
+{undef $mt_title $mt_intro $mt_code $mt_code_label $mt_paragraphs $mt_rows $mt_notice $mt_buttons $mt_links
+       $mt_links_note $mt_outro $mt_footer}

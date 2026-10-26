@@ -44919,6 +44919,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52317,6 +52325,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53344,6 +53356,42 @@ your account.</source>
     </message>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -71335,6 +71383,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71690,6 +71746,10 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -76545,6 +76605,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77070,6 +77158,17 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the page</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

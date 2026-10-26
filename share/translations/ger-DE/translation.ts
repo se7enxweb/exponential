@@ -50367,6 +50367,14 @@ Sie sollten entweder den Benutzer kontaktieren oder einen neuen Entwurf erstelle
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Kommentar von &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Ihnen wurde eine Seite empfohlen</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Sie erhalten diese E-Mail, weil jemand auf %site Ihre Adresse eingegeben hat, um eine Seite mit Ihnen zu teilen.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/translate</name>
@@ -59600,6 +59608,10 @@ Um das zu tun, müssen Sie die %chown Kommandos unter den alternativen Shell-Bef
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Versuch: %attempt von %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Beleg anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -60850,6 +60862,42 @@ Bitte folgen Sie den Hinweisen in der Email, um Ihr Konto zu aktivieren.</transl
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Der Link funktioniert nur einmal und nur %1 Minuten lang.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Passwort zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Jemand hat beantragt, das Passwort Ihres Kontos auf %site zurückzusetzen. Bestätigen Sie es mit der Schaltfläche, dann senden wir Ihnen in einer zweiten E-Mail ein neues Passwort.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Mein Passwort zurücksetzen</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Wenn Sie das nicht beantragt haben, können Sie diese E-Mail ignorieren: Ihr Passwort bleibt, wie es ist.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ihr neues Passwort</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Ihr Passwort auf %site wurde zurückgesetzt. Melden Sie sich mit diesem neuen Passwort an und ändern Sie es dann in ein eigenes.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Wenn Sie Ihr Passwort nicht zurückgesetzt haben, melden Sie sich mit diesem an und ändern Sie es sofort.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Passwort für %site zurücksetzen</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ihr neues Passwort für %site</translation>
     </message>
 </context>
 <context>
@@ -77282,6 +77330,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Your devices</source>
         <translation>Ihre Geräte</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Jemand möchte %email für ein Konto auf %site verwenden. Bitte bestätigen Sie, dass diese Adresse Ihnen gehört.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Sie (oder jemand, der Ihre Adresse eingegeben hat) haben einen Link angefordert, um die E-Mails zu verwalten, die %site an %email sendet. Auf dieser Seite können Sie jede Art von E-Mail ein- oder ausschalten oder alle optionalen E-Mails abbestellen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -77729,6 +77785,10 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Wenn Sie diese Änderung nicht vorgenommen haben, kennt möglicherweise jemand anderes Ihr Passwort: Setzen Sie es sofort mit „%forgot“ auf der Anmeldeseite zurück und kontaktieren Sie uns.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Ihr Passwort wurde geändert</translation>
     </message>
 </context>
 <context>
@@ -83693,6 +83753,34 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The sessions of this user:</source>
         <translation>Die Sitzungen dieses Benutzers:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Neue Anmeldung bei Ihrem Konto</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gerät</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ungefähre Adresse</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Wenn Sie es nicht waren, kennt möglicherweise jemand Ihr Passwort: Melden Sie diese Sitzung auf der Seite Ihrer Geräte ab und ändern Sie dann Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ihre Geräte prüfen</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Sitzungen dieses Benutzers anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -84219,6 +84307,17 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Die Zeile wird aus der Tabelle entfernt und kann nicht wiederhergestellt werden.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Wenn die Schaltfläche nicht funktioniert, kopieren Sie diese Adresse in Ihren Browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Seite öffnen</translation>
     </message>
 </context>
 </TS>
