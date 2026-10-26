@@ -2,14 +2,14 @@
 title: site.ini [MailSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [MailSettings] in site.ini: Transport, TransportAlias, TransportServer, TransportConnectionType, TransportPort, TransportUser, TransportPassword, SenderHost ..."
-keywords: site.ini, MailSettings, INI, setting, Transport, TransportAlias, TransportServer, TransportConnectionType, TransportPort, TransportUser, TransportPassword, SenderHost, AdminEmail, EmailSender, EmailReplyTo, UserAgent, AllowedCharsets, OutputCharset, ContentType, HeaderLineEnding, SendmailOptions, SendmailEnvelopeSender, SendmailInsertUndisclosedRecipient, DebugSending, DebugReceiverEmail, ExcludeHeaders
+summary: "The settings of [MailSettings] in site.ini: Transport, TransportAlias, TransportServer, TransportConnectionType, TransportPort, TransportUser, TransportPassword, TransportAuthMethod ..."
+keywords: site.ini, MailSettings, INI, setting, Transport, TransportAlias, TransportServer, TransportConnectionType, TransportPort, TransportUser, TransportPassword, TransportAuthMethod, SenderHost, AdminEmail, EmailSender, EmailReplyTo, UserAgent, AllowedCharsets, OutputCharset, ContentType, HeaderLineEnding, SendmailOptions, SendmailEnvelopeSender, SendmailInsertUndisclosedRecipient, DebugSending, DebugReceiverEmail, ExcludeHeaders
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [MailSettings]
 
-The block `[MailSettings]` of `settings/site.ini`, with 22 setting(s).
+The block `[MailSettings]` of `settings/site.ini`, with 23 setting(s).
 
 > If RedirectAfterPublish=uri, indicates to which URI user will be redirected  
 > after publishing a node.  
@@ -120,6 +120,25 @@ Default: empty.
 # settings/override/site.ini.append.php
 [MailSettings]
 TransportPassword=
+*/ ?>
+```
+
+## TransportAuthMethod
+
+> SMTP authentication method: PLAIN, LOGIN, CRAM-MD5, DIGEST-MD5, NTLM or XOAUTH2.  
+> Empty: the strongest method the server offers is tried (NTLM before LOGIN and  
+> PLAIN; NTLM needs the mcrypt extension, gone since PHP 7.2, and then fails).  
+> Set LOGIN or PLAIN for a server that offers NTLM. Credentials over an  
+> unencrypted connection to a host other than localhost log a warning: use  
+> TransportConnectionType=tls or ssl there.  
+
+Default: empty.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[MailSettings]
+TransportAuthMethod=
 */ ?>
 ```
 

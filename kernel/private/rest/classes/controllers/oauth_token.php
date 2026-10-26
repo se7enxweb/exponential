@@ -60,7 +60,8 @@ class ezpRestOauthTokenController extends ezcMvcController
         $client_id = $this->request->post['client_id'];
         $client_secret = isset( $this->request->post['client_secret'] ) && is_string( $this->request->post['client_secret'] )
                          ? $this->request->post['client_secret'] : null;
-        $code_verifier = isset( $this->request->post['code_verifier'] ) ? $this->request->post['code_verifier'] : null;
+        $code_verifier = isset( $this->request->post['code_verifier'] ) && is_string( $this->request->post['code_verifier'] )
+                         ? $this->request->post['code_verifier'] : null;
         $tokenTTL = (int)eZINI::instance( 'rest.ini' )->variable( 'OAuthSettings', 'TokenTTL' );
 
         if ( !$this->validateGrantType( $grant_type ) )
@@ -102,24 +103,61 @@ class ezpRestOauthTokenController extends ezcMvcController
 
     protected function checkParams( $paramsToCheck )
     {
+        // $missingParams used to be reset inside the loop, so only a missing last parameter was
+        // refused: a request without client_id went on to fetchByClientId( null ) with
+        // "Undefined array key" warnings. Every missing parameter is reported now.
+        $missingParams = self::missingParams( $this->request->post, $paramsToCheck );
+        if ( !empty( $missingParams ) )
+        {
+            throw new ezpOauthInvalidRequestException( 'Missing ' . implode( ', ', $missingParams ) . ( count( $missingParams ) > 1 ? ' parameters.' : ' parameter.' ) );
+        }
+        // A parameter posted as a list (client_id[]=..., refresh_token[]=...) reached the client and token lookups
+        // as an array, where the database layer failed with an error page instead of an OAuth answer.
+        $invalidParams = self::invalidParams( $this->request->post, $paramsToCheck );
+        if ( !empty( $invalidParams ) )
+        {
+            throw new ezpOauthInvalidRequestException( 'Invalid ' . implode( ', ', $invalidParams ) . ( count( $invalidParams ) > 1 ? ' parameters.' : ' parameter.' ) );
+        }
+    }
+
+    /**
+     * The names in $paramsToCheck whose value in $post is present but not a string (a list posted as name[]=...).
+     *
+     * @param array $post
+     * @param array $paramsToCheck
+     * @return array
+     */
+    public static function invalidParams( $post, $paramsToCheck )
+    {
+        $invalidParams = array();
+        foreach ( $paramsToCheck as $param )
+        {
+            if ( isset( $post[$param] ) && !is_string( $post[$param] ) )
+            {
+                $invalidParams[] = $param;
+            }
+        }
+        return $invalidParams;
+    }
+
+    /**
+     * The names in $paramsToCheck that $post does not carry, in their order.
+     *
+     * @param array $post
+     * @param array $paramsToCheck
+     * @return array
+     */
+    public static function missingParams( $post, $paramsToCheck )
+    {
+        $missingParams = array();
         foreach( $paramsToCheck as $param )
         {
-            $missingParams = array();
-            if ( !isset( $this->request->post[$param] ) )
+            if ( !isset( $post[$param] ) )
             {
                 $missingParams[] = $param;
             }
         }
-        // For now bail out on first missing param, as spec does not yet specify
-        // how to specify multiple missing params simultaneously.
-
-        if ( !empty( $missingParams ))
-        {
-            $error = array_pop( $missingParams );
-
-            throw new ezpOauthInvalidRequestException( "Missing {$error} parameter." );
-        }
-
+        return $missingParams;
     }
 
     protected function validateGrantType( $grant )

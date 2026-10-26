@@ -191,6 +191,24 @@ class expHelpContentEbooks
             $this->change( 'error', "$remoteId: " . $e->getMessage() );
             return false;
         }
+        // epubcheck and Ace by DAISY, where the site has them (expHelpContentBookCheck); BookChecks=required keeps a
+        // book that fails them from being stored
+        if ( $format === 'epub' )
+        {
+            $checker = new expHelpContentBookCheck();
+            $checks = $checker->check( $result['file'] );
+            foreach ( $checks as $check )
+            {
+                if ( $check['status'] !== expHelpContentBookCheck::SKIPPED )
+                    $this->change( 'check', "$remoteId: {$check['tool']} " . strtoupper( $check['status'] ) . ": {$check['message']}" );
+            }
+            if ( $checker->refuses( $checks ) )
+            {
+                $this->change( 'error', "$remoteId: not stored, a check failed (BookChecks=required)" );
+                $this->cleanUp( $result['file'], $dir );
+                return false;
+            }
+        }
         $object = eZContentObject::fetchByRemoteID( $remoteId );
         $stored = $object instanceof eZContentObject ? self::storedFile( $object ) : null;
         $same = $stored !== null && is_file( $stored ) && sha1_file( $stored ) === sha1_file( $result['file'] );

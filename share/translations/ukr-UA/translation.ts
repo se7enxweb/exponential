@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Відкрити або закрити папку</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ця сторінка є у ваших закладках. Відкрийте закладку, щоб змінити її назву або папку.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Додати цю сторінку до закладок.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>У закладках</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Додати сторінку до закладок</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Закладка зберігає адресу цієї сторінки разом з її параметрами: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Зберегти закладку</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Додати закладку</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Мої закладки</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Системна сторінка</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Системні сторінки</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Ви більше не маєте доступу до цієї сторінки.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Відкрити</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Адреса цієї сторінки відсутня. Вилучіть закладку й додайте сторінку до закладок знову.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ви більше не маєте доступу до цієї сторінки. Вилучіть закладку або попросіть адміністратора надати доступ.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адреса</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Модуль і подання</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Системні сторінки теж можна додавати до закладок: відкрийте сторінку (Налаштування, журнал аудиту, список користувачів ...) і виберіть над нею «Додати сторінку до закладок». Такі закладки мають значок шестірні.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>деактивувати облікові записи користувачів і переміщувати їх до групи деактивованих користувачів, а також повертати назад</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>бачити, де ввійшли інші користувачі, і завершувати їхні сеанси</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>Відкрити налаштування електронної пошти</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваші пристрої</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанси</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Де виконано вхід: браузер, система, місце й час. Завершіть сеанс на пристрої, який ви не впізнаєте.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Де цей користувач виконав вхід; вихід користувача на всіх пристроях.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Керувати пристроями</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Показати сеанси</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Активних сеансів: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ключі доступу</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Входьте за допомогою відбитка пальця, обличчя, блокування екрана або ключа безпеки замість пароля.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Керувати ключами доступу</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Додати ключ доступу</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Ключів доступу: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Поки немає</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Комбінації клас/атрибут (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Групи користувачів, нові облікові записи в яких потребують схвалення</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Обліковий запис, опублікований в одній із цих груп або нижче, чекає, доки його не схвалить відповідальна особа. До того з ним не можна ввійти.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Користувачі, які схвалюють облікові записи</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Групи, які схвалюють облікові записи</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Групи користувачів, яким схвалення не потрібне (їхні учасники публікують такі облікові записи одразу; тим, хто схвалює, воно не потрібне ніколи)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Надсилати відповідальним за схвалення лист із посиланням на схвалення (вони входять, щоб схвалити або відхилити)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Завдання cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Завдання cron запускаються з crontab користувача %user, якому належить встановлення.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>У встановленні немає частин завдань cron для планування.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab не записано (%reason). Додайте ці рядки до crontab користувача, від імені якого працює сайт, інакше черга, імпорт, сповіщення й пошуковий індекс ніколи не запускатимуться:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>Назва атрибута класу</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Облікові записи, що потребують схвалення</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Лист відповідальним за схвалення</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>Ваш коментар додано.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Обліковий запис «%1» схвалено й опубліковано: тепер із ним можна ввійти.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Обліковий запис «%1» відхилено. Його не опубліковано, і з ним не можна ввійти; він знову став чернеткою свого автора.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Додано закладок: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Системна сторінка</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Системні сторінки поки не можна додавати до закладок: оновлення бази даних цієї версії ще не виконано.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Цю сторінку не можна додати до закладок: це не сторінка подання модуля.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Цю сторінку не можна додати до закладок: у вас немає доступу до неї.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Не вдалося додати сторінку до закладок.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Сторінка «%name» є у ваших закладках.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Не вдалося перейменувати закладку: потрібно вказати назву.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Закладку перейменовано на «%name».</translation>
     </message>
 </context>
 <context>
@@ -56974,6 +57194,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The archive was refused: the entry "%path" points outside the package.</source>
         <translation>Архів відхилено: запис «%path» вказує за межі пакета.</translation>
+    </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Архів запаковано у форматі PAX tar, який не можна імпортувати. Запакуйте пакет у форматі GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Архів відхилено: запис «%path» має тип tar «%type», а пакет містить лише файли й каталоги.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Архів відхилено: він містить запис з ім’ям, довшим за %length байтів.</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
@@ -58070,6 +58302,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Віддзеркалити в таблиці даних</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Схвалення облікових записів користувачів</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Новий обліковий запис користувача чекає на ваше схвалення</translation>
     </message>
 </context>
 <context>
@@ -64214,6 +64454,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The audit trail of this node</source>
         <translation>Журнал аудиту цього вузла</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>цілісний</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>порушено</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>не перевірено</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>відновлено</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>порожньо</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -69710,6 +69970,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Нова адреса електронної пошти %email очікує підтвердження: відкрийте посилання, яке ми туди надіслали. Доти цей обліковий запис зберігає %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Лист про вхід із нового пристрою або браузера належить до безпеки облікового запису. Його можна ввімкнути або вимкнути на сторінці ваших пристроїв, де також можна переглянути й завершити сеанси вашого облікового запису.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваші пристрої</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -73812,6 +74080,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Build the help manuals from the Markdown help</source>
         <translation>Створити посібники довідки з довідки Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Перевірка і випуск</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Тема зараз на перевірці.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Тему випущено: читачі вже її бачать.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Тема знову є чернеткою.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Поточну версію написали ви, тому її випускає хтось інший із роллю випуску.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Стан не змінено: ваша роль не дозволяє цей крок.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Процес перевірки</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чернетка</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Перевірка</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Назад на перевірку</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Надіслати на перевірку</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Випустити</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Назад до чернетки</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Перевірка за посібником зі стилю</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Перевірка за посібником зі стилю нічого не знайшла.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors помилок, %warnings попереджень, %notices зауважень. Помилка призводить до невдачі ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Рівень</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Правило</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Поле</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Висновок</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Чи було це корисно?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Читачі відповіли так %yes разів і ні %no разів.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Вказані причини для ні:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Дякуємо. Ваша відповідь допомагає нам покращувати довідку.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Якщо ні, що було не так?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Причину не вказано</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Зберігається лише ваша відповідь, а не те, хто ви.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Це застаріло</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Це важко зрозуміти</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Чогось бракує</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Це неправильно</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Інша причина</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Цю тему не випущено; читачі її не бачать.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -75597,6 +76005,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Переглянути таблиці постійних класів…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Завдання cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Жодна частина завдань cron ще не запускалася: черга завдань, імпорт, сповіщення й пошуковий індекс чекають. Виконайте php bin/php/installcrontab.php --add або додайте рядки з виводу --show до crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Одна з частин завдань cron не запускалася довше, ніж дозволяє її розклад: перевірте crontab (php bin/php/installcrontab.php --show) і журнали var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Частина</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Розклад</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Останній запуск</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколи</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>вчасно</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>із запізненням</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>не запускалася</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>У встановленні немає жодної частини завдань cron, яку могло б виконати завдання cron.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Налаштування &gt; Завдання cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Новий обліковий запис користувача чекає на схвалення: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Обліковий запис</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Ім'я користувача</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Група</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Хто запитав</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Відкрити схвалення</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Якщо кнопка не працює, скопіюйте цю адресу до браузера: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Новий обліковий запис користувача чекає на ваше схвалення</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Користувач %requester створив обліковий запис «%name» у %groups. Його не опубліковано, і з ним не можна ввійти, доки його не схвалить відповідальна особа.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Увійдіть в адміністрування й схваліть або відхиліть його у своєму списку співпраці. Це посилання не виконує вхід і саме нічого не вирішує.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Цей лист надіслав сайт %site, бо ви схвалюєте нові облікові записи цих груп.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Комп'ютер</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Телефон</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Планшет</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Програма або застосунок</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Автоматизований клієнт</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Невідомий пристрій</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Пароль і код двоетапного входу</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Інтерфейс REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Інтерфейс SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Єдиний вхід</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Вхід виконано до початку запису сеансів</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Вихід виконано</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Завершено на цій сторінці</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Завершено адміністратором</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Завершено командою «усі інші сеанси»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Замінено новим входом</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Завершено через зміну пароля</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Закінчився</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваші пристрої</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеанси користувача %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Де зараз виконано вхід у ваш обліковий запис. Якщо ви не впізнаєте пристрій, завершіть його сеанс і змініть пароль.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Де зараз виконано вхід у цей обліковий запис. Вихід користувача завершує кожен сеанс під час його наступного запиту.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Назад до облікового запису</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс завершено. На пристрої потрібно ввійти знову.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Завершено інших сеансів: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Інших сеансів для завершення не було.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Завершено сеансів цього користувача: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>У цього користувача не було сеансів для завершення.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Це ваш поточний сеанс. Щоб завершити його, вийдіть із системи.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Цей сеанс уже було завершено.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ви отримуватимете лист, коли у ваш обліковий запис виконується вхід із нового пристрою.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ви більше не отримуватимете листів про вхід із нових пристроїв.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Термін дії сторінки минув. Нічого не змінено; спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>На цьому сайті сеанси не записуються (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Таблиця expuser_session відсутня</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Сеанси почнуть записуватися після її створення: php update/common/scripts/6.0/createusersessiontable.php або оновлення бази даних 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Зараз у системі</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Завершити всі інші сеанси</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Вийти на всіх пристроях</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Кожен пристрій, крім цього, вийде із системи під час наступного запиту, зокрема ті, на яких вхід зберігається завдяки «Запам'ятати мене».</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Кожен сеанс цього користувача буде завершено під час наступного запиту, зокрема сеанси, що зберігаються завдяки «Запам'ятати мене».</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Так, завершити інші сеанси</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Так, завершити всі сеанси</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Цей пристрій</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Пристрій</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адреса</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Показано як мережу; повна адреса зберігається для адміністраторів.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>вхід з %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Вхід виконано</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Остання активність</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Зараз</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Вхід зберігається</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>«Запам'ятати мене» до %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>До закриття браузера</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Місце входу</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Ідентифікація браузера</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Щоб завершити цей сеанс, вийдіть із системи.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Завершити цей сеанс</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Немає активних сеансів.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Сповіщення про вхід</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Надсилати мені лист, коли в мій обліковий запис виконується вхід із нового пристрою або браузера</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Надсилається на %email. У листі вказано пристрій, приблизне місце й час, а також посилання на цю сторінку.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Цей сайт не надсилає сповіщень про вхід.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Нещодавно завершені</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Сеанси, завершені за останні %days дн.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершено</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Як</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Немає.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Комп'ютер</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Телефон</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Планшет</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Програма або застосунок</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Автоматизований клієнт</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Невідомий пристрій</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Пароль і код двоетапного входу</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Інтерфейс REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Інтерфейс SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Єдиний вхід</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Вхід виконано до початку запису сеансів</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Вихід виконано</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Завершено на цій сторінці</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Завершено адміністратором</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Завершено командою «усі інші сеанси»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Замінено новим входом</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Завершено через зміну пароля</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Закінчився</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваші пристрої</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеанси користувача %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Де зараз виконано вхід у ваш обліковий запис. Якщо ви не впізнаєте пристрій, завершіть його сеанс і змініть пароль.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Де зараз виконано вхід у цей обліковий запис. Вихід користувача завершує кожен сеанс під час його наступного запиту.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс завершено. На пристрої потрібно ввійти знову.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Завершено інших сеансів: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Інших сеансів для завершення не було.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Завершено сеансів цього користувача: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>У цього користувача не було сеансів для завершення.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Це ваш поточний сеанс. Щоб завершити його, вийдіть із системи.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Цей сеанс уже було завершено.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ви отримуватимете лист, коли у ваш обліковий запис виконується вхід із нового пристрою.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ви більше не отримуватимете листів про вхід із нових пристроїв.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Термін дії сторінки минув. Нічого не змінено; спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>На цьому сайті сеанси не записуються.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Сеанси ще не записуються: сайту потрібне оновлення бази даних.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Зараз у системі</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Цей пристрій</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Пристрій</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адреса</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Вхід виконано</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Остання активність</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Зараз</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Вхід зберігається</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>«Запам'ятати мене» до %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>До закриття браузера</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Щоб завершити цей сеанс, вийдіть із системи.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Завершити цей сеанс</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Завершити всі інші сеанси</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Вийти на всіх пристроях</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Сповіщення про вхід</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Надсилати мені лист, коли в мій обліковий запис виконується вхід із нового пристрою або браузера</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Нещодавно завершені</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершено</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Як</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Немає за останні %days дн.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Перегляньте, де виконано вхід у ваш обліковий запис, і завершіть сеанс на пристрої, який ви не впізнаєте.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Керувати пристроями</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Новий вхід у ваш обліковий запис на %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Вітаємо!</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>У ваш обліковий запис %login на %site щойно виконано вхід із пристрою або браузера, який останнім часом не використовувався:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Пристрій:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Час:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Приблизна адреса:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Якщо це були ви, нічого робити не потрібно.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Якщо це були не ви, можливо, хтось знає ваш пароль. Завершіть цей сеанс на сторінці ваших пристроїв, а потім змініть пароль:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>На тій самій сторінці можна вимкнути ці листи.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Новий вхід користувача %login на %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>В обліковий запис %login виконано вхід із пристрою або браузера, який останнім часом не використовувався.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Сеанси цього користувача:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Новий вхід у ваш обліковий запис</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>%date у ваш обліковий запис %login виконано вхід із пристрою %device (%ip).</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Якщо це були ви, нічого робити не потрібно. Якщо ні, завершіть цей сеанс на сторінці %url і змініть пароль.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Новий вхід користувача %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>В обліковий запис %login виконано вхід із нового пристрою: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваші пристрої</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеанси користувача %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ключі доступу</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Ключ доступу дає змогу входити за допомогою відбитка пальця, обличчя, блокування екрана або ключа безпеки замість пароля. Він зберігається на вашому пристрої або в менеджері паролів; цей сайт зберігає лише його відкритий ключ, тож витік даних тут не може його розкрити.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Ключі доступу на цьому сайті вимкнено.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Ключі доступу поки не можна використовувати на цьому сайті: адміністратор має спершу виконати оновлення бази даних.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Вилучити ключ доступу «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>З ним більше не можна буде ввійти в цей обліковий запис. Вилучіть його також із пристрою або з менеджера паролів.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Вилучити ключ доступу</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Ваші ключі доступу</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count з %max можливих</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>У вас ще немає ключа доступу. Додайте його нижче: під час наступного входу виберіть «Увійти за допомогою ключа доступу».</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Додано</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Востаннє використано</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Дії</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ще ні</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Синхронізовано</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Цей пристрій або ключ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Перейменувати</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Нова назва</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Зберегти назву</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Додати ключ доступу</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Виконайте кроки, які пропонує браузер або пристрій.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Вікно ключа доступу закрито. Нічого не змінено.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Не вдалося створити ключ доступу. Спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Цей браузер не може створювати ключі доступу. Використайте сучасний браузер або ввійдіть за допомогою пароля.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Наприклад, пристрій або менеджер паролів, де він зберігається, щоб розрізняти ваші ключі доступу.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Цей обліковий запис уже має максимальну кількість ключів доступу (%max). Вилучіть один, щоб додати інший.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Не вдалося використати ключ доступу. Спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Мій обліковий запис</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Вікно ключа доступу закрито. Натомість можна ввійти за допомогою пароля.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Не вдалося використати ключ доступу. Спробуйте ще раз або ввійдіть за допомогою пароля.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Увійти за допомогою ключа доступу</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Не вдалося ввійти за допомогою ключа доступу</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>входьте за допомогою відбитка пальця, обличчя, блокування екрана або ключа безпеки замість пароля.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Ключ доступу «%name» додано. Відтепер із ним можна входити.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Ключ доступу тепер називається «%name».</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Ключ доступу «%name» вилучено. З ним більше не можна ввійти в цей обліковий запис.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Ключ доступу від %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Цей обліковий запис уже має максимальну кількість ключів доступу. Спершу вилучіть один.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>База даних була зайнята, нічого не збережено. Спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Цей ключ доступу вже зареєстровано.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Запит тривав надто довго або вже був використаний. Спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Ключ доступу не перевірив, хто ви (PIN-код, відбиток пальця або обличчя). Спробуйте ще раз і підтвердьте на пристрої.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Цей автентифікатор використовує тип ключа, який цей сайт не приймає.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Ключ доступу створено для іншої адреси, а не для цього сайту.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Цей ключ доступу тут не зареєстровано для жодного облікового запису. Увійдіть за допомогою пароля й додайте його в розділі «Мій обліковий запис», «Ключі доступу».</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>З цим обліковим записом зараз не можна ввійти. Зверніться до адміністратора сайту.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Не вдалося перевірити ключ доступу. Спробуйте ще раз.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Ви збираєтеся змінити спосіб входу або безпеку свого облікового запису.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Ви збираєтеся керувати користувачами, ролями або політиками.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Ви збираєтеся змінити системні налаштування або виконати дію налаштування.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Ви збираєтеся експортувати дані.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Ви збираєтеся вилучити або опублікувати вміст.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Для цієї дії потрібно підтвердити, хто ви.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Підтвердьте, що це ви (вхід виконано як %login). Протягом %minutes хв повторно питати не будемо.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Пароль неправильний.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Код неправильний або вже був використаний.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Виберіть один зі способів нижче.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Не вдалося перевірити ключ доступу.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Залишилося спроб до виходу із системи: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Вибрані файли не можна надіслати повторно: після підтвердження виберіть їх ще раз.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>За допомогою пароля</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>За допомогою ключа доступу</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Підтвердити</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Використати ключ доступу</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>За допомогою коду із застосунку автентифікації</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Код</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Цей обліковий запис не має способу підтвердити, хто ви (немає пароля, ключа доступу чи застосунку автентифікації). Вийдіть і ввійдіть знову або зверніться до адміністратора.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Підтвердьте, що це ви</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Код із застосунку автентифікації</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Власний обліковий запис</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Зміна власного пароля, адреси електронної пошти, ключів доступу, двоетапного входу або ключів API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Користувачі, ролі й політики</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Створення й редагування користувачів, налаштування облікових записів, призначення ролей і редагування політик.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Системні налаштування й дії налаштування</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Редагування налаштувань, розширення, кеші й обслуговування, пакети й оновлення, резервні копії та менеджер Git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Експорт даних</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Експорт зібраної інформації, користувачів, передплатників розсилки та аудиту.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Вилучення й публікація вмісту</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Вилучення вмісту (зокрема до кошика), очищення кошика й публікація. Типово вимкнено.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Перед важливою дією користувач, який увійшов, знову підтверджує, хто він: паролем, ключем доступу або кодом із застосунку автентифікації. Питають лише вебсторінки: інтерфейс REST, SOAP, WebDAV, вхід expservices і командний рядок не питають ніколи.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Загальні</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Скільки хвилин діє підтвердження</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Коли питати</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Правил у site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Зберігається в settings/override/site.ini.append.php. Під час збереження потрібно підтвердити, що це ви.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Підтвердьте, що це ви</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Питати «Підтвердьте, що це ви» перед діями груп, увімкнених нижче</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Налаштування збережено.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Не вдалося зберегти налаштування: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
     </message>
 </context>
 </TS>

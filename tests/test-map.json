@@ -1425,6 +1425,9 @@
     "kernel/private/modules/oauth/authorize.php": [
       "tests/tests/kernel/private/oauth/ezpOauthAuthorizeRedirectTest.php"
     ],
+    "kernel/private/rest/classes/oauth/oauth_filter.php": [
+      "tests/tests/kernel/private/oauth/ezpOauthGrantChecksTest.php"
+    ],
     "design/admin*/templates/oauthadmin/*": [
       "tests/tests/design/AdminOauthadminPagesTest.php",
       "tests/tests/design/AdminStylingRulesTest.php"

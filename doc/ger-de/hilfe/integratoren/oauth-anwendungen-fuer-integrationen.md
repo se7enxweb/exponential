@@ -73,9 +73,12 @@ curl -s https://example.com/api/auth/v1/oauth/token \
      -d refresh_token='<refresh token>'
 ```
 
-Das Zugriffstoken lebt `rest.ini [OAuthSettings] TokenTTL` Sekunden (standardmäßig 3600). Senden Sie es als
-`Authorization: Bearer <token>`. Jede Anfrage läuft als der Benutzer, der die Anwendung erlaubt hat, mit dessen
-Richtlinien.
+Das Zugriffstoken lebt `rest.ini [OAuthSettings] TokenTTL` Sekunden (standardmäßig 3600), das Refresh-Token
+`RefreshTokenTTL` Sekunden (standardmäßig 30 Tage) ab der Erneuerung, die es ausgestellt hat. Senden Sie das
+Zugriffstoken als `Authorization: Bearer <token>`; ein Token im Query-String wird abgelehnt, außer bei
+`AllowTokenInQuery=enabled`. Jede Anfrage läuft als der Benutzer, der die Anwendung erlaubt hat, mit dessen
+Richtlinien, und funktioniert nicht mehr, sobald dieser Benutzer deaktiviert oder durch fehlgeschlagene Anmeldungen
+gesperrt ist.
 
 ## Wer eine Anwendung autorisieren darf
 

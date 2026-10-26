@@ -74669,6 +74669,146 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Byg hjælpemanualerne ud fra Markdown-hjælpen</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Gennemgang og frigivelse</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Emnet er nu til gennemgang.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Emnet er frigivet: læserne ser det nu.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Emnet er igen en kladde.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Du skrev den aktuelle version, så en anden med frigivelsesrollen frigiver den.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Tilstanden blev ikke ændret: din rolle tillader ikke dette trin.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Gennemgangsforløb</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Kladde</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Gennemgang</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Tilbage til gennemgang</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Send til gennemgang</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Frigiv</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Tilbage til kladde</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrol efter stilguiden</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrollen efter stilguiden fandt intet.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors fejl, %warnings advarsler, %notices bemærkninger. En fejl får ./console exp:help:content check til at fejle.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Niveau</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Felt</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Fund</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Var dette nyttigt?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Læserne svarede ja %yes gange og nej %no gange.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Angivne grunde til nej:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Tak. Dit svar hjælper os med at forbedre hjælpen.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Hvis ikke, hvad var forkert?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Ingen grund angivet</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nej</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Kun dit svar gemmes, ikke hvem du er.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Det er forældet</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Det er svært at forstå</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Der mangler noget</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Det er forkert</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>En anden grund</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Dette emne er ikke frigivet; læserne ser det ikke.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

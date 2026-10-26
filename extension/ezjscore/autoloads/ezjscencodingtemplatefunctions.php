@@ -84,7 +84,8 @@ class ezjscEncodingTemplateFunctions
             case 'json_encode':
             {
                 // Lets you use json_encode from templates
-                $operatorValue = json_encode( $namedParameters['hash'] );
+                // through ezjscAjaxContent::jsonEncode(): invalid UTF-8 gave false, an empty value in the page
+                $operatorValue = ezjscAjaxContent::jsonEncode( $namedParameters['hash'] );
             } break;
             case 'xml_encode':
             {

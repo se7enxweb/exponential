@@ -748,6 +748,46 @@ class eZMailTest extends ezpTestCase
         $this->assertEquals( $firstEmailAddress, eZMail::stripEmail( $text ) );
     }
 
+    /**
+     * A mail without sender gave "Trying to access array offset on false" in composeEmailName() and
+     * "mb_encode_mimeheader(): Passing null to parameter #1" in encodeMimeHeader() when
+     * eZSMTPTransport::sendMail() asked for senderText(). No sender is the empty string, without a notice.
+     */
+    public function testSenderTextWithoutSenderIsEmptyAndQuiet()
+    {
+        $notices = array();
+        set_error_handler( function( $errno, $errstr ) use ( &$notices )
+        {
+            $notices[] = $errstr;
+            return true;
+        } );
+        try
+        {
+            $mail = new eZMail();
+            $converted = $mail->senderText();
+            $raw = $mail->senderText( false );
+            $encoded = $mail->encodeMimeHeader( null );
+        }
+        finally
+        {
+            restore_error_handler();
+        }
+        self::assertSame( array(), $notices );
+        self::assertSame( '', $converted );
+        self::assertSame( '', $raw );
+        self::assertSame( '', $encoded );
+    }
+
+    public function testSenderTextWithSenderIsUnchanged()
+    {
+        $mail = new eZMail();
+        $mail->setSender( 'jdoe@example.com', 'John Doe' );
+        self::assertSame( 'John Doe <jdoe@example.com>', $mail->senderText( false ) );
+        $mail->setSender( 'jdoe@example.com' );
+        self::assertSame( 'jdoe@example.com', $mail->senderText( false ) );
+        self::assertSame( '', $mail->composeEmailName( array( 'name' => '' ) ), 'an item without email' );
+    }
+
     #[DataProvider('providerTestSendEmail')]
     #[\PHPUnit\Framework\Attributes\Group('mail-live')]
     public function testSendEmail( $sendData, $expectedResult )

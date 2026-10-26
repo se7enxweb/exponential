@@ -1,6 +1,6 @@
 # Help standards: what the help takes from DITA, IEC/IEEE 82079-1, ISO/IEC/IEEE 26514, ISO 3864-2, EPUB Accessibility and WCAG
 
-Status: 19 October 2026. Pull request #288 ("Help system plan, style guide and standards") announced this page as
+Status: 19 October 2026, updated 25 October 2026. Pull request #288 ("Help system plan, style guide and standards") announced this page as
 the third of its specifications, next to the [plan](help-system.md) and the [style guide](help-style-guide.md), but
 the file was not part of the pull request when it was merged. This page is written from the two merged pages and
 from what Exponential 6.0.15 actually does ([help maintained as content](../../features/6.0/help-content.md)).
@@ -27,11 +27,11 @@ deliberately does some things differently, and leaves the rest out. Where a rule
 
 | Standard | Used for | How far |
 |---|---|---|
-| DITA 1.3 (OASIS) | the information model: topic types, maps, filter attributes, `shortdesc` | the model as content classes; no DITA XML is stored. An export to DITA is in progress |
+| DITA 1.3 (OASIS) | the information model: topic types, maps, filter attributes, `shortdesc` | the model as content classes; no DITA XML is stored, the export writes DITA 1.3 |
 | IEC/IEEE 82079-1:2019 | content rules of instructions: notices where the action happens, prerequisites, result, minimalism | adopted for structure and notices; the hazard signal words are not used |
 | ISO/IEC/IEEE 26514:2022 | design of user information: audiences, task orientation, review, maintenance | adopted as the editorial process (states, roles, review date); no formal documentation plan per release |
 | ISO 3864-2:2016 | safety signs and signal words | only to say why DANGER, WARNING and CAUTION are not used |
-| EPUB Accessibility 1.1 | the e-books of manuals | the metadata and structure are written; the books are not checked with Ace or epubcheck by Exponential |
+| EPUB Accessibility 1.1 | the e-books of manuals | the metadata and structure are written; epubcheck and Ace run on every book where the site has them |
 | WCAG 2.2 AA | the help in the administration and the e-books | the help follows the design rules of the admin interface; there is no audit |
 
 ## DITA 1.3
@@ -64,8 +64,9 @@ deliberately does some things differently, and leaves the rest out. Where a rule
 - **A glossary entry** (`help_glossary_entry`) is an editorial tool with the synonyms to avoid, not a DITA
   `glossentry` that is published.
 
-**How far**: the model and the validator. The DITA bookmap export, and storing the e-books as file objects, are being
-added separately ([help maintained as content](../../features/6.0/help-content.md#compared-with-the-specifications)).
+**How far**: the model, the validator and the DITA 1.3 export (bookmaps, DITAVAL, topics, glossary, valid against the
+OASIS DTDs), also as a history in git ([help maintained as content](../../features/6.0/help-content.md#dita-export)).
+DITA-OT is not run: Exponential writes the e-books itself.
 
 ## IEC/IEEE 82079-1:2019
 
@@ -111,7 +112,8 @@ The standard for the design and development of information for users of software
 - **Task orientation and minimalism**: topic types, "action first", nothing self-evident, what can go wrong in its
   own troubleshooting topic (style guide sections 1, 2 and 4).
 - **Review and approval**: the object states Draft, Review, Released, and the rule that the author does not release
-  their own topic (the roles "Help editor" and "Help release").
+  their own topic (the roles "Help editor" and "Help release"; enforced when states are assigned, and shown with the
+  steps on the topic's page).
 - **Context-sensitive help**: a topic opened by its `help_id` from the admin interface or another client
   (`exphelp/context/<help_id>`), with the validator checking that the help_ids clients use exist
   (`client.help-id-unknown`, `client.help-id-not-released`).
@@ -121,7 +123,8 @@ The standard for the design and development of information for users of software
 
 - **No documentation plan per release** as a separate document. What a release changes in the help is in the
   changelog of the release; the review date and the validity fields keep each topic's state.
-- **Usability testing of the documentation** is left to the site; the help has no "Was this helpful?" yet.
+- **Usability testing of the documentation** is left to the site; the help collects "Was this helpful?" per topic
+  (yes, or no with a reason, nothing about who answered), the least helpful topics first on the command line.
 
 **How far**: the editorial process and the delivery channels. The standard's process for planning, estimating and
 managing a documentation project is not followed.
@@ -154,9 +157,10 @@ The e-books of manuals (`./console exp:help:content export --format=epub`, **Dow
 
 **Different**
 
-- The book carries `dcterms:conformsTo` "EPUB Accessibility 1.1 - WCAG 2.2 Level AA", but **Exponential does not
-  check the book**: epubcheck and Ace by DAISY are not shipped. A site that publishes the books runs both on the file
-  before it does; without that run the claim in the metadata is not verified.
+- The book carries `dcterms:conformsTo` "EPUB Accessibility 1.1 - WCAG 2.2 Level AA". epubcheck and Ace by DAISY are
+  not shipped (Java, Node.js); a site that has them names their commands (`EpubCheckCommand`, `AceCommand`) and
+  Exponential runs both on every book it stores and on `export --check`, and with `BookChecks=required` stores no book
+  that fails. Without the commands a check is reported as skipped, and the claim in the metadata is not verified.
 - No page list or page breaks: the books have no printed edition to refer to.
 
 **How far**: the metadata and structure the standard asks for are written; the evaluation is the publisher's.

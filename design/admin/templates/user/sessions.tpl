@@ -28,7 +28,7 @@
 <div class="a4-pagehead">
     <div class="a4-pagehead-main">
         <h1 class="a4-pagehead-title context-title">{if $sessions_own}{'Your devices'|i18n( 'design/admin/user/sessions' )}{else}{'Sessions of %name'|i18n( 'design/admin/user/sessions',, hash( '%name', $sessions_user_name ) )|wash}{/if}</h1>
-        <p class="a4-pagehead-sub">{if $sessions_own}{'Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.'|i18n( 'design/admin/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/admin/user/sessions' )}{/if}</p>
+        <p class="a4-pagehead-sub">{if $sessions_own}{'Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.'|i18n( 'design/admin/user/sessions' )}{else}{'Where this account is signed in right now. Signing the user out ends every session at its next request.'|i18n( 'design/admin/user/sessions' )}{/if}</p>
     </div>
     <div class="a4-pagehead-actions">
         <a class="a4-btn" href={cond( $sessions_own, 'user/edit', concat( 'user/edit/', $sessions_user_id ) )|ezurl}>{'Back to the account'|i18n( 'design/admin/user/sessions' )}</a>

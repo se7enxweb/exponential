@@ -2090,6 +2090,11 @@ class eZContentOperationCollection
         $canAssignStateIDList = $object->attribute( 'allowed_assign_state_id_list' );
         $selectedStateIDList = array_intersect( $selectedStateIDList, $canAssignStateIDList );
 
+        // Help maintained as content: the person who wrote a help topic does not release it
+        // (doc/eng-us/features/6.0/help-content.md, "The review workflow"; exphelp.ini [ContentSettings] ReleaseByAuthor)
+        if ( $selectedStateIDList && class_exists( 'expHelpContentWorkflow' ) )
+            $selectedStateIDList = array_diff( $selectedStateIDList, expHelpContentWorkflow::refusedStates( $object, array_values( $selectedStateIDList ) ) );
+
         foreach ( $selectedStateIDList as $selectedStateID )
         {
             $state = eZContentObjectState::fetchById( $selectedStateID );
@@ -2113,6 +2118,8 @@ class eZContentOperationCollection
 
         // Help maintained as content: a release builds the stored e-books of the manuals again
         // (doc/eng-us/features/6.0/help-content.md, "Stored e-books"; exphelp.ini [ContentSettings] EbooksOnRelease)
+        if ( $selectedStateIDList && class_exists( 'expHelpContentWorkflow' ) )
+            expHelpContentWorkflow::afterStateAssign( $objectID, array_values( $selectedStateIDList ) );
         if ( $selectedStateIDList && class_exists( 'expHelpContentEbooks' ) )
             expHelpContentEbooks::onStateAssign( $objectID, $selectedStateIDList );
 

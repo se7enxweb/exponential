@@ -56964,6 +56964,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; له بستې بهر ته اشاره کوي.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>آرشیف د tar په PAX بڼه بسته شوی، چې نه شي واردېدای. بسته د tar په GNU بڼه بسته کړئ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; د tar ډول &quot;%type&quot; لري، او بسته یوازې دوتنې او فولډرونه لري.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>آرشیف رد شو: د یوې ننوتنې نوم له %length بایټه اوږد دی.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>آرشیف رد شو: ننوتنه &quot;%path&quot; لینک یا وسیله ده، او بسته یوازې دوتنې او فولډرونه لري.</translation>
     </message>
@@ -73986,6 +73998,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>د مرستې لاسي کتابونه د Markdown له مرستې جوړول</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>بیاکتنه او خپرول</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>موضوع اوس په بیاکتنه کې ده.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>موضوع خپره شوه: لوستونکي یې اوس ویني.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>موضوع بیا مسوده ده.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>اوسنۍ نسخه تاسو لیکلې ده، نو یو بل څوک چې د خپرولو رول لري هغه خپروي.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>حالت بدل نه شو: ستاسو رول دې ګام ته اجازه نه ورکوي.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>د بیاکتنې بهیر</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسوده</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>بیاکتنه</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>بیاکتنې ته بېرته</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>بیاکتنې ته استول</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>خپرول</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>مسودې ته بېرته</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>د سټایل لارښود ازموینه</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>د سټایل لارښود ازموینې هېڅ ونه موندل.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors تېروتنې، %warnings خبرداری، %notices یادښتونه. یوه تېروتنه ./console exp:help:content check ناکاموي.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>کچه</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>قاعده</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>ډګر</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>موندنه</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>ایا دا ګټور و؟</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>لوستونکو %yes ځله هو او %no ځله نه ځواب ورکړ.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>د نه لپاره ورکړل شوي لاملونه:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>مننه. ستاسو ځواب موږ سره د مرستې په ښه کولو کې مرسته کوي.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>که نه، څه غلط وو؟</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>هېڅ لامل نه دی ورکړل شوی</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>یوازې ستاسو ځواب ساتل کېږي، نه دا چې تاسو څوک یاست.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>زوړ شوی دی</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>پوهېدل یې ستونزمن دي</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>یو څه کم دي</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>غلط دی</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>بل لامل</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>دا موضوع نه ده خپره شوې؛ لوستونکي یې نه ویني.</translation>
     </message>
 </context>
 <context>

@@ -56964,6 +56964,18 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; nîşanî derveyî pakêtê dide.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arşîv bi formata PAX ya tar hatiye pakêtkirin, ku nayê îthalkirin. Pakêtê bi formata GNU ya tar pakêt bikin (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arşîv hate redkirin: cureyê tar ê tomara &quot;%path&quot; &quot;%type&quot; e, û pakêt tenê pel û peldankan digire.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arşîv hate redkirin: navê tomarekê ji %length baytan dirêjtir e.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Arşîv hate redkirin: tomara &quot;%path&quot; girêdanek an amûrek e, û pakêt tenê pel û peldankan digire.</translation>
     </message>
@@ -73986,6 +73998,146 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Avakirina rêbernameyên alîkariyê ji alîkariya Markdown</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Venêrîn û belavkirin</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Mijar niha di venêrînê de ye.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Mijar hat belavkirin: xwendevan niha wê dibînin.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Mijar dîsa reşnivîs e.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>We guhertoya niha nivîsand, ji ber vê yekê kesekî din ê bi rola belavkirinê wê belav dike.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Rewş nehat guhertin: rola we destûrê nade vê gavê.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Rêveçûna venêrînê</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Reşnivîs</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Venêrîn</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Vegere venêrînê</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Ji bo venêrînê bişîne</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Belav bike</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Vegere reşnivîsê</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrola rêbera şêwazê</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrola rêbera şêwazê tiştek nedît.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors çewtî, %warnings hişyarî, %notices not. Çewtiyek dibe sedem ku ./console exp:help:content check biserneketî bimîne.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Ast</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Rêgez</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Dîtin</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Ev alîkar bû?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Xwendevanan %yes caran erê û %no caran na bersiv dan.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Sedemên ji bo na:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Spas. Bersiva we alîkariya me dike ku em alîkariyê baştir bikin.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Erê</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Heke na, çi xelet bû?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Tu sedem nehat dayîn</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Tenê bersiva we tê tomarkirin, ne kî hûn in.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Kevn bûye</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Têgihîştina wê zehmet e</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Tiştek kêm e</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Xelet e</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Sedemeke din</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ev mijar nehatiye belavkirin; xwendevan wê nabînin.</translation>
     </message>
 </context>
 <context>

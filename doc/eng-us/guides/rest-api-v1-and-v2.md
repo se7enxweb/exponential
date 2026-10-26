@@ -107,9 +107,15 @@ For an application that lets *other* users sign in and act for them.
    `POST /api/auth/v1/oauth/token`, with `grant_type=authorization_code`, `client_id`, `client_secret`, `code` and
    `redirect_uri`, plus `code_verifier` when it sent a challenge. A public client (stored without a secret, such as a
    mobile app) sends no `client_secret` and must use PKCE ([PKCE and state](../bc/6.0/oauth-pkce.md)).
-4. It sends the token with every request (`Authorization: OAuth <token>`, or the `oauth_token` parameter).
+4. It sends the token with every request (`Authorization: Bearer <token>` or `Authorization: OAuth <token>`; the
+   `oauth_token` parameter of a POST form body as well, unless `rest.ini [OAuthSettings] AllowTokenInBody=disabled`;
+   the `oauth_token` query parameter only with `AllowTokenInQuery=enabled`, off by default).
 5. When the token has expired (`rest.ini [OAuthSettings] TokenTTL`, one hour by default), the application asks for a
-   new one with `grant_type=refresh_token` and `refresh_token=<refresh token>`.
+   new one with `grant_type=refresh_token` and `refresh_token=<refresh token>`. A refresh token is good for
+   `RefreshTokenTTL` (30 days by default, `0` = no expiry) from the refresh that issued it.
+
+A token, a code or a refresh token stops working as soon as its user is disabled or locked by failed logins
+([OAuth token hardening](../bc/6.0/oauth-token-hardening.md)).
 
 The token endpoint supports the grants `authorization_code` and `refresh_token`.
 
@@ -186,6 +192,9 @@ DefaultUserID=
 
 [OAuthSettings]
 TokenTTL=3600
+RefreshTokenTTL=2592000
+AllowTokenInQuery=disabled
+AllowTokenInBody=enabled
 
 # the template of OutputFormat=xhtml for the controller of ezprestapi (ezprestapi 1.2.6, kernel 6.0.15)
 [ezp7xRestContentController_viewContent_OutputSettings]
