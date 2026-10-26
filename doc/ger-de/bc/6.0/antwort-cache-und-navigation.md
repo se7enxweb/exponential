@@ -207,8 +207,21 @@ Besucher die Seite eines anderen ausliefern zu lassen.
 nächsten Update-Prüfung innerhalb von 24 Stunden, weil `index.js` `no-cache` ist.
 
 Der Worker liefert zuerst die gespeicherte Kopie aus und aktualisiert sie im Hintergrund, sodass eine veröffentlichte
-Änderung bei der **zweiten** Ansicht erscheint, nicht bei der ersten. Die Cache-Version ist `exp-nav-v4` (siehe
+Änderung bei der **zweiten** Ansicht erscheint, nicht bei der ersten. Die Cache-Version ist `exp-nav-v5` (siehe
 [Verhaltensänderungen, 16. bis 30. September 2026](verhaltensaenderungen-2026-09b.md)).
+
+Solange die Website mit ihrer Wartungsseite antwortet (während einer Installation oder eines Wartungsfensters: ein 503
+mit `X-Exp-Maintenance` und `Retry-After`), zeigt der Worker keine gespeicherte Seite. Die erste solche Antwort löscht
+alle Seiten, die er hält, und führt den Tab, dem gerade eine gespeicherte Seite gezeigt wurde, zur Wartungsseite; bis
+der Server wieder mit einer Seite antwortet, geht jede Navigation ans Netz. `v4` behielt seine Kopien bei einem 503 und
+zeigte die Website während einer ganzen Installation bei jedem Neuladen. Die eigenen Anfragen des Workers werden beim
+Server neu validiert (`cache: 'no-cache'`), damit der HTTP-Cache des Browsers sie nicht für die Dauer des `max-age`
+einer Seite beantwortet.
+
+Ein Browser ohne den Worker hält eine anonyme Seite weiterhin für ihr `max-age` (`[HTTPHeaderSettings]`,
+`public, max-age=300` auf vielen Websites) und zeigt sie bei einem Link oder einer Eingabe in der Adressleiste
+innerhalb dieser Zeit, ohne den Server zu fragen; ein Neuladen fragt und erhält die Wartungsseite. Halten Sie dieses
+max-age auf einer Website, die neu installiert wird, kurz.
 
 ## Hinzugefügt: Middle-Out, Komprimierung mit gemeinsamem Wörterbuch (standardmäßig aus)
 

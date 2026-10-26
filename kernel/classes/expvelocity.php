@@ -1781,11 +1781,6 @@ class expVelocity
             // files/cache/reverse of the directory above the document root.
             $cache['dir'] = $this->cacheDirectory();
 
-            // In maintenance (var/maintenance.json) neither the server's cache
-            // nor the HTTP cache answers: every request reaches index.php and
-            // gets the maintenance page, not a page stored before it began
-            $cache['pauseFile'] = $this->rootDir . '/' . ( class_exists( 'expMaintenance' ) ? expMaintenance::MARKER : 'var/maintenance.json' );
-
             // With the role-aware HTTP cache on, the server answers anonymous
             // pages from this cache first, which knows nothing of its purges.
             // Its state file is rewritten by every purge, so as this cache's
@@ -1822,6 +1817,14 @@ class expVelocity
             // key out kept it running: say so explicitly.
             $cache['enabled'] = false;
         }
+
+        // In maintenance (var/maintenance.json) neither the server's cache
+        // nor the HTTP cache answers, and neither stores: every request
+        // reaches index.php and gets the maintenance page, not a page stored
+        // before it began. Set with the response cache off too: the server
+        // asks the HTTP cache (Q.web.appCache below) through the same lookup,
+        // and without a pause file it went on answering during an installation.
+        $cache['pauseFile'] = $this->rootDir . '/' . ( class_exists( 'expMaintenance' ) ? expMaintenance::MARKER : 'var/maintenance.json' );
 
         if ( $cache )
             $web['cache'] = $cache;

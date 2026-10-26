@@ -63,7 +63,7 @@ class expMaintenance
     static function state( $root )
     {
         $file = rtrim( $root, '/' ) . '/' . self::MARKER;
-        if ( !is_file( $file ) )
+        if ( !self::markerExists( $file ) )
             return false;
         $state = json_decode( (string)@file_get_contents( $file ), true );
         // A marker that cannot be read still means maintenance: better a
@@ -75,6 +75,29 @@ class expMaintenance
         if ( !empty( $state['lease'] ) && (int)$state['lease'] < time() )
             return false;
         return $state;
+    }
+
+    /**
+     * Whether the marker is there now, asked of the file system for this request.
+     *
+     * A persistent worker remembers what it learnt about files across requests:
+     * PHP's own stat cache in a worker that never ends its request (FrankenPHP's
+     * worker mode), and Velocity's file layer for up to its StatTtl. A worker that
+     * had looked before the installation started kept answering "no marker" and
+     * served the site, and one that had looked during it kept the maintenance
+     * page after it. The marker's own entry is forgotten first, and nothing else:
+     * the rest of what the worker knows stays.
+     *
+     * @param string $file
+     * @return bool
+     */
+    static function markerExists( $file )
+    {
+        if ( class_exists( 'Q_WebServer_CompatFileWrapper', false ) && method_exists( 'Q_WebServer_CompatFileWrapper', 'forgetPath' ) )
+            Q_WebServer_CompatFileWrapper::forgetPath( $file );
+        else
+            clearstatcache( true, $file );
+        return is_file( $file );
     }
 
     /**
@@ -279,19 +302,44 @@ class expMaintenance
     /** Sends the maintenance page: 503, Retry-After, not to be kept by any cache. */
     static function send( $root, array $state )
     {
-        $until = isset( $state['until'] ) ? (int)$state['until'] : 0;
-        $retry = $until > time() ? $until - time() : 120;
         if ( !headers_sent() )
         {
+            // A header a request filter or config.php set before this is not
+            // left to contradict the page (a public max-age, a validator)
+            foreach ( array( 'Cache-Control', 'Expires', 'ETag', 'Last-Modified', 'Vary' ) as $name )
+                header_remove( $name );
             header( 'HTTP/1.1 503 Service Unavailable', true, 503 );
-            header( 'Retry-After: ' . $retry );
-            header( 'Cache-Control: no-store, no-cache, must-revalidate, private' );
-            header( 'Pragma: no-cache' );
-            header( 'Expires: 0' );
-            header( 'Content-Type: text/html; charset=utf-8' );
-            header( 'X-Robots-Tag: noindex' );
+            foreach ( self::headers( $state ) as $name => $value )
+                header( $name . ': ' . $value );
         }
         echo self::page( $root, $state );
+    }
+
+    /**
+     * The maintenance page's headers. no-store keeps it out of every cache (the
+     * browser's, a proxy's, Velocity's, the HTTP cache), Retry-After says when to
+     * ask again. X-Exp-Maintenance names the reason, so the site's service worker
+     * tells this 503 from a server fault: on it, the worker drops the pages it
+     * holds and passes navigations through instead of showing a stored page.
+     *
+     * @param array $state
+     * @param int|null $now
+     * @return array name => value
+     */
+    static function headers( array $state, $now = null )
+    {
+        $now = $now === null ? time() : (int)$now;
+        $until = isset( $state['until'] ) ? (int)$state['until'] : 0;
+        $reason = ( $state['reason'] ?? '' ) === 'setup' ? 'setup' : 'maintenance';
+        return array(
+            'Retry-After' => (string)( $until > $now ? $until - $now : 120 ),
+            'Cache-Control' => 'no-store, no-cache, must-revalidate, private, max-age=0',
+            'Pragma' => 'no-cache',
+            'Expires' => '0',
+            'Content-Type' => 'text/html; charset=utf-8',
+            'X-Robots-Tag' => 'noindex',
+            'X-Exp-Maintenance' => $reason,
+        );
     }
 
     /** The maintenance page's HTML, placeholders filled. */

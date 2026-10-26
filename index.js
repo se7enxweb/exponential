@@ -63,6 +63,18 @@
  *   no-store, the stored copy is deleted. Before v4 it stood, and the old page
  *   was replayed on every normal navigation while only a hard reload, which
  *   skips the worker, showed the real answer.
+ * - It never shows a stored page while the site is being set up or is down
+ *   for maintenance. The server then answers every page with a 503 that
+ *   carries X-Exp-Maintenance (and Retry-After). The first time the worker
+ *   sees one, it deletes every page it holds and takes the browser tab it
+ *   had just shown a stored page in to the real answer; until the server
+ *   answers with a page again, every navigation goes to the network. Before
+ *   v5 a 503 counted as a server fault, the stored copy stood, and the site
+ *   was shown on every reload throughout an installation.
+ * - It asks the server, not the browser's HTTP cache, when it goes to the
+ *   network: a page sent with a max-age was otherwise answered by that cache
+ *   on the server's behalf, and never showed that the server had changed its
+ *   answer (a 503, a 404).
  * - It stays out of the admin entirely.
  *
  * Turning it off
@@ -72,9 +84,11 @@
  * browser that has it will drop it on its next update check.
  */
 
-// v4: drops every page stored by v3, which never let go of a page that later
+// v5: drops every page stored by v4, which kept showing the site while it
+// answered the maintenance page (503) during an installation.
+// v4 dropped every page stored by v3, which never let go of a page that later
 // answered 404 (ezinfo/about kept showing to anyone who had seen it before).
-const VERSION = 'exp-nav-v4';
+const VERSION = 'exp-nav-v5';
 const CACHE = VERSION;
 
 // Paths this must never touch.
@@ -152,9 +166,46 @@ function mayStore(response) {
 // Opened once, reused for every navigation this worker handles.
 const cacheHandle = caches.open(CACHE);
 
-async function refresh(cache, request) {
+// The site answers with its maintenance page (expMaintenance): set up or down
+// for maintenance. A 503 without the header is a fault and is treated as one.
+function isMaintenance(response) {
+	return !!response && response.status === 503
+		&& (response.headers.has('X-Exp-Maintenance') || response.headers.has('Retry-After'));
+}
+
+// Set while the site answers with its maintenance page: navigations go to the
+// network and nothing stored is shown. Cleared by the first page that is not
+// the maintenance page. A worker started afresh does not know it, and needs
+// not: the pages were deleted when it was set.
+let inMaintenance = false;
+
+async function enterMaintenance(cache) {
+	inMaintenance = true;
 	try {
-		const response = await fetch(request);
+		const keys = await cache.keys();
+		await Promise.all(keys.map((k) => cache.delete(k)));
+	} catch (e) {}
+}
+
+// To the server, revalidating whatever the browser's HTTP cache holds: a page
+// sent with a max-age is otherwise answered from there for that long.
+function fromNetwork(request) {
+	return fetch(request, { cache: 'no-cache' });
+}
+
+async function refresh(cache, request, clientId) {
+	try {
+		const response = await fromNetwork(request);
+		if (isMaintenance(response)) {
+			// The page just shown from here is not what the site answers now:
+			// drop every stored page, and take the tab to the real answer.
+			await enterMaintenance(cache);
+			try {
+				const client = clientId ? await self.clients.get(clientId) : null;
+				if (client && typeof client.navigate === 'function') await client.navigate(client.url);
+			} catch (e) {}
+			return;
+		}
 		if (mayStore(response)) {
 			await cache.put(request, response.clone());
 		} else if (response && response.status < 500) {
@@ -201,16 +252,22 @@ self.addEventListener('fetch', (event) => {
 		// match() without ignoreVary, and without a second await for the
 		// network. The stored response is returned the moment it is found;
 		// the refresh is handed to waitUntil, which keeps the worker alive to
-		// finish it without the navigation waiting on it.
-		const stored = await cache.match(request);
+		// finish it without the navigation waiting on it. Not while the site
+		// answers with its maintenance page: then only the network answers.
+		const stored = inMaintenance ? null : await cache.match(request);
 
 		if (stored) {
-			event.waitUntil(refresh(cache, request));
+			event.waitUntil(refresh(cache, request, event.resultingClientId || event.clientId));
 			return stored;               // answered without a round trip
 		}
 
 		try {
-			const response = await fetch(request);
+			const response = await fromNetwork(request);
+			if (isMaintenance(response)) {
+				event.waitUntil(enterMaintenance(cache));
+				return response;
+			}
+			inMaintenance = false;
 			if (mayStore(response)) {
 				event.waitUntil(cache.put(request, response.clone()).catch(() => {}));
 			}
