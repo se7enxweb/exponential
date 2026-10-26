@@ -35,6 +35,10 @@ class I18n extends \Exponential\Runnable\Command
                                  "./console exp:i18n fallbacks --format=json           one JSON object\n" .
                                  "./console exp:i18n check [--strict]                  cycles, chains too long, missing targets, rules\n" .
                                  "                                                     that are none: exit 1 when there is one (CI)\n" .
+                                 "./console exp:i18n coverage                          the totals and the world map at the top of\n" .
+                                 "                                                     doc/eng-us/languages.md and doc/ger-de/sprachen.md:\n" .
+                                 "                                                     write what changed (--raster: every WebP copy)\n" .
+                                 "./console exp:i18n coverage --check                  compare only: exit 1 when they are out of date\n" .
                                  "\n" .
                                  "Exit code: 0 fine, 1 problems found (check, or --check), 2 usage error.",
                 'use-session'    => false,
@@ -42,11 +46,13 @@ class I18n extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[locale:][format:][only:][check][strict][no-extensions]', '[ACTION]', array(
+        $options = $this->startup( '[locale:][format:][only:][check][strict][no-extensions][raster][date:]', '[ACTION]', array(
+            'raster'        => 'With coverage: write the WebP copy of every map again, not only of the maps that changed',
+            'date'          => 'With coverage: the date of the figures when they changed (YYYY-MM-DD, default today)',
             'locale'        => 'Only these locales, comma separated (esl-AR,ger-AT): each step of the chain and every extension',
             'format'        => 'table (default) or json',
             'only'          => 'With the list: own (a translation of its own), fallback (translated through a fallback) or untranslated',
-            'check'         => 'Check the fallbacks as the check action does, after the list',
+            'check'         => 'Check the fallbacks as the check action does, after the list; with coverage: compare only, change nothing',
             'strict'        => 'With check: warnings (a configured locale without a locale file, a chain without a translation) fail too',
             'no-extensions' => 'Leave out the coverage of the extensions (reading their files the first time takes seconds)'
         ) );
@@ -54,11 +60,16 @@ class I18n extends \Exponential\Runnable\Command
         $action = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'fallbacks';
         $format = isset( $options['format'] ) && is_string( $options['format'] ) ? strtolower( $options['format'] ) : 'table';
         $only = isset( $options['only'] ) && is_string( $options['only'] ) ? strtolower( $options['only'] ) : '';
-        if ( !in_array( $action, array( 'fallbacks', 'check' ), true ) || !in_array( $format, array( 'table', 'json' ), true )
+        if ( !in_array( $action, array( 'fallbacks', 'check', 'coverage' ), true ) || !in_array( $format, array( 'table', 'json' ), true )
              || !in_array( $only, array( '', 'own', 'fallback', 'untranslated' ), true ) )
         {
-            $cli->error( 'Usage: ./console exp:i18n fallbacks|check [--locale=...] [--format=table|json] [--only=own|fallback|untranslated] [--strict] (see --help)' );
+            $cli->error( 'Usage: ./console exp:i18n fallbacks|check|coverage [--locale=...] [--format=table|json] [--only=own|fallback|untranslated] [--strict] [--raster] (see --help)' );
             $this->shutdown( self::EXIT_USAGE );
+            return;
+        }
+        if ( $action === 'coverage' )
+        {
+            $this->shutdown( $this->coverage( $options ) );
             return;
         }
 
@@ -95,6 +106,60 @@ class I18n extends \Exponential\Runnable\Command
                 $cli->output( rtrim( self::renderProblems( $problems, $strict ) ) );
         }
         $this->shutdown( $check ? self::exitCode( $problems, $strict ) : self::EXIT_OK );
+    }
+
+    /**
+     * The coverage action: the totals and maps of the language pages (expI18nCoverageMap), written or, with
+     * --check, compared.
+     *
+     * @param array $options
+     * @return int exit code
+     */
+    protected function coverage( array $options )
+    {
+        $cli = $this->cli();
+        $date = isset( $options['date'] ) && is_string( $options['date'] ) && $options['date'] !== '' ? $options['date'] : date( 'Y-m-d' );
+        if ( !preg_match( '/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/', $date ) )
+        {
+            $cli->error( '--date must be YYYY-MM-DD' );
+            return self::EXIT_USAGE;
+        }
+        $root = defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : getcwd();
+        $map = new \expI18nCoverageMap( $root );
+        try
+        {
+            $data = $map->data();
+            $t = $data['translations'];
+            $l = $data['locales'];
+            $cli->output( sprintf( 'Administration translations: %d (%d complete)', $t['total'], $t['complete'] ) );
+            $cli->output( sprintf( 'Locales: %d files (%d variants, %d test), %d language codes, %d right to left',
+                                   $l['files'], $l['variants'], $l['test'], $l['languages'], $l['rtl'] ) );
+            $cli->output( sprintf( 'Countries and territories: %d, %d of them with the administration in their language',
+                                   count( $data['countries'] ), $data['covered'] ) );
+            $cli->output( sprintf( 'Languages: %d known, %d shown translated, %d not translated',
+                                   count( $data['languages'] ), $data['supported'], count( $data['languages'] ) - $data['supported'] ) );
+            if ( !empty( $options['check'] ) )
+            {
+                $problems = $map->check( $date );
+                foreach ( $problems as $problem )
+                    $cli->error( $problem );
+                $cli->output( $problems ? 'FAIL: ' . count( $problems ) . ' out of date' : 'PASS: the totals and maps are current' );
+                return $problems ? self::EXIT_PROBLEMS : self::EXIT_OK;
+            }
+            $result = $map->write( $date, !empty( $options['raster'] ) );
+        }
+        catch ( \RuntimeException $e )
+        {
+            $cli->error( $e->getMessage() );
+            return self::EXIT_USAGE;
+        }
+        foreach ( $result['written'] as $path )
+            $cli->output( 'written: ' . $path );
+        foreach ( $result['errors'] as $error )
+            $cli->error( $error );
+        if ( !$result['written'] && !$result['errors'] )
+            $cli->output( 'Nothing changed.' );
+        return $result['errors'] ? self::EXIT_PROBLEMS : self::EXIT_OK;
     }
 
     /**
