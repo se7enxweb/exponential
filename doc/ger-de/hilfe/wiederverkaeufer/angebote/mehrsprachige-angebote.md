@@ -3,7 +3,7 @@ title: Mehrsprachige Angebote
 audience: reseller, partner, sales-marketing
 category: reselling
 order: 230
-summary: Wie Sie mehrsprachige Exponential-Websites ehrlich verkaufen - Übersetzungen je Inhaltsobjekt, ein Siteaccess je Sprache, 268 Locale-Dateien und 71 Übersetzungen der Administration, Unterstützung für Schreibrichtung von rechts nach links, die Grenze von 62 Inhaltssprachen bei 64-Bit-PHP, was Sie prüfen, bevor Sie eine Sprache versprechen, und was Sie bepreisen.
+summary: Wie Sie mehrsprachige Exponential-Websites ehrlich verkaufen - Übersetzungen je Inhaltsobjekt, ein Siteaccess je Sprache, 268 Locale-Dateien und 73 Übersetzungen der Administration, Unterstützung für Schreibrichtung von rechts nach links, die Grenze von 62 Inhaltssprachen bei 64-Bit-PHP, was Sie prüfen, bevor Sie eine Sprache versprechen, und was Sie bepreisen.
 keywords: mehrsprachig, Sprachen, Übersetzung, Locale, Inhaltssprache, Übersetzung der Administration, Siteaccess je Sprache, rechts nach links, RTL, 62 Inhaltssprachen, 64 Bit, maschinengestützte Übersetzungen, Preisgestaltung, multilingual, languages, translation, locale, content language, administration translation, siteaccess per language, right to left, 62 content languages, 64-bit, machine-assisted translations, pricing
 type: help
 ---
@@ -29,7 +29,7 @@ machen den Unterschied zwischen einem zufriedenen und einem überraschten Kunden
 | Ein Siteaccess je Sprache | Jede Sprache kann ihre eigene Adresse haben, etwa `example.com/ger` oder `example.de` | [Siteaccess nach Host-Präfix und die Weiterleitung zur Sprache](../../../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md) |
 | Locale je Website | Datum, Zahlen und Währung folgen `site.ini [RegionalSettings] Locale` | [Sprachen und Locales](../../unternehmen/mehrsprachig/sprachen-und-locales.md) |
 | 268 Locale-Dateien, 32 Schriftsysteme | Inhalte in fast jeder geschriebenen Sprache | [Sprachen](../../sprachen.md) |
-| 71 Übersetzungen der Administration, alle vollständig (Stand 26. Oktober 2026) | Redakteure können in ihrer eigenen Sprache arbeiten, bei den vollständigen | ebenda |
+| 73 Übersetzungen der Administration, alle vollständig (Stand 26. Oktober 2026) | Redakteure können in ihrer eigenen Sprache arbeiten, bei den vollständigen | ebenda |
 | 40 Locales mit Schreibrichtung von rechts nach links | Hebräisch, Arabisch, Persisch, Urdu und andere; die Administration dreht sich um | [Sprachen mit Schreibrichtung von rechts nach links](../../../funktionen/6.0/rechts-nach-links.md) |
 | Rückfall bei Übersetzungen der Oberfläche | Ein österreichisches oder Schweizer Team erhält ohne Zusatzaufwand die deutsche Administration | [Sprachen und Locales](../../unternehmen/mehrsprachig/sprachen-und-locales.md) |
 
