@@ -84017,7 +84017,7 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     </message>
     <message>
         <source>JSON: %url</source>
-        <translation>JSON: %url</translation>
+        <translation>JSON-Adresse: %url</translation>
     </message>
     <message>
         <source>yes</source>
