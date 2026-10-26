@@ -50672,7 +50672,7 @@ How do you access it?&lt;/p&gt;
 &lt;li&gt;Here you can check out the &lt;a href="http://share.ez.no/blogs"&gt;blog posts&lt;/a&gt;,
     &lt;a href="http://share.ez.no/events"&gt;events&lt;/a&gt;, &lt;a href="http://share.ez.no/members-partners/find-a-partner"&gt;partners&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;We</source>
+&lt;p&gt;We<byte value="x19"/>re looking forward to seeing what you share with the Community!&lt;/p&gt;</source>
         <translation>&lt;p&gt;אויב איר ווילט זיך טיילן מיט וויסן, זיך בייַטן מיט עצות מיט אַנטוויקלער, אָדער פּשוט געפֿינען עטלעכע טריקן צום פֿאַרבעסערן, איז די Exponential־קהילה דער ריכטיקער אָרט.&lt;/p&gt;
 
 &lt;p&gt;
@@ -50683,7 +50683,7 @@ How do you access it?&lt;/p&gt;
 &lt;li&gt;דאָ קענט איר דורכקוקן די &lt;a href="http://share.ez.no/blogs"&gt;בלאָג־אַרטיקלען&lt;/a&gt;,
     &lt;a href="http://share.ez.no/events"&gt;געשעענישן&lt;/a&gt;, &lt;a href="http://share.ez.no/members-partners/find-a-partner"&gt;פּאַרטנערס&lt;/a&gt;...&lt;/li&gt;
 &lt;/ul&gt;&lt;/p&gt;
-&lt;p&gt;מיר</translation>
+&lt;p&gt;מיר קוקן אַרויס צו זען, וואָס איר וועט טיילן מיט דער קהילה!&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Exponential Platform</source>
