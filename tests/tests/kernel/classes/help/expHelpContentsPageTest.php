@@ -124,6 +124,27 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
     }
 
     /** HCP-03 */
+    /**
+     * Source and translation of each message of the kernel/exphelp context.
+     *
+     * XPath, not getElementsByTagName(): before PHP 8.3 each step through that live list walks
+     * the document from its start again, and the catalogues hold thousands of messages.
+     *
+     * @return array list of array( source, translation )
+     */
+    private static function exphelpMessages( DOMDocument $dom )
+    {
+        $xpath = new DOMXPath( $dom );
+        $messages = array();
+        foreach ( $xpath->query( '/TS/context[normalize-space(name)="kernel/exphelp"]/message' ) as $message )
+        {
+            $translation = $xpath->query( 'translation', $message )->item( 0 );
+            $messages[] = array( $xpath->query( 'source', $message )->item( 0 )->textContent,
+                                 $translation ? $translation->textContent : '' );
+        }
+        return $messages;
+    }
+
     public function testStringsTranslatedOnce()
     {
         foreach ( self::CATALOGUES as $lang )
@@ -131,16 +152,10 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
             $dom = new DOMDocument();
             $this->assertTrue( $dom->load( self::root() . "/share/translations/$lang/translation.ts" ), $lang );
             $found = array();
-            foreach ( $dom->getElementsByTagName( 'context' ) as $context )
+            foreach ( self::exphelpMessages( $dom ) as list( $source, $translation ) )
             {
-                if ( trim( $context->getElementsByTagName( 'name' )->item( 0 )->textContent ) !== 'kernel/exphelp' )
-                    continue;
-                foreach ( $context->getElementsByTagName( 'message' ) as $message )
-                {
-                    $source = $message->getElementsByTagName( 'source' )->item( 0 )->textContent;
-                    if ( in_array( $source, self::STRINGS, true ) )
-                        $found[$source][] = $message->getElementsByTagName( 'translation' )->item( 0 )->textContent;
-                }
+                if ( in_array( $source, self::STRINGS, true ) )
+                    $found[$source][] = $translation;
             }
             foreach ( self::STRINGS as $source )
             {
@@ -201,18 +216,13 @@ class expHelpContentsPageTest extends PHPUnit\Framework\TestCase
             $dom = new DOMDocument();
             $dom->load( self::root() . "/share/translations/$lang/translation.ts" );
             $count = 0;
-            foreach ( $dom->getElementsByTagName( 'context' ) as $context )
+            foreach ( self::exphelpMessages( $dom ) as list( $source, $translation ) )
             {
-                if ( trim( $context->getElementsByTagName( 'name' )->item( 0 )->textContent ) !== 'kernel/exphelp' )
-                    continue;
-                foreach ( $context->getElementsByTagName( 'message' ) as $message )
+                if ( $source === 'Clear filter' )
                 {
-                    if ( $message->getElementsByTagName( 'source' )->item( 0 )->textContent === 'Clear filter' )
-                    {
-                        $count++;
-                        if ( $lang !== 'untranslated' )
-                            $this->assertNotSame( '', trim( $message->getElementsByTagName( 'translation' )->item( 0 )->textContent ), $lang );
-                    }
+                    $count++;
+                    if ( $lang !== 'untranslated' )
+                        $this->assertNotSame( '', trim( $translation ), $lang );
                 }
             }
             $this->assertSame( 1, $count, "$lang: Clear filter once in kernel/exphelp" );

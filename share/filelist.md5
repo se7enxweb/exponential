@@ -26217,7 +26217,7 @@ e65692aa5c652521877848dfcbec2000  tests/tests/kernel/classes/help/expHelpContent
 321f570378477f6d95103cb485707cc9  tests/tests/kernel/classes/help/expHelpContentTest.php
 ed18608ae675f08c5609cefc45933c44  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
 7708d14efff93b6488808da256643428  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
-1a6f8d25a51abc94dc6d40460b69c1e0  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
+0f1ce879a2e19f6f03cf5db0d0baf920  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
 de305c435d15620028c69094f1df344f  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
@@ -26935,7 +26935,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
-840fd40673885164549b68700f38b18d  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+f56d3f6cf027fff3ca726b3154a3e760  tests/tests/lib/ezi18n/expTranslationQualityTest.php
 8b290881000923db7e47ea1776081f9a  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg

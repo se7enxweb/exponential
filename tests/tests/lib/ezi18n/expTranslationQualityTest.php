@@ -173,13 +173,15 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( @eZTSTranslator::validateDOMTree( $doc ), "$file validates against ts.rng" );
         $seen = array();
         $duplicates = array();
-        foreach ( $doc->getElementsByTagName( 'context' ) as $context )
+        // XPath, not getElementsByTagName(): see testFinishedTranslationsKeepTheirSourcesMarkup()
+        $xpath = new DOMXPath( $doc );
+        foreach ( $xpath->query( '//context' ) as $context )
         {
-            $name = $context->getElementsByTagName( 'name' )->item( 0 )->textContent;
-            foreach ( $context->getElementsByTagName( 'message' ) as $message )
+            $name = $xpath->query( 'name', $context )->item( 0 )->textContent;
+            foreach ( $xpath->query( 'message', $context ) as $message )
             {
-                $comment = $message->getElementsByTagName( 'comment' )->item( 0 );
-                $key = $name . "\0" . $message->getElementsByTagName( 'source' )->item( 0 )->textContent . "\0" . ( $comment ? $comment->textContent : '' );
+                $comment = $xpath->query( 'comment', $message )->item( 0 );
+                $key = $name . "\0" . $xpath->query( 'source', $message )->item( 0 )->textContent . "\0" . ( $comment ? $comment->textContent : '' );
                 if ( isset( $seen[$key] ) )
                     $duplicates[] = str_replace( "\0", ' | ', $key );
                 $seen[$key] = true;
@@ -194,12 +196,16 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $this->assertTrue( @$doc->load( $file ), "$file is XML" );
         $broken = array();
-        foreach ( $doc->getElementsByTagName( 'message' ) as $message )
+        // XPath, not getElementsByTagName(): before PHP 8.3 each step through that live list
+        // walks the document from its start again, so a catalogue of some 10 000 messages
+        // took about 50 s per file under PHP 8.1 instead of a third of a second.
+        $xpath = new DOMXPath( $doc );
+        foreach ( $xpath->query( '//message' ) as $message )
         {
-            $translation = $message->getElementsByTagName( 'translation' )->item( 0 );
+            $translation = $xpath->query( 'translation', $message )->item( 0 );
             if ( !$translation || $translation->getAttribute( 'type' ) !== '' )
                 continue;
-            $source = $message->getElementsByTagName( 'source' )->item( 0 )->textContent;
+            $source = $xpath->query( 'source', $message )->item( 0 )->textContent;
             $problems = self::problems( $source, $translation->textContent, $language );
             if ( $problems )
                 $broken[] = mb_substr( $source, 0, 60 ) . ': ' . implode( '; ', $problems );
