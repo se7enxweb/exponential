@@ -24281,7 +24281,7 @@ c747d4d9094af12fa536e810f85d99d3  lib/ezi18n/classes/eztranslationcache.php
 f8be2d828d18163faa495b65e3de0c80  lib/ezi18n/classes/eztranslatorgroup.php
 a3484f75543a6443a38e554f38570e7d  lib/ezi18n/classes/eztranslatorhandler.php
 6513d16cb0039d3ce0301b7eb9dc4f59  lib/ezi18n/classes/eztranslatormanager.php
-8a186a6929148fb06e821699b123d249  lib/ezi18n/classes/eztstranslator.php
+b0fdf4df753d502932fc665b4829227e  lib/ezi18n/classes/eztstranslator.php
 31bddf4620277ea94f10938bfb7f66a0  lib/ezi18n/classes/ezutf8codec.php
 b1f9d0cc359e52d77bd2a37936892e46  lib/ezimage/classes/expsvgsanitizer.php
 f69f6eb6351f364356203c20fa061dd1  lib/ezimage/classes/ezexifimageanalyzer.php
@@ -26935,6 +26935,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 2973292804803c561abb24ae9e84f3aa  tests/tests/lib/ezi18n/eZCharTransformTrailingCleanupTest.php
 29832724eee763626bfe2263dd86eaa7  tests/tests/lib/ezi18n/eZCharsetAndTransformTest.php
 9b2f42f8460d203df243995ce82a1dc6  tests/tests/lib/ezi18n/eZCodePageTablesTest.php
+4b348f962cee6553dd35aea8010081eb  tests/tests/lib/ezi18n/eZTSTranslatorEmptyContextListTest.php
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php

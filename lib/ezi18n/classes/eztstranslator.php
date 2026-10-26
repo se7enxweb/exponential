@@ -333,7 +333,9 @@ class eZTSTranslator extends eZTranslatorHandler
         if ( $this->UseCache == true && $this->BuildCache == true )
         {
             eZDebug::accumulatorStart( 'tstranslator_store_cache', 'tstranslator', 'TS store cache' );
-            if ( eZTranslationCache::contextCache( 'cachecontexts' ) == null )
+            // strictly null: a locale without a catalogue caches an empty list of contexts, and array() == null would
+            // set it again for every untranslated message (a warning each time in the debug output)
+            if ( eZTranslationCache::contextCache( 'cachecontexts' ) === null )
             {
                 $contexts = array_keys( $this->CachedMessages );
                 eZTranslationCache::setContextCache( 'cachecontexts',
