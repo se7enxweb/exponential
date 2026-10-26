@@ -728,8 +728,12 @@
         "de": "Die Übersetzungs-Fallbacks: pro Locale die Kette der Übersetzungen, auf die sie zurückfällt, und wie viel vom Kernel und von jeder Erweiterung übersetzt angezeigt wird; --check für CI"
     },
     "command:i18n --check": {
-        "en": "Check the fallbacks as the check action does, after the list",
-        "de": "Nach der Liste die Fallbacks so prüfen wie die Aktion check"
+        "en": "Check the fallbacks as the check action does, after the list; with coverage: compare only, change nothing",
+        "de": "Nach der Liste die Fallbacks so prüfen wie die Aktion check; mit coverage: nur vergleichen, nichts ändern"
+    },
+    "command:i18n --date": {
+        "en": "With coverage: the date of the figures when they changed (YYYY-MM-DD, default today)",
+        "de": "Mit coverage: das Datum der Zahlen, wenn sie sich geändert haben (JJJJ-MM-TT, Standard heute)"
     },
     "command:i18n --format": {
         "en": "table (default) or json",
@@ -746,6 +750,10 @@
     "command:i18n --only": {
         "en": "With the list: own (a translation of its own), fallback (translated through a fallback) or untranslated",
         "de": "Mit der Liste: own (eine eigene Übersetzung), fallback (über einen Fallback übersetzt) oder untranslated"
+    },
+    "command:i18n --raster": {
+        "en": "With coverage: write the WebP copy of every map again, not only of the maps that changed",
+        "de": "Mit coverage: die WebP-Kopie jeder Karte neu schreiben, nicht nur die der geänderten Karten"
     },
     "command:i18n --strict": {
         "en": "With check: warnings (a configured locale without a locale file, a chain without a translation) fail too",

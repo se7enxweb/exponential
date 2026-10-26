@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-42adc2edb5d201dee64dcb088ef02b65  autoload/ezp_kernel.php
+46a36ef5c2f449ee4c4b516569a1b583  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3591,7 +3591,7 @@ d446ad253178f1cefade5d383f499477  doc/eng-us/examples/commands/eztemplatecheck.m
 bffcf86d06178dc75d092a2e9d7683a5  doc/eng-us/examples/commands/ezwebinupgrade.md
 d6c8493434843b5c22f6888920800478  doc/eng-us/examples/commands/flatten.md
 cd78d74cfb5f579bef8cc9d9199bde06  doc/eng-us/examples/commands/frankenphp.md
-ab4c92bb40f2ab9ab75cbed8f42ac7b8  doc/eng-us/examples/commands/i18n.md
+e28bfeba1ddd7b4b0685efa8b952ba78  doc/eng-us/examples/commands/i18n.md
 6ff246dd40bbb38578f8c0f7abe78806  doc/eng-us/examples/commands/ini.md
 1630398a25800e47f4eb2c4d67116259  doc/eng-us/examples/commands/install.md
 d91d364da3537cb4cc3f69551359f027  doc/eng-us/examples/commands/installcrontab.md
@@ -12240,6 +12240,9 @@ b157c3ab90ba4fbce6c8fe089c88636b  doc/eng-us/history/velocity/2026-09d.md
 09fe66cfd7efc177b0979e16d00d9add  doc/eng-us/history/velocity/2026-10.md
 1b26aebfc51d07107cde582d6f105804  doc/eng-us/history/velocity/README.md
 6579cb3af6b13e98420cb492887ed497  doc/eng-us/history/velocity/installers-and-packages.md
+68d6561a203149fe92d977ecad06a942  doc/eng-us/images/languages/coverage-map.svg
+9c52cd471d2d36ded63e05a5aab87edc  doc/eng-us/images/languages/coverage-map.webp
+637835b26be6efc37035bcaa3f6eac01  doc/eng-us/images/languages/world-outline.svg
 c2daac44615144bd3fdc43b77d02a7fb  doc/eng-us/install/01-introduction.md
 956503fceb5e35f318db4eb9f5388440  doc/eng-us/install/02-requirements.md
 eeed09f20f70df3689710abe9b8f4296  doc/eng-us/install/03-getting-the-code.md
@@ -12282,7 +12285,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-668eb16bb0a2bd311b026aeb1060188d  doc/eng-us/languages.md
+36fcf6f345887ba589480edf67bacd94  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -12563,7 +12566,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
-8b6e6fcc0c5f7375fdebc91173ae73b5  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
+02ca7554f6be881f735fce76a2ce5590  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 20a5b83b04efe02e2e54eaf74249f68b  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 a2cdb6d91f08e7a03fa339d5428ce4a6  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 e84360c55b63042bc2fa37e1e9eca706  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
@@ -12841,7 +12844,7 @@ cee9cf644b31b8674fb6a4c8a6be9980  doc/ger-de/beispiele/befehle/eztc.md
 7416e37d89da0167cc103ace62ac48fa  doc/ger-de/beispiele/befehle/ezwebinupgrade.md
 f894de7949a06b95da04657572c105f8  doc/ger-de/beispiele/befehle/flatten.md
 5bcf9d7b838b4b329abfecc3ab9f2181  doc/ger-de/beispiele/befehle/frankenphp.md
-e52b802f27cbc10cba1ab4fb7a2117fa  doc/ger-de/beispiele/befehle/i18n.md
+eea09a5f6273305681218891fe9deec3  doc/ger-de/beispiele/befehle/i18n.md
 b063858853eb61f814acd0d7d74584b0  doc/ger-de/beispiele/befehle/ini.md
 5dcaec6bcb53f913705d944558bb88c4  doc/ger-de/beispiele/befehle/install.md
 c5b4d9c07ff5fb18863cf9673d8496f1  doc/ger-de/beispiele/befehle/installcrontab.md
@@ -15357,6 +15360,8 @@ a437b6de2cfeb8157ec0bd620cfe6f82  doc/ger-de/beispiele/workflow-ereignisse/ezfin
 010d0864d660a185840fd86c93621413  doc/ger-de/beispiele/workflow-ereignisse/ezpaymentgateway.md
 31755bce36887705ae2a3d02f2edd98f  doc/ger-de/beispiele/workflow-ereignisse/ezsimpleshipping.md
 65dddf148faeeed5b008171d5ecc92c8  doc/ger-de/beispiele/workflow-ereignisse/ezwaituntildate.md
+1086d2c407ddeffd57a4897f80c13354  doc/ger-de/bilder/sprachen/abdeckungskarte.svg
+7ec2516ec9b1df107191bc24726ba545  doc/ger-de/bilder/sprachen/abdeckungskarte.webp
 9f7389a3ca3afe0f68567c73bbdf3771  doc/ger-de/branch-uebersicht.md
 a5081b851a21e3aac6cb770c46462bbe  doc/ger-de/funktionen/4.7/cluster-ereignisse.md
 e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
@@ -21230,7 +21235,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-157705a0ba274b8985bd9c322242c8d1  doc/ger-de/sprachen.md
+987e162bf3d36e7784118ff3b61175f1  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 d668c54ddd26f3b59956c1b468b0e5ff  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -22878,6 +22883,7 @@ f7effc41230d544e41a80cf064a96a9d  kernel/classes/help/exphelppdfwriter.php
 d2f0e7555803b18f5d0730de851c5980  kernel/classes/help/exphelprecordrenderer.php
 c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
+935e38ae7acff0bd3ad0a50effb395cf  kernel/classes/i18n/expi18ncoveragemap.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
 203479e7dccaed76ef07b8e33efa41a9  kernel/classes/ini/actions/expiniactionactions.php
@@ -23396,7 +23402,7 @@ df4209e3bf148eb42843f37c322c947a  kernel/private/classes/commands/eztemplatechec
 e2ffd68001dc0fd42558c469d6ac9529  kernel/private/classes/commands/ezwebinupgrade.php
 fd4e1af35d892872dea6d4780364afab  kernel/private/classes/commands/flatten.php
 6c84fcd54d7638ea30baa897c9eeeb25  kernel/private/classes/commands/frankenphp.php
-bf69d054c36a88b90d3dee0f9f1d051e  kernel/private/classes/commands/i18n.php
+ee65c61eba5c695f661bf102118ec34d  kernel/private/classes/commands/i18n.php
 64e2b0277f5e311994539d81cf55c378  kernel/private/classes/commands/ini.php
 97796012ff01b1c1263a437356ff1e0f  kernel/private/classes/commands/install.php
 39c0eebfbbc8030f7ac2e138d6f3eaf6  kernel/private/classes/commands/installcrontab.php
@@ -26247,6 +26253,7 @@ f42ff50eccca16045301996e0e3adafe  tests/tests/kernel/classes/help/expHelpSearchV
 c73b3316fa67b8c61e5eb6829c307139  tests/tests/kernel/classes/help/expHelpTranslatedDocumentationTest.php
 adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branch-overview-svn.txt
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
+5dd7cfbbabf566e542fe371f1bdc19aa  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
 9186831128133636b56a2caf51105db6  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 48973364e4ad637a659b7cdee8273a8a  tests/tests/kernel/classes/ini/command/IniCommandTest.php

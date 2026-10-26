@@ -1,0 +1,898 @@
+<?php
+/**
+ * File containing the expI18nCoverageMap class.
+ *
+ * @copyright Copyright (C) 1998 - 2026 7x and the Exponential Foundation. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+/**
+ * The language totals and the world map at the top of doc/eng-us/languages.md and doc/ger-de/sprachen.md, made from
+ * the files a default installation ships (./console exp:i18n coverage):
+ *
+ * - the administration translations (share/translations/<code>/translation.ts) and how many are complete;
+ * - the locales (share/locale/*.ini), their language codes, the countries and territories they name (the region of
+ *   their [HTTP] ContentLanguage, ISO 3166-1 alpha-2; private-use codes and locales without a region left out) and
+ *   how many are written right to left ([LanguageSettings] TextDirection=rtl);
+ * - per country, whether it is covered: a shipped locale for it whose language the administration shows, through a
+ *   translation of its own or the first translation of its fallback chain (settings/i18n.ini [TranslationSettings],
+ *   as expI18nFallbackResolver and expUISwitchLanguageCatalogue count it: with FallbackMode=first only the first
+ *   translation of the chain counts). English counts as covered, being the language of the source texts;
+ * - the known languages (the language codes of those locales), the ones the administration shows translated in the
+ *   same way and the ones it does not, in a section of their own (LANGUAGES_START to LANGUAGES_END).
+ *
+ * Only the shipped settings/i18n.ini is read (no override, no extension), so the result is that of a default
+ * installation wherever it is made. The map is drawn on the public-domain outline in OUTLINE (Natural Earth): one SVG
+ * per documentation language, with its title, description and legend, and a WebP copy of it for the help viewer,
+ * which shows no SVG. The generated part of each page lies between its START and END markers; the date in the start
+ * marker is kept while nothing else changes, so a check on another day still passes.
+ *
+ * @package kernel
+ */
+class expI18nCoverageMap
+{
+    /** The world outline, relative to the root */
+    const OUTLINE = 'doc/eng-us/images/languages/world-outline.svg';
+
+    /** Per documentation language: the page, the SVG, its WebP copy and the image as the page names it */
+    const PAGES = array(
+        'eng-us' => array( 'page' => 'doc/eng-us/languages.md',
+                           'svg' => 'doc/eng-us/images/languages/coverage-map.svg',
+                           'raster' => 'doc/eng-us/images/languages/coverage-map.webp',
+                           'image' => 'images/languages/coverage-map.webp' ),
+        'ger-de' => array( 'page' => 'doc/ger-de/sprachen.md',
+                           'svg' => 'doc/ger-de/bilder/sprachen/abdeckungskarte.svg',
+                           'raster' => 'doc/ger-de/bilder/sprachen/abdeckungskarte.webp',
+                           'image' => 'bilder/sprachen/abdeckungskarte.webp' ),
+    );
+
+    /** The markers of the generated part of a page */
+    const START_PATTERN = '/^<!-- generated: exp:i18n coverage (\d{4}-\d{2}-\d{2}) \(start\) -->$/m';
+
+    /** The largest mean difference per channel (0 to 1) between a WebP copy and its map rendered again */
+    const RASTER_TOLERANCE = 0.01;
+    const END = '<!-- generated: exp:i18n coverage (end) -->';
+
+    /** The markers of the generated section of the languages not translated */
+    const LANGUAGES_START = '<!-- generated: exp:i18n coverage languages (start) -->';
+    const LANGUAGES_END = '<!-- generated: exp:i18n coverage languages (end) -->';
+
+    /** The colors: covered land, other land, borders; legible on a light and on a dark page */
+    const COVERED = '#2e8b57';
+    const OTHER = '#b8bec6';
+    const STROKE = '#6f7781';
+
+    /** The height of the legend strip below the map, in map units */
+    const LEGEND_HEIGHT = 140;
+
+    /** Region codes that name no country: user-assigned ISO 3166-1 codes (QO, ZZ ...) */
+    const NO_COUNTRY = '/^(AA|Q[M-Z]|X[A-Z]|ZZ)$/';
+
+    /** @var string the installation root, without a trailing slash */
+    protected $root;
+
+    /** @var array|null see data() */
+    protected $data;
+
+    /**
+     * @param string $root the installation root
+     */
+    public function __construct( $root )
+    {
+        $this->root = rtrim( (string)$root, '/' );
+    }
+
+    /**
+     * The settings of the shipped settings/i18n.ini [TranslationSettings]: configured, rules, options.
+     *
+     * @return array
+     */
+    public function settings()
+    {
+        $values = self::parseBlock( (string)@file_get_contents( $this->root . '/settings/i18n.ini' ), 'TranslationSettings' );
+        $get = function ( $name, $default ) use ( $values )
+        {
+            return array_key_exists( $name, $values ) ? $values[$name] : $default;
+        };
+        return array(
+            'configured' => (array)$get( 'FallbackLanguages', array() ),
+            'rules' => array_values( (array)$get( 'FallbackRules', array() ) ),
+            'options' => array(
+                'automatic' => $get( 'AutomaticLanguageFallback', 'enabled' ) === 'enabled',
+                'automatic_exclude' => (array)$get( 'AutomaticFallbackExclude', array( 'eng' ) ),
+                'max_depth' => (int)$get( 'FallbackMaxDepth', 4 ),
+                'mode' => (string)$get( 'FallbackMode', 'first' ),
+                'repository' => $this->root . '/share/translations',
+                'locale_directory' => $this->root . '/share/locale',
+            ),
+        );
+    }
+
+    /**
+     * The settings of one block of an INI text: Name=value, Name[]=value (a list; "Name[]" alone empties it) and
+     * Name[key]=value (a hash). Comments (#) and other blocks are skipped.
+     *
+     * @param string $text
+     * @param string $block
+     * @return array
+     */
+    public static function parseBlock( $text, $block )
+    {
+        $values = array();
+        $current = '';
+        foreach ( preg_split( '/\r\n|\r|\n/', (string)$text ) as $line )
+        {
+            $line = trim( $line );
+            if ( $line === '' || $line[0] === '#' )
+                continue;
+            if ( preg_match( '/^\[([^\]]+)\]$/', $line, $m ) )
+            {
+                $current = $m[1];
+                continue;
+            }
+            if ( $current !== $block )
+                continue;
+            if ( preg_match( '/^([A-Za-z0-9_-]+)\[\]$/', $line, $m ) )
+                $values[$m[1]] = array();
+            elseif ( preg_match( '/^([A-Za-z0-9_-]+)\[([^\]]*)\]=(.*)$/', $line, $m ) )
+            {
+                if ( !isset( $values[$m[1]] ) || !is_array( $values[$m[1]] ) )
+                    $values[$m[1]] = array();
+                if ( $m[2] === '' )
+                    $values[$m[1]][] = trim( $m[3] );
+                else
+                    $values[$m[1]][$m[2]] = trim( $m[3] );
+            }
+            elseif ( preg_match( '/^([A-Za-z0-9_-]+)=(.*)$/', $line, $m ) )
+                $values[$m[1]] = trim( $m[2] );
+        }
+        return $values;
+    }
+
+    /**
+     * The fallback resolver of a default installation below the root.
+     *
+     * @return expI18nFallbackResolver
+     */
+    public function resolver()
+    {
+        $settings = $this->settings();
+        return new expI18nFallbackResolver( $settings['configured'], $settings['rules'], $settings['options'] );
+    }
+
+    /**
+     * Everything the page and the map show:
+     *   translations: hash( total, complete, codes ),
+     *   locales: hash( files, variants, test, base, languages (distinct language codes of the real locales), rtl ),
+     *   countries: ISO code => hash( code, covered, locales => list of hash( locale, shows ) ) sorted by code, where
+     *              shows is the translation the administration shows ('' for the source texts in English for a locale
+     *              that has none, 'eng' for an English locale shown in the source texts),
+     *   covered: the number of covered countries,
+     *   languages: the known languages, those of the real locales (variants and test languages left out), by
+     *              language code => hash( code, name (English, of its first locale), native, supported, locales ),
+     *              supported when the administration shows one of its locales translated (or English),
+     *   supported: the number of supported languages.
+     *
+     * @return array
+     */
+    public function data()
+    {
+        if ( $this->data !== null )
+            return $this->data;
+        $resolver = $this->resolver();
+        $catalogue = new expUISwitchLanguageCatalogue( $this->root, '', null, $resolver );
+        $entries = $catalogue->build();
+
+        $files = array();
+        foreach ( (array)glob( $this->root . '/share/locale/*.ini' ) as $file )
+            $files[basename( $file, '.ini' )] = $file;
+        ksort( $files, SORT_STRING );
+
+        $variants = 0;
+        $test = 0;
+        $rtl = 0;
+        $languages = array();
+        $countries = array();
+        foreach ( $files as $code => $file )
+        {
+            $text = (string)file_get_contents( $file );
+            if ( preg_match( '/^\s*TextDirection\s*=\s*rtl\s*$/mi', $text ) )
+                $rtl++;
+            if ( strpos( $code, '@' ) !== false )
+            {
+                $variants++;
+                continue;
+            }
+            $entry = isset( $entries[$code] ) ? $entries[$code] : null;
+            if ( $entry !== null && !empty( $entry['test'] ) )
+            {
+                $test++;
+                continue;
+            }
+            $shows = '';
+            if ( strpos( $code, 'eng-' ) === 0 )
+            {
+                // English: a translation of its own (eng-US) or of its chain, else the source texts
+                $shows = 'eng';
+                foreach ( array_merge( array( $code ), $resolver->chain( $code ) ) as $candidate )
+                {
+                    if ( $candidate === expI18nFallbackResolver::SOURCE )
+                        break;
+                    if ( $resolver->hasTranslation( $candidate ) )
+                    {
+                        $shows = $candidate;
+                        break;
+                    }
+                }
+            }
+            elseif ( $entry !== null && $entry['coverage'] !== null && $entry['coverage'] > 0 )
+                $shows = $entry['fallback'] !== '' ? (string)$entry['fallback'] : $code;
+
+            // the language: its code (the three letters before the dash) and the name of its first locale
+            $language = substr( $code, 0, 3 );
+            if ( !isset( $languages[$language] ) )
+            {
+                $languages[$language] = array( 'code' => $language,
+                                               'name' => self::baseName( $entry !== null ? (string)$entry['english'] : '', $code ),
+                                               'native' => self::baseName( $entry !== null ? (string)$entry['native'] : '', '' ),
+                                               'supported' => false, 'locales' => array() );
+            }
+            $languages[$language]['locales'][] = array( 'locale' => $code, 'shows' => $shows );
+            if ( $shows !== '' )
+                $languages[$language]['supported'] = true;
+
+            $http = $entry !== null ? (string)$entry['http'] : '';
+            if ( !preg_match( '/-([A-Z]{2})(?:-|$)/', $http, $m ) || preg_match( self::NO_COUNTRY, $m[1] ) )
+                continue;
+            $iso = $m[1];
+            if ( !isset( $countries[$iso] ) )
+                $countries[$iso] = array( 'code' => $iso, 'covered' => false, 'locales' => array() );
+            $countries[$iso]['locales'][] = array( 'locale' => $code, 'shows' => $shows );
+            if ( $shows !== '' )
+                $countries[$iso]['covered'] = true;
+        }
+        ksort( $languages, SORT_STRING );
+        ksort( $countries, SORT_STRING );
+
+        $codes = $resolver->translations();
+        $complete = 0;
+        foreach ( $codes as $code )
+        {
+            if ( isset( $entries[$code] ) && $entries[$code]['coverage'] !== null && $entries[$code]['coverage'] >= 100 )
+                $complete++;
+        }
+        $covered = count( array_filter( $countries, function ( $country ) { return $country['covered']; } ) );
+        return $this->data = array(
+            'translations' => array( 'total' => count( $codes ), 'complete' => $complete, 'codes' => $codes ),
+            'locales' => array( 'files' => count( $files ), 'variants' => $variants, 'test' => $test,
+                                'base' => count( $files ) - $variants, 'languages' => count( $languages ), 'rtl' => $rtl ),
+            'countries' => $countries,
+            'covered' => $covered,
+            'languages' => $languages,
+            'supported' => count( array_filter( $languages, function ( $language ) { return $language['supported']; } ) ),
+        );
+    }
+
+    /**
+     * A language name without what follows it in brackets: "German (Austria)" is German.
+     *
+     * @param string $name
+     * @param string $default when the name is empty
+     * @return string
+     */
+    public static function baseName( $name, $default )
+    {
+        $name = trim( (string)preg_replace( '/\s*\(.*$/s', '', (string)$name ) );
+        return $name !== '' ? $name : (string)$default;
+    }
+
+    /**
+     * The languages the administration does not show translated, sorted by name: list of the data() language.
+     *
+     * @return array
+     */
+    public function untranslatedLanguages()
+    {
+        $list = array_values( array_filter( $this->data()['languages'], function ( $language ) { return !$language['supported']; } ) );
+        usort( $list, function ( $a, $b )
+        {
+            $order = strcmp( expUISwitchLanguageCatalogue::foldForSorting( $a['name'] ), expUISwitchLanguageCatalogue::foldForSorting( $b['name'] ) );
+            return $order !== 0 ? $order : strcmp( $a['code'], $b['code'] );
+        } );
+        return $list;
+    }
+
+    /**
+     * The country names of a documentation language, ISO code => name: English from settings/country.ini, German
+     * from share/locale/ger-DE.ini [CountryNames]; a code without one keeps the English name or the code.
+     *
+     * @param string $language eng-us or ger-de
+     * @return array
+     */
+    public function countryNames( $language )
+    {
+        $names = array();
+        $current = '';
+        foreach ( (array)@file( $this->root . '/settings/country.ini', FILE_IGNORE_NEW_LINES ) as $line )
+        {
+            $line = trim( $line );
+            if ( preg_match( '/^\[([A-Z]{2})\]$/', $line, $m ) )
+                $current = $m[1];
+            elseif ( $current !== '' && preg_match( '/^Name=(.+)$/', $line, $m ) )
+            {
+                $names[$current] = trim( $m[1] );
+                $current = '';
+            }
+        }
+        if ( $language === 'ger-de' )
+        {
+            $german = self::parseBlock( (string)@file_get_contents( $this->root . '/share/locale/ger-DE.ini' ), 'CountryNames' );
+            foreach ( isset( $german['Countries'] ) ? (array)$german['Countries'] : array() as $code => $name )
+            {
+                if ( preg_match( '/^[A-Z]{2}$/', (string)$code ) && $name !== '' )
+                    $names[$code] = $name;
+            }
+        }
+        return $names;
+    }
+
+    /**
+     * The countries sorted by their name in the language: list of the data() country with 'name'.
+     *
+     * @param string $language
+     * @return array
+     */
+    public function sortedCountries( $language )
+    {
+        $names = $this->countryNames( $language );
+        $list = array();
+        foreach ( $this->data()['countries'] as $iso => $country )
+        {
+            $country['name'] = isset( $names[$iso] ) ? $names[$iso] : $iso;
+            $list[] = $country;
+        }
+        usort( $list, function ( $a, $b )
+        {
+            $order = strcmp( expUISwitchLanguageCatalogue::foldForSorting( $a['name'] ), expUISwitchLanguageCatalogue::foldForSorting( $b['name'] ) );
+            return $order !== 0 ? $order : strcmp( $a['code'], $b['code'] );
+        } );
+        return $list;
+    }
+
+    /**
+     * The texts of a documentation language.
+     *
+     * @param string $language
+     * @return array
+     */
+    protected static function texts( $language )
+    {
+        if ( $language === 'ger-de' )
+            return array(
+                'title' => 'Exponential: die Länder und Gebiete mit der Administration in ihrer Sprache',
+                'desc' => 'Weltkarte. Grün: %1$d Länder und Gebiete, für die eine mitgelieferte Locale existiert, deren Sprache die Administration einer Standardinstallation übersetzt zeigt (eigene Übersetzung oder Fallback). Grau: die übrigen. Die Liste steht unter der Karte in doc/ger-de/sprachen.md.',
+                'legend_covered' => 'Administration in der Sprache einer mitgelieferten Locale (%1$d)',
+                'legend_other' => 'Andere Länder und Gebiete',
+                'source' => 'Karte: Natural Earth, gemeinfrei',
+            );
+        return array(
+            'title' => 'Exponential: the countries and territories with the administration in their language',
+            'desc' => 'World map. Green: %1$d countries and territories with a shipped locale whose language the administration of a default installation shows translated (its own translation or a fallback). Grey: the others. The list is below the map in doc/eng-us/languages.md.',
+            'legend_covered' => 'Administration in the language of a shipped locale (%1$d)',
+            'legend_other' => 'Other countries and territories',
+            'source' => 'Map: Natural Earth, public domain',
+        );
+    }
+
+    /**
+     * The map of a documentation language: the outline with the covered countries in green, a title, a description
+     * and a legend.
+     *
+     * @param string $language
+     * @return string
+     * @throws RuntimeException when the outline cannot be read
+     */
+    public function svg( $language )
+    {
+        $outline = @file_get_contents( $this->root . '/' . self::OUTLINE );
+        if ( !is_string( $outline ) || !preg_match( '/viewBox="0 0 (\d+) (\d+)"/', $outline, $box ) )
+            throw new RuntimeException( 'The world outline ' . self::OUTLINE . ' cannot be read' );
+        $width = (int)$box[1];
+        $mapHeight = (int)$box[2];
+        $height = $mapHeight + self::LEGEND_HEIGHT;
+        preg_match_all( '/<path data-iso="([A-Z]{0,2})" d="([^"]+)"\/>/', $outline, $paths, PREG_SET_ORDER );
+        preg_match_all( '/<circle data-iso="([A-Z]{2})" cx="(\d+)" cy="(\d+)" r="(\d+)"\/>/', $outline, $circles, PREG_SET_ORDER );
+        $data = $this->data();
+        $covered = array();
+        foreach ( $data['countries'] as $iso => $country )
+        {
+            if ( $country['covered'] )
+                $covered[$iso] = true;
+        }
+        $texts = self::texts( $language );
+        $esc = function ( $text ) { return htmlspecialchars( (string)$text, ENT_XML1 | ENT_QUOTES, 'UTF-8' ); };
+
+        $groups = array( 'other' => array(), 'covered' => array() );
+        foreach ( $paths as $path )
+            $groups[isset( $covered[$path[1]] ) ? 'covered' : 'other'][] = '<path data-iso="' . $path[1] . '" d="' . $path[2] . '"/>';
+        $dots = array( 'other' => array(), 'covered' => array() );
+        foreach ( $circles as $circle )
+            $dots[isset( $covered[$circle[1]] ) ? 'covered' : 'other'][] = '<circle data-iso="' . $circle[1] . '" cx="' . $circle[2] . '" cy="' . $circle[3] . '" r="' . $circle[4] . '"/>';
+
+        $lines = array();
+        $lines[] = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' . $width . ' ' . $height . '" width="' . $width . '" height="' . $height . '" role="img" aria-labelledby="map-title map-desc">';
+        $lines[] = '<title id="map-title">' . $esc( $texts['title'] ) . '</title>';
+        $lines[] = '<desc id="map-desc">' . $esc( sprintf( $texts['desc'], $data['covered'] ) ) . '</desc>';
+        $lines[] = '<!-- Generated by ./console exp:i18n coverage from the shipped locales, translations and settings/i18n.ini; do not edit.';
+        $lines[] = '     World outline: Natural Earth 1:50m Admin 0 - Countries and Admin 0 - Tiny countries';
+        $lines[] = '     (https://www.naturalearthdata.com/), public domain; Equal Earth projection, Antarctica left out,';
+        $lines[] = '     simplified (' . self::OUTLINE . '). -->';
+        $lines[] = '<g stroke="' . self::STROKE . '" stroke-width="0.7" stroke-linejoin="round">';
+        $lines[] = '<g id="other" fill="' . self::OTHER . '">';
+        $lines = array_merge( $lines, $groups['other'], $dots['other'] );
+        $lines[] = '</g>';
+        $lines[] = '<g id="covered" fill="' . self::COVERED . '">';
+        $lines = array_merge( $lines, $groups['covered'], $dots['covered'] );
+        $lines[] = '</g>';
+        $lines[] = '</g>';
+        // the legend, in a strip below the map: a panel of its own, legible on a light and on a dark page
+        $top = $mapHeight + 12;
+        $lines[] = '<g id="legend" font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#1f2328">';
+        $lines[] = '<rect x="16" y="' . $top . '" width="' . ( $width - 32 ) . '" height="' . ( self::LEGEND_HEIGHT - 24 ) . '" rx="12" fill="#ffffff" stroke="' . self::STROKE . '" stroke-width="1.5"/>';
+        $lines[] = '<rect x="40" y="' . ( $top + 22 ) . '" width="36" height="26" rx="4" fill="' . self::COVERED . '" stroke="' . self::STROKE . '"/>';
+        $lines[] = '<text x="90" y="' . ( $top + 45 ) . '">' . $esc( sprintf( $texts['legend_covered'], $data['covered'] ) ) . '</text>';
+        $lines[] = '<rect x="1140" y="' . ( $top + 22 ) . '" width="36" height="26" rx="4" fill="' . self::OTHER . '" stroke="' . self::STROKE . '"/>';
+        $lines[] = '<text x="1190" y="' . ( $top + 45 ) . '">' . $esc( $texts['legend_other'] ) . '</text>';
+        $lines[] = '<text x="40" y="' . ( $top + 88 ) . '" font-size="22" fill="#4b525a">' . $esc( $texts['source'] ) . '</text>';
+        $lines[] = '</g>';
+        $lines[] = '</svg>';
+        return implode( "\n", $lines ) . "\n";
+    }
+
+    /**
+     * A date as the page writes it.
+     *
+     * @param string $date YYYY-MM-DD
+     * @param string $language
+     * @return string
+     */
+    public static function formatDate( $date, $language )
+    {
+        list( $year, $month, $day ) = array_map( 'intval', explode( '-', $date ) );
+        if ( $language === 'ger-de' )
+        {
+            $months = array( 'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember' );
+            return $day . '. ' . $months[$month - 1] . ' ' . $year;
+        }
+        $months = array( 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' );
+        return $day . ' ' . $months[$month - 1] . ' ' . $year;
+    }
+
+    /**
+     * The generated part of a page, with its markers.
+     *
+     * @param string $language
+     * @param string $date YYYY-MM-DD
+     * @return string
+     */
+    public function block( $language, $date )
+    {
+        $data = $this->data();
+        $t = $data['translations'];
+        $l = $data['locales'];
+        $countries = $this->sortedCountries( $language );
+        $covered = array_values( array_filter( $countries, function ( $c ) { return $c['covered']; } ) );
+        $others = array_values( array_filter( $countries, function ( $c ) { return !$c['covered']; } ) );
+        $german = $language === 'ger-de';
+        $image = self::PAGES[$language]['image'];
+        $svgPath = self::PAGES[$language]['svg'];
+        $when = self::formatDate( $date, $language );
+
+        $out = array();
+        $out[] = '<!-- generated: exp:i18n coverage ' . $date . ' (start) -->';
+        if ( $german )
+        {
+            $out[] = '**Auf einen Blick, Stand ' . $when . '.** Eine Standardinstallation (die mitgelieferten `share/locale`,';
+            $out[] = '`share/translations` und `settings/i18n.ini`, ohne Erweiterungen) hat:';
+            $out[] = '';
+            $out[] = '| Was | Anzahl |';
+            $out[] = '|---|---:|';
+            $out[] = '| Sprachen der Administration: Übersetzungen in `share/translations` | **' . $t['total'] . '**, davon ' . $t['complete'] . ' vollständig |';
+            $out[] = '| Locales: Dateien `share/locale/*.ini` | **' . $l['files'] . '**: ' . ( $l['base'] - $l['test'] ) . ' Sprachen und Länder, ' . $l['test'] . ' Testsprache, ' . $l['variants'] . ' Varianten |';
+            $out[] = '| Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **' . $l['languages'] . '** |';
+            $out[] = '| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **' . $data['supported'] . '** |';
+            $out[] = '| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **' . ( $l['languages'] - $data['supported'] ) . '** |';
+            $out[] = '| Länder und Gebiete der Locales | **' . count( $countries ) . '** |';
+            $out[] = '| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **' . $data['covered'] . '** |';
+            $out[] = '| Locales, die von rechts nach links geschrieben werden | **' . $l['rtl'] . '** |';
+            $out[] = '';
+            $out[] = '![Weltkarte: ' . $data['covered'] . ' Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](' . $image . ')';
+            $out[] = '';
+            $out[] = 'Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:';
+            $out[] = 'mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,';
+            $out[] = '`FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die';
+            $out[] = 'Sprache der Quelltexte. Die Karte als Vektorgrafik: `' . $svgPath . '`; Umrisse: Natural Earth, gemeinfrei.';
+            $out[] = '';
+            $out[] = '<details><summary>Die ' . count( $covered ) . ' Länder und Gebiete in Grün</summary>';
+            $out[] = '';
+            $out[] = '| Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |';
+        }
+        else
+        {
+            $out[] = '**At a glance, on ' . $when . '.** A default installation (the shipped `share/locale`, `share/translations`';
+            $out[] = 'and `settings/i18n.ini`, no extension) has:';
+            $out[] = '';
+            $out[] = '| What | How many |';
+            $out[] = '|---|---:|';
+            $out[] = '| Languages of the administration: translations in `share/translations` | **' . $t['total'] . '**, ' . $t['complete'] . ' of them complete |';
+            $out[] = '| Locales: `share/locale/*.ini` files | **' . $l['files'] . '**: ' . ( $l['base'] - $l['test'] ) . ' languages and countries, ' . $l['test'] . ' test language, ' . $l['variants'] . ' variants |';
+            $out[] = '| Known languages: the language codes of the locales (variants and the test language left out) | **' . $l['languages'] . '** |';
+            $out[] = '| of them shown translated by the administration (own translation, fallback or English) | **' . $data['supported'] . '** |';
+            $out[] = '| of them not translated ([list](#the-languages-not-translated-yet)) | **' . ( $l['languages'] - $data['supported'] ) . '** |';
+            $out[] = '| Countries and territories of the locales | **' . count( $countries ) . '** |';
+            $out[] = '| of them with the administration in their language (green on the map) | **' . $data['covered'] . '** |';
+            $out[] = '| Locales written right to left | **' . $l['rtl'] . '** |';
+            $out[] = '';
+            $out[] = '![World map: ' . $data['covered'] . ' countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](' . $image . ')';
+            $out[] = '';
+            $out[] = 'A country is green when a locale ships for it whose language the administration shows translated: with a';
+            $out[] = 'translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,';
+            $out[] = '`FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the';
+            $out[] = 'language of the source texts. The map as a vector image: `' . $svgPath . '`; outlines: Natural Earth, public domain.';
+            $out[] = '';
+            $out[] = '<details><summary>The ' . count( $covered ) . ' countries and territories in green</summary>';
+            $out[] = '';
+            $out[] = '| Country or territory | Code | Locales and the translation they show |';
+        }
+        $out[] = '|---|---|---|';
+        foreach ( $covered as $country )
+            $out[] = '| ' . self::cell( $country['name'] ) . ' | ' . $country['code'] . ' | ' . self::localeList( $country['locales'], $german, true ) . ' |';
+        $out[] = '';
+        $out[] = '</details>';
+        $out[] = '';
+        $out[] = $german ? '<details><summary>Die ' . count( $others ) . ' Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>'
+                         : '<details><summary>The ' . count( $others ) . ' countries and territories with a locale but the administration in English</summary>';
+        $out[] = '';
+        $out[] = $german ? '| Land oder Gebiet | Code | Locales |' : '| Country or territory | Code | Locales |';
+        $out[] = '|---|---|---|';
+        foreach ( $others as $country )
+            $out[] = '| ' . self::cell( $country['name'] ) . ' | ' . $country['code'] . ' | ' . self::localeList( $country['locales'], $german ) . ' |';
+        $out[] = '';
+        $out[] = '</details>';
+        $out[] = '';
+        $out[] = $german
+            ? 'Erzeugt mit `./console exp:i18n coverage` aus den mitgelieferten Dateien; `./console exp:i18n coverage --check` und der Test `expI18nCoverageMapTest` schlagen fehl, sobald Zahlen oder Karte veraltet sind.'
+            : 'Made by `./console exp:i18n coverage` from the shipped files; `./console exp:i18n coverage --check` and the test `expI18nCoverageMapTest` fail when the figures or the map are out of date.';
+        $out[] = self::END;
+        return implode( "\n", $out );
+    }
+
+    /**
+     * The generated section of the languages the administration does not show translated, with its markers.
+     *
+     * @param string $language the documentation language
+     * @return string
+     */
+    public function languagesBlock( $language )
+    {
+        $data = $this->data();
+        $german = $language === 'ger-de';
+        $missing = $this->untranslatedLanguages();
+        $known = count( $data['languages'] );
+        $out = array();
+        $out[] = self::LANGUAGES_START;
+        if ( $german )
+        {
+            $out[] = '## Die noch nicht übersetzten Sprachen';
+            $out[] = '';
+            $out[] = 'Exponential kennt **' . $known . ' Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem';
+            $out[] = 'Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **' . $data['supported'] . '** davon';
+            $out[] = 'zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste';
+            $out[] = 'Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die';
+            $out[] = 'übrigen **' . count( $missing ) . '** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung';
+            $out[] = '(siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.';
+            $out[] = '';
+            $out[] = '<details><summary>Die ' . count( $missing ) . ' nicht übersetzten Sprachen</summary>';
+            $out[] = '';
+            $out[] = '| Sprache | Eigener Name | Code | Locales (Länder) |';
+        }
+        else
+        {
+            $out[] = '## The languages not translated yet';
+            $out[] = '';
+            $out[] = 'Exponential knows **' . $known . ' languages**: that many different language codes (the three letters before the';
+            $out[] = 'dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The';
+            $out[] = 'administration shows **' . $data['supported'] . '** of them translated: at least one of their locales has a translation of its';
+            $out[] = 'own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the';
+            $out[] = 'source texts. For the other **' . count( $missing ) . '** it shows the source texts in English; each is a candidate for a new';
+            $out[] = 'translation (see [section 8](#8-adding-or-completing-an-administration-translation)).';
+            $out[] = '';
+            $out[] = '<details><summary>The ' . count( $missing ) . ' languages not translated</summary>';
+            $out[] = '';
+            $out[] = '| Language | Own name | Code | Locales (countries) |';
+        }
+        $out[] = '|---|---|---|---|';
+        $names = $this->countryNames( $language );
+        foreach ( $missing as $item )
+        {
+            $locales = array();
+            foreach ( $item['locales'] as $locale )
+            {
+                $region = substr( $locale['locale'], 4, 2 );
+                $locales[] = '`' . $locale['locale'] . '`' . ( isset( $names[$region] ) ? ' (' . self::cell( $names[$region] ) . ')' : '' );
+            }
+            $out[] = '| ' . self::cell( $item['name'] ) . ' | ' . self::cell( $item['native'] ) . ' | `' . $item['code'] . '` | ' . implode( ', ', $locales ) . ' |';
+        }
+        $out[] = '';
+        $out[] = '</details>';
+        $out[] = self::LANGUAGES_END;
+        return implode( "\n", $out );
+    }
+
+    /**
+     * The page with its generated languages section replaced, or put before the first numbered section ("## 1.")
+     * when it has none yet, else at the end.
+     *
+     * @param string $page
+     * @param string $block languagesBlock()
+     * @return string
+     */
+    public static function replaceLanguagesBlock( $page, $block )
+    {
+        $start = strpos( $page, self::LANGUAGES_START );
+        $end = strpos( $page, self::LANGUAGES_END );
+        if ( $start !== false && $end !== false && $end > $start )
+            return substr( $page, 0, $start ) . $block . substr( $page, $end + strlen( self::LANGUAGES_END ) );
+        if ( preg_match( '/^## 1\. /m', $page, $h, PREG_OFFSET_CAPTURE ) )
+            return substr( $page, 0, $h[0][1] ) . $block . "\n\n" . substr( $page, $h[0][1] );
+        return rtrim( $page, "\n" ) . "\n\n" . $block . "\n";
+    }
+
+    /**
+     * The locales of a country as a table cell: `fre-CA` → `fre-FR`, `ger-DE`, `eng-CA` (source texts) and, with
+     * $marked, `kab-DZ` (untranslated).
+     *
+     * @param array $locales
+     * @param bool $german
+     * @param bool $marked mark the locales without a translation
+     * @return string
+     */
+    protected static function localeList( array $locales, $german, $marked = false )
+    {
+        $parts = array();
+        foreach ( $locales as $locale )
+        {
+            $text = '`' . $locale['locale'] . '`';
+            if ( $locale['shows'] === 'eng' )
+                $text .= $german ? ' (Quelltexte)' : ' (source texts)';
+            elseif ( $locale['shows'] === '' && $marked )
+                $text .= $german ? ' (nicht übersetzt)' : ' (untranslated)';
+            elseif ( $locale['shows'] !== '' && $locale['shows'] !== $locale['locale'] )
+                $text .= ' → `' . $locale['shows'] . '`';
+            $parts[] = $text;
+        }
+        return implode( ', ', $parts );
+    }
+
+    /**
+     * @param string $text
+     * @return string text safe in a Markdown table cell
+     */
+    protected static function cell( $text )
+    {
+        return str_replace( array( '|', '<', '>' ), array( '\\|', '&lt;', '&gt;' ), (string)$text );
+    }
+
+    /**
+     * The page with its generated part replaced, or put right below the first heading when it has none yet.
+     *
+     * @param string $page the page's text
+     * @param string $block block()
+     * @return string
+     */
+    public static function replaceBlock( $page, $block )
+    {
+        $start = preg_match( self::START_PATTERN, $page, $m, PREG_OFFSET_CAPTURE ) ? $m[0][1] : false;
+        $end = strpos( $page, self::END );
+        if ( $start !== false && $end !== false && $end > $start )
+            return substr( $page, 0, $start ) . $block . substr( $page, $end + strlen( self::END ) );
+        // below the first heading, after any front matter
+        if ( preg_match( '/^# .*\n\n/m', $page, $h, PREG_OFFSET_CAPTURE ) )
+        {
+            $at = $h[0][1] + strlen( $h[0][0] );
+            return substr( $page, 0, $at ) . $block . "\n\n" . substr( $page, $at );
+        }
+        return $block . "\n\n" . $page;
+    }
+
+    /**
+     * The date in a page's start marker, or null.
+     *
+     * @param string $page
+     * @return string|null YYYY-MM-DD
+     */
+    public static function markerDate( $page )
+    {
+        return preg_match( self::START_PATTERN, (string)$page, $m ) ? $m[1] : null;
+    }
+
+    /**
+     * What the files should hold: path => content, for each language's map and page. A page keeps the date of its
+     * marker while its generated part is otherwise unchanged; else it gets $date.
+     *
+     * @param string $date YYYY-MM-DD
+     * @return array
+     */
+    public function build( $date )
+    {
+        $files = array();
+        foreach ( self::PAGES as $language => $paths )
+        {
+            $files[$paths['svg']] = $this->svg( $language );
+            $page = (string)@file_get_contents( $this->root . '/' . $paths['page'] );
+            $page = self::replaceLanguagesBlock( $page, $this->languagesBlock( $language ) );
+            $marked = self::markerDate( $page );
+            $content = self::replaceBlock( $page, $this->block( $language, $date ) );
+            if ( $marked !== null && self::replaceBlock( $page, $this->block( $language, $marked ) ) === $page )
+                $content = $page;
+            $files[$paths['page']] = $content;
+        }
+        return $files;
+    }
+
+    /**
+     * The differences between the files and build(): a list of messages, empty when everything is current. A WebP
+     * copy must exist and, when Imagick can render SVG, look like its map rendered again (RASTER_TOLERANCE).
+     *
+     * @param string $date
+     * @param bool $raster false: only check that the WebP copies exist
+     * @return string[]
+     */
+    public function check( $date, $raster = true )
+    {
+        $problems = array();
+        foreach ( $this->build( $date ) as $path => $content )
+        {
+            $current = @file_get_contents( $this->root . '/' . $path );
+            if ( $current === false )
+                $problems[] = "$path is missing: run ./console exp:i18n coverage";
+            elseif ( $current !== $content )
+                $problems[] = "$path is out of date: run ./console exp:i18n coverage";
+        }
+        foreach ( self::PAGES as $language => $paths )
+        {
+            $file = $this->root . '/' . $paths['raster'];
+            if ( !is_file( $file ) )
+                $problems[] = $paths['raster'] . ' is missing: run ./console exp:i18n coverage';
+            elseif ( $raster && self::canRasterize() )
+            {
+                $difference = self::rasterDifference( $this->svg( $language ), $file );
+                if ( $difference === null || $difference > self::RASTER_TOLERANCE )
+                    $problems[] = $paths['raster'] . ' does not show the current map: run ./console exp:i18n coverage --raster';
+            }
+        }
+        return $problems;
+    }
+
+    /**
+     * Writes the files that changed, and the WebP copy of each map that changed, is missing or, with $raster, every
+     * one.
+     *
+     * @param string $date
+     * @param bool $raster true: write every WebP copy again
+     * @return array hash( written => paths, errors => messages )
+     */
+    public function write( $date, $raster = false )
+    {
+        $written = array();
+        $errors = array();
+        foreach ( $this->build( $date ) as $path => $content )
+        {
+            $file = $this->root . '/' . $path;
+            if ( @file_get_contents( $file ) === $content )
+                continue;
+            if ( !is_dir( dirname( $file ) ) )
+                mkdir( dirname( $file ), 0775, true );
+            file_put_contents( $file, $content );
+            $written[] = $path;
+        }
+        foreach ( self::PAGES as $paths )
+        {
+            $file = $this->root . '/' . $paths['raster'];
+            if ( !$raster && is_file( $file ) && !in_array( $paths['svg'], $written, true ) )
+                continue;
+            $blob = self::rasterize( (string)file_get_contents( $this->root . '/' . $paths['svg'] ), $error );
+            if ( $blob === null )
+            {
+                $errors[] = $paths['raster'] . ': ' . $error;
+                continue;
+            }
+            if ( @file_get_contents( $file ) !== $blob )
+            {
+                file_put_contents( $file, $blob );
+                $written[] = $paths['raster'];
+            }
+        }
+        return array( 'written' => $written, 'errors' => $errors );
+    }
+
+    /**
+     * Whether Imagick can read SVG and write WebP here.
+     *
+     * @return bool
+     */
+    public static function canRasterize()
+    {
+        return class_exists( 'Imagick' ) && Imagick::queryFormats( 'SVG' ) && Imagick::queryFormats( 'WEBP' );
+    }
+
+    /**
+     * The WebP copy of an SVG at its own size, lossless, transparent where the map has no land.
+     *
+     * @param string $svg
+     * @param string|null $error set to the reason when there is no copy
+     * @return string|null
+     */
+    public static function rasterize( $svg, &$error = null )
+    {
+        $error = '';
+        if ( !self::canRasterize() )
+        {
+            $error = 'Imagick with SVG and WebP support is needed for the WebP copy';
+            return null;
+        }
+        try
+        {
+            $image = new Imagick();
+            $image->setBackgroundColor( new ImagickPixel( 'transparent' ) );
+            $image->readImageBlob( (string)$svg );
+            $image->setImageFormat( 'webp' );
+            $image->setOption( 'webp:lossless', 'true' );
+            $image->setOption( 'webp:method', '6' );
+            $image->stripImage();
+            $blob = $image->getImageBlob();
+            $image->clear();
+            return $blob;
+        }
+        catch ( Exception $e )
+        {
+            $error = $e->getMessage();
+            return null;
+        }
+    }
+
+    /**
+     * How far a WebP copy is from its map rendered again: the mean absolute difference per channel, 0 to 1; null when
+     * the sizes differ or a picture cannot be read.
+     *
+     * @param string $svg
+     * @param string $webpFile
+     * @return float|null
+     */
+    public static function rasterDifference( $svg, $webpFile )
+    {
+        $blob = self::rasterize( $svg );
+        if ( $blob === null )
+            return null;
+        try
+        {
+            $expected = new Imagick();
+            $expected->readImageBlob( $blob );
+            $actual = new Imagick( $webpFile );
+            if ( $expected->getImageWidth() !== $actual->getImageWidth() || $expected->getImageHeight() !== $actual->getImageHeight() )
+                return null;
+            $result = $expected->compareImages( $actual, Imagick::METRIC_MEANABSOLUTEERROR );
+            $expected->clear();
+            $actual->clear();
+            $range = Imagick::getQuantumRange();
+            $quantum = isset( $range['quantumRangeLong'] ) ? (float)$range['quantumRangeLong'] : 65535.0;
+            // Imagick 3 gives the difference normalized (0 to 1) or in quantum units, depending on its version
+            return (float)$result[1] > 1 ? (float)$result[1] / $quantum : (float)$result[1];
+        }
+        catch ( Exception $e )
+        {
+            return null;
+        }
+    }
+}
