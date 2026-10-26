@@ -1795,7 +1795,7 @@ class Action extends \Exponential\Runnable\ModuleView
                 // "Call to a member function attribute() on null", as ActionRemove did
                 if ( !$object instanceof \eZContentObject )
                 {
-                    return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                    return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
                 }
                 $module->redirectTo( $module->functionURI( 'versionview' ) . '/' . $objectID . '/' . $object->attribute( 'current_version' ) . '/' );
                 return $this->viewResult( isset( $Result ) ? $Result : null, null );
@@ -1815,7 +1815,7 @@ class Action extends \Exponential\Runnable\ModuleView
                     // "Call to a member function attribute() on null"; answered like the other branches with a missing node.
                     if ( !$node instanceof \eZContentObjectTreeNode )
                     {
-                        return $this->viewResult( isset( $Result ) ? $Result : null,  $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                        return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
                     }
                     $parentNodeID = $node->attribute( 'parent_node_id' );
                 }

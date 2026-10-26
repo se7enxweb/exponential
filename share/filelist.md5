@@ -22634,7 +22634,7 @@ e7563299271b184bcb13cfc88f720e44  kernel/private/classes/views/class/removegroup
 04e79715afd000fa2c3b362974714174  kernel/private/classes/views/collaboration/group.php
 699c99a3cc1f94f29a834742110cfaa8  kernel/private/classes/views/collaboration/item.php
 ccefa96914e28491976b457d03a55ba1  kernel/private/classes/views/collaboration/view.php
-653c04f3a5df733fdb4c8c6980f6fa31  kernel/private/classes/views/content/action.php
+58cd30f17c3742d94473631976bc2602  kernel/private/classes/views/content/action.php
 58a9443b36a375d365c43bb1aa4cc3ed  kernel/private/classes/views/content/advancedsearch.php
 d7a18f14f302f62a7bb633e91917ff33  kernel/private/classes/views/content/bookmark.php
 30c6386008e5ca98774846ae08d7741a  kernel/private/classes/views/content/browse.php
