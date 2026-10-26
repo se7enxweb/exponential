@@ -57355,12 +57355,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ప్యాకేజీ</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>ఆర్కైవ్ PAX tar ఫార్మాట్‌లో ప్యాక్ చేయబడింది, దాన్ని దిగుమతి చేయలేరు. ప్యాకేజీని GNU tar ఫార్మాట్‌లో ప్యాక్ చేయండి (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ఆర్కైవ్ తిరస్కరించబడింది: ఎంట్రీ “%path” లో %length బైట్ల కంటే పొడవైన ఫైల్ లేదా డైరెక్టరీ పేరు ఉంది, దానిని ఏ ఫైల్ సిస్టమ్ నిల్వ చేయదు.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>ఆర్కైవ్ తిరస్కరించబడింది: “%path” ఎంట్రీకి tar రకం “%type” ఉంది, కానీ ప్యాకేజీలో ఫైల్‌లు మరియు డైరెక్టరీలు మాత్రమే ఉంటాయి.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>లింక్ “%path” ప్యాకేజీ వెలుపలికి సూచిస్తుంది (%target), దిగుమతి చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>లింక్ “%path” ప్యాకేజీలో లేని “%target” వైపు సూచిస్తుంది, దిగుమతి చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>లింక్ “%path” డైరెక్టరీ “%target” వైపు సూచిస్తుంది, దిగుమతి చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>ఎంట్రీ “%path” ఒక పరికరం లేదా పేరున్న పైప్ (tar రకం “%type”), దిగుమతి చేయలేదు.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>ఎంట్రీ “%path” యొక్క tar రకం “%type”, దీన్ని ప్యాకేజీ ఉపయోగించదు, దిగుమతి చేయలేదు.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

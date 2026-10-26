@@ -57355,12 +57355,28 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Fakiti</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>An haɗa ajiyar a tsarin PAX tar, wanda ba za a iya shigo da shi ba. Haɗa fakitin a tsarin GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>An ƙi rumbun: shigarwa “%path” tana da sunan fayil ko babban fayil da ya fi baiti %length tsawo, wanda babu tsarin fayil da ke adana shi.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>An ƙi ajiyar: shigarwar “%path” tana da nau&apos;in tar “%type”, kuma fakiti yana ƙunshe da fayiloli da kundin adireshi kawai.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna wajen fakitin (%target) kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna “%target”, wanda ba ya cikin fakitin, kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna babban fayil “%target” kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Shigarwa “%path” na’ura ce ko bututu mai suna (nau’in tar “%type”) kuma ba a shigo da ita ba.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Shigarwa “%path” tana da nau’in tar “%type”, wanda fakiti ba ya amfani da shi, kuma ba a shigo da ita ba.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

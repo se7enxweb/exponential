@@ -57300,12 +57300,28 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Balík</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Archív bol zbalený vo formáte PAX tar, ktorý nemožno importovať. Zbaľte balík vo formáte GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Archív bol odmietnutý: položka „%path“ má názov súboru alebo adresára dlhší ako %length bajtov, ktorý žiadny súborový systém neuloží.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Archív bol odmietnutý: položka „%path“ má typ tar „%type“, pričom balík obsahuje iba súbory a adresáre.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje mimo balíka (%target) a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje na „%target“, ktorý balík neobsahuje, a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje na adresár „%target“ a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Položka „%path“ je zariadenie alebo pomenovaná rúra (typ tar „%type“) a nebola importovaná.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Položka „%path“ má typ tar „%type“, ktorý balík nepoužíva, a nebola importovaná.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

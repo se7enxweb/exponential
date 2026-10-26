@@ -57300,12 +57300,28 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Paketti</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkisto on pakattu PAX-tar-muotoon, jota ei voi tuoda. Pakkaa paketti GNU-tar-muotoon (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkisto hylättiin: merkinnän ”%path” tiedosto- tai hakemistonimi on yli %length tavua pitkä, eikä mikään tiedostojärjestelmä tallenna sitä.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkisto hylättiin: kohteen ”%path” tar-tyyppi on ”%type”, ja paketti voi sisältää vain tiedostoja ja hakemistoja.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa paketin ulkopuolelle (%target), eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa kohteeseen ”%target”, jota paketissa ei ole, eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Linkki ”%path” osoittaa hakemistoon ”%target”, eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Merkintä ”%path” on laite tai nimetty putki (tar-tyyppi ”%type”), eikä sitä tuotu.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Merkinnän ”%path” tar-tyyppi on ”%type”, jota paketti ei käytä, eikä sitä tuotu.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

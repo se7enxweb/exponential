@@ -57300,12 +57300,28 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>Pakkett</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>L-arkivju ġie ppakkjat fil-format PAX tar, li ma jistax jiġi importat. Ippakkja l-pakkett fil-format GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>L-arkivju ġie rrifjutat: l-entrata "%path" għandha isem ta’ fajl jew direttorju itwal minn %length byte, li l-ebda sistema ta’ fajls ma taħżen.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>L-arkivju ġie rrifjutat: l-entrata "%path" għandha t-tip tar "%type", u pakkett ikun fih biss fajls u direttorji.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Il-link "%path" jindika barra mill-pakkett (%target) u ma ġiex importat.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Il-link "%path" jindika lejn "%target", li mhux fil-pakkett, u ma ġiex importat.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Il-link "%path" jindika lejn id-direttorju "%target" u ma ġiex importat.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>L-entrata "%path" hija apparat jew pipe bl-isem (tip tar "%type") u ma ġietx importata.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>L-entrata "%path" għandha t-tip tar "%type", li pakkett ma jużax, u ma ġietx importata.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

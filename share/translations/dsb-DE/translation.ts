@@ -57300,12 +57300,28 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Paket</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Archiwna dataja jo se zapakowała we formaśe PAX tar, kótaryž njedajo se importěrowaś. Zapakujśo paket we formaśe GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Archiwna dataja jo se wótpokazała: zapisk "%path" ma mě dataje abo zarědnika, kótarež jo dlejše ako %length bajtow a kótarež žeden datajowy system njeskładujo.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Archiwna dataja jo se wótpokazała: zapisk "%path" ma tar-typ "%type", a paket wopśimujo jano dataje a zarědniki.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Wótkaz "%path" pokazujo wen z paketa (%target) a njejo se importěrował.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Wótkaz "%path" pokazujo na "%target", kótaryž w paketje njejo, a njejo se importěrował.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Wótkaz "%path" pokazujo na zarědnik "%target" a njejo se importěrował.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Zapisk "%path" jo rěd abo pomjenjona rołka (tar-typ "%type") a njejo se importěrował.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Zapisk "%path" ma tar-typ "%type", kótaryž paket njewužywa, a njejo se importěrował.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

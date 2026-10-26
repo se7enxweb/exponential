@@ -57253,12 +57253,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" ווייַזט אַרויס פֿונעם פּעקל.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>דער אַרכיוו איז איינגעפּאַקט געוואָרן אינעם PAX־tar־פֿאָרמאַט, וואָס מען קען ניט אימפּאָרטירן. פּאַקט אייַן דאָס פּעקל אינעם GNU־tar־פֿאָרמאַט (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" האָט אַ טעקע־ אָדער מאַפּע־נאָמען לענגער ווי %length בייטן, וואָס קיין טעקע־סיסטעם היט נישט.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>דער אַרכיוו איז אָפּגעזאָגט געוואָרן: די פּאָזיציע "%path" האָט דעם tar־טיפּ "%type", און אַ פּעקל האַלט נאָר טעקעס און מאַפּעס.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אַרויס פֿונעם פּעקל (%target) און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אויף "%target", וואָס איז נישטאָ אינעם פּעקל, און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>דער לינק "%path" ווייזט אויף דער מאַפּע "%target" און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>די פּאָזיציע "%path" איז אַ מכשיר אָדער אַ באַנאָמענטע רער (tar־טיפּ "%type") און איז נישט אימפּאָרטירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>די פּאָזיציע "%path" האָט דעם tar־טיפּ "%type", וואָס אַ פּעקל ניצט נישט, און איז נישט אימפּאָרטירט געוואָרן.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

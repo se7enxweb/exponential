@@ -57300,12 +57300,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>パッケージ</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>アーカイブファイルはインポートできない PAX tar 形式でパックされています。パッケージを GNU tar 形式でパックしてください (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)。</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>アーカイブは拒否されました: エントリ「%path」には %length バイトを超えるファイル名またはディレクトリ名があり、どのファイルシステムにも保存できません。</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>アーカイブファイルは拒否されました: エントリ「%path」の tar タイプは「%type」ですが、パッケージに含めることができるのはファイルとディレクトリのみです。</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>リンク「%path」はパッケージの外 (%target) を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>リンク「%path」はパッケージに含まれない「%target」を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>リンク「%path」はディレクトリ「%target」を指しているため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>エントリ「%path」はデバイスまたは名前付きパイプ (tar タイプ「%type」) のため、インポートされませんでした。</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>エントリ「%path」の tar タイプ「%type」はパッケージで使われないため、インポートされませんでした。</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

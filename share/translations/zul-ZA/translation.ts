@@ -57355,12 +57355,28 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <translation>Iphakheji</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Ingobo yomlando ipakishwe ngefomethi ye-PAX tar, engakwazi ukungeniswa. Pakishani iphakheji ngefomethi ye-GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Ingobo yomlando yenqatshiwe: okufakiwe “%path” kunegama lefayela noma lohla olude kunama-byte angu-%length, okungekho sistimu yamafayela eligcinayo.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>Ingobo yomlando yenqatshiwe: into “%path” inohlobo lwe-tar “%type”, kanti iphakheji iqukethe amafayela namafolda kuphela.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Isixhumanisi “%path” sikhomba ngaphandle kwephakheji (%target) futhi asingeniswanga.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Isixhumanisi “%path” sikhomba ku-“%target”, ongekho kuphakheji, futhi asingeniswanga.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Isixhumanisi “%path” sikhomba kuhla “%target” futhi asingeniswanga.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Okufakiwe “%path” kuyidivayisi noma ipayipi elinegama (uhlobo lwe-tar “%type”) futhi akungeniswanga.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Okufakiwe “%path” kunohlobo lwe-tar “%type”, olungasetshenziswa yiphakheji, futhi akungeniswanga.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

@@ -57300,12 +57300,28 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Pacáiste</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Pacáladh an comhad cartlainne san fhormáid PAX tar, nach féidir a iompórtáil. Pacáil an pacáiste san fhormáid GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Diúltaíodh don chomhad cartlainne: tá ainm comhaid nó comhadlainne níos faide ná %length beart san iontráil "%path", agus ní stórálann aon chóras comhad é.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Diúltaíodh don chomhad cartlainne: is den chineál tar "%type" an iontráil "%path", agus ní bhíonn i bpacáiste ach comhaid agus comhadlanna.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Díríonn an nasc "%path" lasmuigh den phacáiste (%target) agus níor iompórtáladh é.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Díríonn an nasc "%path" ar "%target", nach bhfuil sa phacáiste, agus níor iompórtáladh é.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Díríonn an nasc "%path" ar an gcomhadlann "%target" agus níor iompórtáladh é.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Is gléas nó píopa ainmnithe í an iontráil "%path" (cineál tar "%type") agus níor iompórtáladh í.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Is den chineál tar "%type" an iontráil "%path", nach n-úsáideann pacáiste, agus níor iompórtáladh í.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

@@ -57300,12 +57300,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>패키지</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>아카이브 파일이 가져올 수 없는 PAX tar 형식으로 압축되었습니다. 패키지를 GNU tar 형식으로 압축하세요(GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>아카이브가 거부되었습니다: 항목 "%path"에 %length바이트보다 긴 파일 또는 디렉터리 이름이 있으며, 어떤 파일 시스템도 이를 저장하지 않습니다.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>아카이브 파일이 거부되었습니다. 항목 "%path"의 tar 유형이 "%type"이지만 패키지에는 파일과 디렉터리만 포함할 수 있습니다.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>링크 "%path"이(가) 패키지 밖(%target)을 가리키므로 가져오지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>링크 "%path"이(가) 패키지에 없는 "%target"을(를) 가리키므로 가져오지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>링크 "%path"이(가) 디렉터리 "%target"을(를) 가리키므로 가져오지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>항목 "%path"은(는) 장치 또는 이름 있는 파이프(tar 유형 "%type")이므로 가져오지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>항목 "%path"의 tar 유형 "%type"은(는) 패키지에서 쓰지 않으므로 가져오지 않았습니다.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
