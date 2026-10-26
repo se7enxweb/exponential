@@ -109,7 +109,8 @@ A create answers `{"message":"Created","objectId":...,"nodeId":...}`. More in
 | `[ApiProvider] ProviderClass[<prefix>]` | the provider class of each prefix |
 | `[Authentication] RequireAuthentication`, `AuthenticationStyle`, `RequireHTTPS` | who may call, how, and only over HTTPS |
 | `[ApiKeySettings] ApiKeys` | personal keys on or off (on by default) |
-| `[OAuthSettings] TokenTTL` | the life of an OAuth2 token |
+| `[OAuthSettings] TokenTTL`, `RefreshTokenTTL` | the life of an OAuth2 token and of its refresh token |
+| `[OAuthSettings] AllowTokenInQuery`, `AllowTokenInBody` | where else than the `Authorization` header a token is read |
 
 Read them as the site sees them: `./console exp:ini list rest.ini/Authentication`. Turn `RequireHTTPS` on for any
 installation reachable by others.

@@ -1,6 +1,6 @@
 # Hilfestandards: was die Hilfe von DITA, IEC/IEEE 82079-1, ISO/IEC/IEEE 26514, ISO 3864-2, EPUB Accessibility und WCAG übernimmt
 
-Stand: 19. Oktober 2026. Der Pull-Request #288 („Help system plan, style guide and standards“) kündigte diese Seite als
+Stand: 19. Oktober 2026, aktualisiert am 25. Oktober 2026. Der Pull-Request #288 („Help system plan, style guide and standards“) kündigte diese Seite als
 dritte seiner Spezifikationen an, neben dem [Plan](hilfesystem.md) und den [Stilrichtlinien](hilfe-stilrichtlinien.md), aber die
 Datei war beim Mergen nicht Teil des Pull-Requests. Diese Seite ist aus den beiden gemergten Seiten geschrieben und aus dem,
 was Exponential 6.0.15 tatsächlich tut ([Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md)).
@@ -27,11 +27,11 @@ einige davon, macht manches bewusst anders und lässt den Rest weg. Wo eine Rege
 
 | Standard | Verwendet für | Wie weit |
 |---|---|---|
-| DITA 1.3 (OASIS) | das Informationsmodell: Thementypen, Maps, Filterattribute, `shortdesc` | das Modell als Inhaltsklassen; es wird kein DITA-XML gespeichert. Ein Export nach DITA ist in Arbeit |
+| DITA 1.3 (OASIS) | das Informationsmodell: Thementypen, Maps, Filterattribute, `shortdesc` | das Modell als Inhaltsklassen; es wird kein DITA-XML gespeichert, der Export schreibt DITA 1.3 |
 | IEC/IEEE 82079-1:2019 | Inhaltsregeln für Anleitungen: Hinweise dort, wo die Handlung geschieht, Voraussetzungen, Ergebnis, Minimalismus | für Struktur und Hinweise übernommen; die Signalwörter für Gefährdungen werden nicht verwendet |
 | ISO/IEC/IEEE 26514:2022 | Gestaltung von Benutzerinformation: Zielgruppen, Aufgabenorientierung, Prüfung, Pflege | als redaktioneller Ablauf übernommen (Zustände, Rollen, Prüfdatum); kein formaler Dokumentationsplan je Release |
 | ISO 3864-2:2016 | Sicherheitszeichen und Signalwörter | nur, um zu begründen, warum DANGER, WARNING und CAUTION nicht verwendet werden |
-| EPUB Accessibility 1.1 | die E-Books der Handbücher | die Metadaten und die Struktur werden geschrieben; Exponential prüft die Bücher nicht mit Ace oder epubcheck |
+| EPUB Accessibility 1.1 | die E-Books der Handbücher | die Metadaten und die Struktur werden geschrieben; epubcheck und Ace laufen für jedes Buch, wo die Website sie hat |
 | WCAG 2.2 AA | die Hilfe in der Administration und die E-Books | die Hilfe folgt den Gestaltungsregeln der Administrationsoberfläche; es gibt keine Prüfung durch einen Audit |
 
 ## DITA 1.3
@@ -65,8 +65,9 @@ einige davon, macht manches bewusst anders und lässt den Rest weg. Wo eine Rege
 - **Ein Glossareintrag** (`help_glossary_entry`) ist ein redaktionelles Werkzeug mit den zu vermeidenden Synonymen, kein
   DITA-`glossentry`, das veröffentlicht wird.
 
-**Wie weit**: das Modell und der Validator. Der Export als DITA-Bookmap und das Speichern der E-Books als Dateiobjekte
-kommen getrennt hinzu ([Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md#abgleich-mit-den-spezifikationen)).
+**Wie weit**: das Modell, der Validator und der Export nach DITA 1.3 (Bookmaps, DITAVAL, Themen, Glossar, gültig gegen die
+DTDs von OASIS), auch als Historie in git ([Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md#dita-export)).
+DITA-OT wird nicht ausgeführt: Exponential schreibt die E-Books selbst.
 
 ## IEC/IEEE 82079-1:2019
 
@@ -112,7 +113,8 @@ Der Standard für die Gestaltung und Entwicklung von Informationen für Benutzer
 - **Aufgabenorientierung und Minimalismus**: Thementypen, „die Handlung zuerst“, nichts Selbstverständliches, was
   schiefgehen kann in einem eigenen Fehlerbehebungsthema (Stilrichtlinien Abschnitte 1, 2 und 4).
 - **Prüfung und Freigabe**: die Objektzustände Draft, Review, Released und die Regel, dass der Autor sein eigenes Thema nicht
-  freigibt (die Rollen „Help editor“ und „Help release“).
+  freigibt (die Rollen „Help editor“ und „Help release“; beim Zuweisen der Zustände durchgesetzt und mit den Schritten auf
+  der Seite des Themas angezeigt).
 - **Kontextbezogene Hilfe**: ein Thema, das über seine `help_id` aus der Administrationsoberfläche oder einem anderen Client
   geöffnet wird (`exphelp/context/<help_id>`), wobei der Validator prüft, dass die von Clients verwendeten help_ids
   existieren (`client.help-id-unknown`, `client.help-id-not-released`).
@@ -122,7 +124,9 @@ Der Standard für die Gestaltung und Entwicklung von Informationen für Benutzer
 
 - **Kein Dokumentationsplan je Release** als eigenes Dokument. Was ein Release in der Hilfe ändert, steht im Changelog des
   Releases; das Prüfdatum und die Gültigkeitsfelder halten den Stand jedes Themas fest.
-- **Benutzertests der Dokumentation** bleiben der Website überlassen; die Hilfe hat noch kein „War das hilfreich?“.
+- **Benutzertests der Dokumentation** bleiben der Website überlassen; die Hilfe sammelt „War das hilfreich?“ je Thema (Ja,
+  oder Nein mit Grund, nichts darüber, wer geantwortet hat), die am wenigsten hilfreichen Themen zuerst auf der
+  Kommandozeile.
 
 **Wie weit**: der redaktionelle Ablauf und die Ausgabekanäle. Das Verfahren des Standards zum Planen, Schätzen und Steuern
 eines Dokumentationsprojekts wird nicht befolgt.
@@ -156,9 +160,11 @@ Die E-Books der Handbücher (`./console exp:help:content export --format=epub`, 
 
 **Anders**
 
-- Das Buch trägt `dcterms:conformsTo` „EPUB Accessibility 1.1 - WCAG 2.2 Level AA“, aber **Exponential prüft das Buch
-  nicht**: epubcheck und Ace von DAISY werden nicht mitgeliefert. Eine Website, die die Bücher veröffentlicht, lässt beide
-  vorher über die Datei laufen; ohne diesen Lauf ist die Angabe in den Metadaten nicht überprüft.
+- Das Buch trägt `dcterms:conformsTo` „EPUB Accessibility 1.1 - WCAG 2.2 Level AA“. epubcheck und Ace von DAISY werden
+  nicht mitgeliefert (Java, Node.js); eine Website, die sie hat, nennt ihre Befehle (`EpubCheckCommand`, `AceCommand`),
+  und Exponential führt beide für jedes gespeicherte Buch und bei `export --check` aus und speichert mit
+  `BookChecks=required` kein Buch, das nicht besteht. Ohne die Befehle wird eine Prüfung als übersprungen gemeldet, und die
+  Angabe in den Metadaten ist nicht überprüft.
 - Keine Seitenliste und keine Seitenumbrüche: Die Bücher haben keine gedruckte Ausgabe, auf die sie verweisen könnten.
 
 **Wie weit**: Die Metadaten und die Struktur, die der Standard verlangt, werden geschrieben; die Bewertung ist Sache des

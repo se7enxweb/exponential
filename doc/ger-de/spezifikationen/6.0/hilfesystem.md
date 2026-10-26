@@ -1,7 +1,15 @@
 # Plan: Benutzerhandbücher und Hilfe, gepflegt in Exponential
 
 Status: Vorschlag, 18. Oktober 2026; Phase 1 (Klassen, Baum, Sektionen, Zustände, Rollen, Validator, Web- und Kontexthilfe
-in der Hilfe der Administration) umgesetzt in 6.0.15, siehe [Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md).
+in der Hilfe der Administration) umgesetzt in 6.0.15, siehe [Hilfe als Inhalt gepflegt](../../funktionen/6.0/hilfeinhalte.md);
+ab 20. Oktober 2026 auch der DITA-Export, die gespeicherten E-Books und die überfälligen Prüfungen
+([Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-dita-ebooks-reviews.md)); ab 25. Oktober 2026 der Rest: die Regel,
+dass der Autor nicht freigibt, der Prüfablauf auf der Seite des Themas, veröffentlichte help_ids nie umbenannt oder
+wiederverwendet, die übrigen maschinell prüfbaren Regeln des Styleguides, „War das hilfreich?“ (Phase 7), Kontexthilfe
+für Clients mit Token (Auslieferungsweg 2), epubcheck und Ace, wo die Site sie hat (Weg 3), der regelmäßige DITA-Export
+nach git (Weg 4) und die Templates der öffentlichen Site (Weg 1, Extension exphelpsite), siehe
+[den Hinweis zur Aktualisierung](../../bc/6.0/hilfeinhalte-pruefablauf-rueckmeldung.md). Was ausgelassen ist und warum:
+[Abgleich mit den Spezifikationen](../../funktionen/6.0/hilfeinhalte.md#abgleich-mit-den-spezifikationen).
 Begleitseite: [der Styleguide für die Hilfe](hilfe-stilrichtlinien.md).
 
 ## Idee

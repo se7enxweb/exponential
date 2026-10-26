@@ -67,6 +67,10 @@ class AdminStoredValueEscapingTest extends PHPUnit\Framework\TestCase
                 array( 'array( $preferred_currency|wash )' ), array( 'array( $preferred_currency )' ) ),
             'inactive currency' => array( 'error/shop/4.tpl',
                 array( 'array( $preferred_currency|wash )' ), array( 'array( $preferred_currency )' ) ),
+            // the currency code comes from the URL and reaches the template for an unknown currency as well
+            'edited currency code' => array( 'shop/editcurrency.tpl',
+                array( "'%currency_code', \$original_currency_code|wash", 'value="{$original_currency_code|wash}"', '{$error|wash}' ),
+                array( "'%currency_code', \$original_currency_code )", 'value="{$original_currency_code}"' ) ),
         );
     }
 

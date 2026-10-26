@@ -20,6 +20,8 @@
  * - the upload's name ends in .ezpkg, .tar.gz or .tgz, and the file starts with the gzip signature;
  * - the archive is at most MaxArchiveSize bytes, has at most MaxEntries entries that unpack to at most
  *   MaxUnpackedSize bytes (package.ini [UploadSettings]);
+ * - its tar headers are of a kind ezcArchive reads without looping or reading unbounded long names
+ *   (expPackageArchive::scan(); PAX archives are refused);
  * - every entry is a plain file or a directory with a relative path without "..", a back slash, a NUL or a
  *   control character (safeEntryPath());
  * - package.xml is at the top, well formed, its root element is <package> and it has a <name> that
@@ -222,13 +224,14 @@ class eZPackageUploadInspector
      * @param string $originalName the name the browser sent (only its suffix is used)
      * @param array $limits overrides of limits()
      * @return array( 'ok' => bool, 'code' => string|null, 'path' => string (the entry concerned), 'entries' => int,
-     *                'bytes' => int, 'name' => string, 'vendor_dir' => string, 'summary' => string, 'version' => string )
+     *                'bytes' => int, 'name' => string, 'vendor_dir' => string, 'summary' => string, 'version' => string,
+     *                'type' => string (the tar type flag of a refused entry) )
      */
     static function inspect( $archivePath, $originalName, array $limits = array() )
     {
         $limits += self::limits();
         $result = array( 'ok' => false, 'code' => null, 'path' => '', 'entries' => 0, 'bytes' => 0,
-                         'name' => '', 'vendor_dir' => '', 'summary' => '', 'version' => '', 'format' => eZPackage::FORMAT_XML );
+                         'name' => '', 'vendor_dir' => '', 'summary' => '', 'version' => '', 'format' => eZPackage::FORMAT_XML, 'type' => '' );
         if ( !is_string( $archivePath ) || !is_file( $archivePath ) )
         {
             $result['code'] = 'no_file';
@@ -263,8 +266,17 @@ class eZPackageUploadInspector
         $definitionXML = null;
         try
         {
-            $archive = ezcArchive::open( "compress.zlib://$archivePath", eZPackage::archiveTarType( $archivePath ),
-                                         new ezcArchiveOptions( array( 'readOnly' => true ) ) );
+            // The tar headers are scanned before ezcArchive reads them. Measured with PHP 8.5.4: a PAX archive
+            // (Python's tarfile since 3.8, bsdtar for names that are not ASCII) kept this request in an endless
+            // loop until max_execution_time (expPackageArchive).
+            $archive = expPackageArchive::open( $archivePath, $tarProblem, $limits );
+            if ( !$archive )
+            {
+                $result['code'] = $tarProblem['code'];
+                $result['path'] = $tarProblem['path'];
+                $result['type'] = $tarProblem['type'];
+                return $result;
+            }
             $problem = self::entriesProblem( $archive, $limits );
             if ( $problem !== null )
             {
@@ -368,6 +380,9 @@ class eZPackageUploadInspector
             case 'too_many_entries': return ezpI18n::tr( 'kernel/package', 'The archive has more than %count entries.', false, array( '%count' => $limits['max_entries'] ) );
             case 'too_large_unpacked': return ezpI18n::tr( 'kernel/package', 'The archive unpacks to more than %size.', false, array( '%size' => self::bytesText( $limits['max_unpacked_size'] ) ) );
             case 'unsafe_path': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" points outside the package.', false, $path );
+            case 'tar_pax': return ezpI18n::tr( 'kernel/package', 'The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).' );
+            case 'tar_entry_type': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.', false, $path + array( '%type' => expPackageArchive::typeText( isset( $result['type'] ) ? $result['type'] : '' ) ) );
+            case 'tar_long_name': return ezpI18n::tr( 'kernel/package', 'The archive was refused: it names an entry longer than %length bytes.', false, array( '%length' => expPackageArchive::MAX_LONG_NAME ) );
             case 'unsafe_type': return ezpI18n::tr( 'kernel/package', 'The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.', false, $path );
             case 'no_definition': return ezpI18n::tr( 'kernel/package', 'The archive has no package.xml or package.json at its top, so it is not a package.' );
             case 'definition_malformed': return ezpI18n::tr( 'kernel/package', 'The package.xml of the archive is not a well formed package definition.' );

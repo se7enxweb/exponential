@@ -331,6 +331,48 @@ class expHelpContentProvider implements expHelpContextProviderInterface, expHelp
     }
 
     /**
+     * The validator's findings of one topic (the style guide's rules), for the people who edit or release it: the
+     * topic is checked with what its rules need (the topics it relates to, the topics with its help_id, its figures,
+     * the glossary, the released help_ids), not the whole help. The map rules belong to the manuals and are left out.
+     *
+     * @param array $topic a topic of topic() (with its fields)
+     * @return array the findings of expHelpContentValidator for this object, ERROR first
+     */
+    public function findings( array $topic )
+    {
+        $set = $this->repository()->load();
+        $objectId = (int)$topic['object_id'];
+        $related = array_map( 'intval', isset( $topic['related'] ) ? (array)$topic['related'] : array() );
+        $topics = array();
+        foreach ( $set['topics'] as $item )
+        {
+            if ( (int)$item['object_id'] === $objectId || in_array( (int)$item['object_id'], $related, true )
+                 || ( $topic['help_id'] !== '' && $item['help_id'] === $topic['help_id'] ) )
+                $topics[] = $item;
+        }
+        $wanted = array_map( 'intval', isset( $topic['figures'] ) ? (array)$topic['figures'] : array() );
+        $figures = array_values( array_filter( $set['figures'], function ( $figure ) use ( $wanted ) {
+            return in_array( (int)$figure['object_id'], $wanted, true );
+        } ) );
+        $registry = array();
+        foreach ( expHelpContentHelpIds::registry() as $helpId => $id )
+        {
+            if ( (int)$id === $objectId || $helpId === $topic['help_id'] )
+                $registry[$helpId] = $id;
+        }
+        $validator = new expHelpContentValidator( array( 'released_ids' => $registry, 'used_help_ids' => array() ) );
+        $findings = array();
+        foreach ( $validator->validate( $topics, $figures, array(), $set['glossary'] ) as $finding )
+        {
+            // a figure's section follows every topic that shows it, which this check does not read
+            if ( (int)$finding['object_id'] === $objectId
+                 || ( in_array( (int)$finding['object_id'], $wanted, true ) && $finding['code'] !== 'section.mismatch' ) )
+                $findings[] = $finding;
+        }
+        return $findings;
+    }
+
+    /**
      * A topic as a document of the help (the shape of expHelpDocumentIndex), for lists, search and the viewer's frame
      *
      * @param array $topic

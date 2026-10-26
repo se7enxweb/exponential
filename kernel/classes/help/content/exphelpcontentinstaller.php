@@ -62,8 +62,10 @@ class expHelpContentInstaller
      * @param string[] $steps
      * @return array changes
      */
-    public function install( array $steps = array( 'classes', 'tree', 'roles' ) )
+    public function install( array $steps = array( 'tables', 'classes', 'tree', 'roles' ) )
     {
+        if ( in_array( 'tables', $steps, true ) )
+            $this->installTables();
         if ( in_array( 'classes', $steps, true ) )
             $this->installClasses();
         if ( in_array( 'tree', $steps, true ) )
@@ -71,6 +73,25 @@ class expHelpContentInstaller
         if ( in_array( 'roles', $steps, true ) )
             $this->installRoles();
         return $this->changes;
+    }
+
+    // ---------------------------------------------------------------- tables
+
+    /**
+     * The tables exphelp_help_id and exphelp_feedback (expHelpContentTables), on an installation made before they
+     * were in the kernel schema. A table that exists is left alone.
+     */
+    public function installTables()
+    {
+        $messages = array();
+        $ok = expHelpContentTables::install( null, $this->dryRun, $messages );
+        foreach ( $messages as $message )
+        {
+            if ( strpos( $message, 'create' ) === 0 || strpos( $message, 'created' ) === 0 )
+                $this->change( 'tables', 'create', preg_replace( '/^(create|created) /', '', $message ) );
+            elseif ( !$ok )
+                $this->change( 'tables', 'error', $message );
+        }
     }
 
     // ---------------------------------------------------------------- classes
@@ -719,8 +740,8 @@ class expHelpContentInstaller
         $roles = expHelpContentSchema::roles();
         if ( $anonymous instanceof eZRole )
         {
-            // the opt-in context policy too, whether or not it is switched on now
-            $wanted = array( self::signature( 'exphelp', 'context', array() ) );
+            // the opt-in context and feedback policies too, whether or not they are switched on now
+            $wanted = array( self::signature( 'exphelp', 'context', array() ), self::signature( 'exphelp', 'feedback', array() ) );
             foreach ( $roles['Anonymous'] as $policy )
             {
                 $values = $resolved( $policy[2] );

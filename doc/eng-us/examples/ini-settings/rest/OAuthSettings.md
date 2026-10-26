@@ -2,14 +2,14 @@
 title: rest.ini [OAuthSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce"
-keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce
+summary: "The settings of [OAuthSettings] in rest.ini: TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce"
+keywords: rest.ini, OAuthSettings, INI, setting, TokenTTL, RefreshTokenTTL, AllowTokenInQuery, AllowTokenInBody, AuthorizeRequiresPolicy, RequirePkceForPublicClients, RequirePkceForConfidentialClients, AllowPlainPkce
 type: generated
 generated: exp:help:examples
 ---
 # rest.ini [OAuthSettings]
 
-The block `[OAuthSettings]` of `settings/rest.ini`, with 5 setting(s).
+The block `[OAuthSettings]` of `settings/rest.ini`, with 8 setting(s).
 
 Never edit `settings/rest.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -29,6 +29,57 @@ Default: `3600`.
 # settings/override/rest.ini.append.php
 [OAuthSettings]
 TokenTTL=3600
+*/ ?>
+```
+
+## RefreshTokenTTL
+
+> Refresh token time to live, in seconds; 0 = refresh tokens do not expire (as in earlier versions).  
+> Default is 30 days. Every refresh issues a new refresh token, so the lifetime counts from the last  
+> refresh. The issue time is derived from the access token's expiry and TokenTTL: changing TokenTTL  
+> shifts the deadline of refresh tokens issued before by the difference.  
+
+Default: `2592000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+RefreshTokenTTL=2592000
+*/ ?>
+```
+
+## AllowTokenInQuery
+
+> Where an access token is taken from. The Authorization header ("Bearer <token>" or "OAuth <token>")  
+> is always read and is the recommended way.  
+> AllowTokenInQuery: enabled or disabled (the default). Enabled: the oauth\_token query parameter  
+> (?oauth\_token=...) is accepted as well, as in earlier versions. A token in the address ends up in  
+> access logs, the browser history and Referer headers (RFC 6750, section 2.3); enable it only for  
+> old clients that cannot send the header.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+AllowTokenInQuery=disabled
+*/ ?>
+```
+
+## AllowTokenInBody
+
+> AllowTokenInBody: enabled (the default) or disabled. Enabled: the oauth\_token parameter of a POST  
+> form body is accepted when there is no Authorization header (RFC 6750, section 2.2).  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/rest.ini.append.php
+[OAuthSettings]
+AllowTokenInBody=enabled
 */ ?>
 ```
 

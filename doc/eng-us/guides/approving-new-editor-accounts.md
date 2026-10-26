@@ -79,6 +79,12 @@ opens: *Approval*, *Decision* with the account's preview, *Participants* (the ap
 - Or press **Deny** and confirm. Expected: *The account "<name>" was denied. It is not published and cannot sign in;
   it is a draft of its author again.* The editor finds it in *My drafts*.
 
+Before the decision is carried out, **Verify it's you** asks (the group *users*, on by default): enter your password
+(or use a passkey or the code of your authenticator app) and press **Confirm**. A wrong password is refused with the
+page asked again, and nothing is decided; the right one carries out exactly the Approve or Deny you pressed. Within the
+next ten minutes (`[ReauthSettings] Minutes`) a further decision does not ask again. See
+[Verify it's you](verify-its-you.md).
+
 The decision happens at once; the workflow cronjob is not needed for it.
 
 ## 6. What is refused
@@ -111,6 +117,7 @@ run `adduserapproval.php --required=... --approvers=... --requesters=...`.
 | The account was published without approval | The editor is an approver or in a group without approval, or the event is not in the workflow that content/publish (before) runs: check Setup > Triggers and the event |
 | No mail | Approvers without an e-mail address get none; `[MailSettings]` transport; with *Send the approvers an e-mail* off there is none. The approval item is there anyway (Collaboration) |
 | The link points to the wrong host | Set `[UserSettings] RegistrationAdminBaseURL` |
+| *Verify it's you* appears after *Approve* or *Deny* | As intended: the users group asks before an account is approved or denied. Confirm, and the decision is carried out. An administrator can switch the group off on Setup > Verify it's you |
 | The approval waits after *Approve* | The message said it was approved but not published: another event of the workflow waits (for example a content approval). The workflow cronjob continues it |
 
 More: [Approval of new user accounts](../bc/6.0/user-account-approval.md) (the technical note),

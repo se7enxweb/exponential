@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>فتح المجلد أو إغلاقه</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>هذه الصفحة في إشاراتك المرجعية. افتح الإشارة المرجعية لتغيير اسمها أو مجلدها.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>إضافة هذه الصفحة إلى إشاراتك المرجعية.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>في الإشارات المرجعية</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>إضافة الصفحة إلى الإشارات المرجعية</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>تحفظ الإشارة المرجعية عنوان هذه الصفحة مع معاملاتها: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>حفظ الإشارة المرجعية</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>إضافة إشارة مرجعية</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>إشاراتي المرجعية</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>صفحة نظام</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>صفحات النظام</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>لم يعد بإمكانك فتح هذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>فتح</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>عنوان هذه الصفحة مفقود. أزل الإشارة المرجعية ثم أضف الصفحة إلى الإشارات المرجعية مجددًا.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>لم يعد بإمكانك فتح هذه الصفحة. أزل الإشارة المرجعية، أو اطلب من أحد المسؤولين منحك الوصول.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>الوحدة والعرض</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>يمكن أيضًا إضافة صفحات النظام إلى الإشارات المرجعية: افتح الصفحة (الإعداد، سجل التدقيق، قائمة مستخدمين ...) واختر "إضافة الصفحة إلى الإشارات المرجعية" فوقها. لهذه الإشارات المرجعية أيقونة ترس.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>إلغاء تنشيط حسابات المستخدمين ونقلها إلى مجموعة المستخدمين غير النشطين، وإرجاعها</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>رؤية أماكن تسجيل دخول المستخدمين الآخرين، وتسجيل خروجهم</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>فتح تفضيلات البريد الإلكتروني</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>الجلسات</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>أين سجّلت الدخول: المتصفح والنظام والمكان والوقت. سجّل خروج أي جهاز لا تعرفه.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>أين سجّل هذا المستخدم الدخول، وتسجيل خروجه من كل مكان.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>إدارة الأجهزة</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>عرض الجلسات</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>مسجّلو الدخول: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>مفاتيح المرور</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>سجّل الدخول ببصمة إصبعك أو وجهك أو قفل الشاشة أو مفتاح أمان بدلًا من كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>إدارة مفاتيح المرور</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>إضافة مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>لا شيء بعد</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>تركيبات الفئة/السمة (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>مجموعات المستخدمين التي تحتاج حساباتها الجديدة إلى موافقة</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>الحساب الذي يُنشر في إحدى هذه المجموعات، أو تحتها، ينتظر حتى يقبله موافِق. ولا يمكنه تسجيل الدخول قبل ذلك.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>المستخدمون الذين يوافقون على الحسابات</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>المجموعات التي توافق على الحسابات</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>مجموعات المستخدمين التي لا تحتاج إلى موافقة (ينشر أعضاؤها هذه الحسابات مباشرةً؛ ولا يحتاج إليها الموافِقون أبدًا)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>إرسال بريد إلكتروني إلى الموافِقين مع رابط الموافقة (يسجّلون الدخول للموافقة أو الرفض)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>يحدد متغير البيئة EXP_DEMO_MODE=1 هذا التثبيت كعرض توضيحي عام: تُقبل كلمة مرور مسؤول معروفة، ولا يمكن تغيير كلمات مرور المسؤولين أو إعادة تعيينها لاحقًا. لا تستخدم وضع العرض التوضيحي أبدًا لموقع إنتاج.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>مهام cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>تعمل مهام cron من الـ crontab الخاص بالمستخدم %user، مالك التثبيت.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>لا يحتوي التثبيت على أي جزء من مهام cron لجدولته.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>لم يُكتب الـ crontab (%reason). أضف هذه الأسطر إلى الـ crontab الخاص بالمستخدم الذي يعمل الموقع باسمه، وإلا فلن تعمل قائمة الانتظار والاستيرادات والإشعارات وفهرس البحث أبدًا:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>اسم سمة الفئة</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>الحسابات التي تحتاج إلى موافقة</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>بريد إلكتروني إلى الموافِقين</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>أُضيف تعليقك.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>تمت الموافقة على الحساب "%1" ونُشر: يمكنه تسجيل الدخول الآن.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>رُفض الحساب "%1". إنه غير منشور ولا يمكنه تسجيل الدخول؛ وقد عاد مسودة لمؤلفه.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>أُضيف %count من الإشارات المرجعية.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>صفحة نظام</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>لا يمكن إضافة صفحات النظام إلى الإشارات المرجعية بعد: لم يُشغَّل تحديث قاعدة البيانات لهذا الإصدار.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>لا يمكن إضافة هذه الصفحة إلى الإشارات المرجعية: ليست صفحة عرض لوحدة.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>لا يمكن إضافة هذه الصفحة إلى الإشارات المرجعية: لا يُسمح لك بفتحها.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>تعذّرت إضافة الصفحة إلى الإشارات المرجعية.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>الصفحة "%name" في إشاراتك المرجعية.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>تعذّرت إعادة تسمية الإشارة المرجعية: يلزمها اسم.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>أُعيدت تسمية الإشارة المرجعية إلى "%name".</translation>
     </message>
 </context>
 <context>
@@ -56974,6 +57194,18 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The archive was refused: the entry "%path" points outside the package.</source>
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; يشير إلى خارج الحزمة.</translation>
+    </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>حُزم الأرشيف بتنسيق PAX لـ tar، ولا يمكن استيراده. احزم الحزمة بتنسيق GNU لـ tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; من نوع tar &quot;%type&quot;، والحزمة لا تحتوي إلا على ملفات ومجلدات.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>رُفض الأرشيف: يسمّي إدخالًا أطول من %length بايت.</translation>
     </message>
     <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
@@ -58070,6 +58302,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>النسخ المتزامن إلى جداول البيانات</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>الموافقة على حسابات المستخدمين</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>حساب مستخدم جديد بانتظار موافقتك</translation>
     </message>
 </context>
 <context>
@@ -64214,6 +64454,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The audit trail of this node</source>
         <translation>سجل التدقيق لهذه العقدة</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>سليم</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>منقطع</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>غير مفحوص</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>مُصلَح</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>فارغ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -69710,6 +69970,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>عنوان البريد الإلكتروني الجديد %email بانتظار تأكيده: افتح الرابط الذي أرسلناه إليه. وحتى ذلك الحين يحتفظ هذا الحساب بالعنوان %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>البريد الإلكتروني الخاص بتسجيل الدخول من جهاز أو متصفح جديد جزء من أمان الحساب. يمكنك إيقافه أو تشغيله في صفحة أجهزتك، حيث ترى أيضًا جلسات حسابك وتسجّل خروجها.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -73812,6 +74080,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Build the help manuals from the Markdown help</source>
         <translation>بناء أدلة المساعدة من مساعدة Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>المراجعة والإصدار</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>الموضوع قيد المراجعة الآن.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>تم إصدار الموضوع: يراه القرّاء الآن.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>عاد الموضوع مسودة.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>أنت كتبت النسخة الحالية، لذا يصدرها شخص آخر لديه دور الإصدار.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>لم تتغير الحالة: دورك لا يسمح بهذه الخطوة.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>مسار المراجعة</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودة</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>مراجعة</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>العودة إلى المراجعة</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>إرسال إلى المراجعة</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>إصدار</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>العودة إلى المسودة</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>فحص دليل الأسلوب</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>لم يجد فحص دليل الأسلوب شيئًا.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors أخطاء، %warnings تحذيرات، %notices ملاحظات. الخطأ يُفشل ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>المستوى</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>القاعدة</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>الحقل</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>هل كان هذا مفيدًا؟</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>أجاب القرّاء بنعم %yes مرة وبلا %no مرة.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>الأسباب المذكورة للإجابة بلا:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>شكرًا لك. إجابتك تساعدنا على تحسين المساعدة.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>إن لم يكن، فما الخطأ؟</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>لم يُذكر سبب</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>تُحفظ إجابتك فقط، لا هويتك.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>قديم</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>صعب الفهم</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ينقصه شيء</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>خاطئ</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>سبب آخر</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>هذا الموضوع غير مُصدَر؛ لا يراه القرّاء.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -75597,6 +76005,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>استعراض جداول الأصناف الدائمة…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>مهام cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>لم يعمل أي جزء من مهام cron بعد: قائمة انتظار المهام والاستيرادات والإشعارات وفهرس البحث في الانتظار. شغّل php bin/php/installcrontab.php --add، أو أضف أسطر --show إلى الـ crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>لم يعمل جزء من مهام cron منذ مدة أطول مما يسمح به جدوله: افحص الـ crontab (php bin/php/installcrontab.php --show) والسجلات var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>الجزء</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>الجدول الزمني</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>آخر بدء</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>في الموعد</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>متأخر</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>لم يعمل قط</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>لا يحتوي التثبيت على أي جزء من مهام cron لتشغيله.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>الإعداد &gt; مهام cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>حساب مستخدم جديد بانتظار الموافقة: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>الحساب</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>اسم المستخدم</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>المجموعة</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>بطلب من</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>فتح الموافقة</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>إذا لم يعمل الزر، فانسخ هذا العنوان إلى متصفحك: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>حساب مستخدم جديد بانتظار موافقتك</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>أنشأ %requester الحساب "%name" في %groups. إنه غير منشور ولا يمكنه تسجيل الدخول حتى يقبله موافِق.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>سجّل الدخول إلى الإدارة ووافق عليه أو ارفضه في قائمة التعاون الخاصة بك. هذا الرابط لا يسجّل دخولك ولا يقرر شيئًا بنفسه.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>أرسل %site هذه الرسالة لأنك توافق على الحسابات الجديدة في هذه المجموعات.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>حاسوب</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>هاتف</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>جهاز لوحي</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>برنامج أو تطبيق</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>عميل آلي</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>جهاز غير معروف</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>كلمة المرور ورمز تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>واجهة REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>واجهة SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>تسجيل الدخول الموحّد</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سُجّل الدخول قبل بدء تسجيل الجلسات</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>سُجّل الخروج</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>سُجّل الخروج من هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>سُجّل الخروج بواسطة مسؤول</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>سُجّل الخروج عبر "كل الجلسات الأخرى"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>استُبدلت بتسجيل دخول جديد</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>انتهت بتغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>منتهية الصلاحية</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>جلسات %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>أين حسابك مسجّل الدخول الآن. إذا لم تتعرّف على جهاز، فسجّل خروجه وغيّر كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>أين هذا الحساب مسجّل الدخول الآن. تسجيل خروج المستخدم ينهي كل جلسة عند طلبها التالي.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>الرجوع إلى الحساب</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سُجّل خروج الجلسة. على الجهاز تسجيل الدخول من جديد.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>سُجّل خروج %count من الجلسات الأخرى.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>لم تكن هناك جلسات أخرى لتسجيل خروجها.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>سُجّل خروج %count من جلسات هذا المستخدم.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>لم تكن لهذا المستخدم جلسات لتسجيل خروجها.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>هذه هي الجلسة التي تستخدمها. لإنهائها، سجّل الخروج.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>كانت تلك الجلسة قد انتهت بالفعل.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ستتلقى بريدًا إلكترونيًا عندما يُسجَّل الدخول إلى حسابك من جهاز جديد.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>لن تتلقى بعد الآن بريدًا إلكترونيًا عن تسجيلات الدخول من أجهزة جديدة.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>انتهت صلاحية الصفحة. لم يتغير شيء؛ يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>لا تُسجَّل الجلسات في هذا الموقع (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>الجدول expuser_session مفقود</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>تُسجَّل الجلسات بمجرد إنشائه: php update/common/scripts/6.0/createusersessiontable.php، أو تحديث قاعدة البيانات للإصدار 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>مسجّل الدخول الآن</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>تسجيل خروج كل الجلسات الأخرى</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>تسجيل الخروج من كل مكان</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>يُسجَّل خروج كل جهاز عدا هذا عند طلبه التالي، بما في ذلك الأجهزة التي تبقى مسجّلة الدخول عبر "تذكّرني".</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>يُسجَّل خروج كل جلسة لهذا المستخدم عند طلبها التالي، بما في ذلك الجلسات التي تبقى مسجّلة الدخول عبر "تذكّرني".</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>نعم، تسجيل خروج الجلسات الأخرى</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>نعم، تسجيل خروج كل جلسة</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>هذا الجهاز</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>الجهاز</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>يُعرض كشبكته؛ ويُحتفظ بالعنوان الكامل للمسؤولين.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>سُجّل الدخول من %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخر نشاط</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>الآن</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>البقاء مسجّلًا</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>تذكّرني، حتى %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>حتى إغلاق المتصفح</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>سُجّل الدخول في</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>تعريف المتصفح</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>لإنهاء هذه الجلسة، سجّل الخروج.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>تسجيل خروج هذه الجلسة</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>لا توجد جلسة مسجّلة الدخول.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>تنبيهات تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>إرسال بريد إلكتروني إليّ عند تسجيل الدخول إلى حسابي من جهاز أو متصفح جديد</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>يُرسل إلى %email. يذكر الجهاز والمكان التقريبي والوقت، ويربط بهذه الصفحة.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>لا يرسل هذا الموقع تنبيهات تسجيل الدخول.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>انتهت مؤخرًا</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>الجلسات التي انتهت خلال آخر %days يوم.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>الانتهاء</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>الطريقة</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>لا شيء.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>حاسوب</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>هاتف</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>جهاز لوحي</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>برنامج أو تطبيق</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>عميل آلي</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>جهاز غير معروف</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>كلمة المرور ورمز تسجيل الدخول بخطوتين</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>واجهة REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>واجهة SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>تسجيل الدخول الموحّد</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>سُجّل الدخول قبل بدء تسجيل الجلسات</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>سُجّل الخروج</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>سُجّل الخروج من هذه الصفحة</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>سُجّل الخروج بواسطة مسؤول</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>سُجّل الخروج عبر "كل الجلسات الأخرى"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>استُبدلت بتسجيل دخول جديد</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>انتهت بتغيير كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>منتهية الصلاحية</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>جلسات %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>أين حسابك مسجّل الدخول الآن. إذا لم تتعرّف على جهاز، فسجّل خروجه وغيّر كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>أين هذا الحساب مسجّل الدخول الآن. تسجيل خروج المستخدم ينهي كل جلسة عند طلبها التالي.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>سُجّل خروج الجلسة. على الجهاز تسجيل الدخول من جديد.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>سُجّل خروج %count من الجلسات الأخرى.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>لم تكن هناك جلسات أخرى لتسجيل خروجها.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>سُجّل خروج %count من جلسات هذا المستخدم.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>لم تكن لهذا المستخدم جلسات لتسجيل خروجها.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>هذه هي الجلسة التي تستخدمها. لإنهائها، سجّل الخروج.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>كانت تلك الجلسة قد انتهت بالفعل.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>ستتلقى بريدًا إلكترونيًا عندما يُسجَّل الدخول إلى حسابك من جهاز جديد.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>لن تتلقى بعد الآن بريدًا إلكترونيًا عن تسجيلات الدخول من أجهزة جديدة.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>انتهت صلاحية الصفحة. لم يتغير شيء؛ يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>لا تُسجَّل الجلسات في هذا الموقع.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>لا تُسجَّل الجلسات بعد: يحتاج الموقع إلى تحديث قاعدة بياناته.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>مسجّل الدخول الآن</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>هذا الجهاز</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>الجهاز</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>العنوان</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>آخر نشاط</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>الآن</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>البقاء مسجّلًا</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>تذكّرني، حتى %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>حتى إغلاق المتصفح</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>لإنهاء هذه الجلسة، سجّل الخروج.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>تسجيل الخروج</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>تسجيل خروج هذه الجلسة</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>تسجيل خروج كل الجلسات الأخرى</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>تسجيل الخروج من كل مكان</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>تنبيهات تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>إرسال بريد إلكتروني إليّ عند تسجيل الدخول إلى حسابي من جهاز أو متصفح جديد</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>انتهت مؤخرًا</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>الانتهاء</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>الطريقة</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>لا شيء خلال آخر %days يوم.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>اعرف أين حسابك مسجّل الدخول، وسجّل خروج أي جهاز لا تعرفه.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>إدارة الأجهزة</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>تسجيل دخول جديد إلى حسابك على %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>مرحبًا،</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>استُخدم حسابك %login على %site للتو لتسجيل الدخول من جهاز أو متصفح لم يستخدمه مؤخرًا:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>الجهاز:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>الوقت:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>العنوان التقريبي:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>إذا كنت أنت، فلا داعي لفعل أي شيء.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>إذا لم تكن أنت، فربما يعرف أحدهم كلمة مرورك. سجّل خروج تلك الجلسة في صفحة أجهزتك، ثم غيّر كلمة المرور:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>يمكنك إيقاف رسائل البريد الإلكتروني هذه في الصفحة نفسها.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>تسجيل دخول جديد لـ %login على %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>سجّل الحساب %login الدخول من جهاز أو متصفح لم يستخدمه مؤخرًا.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>جلسات هذا المستخدم:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>تسجيل دخول جديد إلى حسابك</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>استُخدم حسابك %login لتسجيل الدخول من %device (%ip) في %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>إذا كنت أنت، فلا داعي لفعل أي شيء. وإلا، فسجّل خروج هذه الجلسة على %url وغيّر كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>تسجيل دخول جديد لـ %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>سجّل الحساب %login الدخول من جهاز جديد: %device (%ip) في %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>أجهزتك</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>جلسات %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>مفاتيح المرور</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>يتيح لك مفتاح المرور تسجيل الدخول ببصمة إصبعك أو وجهك أو قفل الشاشة أو مفتاح أمان بدلًا من كلمة المرور. يُخزَّن على جهازك أو في مدير كلمات المرور لديك؛ ولا يحتفظ هذا الموقع إلا بمفتاحه العام، لذا لا يمكن لأي تسريب هنا أن يكشفه.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>مفاتيح المرور معطّلة في هذا الموقع.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>لا يمكن استخدام مفاتيح المرور في هذا الموقع بعد: على المسؤول تشغيل تحديث قاعدة البيانات أولًا.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>هل تريد بالتأكيد إزالة مفتاح المرور "%name"؟</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>لن يتمكن بعد ذلك من تسجيل الدخول إلى هذا الحساب. أزله أيضًا من جهازك أو من مدير كلمات المرور.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>إزالة مفتاح المرور</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>مفاتيح المرور الخاصة بك</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count من %max كحد أقصى</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>ليس لديك مفتاح مرور بعد. أضف واحدًا أدناه: في المرة التالية التي تسجّل فيها الدخول، اختر "تسجيل الدخول بمفتاح مرور".</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>تاريخ الإضافة</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>آخر استخدام</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>النوع</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>الإجراءات</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>ليس بعد</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>متزامن</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>هذا الجهاز أو المفتاح</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>إعادة تسمية</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>الاسم الجديد</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>حفظ الاسم</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>إضافة مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>اتبع خطوات متصفحك أو جهازك.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>أُغلق مربع حوار مفتاح المرور. لم يتغير شيء.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>تعذّر إنشاء مفتاح المرور. يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>لا يستطيع هذا المتصفح إنشاء مفاتيح مرور. استخدم متصفحًا حديثًا، أو سجّل الدخول بكلمة المرور.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>مثلًا الجهاز أو مدير كلمات المرور الموجود فيه، حتى تميّز بين مفاتيح المرور الخاصة بك.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>لدى هذا الحساب الحد الأقصى المسموح به من مفاتيح المرور (%max). أزل واحدًا لإضافة آخر.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>تعذّر استخدام مفتاح المرور. يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>حسابي</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>أُغلق مربع حوار مفتاح المرور. يمكنك تسجيل الدخول بكلمة المرور بدلًا من ذلك.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>تعذّر استخدام مفتاح المرور. يرجى المحاولة مرة أخرى، أو سجّل الدخول بكلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>تسجيل الدخول بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>تعذّر تسجيل الدخول بمفتاح المرور</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>سجّل الدخول ببصمة إصبعك أو وجهك أو قفل الشاشة أو مفتاح أمان بدلًا من كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>أُضيف مفتاح المرور "%name". يمكنك تسجيل الدخول به من الآن فصاعدًا.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>أصبح اسم مفتاح المرور "%name".</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>أُزيل مفتاح المرور "%name". لم يعد بإمكانه تسجيل الدخول إلى هذا الحساب.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>مفتاح مرور بتاريخ %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>لدى هذا الحساب الحد الأقصى المسموح به من مفاتيح المرور. أزل واحدًا أولًا.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>كانت قاعدة البيانات مشغولة ولم يُحفظ شيء. يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>مفتاح المرور هذا مسجّل بالفعل.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>استغرق الطلب وقتًا طويلًا جدًا أو استُخدم من قبل. يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>لم يتحقق مفتاح المرور من هويتك (رمز PIN أو بصمة الإصبع أو الوجه). يرجى المحاولة مرة أخرى والتأكيد على جهازك.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>تستخدم أداة المصادقة هذه نوعًا من المفاتيح لا يقبله هذا الموقع.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>أُنشئ مفتاح المرور لعنوان غير عنوان هذا الموقع.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>مفتاح المرور هذا غير مسجّل لأي حساب هنا. سجّل الدخول بكلمة المرور وأضفه من حسابي، مفاتيح المرور.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>لا يمكن لهذا الحساب تسجيل الدخول حاليًا. يرجى التواصل مع مسؤول الموقع.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>تعذّر التحقق من مفتاح المرور. يرجى المحاولة مرة أخرى.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>أنت على وشك تغيير طريقة تسجيل دخولك أو أمان حسابك.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>أنت على وشك إدارة المستخدمين أو الأدوار أو السياسات.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>أنت على وشك تغيير إعدادات النظام أو تشغيل إجراء إعداد.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>أنت على وشك تصدير بيانات.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>أنت على وشك إزالة محتوى أو نشره.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>يتطلب هذا الإجراء تأكيد هويتك.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>أكّد أنك أنت، مسجّل الدخول باسم %login. لن يُطلب منك ذلك مجددًا لمدة %minutes دقيقة.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>كلمة المرور هذه غير صحيحة.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>هذا الرمز غير صحيح، أو استُخدم من قبل.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>اختر إحدى الطرق أدناه.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>تعذّر التحقق من مفتاح المرور.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>تبقّى %count من المحاولات قبل تسجيل خروجك.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>لا يمكن إرسال الملفات التي اخترتها مرة أخرى: بعد التأكيد، اخترها مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>بكلمة المرور</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>بمفتاح مرور</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تأكيد</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>استخدام مفتاح مرور</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>برمز من تطبيق المصادقة</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>الرمز</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>لا توجد لدى هذا الحساب أي طريقة لتأكيد هويتك (لا كلمة مرور ولا مفتاح مرور ولا تطبيق مصادقة). سجّل الخروج ثم الدخول مجددًا، أو اسأل أحد المسؤولين.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>إلغاء</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>التحقق من هويتك</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>رمز من تطبيق المصادقة</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>الحساب الشخصي</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>تغيير المستخدم لكلمة مروره أو عنوان بريده الإلكتروني أو مفاتيح المرور أو تسجيل الدخول بخطوتين أو مفاتيح API الخاصة به.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>المستخدمون والأدوار والسياسات</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>إنشاء المستخدمين وتحريرهم، وإعدادات الحسابات، وتعيين الأدوار، وتحرير السياسات.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>إعدادات النظام وإجراءات الإعداد</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>تحرير الإعدادات، والامتدادات، وذاكرة التخزين المؤقت والصيانة، والحزم والتحديثات، والنسخ الاحتياطية، ومدير git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>تصدير البيانات</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>تصدير المعلومات المجمّعة، والمستخدمين، ومشتركي النشرة الإخبارية، وسجل التدقيق.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>إزالة المحتوى ونشره</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>إزالة المحتوى (بما في ذلك إلى سلة المحذوفات)، وإفراغ سلة المحذوفات، والنشر. معطّل افتراضيًا.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>قبل أي إجراء حساس، يؤكد المستخدم المسجّل الدخول هويته مرة أخرى، بكلمة مروره أو بمفتاح مرور أو برمز من تطبيق المصادقة. صفحات الويب وحدها تسأل: واجهة REST وSOAP وWebDAV وتسجيل الدخول عبر expservices وسطر الأوامر لا تسأل أبدًا.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>عام</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>مدة صلاحية التأكيد بالدقائق</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>متى يُطلب التأكيد</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count من القواعد في site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>يُحفظ في settings/override/site.ini.append.php. يطلب منك الحفظ تأكيد هويتك.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>حفظ</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>التحقق من هويتك</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>طلب "التحقق من هويتك" قبل إجراءات المجموعات المفعّلة أدناه</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>حُفظت الإعدادات.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>تعذّر حفظ الإعدادات: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>الإعداد</translation>
     </message>
 </context>
 </TS>

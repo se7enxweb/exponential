@@ -2355,13 +2355,13 @@ class eZContentObject extends eZPersistentObject
              SET owner_id = 0
              WHERE owner_id = '$delID'" );
 
-        if ( isset( $GLOBALS["eZWorkflowTypeObjects"] ) and is_array( $GLOBALS["eZWorkflowTypeObjects"] ) )
+        // once any event type had been created in this request, only the types already in
+        // $GLOBALS["eZWorkflowTypeObjects"] were asked to clean up; the others kept their rows for the purged object.
+        // fetchRegisteredTypes() loads every type of workflow.ini and keeps those already loaded.
+        $registeredTypes = eZWorkflowType::fetchRegisteredTypes();
+        if ( !is_array( $registeredTypes ) )
         {
-            $registeredTypes =& $GLOBALS["eZWorkflowTypeObjects"];
-        }
-        else
-        {
-            $registeredTypes = eZWorkflowType::fetchRegisteredTypes();
+            $registeredTypes = array();
         }
 
         // Cleanup ezworkflow_event etc...
@@ -6607,7 +6607,28 @@ class eZContentObject extends eZPersistentObject
                 if ( $ini->hasVariable( 'RegionalSettings', 'ContentObjectLocale' ) )
                 {
                     $defaultLanguage = $ini->variable( 'RegionalSettings', 'ContentObjectLocale' );
-                    eZContentLanguage::fetchByLocale( $defaultLanguage, true );
+                    // without a prioritized language (CLI without siteaccess) this created ContentObjectLocale
+                    // as a new content language in an installation that already had others. Now an existing language
+                    // is used: the locale if it exists, else the one with the lowest ID; created only if there is none.
+                    if ( !eZContentLanguage::fetchByLocale( $defaultLanguage ) )
+                    {
+                        $existingLanguage = false;
+                        foreach ( eZContentLanguage::fetchList() as $language )
+                        {
+                            if ( !$existingLanguage || (int)$language->attribute( 'id' ) < (int)$existingLanguage->attribute( 'id' ) )
+                            {
+                                $existingLanguage = $language;
+                            }
+                        }
+                        if ( $existingLanguage )
+                        {
+                            $defaultLanguage = $existingLanguage->attribute( 'locale' );
+                        }
+                        else
+                        {
+                            eZContentLanguage::fetchByLocale( $defaultLanguage, true );
+                        }
+                    }
                 }
             }
             $GLOBALS['eZContentObjectDefaultLanguage'] = $defaultLanguage;

@@ -23,7 +23,11 @@ installation is set up with the defaults; an installation that exists gets them 
    account's name and username, the group, and one link: `<administration>/collaboration/item/full/<id>`. The link
    carries no key and no token. Opening it asks the approver to sign in; it approves or denies nothing by itself.
 4. The approver opens the item (from the mail, or Dashboard > Collaboration), reads the account's preview, optionally
-   adds a comment, and presses **Approve** or **Deny** (each asks for a confirmation).
+   adds a comment, and presses **Approve** or **Deny** (each asks for a confirmation). Then "Verify it's you" asks
+   (the users group, `collaboration/action other CollaborationAction_Accept CollaborationAction_Deny
+   CollaborationAction_Defer`): the decision is held until the approver confirms with the password, a passkey or a
+   code, and is then carried out as pressed. Content approvals are not asked
+   ([Passkeys and "Verify it's you"](passkeys-and-verify-its-you.md)).
 5. **Approve**: the workflow continues at once (not at the next run of the workflow cronjob): the account is published
    below Editors and can sign in. **Deny**: the version is a draft of the editor again, nothing is published, the
    account cannot sign in. The editor can change the draft and send it again, which asks for approval again.

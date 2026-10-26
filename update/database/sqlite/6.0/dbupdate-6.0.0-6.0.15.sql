@@ -607,3 +607,27 @@ CREATE TABLE IF NOT EXISTS exppasskey (
 );
 CREATE UNIQUE INDEX IF NOT EXISTS exppasskey_credential ON exppasskey ( credential_hash );
 CREATE INDEX IF NOT EXISTS exppasskey_user ON exppasskey ( user_id );
+
+-- Help maintained as content (doc/eng-us/features/6.0/help-content.md): exphelp_help_id records every help_id that
+-- was Released and the object it belongs to, so the validator reports a help_id that was renamed or reused (clients
+-- call it); exphelp_feedback keeps the answers to "Was this helpful?": the topic, yes or no, a reason from a fixed
+-- list and the day, nothing about who answered. Without the tables both features are off and every page works as
+-- before; ./console exp:help:content install creates them on any engine.
+-- Written with IF NOT EXISTS, so running these statements again changes nothing.
+CREATE TABLE IF NOT EXISTS exphelp_help_id (
+  help_id varchar(80) NOT NULL DEFAULT '' PRIMARY KEY,
+  object_id integer NOT NULL DEFAULT '0',
+  released integer NOT NULL DEFAULT '0'
+);
+CREATE INDEX IF NOT EXISTS exphelp_help_id_object ON exphelp_help_id ( object_id );
+CREATE TABLE IF NOT EXISTS exphelp_feedback (
+  created integer NOT NULL DEFAULT '0',
+  help_id varchar(80) NOT NULL DEFAULT '',
+  helpful integer NOT NULL DEFAULT '0',
+  id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+  language varchar(20) NOT NULL DEFAULT '',
+  object_id integer NOT NULL DEFAULT '0',
+  reason varchar(32) NOT NULL DEFAULT ''
+);
+CREATE INDEX IF NOT EXISTS exphelp_feedback_object ON exphelp_feedback ( object_id, created );
+CREATE INDEX IF NOT EXISTS exphelp_feedback_created ON exphelp_feedback ( created );

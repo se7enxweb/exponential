@@ -950,14 +950,19 @@ class eZMail
         if ( $key !== false and
              isset( $item[$key] ) )
             return $item[$key];
+        // A mail without sender (From is false) gave "Trying to access array offset on false"
+        // here and null, and senderText() passed it on to mb_encode_mimeheader() ("Passing null to parameter #1",
+        // measured with PHP 8.5.4 via eZSMTPTransport::sendMail()). No address is the empty string now.
+        if ( !is_array( $item ) )
+            return is_string( $item ) ? $item : '';
         if ( !empty( $item['name'] ) )
         {
             if ( $convert )
                 $item['name'] = $this->convertHeaderText( $item['name'] );
-            $text = $item['name'] . ' <' . $item['email'] . '>';
+            $text = $item['name'] . ' <' . ( isset( $item['email'] ) ? $item['email'] : '' ) . '>';
         }
         else
-            $text = $item['email'];
+            $text = isset( $item['email'] ) ? (string)$item['email'] : '';
         return $text;
     }
 
@@ -1185,6 +1190,8 @@ class eZMail
      */
     function encodeMimeHeader( $str )
     {
+        // Null reached mb_encode_mimeheader() (deprecated since PHP 8.1), see composeEmailName()
+        $str = (string)$str;
         if ( !$this->TextCodec )
         {
              $this->TextCodec = eZTextCodec::instance( $this->contentCharset(), $this->outputCharset() );

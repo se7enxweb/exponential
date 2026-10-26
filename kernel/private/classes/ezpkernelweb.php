@@ -556,6 +556,9 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
             $currentURI = $this->completeRequestedURI;
             if ( strlen( $currentURI ) > 0 && $currentURI[0] !== '/' )
                 $currentURI = '/' . $currentURI;
+            // the front page (an empty requested URI) is recorded as the site root, not as '', which no
+            // reader of the page viewed last accepts as a target
+            $currentURI = eZRedirectManager::pageURI( $currentURI );
 
             $lastAccessedURI = "";
             $lastAccessedViewURI = "";

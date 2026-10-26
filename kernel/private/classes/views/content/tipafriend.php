@@ -20,6 +20,43 @@ namespace Exponential\View\Kernel\Content
 
 class Tipafriend extends \Exponential\Runnable\ModuleView
 {
+    /**
+     * The first valid address of site.ini [MailSettings] EmailSender and AdminEmail ("address" or "Name <address>"),
+     * null when neither is one.
+     *
+     * @param \eZINI $ini
+     * @return string|null
+     */
+    public static function siteSender( \eZINI $ini )
+    {
+        foreach ( array( 'EmailSender', 'AdminEmail' ) as $setting )
+        {
+            $text = $ini->hasVariable( 'MailSettings', $setting ) ? $ini->variable( 'MailSettings', $setting ) : '';
+            if ( !is_string( $text ) || trim( $text ) === '' )
+                continue;
+            \eZMail::extractEmail( trim( $text ), $address, $name );
+            if ( is_string( $address ) && \eZMail::validate( $address ) )
+                return $address;
+        }
+        return null;
+    }
+
+    /**
+     * The display name of a tip sent with the site's own address: site.ini [SiteSettings] SiteName without control
+     * characters and quotes, never the visitor's name. With the visitor's name an entry like "Bank support" would
+     * have arrived as "Bank support <site address>" from the site's own domain; the visitor's name stays in Reply-To.
+     *
+     * @param \eZINI $ini
+     * @return string
+     */
+    public static function siteSenderName( \eZINI $ini )
+    {
+        $name = $ini->hasVariable( 'SiteSettings', 'SiteName' ) ? $ini->variable( 'SiteSettings', 'SiteName' ) : '';
+        if ( !is_string( $name ) )
+            return '';
+        return trim( preg_replace( '/[\x00-\x1F\x7F"]+/', ' ', $name ) );
+    }
+
     public function run( array $scope )
     {
         // the including function's variables ($Params, $Module, $cli, ...)
@@ -114,6 +151,15 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
                         $fromEmail = null;
                     }
             }
+            // Without FromEmail the site's own sender, not the visitor's address (it reached
+            // sendmail as the envelope sender, see eZSendmailTransport::sendmailOptions()); the visitor goes into
+            // Reply-To below. Only when neither EmailSender nor AdminEmail is a valid address, the visitor as before.
+            if ( $fromEmail == null )
+                $fromEmail = self::siteSender( $ini );
+            // Whether the sender address is the site's (FromEmail or siteSender()), decided here and not by comparing
+            // with the visitor's input: a visitor who typed the site's own address as YourEmail would get their
+            // free-text name shown in front of the site's address again.
+            $fromIsSite = $fromEmail != null;
             if ( $fromEmail == null )
                 $fromEmail = $yourEmail;
 
@@ -130,7 +176,9 @@ class Tipafriend extends \Exponential\Runnable\ModuleView
             if ( count( $error_strings ) == 0 )
             {
                 $mail = new \eZMail();
-                $mail->setSender( $fromEmail, $yourName );
+                $mail->setSender( $fromEmail, $fromIsSite ? self::siteSenderName( $ini ) : $yourName );
+                if ( $fromIsSite )
+                    $mail->setReplyTo( $yourEmail, $yourName );
                 $mail->setReceiver( $receiversEmail, $receiversName );
                 $mail->setSubject( $subject );
 
