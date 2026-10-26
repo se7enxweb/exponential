@@ -187,6 +187,11 @@
    page, and in the Bookmarks box; it opens a small form in place */
 .a4-content-bookmark-pageaction { position: relative; margin: 0; }
 .a4-content-bookmark-pageaction.is-toolbar { float: inline-end; margin-inline-start: var(--a4-space-3); margin-bottom: var(--a4-space-1); z-index: var(--a4-z-raised); }
+/* The float sits beside the breadcrumb only. What follows the breadcrumb starts below the button: a block that is its
+   own formatting context (the dashboard's grid, a card) placed beside a float is narrowed by the float's width for its
+   whole height, which left an empty column down the page. #fix holds the clear, so it never waits for the left menu. */
+#fix:has(> .a4-content-bookmark-pageaction.is-toolbar) { display: flow-root; }
+#fix > .a4-content-bookmark-pageaction.is-toolbar ~ #path ~ * { clear: inline-end; }
 .a4-content-bookmark-pageaction.is-box { margin-top: var(--a4-space-1); max-width: 100%; }
 .a4-content-bookmark-pageaction.is-box > summary { max-width: 100%; white-space: normal; text-align: start; }
 .a4-content-bookmark-pageaction > summary { display: inline-flex; align-items: center; gap: var(--a4-space-1); list-style: none; cursor: pointer; }
