@@ -199,8 +199,19 @@ to serve one visitor another's page.
 within 24 hours, because `index.js` is `no-cache`.
 
 The worker serves the stored copy first and refreshes it in the background, so a published change appears on the
-**second** view, not the first. The cache version is `exp-nav-v4` (see
+**second** view, not the first. The cache version is `exp-nav-v5` (see
 [Behaviour changes, 16 to 30 September 2026](behaviour-changes-2026-09b.md)).
+
+While the site answers with its maintenance page (during an installation or a maintenance window: a 503 with
+`X-Exp-Maintenance` and `Retry-After`), the worker shows no stored page. The first such answer deletes every page it
+holds and takes the tab that had just been shown a stored page to the maintenance page; until the server answers with
+a page again, every navigation goes to the network. `v4` kept its copies on a 503 and showed the site on every
+reload throughout an installation. The worker's own requests revalidate with the server (`cache: 'no-cache'`), so
+the browser's HTTP cache does not answer them for the length of a page's `max-age`.
+
+A browser without the worker still holds an anonymous page for its `max-age` (`[HTTPHeaderSettings]`,
+`public, max-age=300` on many sites) and shows it on a link or address-bar navigation within that time without asking
+the server; a reload asks, and gets the maintenance page. Keep that max-age short on a site that is reinstalled.
 
 ## Added: Middle-Out, shared-dictionary compression (off by default)
 
