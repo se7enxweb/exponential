@@ -110,7 +110,7 @@ die vollständige Lesereihenfolge im [Lesepfad](lesepfad-fuer-non-profit-organis
 | 3 | Geben Sie jedem Redakteur ein Konto und eine Rolle; schalten Sie für Administratoren die Zwei-Faktor-Anmeldung ein | [Arbeitsblatt Rollen und Berechtigungen](vorlagen/arbeitsblatt-rollen-und-berechtigungen.md) |
 | 4 | Richten Sie Sicherungen und eine monatliche Routine ein und testen Sie eine Wiederherstellung | [Routine für Sicherungen und Updates](betrieb/routine-fuer-sicherungen-und-updates.md), [Monatliche Checkliste](checklisten/monatliche-checkliste.md) |
 
-![Das Dashboard der Administrationsoberfläche von Exponential](../../../eng-us/help/images/admin-dashboard.webp)
+![Das Dashboard der Administrationsoberfläche von Exponential](../bilder/admin-dashboard.webp)
 
 ## Benachbarte Bereiche
 

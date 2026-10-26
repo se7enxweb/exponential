@@ -106,7 +106,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Opening hours* aus Le
 - Der Trainer prüft das, indem er *Wrong language test* und seinen Tab **Übersetzungen** am Beamer öffnet. Wenn die
   Rolle keine Übersetzungen entfernen darf, führt der Trainer Schritt 10 vor.
 
-![Der Tab Übersetzungen mit Als Haupt setzen, Ausgewählte entfernen und der Einstellung Immer verfügbar mit ihrer Schaltfläche Aktualisieren](../../../../../eng-us/help/images/trainers/e201-main-language.webp)
+![Der Tab Übersetzungen mit Als Haupt setzen, Ausgewählte entfernen und der Einstellung Immer verfügbar mit ihrer Schaltfläche Aktualisieren](../../../bilder/trainers/e201-main-language.webp)
 
 ## Quiz
 

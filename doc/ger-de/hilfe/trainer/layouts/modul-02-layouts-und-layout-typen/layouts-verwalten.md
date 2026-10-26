@@ -103,7 +103,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto.
 - Die Teilnehmenden können die Bildschirme für Export und Import beschreiben.
 - Der Trainer prüft die Liste **Layouts** am Beamer: ein Layout pro Person, keine Kopien übrig.
 
-![Die Liste der Layouts mit Status, Typ und den Aktionen pro Layout](../../../../../eng-us/help/images/trainers/ly-list.webp)
+![Die Liste der Layouts mit Status, Typ und den Aktionen pro Layout](../../../bilder/trainers/ly-list.webp)
 
 ## Quiz
 

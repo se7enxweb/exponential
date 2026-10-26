@@ -12,7 +12,7 @@ type: help
 Diese Seite erklärt die Begriffe, die in der Hilfe zu Seitenpaketen verwendet werden. Jeder Eintrag nennt, woher der Begriff im Code oder
 in den Paketen stammt, und verlinkt die Seite, die ihn vollständig erklärt.
 
-![Setup, Pakete](../../../eng-us/help/images/help/sp-glossary.webp)
+![Setup, Pakete](../bilder/help/sp-glossary.webp)
 
 ## Inhalt
 

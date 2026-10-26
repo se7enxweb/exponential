@@ -14,7 +14,7 @@ Diese Seite richtet sich an Anwendungsentwickler, die funktionierende Gerüste w
 registriert wird, und bietet Assistenten an, die eine vollständige Erweiterung schreiben
 ([RAD-Werkzeuge](../../../funktionen/6.0/rad-werkzeuge.md), [Erweiterungspunkte](../../../bc/6.0/rad-erweiterungspunkte.md)).
 
-![Setup, RAD: die Assistenten, die das Gerüst eines Template-Operators oder eines Datentyps erstellen](../../../../eng-us/help/images/creators/rad-tools.webp)
+![Setup, RAD: die Assistenten, die das Gerüst eines Template-Operators oder eines Datentyps erstellen](../../bilder/creators/rad-tools.webp)
 
 ## Inhalt
 

@@ -14,9 +14,9 @@ hat eigene Exporte für E-Mail-Einstellungen und Audit-Einträge; der Rest wird 
 zusammengetragen, weil es keine einheitliche Funktion „alle meine Daten exportieren“ gibt
 ([Datenschutzstandards: Bekannte Lücken](../../../standards/datenschutz.md#bekannte-lücken)).
 
-![Gesammelte Informationen: was Besucher über Formulare gesendet haben, für einen Auskunftsantrag aufzufinden](../../../../eng-us/help/images/government/gov-forms.webp)
+![Gesammelte Informationen: was Besucher über Formulare gesendet haben, für einen Auskunftsantrag aufzufinden](../../bilder/government/gov-forms.webp)
 
-![E-Mail-Einstellungen: das Einwilligungsprotokoll und die Sperrliste, die ein Auskunftsantrag berühren kann](../../../../eng-us/help/images/government/gov-mail-consent.webp)
+![E-Mail-Einstellungen: das Einwilligungsprotokoll und die Sperrliste, die ein Auskunftsantrag berühren kann](../../bilder/government/gov-mail-consent.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

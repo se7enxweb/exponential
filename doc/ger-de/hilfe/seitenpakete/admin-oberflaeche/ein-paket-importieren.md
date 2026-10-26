@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren, die ein Paketarchiv von ihrem Computer in 
 heruntergeladenes Paket, eines, das ein Kollege geschickt hat, oder eines, das von einer anderen Website exportiert wurde. Importieren legt
 das Paket ins lokale Paket-Repository; es installiert es nicht.
 
-![Paket importieren: eine .ezpkg-Datei hochladen](../../../../eng-us/help/images/help/sp-import.webp)
+![Paket importieren: eine .ezpkg-Datei hochladen](../../bilder/help/sp-import.webp)
 
 ## Inhalt
 

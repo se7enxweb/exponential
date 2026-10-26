@@ -29,8 +29,8 @@ sources disagree.
 "After the password, a code from an authenticator app on the phone, or one sent by e-mail: the password alone is then
 useless to anyone else" ([Two-step sign-in](../../guides/two-factor-login.md)). The feature comes from the extension
 `sevenx_authentication_2fa`, which the kernel's `composer.json` requires and the installers activate. The guide puts the
-cost in plain terms: "15 minutes to turn it on, 2 minutes per user to set it up." It is opt-in for users unless the
-site owner requires it.
+cost in plain terms: "15 minutes to turn it on, 2 minutes per user to set it up." A new installation requires it for
+administrators and editors; members of other groups choose for themselves, and the site owner decides whom it applies to.
 
 ## What is new, and when
 
@@ -38,6 +38,7 @@ site owner requires it.
 |---|---|---|
 | The extension imported (version 1.0.0) | 21 July 2026 | [sevenx_authentication_2fa](../../features/6.0/extensions/sevenx_authentication_2fa.md) |
 | The guide, social login buttons on the admin4 login page, codes accepted once and counted as failed logins, secrets encryptable at rest | 6 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
+| Every new installation requires two-step sign-in of administrators and editors | 23 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#2026-10-23-every-new-installation-requires-two-step-sign-in-of-administrators-and-editors-and-has-imports) |
 
 The kernel changes are part of the 6.0.15 development line, which is not released; the extension is released on its
 own.
@@ -66,7 +67,8 @@ without asking 7x which is current.
 
 ## What not to claim
 
-- "Two-step sign-in is mandatory." It is opt-in unless the site owner requires it.
+- "Two-step sign-in is mandatory for everyone." A new installation requires it for administrators and editors only;
+  other users choose for themselves, and the site owner decides whom it applies to.
 - "Social login works out of the box with every provider." The handlers are described as skeletons ready to customize.
 - "Accounts cannot be taken over." Say what the second step protects against, and stop there.
 

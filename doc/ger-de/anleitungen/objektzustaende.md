@@ -105,7 +105,7 @@ Aus dem Code folgen drei Regeln, die das meiste erklären, was Sie sehen werden:
 
 Öffnen Sie **Setup > Zustände** oder gehen Sie auf `/state/groups`. Sie brauchen die Richtlinie `state/administrate`.
 
-![Die Seite der Objektzustandsgruppen: eine kurze Erklärung, fünf Kennzahlen, dann eine Karte je Gruppe mit ihren Zuständen in Reihenfolge, den Objekten in jedem, der Limitierung der Richtlinie, den Sprachen und den Rollen, die sie verwenden](../../eng-us/guides/images/object-states/groups.png)
+![Die Seite der Objektzustandsgruppen: eine kurze Erklärung, fünf Kennzahlen, dann eine Karte je Gruppe mit ihren Zuständen in Reihenfolge, den Objekten in jedem, der Limitierung der Richtlinie, den Sprachen und den Rollen, die sie verwenden](bilder/object-states/groups.png)
 
 Die Seite enthält:
 
@@ -123,7 +123,7 @@ Die Seite enthält:
 
 Das Öffnen einer Gruppe (`/state/group/<identifier>`) zeigt:
 
-![Eine Zustandsgruppe: der Standardzustand, die Objekte mit einem Zustand der Gruppe und die Limitierung der Richtlinie, dann die Zustände in Reihenfolge mit ihrer Position, Objekten, Sprachen und Beschreibung, Nach oben und Nach unten, Bearbeiten und Auswählen](../../eng-us/guides/images/object-states/group.png)
+![Eine Zustandsgruppe: der Standardzustand, die Objekte mit einem Zustand der Gruppe und die Limitierung der Richtlinie, dann die Zustände in Reihenfolge mit ihrer Position, Objekten, Sprachen und Beschreibung, Nach oben und Nach unten, Bearbeiten und Auswählen](bilder/object-states/group.png)
 
 - Die Beschreibung der Gruppe, ihren Standardzustand, wie viele Objekte einen Zustand der Gruppe haben, die
   Limitierung der Richtlinie und ihre ID.
@@ -160,7 +160,7 @@ Das Beispiel baut die Gruppe `review` auf, die in Abschnitt 9 verwendet wird.
    hat. Sie muss einen Namen haben.
 5. **Erstellen**. Sie landen auf der neuen Gruppe, die noch keine Zustände hat.
 
-![Das Formular für einen neuen Zustand: der Bezeichner mit dem, was er enthalten darf und wie Templates ihn schreiben, die Hauptsprache sowie ein Name und eine Beschreibung je Sprache](../../eng-us/guides/images/object-states/edit.png)
+![Das Formular für einen neuen Zustand: der Bezeichner mit dem, was er enthalten darf und wie Templates ihn schreiben, die Hauptsprache sowie ein Name und eine Beschreibung je Sprache](bilder/object-states/edit.png)
 
 Nun die Zustände, in der gewünschten Reihenfolge:
 

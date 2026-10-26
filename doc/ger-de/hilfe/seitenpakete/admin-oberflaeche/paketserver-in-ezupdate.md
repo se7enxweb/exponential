@@ -27,7 +27,7 @@ und `exp:install`, nach dem Server aus `package.ini`.
 
 **Setup > Updates and packages**, Reiter **Package servers** (`/update/servers`).
 
-![Der Reiter Package servers von Updates and packages: die Liste der Composer-Server mit eingeschaltetem packagist.org und einem Formular zum Hinzufügen eines Servers, und die Liste der Exponential-Paketserver mit dem eingebauten Server exponential.packages.exponential.earth/exponential/6.0/6.0.15](../../../../eng-us/help/images/site-packages-ezupdate-servers.webp)
+![Der Reiter Package servers von Updates and packages: die Liste der Composer-Server mit eingeschaltetem packagist.org und einem Formular zum Hinzufügen eines Servers, und die Liste der Exponential-Paketserver mit dem eingebauten Server exponential.packages.exponential.earth/exponential/6.0/6.0.15](../../bilder/site-packages-ezupdate-servers.webp)
 
 Die Seite hat zwei Listen:
 

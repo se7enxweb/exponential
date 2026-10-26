@@ -235,7 +235,7 @@ Kreuzen Sie **Mir ist bewusst, dass die öffentliche Website für jeden oben nic
 bis ich den Wartungsmodus wieder ausschalte.** an und klicken Sie auf **Website offline nehmen**. Die **Vorschau** zeigt
 die Seite, die Besucher erhalten.
 
-![Setup > Wartung bei laufender Site: das grüne Banner, die drei Schritte des Plans (Nachricht, voraussichtliche Dauer, wer weiterhin Zugang hat) und die Vorschau der 503-Seite, die Besucher sehen werden](../../eng-us/help/images/update-maintenance.webp)
+![Setup > Wartung bei laufender Site: das grüne Banner, die drei Schritte des Plans (Nachricht, voraussichtliche Dauer, wer weiterhin Zugang hat) und die Vorschau der 503-Seite, die Besucher sehen werden](bilder/update-maintenance.webp)
 
 ### B2. Sehen, was ansteht
 
@@ -246,7 +246,7 @@ die Seite, die Besucher erhalten.
 geändert und nicht committet haben, können den nächsten Schritt scheitern lassen; committen Sie sie vorher in einer
 Shell.
 
-![Setup > Git-Verwaltung: die Karte Upstream mit Jetzt holen, dem Remote, dem verglichenen Branch, Voraus und zurück, den Commits, die in dieser Installation fehlen, und darunter die Felder Lokaler Branch und Entfernter Branch mit Autoloads neu erzeugen und Auschecken](../../eng-us/help/images/update-git-manager.webp)
+![Setup > Git-Verwaltung: die Karte Upstream mit Jetzt holen, dem Remote, dem verglichenen Branch, Voraus und zurück, den Commits, die in dieser Installation fehlen, und darunter die Felder Lokaler Branch und Entfernter Branch mit Autoloads neu erzeugen und Auschecken](bilder/update-git-manager.webp)
 
 **Aktualisierungen und Pakete** > **Übersicht** > **Nach Aktualisierungen suchen** zeigt, welche Erweiterungen ein neueres Release haben;
 es ändert nichts.
@@ -285,9 +285,9 @@ schreibt.
    INI-, Template- und Inhalts-Caches geleert. Ein Hinweis meldet *The installation is up to date!* oder was sich
    geändert hat. Schalten Sie das Aktualisieren wieder aus.
 
-![Aktualisierungen und Pakete > Übersicht: die Zähler, die Karte Composer mit den Schaltern für Aktualisieren und Installieren neuer Pakete und das Feld Updates mit Updates einschalten, Nach Aktualisierungen suchen, Holen als, Vorschau (Probelauf) und Updates installieren](../../eng-us/help/images/update-ezupdate-overview.webp)
+![Aktualisierungen und Pakete > Übersicht: die Zähler, die Karte Composer mit den Schaltern für Aktualisieren und Installieren neuer Pakete und das Feld Updates mit Updates einschalten, Nach Aktualisierungen suchen, Holen als, Vorschau (Probelauf) und Updates installieren](bilder/update-ezupdate-overview.webp)
 
-![Die Seite eines Probelaufs in Aktualisierungen und Pakete: „Probelauf beendet. Er würde ändern: 2 installed, 63 updated. Es wurde nichts geändert.“, der Composer-Befehl und seine Ausgabe sowie Erneut ausführen](../../eng-us/help/images/update-ezupdate-run.webp)
+![Die Seite eines Probelaufs in Aktualisierungen und Pakete: „Probelauf beendet. Er würde ändern: 2 installed, 63 updated. Es wurde nichts geändert.“, der Composer-Befehl und seine Ausgabe sowie Erneut ausführen](bilder/update-ezupdate-run.webp)
 
 Die anderen Reiter helfen Ihnen beim Prüfen vorher und nachher:
 
@@ -298,13 +298,13 @@ Die anderen Reiter helfen Ihnen beim Prüfen vorher und nachher:
 - **Paketserver** listet die Composer-Server (packagist.org lässt sich ausschalten) und die `.ezpkg`-Paketserver auf.
 - **Förderung** zeigt, wer hinter den installierten Paketen steht und wie Sie sie unterstützen können.
 
-![Aktualisierungen und Pakete > Installierte Pakete: die Datumsangaben von composer.json, composer.lock und installed.json, die Zähler, die Filter (Git-Klone, Braucht Aufmerksamkeit und andere) und die Tabelle der Pakete mit ihren Versionen und ihrem Status](../../eng-us/help/images/update-ezupdate-installed.webp)
+![Aktualisierungen und Pakete > Installierte Pakete: die Datumsangaben von composer.json, composer.lock und installed.json, die Zähler, die Filter (Git-Klone, Braucht Aufmerksamkeit und andere) und die Tabelle der Pakete mit ihren Versionen und ihrem Status](bilder/update-ezupdate-installed.webp)
 
-![Aktualisierungen und Pakete > Pakete finden: das Suchformular mit Wo und Typ sowie Pakete mit Downloads, Sternen und der installierten Version](../../eng-us/help/images/update-ezupdate-browse.webp)
+![Aktualisierungen und Pakete > Pakete finden: das Suchformular mit Wo und Typ sowie Pakete mit Downloads, Sternen und der installierten Version](bilder/update-ezupdate-browse.webp)
 
-![Aktualisierungen und Pakete > Paketserver: die Composer-Server mit eingeschaltetem packagist.org und die Exponential-Paketserver mit dem eingebauten Server](../../eng-us/help/images/update-ezupdate-servers.webp)
+![Aktualisierungen und Pakete > Paketserver: die Composer-Server mit eingeschaltetem packagist.org und die Exponential-Paketserver mit dem eingebauten Server](bilder/update-ezupdate-servers.webp)
 
-![Aktualisierungen und Pakete > Förderung: wie viele Pakete um Finanzierung bitten, von wie vielen Anbietern, und die Finanzierungslinks nach Anbieter gruppiert](../../eng-us/help/images/update-ezupdate-funding.webp)
+![Aktualisierungen und Pakete > Förderung: wie viele Pakete um Finanzierung bitten, von wie vielen Anbietern, und die Finanzierungslinks nach Anbieter gruppiert](bilder/update-ezupdate-funding.webp)
 
 ### B5. Die Datenbank prüfen und aktualisieren
 
@@ -313,7 +313,7 @@ mit den Prüfsummen des Release (nach einem sauberen Git-Update stimmt jede Date
 Datenbankkonsistenz** vergleicht die Tabellen mit dem Schema des neuen Codes und zeigt das SQL, das die Datenbank
 angleichen würde; **SQL herunterladen** speichert es.
 
-![Setup > Upgrade-Prüfung: die Version, die Dateien im Manifest, die Datenbank-Engine und die beiden Prüfungen mit Überprüfe Dateikonsistenz und Überprüfe Datenbankkonsistenz](../../eng-us/help/images/update-upgrade-check.webp)
+![Setup > Upgrade-Prüfung: die Version, die Dateien im Manifest, die Datenbank-Engine und die beiden Prüfungen mit Überprüfe Dateikonsistenz und Überprüfe Datenbankkonsistenz](bilder/update-upgrade-check.webp)
 
 Ein Release kann ein **Datenbank-Update** brauchen: [Upgrade](../installation/11-aktualisieren.md#schritt-2-das-datenbank-update-anwenden)
 nennt die Datei. Ohne Shell öffnet **Setup** > **DS-Editor** die Datenbank der Site in AdminNeo, nachdem Sie eine
@@ -321,7 +321,7 @@ Warnseite bestätigt haben (**Ich habe eine vollständige Sicherung erstellt und
 Datenbank**); dort können Sie SQL ausführen oder die Datei des Release importieren. Das wirkt auf die Live-Daten, an
 allen Prüfungen der Administration vorbei. Führen Sie danach **Überprüfe Datenbankkonsistenz** erneut aus.
 
-![Setup > DS-Editor: die Warnung „Direkter Datenbankzugriff: Halten Sie an und lesen Sie dies“, der Datenbanktyp und die Tabellen, was der Editor kann, und die Bestätigung vor Weiter zur Datenbank](../../eng-us/help/images/update-dse.webp)
+![Setup > DS-Editor: die Warnung „Direkter Datenbankzugriff: Halten Sie an und lesen Sie dies“, der Datenbanktyp und die Tabellen, was der Editor kann, und die Bestätigung vor Weiter zur Datenbank](bilder/update-dse.webp)
 
 ### B6. Die Caches leeren
 
@@ -332,7 +332,7 @@ Velocity die alten Klassen, bis `php bin/php/console exp:velocity restart` (oder
 Kommandozeile läuft; die Seite weist an den entscheidenden Stellen darauf hin. Eine Site, die von Apache oder nginx mit
 PHP-FPM ausgeliefert wird, übernimmt den neuen Code normalerweise von selbst (OPcache prüft die Dateien erneut).
 
-![Setup > Cache-Verwaltung: Alle Caches leeren, Cache des Inhalts leeren, Template-Cache leeren, INI-Caches leeren, Größen messen und die Caches nach ihrem Inhalt gruppiert](../../eng-us/help/images/update-caches.webp)
+![Setup > Cache-Verwaltung: Alle Caches leeren, Cache des Inhalts leeren, Template-Cache leeren, INI-Caches leeren, Größen messen und die Caches nach ihrem Inhalt gruppiert](bilder/update-caches.webp)
 
 ### B7. Die Site prüfen und das Wartungsfenster beenden
 
@@ -342,9 +342,9 @@ weiterhin** sehen Sie die Site, alle anderen die Wartungsseite) sowie ein Objekt
 auf, die häufigsten zuerst; **Zustand der Logs** zeigt die am schnellsten wachsenden Logs und die Dateien, die der
 Webserver nicht schreiben kann. Entscheidend sind die Fehler, die seit dem Update neu sind.
 
-![Setup > Logdateien > Fehlerübersicht: die Fehler der letzten 24 Stunden nach Meldung gruppiert, mit Anzahl, Stufe, letztem Auftreten, Anzeigen und Als bekannt markieren](../../eng-us/help/images/update-logs-digest.webp)
+![Setup > Logdateien > Fehlerübersicht: die Fehler der letzten 24 Stunden nach Meldung gruppiert, mit Anzahl, Stufe, letztem Auftreten, Anzeigen und Als bekannt markieren](bilder/update-logs-digest.webp)
 
-![Setup > Logdateien > Zustand der Logs: Speicherbelegung im Verhältnis zum Budget, die am schnellsten wachsenden Logs, Logs über ihrer Größengrenze und Dateien, die der Webserver nicht schreiben kann](../../eng-us/help/images/update-logs.webp)
+![Setup > Logdateien > Zustand der Logs: Speicherbelegung im Verhältnis zum Budget, die am schnellsten wachsenden Logs, Logs über ihrer Größengrenze und Dateien, die der Webserver nicht schreiben kann](bilder/update-logs.webp)
 
 Erst wenn alles in Ordnung ist: **Setup** > **Wartung** > **Website wieder online bringen**. Wenn etwas nicht in
 Ordnung ist, gehen Sie zuerst zurück: Checken Sie in der Git-Verwaltung im **Commit-Verlauf** den Commit aus, auf dem die Site

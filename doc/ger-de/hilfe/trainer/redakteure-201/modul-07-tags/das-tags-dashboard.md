@@ -95,7 +95,7 @@ Verwenden Sie die Schulungsinstallation mit einer Rolle, die Tags lesen und hinz
 - Die Teilnehmenden haben gesehen, wie eine Zusammenführung und ein Synonym entstehen.
 - Der Trainer prüft das, indem er `Training` im Tag-Baum öffnet: ein untergeordneter Tag pro Person.
 
-![Das Tags-Dashboard mit dem Tag-Baum und den neuesten Tags](../../../../../eng-us/help/images/trainers/e201-tags-dashboard.webp)
+![Das Tags-Dashboard mit dem Tag-Baum und den neuesten Tags](../../../bilder/trainers/e201-tags-dashboard.webp)
 
 ## Quiz
 

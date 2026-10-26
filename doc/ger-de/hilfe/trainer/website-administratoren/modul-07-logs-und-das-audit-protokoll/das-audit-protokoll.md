@@ -126,7 +126,7 @@ Installation.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer das Ereignis aus Schritt 5 mit gekürzter
   Adresse am Beamer zeigen lässt.
 
-![Das Audit-Dashboard: Zustand der Hash-Ketten, Ereignisse von heute und 7 Tagen, Sicherheit](../../../../../eng-us/help/images/trainers/sa-audit-dash.webp)
+![Das Audit-Dashboard: Zustand der Hash-Ketten, Ereignisse von heute und 7 Tagen, Sicherheit](../../../bilder/trainers/sa-audit-dash.webp)
 
 ## Quiz
 

@@ -125,7 +125,7 @@ Installation.
 - Der Trainer prüft das, indem er nach der Nummer des Schritts für den Antwort-Cache und nach dem Grund fragt, den der
   PHP-FPM-Schritt angegeben hat.
 
-![Ein Wartungsfenster, geplant vor einer Bereitstellung](../../../../../eng-us/help/images/trainers/ho-maint.webp)
+![Ein Wartungsfenster, geplant vor einer Bereitstellung](../../../bilder/trainers/ho-maint.webp)
 
 ## Quiz
 

@@ -29,7 +29,7 @@ Inhalte anhand ihres Knotens oder Objekts ([1. Die Linkliste](../../../anleitung
 [2. Wie Links geprüft werden](../../../anleitungen/urls-und-aliase.md#2-wie-links-geprüft-werden)). Die Einstellungen stehen in
 `cronjob.ini [linkCheckSettings]`.
 
-![URL-Verwaltung: die Links in den Inhalten mit Status, letzter Prüfung und wo sie verwendet werden](../../../../eng-us/help/images/creators/link-management.webp)
+![URL-Verwaltung: die Links in den Inhalten mit Status, letzter Prüfung und wo sie verwendet werden](../../bilder/creators/link-management.webp)
 
 ## Nicht referenzierte Objekte
 
@@ -38,7 +38,7 @@ die nichts verwendet: kein Objekt, Layout, keine Einstellung, kein Template, kei
 Newsletter-Eintrag. Markieren Sie sie und verschieben Sie sie nach einer Bestätigung in den Papierkorb
 ([Die Inhaltsprüfungen](../../../funktionen/6.0/inhaltspruefungen.md)).
 
-![Nicht referenzierte Objekte: Bilder und Dateien, die nichts verwendet, zum Aufräumen oder Verschieben in den Papierkorb](../../../../eng-us/help/images/creators/unreferenced-objects.webp)
+![Nicht referenzierte Objekte: Bilder und Dateien, die nichts verwendet, zum Aufräumen oder Verschieben in den Papierkorb](../../bilder/creators/unreferenced-objects.webp)
 
 ## Defekte Relationen
 
@@ -46,7 +46,7 @@ Newsletter-Eintrag. Markieren Sie sie und verschieben Sie sie nach einer Bestät
 Liegendes, Verborgenes oder nie Veröffentlichtes verweisen, mit einem Link zum Bearbeiten der Quelle; außerdem Layouts,
 deren Blöcke solche Inhalte nennen. Nur lesend.
 
-![Defekte Relationen: sichtbare Inhalte, die auf gelöschte, verborgene oder im Papierkorb liegende Inhalte verlinken](../../../../eng-us/help/images/creators/broken-relations.webp)
+![Defekte Relationen: sichtbare Inhalte, die auf gelöschte, verborgene oder im Papierkorb liegende Inhalte verlinken](../../bilder/creators/broken-relations.webp)
 
 ## Speicherdateien und fehlende Dateien
 
@@ -54,7 +54,7 @@ deren Blöcke solche Inhalte nennen. Nur lesend.
 eine Quarantäne verschoben werden), sowie Dateiprobleme (Eigentümer, Rechte, leere Dateien). Fehlende Dateien listet
 Bilder und Dateien auf, deren Datei verschwunden ist ([Fehlende Dateien](../../../anleitungen/fehlende-dateien.md)).
 
-![Speicherdateien: Dateien im Speicher, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten](../../../../eng-us/help/images/creators/storage-files.webp)
+![Speicherdateien: Dateien im Speicher, die nichts verwendet, und Dateien mit falschem Eigentümer oder falschen Rechten](../../bilder/creators/storage-files.webp)
 
 Die Prüfungen stehen im Setup-Menü und im Kontextmenü des Inhaltsbaums (**Fortgeschritten**). Ihre Richtlinien sind
 `contentcheck/unreferenced`, `trash` und `brokenrelations`.

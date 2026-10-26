@@ -108,7 +108,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Our team, two places*
 - Der Trainer prüft das, indem er zwei Alternativtexte und zwei Linktexte vorliest und die Gruppe fragt, ob sie
   funktionieren, ohne die Seite zu sehen.
 
-![Ein Bild in der Upload-Warteschlange mit seinem Feld für den Alternativtext, der sagt, was das Bild zeigt](../../../../../eng-us/help/images/trainers/e201-alt-text.webp)
+![Ein Bild in der Upload-Warteschlange mit seinem Feld für den Alternativtext, der sagt, was das Bild zeigt](../../../bilder/trainers/e201-alt-text.webp)
 
 ## Quiz
 

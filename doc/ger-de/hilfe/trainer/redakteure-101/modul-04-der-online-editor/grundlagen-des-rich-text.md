@@ -119,7 +119,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article* (Le
 - Der Trainer prüft das, indem er den Artikel einer Teilnehmerin oder eines Teilnehmers auf der Website auf dem
   Projektor öffnet.
 
-![Ein Rich-Text-Feld mit seiner Werkzeugleiste und unten dem Pfad des Elements unter dem Cursor](../../../../../eng-us/help/images/trainers/e101-richtext-toolbar.webp)
+![Ein Rich-Text-Feld mit seiner Werkzeugleiste und unten dem Pfad des Elements unter dem Cursor](../../../bilder/trainers/e101-richtext-toolbar.webp)
 
 ## Quiz
 

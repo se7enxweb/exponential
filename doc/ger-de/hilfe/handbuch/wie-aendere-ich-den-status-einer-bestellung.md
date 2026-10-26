@@ -31,7 +31,7 @@ Benutzer, deren Rolle `shop/administrate` hat, um die Bestellliste zu sehen, und
 5. Klicken Sie auf **Änderungen anwenden**.
    Die Liste zeigt den neuen Status. Wenn der Shop für diesen Status eine Mail verschickt, geht sie jetzt hinaus.
 
-![Die Bestellliste mit den Spalten ID, Kunde, Insgesamt, Zeit und Status und den Schaltflächen Ausgewähltes archivieren und Änderungen anwenden](../../../eng-us/help/manual/images/store-order-list.webp)
+![Die Bestellliste mit den Spalten ID, Kunde, Insgesamt, Zeit und Status und den Schaltflächen Ausgewähltes archivieren und Änderungen anwenden](bilder/store-order-list.webp)
 
 ## Was schiefgehen kann
 

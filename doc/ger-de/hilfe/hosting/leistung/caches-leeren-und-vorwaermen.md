@@ -30,7 +30,7 @@ Website verhält und wie Sie eine Website danach vorwärmen, damit die ersten Be
 
 Aus [Kapitel 10, Was zu leeren ist](../../../installation/10-nach-der-installation.md#welcher-cache-zu-leeren-ist), mit `php bin/php/ezcache.php`:
 
-![Setup, Cache-Verwaltung: alle Caches, den Content-View-Cache, die INI- und Template-Caches oder einzelne Caches aus der Liste leeren](../../../../eng-us/help/images/hosting/cache-management.webp)
+![Setup, Cache-Verwaltung: alle Caches, den Content-View-Cache, die INI- und Template-Caches oder einzelne Caches aus der Liste leeren](../../bilder/hosting/cache-management.webp)
 
 | Sie haben geändert | Leeren |
 |---|---|
@@ -103,7 +103,7 @@ Seit 6.0.15 **benennt** ein Leeren ein Cache-Verzeichnis in einem Schritt zur Se
 Hunderttausenden von Dateien schnell zurück, und nichts, was in der Zwischenzeit erzeugt wird, wird vom Löschen erfasst.
 Einstellungen: `site.ini [FileSettings] RenameBeforeDelete=enabled` und `RenameExpiredCaches=enabled` (beide mitgeliefert).
 
-![Der Kasten Cache leeren oben in der rechten Spalte, mit einer Liste von Caches und der Schaltfläche Leeren](../../../../eng-us/help/images/hosting/clear-cache-box.webp)
+![Der Kasten Cache leeren oben in der rechten Spalte, mit einer Liste von Caches und der Schaltfläche Leeren](../../bilder/hosting/clear-cache-box.webp)
 
 Wenn eine Änderung die View-Caches von `[ContentSettings] CacheThreshold` Knoten oder mehr (250) leeren würde, wird stattdessen der
 ganze View-Cache als abgelaufen markiert, und das Log meldet `Expiring all view cache`. Gelegentlich nach einem großen Verschieben ist

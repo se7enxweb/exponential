@@ -30,9 +30,9 @@ braucht, in einem Design zusammen, sodass es ohne die älteren funktioniert. Ben
 den Inhalt, in hellen Farben. Es verwendet nur Systemschriften, lädt keine herunter, und seine Styles liegen in
 gemeinsamen Stylesheets mit Farbtokens, deren Kontrast im hellen und dunklen Modus durch Tests geprüft wird.
 
-![Die Administration admin4 im hellen Modus](../../../eng-us/help/images/help/pr-admin4-light.webp)
+![Die Administration admin4 im hellen Modus](../bilder/help/pr-admin4-light.webp)
 
-![Derselbe Bildschirm im dunklen Modus](../../../eng-us/help/images/help/pr-admin4-dark.webp)
+![Derselbe Bildschirm im dunklen Modus](../bilder/help/pr-admin4-dark.webp)
 
 ## Was neu ist, und seit wann
 
@@ -64,7 +64,7 @@ gemeinsamen Stylesheets mit Farbtokens, deren Kontrast im hellen und dunklen Mod
 
 ## Blickwinkel und Ideen für Überschriften
 
-- „Ein zwanzig Jahre altes CMS bekommt einen dunklen Modus und testet seinen Kontrast.“
+- „Ein seit 1999 entwickeltes CMS bekommt einen dunklen Modus und testet seinen Kontrast.“
 - „Keine heruntergeladenen Schriften, keine Inline-Styles: eine Administration, gebaut für strikte Sicherheit.“
 
 ## Wen Sie fragen

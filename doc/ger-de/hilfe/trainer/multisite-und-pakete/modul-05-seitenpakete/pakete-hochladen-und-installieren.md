@@ -124,7 +124,7 @@ eigenen Installation oder auf einer zweiten, mit `exp:install` in einem anderen 
 - Schritt 8: `exp:ini where package.ini/InstallerSettings/InstallBatchMaxItems` zeigt `4` im globalen Override.
 - Der Trainer prüft Schritt 6 in einer Übungsumgebung.
 
-![Importiere Paket: eine .ezpkg-Datei in ein Repository hochladen](../../../../../eng-us/help/images/trainers/ms-upload.webp)
+![Importiere Paket: eine .ezpkg-Datei in ein Repository hochladen](../../../bilder/trainers/ms-upload.webp)
 
 ## Quiz
 

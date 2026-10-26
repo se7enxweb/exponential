@@ -112,7 +112,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto. Klicken Sie
 - Schritt 11: eine Datei `sevenx_multisite-<version>.ezpkg`; das Paket selbst wurde nur gelesen.
 - Der Trainer prüft Schritt 10 am Beamer.
 
-![Setup, Pakete: die Repositorys und ihre Pakete](../../../../../eng-us/help/images/trainers/ms-cards.webp)
+![Setup, Pakete: die Repositorys und ihre Pakete](../../../bilder/trainers/ms-cards.webp)
 
 ## Quiz
 

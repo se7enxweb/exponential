@@ -34,7 +34,7 @@ Das Beispiel ist der Demo-Import „Demo: PHP news (Atom feed)“, der alle 10 M
 7. Lassen Sie **The schedule is active** angehakt und klicken Sie auf **Save**. Der Schritt listet die nächsten fünf
    Laufzeiten.
 
-![Der Schritt Zeitplan des PHP-News-Imports: Every N minutes gewählt, Datum und Uhrzeit, Zeitzone UTC, alle 10 Minuten, das Feld für den Cron-Ausdruck leer, Run once as soon as possible, der Zeitplan aktiv und die nächsten fünf Läufe im Abstand von zehn Minuten](../../../eng-us/help/images/sqli-import/sqli-import-editor-schedule.webp)
+![Der Schritt Zeitplan des PHP-News-Imports: Every N minutes gewählt, Datum und Uhrzeit, Zeitzone UTC, alle 10 Minuten, das Feld für den Cron-Ausdruck leer, Run once as soon as possible, der Zeitplan aktiv und die nächsten fünf Läufe im Abstand von zehn Minuten](../bilder/sqli-import/sqli-import-editor-schedule.webp)
 
 Ab dann reiht der Cron-Teil `sqliimport` alle 10 Minuten einen Lauf ein. Ein Feed, der sich nicht geändert hat,
 ergibt Läufe mit nur **Unchanged**-Datensätzen und keine neuen Versionen.
@@ -61,7 +61,7 @@ Cron-Ausdrücke unterstützen Listen, Bereiche, Schritte, die Namen von Monaten 
 **Schedules** im linken Menü des Reiters Importe (`sqliimport/schedules`) listet jeden Zeitplan mit seinem Import,
 dem Zeitplan in Worten, ob er aktiv oder angehalten ist, den nächsten drei Laufzeiten und dem letzten Lauf.
 
-![Die Seite Schedules: der Import Demo: PHP news (Atom feed), alle 10 Minuten, aktiv, seine nächsten drei Läufe im Abstand von zehn Minuten, der letzte Lauf #122 und die Schaltflächen Pause, Edit und Delete](../../../eng-us/help/images/sqli-import/sqli-import-schedules.webp)
+![Die Seite Schedules: der Import Demo: PHP news (Atom feed), alle 10 Minuten, aktiv, seine nächsten drei Läufe im Abstand von zehn Minuten, der letzte Lauf #122 und die Schaltflächen Pause, Edit und Delete](../bilder/sqli-import/sqli-import-schedules.webp)
 
 Benutzer mit Manage imports bekommen außerdem diese Aktionen:
 
@@ -113,7 +113,7 @@ Website aufruft, und die Daten im Aufruf mitschicken. Das ist der **Webhook- / A
 jeden Import aus, bis Sie ihn im Schritt **Schedule**, Abschnitt **Started by another system (webhook or API)**,
 einschalten:
 
-![Der Abschnitt Started by another system des Bücher-Imports: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, die Adresse POST https://alpha.se7enx.com/admin/sqliimport/trigger/demo_books_datatable und die Formulare für das Signiergeheimnis und einen neuen API-Schlüssel](../../../eng-us/help/images/sqli-import/sqli-import-editor-trigger.webp)
+![Der Abschnitt Started by another system des Bücher-Imports: The trigger is on, Run as user (ID), A call may bring the data, Signing secret by name, die Adresse POST https://alpha.se7enx.com/admin/sqliimport/trigger/demo_books_datatable und die Formulare für das Signiergeheimnis und einen neuen API-Schlüssel](../bilder/sqli-import/sqli-import-editor-trigger.webp)
 
 1. Haken Sie **The trigger is on** an und tragen Sie **Run as user (ID)** ein: einen Benutzer mit Run imports oder
    Manage imports für diesen Import. Ein ausgelöster Lauf läuft nie als anonymer Benutzer.

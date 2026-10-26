@@ -153,7 +153,7 @@ Läuft die Website auf Velocity, brauchen Sie dessen Befehle zum Stoppen und Sta
 - Der Trainer prüft, indem er alle Teilnehmenden fragt, wie lange die Wiederherstellung gedauert hat, und schreibt die
   Zeiten an die Tafel.
 
-![Sicherungen: eine vollständige Sicherung der Website oder Datenbank und Dateien, auf Wunsch verschlüsselt](../../../../../eng-us/help/images/trainers/sa-backups.webp)
+![Sicherungen: eine vollständige Sicherung der Website oder Datenbank und Dateien, auf Wunsch verschlüsselt](../../../bilder/trainers/sa-backups.webp)
 
 ## Quiz
 

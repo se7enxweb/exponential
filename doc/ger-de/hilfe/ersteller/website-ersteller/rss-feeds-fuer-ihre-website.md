@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die Feeds mit Nachrichten, Blogbe
 Feeds anderer Websites anzeigen. Feeds werden unter **Setup > RSS** verwaltet
 ([RSS-Feeds](../../../anleitungen/rss-feeds.md)).
 
-![Setup, RSS: die RSS-Exporte und -Importe der Website](../../../../eng-us/help/images/creators/rss-list.webp)
+![Setup, RSS: die RSS-Exporte und -Importe der Website](../../bilder/creators/rss-list.webp)
 
 ## Inhalt
 

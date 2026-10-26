@@ -35,7 +35,7 @@ Ein Fehler der Site zeigt eine Seite wie **Bei uns ist etwas schiefgegangen**, u
 Beispiel `ERR-0123456789`. Der Fehler ist bereits protokolliert; mit der Referenz findet ein Administrator genau
 diesen Moment in den Protokollen.
 
-![Setup, Logdateien: die Zusammenfassung der jüngsten Fehler und Warnungen aus den Logdateien](../../eng-us/help/images/help/logs-digest.webp)
+![Setup, Logdateien: die Zusammenfassung der jüngsten Fehler und Warnungen aus den Logdateien](bilder/help/logs-digest.webp)
 
 1. **Notieren Sie die Referenz**, die Uhrzeit und die Adresse der Seite (kopieren Sie sie aus der Adressleiste des
    Browsers).
@@ -60,7 +60,7 @@ in der Einrichtung der Site, melden Sie es öffentlich, damit es für alle behob
 melden** der Hilfe (`exphelp/report` in der Administration) führt Sie durch die Meldung, füllt eine Zusammenfassung
 der Installation für Sie aus und öffnet ein neues Issue mit vorbereitetem Titel und Text.
 
-![Die Seite Fehler melden des Hilfe-Centers: welcher Tracker der richtige ist, und ein vorausgefülltes Issue mit einer unbedenklichen Zusammenfassung der Installation](../../eng-us/help/images/help/report-an-error.webp)
+![Die Seite Fehler melden des Hilfe-Centers: welcher Tracker der richtige ist, und ein vorausgefülltes Issue mit einer unbedenklichen Zusammenfassung der Installation](bilder/help/report-an-error.webp)
 
 Wählen Sie den richtigen Tracker:
 
@@ -117,7 +117,7 @@ Für Fragen, die keine Fehler sind („Wie mache ich ...?“), ist die Community
 [eZpedia](https://ezpedia.exponential.earth/) und in den [Artikeln auf Share Exponential](https://share.exponential.earth/learn)
 nach. Vielleicht haben auch die anderen Hilfeseiten schon die Antwort: siehe [Hilfe für Redakteure und Benutzer](README.md).
 
-![Fehler melden im dunklen Modus: wohin jede Art von Problem gehört, und die unbedenkliche Zusammenfassung der Installation zum Kopieren](../../eng-us/help/images/help/help-report.webp)
+![Fehler melden im dunklen Modus: wohin jede Art von Problem gehört, und die unbedenkliche Zusammenfassung der Installation zum Kopieren](bilder/help/help-report.webp)
 
 Kostenlose Hilfe hängt von der Zeit ab, die Menschen geben; niemand verspricht deshalb eine Antwortzeit. Wenn Sie
 nicht warten können, empfiehlt die [Support-Seite](https://exponential.earth/support) des Projekts den

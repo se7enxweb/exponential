@@ -117,7 +117,7 @@ Installation. Nichts wird installiert oder entfernt.
   Installer-Quelle würde sie neuen Installationen aus dem Assistenten fehlen.
 - Der Trainer prüft die Antwort aus Schritt 8 bei zwei Teilnehmenden.
 
-![Setup, Pakete: die Pakete in den Ablagen](../../../../../eng-us/help/images/trainers/sa-packages.webp)
+![Setup, Pakete: die Pakete in den Ablagen](../../../bilder/trainers/sa-packages.webp)
 
 ## Quiz
 

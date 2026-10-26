@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren, Hoster und Website-Ersteller, die gerade `
 haben und das Ergebnis prüfen wollen oder wissen wollen, wo sie anfangen. Sie beantwortet: woraus die Installation besteht, welche Dateien
 ihre Einstellungen enthalten und was bewusst ausgeschaltet ist.
 
-![Der Inhaltsbaum nach der Installation: ein Ordner pro Website](../../../../eng-us/help/images/help/sp-sevenx-tree.webp)
+![Der Inhaltsbaum nach der Installation: ein Ordner pro Website](../../bilder/help/sp-sevenx-tree.webp)
 
 ## Inhalt
 

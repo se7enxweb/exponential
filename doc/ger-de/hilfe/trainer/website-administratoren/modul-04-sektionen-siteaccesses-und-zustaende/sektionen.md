@@ -108,7 +108,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem private
 - Der Trainer prüft das, indem er auf der Website einer Teilnehmerin oder eines Teilnehmers den Ordner `Members` in
   einem privaten Fenster öffnet.
 
-![Sektionen mit ihren Objekten und Rollen](../../../../../eng-us/help/images/trainers/sa-sections.webp)
+![Sektionen mit ihren Objekten und Rollen](../../../bilder/trainers/sa-sections.webp)
 
 ## Quiz
 

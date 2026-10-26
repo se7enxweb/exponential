@@ -131,7 +131,7 @@ Auf Ihrer Schulungsinstallation, Administration in admin4, Dateien aus Modul 4.
 - Der Trainer prüft den Block einer Teilnehmerin oder eines Teilnehmers in beiden Modi und den zugänglichen Namen des
   Icon-Links.
 
-![Icons von admin4 auf den Karten der Setup-Seite](../../../../../eng-us/help/images/trainers/td-icons.webp)
+![Icons von admin4 auf den Karten der Setup-Seite](../../../bilder/trainers/td-icons.webp)
 
 ## Quiz
 

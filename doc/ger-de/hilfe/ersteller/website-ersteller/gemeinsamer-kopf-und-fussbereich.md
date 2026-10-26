@@ -15,7 +15,7 @@ existiert, um ausgeliehen zu werden. Jede Zone eines anderen Layouts kann mit ei
 zeigt dann die Blöcke dieses Layouts statt ihrer eigenen
 ([Gemeinsame Layouts und verknüpfte Zonen](../../../bc/6.0/layouts.md#gemeinsame-layouts-und-verknüpfte-zonen)).
 
-![Gemeinsame Layouts mit hervorgehobenem Layout Header / Footer, mit dem andere Layouts ihre Kopf- und Fußzonen verknüpfen](../../../../eng-us/help/images/creators/shared-layout-header.webp)
+![Gemeinsame Layouts mit hervorgehobenem Layout Header / Footer, mit dem andere Layouts ihre Kopf- und Fußzonen verknüpfen](../../bilder/creators/shared-layout-header.webp)
 
 ## Inhalt
 

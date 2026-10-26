@@ -98,7 +98,7 @@ Verwenden Sie die Schulungsinstallation; der Trainer hat dem Typ *Article* ein T
 - Wenn **Add new** angeboten wurde, existiert ein neuer Tag unter der Stelle, an die das Feld neue Tags setzt.
 - Der Trainer prüft das, indem er die Tag-Seite am Beamer öffnet.
 
-![Der Tab Tags eines Artikels mit den Tags, die er trägt](../../../../../eng-us/help/images/trainers/e201-tags-tab.webp)
+![Der Tab Tags eines Artikels mit den Tags, die er trägt](../../../bilder/trainers/e201-tags-tab.webp)
 
 ## Quiz
 

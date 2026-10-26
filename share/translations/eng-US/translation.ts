@@ -63617,6 +63617,26 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Background exports are not available here.</source>
         <translation>Background exports are not available here.</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>intact</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>broken</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>unchecked</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>repaired</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>empty</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die eine Website wollen, die Such
 es ankommt, ist bereits eingebaut oder nur eine Erweiterung entfernt; diese Seite listet es als Checkliste auf und
 verweist auf die Seite, die jeden Punkt erklärt.
 
-![Die Seite eines Artikels in der Administration: sein Titel, aus dem auch seine Adresse und der Seitentitel in den Suchergebnissen entstehen](../../../../eng-us/help/images/creators/seo-url-alias.webp)
+![Die Seite eines Artikels in der Administration: sein Titel, aus dem auch seine Adresse und der Seitentitel in den Suchergebnissen entstehen](../../bilder/creators/seo-url-alias.webp)
 
 ## Inhalt
 
