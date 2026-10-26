@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **73**, davon 73 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **75**, davon 75 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **70** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **78** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **72** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **76** |
 | Länder und Gebiete der Locales | **158** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **134** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **136** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
 
-![Weltkarte: 134 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 136 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 134 Länder und Gebiete in Grün</summary>
+<details><summary>Die 136 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -93,6 +93,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kroatien | HR | `cro-HR` |
 | Kuba | CU | `esl-CU` → `esl-ES` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
+| Laos | LA | `lao-LA` |
 | Lettland | LV | `lav-LV` |
 | Libanon | LB | `ara-LB` → `ara-SA` |
 | Libysch-Arabische Dschamahirija | LY | `ara-LY` → `ara-SA` |
@@ -147,6 +148,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` (nicht übersetzt) |
 | Taiwan | TW | `chi-TW` |
 | Tansania | TZ | `swa-TZ` → `swa-KE` |
+| Thailand | TH | `tha-TH` |
 | Togo | TG | `fre-TG` → `fre-FR` |
 | Tschad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Tschechien | CZ | `cze-CZ` |
@@ -166,7 +168,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 </details>
 
-<details><summary>Die 24 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 22 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
@@ -182,14 +184,12 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kambodscha | KH | `khm-KH` |
 | Kasachstan | KZ | `kaz-KZ` |
 | Kirgistan | KG | `kir-KG` |
-| Laos | LA | `lao-LA` |
 | Malaysien | MY | `msa-MY` |
 | Malediven | MV | `div-MV` |
 | Mongolei | MN | `mon-MN` |
 | Nepal | NP | `nep-NP` |
 | Simbabwe | ZW | `sna-ZW` |
 | Tadschikistan | TJ | `tgk-TJ` |
-| Thailand | TH | `tha-TH` |
 | Tonga | TO | `ton-TO` |
 | Turkmenistan | TM | `tuk-TM` |
 | Uganda | UG | `lug-UG` |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **70** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **72** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **78** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **76** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 78 nicht übersetzten Sprachen</summary>
+<details><summary>Die 76 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -282,7 +282,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Kirundi | Ikirundi | `run` | `run-BI` (Burundi) |
 | Konkani | कोंकणी | `kok` | `kok-IN` (Indien) |
 | Kyrgyz | Кыргызча | `kir` | `kir-KG` (Kirgistan) |
-| Lao | ລາວ | `lao` | `lao-LA` (Laos) |
 | Lingala | Lingála | `lin` | `lin-CD` (Zaire) |
 | Luxembourgish | Lëtzebuergesch | `ltz` | `ltz-LU` (Luxemburg) |
 | Macedonian | Македонски | `mkd` | `mkd-MK` (Ehemalige jugoslawische Republik Mazedonien) |
@@ -311,7 +310,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Irak), `syr-SY` (Syrien) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tadschikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russland) |
-| Thai | ไทย | `tha` | `tha-TH` (Thailand) |
 | Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
 | Tigrinya | ትግርኛ | `tir` | `tir-ET` (Äthiopien) |
 | Tongan | Lea fakatonga | `ton` | `ton-TO` (Tonga) |
