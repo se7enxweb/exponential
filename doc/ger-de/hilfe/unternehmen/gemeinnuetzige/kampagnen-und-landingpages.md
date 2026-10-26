@@ -14,7 +14,7 @@ Organisationen. Sie zeigt, wie eine Kampagnenseite in Exponential Layouts ohne E
 nach Datum selbst ein- und ausschalten kann und wie sie mit der Spendenschaltfläche, dem Formular für Ehrenamtliche und
 dem Newsletter verbunden wird.
 
-![Das Layouts-Dashboard, an dem eine Kampagnenseite beginnt](../../../../eng-us/help/images/help/bu-layouts.webp)
+![Das Layouts-Dashboard, an dem eine Kampagnenseite beginnt](../../bilder/help/bu-layouts.webp)
 
 ## Inhalt
 

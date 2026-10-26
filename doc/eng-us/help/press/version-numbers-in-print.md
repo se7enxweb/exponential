@@ -60,12 +60,12 @@ release, not as a corrected copy of the old one" ([SECURITY.md](https://github.c
 
 Velocity and the extensions have their own numbers, independent of the kernel's:
 
-- Velocity uses four positions, for example `0.0.4.50` (the version the README suggests on 18 October 2026).
+- Velocity uses four positions, for example `0.0.4.54` (the first version `composer.json` required, on 20 October 2026).
 - "After `0.1.9` the next release is `0.1.10`; only the last position counts up unless you decide otherwise"
   ([Extensions, "Release it"](../../guides/extensions.md#7-release-it)).
 - Extensions shipped inside the kernel carry the kernel's version; separate extensions carry their own.
 
-Write the product with its number: "Velocity 0.0.4.50", "the expai extension 0.0.1.12". Do not mix them with the
+Write the product with its number: "Velocity 0.0.4.54", "the expai extension 0.0.1.12". Do not mix them with the
 kernel's number.
 
 ## Comparing and sorting versions

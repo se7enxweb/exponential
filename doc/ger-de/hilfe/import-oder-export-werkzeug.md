@@ -90,7 +90,7 @@ nicht, was Sie wollten, holt **Undo this run** auf der Seite des Laufs die vorhe
   die, die seine Dateien lesen. Die Marke **Works with this tool** kennzeichnet die Werkzeuge, deren Dateien dieses
   liest oder die seine Dateien lesen:
 
-  ![Der Kasten Looking for another import or export? am Ende der Übersicht von Imports: Export (xrowextract), RSS export, Collected information export (CIE) und Data tables mit der Marke Works with this tool, dann Packages, Syndication, Documents, RSS import, Collected information, Newsletter subscribers, Audit export und PDF export und ein Verweis auf Which import or export tool do I need?](../../eng-us/help/images/sqli-import/sqli-import-looking-for.webp)
+  ![Der Kasten Looking for another import or export? am Ende der Übersicht von Imports: Export (xrowextract), RSS export, Collected information export (CIE) und Data tables mit der Marke Works with this tool, dann Packages, Syndication, Documents, RSS import, Collected information, Newsletter subscribers, Audit export und PDF export und ein Verweis auf Which import or export tool do I need?](bilder/sqli-import/sqli-import-looking-for.webp)
 - An einem Objekt listet die Schaltfläche **Import/Export**, was Sie mit diesem Objekt tun können: es exportieren,
   in es importieren (in einem Ordner, in dem Sie Objekte anlegen dürfen) und es auf eine andere Site kopieren.
 - Auf einer Klassenseite listet **Import und Export** die Werkzeuge, die mit den Objekten dieser Klasse arbeiten.

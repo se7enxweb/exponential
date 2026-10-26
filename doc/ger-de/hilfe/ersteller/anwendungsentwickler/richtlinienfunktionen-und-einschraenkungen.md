@@ -66,7 +66,7 @@ switch ( $access['accessWord'] )
 Bei Inhalten fragen Sie das Objekt oder den Knoten; sie wenden jede Inhaltseinschränkung an (Klasse, Sektion,
 Eigentümer, Teilbaum, Zustand, Sprache):
 
-![Die Rolle Editor: ihre Richtlinien, jede ein Modul und eine Funktion mit ihren Einschränkungen, und wo die Rolle zugewiesen ist](../../../../eng-us/help/images/creators/role-policies.webp)
+![Die Rolle Editor: ihre Richtlinien, jede ein Modul und eine Funktion mit ihren Einschränkungen, und wo die Rolle zugewiesen ist](../../bilder/creators/role-policies.webp)
 
 ```php
 if ( !$node->canRead() ) { /* deny */ }

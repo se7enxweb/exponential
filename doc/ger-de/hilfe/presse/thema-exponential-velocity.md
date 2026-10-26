@@ -32,7 +32,7 @@ server written in PHP, bundled with Exponential, that keeps the application load
 server engine, and the two projects have since drifted far apart“ (das README des Pakets, zitiert auf
 [Wer ist 7x?, Exponential Velocity](../wer-ist-7x.md#exponential-velocity)). Er liefert HTTPS vom ersten Start an,
 spricht HTTP/2, hat einen Antwort-Cache und ein Control Panel im Browser und ist die Engine, die Exponential „for every
-stage, from development to production“ empfiehlt ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md#wozu-sie-es-verwenden)).
+stage, from development to production“ empfiehlt ([README, Engines](https://github.com/se7enxweb/exponential/blob/main/README.md#engines-frankenphp-phps-built-in-server-or-qbix)).
 Er ist außerdem sehr jung, und auch das gehört zur Geschichte.
 
 ## Was neu ist, und seit wann

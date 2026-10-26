@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 - Der Trainer prüft das, indem er den Artikel einer Teilnehmerin oder eines Teilnehmers auf der Website und die Seite
   **Online-Editor** auf dem Projektor öffnet.
 
-![Unter einem Rich-Text-Feld der Schalter zwischen den Editoren, die die Website anbietet, umrandet](../../../../../eng-us/help/images/trainers/e101-editor-switch.webp)
+![Unter einem Rich-Text-Feld der Schalter zwischen den Editoren, die die Website anbietet, umrandet](../../../bilder/trainers/e101-editor-switch.webp)
 
 ## Quiz
 

@@ -101,7 +101,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Satz aus Schritt 8 nennt jede Einschränkung, verbunden mit „und“.
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, ihren Satz aus Schritt 8 laut vorzulesen.
 
-![Die Rollen der Installation mit ihren Richtlinien und wo sie zugewiesen sind](../../../../../eng-us/help/images/trainers/sa-roles.webp)
+![Die Rollen der Installation mit ihren Richtlinien und wo sie zugewiesen sind](../../../bilder/trainers/sa-roles.webp)
 
 ## Quiz
 

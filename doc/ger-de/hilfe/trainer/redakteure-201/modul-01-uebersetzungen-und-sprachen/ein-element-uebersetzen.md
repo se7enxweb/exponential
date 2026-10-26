@@ -106,7 +106,7 @@ nennt).
 - Schritt 9 hat leere Felder gezeigt und wurde verworfen; dieser Artikel hat weiterhin eine Sprache.
 - Der Trainer prüft das, indem er den Artikel am Beamer in beiden Sprachen öffnet.
 
-![Die Sprachliste neben Bearbeiten und darunter die Sprachkennzeichen, ein ausgefülltes Kennzeichen pro vorhandener Übersetzung](../../../../../eng-us/help/images/trainers/e201-language-badges.webp)
+![Die Sprachliste neben Bearbeiten und darunter die Sprachkennzeichen, ein ausgefülltes Kennzeichen pro vorhandener Übersetzung](../../../bilder/trainers/e201-language-badges.webp)
 
 ## Quiz
 

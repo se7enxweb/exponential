@@ -28,7 +28,7 @@ Entfernen des Moduls.
 4. Um Einsendungen zu entfernen, die Sie nicht mehr brauchen, markieren Sie sie und klicken Sie auf **Ausgewählte
    entfernen**.
 
-![Gesammelte Informationen mit der Liste der Formulare und den Schaltflächen Sammlungen und CSV exportieren](../../../eng-us/help/manual/images/collected-information.webp)
+![Gesammelte Informationen mit der Liste der Formulare und den Schaltflächen Sammlungen und CSV exportieren](bilder/collected-information.webp)
 
 ## Was schiefgehen kann
 

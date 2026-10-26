@@ -14,7 +14,7 @@ jedes Objekt pro Inhaltssprache eine Übersetzung enthalten, und jeder Siteacces
 welcher Reihenfolge zeigt. Die vollständige Referenz ist [Inhaltssprachen](../../../anleitungen/inhaltssprachen.md); diese
 Seite ist der Weg des Website-Erstellers hindurch.
 
-![Die Übersicht der Übersetzungen: die Sprachen der Installation und wie viele Elemente es in jeder gibt](../../../../eng-us/help/images/creators/translations-overview.webp)
+![Die Übersicht der Übersetzungen: die Sprachen der Installation und wie viele Elemente es in jeder gibt](../../bilder/creators/translations-overview.webp)
 
 ## Inhalt
 

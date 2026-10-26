@@ -14,7 +14,7 @@ noch nicht sichtbar ist. Eine öffentliche Website hat mehrere Caches; leeren Si
 und leeren Sie Caches mit fertigen Seiten zuletzt. Referenz: [Caches](../../../../anleitungen/caches.md) und
 [Betrieb einer Website, Abschnitt 2](../../../../anleitungen/betrieb-einer-website.md#2-den-richtigen-cache-leeren).
 
-![Cache-Verwaltung: den kompletten Cache, Inhalts-Caches, Template-Caches oder INI-Caches leeren](../../../../../eng-us/help/images/government/gov-cache.webp)
+![Cache-Verwaltung: den kompletten Cache, Inhalts-Caches, Template-Caches oder INI-Caches leeren](../../../bilder/government/gov-cache.webp)
 
 ## Inhalt
 1. [Zuerst nachsehen](#zuerst-nachsehen)

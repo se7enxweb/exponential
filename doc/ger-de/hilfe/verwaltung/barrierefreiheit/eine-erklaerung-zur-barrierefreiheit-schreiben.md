@@ -16,7 +16,7 @@ nennt das als Lücke gegenüber der Richtlinie über barrierefreie Websites
 folgt der Leitlinie von W3C WAI, Developing an Accessibility Statement (<https://www.w3.org/WAI/planning/statements/>).
 Veröffentlicht Ihr Land eine Mustererklärung, verwenden Sie dieses Muster; es hat Vorrang.
 
-![Die Seite eines Elements in 375 Pixel Breite, eine der Prüfungen vor dem Schreiben einer Erklärung zur Barrierefreiheit](../../../../eng-us/help/images/government/gov-a11y-statement.webp)
+![Die Seite eines Elements in 375 Pixel Breite, eine der Prüfungen vor dem Schreiben einer Erklärung zur Barrierefreiheit](../../bilder/government/gov-a11y-statement.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und übliche Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

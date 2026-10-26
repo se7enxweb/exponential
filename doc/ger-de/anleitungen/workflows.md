@@ -232,7 +232,7 @@ Setup > **Workflow-Prozesse** oder `/workflow/processlist` in der Administration
 Adresse: `/workflow/processlist/(status)/stopped` und `/workflow/processlist/(status)/all`. Das Blättern fügt wie
 bisher `/(offset)/<n>` hinzu.
 
-![Die Statusleiste und die Übersicht mit drei wartenden Beispielfreigaben](../../eng-us/guides/images/workflows/status-and-overview.png)
+![Die Statusleiste und die Übersicht mit drei wartenden Beispielfreigaben](bilder/workflows/status-and-overview.png)
 
 ### 5.2 Die Statusleiste
 
@@ -266,7 +266,7 @@ Sieben Kennzahlen, gezählt über alle Prozesse in der Datenbank (nicht nur die 
 
 ### 5.4 Filter, Suche und Seitengröße
 
-![Die Bedienelemente: welche Prozesse, Suche, Seitengröße und das Abbrechen mehrerer Prozesse](../../eng-us/guides/images/workflows/controls.png)
+![Die Bedienelemente: welche Prozesse, Suche, Seitengröße und das Abbrechen mehrerer Prozesse](bilder/workflows/controls.png)
 
 - **Anzeigen**: *Wartend* (die Vorgabe und alles, was diese Seite früher zeigte), *Angehalten* oder *Alle*, jeweils mit
   ihrer Anzahl. Es sind Links, sie funktionieren also ohne JavaScript und lassen sich als Lesezeichen speichern. Die
@@ -289,7 +289,7 @@ Hinweis auf den Grund.
 
 ### 5.6 Eine Prozesskarte
 
-![Eine wartende Freigabe mit geöffneten technischen Details](../../eng-us/guides/images/workflows/process-card.png)
+![Eine wartende Freigabe mit geöffneten technischen Details](bilder/workflows/process-card.png)
 
 | Teil | Zeigt |
 |---|---|
@@ -387,7 +387,7 @@ Sehen Sie sich zuerst die graue Zeile an und bei Freigaben die Anfrage im Kollab
 Klicken Sie auf einer Karte auf **Abbrechen...** oder haken Sie mehrere an und klicken Sie auf **Ausgewählte Prozesse
 abbrechen...**. Noch ist nichts geschehen: Eine Seite listet die Prozesse auf und sagt, was das Abbrechen bewirkt.
 
-![Der Bestätigungsschritt](../../eng-us/guides/images/workflows/confirm.png)
+![Der Bestätigungsschritt](bilder/workflows/confirm.png)
 
 Klicken Sie auf **Ja, Prozess abbrechen**, um fortzufahren, oder auf **Nein, behalten**, um zurückzugehen. Nach der
 Bestätigung geschieht für jeden Prozess in einer Transaktion Folgendes:

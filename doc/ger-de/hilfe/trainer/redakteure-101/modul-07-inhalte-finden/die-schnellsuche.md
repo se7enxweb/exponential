@@ -102,7 +102,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, Schritt 5 auf dem Projektor zu
   wiederholen.
 
-![Das Ergebnis einer Schnellsuche: Die Suche nach workout ergab n Treffer, mit der Liste In zum Eingrenzen](../../../../../eng-us/help/images/trainers/e101-quick-search.webp)
+![Das Ergebnis einer Schnellsuche: Die Suche nach workout ergab n Treffer, mit der Liste In zum Eingrenzen](../../../bilder/trainers/e101-quick-search.webp)
 
 ## Quiz
 

@@ -116,7 +116,7 @@ durch Ihren Vornamen.
 - Die Person hat die Ausgabe so gesehen, wie ein Abonnent sie bekommt.
 - Der Trainer prüft das, indem er die Testdatei einer Person am Beamer öffnet.
 
-![Testgruppen, die eine Ausgabe erhalten, bevor sie an die Liste geht](../../../../../eng-us/help/images/trainers/nl-test-groups.webp)
+![Testgruppen, die eine Ausgabe erhalten, bevor sie an die Liste geht](../../../bilder/trainers/nl-test-groups.webp)
 
 ## Quiz
 

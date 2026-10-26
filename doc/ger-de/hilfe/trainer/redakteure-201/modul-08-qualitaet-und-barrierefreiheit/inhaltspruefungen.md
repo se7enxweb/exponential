@@ -109,7 +109,7 @@ Papierkorb liegt, und ein Bild, das niemand verwendet.
 - Der Trainer prüft das, indem er **Ungültige Relationen** für den Ordner **Training** am Beamer ausführt: keine Befunde
   mehr.
 
-![Ungültige Relationen mit dem Startort, den zu prüfenden Zielen und Verweisen und Anzeigen](../../../../../eng-us/help/images/trainers/e201-broken-relations.webp)
+![Ungültige Relationen mit dem Startort, den zu prüfenden Zielen und Verweisen und Anzeigen](../../../bilder/trainers/e201-broken-relations.webp)
 
 ## Quiz
 

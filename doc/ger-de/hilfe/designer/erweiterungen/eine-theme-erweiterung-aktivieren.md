@@ -27,7 +27,7 @@ installieren.
 4. Drücken Sie **Änderungen anwenden**. Die Seite nennt die Datei, die sie gespeichert hat, und die Sicherungskopie, die
    sie angelegt hat.
 
-![Setup, Extensions: die Zähler, Suche, Sortierung und Filter der Erweiterungen über den Karten mit Aktivieren und Deaktivieren](../../../../eng-us/help/images/designers/extensions-activate.webp)
+![Setup, Extensions: die Zähler, Suche, Sortierung und Filter der Erweiterungen über den Karten mit Aktivieren und Deaktivieren](../../bilder/designers/extensions-activate.webp)
 
 Die ganze Seite: [Die Seite Extensions](../../../anleitungen/extensions-seite.md).
 

@@ -32,7 +32,7 @@ your interview time on design decisions. Facts are as of 18 October 2026; check 
 | PHP | 8.0 is the oldest supported version on the development line; 8.1 to 8.5 supported; PHP 7.4 only up to 6.0.7 | [PHP versions](../who-is-the-exponential-foundation.md#php-versions) |
 | Testing | CI runs the test suite on PHP 8.1 to 8.5 and checks that 8.0 boots, on every push to `main` and every pull request | Same section |
 | License | GNU GPL v2 or later; documentation GNU FDL 1.3 or later | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
-| Packages | The kernel is the Composer package `se7enxweb/exponential`; its `composer.json` requires 66 se7enxweb packages | [7x in numbers](../who-is-7x.md#7x-in-numbers) |
+| Packages | The kernel is the Composer package `se7enxweb/exponential`; its `composer.json` required 66 se7enxweb packages on 18 October 2026 | [7x in numbers](../who-is-7x.md#7x-in-numbers) |
 | Code age | Oldest commit 2 September 2002; 27,242 commits on `main` on 18 October 2026 | Same table |
 
 ## Databases

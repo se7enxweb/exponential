@@ -110,7 +110,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, als Administrator angemeldet. D
 - Nach Schritt 7 wurde nichts geschrieben: Die Liste in Schritt 8 ist dieselbe wie vor der Übung.
 - Der Trainer prüft die Datei bei zwei Teilnehmenden mit dem Befehl aus Schritt 8.
 
-![Die Seite der Erweiterungen: Zähler, Suche, Filter und eine Karte pro Erweiterung](../../../../../eng-us/help/images/trainers/sa-extensions.webp)
+![Die Seite der Erweiterungen: Zähler, Suche, Filter und eine Karte pro Erweiterung](../../../bilder/trainers/sa-extensions.webp)
 
 ## Quiz
 

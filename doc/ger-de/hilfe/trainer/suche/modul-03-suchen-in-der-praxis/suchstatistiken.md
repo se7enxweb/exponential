@@ -123,7 +123,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. `<public siteaccess>` ist der N
 - Nach Schritt 8 ist die Tabelle leer; nach Schritt 9 gibt `exp:ini get` für den Siteaccess `disabled` aus.
 - Der Trainer fragt jede Person nach einer Inhaltsmaßnahme aus Schritt 7.
 
-![Suchstatistiken: wonach Besucher gesucht haben und wie viele Ergebnisse sie bekamen](../../../../../eng-us/help/images/trainers/se-stats.webp)
+![Suchstatistiken: wonach Besucher gesucht haben und wie viele Ergebnisse sie bekamen](../../../bilder/trainers/se-stats.webp)
 
 ## Quiz
 

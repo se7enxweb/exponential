@@ -126,7 +126,7 @@ Installation:
 - Nach Schritt 9 zeigt `exp:ini where site.ini/UserSettings/MaxNumberOfFailedLogin` den Standardwert 0 als wirksam.
 - Der Trainer prüft die Einträge im Audit-Protokoll später im Kurs oder bittet eine Person, Schritt 7 zu zeigen.
 
-![Das Formular Passwort ändern](../../../../../eng-us/help/images/trainers/sa-change-password.webp)
+![Das Formular Passwort ändern](../../../bilder/trainers/sa-change-password.webp)
 
 ## Quiz
 

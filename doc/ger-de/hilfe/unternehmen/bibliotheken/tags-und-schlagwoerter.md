@@ -15,7 +15,7 @@ Ihnen kontrollierte Schlagwörter gibt: eine Hierarchie von Begriffen, Synonyme,
 Einträgen nach Thema. Die Schritte zur Einrichtung stehen unter
 [Inhalte mit eztags verschlagworten](../../ersteller/website-ersteller/verschlagworten-mit-eztags.md).
 
-![Das Tags-Dashboard mit dem Tag-Baum](../../../../eng-us/help/images/help/bu-classes.webp)
+![Das Tags-Dashboard mit dem Tag-Baum](../../bilder/help/bu-classes.webp)
 
 ## Inhalt
 

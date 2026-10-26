@@ -203,7 +203,8 @@ class Dashboard extends \Exponential\Runnable\ModuleView
             $d = date( 'Y-m-d', mktime( 0, 0, 0, (int)date( 'n' ), (int)date( 'j' ) - $i ) );
             $n = isset( $perDay[$d] ) ? array_sum( $perDay[$d] ) : 0;
             $max = max( $max, $n );
-            $days[] = array( 'day' => $d, 'label' => date( 'D', strtotime( $d ) ), 'n' => $n );
+            // the short day name of the interface's locale (Mo, Di ... in German), not date( 'D' ), which is always English
+            $days[] = array( 'day' => $d, 'label' => \eZLocale::instance()->shortDayName( (int)date( 'w', strtotime( $d ) ) ), 'n' => $n );
         }
         foreach ( $days as $i => $d )
             $days[$i]['pct'] = round( 100 * $d['n'] / $max, 1 );

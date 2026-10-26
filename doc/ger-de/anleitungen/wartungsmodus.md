@@ -147,7 +147,7 @@ keine Datenbankverbindung. Solange die Datei nicht existiert, kostet das einen A
 
 Wenn die Site online ist, sagt das Banner das und verspricht, dass sich nichts ändert, bevor Sie bestätigen:
 
-![Das Zustandsbanner einer Site, die online ist](../../eng-us/guides/images/maintenance/online-state.png)
+![Das Zustandsbanner einer Site, die online ist](bilder/maintenance/online-state.png)
 
 Die Seite funktioniert ohne JavaScript: Beide Schaltflächen senden das Formular ab, die Bestätigung ist ein
 Pflicht-Kontrollkästchen, das der Browser selbst prüft, und die aufklappbaren Abschnitte sind einfache
@@ -161,7 +161,7 @@ von admin4 einen Kontrast von mindestens 4,5:1.
 Das Formular hat drei nummerierte Schritte, eine Vorschau und eine Bestätigung. Jeder Schritt ist optional, außer der
 Bestätigung.
 
-![Der Plan: Nachricht, Dauer, wer weiterhin Zugang hat, Vorschau und die Bestätigung](../../eng-us/guides/images/maintenance/plan-form.png)
+![Der Plan: Nachricht, Dauer, wer weiterhin Zugang hat, Vorschau und die Bestätigung](bilder/maintenance/plan-form.png)
 
 ### Schritt 1: die Nachricht für Besucher
 
@@ -199,7 +199,7 @@ again in a few minutes.“ und `Retry-After` beträgt 120 Sekunden.
   exakt verglichen. Die Seite prüft, was Sie eingeben, und nennt, was keine Adresse ist („Keine Adressen, diese würden
   ausgelassen: office“); der Server prüft erneut, lässt solche Einträge aus und sagt nach dem Einschalten, welche:
 
-![Nach dem Einschalten werden die Einträge genannt, die keine Adressen waren](../../eng-us/guides/images/maintenance/left-out-addresses.png)
+![Nach dem Einschalten werden die Einträge genannt, die keine Adressen waren](bilder/maintenance/left-out-addresses.png)
 
 Abschnitt 7 erklärt jeden Weg hinein im Detail.
 
@@ -224,7 +224,7 @@ Offline-Zustand.
 
 ## 5. Während die Site offline ist
 
-![Das Banner einer Site im Wartungsmodus: Grund, wer, seit, bis, überschritten und Sie](../../eng-us/guides/images/maintenance/in-maintenance.png)
+![Das Banner einer Site im Wartungsmodus: Grund, wer, seit, bis, überschritten und Sie](bilder/maintenance/in-maintenance.png)
 
 Das Banner sagt Ihnen:
 
@@ -242,14 +242,14 @@ Darunter zeigt **Was Besucher lesen** die Nachricht (oder dass der Standardtext 
 Zugang hat** listet die offenen Pfade und die zugelassenen Adressen auf (Ihre ist mit **Sie** markiert), und **Was
 Besucher jetzt sehen** ist die Seite, die ausgeliefert wird, aus der in der Markierungsdatei genannten Datei.
 
-![Was Besucher lesen, wer weiterhin Zugang hat und die ausgelieferte Seite](../../eng-us/guides/images/maintenance/in-maintenance-details.png)
+![Was Besucher lesen, wer weiterhin Zugang hat und die ausgelieferte Seite](bilder/maintenance/in-maintenance-details.png)
 
 **Website wieder online bringen** (`SwitchOffButton`) entfernt die Markierungsdatei, verschiebt die Dateien des
 HTTP-Caches erneut zur Seite, damit während des Fensters vorgenommene Änderungen sofort sichtbar sind, und hält die
 Änderung im Audit fest. Es ist keine Bestätigung nötig: Die Site zurückzuholen ist immer sicher, mit einer Ausnahme,
 vor der die Seite warnt.
 
-![Eine Installation hält den Wartungsmodus: Die Seite warnt, bevor Sie ihn beenden](../../eng-us/guides/images/maintenance/installation-running.png)
+![Eine Installation hält den Wartungsmodus: Die Seite warnt, bevor Sie ihn beenden](bilder/maintenance/installation-running.png)
 
 Wenn eine Installation den Wartungsmodus hält („Eine Installation läuft noch: Besucher würden eine halb aufgebaute
 Website sehen.“), warten Sie, bis sie fertig ist: Der Kickstarter und der Assistent schalten ihn selbst aus. Wenn Sie
@@ -273,7 +273,7 @@ php bin/php/maintenance.php off
 
 Der Abschnitt **Von der Kommandozeile** der Seite listet die drei Befehle mit Schaltflächen zum Kopieren auf:
 
-![Die Befehle, die dasselbe in einer Shell tun](../../eng-us/guides/images/maintenance/shell.png)
+![Die Befehle, die dasselbe in einer Shell tun](bilder/maintenance/shell.png)
 
 Die Optionen, aus `php bin/php/maintenance.php --help` auf dem Demonstrationsserver:
 
@@ -524,7 +524,7 @@ Jedes Einschalten, Ändern und Ausschalten wird im Audit als `system.maintenance
 vorher und nachher, dem Grund, dem erwarteten Ende und der **Anzahl** der zugelassenen Pfade und Adressen (nie den
 Adressen selbst). Die Seite listet die letzten acht auf, neueste zuerst, aus dem Index des Audits:
 
-![Die letzten Schaltvorgänge, aus dem Audit](../../eng-us/guides/images/maintenance/recent-changes.png)
+![Die letzten Schaltvorgänge, aus dem Audit](bilder/maintenance/recent-changes.png)
 
 - **Wann** verlinkt auf den vollständigen Audit-Eintrag (`/audit/event/<id>`).
 - **Änderung** ist **Eingeschaltet**, **Ausgeschaltet** oder **Geändert** (eingeschaltet, während er bereits

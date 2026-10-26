@@ -67,9 +67,9 @@ die Ausnahme ([admin4-Modul-Stylesheets](admin4-modul-stylesheets.md)).
 </div>
 ```
 
-![Setup, Sektionen aus den gemeinsamen Komponenten gebaut: Zählerkarten, eine Filterleiste (umrandet) und eine Karte pro Sektion](../../../../eng-us/help/images/designers/components-page.webp)
+![Setup, Sektionen aus den gemeinsamen Komponenten gebaut: Zählerkarten, eine Filterleiste (umrandet) und eine Karte pro Sektion](../../bilder/designers/components-page.webp)
 
-![Dieselbe Seite im dunklen Modus, ohne zusätzliches CSS: Die Komponenten übernehmen die dunklen Token-Werte](../../../../eng-us/help/images/designers/components-page-dark.webp)
+![Dieselbe Seite im dunklen Modus, ohne zusätzliches CSS: Die Komponenten übernehmen die dunklen Token-Werte](../../bilder/designers/components-page-dark.webp)
 
 Kein `<style>`, kein `style=""`, jede Farbe kommt über die Klassen aus Token.
 

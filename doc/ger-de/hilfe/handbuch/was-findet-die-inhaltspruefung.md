@@ -36,7 +36,7 @@ oder `contentcheck/fixfiles`.
      in den Papierkorb;
    - Speicherdatei: Folgen Sie der Aktion, die die Seite anbietet, und lesen Sie ihre Bestätigung.
 
-![Ungültige Relationen mit dem Filter für den Baum und der Liste der Befunde](../../../eng-us/help/manual/images/broken-relations.webp)
+![Ungültige Relationen mit dem Filter für den Baum und der Liste der Befunde](bilder/broken-relations.webp)
 
 ## Was schiefgehen kann
 

@@ -46,7 +46,7 @@ Aus [Die fünf Grundbegriffe, die Sie brauchen](../../../bc/6.0/layouts.md#die-f
 - Rechte: die Richtlinien des Moduls `explayouts`; mindestens `explayouts/read`
   ([Rechte](../../../bc/6.0/layouts.md#berechtigungen)).
 
-![Der Reiter Layouts: die Layouts der Website mit Typ, Status und den Seiten, die sie verwenden](../../../../eng-us/help/images/creators/layouts-dashboard.webp)
+![Der Reiter Layouts: die Layouts der Website mit Typ, Status und den Seiten, die sie verwenden](../../bilder/creators/layouts-dashboard.webp)
 
 ## Eine Kampagnenseite von Grund auf
 

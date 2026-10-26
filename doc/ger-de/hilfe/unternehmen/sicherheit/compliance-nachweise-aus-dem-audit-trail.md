@@ -14,7 +14,7 @@ eigenen Vorstand zeigen müssen, dass die Website kontrolliert betrieben wird: w
 Protokoll selbst nicht verändert wurde. Das Prüfprotokoll von Exponential wurde genau dafür gebaut. Die Seite erklärt, was
 es Ihnen bietet und wie Sie Nachweise übergeben.
 
-![Das Audit-Dashboard: Zustand der Ketten, Ereignisse und Sicherheit](../../../../eng-us/help/images/help/bu-audit.webp)
+![Das Audit-Dashboard: Zustand der Ketten, Ereignisse und Sicherheit](../../bilder/help/bu-audit.webp)
 
 > **Warnung**
 > Grundlagen, keine Rechtsberatung. Ob Audit-Aufzeichnungen ein bestimmtes Gesetz, eine Norm oder einen Vertrag

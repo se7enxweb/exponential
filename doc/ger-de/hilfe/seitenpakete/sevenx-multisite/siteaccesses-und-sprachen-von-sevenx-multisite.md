@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren und Hoster, die eine Installation von `seve
 sie hat, was in jedem gesetzt ist und was mit den im Setup gewählten Sprachen geschieht. Alles hier ist aus
 `settings/sevenx-multi-site-installer.php` und dem Kernel-Schritt `kernel/setup/steps/ezstep_create_sites.php` gelesen.
 
-![Die Anmeldeseite des Siteaccess der Administration](../../../../eng-us/help/images/help/sp-sevenx-login.webp)
+![Die Anmeldeseite des Siteaccess der Administration](../../bilder/help/sp-sevenx-login.webp)
 
 ## Inhalt
 

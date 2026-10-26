@@ -113,7 +113,7 @@ Verwenden Sie Ihre Schulungsinstallation und ein Administratorkonto.
 - Schritt 11: Die Validierung ist erfolgreich, und der Browser speichert `course_classes-1.0.0...ezpkg`.
 - Der Trainer prüft die Zusammenfassung **Überprüfen** aus Schritt 8 auf einem Bildschirm.
 
-![Erstelle Paket: die Assistenten, mit denen man beginnen kann](../../../../../eng-us/help/images/trainers/ms-create.webp)
+![Erstelle Paket: die Assistenten, mit denen man beginnen kann](../../../bilder/trainers/ms-create.webp)
 
 ## Quiz
 

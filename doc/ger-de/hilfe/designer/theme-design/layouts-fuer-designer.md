@@ -33,7 +33,7 @@ erklärt die Begriffe, die Kette des Renderns und wo Ihre Templates ansetzen. Di
 | **Sammlung** | die Inhalte, die ein listenartiger Block zeigt (ausgewählt oder abgefragt) | wie Einträge gezeichnet werden |
 | **Regel** | welche Seiten welches Layout bekommen | nichts, aber sie erklärt, welches Layout Sie sehen |
 
-![Das Dashboard der Layouts: die Zahl der Layouts, Zonen, Blöcke, Regeln und Sammlungen und die zuletzt bearbeiteten Layouts](../../../../eng-us/help/images/designers/layouts-dashboard.webp)
+![Das Dashboard der Layouts: die Zahl der Layouts, Zonen, Blöcke, Regeln und Sammlungen und die zuletzt bearbeiteten Layouts](../../bilder/designers/layouts-dashboard.webp)
 
 ## Die Kette des Renderns
 

@@ -26,7 +26,7 @@ Assistent schreibt den Ordner, das Design, die Einstellungen, die Metadaten, ein
    zu `/setup/designextension`.
 2. Füllen Sie unter **Was es ist** aus:
 
-![Der Design-Erweiterungs-Assistent: was das Theme ist, was hineinkommt, und die Vorschau jeder Datei, bevor sie geschrieben wird](../../../../eng-us/help/images/designers/design-extension-wizard.webp)
+![Der Design-Erweiterungs-Assistent: was das Theme ist, was hineinkommt, und die Vorschau jeder Datei, bevor sie geschrieben wird](../../bilder/designers/design-extension-wizard.webp)
 
    | Feld | Was Sie eingeben |
    |---|---|

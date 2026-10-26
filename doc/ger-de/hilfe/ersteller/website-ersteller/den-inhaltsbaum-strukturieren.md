@@ -28,7 +28,7 @@ Teilbaum-Einschränkungen, wer was tun darf.
 
 `settings/content.ini [NodeSettings]` benennt die obersten Knoten:
 
-![Inhaltsstruktur: die Wurzel des Inhaltsbaums mit ihren Unterelementen, ein Ordner je Website](../../../../eng-us/help/images/creators/content-tree-roots.webp)
+![Inhaltsstruktur: die Wurzel des Inhaltsbaums mit ihren Unterelementen, ein Ordner je Website](../../bilder/creators/content-tree-roots.webp)
 
 | Einstellung | Knoten | Enthält |
 |---|---|---|
@@ -66,7 +66,7 @@ Jeder Container hat ein Sortierfeld und eine Richtung: nach Name, Veröffentlich
 Klasse und weiteren. Legen Sie sie am Ordner fest (in der Liste der Unterelemente), und wählen Sie den Standard der
 Klasse für neue Container ([Inhaltsklassen für Websites](inhaltsklassen-fuer-websites.md)).
 
-![Der Reiter Sortierung eines Ordners: das Feld und die Richtung, nach denen seine Unterelemente sortiert werden, mit der Schaltfläche zum Setzen](../../../../eng-us/help/images/creators/sort-order.webp)
+![Der Reiter Sortierung eines Ordners: das Feld und die Richtung, nach denen seine Unterelemente sortiert werden, mit der Schaltfläche zum Setzen](../../bilder/creators/sort-order.webp)
 
 | Inhalt | Sortieren nach |
 |---|---|

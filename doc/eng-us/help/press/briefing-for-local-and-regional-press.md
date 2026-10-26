@@ -28,7 +28,7 @@ where to find a genuine local angle, and which details must not be assumed.
 | The Exponential Foundation is "a 501(c)(3) Non-Profit Corporation founded in Seattle, Washington, USA", founded on 19 March 2026 | [Who is the Exponential Foundation?, In short](../who-is-the-exponential-foundation.md#in-short) |
 | 7x describes itself as "a responsive North American web design, support, development and website hosting company" | [Who is 7x?, In short](../who-is-7x.md#in-short) |
 | The se7enxweb GitHub account bio gives its location as Seattle, Washington, USA | [Who is 7x?, In its own words](../who-is-7x.md#in-its-own-words) |
-| Brookins Consulting, the earlier name of 7x, was "an eZ Publish partner in the USA" | [Who is 7x?, In short](../who-is-7x.md#in-short) |
+| Brookins Consulting, the earlier name of 7x, was "an eZ Partner in USA", in the words of 7x's website | <https://se7enx.com/about/exponential-hosting-usa>; [Who is 7x?, In short](../who-is-7x.md#in-short) |
 
 The Foundation's postal address and registration numbers are published on its own websites; this help does not
 repeat them ([What the sources do not say](../who-is-the-exponential-foundation.md#what-the-sources-do-not-say)).

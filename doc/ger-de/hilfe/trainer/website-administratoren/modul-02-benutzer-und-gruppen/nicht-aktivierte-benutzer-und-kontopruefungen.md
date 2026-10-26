@@ -117,9 +117,9 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Schritt 10: eine CSV-Datei in UTF-8 mit der gefilterten Liste.
 - Der Trainer prüft die Zahlen aus Schritt 4 auf einem Bildschirm und die CSV-Datei einer Person.
 
-![Benutzerkonten prüfen: nie angemeldete, nicht gesehene, deaktivierte, gesperrte, verwaiste und doppelte Konten](../../../../../eng-us/help/images/trainers/sa-user-hygiene.webp)
+![Benutzerkonten prüfen: nie angemeldete, nicht gesehene, deaktivierte, gesperrte, verwaiste und doppelte Konten](../../../bilder/trainers/sa-user-hygiene.webp)
 
-![Nicht aktivierte Benutzer: Konten, die sich registriert, ihre E-Mail-Adresse aber nie bestätigt haben](../../../../../eng-us/help/images/trainers/sa-unactivated.webp)
+![Nicht aktivierte Benutzer: Konten, die sich registriert, ihre E-Mail-Adresse aber nie bestätigt haben](../../../bilder/trainers/sa-unactivated.webp)
 
 ## Quiz
 

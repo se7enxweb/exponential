@@ -30,7 +30,7 @@ korrigieren oder rückgängig machen.
 letzten 24 Stunden fehlgeschlagene Läufe, der nächste geplante Lauf), die letzten 30 Tage, die Importe und ihre
 Läufe. Die Leiste **Run now** oben startet jeden Import; **New import** öffnet den Editor.
 
-![Die Liste der Importe auf der Übersicht: jeder Import mit Quelltyp, Verarbeitung (Mapping oder datatable), letztem Lauf mit Status, nächstem Lauf und den Schaltflächen Run now, Dry run, Edit und More](../../../eng-us/help/images/sqli-import/sqli-import-imports-list.webp)
+![Die Liste der Importe auf der Übersicht: jeder Import mit Quelltyp, Verarbeitung (Mapping oder datatable), letztem Lauf mit Status, nächstem Lauf und den Schaltflächen Run now, Dry run, Edit und More](../bilder/sqli-import/sqli-import-imports-list.webp)
 
 - **Run now** (bei einem aktivierten Import) und **Dry run** sehen Benutzer mit Run imports oder Manage imports.
 - **Edit** und **More** (Duplicate, New data table from its fields, Enable oder Disable, Delete) sehen Benutzer mit
@@ -95,7 +95,7 @@ umbenannten Produkten zurück, und Zeile 13 hat ihren Namen verloren:
 
 **Run now** ergibt diese Seite:
 
-![Lauf 3 von Demo: Products (CSV), Completed with errors: 50 von 50 Datensätzen, 0 angelegt, 5 aktualisiert, 44 unverändert, 0 übersprungen, 1 fehlgeschlagen; Datensatz 13 schlug fehl mit der Meldung „the required attribute 'name' has no value“, Datensatz 3 und 8 wurden von Version 1 auf 2 aktualisiert; die Schaltflächen Retry failed rows, Refresh und Jobs of this run](../../../eng-us/help/images/sqli-import/sqli-import-run-failed-row.webp)
+![Lauf 3 von Demo: Products (CSV), Completed with errors: 50 von 50 Datensätzen, 0 angelegt, 5 aktualisiert, 44 unverändert, 0 übersprungen, 1 fehlgeschlagen; Datensatz 13 schlug fehl mit der Meldung „the required attribute 'name' has no value“, Datensatz 3 und 8 wurden von Version 1 auf 2 aktualisiert; die Schaltflächen Retry failed rows, Refresh und Jobs of this run](../bilder/sqli-import/sqli-import-run-failed-row.webp)
 
 1. Klicken Sie auf die Zahl **1 Failed**, um nur den fehlgeschlagenen Datensatz mit seiner Meldung zu sehen.
 2. Hier sind die Daten selbst falsch: Korrigieren Sie Zeile 13 in der Datei, laden Sie sie im Schritt Quelle des
@@ -114,7 +114,7 @@ Version. Ein Objekt, das jemand nach dem Lauf geändert hat, bleibt in Ruhe und 
 einmal rückgängig machen, innerhalb von 30 Tagen (`[RunSettings] UndoDays` oder die eigene Angabe des Imports **Days
 a run can be undone**). Das Rückgängigmachen ist ein eigener Lauf mit eigener Seite:
 
-![Lauf 4, das Rückgängigmachen von Lauf 3: Completed, 5 rückgängig gemacht; jedes der fünf aktualisierten Produkte hat die Meldung „version 1 published again as version 3“](../../../eng-us/help/images/sqli-import/sqli-import-run-undo.webp)
+![Lauf 4, das Rückgängigmachen von Lauf 3: Completed, 5 rückgängig gemacht; jedes der fünf aktualisierten Produkte hat die Meldung „version 1 published again as version 3“](../bilder/sqli-import/sqli-import-run-undo.webp)
 
 Die Seite des rückgängig gemachten Laufs sagt dann **This run was undone by run #4**. Ein Rückgängig-Lauf lässt sich
 nicht rückgängig machen; brauchen Sie die neueren Werte wieder, lassen Sie den Import erneut laufen. Läufe in eine
@@ -138,14 +138,14 @@ verglichen mit einem anderen Zeitraum. Filtern Sie nach Import, Quelltyp, Benutz
 lädt die Zahlen herunter. **Suggestions** (Vorschläge) zeigen, was sich verbessern lässt, etwa ein Import, dessen
 Datensätze fast immer unverändert sind und der seltener laufen könnte.
 
-![Die Seite Statistics für die letzten 30 Tage: die Knöpfe für den Zeitraum und die Filter, 83 Läufe, 98,8 % ohne Fehler, 1.266 verarbeitete Datensätze, 0,1 % fehlgeschlagen, 0,8 s durchschnittliche Dauer und ein Vorschlag, den Import der PHP-News seltener laufen zu lassen](../../../eng-us/help/images/sqli-import/sqli-import-statistics.webp)
+![Die Seite Statistics für die letzten 30 Tage: die Knöpfe für den Zeitraum und die Filter, 83 Läufe, 98,8 % ohne Fehler, 1.266 verarbeitete Datensätze, 0,1 % fehlgeschlagen, 0,8 s durchschnittliche Dauer und ein Vorschlag, den Import der PHP-News seltener laufen zu lassen](../bilder/sqli-import/sqli-import-statistics.webp)
 
 Probeläufe und Rückgängig-Läufe zählen nicht mit, außer Sie wählen sie unter **Runs**. Einzelheiten:
 `/exphelp/viewer/ext/sqliimport/ger-de/statistics.md`.
 
 Die Seiten folgen auch dem dunklen Modus der Administration:
 
-![Die Übersicht Imports im dunklen Modus bei 960 Pixeln: die Leiste Run now, die Kennzahlen und die letzten 30 Tage](../../../eng-us/help/images/sqli-import/sqli-import-dashboard-dark.webp)
+![Die Übersicht Imports im dunklen Modus bei 960 Pixeln: die Leiste Run now, die Kennzahlen und die letzten 30 Tage](../bilder/sqli-import/sqli-import-dashboard-dark.webp)
 
 ## Auf der Kommandozeile
 

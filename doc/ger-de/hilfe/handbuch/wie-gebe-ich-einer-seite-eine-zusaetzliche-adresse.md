@@ -30,7 +30,7 @@ Benutzer, deren Rolle `content/urltranslator` hat, oder `content/edit` für die 
    verwenden Sie **Setup** > **URL-Übersetzer**: Füllen Sie unter **Neuer Alias** die Felder **Neuer URL-Alias** und
    **Ziel** aus und klicken Sie auf **Erstellen**.
 
-![Der URL-Übersetzer mit dem Formular Neuer Alias und der Liste der globalen Aliase](../../../eng-us/help/manual/images/url-translator.webp)
+![Der URL-Übersetzer mit dem Formular Neuer Alias und der Liste der globalen Aliase](bilder/url-translator.webp)
 
 ## Was schiefgehen kann
 

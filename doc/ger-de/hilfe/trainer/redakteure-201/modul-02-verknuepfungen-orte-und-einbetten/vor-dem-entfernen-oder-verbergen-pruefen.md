@@ -106,7 +106,7 @@ Verwenden Sie die Schulungsinstallation und Ihre Elemente aus den Lektionen 2.1 
   und den Artikel wieder sichtbar gemacht.
 - Der Trainer prüft das mit der Frage, was eine Person täte, wenn die Liste in Schritt 2 zehn Artikel enthalten hätte.
 
-![Die Bestätigung zum Entfernen, die auflistet, was das Element sonst noch verwendet, bevor es in den Papierkorb kommt](../../../../../eng-us/help/images/trainers/e201-remove-check.webp)
+![Die Bestätigung zum Entfernen, die auflistet, was das Element sonst noch verwendet, bevor es in den Papierkorb kommt](../../../bilder/trainers/e201-remove-check.webp)
 
 ## Quiz
 

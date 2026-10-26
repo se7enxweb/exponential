@@ -23,8 +23,8 @@ smallest member of the family and has the longest thread of history behind 7x.
 
 "Exponential Basic is the simple to us to use CMS Framework that is for everyone, educational purposes, personal use
 and worldwide general" (repository description, quoted as published). It descends from the second generation of the
-code base: its repository is a fork of `brookinsconsulting/ezcommunity2`, the eZ Publish 2.2 line that Brookins
-Consulting kept alive with PHP 5 support long after that generation ended ([Exponential Basic](../who-is-the-exponential-foundation.md#exponential-basic),
+code base: its repository is a fork of `brookinsconsulting/ezcommunity2`, the eZCommunity2 repository that Brookins
+Consulting created for eZ Publish 2.2 ([Exponential Basic](../who-is-the-exponential-foundation.md#exponential-basic),
 [Who is 7x?, Exponential Basic](../who-is-7x.md#exponential-basic)).
 
 ## Facts you can print

@@ -14,7 +14,7 @@ oder einer anderen ehrenamtlich geführten Gruppe. Vorstände wechseln alle ein 
 jedes Mal neu aufgebaut werden müssen. Diese Seite listet, was übergeben wird, die Funktionen von Exponential, die
 die Übergabe sauber machen, und was zu tun ist, wenn der vorherige Administrator nicht mehr erreichbar ist.
 
-![Wartende Workflow-Prozesse, die Sie prüfen, bevor ein Ehrenamtlicher geht](../../../../eng-us/help/images/help/bu-workflow.webp)
+![Wartende Workflow-Prozesse, die Sie prüfen, bevor ein Ehrenamtlicher geht](../../bilder/help/bu-workflow.webp)
 
 ## Inhalt
 

@@ -15,7 +15,7 @@ Template. Jeder Schritt endet mit etwas, das Sie prüfen können. Sie verwendet 
 Datenbankserver), das Standard-Seitenpaket und Velocity. Für eine echte Website lesen Sie danach
 [Eine Installationsmethode wählen](eine-installationsmethode-waehlen.md).
 
-![Das Hilfezentrum in der Administration, wo diese Seite und der übrige Weg für Website-Ersteller zu finden sind](../../../../eng-us/help/images/creators/help-dashboard-first-site.webp)
+![Das Hilfezentrum in der Administration, wo diese Seite und der übrige Weg für Website-Ersteller zu finden sind](../../bilder/creators/help-dashboard-first-site.webp)
 
 ## Inhalt
 

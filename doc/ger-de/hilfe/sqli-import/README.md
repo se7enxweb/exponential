@@ -15,7 +15,7 @@ WordPress-Export, eine Tabelle einer anderen Datenbank. Jeder Datensatz wird ein
 Datentabelle. Ein Import läuft einmal, für eine Migration, oder nach Zeitplan, für einen nächtlichen Abgleich.
 Version 2.0 ist der Nachfolger von SQLI Import 1.x und lässt jeden Handler von 1.x weiterlaufen.
 
-![Die Übersicht des Reiters Importe: die Leiste Run now, die Kennzahlen (Importe, Läufe heute, laufend, fehlgeschlagen in 24 Stunden, nächster geplanter Lauf) und die letzten 30 Tage mit den Datensätzen pro Tag](../../../eng-us/help/images/sqli-import/sqli-import-dashboard.webp)
+![Die Übersicht des Reiters Importe: die Leiste Run now, die Kennzahlen (Importe, Läufe heute, laufend, fehlgeschlagen in 24 Stunden, nächster geplanter Lauf) und die letzten 30 Tage mit den Datensätzen pro Tag](../bilder/sqli-import/sqli-import-dashboard.webp)
 
 ## Inhalt
 

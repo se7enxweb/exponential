@@ -28,7 +28,7 @@ Wiederherstellen braucht `content/restore`. Administratoren haben beides.
    Sie.
 5. Um alles zu löschen, klicken Sie auf **Papierkorb leeren** und bestätigen Sie.
 
-![Die Seite Papierkorb mit dem Filter, der Schaltfläche Wiederherstellen in jeder Zeile und den Schaltflächen Ausgewählte entfernen und Papierkorb leeren](../../../eng-us/help/manual/images/trash.webp)
+![Die Seite Papierkorb mit dem Filter, der Schaltfläche Wiederherstellen in jeder Zeile und den Schaltflächen Ausgewählte entfernen und Papierkorb leeren](bilder/trash.webp)
 
 ## Was schiefgehen kann
 

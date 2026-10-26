@@ -105,7 +105,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Der Bericht nach **Alle veröffentlichen** hat beide Elemente als veröffentlicht aufgelistet.
 - Der Trainer prüft das, indem er den Ordner einer Teilnehmerin oder eines Teilnehmers auf dem Projektor öffnet.
 
-![Zwei angekreuzte Elemente und das geöffnete Menü Weitere Aktionen, mit Ausgewählte bearbeiten für ein Formular mit beiden Elementen](../../../../../eng-us/help/images/trainers/e101-edit-selected.webp)
+![Zwei angekreuzte Elemente und das geöffnete Menü Weitere Aktionen, mit Ausgewählte bearbeiten für ein Formular mit beiden Elementen](../../../bilder/trainers/e101-edit-selected.webp)
 
 ## Quiz
 

@@ -103,7 +103,7 @@ Arten (notiert auf einer Karte, die die Person nicht sieht):
 - Die Teilnehmenden können die fünf üblichen Ursachen der Reihe nach nennen.
 - Der Trainer prüft das, indem er die Karten vorliest und jede Person fragt, wie sie den Fehler gefunden hat.
 
-![Der Reiter Layouts einer Seite: das Layout, zu dem sie aufgelöst wird, und ihre Zuordnungen](../../../../../eng-us/help/images/trainers/ly-tab.webp)
+![Der Reiter Layouts einer Seite: das Layout, zu dem sie aufgelöst wird, und ihre Zuordnungen](../../../bilder/trainers/ly-tab.webp)
 
 ## Quiz
 

@@ -108,7 +108,7 @@ Elementen vorbereitet (zum Beispiel mit **Mehrere neu anlegen** oder als Kopie e
 - `Old campaign` ist mit all seinen Elementen zurück.
 - Der Trainer prüft das, indem er die Auftragsseite einer Person oder die Auftragsliste am Beamer öffnet.
 
-![Der Papierkorb mit seinen Filtern danach, wer die Elemente entfernt hat, ihrem Typ und dem Datum](../../../../../eng-us/help/images/trainers/e201-trash-filters.webp)
+![Der Papierkorb mit seinen Filtern danach, wer die Elemente entfernt hat, ihrem Typ und dem Datum](../../../bilder/trainers/e201-trash-filters.webp)
 
 ## Quiz
 

@@ -60,7 +60,7 @@ written down. (6.0.15 is in development and not released; the feature was added 
 - "The audit trail makes a site compliant" with any regulation. It is evidence an organization can use; compliance
   depends on the organization.
 - "Nobody can change the log." The source says changes can be **detected** (`verify` exits 1 when a chain is broken).
-- "It records everything users do." It records the events listed in its catalogue; read the
+- "It records everything users do." It records the events listed in its catalog; read the
   [audit guide](../../bc/6.0/audit.md) before saying more.
 
 ## Explaining it to readers
