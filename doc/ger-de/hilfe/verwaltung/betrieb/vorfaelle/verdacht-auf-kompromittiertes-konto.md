@@ -14,7 +14,7 @@ Beschäftigten in falschen Händen sein könnte: ein per Phishing erbeutetes Pas
 eine Warnung wie `brute_force_user` oder `admin_role_granted` oder Änderungen, die die Kontoinhaberin oder der
 Kontoinhaber nicht vorgenommen hat. Beginnen Sie mit den [Grundlagen der Vorfallsbehandlung](grundlagen-der-vorfallsbehandlung.md).
 
-![Sitzungsverwaltung: wer sich in der letzten Stunde, am letzten Tag und innerhalb der Sitzungsdauer angemeldet hat](../../../../../eng-us/help/images/government/gov-sessions.webp)
+![Sitzungsverwaltung: wer sich in der letzten Stunde, am letzten Tag und innerhalb der Sitzungsdauer angemeldet hat](../../../bilder/government/gov-sessions.webp)
 
 ## Inhalt
 1. [Das Konto eindämmen](#das-konto-eindämmen)

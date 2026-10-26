@@ -16,7 +16,7 @@ Werkzeugen von Exponential wieder aufwärmen. Die Referenzen sind [Caches vorlad
 [Eine Website betreiben](../../../../anleitungen/betrieb-einer-website.md) und die Hosting-Seite
 [Caches leeren und aufwärmen](../../../hosting/leistung/caches-leeren-und-vorwaermen.md).
 
-![Vorladen: die Seiten einer Website abrufen, damit ihre Caches warm sind, bevor Besucher kommen](../../../../../eng-us/help/images/government/gov-preload.webp)
+![Vorladen: die Seiten einer Website abrufen, damit ihre Caches warm sind, bevor Besucher kommen](../../../bilder/government/gov-preload.webp)
 
 ## Inhalt
 

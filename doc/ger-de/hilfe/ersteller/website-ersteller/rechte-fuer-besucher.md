@@ -28,7 +28,7 @@ Jede Anfrage ohne Anmeldung läuft als Benutzer Anonymous, ein Mitglied der Benu
 kommen aus der Rolle, die dieser Gruppe zugewiesen ist und meist Anonymous heißt
 ([Rollen und Richtlinien](../../../anleitungen/rollen-und-richtlinien.md)).
 
-![Setup, Rollen: die Rollen der Installation, darunter Anonymous, mit ihren Richtlinien und Zuweisungen](../../../../eng-us/help/images/creators/roles-list.webp)
+![Setup, Rollen: die Rollen der Installation, darunter Anonymous, mit ihren Richtlinien und Zuweisungen](../../bilder/creators/roles-list.webp)
 
 ## Was die Rolle standardmäßig erlaubt
 

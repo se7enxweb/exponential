@@ -41,10 +41,11 @@ class eZSendmailEnvelopeSenderTest extends PHPUnit\Framework\TestCase
      * @param string $sender the sender of the mail, '' for none
      * @param string $emailSender the value of EmailSender
      * @param string $extraFrom a From extra header of the mail, '' for none
+     * @param bool $allowWarnings whether the child may write to stderr (an eZDebug warning)
      * @return array 'args' => the arguments sendmail got, 'message' => the mail it was handed, 'sender' => the
      *               sender of the mail after sending ('From' => eZMail::$From, 'from' => the address of ezcMail::$from)
      */
-    private function send( $envelopeSender, $sender = '', $emailSender = 'site@example.com', $extraFrom = '' )
+    private function send( $envelopeSender, $sender = '', $emailSender = 'site@example.com', $extraFrom = '', $allowWarnings = false )
     {
         file_put_contents( $this->captureFile, '' );
         $fixtures = __DIR__ . '/fixtures';
@@ -64,7 +65,8 @@ class eZSendmailEnvelopeSenderTest extends PHPUnit\Framework\TestCase
         proc_close( $process );
         $lines = explode( "\n", $output, 2 );
         $this->assertSame( 'sent', $lines[0], $output . $errors );
-        $this->assertSame( '', $errors, 'no warning or notice' );
+        if ( !$allowWarnings )
+            $this->assertSame( '', $errors, 'no warning or notice' );
         $captured = json_decode( (string)file_get_contents( $this->captureFile ), true );
         $this->assertIsArray( $captured, 'sendmail was called' );
         $captured['sender'] = json_decode( isset( $lines[1] ) ? $lines[1] : '', true );
@@ -161,6 +163,36 @@ class eZSendmailEnvelopeSenderTest extends PHPUnit\Framework\TestCase
         $this->assertDoesNotMatchRegularExpression( '/^Bcc:/mi', $headers );
         $this->assertSame( 1, preg_match_all( '/^From:/mi', $headers ) );
         $this->assertSame( array(), preg_grep( '/^-f|spy/', $captured['args'] ) );
+    }
+
+    /**
+     * An address eZMail::validate() accepts (quoted local part) but that is not shell-safe is
+     * not handed to sendmail with -f. mail() runs escapeshellcmd() over the whole option string, which undid the
+     * escapeshellarg() quoting (PHPMailer CVE-2016-10033): sendmail got -X<file> and -OQueueDirectory as arguments
+     * of their own. The mail is still sent, with SendmailOptions[] and without -f.
+     */
+    public function testAnAddressThatIsNotShellSafeGetsNoDashF()
+    {
+        $payload = "\"a' -X/nonexistent/x.php -OQueueDirectory=/nonexistent '\"@example.com";
+        $this->assertTrue( (bool)eZMail::validate( $payload ), 'the payload is a valid address for eZMail' );
+        $captured = $this->send( 'enabled', $payload, 'site@example.com', '', true );
+        $this->assertSame( array(), preg_grep( '/^-X|^-OQueueDirectory|^-f/', $captured['args'] ), implode( ' ', $captured['args'] ) );
+        $this->assertContains( '-r', $captured['args'], 'SendmailOptions[] are handed on' );
+    }
+
+    /**
+     * Which addresses eZSendmailTransport hands to sendmail with -f.
+     */
+    public function testShellSafeAddresses()
+    {
+        foreach ( array( 'site@example.com', 'bounce+tag@mail.example.com', 'first.last@example.co.uk',
+                         'srs0=ab=cd@example.com', 'a_b-c%d@example-host.de' ) as $address )
+            $this->assertTrue( eZSendmailTransport::isShellSafeAddress( $address ), $address );
+        foreach ( array( "\"a' -X/tmp/x.php -OQueueDirectory=/tmp '\"@example.com", '"a b"@example.com',
+                         "o'neil@example.com", '-oQ@example.com', 'a@b@example.com', 'a@[127.0.0.1]', 'a;id@example.com',
+                         'a$(id)@example.com', 'a`id`@example.com', '', 'site@example.com ', "site@example.com\n",
+                         false, null, array( 'site@example.com' ) ) as $address )
+            $this->assertFalse( eZSendmailTransport::isShellSafeAddress( $address ), var_export( $address, true ) );
     }
 
     public function testAnyOtherValueKeepsDashF()

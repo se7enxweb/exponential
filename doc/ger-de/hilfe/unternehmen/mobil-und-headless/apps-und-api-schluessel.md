@@ -14,7 +14,7 @@ dürfen: eine mobile App, das System eines Partners, ein Importskript, das Werkz
 Arten von Zugangsdaten, die die Plattform bietet, wie jede gesteuert wird, was aufgezeichnet wird, und eine Reihe von
 Hausregeln. Die technische Seite ist [OAuth und API-Schlüssel](../../ersteller/anwendungsentwickler/oauth-und-api-schluessel.md).
 
-![oAuth-Verwaltung: die Anwendungen mit Zugriff](../../../../eng-us/help/images/help/bu-oauth.webp)
+![oAuth-Verwaltung: die Anwendungen mit Zugriff](../../bilder/help/bu-oauth.webp)
 
 ## Inhalt
 

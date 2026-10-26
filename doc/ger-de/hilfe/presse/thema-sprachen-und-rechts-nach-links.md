@@ -3,7 +3,7 @@ title: "Thema: Sprachen und Schreibrichtung von rechts nach links"
 audience: press
 category: press-media
 order: 64
-summary: Ein Themenbeitrag über Sprachen in Exponential - 268 Locale-Dateien, 40 davon von rechts nach links, 37 Übersetzungen der Administration, von denen 24 vollständig sind, eine Administration, die sich für Hebräisch und Arabisch umdreht - mit druckbaren Fakten, einem Zählunterschied, auf den Sie achten sollten, und den Aussagen, die Sie vermeiden sollten.
+summary: Ein Themenbeitrag über Sprachen in Exponential - 268 Locale-Dateien, 40 davon von rechts nach links, 38 Übersetzungen der Administration, von denen dreiundzwanzig vollständig sind, eine Administration, die sich für Hebräisch und Arabisch umdreht - mit druckbaren Fakten, einem Zählunterschied, auf den Sie achten sollten, und den Aussagen, die Sie vermeiden sollten.
 keywords: Thema, Sprachen, Locales, Übersetzungen, rechts nach links, RTL, Hebräisch, Arabisch, mehrsprachig, Internationalisierung, Presse, story, languages, locales, translations, right to left, Hebrew, Arabic, multilingual, internationalization, press
 type: help
 ---
@@ -28,8 +28,8 @@ die dokumentierten Zahlen mit ihrem Datum und zeigt, wo zwei Quellen unterschied
 
 Exponential trennt die Sprache der **Inhalte** von der Sprache der **Administration**. „268 Locale-Dateien (261
 Sprachen und Länder, [eine Testsprache] und 6 Varianten, in 32 Schriften, 40 davon von rechts nach links geschrieben)
-lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt 37 Übersetzungen der Administration
-(`share/translations`, gezählt am 25. Oktober 2026), vierundzwanzig davon vollständig“ ([Sprachen in Exponential](../../sprachen.md)). Wenn ein Redakteur eine Oberflächensprache mit
+lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt 38 Übersetzungen der Administration, dreiundzwanzig
+davon vollständig“ ([Sprachen in Exponential](../../sprachen.md)). Wenn ein Redakteur eine Oberflächensprache mit
 Schreibrichtung von rechts nach links wählt, „dreht sich die Administration um“: Die Seite sagt `dir="rtl"`, die
 Seitenspalten tauschen die Plätze, und Text beginnt rechts ([Rechts nach links](../../funktionen/6.0/rechts-nach-links.md)).
 Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist.
@@ -48,7 +48,7 @@ Das meiste davon kam im Oktober 2026, in der Entwicklungslinie 6.0.15, die nicht
 | Fakt | Quelle |
 |---|---|
 | 268 Locale-Dateien, 40 von rechts nach links geschrieben, in 32 Schriften (Stand 15. Oktober 2026). | [Sprachen in Exponential](../../sprachen.md) |
-| 33 Übersetzungen der Administration, neunzehn vollständig (19. Oktober 2026): `eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko, Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien), Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Latein und Klingonisch. Alle außer `eng-US` und `ger-DE` entstanden zumindest teilweise maschinell unterstützt. | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
+| 38 Übersetzungen der Administration, dreiundzwanzig vollständig (23. Oktober 2026): `eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko, Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien), Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch (Kurmandschi), Suaheli, Latein und Klingonisch. Alle außer `eng-US` und `ger-DE` entstanden zumindest teilweise maschinell unterstützt. | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Jede Übersetzung eines Elements wird für sich veröffentlicht; Kennzeichen zeigen, was vorhanden ist und was fehlt. | [Sprachen](../sprachen.md) |
 | Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch. | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
 | Eine Seite mit Schreibrichtung von links nach rechts bleibt nach der Arbeit an rechts nach links „Byte für Byte dasselbe Markup“. | [Rechts nach links](../../funktionen/6.0/rechts-nach-links.md) |
@@ -64,8 +64,8 @@ Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sp
 
 ## Was Sie nicht behaupten sollten
 
-- „Exponential ist in 268 Sprachen verfügbar.“ Sagen Sie „268 Locale-Dateien als Inhaltssprachen; 37 Übersetzungen der
-  Administration, 24 vollständig (Stand 25. Oktober 2026)“.
+- „Exponential ist in 268 Sprachen verfügbar.“ Sagen Sie „268 Locale-Dateien als Inhaltssprachen; 38 Übersetzungen der
+  Administration, dreiundzwanzig vollständig“.
 - „Jede Übersetzung ist perfekt“ oder „professionell übersetzt“. Mehrere entstanden maschinell unterstützt.
 - „Unbegrenzt viele Inhaltssprachen.“ Die dokumentierte Grenze liegt bei 62 pro Installation auf 64-Bit-PHP.
 - „Unterstützung für Klingonisch“ als ernsthafte Funktion: Das README selbst sagt „(for fun)“.
@@ -78,7 +78,7 @@ Oktober in mehreren Schritten hinzu; verwenden Sie also die datierte Zahl der Sp
 
 ```text
 „Eine Administration, die von rechts nach links liest: Exponential ergänzt Hebräisch und Arabisch“
-„268 Locales, 24 vollständige Übersetzungen: Sprachen ehrlich zählen“
+„268 Locales, dreiundzwanzig vollständige Übersetzungen: Sprachen ehrlich zählen“
 „Muttersprachler gesucht: ein mit maschineller Hilfe übersetztes CMS prüfen“
 ```
 

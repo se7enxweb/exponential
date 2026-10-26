@@ -50,6 +50,30 @@ class expHelpFunctionCollection
             return array( 'result' => false );
         return array( 'result' => expHelpContextRegistry::instance()->menu( (string)$module, (string)$view, (string)$design ) );
     }
+
+    /**
+     * fetch( 'exphelp', 'site_topic', hash( 'object_id', ... ) ): a help topic for the site's own page
+     *
+     * @param int $object_id
+     * @return array array( 'result' => expHelpContentSite::topic(), or false when the reader may not see it )
+     */
+    public static function fetchSiteTopic( $object_id )
+    {
+        $topic = class_exists( 'expHelpContentSite' ) ? ( new expHelpContentSite() )->topic( (int)$object_id ) : null;
+        return array( 'result' => $topic !== null ? $topic : false );
+    }
+
+    /**
+     * fetch( 'exphelp', 'site_map', hash( 'object_id', ... ) ): a manual or chapter for the site's own page
+     *
+     * @param int $object_id
+     * @return array array( 'result' => expHelpContentSite::map(), or false when the reader may not see it )
+     */
+    public static function fetchSiteMap( $object_id )
+    {
+        $map = class_exists( 'expHelpContentSite' ) ? ( new expHelpContentSite() )->map( (int)$object_id ) : null;
+        return array( 'result' => $map !== null ? $map : false );
+    }
 }
 
 ?>

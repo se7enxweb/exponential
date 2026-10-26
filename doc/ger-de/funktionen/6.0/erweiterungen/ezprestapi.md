@@ -41,8 +41,10 @@ Template=rest_pagelayout.tpl
 
 Die Aufrufe zum Erstellen und Löschen stützen sich auf [nxc_powercontent](nxc_powercontent.md) (eine Aktualisierung wird
 geprüft und antwortet dann mit 501). Die Authentifizierung ist das OAuth2 des REST-Frameworks: Holen Sie ein Token unter
-`POST /api/auth/v1/oauth/token` (Grants `authorization_code` und `refresh_token`) und senden Sie es als Parameter
-`oauth_token` oder im Header `Authorization: OAuth`.
+`POST /api/auth/v1/oauth/token` (Grants `authorization_code` und `refresh_token`) und senden Sie es im Header
+`Authorization: Bearer` (oder `OAuth`); den Parameter `oauth_token` liest die API aus einem POST-Formular und aus dem
+Query-String nur bei `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`
+([Härtung der OAuth-Tokens](../../../bc/6.0/oauth-token-haertung.md)).
 Ein Benutzer kann auf der Website auch einen [persönlichen API-Schlüssel](../../../anleitungen/api-schluessel.md) anlegen und ihn
 als `Authorization: Bearer expk_...` senden; die Routen zum Erstellen, Aktualisieren und Löschen brauchen dann zusätzlich
 den Scope `publish`, `edit` oder `remove` des Schlüssels (`rest.ini [ApiKeySettings] RouteScopes[]`, `RouteGuards[]`).

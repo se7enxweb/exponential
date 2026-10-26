@@ -25,8 +25,8 @@ Every pull request is merged. While it is open, 7x reviews it in many rounds, an
 it onto `main` as the reviews ask; once it is merged, `main`'s history is never rewritten, and later fixes come as new
 pull requests ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows),
 [CI](../../bc/6.0/ci.md)). Contributions are released under the same GPL license (CONTRIBUTING.md). Since December 2023
-pull requests have come from 7x, from developers such as ekked and fwoldt, and from companies such as Netgen and Mugo
-Web; 1,062 merged pull requests appear in the whole history (25 October 2026) ([Exponential by the numbers](exponential-by-the-numbers.md)).
+pull requests have come from 7x, from individual developers, and from companies such as Netgen and Mugo
+Web; 1,042 merged pull requests appear in the whole history (19 October 2026) ([Exponential by the numbers](exponential-by-the-numbers.md)).
 
 ## Facts you can print
 
@@ -37,7 +37,7 @@ Web; 1,062 merged pull requests appear in the whole history (25 October 2026) ([
 | The test suite runs on every pull request | [CI](../../bc/6.0/ci.md) |
 | Contributions under GPL v2 or later | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Code contributions to the kernel need a signed Contributor Licensing Agreement (CLA) before they are merged; by signing and submitting, contributors assign the copyright to 7x and give up control: 7x may use, change, relicense and distribute a contribution in any way, without asking or paying them, and they cannot withdraw it; users' own extensions are not affected | [Copyright assignment (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
-| 1,039 merged pull requests in the history (18 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
+| 1,042 merged pull requests in the history (19 October 2026) | [Exponential by the numbers](exponential-by-the-numbers.md) |
 
 ## What not to claim
 

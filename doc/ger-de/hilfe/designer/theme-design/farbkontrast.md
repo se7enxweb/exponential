@@ -12,9 +12,9 @@ type: help
 Diese Seite ist für Designer, die Farben auswählen. Sie beantwortet: welche Verhältnisse zu erreichen sind, wie Sie sie in beiden
 Themes prüfen und wo der Kontrast meistens versagt.
 
-![Die Titelzeile der Seite eines Eintrags mit ihren Badges für Typ und Sichtbarkeit, kleiner Text, der einen Kontrast von 4,5:1 halten muss](../../../../eng-us/help/images/designers/contrast-badges.webp)
+![Die Titelzeile der Seite eines Eintrags mit ihren Badges für Typ und Sichtbarkeit, kleiner Text, der einen Kontrast von 4,5:1 halten muss](../../bilder/designers/contrast-badges.webp)
 
-![Dieselbe Titelzeile im dunklen Modus, mit eigenen Farben der Badges](../../../../eng-us/help/images/designers/contrast-badges-dark.webp)
+![Dieselbe Titelzeile im dunklen Modus, mit eigenen Farben der Badges](../../bilder/designers/contrast-badges-dark.webp)
 
 ## Inhalt
 

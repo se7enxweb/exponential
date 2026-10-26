@@ -24,7 +24,7 @@ gefülltes Kürzel wie **EN** ist eine vorhandene Übersetzung; ein gestrichelte
 gibt. Zeigen Sie auf ein Kürzel, um es zu lesen, zum Beispiel *English (American) – Hauptsprache* oder *In Deutsch
 übersetzen*.
 
-![Die Registerkarte Übersetzungen eines Artikels: die vorhandenen Übersetzungen mit ihrer Locale und Hauptsprache und die fehlenden](../../eng-us/help/images/languages/translations-tab.webp)
+![Die Registerkarte Übersetzungen eines Artikels: die vorhandenen Übersetzungen mit ihrer Locale und Hauptsprache und die fehlenden](bilder/languages/translations-tab.webp)
 
 Die Registerkarte **Übersetzungen** des Objekts listet seine Übersetzungen vollständig auf.
 
@@ -38,7 +38,7 @@ Die Registerkarte **Übersetzungen** des Objekts listet seine Übersetzungen vol
    **Keine** für leere Felder.
 4. Übersetzen Sie die Felder und klicken Sie auf **Zur Veröffentlichung schicken**.
 
-![Die Sprachliste neben Bearbeiten, in der Sie die Sprache wählen, die Sie bearbeiten oder in die Sie übersetzen, hervorgehoben](../../eng-us/help/images/languages/translation-badges.webp)
+![Die Sprachliste neben Bearbeiten, in der Sie die Sprache wählen, die Sie bearbeiten oder in die Sie übersetzen, hervorgehoben](bilder/languages/translation-badges.webp)
 
 Um eine vorhandene Übersetzung zu ändern, wählen Sie diese Sprache in der Liste neben **Bearbeiten** und klicken Sie
 dann auf **Bearbeiten**. Das Bearbeitungsformular nennt neben dem Titel die Sprache, die es bearbeitet.
@@ -61,9 +61,9 @@ Administrator, wenn Sie unsicher sind.
 
 Die rechte Spalte enthält den Kasten **Oberfläche** mit der Liste **Sprache der Oberfläche**.
 
-![Der Kasten Oberfläche in der rechten Spalte mit der Liste Sprache der Oberfläche und der Schaltfläche Anwenden](../../eng-us/help/images/languages/interface-language.webp)
+![Der Kasten Oberfläche in der rechten Spalte mit der Liste Sprache der Oberfläche und der Schaltfläche Anwenden](bilder/languages/interface-language.webp)
 
-![Setup, Oberflächensprachen: jede Locale der Administration, was sie anzeigt und wie vollständig ihre Übersetzung ist](../../eng-us/help/images/languages/setup-languages.webp)
+![Setup, Oberflächensprachen: jede Locale der Administration, was sie anzeigt und wie vollständig ihre Übersetzung ist](bilder/languages/setup-languages.webp)
 
 1. Öffnen Sie die Liste. Sie zeigt zuerst die meistgenutzten Sprachen in Gruppen, dann alle Sprachen von A bis Z.
    Jeder Eintrag zeigt den eigenen Namen der Sprache, ihren Namen in der aktuellen Sprache der Oberfläche und wie

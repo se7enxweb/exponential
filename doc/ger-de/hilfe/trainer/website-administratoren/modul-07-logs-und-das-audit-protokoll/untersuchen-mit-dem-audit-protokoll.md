@@ -114,7 +114,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation. Jedes Testkonto verwendet eine 
 - Schritt 10 listet die Verweigerungen des Testbenutzers.
 - Der Trainer prüft die Rolle einer Teilnehmerin oder eines Teilnehmers: genau eine Richtlinie, `audit/read`.
 
-![Die Audit-Einstellungen: Index, Schlüssel, Senken, Archivformate und Quellen](../../../../../eng-us/help/images/trainers/sa-audit-settings.webp)
+![Die Audit-Einstellungen: Index, Schlüssel, Senken, Archivformate und Quellen](../../../bilder/trainers/sa-audit-settings.webp)
 
 ## Quiz
 

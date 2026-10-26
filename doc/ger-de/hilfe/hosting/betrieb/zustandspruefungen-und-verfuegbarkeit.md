@@ -74,7 +74,7 @@ Siehe [Wartungsmodus](wartungsmodus.md).
 
 Führen Sie diese nach Zeitplan als Benutzer der Website aus und lösen Sie bei einem Exit-Status ungleich null einen Alarm aus:
 
-![Setup, Systeminformationen: PHP, Datenbank und Server mit Zustandsprüfungen](../../../../eng-us/help/images/hosting/system-information.webp)
+![Setup, Systeminformationen: PHP, Datenbank und Server mit Zustandsprüfungen](../../bilder/hosting/system-information.webp)
 
 ```bash
 ./console exp:systeminfo --json                      # exit 1 when a health check fails

@@ -14,7 +14,7 @@ wissen müssen, welche Software eine öffentliche Website betreibt, und sicher s
 den alle anderen unter dieser Version kennen. Die Richtlinie steht im
 [Standard für Versionsverwaltung und Releases](../../../../standards/versionsverwaltung-und-releases.md#releases).
 
-![Die Seite „Über“ zeigt das Release, das die Installation betreibt](../../../../../eng-us/help/images/government/gov-about.webp)
+![Die Seite „Über“ zeigt das Release, das die Installation betreibt](../../../bilder/government/gov-about.webp)
 
 ## Inhalt
 1. [Die Regel](#die-regel)

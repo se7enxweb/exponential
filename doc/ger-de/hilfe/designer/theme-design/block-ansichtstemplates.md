@@ -12,7 +12,7 @@ type: help
 Diese Seite ist für Designer, die das Template eines Layout-Blocks schreiben oder neu gestalten. Sie beantwortet: was ein
 Block-Template erhält, wie es seine Einträge zeichnet und wie ein Container seine Kinder zeichnet.
 
-![Layouts, Template-Editor: die Block-Ansichtstemplates der aktiven Designs, zum Lesen, bevor Sie eines überschreiben](../../../../eng-us/help/images/layouts/layout-template-editor.webp)
+![Layouts, Template-Editor: die Block-Ansichtstemplates der aktiven Designs, zum Lesen, bevor Sie eines überschreiben](../../bilder/layouts/layout-template-editor.webp)
 
 ## Inhalt
 

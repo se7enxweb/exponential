@@ -14,7 +14,7 @@ Diese Antworten folgen den FAQ-Seiten der Projektwebsite, [exponential.earth/faq
 gelesen im Oktober 2026, in den eigenen Worten dieser Hilfe wiedergegeben und mit der Software in diesem Repository
 abgeglichen. Wo das Repository etwas anderes sagt, weist die Antwort darauf hin und folgt dem Repository.
 
-![Die Seite eines Objekts in der Administration](../../../eng-us/help/images/help/pj-item.webp)
+![Die Seite eines Objekts in der Administration](../bilder/help/pj-item.webp)
 
 Die FAQ der Website verweist außerdem auf eine ältere FAQ in der archivierten Dokumentation,
 [doc.ezpublishlegacy.se7enx.com/FAQ.html](https://doc.ezpublishlegacy.se7enx.com/FAQ.html), die sie als „schon etwas

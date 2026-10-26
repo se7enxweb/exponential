@@ -120,7 +120,7 @@ Verwenden Sie die Schulungsinstallation. Während der Schritte 1 bis 6 drückt n
   nötig ist.
 - Der Trainer prüft **Letzte Sendungen** auf dem Dashboard am Beamer.
 
-![Der Newsletter-Bericht: die gesendeten Ausgaben mit ihren Zahlen](../../../../../eng-us/help/images/trainers/nl-report.webp)
+![Der Newsletter-Bericht: die gesendeten Ausgaben mit ihren Zahlen](../../../bilder/trainers/nl-report.webp)
 
 ## Quiz
 

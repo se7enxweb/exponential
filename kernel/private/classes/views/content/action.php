@@ -1791,6 +1791,12 @@ class Action extends \Exponential\Runnable\ModuleView
             {
                 $user = \eZUser::currentUser();
                 $object = \eZContentObject::fetch(  $objectID );
+                // an object that no longer exists (the form of a removed object sent again) ended in
+                // "Call to a member function attribute() on null", as ActionRemove did
+                if ( !$object instanceof \eZContentObject )
+                {
+                    return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                }
                 $module->redirectTo( $module->functionURI( 'versionview' ) . '/' . $objectID . '/' . $object->attribute( 'current_version' ) . '/' );
                 return $this->viewResult( isset( $Result ) ? $Result : null, null );
 
@@ -1805,6 +1811,12 @@ class Action extends \Exponential\Runnable\ModuleView
                 {
                     $contentNodeID = $http->postVariable( 'ContentNodeID' );
                     $node = \eZContentObjectTreeNode::fetch( $contentNodeID );
+                    // a node ID that no longer exists (form sent again after the removal) ended in
+                    // "Call to a member function attribute() on null"; answered like the other branches with a missing node.
+                    if ( !$node instanceof \eZContentObjectTreeNode )
+                    {
+                        return $this->viewResult( null, $module->handleError( \eZError::KERNEL_NOT_AVAILABLE, 'kernel' ) );
+                    }
                     $parentNodeID = $node->attribute( 'parent_node_id' );
                 }
 

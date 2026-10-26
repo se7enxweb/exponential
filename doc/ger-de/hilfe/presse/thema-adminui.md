@@ -31,7 +31,7 @@ Der Kernel setzt das Paket seit der Produktlinie 6.0.15 voraus ([Die Produktfami
 
 | Fakt | Quelle |
 |---|---|
-| Paket `exp_adminui`, in der Produktlinie 6.0.15 als `~1.0.0.50` vorausgesetzt | [Die Produktfamilie auf einen Blick](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick) |
+| Paket `exp_adminui`, in der Produktlinie 6.0.15 als `~1.0.0.50` vorausgesetzt (25. Oktober 2026) | [composer.json](https://github.com/se7enxweb/exponential/blob/main/composer.json) |
 | Eine Portierung der Netgen AdminUI | Beschreibung des Repositorys |
 | Braucht Exponential 6.0.15 oder neuer | ebenda |
 | Funktionsseite | [Exponential AdminUI](../../funktionen/6.0/exp-adminui.md) |

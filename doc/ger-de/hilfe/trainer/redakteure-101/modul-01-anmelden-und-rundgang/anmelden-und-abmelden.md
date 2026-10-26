@@ -138,9 +138,9 @@ Verwenden Sie die Schulungsinstallation, die der Trainer vorbereitet hat, und di
 - Schritt 10: Die Seite fragt nach der E-Mail-Adresse des Kontos und bietet **Neues Passwort erstellen** an.
 - Der Trainer prüft das, indem er alle Teilnehmenden bittet, ihre Begrüßung auf dem Dashboard zu zeigen.
 
-![Das Anmeldeformular mit Benutzername, Passwort und der Schaltfläche Anmelden](../../../../../eng-us/help/images/trainers/e101-sign-in.webp)
+![Das Anmeldeformular mit Benutzername, Passwort und der Schaltfläche Anmelden](../../../bilder/trainers/e101-sign-in.webp)
 
-![Das Dashboard nach der Anmeldung, das die Teilnehmenden mit Namen begrüßt, darunter Meine Entwürfe und Meine Warteliste](../../../../../eng-us/help/images/trainers/e101-dashboard-greeting.webp)
+![Das Dashboard nach der Anmeldung, das die Teilnehmenden mit Namen begrüßt, darunter Meine Entwürfe und Meine Warteliste](../../../bilder/trainers/e101-dashboard-greeting.webp)
 
 ## Quiz
 

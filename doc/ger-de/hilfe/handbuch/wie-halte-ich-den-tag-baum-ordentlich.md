@@ -31,7 +31,7 @@ Personen pflegen den Baum.
    von Redakteuren in Eile.
 5. Übersetzen Sie Tags in jede Sprache, die die Website zeigt: Öffnen Sie den Tag und fügen Sie die Übersetzung hinzu.
 
-![Das Tags dashboard mit den untergeordneten Tags und den Schaltflächen Add tag und Weitere Aktionen](../../../eng-us/help/manual/images/tags-dashboard.webp)
+![Das Tags dashboard mit den untergeordneten Tags und den Schaltflächen Add tag und Weitere Aktionen](bilder/tags-dashboard.webp)
 
 ## Was schiefgehen kann
 

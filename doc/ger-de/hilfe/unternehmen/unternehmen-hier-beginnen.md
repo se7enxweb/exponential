@@ -135,7 +135,7 @@ Der größte Teil der Kosten einer Website liegt nicht im Aufbau, sondern im jah
 Die vollständige Lesereihenfolge steht im [Lesepfad](lesepfad-fuer-unternehmen.md). Kurze Antworten finden Sie in der
 [FAQ](faq-fuer-unternehmen.md), und die Begriffe sind im [Glossar](glossar-fuer-unternehmen.md) erklärt.
 
-![Das Dashboard der Administration von Exponential](../../../eng-us/help/images/admin-dashboard.webp)
+![Das Dashboard der Administration von Exponential](../bilder/admin-dashboard.webp)
 
 ## Weitere Bereiche dieser Hilfe
 

@@ -114,7 +114,7 @@ Administration angemeldet.
 - Schritt 7 listet Hilfeseiten auf, keine Inhalte.
 - Der Trainer prüft die Notizen von zwei Teilnehmenden anhand der Landkarte an der Tafel.
 
-![Das Suchfeld in der Kopfzeile der Administration](../../../../../eng-us/help/images/trainers/se-where.webp)
+![Das Suchfeld in der Kopfzeile der Administration](../../../bilder/trainers/se-where.webp)
 
 ## Quiz
 

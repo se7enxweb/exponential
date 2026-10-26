@@ -83,8 +83,9 @@ TokenTTL`, 3600 seconds by default). The code itself also expires after `TokenTT
 Authorization: OAuth <access_token>
 ```
 
-The REST layer also accepts `Authorization: Bearer <access_token>` for OAuth tokens, and an `oauth_token` query or
-form parameter. Use the header: URLs are logged by servers and proxies.
+The REST layer also accepts `Authorization: Bearer <access_token>` for OAuth tokens, and an `oauth_token` form
+parameter of a POST body. An `oauth_token` query parameter is refused unless the site sets `rest.ini [OAuthSettings]
+AllowTokenInQuery=enabled`: URLs are logged by servers and proxies. Use the header.
 
 ## Refreshing tokens
 
@@ -96,7 +97,9 @@ curl -s https://example.com/api/auth/v1/oauth/token \
      -d refresh_token='<refresh token>'
 ```
 
-The answer has the same three keys. Store the new refresh token in place of the old one. Refresh once; if that fails,
+The answer has the same three keys. Store the new refresh token in place of the old one: a refresh token lasts
+`rest.ini [OAuthSettings] RefreshTokenTTL` (30 days by default) from the refresh that issued it, and it stops working
+when the user is disabled or locked. Refresh once; if that fails,
 send the user through the authorize page again. Refreshing also needs the client secret, so it too runs on the back
 end.
 

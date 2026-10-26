@@ -14,7 +14,7 @@ müssen, in denen ihre Mitarbeitenden arbeiten. Die Oberflächentexte stehen in 
 `share/translations/<locale>/translation.ts`, und im Verzeichnis `translations/` jeder Erweiterung
 ([Übersetzungen und Sprachen](../../../funktionen/6.0/uebersetzungen-und-sprachen.md)).
 
-![Oberflächensprachen: jede Locale der Administration und wie vollständig ihre Übersetzung ist](../../../../eng-us/help/images/government/gov-interface-languages.webp)
+![Oberflächensprachen: jede Locale der Administration und wie vollständig ihre Übersetzung ist](../../bilder/government/gov-interface-languages.webp)
 
 ## Inhalt
 

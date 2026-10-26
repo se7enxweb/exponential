@@ -64,7 +64,8 @@ X-Exp-Token: expt_...
 ```
 
 Die REST-API hat keinen solchen zweiten Header; bei ihr muss `Authorization` ankommen (ein OAuth-Token, aber kein
-API-Schlüssel, kann auch als Parameter `oauth_token` kommen, was dieser Abschnitt nicht empfiehlt, weil URLs
+API-Schlüssel, kann auch als Parameter `oauth_token` eines POST-Formulars kommen; im Query-String nur, wenn die
+Website `rest.ini [OAuthSettings] AllowTokenInQuery` einschaltet, was dieser Abschnitt nicht empfiehlt, weil URLs
 protokolliert werden).
 
 ## Die Fälle unterscheiden

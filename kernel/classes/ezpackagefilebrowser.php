@@ -198,7 +198,8 @@ class eZPackageFileBrowser
             return $out;
         }
         $dom = new DOMDocument( '1.0', 'utf-8' );
-        if ( !@$dom->loadXML( (string)$bytes ) || !$dom->documentElement )
+        // the bytes are a file of an uploaded package; no DTD or entity is fetched from the network
+        if ( !@$dom->loadXML( (string)$bytes, LIBXML_NONET ) || !$dom->documentElement )
         {
             $out['error'] = 'not well-formed XML';
             $out['text'] = self::prettyPrintXML( $bytes );
@@ -355,7 +356,7 @@ class eZPackageFileBrowser
         $dom = new DOMDocument( '1.0', 'utf-8' );
         $dom->preserveWhiteSpace = false;
         $dom->formatOutput = true;
-        if ( !@$dom->loadXML( (string)$bytes ) )
+        if ( !@$dom->loadXML( (string)$bytes, LIBXML_NONET ) ) // a file of an uploaded package, see documentText()
             return (string)$bytes;
         $pretty = $dom->saveXML();
         return $pretty !== false ? $pretty : (string)$bytes;
@@ -373,7 +374,7 @@ class eZPackageFileBrowser
     static function objectItemSummary( $bytes )
     {
         $dom = new DOMDocument();
-        if ( !@$dom->loadXML( (string)$bytes ) )
+        if ( !@$dom->loadXML( (string)$bytes, LIBXML_NONET ) ) // a file of an uploaded package, see documentText()
             return null;
         $root = $dom->documentElement;
         if ( !$root )

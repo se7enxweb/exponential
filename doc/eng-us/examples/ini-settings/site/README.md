@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 59 blocks, 462 settings.
+The shipped settings of `settings/site.ini`: 49 blocks, 423 settings.
 
 > Exponential configuration file.  
 >
@@ -27,18 +27,16 @@ The shipped settings of `settings/site.ini`: 59 blocks, 462 settings.
 | [Cache](Cache.md) | 1 |
 | [Cache_rest](Cache_rest.md) | 5 |
 | [Cache_restRoutes](Cache_restRoutes.md) | 5 |
-| [Cache_exphelpcontent](Cache_exphelpcontent.md) | 5 |
 | [DatabaseSettings](DatabaseSettings.md) | 20 |
 | [Event](Event.md) | 1 |
 | [RunnableSettings](RunnableSettings.md) | 2 |
-| [ExtensionSettings](ExtensionSettings.md) | 6 |
+| [ExtensionSettings](ExtensionSettings.md) | 5 |
 | [InformationCollectionSettings](InformationCollectionSettings.md) | 1 |
 | [Session](Session.md) | 14 |
-| [UserSessionSettings](UserSessionSettings.md) | 7 |
 | [DebugSettings](DebugSettings.md) | 16 |
 | [RequestLogSettings](RequestLogSettings.md) | 4 |
 | [HTMLForms](HTMLForms.md) | 2 |
-| [URLTranslator](URLTranslator.md) | 13 |
+| [URLTranslator](URLTranslator.md) | 12 |
 | [AppendNodeIDFilterSettings](AppendNodeIDFilterSettings.md) | 1 |
 | [SiteSettings](SiteSettings.md) | 18 |
 | [AdminEnvironment](AdminEnvironment.md) | 7 |
@@ -48,14 +46,6 @@ The shipped settings of `settings/site.ini`: 59 blocks, 462 settings.
 | [UserSettings](UserSettings.md) | 44 |
 | [PasswordSettings](PasswordSettings.md) | 11 |
 | [PasswordChangeRequiredSettings](PasswordChangeRequiredSettings.md) | 1 |
-| [SignInSecondFactorSettings](SignInSecondFactorSettings.md) | 2 |
-| [PasskeySettings](PasskeySettings.md) | 9 |
-| [ReauthSettings](ReauthSettings.md) | 5 |
-| [ReauthGroup_account](ReauthGroup_account.md) | 2 |
-| [ReauthGroup_users](ReauthGroup_users.md) | 2 |
-| [ReauthGroup_system](ReauthGroup_system.md) | 2 |
-| [ReauthGroup_export](ReauthGroup_export.md) | 2 |
-| [ReauthGroup_content](ReauthGroup_content.md) | 2 |
 | [SiteAccessSettings](SiteAccessSettings.md) | 37 |
 | [PortAccessSettings](PortAccessSettings.md) | 2 |
 | [RoleSettings](RoleSettings.md) | 13 |
@@ -68,7 +58,7 @@ The shipped settings of `settings/site.ini`: 59 blocks, 462 settings.
 | [FileSettings](FileSettings.md) | 22 |
 | [TemplateSettings](TemplateSettings.md) | 25 |
 | [ContentSettings](ContentSettings.md) | 20 |
-| [MailSettings](MailSettings.md) | 22 |
+| [MailSettings](MailSettings.md) | 23 |
 | [ShopSettings](ShopSettings.md) | 4 |
 | [OverrideSettings](OverrideSettings.md) | 1 |
 | [FormProcessSettings](FormProcessSettings.md) | 1 |

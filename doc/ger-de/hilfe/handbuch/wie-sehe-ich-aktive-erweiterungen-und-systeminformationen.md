@@ -31,7 +31,7 @@ braucht `setup/system_info`.
 4. Für den Support öffnen Sie **Bericht für den Support** und klicken Sie auf **Bericht als Text kopieren** oder
    **Bericht herunterladen (.txt)**.
 
-![Systeminformationen mit den Zustandsprüfungen, der Übersicht und den aufklappbaren Abschnitten](../../../eng-us/help/manual/images/system-information.webp)
+![Systeminformationen mit den Zustandsprüfungen, der Übersicht und den aufklappbaren Abschnitten](bilder/system-information.webp)
 
 ## Was schiefgehen kann
 

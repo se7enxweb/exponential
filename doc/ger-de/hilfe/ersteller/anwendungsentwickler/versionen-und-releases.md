@@ -13,7 +13,7 @@ Diese Seite richtet sich an Anwendungsentwickler, die Releases veröffentlichen.
 eigenen Erweiterungen von Exponential folgen; sie sorgen dafür, dass Installationen erkennen können, welchen Code sie
 ausführen.
 
-![Der Bereich Erweiterungen auf der Seite „Über“: jede Erweiterung mit Version, Lizenz und Website](../../../../eng-us/help/images/creators/about-extensions.webp)
+![Der Bereich Erweiterungen auf der Seite „Über“: jede Erweiterung mit Version, Lizenz und Website](../../bilder/creators/about-extensions.webp)
 
 ## Inhalt
 

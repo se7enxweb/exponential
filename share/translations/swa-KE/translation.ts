@@ -56964,6 +56964,18 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; linaelekeza nje ya kifurushi.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Kumbukumbu iliyobanwa imefungwa kwa muundo wa PAX wa tar, ambao hauwezi kuingizwa. Funga kifurushi kwa muundo wa GNU wa tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; lina aina ya tar &quot;%type&quot;, na kifurushi kina faili na saraka pekee.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Kumbukumbu iliyobanwa imekataliwa: ina ingizo lenye jina refu kuliko baiti %length.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Kumbukumbu iliyobanwa imekataliwa: ingizo &quot;%path&quot; ni kiungo au kifaa, na kifurushi kina faili na saraka pekee.</translation>
     </message>
@@ -75436,6 +75448,146 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>More audiences</source>
         <translation>Hadhira zaidi</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Ukaguzi na utoaji</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Mada sasa iko kwenye ukaguzi.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Mada imetolewa: wasomaji wanaiona sasa.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Mada ni rasimu tena.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Wewe uliandika toleo la sasa, kwa hiyo mtu mwingine mwenye jukumu la utoaji ndiye anaitoa.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Hali haikubadilishwa: jukumu lako haliruhusu hatua hii.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Mtiririko wa ukaguzi</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Rasimu</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Ukaguzi</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Rudisha kwenye ukaguzi</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Tuma kwa ukaguzi</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Toa</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Rudisha kwenye rasimu</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Ukaguzi wa mwongozo wa mtindo</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Ukaguzi wa mwongozo wa mtindo haukupata chochote.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Makosa %errors, maonyo %warnings, maelezo %notices. Kosa linafanya ./console exp:help:content check ishindwe.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Kiwango</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Kanuni</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Sehemu</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Je, hii ilisaidia?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Wasomaji walijibu ndiyo mara %yes na hapana mara %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Sababu zilizotolewa za hapana:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Asante. Jibu lako linatusaidia kuboresha msaada.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ndiyo</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Kama sivyo, nini kilikuwa kibaya?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Hakuna sababu iliyotolewa</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hapana</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Jibu lako tu ndilo linalohifadhiwa, si wewe ni nani.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Imepitwa na wakati</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Ni vigumu kuelewa</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Kuna kitu kinakosekana</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Si sahihi</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Sababu nyingine</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Mada hii haijatolewa; wasomaji hawaioni.</translation>
     </message>
 </context>
 <context>

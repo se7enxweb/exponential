@@ -68,7 +68,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 59 Blöcke, 462 Einste
 | [FileSettings](FileSettings.md) | 22 |
 | [TemplateSettings](TemplateSettings.md) | 25 |
 | [ContentSettings](ContentSettings.md) | 20 |
-| [MailSettings](MailSettings.md) | 22 |
+| [MailSettings](MailSettings.md) | 23 |
 | [ShopSettings](ShopSettings.md) | 4 |
 | [OverrideSettings](OverrideSettings.md) | 1 |
 | [FormProcessSettings](FormProcessSettings.md) | 1 |

@@ -25,8 +25,8 @@ Der Code wurde ab 1999 von eZ Systems als eZ Publish entwickelt, ein Produkt, da
 eingestellt hat; seine letzten Releases sind bis September 2021 verzeichnet. „Exponential has made it beyond it's end
 of life in 2021 and survived“ (README). 7x, das als Brookins Consulting seit den ersten Versionen mit der Software
 gearbeitet hatte, startete sein Projekt im Dezember 2023, veröffentlichte 6.0.0 am 1. Januar 2024 und bis Juni 2026
-vierzehn weitere Releases, brachte den Code auf PHP 8.0 bis 8.5, benannte ihn im August 2025 in Exponential um und half
-im März 2026, eine gemeinnützige Organisation dafür zu gründen
+vierzehn weitere Releases, brachte den Code auf PHP 8.0 bis 8.5 und benannte ihn im August 2025 in Exponential um; im
+März 2026 wurde dafür eine gemeinnützige Organisation gegründet, die Exponential Foundation
 ([Die Geschichte für lange Beiträge](die-geschichte-fuer-lange-beitraege.md)).
 
 ## Fakten, die Sie drucken können

@@ -47,7 +47,7 @@ kaputt sein könnte.
 
 Aus einer Shell, im Installationsverzeichnis, als Benutzer der Website (als root fügen Sie `--allow-root-user` hinzu):
 
-![Setup, Wartung: das Wartungsfenster beginnen und verlassen und die Wartungsaufgaben der Installation ausführen](../../../../eng-us/help/images/hosting/maintenance-window.webp)
+![Setup, Wartung: das Wartungsfenster beginnen und verlassen und die Wartungsaufgaben der Installation ausführen](../../bilder/hosting/maintenance-window.webp)
 
 ```bash
 php bin/php/maintenance.php on --message="Back at 06:00 UTC" --until=2h --allow-admin

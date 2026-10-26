@@ -109,7 +109,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *My first article*.
 - Der Trainer prüft das, indem er zwei Versionen des Artikels einer Teilnehmerin oder eines Teilnehmers auf dem
   Projektor vergleicht.
 
-![Die Versionsseite eines Elements mit mehreren Versionen, den Filtern und Zwei Versionen vergleichen](../../../../../eng-us/help/images/trainers/e101-versions.webp)
+![Die Versionsseite eines Elements mit mehreren Versionen, den Filtern und Zwei Versionen vergleichen](../../../bilder/trainers/e101-versions.webp)
 
 ## Quiz
 

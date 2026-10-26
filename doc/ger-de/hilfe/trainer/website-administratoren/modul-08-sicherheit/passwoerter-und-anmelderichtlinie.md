@@ -129,7 +129,7 @@ Browserfenstern.
 - Der Trainer prüft bei einer Person `settings/override/site.ini.append.php`: Die zwei neuen Einstellungen stehen
   dort, in `settings/site.ini` hat sich nichts geändert.
 
-![Das Anmeldeformular, dessen Regeln die Anmelderichtlinie festlegt](../../../../../eng-us/help/images/trainers/sa-signin-policy.webp)
+![Das Anmeldeformular, dessen Regeln die Anmelderichtlinie festlegt](../../../bilder/trainers/sa-signin-policy.webp)
 
 ## Quiz
 

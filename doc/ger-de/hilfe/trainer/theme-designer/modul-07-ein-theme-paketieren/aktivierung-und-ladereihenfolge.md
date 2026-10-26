@@ -113,7 +113,7 @@ Auf Ihrer eigenen Schulungsinstallation, in der Administration angemeldet mit Ih
 - Der Trainer prüft den README-Abschnitt und die Notiz zu `<dependencies>` einer Teilnehmerin oder eines Teilnehmers:
   `<dependencies><extends><extension name="base_theme" /></extends></dependencies>`.
 
-![Die Seite Extensions, auf der eine Theme-Erweiterung aktiviert und ihre Ladereihenfolge angezeigt wird](../../../../../eng-us/help/images/trainers/td-extensions.webp)
+![Die Seite Extensions, auf der eine Theme-Erweiterung aktiviert und ihre Ladereihenfolge angezeigt wird](../../../bilder/trainers/td-extensions.webp)
 
 ## Quiz
 

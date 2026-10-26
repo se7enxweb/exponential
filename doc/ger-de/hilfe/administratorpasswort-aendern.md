@@ -45,7 +45,7 @@ Das Passwort, mit dem eine neue Installation beginnt, beschreibt
 Die Seite ist `user/password`: `/admin/user/password` beim standardmäßigen URL-Zugriff (der Teil vor `/user/password`
 ist der Siteaccess Ihrer Administration). Es ist in jedem Design dieselbe Seite; nur der Weg dorthin unterscheidet sich.
 
-![Das Formular „Passwort ändern“ der Administration mit hervorgehobenem Feld für das neue Passwort](../../eng-us/help/images/accounts/user-password-admin.webp)
+![Das Formular „Passwort ändern“ der Administration mit hervorgehobenem Feld für das neue Passwort](bilder/accounts/user-password-admin.webp)
 
 | Design | Wo Sie es finden |
 |---|---|
@@ -250,7 +250,7 @@ Sie das Büro- oder VPN-Netz in `TrustedIPList[]` ein, damit Ihre eigenen Admini
 
 Festgelegt in `site.ini [PasswordSettings]`, beide standardmäßig eingeschaltet:
 
-![Setup, Sitzungen: wer angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../eng-us/help/images/accounts/users-sessions.webp)
+![Setup, Sitzungen: wer angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](bilder/accounts/users-sessions.webp)
 
 - **`EndOtherSessions=enabled`**: Eine Anmeldung speichert einen Stempel des Passworts in der Sitzung; ändert sich das
   Passwort, passt keine andere Sitzung dieses Benutzers mehr, und jede wird bei ihrer nächsten Anfrage abgemeldet, mit
@@ -360,7 +360,7 @@ Die Wiederherstellungsdetails der Erweiterung selbst stehen in ihrer `README.md`
 Das Konto `admin` gibt es in jeder Installation, daher ist sein Login-Name der erste, den ein Angreifer versucht.
 Verwenden Sie es nicht für die tägliche Arbeit:
 
-![Benutzerkonten prüfen: Konten, die niemand verwendet oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](../../eng-us/help/images/accounts/user-hygiene.webp)
+![Benutzerkonten prüfen: Konten, die niemand verwendet oder die einen Blick brauchen, zum Deaktivieren, Entsperren oder Exportieren](bilder/accounts/user-hygiene.webp)
 
 1. **Legen Sie ein persönliches Administratorkonto an.** Erstellen Sie unter **Benutzer** > **Administrator users**
    einen **Benutzer** mit einem eigenen Login (nicht `admin`, nicht `administrator`, möglichst nicht Ihre öffentliche

@@ -24,7 +24,7 @@ Systemeinstellung (kein Skript); Teil B fügt einen Umschalter hinzu. Planen Sie
 
 1. Listen Sie jede Farbe in Ihren Stylesheets auf:
 
-![Das Hilfezentrum im dunklen Modus, eine Seite, deren Farben nur aus Token kommen](../../../../eng-us/help/images/designers/help-dashboard-dark.webp)
+![Das Hilfezentrum im dunklen Modus, eine Seite, deren Farben nur aus Token kommen](../../bilder/designers/help-dashboard-dark.webp)
 
    ```bash
    grep -n -o -E "#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)" extension/mytheme/design/mytheme/stylesheets/*.css | sort | uniq -c | sort -rn
@@ -87,7 +87,7 @@ Stellen Sie Ihr Betriebssystem auf dunkel und laden Sie neu. Messen Sie den Kont
 Verwenden Sie die [Checkliste für den dunklen Modus](checkliste-dunkelmodus.md). Kurz: jeder Seitentyp hell und dunkel, bei 1440 px und 960 px
 mit Skalierung 2; keine weißen Kästen; Kontrast gemessen; Neuladen behält die Auswahl; kein Aufblitzen beim Laden; der Druck ist hell.
 
-![Die Seite Setup im dunklen Modus, eine gute Seite, um Karten, Symbole und Links zu prüfen](../../../../eng-us/help/images/designers/setup-cards-dark.webp)
+![Die Seite Setup im dunklen Modus, eine gute Seite, um Karten, Symbole und Links zu prüfen](../../bilder/designers/setup-cards-dark.webp)
 
 ## Verwandte Seiten
 

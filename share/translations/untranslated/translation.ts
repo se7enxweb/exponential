@@ -57103,6 +57103,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -64347,6 +64359,26 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The audit trail of this node</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>empty</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -75624,6 +75656,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -75880,7 +76052,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -76171,7 +76343,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -76729,7 +76901,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

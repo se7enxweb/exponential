@@ -15,6 +15,9 @@
  *  RA-09 the replayed POST: nested fields flattened to name[key], the form token left out; the form's own fields (its passkey fields only in its answer)
  *        are taken out before the view runs
  *  RA-10 the settings page: the form's values (groups ticked, minutes kept within 1 to 1440)
+ *  RA-11 the approve and deny of a new user account waiting for approval (collaboration/action of an item of the event
+ *        "Approve user accounts", which addresses that account) ask in the users group; a content approval (it addresses
+ *        no account), a comment and the content group (off, and without collaboration rules) do not
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -223,5 +226,36 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'enabled' => true, 'minutes' => 1440, 'groups' => array( 'account' => false, 'content' => true ) ), $v );
         $v = expReauthSettings::fromForm( array( 'account' ), array( 'ReauthMinutes' => 'x' ) );
         $this->assertSame( array( 'enabled' => false, 'minutes' => 10, 'groups' => array( 'account' => false ) ), $v );
+    }
+
+    /** RA-11 */
+    public function testAccountApprovals()
+    {
+        $s = self::$shipped;
+        $other = function () { return 'other'; };
+        $none = function () { return null; };
+        $form = array( 'CollaborationActionCustom' => 'custom', 'CollaborationTypeIdentifier' => 'ezapprove', 'CollaborationItemID' => '7',
+                       'Collaboration_ApproveComment' => '' );
+        foreach ( array( 'CollaborationAction_Accept', 'CollaborationAction_Deny', 'CollaborationAction_Defer' ) as $button )
+        {
+            $m = expReauth::matchGroup( $s, 'collaboration', 'action', 'POST', $form + array( $button => 'x' ), $other );
+            $this->assertSame( 'users', $m ? $m['group'] : null, "$button of an account approval" );
+            $this->assertNull( expReauth::matchGroup( $s, 'collaboration', 'action', 'POST', $form + array( $button => 'x' ), $none ),
+                               "$button of a content approval" );
+        }
+        $this->assertNull( expReauth::matchGroup( $s, 'collaboration', 'action', 'POST', $form + array( 'CollaborationAction_Comment' => 'x' ), $other ),
+                           'a comment on an account approval' );
+        $this->assertNull( expReauth::matchGroup( $s, 'collaboration', 'item', 'GET', array(), $other ), 'opening the item' );
+        // with the content group on, a content approval still does not ask: no rule of it names collaboration/action
+        $s['groups']['content']['enabled'] = true;
+        $this->assertNull( expReauth::matchGroup( $s, 'collaboration', 'action', 'POST', $form + array( 'CollaborationAction_Accept' => 'x' ), $none ) );
+        // the item of the decision, without a database
+        $this->assertSame( 7, expReauth::approvalItemID( 'collaboration', 'action', $form ) );
+        $this->assertSame( 0, expReauth::approvalItemID( 'collaboration', 'action', array( 'CollaborationItemID' => '7' ) ), 'another collaboration type' );
+        $this->assertSame( 0, expReauth::approvalItemID( 'collaboration', 'action', array( 'CollaborationTypeIdentifier' => 'ezapprove', 'CollaborationItemID' => '7 OR 1' ) ) );
+        $this->assertSame( 0, expReauth::approvalItemID( 'collaboration', 'action', array( 'CollaborationTypeIdentifier' => 'ezapprove', 'CollaborationItemID' => array( 7 ) ) ) );
+        $this->assertSame( 0, expReauth::approvalItemID( 'content', 'action', $form ) );
+        $this->assertNull( expReauth::addressedUser( 'collaboration', 'action', array(), array( 'CollaborationActionCustom' => 'custom' ) ),
+                           'a collaboration action without an approval item addresses no account' );
     }
 }

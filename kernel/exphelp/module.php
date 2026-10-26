@@ -18,6 +18,12 @@
  *   exphelp/pdf/<page id>          the page as a PDF file to download (expHelpPdf)
  *   exphelp/report                 how to report an error: which tracker, a prefilled issue, safe diagnostics
  *
+ * Help maintained as content (doc/eng-us/features/6.0/help-content.md):
+ *
+ *   exphelp/topic/<help_id>        a topic; exphelp/manual/<remote_id> a manual; exphelp/context/... their JSON
+ *   exphelp/state/<help_id>        POST: a step of the review workflow (Draft, Review, Released)
+ *   exphelp/feedback/<help_id>     POST: an answer to "Was this helpful?"
+ *
  * Every option is a view parameter (/(name)/value), never a GET query parameter.
  *
  * Policy function read; Anonymous is not given it. An unknown or refused path is a 404.
@@ -127,6 +133,25 @@ $ViewList['topic'] = array(
     'default_navigation_part' => 'ezsetupnavigationpart',
     'script' => 'topic.php',
     'functions' => array( 'read' ),
+    'params' => array(),
+    // (step)/<state>: the result of a step of the review workflow; (helpful)/thanks: after "Was this helpful?"
+    'unordered_params' => array( 'step' => 'Step',
+                                 'helpful' => 'Helpful' ) );
+
+// One step of the review workflow (Draft, Review, Released) of a topic or manual: POST HelpState
+// (exphelp/state/<help_id>, exphelp/state/manual/<remote_id>); state/assign decides, the author does not release
+$ViewList['state'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'state.php',
+    'functions' => array( 'read' ),
+    'params' => array() );
+
+// "Was this helpful?" of a Released topic: POST Helpful, Reason, RedirectURI (exphelp/feedback/<help_id>); for the
+// readers of the help in the administration (read) and of a site's public help (feedback)
+$ViewList['feedback'] = array(
+    'default_navigation_part' => 'ezsetupnavigationpart',
+    'script' => 'feedback.php',
+    'functions' => 'read or feedback',
     'params' => array() );
 
 // A manual of help maintained as content by its remote_id: its table of contents (exphelp/manual/help-manual-editors);
@@ -151,5 +176,7 @@ $FunctionList = array();
 $FunctionList['read'] = array();
 // Context help as JSON (exphelp/context): only topics the user may read (content/read) and that are Released
 $FunctionList['context'] = array();
+// "Was this helpful?" (exphelp/feedback) without the help of the administration: for the readers of a public help
+$FunctionList['feedback'] = array();
 
 ?>

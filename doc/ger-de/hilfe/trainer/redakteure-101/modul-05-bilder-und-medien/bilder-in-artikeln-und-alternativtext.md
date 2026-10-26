@@ -106,7 +106,7 @@ Verwenden Sie die Schulungsinstallation, Ihren Kursordner und ein weiteres Beisp
 - Nach Schritt 9 hat der veröffentlichte Artikel weiterhin sein Bild, weil der Entwurf verworfen wurde.
 - Der Trainer prüft das, indem er die Alternativtexte von zwei Teilnehmenden vorliest und mit der Gruppe bespricht.
 
-![Das Verknüpfungsfeld eines Artikels mit Vorhandene Objekte hinzufügen und Datei hochladen](../../../../../eng-us/help/images/trainers/e101-image-field.webp)
+![Das Verknüpfungsfeld eines Artikels mit Vorhandene Objekte hinzufügen und Datei hochladen](../../../bilder/trainers/e101-image-field.webp)
 
 ## Quiz
 

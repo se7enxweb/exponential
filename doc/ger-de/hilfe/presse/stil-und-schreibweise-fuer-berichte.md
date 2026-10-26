@@ -13,7 +13,7 @@ Diese Seite ist für Autoren und Redakteure in der Schlussredaktion, deren Texte
 sollen oder die entscheiden müssen, wie sie mit Fachbegriffen umgehen. Wo Ihr Hausstil abweicht, hat er Vorrang; diese
 Seite sagt Ihnen, was das Projekt tut und warum, damit Sie wählen können.
 
-![Der Bereich Setup, in Berichten mit großem S geschrieben](../../../eng-us/help/images/help/pr-style-setup.webp)
+![Der Bereich Setup, in Berichten mit großem S geschrieben](../bilder/help/pr-style-setup.webp)
 
 ## Inhalt
 

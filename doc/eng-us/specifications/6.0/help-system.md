@@ -4,7 +4,13 @@ Status: proposal, 18 October 2026; phase 1 (classes, tree, sections, states, rol
 in the help of the administration) implemented in 6.0.15, see [help maintained as content](../../features/6.0/help-content.md);
 from 20 October 2026 also the DITA export (delivery path 3, and the export for path 4), the e-books stored as file
 objects and rebuilt on release (delivery path 3) and the dashboard list of topics overdue for review (phase 7), see
-[the upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md).
+[the upgrade note](../../bc/6.0/help-content-dita-ebooks-reviews.md); from 25 October 2026 the rest: the rule that the
+author does not release, the review workflow on the topic's page, released help_ids never renamed or reused, the
+remaining machine-checkable rules of the style guide, "Was this helpful?" (phase 7), context help for clients with a
+token (delivery path 2), epubcheck and Ace where the site has them (path 3), the regular DITA export into git (path 4)
+and the templates of the public site (path 1, extension exphelpsite), see
+[the upgrade note](../../bc/6.0/help-content-workflow-feedback.md). What is left out, and why:
+[compared with the specifications](../../features/6.0/help-content.md#compared-with-the-specifications).
 Companion page: [the help style guide](help-style-guide.md).
 
 ## Idea

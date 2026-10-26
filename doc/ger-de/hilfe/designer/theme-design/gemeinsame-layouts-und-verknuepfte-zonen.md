@@ -26,7 +26,7 @@ Redakteure sie an einer Stelle ändern. Der Layout-Editor erledigt das mit **gem
   gemeinsamen Layouts statt ihrer eigenen.
 - Bearbeiten Sie das gemeinsame Layout, veröffentlichen Sie es, und jede Seite, die darauf verknüpft, folgt.
 
-![Layouts, gemeinsame Layouts: die Layouts, mit denen andere Layouts Zonen verknüpfen, wie Kopf- und Fußbereich](../../../../eng-us/help/images/layouts/shared-layouts.webp)
+![Layouts, gemeinsame Layouts: die Layouts, mit denen andere Layouts Zonen verknüpfen, wie Kopf- und Fußbereich](../../bilder/layouts/shared-layouts.webp)
 
 Auf der Demonstrationsinstallation sind die Layouts „Header / Footer“ und „Prefooter“ gemeinsam und werden von den anderen Layouts
 verknüpft (Layouttyp `layout_2` mit den Zonen `header`, `post_header`, `main`, `pre_footer`, `footer`).

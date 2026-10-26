@@ -63,10 +63,17 @@ Exponential ist ein **Autorisierungsserver** für seine REST-API:
   `refresh_token` (`validateGrantType()`), prüft das Client-Geheimnis (`ezpRestClient::validateSecret()`) und
   antwortet mit `access_token`, `refresh_token` und `expires_in`.
 - Tokens sind 40 Hexadezimalzeichen aus `random_bytes()` (`ezpRestToken::generateToken()`); ihre Lebensdauer ist
-  `settings/rest.ini [OAuthSettings] TokenTTL=3600`.
+  `settings/rest.ini [OAuthSettings] TokenTTL=3600`, die eines Refresh-Tokens `RefreshTokenTTL=2592000` (30 Tage,
+  `0` = kein Ablauf; `ezpOauthUtility::refreshTokenExpired()`).
+- Ein Code oder Refresh-Token wird nur von dem Client eingelöst, für den er ausgestellt wurde
+  (`ezpOauthUtility::clientMatches()`), und nur, solange sein Benutzer aktiviert und nicht durch fehlgeschlagene
+  Anmeldungen gesperrt ist (`ezpOauthUtility::userMayUseToken()`); dieselbe Prüfung läuft für jede Ressourcenanfrage in
+  `ezpOauthFilter`.
 - Eine Ressourcenanfrage trägt das Token als `Authorization: Bearer <token>` (RFC 6750), als
-  `Authorization: OAuth <token>` (ein älterer Entwurf) oder als Parameter `oauth_token`
-  (`kernel/private/rest/classes/oauth/utility.php`).
+  `Authorization: OAuth <token>` (ein älterer Entwurf) oder als Parameter `oauth_token` eines POST-Formulars
+  (RFC 6750 Abschnitt 2.2, `AllowTokenInBody=enabled`); den Query-Parameter `oauth_token` nur bei
+  `AllowTokenInQuery=enabled`, standardmäßig aus (RFC 6750 Abschnitt 2.3; `ezpOauthUtility::tokenSources()` in
+  `kernel/private/rest/classes/oauth/utility.php`).
 - `rest.ini [Authentication] RequireAuthentication=enabled` und
   `AuthenticationStyle=ezpRestOauthAuthenticationStyle` sind die Standards.
 - Persönliche API-Schlüssel (`Authorization: Bearer expk_...`) sind eine zweite Art von Zugangsdaten im selben Header,
@@ -94,7 +101,9 @@ mehrere vorgeschriebene oder empfohlene Teile fehlen.
   vom Controller nicht gesetzt. **Nicht geprüft**, ob eine darunterliegende Schicht es hinzufügt.
 - Kein Grant `client_credentials` oder `password`, keine Token-Introspektion (RFC 7662), kein Widerrufs-Endpunkt
   (RFC 7009).
-- Die Annahme des Tokens in einem Query-Parameter erlaubt RFC 6750 nur als letztes Mittel; es kann in Logs landen.
+- Das Token in einem Query-Parameter, das RFC 6750 nur als letztes Mittel erlaubt, wird seit 6.0.15 standardmäßig
+  abgelehnt (`AllowTokenInQuery=disabled`, [Härtung der OAuth-Tokens](../bc/6.0/oauth-token-haertung.md)). Das ist
+  keine Lücke mehr, solange eine Website es nicht einschaltet.
 
 ## OpenID Connect und OAuth 2.0 als Client (Social Login)
 

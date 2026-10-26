@@ -49,7 +49,7 @@ The session you are using has no such button: sign out with **Sign out** instead
 **Sign out all other sessions** (above the cards, it asks once more) ends every device except this one. Use it after
 you signed in on a computer that is not yours, or when a phone was lost.
 
-If you do not recognise a device: sign it out, then change your password (My account > Password). Changing the
+If you do not recognize a device: sign it out, then change your password (My account > Password). Changing the
 password signs out the other sessions as well.
 
 ## 3. The e-mail about a new sign-in

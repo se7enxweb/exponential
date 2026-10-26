@@ -24,7 +24,7 @@ den Assistenten verwenden, ändert sich nichts an der Website; er schreibt nur e
 1. Öffnen Sie **Setup > Pakete** (`/package/list`) und drücken Sie **Neues Paket erstellen** (`/package/create`).
 2. Wählen Sie einen Assistenten und drücken Sie **Assistent starten**:
 
-![Paket erstellen: die Assistenten Export von Inhaltsklassen, Export von Inhaltsobjekten, Extension-Export und Seitenstil, mit Assistent starten](../../../../eng-us/help/images/designers/package-create.webp)
+![Paket erstellen: die Assistenten Export von Inhaltsklassen, Export von Inhaltsobjekten, Extension-Export und Seitenstil, mit Assistent starten](../../bilder/designers/package-create.webp)
 
    | Assistent | Exportiert | Seine eigenen Schritte |
    |---|---|---|

@@ -101,7 +101,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Artikel *Opening hours* (in Le
 - Der zusätzliche Alias ist nach Schritt 8 weg.
 - Der Trainer prüft das, indem er vor Schritt 8 den Alias einer Person am Beamer ausprobiert.
 
-![Die URL-Aliase eines Elements: der erzeugte Alias und das Formular, um einen weiteren hinzuzufügen](../../../../../eng-us/help/images/trainers/e201-url-aliases.webp)
+![Die URL-Aliase eines Elements: der erzeugte Alias und das Formular, um einen weiteren hinzuzufügen](../../../bilder/trainers/e201-url-aliases.webp)
 
 ## Quiz
 

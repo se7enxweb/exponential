@@ -130,7 +130,7 @@ Schulungs-Administratorkonto.
 - Der Trainer prüft, dass alle Teilnehmenden am Ende im eigenen Design des Siteaccess und in ihrem eigenen Farbmodus
   sind.
 
-![Die Liste der Administrationsdesigns in der rechten Spalte, in der alle Benutzer ein Administrationsdesign wählen](../../../../../eng-us/help/images/trainers/td-design-switch.webp)
+![Die Liste der Administrationsdesigns in der rechten Spalte, in der alle Benutzer ein Administrationsdesign wählen](../../../bilder/trainers/td-design-switch.webp)
 
 ## Quiz
 

@@ -5,11 +5,14 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 18. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **37 Übersetzungen
-der Administrationsoberfläche** (`share/translations`, gezählt am 25. Oktober 2026), vierundzwanzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
-Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien),
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **54 Übersetzungen
+der Administrationsoberfläche**, einundfünfzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
+Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien und Portugal),
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
-(Kurmandschi), Suaheli, Latein und, zum Spaß, Klingonisch).
+(Kurmandschi), Suaheli, Hindi, Koreanisch, Japanisch, Griechisch, Finnisch, Ungarisch, Rumänisch, Slowakisch,
+Slowenisch, Bosnisch, Albanisch, Estnisch, Lettisch, Isländisch, Irisch, Maltesisch, Niedersorbisch, Grönländisch,
+Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Afrikaans, Englisch (Australien),
+Latein und, zum Spaß, Klingonisch).
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
 ## Inhalt
@@ -57,18 +60,15 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
-| **Oberfläche teilweise, Inhalt vollständig** | Es gibt eine Übersetzung der Administrationsoberfläche, sie deckt aber 23 bis 37 % der heutigen Texte ab (sie war für ein älteres Release vollständig). Texte ohne Übersetzung erscheinen auf Englisch. Inhalte wie oben. | die 12 älteren Übersetzungen mit Texten, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `afr-ZA`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Oberfläche teilweise, Inhalt vollständig** | Es gibt eine Übersetzung der Administrationsoberfläche, sie deckt aber 23 bis 37 % der heutigen Texte ab (sie war für ein älteres Release vollständig). Texte ohne Übersetzung erscheinen auf Englisch. Inhalte wie oben. | die älteren Übersetzungen mit Texten, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 170, die in 6.0.15 hinzukamen |
-
-`nno-NO` hat eine Übersetzungsdatei ohne einen einzigen übersetzten Text und ist daher in der Praxis nur für Inhalte
-nutzbar.
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
 auf derselben Stufe: Jedes deutsch-, französisch- und spanischsprachige Land fällt auf `ger-DE`, `fre-FR` und `esl-ES`
 zurück (auch Lateinamerika: `esl-ES` ist die vollständige, `esl-MX` fehlen einige Kernel-Texte und vier Extensions;
 `esl-MX` selbst nimmt für diese Extensions `esl-ES`), die arabischen Länder auf `ara-SA`,
-und die anderen Sprachen ebenso (`por-PT` auf `por-BR`, `ita-CH` auf `ita-IT`). Der Übersetzer schlägt den Fallback
+und die anderen Sprachen ebenso (`por-MZ` auf `por-PT`, `ita-CH` auf `ita-IT`). Der Übersetzer schlägt den Fallback
 für den Kernel und für jede Extension getrennt nach. `expUISwitchLanguageProviderTest` schlägt fehl, wenn ein Land
 einer übersetzten Sprache keines von beiden hat. Die Spalte „Übersetzungsabdeckung“ unten zählt nur die eigene
 Übersetzung einer Locale; die Wahl der Oberflächensprache zeigt die des Fallbacks. Ketten, der automatische Fallback
@@ -106,7 +106,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 
 | Code | Englischer Name | Eigenname | Region | Richtung | Schrift | Quelle | Übersetzungsabdeckung |
 |---|---|---|---|---|---|---|---:|
-| `afr-ZA` | Afrikaans | Afrikaans | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `afr-ZA` | Afrikaans | Afrikaans | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `aka-GH` | Akan | Akan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `amh-ET` | Amharic | አማርኛ | Afrika | LTR | Äthiopisch (`Ethi`) | CLDR 44 | — |
 | `ara-AE` | Arabic (United Arab Emirates) | العربية (الإمارات العربية المتحدة) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | — |
@@ -145,8 +145,8 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `bos-BA` | Bosnian | Bosanski | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `bre-FR` | Breton | Brezhoneg | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `brx-IN` | Bodo | बर’ | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
-| `bul-BG` | Bulgarian | Български | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
-| `cat-ES` | Catalan | Català | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 37 % |
+| `bul-BG` | Bulgarian | Български | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
+| `cat-ES` | Catalan | Català | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `ceb-PH` | Cebuano | Cebuano | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `che-RU` | Chechen | Нохчийн | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
 | `chi-CN` | Simplified Chinese | 简体中文 | Ostasien | LTR | Han (vereinfacht) (`Hans`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 37 % |
@@ -174,7 +174,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `eng-IN` | English (India) | English (India) | Südasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-KE` | English (Kenya) | English (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-NG` | English (Nigeria) | English (Nigeria) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `eng-NZ` | English (New Zealand) | English (New Zealand) | Ozeanien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
+| `eng-NZ` | English (New Zealand) | English (New Zealand) | Ozeanien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % (fällt auf `eng-AU` zurück) |
 | `eng-PH` | English (Philippines) | English (Philippines) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-PK` | English (Pakistan) | English (Pakistan) | Südasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `eng-SG` | English (Singapore) | English (Singapore) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
@@ -290,7 +290,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `lat-VA` | Latin | Latina | Europa | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `lav-LV` | Latvian | Latviešu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `lin-CD` | Lingala | Lingála | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `lit-LT` | Lithuanian | Lietuvių | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `lit-LT` | Lithuanian | Lietuvių | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ltz-LU` | Luxembourgish | Lëtzebuergesch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `lug-UG` | Ganda | Luganda | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `mai-IN` | Maithili | मैथिली | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
@@ -307,7 +307,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `msa-SG` | Malay (Singapore) | Melayu (Singapura) | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `mya-MM` | Burmese | မြန်မာ | Südostasien | LTR | Myanmar (`Mymr`) | CLDR 44 | — |
 | `nep-NP` | Nepali | नेपाली | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
-| `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 0 % |
+| `nno-NO` | Norwegian (Nynorsk) | Norsk (Nynorsk) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % (fällt auf `nor-NO` zurück) |
 | `nor-NO` | Norwegian Bokmål | Norsk (Bokmål) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `nor-NO@intl` | Variant of `nor-NO`: Internasjonalt Format |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | — |
 | `nor-NO@spraakraad` | Variant of `nor-NO`: Norsk Språkråd |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | — |
@@ -323,7 +323,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `por-BR` | Portuguese (Brazil) | Português (Brasil) | Amerika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `por-CV` | Portuguese (Cape Verde) | Português (Cabo Verde) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `por-MZ` | Portuguese (Mozambique) | Português | Afrika | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | — |
-| `por-PT` | Portuguese (Portugal) | Português | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | — |
+| `por-PT` | Portuguese (Portugal) | Português | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `por-PT@euro` | Variant of `por-PT`: Suporte para Euro |  | Europa | LTR | Lateinisch (`Latn`) | ältere Variante, von Hand erstellt | — |
 | `pus-AF` | Pashto | پښتو | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % |
 | `qlo-ZZ` | Lorem Ipsum | Lorem Ipsum | Keine (Testsprache) | LTR | Lateinisch (`Latn`) | von Hand erstellt, nur Testsprache | — |
@@ -331,10 +331,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `roh-CH` | Romansh | Rumantsch | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `ron-RO` | Romanian | Română | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `run-BI` | Kirundi | Ikirundi | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `rus-RU` | Russian | Русский | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 32 % |
+| `rus-RU` | Russian | Русский | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 100 % |
 | `san-IN` | Sanskrit | संस्कृत भाषा | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `sat-IN` | Santali | ᱥᱟᱱᱛᱟᱲᱤ | Südasien | LTR | Ol Chiki (`Olck`) | CLDR 44 | — |
-| `ser-SR` | Serbian (Srpski) | Serbian (Srpski) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 23 % |
+| `ser-SR` | Serbian (Srpski) | Serbian (Srpski) | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `sin-LK` | Sinhala | සිංහල | Südasien | LTR | Singhalesisch (`Sinh`) | CLDR 44 | — |
 | `slk-SK` | Slovak | Slovenčina | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | — |
 | `slv-SI` | Slovenian | Slovenščina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -343,7 +343,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `snd-PK` | Sindhi | سنڌي | Südasien | RTL | Arabisch (`Arab`) | CLDR 44 | — |
 | `som-SO` | Somali | Soomaali | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `sqi-AL` | Albanian | Shqip | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
-| `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 32 % |
+| `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europa | LTR | Kyrillisch (`Cyrl`) | älter, von Hand erstellt | 100 % |
 | `sun-ID` | Sundanese | Basa Sunda | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `swa-KE` | Swahili (Kenya) | Kiswahili (Kenya) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `swa-TZ` | Swahili (Tanzania) | Kiswahili (Tanzania) | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % (fällt auf `swa-KE` zurück) |
@@ -502,23 +502,34 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `pus-AF` | 100 % (17.834 von 17.834) | 100 % (17.834 von 17.834) |
 | `kur-TR` | 100 % (17.834 von 17.834) | 100 % (17.834 von 17.834) |
 | `swa-KE` | 100 % (18.404 von 18.404) | 100 % (18.404 von 18.404) |
+| `rus-RU` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `cat-ES` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `srp-RS` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `ser-SR` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `bul-BG` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `lit-LT` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `por-PT` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `afr-ZA` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `eng-AU` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
+| `eng-NZ` | fällt auf `eng-AU` zurück | 100 % (fällt auf `eng-AU` zurück) |
+| `nno-NO` | fällt auf `nor-NO` zurück | 100 % (fällt auf `nor-NO` zurück) |
 | `ger-DE` | 99 % (16.514 von 16.529) | 99 % (16.509 von 16.623) |
-| `cat-ES` | 96 % (6.314 von 6.512) | 37 % (6.314 von 16.623) |
 | `jpn-JP` | 96 % (6.281 von 6.513) | 37 % (6.281 von 16.623) |
 | `chi-CN` | 95 % (6.210 von 6.512) | 37 % (6.210 von 16.623) |
 | `ell-GR` | 92 % (6.019 von 6.512) | 36 % (6.019 von 16.623) |
-| `eng-AU` | 84 % (5.499 von 6.512) | 33 % (5.499 von 16.623) |
-| `eng-NZ` | 84 % (5.499 von 6.512) | 33 % (5.499 von 16.623) |
 | `fin-FI` | 82 % (5.369 von 6.512) | 32 % (5.369 von 16.623) |
-| `srp-RS` | 82 % (5.357 von 6.511) | 32 % (5.357 von 16.623) |
-| `rus-RU` | 82 % (5.351 von 6.512) | 32 % (5.351 von 16.623) |
 | `chi-HK` | 70 % (4.592 von 6.509) | 27 % (4.592 von 16.623) |
 | `chi-TW` | 70 % (4.592 von 6.509) | 27 % (4.592 von 16.623) |
-| `ser-SR` | 60 % (3.957 von 6.512) | 23 % (3.957 von 16.623) |
-| `nno-NO` | 0 % (0 von 6.512) | 0 % (0 von 16.623) |
 
 Hinweise:
 
+- **Russisch, Katalanisch, Serbisch, Bulgarisch, Litauisch, Portugiesisch (Portugal), Afrikaans** wurden am
+  25. Oktober 2026 vervollständigt bzw. neu angelegt, maschinell unterstützt mit Leitfaden und Glossar je Sprache
+  (`share/translations/<code>/GUIDE.md`) und mit denselben Tests geprüft wie jede andere Sprache. `ser-SR` wird nicht
+  eigens übersetzt: es ist `srp-RS`, Buchstabe für Buchstabe in lateinische Schrift umgeschrieben. `eng-AU` ist aus den
+  Quelltexten mit einer geprüften Wortliste erzeugt (australische Schreibung, GST statt VAT). `nno-NO` (Nynorsk) und
+  `eng-NZ` haben keinen eigenen Katalog mehr und fallen auf `nor-NO` bzw. `eng-AU` zurück. Eine Prüfung durch
+  Muttersprachler ist willkommen.
 - **Spanisch** (`esl-ES`, `esl-MX`) war für ein älteres Release vollständig; die seither hinzugekommenen Texte wurden
   für 6.0.15 maschinell unterstützt übersetzt, im jeweiligen Sprachgebrauch des Landes. Eine Prüfung durch einen
   Muttersprachler ist willkommen.
@@ -585,17 +596,17 @@ sind auf Millionen gerundet.
 
 | # | Sprache | Sprecher (Mio.) | Locales | Übersetzung der Administrationsoberfläche |
 |---:|---|---:|---|---|
-| 1 | Englisch | 1.493 | `eng-US`, `eng-GB`, `eng-CA`, `eng-AU`, `eng-NZ`, `eng-IE`, `eng-IN`, `eng-SG`, `eng-ZA`, `eng-NG`, `eng-KE`, `eng-GH`, `eng-PK`, `eng-PH` | `eng-US` vollständig; `eng-AU`, `eng-NZ` teilweise |
+| 1 | Englisch | 1.493 | `eng-US`, `eng-GB`, `eng-CA`, `eng-AU`, `eng-NZ`, `eng-IE`, `eng-IN`, `eng-SG`, `eng-ZA`, `eng-NG`, `eng-KE`, `eng-GH`, `eng-PK`, `eng-PH` | `eng-US` vollständig; `eng-AU` vollständig, `eng-NZ` fällt darauf zurück |
 | 2 | Mandarin-Chinesisch | 1.183 | `chi-CN`, `chi-SG` (vereinfacht), `chi-TW`, `chi-HK` (traditionell) | `chi-CN`, `chi-TW`, `chi-HK` teilweise |
 | 3 | Hindi | 611 | `hin-IN` | keine |
 | 4 | Spanisch | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY`, `esl-PY`, `esl-CR`, `esl-PA`, `esl-HN`, `esl-SV`, `esl-NI`, `esl-PR`, `esl-GQ` | `esl-ES`, `esl-MX` vollständig |
 | 5 | Modernes Hocharabisch | 335 | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | keine |
 | 6 | Französisch | 334 | `fre-FR`, `fre-BE`, `fre-CA`, `fre-CH`, `fre-SN`, `fre-CI`, `fre-CM`, `fre-MA`, `fre-CD`, `fre-LU`, `fre-MC`, `fre-HT`, `fre-BJ`, `fre-BF`, `fre-BI`, `fre-CF`, `fre-TD`, `fre-KM`, `fre-CG`, `fre-DJ`, `fre-GQ`, `fre-GA`, `fre-GN`, `fre-MG`, `fre-ML`, `fre-NE`, `fre-RW`, `fre-SC`, `fre-TG`, `fre-VU`, `fre-DZ`, `fre-TN`, `fre-MR`, `fre-MU` | `fre-FR` vollständig |
 | 7 | Bengalisch | 274 | `ben-BD`, `ben-IN` | keine |
-| 8 | Portugiesisch | 269 | `por-PT`, `por-BR`, `por-MZ`, `por-AO`, `por-CV` | `por-BR` teilweise |
+| 8 | Portugiesisch | 269 | `por-PT`, `por-BR`, `por-MZ`, `por-AO`, `por-CV` | `por-BR`, `por-PT` vollständig; `por-MZ`, `por-AO`, `por-CV` fallen auf `por-PT` zurück |
 | 9 | Indonesisch | 255 | `ind-ID` | keine |
 | 10 | Urdu | 246 | `urd-PK`, `urd-IN` | keine |
-| 11 | Russisch | 210 | `rus-RU` | `rus-RU` teilweise |
+| 11 | Russisch | 210 | `rus-RU` | `rus-RU` vollständig |
 | 12 | Deutsch | 133 | `ger-DE`, `ger-AT`, `ger-CH`, `ger-LU`, `ger-LI`, `ger-BE` | `ger-DE` vollständig |
 | 13 | Japanisch | 126 | `jpn-JP` | `jpn-JP` teilweise |
 | 14 | Nigerianisches Pidgin | 121 | `pcm-NG` | keine |
@@ -825,7 +836,7 @@ Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche 
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
 Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa 10.000) sind die nützlichste Arbeit für jede Sprache außer den
-vierundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
+dreiundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
 Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.

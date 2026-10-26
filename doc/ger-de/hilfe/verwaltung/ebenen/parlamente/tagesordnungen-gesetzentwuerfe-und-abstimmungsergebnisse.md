@@ -15,7 +15,7 @@ den Klassen aus [Inhaltsmodell für Parlamente](inhaltsmodell.md) und den Rollen
 [Struktur, Sektionen und Rollen für Parlamente](struktur-sektionen-und-rollen.md) veröffentlichen. Jede genannte
 Produktfunktion ist auf der daneben verlinkten Seite dokumentiert.
 
-![Das Dashboard von Layouts, in dem Seiten wie eine Tagesordnung aus Blöcken gebaut werden](../../../../../eng-us/help/images/government/gov-layouts.webp)
+![Das Dashboard von Layouts, in dem Seiten wie eine Tagesordnung aus Blöcken gebaut werden](../../../bilder/government/gov-layouts.webp)
 
 ## Inhalt
 

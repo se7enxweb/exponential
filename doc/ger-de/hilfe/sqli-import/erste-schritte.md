@@ -97,7 +97,7 @@ id,name,code,description
    bestimmten Ordner entstehen, öffnen Sie stattdessen diesen Ordner und wählen **Import/Export > Import into this
    folder…**: Der Editor sagt dann, wo die Objekte angelegt werden.
 
-   ![Der Schritt Quelle eines neuen Imports, aus einem Ordner geöffnet: der Hinweis „The objects will be created in Media“, die Felder Name, Identifier und Description und die Quelltypen, gruppiert wie im Katalog](../../../eng-us/help/images/sqli-import/sqli-import-into-folder.webp)
+   ![Der Schritt Quelle eines neuen Imports, aus einem Ordner geöffnet: der Hinweis „The objects will be created in Media“, die Felder Name, Identifier und Description und die Quelltypen, gruppiert wie im Katalog](../bilder/sqli-import/sqli-import-into-folder.webp)
 
 2. **Schritt 1, Quelle.** Name: `Products (CSV)`. Lassen Sie den Bezeichner leer (er wird `products-csv`). Wählen
    Sie **CSV and delimited text**, dann **An uploaded file**, und wählen Sie `products.csv`. Setzen Sie die Option
@@ -123,7 +123,7 @@ veröffentlicht.
 Ändert sich die Datei später, klicken Sie zuerst auf **Dry run**. Mit zwei umbenannten Produkten und einer Zeile ohne
 Namen sagt der Probelauf Feld für Feld, was geschähe, bevor etwas geschrieben wird:
 
-![Ein Probelauf des Produktimports: Datensatz 3 und 8 würden aktualisiert, mit dem durchgestrichenen alten und dem neuen Namen „(new harvest)“ daneben, Datensatz 13 schlüge fehl, weil das Pflichtattribut 'name' keinen Wert hat, alle anderen bleiben unverändert](../../../eng-us/help/images/sqli-import/sqli-import-editor-preview.webp)
+![Ein Probelauf des Produktimports: Datensatz 3 und 8 würden aktualisiert, mit dem durchgestrichenen alten und dem neuen Namen „(new harvest)“ daneben, Datensatz 13 schlüge fehl, weil das Pflichtattribut 'name' keinen Wert hat, alle anderen bleiben unverändert](../bilder/sqli-import/sqli-import-editor-preview.webp)
 
 Wie es weitergeht: [Der Import-Editor](der-import-editor.md) erklärt jeden Schritt genauer, und
 [Importe und Läufe](importe-und-laeufe.md), was mit der fehlgeschlagenen Zeile zu tun ist und wie sich ein Lauf

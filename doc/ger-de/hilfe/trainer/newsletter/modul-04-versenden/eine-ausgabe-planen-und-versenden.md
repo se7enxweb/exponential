@@ -122,7 +122,7 @@ Verwenden Sie die Schulungsinstallation. Ersetzen Sie `<name>` durch Ihren Vorna
 - **Letzte Sendungen** auf dem Dashboard zeigt den Versand mit **Status**, **E-Mails** und **Fehlgeschlagen**.
 - Der Trainer prüft das, indem er die Zahlen des Dashboards mit den Vorhersagen zweier Personen vergleicht.
 
-![Geplante Versände der Newsletter](../../../../../eng-us/help/images/trainers/nl-schedule.webp)
+![Geplante Versände der Newsletter](../../../bilder/trainers/nl-schedule.webp)
 
 ## Quiz
 

@@ -30,7 +30,7 @@ Benutzer, deren Rolle `shop/administrate` hat. Legen Sie die Sätze zuerst mit I
    dann auf **Erstellen**.
 7. Bearbeiten Sie ein Produkt, wählen Sie in seinem Preisfeld den USt-Typ und veröffentlichen Sie es.
 
-![Die Liste der USt-Typen mit Name und Prozentsatz und den Schaltflächen Ausgewählte entfernen, Neuer USt-Typ und Änderungen anwenden](../../../eng-us/help/manual/images/store-vat-types.webp)
+![Die Liste der USt-Typen mit Name und Prozentsatz und den Schaltflächen Ausgewählte entfernen, Neuer USt-Typ und Änderungen anwenden](bilder/store-vat-types.webp)
 
 ## Was schiefgehen kann
 

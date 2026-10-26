@@ -62,7 +62,7 @@ Verbergen Sie ihn nicht mit `display: none` oder `visibility: hidden`: Dann kön
   `.a4-skip-link` in `components.css` (feste Position, ein eigenes z-index-Token `--a4-z-skip-link`, ein Fokusring).
 - **media**: `pagelayout/accessibility_links.tpl` gibt einen Link „Skip to main content“ auf `#main` aus, direkt nach `<body>` eingebunden.
 
-![Der Skip-Link der Administration, gezeigt, wenn auf einer Seite zuerst Tab gedrückt wird, umrandet](../../../../eng-us/help/images/designers/skip-link.webp)
+![Der Skip-Link der Administration, gezeigt, wenn auf einer Seite zuerst Tab gedrückt wird, umrandet](../../bilder/designers/skip-link.webp)
 
 ## Prüfungen
 

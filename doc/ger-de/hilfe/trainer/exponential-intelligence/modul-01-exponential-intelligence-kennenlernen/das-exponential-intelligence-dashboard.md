@@ -100,7 +100,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto.
 - Es wurde keine Anfrage geschickt.
 - Der Trainer prüft das, indem er eine Person bittet, den Unterschied zwischen **Mine** und **Site** zu erklären.
 
-![Das Exponential-Intelligence-Dashboard](../../../../../eng-us/help/images/trainers/ei-dashboard.webp)
+![Das Exponential-Intelligence-Dashboard](../../../bilder/trainers/ei-dashboard.webp)
 
 ## Quiz
 

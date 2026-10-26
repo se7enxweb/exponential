@@ -164,7 +164,9 @@ class ezxFormToken
             throw self::refusal( 'missing' );
         }
 
-        if ( $token !== self::getToken() )
+        // !== stops at the first differing byte, so the time of a refusal told how much of a guess was right;
+        // hash_equals() takes the same time, and a token posted as an array (form_token[]=) is refused, not a TypeError
+        if ( !is_string( $token ) || !hash_equals( (string)self::getToken(), $token ) )
             throw self::refusal( 'wrong' );
 
         eZDebugSetting::writeDebug( 'ezformtoken', 'Input validated, token verified and was correct', __METHOD__ );

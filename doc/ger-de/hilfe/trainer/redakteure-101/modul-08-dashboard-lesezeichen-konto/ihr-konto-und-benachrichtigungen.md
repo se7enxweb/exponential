@@ -115,7 +115,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - Der Trainer prüft das, indem er nach denselben Schritten **Meine Benachrichtigungseinstellungen** seines eigenen
   Kontos öffnet.
 
-![Meine Benachrichtigungseinstellungen: die Elemente, denen Sie folgen, die Zusammenfassung und die Benachrichtigungen zur Zusammenarbeit](../../../../../eng-us/help/images/trainers/e101-notifications.webp)
+![Meine Benachrichtigungseinstellungen: die Elemente, denen Sie folgen, die Zusammenfassung und die Benachrichtigungen zur Zusammenarbeit](../../../bilder/trainers/e101-notifications.webp)
 
 ## Quiz
 

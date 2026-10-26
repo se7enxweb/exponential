@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren, Zuständige für Schriftgut und Erm
 Veröffentlichung oder eine Kontoänderung strittig ist, kann das Prüfprotokoll zeigen, wer wann was getan hat. Sein Wert
 als Nachweis hängt davon ab, wie die Einträge ausgewählt, geprüft und übergeben werden ([Audit](../../../bc/6.0/audit.md)).
 
-![Das Audit-Dashboard: der Zustand der Hash-Ketten, die Ereignisse und die Sicherheitsereignisse](../../../../eng-us/help/images/government/gov-audit-dash.webp)
+![Das Audit-Dashboard: der Zustand der Hash-Ketten, die Ereignisse und die Sicherheitsereignisse](../../bilder/government/gov-audit-dash.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie das für
 > Ihre Organisation geltende Recht mit Ihrer Rechtsberatung.

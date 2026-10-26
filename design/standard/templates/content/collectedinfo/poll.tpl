@@ -24,13 +24,13 @@
 {section loop=$object.contentobject_attributes}
     {if $:item.contentclass_attribute.is_information_collector}
 
-        <h3>{$:item.contentclass_attribute.name}</h3>
+        <h3>{$:item.contentclass_attribute.name|wash}</h3>
         {attribute_result_gui view=count attribute=$:item}
 
     {else}
 
         {if $attribute_hide_list|contains($:item.contentclass_attribute.identifier)|not}
-            <h3>{$:item.contentclass_attribute.name}</h3>
+            <h3>{$:item.contentclass_attribute.name|wash}</h3>
             {attribute_view_gui attribute=$:item}
         {/if}
 

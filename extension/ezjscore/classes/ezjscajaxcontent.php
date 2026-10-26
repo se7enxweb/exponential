@@ -112,7 +112,7 @@ class ezjscAjaxContent
         if ( $type === 'xml' )
             return self::xmlEncode( $ret );
         else if ( $type === 'json' )
-            return json_encode( $ret );
+            return self::jsonEncode( $ret ); // json_encode() gave false (an empty body) for invalid UTF-8
         else
             return self::textEncode( $ret );
     }
@@ -158,7 +158,7 @@ class ezjscAjaxContent
         if ( $type === 'xml' )
             return self::xmlEncode( $ret );
         else if ( $type === 'json' )
-            return json_encode( $ret );
+            return self::jsonEncode( $ret ); // json_encode() gave false (an empty body) for invalid UTF-8
         else
             return $ret;
     }
@@ -577,6 +577,27 @@ class ezjscAjaxContent
             $formattedDate = $locale->$method( $timestamp );
 
         return $formattedDate;
+    }
+
+    /**
+     * json_encode() for autoEncode() and nodeEncode(), never false.
+     *
+     * A string that is not valid UTF-8 (a truncated multibyte character in a title, a Latin-1 value from an old
+     * import) made json_encode() return false, and ezjscore/call answered 200 with an empty body, which the client
+     * only saw as a JSON SyntaxError. Invalid bytes become U+FFFD; whatever still cannot be encoded (INF, NAN, too
+     * deep) is logged and answered with the error object ezjscore/call uses for every other failure.
+     *
+     * @param mixed $value
+     * @return string
+     */
+    public static function jsonEncode( $value )
+    {
+        $json = json_encode( $value, JSON_INVALID_UTF8_SUBSTITUTE );
+        if ( $json !== false )
+            return $json;
+
+        eZDebug::writeError( 'The response could not be encoded as JSON: ' . json_last_error_msg(), __METHOD__ );
+        return json_encode( array( 'error_text' => 'The response could not be encoded as JSON', 'content' => '' ) );
     }
 }
 

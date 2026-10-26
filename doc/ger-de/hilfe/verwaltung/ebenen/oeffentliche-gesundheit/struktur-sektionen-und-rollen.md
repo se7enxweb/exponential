@@ -15,7 +15,7 @@ Bereitschaftsteam hinaus. Die Mechanismen sind unter [Sektionen](../../../../anl
 [Rollen und Richtlinien](../../../../anleitungen/rollen-und-richtlinien.md) und [Workflows](../../../../anleitungen/workflows.md)
 beschrieben.
 
-![Sektionen, die Inhalte für Zugriff und Design gruppieren](../../../../../eng-us/help/images/government/gov-sections.webp)
+![Sektionen, die Inhalte für Zugriff und Design gruppieren](../../../bilder/government/gov-sections.webp)
 
 ## Inhalt
 

@@ -19,7 +19,7 @@
  *
  * Only the header is read; nothing is looked up. A header that names nothing known is "Unknown" (device
  * "unknown"); programs (curl, Python, WebDAV and SOAP clients) are device "app"; crawlers are "bot". The address is
- * shown cut to its network (IPv4 /24, IPv6 /48): enough for a person to recognise "that was me at home", without
+ * shown cut to its network (IPv4 /24, IPv6 /48): enough for a person to recognize "that was me at home", without
  * showing the exact address to someone looking over a shoulder. The stored address is the one the request came from.
  *
  * Without state, so the same answers in a persistent worker (Velocity). Tests: tests/tests/kernel/classes/user/expUserSessionTest.php

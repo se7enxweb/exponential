@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Websiteersteller, die eine mehrs
 liefert eine eigens zum Testen gemachte Sprache mit, **Lorem Ipsum** (`qlo-ZZ`), die keine Installation von selbst
 hinzufügt ([Die Testsprache Lorem Ipsum](../../../anleitungen/testsprache-lorem-ipsum.md)).
 
-![Der Reiter Übersetzungen eines Eintrags, mit den vorhandenen und den fehlenden Übersetzungen](../../../../eng-us/help/images/government/gov-translations-tab.webp)
+![Der Reiter Übersetzungen eines Eintrags, mit den vorhandenen und den fehlenden Übersetzungen](../../bilder/government/gov-translations-tab.webp)
 
 ## Inhalt
 

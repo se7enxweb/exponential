@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller und Redakteure, die sich um Newsle
 was die Abonnementstatus bedeuten, wo Abonnenten verwaltet werden, Import und Export und wie Listen sauber bleiben
 ([cjw_newsletter](../../../funktionen/6.0/erweiterungen/cjw_newsletter.md)).
 
-![Das Newsletter-Dashboard: Listen, Abonnenten, Ausgaben und der Stand des Versands](../../../../eng-us/help/images/creators/newsletter-lists.webp)
+![Das Newsletter-Dashboard: Listen, Abonnenten, Ausgaben und der Stand des Versands](../../bilder/creators/newsletter-lists.webp)
 
 ## Inhalt
 
