@@ -3631,7 +3631,10 @@ WHERE user_id = '" . $userID . "' AND
         $userContentClassIDs = array();
         foreach ( $userDatatypes as $datatypeIdentifier )
         {
-            $userContentClassIDs = array_merge( $userContentClassIDs, eZContentClass::fetchIDListContainingDatatype( $datatypeIdentifier ) );
+            // a failed query answers false: no classes from it, not a stopped request
+            $classIDs = eZContentClass::fetchIDListContainingDatatype( $datatypeIdentifier );
+            if ( is_array( $classIDs ) )
+                $userContentClassIDs = array_merge( $userContentClassIDs, $classIDs );
         }
 
         return $userContentClassIDs;
