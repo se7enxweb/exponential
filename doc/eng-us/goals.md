@@ -139,7 +139,8 @@ Sources: [Licensing questions](help/project/licensing-faq.md), [Comparing Expone
   ([Comparing Exponential factually](help/business/comparing-exponential-factually.md)).
 - **Agencies**: build and sell sites and services for clients; the GPL allows commercial work. Extensions and designs
   you distribute go out under the GPL; what you never distribute stays yours
-  ([Licensing questions](help/project/licensing-faq.md)).
+  ([Licensing questions](help/project/licensing-faq.md); what you owe your clients when you hand a site over:
+  [License violations](help/project/licensing-faq.md#license-violations)).
 - **Editors**: the help you read is free documentation; you may copy it into your own training material, translate
   it and improve it ([Free documentation](help/free-documentation.md)).
 - **Translators**: a translation reaches every user of a language, often people who would never read an English

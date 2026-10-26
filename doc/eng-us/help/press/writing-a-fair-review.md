@@ -69,7 +69,7 @@ come with their method; quote them as the README's, and if you measure, publish 
 | Hosting freedom | Databases, operating systems | [Database support](../database-support.md), [Operating systems](../os-support.md) |
 | Security | Two-step sign-in, audit trail, hardening | [Security hardening](../security-hardening.md) |
 | Documentation | Find answers in the built-in help | [The help system](../../features/6.0/help-system.md) |
-| License | GPL for the code, GNU FDL for the documentation | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
+| License | GPL for the code, GNU FDL for the documentation; what passing it on requires | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses); [License violations](../project/licensing-faq.md#license-violations) |
 | Support and continuity | What is committed, and by whom | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 
 ## Limits and gaps worth reporting
