@@ -33,7 +33,7 @@ bevor Sie veröffentlichen.
 | PHP | 8.0 ist die älteste unterstützte Version der Entwicklungslinie; 8.1 bis 8.5 werden unterstützt; PHP 7.4 nur bis 6.0.7 | [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 | Tests | Die CI führt die Testsuite auf PHP 8.1 bis 8.5 aus und prüft, dass 8.0 startet, bei jedem Push auf `main` und jedem Pull Request | Derselbe Abschnitt |
 | Lizenz | GNU GPL v2 oder später; Dokumentation GNU FDL 1.3 oder später | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
-| Pakete | Der Kernel ist das Composer-Paket `se7enxweb/exponential`; seine `composer.json` verlangt 66 se7enxweb-Pakete | [7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
+| Pakete | Der Kernel ist das Composer-Paket `se7enxweb/exponential`; seine `composer.json` verlangte am 18. Oktober 2026 66 se7enxweb-Pakete | [7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen) |
 | Alter des Codes | Ältester Commit am 2. September 2002; 27.242 Commits auf `main` am 18. Oktober 2026 | Dieselbe Tabelle |
 
 ## Datenbanken

@@ -109,9 +109,35 @@ class eZSendmailTransport extends eZMailTransport
             $sendmailOptions = implode( ' ', $sendmailOptionsArray );
         elseif ( !is_string( $sendmailOptionsArray ) )
             $sendmailOptions = $sendmailOptionsArray;
+        // -f only with a shell-safe address, and without escapeshellarg(). mail() runs
+        // escapeshellcmd() over the whole option string, which undid the quoting (PHPMailer CVE-2016-10033). Measured:
+        // the sender "a' -X/tmp/x.php -OQueueDirectory=/tmp '"@example.com passes eZMail::validate() (quoted local
+        // part), and sendmail got -X/tmp/x.php and -OQueueDirectory=/tmp as arguments of their own. The sender is the
+        // visitor's address in content/tipafriend and can come from a form in content/collectinformation.
         if ( $emailSender && $useEnvelopeSender )
-            $sendmailOptions .= ' -f' . escapeshellarg( $emailSender );
+        {
+            if ( self::isShellSafeAddress( $emailSender ) )
+                $sendmailOptions .= ' -f' . $emailSender;
+            else
+                eZDebug::writeWarning( 'The sender address is not handed to sendmail with -f, it is not shell-safe: ' .
+                                       var_export( $emailSender, true ), __METHOD__ );
+        }
         return (string)$sendmailOptions;
+    }
+
+    /**
+     * Whether $address may be handed to sendmail as "-f<address>": letters, digits and ._%+=- before a single @, a
+     * host name of letters, digits, dots and hyphens after it, not beginning with "-". This is narrower than
+     * eZMail::validate() (no quoted local part, no address literal); like PHPMailer's isShellSafe(), an address
+     * outside it is simply not handed on.
+     *
+     * @param mixed $address
+     * @return bool
+     */
+    public static function isShellSafeAddress( $address )
+    {
+        return is_string( $address ) && $address !== '' && $address[0] !== '-'
+            && preg_match( '/^[A-Za-z0-9._%+=-]+@[A-Za-z0-9.-]+$/D', $address ) === 1;
     }
 
     /**

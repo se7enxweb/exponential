@@ -25,7 +25,11 @@ eingerichtet; eine bestehende bekommt sie mit `bin/php/adduserapproval.php`.
    `<Administration>/collaboration/item/full/<id>`. Der Link enthält keinen Schlüssel und kein Token. Er verlangt die
    Anmeldung und gibt selbst nichts frei und lehnt nichts ab.
 4. Der Freigebende öffnet das Element (aus der Mail oder unter Dashboard > Kollaboration), sieht die Vorschau des Kontos,
-   schreibt bei Bedarf einen Kommentar und drückt **Freigeben** oder **Ablehnen** (beides mit Rückfrage).
+   schreibt bei Bedarf einen Kommentar und drückt **Freigeben** oder **Ablehnen** (beides mit Rückfrage). Dann fragt
+   „Identität bestätigen“ (die Gruppe users, `collaboration/action other CollaborationAction_Accept
+   CollaborationAction_Deny CollaborationAction_Defer`): Die Entscheidung wird angehalten, bis der Freigebende mit dem
+   Passwort, einem Passkey oder einem Code bestätigt, und dann so ausgeführt, wie sie gedrückt wurde. Inhaltsfreigaben
+   fragen nicht ([Passkeys und „Identität bestätigen“](passkeys-und-identitaet-bestaetigen.md)).
 5. **Freigeben**: der Workflow läuft sofort weiter (nicht erst beim nächsten Lauf des Workflow-Cronjobs): das Konto
    wird unter Editors veröffentlicht und kann sich anmelden. **Ablehnen**: die Version ist wieder ein Entwurf des
    Redakteurs, nichts wird veröffentlicht, das Konto kann sich nicht anmelden. Der Redakteur kann den Entwurf ändern und

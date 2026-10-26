@@ -14,7 +14,7 @@
 {if eq( $original_currency_code, '' )}
     {'Create currency'|i18n( 'design/admin/shop/editcurrency' )}
 {else}
-    {'Edit \'%currency_code\' currency'|i18n( 'design/admin/shop/editcurrency',, hash( '%currency_code', $original_currency_code ) )}
+    {'Edit \'%currency_code\' currency'|i18n( 'design/admin/shop/editcurrency',, hash( '%currency_code', $original_currency_code|wash ) )}
 {/if}
 </h1>
 
@@ -95,5 +95,5 @@
 
 </div>
 
-<input type="hidden" name="OriginalCurrencyCode" value="{$original_currency_code}" />
+<input type="hidden" name="OriginalCurrencyCode" value="{$original_currency_code|wash}" />
 </form>

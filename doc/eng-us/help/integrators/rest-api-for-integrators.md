@@ -146,6 +146,9 @@ print(get('/content/node/2')['metadata']['objectName'])
 | `[Authentication] AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | OAuth, or `ezpRestBasicAuthStyle`; API keys work with both |
 | `[Authentication] RequireHTTPS` | `disabled` | Refuse plain HTTP |
 | `[OAuthSettings] TokenTTL` | `3600` | Lifetime of an OAuth token |
+| `[OAuthSettings] RefreshTokenTTL` | `2592000` | Lifetime of a refresh token from the refresh that issued it; `0` = no expiry |
+| `[OAuthSettings] AllowTokenInQuery` | `disabled` | `enabled` also takes `?oauth_token=` from the address |
+| `[OAuthSettings] AllowTokenInBody` | `enabled` | Take `oauth_token` from a POST form body |
 | `[CacheSettings] ApplicationCache` | | The answer cache: one answer per user, `GET` and `HEAD` only |
 
 After a change, clear the INI cache (`php bin/php/ezcache.php --clear-tag=ini --allow-root-user`), reload PHP-FPM

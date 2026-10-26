@@ -39,4 +39,20 @@ $FunctionList['context_menu'] = array( 'name' => 'context_menu',
                                                               array( 'name' => 'view', 'type' => 'string', 'required' => false, 'default' => '' ),
                                                               array( 'name' => 'design', 'type' => 'string', 'required' => false, 'default' => '' ) ) );
 
+// Help maintained as content on the site's own pages (the node templates of help_*, extension exphelpsite):
+// fetch( 'exphelp', 'site_topic', hash( 'object_id', $node.contentobject_id ) ) and 'site_map' for a manual or
+// chapter (expHelpContentSite); false when the reader may not see it
+$FunctionList['site_topic'] = array( 'name' => 'site_topic',
+                                     'operation_types' => array( 'read' ),
+                                     'call_method' => array( 'class' => 'expHelpFunctionCollection',
+                                                             'method' => 'fetchSiteTopic' ),
+                                     'parameter_type' => 'standard',
+                                     'parameters' => array( array( 'name' => 'object_id', 'type' => 'integer', 'required' => true ) ) );
+$FunctionList['site_map'] = array( 'name' => 'site_map',
+                                   'operation_types' => array( 'read' ),
+                                   'call_method' => array( 'class' => 'expHelpFunctionCollection',
+                                                           'method' => 'fetchSiteMap' ),
+                                   'parameter_type' => 'standard',
+                                   'parameters' => array( array( 'name' => 'object_id', 'type' => 'integer', 'required' => true ) ) );
+
 ?>

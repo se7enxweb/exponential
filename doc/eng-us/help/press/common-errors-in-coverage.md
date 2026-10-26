@@ -66,7 +66,7 @@ you publish.
 | "the AI writes and publishes" | Writes drafts only | [Story: an assistant that writes drafts only](story-ai-that-writes-drafts-only.md) |
 | "DXP includes the page builder" | Nexus ships the layouts editor; DXP does not | [The product family for reporters](the-product-family-for-reporters.md) |
 | "Velocity is required" | Velocity is recommended; classic servers and FrankenPHP remain options | [Story: engines, Velocity, FrankenPHP and the classic servers](story-engines-velocity-frankenphp-and-classic.md) |
-| "all languages fully translated" | 33 administration translations, 19 complete (19 October 2026) | [Story: languages and right to left](story-languages-and-right-to-left.md) |
+| "all languages fully translated" | 38 administration translations, 23 complete (23 October 2026) | [Story: languages and right to left](story-languages-and-right-to-left.md) |
 
 ## Numbers and comparisons
 

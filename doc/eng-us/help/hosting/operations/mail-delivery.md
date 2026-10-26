@@ -67,14 +67,15 @@ EmailSender=noreply@example.com
 | Key | Shipped | Meaning |
 |---|---|---|
 | `TransportServer`, `TransportPort` | empty, `25` | the SMTP server; secure SMTP is usually 465 (`ssl`) or 587 (`tls`) |
-| `TransportConnectionType` | empty | empty (no encryption), `ssl` or `tls` |
+| `TransportConnectionType` | empty | empty (no encryption), `ssl` or `tls`; a login sent without encryption to a host other than `localhost` logs a warning |
 | `TransportUser`, `TransportPassword` | empty | the SMTP login |
+| `TransportAuthMethod` | empty | the SMTP authentication method: `PLAIN`, `LOGIN`, `CRAM-MD5`, `DIGEST-MD5`, `NTLM` or `XOAUTH2`; empty tries the strongest the server offers. Set `LOGIN` or `PLAIN` for a server that offers `NTLM`, which needs the mcrypt extension that PHP no longer has |
 | `SenderHost` | `localhost` | the name given in `EHLO`; set it to the site's host name |
 | `AdminEmail` | a placeholder | the administrator's address and the fallback sender; **change it** |
 | `EmailSender`, `EmailReplyTo` | empty | `From` and `Reply-To` unless a template sets them |
 | `UserAgent` | empty | the `User-Agent` header of every mail, ASCII only |
 | `SendmailOptions[]` | empty | extra sendmail options, one per line |
-| `SendmailEnvelopeSender` | `enabled` | `disabled` leaves out `-f <sender>`, for msmtp with `--read-envelope-from` |
+| `SendmailEnvelopeSender` | `enabled` | `disabled` leaves out `-f <sender>`, for msmtp with `--read-envelope-from`. `-f` is only given for a plain address (letters, digits, `._%+=-`, one `@`, a host name); any other sender is left out with a warning in the debug log |
 | `ExcludeHeaders[]` | empty | headers removed before SMTP sending; add `bcc` if your server does not hide them |
 | `DebugSending`, `DebugReceiverEmail` | `disabled`, empty | send every mail to one address instead of its recipients |
 

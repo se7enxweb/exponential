@@ -174,19 +174,23 @@ Dateien aus einem Paket (Herunterladen im Inhalt) kommen auf dieselbe Weise von
 1. sein Name endet auf eine erlaubte Endung, und die Datei beginnt mit der gzip-Signatur;
 2. es ist höchstens `MaxArchiveSize` Bytes groß und hat höchstens `MaxEntries` Einträge, die entpackt höchstens
    `MaxUnpackedSize` Bytes ergeben;
-3. jeder Eintrag ist eine einfache Datei oder ein Verzeichnis mit einem relativen Pfad: kein `..`, kein absoluter
+3. seine tar-Köpfe sind von einer Art, die der Archivleser verarbeitet: Ein PAX-Archiv wird abgewiesen (packen Sie es
+   mit `tar --format=gnu` oder mit bsdtar, dem tar von macOS, mit `tar --format=gnutar`), ebenso ein Kopftyp außer
+   einer Datei, einem Verzeichnis oder einem GNU-Langnamen von höchstens 4096 Bytes;
+4. jeder Eintrag ist eine einfache Datei oder ein Verzeichnis mit einem relativen Pfad: kein `..`, kein absoluter
    Pfad, kein Backslash, kein Steuerzeichen, kein symbolischer oder harter Link, kein Gerät und keine FIFO;
-4. es hat auf oberster Ebene eine `package.xml`, die wohlgeformt ist, `<package>` als Wurzel und keinen Dokumenttyp
+5. es hat auf oberster Ebene eine `package.xml`, die wohlgeformt ist, `<package>` als Wurzel und keinen Dokumenttyp
    hat, ein gültiges Paket nennt (Kleinbuchstaben, Ziffern und `_`) und ihre Versions- und Paketierungsangaben enthält,
    und deren Hersteller einen Repository-Namen ergibt;
-5. in keinem Repository existiert ein Paket dieses Namens.
+6. in keinem Repository existiert ein Paket dieses Namens.
 
 Die Seite nennt die erste Regel, die nicht erfüllt war. Danach wird das Paket selbst validiert: jedes Dokument auf
 Wohlgeformtheit, die JSON-Dokumente eines [JSON-Pakets](../bc/6.0/package-json-format.md) gegen sein Schema und die
 Prüfsummen seiner `package.json`. Ein Paket, das durchfällt, wird mit der Liste dessen abgelehnt, was fehlgeschlagen
 ist. Sind alle Bedingungen erfüllt, wird das Paket in sein Repository entpackt; bei einem Paket mit
 Installationselementen öffnet sich als Nächstes sein Installationsschritt, bei jedem anderen seine Seite, und beide
-zeigen das Validierungsergebnis bis zur nächsten Aktion am Paket.
+zeigen das Validierungsergebnis bis zur nächsten Aktion am Paket. Entpackte Dateien erhalten den Modus 0644 und
+Verzeichnisse 0755, was immer das Archiv angibt.
 
 Die Grenzwerte mit ihren Standardwerten:
 

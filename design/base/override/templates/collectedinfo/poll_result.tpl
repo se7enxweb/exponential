@@ -31,7 +31,7 @@
                   total_count=fetch( 'content', 'collected_info_count', hash( 'object_attribute_id', $contentobject_attribute_id ) )
                   item_counts=fetch( 'content', 'collected_info_count_list', hash( 'object_attribute_id', $contentobject_attribute_id  ) ) }
 
-                <h3>{$contentobject_attribute.content.name}</h3>
+                <h3>{$contentobject_attribute.content.name|wash}</h3>
 
                 <table class="poll-resultlist">
                 <tr>
@@ -43,7 +43,7 @@
                     {/if}
                     <td class="poll-resultname">
                         <p>
-                            {$:item.value}
+                            {$:item.value|wash}
                         </p>
                     </td>
 

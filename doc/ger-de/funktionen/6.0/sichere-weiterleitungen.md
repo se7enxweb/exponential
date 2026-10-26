@@ -39,7 +39,8 @@ eines dieser Formulare ausgibt, kann dieselbe Zeile hinzufügen; ohne sie verwen
 was meist dieselbe ist.
 
 **Die zuletzt angesehene Seite** ist `LastAccessesURI` der Sitzung, die der Kernel nach jeder Seite erfasst, die keine
-Bearbeitungs-, Administrations-, Auswahl-, Authentifizierungs- oder Ajax-Ansicht ist.
+Bearbeitungs-, Administrations-, Auswahl-, Authentifizierungs- oder Ajax-Ansicht ist. Die Startseite wird als Wurzel der
+Site `/` erfasst (vor 6.0.15 als leere Seite, die kein Ziel annimmt; ein solcher Wert einer älteren Sitzung gilt als `/`).
 
 ## Die Regeln
 

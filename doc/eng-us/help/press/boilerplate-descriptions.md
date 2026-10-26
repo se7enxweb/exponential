@@ -54,7 +54,8 @@ under the GNU GPL. Its code base has been developed since 1999, first under the 
 
 ```text
 Exponential is a free and open source content management system and application framework written in PHP.
-Its README calls it "a professional PHP application framework with advanced CMS functionality" whose most
+Its README calls it "a professional PHP application framework with advanced CMS (content management system)
+functionality" whose most
 notable feature is "its fully customizable and extendable content model". Organizations use it to define their
 own content types, edit them in the browser with versions, approval and scheduled publication, and publish
 them to several websites in many languages, including right-to-left scripts. It includes a built-in shop,

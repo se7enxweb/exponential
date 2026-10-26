@@ -1,3 +1,9 @@
+# 1.8.6 (unreleased)
+- Fixed: ezjscore/call, the json_encode template operator and the ajax uploader never answer with an empty JSON
+  value for a string that is not valid UTF-8 (a truncated multibyte character, a Latin-1 value of an old import):
+  ezjscAjaxContent::jsonEncode() replaces the invalid bytes with U+FFFD, and a value that still cannot be encoded
+  (INF, NAN) is logged and answered with the error object ezjscore/call uses for every other failure.
+
 # 1.8.5
 - Added: Croatian, Czech, Danish, Dutch, Italian, Norwegian Bokmål, Polish, Portuguese (Brazil), Swedish and
   Turkish translations (cro-HR, cze-CZ, dan-DK, dut-NL, ita-IT, nor-NO, pol-PL, por-BR, swe-SE, tur-TR), and the

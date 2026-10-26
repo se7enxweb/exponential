@@ -35,11 +35,11 @@ fairly.
 
 ## Who contributes
 
-- Since December 2023, pull requests have come from se7enxweb, ekked, fwoldt, netgen, brookinsconsulting, mugoweb and
+- Since December 2023, pull requests have come from the accounts of se7enxweb, netgen, brookinsconsulting, mugoweb, individual contributors and
   others (`git log --grep="Merge pull request"`, cited on [Who is 7x?](../who-is-7x.md#contributors-and-friends-of-the-project)).
 - Before 2016, 194 different commit authors appear in the history.
 - Companies whose open source work is used are credited by name ([Crediting Netgen, Mugo Web and CJW Network](crediting-other-projects.md)).
-- Translators maintain 33 administration translations, nineteen complete (19 October 2026) ([Languages in Exponential](../../languages.md)).
+- Translators maintain 38 administration translations, twenty-three complete (25 October 2026) ([Languages in Exponential](../../languages.md)).
 
 ## How contributions are handled
 
