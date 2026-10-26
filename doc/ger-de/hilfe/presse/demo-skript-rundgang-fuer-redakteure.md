@@ -86,7 +86,7 @@ Version unter **Meine Warteliste**.“
 4. Schalten Sie zurück auf Englisch.
 
 Wenn Sie Zahlen nennen, verwenden Sie die dokumentierten mit ihrer Quelle: 268 Locale-Dateien, die als Inhaltssprachen
-verwendet werden können, 33 Übersetzungen der Administration, neunzehn davon vollständig (19. Oktober 2026)
+verwendet werden können, 38 Übersetzungen der Administration, dreiundzwanzig davon vollständig (23. Oktober 2026)
 ([Sprachen in Exponential](../../sprachen.md)).
 
 ![Teil 4: die Übersetzungen eines Objekts](../bilder/help/pr-editor-translations.webp)

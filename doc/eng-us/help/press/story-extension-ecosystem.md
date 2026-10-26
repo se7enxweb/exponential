@@ -21,7 +21,7 @@ extensions; many are installed with every site and many are switched off until n
 
 ## The story in one paragraph
 
-The kernel's `composer.json` requires 66 `se7enxweb/*` packages: themes, the page builder, the writing assistant, tags,
+On 18 October 2026 the kernel's `composer.json` required 66 `se7enxweb/*` packages: themes, the page builder, the writing assistant, tags,
 newsletters, two-factor sign-in, the Oracle driver, the REST API, the job queue and more; "Many are inactive until you
 switch them on" ([The extension ecosystem](../who-is-7x.md#the-extension-ecosystem)). Each has its own repository,
 releases and changelog, and states its version in its own files. On Packagist, the vendor se7enxweb has 219 packages.

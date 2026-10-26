@@ -34,7 +34,7 @@ Oracle.
 | Was | Wann | Quelle |
 |---|---|---|
 | `ezpm` in der Konsole, ein Installer mit einem Befehl und der Kickstarter | Juli 2026 | [Juli 2026](../../geschichte/2026/2026-07.md) |
-| SQLite als Datenbank, die keinen Server braucht | 1. Januar 2024 (6.0.0) | [Januar 2024](../../geschichte/2024/2024-01a.md) |
+| SQLite als Datenbank, die keinen Server braucht | 7. Januar 2024 | [Januar 2024](../../geschichte/2024/2024-01a.md) |
 
 ## Fakten, die Sie drucken können
 

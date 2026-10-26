@@ -75,8 +75,8 @@ the first answer to a security report, "within one business day" (SECURITY.md).
 
 ## Security reports are different
 
-If you, a source or a reader found a vulnerability, it goes privately to security@se7enx.com or through GitHub's
-private vulnerability reporting, as [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)
+If you, a source or a reader found a vulnerability, it goes privately by e-mail to security@se7enx.com, not to
+the public issue tracker or the discussions, as [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)
 describes. Do not publish details before a fix is released. Read [If you find a vulnerability](if-you-find-a-vulnerability.md)
 and [Covering security fixes](covering-security-fixes.md).
 

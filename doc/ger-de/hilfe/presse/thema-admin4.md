@@ -64,7 +64,7 @@ gemeinsamen Stylesheets mit Farbtokens, deren Kontrast im hellen und dunklen Mod
 
 ## Blickwinkel und Ideen für Überschriften
 
-- „Ein zwanzig Jahre altes CMS bekommt einen dunklen Modus und testet seinen Kontrast.“
+- „Ein seit 1999 entwickeltes CMS bekommt einen dunklen Modus und testet seinen Kontrast.“
 - „Keine heruntergeladenen Schriften, keine Inline-Styles: eine Administration, gebaut für strikte Sicherheit.“
 
 ## Wen Sie fragen

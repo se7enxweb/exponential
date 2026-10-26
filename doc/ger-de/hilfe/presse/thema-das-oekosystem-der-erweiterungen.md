@@ -22,7 +22,7 @@ sie gebraucht werden.
 
 ## Das Thema in einem Absatz
 
-Die `composer.json` des Kernels setzt 66 Pakete `se7enxweb/*` voraus: Themes, den Seitenbaukasten, den
+Am 18. Oktober 2026 setzte die `composer.json` des Kernels 66 Pakete `se7enxweb/*` voraus: Themes, den Seitenbaukasten, den
 Schreibassistenten, Tags, Newsletter, die zweistufige Anmeldung, den Oracle-Treiber, die REST-API, die
 Job-Warteschlange und mehr; „Viele sind inaktiv, bis Sie sie einschalten“
 ([Das Ökosystem der Erweiterungen](../wer-ist-7x.md#das-ökosystem-der-erweiterungen)). Jedes hat sein eigenes Repository, eigene
