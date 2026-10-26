@@ -164,7 +164,7 @@ The decision between them is the subject of
 ## Languages and accessibility
 
 - **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations), in 32 scripts,
-  40 of them written right to left, can be chosen as content languages; **54 administration translations** exist, 24
+  40 of them written right to left, can be chosen as content languages; **54 administration translations** exist, 51
   of them complete (25 October 2026) ([Languages in Exponential](../../languages.md)).
 - One installation holds at most 62 content languages at a time on 64-bit PHP
   ([Languages](../../languages.md#11-the-limit-of-62-content-languages)).

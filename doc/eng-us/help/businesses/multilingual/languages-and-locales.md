@@ -46,7 +46,7 @@ As counted in [Languages in Exponential](../../../languages.md) (Exponential 6.0
 - **32 scripts**, from Latin, Cyrillic and Greek to Arabic, Hebrew, Devanagari, Chinese and many more.
 - **40 locales written right to left** ([Right-to-left markets](right-to-left-markets.md)).
 - **54 administration translations**, 51 of them complete (25 October 2026), listed in
-  [Languages in Exponential](../../../languages.md#in-short).
+  [Languages in Exponential](../../../languages.md).
 - **No PHP extension needed at run time**: locales are plain INI files
   ([Languages, section 10](../../../languages.md#10-no-php-extension-at-run-time)).
 
