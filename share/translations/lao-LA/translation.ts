@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>ຄຳເຫັນໂດຍ "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ມີການແນະນຳໜ້າໜຶ່ງໃຫ້ທ່ານ</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>ທ່ານໄດ້ຮັບອີເມວນີ້ ເພາະມີຜູ້ປ້ອນທີ່ຢູ່ຂອງທ່ານເທິງ %site ເພື່ອແບ່ງປັນໜ້າໜຶ່ງໃຫ້ທ່ານ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ລອງໃໝ່: %attempt ຈາກ %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ເບິ່ງໃບຮັບເງິນຂອງທ່ານ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ລິ້ງໃຊ້ໄດ້ພຽງຄັ້ງດຽວ ແລະພຽງ %1 ນາທີ.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>ຕັ້ງລະຫັດຜ່ານຂອງທ່ານຄືນໃໝ່</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>ມີຜູ້ຂໍຕັ້ງລະຫັດຜ່ານຂອງບັນຊີຂອງທ່ານຄືນໃໝ່ ເທິງ %site. ຢືນຢັນດ້ວຍປຸ່ມ ແລ້ວພວກເຮົາຈະສົ່ງລະຫັດຜ່ານໃໝ່ໃຫ້ທ່ານໃນອີເມວສະບັບທີສອງ.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>ຕັ້ງລະຫັດຜ່ານຂອງຂ້ອຍຄືນໃໝ່</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>ຖ້າທ່ານບໍ່ໄດ້ຂໍ ທ່ານສາມາດບໍ່ສົນໃຈອີເມວນີ້ໄດ້: ລະຫັດຜ່ານຂອງທ່ານຍັງຄືເກົ່າ.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>ລະຫັດຜ່ານໃໝ່ຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>ລະຫັດຜ່ານຂອງທ່ານເທິງ %site ຖືກຕັ້ງຄືນໃໝ່ແລ້ວ. ເຂົ້າສູ່ລະບົບດ້ວຍລະຫັດຜ່ານໃໝ່ນີ້ ແລ້ວປ່ຽນເປັນລະຫັດຜ່ານຂອງທ່ານເອງ.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>ຖ້າທ່ານບໍ່ໄດ້ຕັ້ງລະຫັດຜ່ານຄືນໃໝ່ ໃຫ້ເຂົ້າສູ່ລະບົບດ້ວຍລະຫັດຜ່ານນີ້ ແລ້ວປ່ຽນທັນທີ.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>ຕັ້ງລະຫັດຜ່ານຄືນໃໝ່ສຳລັບ %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>ລະຫັດຜ່ານໃໝ່ຂອງທ່ານສຳລັບ %site</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71533,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>ອຸປະກອນຂອງທ່ານ</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>ມີຜູ້ຂໍໃຊ້ %email ສຳລັບບັນຊີເທິງ %site. ກະລຸນາຢືນຢັນວ່າທີ່ຢູ່ນີ້ເປັນຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>ທ່ານ (ຫຼືຜູ້ທີ່ພິມທີ່ຢູ່ຂອງທ່ານ) ຂໍລິ້ງສຳລັບຈັດການອີເມວທີ່ %site ສົ່ງໄປຫາ %email. ໃນໜ້ານັ້ນທ່ານສາມາດເປີດຫຼືປິດອີເມວແຕ່ລະປະເພດ ຫຼືຢຸດອີເມວທີ່ບໍ່ບັງຄັບທັງໝົດ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71897,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ຖ້າທ່ານບໍ່ໄດ້ເປັນຜູ້ປ່ຽນແປງນີ້ ຄົນອື່ນອາດຮູ້ລະຫັດຜ່ານຂອງທ່ານ: ກະລຸນາຣີເຊັດມັນທັນທີດ້ວຍ "%forgot" ໃນໜ້າເຂົ້າສູ່ລະບົບ ແລະຕິດຕໍ່ພວກເຮົາ.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>ລະຫັດຜ່ານຂອງທ່ານຖືກປ່ຽນແລ້ວ</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76755,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ເຊສຊັນຂອງຜູ້ໃຊ້ນີ້:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ການເຂົ້າສູ່ລະບົບໃໝ່ໃນບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ອຸປະກອນ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ເວລາ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ທີ່ຢູ່ໂດຍປະມານ</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>ຖ້າບໍ່ແມ່ນທ່ານ ອາດມີຄົນຮູ້ລະຫັດຜ່ານຂອງທ່ານ: ໃຫ້ອອກຈາກລະບົບເຊສຊັນນັ້ນໃນໜ້າອຸປະກອນຂອງທ່ານ ແລ້ວປ່ຽນລະຫັດຜ່ານ.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ກວດສອບອຸປະກອນຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ເບິ່ງເຊສຊັນຂອງຜູ້ໃຊ້ນີ້</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77309,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>ແຖວຈະຖືກເອົາອອກຈາກຕາຕະລາງ ແລະບໍ່ສາມາດນຳກັບຄືນມາໄດ້.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ຖ້າປຸ່ມໃຊ້ບໍ່ໄດ້ ກະລຸນາສຳເນົາທີ່ຢູ່ນີ້ໄປໃສ່ບຣາວເຊີຂອງທ່ານ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>ເປີດໜ້າ</translation>
     </message>
 </context>
 </TS>

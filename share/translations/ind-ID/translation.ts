@@ -44936,6 +44936,14 @@ Jika Anda ingin mengirim komentar kepada pemberi persetujuan atau melihat status
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Komentar dari "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Sebuah halaman direkomendasikan kepada Anda</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Anda menerima email ini karena seseorang memasukkan alamat Anda di %site untuk membagikan sebuah halaman kepada Anda.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Untuk melakukannya, Anda perlu mengubah perintah %chown di bawah Perintah shell 
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Percobaan ulang: %attempt dari %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Lihat tanda terima Anda</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ akun Anda.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Tautan hanya berlaku sekali dan hanya selama %1 menit.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Atur ulang kata sandi Anda</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Seseorang meminta pengaturan ulang kata sandi akun Anda di %site. Konfirmasikan dengan tombol, dan kami akan mengirimkan kata sandi baru kepada Anda dalam email kedua.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Atur ulang kata sandi saya</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jika Anda tidak memintanya, abaikan email ini: kata sandi Anda tetap seperti semula.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Kata sandi baru Anda</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Kata sandi Anda di %site telah diatur ulang. Masuklah dengan kata sandi baru ini, lalu ubah menjadi kata sandi pilihan Anda sendiri.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jika Anda tidak mengatur ulang kata sandi Anda, masuklah dengan kata sandi ini dan segera ubah.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Atur ulang kata sandi untuk %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Kata sandi baru Anda untuk %site</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71533,14 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Your devices</source>
         <translation>Perangkat Anda</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Seseorang meminta penggunaan %email untuk sebuah akun di %site. Harap konfirmasikan bahwa alamat ini milik Anda.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Anda (atau seseorang yang mengetik alamat Anda) meminta tautan untuk mengelola email yang dikirim %site ke %email. Di halaman itu Anda dapat mengaktifkan atau menonaktifkan setiap jenis email, atau menghentikan semua email opsional.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71897,10 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jika Anda tidak membuat perubahan ini, orang lain mungkin mengetahui kata sandi Anda: segera atur ulang dengan "%forgot" di halaman masuk, dan hubungi kami.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Kata sandi Anda telah diubah</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76755,34 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>The sessions of this user:</source>
         <translation>Sesi pengguna ini:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Proses masuk baru ke akun Anda</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Perangkat</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Alamat perkiraan</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jika itu bukan Anda, mungkin seseorang mengetahui kata sandi Anda: keluarkan sesi tersebut di halaman perangkat Anda, lalu ubah kata sandi Anda.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Tinjau perangkat Anda</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Lihat sesi pengguna ini</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77309,17 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Baris dihapus dari tabel dan tidak dapat dikembalikan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jika tombol tidak berfungsi, salin alamat ini ke peramban Anda: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Buka halaman</translation>
     </message>
 </context>
 </TS>

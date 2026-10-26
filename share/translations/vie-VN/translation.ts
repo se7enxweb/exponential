@@ -44936,6 +44936,14 @@ Nếu bạn muốn gửi bình luận cho người phê duyệt hoặc xem tình
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Bình luận của "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Một trang đã được giới thiệu cho bạn</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Bạn nhận được email này vì có người đã nhập địa chỉ của bạn trên %site để chia sẻ một trang với bạn.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Nếu bạn biết người dùng và nhóm của máy chủ web, bạn nên tha
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Thử lại: %attempt trên %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Xem biên nhận của bạn</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ tài khoản của bạn.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Liên kết chỉ dùng được một lần và chỉ trong %1 phút.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Đặt lại mật khẩu của bạn</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Có người đã yêu cầu đặt lại mật khẩu cho tài khoản của bạn trên %site. Hãy xác nhận bằng nút bên dưới, và chúng tôi sẽ gửi mật khẩu mới cho bạn trong một email thứ hai.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Đặt lại mật khẩu của tôi</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Nếu bạn không yêu cầu việc này, bạn có thể bỏ qua email này: mật khẩu của bạn vẫn giữ nguyên.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Mật khẩu mới của bạn</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Mật khẩu của bạn trên %site đã được đặt lại. Hãy đăng nhập bằng mật khẩu mới này, rồi đổi sang mật khẩu của riêng bạn.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Nếu bạn không đặt lại mật khẩu, hãy đăng nhập bằng mật khẩu này và đổi ngay.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Đặt lại mật khẩu cho %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Mật khẩu mới của bạn cho %site</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71533,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>Your devices</source>
         <translation>Thiết bị của bạn</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Có người đã yêu cầu dùng %email cho một tài khoản trên %site. Vui lòng xác nhận địa chỉ này là của bạn.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Bạn (hoặc ai đó đã nhập địa chỉ của bạn) đã yêu cầu một liên kết để quản lý email mà %site gửi đến %email. Trên trang đó, bạn có thể bật hoặc tắt từng loại email, hoặc dừng mọi email tùy chọn.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71897,10 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Nếu bạn không thực hiện thay đổi này, có thể người khác biết mật khẩu của bạn: hãy đặt lại ngay bằng "%forgot" trên trang đăng nhập và liên hệ với chúng tôi.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Mật khẩu của bạn đã được thay đổi</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76755,34 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The sessions of this user:</source>
         <translation>Các phiên của người dùng này:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Lần đăng nhập mới vào tài khoản của bạn</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Thiết bị</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Địa chỉ gần đúng</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Nếu đó không phải là bạn, có thể ai đó đã biết mật khẩu của bạn: hãy đăng xuất phiên đó trên trang thiết bị của bạn, rồi đổi mật khẩu.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Xem lại các thiết bị của bạn</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Xem các phiên của người dùng này</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77309,17 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Hàng sẽ bị gỡ bỏ khỏi bảng và không thể khôi phục.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Nếu nút không hoạt động, hãy sao chép địa chỉ này vào trình duyệt của bạn: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Mở trang</translation>
     </message>
 </context>
 </TS>

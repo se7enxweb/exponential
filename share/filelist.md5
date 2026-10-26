@@ -12569,7 +12569,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
-0412531dde8991e64e7f10e332b9ecba  doc/eng-us/translation-waves.md
+703467a69ec80ac532c28770645b9a11  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 02ca7554f6be881f735fce76a2ce5590  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -21431,7 +21431,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-4f4a15ca37096d0bcf37cb4315d007c3  doc/ger-de/uebersetzungswellen.md
+631e0f2c8de8e810b76b0fa88ed98d94  doc/ger-de/uebersetzungswellen.md
 ca648c2e1703bdba32c81fd0f747db20  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
@@ -25421,7 +25421,7 @@ e49d0561acdd0a71f742e5f72d0d813f  share/translations/hun-HU/translation.ts
 0e403bd6d82a204ecfbeddebbc8d2054  share/translations/ibo-NG/GUIDE.md
 03dac5f05c2e450422284d543873533f  share/translations/ibo-NG/translation.ts
 7217780ba8eb5b1f2a6b454bd3ebb0d2  share/translations/ind-ID/GUIDE.md
-b683962f76dec2a2bfa852ce0b9c98ea  share/translations/ind-ID/translation.ts
+2d38cc1582e501e37ecf7bd5ab095b97  share/translations/ind-ID/translation.ts
 965b5ed364b2c41efef84f2efe7cf31c  share/translations/isl-IS/GUIDE.md
 44b613a61724781d83ddf270993927b9  share/translations/isl-IS/translation.ts
 68f0181853680913c1bf3a26d4ab7698  share/translations/ita-IT/GUIDE.md
@@ -25437,7 +25437,7 @@ fed9552618ada79c959fa397099a32bc  share/translations/kan-IN/GUIDE.md
 5dacca503fa69dfcb372ce030491e054  share/translations/kur-TR/GUIDE.md
 92f3262bc69e5a42d72b383278da2753  share/translations/kur-TR/translation.ts
 0ca111922a9a0837517e2bcf91a2ac3c  share/translations/lao-LA/GUIDE.md
-c843e6839e4910ab6438079153177eaa  share/translations/lao-LA/translation.ts
+f21ed2563795058efd8e2ee33488a386  share/translations/lao-LA/translation.ts
 d816ca75f3f4c4afcad048d4aaee7244  share/translations/lat-VA/GUIDE.md
 e8d2682fb243878031b7d0d6cd14a407  share/translations/lat-VA/translation.ts
 7ee72d57ddd9eb952cbf84526782d864  share/translations/lav-LV/GUIDE.md
@@ -25451,7 +25451,7 @@ e8d2682fb243878031b7d0d6cd14a407  share/translations/lat-VA/translation.ts
 3a2cb5e8a53fa3709e6fd30b33993f39  share/translations/mlt-MT/GUIDE.md
 1d102365d075f9d4de2ba3832542ac86  share/translations/mlt-MT/translation.ts
 9bb4a04cc94db519caf1a68388f7ffef  share/translations/msa-MY/GUIDE.md
-1d3e75208b335a88c83f5732f1605f05  share/translations/msa-MY/translation.ts
+af0d676286f7518b803d8115454a0fc3  share/translations/msa-MY/translation.ts
 bfeaee8dbc2f0b6e5099de1897be5306  share/translations/nor-NO/GUIDE.md
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 47ff1e2c2159eb5dc958960a0105b38a  share/translations/nor-NO/translation.ts
@@ -25492,7 +25492,7 @@ da2e7db21ab7a9830095d51a04f3d73a  share/translations/tam-IN/translation.ts
 d0029e68f06955d50b9b3f2b4073f9ff  share/translations/tel-IN/GUIDE.md
 6d6f318608a9a7dd3689609a45414798  share/translations/tel-IN/translation.ts
 07acea7d00887fad370466f3555b95ac  share/translations/tha-TH/GUIDE.md
-cf6bdec9cadf374981f30fde072c8502  share/translations/tha-TH/translation.ts
+720b5c4790cadd28de9cfd74b2cb581f  share/translations/tha-TH/translation.ts
 88e29d29b132900edbb1c7eca3d72360  share/translations/tlh-QO/GUIDE.md
 7d451a5ca515b12666242001acca319e  share/translations/tlh-QO/translation.ts
 0a1bfbe969ccf384196950416c92a71e  share/translations/tur-TR/GUIDE.md
@@ -25504,7 +25504,7 @@ e9d4708642179b0afb52be68fa130a35  share/translations/untranslated/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 0bd4bba6e8c049de65b8bca083b166de  share/translations/urd-PK/translation.ts
 5b0c50481744b3b95fc8751f105dca49  share/translations/vie-VN/GUIDE.md
-4510e926df04e2657a3389373f1eef23  share/translations/vie-VN/translation.ts
+9ed863a03aecf6e0e7e70a88072066ee  share/translations/vie-VN/translation.ts
 cd5abb3113842abfea8acce6ea5f239a  share/translations/xho-ZA/GUIDE.md
 04b2c3fb1a9ebc33b182a60e6df02cb3  share/translations/xho-ZA/translation.ts
 126b98ec88900b03cbc885865a55b15c  share/translations/yid-US/GUIDE.md

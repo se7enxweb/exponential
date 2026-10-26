@@ -44936,6 +44936,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>ความคิดเห็นโดย "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>มีการแนะนำหน้าหนึ่งให้คุณ</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>คุณได้รับอีเมลนี้เพราะมีผู้ป้อนที่อยู่ของคุณบน %site เพื่อแชร์หน้าหนึ่งให้คุณ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ลองใหม่: ครั้งที่ %attempt จาก %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ดูใบเสร็จของคุณ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ลิงก์ใช้ได้ครั้งเดียวและใช้ได้เพียง %1 นาที.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>รีเซ็ตรหัสผ่านของคุณ</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>มีผู้ขอรีเซ็ตรหัสผ่านของบัญชีของคุณบน %site. ยืนยันด้วยปุ่ม แล้วเราจะส่งรหัสผ่านใหม่ให้คุณในอีเมลฉบับที่สอง.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>รีเซ็ตรหัสผ่านของฉัน</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>หากคุณไม่ได้ขอ สามารถเพิกเฉยต่ออีเมลนี้ได้: รหัสผ่านของคุณจะคงเดิม.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>รหัสผ่านใหม่ของคุณ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>รหัสผ่านของคุณบน %site ถูกรีเซ็ตแล้ว. เข้าสู่ระบบด้วยรหัสผ่านใหม่นี้ แล้วเปลี่ยนเป็นรหัสผ่านของคุณเอง.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>หากคุณไม่ได้รีเซ็ตรหัสผ่าน ให้เข้าสู่ระบบด้วยรหัสผ่านนี้และเปลี่ยนทันที.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>รีเซ็ตรหัสผ่านสำหรับ %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>รหัสผ่านใหม่ของคุณสำหรับ %site</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71533,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>อุปกรณ์ของคุณ</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>มีผู้ขอใช้ %email สำหรับบัญชีบน %site. โปรดยืนยันว่าที่อยู่นี้เป็นของคุณ.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>คุณ (หรือผู้ที่พิมพ์ที่อยู่ของคุณ) ขอลิงก์สำหรับจัดการอีเมลที่ %site ส่งไปยัง %email. ในหน้านั้นคุณสามารถเปิดหรือปิดอีเมลแต่ละประเภท หรือหยุดอีเมลที่ไม่บังคับทั้งหมดได้.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71897,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>หากคุณไม่ได้เป็นผู้เปลี่ยนแปลง ผู้อื่นอาจรู้รหัสผ่านของคุณ: กรุณารีเซ็ตทันทีด้วย "%forgot" ในหน้าเข้าสู่ระบบ และติดต่อเรา.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>รหัสผ่านของคุณถูกเปลี่ยนแล้ว</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76755,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>เซสชันของผู้ใช้นี้:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>การเข้าสู่ระบบใหม่ในบัญชีของคุณ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>อุปกรณ์</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>เวลา</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ที่อยู่โดยประมาณ</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>หากไม่ใช่คุณ อาจมีคนรู้รหัสผ่านของคุณ: ให้ออกจากระบบเซสชันนั้นในหน้าอุปกรณ์ของคุณ แล้วเปลี่ยนรหัสผ่าน.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ตรวจสอบอุปกรณ์ของคุณ</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ดูเซสชันของผู้ใช้นี้</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77309,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>แถวจะถูกนำออกจากตารางและไม่สามารถนำกลับมาได้.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>หากปุ่มไม่ทำงาน กรุณาคัดลอกที่อยู่นี้ไปวางในเบราว์เซอร์ของคุณ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>เปิดหน้า</translation>
     </message>
 </context>
 </TS>
