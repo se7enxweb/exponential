@@ -2,7 +2,7 @@
 title: Patterns in extension/ezwt
 audience: developer
 category: standards
-order: 464
+order: 465
 summary: Every class, view, fetch function, operator and plugin point of extension/ezwt with its design patterns.
 keywords: extension/ezwt, design patterns, classes, extension points
 type: catalogue

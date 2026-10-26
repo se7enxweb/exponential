@@ -2,7 +2,7 @@
 title: Patterns in extension/expsite_core
 audience: developer
 category: standards
-order: 431
+order: 432
 summary: Every class, view, fetch function, operator and plugin point of extension/expsite_core with its design patterns.
 keywords: extension/expsite_core, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/passkey
 audience: developer
 category: standards
-order: 508
+order: 509
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/passkey with its design patterns.
 keywords: kernel/classes/passkey, design patterns, classes, extension points
 type: catalogue

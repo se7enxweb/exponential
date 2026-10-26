@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/packagecreators
 audience: developer
 category: standards
-order: 505
+order: 506
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/packagecreators with its design patterns.
 keywords: kernel/classes/packagecreators, design patterns, classes, extension points
 type: catalogue

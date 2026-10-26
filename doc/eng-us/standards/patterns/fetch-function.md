@@ -3,7 +3,7 @@ title: Fetch function (Query Object, Facade)
 audience: developer
 category: standards
 order: 315
-summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 352 instances in Exponential.
+summary: A named query that templates call with fetch( module, function, hash(...) ); the kernel maps it to a method of a function collection class. 354 instances in Exponential.
 keywords: design pattern, fetch-function, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 352 |
+| Instances | 354 |
 | Recognized by | An entry of a module's function_definition.php, or a class named *FunctionCollection. |
 | Extension point | function_definition.php in the module directory of an extension (module.ini ModuleRepositories[]). |
 
@@ -195,7 +195,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 |---|---|---|---|---|
 | `ezpLanguageSwitcherFunctionCollection` | class | `kernel/private/modules/switchlanguage/ezpLanguageSwitcherFunctionCollection.php:14` | – | – |
 
-## Fetch functions (314)
+## Fetch functions (316)
 
 ### extension/cjw_newsletter (16)
 
@@ -400,7 +400,7 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'xrowextract', 'schedule_alerts' )` | `XrowExtractFunctionCollection::fetchScheduleAlerts()` | `extension/xrowextract/modules/xrowextract/function_definition.php:10` |
 | `fetch( 'xrowextract', 'requirement_notices' )` | `XrowExtractFunctionCollection::fetchRequirementNotices()` | `extension/xrowextract/modules/xrowextract/function_definition.php:17` |
 
-### kernel/modules (180)
+### kernel/modules (182)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
@@ -499,6 +499,8 @@ A named query that templates call with fetch( module, function, hash(...) ); the
 | `fetch( 'exphelp', 'context' )` | `expHelpFunctionCollection::fetchContext()` | `kernel/exphelp/function_definition.php:16` |
 | `fetch( 'exphelp', 'license' )` | `expHelpFunctionCollection::fetchLicense()` | `kernel/exphelp/function_definition.php:25` |
 | `fetch( 'exphelp', 'context_menu' )` | `expHelpFunctionCollection::fetchContextMenu()` | `kernel/exphelp/function_definition.php:33` |
+| `fetch( 'exphelp', 'site_topic' )` | `expHelpFunctionCollection::fetchSiteTopic()` | `kernel/exphelp/function_definition.php:45` |
+| `fetch( 'exphelp', 'site_map' )` | `expHelpFunctionCollection::fetchSiteMap()` | `kernel/exphelp/function_definition.php:51` |
 | `fetch( 'infocollector', 'collected_info_count' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCount()` | `kernel/infocollector/function_definition.php:13` |
 | `fetch( 'infocollector', 'collected_info_count_list' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCountList()` | `kernel/infocollector/function_definition.php:39` |
 | `fetch( 'infocollector', 'collected_info_collection' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCollection()` | `kernel/infocollector/function_definition.php:50` |

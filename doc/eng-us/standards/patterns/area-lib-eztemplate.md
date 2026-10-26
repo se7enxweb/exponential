@@ -2,7 +2,7 @@
 title: Patterns in lib/eztemplate
 audience: developer
 category: standards
-order: 551
+order: 552
 summary: Every class, view, fetch function, operator and plugin point of lib/eztemplate with its design patterns.
 keywords: lib/eztemplate, design patterns, classes, extension points
 type: catalogue

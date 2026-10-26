@@ -2,7 +2,7 @@
 title: Patterns in extension/ezautosave
 audience: developer
 category: standards
-order: 439
+order: 440
 summary: Every class, view, fetch function, operator and plugin point of extension/ezautosave with its design patterns.
 keywords: extension/ezautosave, design patterns, classes, extension points
 type: catalogue

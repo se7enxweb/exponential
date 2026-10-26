@@ -2,7 +2,7 @@
 title: Patterns in lib/ezsession
 audience: developer
 category: standards
-order: 549
+order: 550
 summary: Every class, view, fetch function, operator and plugin point of lib/ezsession with its design patterns.
 keywords: lib/ezsession, design patterns, classes, extension points
 type: catalogue

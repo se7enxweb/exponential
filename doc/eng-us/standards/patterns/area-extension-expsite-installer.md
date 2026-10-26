@@ -2,7 +2,7 @@
 title: Patterns in extension/expsite_installer
 audience: developer
 category: standards
-order: 433
+order: 434
 summary: Every class, view, fetch function, operator and plugin point of extension/expsite_installer with its design patterns.
 keywords: extension/expsite_installer, design patterns, classes, extension points
 type: catalogue

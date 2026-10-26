@@ -2,7 +2,7 @@
 title: Patterns in lib/ezpdf
 audience: developer
 category: standards
-order: 548
+order: 549
 summary: Every class, view, fetch function, operator and plugin point of lib/ezpdf with its design patterns.
 keywords: lib/ezpdf, design patterns, classes, extension points
 type: catalogue

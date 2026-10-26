@@ -2,7 +2,7 @@
 title: Patterns in extension/syndication
 audience: developer
 category: standards
-order: 480
+order: 481
 summary: Every class, view, fetch function, operator and plugin point of extension/syndication with its design patterns.
 keywords: extension/syndication, design patterns, classes, extension points
 type: catalogue

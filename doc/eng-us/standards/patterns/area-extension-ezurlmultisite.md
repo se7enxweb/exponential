@@ -2,7 +2,7 @@
 title: Patterns in extension/ezurlmultisite
 audience: developer
 category: standards
-order: 462
+order: 463
 summary: Every class, view, fetch function, operator and plugin point of extension/ezurlmultisite with its design patterns.
 keywords: extension/ezurlmultisite, design patterns, classes, extension points
 type: catalogue

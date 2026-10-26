@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/ini
 audience: developer
 category: standards
-order: 500
+order: 501
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/ini with its design patterns.
 keywords: kernel/classes/ini, design patterns, classes, extension points
 type: catalogue

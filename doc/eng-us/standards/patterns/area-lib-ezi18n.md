@@ -2,7 +2,7 @@
 title: Patterns in lib/ezi18n
 audience: developer
 category: standards
-order: 544
+order: 545
 summary: Every class, view, fetch function, operator and plugin point of lib/ezi18n with its design patterns.
 keywords: lib/ezi18n, design patterns, classes, extension points
 type: catalogue

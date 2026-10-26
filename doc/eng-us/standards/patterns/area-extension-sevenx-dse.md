@@ -2,7 +2,7 @@
 title: Patterns in extension/sevenx_dse
 audience: developer
 category: standards
-order: 473
+order: 474
 summary: Every class, view, fetch function, operator and plugin point of extension/sevenx_dse with its design patterns.
 keywords: extension/sevenx_dse, design patterns, classes, extension points
 type: catalogue

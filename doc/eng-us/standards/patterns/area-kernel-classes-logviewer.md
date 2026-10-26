@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/logviewer
 audience: developer
 category: standards
-order: 501
+order: 502
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/logviewer with its design patterns.
 keywords: kernel/classes/logviewer, design patterns, classes, extension points
 type: catalogue

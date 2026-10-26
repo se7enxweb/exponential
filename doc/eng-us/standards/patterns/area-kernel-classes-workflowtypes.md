@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/workflowtypes
 audience: developer
 category: standards
-order: 523
+order: 524
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/workflowtypes with its design patterns.
 keywords: kernel/classes/workflowtypes, design patterns, classes, extension points
 type: catalogue

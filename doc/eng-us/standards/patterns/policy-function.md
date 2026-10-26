@@ -3,7 +3,7 @@ title: Policy function (access control)
 audience: developer
 category: standards
 order: 317
-summary: A permission a role can grant, optionally limited (by class, section, subtree, siteaccess ...). Views name the functions they need. 259 instances in Exponential.
+summary: A permission a role can grant, optionally limited (by class, section, subtree, siteaccess ...). Views name the functions they need. 260 instances in Exponential.
 keywords: design pattern, policy-function, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,11 +18,11 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 259 |
+| Instances | 260 |
 | Recognized by | An entry of $FunctionList in a module.php. |
 | Extension point | module.php $FunctionList; limitations are functions that list the allowed values. |
 
-## Policy functions (259)
+## Policy functions (260)
 
 ### extension/AdminAid (4)
 
@@ -349,7 +349,7 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `xrowextract/all_jobs` | – | `extension/xrowextract/modules/xrowextract/module.php:128` |
 | `xrowextract/import` | – | `extension/xrowextract/modules/xrowextract/module.php:130` |
 
-### kernel/modules (93)
+### kernel/modules (94)
 
 | Function | Limitations | Defined in |
 |---|---|---|
@@ -395,8 +395,9 @@ A permission a role can grant, optionally limited (by class, section, subtree, s
 | `datatable/manage` | – | `kernel/datatable/module.php:84` |
 | `datatable/connections` | – | `kernel/datatable/module.php:86` |
 | `datatable/sync` | – | `kernel/datatable/module.php:88` |
-| `exphelp/read` | – | `kernel/exphelp/module.php:151` |
-| `exphelp/context` | – | `kernel/exphelp/module.php:153` |
+| `exphelp/read` | – | `kernel/exphelp/module.php:176` |
+| `exphelp/context` | – | `kernel/exphelp/module.php:178` |
+| `exphelp/feedback` | – | `kernel/exphelp/module.php:180` |
 | `ezinfo/read` | – | `kernel/ezinfo/module.php:33` |
 | `infocollector/read` | – | `kernel/infocollector/module.php:50` |
 | `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:72` |

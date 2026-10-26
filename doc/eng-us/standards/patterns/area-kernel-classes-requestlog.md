@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/requestlog
 audience: developer
 category: standards
-order: 512
+order: 513
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/requestlog with its design patterns.
 keywords: kernel/classes/requestlog, design patterns, classes, extension points
 type: catalogue

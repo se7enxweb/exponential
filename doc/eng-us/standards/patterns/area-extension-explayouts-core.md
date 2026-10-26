@@ -2,7 +2,7 @@
 title: Patterns in extension/explayouts_core
 audience: developer
 category: standards
-order: 419
+order: 420
 summary: Every class, view, fetch function, operator and plugin point of extension/explayouts_core with its design patterns.
 keywords: extension/explayouts_core, design patterns, classes, extension points
 type: catalogue

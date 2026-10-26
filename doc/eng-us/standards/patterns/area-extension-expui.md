@@ -2,7 +2,7 @@
 title: Patterns in extension/expui
 audience: developer
 category: standards
-order: 434
+order: 435
 summary: Every class, view, fetch function, operator and plugin point of extension/expui with its design patterns.
 keywords: extension/expui, design patterns, classes, extension points
 type: catalogue

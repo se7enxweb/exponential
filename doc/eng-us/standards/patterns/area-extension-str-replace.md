@@ -2,7 +2,7 @@
 title: Patterns in extension/str_replace
 audience: developer
 category: standards
-order: 478
+order: 479
 summary: Every class, view, fetch function, operator and plugin point of extension/str_replace with its design patterns.
 keywords: extension/str_replace, design patterns, classes, extension points
 type: catalogue

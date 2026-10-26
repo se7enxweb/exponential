@@ -2,7 +2,7 @@
 title: Patterns in lib/ezimage
 audience: developer
 category: standards
-order: 545
+order: 546
 summary: Every class, view, fetch function, operator and plugin point of lib/ezimage with its design patterns.
 keywords: lib/ezimage, design patterns, classes, extension points
 type: catalogue

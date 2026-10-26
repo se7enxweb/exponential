@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/mailpreferences
 audience: developer
 category: standards
-order: 503
+order: 504
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/mailpreferences with its design patterns.
 keywords: kernel/classes/mailpreferences, design patterns, classes, extension points
 type: catalogue

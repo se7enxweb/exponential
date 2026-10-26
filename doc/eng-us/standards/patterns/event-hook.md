@@ -127,15 +127,15 @@ A named point where the kernel calls ezpEvent::getInstance()->notify() or filter
 | `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1481` |
 | `content/remove` | notify | `kernel/content/ezcontentoperationcollection.php:1490` |
 | `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1604` |
-| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2112` |
+| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2117` |
 | `content/cache/version` | notify | `kernel/content/multiedit_functions.php:496` |
 
 ### kernel/private (4)
 
 | Event | Kind | Called in |
 |---|---|---|
-| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1658` |
-| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1783` |
+| `request/preinput` | notify | `kernel/private/classes/ezpkernelweb.php:1661` |
+| `request/input` | notify | `kernel/private/classes/ezpkernelweb.php:1786` |
 | `response/preoutput` | filter | `kernel/private/classes/global_functions.php:83` |
 | `response/output` | filter | `kernel/private/classes/global_functions.php:102` |
 

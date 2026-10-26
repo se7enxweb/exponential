@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/binaryhandlers
 audience: developer
 category: standards
-order: 487
+order: 488
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/binaryhandlers with its design patterns.
 keywords: kernel/classes/binaryhandlers, design patterns, classes, extension points
 type: catalogue

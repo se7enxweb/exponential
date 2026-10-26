@@ -2,7 +2,7 @@
 title: Patterns in lib
 audience: developer
 category: standards
-order: 539
+order: 540
 summary: Every class, view, fetch function, operator and plugin point of lib with its design patterns.
 keywords: lib, design patterns, classes, extension points
 type: catalogue

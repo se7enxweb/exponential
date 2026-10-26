@@ -3,7 +3,7 @@ title: Command (console, scripts, cronjobs)
 audience: developer
 category: standards
 order: 319
-summary: A unit of work that runs on its own: a console command (./console exp:...), a CLI script class or a cronjob part. 246 instances in Exponential.
+summary: A unit of work that runs on its own: a console command (./console exp:...), a CLI script class or a cronjob part. 247 instances in Exponential.
 keywords: design pattern, command, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 246 |
+| Instances | 247 |
 | Recognized by | Extends Command, CronjobPart or Runnable (the runnable console commands and cronjob parts), or a cronjobs/*.php file. |
 | Extension point | kernel/private/classes/commands/, cronjob.ini [CronjobSettings] ExtensionDirectories[] and CronjobPart-*. |
 
@@ -308,7 +308,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 | `Exponential\Command\Kernel\Warm` | class extends Command | `kernel/private/classes/commands/warm.php:34` | The code of bin/php/warm.php, moved into a class (#207 stage 1). | – |
 | `Exponential\Command\Kernel\Webserver` | class extends Command | `kernel/private/classes/commands/webserver.php:170` | Report a configure result for a person or as JSON. | – |
 
-### kernel/private/classes/cronjobs (29)
+### kernel/private/classes/cronjobs (30)
 
 [All patterns of kernel/private/classes/cronjobs](area-kernel-private-classes-cronjobs.md)
 
@@ -322,6 +322,7 @@ A unit of work that runs on its own: a console command (./console exp:...), a CL
 | `Exponential\Cronjob\Kernel\Contentcheck` | class extends CronjobPart | `kernel/private/classes/cronjobs/contentcheck.php:18` | The code of cronjobs/contentcheck.php: builds the reference index of the content checks and keeps it in the cache (expContentCheckReferences). | – |
 | `Exponential\Cronjob\Kernel\Contentjobs` | class extends CronjobPart | `kernel/private/classes/cronjobs/contentjobs.php:21` | The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a worker and have none — a running job who… | – |
 | `Exponential\Cronjob\Kernel\Datatablesync` | class extends CronjobPart | `kernel/private/classes/cronjobs/datatablesync.php:16` | The cronjob part datatablesync (cronjobs/datatablesync.php, frequent group; doc/eng-us/features/6.0/data-tables.md, "Synchronisation"): starts each e… | – |
+| `Exponential\Cronjob\Kernel\Exphelp` | class extends CronjobPart | `kernel/private/classes/cronjobs/exphelp.php:15` | – | – |
 | `Exponential\Cronjob\Kernel\Explogrotate` | class extends CronjobPart | `kernel/private/classes/cronjobs/explogrotate.php:19` | The code of cronjobs/explogrotate.php: the log rotation cronjob part ([CronjobPart-logs], in no default part, so it runs only when a site adds it to… | – |
 | `Exponential\Cronjob\Kernel\Hide` | class extends CronjobPart | `kernel/private/classes/cronjobs/hide.php:25` | The code of cronjobs/hide.php, moved into a class (#207 stage 1). | – |
 | `Exponential\Cronjob\Kernel\HttpcacheCleanup` | class extends CronjobPart | `kernel/private/classes/cronjobs/httpcache_cleanup.php:23` | The code of cronjobs/httpcache_cleanup.php, moved into a class (#207 stage 1). | – |

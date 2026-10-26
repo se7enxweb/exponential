@@ -3,7 +3,7 @@ title: Strategy / handler
 audience: developer
 category: standards
 order: 324
-summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 381 instances in Exponential.
+summary: Interchangeable implementations of one job, chosen by a setting: cluster file handlers, image handlers, login handlers, search engines, mail transports, cache backends ... 382 instances in Exponential.
 keywords: design pattern, strategy-handler, behavior, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | | |
 |---|---|
 | Group | Behavior |
-| Instances | 381 |
+| Instances | 382 |
 | Recognized by | Class name ends in Handler, Backend, Driver, Transport, Engine or Strategy, or implements an interface whose name does. |
 | Extension point | The INI setting that names the handler (see the INI plugin points page). |
 
@@ -585,7 +585,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 | `eZXMLInputHandler` | class | `kernel/classes/datatypes/ezxmltext/ezxmlinputhandler.php:19` | – | – |
 | `eZXMLOutputHandler` | class | `kernel/classes/datatypes/ezxmltext/ezxmloutputhandler.php:20` | – | – |
 
-### kernel/classes/help (2)
+### kernel/classes/help (3)
 
 [All patterns of kernel/classes/help](area-kernel-classes-help.md)
 
@@ -593,6 +593,7 @@ Interchangeable implementations of one job, chosen by a setting: cluster file ha
 |---|---|---|---|---|
 | `expHelpContentEditionProvider` | class extends expHelpContentProvider | `kernel/classes/help/content/exphelpcontenteditionprovider.php:16` | What goes into a stored edition of a manual (expHelpContentEbooks): every Released object, whoever builds the book, and for a public manual only what… | – |
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… | settings/exphelp.ini [ContextHelp] Providers[] |
+| `expHelpRestProvider` | class | `kernel/classes/help/content/rest/exphelprestprovider.php:21` | The REST routes of context help (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"; the plan's delivery path 2: "internal topics wit… | settings/rest.ini [ApiProvider] ProviderClass[help] |
 
 ### kernel/classes/ini (3)
 

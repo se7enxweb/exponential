@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/subitems
 audience: developer
 category: standards
-order: 516
+order: 517
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/subitems with its design patterns.
 keywords: kernel/classes/subitems, design patterns, classes, extension points
 type: catalogue

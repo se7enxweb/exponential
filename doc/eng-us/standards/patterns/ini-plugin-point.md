@@ -3,7 +3,7 @@ title: INI plugin point (extension point)
 audience: developer
 category: standards
 order: 338
-summary: A setting that names the class the kernel uses for a job, so an extension or a site can replace or add one without changing code. 1374 instances in Exponential.
+summary: A setting that names the class the kernel uses for a job, so an extension or a site can replace or add one without changing code. 1376 instances in Exponential.
 keywords: design pattern, ini-plugin-point, plugins, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | | |
 |---|---|
 | Group | Plugins |
-| Instances | 1374 |
+| Instances | 1376 |
 | Recognized by | A setting of a settings/*.ini file (or an extension's) whose value is the name of a class of the catalogue. |
 | Extension point | Set the setting in an extension's settings/FILE.ini.append.php or in settings/override/. |
 
@@ -755,7 +755,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 |---|---|---|---|---|
 | `expDebugBarServerFunctions` | class extends ezjscServerFunctions | `kernel/classes/debugbar/expdebugbarserverfunctions.php:28` | The ezjscore server functions of the Exp Debug bar, registered as [ezjscServer_expdebugbar] in extension/ezjscore/settings/ezjscore.ini: | extension/ezjscore/settings/ezjscore.ini [ezjscServer_expdebugbar] Class |
 
-### kernel/classes/help (2)
+### kernel/classes/help (3)
 
 [All patterns of kernel/classes/help](area-kernel-classes-help.md)
 
@@ -763,6 +763,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 |---|---|---|---|---|
 | `expHelpContentProvider` | class | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… | settings/exphelp.ini [ContextHelp] Providers[] |
 | `expHelpContentRepository` | class | `kernel/classes/help/content/exphelpcontentrepository.php:15` | Reads help maintained as content out of the database into plain arrays (the shapes expHelpContentValidator describes), without any permission filter:… | settings/site.ini [Cache_exphelpcontent] class; settings/site.ini [Cache_exphelpcontent] purgeClass |
+| `expHelpRestProvider` | class | `kernel/classes/help/content/rest/exphelprestprovider.php:21` | The REST routes of context help (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"; the plan's delivery path 2: "internal topics wit… | settings/rest.ini [ApiProvider] ProviderClass[help] |
 
 ### kernel/classes/ini (15)
 
@@ -1005,7 +1006,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `eZSendmailTransport` | class extends eZMailTransport | `lib/ezutils/classes/ezsendmailtransport.php:20` | – | settings/site.ini [MailSettings] TransportAlias[sendmail] |
 | `eZSMTPTransport` | class extends eZMailTransport | `lib/ezutils/classes/ezsmtptransport.php:18` | – | settings/site.ini [MailSettings] TransportAlias[smtp] |
 
-## INI plugin points (841)
+## INI plugin points (842)
 
 ### extension/AdminAid (18)
 
@@ -1790,7 +1791,7 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 |---|---|---|
 | `[SolrFieldMapSettings] CustomMap[xrowmetadata]` | `ezfSolrDocumentFieldxrowMetadata` | `extension/xrowmetadata/settings/ezfind.ini.append.php:4` |
 
-### settings (253)
+### settings (254)
 
 | Setting | Class | Set in |
 |---|---|---|
@@ -1890,9 +1891,10 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `[Registry_auditsources] Entries[Sources]` | `expAuditSource` | `settings/rad.ini:77` |
 | `[System] PrefixFilterClass` | `ezpRestDefaultRegexpPrefixFilter` | `settings/rest.ini:13` |
 | `[ApiProvider] ProviderClass[auth]` | `ezpRestAuthProvider` | `settings/rest.ini:18` |
-| `[OutputSettings] RendererClass[xhtml]` | `ezpContentXHTMLRenderer` | `settings/rest.ini:24` |
-| `[Authentication] AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | `settings/rest.ini:69` |
-| `[RouteSettings] RouteSettingImpl` | `ezpRestIniRouteFilter` | `settings/rest.ini:190` |
+| `[ApiProvider] ProviderClass[help]` | `expHelpRestProvider` | `settings/rest.ini:21` |
+| `[OutputSettings] RendererClass[xhtml]` | `ezpContentXHTMLRenderer` | `settings/rest.ini:27` |
+| `[Authentication] AuthenticationStyle` | `ezpRestOauthAuthenticationStyle` | `settings/rest.ini:76` |
+| `[RouteSettings] RouteSettingImpl` | `ezpRestIniRouteFilter` | `settings/rest.ini:216` |
 | `[MathSettings] MathHandler` | `eZPHPMath` | `settings/shop.ini:19` |
 | `[Cache_restRoutes] class` | `ezpRestRoutesCacheClear` | `settings/site.ini:59` |
 | `[Cache_restRoutes] purgeClass` | `ezpRestRoutesCacheClear` | `settings/site.ini:60` |
@@ -1910,13 +1912,13 @@ A setting that names the class the kernel uses for a job, so an extension or a s
 | `[URLTranslator] FilterClasses[]` | `eZURLAliasFilterAppendNodeID` | `settings/site.ini:593` |
 | `[SearchSettings] SearchEngine` | `eZSearchEngine` | `settings/site.ini:795` |
 | `[ReauthSettings] CodeHandlers[]` | `expReauthTotpCode` | `settings/site.ini:1185` |
-| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1480` |
-| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1770` |
-| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:2097` |
-| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:2106` |
-| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:2137` |
-| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:2138` |
-| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:2139` |
+| `[SiteAccessSettings] MobileDeviceFilterClass` | `ezpMobileDeviceRegexpFilter` | `settings/site.ini:1484` |
+| `[RegionalSettings] LanguageSwitcherClass` | `ezpLanguageSwitcher` | `settings/site.ini:1774` |
+| `[ContentSettings] StaticCacheHandler` | `eZStaticCache` | `settings/site.ini:2101` |
+| `[ContentSettings] ContentClassEditHandler` | `eZContentClassEditHandler` | `settings/site.ini:2110` |
+| `[MailSettings] TransportAlias[file]` | `eZFileTransport` | `settings/site.ini:2141` |
+| `[MailSettings] TransportAlias[sendmail]` | `eZSendmailTransport` | `settings/site.ini:2142` |
+| `[MailSettings] TransportAlias[smtp]` | `eZSMTPTransport` | `settings/site.ini:2143` |
 | `[Column_parentnodeid] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:172` |
 | `[Column_depth] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:183` |
 | `[Column_pathstring] Class` | `expSubitemsNodeColumn` | `settings/subitemscolumns.ini:194` |

@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/i18n
 audience: developer
 category: standards
-order: 499
+order: 500
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/i18n with its design patterns.
 keywords: kernel/classes/i18n, design patterns, classes, extension points
 type: catalogue

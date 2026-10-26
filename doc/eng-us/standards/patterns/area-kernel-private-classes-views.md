@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/views
 audience: developer
 category: standards
-order: 537
+order: 538
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/views with its design patterns.
 keywords: kernel/private/classes/views, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/private/classes/views` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (270)
+## Classes (272)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -109,12 +109,14 @@ Every class, interface and trait of `kernel/private/classes/views` with the patt
 | `Exponential\View\Kernel\Exphelp\Context` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/context.php:21` | exphelp/context/ and exphelp/context/manual/ (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"): a help topic, or a manual's table… |
 | `Exponential\View\Kernel\Exphelp\Dashboard` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/dashboard.php:19` | exphelp/dashboard (doc/eng-us/features/6.0/help-system.md): the help start page. |
 | `Exponential\View\Kernel\Exphelp\Extensions` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/extensions.php:27` | exphelp/extensions (doc/eng-us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of the active extensions in the hel… |
+| `Exponential\View\Kernel\Exphelp\Feedback` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/feedback.php:21` | exphelp/feedback/ (doc/eng-us/features/6.0/help-content.md, "Was this helpful?"): stores one answer to "Was this helpful?" of a Released help topic (… |
 | `Exponential\View\Kernel\Exphelp\Image` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/image.php:18` | exphelp/image/(id)/ (doc/eng-us/features/6.0/help-system.md, "External images"): the local copy of an external image a help page shows (README.md's s… |
 | `Exponential\View\Kernel\Exphelp\Manual` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/manual.php:18` | exphelp/manual/ (doc/eng-us/features/6.0/help-content.md): a manual of help maintained as content, its metadata and table of contents (chapters and t… |
 | `Exponential\View\Kernel\Exphelp\Pdf` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/pdf.php:18` | exphelp/pdf/ (doc/eng-us/features/6.0/help-system.md, "Print and PDF"): the help page as a PDF file to download. |
 | `Exponential\View\Kernel\Exphelp\Report` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/report.php:18` | exphelp/report (doc/eng-us/features/6.0/help-system.md, "Reporting an error"): which tracker, how to write a good report, a prefilled issue, the safe… |
 | `Exponential\View\Kernel\Exphelp\Search` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/search.php:32` | exphelp/search (doc/eng-us/features/6.0/help-system.md, "Search"): the search and browse page of the help. |
-| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/topic.php:21` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): one help topic maintained as content, rendered. |
+| `Exponential\View\Kernel\Exphelp\State` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/state.php:21` | exphelp/state/ and exphelp/state/manual/ (doc/eng-us/features/6.0/help-content.md, "The review workflow"): one step of Draft -› Review -› Released fo… |
+| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/topic.php:26` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): one help topic maintained as content, rendered. |
 | `Exponential\View\Kernel\Exphelp\Viewer` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/exphelp/viewer.php:24` | exphelp/viewer/ (doc/eng-us/features/6.0/help-system.md): one help page, rendered. |
 | `Exponential\View\Kernel\Ezinfo\About` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/ezinfo/about.php:267` | The code of kernel/ezinfo/about.php, moved into a class (#207 stage 1). |
 | `Exponential\View\Kernel\Ezinfo\Copyright` | class extends ModuleView | [Module view (Page Controller)](module-view.md) | `kernel/private/classes/views/ezinfo/copyright.php:21` | The code of kernel/ezinfo/copyright.php, moved into a class (#207 stage 1). |

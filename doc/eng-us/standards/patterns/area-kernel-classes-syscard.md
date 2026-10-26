@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/syscard
 audience: developer
 category: standards
-order: 517
+order: 518
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/syscard with its design patterns.
 keywords: kernel/classes/syscard, design patterns, classes, extension points
 type: catalogue

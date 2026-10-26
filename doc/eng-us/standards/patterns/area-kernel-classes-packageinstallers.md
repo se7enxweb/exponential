@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/packageinstallers
 audience: developer
 category: standards
-order: 507
+order: 508
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/packageinstallers with its design patterns.
 keywords: kernel/classes/packageinstallers, design patterns, classes, extension points
 type: catalogue

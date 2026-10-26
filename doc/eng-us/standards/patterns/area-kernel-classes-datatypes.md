@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/datatypes
 audience: developer
 category: standards
-order: 496
+order: 497
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/datatypes with its design patterns.
 keywords: kernel/classes/datatypes, design patterns, classes, extension points
 type: catalogue

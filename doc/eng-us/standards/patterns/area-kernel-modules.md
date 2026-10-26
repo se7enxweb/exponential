@@ -2,7 +2,7 @@
 title: Patterns in kernel/modules
 audience: developer
 category: standards
-order: 525
+order: 526
 summary: Every class, view, fetch function, operator and plugin point of kernel/modules with its design patterns.
 keywords: kernel/modules, design patterns, classes, extension points
 type: catalogue
@@ -98,7 +98,7 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `eZWorkflowFunctionCollection` | class | [Fetch function (Query Object, Facade)](fetch-function.md) | `kernel/workflow/ezworkflowfunctioncollection.php:20` | – |
 | `eZWorkflowFunctions` | class | [Utility (static helper)](utility.md) | `kernel/workflow/ezworkflowfunctions.php:14` | – |
 
-## Module views (229)
+## Module views (231)
 
 | View | Script | Policy functions | Defined in |
 |---|---|---|---|
@@ -191,19 +191,21 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `/datatable/connections` | `connections.php` | connections | `kernel/datatable/module.php:68` |
 | `/datatable/connection` | `connection.php` | connections | `kernel/datatable/module.php:74` |
 | `/error/view` | `view.php` | – | `kernel/error/module.php:13` |
-| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:35` |
-| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:43` |
-| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:53` |
-| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:61` |
-| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:71` |
-| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:87` |
-| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:94` |
-| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:102` |
-| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:110` |
-| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:117` |
-| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:126` |
-| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:134` |
-| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:143` |
+| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:41` |
+| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:49` |
+| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:59` |
+| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:67` |
+| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:77` |
+| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:93` |
+| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:100` |
+| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:108` |
+| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:116` |
+| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:123` |
+| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:132` |
+| `/exphelp/state` | `state.php` | read | `kernel/exphelp/module.php:143` |
+| `/exphelp/feedback` | `feedback.php` | – | `kernel/exphelp/module.php:151` |
+| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:159` |
+| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:168` |
 | `/ezinfo/copyright` | `copyright.php` | read | `kernel/ezinfo/module.php:14` |
 | `/ezinfo/about` | `about.php` | read | `kernel/ezinfo/module.php:21` |
 | `/ezinfo/is_alive` | `isalive.php` | read | `kernel/ezinfo/module.php:27` |
@@ -332,7 +334,7 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `/workflow/event` | `event.php` | – | `kernel/workflow/module.php:51` |
 | `/workflow/processlist` | `processlist.php` | – | `kernel/workflow/module.php:55` |
 
-## Policy functions (93)
+## Policy functions (94)
 
 | Function | Limitations | Defined in |
 |---|---|---|
@@ -378,8 +380,9 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `datatable/manage` | – | `kernel/datatable/module.php:84` |
 | `datatable/connections` | – | `kernel/datatable/module.php:86` |
 | `datatable/sync` | – | `kernel/datatable/module.php:88` |
-| `exphelp/read` | – | `kernel/exphelp/module.php:151` |
-| `exphelp/context` | – | `kernel/exphelp/module.php:153` |
+| `exphelp/read` | – | `kernel/exphelp/module.php:176` |
+| `exphelp/context` | – | `kernel/exphelp/module.php:178` |
+| `exphelp/feedback` | – | `kernel/exphelp/module.php:180` |
 | `ezinfo/read` | – | `kernel/ezinfo/module.php:33` |
 | `infocollector/read` | – | `kernel/infocollector/module.php:50` |
 | `mailpreferences/administrate` | – | `kernel/mailpreferences/module.php:72` |
@@ -430,7 +433,7 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `user/deactivate` | – | `kernel/user/module.php:211` |
 | `user/sessions` | – | `kernel/user/module.php:213` |
 
-## Fetch functions (180)
+## Fetch functions (182)
 
 | Fetch | Implemented by | Defined in |
 |---|---|---|
@@ -529,6 +532,8 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `fetch( 'exphelp', 'context' )` | `expHelpFunctionCollection::fetchContext()` | `kernel/exphelp/function_definition.php:16` |
 | `fetch( 'exphelp', 'license' )` | `expHelpFunctionCollection::fetchLicense()` | `kernel/exphelp/function_definition.php:25` |
 | `fetch( 'exphelp', 'context_menu' )` | `expHelpFunctionCollection::fetchContextMenu()` | `kernel/exphelp/function_definition.php:33` |
+| `fetch( 'exphelp', 'site_topic' )` | `expHelpFunctionCollection::fetchSiteTopic()` | `kernel/exphelp/function_definition.php:45` |
+| `fetch( 'exphelp', 'site_map' )` | `expHelpFunctionCollection::fetchSiteMap()` | `kernel/exphelp/function_definition.php:51` |
 | `fetch( 'infocollector', 'collected_info_count' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCount()` | `kernel/infocollector/function_definition.php:13` |
 | `fetch( 'infocollector', 'collected_info_count_list' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCountList()` | `kernel/infocollector/function_definition.php:39` |
 | `fetch( 'infocollector', 'collected_info_collection' )` | `eZInfocollectorFunctionCollection::fetchCollectedInfoCollection()` | `kernel/infocollector/function_definition.php:50` |
@@ -625,5 +630,5 @@ Every class, interface and trait of `kernel/modules` with the patterns it was re
 | `content/cache` | filter | `kernel/content/ezcontentoperationcollection.php:1481` |
 | `content/remove` | notify | `kernel/content/ezcontentoperationcollection.php:1490` |
 | `content/cache` | notify | `kernel/content/ezcontentoperationcollection.php:1604` |
-| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2112` |
+| `content/state/assign` | notify | `kernel/content/ezcontentoperationcollection.php:2117` |
 | `content/cache/version` | notify | `kernel/content/multiedit_functions.php:496` |

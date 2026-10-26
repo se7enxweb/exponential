@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/help
 audience: developer
 category: standards
-order: 498
+order: 499
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/help with its design patterns.
 keywords: kernel/classes/help, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes/help` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (47)
+## Classes (57)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -24,10 +24,14 @@ Every class, interface and trait of `kernel/classes/help` with the patterns it w
 | `expHelpAudience` | class | [Factory and static factory methods](factory.md) | `kernel/classes/help/exphelpaudience.php:34` | Who a help page is for, which section of the help it belongs to and what kind of page it is (doc/eng-us/features/6.0/help-system.md, "Audiences, cate… |
 | `expHelpCommitFeed` | class | [Factory and static factory methods](factory.md) | `kernel/classes/help/exphelpcommitfeed.php:29` | The latest commits of the Exponential repository for the developers' landing page of the help (exphelp/audience/developer, doc/eng-us/features/6.0/he… |
 | `expHelpContentAccess` | class | [Factory and static factory methods](factory.md) | `kernel/classes/help/content/exphelpcontentaccess.php:18` | Who may see a topic, manual or chapter of help maintained as content, decided from the plain data the repository keeps of each object (expHelpContent… |
+| `expHelpContentBookCheck` | class | – | `kernel/classes/help/content/exphelpcontentbookcheck.php:26` | The checks of an EPUB of a help manual (doc/eng-us/specifications/6.0/help-system.md, delivery path 3: "epubcheck + Ace by DAISY"; doc/eng-us/specifi… |
 | `expHelpContentDita` | class | – | `kernel/classes/help/content/exphelpcontentdita.php:45` | The DITA 1.3 export of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, "The standard: what DITA means here" and delivery pa… |
+| `expHelpContentDitaHistory` | class | – | `kernel/classes/help/content/exphelpcontentditahistory.php:21` | The change history of the help in git (doc/eng-us/specifications/6.0/help-system.md, delivery path 4: "the DITA export runs regularly into its own gi… |
 | `expHelpContentEbooks` | class | [Factory and static factory methods](factory.md) | `kernel/classes/help/content/exphelpcontentebooks.php:26` | E-books of help manuals stored as content (doc/eng-us/specifications/6.0/help-system.md, delivery path 3: "stored as a file object under E-books (sec… |
 | `expHelpContentEditionProvider` | class extends expHelpContentProvider | [Strategy / handler](strategy-handler.md) | `kernel/classes/help/content/exphelpcontenteditionprovider.php:16` | What goes into a stored edition of a manual (expHelpContentEbooks): every Released object, whoever builds the book, and for a public manual only what… |
 | `expHelpContentExport` | class | – | `kernel/classes/help/content/exphelpcontentexport.php:21` | E-books of a manual of help maintained as content (doc/eng-us/features/6.0/help-content.md, "E-books"): EPUB 3 (written here, pure PHP with ZipArchiv… |
+| `expHelpContentFeedback` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontentfeedback.php:21` | "Was this helpful?" on each help topic (doc/eng-us/specifications/6.0/help-system.md, phase 7; ISO/IEC/IEEE 26514, usability of the information): the… |
+| `expHelpContentHelpIds` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontenthelpids.php:21` | The help_ids that were Released (doc/eng-us/specifications/6.0/help-style-guide.md, section 7: "A help_id is never renamed and never reused"): the ta… |
 | `expHelpContentInstaller` | class | – | `kernel/classes/help/content/exphelpcontentinstaller.php:23` | Creates the content model of help maintained as content on an installed site, idempotently: the eight help_* classes (class group "Help"), the sectio… |
 | `expHelpContentPackage` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontentpackage.php:23` | The help classes as a content class package (doc/eng-us/specifications/6.0/help-content-package.md, CJW #16564): the eight help_* classes of expHelpC… |
 | `expHelpContentProvider` | class implements expHelpContextProviderInterface, expHelpContextPageInterface | [INI plugin point (extension point)](ini-plugin-point.md), [Singleton / instance()](singleton.md), [Strategy / handler](strategy-handler.md) | `kernel/classes/help/content/exphelpcontentprovider.php:19` | Help maintained as content, delivered into the help system (exphelp): the topics the current user may see, rendered with the help's Markdown renderer… |
@@ -35,7 +39,10 @@ Every class, interface and trait of `kernel/classes/help` with the patterns it w
 | `expHelpContentReview` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontentreview.php:23` | Overdue reviews of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, phase 7 "a list of outdated topics (review date passed)… |
 | `expHelpContentSchema` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontentschema.php:20` | The content model of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, doc/eng-us/features/6.0/help-content.md): the eight he… |
 | `expHelpContentSeeder` | class | – | `kernel/classes/help/content/exphelpcontentseeder.php:15` | Creates the initial glossary, topics, chapters and manuals from a data file (share/help/seed-glossary.json, share/help/seed-topics.json). |
+| `expHelpContentSite` | class | – | `kernel/classes/help/content/exphelpcontentsite.php:21` | Help maintained as content on a site's own pages (doc/eng-us/specifications/6.0/help-system.md, delivery path 1: "templates full/help_*.tpl and line/… |
+| `expHelpContentTables` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontenttables.php:21` | The two tables of help maintained as content (doc/eng-us/features/6.0/help-content.md) on any engine: whether they exist, and creating them from thei… |
 | `expHelpContentValidator` | class | – | `kernel/classes/help/content/exphelpcontentvalidator.php:23` | The machine-checkable rules of the help style guide (doc/eng-us/specifications/6.0/help-style-guide.md), on plain arrays: no database. |
+| `expHelpContentWorkflow` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/content/exphelpcontentworkflow.php:23` | The review workflow of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, "Status" and "Permissions"; style guide section 8, "… |
 | `expHelpContextPageInterface` | interface | [Interface (contract)](interface.md) | `kernel/classes/help/exphelpcontextpageinterface.php:16` | A context help provider (expHelpContextProviderInterface) that also serves pages which are not files below doc/: help topics maintained as content, w… |
 | `expHelpContextProviderInterface` | interface | [Interface (contract)](interface.md) | `kernel/classes/help/exphelpcontextproviderinterface.php:15` | A class that answers "help for this page" in code, for what one Map[] entry per view cannot say (a view whose help depends on its parameters, an exte… |
 | `expHelpContextRegistry` | class | [Factory and static factory methods](factory.md), [Registry](registry.md), [Singleton / instance()](singleton.md) | `kernel/classes/help/exphelpcontextregistry.php:45` | Context help: which help page answers "help for this page", for a module, view and design. |
@@ -65,4 +72,7 @@ Every class, interface and trait of `kernel/classes/help` with the patterns it w
 | `expHelpReadPolicyGrant` | class | [Utility (static helper)](utility.md) | `kernel/classes/help/exphelpreadpolicygrant.php:22` | Plans and applies the grant of the policy exphelp/read (bin/php/addexphelpreadpolicy.php): reading the help system (doc/eng-us/features/6.0/help-syst… |
 | `expHelpRecordRenderer` | class | – | `kernel/classes/help/exphelprecordrenderer.php:36` | Plain text pages that are lists of records (doc/eng-us/release-overview, the release history; doc/branch-overview was one until it became Markdown) s… |
 | `expHelpRemoteImages` | class | – | `kernel/classes/help/exphelpremoteimages.php:22` | The copies of the external images the help pages show (doc/eng-us/features/6.0/help-system.md, "External images"). |
+| `expHelpRestController` | class extends ezpRestMvcController | – | `kernel/classes/help/content/rest/exphelprestcontroller.php:23` | The route's variables come from ezcMvcController::__get() (its properties); a declared property would hide them. |
+| `expHelpRestProvider` | class implements ezpRestProviderInterface | [INI plugin point (extension point)](ini-plugin-point.md), [Strategy / handler](strategy-handler.md) | `kernel/classes/help/content/rest/exphelprestprovider.php:21` | The REST routes of context help (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"; the plan's delivery path 2: "internal topics wit… |
+| `expHelpRestViewController` | class implements ezpRestViewControllerInterface | – | `kernel/classes/help/content/rest/exphelprestviewcontroller.php:10` | The view of the context help routes (expHelpRestProvider): JSON |
 | `expHelpSearch` | class | [Factory and static factory methods](factory.md) | `kernel/classes/help/exphelpsearch.php:34` | expHelpSearch: the full-text search of the help system (doc/eng-us/features/6.0/help-system.md, "Search"). |

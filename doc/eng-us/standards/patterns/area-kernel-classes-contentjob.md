@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/contentjob
 audience: developer
 category: standards
-order: 494
+order: 495
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/contentjob with its design patterns.
 keywords: kernel/classes/contentjob, design patterns, classes, extension points
 type: catalogue

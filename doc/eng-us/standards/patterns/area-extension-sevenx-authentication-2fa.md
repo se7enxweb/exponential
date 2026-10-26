@@ -2,7 +2,7 @@
 title: Patterns in extension/sevenx_authentication_2fa
 audience: developer
 category: standards
-order: 472
+order: 473
 summary: Every class, view, fetch function, operator and plugin point of extension/sevenx_authentication_2fa with its design patterns.
 keywords: extension/sevenx_authentication_2fa, design patterns, classes, extension points
 type: catalogue

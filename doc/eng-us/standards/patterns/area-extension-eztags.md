@@ -2,7 +2,7 @@
 title: Patterns in extension/eztags
 audience: developer
 category: standards
-order: 460
+order: 461
 summary: Every class, view, fetch function, operator and plugin point of extension/eztags with its design patterns.
 keywords: extension/eztags, design patterns, classes, extension points
 type: catalogue

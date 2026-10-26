@@ -2,7 +2,7 @@
 title: Patterns in extension/expqueue
 audience: developer
 category: standards
-order: 427
+order: 428
 summary: Every class, view, fetch function, operator and plugin point of extension/expqueue with its design patterns.
 keywords: extension/expqueue, design patterns, classes, extension points
 type: catalogue

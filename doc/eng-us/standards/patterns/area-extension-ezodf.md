@@ -2,7 +2,7 @@
 title: Patterns in extension/ezodf
 audience: developer
 category: standards
-order: 449
+order: 450
 summary: Every class, view, fetch function, operator and plugin point of extension/ezodf with its design patterns.
 keywords: extension/ezodf, design patterns, classes, extension points
 type: catalogue

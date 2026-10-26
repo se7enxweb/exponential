@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/datatable
 audience: developer
 category: standards
-order: 495
+order: 496
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/datatable with its design patterns.
 keywords: kernel/classes/datatable, design patterns, classes, extension points
 type: catalogue

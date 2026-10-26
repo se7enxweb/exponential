@@ -2,7 +2,7 @@
 title: Patterns in extension/ezmbpaex
 audience: developer
 category: standards
-order: 447
+order: 448
 summary: Every class, view, fetch function, operator and plugin point of extension/ezmbpaex with its design patterns.
 keywords: extension/ezmbpaex, design patterns, classes, extension points
 type: catalogue

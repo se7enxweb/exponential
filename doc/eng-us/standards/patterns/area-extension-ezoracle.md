@@ -2,7 +2,7 @@
 title: Patterns in extension/ezoracle
 audience: developer
 category: standards
-order: 451
+order: 452
 summary: Every class, view, fetch function, operator and plugin point of extension/ezoracle with its design patterns.
 keywords: extension/ezoracle, design patterns, classes, extension points
 type: catalogue

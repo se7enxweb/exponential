@@ -3,7 +3,7 @@ title: Value object / struct
 audience: developer
 category: standards
 order: 334
-summary: A small object that carries data and has no identity of its own. 105 instances in Exponential.
+summary: A small object that carries data and has no identity of its own. 106 instances in Exponential.
 keywords: design pattern, value-object, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A small object that carries data and has no identity of its own.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 105 |
+| Instances | 106 |
 | Recognized by | Class name ends in Struct, Value, Result, Item, Info or Definition and the class has few methods, or extends ezcBaseStruct. |
 
 ## Classes by area
@@ -127,6 +127,14 @@ A small object that carries data and has no identity of its own.
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expchangeclassInfo` | class | `extension/expchangeclass/ezinfo.php:14` | – | – |
+
+### extension/exphelpsite (1)
+
+[All patterns of extension/exphelpsite](area-extension-exphelpsite.md)
+
+| Class | Kind | File | Description | Extension point |
+|---|---|---|---|---|
+| `exphelpsiteInfo` | class | `extension/exphelpsite/ezinfo.php:11` | The extension exphelpsite: the node templates of help maintained as content for a site's public pages (doc/eng-us/features/6.0/help-content.md, "Help… | – |
 
 ### extension/expimageeditor (1)
 

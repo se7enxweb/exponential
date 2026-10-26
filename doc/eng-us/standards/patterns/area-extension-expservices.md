@@ -2,7 +2,7 @@
 title: Patterns in extension/expservices
 audience: developer
 category: standards
-order: 428
+order: 429
 summary: Every class, view, fetch function, operator and plugin point of extension/expservices with its design patterns.
 keywords: extension/expservices, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/contentfinder
 audience: developer
 category: standards
-order: 493
+order: 494
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/contentfinder with its design patterns.
 keywords: kernel/classes/contentfinder, design patterns, classes, extension points
 type: catalogue

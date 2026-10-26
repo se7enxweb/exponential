@@ -2,7 +2,7 @@
 title: Patterns in extension/nxc_powercontent
 audience: developer
 category: standards
-order: 468
+order: 469
 summary: Every class, view, fetch function, operator and plugin point of extension/nxc_powercontent with its design patterns.
 keywords: extension/nxc_powercontent, design patterns, classes, extension points
 type: catalogue

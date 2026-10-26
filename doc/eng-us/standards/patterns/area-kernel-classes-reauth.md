@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/reauth
 audience: developer
 category: standards
-order: 510
+order: 511
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/reauth with its design patterns.
 keywords: kernel/classes/reauth, design patterns, classes, extension points
 type: catalogue

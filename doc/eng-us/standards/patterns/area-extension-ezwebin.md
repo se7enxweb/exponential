@@ -2,7 +2,7 @@
 title: Patterns in extension/ezwebin
 audience: developer
 category: standards
-order: 463
+order: 464
 summary: Every class, view, fetch function, operator and plugin point of extension/ezwebin with its design patterns.
 keywords: extension/ezwebin, design patterns, classes, extension points
 type: catalogue

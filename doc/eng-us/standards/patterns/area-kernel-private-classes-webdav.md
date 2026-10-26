@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/webdav
 audience: developer
 category: standards
-order: 538
+order: 539
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/webdav with its design patterns.
 keywords: kernel/private/classes/webdav, design patterns, classes, extension points
 type: catalogue

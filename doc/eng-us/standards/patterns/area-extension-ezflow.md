@@ -2,7 +2,7 @@
 title: Patterns in extension/ezflow
 audience: developer
 category: standards
-order: 442
+order: 443
 summary: Every class, view, fetch function, operator and plugin point of extension/ezflow with its design patterns.
 keywords: extension/ezflow, design patterns, classes, extension points
 type: catalogue

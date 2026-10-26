@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/webauthn
 audience: developer
 category: standards
-order: 522
+order: 523
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/webauthn with its design patterns.
 keywords: kernel/classes/webauthn, design patterns, classes, extension points
 type: catalogue

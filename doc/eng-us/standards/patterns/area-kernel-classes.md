@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes
 audience: developer
 category: standards
-order: 483
+order: 484
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes with its design patterns.
 keywords: kernel/classes, design patterns, classes, extension points
 type: catalogue
@@ -15,7 +15,7 @@ type: catalogue
 
 Every class, interface and trait of `kernel/classes` with the patterns it was recognized as, followed by the module views, policy functions, fetch functions, template operators, cronjobs, event hooks and INI plugin points of the area. [All patterns](README.md).
 
-## Classes (215)
+## Classes (217)
 
 | Class | Kind | Patterns | File | Description |
 |---|---|---|---|---|
@@ -67,6 +67,8 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `expNodeQuickPick` | class | [Utility (static helper)](utility.md) | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/eng-us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Webs… |
 | `expNotificationJob` | class | [Utility (static helper)](utility.md) | `kernel/classes/expnotificationjob.php:17` | A notification run for the status page ("Run now"), in the background. |
 | `expNotificationService` | class | [Facade / service](facade.md), [Utility (static helper)](utility.md) | `kernel/classes/expnotificationservice.php:26` | The one place that knows how the notification system is run and looked at: the cronjob part, the exp:notification:* commands, the status page and its… |
+| `expPackageArchive` | class | [Utility (static helper)](utility.md) | `kernel/classes/exppackagearchive.php:41` | Opens a package archive (.ezpkg: a gzip compressed tar archive) for reading, after a bounded scan of its tar headers. |
+| `expPackageArchiveModes` | class extends ezcArchiveCallback | – | `kernel/classes/exppackagearchivemodes.php:20` | The extract callback of a package archive (expPackageArchive::open()): every file it extracts gets 0644, every directory 0755, each within the limits… |
 | `expPackageConflictReport` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/exppackageconflictreport.php:22` | What installing a package would meet on this installation, by remote id, without writing anything: for every content object of the package whether an… |
 | `expPackageJson` | class | [Utility (static helper)](utility.md) | `kernel/classes/exppackagejson.php:34` | The JSON serialization of a package (doc/eng-us/bc/6.0/package-json-format.md). |
 | `expPasswordPolicy` | class | [Singleton / instance()](singleton.md) | `kernel/classes/exppasswordpolicy.php:24` | The rules a new password must meet, and what happens after a password was changed. |
@@ -178,7 +180,7 @@ Every class, interface and trait of `kernel/classes` with the patterns it was re
 | `eZPackageLicense` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackagelicense.php:28` | – |
 | `eZPackageRemovalPlan` | class | [Factory and static factory methods](factory.md), [Utility (static helper)](utility.md) | `kernel/classes/ezpackageremovalplan.php:20` | What removing a selection of packages would do, before it is done: per package its directory, files and size, whether it is installed (its install re… |
 | `eZPackageRequestGuard` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackagerequestguard.php:16` | The checks every package view applies to what a request names before anything is read from disk: a package name, a repository, a view mode and a file… |
-| `eZPackageUploadInspector` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageuploadinspector.php:31` | Looks at a package archive before anything of it is written into a repository. |
+| `eZPackageUploadInspector` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageuploadinspector.php:33` | Looks at a package archive before anything of it is written into a repository. |
 | `eZPackageVersion` | class | [Utility (static helper)](utility.md) | `kernel/classes/ezpackageversion.php:55` | – |
 | `eZPathElement` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md) | `kernel/classes/ezpathelement.php:23` | – |
 | `eZPDFExport` | class extends eZPersistentObject | [Active Record (eZPersistentObject)](active-record.md), [Factory and static factory methods](factory.md) | `kernel/classes/ezpdfexport.php:19` | – |

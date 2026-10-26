@@ -2,7 +2,7 @@
 title: Patterns in extension/exp_adminui
 audience: developer
 category: standards
-order: 435
+order: 436
 summary: Every class, view, fetch function, operator and plugin point of extension/exp_adminui with its design patterns.
 keywords: extension/exp_adminui, design patterns, classes, extension points
 type: catalogue

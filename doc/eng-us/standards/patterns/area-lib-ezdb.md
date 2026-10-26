@@ -2,7 +2,7 @@
 title: Patterns in lib/ezdb
 audience: developer
 category: standards
-order: 540
+order: 541
 summary: Every class, view, fetch function, operator and plugin point of lib/ezdb with its design patterns.
 keywords: lib/ezdb, design patterns, classes, extension points
 type: catalogue

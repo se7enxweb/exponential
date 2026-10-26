@@ -2,7 +2,7 @@
 title: Patterns in extension/ezstarrating
 audience: developer
 category: standards
-order: 459
+order: 460
 summary: Every class, view, fetch function, operator and plugin point of extension/ezstarrating with its design patterns.
 keywords: extension/ezstarrating, design patterns, classes, extension points
 type: catalogue

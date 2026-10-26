@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/confirmorderhandlers
 audience: developer
 category: standards
-order: 491
+order: 492
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/confirmorderhandlers with its design patterns.
 keywords: kernel/classes/confirmorderhandlers, design patterns, classes, extension points
 type: catalogue

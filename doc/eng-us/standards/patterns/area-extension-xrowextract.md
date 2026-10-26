@@ -2,7 +2,7 @@
 title: Patterns in extension/xrowextract
 audience: developer
 category: standards
-order: 481
+order: 482
 summary: Every class, view, fetch function, operator and plugin point of extension/xrowextract with its design patterns.
 keywords: extension/xrowextract, design patterns, classes, extension points
 type: catalogue

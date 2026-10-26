@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/shopaccounthandlers
 audience: developer
 category: standards
-order: 515
+order: 516
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/shopaccounthandlers with its design patterns.
 keywords: kernel/classes/shopaccounthandlers, design patterns, classes, extension points
 type: catalogue

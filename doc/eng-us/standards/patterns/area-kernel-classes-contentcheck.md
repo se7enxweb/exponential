@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/contentcheck
 audience: developer
 category: standards
-order: 492
+order: 493
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/contentcheck with its design patterns.
 keywords: kernel/classes/contentcheck, design patterns, classes, extension points
 type: catalogue

@@ -2,7 +2,7 @@
 title: Patterns in extension/ezownerchange
 audience: developer
 category: standards
-order: 452
+order: 453
 summary: Every class, view, fetch function, operator and plugin point of extension/ezownerchange with its design patterns.
 keywords: extension/ezownerchange, design patterns, classes, extension points
 type: catalogue

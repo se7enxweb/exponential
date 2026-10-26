@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/notification
 audience: developer
 category: standards
-order: 504
+order: 505
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/notification with its design patterns.
 keywords: kernel/classes/notification, design patterns, classes, extension points
 type: catalogue

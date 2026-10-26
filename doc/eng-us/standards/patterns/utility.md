@@ -3,7 +3,7 @@ title: Utility (static helper)
 audience: developer
 category: standards
 order: 337
-summary: A class of static functions grouped by subject; no instances. 725 instances in Exponential.
+summary: A class of static functions grouped by subject; no instances. 730 instances in Exponential.
 keywords: design pattern, utility, structure, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ A class of static functions grouped by subject; no instances.
 | | |
 |---|---|
 | Group | Structure |
-| Instances | 725 |
+| Instances | 730 |
 | Recognized by | A concrete class whose methods are all static (at least two). |
 
 ## Classes by area
@@ -740,7 +740,7 @@ A class of static functions grouped by subject; no instances.
 | `xrowSitemapTools` | class | `extension/xrowmetadata/classes/xrowsitemaptools.php:3` | – | – |
 | `xrowSiteUpdater` | class | `extension/xrowmetadata/classes/xrowsiteupdater.php:3` | – | – |
 
-### kernel/classes (88)
+### kernel/classes (89)
 
 [All patterns of kernel/classes](area-kernel-classes.md)
 
@@ -776,6 +776,7 @@ A class of static functions grouped by subject; no instances.
 | `expNodeQuickPick` | class | `kernel/classes/expnodequickpick.php:18` | Quick location buttons (doc/eng-us/features/6.0/quick-location-buttons.md): a few well-known places of the content tree, found from a short key (Webs… | – |
 | `expNotificationJob` | class | `kernel/classes/expnotificationjob.php:17` | A notification run for the status page ("Run now"), in the background. | – |
 | `expNotificationService` | class | `kernel/classes/expnotificationservice.php:26` | The one place that knows how the notification system is run and looked at: the cronjob part, the exp:notification:* commands, the status page and its… | – |
+| `expPackageArchive` | class | `kernel/classes/exppackagearchive.php:41` | Opens a package archive (.ezpkg: a gzip compressed tar archive) for reading, after a bounded scan of its tar headers. | – |
 | `expPackageConflictReport` | class | `kernel/classes/exppackageconflictreport.php:22` | What installing a package would meet on this installation, by remote id, without writing anything: for every content object of the package whether an… | – |
 | `expPackageJson` | class | `kernel/classes/exppackagejson.php:34` | The JSON serialization of a package (doc/eng-us/bc/6.0/package-json-format.md). | – |
 | `expPhar` | class | `kernel/classes/expphar.php:21` | Packages the engine -- the kernel and library class files -- into a phar, so the runtime can load them from one archive instead of from a thousand se… | – |
@@ -815,7 +816,7 @@ A class of static functions grouped by subject; no instances.
 | `eZPackageLicense` | class | `kernel/classes/ezpackagelicense.php:28` | – | – |
 | `eZPackageRemovalPlan` | class | `kernel/classes/ezpackageremovalplan.php:20` | What removing a selection of packages would do, before it is done: per package its directory, files and size, whether it is installed (its install re… | – |
 | `eZPackageRequestGuard` | class | `kernel/classes/ezpackagerequestguard.php:16` | The checks every package view applies to what a request names before anything is read from disk: a package name, a repository, a view mode and a file… | – |
-| `eZPackageUploadInspector` | class | `kernel/classes/ezpackageuploadinspector.php:31` | Looks at a package archive before anything of it is written into a repository. | – |
+| `eZPackageUploadInspector` | class | `kernel/classes/ezpackageuploadinspector.php:33` | Looks at a package archive before anything of it is written into a repository. | – |
 | `eZPackageVersion` | class | `kernel/classes/ezpackageversion.php:55` | – | – |
 | `eZPendingActions` | class extends eZPersistentObject | `kernel/classes/ezpendingactions.php:12` | – | – |
 | `eZPreferences` | class | `kernel/classes/ezpreferences.php:22` | – | – |
@@ -955,16 +956,20 @@ A class of static functions grouped by subject; no instances.
 | `expDebugBarSummary` | class | `kernel/classes/debugbar/expdebugbarsummary.php:20` | Collects what the request cost, from what eZDebug already measured: page time, SQL statements and their time (the *_query accumulators of the databas… | – |
 | `expRenderStats` | class | `kernel/classes/debugbar/exprenderstats.php:19` | Collects, for the request being served, what the debug bar's Rendering tab shows: the controller (module, view, script and view class), what the cont… | – |
 
-### kernel/classes/help (12)
+### kernel/classes/help (16)
 
 [All patterns of kernel/classes/help](area-kernel-classes-help.md)
 
 | Class | Kind | File | Description | Extension point |
 |---|---|---|---|---|
 | `expHelp` | class | `kernel/classes/help/exphelp.php:11` | The help system's shared helpers (doc/eng-us/features/6.0/help-system.md): its settings, whether it is on, the install root it reads from, and the UR… | – |
+| `expHelpContentFeedback` | class | `kernel/classes/help/content/exphelpcontentfeedback.php:21` | "Was this helpful?" on each help topic (doc/eng-us/specifications/6.0/help-system.md, phase 7; ISO/IEC/IEEE 26514, usability of the information): the… | – |
+| `expHelpContentHelpIds` | class | `kernel/classes/help/content/exphelpcontenthelpids.php:21` | The help_ids that were Released (doc/eng-us/specifications/6.0/help-style-guide.md, section 7: "A help_id is never renamed and never reused"): the ta… | – |
 | `expHelpContentPackage` | class | `kernel/classes/help/content/exphelpcontentpackage.php:23` | The help classes as a content class package (doc/eng-us/specifications/6.0/help-content-package.md, CJW #16564): the eight help_* classes of expHelpC… | – |
 | `expHelpContentReview` | class | `kernel/classes/help/content/exphelpcontentreview.php:23` | Overdue reviews of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, phase 7 "a list of outdated topics (review date passed)… | – |
 | `expHelpContentSchema` | class | `kernel/classes/help/content/exphelpcontentschema.php:20` | The content model of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, doc/eng-us/features/6.0/help-content.md): the eight he… | – |
+| `expHelpContentTables` | class | `kernel/classes/help/content/exphelpcontenttables.php:21` | The two tables of help maintained as content (doc/eng-us/features/6.0/help-content.md) on any engine: whether they exist, and creating them from thei… | – |
+| `expHelpContentWorkflow` | class | `kernel/classes/help/content/exphelpcontentworkflow.php:23` | The review workflow of help maintained as content (doc/eng-us/specifications/6.0/help-system.md, "Status" and "Permissions"; style guide section 8, "… | – |
 | `expHelpFrontMatter` | class | `kernel/classes/help/exphelpfrontmatter.php:28` | The front matter of a help page (doc/eng-us/features/6.0/help-system.md, "Front matter"): a block at the very top of a Markdown file between two line… | – |
 | `expHelpFunctionCollection` | class | `kernel/classes/help/exphelpfunctioncollection.php:10` | The exphelp fetch functions (kernel/exphelp/function_definition.php). | – |
 | `expHelpHighlighter` | class | `kernel/classes/help/exphelphighlighter.php:29` | Server-side syntax highlighting of the code blocks of the help pages (exphelp, doc/eng-us/features/6.0/help-system.md), without JavaScript or an exte… | – |

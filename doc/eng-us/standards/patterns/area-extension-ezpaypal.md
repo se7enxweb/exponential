@@ -2,7 +2,7 @@
 title: Patterns in extension/ezpaypal
 audience: developer
 category: standards
-order: 453
+order: 454
 summary: Every class, view, fetch function, operator and plugin point of extension/ezpaypal with its design patterns.
 keywords: extension/ezpaypal, design patterns, classes, extension points
 type: catalogue

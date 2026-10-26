@@ -3,7 +3,7 @@ title: Module view (Page Controller)
 audience: developer
 category: standards
 order: 316
-summary: Each view is a page controller: the front controller dispatches /MODULE/VIEW to the view's script, which reads the request and renders a template. 989 instances in Exponential.
+summary: Each view is a page controller: the front controller dispatches /MODULE/VIEW to the view's script, which reads the request and renders a template. 993 instances in Exponential.
 keywords: design pattern, module-view, request handling, pattern catalogue
 type: catalogue
 ---
@@ -18,7 +18,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | | |
 |---|---|
 | Group | Request handling |
-| Instances | 989 |
+| Instances | 993 |
 | Recognized by | An entry of $ViewList in a module.php, or a class that extends ModuleView or Page (the runnable form of a view). |
 | Extension point | module.ini [ModuleSettings] ExtensionRepositories[] and ModuleList[]; views declare the policy functions they need. |
 
@@ -388,7 +388,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `Exponential\View\Extension\Xrowmetadata\Sitemaps\Index` | class extends ModuleView | `extension/xrowmetadata/classes/runnable/views/sitemaps/index.php:65` | The code of extension/xrowmetadata/modules/sitemaps/index.php, moved into a class (#207 stage 1). | – |
 | `Exponential\View\Extension\Xrowmetadata\Sitemaps\Robots` | class extends ModuleView | `extension/xrowmetadata/classes/runnable/views/sitemaps/robots.php:10` | The code of extension/xrowmetadata/modules/sitemaps/robots.php, moved into a class (#207 stage 1). | – |
 
-### kernel/private/classes/views (270)
+### kernel/private/classes/views (272)
 
 [All patterns of kernel/private/classes/views](area-kernel-private-classes-views.md)
 
@@ -484,12 +484,14 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `Exponential\View\Kernel\Exphelp\Context` | class extends ModuleView | `kernel/private/classes/views/exphelp/context.php:21` | exphelp/context/ and exphelp/context/manual/ (doc/eng-us/features/6.0/help-content.md, "Context help by help_id"): a help topic, or a manual's table… | – |
 | `Exponential\View\Kernel\Exphelp\Dashboard` | class extends ModuleView | `kernel/private/classes/views/exphelp/dashboard.php:19` | exphelp/dashboard (doc/eng-us/features/6.0/help-system.md): the help start page. | – |
 | `Exponential\View\Kernel\Exphelp\Extensions` | class extends ModuleView | `kernel/private/classes/views/exphelp/extensions.php:27` | exphelp/extensions (doc/eng-us/features/6.0/help-system.md, "Documentation of the extensions"): the documentation of the active extensions in the hel… | – |
+| `Exponential\View\Kernel\Exphelp\Feedback` | class extends ModuleView | `kernel/private/classes/views/exphelp/feedback.php:21` | exphelp/feedback/ (doc/eng-us/features/6.0/help-content.md, "Was this helpful?"): stores one answer to "Was this helpful?" of a Released help topic (… | – |
 | `Exponential\View\Kernel\Exphelp\Image` | class extends ModuleView | `kernel/private/classes/views/exphelp/image.php:18` | exphelp/image/(id)/ (doc/eng-us/features/6.0/help-system.md, "External images"): the local copy of an external image a help page shows (README.md's s… | – |
 | `Exponential\View\Kernel\Exphelp\Manual` | class extends ModuleView | `kernel/private/classes/views/exphelp/manual.php:18` | exphelp/manual/ (doc/eng-us/features/6.0/help-content.md): a manual of help maintained as content, its metadata and table of contents (chapters and t… | – |
 | `Exponential\View\Kernel\Exphelp\Pdf` | class extends ModuleView | `kernel/private/classes/views/exphelp/pdf.php:18` | exphelp/pdf/ (doc/eng-us/features/6.0/help-system.md, "Print and PDF"): the help page as a PDF file to download. | – |
 | `Exponential\View\Kernel\Exphelp\Report` | class extends ModuleView | `kernel/private/classes/views/exphelp/report.php:18` | exphelp/report (doc/eng-us/features/6.0/help-system.md, "Reporting an error"): which tracker, how to write a good report, a prefilled issue, the safe… | – |
 | `Exponential\View\Kernel\Exphelp\Search` | class extends ModuleView | `kernel/private/classes/views/exphelp/search.php:32` | exphelp/search (doc/eng-us/features/6.0/help-system.md, "Search"): the search and browse page of the help. | – |
-| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | `kernel/private/classes/views/exphelp/topic.php:21` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): one help topic maintained as content, rendered. | – |
+| `Exponential\View\Kernel\Exphelp\State` | class extends ModuleView | `kernel/private/classes/views/exphelp/state.php:21` | exphelp/state/ and exphelp/state/manual/ (doc/eng-us/features/6.0/help-content.md, "The review workflow"): one step of Draft -› Review -› Released fo… | – |
+| `Exponential\View\Kernel\Exphelp\Topic` | class extends ModuleView | `kernel/private/classes/views/exphelp/topic.php:26` | exphelp/topic/ (doc/eng-us/features/6.0/help-content.md): one help topic maintained as content, rendered. | – |
 | `Exponential\View\Kernel\Exphelp\Viewer` | class extends ModuleView | `kernel/private/classes/views/exphelp/viewer.php:24` | exphelp/viewer/ (doc/eng-us/features/6.0/help-system.md): one help page, rendered. | – |
 | `Exponential\View\Kernel\Ezinfo\About` | class extends ModuleView | `kernel/private/classes/views/ezinfo/about.php:267` | The code of kernel/ezinfo/about.php, moved into a class (#207 stage 1). | – |
 | `Exponential\View\Kernel\Ezinfo\Copyright` | class extends ModuleView | `kernel/private/classes/views/ezinfo/copyright.php:21` | The code of kernel/ezinfo/copyright.php, moved into a class (#207 stage 1). | – |
@@ -665,7 +667,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `Exponential\View\Kernel\Workflow\View` | class extends ModuleView | `kernel/private/classes/views/workflow/view.php:21` | The code of kernel/workflow/view.php, moved into a class (#207 stage 1). | – |
 | `Exponential\View\Kernel\Workflow\Workflowlist` | class extends ModuleView | `kernel/private/classes/views/workflow/workflowlist.php:56` | Removes a workflow and everything that belongs to it. | – |
 
-## Module views (530)
+## Module views (532)
 
 ### extension/AdminAid (6)
 
@@ -1140,7 +1142,7 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `/sitemaps/index` | `index.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:9` |
 | `/sitemaps/robots` | `robots.php` | – | `extension/xrowmetadata/modules/sitemaps/module.php:12` |
 
-### kernel/modules (229)
+### kernel/modules (231)
 
 | View | Script | Policy functions | Defined in |
 |---|---|---|---|
@@ -1233,19 +1235,21 @@ Each view is a page controller: the front controller dispatches /MODULE/VIEW to 
 | `/datatable/connections` | `connections.php` | connections | `kernel/datatable/module.php:68` |
 | `/datatable/connection` | `connection.php` | connections | `kernel/datatable/module.php:74` |
 | `/error/view` | `view.php` | – | `kernel/error/module.php:13` |
-| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:35` |
-| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:43` |
-| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:53` |
-| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:61` |
-| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:71` |
-| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:87` |
-| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:94` |
-| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:102` |
-| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:110` |
-| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:117` |
-| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:126` |
-| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:134` |
-| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:143` |
+| `/exphelp/dashboard` | `dashboard.php` | read | `kernel/exphelp/module.php:41` |
+| `/exphelp/audience` | `audience.php` | read | `kernel/exphelp/module.php:49` |
+| `/exphelp/viewer` | `viewer.php` | read | `kernel/exphelp/module.php:59` |
+| `/exphelp/contents` | `contents.php` | read | `kernel/exphelp/module.php:67` |
+| `/exphelp/search` | `search.php` | read | `kernel/exphelp/module.php:77` |
+| `/exphelp/extensions` | `extensions.php` | read | `kernel/exphelp/module.php:93` |
+| `/exphelp/asset` | `asset.php` | read | `kernel/exphelp/module.php:100` |
+| `/exphelp/image` | `image.php` | read | `kernel/exphelp/module.php:108` |
+| `/exphelp/pdf` | `pdf.php` | read | `kernel/exphelp/module.php:116` |
+| `/exphelp/report` | `report.php` | read | `kernel/exphelp/module.php:123` |
+| `/exphelp/topic` | `topic.php` | read | `kernel/exphelp/module.php:132` |
+| `/exphelp/state` | `state.php` | read | `kernel/exphelp/module.php:143` |
+| `/exphelp/feedback` | `feedback.php` | – | `kernel/exphelp/module.php:151` |
+| `/exphelp/manual` | `manual.php` | read | `kernel/exphelp/module.php:159` |
+| `/exphelp/context` | `context.php` | context | `kernel/exphelp/module.php:168` |
 | `/ezinfo/copyright` | `copyright.php` | read | `kernel/ezinfo/module.php:14` |
 | `/ezinfo/about` | `about.php` | read | `kernel/ezinfo/module.php:21` |
 | `/ezinfo/is_alive` | `isalive.php` | read | `kernel/ezinfo/module.php:27` |

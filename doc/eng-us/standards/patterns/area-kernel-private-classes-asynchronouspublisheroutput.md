@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/asynchronouspublisheroutput
 audience: developer
 category: standards
-order: 527
+order: 528
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/asynchronouspublisheroutput with its design patterns.
 keywords: kernel/private/classes/asynchronouspublisheroutput, design patterns, classes, extension points
 type: catalogue

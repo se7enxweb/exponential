@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/debugbar
 audience: developer
 category: standards
-order: 497
+order: 498
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/debugbar with its design patterns.
 keywords: kernel/classes/debugbar, design patterns, classes, extension points
 type: catalogue

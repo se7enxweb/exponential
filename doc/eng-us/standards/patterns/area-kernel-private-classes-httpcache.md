@@ -2,7 +2,7 @@
 title: Patterns in kernel/private/classes/httpcache
 audience: developer
 category: standards
-order: 532
+order: 533
 summary: Every class, view, fetch function, operator and plugin point of kernel/private/classes/httpcache with its design patterns.
 keywords: kernel/private/classes/httpcache, design patterns, classes, extension points
 type: catalogue

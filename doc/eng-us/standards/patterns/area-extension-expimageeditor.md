@@ -2,7 +2,7 @@
 title: Patterns in extension/expimageeditor
 audience: developer
 category: standards
-order: 413
+order: 414
 summary: Every class, view, fetch function, operator and plugin point of extension/expimageeditor with its design patterns.
 keywords: extension/expimageeditor, design patterns, classes, extension points
 type: catalogue

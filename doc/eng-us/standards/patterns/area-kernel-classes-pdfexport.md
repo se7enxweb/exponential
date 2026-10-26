@@ -2,7 +2,7 @@
 title: Patterns in kernel/classes/pdfexport
 audience: developer
 category: standards
-order: 509
+order: 510
 summary: Every class, view, fetch function, operator and plugin point of kernel/classes/pdfexport with its design patterns.
 keywords: kernel/classes/pdfexport, design patterns, classes, extension points
 type: catalogue

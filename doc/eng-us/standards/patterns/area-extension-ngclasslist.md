@@ -2,7 +2,7 @@
 title: Patterns in extension/ngclasslist
 audience: developer
 category: standards
-order: 467
+order: 468
 summary: Every class, view, fetch function, operator and plugin point of extension/ngclasslist with its design patterns.
 keywords: extension/ngclasslist, design patterns, classes, extension points
 type: catalogue
