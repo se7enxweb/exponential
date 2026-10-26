@@ -75275,6 +75275,146 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Sestavit příručky nápovědy z nápovědy ve formátu Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Kontrola a vydání</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Téma je nyní v kontrole.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Téma je vydáno: čtenáři ho nyní vidí.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Téma je opět koncept.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Aktuální verzi jste napsali vy, proto ji vydá někdo jiný s rolí pro vydání.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Stav nebyl změněn: vaše role tento krok neumožňuje.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Postup kontroly</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Koncept</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Kontrola</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Zpět do kontroly</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Odeslat ke kontrole</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Vydat</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Zpět na koncept</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrola podle stylové příručky</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrola podle stylové příručky nic nenašla.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors chyb, %warnings varování, %notices poznámek. Chyba způsobí, že ./console exp:help:content check selže.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Úroveň</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Pravidlo</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Zjištění</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Bylo to užitečné?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Čtenáři odpověděli ano %yes krát a ne %no krát.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Uvedené důvody pro ne:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Děkujeme. Vaše odpověď nám pomáhá zlepšovat nápovědu.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Pokud ne, co bylo špatně?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Bez uvedení důvodu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Ukládá se jen vaše odpověď, ne to, kdo jste.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Je zastaralé</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Je těžko srozumitelné</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Něco chybí</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Je to špatně</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Jiný důvod</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Toto téma není vydáno; čtenáři ho nevidí.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -73815,6 +73815,146 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Enchiridia auxilii ex auxilio Markdown construere</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Recognitio et editio</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Argumentum nunc recognoscitur.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Argumentum editum est: lectores id nunc vident.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Argumentum iterum adumbratio est.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Versionem hodiernam tu scripsisti; itaque alius cum munere edendi eam edit.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Status non mutatus est: munus tuum hunc gradum non permittit.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Cursus recognitionis</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Adumbratio</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Recognitio</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Ad recognitionem redi</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Ad recognitionem mitte</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Ede</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Ad adumbrationem redi</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Probatio ex libello stili</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Probatio ex libello stili nihil invenit.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors errores, %warnings monita, %notices notae. Error efficit ut ./console exp:help:content check deficiat.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regula</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Campus</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Inventum</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Utilene hoc fuit?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lectores %yes ita et %no non responderunt.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Causae pro non datae:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Gratias. Responsum tuum nos adiuvat auxilium emendare.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ita</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Si non, quid erravit?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nulla causa data</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Solum responsum tuum servatur, non quis sis.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Obsoletum est</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Difficile intellectu est</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Aliquid deest</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Falsum est</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Alia causa</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Hoc argumentum non editum est; lectores id non vident.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

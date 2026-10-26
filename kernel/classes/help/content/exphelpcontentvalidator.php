@@ -48,9 +48,26 @@ class expHelpContentValidator
     /** @var string[]|null */
     protected $publicAudiences;
 
+    /** Plain language (style guide section 3): words per sentence for public audiences and for technical ones,
+     *  sentences per paragraph for public audiences; exphelp.ini [ContentSettings] replaces them, 0 switches one off */
+    const SENTENCE_WORDS_PUBLIC = 20;
+    const SENTENCE_WORDS_TECHNICAL = 25;
+    const PARAGRAPH_SENTENCES_PUBLIC = 4;
+
+    /** Review date (style guide section 8): release + 12 months, the short areas (privacy, account) + 6 months */
+    const REVIEW_MONTHS = 12;
+    const SHORT_REVIEW_MONTHS = 6;
+    const DEFAULT_SHORT_REVIEW_AREAS = array( 'privacy', 'account' );
+
+    /** The remote_id prefix of the topics made from the Markdown help: their text is checked where it is written */
+    const GENERATED_PREFIX = 'help-gen-';
+
     /**
      * @param array $options now (timestamp), areas (string[]), public_audiences (string[]), used_help_ids (where =>
-     *                       help_id, default usedHelpIdsFromSettings())
+     *                       help_id, default usedHelpIdsFromSettings()), released_ids (help_id => object id of every
+     *                       help_id that was Released, expHelpContentHelpIds::registry(); default none),
+     *                       sentence_words_public, sentence_words_technical, paragraph_sentences_public,
+     *                       review_months, short_review_months, short_review_areas
      */
     public function __construct( array $options = array() )
     {
@@ -59,7 +76,42 @@ class expHelpContentValidator
                                                   : expHelpContentSchema::setting( 'Areas', self::DEFAULT_AREAS );
         $this->publicAudiences = isset( $options['public_audiences'] ) ? (array)$options['public_audiences'] : null;
         $this->usedHelpIds = isset( $options['used_help_ids'] ) ? (array)$options['used_help_ids'] : self::usedHelpIdsFromSettings();
+        $this->releasedIds = isset( $options['released_ids'] ) ? (array)$options['released_ids'] : array();
+        $number = function ( $option, $setting, $default ) use ( $options ) {
+            return isset( $options[$option] ) ? (int)$options[$option] : (int)expHelpContentSchema::setting( $setting, $default );
+        };
+        $this->sentenceWordsPublic = $number( 'sentence_words_public', 'SentenceWordsPublic', self::SENTENCE_WORDS_PUBLIC );
+        $this->sentenceWordsTechnical = $number( 'sentence_words_technical', 'SentenceWordsTechnical', self::SENTENCE_WORDS_TECHNICAL );
+        $this->paragraphSentencesPublic = $number( 'paragraph_sentences_public', 'ParagraphSentencesPublic', self::PARAGRAPH_SENTENCES_PUBLIC );
+        $this->reviewMonths = $number( 'review_months', 'ReviewMonths', self::REVIEW_MONTHS );
+        $this->shortReviewMonths = $number( 'short_review_months', 'ShortReviewMonths', self::SHORT_REVIEW_MONTHS );
+        $this->shortReviewAreas = isset( $options['short_review_areas'] ) ? array_values( (array)$options['short_review_areas'] )
+                                  : expHelpContentSchema::setting( 'ShortReviewAreas', self::DEFAULT_SHORT_REVIEW_AREAS );
+        $this->plainAudiences = isset( $options['plain_audiences'] ) ? array_values( (array)$options['plain_audiences'] )
+                                : expHelpContentSchema::setting( 'PlainLanguageAudiences', self::DEFAULT_PLAIN_AUDIENCES );
     }
+
+    /** The audiences that get plain language (style guide section 3.2: visitors, members) */
+    const DEFAULT_PLAIN_AUDIENCES = array( 'Visitors', 'Members' );
+
+    /** @var string[] */
+    protected $plainAudiences = array();
+
+    /** @var array help_id => object id: every help_id that was Released (expHelpContentHelpIds) */
+    protected $releasedIds = array();
+
+    /** @var int */
+    protected $sentenceWordsPublic;
+    /** @var int */
+    protected $sentenceWordsTechnical;
+    /** @var int */
+    protected $paragraphSentencesPublic;
+    /** @var int */
+    protected $reviewMonths;
+    /** @var int */
+    protected $shortReviewMonths;
+    /** @var string[] */
+    protected $shortReviewAreas = array();
 
     /** @var array where => help_id: the help_ids called from outside (usedHelpIdsFromSettings()) */
     protected $usedHelpIds = array();
@@ -203,6 +255,7 @@ class expHelpContentValidator
             $this->checkFigure( $figure, isset( $figureSections[(int)$figure['object_id']] ) ? $figureSections[(int)$figure['object_id']] : null );
         $this->checkMaps( $maps, $byObject, $mapIds );
         $this->checkUsedHelpIds( $topics );
+        $this->checkReleasedIds( $topics );
         foreach ( $glossary as $entry )
         {
             if ( isset( $entry['section'] ) && $entry['section'] !== expHelpContentSchema::SECTION_INTERNAL )
@@ -349,6 +402,28 @@ class expHelpContentValidator
         $review = (int)$value( 'review_date' );
         if ( $review > 0 && $review < $this->now )
             $this->add( self::WARNING, 'review-date.past', $topic, 'review_date', 'The review date is in the past (' . gmdate( 'Y-m-d', $review ) . ')' );
+        elseif ( $review > 0 )
+        {
+            // release + 12 months, privacy and account + 6 (section 8); a month of grace for the day of the release
+            $parts = self::parseHelpId( $helpId );
+            $short = $parts !== null && in_array( $parts['area'], $this->shortReviewAreas, true );
+            $months = $short ? $this->shortReviewMonths : $this->reviewMonths;
+            if ( $months > 0 && $review > $this->now + ( $months + 1 ) * 2629800 )
+                $this->add( self::WARNING, 'review-date.too-far', $topic, 'review_date',
+                            'The review date (' . gmdate( 'Y-m-d', $review ) . ") is more than $months months away" .
+                            ( $short ? " (area {$parts['area']})" : '' ) . '; review the topic at least that often' );
+        }
+        // a topic that is no longer current names its successor (section 7: version_to and a link to the new one)
+        if ( trim( (string)$value( 'version_to' ) ) !== '' && !( isset( $topic['related'] ) && (array)$topic['related'] ) )
+            $this->add( self::WARNING, 'version.successor', $topic, 'related',
+                        'The topic has version_to but no related topic; link the topic that replaces it' );
+
+        $generated = isset( $topic['remote_id'] ) && strpos( (string)$topic['remote_id'], self::GENERATED_PREFIX ) === 0;
+        if ( !$generated )
+        {
+            $this->checkLanguage( $topic, $fields );
+            $this->checkVerbs( $topic, $fields + array( 'shortdesc' => $shortdesc ) );
+        }
 
         // relations
         foreach ( isset( $topic['related'] ) ? (array)$topic['related'] : array() as $id )
@@ -517,6 +592,185 @@ class expHelpContentValidator
             $current = null;
         }
         return array_map( 'trim', $items );
+    }
+
+    /**
+     * A help_id is never renamed and never reused (style guide section 7): every help_id that was Released is recorded
+     * with its object (expHelpContentHelpIds), and clients keep calling it.
+     *
+     * - help-id.renamed: the topic was Released under another help_id;
+     * - help-id.reused: the help_id was Released for another object;
+     * - help-id.gone: a released help_id has no topic any more (clients get a 404); the old topic is kept with
+     *   version_to and a link to its successor.
+     *
+     * @param array $topics
+     */
+    protected function checkReleasedIds( array $topics )
+    {
+        if ( !$this->releasedIds )
+            return;
+        $byObject = array();
+        foreach ( $topics as $topic )
+            $byObject[(int)$topic['object_id']] = $topic;
+        foreach ( $this->releasedIds as $helpId => $objectId )
+        {
+            $helpId = (string)$helpId;
+            $objectId = (int)$objectId;
+            if ( isset( $byObject[$objectId] ) )
+            {
+                $current = isset( $byObject[$objectId]['help_id'] ) ? (string)$byObject[$objectId]['help_id'] : '';
+                if ( $current !== $helpId )
+                    $this->add( self::ERROR, 'help-id.renamed', $byObject[$objectId], 'help_id',
+                                "The topic was Released as \"$helpId\"; a help_id is never renamed, clients call it. " .
+                                'Give it back, or make a new topic and set version_to on this one' );
+            }
+            else
+                $this->add( self::WARNING, 'help-id.gone', array( 'object_id' => $objectId, 'help_id' => $helpId ), 'help_id',
+                            "The released help_id \"$helpId\" has no topic any more; clients get a 404. Keep the old topic " .
+                            'with version_to and a link to its successor' );
+        }
+        foreach ( $topics as $topic )
+        {
+            $helpId = isset( $topic['help_id'] ) ? (string)$topic['help_id'] : '';
+            if ( $helpId !== '' && isset( $this->releasedIds[$helpId] ) && (int)$this->releasedIds[$helpId] !== (int)$topic['object_id'] )
+                $this->add( self::ERROR, 'help-id.reused', $topic, 'help_id',
+                            "The help_id \"$helpId\" was Released for object " . (int)$this->releasedIds[$helpId] . '; a help_id is never reused' );
+        }
+    }
+
+    /**
+     * Plain language (style guide section 3): at most 20 words per sentence and 4 sentences per paragraph for a topic
+     * one of whose audiences gets plain language (PlainLanguageAudiences[]: visitors, members), 25 words for one that
+     * only technical audiences read. NOTICE: the count is a hint for the review, not a hard rule (a list of labels or
+     * a long name is counted as words too). One finding per field: the first sentence or paragraph over the limit.
+     *
+     * @param array $topic
+     * @param array $fields field => Markdown
+     */
+    protected function checkLanguage( array $topic, array $fields )
+    {
+        $public = expHelpContentSchema::isPublicAudience( isset( $topic['audience'] ) ? (array)$topic['audience'] : array(), $this->plainAudiences );
+        $maxWords = $public ? $this->sentenceWordsPublic : $this->sentenceWordsTechnical;
+        $maxSentences = $public ? $this->paragraphSentencesPublic : 0;
+        foreach ( $fields as $field => $text )
+        {
+            $paragraphs = self::proseParagraphs( (string)$text );
+            $longSentence = null;
+            $longParagraph = 0;
+            foreach ( $paragraphs as $paragraph )
+            {
+                $sentences = self::sentences( $paragraph );
+                if ( $maxSentences > 0 && count( $sentences ) > $maxSentences && !$longParagraph )
+                    $longParagraph = count( $sentences );
+                foreach ( $sentences as $sentence )
+                {
+                    if ( $maxWords > 0 && $longSentence === null && self::wordCount( $sentence ) > $maxWords )
+                        $longSentence = $sentence;
+                }
+            }
+            if ( $longSentence !== null )
+            {
+                $words = preg_split( '/\s+/u', trim( $longSentence ) );
+                $this->add( self::NOTICE, 'language.sentence-too-long', $topic, $field,
+                            'A sentence has ' . self::wordCount( $longSentence ) . " words; at most $maxWords for " .
+                            ( $public ? 'visitors and members' : 'editors and administrators' ) . ': "' .
+                            implode( ' ', array_slice( $words, 0, 8 ) ) . ( count( $words ) > 8 ? ' ...' : '' ) . '"' );
+            }
+            if ( $longParagraph )
+                $this->add( self::NOTICE, 'language.paragraph-too-long', $topic, $field,
+                            "A paragraph has $longParagraph sentences; at most $maxSentences for visitors and members" );
+        }
+    }
+
+    /**
+     * One verb per platform (style guide section 4): "click" on the web and in the admin, "tap" on touch devices, not
+     * both in one topic, and not "press" for a control ("press Enter" names a key and is fine).
+     *
+     * @param array $topic
+     * @param array $texts field => text
+     */
+    protected function checkVerbs( array $topic, array $texts )
+    {
+        $used = array();
+        foreach ( $texts as $text )
+        {
+            $plain = self::uncheckedTextRemoved( (string)$text );
+            if ( preg_match( '/\bclick(?:s|ed|ing)?\b/i', $plain ) )
+                $used['click'] = true;
+            if ( preg_match( '/\btap(?:s|ped|ping)?\b/i', $plain ) )
+                $used['tap'] = true;
+            // "press" for a control; not for a key (press Enter, press `Esc`, press Ctrl+S)
+            if ( preg_match( '/\bpress(?:es|ed|ing)?\b(?!\s+(?:`|<kbd|enter\b|return\b|esc|escape\b|tab\b|ctrl|control\b|shift\b|alt\b|cmd\b|command\b|option\b|space\b|delete\b|backspace\b|home\b|end\b|f\d+\b|the\s+(?:enter|return|esc|escape|tab|space|delete|backspace)\b|[a-z0-9]\b))/i', $plain ) )
+                $used['press'] = true;
+        }
+        if ( count( $used ) > 1 )
+            $this->add( self::WARNING, 'verb.mix', $topic, 'steps',
+                        'The topic uses "' . implode( '", "', array_keys( $used ) ) . '"; one verb per platform: click on the web and in the admin, tap on touch devices' );
+    }
+
+    /**
+     * The paragraphs of running text in a Markdown field: without code, tables, headings and link targets; a list item
+     * is a paragraph of its own; bold labels keep their words.
+     *
+     * @param string $markdown
+     * @return string[]
+     */
+    public static function proseParagraphs( $markdown )
+    {
+        $text = preg_replace( '/^\s*(```|~~~).*?^\s*\1[^\n]*$/ms', '', (string)$markdown );
+        $paragraphs = array();
+        $current = '';
+        foreach ( preg_split( '/\r\n|\r|\n/', (string)$text ) as $line )
+        {
+            $trim = trim( $line );
+            $isItem = (bool)preg_match( '/^(\d{1,3}[.)]|[-*+])\s+/', $trim );
+            if ( $trim === '' || $isItem || strpos( $trim, '|' ) === 0 || strpos( $trim, '#' ) === 0 || preg_match( '/^:::/', $trim ) )
+            {
+                if ( trim( $current ) !== '' )
+                    $paragraphs[] = trim( $current );
+                $current = '';
+                if ( $isItem )
+                    $current = preg_replace( '/^(\d{1,3}[.)]|[-*+])\s+/', '', $trim );
+                continue;
+            }
+            $current .= ' ' . preg_replace( '/^>\s?/', '', $trim );
+        }
+        if ( trim( $current ) !== '' )
+            $paragraphs[] = trim( $current );
+        $clean = array();
+        foreach ( $paragraphs as $paragraph )
+        {
+            $paragraph = preg_replace( '/`[^`]*`/', 'code', $paragraph );
+            $paragraph = preg_replace( '/!?\[([^\]]*)\]\([^)]*\)/', '$1', $paragraph );
+            $paragraph = str_replace( array( '**', '__' ), '', $paragraph );
+            $paragraph = trim( preg_replace( '/\s+/u', ' ', $paragraph ) );
+            if ( $paragraph !== '' )
+                $clean[] = $paragraph;
+        }
+        return $clean;
+    }
+
+    /**
+     * The sentences of a paragraph (as sentenceCount() divides them)
+     *
+     * @param string $paragraph
+     * @return string[]
+     */
+    public static function sentences( $paragraph )
+    {
+        $text = trim( preg_replace( '/\b(e\.g|i\.e|etc|vs|approx|incl)\./i', '$1', (string)$paragraph ) );
+        if ( $text === '' )
+            return array();
+        return preg_split( '/(?<=[.!?]|[.!?]["\')\]])\s+(?=[\p{Lu}\p{N}"])/u', $text );
+    }
+
+    /**
+     * @param string $sentence
+     * @return int the number of words
+     */
+    public static function wordCount( $sentence )
+    {
+        return (int)preg_match_all( '/[\p{L}\p{N}][\p{L}\p{N}\'\x{2019}-]*/u', (string)$sentence );
     }
 
     protected function checkTerminology( array $topic, array $texts, array $glossary )

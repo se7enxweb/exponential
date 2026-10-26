@@ -7,7 +7,9 @@
    audience[], audience_names[], platform[], state, preview, version_from, version_to, mtime), help_topic, help_html
    (safe: NOT washed), help_toc, help_related (documents), help_figures (image_url, alt_text, caption), help_topics
    (documents), help_manuals (title, remote_id, preview), help_edit_url ('' or content/edit/<id>), help_json_url,
-   help_i18n_json.
+   help_i18n_json; help_workflow, help_step, help_findings, help_findings_counts (the review workflow and the style
+   guide check, parts/topic_workflow.tpl), help_feedback_open, help_feedback_thanks, help_feedback_summary,
+   help_feedback_reasons ("Was this helpful?", parts/topic_feedback.tpl).
 
    The same file is in design/admin and design/admin4. *}
 {def $help_toc_items = array()}
@@ -96,6 +98,15 @@
                 {/foreach}
                 </ul>
             </section>
+            {/if}
+
+            {if $help_feedback_open}
+            {include uri='design:exphelp/parts/topic_feedback.tpl' help_id=$help_topic.help_id thanks=$help_feedback_thanks reasons=$help_feedback_reasons prefix='exphelp-topic'}
+            {/if}
+
+            {if or( $help_workflow.steps|count, $help_edit_url|ne( '' ), $help_step|ne( '' ) )}
+            {include uri='design:exphelp/parts/topic_workflow.tpl' workflow=$help_workflow step=$help_step state_url=concat( 'exphelp/state/', $help_topic.help_id )
+                     findings=$help_findings findings_counts=$help_findings_counts feedback=$help_feedback_summary prefix='exphelp-topic'}
             {/if}
 
             <p class="a4-help-foot a4-meta"><a href={'exphelp/report'|ezurl}><span class="a4-icon a4-bi-exclamation-diamond" aria-hidden="true"></span> {'Something wrong on this page? Report an error'|i18n( 'kernel/exphelp' )}</a></p>

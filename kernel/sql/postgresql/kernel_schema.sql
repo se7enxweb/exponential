@@ -836,6 +836,15 @@ CREATE SEQUENCE expuser_session_id_seq
 
 
 
+CREATE SEQUENCE exphelp_feedback_id_seq
+    START 1
+    INCREMENT 1
+    MAXVALUE 9223372036854775807
+    MINVALUE 1
+    CACHE 1;
+
+
+
 
 
 
@@ -2654,6 +2663,26 @@ CREATE TABLE expuser_session (
 
 
 
+CREATE TABLE exphelp_help_id (
+    help_id character varying(80) DEFAULT ''::character varying NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    released integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE exphelp_feedback (
+    created integer DEFAULT 0 NOT NULL,
+    help_id character varying(80) DEFAULT ''::character varying NOT NULL,
+    helpful integer DEFAULT 0 NOT NULL,
+    id integer DEFAULT nextval('exphelp_feedback_id_seq'::text) NOT NULL,
+    language character varying(20) DEFAULT ''::character varying NOT NULL,
+    object_id integer DEFAULT 0 NOT NULL,
+    reason character varying(32) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 
 
 
@@ -4152,6 +4181,18 @@ CREATE INDEX expuser_session_active ON expuser_session USING btree (ended, last_
 
 
 
+CREATE INDEX exphelp_help_id_object ON exphelp_help_id USING btree (object_id);
+
+
+
+CREATE INDEX exphelp_feedback_object ON exphelp_feedback USING btree (object_id, created);
+
+
+
+CREATE INDEX exphelp_feedback_created ON exphelp_feedback USING btree (created);
+
+
+
 
 
 
@@ -5243,6 +5284,16 @@ ALTER TABLE ONLY exp_data_sync_link
 
 ALTER TABLE ONLY expuser_session
     ADD CONSTRAINT expuser_session_pkey PRIMARY KEY (id);
+
+
+
+ALTER TABLE ONLY exphelp_help_id
+    ADD CONSTRAINT exphelp_help_id_pkey PRIMARY KEY (help_id);
+
+
+
+ALTER TABLE ONLY exphelp_feedback
+    ADD CONSTRAINT exphelp_feedback_pkey PRIMARY KEY (id);
 
 
 
