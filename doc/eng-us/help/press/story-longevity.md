@@ -25,7 +25,7 @@ The code was developed from 1999 by eZ Systems as eZ Publish, a product that its
 years; its last releases are listed until September 2021. "Exponential has made it beyond it's end of life in 2021 and
 survived" (README). 7x, which as Brookins Consulting had worked with the software since its first versions, launched
 its project in December 2023, released 6.0.0 on 1 January 2024 and fourteen more releases by June 2026, moved the code
-to PHP 8.0 to 8.5, renamed it Exponential in August 2025 and helped found a nonprofit for it in March 2026
+to PHP 8.0 to 8.5 and renamed it Exponential in August 2025; in March 2026 a nonprofit, the Exponential Foundation, was founded for it
 ([The history for long-form stories](the-history-for-long-form-stories.md)).
 
 ## Facts you can print

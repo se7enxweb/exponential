@@ -26,7 +26,7 @@ keeps the extension's version apart from the kernel's and credits the people who
 Extensions add features to the kernel. "Every extension except the four kernel-shipped ones is a Composer package of
 type `ezpublish-legacy-extension`", installed into `extension/<name>`, and "Being on disk does not make an extension
 active" ([Getting the code](../../install/03-getting-the-code.md#35-extensions-are-composer-packages)). The kernel's
-`composer.json` requires 66 se7enxweb packages ([Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-numbers)); the
+`composer.json` required 66 se7enxweb packages on 18 October 2026 ([Who is 7x?, 7x in numbers](../who-is-7x.md#7x-in-numbers)); the
 [Extensions guide](../../guides/extensions.md) explains how they are found, installed and released.
 
 So "a new version of extension X" usually means: site owners can update that one package; nothing changes for them

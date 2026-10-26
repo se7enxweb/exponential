@@ -27,8 +27,8 @@ version numbers (Exponential Velocity 0.0.4.x). Say both on camera.
 
 ## Off camera: install and prepare
 
-The engine is required by Exponential's `composer.json` (at `~0.0.4.54`), so `composer install` brings it; it needs
-PHP 8.0 or later and the `sockets` extension ([Serving the site, 8.3.1](../../install/08-serving-the-site.md#831-install-the-engine-package)):
+The engine is required by Exponential's `composer.json`, so `composer install` brings it; from its release 0.0.4.54 it
+needs PHP 8.0 or later, and the `sockets` extension ([Serving the site, 8.3.1](../../install/08-serving-the-site.md#831-install-the-engine-package)):
 
 ```bash
 composer install                                                   # brings the engine the kernel's composer.json requires
@@ -36,8 +36,8 @@ php bin/php/console exp:velocity ext check                         # missing PHP
 php bin/php/console exp:velocity config set ServerSettings Engine qbix
 ```
 
-Read the version from the `suggest` block of the kernel's `composer.json`: on 19 October 2026 it was `~0.0.4.52`, while
-the installation book still shows `~0.0.4.44`. The tilde accepts every later 0.0.4.x.
+Read the version from the `require` block of the kernel's `composer.json`: on 25 October 2026 it was `~0.0.4.55`, while
+the README and the installation book show `~0.0.4.54`. The tilde accepts every later 0.0.4.x.
 
 The shipped default engine is `php` (PHP's built-in server, for development only); `qbix` is the recommended engine
 and FrankenPHP the production-ready alternative. Shipped ports: `qbix` 8088 (HTTP) and 8080 (HTTPS), `frankenphp` 8089

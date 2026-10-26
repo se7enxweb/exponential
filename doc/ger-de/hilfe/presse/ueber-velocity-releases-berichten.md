@@ -29,7 +29,7 @@ Leistungszahlen sind mit ihren Bedingungen dokumentiert, und diese Bedingungen g
 | "It began as a fork of the Qbix web server engine, and the two projects have since drifted far apart" | Die README des Pakets, zitiert in [Wer ist 7x?, Exponential Velocity](../wer-ist-7x.md#exponential-velocity) |
 | Der PHP-Anwendungsserver, "that Exponential recommends for every stage from development to production" | [Chronik von Velocity](../../geschichte/velocity/README.md) |
 | MIT-lizenziert | Seine `composer.json`, laut [Wer ist 7x?](../wer-ist-7x.md#open-source-lizenzen) |
-| Ein eigenes Composer-Paket, das die `composer.json` des Kernels "requires it at `~0.0.4.54`"; ab diesem Release läuft es auf PHP 8.0 bis 8.5 (bis dahin brauchte es 8.1 und wurde nur empfohlen) | [Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
+| Ein eigenes Composer-Paket, das die `composer.json` des Kernels in `~0.0.4.54` verlangt; ab diesem Release läuft es auf PHP 8.0 bis 8.5 (bis dahin brauchte es 8.1 und wurde nur empfohlen) | [Den Code beschaffen](../../installation/03-den-code-beschaffen.md#34-das-velocity-paket) |
 | Erste Commits am 20. Juli 2026, erstes Release `v0.0.1` im September 2026, Teil von Exponential seit dem 22. September 2026 | [Wer ist 7x?](../wer-ist-7x.md#exponential-velocity) |
 
 ## Releases und Versionsnummern

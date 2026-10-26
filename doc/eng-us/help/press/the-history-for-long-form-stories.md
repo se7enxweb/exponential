@@ -31,7 +31,7 @@ history of every change since December 2023. This page shows you the arc, the ch
 3. Brookins Consulting, an American company that had worked with the software since its first versions, became 7x:
    the idea in 2014, the project in 2022, the launch in December 2023.
 4. 7x released 6.0.0 on 1 January 2024 and fourteen more 6.0.x releases until June 2026, renamed
-   the product Exponential in August 2025, and helped found the Exponential Foundation in March 2026.
+   the product Exponential in August 2025; in March 2026 the nonprofit Exponential Foundation was founded for the project.
 5. In 2026 the line added a PHP web server of its own, a page builder, a writing assistant and a help system, while
    keeping sites built over two decades running.
 

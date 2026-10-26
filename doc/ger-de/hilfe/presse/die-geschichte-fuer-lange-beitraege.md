@@ -32,7 +32,7 @@ Bogen, die Kapitel und wo jedes davon erzählt wird.
 3. Brookins Consulting, ein amerikanisches Unternehmen, das seit den ersten Versionen mit der Software gearbeitet
    hatte, wurde zu 7x: die Idee 2014, das Projekt 2022, der Start im Dezember 2023.
 4. 7x veröffentlichte 6.0.0 am 1. Januar 2024 und bis Juni 2026 vierzehn weitere Releases 6.0.x, benannte das Produkt
-   im August 2025 in Exponential um und half im März 2026, die Exponential Foundation zu gründen.
+   im August 2025 in Exponential um; im März 2026 wurde die gemeinnützige Exponential Foundation für das Projekt gegründet.
 5. 2026 kamen in der Linie ein eigener Webserver in PHP, ein Seitenbaukasten, ein Schreibassistent und ein Hilfesystem
    hinzu, während Websites, die über zwei Jahrzehnte gebaut wurden, weiterlaufen.
 
@@ -105,11 +105,3 @@ git tag -l 'v6.0.*' --sort=version:refname           # the releases, in order
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Geschichtsbeiträge schreiben](../fuersprecher/beitraege-zur-geschichte-schreiben.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
-
-<!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
-2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
-Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
-[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
-<!-- exp-partner-block:end -->
