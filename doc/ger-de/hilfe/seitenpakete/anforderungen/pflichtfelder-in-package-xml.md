@@ -44,21 +44,26 @@ Die Seite zum Hochladen in der Administration prüft mehr, bevor irgendetwas ent
 
 ## Der Name
 
-**Erzwungen.** `eZPackage::isValidName()` schickt den Namen durch die Transformation `identifier` aus `settings/transform.ini` und akzeptiert
-ihn nur, wenn sich nichts ändert. Die Transformation endet mit `lowercase` und `identifier_cleanup` (`lib/ezi18n/classes/ezcodemapper.php`),
-sodass ein gültiger Name:
+**Erzwungen.** `eZPackage::isValidName()` akzeptiert einen Namen, der:
 
-- nur die Zeichen `a` bis `z`, `0` bis `9` und `_` hat;
-- keinen Großbuchstaben, kein Leerzeichen, keinen Bindestrich und keinen Punkt hat;
-- nicht mit `_` beginnt oder endet und kein `__` enthält.
+- nur Buchstaben in Groß- oder Kleinschreibung (`a` bis `z`, `A` bis `Z`), Ziffern `0` bis `9`, `_` und `-` hat;
+- nicht mit `-` beginnt und höchstens 200 Zeichen lang ist;
+- also kein Leerzeichen, keinen Punkt, keinen `/`, keinen umgekehrten Schrägstrich und kein Steuerzeichen enthält: nichts, was einen Pfad bilden könnte.
+
+Der Name ist das Verzeichnis des Pakets und bleibt, wie er ist, sodass `infoProf` und `infoprof` auf einem Dateisystem, das
+Groß- und Kleinschreibung unterscheidet, zwei Pakete sind. Pakete, die eZ Publish 4.x mit der Schreibweise ihrer Inhaltsklasse
+exportierte (`RSSFeed_content_class`, `infoProf`), werden so importiert, wie sie sind. Die Assistenten zum Erstellen von Paketen
+schlagen weiterhin einen Namen aus Kleinbuchstaben, Ziffern und `_` vor (die Transformation `identifier` aus `settings/transform.ini`).
 
 | Name | Gültig | Warum |
 |---|---|---|
 | `sevenx_multisite` | ja | |
 | `cjw_multisite_democontent` | ja | |
-| `MySite` | nein | Großbuchstaben |
-| `my-site` | nein | Bindestrich |
-| `my_site_` | nein | abschließendes `_` |
+| `MySite` | ja | |
+| `my-site` | ja | |
+| `-site` | nein | führendes `-` |
+| `my.site` | nein | Punkt |
+| `my site` | nein | Leerzeichen |
 
 Das Hochladen in der Administration wendet außerdem `eZPackageRequestGuard::isSafeName()` an, das den Namen auf 200 Zeichen begrenzt. Der
 Assistent zum Erstellen von Paketen weist einen ungültigen Namen mit „Der Paketname %packagename ist nicht gültig. Er kann nur Zeichen von

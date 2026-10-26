@@ -182,7 +182,7 @@ Dateien aus einem Paket (Herunterladen im Inhalt) kommen auf dieselbe Weise von
    heraus, auf ein Verzeichnis oder ins Leere, ein Gerät und eine FIFO werden mit einem Hinweis übergangen (unter den
    Warnungen der Validierung aufgeführt), und der Rest des Pakets wird importiert;
 5. es hat auf oberster Ebene eine `package.xml`, die wohlgeformt ist, `<package>` als Wurzel und keinen Dokumenttyp
-   hat, ein gültiges Paket nennt (Kleinbuchstaben, Ziffern und `_`) und ihre Versions- und Paketierungsangaben enthält,
+   hat, ein gültiges Paket nennt (Buchstaben in Groß- oder Kleinschreibung, Ziffern, `_` und `-`, nicht mit `-` beginnend) und ihre Versions- und Paketierungsangaben enthält,
    und deren Hersteller einen Repository-Namen ergibt;
 6. in keinem Repository existiert ein Paket dieses Namens.
 

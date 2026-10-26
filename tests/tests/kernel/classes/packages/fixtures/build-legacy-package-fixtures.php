@@ -14,6 +14,7 @@
  *   files typed "\0", directories "5" with a trailing slash, modes with the file type bits ("100666"), a long name as
  *   "L" header without magic (the ezwebin 1.0 packages are of this kind).
  * - ez4x-ezcarchive-ustar: ezcArchive's ustar writer, as the exporter of 4.x/5.x writes (prefix field for long paths).
+ * - ez4x-uppercase-name: the same, for a package named "Legacy_UpperCase-Name" (upper case letters and a hyphen).
  * - ez4x-archive-tar-ustar: the archive handler of 4.0 to 4.2, written byte by byte: the 3.x one with the magic
  *   "ustar" and an empty version ("ustar\0\0\0"), "L" long names with that magic (the ezjscore 4.2 packages).
  * - pear-archive-tar: PEAR Archive_Tar 1.4 (GNU magic), when /usr/share/pear has it; a symbolic link inside.
@@ -264,6 +265,8 @@ $ezcBuilder = function ( $type, $name ) use ( $work, $outDir )
     };
 };
 $builders['ez4x-ezcarchive-ustar'] = $ezcBuilder( ezcArchive::TAR_USTAR, 'legacy_ez4x_ezcarchive_ustar' );
+// a name with the case of a content class and a hyphen, as packages of 4.x were exported (RSSFeed_content_class)
+$builders['ez4x-uppercase-name'] = $ezcBuilder( ezcArchive::TAR_USTAR, 'Legacy_UpperCase-Name' );
 
 $builders['ez4x-archive-tar-ustar'] = function ( $id ) use ( $outDir )
 {

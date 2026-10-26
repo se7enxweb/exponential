@@ -44,7 +44,7 @@ dieses Teils erklären jeden Punkt im Detail.
 |---|---|---|---|
 | [ ] | Wohlgeformtes XML, Wurzelelement `<package>`, kein DOCTYPE | Erzwungen bei `package/upload` | `eZPackageUploadInspector::definition()` |
 | [ ] | Ein nicht leerer `<name>` | Erzwungen | `eZPackage::parseDOMTree()` |
-| [ ] | `<name>` von der Transformation `identifier` unverändert: `a-z`, `0-9`, `_`, kein führendes, abschließendes oder doppeltes `_` | Erzwungen (`STATUS_INVALID_NAME`) | `eZPackage::isValidName()` |
+| [ ] | `<name>` nur `a-z`, `A-Z`, `0-9`, `_` und `-`, nicht mit `-` beginnend (Kleinschreibung ist die Konvention) | Erzwungen (`STATUS_INVALID_NAME`) | `eZPackage::isValidName()` |
 | [ ] | Kein Paket desselben Namens bereits importiert | Erzwungen (`STATUS_ALREADY_EXISTS`) | `eZPackage::importUnaudited()` |
 | [ ] | Elemente `<ezpublish>` und `<packaging>` vorhanden | Erzwungen bei `package/upload` (`definition_incomplete`) | `eZPackageUploadInspector::definition()` |
 | [ ] | `<version><number>`, `<version><release>` und `<type value>` sind leer oder bis zu 64 Zeichen aus `0-9 A-Z a-z . _ + -` | Erzwungen (die Definition wird nicht gelesen) | `eZPackage::isValidDefinitionToken()` |

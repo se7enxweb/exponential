@@ -90,7 +90,7 @@ exponential/6.0/6.0.15/
 
 | Regel | Warum |
 |---|---|
-| Dateiname = `<package name>.ezpkg`, der Name genau wie in `<name>` von `package.xml` | Der Index zeigt auf die Datei, und der Importer weist einen Namen ab, der nicht aus Kleinbuchstaben, Ziffern und `_` besteht ([Pflichtfelder in package.xml](anforderungen/pflichtfelder-in-package-xml.md)) |
+| Dateiname = `<package name>.ezpkg`, der Name genau wie in `<name>` von `package.xml` | Der Index zeigt auf die Datei, und der Importer weist einen Namen ab, der nicht aus Buchstaben, Ziffern, `_` und `-` besteht ([Pflichtfelder in package.xml](anforderungen/pflichtfelder-in-package-xml.md)) |
 | Ein eigener Name, nie einer, der existiert | Ein Import weist ein Paket ab, dessen Name bereits in irgendeinem Repository der Website steht ([Anleitung zu Paketen](../../anleitungen/pakete.md#6-ein-paket-hochladen)) |
 | Vorschaubild in `thumbnails/<package name>.png` | Dasselbe Muster, das jedes vorhandene Seitenpaket nutzt (`thumbnail_url` in `index.xml`) |
 | Pakete, die Ihr Seitenpaket verlangt, liegen ebenfalls auf dem Server | Der Assistent lädt jedes verlangte Paket aus demselben Index herunter ([Abhängigkeiten und die Installationsreihenfolge](grundlagen/abhaengigkeiten-und-die-installationsreihenfolge.md)) |
@@ -125,7 +125,7 @@ Die vollständige Liste, mit dem Grund für jeden Punkt, ist [Die Checkliste der
 Kurz gefasst, bevor Sie den Pull Request öffnen:
 
 - [ ] `package.xml` ist wohlgeformt, hat `<package>` als Wurzel und keinen Dokumenttyp.
-- [ ] `<name>` besteht aus Kleinbuchstaben, Ziffern und `_` und passt zum Dateinamen.
+- [ ] `<name>` besteht aus Buchstaben, Ziffern, `_` und `-` (nach Konvention aus Kleinbuchstaben, Ziffern und `_`) und passt zum Dateinamen.
 - [ ] `<summary>` und `<description>` sagen in einfachen Worten, was die Website ist.
 - [ ] `<vendor>` nennt Sie oder Ihre Organisation.
 - [ ] `<type value="site" />` für das Seitenpaket; der richtige Typ für jedes Paket, das es verlangt.

@@ -77,6 +77,7 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
             'eZ Publish 3.x: Archive_Tar port, V7' => array( 'ez3x-archive-tar-v7', 'legacy_ez3x_archive_tar_v7', $plain ),
             'eZ Publish 4.0-4.2: archive handler, ustar with empty version' => array( 'ez4x-archive-tar-ustar', 'legacy_ez4x_archive_tar_ustar', $plain ),
             'eZ Publish 4.x/5.x: ezcArchive ustar (the exporter)' => array( 'ez4x-ezcarchive-ustar', 'legacy_ez4x_ezcarchive_ustar', $plain ),
+            'eZ Publish 4.x: a package name with upper case letters and a hyphen' => array( 'ez4x-uppercase-name', 'Legacy_UpperCase-Name', $plain ),
             'PEAR Archive_Tar 1.4 with a symbolic link' => array( 'pear-archive-tar', 'legacy_pear_archive_tar',
                 array( 'copies' => array( 'ezextension/legacyfixture/settings/site.ini.append' => self::SETTINGS ) ) + $plain ),
             'GNU tar, gnu format, repacked with ./ only' => array( 'gnutar-gnu-plain', 'legacy_gnutar_gnu_plain', $plain ),
@@ -144,6 +145,46 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
         $this->assertInstanceOf( 'eZPackage', $package, $fixture );
         $this->assertSame( $name, $package->attribute( 'name' ) );
         $this->assertPackageTree( eZPackage::repositoryPath() . '/' . self::REPOSITORY . '/' . $name, $name, $expected );
+    }
+
+    /**
+     * A package named with upper case letters (as 4.x exported "RSSFeed_content_class" or "infoProf") is imported into
+     * a directory of exactly that name, found by that name only (the file system is case-sensitive), listed by the
+     * package list, offered for removal and removed.
+     */
+    public function testPackageWithUpperCaseNameIsImportedListedAndRemoved()
+    {
+        $name = 'Legacy_UpperCase-Name';
+        $packageName = '';
+        $package = @eZPackage::importUnaudited( self::fixturePath( 'ez4x-uppercase-name' ), $packageName, false, self::REPOSITORY );
+        $this->assertInstanceOf( 'eZPackage', $package );
+        $this->assertSame( $name, $packageName );
+        $repositoryPath = eZPackage::repositoryPath() . '/' . self::REPOSITORY;
+        $this->assertFileExists( "$repositoryPath/$name/package.xml" );
+        $this->assertSame( $repositoryPath . '/' . $name, $package->path() );
+
+        $this->assertInstanceOf( 'eZPackage', eZPackage::fetch( $name, false, self::REPOSITORY, false ) );
+        $this->assertFalse( eZPackage::fetch( strtolower( $name ), false, self::REPOSITORY, false ) );
+        // a second import of the same name is refused as existing
+        $again = '';
+        $this->assertSame( eZPackage::STATUS_ALREADY_EXISTS, @eZPackage::importUnaudited( self::fixturePath( 'ez4x-uppercase-name' ), $again, false, self::REPOSITORY ) );
+
+        $repositories = array( array( 'id' => self::REPOSITORY, 'name' => self::REPOSITORY, 'type' => 'global', 'path' => $repositoryPath ) );
+        $cards = @eZPackageCatalog::scan( $repositories, false, self::REPOSITORY )['cards'];
+        $key = $name . '@' . self::REPOSITORY;
+        $this->assertArrayHasKey( $key, $cards );
+        $this->assertSame( array( $name, self::REPOSITORY ), eZPackageRemovalPlan::parseValue( $key ) );
+        $plan = eZPackageRemovalPlan::build( array( $key ), '', $cards, null, $repositoryPath );
+        $this->assertSame( array( $key ), array_keys( $plan['items'] ) );
+        $this->assertSame( array(), $plan['refused'] );
+
+        // what package/list does with the plan's items
+        $toRemove = eZPackage::fetch( $name, false, self::REPOSITORY, false );
+        $toRemove->Parameters['install_type'] = 'import';
+        $toRemove->remove();
+        clearstatcache();
+        $this->assertDirectoryDoesNotExist( "$repositoryPath/$name" );
+        $this->assertFalse( eZPackage::fetch( $name, false, self::REPOSITORY, false ) );
     }
 
     /**

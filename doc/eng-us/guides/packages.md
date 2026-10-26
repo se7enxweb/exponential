@@ -171,7 +171,7 @@ press **Import package**. Before anything is written, the archive is inspected:
    or to nothing, a device and a fifo are passed over with a notice (listed among the validation warnings), and the
    rest of the package is imported;
 5. it has a `package.xml` at its top that is well formed, has `<package>` as its root and no document type, names a
-   valid package (lower case letters, digits and `_`) and has its version and packaging information, and its vendor
+   valid package (letters of either case, digits, `_` and `-`, not starting with `-`) and has its version and packaging information, and its vendor
    gives a repository name;
 6. no package of that name exists in any repository.
 
