@@ -22893,7 +22893,7 @@ c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
 a531c375f6b659ead181b618dcfda9c7  kernel/classes/i18n/expi18ncoveragemap.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
-e9b8c6a0fec82defc0e7fd43f123f094  kernel/classes/i18n/expi18ntranslationwaves.php
+3b3e89da20129fdcb5a216fe5780cd34  kernel/classes/i18n/expi18ntranslationwaves.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
 203479e7dccaed76ef07b8e33efa41a9  kernel/classes/ini/actions/expiniactionactions.php
 a5dce8aeb6cc7cc83e6b49f864a0429e  kernel/classes/ini/actions/expiniactionadd.php

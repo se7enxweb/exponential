@@ -946,7 +946,7 @@ class expI18nTranslationWaves
         $helpParts = $data['help']['parts'];
         $extensionsTotal = array_sum( $data['extensions'] );
         $translated = array_keys( $status );
-        $catalogueWaves = function ( $phase, $locale ) use ( $status, $adminParts, $extensionsTotal, $add )
+        $catalogueWaves = function ( $phase, $locale ) use ( $status, $adminParts, $add )
         {
             foreach ( $adminParts as $part )
             {
@@ -1631,7 +1631,7 @@ class expI18nTranslationWaves
             if ( @file_get_contents( $file ) === $content )
                 continue;
             if ( !is_dir( dirname( $file ) ) )
-                mkdir( dirname( $file ), 0777, true );
+                eZDir::mkdir( dirname( $file ), false, true );
             file_put_contents( $file, $content );
             $written[] = $path;
         }
