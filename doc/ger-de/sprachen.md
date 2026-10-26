@@ -5,12 +5,12 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 18. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **71 Übersetzungen
-der Administrationsoberfläche**, achtundsechzig davon vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **70 Übersetzungen
+der Administrationsoberfläche**, alle vollständig (`eng-US`, `ger-DE`, Spanisch für Spanien und Mexiko,
 Französisch, Ukrainisch, Hebräisch, Arabisch, Türkisch, Polnisch, Italienisch, Portugiesisch (Brasilien und Portugal),
 Niederländisch, Schwedisch, Norwegisch (Bokmål), Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch
 (Kurmandschi), Suaheli, Hindi, Koreanisch, Japanisch, Griechisch, Finnisch, Ungarisch, Rumänisch, Slowakisch,
-Slowenisch, Bosnisch, Albanisch, Estnisch, Lettisch, Isländisch, Irisch, Maltesisch, Niedersorbisch, Grönländisch,
+Slowenisch, Bosnisch, Albanisch, Estnisch, Lettisch, Isländisch, Irisch, Maltesisch, Niedersorbisch, Grönländisch, Chinesisch (vereinfacht und traditionell),
 Russisch, Katalanisch, Serbisch (kyrillisch und lateinisch), Bulgarisch, Litauisch, Afrikaans, Englisch (Australien), Bengalisch, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharisch, Yoruba, Malayalam, Punjabi (Gurmukhi), Oriya, Igbo, isiZulu, Somali, isiXhosa,
 Latein und, zum Spaß, Klingonisch).
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
@@ -60,8 +60,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
-| **Oberfläche teilweise, Inhalt vollständig** | Es gibt eine Übersetzung der Administrationsoberfläche, sie deckt aber 23 bis 37 % der heutigen Texte ab (sie war für ein älteres Release vollständig). Texte ohne Übersetzung erscheinen auf Englisch. Inhalte wie oben. | die älteren Übersetzungen mit Texten, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 170, die in 6.0.15 hinzukamen |
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
@@ -149,10 +148,10 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `cat-ES` | Catalan | Català | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `ceb-PH` | Cebuano | Cebuano | Südostasien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `che-RU` | Chechen | Нохчийн | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
-| `chi-CN` | Simplified Chinese | 简体中文 | Ostasien | LTR | Han (vereinfacht) (`Hans`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 37 % |
-| `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 27 % |
-| `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Südostasien | LTR | Han (vereinfacht) (`Hans`) | CLDR 44 | — |
-| `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt | 27 % |
+| `chi-CN` | Simplified Chinese | 简体中文 | Ostasien | LTR | Han (vereinfacht) (`Hans`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % |
+| `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt, korrigiert in 6.0.15 | 100 % (fällt auf `chi-TW` zurück) |
+| `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Südostasien | LTR | Han (vereinfacht) (`Hans`) | CLDR 44 | 100 % (fällt auf `chi-CN` zurück) |
+| `chi-TW` | Traditional Chinese (Taiwan) | 繁體中文 (臺灣) | Ostasien | LTR | Han (traditionell) (`Hant`) | älter, von Hand erstellt | 100 % |
 | `ckb-IQ` | Central Kurdish | کوردیی ناوەندی | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | — |
 | `cro-HR` | Croatian | Hrvatski | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `cym-GB` | Welsh | Cymraeg | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -532,14 +531,17 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `xho-ZA` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
 | `ger-DE` | 99 % (16.514 von 16.529) | 99 % (16.509 von 16.623) |
 | `jpn-JP` | 96 % (6.281 von 6.513) | 37 % (6.281 von 16.623) |
-| `chi-CN` | 95 % (6.210 von 6.512) | 37 % (6.210 von 16.623) |
+| `chi-CN` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
 | `ell-GR` | 92 % (6.019 von 6.512) | 36 % (6.019 von 16.623) |
 | `fin-FI` | 82 % (5.369 von 6.512) | 32 % (5.369 von 16.623) |
-| `chi-HK` | 70 % (4.592 von 6.509) | 27 % (4.592 von 16.623) |
-| `chi-TW` | 70 % (4.592 von 6.509) | 27 % (4.592 von 16.623) |
+| `chi-HK` | fällt auf `chi-TW` zurück | 100 % (fällt auf `chi-TW` zurück) |
+| `chi-TW` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
 
 Hinweise:
 
+- **Chinesisch** (`chi-CN`, `chi-TW`) ist seit dem 24. Oktober 2026 vollständig, maschinell unterstützt mit Leitfaden und
+  Glossar je Sprache (Festland: 帐户, 单击; Taiwan: 帳戶, 按一下, 垃圾桶). `chi-HK` hat keinen eigenen Katalog mehr und fällt auf
+  `chi-TW` zurück, `chi-SG` auf `chi-CN`. Eine Prüfung durch Muttersprachler ist willkommen.
 - **Bengalisch, Urdu, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Punjabi (Gurmukhi), Oriya, Hausa, Amharisch,
   Yoruba, Igbo, isiZulu, Somali, isiXhosa** sind am 26. Oktober 2026 hinzugekommen, maschinell unterstützt mit
   Leitfaden und Glossar je Sprache. Mehrdeutige Wörter haben hier noch keine kontextabhängigen Übersetzungen, und
@@ -619,7 +621,7 @@ sind auf Millionen gerundet.
 | # | Sprache | Sprecher (Mio.) | Locales | Übersetzung der Administrationsoberfläche |
 |---:|---|---:|---|---|
 | 1 | Englisch | 1.493 | `eng-US`, `eng-GB`, `eng-CA`, `eng-AU`, `eng-NZ`, `eng-IE`, `eng-IN`, `eng-SG`, `eng-ZA`, `eng-NG`, `eng-KE`, `eng-GH`, `eng-PK`, `eng-PH` | `eng-US` vollständig; `eng-AU` vollständig, `eng-NZ` fällt darauf zurück |
-| 2 | Mandarin-Chinesisch | 1.183 | `chi-CN`, `chi-SG` (vereinfacht), `chi-TW`, `chi-HK` (traditionell) | `chi-CN`, `chi-TW`, `chi-HK` teilweise |
+| 2 | Mandarin-Chinesisch | 1.183 | `chi-CN`, `chi-SG` (vereinfacht), `chi-TW`, `chi-HK` (traditionell) | `chi-CN`, `chi-TW` vollständig; `chi-SG` fällt auf `chi-CN`, `chi-HK` auf `chi-TW` zurück |
 | 3 | Hindi | 611 | `hin-IN` | keine |
 | 4 | Spanisch | 561 | `esl-ES`, `esl-MX`, `esl-AR`, `esl-CO`, `esl-CL`, `esl-PE`, `esl-US`, `esl-VE`, `esl-EC`, `esl-GT`, `esl-CU`, `esl-DO`, `esl-BO`, `esl-UY`, `esl-PY`, `esl-CR`, `esl-PA`, `esl-HN`, `esl-SV`, `esl-NI`, `esl-PR`, `esl-GQ` | `esl-ES`, `esl-MX` vollständig |
 | 5 | Modernes Hocharabisch | 335 | `ara-SA`, `ara-EG`, `ara-AE`, `ara-MA`, `ara-DZ`, `ara-TN`, `ara-IQ`, `ara-JO`, `ara-LB`, `ara-SY`, `ara-KW`, `ara-QA`, `ara-BH`, `ara-OM`, `ara-LY`, `ara-PS`, `ara-YE`, `ara-SD`, `ara-MR`, `ara-DJ`, `ara-KM`, `ara-SO`, `ara-TD`, `ara-ER` | keine |
@@ -642,8 +644,8 @@ sind auf Millionen gerundet.
 | 22 | Westpandschabi | 90 | `pnb-PK` (Shahmukhi-Schrift; `pan-IN` ist Pandschabi in Gurmukhi-Schrift) | `pan-IN` vollständig |
 | 23 | Tagalog | 87 | `fil-PH` (Filipino, die Standardform des Tagalog) | keine |
 | 24 | Tamil | 86 | `tam-IN`, `tam-LK`, `tam-SG` | `tam-IN` vollständig; `tam-LK`, `tam-SG` fallen darauf zurück |
-| 25 | Yue-Chinesisch (Kantonesisch) | 86 | `chi-HK` (geschriebenes traditionelles Chinesisch) | `chi-HK` teilweise |
-| 26 | Wu-Chinesisch | 83 | geschrieben als vereinfachtes Chinesisch: `chi-CN` | `chi-CN` teilweise |
+| 25 | Yue-Chinesisch (Kantonesisch) | 86 | `chi-HK` (geschriebenes traditionelles Chinesisch) | `chi-HK` fällt auf `chi-TW` zurück |
+| 26 | Wu-Chinesisch | 83 | geschrieben als vereinfachtes Chinesisch: `chi-CN` | `chi-CN` vollständig |
 | 27 | Persisch | 82 | `fas-IR`, `fas-AF` (Dari) | `fas-IR` vollständig, `fas-AF` fällt darauf zurück |
 | 28 | Koreanisch | 82 | `kor-KR` | keine |
 | 29 | Amharisch | 78 | `amh-ET` | `amh-ET` vollständig |

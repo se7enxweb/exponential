@@ -19,13 +19,13 @@
  */
 class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
-    const LANGUAGES = array( 'afr-ZA', 'amh-ET', 'ara-SA', 'ben-BD', 'bos-BA', 'bul-BG', 'cat-ES', 'cro-HR', 'cze-CZ',
-        'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fin-FI', 'fre-FR', 'ger-DE',
-        'gle-IE', 'guj-IN', 'hau-NG', 'heb-IL', 'hin-IN', 'hun-HU', 'ibo-NG', 'isl-IS', 'ita-IT', 'jpn-JP', 'kal-GL',
-        'kan-IN', 'kor-KR', 'kur-TR', 'lat-VA', 'lav-LV', 'lit-LT', 'mal-IN', 'mar-IN', 'mlt-MT', 'nor-NO', 'ori-IN',
-        'pan-IN', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK', 'slv-SI', 'som-SO',
-        'sqi-AL', 'srp-RS', 'swa-KE', 'swe-SE', 'tam-IN', 'tel-IN', 'tlh-QO', 'tur-TR', 'ukr-UA', 'urd-PK', 'xho-ZA',
-        'yor-NG', 'zul-ZA' );
+    const LANGUAGES = array( 'afr-ZA', 'amh-ET', 'ara-SA', 'ben-BD', 'bos-BA', 'bul-BG', 'cat-ES', 'chi-CN', 'chi-TW',
+        'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR', 'fin-FI',
+        'fre-FR', 'ger-DE', 'gle-IE', 'guj-IN', 'hau-NG', 'heb-IL', 'hin-IN', 'hun-HU', 'ibo-NG', 'isl-IS', 'ita-IT',
+        'jpn-JP', 'kal-GL', 'kan-IN', 'kor-KR', 'kur-TR', 'lat-VA', 'lav-LV', 'lit-LT', 'mal-IN', 'mar-IN', 'mlt-MT',
+        'nor-NO', 'ori-IN', 'pan-IN', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK',
+        'slv-SI', 'som-SO', 'sqi-AL', 'srp-RS', 'swa-KE', 'swe-SE', 'tam-IN', 'tel-IN', 'tlh-QO', 'tur-TR', 'ukr-UA',
+        'urd-PK', 'xho-ZA', 'yor-NG', 'zul-ZA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
     const ENTITY = '/&(?:#[0-9]+|#x[0-9A-Fa-f]+|[A-Za-z][A-Za-z0-9]*);/';
