@@ -15,7 +15,7 @@ Exponential 6.0.15+ bietet einer Site zwei Wege, gebaut zu werden, und die meist
 | | 1. Templates in einer Design-Erweiterung | 2. Der Layout-Editor |
 |---|---|---|
 | Was Sie anlegen | `.tpl`-Dateien, Stylesheets, Einstellungen, in Ihrer eigenen Erweiterung | Layouts: mit Blöcken gefüllte Zonen, in der Datenbank gespeichert |
-| Werkzeug | ein Editor, ein Terminal, git | die Administration: **Layouts** |
+| Werkzeug | ein Editor, ein Terminal, git | der Reiter **Layouts** der Administration (im oberen Menü oder unter **Mehr**, wenn das Menü keinen Platz für ihn hat) |
 | Wer | Designer, Entwickler | Website-Ersteller, Redakteure, Administratoren |
 | Änderungen gehen live | nach Deployment und Leeren eines Cache | wenn Sie auf **Layout veröffentlichen** klicken |
 | Versioniert | in git mit Ihrer Erweiterung | Entwürfe und veröffentlichte Versionen in der Datenbank; Export und Import als `.zip` (`exp:layouts`) |
@@ -47,11 +47,16 @@ Menü, das seine Einträge holt, Markup, das auf jeder Seite gleich sein muss.
 
 ## Weg 2: der Layout-Editor
 
-**Layouts** in der Administration baut Seiten per Ziehen und Ablegen aus Blöcken. Ein **Layout** hat einen Typ (seine Zonen,
+**Layouts** in der Administration baut Seiten per Ziehen und Ablegen aus Blöcken. Der Reiter **Layouts** des oberen Menüs
+(unter **Mehr**, wenn das Menü keinen Platz für ihn hat) öffnet das Layouts-Dashboard; sein linkes Menü hat
+**Layout-Zuordnungen**, **Layouts**, **Gemeinsame Layouts**, **Komponenten**, **Export**, **Importieren** und
+**Template-Editor**, und **Neues Layout** auf dem Dashboard öffnet den Editor. Ein **Layout** hat einen Typ (seine Zonen,
 zum Beispiel `header`, `post_header`, `main`, `pre_footer`, `footer`) und enthält in seinen Zonen **Blöcke**. Der Editor
-bietet die in der `explayouts.ini` definierten Blocktypen an (Title, Text, Rich text, Image, Button, List, Grid, Gallery,
-Slider, Hero, Card, Columns und mehr), jeden mit seinen **Ansichtstypen** und Optionen. **Layout-Zuordnungen** entscheiden,
-welches Layout eine Seite bekommt (nach Knoten, Teilbaum, Pfad oder Inhaltsklasse).
+bietet die in der `explayouts.ini` definierten Blocktypen an (Titel, Text, Formatierter Text, Bild, Schaltfläche / Link,
+Liste, Raster, Galerie, Slider, Hero, Karte, Zwei Spalten, Drei Spalten, Vier Spalten und mehr), jeden mit seinen
+**Ansichtstypen** und Optionen. **Layout-Zuordnungen** entscheiden, welches Layout eine Seite bekommt: nach Knoten,
+Teilbaum, Pfad oder Route, bei Bedarf eingeschränkt durch Bedingungen wie die Inhaltsklasse, den Siteaccess oder einen
+Zeitraum.
 
 Wählen Sie ihn für die Zusammenstellung von Seiten: Landingpages, Kampagnenseiten, ein Hero und drei Teaser, eine Liste der
 neuesten Artikel, die Blöcke über der Fußzeile, alles, was ein Redakteur ohne Release neu anordnen können soll.
@@ -73,8 +78,21 @@ Die beiden Wege sind ein System:
 ## Ein drittes Werkzeug: Einstellungen
 
 Manches ist keins von beidem: Das Kopfmenü dieses Themes ist eine Liste von Knoten-IDs in der `menu.ini`, gelesen vom
-Template der Kopfzeile. Einstellungen werden unter **Setup > INI-Einstellungen** oder mit `./console exp:ini` geändert, ohne
-Code ([Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)).
+Template der Kopfzeile. Einstellungen werden unter **Setup > Ini Einstellungen** (die Gruppe *System* des Setup-Menüs;
+so heißt der Eintrag in der deutschen Oberfläche) oder mit `./console exp:ini` geändert, ohne Code
+([Einen Eintrag zum Kopfmenü hinzufügen](kopfmenue-eintrag-hinzufuegen.md)).
+
+Drei Teile der Administration kommen auf fast jeder Seite dieser Anleitung vor:
+
+- Die rechte Spalte hat das Feld **Cache leeren** (wählen Sie zum Beispiel **Template & Inhalt**, dann **Leeren**) und
+  weiter unten die **Kurzeinstellungen** mit den Debug-Schaltern wie **Liste der verwendeten Templates**, mit einer
+  Auswahl **Siteaccess** und **Setzen**. Die Adresse `setup/settingstoolbar` der Administration zeigt dieselben Schalter
+  als eigene Seite, **Kurzeinstellungen**.
+- Inhalte legen Sie in der **Inhaltsstruktur** an (oder unter **Medien** für die Fußzeilen-Links): Öffnen Sie das
+  übergeordnete Objekt und klicken Sie über seinen Unterelementen auf **Neu erstellen**; das Menü listet die Klassen
+  nach Gruppen (*Netgen* enthält Landing page und Menu item, *Content* enthält Folder).
+- Die Schaltfläche **?** in der oberen Leiste hat **Hilfe zu dieser Seite** und **Hilfe-Center öffnen**, wo sich diese
+  Anleitung und die übrige Hilfe durchsuchen lassen.
 
 ## Welcher Weg wann
 
