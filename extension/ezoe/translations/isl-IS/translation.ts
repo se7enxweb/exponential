@@ -1364,6 +1364,10 @@ Viltu fá frekari upplýsingar um þetta mál?</translation>
         <source>required</source>
         <translation>áskilið</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Þetta vefsvæði notar %engine fyrir alla ritstjóra; þitt eigið val gildir ekki hér.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

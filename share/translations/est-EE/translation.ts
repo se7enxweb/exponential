@@ -57299,6 +57299,18 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>Package</source>
         <translation>Pakett</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arhiiv on pakitud PAX-tar-vormingus, mida ei saa importida. Pakkige pakett GNU-tar-vormingus (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arhiiv lükati tagasi: kirje „%path“ tar-tüüp on „%type“, kuid pakett võib sisaldada ainult faile ja katalooge.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arhiiv lükati tagasi: selles on kirje, mis on pikem kui %length baiti.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>More audiences</source>
         <translation>Rohkem sihtrühmi</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Ülevaatus ja avaldamine</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Teema on nüüd ülevaatusel.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Teema on avaldatud: lugejad näevad seda nüüd.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Teema on jälle mustand.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Teie kirjutasite praeguse versiooni, seega avaldab selle keegi teine, kellel on avaldaja roll.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Olekut ei muudetud: teie roll ei luba seda sammu.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Ülevaatuse töövoog</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Mustand</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Ülevaatus</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Tagasi ülevaatusele</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Saada ülevaatusele</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Avalda</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Tagasi mustandiks</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Stiilijuhendi kontroll</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Stiilijuhendi kontroll ei leidnud midagi.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Vigu: %errors, hoiatusi: %warnings, märkusi: %notices. Viga ei lase käsul ./console exp:help:content check läbida.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Tase</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Reegel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Väli</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Leid</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Kas see oli abiks?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lugejad vastasid „jah“ %yes korda ja „ei“ %no korda.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Eitava vastuse põhjused:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Täname! Teie vastus aitab meil abi paremaks muuta.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jah</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Kui ei, mis oli valesti?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Põhjust pole antud</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Salvestatakse ainult teie vastus, mitte see, kes te olete.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>See on aegunud</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Seda on raske mõista</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Midagi on puudu</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>See on vale</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Muu põhjus</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>See teema pole avaldatud; lugejad seda ei näe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Kasutaja %name seansid</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kus teie konto praegu sisse logitud on. Kui te mõnda seadet ei tunne, logige see välja ja muutke oma parooli.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Kasutaja %name seansid</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kus teie konto praegu sisse logitud on. Kui te mõnda seadet ei tunne, logige see välja ja muutke oma parooli.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <translation>Kasutajad, rollid ja poliitikad</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Kasutajate loomine ja redigeerimine, kontosätted, rollide määramine ja poliitikate redigeerimine.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Kasutajate loomine ja redigeerimine, kontosätted, uute kasutajakontode kinnitamine või tagasilükkamine, rollide määramine ja poliitikate redigeerimine.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Setup</source>
         <translation>Häälestus</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Automaatne RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Andmebaasiredaktor</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Andmebaasi lähtekoodi redaktor</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Alampuu karkasside avaldaja</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Saada plokki</translation>
     </message>
 </context>
 </TS>

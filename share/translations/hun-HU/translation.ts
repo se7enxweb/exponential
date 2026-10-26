@@ -57299,6 +57299,18 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Package</source>
         <translation>Csomag</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Az archívum PAX tar formátumban készült, amely nem importálható. Csomagolja a csomagot GNU tar formátumban (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Az archívum elutasítva: a(z) „%path” bejegyzés tar típusa „%type”, egy csomag pedig csak fájlokat és könyvtárakat tartalmazhat.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Az archívum elutasítva: %length bájtnál hosszabb bejegyzést tartalmaz.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>More audiences</source>
         <translation>További célközönségek</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Felülvizsgálat és kiadás</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>A témakör most Felülvizsgálat állapotban van.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>A témakör kiadva: az olvasók most már látják.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>A témakör ismét piszkozat.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Az aktuális verziót Ön írta, ezért egy másik, kiadói szerepkörrel rendelkező személy adja ki.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Az állapot nem változott: a szerepköre nem engedélyezi ezt a lépést.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Felülvizsgálati folyamat</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Piszkozat</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Felülvizsgálat</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Vissza felülvizsgálatra</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Küldés felülvizsgálatra</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Kiadás</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Vissza piszkozatba</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Stílusútmutató-ellenőrzés</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>A stílusútmutató-ellenőrzés nem talált semmit.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors hiba, %warnings figyelmeztetés, %notices megjegyzés. Hiba esetén a ./console exp:help:content check nem fut le sikeresen.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Szint</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Szabály</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Mező</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Megállapítás</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Hasznos volt?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Az olvasók %yes alkalommal igennel és %no alkalommal nemmel válaszoltak.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>A nem válaszok okai:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Köszönjük. Válasza segít nekünk a súgó fejlesztésében.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ha nem, mi volt a gond?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Nincs megadott ok</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Csak a válaszát tároljuk, azt nem, hogy kicsoda.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Elavult</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Nehezen érthető</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Hiányzik valami</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Hibás</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Egyéb ok</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ez a témakör nincs kiadva; az olvasók nem látják.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>%name munkamenetei</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ahol a fiókja jelenleg be van jelentkezve. Ha nem ismer fel egy eszközt, jelentkeztesse ki, és módosítsa a jelszavát.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>%name munkamenetei</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ahol a fiókja jelenleg be van jelentkezve. Ha nem ismer fel egy eszközt, jelentkeztesse ki, és módosítsa a jelszavát.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Felhasználók, szerepkörök és házirendek</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Felhasználók létrehozása és szerkesztése, fiókbeállítások, szerepkörök hozzárendelése és házirendek szerkesztése.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Felhasználók létrehozása és szerkesztése, fiókbeállítások, új felhasználói fiókok jóváhagyása vagy elutasítása, szerepkörök hozzárendelése és házirendek szerkesztése.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Setup</source>
         <translation>Rendszer</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Automatikus RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Adatbázis-szerkesztő</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Adatbázis-forráskódszerkesztő</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Részfaváz-közzétevő</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Küldés blokkba</translation>
     </message>
 </context>
 </TS>

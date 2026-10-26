@@ -57299,6 +57299,18 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Package</source>
         <translation>Balík</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archív bol zbalený vo formáte PAX tar, ktorý nemožno importovať. Zbaľte balík vo formáte GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Archív bol odmietnutý: položka „%path“ má typ tar „%type“, pričom balík obsahuje iba súbory a adresáre.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archív bol odmietnutý: uvádza položku dlhšiu ako %length bajtov.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>More audiences</source>
         <translation>Ďalšie cieľové skupiny</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Kontrola a vydanie</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Téma je teraz v stave Kontrola.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Téma je vydaná: čitatelia ju teraz vidia.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Téma je znova koncept.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Aktuálnu verziu ste napísali vy, preto ju vydá niekto iný s rolou na vydávanie.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Stav sa nezmenil: vaša rola tento krok nepovoľuje.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Postup kontroly</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Koncept</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Kontrola</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Vrátiť do kontroly</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Odoslať na kontrolu</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Vydať</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Vrátiť do konceptu</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrola podľa štýlovej príručky</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrola podľa štýlovej príručky nič nenašla.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Chyby: %errors, upozornenia: %warnings, poznámky: %notices. Chyba zabráni úspešnému prebehnutiu ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Úroveň</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Pravidlo</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pole</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Zistenie</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Pomohlo vám to?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Čitatelia odpovedali áno %yes-krát a nie %no-krát.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Dôvody odpovede nie:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Ďakujeme. Vaša odpoveď nám pomáha zlepšovať pomocníka.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Áno</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ak nie, čo bolo zlé?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Bez uvedenia dôvodu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Uchováva sa iba vaša odpoveď, nie to, kto ste.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Je zastarané</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Je ťažko zrozumiteľné</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Niečo chýba</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Je nesprávne</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Iný dôvod</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Táto téma nie je vydaná; čitatelia ju nevidia.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Relácie používateľa %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kde je vaše konto práve prihlásené. Ak niektoré zariadenie nepoznáte, odhláste ho a zmeňte si heslo.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Relácie používateľa %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kde je vaše konto práve prihlásené. Ak niektoré zariadenie nepoznáte, odhláste ho a zmeňte si heslo.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Používatelia, roly a politiky</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Vytváranie a úprava používateľov, nastavenia kont, priraďovanie rolí a úprava politík.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Vytváranie a úprava používateľov, nastavenia kont, schvaľovanie alebo zamietanie nových používateľských kont, priraďovanie rolí a úprava politík.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Setup</source>
         <translation>Nastavenie</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Automatické RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor databázy</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor zdrojového kódu databázy</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publikovanie kostry podstromu</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Odoslať do bloku</translation>
     </message>
 </context>
 </TS>

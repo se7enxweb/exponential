@@ -57299,6 +57299,18 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>Package</source>
         <translation>Paketti</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arkisto on pakattu PAX-tar-muotoon, jota ei voi tuoda. Pakkaa paketti GNU-tar-muotoon (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arkisto hylättiin: kohteen ”%path” tar-tyyppi on ”%type”, ja paketti voi sisältää vain tiedostoja ja hakemistoja.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arkisto hylättiin: siinä on kohde, jonka nimi on pidempi kuin %length tavua.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>More audiences</source>
         <translation>Lisää kohderyhmiä</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Tarkistus ja julkaisu</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Aihe on nyt Tarkistus-tilassa.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Aihe on julkaistu: lukijat näkevät sen nyt.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Aihe on taas luonnos.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Kirjoitit nykyisen version, joten sen julkaisee joku muu, jolla on julkaisijan rooli.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Tilaa ei muutettu: roolisi ei salli tätä vaihetta.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Tarkistuksen kulku</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Luonnos</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Tarkistus</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Palauta tarkistukseen</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Lähetä tarkistukseen</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Julkaise</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Palauta luonnokseksi</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Tyylioppaan tarkistus</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Tyylioppaan tarkistus ei löytänyt mitään.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Virheitä %errors, varoituksia %warnings, huomautuksia %notices. Virhe estää komentoa ./console exp:help:content check menemästä läpi.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Taso</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Sääntö</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Kenttä</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Havainto</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Oliko tästä apua?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lukijat vastasivat kyllä %yes kertaa ja ei %no kertaa.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Ei-vastausten syyt:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Kiitos. Vastauksesi auttaa meitä parantamaan ohjetta.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Jos ei, mikä oli vialla?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Syytä ei annettu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Vain vastauksesi tallennetaan, ei henkilöllisyyttäsi.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Se on vanhentunut</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Sitä on vaikea ymmärtää</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Jotain puuttuu</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Se on virheellinen</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Muu syy</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Tätä aihetta ei ole julkaistu; lukijat eivät näe sitä.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Käyttäjän %name istunnot</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Missä tilisi on juuri nyt kirjautuneena. Jos et tunnista laitetta, kirjaa se ulos ja vaihda salasanasi.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Käyttäjän %name istunnot</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Missä tilisi on juuri nyt kirjautuneena. Jos et tunnista laitetta, kirjaa se ulos ja vaihda salasanasi.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <translation>Käyttäjät, roolit ja käytännöt</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Käyttäjien luominen ja muokkaaminen, tiliasetukset, roolien määrittäminen ja käytäntöjen muokkaaminen.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Käyttäjien luominen ja muokkaaminen, tiliasetukset, uusien käyttäjätilien hyväksyminen tai hylkääminen, roolien määrittäminen ja käytäntöjen muokkaaminen.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Setup</source>
         <translation>Asetukset</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Automaattinen RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Tietokantaeditori</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Tietokannan lähdekoodieditori</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Alipuun runkojen julkaisija</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Siirrä lohkoon</translation>
     </message>
 </context>
 </TS>

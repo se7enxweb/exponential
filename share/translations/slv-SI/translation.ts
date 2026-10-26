@@ -57299,6 +57299,18 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Package</source>
         <translation>Paket</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arhivska datoteka je bila zapakirana v obliki PAX tar, ki je ni mogoče uvoziti. Paket zapakirajte v obliki GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arhivska datoteka je bila zavrnjena: vnos „%path“ ima vrsto tar „%type“, paket pa vsebuje samo datoteke in imenike.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arhivska datoteka je bila zavrnjena: navaja vnos, daljši od %length bajtov.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>More audiences</source>
         <translation>Več ciljnih skupin</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Pregled in izdaja</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tema je zdaj v stanju Pregled.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tema je izdana: bralci jo zdaj vidijo.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Tema je spet osnutek.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Trenutno različico ste napisali vi, zato jo izda nekdo drug z vlogo za izdajo.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Stanje ni bilo spremenjeno: vaša vloga tega koraka ne dovoljuje.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Potek pregleda</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Osnutek</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pregled</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Vrni v pregled</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Pošlji v pregled</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Izdaj</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Vrni v osnutek</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Preverjanje po slogovnem priročniku</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Preverjanje po slogovnem priročniku ni našlo ničesar.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Napake: %errors, opozorila: %warnings, obvestila: %notices. Zaradi napake ./console exp:help:content check ne uspe.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Raven</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Pravilo</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Polje</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Ugotovitev</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Vam je bilo to v pomoč?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Bralci so %yes-krat odgovorili z da in %no-krat z ne.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Razlogi za ne:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Hvala. Vaš odgovor nam pomaga izboljšati pomoč.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Če ne, kaj je bilo narobe?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Razlog ni naveden</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Shrani se samo vaš odgovor, ne pa tudi, kdo ste.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Zastarelo je</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Težko razumljivo</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Nekaj manjka</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Napačno je</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Drug razlog</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Ta tema ni izdana; bralci je ne vidijo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Seje uporabnika %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kje je vaš račun trenutno prijavljen. Če naprave ne prepoznate, jo odjavite in spremenite geslo.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Seje uporabnika %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Kje je vaš račun trenutno prijavljen. Če naprave ne prepoznate, jo odjavite in spremenite geslo.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <translation>Uporabniki, vloge in pravilniki</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Ustvarjanje in urejanje uporabnikov, nastavitve računov, dodeljevanje vlog in urejanje pravilnikov.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ustvarjanje in urejanje uporabnikov, nastavitve računov, odobritev ali zavrnitev novih uporabniških računov, dodeljevanje vlog in urejanje pravilnikov.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Setup</source>
         <translation>Nastavitve</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Samodejni RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Urejevalnik zbirke podatkov</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Urejevalnik izvorne kode zbirke podatkov</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Objavljanje ogrodja poddrevesa</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Potisni v blok</translation>
     </message>
 </context>
 </TS>

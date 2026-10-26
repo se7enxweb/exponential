@@ -57299,6 +57299,18 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>Package</source>
         <translation>Pakket</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Die argief is in die PAX-tar-formaat gepak, wat nie ingevoer kan word nie. Pak die pakket in die GNU-tar-formaat (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Die argief is geweier: die inskrywing “%path” het die tar-tipe “%type”, en ’n pakket bevat slegs lêers en gidse.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Die argief is geweier: dit noem ’n inskrywing langer as %length grepe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>More audiences</source>
         <translation>Meer teikengroepe</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Hersiening en vrystelling</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Die onderwerp is nou in Hersiening.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Die onderwerp is Vrygestel: lesers sien dit nou.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Die onderwerp is weer ’n Konsep.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>U het die huidige weergawe geskryf, dus stel iemand anders met die vrystellingsrol dit vry.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Die status is nie verander nie: u rol laat nie hierdie stap toe nie.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Hersieningswerkvloei</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Konsep</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Hersiening</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Terug na Hersiening</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Stuur na Hersiening</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Stel vry</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Terug na Konsep</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Stylgidskontrole</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Die stylgidskontrole het niks gevind nie.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors foute, %warnings waarskuwings, %notices kennisgewings. ’n Fout verhoed dat ./console exp:help:content check slaag.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Vlak</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Reël</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Veld</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Bevinding</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Was dit nuttig?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lesers het %yes keer ja en %no keer nee geantwoord.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Redes vir nee:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Dankie. U antwoord help ons om die hulp te verbeter.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Indien nie, wat was verkeerd?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Geen rede gegee nie</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Slegs u antwoord word bewaar, nie wie u is nie.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Dit is verouderd</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Dit is moeilik om te verstaan</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Iets ontbreek</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Dit is verkeerd</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>’n Ander rede</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Hierdie onderwerp is nie Vrygestel nie; lesers sien dit nie.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Sessies van %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Waar u rekening tans aangemeld is. As u 'n toestel nie herken nie, meld dit af en verander u wagwoord.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Sessies van %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Waar u rekening tans aangemeld is. As u 'n toestel nie herken nie, meld dit af en verander u wagwoord.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Gebruikers, rolle en beleide</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Skep en wysig van gebruikers, rekeninginstellings, toewysing van rolle en wysiging van beleide.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Skep en wysig van gebruikers, rekeninginstellings, goedkeuring of weiering van nuwe gebruikersrekeninge, toewysing van rolle en wysiging van beleide.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     <message>
         <source>Setup</source>
         <translation>Opstelling</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Outo-RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Databasisredigeerder</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Databasis-bronredigeerder</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Subboom-geraamtepubliseerder</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Stoot na blok</translation>
     </message>
 </context>
 </TS>
