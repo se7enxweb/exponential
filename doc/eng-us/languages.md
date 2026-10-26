@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **77**, 76 of them complete |
+| Languages of the administration: translations in `share/translations` | **79**, 76 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **74** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **74** |
+| of them shown translated by the administration (own translation, fallback or English) | **76** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **72** |
 | Countries and territories of the locales | **158** |
-| of them with the administration in their language (green on the map) | **138** |
+| of them with the administration in their language (green on the map) | **139** |
 | Locales written right to left | **40** |
 
-![World map: 138 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 139 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 138 countries and territories in green</summary>
+<details><summary>The 139 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -117,6 +117,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (untranslated) |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
+| Nepal | NP | `nep-NP` |
 | Netherlands | NL | `dut-NL`, `fry-NL` (untranslated) |
 | New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
 | Nicaragua | NI | `esl-NI` → `esl-ES` |
@@ -170,7 +171,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 20 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 19 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -186,7 +187,6 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Maldives | MV | `div-MV` |
 | Mongolia | MN | `mon-MN` |
 | Myanmar | MM | `mya-MM` |
-| Nepal | NP | `nep-NP` |
 | North Macedonia | MK | `mkd-MK` |
 | Tajikistan | TJ | `tgk-TJ` |
 | Tonga | TO | `ton-TO` |
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **74** of them translated: at least one of their locales has a translation of its
+administration shows **76** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **74** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **72** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 74 languages not translated</summary>
+<details><summary>The 72 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -287,7 +287,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
 | Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolia) |
-| Nepali | नेपाली | `nep` | `nep-NP` (Nepal) |
 | Nigerian Pidgin | Naijíriá Píjin | `pcm` | `pcm-NG` (Nigeria) |
 | Northern Sami | Davvisámegiella | `sme` | `sme-NO` (Norway) |
 | N’Ko | ߒߞߏ | `nqo` | `nqo-GN` (Guinea) |
@@ -302,7 +301,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
-| Sundanese | Basa Sunda | `sun` | `sun-ID` (Indonesia) |
 | Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Iraq), `syr-SY` (Syrian Arab Republic) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russian Federation) |
