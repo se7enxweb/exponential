@@ -40,7 +40,9 @@ Jeder darf die Software für jeden Zweck nutzen, ihren Code untersuchen und änd
 geänderte Kopien. Wer die Software oder eine geänderte Version verbreitet, muss dieselben Freiheiten und den Quellcode
 weitergeben. Wer sie auf dem eigenen Server für die eigene Website betreibt, muss seine Änderungen nicht unter der
 GPL v2 veröffentlichen. Diese Lizenz hat es 7x ermöglicht, den Code weiterzuführen, nachdem sein ursprünglicher
-Entwickler aufgehört hatte ([Thema: Open Source und Lizenzen](thema-open-source-und-lizenzen.md)).
+Entwickler aufgehört hatte ([Thema: Open Source und Lizenzen](thema-open-source-und-lizenzen.md)). Was die Weitergabe
+verlangt, wie die Lizenz in der Praxis verletzt wird und warum es kein Verstoß ist, Änderungen nicht an das Projekt
+zurückzugeben: [Lizenzverstöße](../projekt/lizenz-faq.md#lizenzverstöße).
 
 ## Die GFDL in einfachen Worten
 

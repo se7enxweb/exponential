@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **73**, davon 73 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **75**, davon 75 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **70** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **78** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **72** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **76** |
 | Länder und Gebiete der Locales | **158** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **134** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **136** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
 
-![Weltkarte: 134 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 136 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 134 Länder und Gebiete in Grün</summary>
+<details><summary>Die 136 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -93,6 +93,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kroatien | HR | `cro-HR` |
 | Kuba | CU | `esl-CU` → `esl-ES` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
+| Laos | LA | `lao-LA` |
 | Lettland | LV | `lav-LV` |
 | Libanon | LB | `ara-LB` → `ara-SA` |
 | Libysch-Arabische Dschamahirija | LY | `ara-LY` → `ara-SA` |
@@ -147,6 +148,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Syrien | SY | `ara-SY` → `ara-SA`, `syr-SY` (nicht übersetzt) |
 | Taiwan | TW | `chi-TW` |
 | Tansania | TZ | `swa-TZ` → `swa-KE` |
+| Thailand | TH | `tha-TH` |
 | Togo | TG | `fre-TG` → `fre-FR` |
 | Tschad | TD | `ara-TD` → `ara-SA`, `fre-TD` → `fre-FR` |
 | Tschechien | CZ | `cze-CZ` |
@@ -166,7 +168,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 </details>
 
-<details><summary>Die 24 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 22 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
@@ -182,14 +184,12 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kambodscha | KH | `khm-KH` |
 | Kasachstan | KZ | `kaz-KZ` |
 | Kirgistan | KG | `kir-KG` |
-| Laos | LA | `lao-LA` |
 | Malaysien | MY | `msa-MY` |
 | Malediven | MV | `div-MV` |
 | Mongolei | MN | `mon-MN` |
 | Nepal | NP | `nep-NP` |
 | Simbabwe | ZW | `sna-ZW` |
 | Tadschikistan | TJ | `tgk-TJ` |
-| Thailand | TH | `tha-TH` |
 | Tonga | TO | `ton-TO` |
 | Turkmenistan | TM | `tuk-TM` |
 | Uganda | UG | `lug-UG` |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **70** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **72** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **78** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **76** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 78 nicht übersetzten Sprachen</summary>
+<details><summary>Die 76 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -282,7 +282,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Kirundi | Ikirundi | `run` | `run-BI` (Burundi) |
 | Konkani | कोंकणी | `kok` | `kok-IN` (Indien) |
 | Kyrgyz | Кыргызча | `kir` | `kir-KG` (Kirgistan) |
-| Lao | ລາວ | `lao` | `lao-LA` (Laos) |
 | Lingala | Lingála | `lin` | `lin-CD` (Zaire) |
 | Luxembourgish | Lëtzebuergesch | `ltz` | `ltz-LU` (Luxemburg) |
 | Macedonian | Македонски | `mkd` | `mkd-MK` (Ehemalige jugoslawische Republik Mazedonien) |
@@ -311,7 +310,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Irak), `syr-SY` (Syrien) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tadschikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russland) |
-| Thai | ไทย | `tha` | `tha-TH` (Thailand) |
 | Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
 | Tigrinya | ትግርኛ | `tir` | `tir-ET` (Äthiopien) |
 | Tongan | Lea fakatonga | `ton` | `ton-TO` (Tonga) |
@@ -356,7 +354,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 170, die in 6.0.15 hinzukamen |
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
@@ -581,7 +579,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `kok-IN` | Konkani | कोंकणी | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `kor-KR` | Korean | 한국어 | Ostasien | LTR | Koreanisch (Hangul, Han) (`Kore`) | älter, neu erzeugt aus CLDR 44 | — |
 | `kur-TR` | Kurdish | Kurdî (kurmancî) | Naher Osten | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `lao-LA` | Lao | ລາວ | Südostasien | LTR | Laotisch (`Laoo`) | CLDR 44 | — |
+| `lao-LA` | Lao | ລາວ | Südostasien | LTR | Laotisch (`Laoo`) | CLDR 44 | 100 % |
 | `lat-VA` | Latin | Latina | Europa | LTR | Lateinisch (`Latn`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
 | `lav-LV` | Latvian | Latviešu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `lin-CD` | Lingala | Lingála | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -651,7 +649,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `tat-RU` | Tatar | Татар | Europa | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
 | `tel-IN` | Telugu | తెలుగు | Südasien | LTR | Telugu (`Telu`) | CLDR 44 | 100 % |
 | `tgk-TJ` | Tajik | Тоҷикӣ | Zentralasien und Kaukasus | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
-| `tha-TH` | Thai | ไทย | Südostasien | LTR | Thai (`Thai`) | CLDR 44 | — |
+| `tha-TH` | Thai | ไทย | Südostasien | LTR | Thai (`Thai`) | CLDR 44 | 100 % |
 | `tir-ET` | Tigrinya | ትግርኛ | Afrika | LTR | Äthiopisch (`Ethi`) | CLDR 44 | — |
 | `tlh-QO` | Klingon | tlhIngan Hol | Weltweit (fiktiv) | LTR | Lateinisch (`Latn`) | von Hand erstellt | 100 % |
 | `ton-TO` | Tongan | Lea fakatonga | Ozeanien | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -833,19 +831,26 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `chi-HK` | fällt auf `chi-TW` zurück | 100 % (fällt auf `chi-TW` zurück) |
 | `chi-TW` | 100 % (18.415 von 18.415) | 100 % (18.415 von 18.415) |
 | `yid-US` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
-| `vie-VN` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
-| `ind-ID` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `tha-TH` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `lao-LA` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 | `msa-MY` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 | `msa-SG` | fällt auf `msa-MY` zurück | 100 % (fällt auf `msa-MY` zurück) |
 | `msa-BN` | fällt auf `msa-MY` zurück | 100 % (fällt auf `msa-MY` zurück) |
+| `vie-VN` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
+| `ind-ID` | 100 % (18.812 von 18.812) | 100 % (18.812 von 18.812) |
 
 Hinweise:
 
 - **Malaiisch** (`msa-MY`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in malaysischem Standard-Malaiisch
   (Rumi-Schrift) mit der höflichen Anrede *anda*, den Fachbegriffen von Dewan Bahasa dan Pustaka und einem Glossar, das
   die Unterschiede zum Indonesischen nennt (`share/translations/msa-MY/GUIDE.md`); die Kataloge des Kernels, von ezoe und
-  ezjscore sind vollständig. `msa-SG` und `msa-BN` fallen darauf zurück. Eine Prüfung durch Muttersprachler
-  ist willkommen.
+  ezjscore sind vollständig. `msa-SG` und `msa-BN` fallen darauf zurück. Eine Prüfung durch Muttersprachler ist
+  willkommen.
+- **Thai** (`tha-TH`) und **Laotisch** (`lao-LA`) sind am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, im
+  höflichen, neutralen Ton aktueller Software ohne Satzendpartikel, mit Wörtern ohne Leerzeichen dazwischen und frei
+  stehenden Platzhaltern, jede mit einem Glossar (`share/translations/tha-TH/GUIDE.md`,
+  `share/translations/lao-LA/GUIDE.md`); die Kataloge des Kernels, von ezoe und ezjscore sind vollständig. Eine
+  Prüfung durch Muttersprachler ist willkommen.
 - **Jiddisch** (`yid-US`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in der YIVO-Rechtschreibung und
   von rechts nach links, mit der höflichen Anrede und einem Glossar (`share/translations/yid-US/GUIDE.md`); die Kataloge
   des Kernels, von ezoe und ezjscore sind vollständig. Eine Prüfung durch Muttersprachler ist willkommen.
@@ -965,7 +970,7 @@ sind auf Millionen gerundet.
 | 27 | Persisch | 82 | `fas-IR`, `fas-AF` (Dari) | `fas-IR` vollständig, `fas-AF` fällt darauf zurück |
 | 28 | Koreanisch | 82 | `kor-KR` | keine |
 | 29 | Amharisch | 78 | `amh-ET` | `amh-ET` vollständig |
-| 30 | Thai | 71 | `tha-TH` | keine |
+| 30 | Thai | 71 | `tha-TH` | `tha-TH` vollständig |
 | 31 | Javanisch | 69 | `jav-ID` | keine |
 | 32 | Italienisch | 66 | `ita-IT`, `ita-CH` | `ita-IT` teilweise |
 | 33 | Gujarati | 62 | `guj-IN` | `guj-IN` vollständig |
@@ -1180,6 +1185,11 @@ dreiundsiebzig vollständigen, und eine Prüfung der maschinell unterstützten �
 Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.
+
+**Übersetzungswellen.** Die Arbeit, die für jede Sprache bleibt (der Administrationskatalog, die Erweiterungen und die
+Hilfe), ist gemessen und in kleine, voneinander unabhängige Wellen geteilt, geordnet nach der Prioritätsgruppe der
+Herkunftssprachen geflüchteter Kinder, dann nach Sprechern und Schwierigkeit, in
+[Übersetzungswellen](uebersetzungswellen.md).
 
 ## 9. Sprachen, die von rechts nach links geschrieben werden
 

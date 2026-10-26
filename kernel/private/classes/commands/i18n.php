@@ -39,6 +39,13 @@ class I18n extends \Exponential\Runnable\Command
                                  "                                                     doc/eng-us/languages.md and doc/ger-de/sprachen.md:\n" .
                                  "                                                     write what changed (--raster: every WebP copy)\n" .
                                  "./console exp:i18n coverage --check                  compare only: exit 1 when they are out of date\n" .
+                                 "./console exp:i18n waves                             the translation waves at the top of\n" .
+                                 "                                                     doc/eng-us/translation-waves.md and\n" .
+                                 "                                                     doc/ger-de/uebersetzungswellen.md: write what changed\n" .
+                                 "./console exp:i18n waves --check                     compare only: exit 1 when a percentage changed or a\n" .
+                                 "                                                     size is more than 3 % off\n" .
+                                 "./console exp:i18n waves --list                      the whole queue, one wave a line\n" .
+                                 "./console exp:i18n waves --wave=ara-SA/H-help        the pages (contexts, files) of a wave, which are done\n" .
                                  "\n" .
                                  "Exit code: 0 fine, 1 problems found (check, or --check), 2 usage error.",
                 'use-session'    => false,
@@ -46,7 +53,9 @@ class I18n extends \Exponential\Runnable\Command
                 'use-extensions' => true
             )
         );
-        $options = $this->startup( '[locale:][format:][only:][check][strict][no-extensions][raster][date:]', '[ACTION]', array(
+        $options = $this->startup( '[locale:][format:][only:][check][strict][no-extensions][raster][date:][list][wave:]', '[ACTION]', array(
+            'list'          => 'With waves: print the whole queue, one wave a line',
+            'wave'          => 'With waves: the pages, contexts or files of one wave (ara-SA/H-help) or work set (A03), and which are done',
             'raster'        => 'With coverage: write the WebP copy of every map again, not only of the maps that changed',
             'date'          => 'With coverage: the date of the figures when they changed (YYYY-MM-DD, default today)',
             'locale'        => 'Only these locales, comma separated (esl-AR,ger-AT): each step of the chain and every extension',
@@ -60,7 +69,7 @@ class I18n extends \Exponential\Runnable\Command
         $action = isset( $options['arguments'][0] ) ? strtolower( trim( $options['arguments'][0] ) ) : 'fallbacks';
         $format = isset( $options['format'] ) && is_string( $options['format'] ) ? strtolower( $options['format'] ) : 'table';
         $only = isset( $options['only'] ) && is_string( $options['only'] ) ? strtolower( $options['only'] ) : '';
-        if ( !in_array( $action, array( 'fallbacks', 'check', 'coverage' ), true ) || !in_array( $format, array( 'table', 'json' ), true )
+        if ( !in_array( $action, array( 'fallbacks', 'check', 'coverage', 'waves' ), true ) || !in_array( $format, array( 'table', 'json' ), true )
              || !in_array( $only, array( '', 'own', 'fallback', 'untranslated' ), true ) )
         {
             $cli->error( 'Usage: ./console exp:i18n fallbacks|check|coverage [--locale=...] [--format=table|json] [--only=own|fallback|untranslated] [--strict] [--raster] (see --help)' );
@@ -70,6 +79,11 @@ class I18n extends \Exponential\Runnable\Command
         if ( $action === 'coverage' )
         {
             $this->shutdown( $this->coverage( $options ) );
+            return;
+        }
+        if ( $action === 'waves' )
+        {
+            $this->shutdown( $this->waves( $options ) );
             return;
         }
 
@@ -160,6 +174,75 @@ class I18n extends \Exponential\Runnable\Command
         if ( !$result['written'] && !$result['errors'] )
             $cli->output( 'Nothing changed.' );
         return $result['errors'] ? self::EXIT_PROBLEMS : self::EXIT_OK;
+    }
+
+    /**
+     * The waves action: the translation waves of the help pages (expI18nTranslationWaves), written, compared with
+     * --check, the whole queue with --list, or one wave with --wave.
+     *
+     * @param array $options
+     * @return int exit code
+     */
+    protected function waves( array $options )
+    {
+        $cli = $this->cli();
+        $date = isset( $options['date'] ) && is_string( $options['date'] ) && $options['date'] !== '' ? $options['date'] : date( 'Y-m-d' );
+        if ( !preg_match( '/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/', $date ) )
+        {
+            $cli->error( '--date must be YYYY-MM-DD' );
+            return self::EXIT_USAGE;
+        }
+        $root = defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : getcwd();
+        $waves = new \expI18nTranslationWaves( $root );
+        if ( isset( $options['wave'] ) && is_string( $options['wave'] ) && $options['wave'] !== '' )
+        {
+            $wave = $waves->wave( $options['wave'] );
+            if ( $wave === null )
+            {
+                $cli->error( 'No such wave or work set: ' . $options['wave'] . ' (A01, E, H-help, X01 ..., or <locale>/<set>)' );
+                return self::EXIT_USAGE;
+            }
+            $open = 0;
+            foreach ( $wave['items'] as $item )
+            {
+                $mark = $item['done'] === null ? '  ' : ( $item['done'] ? '+ ' : '- ' );
+                if ( $item['done'] === false )
+                    $open++;
+                $cli->output( $mark . $item['item'] );
+            }
+            $cli->output( count( $wave['items'] ) . ' items' . ( $wave['locale'] !== '' ? ", $open not translated in " . $wave['locale'] . ' (- open, + done)' : '' ) );
+            return self::EXIT_OK;
+        }
+        $data = $waves->data();
+        if ( !empty( $options['list'] ) )
+        {
+            foreach ( $data['queue'] as $wave )
+            {
+                $s = $wave['size'];
+                $cli->output( sprintf( '%6d  %d  %-34s %-10s messages %d, pages %d, entries %d, words %d, left %d', $wave['number'], $wave['phase'], $wave['id'],
+                                       $wave['kind'], $s['messages'], $s['pages'], $s['entries'], $s['words'], $s['missing'] ) );
+            }
+            return self::EXIT_OK;
+        }
+        $tiers = $data['help']['tiers'];
+        $cli->output( sprintf( 'Administration: %d strings in %d parts; shipped extensions: %d strings', $data['admin']['messages'], count( $data['admin']['parts'] ), array_sum( $data['extensions'] ) ) );
+        foreach ( $tiers as $tier => $figures )
+            $cli->output( sprintf( 'Help, %-9s %5d pages, %5d entries, %8d words, %3d parts', $tier . ':', $figures['pages'], $figures['entries'], $figures['words'], $figures['parts'] ) );
+        $cli->output( sprintf( 'Translations: %d; languages without one: %d; waves: %d', count( $data['status'] ), count( $data['untranslated'] ), count( $data['queue'] ) ) );
+        if ( !empty( $options['check'] ) )
+        {
+            $problems = $waves->check( $date );
+            foreach ( $problems as $problem )
+                $cli->error( $problem );
+            $cli->output( $problems ? 'FAIL: ' . count( $problems ) . ' out of date' : 'PASS: the translation waves are current' );
+            return $problems ? self::EXIT_PROBLEMS : self::EXIT_OK;
+        }
+        $written = $waves->write( $date );
+        foreach ( $written as $path )
+            $cli->output( 'written: ' . $path );
+        if ( !$written )
+            $cli->output( 'Nothing changed.' );
+        return self::EXIT_OK;
     }
 
     /**

@@ -3,8 +3,8 @@ title: "Licensing questions: the GPL and Exponential"
 audience: user, admin, developer, designer, partner
 category: project
 order: 20
-summary: The licensing FAQ of exponential.earth in plain words - the GPL version 2 or later, compatible and incompatible code, assets and dependencies, who holds the copyright, what source code means for a web application, whether your extension or design must be GPL, whether you must share it, selling, agencies working for clients, bridge extensions, website visitors and GPL version 3. Not legal advice.
-keywords: license, licensing, GPL, GPL-2.0-or-later, GPL version 3, GPL compatible, AGPL, LGPL, MIT, BSD, PHP license, PEAR, copyright, source code, derivative work, extension, design, module, sell, agency, client, bridge module, website visitors, trademark, Creative Commons
+summary: The licensing FAQ of exponential.earth in plain words - the GPL version 2 or later, compatible and incompatible code, assets and dependencies, who holds the copyright, what source code means for a web application, whether your extension or design must be GPL, whether you must share it, selling, agencies working for clients, license violations (what distributing Exponential or a design requires, common violations, giving back, what customers can ask for, what to do), bridge extensions, website visitors and GPL version 3. Not legal advice.
+keywords: license, licensing, license violation, GPL violation, GPL compliance, distribution, conveying, written offer, corresponding source, minified, further restrictions, giving back, GPL, GPL-2.0-or-later, GPL version 3, GPL compatible, AGPL, LGPL, MIT, BSD, PHP license, PEAR, copyright, source code, derivative work, extension, design, module, sell, agency, client, bridge module, website visitors, trademark, Creative Commons
 type: help
 ---
 # Licensing questions: the GPL and Exponential
@@ -128,6 +128,165 @@ that combination to the public.
 
 The client can do with the result what the GPL allows. Selling or giving the same extension to other clients, or
 publishing it, is distribution, with everything that follows from it.
+
+That answer covers a narrow case: a contractor working on the client's behalf and under its direction, much like an
+employee. Whether a particular hand-over is that or a distribution depends on the contract and the facts, and not
+everyone draws the line in the same place. When in doubt, treat the delivery as distribution and meet the
+obligations in [License violations](#license-violations): it costs the agency nothing but handing over files it
+already has.
+
+## License violations
+
+This section explains how the license of Exponential is broken in practice, so that whoever passes Exponential or a
+design on knows what they owe, and whoever receives it knows what they are entitled to. It follows the
+[GNU GPL version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and names its sections (§); where
+[GPL version 3](https://www.gnu.org/licenses/gpl-3.0.html), which anyone may choose under "or any later version",
+differs, that is noted. It is not legal advice.
+
+### What triggers the obligations: distribution
+
+The conditions of the GPL apply when you **distribute** (GPL version 3 says "convey") Exponential or a work based on
+it to a third party. A work based on Exponential is, for example:
+
+- Exponential itself, changed or unchanged;
+- an extension that uses Exponential's classes and runs in the same PHP process;
+- a site package built from Exponential's packages and data;
+- a design or theme whose templates, stylesheets or scripts include or are built from Exponential's GPL templates,
+  stylesheets or scripts, such as overrides of the standard templates or a shipped design copied and changed.
+
+Distribution means handing a copy to someone else, in any form: an archive, a Git repository, a copy uploaded to the
+recipient's server, a download from a theme shop. Typical cases:
+
+- an agency delivers a finished site, with its design and extensions, to its customer, who runs it or has another
+  host run it;
+- a designer sells or gives away a theme;
+- a company publishes an extension or a site package, or sells it.
+
+What is **not** distribution under GPL version 2:
+
+- installing and running Exponential for yourself, changed or unchanged. The GPL does not restrict running the
+  program (§0: "Activities other than copying, distribution and modification are not covered by this License");
+- copies made and used inside your own organization;
+- offering a website built with Exponential to its visitors. The PHP code runs on your server; visitors receive its
+  output, not the program. Neither GPL version 2 nor version 3 has a clause about use over a network. The GNU Affero
+  GPL has one (its §13), but Exponential is not under the AGPL; only code under the AGPL that you add to an
+  installation would bring that obligation with it.
+
+One precise point: the JavaScript and stylesheet files a site sends to the browser are copies of those files, and the
+Free Software Foundation regards sending GPL JavaScript to visitors as conveying it to them. Keep the license
+notices in such files and make their unminified source available, for example by linking the public repository it
+comes from.
+
+### What you owe when you distribute
+
+| Obligation | GPL version 2 | GPL version 3 |
+|---|---|---|
+| Give every recipient a copy of the license with the program | §1 | §4 |
+| Keep the copyright notices, the license notices and the notice that there is no warranty intact | §1 | §4, §5 |
+| Mark changed files with a prominent notice that you changed them, and the date | §2(a) | §5(a) |
+| License the whole work based on Exponential under the GPL to every third party, at no charge | §2(b) | §5(c), §10 |
+| Provide the complete corresponding source code | §3 | §6 |
+| Impose no further restrictions on the recipients' rights | §6 | §10, §7 |
+
+The source code, in the license's words, is "the preferred form of the work for making modifications to it"; the
+complete source also includes "the scripts used to control compilation and installation" (§3). For a site or a
+design that means:
+
+- the templates and the PHP code of the extensions;
+- the original, unminified CSS and JavaScript, and the files they are built from (Sass, Less, TypeScript and the
+  like): a minified bundle or a compiled stylesheet is not source code;
+- the build configuration needed to produce the delivered files from those sources (`package.json`, the bundler's
+  configuration, a `Makefile`, build scripts);
+- the editable original of an image you made from a GPL image.
+
+Under §3 you provide it in one of these ways:
+
+- **with the delivery** (§3(a)): the source goes with the copy, which for a web project usually means the
+  repository or an archive of it;
+- **with a written offer** (§3(b)), valid for at least three years, to give **any third party** the complete source
+  for no more than the cost of physically making the copy;
+- **by passing on an offer** you received yourself (§3(c)), allowed only for noncommercial distribution.
+
+Two more rules complete the picture:
+
+- **You may charge.** "You may charge a fee for the physical act of transferring a copy, and you may at your option
+  offer warranty protection in exchange for a fee" (§1). Pricing a theme, a site, the installation, support or
+  hosting is allowed. What you may not do is take the freedoms away: the recipient gets the license itself at no
+  charge (§2(b)) and may change the work, share it, sell it or give it away.
+- **No further restrictions.** "You may not impose any further restrictions on the recipients' exercise of the
+  rights granted herein" (§6). If a contract, a non-disclosure agreement or any other obligation stops you from
+  meeting the GPL's conditions, you may not distribute the work at all (§7). Under GPL version 3, a recipient may
+  remove a further restriction that comes with the work (§7).
+
+Parts that are separate works and only travel alongside, such as photos, illustrations and fonts the agency made or
+licensed on their own, may keep their own licenses, because "mere aggregation" with a GPL work does not bring them
+under the GPL (§2, last paragraph). Say which parts these are and under which terms they come.
+
+### Common violations
+
+- Delivering a site without the source of its design or of its custom extensions.
+- Delivering only minified or compiled assets, without the files and build scripts they were made from.
+- Delivering without the license text, or with a written offer that is never honored.
+- Removing or replacing the copyright and license notices of Exponential or of a template a design was built from.
+  Adding your own copyright notice for your own changes is fine; removing the others is not.
+- Contracts or terms that forbid the customer to pass the code on, to change it, to reuse it, to publish it or to
+  have another provider work on it.
+- Calling a design proprietary, or selling it under a "single-site license", while it is a derivative of GPL
+  templates, stylesheets or scripts.
+- Charging a fee for the license of the GPL parts, or making their use depend on a license key.
+
+The consequence under GPL version 2 is that the distributor's rights under the license end automatically (§4:
+"Any attempt otherwise to copy, modify, sublicense or distribute the Program is void, and will automatically
+terminate your rights under this License"); those who already received copies from them keep their own licenses.
+Distributing without a license is copyright infringement, which the copyright holders can take to court; German
+courts have enforced the GPL since the Landgericht München I decided so on 19 May 2004 (21 O 6123/04). A distributor
+who follows GPL version 3 gets the license back by ending the violation: provisionally at once, and permanently if
+the copyright holder does not notify them of it within 60 days after it ended, or if it is the first notice from that
+copyright holder and the violation is cured within 30 days of receiving it (§8).
+
+### Giving back: what the project asks, and what the GPL does not require
+
+The GPL does **not** oblige anyone to give their changes, extensions or designs to the Exponential project. It obliges
+whoever distributes them to give the source and the license **to the people they distribute to**. Not contributing a
+design back is therefore not a violation of the license.
+
+Once the customer has received the design under the GPL, the customer holds every right the GPL gives: to use it,
+change it, have it changed by anyone, and share it with anyone, including the project.
+
+The project asks agencies and designers to contribute their designs, extensions and fixes back, and the community
+expects it: that is how free software stays healthy, and every site built on Exponential stands on work others gave
+before. It is a request and an expectation of the community, not a legal duty. How to do it:
+[Contribute extensions back](../contribute-extensions-back.md) and
+[Contribute to the project](contribute-to-the-project.md).
+
+### What customers can ask their agency for
+
+- The license text, and the copyright notices of what was delivered.
+- The complete source of everything delivered under the GPL: the extensions, the design with its templates,
+  unminified stylesheets and scripts and their build scripts, the site package, ideally as the Git repository.
+- A contract that confirms the rights the GPL gives, and has no clause forbidding changes, passing on, reuse or the
+  choice of another provider. Clauses to look for and to ask for:
+  [Lock-in clauses to avoid](../government/procurement/exit-plans/lock-in-clauses-to-avoid.md) and the
+  [open source license and source availability clause](../government/procurement/tender-templates/open-source-license-and-source-availability-clause.md).
+- A list of the parts under other licenses (photos, fonts, paid libraries) and what their terms allow.
+
+The contract may give the customer more than the GPL, for example the copyright of work it paid for; it can never
+give less.
+
+### What to do about a violation
+
+1. **Ask first.** Most violations are mistakes. Write to the agency or vendor, name what is missing (the license,
+   the source, a clause that conflicts with the GPL), cite the sections above and give a reasonable time.
+2. **The copyright holders can enforce the license.** For the kernel these are 7x and the Exponential Foundation,
+   and eZ Systems AS for the inherited code (`COPYRIGHT.md`); for an extension or a design, its authors. Tell them
+   what you found: for Exponential, write to 7x at info@se7enx.com. A customer who did not receive what was promised
+   may also have claims under the contract; that is a question for the customer's lawyer.
+3. **Read the guides on GPL compliance.**
+   - Free Software Foundation: [Violations of the GNU licenses](https://www.gnu.org/licenses/gpl-violation.html)
+     and the [Frequently asked questions about the GNU licenses](https://www.gnu.org/licenses/gpl-faq.html).
+   - Software Freedom Conservancy: [Copyleft compliance](https://sfconservancy.org/copyleft-compliance/), the
+     [Principles of community-oriented GPL enforcement](https://sfconservancy.org/copyleft-compliance/principles.html)
+     and the [Copyleft and the GNU General Public License: a comprehensive tutorial and guide](https://copyleft.org/guide/).
 
 ## Problems and questions
 
