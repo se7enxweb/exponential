@@ -22381,7 +22381,7 @@ febc8514204b8e9e722c9f7629aee178  kernel/classes/ezcontentbrowsebookmarkfolder.p
 e03967a373ba9e46d7ba161d72500151  kernel/classes/ezcontentbrowserecent.php
 be5967e47609a568319111fd808d10e2  kernel/classes/ezcontentcache.php
 d54f49848795212a691c9840b37564bd  kernel/classes/ezcontentcachemanager.php
-7dd52dd89ad105b6e3a9b4f4a4ddef93  kernel/classes/ezcontentclass.php
+7b3bdf1b73c74d27e08f2661a7457b1d  kernel/classes/ezcontentclass.php
 1b6e5128718bb11668a859b0c083cda1  kernel/classes/ezcontentclassattribute.php
 57be7f3d46bf77207cc381abf151a22c  kernel/classes/ezcontentclassclassgroup.php
 80531ede01d01d5e75317285416f594a  kernel/classes/ezcontentclassedithandler.php
