@@ -815,6 +815,16 @@ class eZObjectRelationType extends eZDataType
             $defaultSelectionNode->setAttribute( 'node-id', $content['default_selection_node'] );
             $attributeParametersNode->appendChild( $defaultSelectionNode );
         }
+        // the allowed classes (data_text5) were not exported, a class imported from a package allowed every
+        // class. Written as ezobjectrelationlist writes them, and read back in unserializeContentClassAttribute().
+        $classConstraintsNode = $dom->createElement( 'class-constraints' );
+        $attributeParametersNode->appendChild( $classConstraintsNode );
+        foreach ( isset( $content['class_constraint_list'] ) ? (array)$content['class_constraint_list'] : array() as $classIdentifier )
+        {
+            $classConstraintNode = $dom->createElement( 'class-constraint' );
+            $classConstraintNode->setAttribute( 'class-identifier', $classIdentifier );
+            $classConstraintsNode->appendChild( $classConstraintNode );
+        }
     }
 
     function unserializeContentClassAttribute( $classAttribute, $attributeNode, $attributeParametersNode )
@@ -834,6 +844,17 @@ class eZObjectRelationType extends eZDataType
         $content['default_selection_node'] = false;
         if ( $defaultSelectionNode )
             $content['default_selection_node'] = $defaultSelectionNode->getAttribute( 'node-id' );
+
+        // the allowed classes; a package from before has no <class-constraints> and keeps what was there
+        $classConstraintsNode = $attributeParametersNode->getElementsByTagName( 'class-constraints' )->item( 0 );
+        if ( $classConstraintsNode )
+        {
+            $content['class_constraint_list'] = array();
+            foreach ( $classConstraintsNode->getElementsByTagName( 'class-constraint' ) as $classConstraintNode )
+            {
+                $content['class_constraint_list'][] = $classConstraintNode->getAttribute( 'class-identifier' );
+            }
+        }
 
         $classAttribute->setContent( $content );
         $classAttribute->store();

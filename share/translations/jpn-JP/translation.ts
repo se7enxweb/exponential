@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>パッケージ</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>アーカイブファイルはインポートできない PAX tar 形式でパックされています。パッケージを GNU tar 形式でパックしてください (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>アーカイブファイルは拒否されました: エントリ「%path」の tar タイプは「%type」ですが、パッケージに含めることができるのはファイルとディレクトリのみです。</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>アーカイブファイルは拒否されました: %length バイトを超える名前のエントリが含まれています。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>その他の対象者</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>レビューとリリース</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>トピックは「レビュー中」になりました。</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>トピックはリリースされました。読者に表示されるようになりました。</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>トピックは再び下書きになりました。</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>現在のバージョンの作成者であるため、リリースのロールを持つ別のユーザーがリリースします。</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>状態は変更されませんでした。ロールでこの手順が許可されていません。</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>レビューのワークフロー</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>下書き</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>レビュー</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>レビューに戻す</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>レビューに送る</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>リリース</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>下書きに戻す</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>スタイルガイドのチェック</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>スタイルガイドのチェックで問題は見つかりませんでした。</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>エラー %errors 件、警告 %warnings 件、通知 %notices 件。エラーがあると ./console exp:help:content check は合格しません。</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>レベル</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>ルール</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>フィールド</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>検出事項</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>この情報は役に立ちましたか？</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>読者の回答: 「はい」%yes 回、「いいえ」%no 回。</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>「いいえ」の理由:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>ありがとうございました。回答はヘルプの改善に役立てられます。</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>役に立たなかった場合、何が問題でしたか？</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>理由の記入なし</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>いいえ</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>保存されるのは回答のみで、回答者の情報は保存されません。</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>情報が古い</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>わかりにくい</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>情報が不足している</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>内容が間違っている</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>その他の理由</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>このトピックはリリースされていないため、読者には表示されません。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name のセッション</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>アカウントが現在ログインしている場所です。心当たりのないデバイスがある場合は、ログアウトさせてからパスワードを変更してください。</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name のセッション</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>アカウントが現在ログインしている場所です。心当たりのないデバイスがある場合は、ログアウトさせてからパスワードを変更してください。</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ユーザー、ロール、ポリシー</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>ユーザーの作成と編集、アカウント設定、ロールの割り当て、ポリシーの編集。</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>ユーザーの作成と編集、アカウント設定、新しいユーザーアカウントの承認または拒否、ロールの割り当て、ポリシーの編集。</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>システム設定</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>自動 RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>データベースエディター</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>データベースソースエディター</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>サブツリー骨格パブリッシャー</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>ブロックへ送信</translation>
     </message>
 </context>
 </TS>

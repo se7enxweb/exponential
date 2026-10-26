@@ -41,7 +41,7 @@ Sie die Sprache (English (American) ist vorausgewählt) und klicken Sie auf **OK
 | Target blank | Anhaken, um den Link in einem neuen Fenster zu öffnen (`target="_blank" rel="noopener noreferrer"`) | ja |
 | Item object, Menu items, Parent node, Class filter, Max depth, Limit, Use menu item name | andere Verwendungen der Klasse | nicht von dieser Fußzeile |
 
-![Das Bearbeitungsformular eines neuen Menu item mit dem Titel Showcase und der URL /showcase](../../../eng-us/help/build-two-ways/images/ft-03-menu-item-form.webp)
+![Das Bearbeitungsformular eines neuen Menu item mit dem Titel Showcase und der URL /showcase](bilder/ft-03-menu-item-form.webp)
 
 Ein Menu item ohne URL wird von der Fußzeile übersprungen.
 
@@ -49,7 +49,7 @@ Ein Menu item ohne URL wird von der Fußzeile übersprungen.
 
 Klicken Sie auf **Zur Veröffentlichung schicken**. Der Ordner listet jetzt den neuen Eintrag.
 
-![Der Ordner Footer links mit acht Unterelementen, Showcase zuerst](../../../eng-us/help/build-two-ways/images/ft-04-footer-links-after-publish.webp)
+![Der Ordner Footer links mit acht Unterelementen, Showcase zuerst](bilder/ft-04-footer-links-after-publish.webp)
 
 Auf der Testkopie musste kein Cache geleert werden: Die nächste Seite zeigte den Link bereits, an erster Stelle der zweiten
 Zeile, weil ein neuer Eintrag die Priorität 0 bekommt und die anderen 10 bis 70 haben.

@@ -1364,6 +1364,10 @@ Do you want more information about this issue?</translation>
         <source>required</source>
         <translation>required</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>This site uses %engine for every editor; a choice of your own does not apply here.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

@@ -76203,7 +76203,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Sessiones usoris %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ubi ratio tua nunc inierit. Si instrumentum non agnoscis, id exire coge et tesseram tuam muta.</translation>
     </message>
     <message>
@@ -76494,7 +76494,7 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Sessiones usoris %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Ubi ratio tua nunc inierit. Si instrumentum non agnoscis, id exire coge et tesseram tuam muta.</translation>
     </message>
     <message>
@@ -77052,8 +77052,8 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <translation>Usores, munera et regulae</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Usores creare et recensere, optiones rationum, munera assignare et regulas recensere.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Usores creare et recensere, optiones rationum, novas rationes usorum probare aut recusare, munera assignare et regulas recensere.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -77126,6 +77126,38 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Setup</source>
         <translation>Configuratio</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automaticum</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Redactor basis datorum</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Redactor fontis basis datorum</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publicator sceleti subarboris</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>In segmentum mittere</translation>
     </message>
 </context>
 </TS>

@@ -1364,6 +1364,10 @@ Szeretne további információt erről a problémáról?</translation>
         <source>required</source>
         <translation>kötelező</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Ez a webhely minden szerkesztőnél a(z) %engine szerkesztőt használja; a saját választása itt nem érvényes.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

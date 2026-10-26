@@ -1364,6 +1364,10 @@ Vai vēlaties saņemt vairāk informācijas par šo problēmu?</translation>
         <source>required</source>
         <translation>obligāts</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Šī vietne visiem redaktoriem izmanto %engine; jūsu pašu izvēle šeit netiek piemērota.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

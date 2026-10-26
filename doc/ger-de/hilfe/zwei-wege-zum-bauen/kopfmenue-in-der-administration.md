@@ -66,7 +66,7 @@ Klicken Sie auf **Speichern**. Die Seite kehrt mit der Meldung *Gespeichert: [Si
 settings/siteaccess/site/menu.ini.append.php* zu den Einstellungen der `menu.ini` zurück und markiert die geänderte Zeile.
 Die Liste hat jetzt sieben Einträge.
 
-![Die Zeile MainMenuID nach dem Speichern: Liste mit 7, der letzte 192](../../../eng-us/help/build-two-ways/images/hm-05-settings-saved.webp)
+![Die Zeile MainMenuID nach dem Speichern: Liste mit 7, der letzte 192](bilder/hm-05-settings-saved.webp)
 
 Das Speichern leert die INI-Caches. Es leert **nicht** die kompilierten Templates, und das Menü-Template der Kopfzeile wird
 mit der Liste darin kompiliert.

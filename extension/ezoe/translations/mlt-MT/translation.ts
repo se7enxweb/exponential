@@ -1364,6 +1364,10 @@ Trid aktar informazzjoni dwar din il-problema?</translation>
         <source>required</source>
         <translation>meħtieġ</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Dan is-sit juża %engine għal kull editur; għażla tiegħek stess ma tapplikax hawn.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

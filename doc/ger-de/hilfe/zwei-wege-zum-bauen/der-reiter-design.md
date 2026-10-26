@@ -12,7 +12,7 @@ type: help
 Wählen Sie einen Block aus, dann **Design**. Die Optionen hängen vom Blocktyp ab; ein List-Block zeigt die meisten. Das
 `explayouts/block/block.tpl` des Media-Designs macht daraus Klassen am Wrapper des Blocks, die ein Designer gestalten kann.
 
-![Der Reiter Design eines List-Blocks: View type grid, Item view type, Number of columns, Hintergrund, Leerraum, Seitennavigation, CSS class, CSS ID, Wrap in container](../../../eng-us/help/build-two-ways/images/pf-09-list-design-tab.webp)
+![Der Reiter Design eines List-Blocks: View type grid, Item view type, Number of columns, Hintergrund, Leerraum, Seitennavigation, CSS class, CSS ID, Wrap in container](bilder/pf-09-list-design-tab.webp)
 
 ## Die Optionen
 

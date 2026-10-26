@@ -57299,6 +57299,18 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Package</source>
         <translation>Pacáiste</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Pacáladh an comhad cartlainne san fhormáid PAX tar, nach féidir a iompórtáil. Pacáil an pacáiste san fhormáid GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Diúltaíodh don chomhad cartlainne: is den chineál tar "%type" an iontráil "%path", agus ní bhíonn i bpacáiste ach comhaid agus comhadlanna.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Diúltaíodh don chomhad cartlainne: ainmníonn sé iontráil atá níos faide ná %length beart.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>More audiences</source>
         <translation>Tuilleadh lucht féachana</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Athbhreithniú agus eisiúint</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tá an topaic in “Athbhreithniú” anois.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tá an topaic “Eisithe”: feiceann léitheoirí anois í.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Is “Dréacht” an topaic arís.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Is tusa a scríobh an leagan reatha, mar sin eiseoidh duine eile a bhfuil an ról eisiúna aige é.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Níor athraíodh an staid: ní cheadaíonn do ról an chéim seo.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Sreabhadh oibre an athbhreithnithe</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Dréacht</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Athbhreithniú</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Ar ais chuig Athbhreithniú</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Seol chuig Athbhreithniú</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Eisigh</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Ar ais chuig Dréacht</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Seiceáil de réir na treorach stíle</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Níor aimsigh an tseiceáil de réir na treorach stíle aon rud.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Earráidí: %errors, rabhaidh: %warnings, fógraí: %notices. Má tá earráid ann, ní éireoidh le ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Leibhéal</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Riail</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Réimse</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Fionnachtain</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>An raibh sé seo cabhrach?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>D’fhreagair léitheoirí “tá” %yes uair agus “níl” %no uair.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Cúiseanna a tugadh le “níl”:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Go raibh maith agat. Cabhraíonn d’fhreagra linn an chabhair a fheabhsú.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tá</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Mura raibh, cad a bhí mícheart?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Níor tugadh aon chúis</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Níl</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Ní choinnítear ach d’fhreagra, ní hé cé thú féin.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Tá sé as dáta</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Tá sé deacair é a thuiscint</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Tá rud éigin in easnamh</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Tá sé mícheart</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Cúis eile</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Níl an topaic seo “Eisithe”; ní fheiceann léitheoirí í.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Seisiúin an úsáideora %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Cá bhfuil do chuntas sínithe isteach faoi láthair. Mura n-aithníonn tú gléas, sínigh amach é agus athraigh do phasfhocal.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Seisiúin an úsáideora %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Cá bhfuil do chuntas sínithe isteach faoi láthair. Mura n-aithníonn tú gléas, sínigh amach é agus athraigh do phasfhocal.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <translation>Úsáideoirí, róil agus polasaithe</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Úsáideoirí a chruthú agus a chur in eagar, socruithe cuntais, róil a shannadh agus polasaithe a chur in eagar.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Úsáideoirí a chruthú agus a chur in eagar, socruithe cuntais, cuntais úsáideora nua a cheadú nó a dhiúltú, róil a shannadh agus polasaithe a chur in eagar.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Setup</source>
         <translation>Socrú</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS uathoibríoch</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Eagarthóir bunachair sonraí</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Eagarthóir foinse an bhunachair sonraí</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Foilsitheoir creatlach fochrainn</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Brúigh chuig bloc</translation>
     </message>
 </context>
 </TS>

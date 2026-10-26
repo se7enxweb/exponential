@@ -57299,6 +57299,18 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Package</source>
         <translation>Pakkett</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>L-arkivju ġie ppakkjat fil-format PAX tar, li ma jistax jiġi importat. Ippakkja l-pakkett fil-format GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>L-arkivju ġie rrifjutat: l-entrata "%path" għandha t-tip tar "%type", u pakkett ikun fih biss fajls u direttorji.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>L-arkivju ġie rrifjutat: isemmi entrata itwal minn %length bytes.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>More audiences</source>
         <translation>Aktar udjenzi</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Reviżjoni u rilaxx</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Is-suġġett issa jinsab fl-istat Reviżjoni.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Is-suġġett huwa Rilaxxat: il-qarrejja jarawh issa.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Is-suġġett reġa' sar Abbozz.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Int ktibt il-verżjoni attwali, għalhekk xi ħadd ieħor bir-rwol tar-rilaxx jirrilaxxaha.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>L-istat ma nbidilx: ir-rwol tiegħek ma jippermettix dan il-pass.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Fluss tax-xogħol tar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Abbozz</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Reviżjoni</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Lura għar-Reviżjoni</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Ibgħat għar-Reviżjoni</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Irrilaxxa</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Lura għall-Abbozz</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontroll skont il-gwida tal-istil</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Il-kontroll skont il-gwida tal-istil ma sab xejn.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Żbalji: %errors, twissijiet: %warnings, avviżi: %notices. Żball iżomm lil ./console exp:help:content check milli jgħaddi.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Livell</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regola</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Qasam</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Sejba</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Kien utli dan?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Tweġibiet tal-qarrejja: iva %yes, le %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Raġunijiet mogħtija għal le:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Grazzi. It-tweġiba tiegħek tgħinna ntejbu l-għajnuna.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Iva</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Jekk le, x'kien ħażin?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>L-ebda raġuni mogħtija</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Tinżamm biss it-tweġiba tiegħek, mhux min int.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>M'għadux aġġornat</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Diffiċli biex jinftiehem</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Hemm xi ħaġa nieqsa</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Mhux korrett</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Raġuni oħra</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Dan is-suġġett mhuwiex Rilaxxat; il-qarrejja ma jarawhx.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>Is-sessjonijiet ta' %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Fejn il-kont tiegħek huwa dieħel bħalissa. Jekk ma tagħrafx apparat, agħlaq is-sessjoni tiegħu u biddel il-password tiegħek.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>Is-sessjonijiet ta' %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Fejn il-kont tiegħek huwa dieħel bħalissa. Jekk ma tagħrafx apparat, agħlaq is-sessjoni tiegħu u biddel il-password tiegħek.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <translation>Utenti, rwoli u politiki</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Ħolqien u editjar ta' utenti, issettjar tal-kontijiet, assenjazzjoni ta' rwoli u editjar ta' politiki.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Ħolqien u editjar ta' utenti, issettjar tal-kontijiet, approvazzjoni jew ċaħda ta' kontijiet ġodda tal-utenti, assenjazzjoni ta' rwoli u editjar ta' politiki.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Setup</source>
         <translation>Konfigurazzjoni</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS awtomatiku</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editur tal-bażi tad-dejta</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editur tas-sors tal-bażi tad-dejta</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Pubblikatur tal-iskeletri tas-sottosiġra</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Ibgħat għall-blokk</translation>
     </message>
 </context>
 </TS>

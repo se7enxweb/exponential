@@ -47,7 +47,7 @@ getippte Zeile) und auf der Konsole zwei Befehle ([Gemessene Schritte und Zeiten
 Öffnen Sie **Layouts > Gemeinsame Layouts > Header / Footer**, und Sie sehen Blöcke, keine Menüeinträge: Die Zone header
 enthält einen **Template block**, dessen Template-Name `header` ist.
 
-![Das Layout Header / Footer im Editor: Die Zone header enthält einen Template-Block namens header und eine Spalte mit dem Template-Block des Brotkrumenpfads](../../../eng-us/help/build-two-ways/images/hm-08-layout-2-header-template-block.webp)
+![Das Layout Header / Footer im Editor: Die Zone header enthält einen Template-Block namens header und eine Spalte mit dem Template-Block des Brotkrumenpfads](bilder/hm-08-layout-2-header-template-block.webp)
 
 Ein Template-Block ist ein Platzhalter: Er sagt der Seite „stelle hier das Template namens `header` dar“. Das Menü in diesem
 Template ist nicht im Layout gespeichert. Es kommt aus der `menu.ini`. Also:

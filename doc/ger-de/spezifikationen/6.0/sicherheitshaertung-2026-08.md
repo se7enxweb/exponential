@@ -26,7 +26,7 @@ Commits: Befunde `fa808e5a39`, `dec6c49a68`, `233a6d8c35`, `4a43d5df33`, `b0fdcb
 | F-02 | Erratbarer Link zur Kontoaktivierung | 330 | `kernel/user/ezuseroperationcollection.php` | Der Aktivierungs-Hash ist `bin2hex( random_bytes( 16 ) )` statt `md5( mt_rand() . time() . $userID )` |
 | F-03 | HTTP-Header-Injection (CRLF) | 93 | `extension/ezoe/classes/runnable/views/ezoe/atd_rpc.php` | `\r` und `\n` werden aus dem Parameter `url` entfernt, bevor er Teil der von Hand gebauten Anfrage an den After-the-Deadline-Server wird. Der Post-Text wird initialisiert, sodass ein GET keine undefinierte Variable mehr liest. Entfernt in 6.0.15 (16. Oktober 2026): Die View, ihre Klasse und das AtD-Plugin sind entfallen, siehe das [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#16-october-2026-online-editor-hardening) |
 | F-05 | Einschleusen von Betriebssystembefehlen | 78 | `kernel/classes/datatypes/ezbinaryfile/plugins/ezpdfparser.php`, `ezwordparser.php` | Das Extraktionswerkzeug läuft durch `escapeshellcmd()`; Dateinamen, einschließlich der temporären Ausgabedatei, laufen durch `escapeshellarg()`. Ein Dateiname mit Shell-Zeichen kann keinen Befehl mehr hinzufügen |
-| F-06 | Offenes Versagen bei der Anmeldung (Fail open) | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | Bei der Anmeldung gilt ein Konto ohne Zeile in `ezuser_setting` als deaktiviert; früher galt es als aktiviert. `eZUser::isEnabled()` selbst gibt für ein solches Konto weiterhin true zurück; es ist die Anmeldung, die geschlossen versagt. Das Deaktivieren eines Benutzers behält die Zeile mit `is_enabled = 0`, daher sind nur Konten ohne Zeile betroffen |
+| F-06 | Offenes Versagen bei der Anmeldung (Fail open) | 636, 697 | `kernel/classes/datatypes/ezuser/ezuser.php`, `eZUser::_loginUser()` | Bei der Anmeldung gilt ein Konto ohne Zeile in `ezuser_setting` als deaktiviert; früher galt es als aktiviert. Seit 6.0.15 (24. Oktober 2026) stimmt `eZUser::isEnabled()` zu: ein Konto ohne Zeile ist nicht aktiviert, daher funktionieren auch seine Sitzung, sein API-Schlüssel oder OAuth-Token nicht mehr, die Seiten zur Konten-Hygiene und Deaktivierung führen es als deaktiviert, und das Aktivieren (`eZUserOperationCollection::setSettings()`) legt die fehlende Zeile an. Das Deaktivieren eines Benutzers behält die Zeile mit `is_enabled = 0`, daher sind nur Konten ohne Zeile betroffen |
 | H-06 | Skripte über einfaches HTTP | 829, 319 | `extension/ezjscore/settings/ezjscore.ini` | Die URLs in `ExternalScripts[...]` verwenden `https://`. Bevorzugen Sie `LoadFromCDN=disabled` (lokale Skripte) oder Subresource Integrity. Das Yahoo-CDN für YUI hat sein Lebensende erreicht und antwortet möglicherweise nicht |
 
 Hinweis zu F-03: Die View `extension/ezoe/modules/ezoe/atd_rpc.php` ist jetzt ein Einstiegspunkt, der die oben genannte Klasse aufruft. Beide Dateien wurden in 6.0.15 zusammen mit der Rechtschreibprüfung After the Deadline entfernt.
@@ -45,7 +45,8 @@ WHERE s.user_id IS NULL;
 ```
 
 Jede Zeile ist ein Konto ohne Einstellungen. Ein leeres Ergebnis bedeutet, dass sich jedes Konto anmelden kann. Damit sich ein
-solches Konto anmelden kann, legen Sie seine Zeile an:
+solches Konto anmelden kann, aktivieren Sie es in der Administration (Benutzereinstellungen oder die Seite zur
+Konten-Hygiene), was seit 6.0.15 die Zeile anlegt, oder legen Sie seine Zeile an:
 
 ```sql
 INSERT INTO ezuser_setting ( user_id, is_enabled, max_login ) VALUES ( <contentobject_id>, 1, 1000 );
@@ -53,6 +54,21 @@ INSERT INTO ezuser_setting ( user_id, is_enabled, max_login ) VALUES ( <contento
 
 `max_login` ist die erlaubte Anzahl gleichzeitiger Anmeldungen; verwenden Sie den Wert, den Ihre anderen Konten haben.
 Importer für Pakete und Migrationen sollten diese Zeile anlegen, wenn sie einen Benutzer anlegen.
+
+Seit 6.0.15 legt ein Upgrade-Skript die Zeilen aller solchen Konten auf einmal an, auf jeder Datenbank-Engine. Bis 6.0.15
+galten diese Konten überall außer bei der Anmeldung als aktiviert, und das Skript gibt ihnen diesen Zustand zurück: eine
+aktivierte Zeile, oder eine deaktivierte für ein Konto, das noch auf seine Aktivierungs-Mail wartet; ein Konto, dessen
+Inhaltsobjekt nicht veröffentlicht ist (ein zur Freigabe zurückgehaltener Entwurf), bleibt unberührt. Vorhandene Zeilen
+werden nie geändert, das Skript kann also erneut laufen:
+
+```sh
+php update/common/scripts/6.0/createmissingusersettings.php --dry-run    # listet die IDs und was jede bekäme
+php update/common/scripts/6.0/createmissingusersettings.php              # legt die Zeilen an
+php update/common/scripts/6.0/createmissingusersettings.php --disabled   # legt jede Zeile deaktiviert an
+```
+
+Führen Sie es vor oder direkt nach dem Update auf 6.0.15 aus: ab diesem Release ist ein Konto ohne seine Zeile nirgends
+aktiviert, daher funktionieren auch seine offene Sitzung, sein API-Schlüssel oder OAuth-Token nicht mehr.
 
 ## jQuery 3.7.1 und jQuery Migrate 3.4.1
 

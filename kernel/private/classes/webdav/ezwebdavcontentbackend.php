@@ -106,6 +106,17 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     protected $cachedProperties = array();
 
     /**
+     * Paths of write operations that the content layer refused in this request.
+     *
+     * ezcWebdavSimpleBackend::put() and ::makeCollection() drop the result of setResourceContents() and
+     * createCollection(), so a refused write (no content/edit or content/create) was answered with 201/204 and
+     * the change was lost. The paths are collected here and put() and makeCollection() answer 403.
+     *
+     * @var array(string)
+     */
+    protected $refusedWrites = array();
+
+    /**
      * Specifies weather to log with appendLogEntry().
      *
      * Value defined in webdav.ini, read in appendLogEntry().
@@ -276,7 +287,8 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $target = $this->splitFirstPathElement( $fullPath, $currentSite );
 
         $data = $this->getVirtualFolderData( $result, $currentSite, $target, $fullPath );
-        if ( $data['file'] )
+        // false: not found, or a node the user may not read (getContentNodeData())
+        if ( is_array( $data ) && $data['file'] )
         {
             $file = eZClusterFileHandler::instance( $data['file'] );
             //$this->cachedProperties[ $data['file'] ]['size'] = $file->size();
@@ -942,9 +954,16 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     public function put( ezcWebdavPutRequest $request )
     {
         $this->acquireLock();
+        $this->refusedWrites = array();
         $return = parent::put( $request );
         $this->forgetCachedNodes();
         $this->freeLock();
+
+        // see $refusedWrites
+        if ( $this->refusedWrites !== array() )
+        {
+            return new ezcWebdavErrorResponse( ezcWebdavResponse::STATUS_403, $request->requestUri );
+        }
 
         return $return;
     }
@@ -981,6 +1000,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         // If there was an actual file:
         if ( !$tempFile )
         {
+            $this->refusedWrites[] = $path;
             return false; // @as self::FAILED_FORBIDDEN;
         }
 
@@ -990,6 +1010,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
 
         if ( !$currentSite )
         {
+            $this->refusedWrites[] = $fullPath;
             return false; // @as self::FAILED_FORBIDDEN;
         }
 
@@ -997,6 +1018,11 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
 
         unlink( $tempFile );
         eZDir::cleanupEmptyDirectories( dirname( $tempFile ) );
+
+        if ( $result === false )
+        {
+            $this->refusedWrites[] = $fullPath;
+        }
 
         return $result;
     }
@@ -1092,8 +1118,9 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
                 // do not delete anything, because the move() function in
                 // ezcWebdavSimpleBackend first calls performDelete(), which
                 // deletes the destination if the source and destination
-                // are the same in URL alias terms
-                return null;
+                // are the same in URL alias terms.
+                // ezcWebdavSimpleBackend::move() counts the result (count( null ) is a TypeError in PHP 8)
+                return array();
 
             default:
                 $errors = $this->checkDeleteRecursive( $target );
@@ -1113,13 +1140,20 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $target = $this->splitFirstPathElement( $target, $currentSite );
 
         $status = $this->deleteVirtualFolder( $currentSite, $target );
-        // @as @todo return based on $status
+
+        // the result was ignored (@todo), so a refused delete (no content/remove) answered 204 and
+        // nothing was removed. DELETE takes an error response, COPY and MOVE count the result as a list.
+        if ( $status === false )
+        {
+            $error = new ezcWebdavErrorResponse( ezcWebdavResponse::STATUS_403, $fullPath );
+            return $_SERVER['REQUEST_METHOD'] === 'DELETE' ? $error : array( $error );
+        }
 
         // The stored properties (locks) of the deleted resources go with them
         $this->removeStoredProperties( $fullPath );
 
         // Return success
-        return null;
+        return $_SERVER['REQUEST_METHOD'] === 'DELETE' ? null : array();
     }
 
     /**
@@ -1196,8 +1230,9 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         // Transform errors
         foreach ( $errors as $nr => $error )
         {
+            // 403 (refused), was 423 (locked)
             $errors[$nr] = new ezcWebdavErrorResponse(
-                ezcWebdavResponse::STATUS_423,
+                ezcWebdavResponse::STATUS_403,
                 $error
             );
         }
@@ -1245,7 +1280,8 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             //       if so allow the copy as a simple object copy
             //       If not we will have to do an object export from
             //       $sourceSite and import it in $destinationSite
-            return array(); // @as self::FAILED_FORBIDDEN;
+            // this answered "no errors" and nothing was copied
+            return array( $fullSource ); // @as self::FAILED_FORBIDDEN;
         }
 
         if ( !$sourceSite or
@@ -1255,8 +1291,12 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             return array( $fullSource ); // @as self::FAILED_FORBIDDEN;
         }
 
-        $this->copyVirtualFolder( $sourceSite, $destinationSite,
-                                  $source, $destination );
+        // the result was ignored, a refused copy answered 201/204
+        if ( $this->copyVirtualFolder( $sourceSite, $destinationSite,
+                                       $source, $destination ) === false )
+        {
+            return array( $fullSource );
+        }
 
         if ( $depth === ezcWebdavRequest::DEPTH_ZERO || !$this->isCollection( $fullSource ) )
         {
@@ -1317,7 +1357,8 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             //       if so allow the copy as a simple object copy
             //       If not we will have to do an object export from
             //       $sourceSite and import it in $destinationSite
-            return array(); // @as self::FAILED_FORBIDDEN;
+            // this answered "no errors" and nothing was moved
+            return array( $fullSource ); // @as self::FAILED_FORBIDDEN;
         }
 
         if ( !$sourceSite or
@@ -1327,9 +1368,13 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
             return array( $fullSource ); // @as self::FAILED_FORBIDDEN;
         }
 
-        $this->moveVirtualFolder( $sourceSite, $destinationSite,
-                                  $source, $destination,
-                                  $fullSource, $fullDestination );
+        // the result was ignored, a refused move answered 201/204
+        if ( $this->moveVirtualFolder( $sourceSite, $destinationSite,
+                                       $source, $destination,
+                                       $fullSource, $fullDestination ) === false )
+        {
+            return array( $fullSource );
+        }
 
         if ( $depth === ezcWebdavRequest::DEPTH_ZERO || !$this->isCollection( $fullSource ) )
         {
@@ -1402,9 +1447,16 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
     public function makeCollection( ezcWebdavMakeCollectionRequest $request )
     {
         $this->acquireLock();
+        $this->refusedWrites = array();
         $return = parent::makeCollection( $request );
         $this->forgetCachedNodes();
         $this->freeLock();
+
+        // see $refusedWrites
+        if ( $this->refusedWrites !== array() )
+        {
+            return new ezcWebdavErrorResponse( ezcWebdavResponse::STATUS_403, $request->requestUri );
+        }
 
         return $return;
     }
@@ -1508,7 +1560,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         foreach ( $this->availableSites as $site )
         {
             // Check if given path starts with this site-name, if so: return it.
-            if ( preg_match( "#^/" . preg_quote( $site ) . "(.*)$#", $path, $matches ) )
+            if ( preg_match( "#^/" . preg_quote( $site, '#' ) . "(/|$)#", $path, $matches ) )
             {
                 return $site;
             }
@@ -1768,10 +1820,11 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         $nodePath = $this->internalNodePath( $virtualFolder, $target );
         eZWebDAVContentBackend::appendLogEntry( __FUNCTION__ . " Path:" . $nodePath );
         $node = $this->fetchNodeByTranslation( $nodePath );
-        $info = $this->fetchNodeInfo( $fullPath, $node );
 
-        // Proceed only if the node is valid:
-        if ( $node === null )
+        // Proceed only if the node is valid. fetchNodeByTranslation() answers false for a path without a node, and
+        // fetchNodeInfo() was called before this check: a call on false. Nothing about a node the user may not read
+        // is read either.
+        if ( !$node instanceof eZContentObjectTreeNode )
         {
             return $result;
         }
@@ -1781,6 +1834,7 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
         {
             return false; // @as self::FAILED_FORBIDDEN;
         }
+        $info = $this->fetchNodeInfo( $fullPath, $node );
 
         $object = $node->attribute( 'object' );
 
@@ -2277,15 +2331,22 @@ class eZWebDAVContentBackend extends ezcWebdavSimpleBackend implements ezcWebdav
      */
     protected function createCollection( $target )
     {
+        $fullTarget = $target;
         $target = $this->splitFirstPathElement( $target, $currentSite );
 
         if ( !$currentSite )
         {
             // Site list cannot get new entries
+            $this->refusedWrites[] = $fullTarget;
             return false; // @as self::FAILED_FORBIDDEN;
         }
 
-        return $this->mkcolVirtualFolder( $currentSite, $target );
+        $result = $this->mkcolVirtualFolder( $currentSite, $target );
+        if ( $result === false )
+        {
+            $this->refusedWrites[] = $fullTarget;
+        }
+        return $result;
     }
 
     /**

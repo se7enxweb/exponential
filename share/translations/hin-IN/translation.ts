@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>पैकेज</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>आर्काइव PAX tar प्रारूप में पैक किया गया था, जिसे आयात नहीं किया जा सकता। पैकेज को GNU tar प्रारूप में पैक करें (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar)।</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>आर्काइव अस्वीकार कर दिया गया: प्रविष्टि “%path” का tar प्रकार “%type” है, और पैकेज में केवल फ़ाइलें और फ़ोल्डर होते हैं।</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>आर्काइव अस्वीकार कर दिया गया: इसमें %length बाइट से लंबे नाम वाली प्रविष्टि है।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>अधिक लक्षित दर्शक</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>समीक्षा और जारी करना</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>विषय अब समीक्षा में है।</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>विषय जारी हो गया है: पाठक अब इसे देखते हैं।</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>विषय फिर से ड्राफ़्ट है।</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>वर्तमान संस्करण आपने लिखा है, इसलिए जारी करने की भूमिका वाला कोई अन्य व्यक्ति इसे जारी करेगा।</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>स्थिति नहीं बदली गई: आपकी भूमिका इस चरण की अनुमति नहीं देती।</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>समीक्षा वर्कफ़्लो</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ड्राफ़्ट</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>समीक्षा</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>वापस समीक्षा में भेजें</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>समीक्षा के लिए भेजें</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>जारी करें</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>वापस ड्राफ़्ट में भेजें</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>शैली मार्गदर्शिका जाँच</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>शैली मार्गदर्शिका जाँच में कुछ नहीं मिला।</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors त्रुटियाँ, %warnings चेतावनियाँ, %notices सूचनाएँ। कोई त्रुटि होने पर ./console exp:help:content check सफल नहीं होता।</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>स्तर</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>नियम</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>फ़ील्ड</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>निष्कर्ष</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>क्या यह सहायक था?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>पाठकों ने %yes बार हाँ और %no बार नहीं में उत्तर दिया।</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>नहीं के लिए दिए गए कारण:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>धन्यवाद। आपका उत्तर सहायता को बेहतर बनाने में हमारी मदद करता है।</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>हाँ</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>यदि नहीं, तो क्या गलत था?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>कोई कारण नहीं दिया गया</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>नहीं</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>केवल आपका उत्तर सहेजा जाता है, यह नहीं कि आप कौन हैं।</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>यह पुराना हो चुका है</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>इसे समझना कठिन है</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>कुछ छूट गया है</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>यह गलत है</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>कोई अन्य कारण</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>यह विषय जारी नहीं हुआ है; पाठक इसे नहीं देखते।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name के सत्र</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>आपका खाता इस समय कहाँ साइन इन है। यदि आप किसी डिवाइस को नहीं पहचानते, तो उसे साइन आउट करें और अपना पासवर्ड बदलें।</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>%name के सत्र</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>आपका खाता इस समय कहाँ साइन इन है। यदि आप किसी डिवाइस को नहीं पहचानते, तो उसे साइन आउट करें और अपना पासवर्ड बदलें।</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>उपयोगकर्ता, भूमिकाएँ और नीतियाँ</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>उपयोगकर्ता बनाना और संपादित करना, खाता सेटिंग्स, भूमिकाएँ असाइन करना और नीतियाँ संपादित करना।</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>उपयोगकर्ता बनाना और संपादित करना, खाता सेटिंग्स, नए उपयोगकर्ता खाते स्वीकृत या अस्वीकार करना, भूमिकाएँ असाइन करना और नीतियाँ संपादित करना।</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>सेटअप</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>स्वचालित RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>डेटाबेस संपादक</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>डेटाबेस स्रोत संपादक</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>सबट्री ढाँचा प्रकाशक</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>ब्लॉक में भेजें</translation>
     </message>
 </context>
 </TS>

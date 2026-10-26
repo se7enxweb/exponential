@@ -1364,6 +1364,10 @@ Do you want more information about this issue?</source>
         <source>required</source>
         <translation>обов&apos;язковий</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Цей сайт використовує %engine для всіх редакторів; ваш власний вибір тут не застосовується.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>
