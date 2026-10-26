@@ -43,6 +43,9 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     /** @var string the repository */
     protected $root;
 
+    /** @var array|null the entries of the interface language switch, built from the files once */
+    protected static $switchEntries = null;
+
     protected function setUp(): void
     {
         $this->root = dirname( __DIR__, 4 );
@@ -105,8 +108,12 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     #[PHPUnit\Framework\Attributes\DataProvider( 'completeLanguages' )]
     public function testTheSwitchMeasuresTheCatalogueAsComplete( $code )
     {
-        $catalogue = new expUISwitchLanguageCatalogue( $this->root, '' );
-        $entry = $catalogue->entry( $code );
+        // Built once for every data set: setUp() empties the catalogue's memory, and building it
+        // from every translation file again for each language took some ten seconds a language,
+        // four to five minutes for the data sets together.
+        if ( self::$switchEntries === null )
+            self::$switchEntries = ( new expUISwitchLanguageCatalogue( $this->root, '' ) )->entries();
+        $entry = self::$switchEntries[$code] ?? null;
         $this->assertIsArray( $entry, "$code is not in the catalogue of the interface language switch" );
         $this->assertGreaterThanOrEqual( 99, $entry['coverage'], "$code: coverage" );
         $this->assertFalse( $entry['test'], "$code must not be a test language" );

@@ -88,12 +88,10 @@ class eZExtensionWithoutOrderingTest extends ezpTestCase
      */
     private static function clearActiveExtensionsCache()
     {
+        // Removes the cache files and the in-memory copy (eZCache::clearActiveExtensions()),
+        // so no wait for the expiry timestamp is needed: the two seconds slept here per call
+        // added more than a minute to every run of the suite.
         eZCache::clearByID( 'active_extensions' );
-
-        // currently required so that cache will actually be considered expired
-        // this is a design issue in eZExpiryHandler we need to address soon as it deeply impacts testing any feature
-        // that relies on it, and also impacts runtime on high-trafic sites.
-        sleep( 2 );
     }
 }
 

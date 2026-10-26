@@ -26026,8 +26026,8 @@ c2edb6e2d9c112518bab3ebd07cd1247  tests/tests/kernel/classes/eZContentObjectTree
 872626d9764abd0bdf850636ddad3cdd  tests/tests/kernel/classes/eZDBGarbageCollectorBasketQueryTest.php
 c50ed4541f1fb9c0614ec8dad537f6a1  tests/tests/kernel/classes/eZDynamicPropertiesPHP82Test.php
 c5b0906382598e118d038175ada1cc30  tests/tests/kernel/classes/eZExtensionAdditionalDirectoriesTest.php
-ae5b1048f8e08ec7094ae01547fdcee1  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
-b78b2f659b4281a0dead0cdea8bae0b1  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
+c0b1056e2ae35099df7e93f2bf52db8d  tests/tests/kernel/classes/eZExtensionWithOrderingTest.php
+c9ecd006b05949d49d576959d7d63699  tests/tests/kernel/classes/eZExtensionWithoutOrderingTest.php
 cbfe9686d5c1b5bc8335c7ef7f985b45  tests/tests/kernel/classes/eZNamePatternResolverClassTest.php
 5fc77f0769c23410fe52003fa08cfc7a  tests/tests/kernel/classes/eZNamePatternResolverLimitTest.php
 5177bfc3e5766c1569122d4c4c6a299d  tests/tests/kernel/classes/eZNamePatternResolverPatternTest.php
@@ -26930,7 +26930,7 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-415c99b9a737b4bf78a18e99091286c5  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+8087dd32a538cf000d206a6bb12f88f2  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 98e1f0b2248c3a8c16e298ecc9e0b8f7  tests/tests/lib/ezi18n/expChineseHongKongFallbackTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
