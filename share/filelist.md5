@@ -25,7 +25,7 @@ bcf8dbf240443e603fa3c3874657b9c8  LICENSE.md
 6b46d9fc07327c0fe9cb81e5b1e79674  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 06f53e40c083d92702ed763f9f938870  autoload.php
-46a36ef5c2f449ee4c4b516569a1b583  autoload/ezp_kernel.php
+ff9c565734d8dfc50359892b4918cbc3  autoload/ezp_kernel.php
 ae0bdc18dff1a804e55981b11d69cf84  benchmarks/classes/ezbenchmark.php
 ef1301b17201945ad0ff49f3ce6a4216  benchmarks/classes/ezbenchmarkcase.php
 78fd84842e9bc313515565ee97273adf  benchmarks/classes/ezbenchmarkclirunner.php
@@ -6542,7 +6542,7 @@ edeb2f28aeb2ba6d540160c9627ab70d  doc/eng-us/features/6.0/velocity-web-server.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 772ba7f2425b05709fb0cd77716e96a4  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 217e1d27dc05837f7e57391eb935abc4  doc/eng-us/glossary.md
-4bf360efb18e147844b07415b244e43f  doc/eng-us/goals.md
+ea403e936128ab0b0ace2836f227f9c1  doc/eng-us/goals.md
 f530f12f4c06427ded2f29fb3e53119a  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 713a9eac9e6b5edd504f53bede52a503  doc/eng-us/guides/approving-new-editor-accounts.md
@@ -7151,7 +7151,7 @@ da8eddfc3c69ef5ea85b6a10c978b71c  doc/eng-us/help/build-two-ways/prefooter-in-th
 3554b555bbc769874cf7d822f832315d  doc/eng-us/help/build-two-ways/shared-layouts-and-zone-linking.md
 aa7f6ee489a8fe7f419058d4973490aa  doc/eng-us/help/build-two-ways/styling-your-blocks.md
 bd568adf40fa0f684f27d6c231285c15  doc/eng-us/help/build-two-ways/template-blocks.md
-addf6a51aa1655b767766574038f7428  doc/eng-us/help/build-two-ways/two-ways-to-build.md
+4ebe7874d635ce754e9dcd8b314b94e5  doc/eng-us/help/build-two-ways/two-ways-to-build.md
 5a0bb86e8c896997876836c4063e1b90  doc/eng-us/help/build-two-ways/why-doesnt-my-change-appear.md
 0bf36c5289bd5fa1762891ff19029dfd  doc/eng-us/help/build-two-ways/your-own-design-extension.md
 cc85ee3687f412faa4f4596fb3e91616  doc/eng-us/help/bundlers/adding-and-removing-extensions.md
@@ -10775,7 +10775,7 @@ e0031cdb871f84503f8a2a6e2bffe656  doc/eng-us/help/press/glossary-for-journalists
 59f76f1acc7a1a5574f73af59b90733f  doc/eng-us/help/press/if-you-find-a-vulnerability.md
 608f0f0483d2fbbe39b876e3827954cc  doc/eng-us/help/press/interview-question-bank.md
 752e6257d089f3e8162543053cd76c95  doc/eng-us/help/press/keeping-secrets-off-screen.md
-7529dc6ae9924b001fa4e99a5d8edeca  doc/eng-us/help/press/licenses-explained-for-reporters.md
+73e4a91519878d0015f3e45ef27d353f  doc/eng-us/help/press/licenses-explained-for-reporters.md
 fc4ca0a12aea735573d98286313b51e3  doc/eng-us/help/press/live-stream-guide.md
 c225b916196faa24f4b2518fa3d02e67  doc/eng-us/help/press/logos-and-brand-assets.md
 4cf86a512b0f9bf79ff3016ea02085bf  doc/eng-us/help/press/making-your-coverage-accessible.md
@@ -10874,7 +10874,7 @@ b5a203d8b33bbfd147b163fb93bef09c  doc/eng-us/help/press/verifying-quotes.md
 5f3ef805775bcdb3dce4e881dfabadf6  doc/eng-us/help/press/where-changelogs-and-release-notes-live.md
 39a89ecb2c389766fba8a2e64ca49f6c  doc/eng-us/help/press/where-the-facts-live-for-press.md
 c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponential.md
-902d8969cb2ac53f09e27962778c5485  doc/eng-us/help/press/writing-a-fair-review.md
+6a45abcfec723327c6f07d680031dc78  doc/eng-us/help/press/writing-a-fair-review.md
 0f29e522057b0fac13c4aa217a6291c0  doc/eng-us/help/press/writing-about-funding-and-sponsors.md
 4c05613fcbe7161aae06c0d94beaffc9  doc/eng-us/help/press/writing-about-the-community.md
 3d1e47b6b2c52a73bbb582ae17937106  doc/eng-us/help/press/writing-about-the-ez-publish-years.md
@@ -10889,7 +10889,7 @@ c1f7a212ea842e5d20ea84e5fb9f577a  doc/eng-us/help/press/why-it-is-called-exponen
 f6229d8d02e7f289999e42ec6567e9bc  doc/eng-us/help/project/faq.md
 41934db57b1ecbc2400e1854e3ada66e  doc/eng-us/help/project/getting-support.md
 1200d882566c888a6e20b01114ba8bb4  doc/eng-us/help/project/give-and-donate.md
-21f20175cb9d6fec6d97c0aa257abb6b  doc/eng-us/help/project/licensing-faq.md
+f59ae61774766313dd1b9935e9605a9c  doc/eng-us/help/project/licensing-faq.md
 b45f7db3afc468216730c3e5e8bcffec  doc/eng-us/help/project/roadmap.md
 50da3ae7b9a1de071a0189a761db8aa5  doc/eng-us/help/publishing-and-versions.md
 754b44ed76cc7e5ab984dd4faf3daa35  doc/eng-us/help/reading-help-in-other-languages.md
@@ -12287,7 +12287,7 @@ e9e96bfe1a547715698636f3b5ca4a07  doc/eng-us/install/migration/other-application
 0abfe339c3b8505840a67bc0ead04f08  doc/eng-us/install/migration/static-html.md
 77086c0914a9e5e8d960262ffd85eccc  doc/eng-us/install/migration/symfony-apps.md
 470354c857d794827531e5cf374d7859  doc/eng-us/install/migration/wordpress.md
-1c12b09ff1f7b62c46b238599357849e  doc/eng-us/languages.md
+365de66b6f0b38fd6f4bfb35a1917429  doc/eng-us/languages.md
 5ca19bde368970c0a22a6a314de2c9af  doc/eng-us/release-overview
 81b7485665e49e6de38b6e8a216c7136  doc/eng-us/shop/classeshierarchy.html
 7a4ca93d7c8c4867763c5b42ee925a96  doc/eng-us/shop/examples/paypal/extensionfiles.html
@@ -12566,6 +12566,7 @@ aa57a726dc0740993dd6d133be08b6f5  doc/eng-us/standards/patterns/value-object.md
 73a29218cbabcba5c380e1fe436a45be  doc/eng-us/standards/source-control-and-releases.md
 6076499d7dc68d5e1fb7dae4e8a7c41c  doc/eng-us/standards/testing-and-ci.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
+fe0b0c6182e4164ef1952334b518556f  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 4a17b507552fd50a4a416c8e6d5261d6  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 02ca7554f6be881f735fce76a2ce5590  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
@@ -12582,7 +12583,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-24e2e5c2b63d9ee3f2f93b4edb34c192  doc/ger-de/.paths.json
+4871f58dbe8cf8909151fc4c9d53e9a2  doc/ger-de/.paths.json
 8711f537a8d8be14952a796ca3992b04  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
@@ -18643,7 +18644,7 @@ e5660c9791007cf20594182725eaa77b  doc/ger-de/hilfe/presse/ein-changelog-lesen.md
 98ab987827aa6179466adf7a66ce9324  doc/ger-de/hilfe/presse/ein-release-selbst-pruefen.md
 6ff4c87122d9086fe6949fcaccdd04ea  doc/ger-de/hilfe/presse/ein-video-oder-einen-beitrag-korrigieren.md
 fecdf6cb78bd671af2bf4632b5d33177  doc/ger-de/hilfe/presse/eine-demo-installation-einrichten.md
-78173e806e11020795d072a42b7f8e2b  doc/ger-de/hilfe/presse/eine-faire-rezension-schreiben.md
+a641140447eec6e155b33dceed303a3f  doc/ger-de/hilfe/presse/eine-faire-rezension-schreiben.md
 2aae7ce2f435670eb82d8218cb40d840  doc/ger-de/hilfe/presse/exponential-in-kuerze.md
 6b70826e27546fb2846ca616d27323e1  doc/ger-de/hilfe/presse/exponential-in-zahlen.md
 6182a066c755b826f5d38bff05978ed0  doc/ger-de/hilfe/presse/faire-vergleiche.md
@@ -18666,7 +18667,7 @@ f7991f704e6bba5347f803d0e82e1225  doc/ger-de/hilfe/presse/kurzvideos.md
 b57d988762860154a70730aaf594713c  doc/ger-de/hilfe/presse/leitfaden-fuer-livestreams.md
 e0e42fd8cf576f6a6b38095e4ffc9a40  doc/ger-de/hilfe/presse/leitfaden-fuer-video-rundgaenge.md
 df38ea49003fc3c1da27eb8b0a72e0cb  doc/ger-de/hilfe/presse/lesepfad-fuer-die-presse.md
-799dbad37ca1291e2d69b45d5896f917  doc/ger-de/hilfe/presse/lizenzen-fuer-reporter-erklaert.md
+d027c1a5dbdd15d5fc3826fcd8f79122  doc/ger-de/hilfe/presse/lizenzen-fuer-reporter-erklaert.md
 dfb56720c1e43ae30dff18f3b0cc77e3  doc/ger-de/hilfe/presse/logos-und-markenmaterial.md
 89fc22c269723e657fefff2d9872c295  doc/ger-de/hilfe/presse/marke-und-namen-fuer-medien.md
 8a12e3008db494204cd85aeca6b780b3  doc/ger-de/hilfe/presse/mit-kommentaren-und-fragen-umgehen.md
@@ -18815,7 +18816,7 @@ a77a3eb970907ffb52d048db9af3b2b1  doc/ger-de/hilfe/privatpersonen/vereinsseiten/
 3d66aad19e958427806e3afae5cd0c39  doc/ger-de/hilfe/projekt/community-kanaele.md
 76ced160bc8406c9f0e9e95caf44fac2  doc/ger-de/hilfe/projekt/faq.md
 3d40985756abb05bf26f0b41eda2f46a  doc/ger-de/hilfe/projekt/geben-und-spenden.md
-ab8346975ba7956f26fe68dab16d2d5d  doc/ger-de/hilfe/projekt/lizenz-faq.md
+2f15345e033464652c69c2d127949898  doc/ger-de/hilfe/projekt/lizenz-faq.md
 97572b4dca4026adce48a2451cfedd31  doc/ger-de/hilfe/projekt/mit-exponential-bauen.md
 0578aec406fed8cc2628d06053292e19  doc/ger-de/hilfe/projekt/quellen-der-dokumentation.md
 fe8820676579d4c377024e2f470eeada  doc/ger-de/hilfe/projekt/roadmap.md
@@ -21157,7 +21158,7 @@ e8f9765cd175a6159a4fd7691ad31898  doc/ger-de/hilfe/zwei-wege-zum-bauen/warum-ers
 62b584b3063a17ce90c33e374b12b912  doc/ger-de/hilfe/zwei-wege-zum-bauen/wie-die-fusszeile-aufgebaut-ist.md
 6094b15907a660b4cc32cc65b9da066a  doc/ger-de/hilfe/zwei-wege-zum-bauen/wie-die-kopfzeile-aufgebaut-ist.md
 3b542781e7b9593616e5ebe02ac6493e  doc/ger-de/hilfe/zwei-wege-zum-bauen/zuordnung-block-zu-template.md
-1f9f1223a8361795e1a8b774110680eb  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
+4ccaf7d1e8e4353d988dba2d86a9e500  doc/ger-de/hilfe/zwei-wege-zum-bauen/zwei-wege-zum-bauen.md
 31c873da0d9d22612cac654656a0764b  doc/ger-de/installation/01-einfuehrung.md
 902863969e0cf8d2b9cdf98a5ac483ff  doc/ger-de/installation/02-voraussetzungen.md
 41ad8724fe66ba4a01f89a491326d8b1  doc/ger-de/installation/03-den-code-beschaffen.md
@@ -21237,7 +21238,7 @@ f6ce87b6422da987a43c79641d17de0c  doc/ger-de/spezifikationen/6.0/syndikation.md
 318e35392529be468f30eb96b9543fa7  doc/ger-de/spezifikationen/6.0/velocity-http2-und-sicherheit.md
 0a829bee13ffa1d319b038f4c24af29e  doc/ger-de/spezifikationen/6.0/velocity-worker-pool.md
 c4f17fcd2efd17b97d9e37fbcd966f62  doc/ger-de/spezifikationen/6.0/xrowextract.md
-e037f556d1504bfe6cfee79562a467c7  doc/ger-de/sprachen.md
+ac4396202f41670a741d335fea48bb95  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 d668c54ddd26f3b59956c1b468b0e5ff  doc/ger-de/standards/apis-und-protokolle.md
 f4b2034a339ea293b43a42dda7649215  doc/ger-de/standards/architektur/kernel-architektur.md
@@ -21427,7 +21428,8 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-58954302464c25f7fc89d98ab6de8eaa  doc/ger-de/ziele.md
+7f3df84e39afad53057c9559d7ca3571  doc/ger-de/uebersetzungswellen.md
+ca648c2e1703bdba32c81fd0f747db20  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
 11aff5cc28fe69d7e6106a9efcf581d2  extension/exphelpsite/design/standard/override/templates/help/full_topic.tpl
@@ -22893,6 +22895,7 @@ c27d8162e494a41713e53e5af9cf0d7e  kernel/classes/help/exphelpremoteimages.php
 ee756ea5fba2ba58e03c8c75da88abd7  kernel/classes/help/exphelpsearch.php
 a531c375f6b659ead181b618dcfda9c7  kernel/classes/i18n/expi18ncoveragemap.php
 9077517337214af1514f7d858f8192df  kernel/classes/i18n/expi18nfallbackreport.php
+3b3e89da20129fdcb5a216fe5780cd34  kernel/classes/i18n/expi18ntranslationwaves.php
 6d83d4078ed5276344500f0f0dec4da5  kernel/classes/ini/actions/expiniaction.php
 203479e7dccaed76ef07b8e33efa41a9  kernel/classes/ini/actions/expiniactionactions.php
 a5dce8aeb6cc7cc83e6b49f864a0429e  kernel/classes/ini/actions/expiniactionadd.php
@@ -23410,7 +23413,7 @@ df4209e3bf148eb42843f37c322c947a  kernel/private/classes/commands/eztemplatechec
 e2ffd68001dc0fd42558c469d6ac9529  kernel/private/classes/commands/ezwebinupgrade.php
 fd4e1af35d892872dea6d4780364afab  kernel/private/classes/commands/flatten.php
 6c84fcd54d7638ea30baa897c9eeeb25  kernel/private/classes/commands/frankenphp.php
-ee65c61eba5c695f661bf102118ec34d  kernel/private/classes/commands/i18n.php
+10a10fb9459a9635d6533b2ac79742a6  kernel/private/classes/commands/i18n.php
 64e2b0277f5e311994539d81cf55c378  kernel/private/classes/commands/ini.php
 97796012ff01b1c1263a437356ff1e0f  kernel/private/classes/commands/install.php
 39c0eebfbbc8030f7ac2e138d6f3eaf6  kernel/private/classes/commands/installcrontab.php
@@ -26274,6 +26277,7 @@ adac5192811bf518d52266dd4a6b0e72  tests/tests/kernel/classes/help/fixtures/branc
 1daf12e31058d06d39683173f3e4656f  tests/tests/kernel/classes/httpcache/ezpHttpCacheContractTest.php
 5dd7cfbbabf566e542fe371f1bdc19aa  tests/tests/kernel/classes/i18n/expI18nCoverageMapTest.php
 444d0db01cc11b5e3f7778567f43f105  tests/tests/kernel/classes/i18n/expI18nFallbackReportTest.php
+ac5b60985e025782746177216256790f  tests/tests/kernel/classes/i18n/expI18nTranslationWavesTest.php
 9186831128133636b56a2caf51105db6  tests/tests/kernel/classes/ini/command/IniCommandExtensionTest.php
 48973364e4ad637a659b7cdee8273a8a  tests/tests/kernel/classes/ini/command/IniCommandTest.php
 85a363e40b9ad90084f0a1679949ecaf  tests/tests/kernel/classes/ini/command/IniMoveTest.php

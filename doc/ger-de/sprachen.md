@@ -1178,6 +1178,11 @@ Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Ital
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.
 
+**Übersetzungswellen.** Die Arbeit, die für jede Sprache bleibt (der Administrationskatalog, die Erweiterungen und die
+Hilfe), ist gemessen und in kleine, voneinander unabhängige Wellen geteilt, geordnet nach der Prioritätsgruppe der
+Herkunftssprachen geflüchteter Kinder, dann nach Sprechern und Schwierigkeit, in
+[Übersetzungswellen](uebersetzungswellen.md).
+
 ## 9. Sprachen, die von rechts nach links geschrieben werden
 
 40 Locale-Dateien werden von rechts nach links geschrieben:

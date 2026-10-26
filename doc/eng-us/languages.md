@@ -1166,6 +1166,10 @@ Klingon, Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish
 Kurdish, Swahili, the eighteen languages added or completed on 24 October 2026, the nine completed or added on
 25 October 2026 and the three added on 26 October 2026) is the quickest win.
 
+**Translation waves.** The work that remains for each language (the administration catalogue, the extensions and
+the help) is measured and cut into small, independent waves, ordered by the priority group of refugee children's
+home languages, then by speakers and difficulty, in [Translation waves](translation-waves.md).
+
 ## 9. Right-to-left languages
 
 40 locale files are written right to left:
