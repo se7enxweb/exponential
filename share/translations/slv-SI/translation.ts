@@ -77126,6 +77126,97 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavitve</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Novo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrani</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Vrstice: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nova vrstica</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Vrstica je bila shranjena.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Išči</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dejanja</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Uredi</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Vrstic še ni.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Naslov JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>ID vozlišča</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID objekta uporabnika</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>ID vsebinskega objekta</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Vrstica %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Vrstica ni bila shranjena</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Želite odstraniti vrstico %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Vrstica bo odstranjena iz tabele in je ne bo mogoče obnoviti.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

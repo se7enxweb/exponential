@@ -77126,6 +77126,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Νέο</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Γραμμές: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Νέα γραμμή</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Η γραμμή αποθηκεύτηκε.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Αναζήτηση</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ενέργειες</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Επεξεργασία</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Δεν υπάρχουν ακόμη γραμμές.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Διεύθυνση JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ναι</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>όχι</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Ένα αναγνωριστικό κόμβου</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>Το αναγνωριστικό αντικειμένου ενός χρήστη</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Ένα αναγνωριστικό αντικειμένου περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Γραμμή %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Η γραμμή δεν αποθηκεύτηκε</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε τη γραμμή %id;</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Η γραμμή αφαιρείται από τον πίνακα και δεν μπορεί να επαναφερθεί.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

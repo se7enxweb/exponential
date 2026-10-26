@@ -77126,6 +77126,97 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Configurare</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nou</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eliminare</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>Rânduri: %count</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Rând nou</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>Rândul a fost salvat.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Căutare</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acțiuni</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editare</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Încă nu există rânduri.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adresă JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nu</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Un ID de nod</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>ID-ul de obiect al unui utilizator</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Un ID de obiect de conținut</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Rândul %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>Rândul nu a fost salvat</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Sigur doriți să eliminați rândul %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>Rândul este eliminat din tabel și nu mai poate fi recuperat.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

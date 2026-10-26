@@ -77126,6 +77126,97 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>New</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count rows</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>New row</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>The row was saved.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Search</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>No rows yet.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>JSON: %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yes</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>A node id</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>The object id of a user</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>A content object id</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Row %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>The row was not saved</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Remove row %id?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>The row is removed from the table and cannot be brought back.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>

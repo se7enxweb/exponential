@@ -78536,6 +78536,97 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
     </message>
 </context>
 <context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation>Administration</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nouveau</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Supprimer</translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation>%count lignes</translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation>Nouvelle ligne</translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation>La ligne a été enregistrée.</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Rechercher</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Modifier</translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation>Aucune ligne pour l'instant.</translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation>Adresse JSON : %url</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>oui</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>non</translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation>Un ID de nœud</translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation>L'ID d'objet d'un utilisateur</translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation>Un ID d'objet de contenu</translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation>Ligne %id</translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation>La ligne n'a pas été enregistrée</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Enregistrer</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuler</translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation>Supprimer la ligne %id ?</translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation>La ligne est supprimée de la table et ne peut pas être récupérée.</translation>
+    </message>
+</context>
+<context>
     <name>extension/autorss</name>
     <message>
         <source>Auto RSS</source>
