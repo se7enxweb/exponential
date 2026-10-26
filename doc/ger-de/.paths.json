@@ -8269,5 +8269,6 @@
     "standards/tests-und-ci.md": "standards/testing-and-ci.md",
     "standards/versionsverwaltung-und-releases.md": "standards/source-control-and-releases.md",
     "standards/webplattform.md": "standards/web-platform.md",
-    "uebersetzungswellen.md": "translation-waves.md"
+    "uebersetzungswellen.md": "translation-waves.md",
+    "ziele.md": "goals.md"
 }

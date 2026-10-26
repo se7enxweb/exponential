@@ -37,7 +37,7 @@ Always ask "for editors' screens or for content?" before answering "is my langua
 |---|---|
 | "268 locale files can be used as content languages." | [Languages in Exponential](../../languages.md), [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
 | "40 of them are right to left." | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
-| "71 administration translations exist, all of them complete (26 October 2026)." | same |
+| "73 administration translations exist, all of them complete (26 October 2026)." | same |
 | "Each translation of an item is published on its own, and badges show what exists and what is missing." | [Languages](../languages.md) |
 | "Each editor chooses the language of their own administration." | [Languages](../languages.md) |
 | "A country without its own translation falls back to a related one, for example every German-speaking country to German." | [Languages in Exponential, Support levels](../../languages.md#2-support-levels) |

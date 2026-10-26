@@ -44,7 +44,7 @@ der Entwicklungslinie 6.0.15; sagen Sie, welche Version Sie zeigen.
 2. Zeigen Sie auf die Richtlinie, die die Hilfe öffnet: „Die Hilfe ist für Redakteure auf einer neuen Installation über
    die Richtlinie `exphelp/read` lesbar.“ ([Das Hilfesystem](../../funktionen/6.0/hilfesystem.md#wer-sie-lesen-darf))
 3. **Setup > Sprachen**: Zeigen Sie die Inhaltssprachen. Nennen Sie die dokumentierten Zahlen mit ihrer Quelle:
-   268 Locale-Dateien können als Inhaltssprachen verwendet werden; es gibt 71 Übersetzungen der Administration, alle
+   268 Locale-Dateien können als Inhaltssprachen verwendet werden; es gibt 73 Übersetzungen der Administration, alle
    vollständig (26. Oktober 2026) ([Sprachen in Exponential](../../sprachen.md)).
 
 ![Rollen, gezeigt in Teil 2](../bilder/help/pr-admin-roles.webp)

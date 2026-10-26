@@ -139,7 +139,7 @@ siteaccess." ([Which pages use a layout](../layouts-editor.md#which-pages-use-a-
    the side columns change places and text starts at the right." ([Right to left](../../features/6.0/right-to-left.md))
 5. Switch back to English.
 
-Talk track: "268 locale files can be used as content languages; 71 administration translations exist, all of them
+Talk track: "268 locale files can be used as content languages; 73 administration translations exist, all of them
 complete." ([Languages in Exponential](../../languages.md))
 
 ### Part 4: help and proof (4 minutes)
