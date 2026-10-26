@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>Пакет</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Архивът е пакетиран във формат PAX tar, който не може да бъде импортиран. Пакетирайте пакета във формат GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Архивът е отхвърлен: записът „%path“ е от tar тип „%type“, а пакетът съдържа само файлове и директории.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Архивът е отхвърлен: съдържа запис с име, по-дълго от %length байта.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>Още аудитории</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Преглед и издаване</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Темата вече е в състояние „Преглед“.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Темата е издадена: читателите вече я виждат.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Темата отново е чернова.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Вие сте написали текущата версия, затова друг човек с ролята за издаване я издава.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Състоянието не е променено: вашата роля не позволява тази стъпка.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Работен процес за преглед</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чернова</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Преглед</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Обратно към преглед</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Изпрати за преглед</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Издай</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Обратно към чернова</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Проверка по ръководството за стил</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Проверката по ръководството за стил не откри нищо.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors грешки, %warnings предупреждения, %notices бележки. Една грешка не позволява ./console exp:help:content check да премине успешно.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Ниво</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Правило</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Поле</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Констатация</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Беше ли полезно?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Читателите отговориха с „да“ %yes пъти и с „не“ %no пъти.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Посочени причини за „не“:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Благодарим ви. Вашият отговор ни помага да подобрим помощта.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ако не, какво не беше наред?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Не е посочена причина</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Запазва се само отговорът ви, а не кой сте.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Остаряла е</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Трудна е за разбиране</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Липсва нещо</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Грешна е</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Друга причина</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Тази тема не е издадена; читателите не я виждат.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сесии на %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Къде е влязъл акаунтът ви в момента. Ако не разпознавате дадено устройство, отпишете го и сменете паролата си.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сесии на %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Къде е влязъл акаунтът ви в момента. Ако не разпознавате дадено устройство, отпишете го и сменете паролата си.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Потребители, роли и политики</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Създаване и редактиране на потребители, настройки на акаунти, назначаване на роли и редактиране на политики.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Създаване и редактиране на потребители, настройки на акаунти, одобряване или отхвърляне на нови потребителски акаунти, назначаване на роли и редактиране на политики.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Инсталация</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Автоматичен RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Редактор на бази данни</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Редактор на изходния код на бази данни</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Публикуване на скелет на поддърво</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Изпрати към блок</translation>
     </message>
 </context>
 </TS>

@@ -57299,6 +57299,18 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Package</source>
         <translation>Pachet</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Arhiva a fost împachetată în formatul tar PAX, care nu poate fi importat. Împachetați pachetul în formatul tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Arhiva a fost refuzată: intrarea „%path” are tipul tar „%type”, iar un pachet conține doar fișiere și directoare.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Arhiva a fost refuzată: conține o intrare mai lungă de %length octeți.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>More audiences</source>
         <translation>Mai multe categorii de public</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Verificare și publicare</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Subiectul este acum în Verificare.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Subiectul este Publicat: cititorii îl văd acum.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Subiectul este din nou o Ciornă.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Ați scris versiunea curentă, așa că o publică altcineva care are rolul de publicare.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Starea nu a fost modificată: rolul dumneavoastră nu permite acest pas.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Flux de verificare</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ciornă</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Verificare</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Înapoi la Verificare</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Trimitere la Verificare</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Publicare</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Înapoi la Ciornă</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Verificare după ghidul de stil</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Verificarea după ghidul de stil nu a găsit nimic.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors erori, %warnings avertismente, %notices notificări. O eroare împiedică trecerea verificării ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivel</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regulă</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Câmp</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Constatare</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>V-a fost de ajutor?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Cititorii au răspuns da de %yes ori și nu de %no ori.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Motive indicate pentru nu:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Vă mulțumim. Răspunsul dumneavoastră ne ajută să îmbunătățim ajutorul.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Dacă nu, ce nu a fost în regulă?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Niciun motiv indicat</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Se păstrează doar răspunsul dumneavoastră, nu și identitatea dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Este depășit</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Este greu de înțeles</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Lipsește ceva</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Este greșit</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Alt motiv</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Acest subiect nu este Publicat; cititorii nu îl văd.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Sesiunile utilizatorului %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Unde este conectat contul dumneavoastră în acest moment. Dacă nu recunoașteți un dispozitiv, deconectați-l și schimbați-vă parola.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Sesiunile utilizatorului %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Unde este conectat contul dumneavoastră în acest moment. Dacă nu recunoașteți un dispozitiv, deconectați-l și schimbați-vă parola.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Utilizatori, roluri și politici</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Crearea și editarea utilizatorilor, setările conturilor, atribuirea rolurilor și editarea politicilor.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crearea și editarea utilizatorilor, setările conturilor, aprobarea sau respingerea conturilor noi de utilizator, atribuirea rolurilor și editarea politicilor.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Setup</source>
         <translation>Configurare</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automat</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor de baze de date</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor de surse pentru baze de date</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publicator de schelete de subarbori</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Trimitere în bloc</translation>
     </message>
 </context>
 </TS>

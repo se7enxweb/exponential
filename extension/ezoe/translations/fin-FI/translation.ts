@@ -1364,6 +1364,10 @@ Haluatko lisätietoja tästä ongelmasta?</translation>
         <source>required</source>
         <translation>pakollinen</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Tämä sivusto käyttää editoria %engine kaikille toimittajille; oma valintasi ei ole tässä voimassa.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

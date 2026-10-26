@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>Pakki</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Safnskránni var pakkað á PAX tar-sniði, sem ekki er hægt að flytja inn. Pakkaðu pakkanum á GNU tar-sniði (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Safnskránni var hafnað: færslan „%path“ er af tar-gerðinni „%type“, en pakki inniheldur aðeins skrár og möppur.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Safnskránni var hafnað: hún nefnir færslu sem er lengri en %length bæti.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>Fleiri markhópar</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Yfirferð og útgáfa</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Efnisatriðið er nú í Yfirferð.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Efnisatriðið er Gefið út: lesendur sjá það núna.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Efnisatriðið er aftur Drög.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Þú skrifaðir núverandi útgáfu, svo einhver annar með útgáfuhlutverkið gefur hana út.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Ástandinu var ekki breytt: hlutverk þitt leyfir ekki þetta skref.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Yfirferðarferli</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Drög</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Yfirferð</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Aftur í Yfirferð</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Senda í Yfirferð</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Gefa út</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Aftur í Drög</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Athugun samkvæmt stílleiðbeiningum</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Athugunin samkvæmt stílleiðbeiningum fann ekkert.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Villur: %errors, viðvaranir: %warnings, athugasemdir: %notices. Villa kemur í veg fyrir að ./console exp:help:content check standist.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Stig</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regla</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Reitur</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Athugasemd</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Var þetta gagnlegt?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lesendur svöruðu já %yes sinnum og nei %no sinnum.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Ástæður fyrir nei:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Takk fyrir. Svarið þitt hjálpar okkur að bæta hjálpina.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Já</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Ef ekki, hvað var að?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Engin ástæða gefin</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Aðeins svarið þitt er geymt, ekki hver þú ert.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Það er úrelt</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Það er erfitt að skilja</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Eitthvað vantar</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Það er rangt</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Önnur ástæða</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Þetta efnisatriði er ekki Gefið út; lesendur sjá það ekki.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Setur notandans %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Hvar reikningurinn þinn er skráður inn núna. Ef þú þekkir ekki tæki skaltu skrá það út og breyta aðgangsorðinu þínu.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Setur notandans %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Hvar reikningurinn þinn er skráður inn núna. Ef þú þekkir ekki tæki skaltu skrá það út og breyta aðgangsorðinu þínu.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Notendur, hlutverk og stefnur</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Stofnun og breyting notenda, reikningsstillingar, úthlutun hlutverka og breyting stefna.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Stofnun og breyting notenda, reikningsstillingar, samþykkt eða höfnun nýrra notendareikninga, úthlutun hlutverka og breyting stefna.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Uppsetning</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Sjálfvirkt RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Gagnagrunnsritill</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Frumkóðaritill gagnagrunns</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Útgefandi undirtrésgrinda</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Senda í bálk</translation>
     </message>
 </context>
 </TS>

@@ -57299,6 +57299,18 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Package</source>
         <translation>Πακέτο</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Το αρχείο συμπίεσης δημιουργήθηκε σε μορφή PAX tar, η οποία δεν μπορεί να εισαχθεί. Δημιουργήστε το πακέτο σε μορφή GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Το αρχείο συμπίεσης απορρίφθηκε: η καταχώριση «%path» έχει τύπο tar «%type», ενώ ένα πακέτο περιέχει μόνο αρχεία και φακέλους.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Το αρχείο συμπίεσης απορρίφθηκε: περιέχει καταχώριση με όνομα μεγαλύτερο από %length byte.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>Περισσότερες ομάδες κοινού</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Έλεγχος και δημοσίευση</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Το θέμα βρίσκεται τώρα σε «Έλεγχο».</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Το θέμα δημοσιεύτηκε: οι αναγνώστες το βλέπουν τώρα.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Το θέμα είναι ξανά προσχέδιο.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Γράψατε την τρέχουσα έκδοση, επομένως τη δημοσιεύει κάποιος άλλος με τον ρόλο δημοσίευσης.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Η κατάσταση δεν άλλαξε: ο ρόλος σας δεν επιτρέπει αυτό το βήμα.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Ροή εργασιών ελέγχου</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Προσχέδιο</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Έλεγχος</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Επιστροφή σε έλεγχο</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Αποστολή για έλεγχο</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Επιστροφή σε προσχέδιο</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Έλεγχος οδηγού ύφους</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Ο έλεγχος οδηγού ύφους δεν βρήκε τίποτα.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors σφάλματα, %warnings προειδοποιήσεις, %notices ειδοποιήσεις. Ένα σφάλμα εμποδίζει την επιτυχία του ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Επίπεδο</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Κανόνας</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Πεδίο</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Εύρημα</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Ήταν χρήσιμο αυτό;</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Οι αναγνώστες απάντησαν «ναι» %yes φορές και «όχι» %no φορές.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Λόγοι για το «όχι»:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Ευχαριστούμε. Η απάντησή σας μάς βοηθά να βελτιώσουμε τη βοήθεια.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναι</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Αν όχι, τι ήταν λάθος;</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Δεν δόθηκε λόγος</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Όχι</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Αποθηκεύεται μόνο η απάντησή σας, όχι το ποιος είστε.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Δεν είναι ενημερωμένο</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Είναι δυσνόητο</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Λείπει κάτι</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Είναι λάθος</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Άλλος λόγος</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Αυτό το θέμα δεν έχει δημοσιευτεί· οι αναγνώστες δεν το βλέπουν.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Περίοδοι λειτουργίας του χρήστη %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Πού είναι συνδεδεμένος ο λογαριασμός σας αυτή τη στιγμή. Αν δεν αναγνωρίζετε μια συσκευή, αποσυνδέστε την και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Περίοδοι λειτουργίας του χρήστη %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Πού είναι συνδεδεμένος ο λογαριασμός σας αυτή τη στιγμή. Αν δεν αναγνωρίζετε μια συσκευή, αποσυνδέστε την και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Χρήστες, ρόλοι και πολιτικές</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Δημιουργία και επεξεργασία χρηστών, ρυθμίσεις λογαριασμών, ανάθεση ρόλων και επεξεργασία πολιτικών.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Δημιουργία και επεξεργασία χρηστών, ρυθμίσεις λογαριασμών, έγκριση ή απόρριψη νέων λογαριασμών χρηστών, ανάθεση ρόλων και επεξεργασία πολιτικών.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Αυτόματο RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Επεξεργαστής βάσης δεδομένων</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Επεξεργαστής πηγαίου κώδικα βάσης δεδομένων</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Δημοσίευση σκελετού υποδένδρου</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Προώθηση σε μπλοκ</translation>
     </message>
 </context>
 </TS>

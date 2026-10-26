@@ -1364,6 +1364,10 @@ Do you want more information about this issue?</source>
         <source>required</source>
         <translation>υποχρεωτικό</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Αυτός ο ιστότοπος χρησιμοποιεί %engine για κάθε συντάκτη· η δική σας επιλογή δεν ισχύει εδώ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

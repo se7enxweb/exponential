@@ -989,7 +989,7 @@ class eZContentObject extends eZPersistentObject
         {
             $resultArray = $db->arrayQuery( 'SELECT id FROM ezcontentobject WHERE remote_id=\'' . $remoteID . '\'' );
         }
-        if ( count( $resultArray ) != 1 )
+        if ( !is_array( $resultArray ) || count( $resultArray ) != 1 )
             $object = null;
         else
             $object = eZContentObject::fetch( $resultArray[0]['id'], $asObject );

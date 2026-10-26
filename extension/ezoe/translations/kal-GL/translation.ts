@@ -1364,6 +1364,10 @@ Ajornartorsiut una pillugu paasissutissanik amerlanerusunik pissarsiumaviit?</tr
         <source>required</source>
         <translation>pisariaqartoq</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Nittartagaq una aaqqissuisunut tamanut %engine-imik atuivoq; nammineq toqqakkat maani atuutinngilaq.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

@@ -76200,7 +76200,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сеанси користувача %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Де зараз виконано вхід у ваш обліковий запис. Якщо ви не впізнаєте пристрій, завершіть його сеанс і змініть пароль.</translation>
     </message>
     <message>
@@ -76491,7 +76491,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сеанси користувача %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Де зараз виконано вхід у ваш обліковий запис. Якщо ви не впізнаєте пристрій, завершіть його сеанс і змініть пароль.</translation>
     </message>
     <message>
@@ -77049,8 +77049,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Користувачі, ролі й політики</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Створення й редагування користувачів, налаштування облікових записів, призначення ролей і редагування політик.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Створення й редагування користувачів, налаштування облікових записів, схвалення або відхилення нових облікових записів користувачів, призначення ролей і редагування політик.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -77123,6 +77123,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>Налаштування</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Автоматичний RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Редактор бази даних</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Редактор вихідного коду бази даних</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Публікатор каркаса піддерева</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Надіслати в блок</translation>
     </message>
 </context>
 </TS>
