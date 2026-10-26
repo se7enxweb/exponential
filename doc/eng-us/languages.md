@@ -89,7 +89,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Hungary | HU | `hun-HU` |
 | Iceland | IS | `isl-IS` |
 | India | IN | `asm-IN` (untranslated), `ben-IN` → `ben-BD`, `bho-IN` (untranslated), `brx-IN` (untranslated), `doi-IN` (untranslated), `eng-IN` (source texts), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (untranslated), `kok-IN` (untranslated), `mai-IN` (untranslated), `mal-IN`, `mar-IN`, `mni-IN` (untranslated), `ori-IN`, `pan-IN`, `san-IN` (untranslated), `sat-IN` (untranslated), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
-| Indonesia | ID | `ind-ID`, `jav-ID` (untranslated), `sun-ID` (untranslated) |
+| Indonesia | ID | `ind-ID`, `jav-ID`, `sun-ID` (untranslated) |
 | Iran, Islamic Republic of | IR | `fas-IR` |
 | Iraq | IQ | `ara-IQ` → `ara-SA`, `ckb-IQ` (untranslated), `syr-IQ` (untranslated) |
 | Ireland | IE | `eng-IE` (source texts), `gle-IE` |
@@ -209,7 +209,7 @@ exist, all of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, F
 Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Persian,
 Pashto, Kurdish (Kurmanji), Swahili, Hindi, Korean, Japanese, Greek, Finnish, Hungarian, Romanian, Slovak, Slovenian,
 Bosnian, Albanian, Estonian, Latvian, Icelandic, Irish, Maltese, Lower Sorbian, Greenlandic, Chinese (Simplified and Traditional), Russian, Catalan, Serbian
-(Cyrillic and Latin), Bulgarian, Lithuanian, Portuguese (Portugal), Afrikaans, English (Australia), Bengali, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharic, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Yiddish, Vietnamese, Indonesian, Latin and, for fun,
+(Cyrillic and Latin), Bulgarian, Lithuanian, Portuguese (Portugal), Afrikaans, English (Australia), Bengali, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharic, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Yiddish, Vietnamese, Indonesian, Javanese, Latin and, for fun,
 Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
@@ -351,7 +351,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -557,7 +557,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `ita-CH` | Italian (Switzerland) | Italiano (Svizzera) | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `ita-IT` | Italian (Italy) | Italiano (Italia) | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
-| `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `jav-ID` | Javanese | Jawa | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `jpn-JP` | Japanese | 日本語 | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older, hand-made | 100% |
 | `jpn-JP@international` | Variant of `jpn-JP`: @international |  | East Asia | LTR | Japanese (Han, Hiragana, Katakana) (`Jpan`) | older variation, hand-made | — |
 | `kab-DZ` | Kabyle | Taqbaylit | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -840,6 +840,7 @@ source text, and the interface language choice counts English as 100%.
 | `msa-BN` | falls back to `msa-MY` | 100% (falls back to `msa-MY`) |
 | `vie-VN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `ind-ID` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `jav-ID` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 
 Notes:
 
@@ -977,7 +978,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 28 | Korean | 82 | `kor-KR` | `kor-KR` complete |
 | 29 | Amharic | 78 | `amh-ET` | `amh-ET` complete |
 | 30 | Thai | 71 | `tha-TH` | `tha-TH` complete |
-| 31 | Javanese | 69 | `jav-ID` | none |
+| 31 | Javanese | 69 | `jav-ID` | `jav-ID` complete |
 | 32 | Italian | 66 | `ita-IT`, `ita-CH` | `ita-IT` partial |
 | 33 | Gujarati | 62 | `guj-IN` | `guj-IN` complete |
 | 34 | Kannada | 59 | `kan-IN` | `kan-IN` complete |

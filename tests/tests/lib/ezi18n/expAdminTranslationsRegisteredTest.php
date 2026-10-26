@@ -24,13 +24,14 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     const COMPLETE = array( 'ger-DE', 'esl-ES', 'esl-MX', 'fre-FR', 'heb-IL', 'lat-VA', 'tlh-QO', 'ukr-UA', 'ara-SA',
         'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN',
         'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
-        'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY' );
+        'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY',
+        'jav-ID' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
-    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL',
-        'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN',
-        'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
-        'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY' );
+    const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
+        'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN', 'hun-HU', 'isl-IS', 'jpn-JP',
+        'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK', 'slv-SI',
+        'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -38,7 +39,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
      */
     const ALL_LANGUAGES_ONLY = array( 'lat-VA', 'tlh-QO', 'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR',
         'est-EE', 'fin-FI', 'gle-IE', 'hun-HU', 'isl-IS', 'kal-GL', 'lav-LV', 'lit-LT', 'mlt-MT', 'ron-RO', 'ser-SR',
-        'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'tha-TH', 'lao-LA', 'msa-MY' );
+        'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID' );
 
     /** @var string the repository */
     protected $root;
