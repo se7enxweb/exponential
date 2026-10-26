@@ -441,7 +441,7 @@ class expMailPreferencesService
      *
      * @param string $uri design:...
      * @param array $vars
-     * @return array|null body, subject (or null), content_type (or null); null when the template does not exist
+     * @return array|null body, subject (or null), content_type (or null), body_text (the text part of an HTML mail, or null); null when the template does not exist
      */
     public static function renderTemplate( $uri, array $vars )
     {
@@ -466,10 +466,11 @@ class expMailPreferencesService
         $body = (string)$tpl->fetch( $uri );
         $subject = $tpl->hasVariable( 'subject' ) ? (string)$tpl->variable( 'subject' ) : null;
         $type = $tpl->hasVariable( 'content_type' ) ? (string)$tpl->variable( 'content_type' ) : null;
-        foreach ( array_merge( array_keys( $vars ), array( 'subject', 'content_type' ) ) as $k )
+        $text = $tpl->hasVariable( 'body_text' ) ? (string)$tpl->variable( 'body_text' ) : null;
+        foreach ( array_merge( array_keys( $vars ), array( 'subject', 'content_type', 'body_text' ) ) as $k )
             if ( $tpl->hasVariable( $k ) )
                 $tpl->unsetVariable( $k );
-        return array( 'body' => $body, 'subject' => $subject, 'content_type' => $type );
+        return array( 'body' => $body, 'subject' => $subject, 'content_type' => $type, 'body_text' => $text );
     }
 
     /**
@@ -496,7 +497,7 @@ class expMailPreferencesService
         $mail->setSender( $sender );
         $mail->setReceiver( $email );
         $mail->setSubject( $subject );
-        $mail->setBody( $body );
+        expMailTemplateBody::applyRendered( $mail, $rendered, $body );
         $mail->setCategory( 'security' );
         return (bool)eZMailTransport::send( $mail );
     }

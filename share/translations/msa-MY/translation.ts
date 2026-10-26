@@ -44936,6 +44936,14 @@ Jika anda mahu menghantar komen kepada pelulus atau melihat status, gunakan URL 
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Komen oleh "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Sebuah halaman telah disyorkan kepada anda</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Anda menerima e-mel ini kerana seseorang memasukkan alamat anda di %site untuk berkongsi sebuah halaman dengan anda.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Untuk melakukannya, anda perlu mengubah arahan %chown di bawah Arahan shell alte
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Cubaan: %attempt daripada %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Lihat resit anda</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ akaun anda.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Pautan ini hanya berfungsi sekali dan hanya selama %1 minit.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Tetapkan semula kata laluan anda</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Seseorang telah meminta supaya kata laluan akaun anda di %site ditetapkan semula. Sahkan dengan butang, dan kami akan menghantar kata laluan baharu kepada anda dalam e-mel kedua.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Tetapkan semula kata laluan saya</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jika anda tidak memintanya, abaikan e-mel ini: kata laluan anda kekal seperti sedia ada.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Kata laluan baharu anda</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Kata laluan anda di %site telah ditetapkan semula. Log masuk dengan kata laluan baharu ini, kemudian tukar kepada kata laluan anda sendiri.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jika anda tidak menetapkan semula kata laluan anda, log masuk dengan kata laluan ini dan tukarkannya serta-merta.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Tetapkan semula kata laluan untuk %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Kata laluan baharu anda untuk %site</translation>
     </message>
 </context>
 <context>
@@ -57253,12 +57301,28 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Arkib ditolak: entri "%path" menghala ke luar pakej.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkib dipek dalam format tar PAX, yang tidak boleh diimport. Pek pakej dalam format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkib ditolak: entri "%path" mempunyai nama fail atau direktori yang lebih panjang daripada %length bait, yang tidak disimpan oleh mana-mana sistem fail.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkib ditolak: entri "%path" mempunyai jenis tar "%type", dan pakej hanya mengandungi fail dan direktori.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Pautan "%path" menghala ke luar pakej (%target) dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Pautan "%path" menghala ke "%target", yang tiada dalam pakej, dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Pautan "%path" menghala ke direktori "%target" dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Entri "%path" ialah peranti atau paip bernama (jenis tar "%type") dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Entri "%path" mempunyai jenis tar "%type", yang tidak digunakan oleh pakej, dan tidak diimport.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71485,6 +71549,14 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Your devices</source>
         <translation>Peranti anda</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Seseorang telah meminta untuk menggunakan %email bagi sebuah akaun di %site. Sila sahkan bahawa alamat ini milik anda.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Anda (atau seseorang yang menaip alamat anda) meminta pautan untuk mengurus e-mel yang dihantar oleh %site kepada %email. Pada halaman itu anda boleh menghidupkan atau mematikan setiap jenis e-mel, atau menghentikan semua e-mel pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71913,10 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jika anda tidak membuat perubahan ini, orang lain mungkin mengetahui kata laluan anda: set semulanya dengan segera melalui "%forgot" pada halaman log masuk, dan hubungi kami.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Kata laluan anda telah ditukar</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76771,34 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>The sessions of this user:</source>
         <translation>Sesi pengguna ini:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Log masuk baharu ke akaun anda</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Peranti</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Masa</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Alamat anggaran</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jika itu bukan anda, mungkin seseorang mengetahui kata laluan anda: log keluar sesi itu pada halaman peranti anda, kemudian tukar kata laluan anda.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Semak peranti anda</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Lihat sesi pengguna ini</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77325,17 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Baris dialih keluar daripada jadual dan tidak boleh dikembalikan.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jika butang tidak berfungsi, salin alamat ini ke dalam pelayar anda: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Buka halaman</translation>
     </message>
 </context>
 </TS>

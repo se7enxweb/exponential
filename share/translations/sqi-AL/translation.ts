@@ -44879,6 +44879,14 @@ Nëse dëshironi t&apos;i dërgoni komente miratuesit ose të shihni statusin, p
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Koment nga „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Ju është rekomanduar një faqe</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>E merrni këtë email sepse dikush futi adresën tuaj në %site për të ndarë një faqe me ju.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Për ta bërë këtë duhet të ndryshoni komandat %chown te Komanda alternative
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Përpjekja: %attempt nga %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Shiko faturën</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ llogarinë tuaj.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Lidhja funksionon vetëm një herë dhe vetëm për %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Rivendosja e fjalëkalimit</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Dikush kërkoi rivendosjen e fjalëkalimit të llogarisë suaj në %site. Konfirmojeni me butonin dhe do t'ju dërgojmë një fjalëkalim të ri në një email të dytë.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Rivendos fjalëkalimin tim</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Nëse nuk e keni kërkuar këtë, mund ta shpërfillni këtë email: fjalëkalimi juaj mbetet i pandryshuar.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Fjalëkalimi juaj i ri</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Fjalëkalimi juaj në %site u rivendos. Identifikohuni me këtë fjalëkalim të ri, pastaj ndryshojeni me një tuajin.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Nëse nuk e keni rivendosur fjalëkalimin, identifikohuni me këtë dhe ndryshojeni menjëherë.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Rivendosja e fjalëkalimit për %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Fjalëkalimi juaj i ri për %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Paketë</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkivi u paketua në formatin tar PAX, i cili nuk mund të importohet. Paketojeni paketën në formatin tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkivi u refuzua: hyrja „%path“ ka një emër skedari ose drejtorie më të gjatë se %length bajte, që asnjë sistem skedarësh nuk e ruan.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkivi u refuzua: hyrja „%path“ ka llojin tar „%type“, ndërsa një paketë përmban vetëm skedarë dhe dosje.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Lidhja „%path“ tregon jashtë paketës (%target) dhe nuk u importua.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Lidhja „%path“ tregon te „%target“, që nuk është në paketë, dhe nuk u importua.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Lidhja „%path“ tregon te drejtoria „%target“ dhe nuk u importua.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Hyrja „%path“ është pajisje ose tub me emër (lloji tar „%type“) dhe nuk u importua.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Hyrja „%path“ ka llojin tar „%type“, që një paketë nuk e përdor, dhe nuk u importua.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>Your devices</source>
         <translation>Pajisjet tuaja</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Dikush kërkoi të përdorë %email për një llogari në %site. Ju lutemi, konfirmoni që kjo adresë është e juaja.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ju (ose dikush që shkroi adresën tuaj) kërkuat një lidhje për të menaxhuar email-et që %site dërgon te %email. Në atë faqe mund të aktivizoni ose çaktivizoni çdo lloj email-i, ose të ndalni të gjitha email-et opsionale.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Nëse nuk e bëtë ju këtë ndryshim, dikush tjetër mund ta dijë fjalëkalimin tuaj: rivendoseni menjëherë me „%forgot“ në faqen e identifikimit dhe na kontaktoni.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Fjalëkalimi juaj u ndryshua</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The sessions of this user:</source>
         <translation>Seancat e këtij përdoruesi:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Identifikim i ri në llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pajisja</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresa e përafërt</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Nëse nuk ishit ju, dikush mund ta dijë fjalëkalimin tuaj: mbyllni atë seancë në faqen e pajisjeve tuaja, pastaj ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Shqyrto pajisjet</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Shiko seancat e këtij përdoruesi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Push to block</source>
         <translation>Dërgo në bllok</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Nëse butoni nuk funksionon, kopjojeni këtë adresë në shfletuesin tuaj: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Hap faqen</translation>
     </message>
 </context>
 </TS>

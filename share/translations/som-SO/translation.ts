@@ -44934,6 +44934,14 @@ Haddii aad rabto inaad faallooyin u dirto ansaxiyaha ama aad aragto xaaladda, is
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Faallo ka timid “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Bog ayaa laguu soo jeediyay</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Iimaylkan waxaad u heshay sababtoo ah qof ayaa ciwaankaaga ku qoray %site si uu bog kuula wadaago.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ Taas si aad u sameyso waa inaad bedeshaa amarrada %chown ee hoos yimaada Amarrad
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Isku day mar kale: %attempt ka mid ah %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Eeg rasiidkaaga</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ hawlgeliso akoonkaaga.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Xiriirku wuxuu shaqeeyaa hal mar kaliya iyo %1 daqiiqo kaliya.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Dib-u-dejinta erayga sirta ah</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Qof ayaa codsaday in dib loo dejiyo erayga sirta ah ee akoonkaaga ku jira %site. Ku xaqiiji badhanka, waxaanan kuugu soo diri doonnaa erey sir ah oo cusub iimayl labaad.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Dib u deji erayga sirta ah</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Haddii aadan codsan tan, waad iska dhaafi kartaa iimaylkan: erayga sirta ah sidiisa ayuu ahaanayaa.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Erayga sirta ah ee cusub</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Erayga sirta ah ee aad ku leedahay %site dib ayaa loo dejiyay. Ku gal erayga sirta ah ee cusubkan, kadibna u beddel mid adiga kuu gaar ah.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Haddii aadan dib u dejin erayga sirta ah, ku gal kan oo isla markiiba beddel.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Dib-u-dejinta erayga sirta ah ee %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Erayga sirta ah ee cusub ee %site</translation>
     </message>
 </context>
 <context>
@@ -57355,12 +57403,28 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <translation>Xirmo</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Kaydka waxaa lagu duubay qaabka PAX tar, kaas oo aan la soo dhoofsan karin. Xirmada ku duub qaabka GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Kaydka waa la diiday: gelitaanka “%path” wuxuu leeyahay magac fayl ama gal ka dheer %length baayt, oo aan nidaam fayl midna kaydin.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>Kaydka waa la diiday: gelinta “%path” waxay leedahay nooca tar “%type”, xirmaduna waxay haysaa oo keliya faylal iyo tusayaal.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Xiriirka “%path” wuxuu tilmaamayaa meel ka baxsan xirmada (%target) lamana soo dejin.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Xiriirka “%path” wuxuu tilmaamayaa “%target”, oo aan xirmada ku jirin, lamana soo dejin.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Xiriirka “%path” wuxuu tilmaamayaa galka “%target” lamana soo dejin.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Gelitaanka “%path” waa qalab ama tuubo magac leh (nooca tar “%type”) lamana soo dejin.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Gelitaanka “%path” wuxuu leeyahay nooca tar “%type”, oo aysan xirmo isticmaalin, lamana soo dejin.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71483,6 +71547,14 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Your devices</source>
         <translation>Qalabkaaga</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Qof ayaa codsaday in %email loo isticmaalo akoon ku jira %site. Fadlan xaqiiji in ciwaankani yahay kaaga.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Adiga (ama qof qoray ciwaankaaga) ayaa codsaday xiriir lagu maareeyo iimaylada %site u diro %email. Boggaas waxaad ku shidi kartaa ama ku dami kartaa nooc kasta oo iimayl ah, ama waad joojin kartaa dhammaan iimaylada ikhtiyaariga ah.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71911,10 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Haddii aadan adigu samayn isbeddelkan, qof kale ayaa laga yaabaa inuu ogyahay erayga sirta ah ee akoonkaaga: isla markiiba dib u deji adigoo isticmaalaya “%forgot” bogga gelitaanka, oo nagala soo xiriir.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Erayga sirta ah ee akoonkaaga waa la beddelay</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The sessions of this user:</source>
         <translation>Fadhiyada isticmaalahan:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Gelitaan cusub oo akoonkaaga ah</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Qalab</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waqti</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Ciwaanka qiyaasta ah</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Haddii aadan adigu ahayn, qof ayaa laga yaabaa inuu yaqaan erayga sirta ah: fadhigaas ka saar bogga qalabkaaga, kadibna beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Dib u eeg qalabkaaga</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Eeg fadhiyada isticmaalahan</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77323,17 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Safka waa laga saarayaa miiska lamana soo celin karo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Haddii badhanku shaqayn waayo, ciwaankan ku koobi browser-kaaga: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Fur bogga</translation>
     </message>
 </context>
 </TS>

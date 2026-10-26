@@ -44879,6 +44879,14 @@ Ak chcete schvaľovateľovi poslať komentáre alebo zobraziť stav, použite ad
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentár od „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Odporučili vám stránku</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Tento e-mail ste dostali, pretože niekto zadal vašu adresu na lokalite %site, aby s vami zdieľal stránku.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Na to musíte zmeniť príkazy %chown v časti Alternatívne príkazy príkazov�
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Pokus: %attempt z %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Zobraziť doklad o kúpe</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ svoje konto.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Odkaz funguje iba raz a iba %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Vynulovanie hesla</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Niekto požiadal o vynulovanie hesla vášho konta na lokalite %site. Potvrďte to tlačidlom a nové heslo vám pošleme v druhom e-maile.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Vynulovať heslo</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ak ste o to nežiadali, môžete tento e-mail ignorovať: vaše heslo zostane nezmenené.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Vaše nové heslo</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Vaše heslo na lokalite %site bolo vynulované. Prihláste sa týmto novým heslom a potom ho zmeňte na vlastné.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ak ste heslo nevynulovali, prihláste sa týmto heslom a ihneď ho zmeňte.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Vynulovanie hesla na lokalite %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Vaše nové heslo na lokalite %site</translation>
     </message>
 </context>
 <context>
@@ -57300,12 +57348,28 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <translation>Balík</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Archív bol zbalený vo formáte PAX tar, ktorý nemožno importovať. Zbaľte balík vo formáte GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Archív bol odmietnutý: položka „%path“ má názov súboru alebo adresára dlhší ako %length bajtov, ktorý žiadny súborový systém neuloží.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Archív bol odmietnutý: položka „%path“ má typ tar „%type“, pričom balík obsahuje iba súbory a adresáre.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje mimo balíka (%target) a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje na „%target“, ktorý balík neobsahuje, a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Odkaz „%path“ ukazuje na adresár „%target“ a nebol importovaný.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Položka „%path“ je zariadenie alebo pomenovaná rúra (typ tar „%type“) a nebola importovaná.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Položka „%path“ má typ tar „%type“, ktorý balík nepoužíva, a nebola importovaná.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71428,6 +71492,14 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Your devices</source>
         <translation>Vaše zariadenia</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Niekto požiadal o použitie adresy %email pre konto na lokalite %site. Potvrďte, že táto adresa patrí vám.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Vy (alebo niekto, kto zadal vašu adresu) ste požiadali o odkaz na správu e-mailov, ktoré lokalita %site posiela na adresu %email. Na tejto stránke môžete zapnúť alebo vypnúť každý druh e-mailov alebo zastaviť všetky voliteľné e-maily.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71856,10 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ak ste túto zmenu nevykonali, vaše heslo môže poznať niekto iný: okamžite ho obnovte pomocou funkcie „%forgot“ na prihlasovacej stránke a kontaktujte nás.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Vaše heslo bolo zmenené</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>The sessions of this user:</source>
         <translation>Relácie tohto používateľa:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nové prihlásenie do vášho konta</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zariadenie</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Približná adresa</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ak ste to neboli vy, niekto môže poznať vaše heslo: odhláste túto reláciu na stránke vašich zariadení a potom zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Skontrolovať zariadenia</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Zobraziť relácie tohto používateľa</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Push to block</source>
         <translation>Odoslať do bloku</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ak tlačidlo nefunguje, skopírujte túto adresu do prehliadača: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Otvoriť stránku</translation>
     </message>
 </context>
 </TS>

@@ -44934,6 +44934,14 @@ O ji chọọ izipụ nkọwa nye onye na-ekwenye ma ọ bụ lee ọnọdụ ya
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Nkọwa nke “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>A tụụrụ gị aro ibe</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Ị na-enweta ozi e-mail a n'ihi na mmadụ tinyere adreesị gị na %site iji kesaa gị ibe.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ Iji mee nke a, ị ga-agbanwe iwu %chown n&apos;okpuru Iwu shel ndị ọzọ.</
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nwaa ọzọ: %attempt n&apos;ime %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Lee akwụkwọ nnata gị</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ akaụntụ gị rụọ ọrụ.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Njikọ a na-arụ ọrụ naanị otu ugboro na naanị ruo nkeji %1.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Tọgharịa okwuntughe gị</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Mmadụ rịọrọ ka a tọgharịa okwuntughe akaụntụ gị na %site. Jiri bọtịnụ a kwado ya, anyị ga-ezitekwara gị okwuntughe ọhụrụ n'ozi e-mail nke abụọ.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Tọgharịa okwuntughe m</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ọ bụrụ na ị rịọghị nke a, ị nwere ike ileghara ozi e-mail a anya: okwuntughe gị ga-anọgide otu ọ dị.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Okwuntughe ọhụrụ gị</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>E tọgharịrị okwuntughe gị na %site. Jiri okwuntughe ọhụrụ a banye, wee gbanwee ya ka ọ bụrụ nke gị.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ọ bụrụ na ọ bụghị gị tọgharịrị okwuntughe gị, jiri nke a banye ma gbanwee ya ozugbo.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Tọgharịa okwuntughe gị maka %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Okwuntughe ọhụrụ gị maka %site</translation>
     </message>
 </context>
 <context>
@@ -57355,12 +57403,28 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Mpakị</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Ejiri usoro PAX tar kwakọọ faịlụ nchekwa ahụ, nke a na-enweghị ike iwebata. Jiri usoro GNU tar kwakọọ mpakị ahụ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Ajụrụ ebe nchekwa ahụ: ntinye “%path” nwere aha faịlụ ma ọ bụ ndekọ karịrị baịtị %length, nke ọ dịghị usoro faịlụ na-echekwa.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>Ajụla faịlụ nchekwa ahụ: ihe edepụtara “%path” nwere ụdị tar “%type”, mpakị na-enwekwa naanị faịlụ na folda.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ n’èzí ngwugwu ahụ (%target) ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ na “%target”, nke na-adịghị na ngwugwu ahụ, ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ na ndekọ “%target” ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Ntinye “%path” bụ ngwaọrụ ma ọ bụ ọkpọkọ nwere aha (ụdị tar “%type”) ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Ntinye “%path” nwere ụdị tar “%type”, nke ngwugwu anaghị eji, ma ebubataghị ya.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71483,6 +71547,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>Your devices</source>
         <translation>Ngwaọrụ gị</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Mmadụ rịọrọ iji %email maka akaụntụ na %site. Biko kwado na adreesị a bụ nke gị.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Gị onwe gị (ma ọ bụ onye pịnyere adreesị gị) rịọrọ njikọ iji jikwaa ozi e-mail nke %site na-ezigara %email. Na ibe ahụ, ị nwere ike ịgbanye ma ọ bụ gbanyụọ ụdị ozi e-mail ọ bụla, ma ọ bụ kwụsị ozi e-mail niile na-abụghị iwu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71911,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ọ bụrụ na ọ bụghị gị mere mgbanwe a, o nwere ike ịbụ na onye ọzọ maara Okwuntughe gị: tọgharịa ya ozugbo site na “%forgot” na ibe nbanye, ma kpọtụrụ anyị.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>E gbanwere okwuntughe gị</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The sessions of this user:</source>
         <translation>Oge nnọdụ nke onye ọrụ a:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nbanye ọhụrụ n'akaụntụ gị</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ngwaọrụ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Oge</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adreesị dị nso</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ọ bụrụ na ọ bụghị gị, mmadụ nwere ike ịma okwuntughe gị: mee ka oge nnọdụ ahụ pụọ na ibe ngwaọrụ gị, wee gbanwee okwuntughe gị.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Lelee ngwaọrụ gị</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Lee oge nnọdụ nke onye ọrụ a</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77323,17 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>A na-ewepụ ahịrị ahụ na tebụl ahụ, enweghịkwa ike iweghachi ya.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ọ bụrụ na Bọtịnụ a adịghị arụ ọrụ, detuo adreesị a n'ime nchọgharị gị: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Mepee ibe ahụ</translation>
     </message>
 </context>
 </TS>
