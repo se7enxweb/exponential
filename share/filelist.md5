@@ -22787,7 +22787,7 @@ fc838b682063911952e92772f2740cc3  kernel/classes/ezpolicylimitationvalue.php
 2be8eddb0c1fde222c140d80b889bb40  kernel/classes/ezproductcollectionitemoption.php
 2d77ef597f0d6aa9c4a546b8ceebf4f7  kernel/classes/ezredirectmanager.php
 ee40d4bfbb75ea5e27606fec42a7eefd  kernel/classes/ezrole.php
-e094631e523211106016c1f6ccd2021e  kernel/classes/ezrssexport.php
+9fbcb2dc87c0bc53e9b354eb71073e7a  kernel/classes/ezrssexport.php
 2be618c5672383f41c76aabb6b47016a  kernel/classes/ezrssexportitem.php
 6ef539ffae5c45b5237f4166bb4c601a  kernel/classes/ezrssexportopmlitem.php
 a1fdd12cc8b007017c4bf7964e3ff6d0  kernel/classes/ezrssimport.php
@@ -26044,6 +26044,7 @@ c9c4cb539a1a23f7edb9104a225c117c  tests/tests/kernel/classes/eZPolicySaveTempora
 74a56404c3de4b8aaa885226b2d8f530  tests/tests/kernel/classes/eZProductCollectionItemOptionTest.php
 8c3bb24e19c768eef1b4c90e2e9a384f  tests/tests/kernel/classes/eZProductCollectionItemTest.php
 417b58552595f21c5e75b6953d5f1533  tests/tests/kernel/classes/eZProductCollectionTest.php
+f5a79915ab46584685693b0f0919aec7  tests/tests/kernel/classes/eZRSSExportFeedEscapingTest.php
 b015159dd7d236d4811da57dec408bbb  tests/tests/kernel/classes/eZRSSExportOPMLItemTest.php
 f93a12094e2be51548c2402f181cb330  tests/tests/kernel/classes/eZRSSExportTest.php
 a308c966b0cceea390ea5ae2e302e57b  tests/tests/kernel/classes/eZRedirectManagerSafeURITest.php

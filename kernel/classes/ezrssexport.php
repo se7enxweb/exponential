@@ -1614,6 +1614,44 @@ class eZRSSExport extends eZPersistentObject
         return $timestamp > 0 ? gmdate( 'D, d M Y H:i:s', $timestamp ) . ' GMT' : '';
     }
 
+    /**
+     * Fields that ezcFeed writes into the document as markup, per feed type.
+     *
+     * ezcFeed puts most values into the feed as DOM text nodes or attributes,
+     * which escape them, so they have to be handed over as plain text: escaped
+     * here as well, an "&" reached the feed as "&amp;amp;". A few fields are
+     * written with createElement( $name, $value ) or nodeValue instead, which
+     * do not escape "&", so those alone need escaping here, or the element
+     * comes out empty: the person, category and guid of RSS 2.0 and the text
+     * constructs (title, subtitle, summary) of ATOM. RSS 1.0 has none.
+     *
+     * @var array(string=>array(string))
+     */
+    protected static $feedMarkupFields = array(
+        'rss2' => array( 'author', 'category', 'guid' ),
+        'atom' => array( 'title', 'description' ),
+    );
+
+    /**
+     * A value as ezcFeed expects it for $field of a feed of $type: escaped
+     * once where ezcFeed writes the field as markup, plain text everywhere else.
+     *
+     * @param string $type One of 'rss1', 'rss2' and 'atom'
+     * @param string $field 'title', 'description', 'author', 'category', 'guid', or another field
+     * @param string $text The plain text
+     * @return string
+     */
+    static function feedText( $type, $field, $text )
+    {
+        $text = (string) $text;
+        if ( isset( self::$feedMarkupFields[$type] ) && in_array( $field, self::$feedMarkupFields[$type], true ) )
+        {
+            return htmlspecialchars( $text, ENT_NOQUOTES, 'UTF-8' );
+        }
+
+        return $text;
+    }
+
     /*!
       Fetches RSS Items related to this RSS Export. The RSS Export Items contain information about which nodes to export information from
 
@@ -1698,52 +1736,40 @@ class eZRSSExport extends eZPersistentObject
 
         $feed = new ezcFeed();
 
-        $feed->title = htmlspecialchars(
-            $this->attribute( 'title' ), ENT_NOQUOTES, 'UTF-8'
-        );
+        // Each value goes through feedText(), which escapes it only where
+        // ezcFeed does not: escaping everything here as well wrote "&amp;amp;"
+        // into RSS 1.0 and 2.0 feeds.
+        $feed->title = self::feedText( $type, 'title', $this->attribute( 'title' ) );
 
         $link = $feed->add( 'link' );
-        $link->href = htmlspecialchars( $baseItemURL, ENT_NOQUOTES, 'UTF-8' );
+        $link->href = $baseItemURL;
 
-        $feed->description = htmlspecialchars(
-            $this->attribute( 'description' ), ENT_NOQUOTES, 'UTF-8'
-        );
+        $feed->description = self::feedText( $type, 'description', $this->attribute( 'description' ) );
         $feed->language = $locale->httpLocaleCode();
 
         // to add the <atom:link> element needed for RSS2
-        $feed->id = htmlspecialchars(
-            $baseItemURL . 'rss/feed/' . $this->attribute( 'access_url' ),
-            ENT_NOQUOTES, 'UTF-8'
-        );
+        $feed->id = $baseItemURL . 'rss/feed/' . $this->attribute( 'access_url' );
 
         // required for ATOM
         $feed->updated = time();
         $author        = $feed->add( 'author' );
-        $author->email = htmlspecialchars(
-            $config->variable( 'MailSettings', 'AdminEmail' ),
-            ENT_NOQUOTES, 'UTF-8'
-        );
+        $author->email = self::feedText( $type, 'author', $config->variable( 'MailSettings', 'AdminEmail' ) );
         $creatorObject = eZContentObject::fetch( $this->attribute( 'creator_id' ) );
         if ( $creatorObject instanceof eZContentObject )
         {
-            $author->name = htmlspecialchars(
-                $creatorObject->attribute('name'), ENT_NOQUOTES, 'UTF-8'
-            );
+            $author->name = self::feedText( $type, 'author', $creatorObject->attribute( 'name' ) );
         }
 
         $imageURL = $this->fetchImageURL();
         if ( $imageURL !== false )
         {
-            $imageURL = htmlspecialchars( $imageURL, ENT_NOQUOTES, 'UTF-8' );
             $image = $feed->add( 'image' );
 
             // Required for RSS1
             $image->about = $imageURL;
 
             $image->url = $imageURL;
-            $image->title = htmlspecialchars(
-                $this->attribute( 'title' ), ENT_NOQUOTES, 'UTF-8'
-            );
+            $image->title = $this->attribute( 'title' );
             $image->link = $link->href;
         }
 
@@ -1824,15 +1850,15 @@ class eZRSSExport extends eZPersistentObject
 
                 $item = $feed->add( 'item' );
 
-                $item->title = htmlspecialchars( $itemTitleText, ENT_NOQUOTES, 'UTF-8' );
+                $item->title = self::feedText( $type, 'title', $itemTitleText );
 
                 $link = $item->add( 'link' );
-                $link->href = htmlspecialchars( $nodeURL, ENT_NOQUOTES, 'UTF-8' );
+                $link->href = $nodeURL;
 
                 switch ( $type )
                 {
                     case 'rss2':
-                        $item->id = $object->attribute( 'remote_id' );
+                        $item->id = self::feedText( $type, 'guid', $object->attribute( 'remote_id' ) );
                         $item->id->isPermaLink = false;
                         break;
                     default:
@@ -1843,10 +1869,8 @@ class eZRSSExport extends eZPersistentObject
                 if ( $itemCreatorObject instanceof eZContentObject )
                 {
                     $author = $item->add( 'author' );
-                    $author->name = htmlspecialchars(
-                        $itemCreatorObject->attribute('name'), ENT_NOQUOTES, 'UTF-8'
-                    );
-                    $author->email = $config->variable( 'MailSettings', 'AdminEmail' );
+                    $author->name = self::feedText( $type, 'author', $itemCreatorObject->attribute( 'name' ) );
+                    $author->email = self::feedText( $type, 'author', $config->variable( 'MailSettings', 'AdminEmail' ) );
                 }
 
                 // description RSS element with respective class attribute content
@@ -1856,9 +1880,7 @@ class eZRSSExport extends eZPersistentObject
                     if ( $descContent instanceof eZXMLText )
                     {
                         $outputHandler =  $descContent->attribute( 'output' );
-                        $itemDescriptionText = htmlspecialchars(
-                            $outputHandler->attribute( 'output_text' ), ENT_NOQUOTES, 'UTF-8'
-                        );
+                        $itemDescriptionText = $outputHandler->attribute( 'output_text' );
                     }
                     else if ( $descContent instanceof eZImageAliasHandler )
                     {
@@ -1866,20 +1888,19 @@ class eZRSSExport extends eZPersistentObject
                         $origImage   = $descContent->attribute( 'original' );
                         eZURI::transformURI( $itemImage['full_path'], true, 'full' );
                         eZURI::transformURI( $origImage['full_path'], true, 'full' );
-                        $itemDescriptionText = '&lt;a href="' . htmlspecialchars( $origImage['full_path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
-                                             . '"&gt;&lt;img alt="' . htmlspecialchars( $descContent->attribute( 'alternative_text' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
+                        // HTML markup as text: feedText() below escapes it for the feed
+                        $itemDescriptionText = '<a href="' . htmlspecialchars( $origImage['full_path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
+                                             . '"><img alt="' . htmlspecialchars( $descContent->attribute( 'alternative_text' ), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
                                              . '" src="' . htmlspecialchars( $itemImage['full_path'], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401 )
                                              . '" width="' . $itemImage['width']
                                              . '" height="' . $itemImage['height']
-                                             . '" /&gt;&lt;/a&gt;';
+                                             . '" /></a>';
                     }
                     else
                     {
-                        $itemDescriptionText = htmlspecialchars(
-                            $descContent, ENT_NOQUOTES, 'UTF-8'
-                        );
+                        $itemDescriptionText = $descContent;
                     }
-                    $item->description = $itemDescriptionText;
+                    $item->description = self::feedText( $type, 'description', $itemDescriptionText );
                 }
 
                 // category RSS element with respective class attribute content
@@ -1903,9 +1924,7 @@ class eZRSSExport extends eZPersistentObject
                     if ( $itemCategoryText )
                     {
                         $cat = $item->add( 'category' );
-                        $cat->term = htmlspecialchars(
-                            $itemCategoryText, ENT_NOQUOTES, 'UTF-8'
-                        );
+                        $cat->term = self::feedText( $type, 'category', $itemCategoryText );
                     }
                 }
 
@@ -1947,7 +1966,7 @@ class eZRSSExport extends eZPersistentObject
 
                     if ( $encItemURL )
                     {
-                        $enc->url = htmlspecialchars( $encItemURL, ENT_NOQUOTES, 'UTF-8' );
+                        $enc->url = $encItemURL;
                     }
                 }
 
