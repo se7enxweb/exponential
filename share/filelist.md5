@@ -25672,7 +25672,7 @@ ea34845202a0b1a352b977d9366e4116  tests/tests/design/js/left_resize.js
 a493ba46496c8264384ae9d04f048228  tests/tests/design/js/mega_menu.js
 1ca82e275571c19ceb13991441dda184  tests/tests/design/js/mega_menu_load.js
 dedf773f52cc67f5c8a20d345e593566  tests/tests/design/js/mini_dom.js
-ab4c0476e1c86a9eb06dedee93d8a724  tests/tests/design/js/multiupload_quick_locations.js
+ac8aea5be1ce903940c3443b1a13ef03  tests/tests/design/js/multiupload_quick_locations.js
 3652f70528b200fec140f85fe412c262  tests/tests/design/js/node_tabs.js
 254dc54632aa8d8fc6ac4b677cf308d8  tests/tests/design/js/phone_menu.js
 8954e376b827cae9a9968e8d6e2b5044  tests/tests/design/js/popup_substitute.js
@@ -25802,8 +25802,8 @@ a7f1588e0a629132d1903a8cb5a065a7  tests/tests/extension/ezjscore/ezjscServerFunc
 9c4dc8893e7dbfc3a44db815e9d751f1  tests/tests/extension/ezjscore/ezjscoreCallThrowableTest.php
 708d1e986b92531457d34829727a367b  tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php
 9004bfc49f5764c617f188163c4ed482  tests/tests/extension/ezjscore/fixtures/publishingqueue_harness.php
-d1bb598a1a821181a00acf02e3dde0bc  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsScriptTest.php
-87dfb442b2f908684c39f95a820c497c  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php
+faf1dd4b8a162b9eef62f60bfd946eae  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsScriptTest.php
+1d145f6849bc5802d842a12fddf81cd9  tests/tests/extension/ezmultiupload/expMultiuploadQuickLocationsTest.php
 66e6cbee478fb7265fcc9ee62f4981c3  tests/tests/extension/ezmultiupload/expMultiuploadServiceTest.php
 dfb38e0e8ada903c6cf26e6b85182c3d  tests/tests/extension/ezmultiupload/expMultiuploadZipTest.php
 6af13ee38eecd73f9d1a8488684b3b9d  tests/tests/extension/ezoe/expOEAtdRemovedTest.php
