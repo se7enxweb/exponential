@@ -1470,7 +1470,7 @@ e36329025b09f023b15222452941ff02  design/admin4/templates/parts/ini_menu_tiles.t
 fa8f8c371e071bca043dc0ab05acd3dd  design/admin4/templates/parts/left_trash.tpl
 6d80823e605192a5da410871071737be  design/admin4/templates/parts/left_width_control.tpl
 3e68bfa74f1b07404548df2be1068041  design/admin4/templates/parts/media/menu.tpl
-a0ccfa5e791431fc4654b5b3286aba11  design/admin4/templates/parts/my/mega_menu.tpl
+1b1c9a9935663f9053a8abc14167a020  design/admin4/templates/parts/my/mega_menu.tpl
 5622ed968a7d626e4219712e8b6bace4  design/admin4/templates/parts/my/menu.tpl
 cb5a028b13368bef7b3a094ad29e1ff7  design/admin4/templates/parts/setup/mega_menu.tpl
 79dfe2adaa14ecabaf2d85ad9854f7b1  design/admin4/templates/parts/setup/menu.tpl
@@ -25599,7 +25599,7 @@ b6d6afb887a7aa995c0135bfef804f04  tests/tests/design/AdminLanguageBadgeTest.php
 6fcb08681e6917af353d038967fb3e7d  tests/tests/design/AdminLeftMenuGroupsTest.php
 11725412969d2fd8de40d2eb0604e69f  tests/tests/design/AdminLegacyControlsTest.php
 787c93133cc75367bb9363930408a431  tests/tests/design/AdminLogoTest.php
-3e96ea6b33d16e08e39badcfe679c6c1  tests/tests/design/AdminMegaMenuTest.php
+4c797917823f0ae9a682f6b3c839f291  tests/tests/design/AdminMegaMenuTest.php
 b91ebdadc3ad541ef7590c9f79877960  tests/tests/design/AdminMenuPolicyListTest.php
 8bd26f4d83a90026832a3696b7335882  tests/tests/design/AdminNewsletterPreviewTest.php
 4e03fd4b653ac220610d62cb9b415422  tests/tests/design/AdminNodeBinary.php

@@ -392,6 +392,34 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
                                            self::read( 'design/admin4/templates/parts/ini_menu.tpl' ) );
     }
 
+    /** MM-07: every chosen link of the Dashboard and Users mega menus shows a name, never its bare key */
+    public function testEveryChosenLinkHasAName()
+    {
+        $ini = self::read( 'settings/menu.ini' );
+        // a link of an extension names itself with LinkNames[<key>] in the extension's menu.ini.append.php
+        $linkNames = $ini;
+        foreach ( glob( self::root() . '/extension/*/settings/menu.ini.append.php' ) ?: array() as $file )
+            $linkNames .= "\n" . file_get_contents( $file );
+        foreach ( array( 'Leftmenu_my_mega' => 'my', 'Leftmenu_user_mega' => 'user' ) as $name => $dir )
+        {
+            $template = self::read( "design/admin4/templates/parts/$dir/mega_menu.tpl" );
+            $this->assertSame( 1, preg_match( '/^\[' . $name . '\]$(.*?)(?=^\[|\z)/ms', $ini, $section ), "[$name] exists" );
+            preg_match_all( '/^MegaMenuLinks\[\]=(\S+)$/m', $section[1], $m );
+            $this->assertNotEmpty( $m[1], "[$name] chooses links" );
+            foreach ( $m[1] as $choice )
+            {
+                $key = substr( $choice, strpos( $choice, '-' ) + 1 );
+                // a link of an extension that is not here (expai) is not drawn at all
+                if ( !preg_match( '/^Links\[' . preg_quote( $key, '/' ) . '\]=/m', $linkNames ) )
+                    continue;
+                $named = strpos( $template, "'$choice'," ) !== false
+                      || preg_match( '/^LinkNames\[' . preg_quote( $key, '/' ) . '\]=/m', $linkNames );
+                $this->assertTrue( (bool)$named, "MegaMenuLinks[]=$choice of [$name] has a name in parts/$dir/mega_menu.tpl "
+                                               . "or a LinkNames[$key] (else the panel shows the key)" );
+            }
+        }
+    }
+
     /** MM-07 */
     public function testOnlyTheChosenLinksShowInTheirGroupsAndOrder()
     {
