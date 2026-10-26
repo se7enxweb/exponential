@@ -8,6 +8,7 @@
 
 <div class="block">
 <input type="hidden" name="SiteAccess" value="{$siteaccess|wash}" />
+{if is_set( $redirect_uri )}<input type="hidden" name="RedirectURI" value="{$redirect_uri|wash}" />{/if}
 
 {section show=eq( $siteaccess, 'global_override' )}
    {section loop=$settings_list}
