@@ -478,22 +478,23 @@ designs keep their tabs.
 `AdminSetupOverviewTest` fails when a moved tab's group, section, page, icon, description or translation is missing,
 when a tab is hidden by default, and draws `parts/a4_navigation_part.tpl` with the tabs shown and hidden.
 
-### Mega menu (prototype, opt-in)
+### Mega menu
 
 A small button beside a top tab opens a panel under the header with the most used functions of the tab in their
 groups: each with its icon, its name and its description under it, up to three groups side by side, and "Go to
-<tab>" (the tab's own page, for Setup the overview) at the end for the rest. Setup, Users and Dashboard have one. Off by
-default; to switch them on, in a siteaccess or override `menu.ini.append.php`:
+<tab>" (the tab's own page, for Setup the overview) at the end for the rest. Setup, Users and Dashboard have one, and
+all three are on by default (since 26 October 2026; before that the setting was empty and each installation switched
+them on itself). To switch them off, in a siteaccess or override `menu.ini.append.php`:
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 
 [TopAdminMenu]
-MegaMenuTabs[]=setup
-MegaMenuTabs[]=users
-MegaMenuTabs[]=dashboard
+MegaMenuTabs[]
 */ ?>
 ```
+
+To keep only some, list them after the empty line, e.g. `MegaMenuTabs[]` followed by `MegaMenuTabs[]=setup`.
 
 Then clear the caches (the INI cache and the template caches: the header reads the setting when its template is
 compiled). With `MegaMenuTabs[]` empty the header draws no button and the page loads no script. One panel is open
@@ -1004,12 +1005,12 @@ Policies of a role (`role/view`, `role/edit`) and the role cards of `role/list` 
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | empty | siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | empty (see [Moving a tab into Setup](#moving-a-tab-into-setup)) | siteaccess |
-| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | empty; `setup`, `users` and `dashboard` have a template (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | `setup`, `users` and `dashboard` (each has a template) (see [Mega menu](#mega-menu)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users), `design:parts/my/mega_menu.tpl` (dashboard) | siteaccess |
-| `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | eight links of the Users tab (see [Mega menu](#mega-menu)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuLayout` | unset (up to three groups side by side); `wide` for dashboard (up to four balanced columns) | siteaccess |
-| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | seventeen links of the Dashboard tab, every Exponential Intelligence link among them (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
-| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | nineteen frequent links, at most 19 shown (see [Mega menu](#mega-menu-prototype-opt-in)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | seventeen links of the Dashboard tab, every Exponential Intelligence link among them (see [Mega menu](#mega-menu)) | siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | nineteen frequent links, at most 19 shown (see [Mega menu](#mega-menu)) | siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | the default tab names, context `design/admin/pagelayout` | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | the nine groups of `Leftmenu_setup` (Design and Audit for moved tabs, AI and Updates for extensions' links) | siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | siteaccess |

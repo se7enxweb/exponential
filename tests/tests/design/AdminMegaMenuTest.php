@@ -2,8 +2,8 @@
 /**
  * admin4's mega menu of the Setup and Users tabs (prototype, opt-in), checked on the files alone (no database):
  *
- *  MM-01 - off by default: menu.ini [TopAdminMenu] MegaMenuTabs[] is empty, the header draws the button and the page
- *          loads the script only while the setting names a tab
+ *  MM-01 - on by default for setup, users and dashboard: menu.ini [TopAdminMenu] MegaMenuTabs[] clears the list and
+ *          names the three; the header draws the button and the page loads the script only while it names a tab
  *  MM-02 - the disclosure navigation pattern: the tab stays a link, a button beside it with aria-expanded,
  *          aria-controls and a name, a hidden panel of plain links with a heading per group; no role="menu"
  *  MM-03 - one source and the rights: the header carries no link of the panel (it sits in the header's cache block,
@@ -109,17 +109,23 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
     }
 
     /** MM-01 */
-    public function testItIsOffUntilATabIsNamed()
+    public function testItIsOnForTheThreeTabsAndCanBeSwitchedOff()
     {
         $ini = self::read( 'settings/menu.ini' );
         $this->assertMatchesRegularExpression( '/^\[TopAdminMenu\]$/m', $ini );
         $section = substr( $ini, strpos( $ini, '[TopAdminMenu]' ) );
         $section = substr( $section, 0, strpos( $section, "\n[", 1 ) );
-        $this->assertMatchesRegularExpression( '/^MegaMenuTabs\[\]$/m', $section, 'MegaMenuTabs[] is declared, empty' );
-        $this->assertDoesNotMatchRegularExpression( '/^MegaMenuTabs\[\]=/m', $ini, 'no tab has a mega menu by default' );
-        $this->assertStringContainsString( '#   MegaMenuTabs[]=setup', $section, 'the comment says how to switch it on' );
-        $this->assertStringContainsString( '#   MegaMenuTabs[]=users', $section );
-        $this->assertStringContainsString( '#   MegaMenuTabs[]=dashboard', $section );
+        $this->assertMatchesRegularExpression( '/^MegaMenuTabs\[\]\nMegaMenuTabs\[\]=setup\nMegaMenuTabs\[\]=users\nMegaMenuTabs\[\]=dashboard$/m', $section, 'the list is cleared, then names the three tabs' );
+        preg_match_all( '/^MegaMenuTabs\[\]=(\w+)$/m', $ini, $tabs );
+        $this->assertSame( array( 'setup', 'users', 'dashboard' ), $tabs[1], 'only these three tabs by default' );
+        foreach ( $tabs[1] as $tab )
+        {
+            // the tab's section runs to the next line that starts a section (comments in it name sections too)
+            $this->assertSame( 1, preg_match( '/^\[Topmenu_' . $tab . '\]$(.*?)(?=^\[|\z)/ms', $ini, $topmenu ), "[Topmenu_$tab] exists" );
+            $this->assertMatchesRegularExpression( '/^MegaMenuTemplate=design:/m', $topmenu[1],
+                                                   "the default tab $tab names a MegaMenuTemplate" );
+        }
+        $this->assertStringContainsString( '#   MegaMenuTabs[]' . "\n", $section, 'the comment says how to switch it off' );
 
         // the header asks for the setting, and for the user's access to the fragment, before it draws a button
         // one template draws the tabs for every header: admin4's page_topmenu.tpl and admin4l's tab menu block
@@ -384,6 +390,34 @@ class AdminMegaMenuTest extends PHPUnit\Framework\TestCase
         // the template reads the choice from the menu's own section, nowhere else
         $this->assertStringContainsString( "mega_links=cond( ezini_hasvariable( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), ezini( \$ini_section, 'MegaMenuLinks', 'menu.ini' ), array() )",
                                            self::read( 'design/admin4/templates/parts/ini_menu.tpl' ) );
+    }
+
+    /** MM-07: every chosen link of the Dashboard and Users mega menus shows a name, never its bare key */
+    public function testEveryChosenLinkHasAName()
+    {
+        $ini = self::read( 'settings/menu.ini' );
+        // a link of an extension names itself with LinkNames[<key>] in the extension's menu.ini.append.php
+        $linkNames = $ini;
+        foreach ( glob( self::root() . '/extension/*/settings/menu.ini.append.php' ) ?: array() as $file )
+            $linkNames .= "\n" . file_get_contents( $file );
+        foreach ( array( 'Leftmenu_my_mega' => 'my', 'Leftmenu_user_mega' => 'user' ) as $name => $dir )
+        {
+            $template = self::read( "design/admin4/templates/parts/$dir/mega_menu.tpl" );
+            $this->assertSame( 1, preg_match( '/^\[' . $name . '\]$(.*?)(?=^\[|\z)/ms', $ini, $section ), "[$name] exists" );
+            preg_match_all( '/^MegaMenuLinks\[\]=(\S+)$/m', $section[1], $m );
+            $this->assertNotEmpty( $m[1], "[$name] chooses links" );
+            foreach ( $m[1] as $choice )
+            {
+                $key = substr( $choice, strpos( $choice, '-' ) + 1 );
+                // a link of an extension that is not here (expai) is not drawn at all
+                if ( !preg_match( '/^Links\[' . preg_quote( $key, '/' ) . '\]=/m', $linkNames ) )
+                    continue;
+                $named = strpos( $template, "'$choice'," ) !== false
+                      || preg_match( '/^LinkNames\[' . preg_quote( $key, '/' ) . '\]=/m', $linkNames );
+                $this->assertTrue( (bool)$named, "MegaMenuLinks[]=$choice of [$name] has a name in parts/$dir/mega_menu.tpl "
+                                               . "or a LinkNames[$key] (else the panel shows the key)" );
+            }
+        }
     }
 
     /** MM-07 */

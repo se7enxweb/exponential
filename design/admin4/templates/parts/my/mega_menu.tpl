@@ -11,6 +11,7 @@
     section_hidden_links=hash( 'Leftmenu_audit', fetch( 'audit', 'hidden_menu_links', hash( 'section', 'Leftmenu_audit' ) ) )
     i18n_hash=hash(
     'overview-dashboard',       'Dashboard'|i18n( 'design/admin/parts/my/menu' ),
+    'overview-help_center',     'Help center'|i18n( 'design/admin/parts/my/menu' ),
     'work-my_drafts',           'My drafts'|i18n( 'design/admin/parts/my/menu' ),
     'work-my_pending',          'My pending items'|i18n( 'design/admin/parts/my/menu' ),
     'work-collaboration',       'Collaboration'|i18n( 'design/admin/parts/my/menu' ),
