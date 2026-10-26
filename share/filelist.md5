@@ -25584,7 +25584,7 @@ c239764eaf3a9faa20a382734df78387  tests/tests/design/AdminHelpLanguageLineTest.p
 8df6b3e23c1da3aea5c7d5b745158627  tests/tests/design/AdminI18nStringTagsTest.php
 9e471e6d5c672f60a74d65b48a683e94  tests/tests/design/AdminIconsTest.php
 a521629dd943dfd2d64fe8b3ce016f69  tests/tests/design/AdminJQuery4RemovedApisTest.php
-bd9be3bfcb1ac1dcb4cb2432ebcfb9e6  tests/tests/design/AdminJQueryOnDemandTest.php
+100b18ad100f9432e3b65f30bb36e6cf  tests/tests/design/AdminJQueryOnDemandTest.php
 ef7f72e6efae269cefa3d98124eee4f2  tests/tests/design/AdminJobTranslationsTest.php
 b5f411ebc5ba7f9db7e43e6c9495e152  tests/tests/design/AdminKernelDesignTemplatesTest.php
 ec772ea8d9d137c4bbc2582cfeff24c1  tests/tests/design/AdminKeyboardTest.php

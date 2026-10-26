@@ -78,8 +78,12 @@ class AdminJQueryOnDemandTest extends PHPUnit\Framework\TestCase
         'design/admin4/templates/content/datatype/edit/ezobjectrelation_ajax_search.tpl',
     );
 
-    /** A call of jQuery in code without comments: jQuery( / jQuery. / $( / $. / Exp.$ (Exponential UI's jQuery) */
-    const JQUERY_CALL = '/(?<![\w$.])(?:jQuery|\$)\s*[(.]|\bExp\.\$\s*[(.]/';
+    /**
+     * A call of jQuery in code without comments: jQuery( / jQuery. / $( / $. / Exp.$ (Exponential UI's jQuery). A $
+     * right after ] or \ is a character of a regular expression, not a call: AdminNeo's adminneo/main.js (sevenx_dse)
+     * escapes with /[\\.+*?\[^\]$(){}=!<>|:]/g.
+     */
+    const JQUERY_CALL = '/(?<![\w$.\]\\\\])(?:jQuery|\$)\s*[(.]|\bExp\.\$\s*[(.]/';
 
     private static function root()
     {
