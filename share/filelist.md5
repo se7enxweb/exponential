@@ -386,7 +386,7 @@ d8edfe4bd7af7efd97f8819de5d247b8  design/admin/templates/audit/recent.tpl
 285f50ecd0189915430a72868d737398  design/admin/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin/templates/audit/sources.tpl
 b3243dc13f620b2234fd244784a62866  design/admin/templates/children.tpl
-46ec2e9cdb4f1348387240388bba7ec5  design/admin/templates/children_detailed.tpl
+336b4f52aa37260c4a15a1d0d60a5d98  design/admin/templates/children_detailed.tpl
 a568d2812c3cb4b8fa1e847e9cd263c2  design/admin/templates/class/classlist.tpl
 c776b1b3be862fe04c3f70c459dde834  design/admin/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -1146,7 +1146,7 @@ c7eb697cccc88a7038703f8fcc862659  design/admin4/templates/audit/reauth.tpl
 eb264deee765003628f666064dea68f3  design/admin4/templates/audit/settings.tpl
 6ad3a8724d541edaf79af7df5927ab5a  design/admin4/templates/audit/sources.tpl
 fdaab8d991099b9b214d46a94b87ae98  design/admin4/templates/children.tpl
-103fc88542235e654645d11ad7c3ad52  design/admin4/templates/children_detailed.tpl
+33549e555bdc459ab53c9f9f2f62e4fe  design/admin4/templates/children_detailed.tpl
 cc2f7b0b81754a30c93b2c5ea65b08b0  design/admin4/templates/class/classlist.tpl
 c776b1b3be862fe04c3f70c459dde834  design/admin4/templates/class/copy_confirm.tpl
 2f32def3d98933143182da37d73213f4  design/admin4/templates/class/datatype/browse_objectrelation_placement.tpl
@@ -25565,6 +25565,7 @@ ebe5f3aee09a156ee8ceebe72819baa1  tests/tests/design/AdminClassEditMoveTest.php
 f8369e0d852d19a42089e7d006a86c6b  tests/tests/design/AdminContextMenuTest.php
 0ec6085f13f9d3fe229755458bae81f1  tests/tests/design/AdminCopyQueuedLockedTemplatesTest.php
 39edc8217670a84ba9f44cfc301e7bd2  tests/tests/design/AdminCreateLanguagesTitleTest.php
+5f9ba5b7712d1d79e9c1ff96c0246b04  tests/tests/design/AdminCreateMenuOwnGroupFirstTest.php
 9811db047be7881e1faebb56b853e491  tests/tests/design/AdminCssReviewFixesTest.php
 558bc49e89707a01b8f75d20e4c1f6c3  tests/tests/design/AdminDashboardTest.php
 954111b43f470f49b2adcba584ec2b8d  tests/tests/design/AdminDensityTest.php
