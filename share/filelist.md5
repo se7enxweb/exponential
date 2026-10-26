@@ -24041,7 +24041,7 @@ f5c3ac3287cc41ffd8436e5874d5787d  kernel/setup/logshealth.php
 cee49ff6dec89a7c29a22fc24f59da51  kernel/setup/logsmanage.php
 52e7621ffe33cd09606c50406d16a4ed  kernel/setup/maintenance.php
 55ee736cdd6ac1037e93af940d9b33c1  kernel/setup/menuconfig.php
-dc17832efd7561981536c20973c5b8bf  kernel/setup/module.php
+e668f100778185f761460f28ae79ad6b  kernel/setup/module.php
 e29ec70a985ee0e4961c6b216dbc6d19  kernel/setup/moduleextension.php
 eb2415031ecaa6b3487a7e2840c8d483  kernel/setup/moduletable.php
 6b23c64b22f573e384f9bc710880a4b4  kernel/setup/modulewizard.php
@@ -25867,7 +25867,7 @@ a259b36c8795f576c46cb9b5ea46ea25  tests/tests/extension/maps/expMapAddressEscapi
 14ed0fd86bd419c3abc2e81c07d0cdc0  tests/tests/extension/sevenx_dse/fixtures/adminneo_runs_to_end.php
 89b118c6d391cbf19c7af686e98794a2  tests/tests/extension/sevenx_dse/fixtures/adminneo_throws_other.php
 f04713280a3892277e47fac6ad2dc2fb  tests/tests/extension/syndication/ezSyndicationTest.php
-e4b7e37794279f5886a2d737efab64ad  tests/tests/kernel/classes/SettingsToolbarViewTest.php
+3c9e9b7ebf97541ce712bc065ea8b8e4  tests/tests/kernel/classes/SettingsToolbarViewTest.php
 d8aef2fead647bf588799e969b3627e3  tests/tests/kernel/classes/SiteAccessDesignAndAdminViewWarningsTest.php
 94e110c5205488d8c6b08cfe9136eeca  tests/tests/kernel/classes/apikey/ApiKeyLiveTest.php
 80f2b4056adbe4f9240733cdcfd4d5d9  tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php

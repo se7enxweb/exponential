@@ -69,6 +69,8 @@ $ViewList['cachetoolbar'] = array(
 $ViewList['settingstoolbar'] = array(
     'functions' => array( 'setup' ),
     'script' => 'settingstoolbar.php',
+    // the page of the quick settings (opened by its address) belongs to the Setup tab
+    'default_navigation_part' => 'ezsetupnavigationpart',
     'single_post_actions' => array( 'SetButton' => 'Set' ),
     'post_action_parameters' => array( 'Set' => array( 'SiteAccess' => 'SiteAccess',
                                                        'AllSettingsList' => 'AllSettingsList',
