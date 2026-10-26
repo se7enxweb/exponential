@@ -57348,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пакет</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Архив упакован в формате PAX tar, который нельзя импортировать. Упакуйте пакет в формате GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Архив отклонён: у записи «%path» имя файла или каталога длиннее %length байт, которое не хранит ни одна файловая система.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Архив отклонен: элемент «%path» имеет тип tar «%type», а пакет может содержать только файлы и каталоги.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Ссылка «%path» указывает за пределы пакета (%target) и не была импортирована.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Ссылка «%path» указывает на «%target», которого нет в пакете, и не была импортирована.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Ссылка «%path» указывает на каталог «%target» и не была импортирована.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Запись «%path» — устройство или именованный канал (тип tar «%type») и не была импортирована.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Запись «%path» имеет тип tar «%type», который пакет не использует, и не была импортирована.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

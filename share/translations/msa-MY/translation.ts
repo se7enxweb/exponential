@@ -57301,12 +57301,28 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Arkib ditolak: entri "%path" menghala ke luar pakej.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arkib dipek dalam format tar PAX, yang tidak boleh diimport. Pek pakej dalam format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arkib ditolak: entri "%path" mempunyai nama fail atau direktori yang lebih panjang daripada %length bait, yang tidak disimpan oleh mana-mana sistem fail.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arkib ditolak: entri "%path" mempunyai jenis tar "%type", dan pakej hanya mengandungi fail dan direktori.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Pautan "%path" menghala ke luar pakej (%target) dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Pautan "%path" menghala ke "%target", yang tiada dalam pakej, dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Pautan "%path" menghala ke direktori "%target" dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Entri "%path" ialah peranti atau paip bernama (jenis tar "%type") dan tidak diimport.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Entri "%path" mempunyai jenis tar "%type", yang tidak digunakan oleh pakej, dan tidak diimport.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

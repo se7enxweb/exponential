@@ -57348,12 +57348,28 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Csomag</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Az archívum PAX tar formátumban készült, amely nem importálható. Csomagolja a csomagot GNU tar formátumban (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Az archívum elutasítva: a(z) „%path” bejegyzés fájl- vagy könyvtárneve hosszabb %length bájtnál, amelyet egyetlen fájlrendszer sem tárol.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Az archívum elutasítva: a(z) „%path” bejegyzés tar típusa „%type”, egy csomag pedig csak fájlokat és könyvtárakat tartalmazhat.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>A(z) „%path” hivatkozás a csomagon kívülre mutat (%target), és nem lett importálva.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>A(z) „%path” hivatkozás a(z) „%target” elemre mutat, amely nincs a csomagban, és nem lett importálva.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>A(z) „%path” hivatkozás a(z) „%target” könyvtárra mutat, és nem lett importálva.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>A(z) „%path” bejegyzés eszköz vagy nevesített cső („%type” tar-típus), és nem lett importálva.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>A(z) „%path” bejegyzés tar-típusa „%type”, amelyet csomag nem használ, és nem lett importálva.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

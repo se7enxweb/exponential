@@ -57348,12 +57348,28 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <translation>Pacote</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>O arquivo foi compactado no formato tar PAX, que não pode ser importado. Compacte o pacote no formato tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>O arquivo foi recusado: a entrada «%path» tem um nome de ficheiro ou diretório com mais de %length bytes, que nenhum sistema de ficheiros guarda.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>O arquivo foi recusado: a entrada «%path» tem o tipo tar «%type», e um pacote contém apenas ficheiros e diretórios.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>A ligação «%path» aponta para fora do pacote (%target) e não foi importada.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>A ligação «%path» aponta para «%target», que o pacote não contém, e não foi importada.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>A ligação «%path» aponta para o diretório «%target» e não foi importada.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>A entrada «%path» é um dispositivo ou um pipe com nome (tipo tar «%type») e não foi importada.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>A entrada «%path» tem o tipo tar «%type», que um pacote não usa, e não foi importada.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

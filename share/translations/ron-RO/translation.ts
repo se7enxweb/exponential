@@ -57348,12 +57348,28 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Pachet</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arhiva a fost împachetată în formatul tar PAX, care nu poate fi importat. Împachetați pachetul în formatul tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arhiva a fost respinsă: intrarea „%path” are un nume de fișier sau director mai lung de %length octeți, pe care niciun sistem de fișiere nu îl stochează.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arhiva a fost refuzată: intrarea „%path” are tipul tar „%type”, iar un pachet conține doar fișiere și directoare.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Legătura „%path” indică în afara pachetului (%target) și nu a fost importată.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Legătura „%path” indică spre „%target”, care nu se află în pachet, și nu a fost importată.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Legătura „%path” indică spre directorul „%target” și nu a fost importată.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Intrarea „%path” este un dispozitiv sau un pipe cu nume (tip tar „%type”) și nu a fost importată.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Intrarea „%path” are tipul tar „%type”, pe care un pachet nu îl folosește, și nu a fost importată.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

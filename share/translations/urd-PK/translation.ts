@@ -57403,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پیکج</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>آرکائیو PAX tar فارمیٹ میں پیک کیا گیا تھا، جسے درآمد نہیں کیا جا سکتا۔ پیکج کو GNU tar فارمیٹ میں پیک کریں (GNU tar: tar --format=gnu، bsdtar/macOS: tar --format=gnutar)۔</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>آرکائیو مسترد کر دیا گیا: اندراج “%path” میں %length بائٹ سے لمبا فائل یا ڈائریکٹری کا نام ہے، جسے کوئی فائل سسٹم محفوظ نہیں کرتا۔</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>آرکائیو مسترد کر دیا گیا: اندراج “%path” کی tar قسم “%type” ہے، اور پیکج میں صرف فائلیں اور ڈائریکٹریاں ہوتی ہیں۔</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>لنک “%path” پیکیج سے باہر اشارہ کرتا ہے (%target) اور درآمد نہیں کیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>لنک “%path” “%target” کی طرف اشارہ کرتا ہے، جو پیکیج میں نہیں، اور درآمد نہیں کیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>لنک “%path” ڈائریکٹری “%target” کی طرف اشارہ کرتا ہے اور درآمد نہیں کیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>اندراج “%path” ایک آلہ یا نام والا پائپ ہے (tar قسم “%type”) اور درآمد نہیں کیا گیا۔</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>اندراج “%path” کی tar قسم “%type” ہے، جو پیکیج استعمال نہیں کرتا، اور درآمد نہیں کیا گیا۔</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

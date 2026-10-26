@@ -57403,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>软件包</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>该压缩包是以 PAX tar 格式打包的，无法导入。请以 GNU tar 格式打包软件包（GNU tar：tar --format=gnu，bsdtar/macOS：tar --format=gnutar）。</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>已拒绝此压缩包：条目“%path”的文件名或目录名超过 %length 字节，没有文件系统能够存储。</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>已拒绝该压缩包：条目“%path”的 tar 类型为“%type”，而软件包只能包含文件和目录。</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>链接“%path”指向软件包之外（%target），未导入。</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>链接“%path”指向“%target”，软件包中没有该项，未导入。</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>链接“%path”指向目录“%target”，未导入。</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>条目“%path”是设备或命名管道（tar 类型“%type”），未导入。</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>条目“%path”的 tar 类型为“%type”，软件包不使用该类型，未导入。</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

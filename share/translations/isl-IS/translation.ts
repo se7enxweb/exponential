@@ -57348,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Pakki</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Safnskránni var pakkað á PAX tar-sniði, sem ekki er hægt að flytja inn. Pakkaðu pakkanum á GNU tar-sniði (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Safninu var hafnað: færslan „%path“ hefur skráar- eða möppuheiti lengra en %length bæti, sem ekkert skráakerfi geymir.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Safnskránni var hafnað: færslan „%path“ er af tar-gerðinni „%type“, en pakki inniheldur aðeins skrár og möppur.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar út fyrir pakkann (%target) og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar á „%target“, sem er ekki í pakkanum, og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Tengillinn „%path“ vísar á möppuna „%target“ og var ekki fluttur inn.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Færslan „%path“ er tæki eða nefnd pípa (tar-gerð „%type“) og var ekki flutt inn.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Færslan „%path“ er af tar-gerðinni „%type“, sem pakki notar ekki, og var ekki flutt inn.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

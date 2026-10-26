@@ -57403,12 +57403,28 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Mpakị</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Ejiri usoro PAX tar kwakọọ faịlụ nchekwa ahụ, nke a na-enweghị ike iwebata. Jiri usoro GNU tar kwakọọ mpakị ahụ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Ajụrụ ebe nchekwa ahụ: ntinye “%path” nwere aha faịlụ ma ọ bụ ndekọ karịrị baịtị %length, nke ọ dịghị usoro faịlụ na-echekwa.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>Ajụla faịlụ nchekwa ahụ: ihe edepụtara “%path” nwere ụdị tar “%type”, mpakị na-enwekwa naanị faịlụ na folda.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ n’èzí ngwugwu ahụ (%target) ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ na “%target”, nke na-adịghị na ngwugwu ahụ, ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Njikọ “%path” na-atụ na ndekọ “%target” ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Ntinye “%path” bụ ngwaọrụ ma ọ bụ ọkpọkọ nwere aha (ụdị tar “%type”) ma ebubataghị ya.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Ntinye “%path” nwere ụdị tar “%type”, nke ngwugwu anaghị eji, ma ebubataghị ya.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

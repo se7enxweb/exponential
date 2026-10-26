@@ -57246,12 +57246,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הארכיון נדחה: הרשומה &quot;%path&quot; מפנה אל מחוץ לחבילה.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>הארכיון נארז בתבנית PAX של tar, שלא ניתן לייבא. יש לארוז את החבילה בתבנית GNU של tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>הארכיון נדחה: לרשומה &quot;%path&quot; יש שם קובץ או תיקייה ארוך מ־%length בתים, ששום מערכת קבצים אינה שומרת.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>הארכיון נדחה: לרשומה &quot;%path&quot; יש סוג tar &quot;%type&quot;, וחבילה מכילה רק קבצים ותיקיות.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>הקישור &quot;%path&quot; מצביע אל מחוץ לחבילה (%target) ולא יובא.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>הקישור &quot;%path&quot; מצביע אל &quot;%target&quot;, שאינו בחבילה, ולא יובא.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>הקישור &quot;%path&quot; מצביע אל התיקייה &quot;%target&quot; ולא יובא.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>הרשומה &quot;%path&quot; היא התקן או צינור בעל שם (סוג tar &quot;%type&quot;) ולא יובאה.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>לרשומה &quot;%path&quot; יש סוג tar &quot;%type&quot;, שחבילה אינה משתמשת בו, והיא לא יובאה.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

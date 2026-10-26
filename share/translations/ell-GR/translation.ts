@@ -57348,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Πακέτο</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Το αρχείο συμπίεσης δημιουργήθηκε σε μορφή PAX tar, η οποία δεν μπορεί να εισαχθεί. Δημιουργήστε το πακέτο σε μορφή GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Το αρχείο απορρίφθηκε: η καταχώριση «%path» έχει όνομα αρχείου ή καταλόγου μεγαλύτερο από %length byte, που κανένα σύστημα αρχείων δεν αποθηκεύει.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Το αρχείο συμπίεσης απορρίφθηκε: η καταχώριση «%path» έχει τύπο tar «%type», ενώ ένα πακέτο περιέχει μόνο αρχεία και φακέλους.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει έξω από το πακέτο (%target) και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει στο «%target», που δεν υπάρχει στο πακέτο, και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Ο σύνδεσμος «%path» δείχνει στον κατάλογο «%target» και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Η καταχώριση «%path» είναι συσκευή ή επώνυμη σωλήνωση (τύπος tar «%type») και δεν εισήχθη.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Η καταχώριση «%path» έχει τύπο tar «%type», που ένα πακέτο δεν χρησιμοποιεί, και δεν εισήχθη.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

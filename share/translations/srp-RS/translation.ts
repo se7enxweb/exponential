@@ -57348,12 +57348,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Пакет</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Архива је спакована у формату PAX tar, који не може да се увезе. Спакујте пакет у формату GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Архива је одбијена: ставка „%path“ има назив датотеке или директоријума дужи од %length бајтова, који ниједан систем датотека не чува.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Архива је одбијена: ставка „%path“ има tar тип „%type“, а пакет садржи само датотеке и директоријуме.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Веза „%path“ показује изван пакета (%target) и није увезена.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Веза „%path“ показује на „%target“, који није у пакету, и није увезена.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Веза „%path“ показује на директоријум „%target“ и није увезена.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Ставка „%path“ је уређај или именована цев (tar тип „%type“) и није увезена.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Ставка „%path“ има tar тип „%type“, који пакет не користи, и није увезена.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

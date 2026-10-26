@@ -57403,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>தொகுப்பு</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>காப்பகம் PAX tar வடிவத்தில் தொகுக்கப்பட்டுள்ளது, அதை இறக்குமதி செய்ய முடியாது. தொகுப்பை GNU tar வடிவத்தில் தொகுங்கள் (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>காப்பகம் நிராகரிக்கப்பட்டது: பதிவு “%path” இல் %length பைட்டுகளை விட நீளமான கோப்பு அல்லது அடைவுப் பெயர் உள்ளது, அதை எந்தக் கோப்பு முறைமையும் சேமிப்பதில்லை.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>காப்பகம் மறுக்கப்பட்டது: “%path” உள்ளீட்டின் tar வகை “%type”, ஆனால் ஒரு தொகுப்பில் கோப்புகளும் அடைவுகளும் மட்டுமே இருக்கும்.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>இணைப்பு “%path” தொகுப்புக்கு வெளியே சுட்டுகிறது (%target), இறக்குமதி செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>இணைப்பு “%path” தொகுப்பில் இல்லாத “%target” ஐச் சுட்டுகிறது, இறக்குமதி செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>இணைப்பு “%path” அடைவு “%target” ஐச் சுட்டுகிறது, இறக்குமதி செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>பதிவு “%path” ஒரு சாதனம் அல்லது பெயரிடப்பட்ட குழாய் (tar வகை “%type”), இறக்குமதி செய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>பதிவு “%path” இன் tar வகை “%type”, தொகுப்பு இதைப் பயன்படுத்துவதில்லை, இறக்குமதி செய்யப்படவில்லை.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

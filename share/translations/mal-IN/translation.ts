@@ -57403,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>പാക്കേജ്</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>ആർക്കൈവ് PAX tar ഫോർമാറ്റിലാണ് പാക്ക് ചെയ്തത്, അത് ഇറക്കുമതി ചെയ്യാനാവില്ല. പാക്കേജ് GNU tar ഫോർമാറ്റിൽ പാക്ക് ചെയ്യുക (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ആർക്കൈവ് നിരസിച്ചു: എൻട്രി “%path”-ൽ %length ബൈറ്റിനേക്കാൾ നീളമുള്ള ഫയൽ അല്ലെങ്കിൽ ഡയറക്ടറി പേരുണ്ട്, അത് ഒരു ഫയൽ സിസ്റ്റവും സൂക്ഷിക്കുന്നില്ല.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>ആർക്കൈവ് നിരസിച്ചു: “%path” എന്ന എൻട്രിയുടെ tar തരം “%type” ആണ്, ഒരു പാക്കേജിൽ ഫയലുകളും ഡയറക്ടറികളും മാത്രമേ ഉണ്ടാകൂ.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>ലിങ്ക് “%path” പാക്കേജിന് പുറത്തേക്ക് ചൂണ്ടുന്നു (%target), ഇമ്പോർട്ട് ചെയ്തില്ല.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>ലിങ്ക് “%path” പാക്കേജിൽ ഇല്ലാത്ത “%target”-ലേക്ക് ചൂണ്ടുന്നു, ഇമ്പോർട്ട് ചെയ്തില്ല.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>ലിങ്ക് “%path” ഡയറക്ടറി “%target”-ലേക്ക് ചൂണ്ടുന്നു, ഇമ്പോർട്ട് ചെയ്തില്ല.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>എൻട്രി “%path” ഒരു ഉപകരണം അല്ലെങ്കിൽ പേരുള്ള പൈപ്പ് ആണ് (tar തരം “%type”), ഇമ്പോർട്ട് ചെയ്തില്ല.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>എൻട്രി “%path”-ന്റെ tar തരം “%type” ആണ്, പാക്കേജ് അത് ഉപയോഗിക്കുന്നില്ല, ഇമ്പോർട്ട് ചെയ്തില്ല.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
