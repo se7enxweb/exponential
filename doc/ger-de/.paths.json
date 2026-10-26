@@ -8268,5 +8268,6 @@
     "standards/sicherheit.md": "standards/security.md",
     "standards/tests-und-ci.md": "standards/testing-and-ci.md",
     "standards/versionsverwaltung-und-releases.md": "standards/source-control-and-releases.md",
-    "standards/webplattform.md": "standards/web-platform.md"
+    "standards/webplattform.md": "standards/web-platform.md",
+    "ziele.md": "goals.md"
 }

@@ -61,6 +61,9 @@ gehören zu mehr als einem.
 - **Ein Verhaltenskodex für alle.** Der Contributor Covenant 2.1 mit Exponential-Ergänzungen; Meldungen gehen an
   community@se7enx.com, und die Exponential Foundation entscheidet ([Der Verhaltenskodex](beitreten/der-verhaltenskodex.md)).
 - **Hilfe ist öffentlich.** Foren, ein Telegram-Chat, eine Enzyklopädie, Dokumentation und öffentliche Issue-Tracker.
+- **Warum wir das tun.** Warum es das Projekt gibt, warum es freie Software bleibt, wie 7x seinen Lebensunterhalt
+  verdient und warum Sie eingeladen sind mitzumachen, mit Antworten auf Zweifel an unseren Absichten:
+  [Unsere Ziele](../../ziele.md).
 
 ## Wo sich die Community trifft
 

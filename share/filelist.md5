@@ -6542,6 +6542,7 @@ edeb2f28aeb2ba6d540160c9627ab70d  doc/eng-us/features/6.0/velocity-web-server.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 772ba7f2425b05709fb0cd77716e96a4  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 217e1d27dc05837f7e57391eb935abc4  doc/eng-us/glossary.md
+4bf360efb18e147844b07415b244e43f  doc/eng-us/goals.md
 f530f12f4c06427ded2f29fb3e53119a  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 713a9eac9e6b5edd504f53bede52a503  doc/eng-us/guides/approving-new-editor-accounts.md
@@ -6620,7 +6621,7 @@ fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 bcfc7c492653c3477d0252e45ed1879c  doc/eng-us/guides/verify-its-you.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
 4cbebf2bd60b1f1a46332294a0844551  doc/eng-us/guides/your-devices-and-sessions.md
-f9f98d742660b857bad3717dc8539aed  doc/eng-us/help/README.md
+645a3abe9387c61021e40fe447bc942a  doc/eng-us/help/README.md
 c17f8a2ff4c45a64bc6ea4a8ba0ff3d3  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
@@ -6678,7 +6679,7 @@ f1c99d54fd7d0f2a3e89455bba457a59  doc/eng-us/help/advocates/accessible-slides-an
 2132f8759f827b00060ec8b19caa785c  doc/eng-us/help/advocates/advocate-faq.md
 fcd6771b79c62841d665ccff6d4ed734  doc/eng-us/help/advocates/advocate-reading-path.md
 737969c823324090f3ec84e6fc9d995c  doc/eng-us/help/advocates/advocate-toolkit.md
-9eb4b96a031cafe98476a6df96b1b063  doc/eng-us/help/advocates/advocates-start-here.md
+0020348febfa652129228fd9047ead15  doc/eng-us/help/advocates/advocates-start-here.md
 027153c7e41db545bfab3557e9625530  doc/eng-us/help/advocates/advocating-for-accessibility.md
 fe4693c78ecea4dca522053ecdc566d3  doc/eng-us/help/advocates/advocating-for-free-documentation.md
 b428f3bf08ef02426f02b492fc7f949c  doc/eng-us/help/advocates/advocating-for-open-source.md
@@ -7461,7 +7462,7 @@ b0b2d625b6f4227bf2e2a0862764018e  doc/eng-us/help/community/community-checklists
 5f81e87755ec811031f8cbb55520a639  doc/eng-us/help/community/community-faq.md
 2d0bb0122f17c819028d7e967dcf8844  doc/eng-us/help/community/community-glossary.md
 a923ed9a58a0dc3c71df4094789c0889  doc/eng-us/help/community/community-reading-path.md
-05e80fa84b6d81de240df9d58d3bd9d2  doc/eng-us/help/community/community-start-here.md
+94d45e46608e4be838eb3c06d2e4ad86  doc/eng-us/help/community/community-start-here.md
 e7b0cc8df6e5aad99fe6f980a5ca93d7  doc/eng-us/help/community/contributing/README.md
 e0428a591f5df0eaa5d173cb750d4abc  doc/eng-us/help/community/contributing/contributing-code.md
 31e5d0b4e9fb7de95f73329394f336ba  doc/eng-us/help/community/contributing/contributing-documentation-and-help-pages.md
@@ -10764,7 +10765,7 @@ bef1104aced6962e4c83982257d8b0e2  doc/eng-us/help/press/earlier-press-releases-a
 efa83c622d4c4e3bdb5da5273bb30d97  doc/eng-us/help/press/exponential-in-brief.md
 6b38c30636f1bab21d04449e3146ecef  doc/eng-us/help/press/fact-checking-checklist.md
 ec6bc437786420f22d88c69ac3b1055d  doc/eng-us/help/press/fact-checking-guide.md
-7b4045100985c6ebf97e0941f4a1a90e  doc/eng-us/help/press/fact-sheet-for-journalists.md
+b3b72d5c5dc7a52616d6f96eb12a6bb5  doc/eng-us/help/press/fact-sheet-for-journalists.md
 6f5f6c4bdfc4d41d21a31f96034c07eb  doc/eng-us/help/press/feature-stories-index.md
 e0031cdb871f84503f8a2a6e2bffe656  doc/eng-us/help/press/glossary-for-journalists.md
 31bd239d7feb13090693fec5d3c477fb  doc/eng-us/help/press/handling-comments-and-questions.md
@@ -12581,7 +12582,7 @@ d6225dfafa167890de2f91ad0d55857a  doc/ger-de/.examples/descriptions/11-ini-setti
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-e52413ffe386e7e90439780bbfd3e46b  doc/ger-de/.paths.json
+24e2e5c2b63d9ee3f2f93b4edb34c192  doc/ger-de/.paths.json
 8711f537a8d8be14952a796ca3992b04  doc/ger-de/INSTALL.md
 c57e8aab656f016038f1dbeccc7d5f4a  doc/ger-de/README-LIZENZ.md
 e00ddb4c9c765b0204eda8d076778404  doc/ger-de/anleitungen/README.md
@@ -15903,7 +15904,7 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 e3ad212462012dd2d97c28fca761abae  doc/ger-de/glossar.md
-c04c26868769ec58190ace43031db627  doc/ger-de/hilfe/README.md
+d31cdc3abe8498ffb5a7134eec953934  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 aba818b7134733a653e1ff2e3e5bf4e8  doc/ger-de/hilfe/anmelden-im-editor.md
 787c31fd4b74e4c9574987ac720a6506  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -17480,7 +17481,7 @@ dba51358f637f28e894d51ea5c241f34  doc/ger-de/hilfe/fuersprecher/fuer-freie-dokum
 7eb5f11a95501d9203d954646198cc51  doc/ger-de/hilfe/fuersprecher/fuer-open-source-eintreten.md
 5e5c53f400b33a24544344a359e40f25  doc/ger-de/hilfe/fuersprecher/fuer-sicherheit-eintreten.md
 9bae3c44ab2d4b4c6996ba6aa4a933f8  doc/ger-de/hilfe/fuersprecher/fuersprache-ehrlich-messen.md
-5a8130ffa6cb4987dbead67116785838  doc/ger-de/hilfe/fuersprecher/fuersprecher-hier-beginnen.md
+2c3c90afeb4a5117f648f283a91e9a45  doc/ger-de/hilfe/fuersprecher/fuersprecher-hier-beginnen.md
 4a29c244eb1da1c6a48fb4bd54abfa95  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-barrierefreiheit.md
 bff8a3ca0504ec0e09baf08caa90f6d2  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-exponential-intelligence.md
 655383ad758f102a8cc5a721ed547dfb  doc/ger-de/hilfe/fuersprecher/gespraechspunkte-exponential-layouts.md
@@ -17539,7 +17540,7 @@ c87a518eb5a397d7e068f6e3d235fb18  doc/ger-de/hilfe/gemeinschaft/anderen-helfen/t
 85d7f904c0615a234cd6be9a72eff3d7  doc/ger-de/hilfe/gemeinschaft/beitreten/sich-vorstellen.md
 7fb9aa498a9a9964216c6415a2cf4963  doc/ger-de/hilfe/gemeinschaft/beitreten/wo-sich-menschen-treffen.md
 3a3a9c0bfbad861a60b1b32ef5a31e77  doc/ger-de/hilfe/gemeinschaft/checklisten-fuer-die-community.md
-7ad685ad5f4122c78bef5938cb90a85c  doc/ger-de/hilfe/gemeinschaft/community-hier-beginnen.md
+125957e71811e251cddd285a135693a9  doc/ger-de/hilfe/gemeinschaft/community-hier-beginnen.md
 51e5b6c871f36c0a840ba7561f37fe55  doc/ger-de/hilfe/gemeinschaft/faq-fuer-die-community.md
 05ebd1f23f4bae913b7db177863dd854  doc/ger-de/hilfe/gemeinschaft/glossar-fuer-die-community.md
 3a09b05f2878ab0b2d0ea5a4a47d4a0e  doc/ger-de/hilfe/gemeinschaft/ihre-erste-woche-in-der-community.md
@@ -18646,7 +18647,7 @@ fecdf6cb78bd671af2bf4632b5d33177  doc/ger-de/hilfe/presse/eine-demo-installation
 2aae7ce2f435670eb82d8218cb40d840  doc/ger-de/hilfe/presse/exponential-in-kuerze.md
 6b70826e27546fb2846ca616d27323e1  doc/ger-de/hilfe/presse/exponential-in-zahlen.md
 6182a066c755b826f5d38bff05978ed0  doc/ger-de/hilfe/presse/faire-vergleiche.md
-2c24ba50d48a4372603dc3df508f2417  doc/ger-de/hilfe/presse/faktenblatt-fuer-journalisten.md
+c0c1415fcdb15455f69146d6ce237295  doc/ger-de/hilfe/presse/faktenblatt-fuer-journalisten.md
 d29ddb511dedaf17be9edfcfea69b8bc  doc/ger-de/hilfe/presse/faq-fuer-creator.md
 a15cb7a441541a2d5db00a4f99923360  doc/ger-de/hilfe/presse/faq-fuer-reporter.md
 14334d88edf04141290ca3411f41921b  doc/ger-de/hilfe/presse/fragen-an-7x.md
@@ -21426,6 +21427,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
+58954302464c25f7fc89d98ab6de8eaa  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
 11aff5cc28fe69d7e6106a9efcf581d2  extension/exphelpsite/design/standard/override/templates/help/full_topic.tpl

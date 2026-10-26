@@ -60,6 +60,8 @@ The help describes three circles of people around Exponential. They overlap, and
 - **One code of conduct for everyone.** The Contributor Covenant 2.1 with Exponential additions; reports go to
   community@se7enx.com and the Exponential Foundation decides ([The code of conduct](joining/the-code-of-conduct.md)).
 - **Help is public.** Forums, a Telegram chat, an encyclopedia, documentation and public issue trackers.
+- **Why we do this.** Why the project exists, why it stays free software, how 7x earns a living and why you are
+  invited to join, with answers to doubts about our intentions: [Our goals](../../goals.md).
 
 ## Where the community meets
 
