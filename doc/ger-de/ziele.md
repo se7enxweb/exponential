@@ -146,7 +146,8 @@ Quellen: [Fragen zur Lizenz](hilfe/projekt/lizenz-faq.md), [Exponential sachlich
   ([Exponential sachlich vergleichen](hilfe/geschaeft/exponential-sachlich-vergleichen.md)).
 - **Agenturen**: Sites und Dienstleistungen für Kunden bauen und verkaufen; die GPL erlaubt kommerzielle Arbeit.
   Erweiterungen und Designs, die Sie weitergeben, gehen unter der GPL hinaus; was Sie nie weitergeben, bleibt Ihres
-  ([Fragen zur Lizenz](hilfe/projekt/lizenz-faq.md)).
+  ([Fragen zur Lizenz](hilfe/projekt/lizenz-faq.md); was Sie Ihren Kunden bei der Übergabe einer Site schulden:
+  [Lizenzverstöße](hilfe/projekt/lizenz-faq.md#lizenzverstöße)).
 - **Redakteure**: Die Hilfe, die Sie lesen, ist freie Dokumentation; Sie dürfen sie in Ihr eigenes Schulungsmaterial
   übernehmen, übersetzen und verbessern ([Freie Dokumentation](hilfe/freie-dokumentation.md)).
 - **Übersetzer**: Eine Übersetzung erreicht alle, die eine Sprache sprechen, oft Menschen, die nie ein englisches

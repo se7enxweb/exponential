@@ -6542,7 +6542,7 @@ edeb2f28aeb2ba6d540160c9627ab70d  doc/eng-us/features/6.0/velocity-web-server.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 772ba7f2425b05709fb0cd77716e96a4  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 217e1d27dc05837f7e57391eb935abc4  doc/eng-us/glossary.md
-4bf360efb18e147844b07415b244e43f  doc/eng-us/goals.md
+ea403e936128ab0b0ace2836f227f9c1  doc/eng-us/goals.md
 f530f12f4c06427ded2f29fb3e53119a  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 713a9eac9e6b5edd504f53bede52a503  doc/eng-us/guides/approving-new-editor-accounts.md
@@ -21427,7 +21427,7 @@ f5ff4f18d94e1c80ff309a29ec39ac4d  doc/ger-de/standards/sicherheit.md
 3e355cb14e5eefd2bf6bb2044c682f56  doc/ger-de/standards/tests-und-ci.md
 7d089b30e57b258c2749f8a92146dcf8  doc/ger-de/standards/versionsverwaltung-und-releases.md
 9e515575ffc50620e08b29cbb7a63894  doc/ger-de/standards/webplattform.md
-58954302464c25f7fc89d98ab6de8eaa  doc/ger-de/ziele.md
+ca648c2e1703bdba32c81fd0f747db20  doc/ger-de/ziele.md
 1147a04b0458d869f2da4e5c14256142  exponential.cron
 b09f1f23ad8851037391227378101eda  extension/exphelpsite/design/standard/override/templates/help/full_map.tpl
 11aff5cc28fe69d7e6106a9efcf581d2  extension/exphelpsite/design/standard/override/templates/help/full_topic.tpl
