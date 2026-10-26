@@ -81,7 +81,7 @@ Eine faire Rezension berichtet, was die Quellen selbst einräumen, mit der Quell
 
 - 6.0.15 ist in Entwicklung und hat kein Veröffentlichungsdatum; vieles von dem, was die Hilfe beschreibt, gehört dazu
   ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
-- Alle 70 Übersetzungen der Administration sind vollständig (26. Oktober 2026); später hinzukommende Texte zeigen
+- Alle 71 Übersetzungen der Administration sind vollständig (26. Oktober 2026); später hinzukommende Texte zeigen
   sie Englisch, bis sie übersetzt sind ([Sprachen in Exponential](../../sprachen.md)).
 - Die mitgelieferte Standard-Engine von Velocity ist der eingebaute Server von PHP, nur für die Entwicklung; die
   empfohlene Engine muss ausgewählt werden ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)).

@@ -293,7 +293,7 @@ publishing, media portals, intranets, e-commerce and extranets" (<https://expone
 | Framework (CMF) | MVC architecture, modules and views, a template engine, INI settings, a database abstraction layer, CLI scripts, a REST API, stand-alone libraries | [Templates and design](../guides/templates-and-design.md), [REST API v1 and v2](../guides/rest-api-v1-and-v2.md) |
 | E-commerce | "Advanced e-Commerce Stores (Built in)": products, baskets, orders, VAT, currencies, PayPal | README, "Main Exponential features"; [Order receipts](../features/6.0/order-receipts.md), [Order list sorting](../features/6.0/order-list-sorting.md) |
 | Multisite | Several sites from one installation, each a siteaccess with its own host, path, language and design | [Siteaccess host and language matching](../features/6.0/siteaccess-host-and-language-matching.md), [Multi-site settings](../features/6.0/multi-site-ini-overrides.md) |
-| Multilingual | 268 locale files (261 languages and countries) as content languages; 70 administration translations in `share/translations`, all of them, English included, complete (at least 99% of the current strings, as of 26 October 2026) | [Languages in Exponential](../languages.md) |
+| Multilingual | 268 locale files (261 languages and countries) as content languages; 71 administration translations in `share/translations`, all of them, English included, complete (at least 99% of the current strings, as of 26 October 2026) | [Languages in Exponential](../languages.md) |
 | Right to left | `dir="rtl"` in content and in the administration for right-to-left languages | [Right to left](../features/6.0/right-to-left.md) |
 | Page building | Exponential Layouts: layouts, zones, blocks and rules, a port of the Netgen Layouts concept | README, "Exponential Layouts"; [The layouts editor](layouts-editor.md) |
 | Writing assistance | Exponential Intelligence (`expai`): writes drafts, never publishes on its own, hosted providers in the US or the EU or a local model | [Exponential Intelligence](../features/6.0/extensions/expai.md) |
@@ -498,7 +498,7 @@ Counted on 18 October 2026. Numbers change; the command or page in the last colu
   [forums](https://share.exponential.earth/forums) or on [Telegram](https://t.me/exponentialcms).
 - **Grow from user to developer.** Install with Git, keep your work on a branch and send pull requests:
   [Develop with Git](develop-with-git.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md).
-- **Translate.** The administration has 70 translations, all of them complete (as of 26 October 2026); [Languages](../languages.md) explains how to
+- **Translate.** The administration has 71 translations, all of them complete (as of 26 October 2026); [Languages](../languages.md) explains how to
   add or complete one.
 - **Improve this help.** Every page has "Edit on GitHub"; the pages are free documentation
   ([Free documentation](free-documentation.md)).

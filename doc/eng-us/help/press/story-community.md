@@ -37,7 +37,7 @@ and put the support needs of community users first."
 | eZpedia since 2006, under the GNU FDL | [The community](../who-is-7x.md#the-community) |
 | Forums, Telegram, Discord, Slack, trackers | [Official channels and social accounts](official-channels-and-social-accounts.md) |
 | 194 commit authors before 2016 | [Contributors and friends of the project](../who-is-7x.md#contributors-and-friends-of-the-project) |
-| 70 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
+| 71 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
 | Every pull request is merged | [Story: every pull request is merged](story-every-pull-request-merged.md) |
 
 ## What not to claim
