@@ -98,7 +98,7 @@ Auf der Testkopie zeigte die Kopfzeile danach die Kinder von Fit & Healthy mit d
 Öffnen Sie in der **Inhaltsstruktur** **Fit & Healthy**, **Neu erstellen > Folder**, nennen Sie ihn *Events* und klicken
 Sie auf **Zur Veröffentlichung schicken**.
 
-![Das Bearbeitungsformular eines neuen Ordners namens Events](../../../eng-us/help/build-two-ways/images/tt-02-new-folder-form.webp)
+![Das Bearbeitungsformular eines neuen Ordners namens Events](bilder/tt-02-new-folder-form.webp)
 
 Der nächste Seitenaufruf hatte den neuen Eintrag am Ende, ohne dass ein Cache von Hand geleert wurde:
 

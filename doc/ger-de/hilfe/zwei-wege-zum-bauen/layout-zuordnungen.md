@@ -60,7 +60,7 @@ met*; jede Bedingung muss erfüllt sein.
 
 Eine Siteaccess-Bedingung ist eine Liste der Siteaccesse der Installation zur Auswahl:
 
-![Eine Siteaccess-Bedingung mit der Liste site, admin, classic, bold](../../../eng-us/help/build-two-ways/images/mp-04-siteaccess-condition.webp)
+![Eine Siteaccess-Bedingung mit der Liste site, admin, classic, bold](bilder/mp-04-siteaccess-condition.webp)
 
 Ein Ziel vom Typ **Route** nennt statt einer Adresse eine Modulansicht von Exponential: `content/search` (die
 Suchseite), `user/*` (alle Benutzerseiten), `content/view` (jede Inhaltsseite; ein URL-Alias zählt als die

@@ -82,14 +82,14 @@ Das Media-Design stellt einen List-Block mit `explayouts/block/list.tpl` dar, da
 Wählen Sie einen List-Block aus, Reiter **Design**, **Ansichtstyp**: `list_compact` wird angeboten. Wenn Sie ihn wählen,
 werden die Optionen ausgeblendet, die zu den anderen Ansichtstypen gehören (Spalten, Ansichtstyp der Elemente).
 
-![Der Reiter Design mit dem Ansichtstyp list_compact](../../../eng-us/help/build-two-ways/images/vt-01-design-tab-list-compact.webp)
+![Der Reiter Design mit dem Ansichtstyp list_compact](bilder/vt-01-design-tab-list-compact.webp)
 
 **Hinweis:** Vor explayouts_ui_api 1.3.29 wurde der Block nicht gespeichert, wenn nur der Ansichtstyp auf einen wie
 diesen geändert wurde, bei dem kein Ansichtstyp der Elemente zur Wahl bleibt; die Änderung wurde zusammen mit der
 nächsten Änderung eines anderen Felds gespeichert (auf der Testkopie eine in **CSS class** getippte und wieder gelöschte
 Taste). Ab 1.3.29 wird die Änderung sofort gespeichert. Prüfen Sie den Blockkopf: Er zeigt den gespeicherten Ansichtstyp in Großbuchstaben, hier `LIST_COMPACT`.
 
-![Der Block zeigt jetzt LIST_COMPACT in seinem Kopf und die Einträge als Liste](../../../eng-us/help/build-two-ways/images/vt-02-draft-list-compact.webp)
+![Der Block zeigt jetzt LIST_COMPACT in seinem Kopf und die Einträge als Liste](bilder/vt-02-draft-list-compact.webp)
 
 ## 5. Das Ergebnis
 

@@ -11,7 +11,7 @@ type: help
 
 Öffnen Sie ein beliebiges Layout mit **Layouts > Layouts** (oder **Gemeinsame Layouts**) und seinem Namen. Der Editor füllt das Browserfenster.
 
-![Der Editor mit dem Layout Prefooter: obere Leiste, die Zone MAIN mit einer Column, einem Title und einer List, rechts das Eigenschaftenfeld](../../../eng-us/help/build-two-ways/images/pf-02-prefooter-editor.webp)
+![Der Editor mit dem Layout Prefooter: obere Leiste, die Zone MAIN mit einer Column, einem Title und einer List, rechts das Eigenschaftenfeld](bilder/pf-02-prefooter-editor.webp)
 
 ## Inhalt
 
@@ -31,7 +31,7 @@ type: help
 | **Layout veröffentlichen** | macht den Entwurf zum veröffentlichten Layout |
 | `...` | weitere Aktionen |
 
-![Die Frage Änderungen verwerfen: Möchten Sie Ihre Änderungen am Layoutentwurf wirklich verwerfen? mit Abbrechen und Verwerfen](../../../eng-us/help/build-two-ways/images/ed-01-discard-confirm.webp)
+![Die Frage Änderungen verwerfen: Möchten Sie Ihre Änderungen am Layoutentwurf wirklich verwerfen? mit Abbrechen und Verwerfen](bilder/ed-01-discard-confirm.webp)
 
 ## Die Blockpalette
 

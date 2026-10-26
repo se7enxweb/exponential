@@ -98,16 +98,17 @@ gemeinsamen Optionen an (Abstände, CSS-Klasse, Container).
 
 Öffnen Sie ein Layout im Editor, und die Gruppe **Basic** der Palette hat **Notice**:
 
-![Die Blockpalette: die Gruppe Basic endet mit Notice](../../../eng-us/help/build-two-ways/images/nb-01-palette-with-notice.webp)
+![Die Blockpalette: die Gruppe Basic endet mit Notice](bilder/nb-01-palette-with-notice.webp)
 
 ## 5. Verwenden
 
-![Der Notice-Block im Prefooter abgelegt, noch ohne Inhalt](../../../eng-us/help/build-two-ways/images/nb-02-notice-dropped.webp)
+![Der Notice-Block im Prefooter abgelegt, noch ohne Inhalt](bilder/nb-02-notice-dropped.webp)
 
-Ziehen Sie **Notice** in eine Zone. Er kommt mit dem Ansichtstyp `default` an; wählen Sie ihn aus, öffnen Sie **Design**,
-wählen Sie `warning`, tippen Sie den Text in **Content** ein und klicken Sie auf **Layout veröffentlichen**.
+Ziehen Sie **Notice** in eine Zone. Er kommt mit seinem ersten Ansichtstyp (`info`) an; wählen Sie ihn aus, öffnen Sie
+**Design**, wählen Sie `warning`, tippen Sie den Text in **Inhalt** (der Parameter `content`) ein und klicken Sie auf
+**Layout veröffentlichen**.
 
-![Der Notice-Block im Reiter Design: Ansichtstyp warning und der Text in Content](../../../eng-us/help/build-two-ways/images/nb-04-notice-design-tab.webp)
+![Der Notice-Block im Reiter Design: Ansichtstyp warning und der Text im Feld Inhalt](bilder/nb-04-notice-design-tab.webp)
 
 Die veröffentlichte Seite stellt dar:
 
