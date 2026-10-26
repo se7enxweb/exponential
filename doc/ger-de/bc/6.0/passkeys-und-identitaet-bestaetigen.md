@@ -59,7 +59,9 @@ Für Extensions:
 - `expReauth::isFresh( $user )` sagt, ob der Benutzer innerhalb der Minuten bestätigt hat; `expAuditReauth` (die
   erneute Passworteingabe der Audit-Konsole) erkennt es an.
 - Ein gefragter POST wird nach der Antwort mit seinen eigenen Feldern wiederholt; Dateien nicht (ein Browser kann sie
-  nicht zweimal senden), deshalb sollte eine Ansicht mit Upload mit `*` genannt werden.
+  nicht zweimal senden), deshalb sollte eine Ansicht mit Upload mit `*` genannt werden. Ein POST mit einer tatsächlich
+  gewählten Datei öffnet das Formular nach der Antwort wieder; leer gebliebene Dateifelder sind kein Upload
+  (`expReauth::hasUploads()`), und ein solches Formular wird wiederholt.
 
 ## Audit
 

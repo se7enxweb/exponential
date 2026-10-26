@@ -64,7 +64,10 @@ As shipped in `settings/site.ini`:
 | `content`: removing and publishing content | no | `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton` |
 
 So changing one's own e-mail address asks (it changes credentials), editing one's own name does not; editing another
-user's account always asks.
+user's account always asks. Creating an account below a user group counts as editing another user's account: it is
+user management, as the login, e-mail address, password and group of an account decide who can sign in with which
+rights, whether or not a field of it changed. The question comes once, when the form is published (or stored), and
+the answer runs the form as it was sent (see "What happens to the request").
 
 ## 3. Switching groups on and off
 
@@ -121,7 +124,11 @@ Clear the INI cache afterwards. A group of its own appears on `setup/reauth` wit
   fields; after a right answer the view runs with exactly those fields.
 - **A GET** (a `*` rule) is asked again after the answer: the browser is redirected to the same address.
 - **A file upload** cannot be sent twice by a browser: after the answer the form opens again and the files are chosen
-  once more. That is why the rule for `package/upload` asks already when the page opens (`*`).
+  once more. That is why the rule for `package/upload` asks already when the page opens (`*`). Only a file actually
+  chosen counts: a form that merely has file inputs, left empty, is a POST like any other. Creating or editing another
+  user's account is the usual case: the user edit form has the image of the account, and an editor who creates a
+  member without choosing an image confirms once and the account is published as it was filled in, without filling in
+  the form again. The page says that files have to be chosen again only when a file was chosen.
 - **A script** (XMLHttpRequest, or `Accept: application/json` without HTML) gets `403` with
   `{"error": "reauth_required", "url": "..."}` instead of the page.
 

@@ -15,6 +15,9 @@
  *  RA-09 the replayed POST: nested fields flattened to name[key], the form token left out; the form's own fields (its passkey fields only in its answer)
  *        are taken out before the view runs
  *  RA-10 the settings page: the form's values (groups ticked, minutes kept within 1 to 1440)
+ *  RA-12 an upload is a file actually chosen: file inputs left empty (UPLOAD_ERR_NO_FILE, also in nested arrays) are
+ *        none, so such a form is replayed whole; a chosen file (or one that did not arrive) is one; the mark of an
+ *        upload the page sends back is one of the form's own fields
  *
  * @copyright Copyright (C) 1998 - 2026 7x & Exponential Foundation. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -223,5 +226,55 @@ class expReauthRulesTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'enabled' => true, 'minutes' => 1440, 'groups' => array( 'account' => false, 'content' => true ) ), $v );
         $v = expReauthSettings::fromForm( array( 'account' ), array( 'ReauthMinutes' => 'x' ) );
         $this->assertSame( array( 'enabled' => false, 'minutes' => 10, 'groups' => array( 'account' => false ) ), $v );
+    }
+
+    /** RA-12 */
+    public function testUploads()
+    {
+        $none = function ( $name ) {
+            return array( 'name' => $name, 'type' => '', 'tmp_name' => '', 'error' => UPLOAD_ERR_NO_FILE, 'size' => 0 );
+        };
+        $chosen = array( 'name' => 'me.png', 'type' => 'image/png', 'tmp_name' => '/php/tmp/phpA1', 'error' => UPLOAD_ERR_OK, 'size' => 120 );
+        // no form with files, and a form without file inputs
+        $this->assertFalse( expReauth::hasUploads( array() ) );
+        // the edit form of a user: its image and another file input, both left empty
+        $this->assertFalse( expReauth::hasUploads( array( 'ContentObjectAttribute_data_imagename_4792' => $none( '' ),
+                                                          'ContentObjectAttribute_data_binaryfilename_4793' => $none( '' ) ) ) );
+        // the same form with the image chosen
+        $this->assertTrue( expReauth::hasUploads( array( 'ContentObjectAttribute_data_imagename_4792' => $chosen,
+                                                         'ContentObjectAttribute_data_binaryfilename_4793' => $none( '' ) ) ) );
+        // a file that was chosen but did not arrive has to be chosen again as well
+        $this->assertTrue( expReauth::hasUploads( array( 'f' => array( 'error' => UPLOAD_ERR_INI_SIZE ) + $none( 'big.iso' ) ) ) );
+        $this->assertTrue( expReauth::hasUploads( array( 'f' => array( 'error' => UPLOAD_ERR_PARTIAL ) + $none( 'half.pdf' ) ) ) );
+        // inputs named as arrays: name[] and name[key][sub], PHP's layout with the arrays below each property
+        $this->assertFalse( expReauth::hasUploads( array( 'files' => array(
+            'name' => array( '', '' ), 'type' => array( '', '' ), 'tmp_name' => array( '', '' ),
+            'error' => array( UPLOAD_ERR_NO_FILE, UPLOAD_ERR_NO_FILE ), 'size' => array( 0, 0 ) ) ) ) );
+        $this->assertTrue( expReauth::hasUploads( array( 'files' => array(
+            'name' => array( '', 'b.png' ), 'type' => array( '', 'image/png' ), 'tmp_name' => array( '', '/php/tmp/phpB2' ),
+            'error' => array( UPLOAD_ERR_NO_FILE, UPLOAD_ERR_OK ), 'size' => array( 0, 99 ) ) ) ) );
+        $this->assertFalse( expReauth::hasUploads( array( 'Attr' => array(
+            'name' => array( 'a' => array( 'x' => '', 'y' => '' ) ),
+            'error' => array( 'a' => array( 'x' => UPLOAD_ERR_NO_FILE, 'y' => UPLOAD_ERR_NO_FILE ) ) ) ) ) );
+        $this->assertTrue( expReauth::hasUploads( array( 'Attr' => array(
+            'name' => array( 'a' => array( 'x' => '', 'y' => 'deep.txt' ) ),
+            'error' => array( 'a' => array( 'x' => UPLOAD_ERR_NO_FILE, 'y' => UPLOAD_ERR_OK ) ) ) ) ) );
+        // entries that are no uploads at all are ignored
+        $this->assertFalse( expReauth::hasUploads( array( 'odd' => 'text', 'other' => array( 'name' => 'x' ) ) ) );
+        // $_FILES itself when no array is given
+        $saved = $_FILES;
+        try
+        {
+            $_FILES = array( 'ContentObjectAttribute_data_imagename_4792' => $none( '' ) );
+            $this->assertFalse( expReauth::hasUploads() );
+            $_FILES['ContentObjectAttribute_data_imagename_4792'] = $chosen;
+            $this->assertTrue( expReauth::hasUploads() );
+        }
+        finally
+        {
+            $_FILES = $saved;
+        }
+        // the page's mark of an upload is the form's own field: it never reaches the view
+        $this->assertSame( array( 'PublishButton' => 1 ), expReauth::withoutOwnFields( array( 'PublishButton' => 1, 'ExpReauthReplayFiles' => 1 ) ) );
     }
 }
