@@ -1364,6 +1364,10 @@ Kas soovite selle probleemi kohta rohkem teavet?</translation>
         <source>required</source>
         <translation>kohustuslik</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>See sait kasutab kõigi toimetajate jaoks redaktorit %engine; teie enda valik siin ei kehti.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

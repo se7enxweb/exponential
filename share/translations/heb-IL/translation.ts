@@ -76202,7 +76202,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ההפעלות של %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>היכן החשבון שלך מחובר כרגע. אם מכשיר אינו מוכר, יש לנתק אותו ולשנות את הסיסמה.</translation>
     </message>
     <message>
@@ -76493,7 +76493,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ההפעלות של %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>היכן החשבון שלך מחובר כרגע. אם מכשיר אינו מוכר, יש לנתק אותו ולשנות את הסיסמה.</translation>
     </message>
     <message>
@@ -77051,8 +77051,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>משתמשים, תפקידים ומדיניות</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>יצירה ועריכה של משתמשים, הגדרות חשבון, הקצאת תפקידים ועריכת מדיניות.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>יצירה ועריכה של משתמשים, הגדרות חשבון, אישור או דחייה של חשבונות משתמש חדשים, הקצאת תפקידים ועריכת מדיניות.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -77125,6 +77125,38 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Setup</source>
         <translation>הגדרות</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS אוטומטי</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>עורך מסד נתונים</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>עורך קוד המקור של מסד הנתונים</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>מפרסם שלד של תת־עץ</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>שליחה לבלוק</translation>
     </message>
 </context>
 </TS>

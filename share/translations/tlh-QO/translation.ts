@@ -76203,7 +76203,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>%name poHmey</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>DaH lo'wI' De'lIj 'eltaHbogh Daqmey. jan DaghovlaHbe'chugh, yImejmoH 'ej pegh mu'lIj yIchoH.</translation>
     </message>
     <message>
@@ -76494,7 +76494,7 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>%name poHmey</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>DaH lo'wI' De'lIj 'eltaHbogh Daqmey. jan DaghovlaHbe'chugh, yImejmoH 'ej pegh mu'lIj yIchoH.</translation>
     </message>
     <message>
@@ -77052,8 +77052,8 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>lo'wI'pu', patlhmey, chaw' chutmey je</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>lo'wI'pu' chenmoHghach choHghach je, lo'wI' De' DuHmey, patlhmey nobghach, chaw' chutmey choHghach je.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>lo'wI'pu' chenmoHghach choHghach je, lo'wI' De' DuHmey, lo'wI' De' chu'mey chaw'ghach lajQo'ghach je, patlhmey nobghach, chaw' chutmey choHghach je.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -77126,6 +77126,38 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Setup</source>
         <translation>SeHlaw</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>nIteb Qapbogh RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>De' pa' choHwI'</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>De' pa' Hal choHwI'</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>SorHom Hommey 'angwI'</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>ngoghDaq yIlan</translation>
     </message>
 </context>
 </TS>

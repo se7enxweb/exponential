@@ -57299,6 +57299,18 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Package</source>
         <translation>Paket</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Archiwna dataja jo se zapakowała we formaśe PAX tar, kótaryž njedajo se importěrowaś. Zapakujśo paket we formaśe GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Archiwna dataja jo se wótpokazała: zapisk "%path" ma tar-typ "%type", a paket wopśimujo jano dataje a zarědniki.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Archiwna dataja jo se wótpokazała: mjenujo zapisk, kótaryž jo dlejšy ako %length bajtow.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>More audiences</source>
         <translation>Dalšne celowe kupki</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Pśeglědowanje a wudaśe</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Tema jo něnto w pśeglědowanju.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Tema jo wudana: cytarje ju něnto wiźe.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Tema jo zasej nacerjenje.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Aktualna wersija jo wót Was, togodla ju wuda něchten drugi z rolu za wudaśe.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Staw njejo se změnił: Waša rola toś ten kšac njedowólujo.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Wótbězg pśeglědowanja</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Nacerjenje</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pśeglědowanje</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Slědk do pśeglědowanja</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>K pśeglědowanju pósłaś</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Wudaś</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Slědk k nacerjenjeju</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Kontrola pó stilowem pšawidłowniku</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Kontrola pó stilowem pšawidłowniku njejo nic namakała.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>Zmólki: %errors, warnowanja: %warnings, pokaze: %notices. Zmólka zawinujo, až ./console exp:help:content check njepśejźo.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Stopjeń</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Pšawidło</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Pólo</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Zwěsćenje</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Jo to było wužytne?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Cytarje su wótegronili z „jo“: %yes, z „ně“: %no.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Pśicyny za „ně“:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Wjeliki źěk. Waša wótegrona nam pomaga, pomoc pólěpšyś.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Jolic nic, co jo było wopak?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Žedna pśicyna pódana</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ně</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Składujo se jano Waša wótegrona, nic, chto sćo.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Jo zestarjone</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Jo śěžko zrozměś</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Něco felujo</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Jo wopak</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Druga pśicyna</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Toś ta tema njejo wudana; cytarje ju njewiźe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Pósejźenja wužywarja %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Źo jo Wašo konto rowno pśizjawjone. Jolic rěd njespóznawaśo, wótzjawśo jen a změńśo swójo gronidło.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Pósejźenja wužywarja %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>Źo jo Wašo konto rowno pśizjawjone. Jolic rěd njespóznawaśo, wótzjawśo jen a změńśo swójo gronidło.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <translation>Wužywarje, role a zasady</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Wužywarjow napóraś a wobźěłaś, nastajenja kontow, role pśirědowaś a zasady wobźěłaś.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Wužywarjow napóraś a wobźěłaś, nastajenja kontow, nowe wužywarske konta pśizwóliś abo wótpokazaś, role pśirědowaś a zasady wobźěłaś.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Setup</source>
         <translation>Zarědowanje</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>Awtomatiski RSS</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor datoweje banki</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor žrědłowego teksta datoweje banki</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Wózjawjaŕ skeleta pódboma</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Do bloka pósłaś</translation>
     </message>
 </context>
 </TS>

@@ -1364,6 +1364,10 @@ Cośo wěcej informacijow wó toś tom problemje?</translation>
         <source>required</source>
         <translation>trěbny</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Toś to sedło wužywa %engine za wšych redaktorow; Wašo swójske wuběranje how njepłaśi.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

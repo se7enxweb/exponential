@@ -1364,6 +1364,10 @@ Ar norite gauti daugiau informacijos apie šią problemą?</translation>
         <source>required</source>
         <translation>privaloma</translation>
     </message>
+    <message>
+        <source>This site uses %engine for every editor; a choice of your own does not apply here.</source>
+        <translation>Ši svetainė visiems redaktoriams naudoja %engine; jūsų pačių pasirinkimas čia netaikomas.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/ezoe/handler</name>

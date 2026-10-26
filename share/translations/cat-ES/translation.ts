@@ -57299,6 +57299,18 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Package</source>
         <translation>Paquet</translation>
     </message>
+    <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>L'arxiu s'ha empaquetat en el format tar PAX, que no es pot importar. Empaqueta el paquet en el format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>S'ha rebutjat l'arxiu: l'entrada «%path» té el tipus tar «%type», i un paquet només conté fitxers i directoris.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>S'ha rebutjat l'arxiu: conté una entrada de més de %length bytes.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/pdf</name>
@@ -75737,6 +75749,146 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>More audiences</source>
         <translation>Més públics</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Revisió i publicació</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Ara el tema és en revisió.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>El tema està publicat: els lectors ja el veuen.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>El tema torna a ser un esborrany.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Has escrit la versió actual, per tant la publica una altra persona amb el rol de publicació.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>No s'ha canviat l'estat: el teu rol no permet aquest pas.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Flux de revisió</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Esborrany</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Revisió</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Torna a revisió</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Envia a revisió</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Publica</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Torna a esborrany</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Comprovació de la guia d'estil</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>La comprovació de la guia d'estil no ha trobat res.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors errors, %warnings avisos, %notices notes. Un error fa que ./console exp:help:content check no se superi.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Nivell</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regla</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Camp</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Troballa</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>T'ha estat útil?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Els lectors han respost sí %yes vegades i no %no vegades.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Motius donats per al no:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Gràcies. La teva resposta ens ajuda a millorar l'ajuda.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Si no, què hi fallava?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>No s'ha donat cap motiu</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Només es desa la teva resposta, no qui ets.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Està desactualitzat</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>És difícil d'entendre</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Hi falta alguna cosa</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>És incorrecte</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Un altre motiu</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Aquest tema no està publicat; els lectors no el veuen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76048,7 +76200,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Sessions de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>On té la sessió iniciada el teu compte ara mateix. Si no reconeixes un dispositiu, tanca'n la sessió i canvia la contrasenya.</translation>
     </message>
     <message>
@@ -76339,7 +76491,7 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Sessions de %name</translation>
     </message>
     <message>
-        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <source>Where your account is signed in right now. If you do not recognize a device, sign it out and change your password.</source>
         <translation>On té la sessió iniciada el teu compte ara mateix. Si no reconeixes un dispositiu, tanca'n la sessió i canvia la contrasenya.</translation>
     </message>
     <message>
@@ -76897,8 +77049,8 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <translation>Usuaris, rols i polítiques</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Crear i editar usuaris, paràmetres del compte, assignar rols i editar polítiques.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Crear i editar usuaris, paràmetres del compte, aprovar o denegar comptes d'usuari nous, assignar rols i editar polítiques.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>
@@ -76971,6 +77123,38 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Setup</source>
         <translation>Configuració</translation>
+    </message>
+</context>
+<context>
+    <name>extension/autorss</name>
+    <message>
+        <source>Auto RSS</source>
+        <translation>RSS automàtic</translation>
+    </message>
+</context>
+<context>
+    <name>extension/expdse</name>
+    <message>
+        <source>Database Editor</source>
+        <translation>Editor de bases de dades</translation>
+    </message>
+    <message>
+        <source>Database Source Editor</source>
+        <translation>Editor del codi font de bases de dades</translation>
+    </message>
+</context>
+<context>
+    <name>extension/ezssp</name>
+    <message>
+        <source>Subtree Skeleton Publisher</source>
+        <translation>Publicador d'esquelets de subarbres</translation>
+    </message>
+</context>
+<context>
+    <name>ezflow/push</name>
+    <message>
+        <source>Push to block</source>
+        <translation>Envia al bloc</translation>
     </message>
 </context>
 </TS>
