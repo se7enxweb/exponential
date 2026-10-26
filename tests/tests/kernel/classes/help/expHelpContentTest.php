@@ -130,7 +130,7 @@ class expHelpContentTest extends PHPUnit\Framework\TestCase
                                 'audience' => array( 'Editors', 'Administrators' ),
                                 'fields' => array( 'condition' => 'The article is listed as published. Its address shows "Access denied".', 'cause' => 'Anonymous readers may not read it.', 'remedy' => 'Look at **Section** and **Object states**.' ) ) ),
             self::topic( array( 'object_id' => 13, 'class' => 'help_task', 'help_id' => 'account.log-in', 'title' => 'Log in', 'shortdesc' => 'Log in with your user name and your password.',
-                                'audience' => array( 'Members', 'Visitors' ), 'section' => 'help_public', 'platform' => array( 'Web' ),
+                                'audience' => array( 'Members', 'Visitors' ), 'section' => 'help_public', 'platform' => array( 'Web' ), 'review_date' => self::NOW + 86400 * 150,
                                 'fields' => array( 'prereq' => 'You have an account.', 'steps' => "1. Open the login page.\n2. Enter your user name in **Username**.\n3. Click **Login**.", 'result' => 'You are logged in.' ) ) ),
         );
         $findings = $this->validator()->validate( $topics );
@@ -416,7 +416,9 @@ class expHelpContentTest extends PHPUnit\Framework\TestCase
             $topics[] = self::topic( array( 'object_id' => ++$i, 'class' => $t['class'], 'help_id' => $t['help_id'], 'title' => $t['title'],
                                             'shortdesc' => $t['shortdesc'], 'audience' => $t['audience'], 'platform' => $t['platform'],
                                             'fields' => $t['fields'] + array_fill_keys( array_keys( expHelpContentSchema::textFields( $t['class'] ) ), '' ),
-                                            'section' => $public ? 'help_public' : 'help_internal' ) );
+                                            'section' => $public ? 'help_public' : 'help_internal',
+                                            // the review date the seeder gives a topic (12 months, account and privacy 6)
+                                            'review_date' => expHelpContentSeeder::reviewDate( $t['help_id'], self::NOW ) ) );
             foreach ( $t['related'] as $rel )
                 $this->assertContains( $rel, array_column( $data['topics'], 'help_id' ), "related $rel" );
         }

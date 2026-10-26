@@ -83,8 +83,10 @@ TokenTTL`, standardmäßig 3600 Sekunden). Auch der Code selbst läuft nach `Tok
 Authorization: OAuth <access_token>
 ```
 
-Die REST-Schicht akzeptiert für OAuth-Tokens auch `Authorization: Bearer <access_token>` sowie einen Query- oder
-Formularparameter `oauth_token`. Verwenden Sie den Header: URLs werden von Servern und Proxys protokolliert.
+Die REST-Schicht akzeptiert für OAuth-Tokens auch `Authorization: Bearer <access_token>` sowie einen
+Formularparameter `oauth_token` eines POST-Bodys. Ein Query-Parameter `oauth_token` wird abgelehnt, außer die Website
+setzt `rest.ini [OAuthSettings] AllowTokenInQuery=enabled`: URLs werden von Servern und Proxys protokolliert.
+Verwenden Sie den Header.
 
 ## Tokens erneuern
 
@@ -96,7 +98,9 @@ curl -s https://example.com/api/auth/v1/oauth/token \
      -d refresh_token='<refresh token>'
 ```
 
-Die Antwort hat dieselben drei Schlüssel. Speichern Sie das neue Refresh-Token anstelle des alten. Erneuern Sie einmal;
+Die Antwort hat dieselben drei Schlüssel. Speichern Sie das neue Refresh-Token anstelle des alten: Ein Refresh-Token gilt
+`rest.ini [OAuthSettings] RefreshTokenTTL` (standardmäßig 30 Tage) ab der Erneuerung, die es ausgestellt hat, und es
+funktioniert nicht mehr, sobald der Benutzer deaktiviert oder gesperrt ist. Erneuern Sie einmal;
 scheitert das, schicken Sie den Benutzer erneut über die Autorisierungsseite. Auch das Erneuern braucht das
 Client-Secret, also läuft es ebenfalls im Backend.
 

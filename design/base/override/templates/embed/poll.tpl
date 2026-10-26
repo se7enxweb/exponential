@@ -12,12 +12,12 @@
         {let attribute=$object.data_map.question
              option_id=cond( is_set( $#collection_attributes[$attribute.id]), $#collection_attributes[$attribute.id].data_int,false() )}
 
-        <h3>{$attribute.content.name}</h3>
+        <h3>{$attribute.content.name|wash}</h3>
 
         {section name=OptionList loop=$attribute.content.option_list}
             <input type="radio" name="ContentObjectAttribute_data_option_value_{$attribute.id}" value="{$OptionList:item.id}"
            {if $OptionList:item.id|eq($option_id)}checked="checked"{/if}
-           />{$OptionList:item.value}<br />
+           />{$OptionList:item.value|wash}<br />
         {/section}
 
         {/let}

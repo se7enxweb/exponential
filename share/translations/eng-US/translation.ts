@@ -58245,6 +58245,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>The archive was refused: the entry "%path" points outside the package.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>The archive was refused: it names an entry longer than %length bytes.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</translation>
     </message>
@@ -75824,6 +75836,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>More audiences</source>
         <translation>More audiences</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Review and release</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>The topic is in Review now.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>The topic is Released: readers see it now.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>The topic is a Draft again.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>You wrote the current version, so someone else with the release role releases it.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>The state was not changed: your role does not allow this step.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Review workflow</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Review</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Back to Review</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Send to Review</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Release</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Back to Draft</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Style guide check</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>The style guide check found nothing.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Level</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Rule</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Field</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Finding</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Was this helpful?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Readers answered yes %yes times and no %no times.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Reasons given for no:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Thank you. Your answer helps us improve the help.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>If not, what was wrong?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>No reason given</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Only your answer is kept, not who you are.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>It is out of date</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>It is hard to understand</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Something is missing</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>It is wrong</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Another reason</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>This topic is not Released; readers do not see it.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -76929,8 +77081,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Users, roles and policies</translation>
     </message>
     <message>
-        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
-        <translation>Creating and editing users, account settings, assigning roles and editing policies.</translation>
+        <source>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</source>
+        <translation>Creating and editing users, account settings, approving or denying new user accounts, assigning roles and editing policies.</translation>
     </message>
     <message>
         <source>System settings and setup actions</source>

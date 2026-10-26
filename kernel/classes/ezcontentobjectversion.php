@@ -23,6 +23,8 @@ class eZContentObjectVersion extends eZPersistentObject
     public $TempNode;
     public $VersionName;
     public $VersionNameCache;
+    // name() per language; VersionName only holds the name without a language
+    public $VersionLanguageNames = array();
     public $Permissions;
     public $ContentObject;
     public $Version;
@@ -369,20 +371,36 @@ class eZContentObjectVersion extends eZPersistentObject
     /*!
      \return the name of the current version, optionally in the specific language \a $lang
     */
-    function name( $lang = false )
+    function name( $lang = false, $languageCode = false )
     {
+        // content/copy calls name( false, $languageCode ) like eZContentObject::name(); the language landed in
+        // a parameter that did not exist, and the first answer was cached for every language, so each translation of
+        // the copy got the name of the main language. The language is taken from either position and cached per language.
+        if ( $languageCode !== false )
+        {
+            $lang = $languageCode;
+        }
+        if ( $lang !== false )
+        {
+            if ( !array_key_exists( $lang, $this->VersionLanguageNames ) )
+            {
+                $name = $this->attribute( 'contentobject' )->versionLanguageName( $this->attribute( 'version' ), $lang );
+                if ( $name === false )
+                {
+                    $contentObject = $this->contentObject();
+                    if ( $contentObject )
+                    {
+                        $name = $contentObject->name( false, $lang );
+                    }
+                }
+                $this->VersionLanguageNames[$lang] = $name;
+            }
+            return $this->VersionLanguageNames[$lang];
+        }
         if ( $this->VersionName !== null )
             return $this->VersionName;
         $this->VersionName = $this->attribute( 'contentobject' )->versionLanguageName( $this->attribute( 'version' ),
                                                                                        $lang );
-        if ( $lang !== false )
-        {
-            $contentObject = $this->contentObject();
-            if ( $contentObject )
-            {
-                return $contentObject->name( false, $lang );
-            }
-        }
         if ( $this->VersionName === false )
         {
             $contentObject = $this->contentObject();

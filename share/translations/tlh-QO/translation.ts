@@ -57199,6 +57199,18 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: &apos;aplo&apos; Hur &apos;agh Doch &quot;%path&quot;.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>PAX tar mIw lo&apos;lu&apos;pu&apos;; ghItlh ngaSwI&apos; lI&apos;laHbe&apos;lu&apos;. GNU tar mIw yIlo&apos; (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: tar Segh &quot;%type&quot; ghaj Doch &quot;%path&quot;; ghItlhmey ghItlh pa&apos;mey je neH ngaS &apos;aplo&apos;.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: %length mI&apos; law&apos; Doch pong tIq law&apos;.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>ghItlh ngaSwI&apos; Qo&apos;lu&apos;ta&apos;: rarwI&apos; pagh jan &apos;oH Doch &quot;%path&quot;; ghItlhmey ghItlh pa&apos;mey je neH ngaS &apos;aplo&apos;.</translation>
     </message>
@@ -74070,6 +74082,146 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Markdown QaHvo&apos; QaH paqmey tIchenmoH</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>nuD 'ej ngangmoH</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>DaH nuDlu'taH mIw.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>ngangmoHlu' mIw: DaH legh laDwI'pu'.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>mIw nab 'oH mIw'e' 'e' qaSqa'.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>DaH mIw Segh Dayaj SoH; vaj ngangmoHmeH Qu' ghaj latlh ngangmoH.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Dotlh choHbe'lu': gha'meH ghotvam DaQaQ'e' chaw'be' Qu'lIj.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>nuDmeH mIw</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>nab</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>nuD</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>nuDmo' chegh</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>nuDmeH ngeH</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>ngangmoH</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>nabvo' chegh</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>ghItlh mIw nuD</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>pagh tu' ghItlh mIw nuD.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors Qagh, %warnings ghuH, %notices ghItlh. ./console exp:help:content check luj Qagh.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>patlh</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>chut</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>tu'</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>QaHta''a' Dochvam?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>%yes HIja' jang laDwI'pu' 'ej %no ghobe' jang.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>ghobe' meq:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>qatlho'. QaH jangmeyraj.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>HIja'</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>QaHbe'chugh, nuq Qagh?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>meq nobbe'lu'</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe'</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>jangmeyraj neH polmeH, nuv DaHbe'.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>ngo' 'oH</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>yajchu'meH Qatlh</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>vay' Hutlh</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>muj</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>latlh meq</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>ngangmoHbe'lu' mIwvam; legh laDwI'pu'be'.</translation>
     </message>
 </context>
 <context>

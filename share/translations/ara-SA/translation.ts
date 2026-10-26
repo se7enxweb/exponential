@@ -57196,6 +57196,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; يشير إلى خارج الحزمة.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>حُزم الأرشيف بتنسيق PAX لـ tar، ولا يمكن استيراده. احزم الحزمة بتنسيق GNU لـ tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; من نوع tar &quot;%type&quot;، والحزمة لا تحتوي إلا على ملفات ومجلدات.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>رُفض الأرشيف: يسمّي إدخالًا أطول من %length بايت.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>رُفض الأرشيف: الإدخال &quot;%path&quot; رابط أو جهاز، والحزمة لا تحتوي إلا على ملفات ومجلدات.</translation>
     </message>
@@ -74067,6 +74079,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>بناء أدلة المساعدة من مساعدة Markdown</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>المراجعة والإصدار</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>الموضوع قيد المراجعة الآن.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>تم إصدار الموضوع: يراه القرّاء الآن.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>عاد الموضوع مسودة.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>أنت كتبت النسخة الحالية، لذا يصدرها شخص آخر لديه دور الإصدار.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>لم تتغير الحالة: دورك لا يسمح بهذه الخطوة.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>مسار المراجعة</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودة</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>مراجعة</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>العودة إلى المراجعة</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>إرسال إلى المراجعة</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>إصدار</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>العودة إلى المسودة</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>فحص دليل الأسلوب</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>لم يجد فحص دليل الأسلوب شيئًا.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors أخطاء، %warnings تحذيرات، %notices ملاحظات. الخطأ يُفشل ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>المستوى</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>القاعدة</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>الحقل</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>هل كان هذا مفيدًا؟</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>أجاب القرّاء بنعم %yes مرة وبلا %no مرة.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>الأسباب المذكورة للإجابة بلا:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>شكرًا لك. إجابتك تساعدنا على تحسين المساعدة.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>نعم</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>إن لم يكن، فما الخطأ؟</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>لم يُذكر سبب</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>لا</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>تُحفظ إجابتك فقط، لا هويتك.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>قديم</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>صعب الفهم</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>ينقصه شيء</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>خاطئ</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>سبب آخر</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>هذا الموضوع غير مُصدَر؛ لا يراه القرّاء.</translation>
     </message>
 </context>
 <context>

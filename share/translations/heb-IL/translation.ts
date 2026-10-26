@@ -57198,6 +57198,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>הארכיון נדחה: הרשומה &quot;%path&quot; מפנה אל מחוץ לחבילה.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>הארכיון נארז בתבנית PAX של tar, שלא ניתן לייבא. יש לארוז את החבילה בתבנית GNU של tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>הארכיון נדחה: לרשומה &quot;%path&quot; יש סוג tar &quot;%type&quot;, וחבילה מכילה רק קבצים ותיקיות.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>הארכיון נדחה: הוא מציין רשומה ארוכה מ־%length בתים.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>הארכיון נדחה: הרשומה &quot;%path&quot; היא קישור או התקן, וחבילה מכילה רק קבצים ותיקיות.</translation>
     </message>
@@ -74069,6 +74081,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>בניית מדריכי העזרה מתוך עזרת ה־Markdown</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>סקירה ושחרור</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>הנושא נמצא כעת בסקירה.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>הנושא שוחרר: הקוראים רואים אותו כעת.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>הנושא חזר להיות טיוטה.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>את הגרסה הנוכחית כתבת את/ה, ולכן מישהו אחר עם תפקיד השחרור משחרר אותה.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>המצב לא השתנה: התפקיד שלך אינו מאפשר שלב זה.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>תהליך הסקירה</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>טיוטה</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>סקירה</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>חזרה לסקירה</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>שליחה לסקירה</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>שחרור</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>חזרה לטיוטה</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>בדיקת מדריך הסגנון</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>בדיקת מדריך הסגנון לא מצאה דבר.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors שגיאות, %warnings אזהרות, %notices הערות. שגיאה גורמת לכישלון של ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>רמה</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>כלל</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>שדה</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>ממצא</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>האם זה עזר?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>הקוראים ענו כן %yes פעמים ולא %no פעמים.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>סיבות שניתנו ללא:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>תודה. התשובה שלך עוזרת לנו לשפר את העזרה.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>כן</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>אם לא, מה היה שגוי?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>לא ניתנה סיבה</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>לא</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>נשמרת רק התשובה שלך, לא מי את/ה.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>זה לא עדכני</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>קשה להבין את זה</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>משהו חסר</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>זה שגוי</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>סיבה אחרת</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>נושא זה לא שוחרר; הקוראים אינם רואים אותו.</translation>
     </message>
 </context>
 <context>

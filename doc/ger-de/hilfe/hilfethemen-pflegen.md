@@ -39,6 +39,31 @@ So kümmern Sie sich um ein Thema:
 
 Wer eine Änderung geschrieben hat, ist nicht derjenige, der sie veröffentlicht.
 
+## Ein Thema zur Prüfung geben und freigeben
+
+Unter jedem Thema in der Hilfe zeigt die Karte **Prüfung und Freigabe**, wo das Thema steht und was Sie als Nächstes tun
+können. Sie sehen sie, wenn Sie das Thema bearbeiten oder seinen Status ändern dürfen.
+
+1. Öffnen Sie das Thema in der Hilfe.
+2. Lesen Sie **Prüfung nach dem Styleguide**. Dort steht, was die Prüfung des Styleguides in diesem Thema findet: Ein
+   Fehler hält die Prüfung der Website auf, eine Warnung oder ein Hinweis ist ein Hinweis für Sie und die Prüfenden.
+3. Klicken Sie auf **Zur Prüfung geben**, wenn das Thema fertig ist.
+   Die Karte meldet, dass das Thema jetzt in Prüfung ist.
+
+Ein Release-Verantwortlicher öffnet das Thema dann und klickt auf **Freigeben**, oder auf **Zurück zum Entwurf**, um es
+zurückzugeben. Ein freigegebenes Thema geht mit **Zurück in Prüfung** zurück, bevor jemand es wieder ändert.
+
+Wenn Sie die aktuelle Version eines Themas geschrieben haben, zeigt die Karte keine Schaltfläche **Freigeben**, sondern
+den Grund: Jemand anderes mit der Freigaberolle gibt es frei. Dieselbe Regel gilt im Reiter **Objektstatus** der
+Administrationsoberfläche.
+
+## Was Leser sagen: War das hilfreich?
+
+Unter jedem freigegebenen Thema beantworten Leser **War das hilfreich?** mit **Ja**, oder mit **Nein** und einem Grund
+(veraltet, schwer zu verstehen, es fehlt etwas, falsch, ein anderer Grund). Gespeichert wird nur die Antwort, nie, wer
+sie gegeben hat. Die Karte **Prüfung und Freigabe** zeigt, wie oft Leser Ja und Nein geantwortet haben, und die
+genannten Gründe. Ein Thema mit vielen Antworten **Nein** ist ein guter Kandidat für die nächste Prüfung.
+
 ## E-Books der Handbücher
 
 Jedes Handbuch der Hilfe ist auch ein E-Book, als EPUB und PDF. Sie finden die E-Books auf der Seite des Handbuchs in

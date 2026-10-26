@@ -57196,6 +57196,18 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Архів відхилено: запис «%path» вказує за межі пакета.</translation>
     </message>
     <message>
+        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
+        <translation>Архів запаковано у форматі PAX tar, який не можна імпортувати. Запакуйте пакет у форматі GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
+        <translation>Архів відхилено: запис «%path» має тип tar «%type», а пакет містить лише файли й каталоги.</translation>
+    </message>
+    <message>
+        <source>The archive was refused: it names an entry longer than %length bytes.</source>
+        <translation>Архів відхилено: він містить запис з ім’ям, довшим за %length байтів.</translation>
+    </message>
+    <message>
         <source>The archive was refused: the entry "%path" is a link or a device, and a package holds only files and directories.</source>
         <translation>Архів відхилено: запис «%path» є посиланням або пристроєм, а пакет містить лише файли й каталоги.</translation>
     </message>
@@ -74067,6 +74079,146 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Build the help manuals from the Markdown help</source>
         <translation>Створити посібники довідки з довідки Markdown</translation>
+    </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Перевірка і випуск</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Тема зараз на перевірці.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Тему випущено: читачі вже її бачать.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Тема знову є чернеткою.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Поточну версію написали ви, тому її випускає хтось інший із роллю випуску.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Стан не змінено: ваша роль не дозволяє цей крок.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Процес перевірки</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чернетка</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Перевірка</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Назад на перевірку</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Надіслати на перевірку</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Випустити</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Назад до чернетки</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Перевірка за посібником зі стилю</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Перевірка за посібником зі стилю нічого не знайшла.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors помилок, %warnings попереджень, %notices зауважень. Помилка призводить до невдачі ./console exp:help:content check.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Рівень</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Правило</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Поле</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Висновок</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Чи було це корисно?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Читачі відповіли так %yes разів і ні %no разів.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Вказані причини для ні:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Дякуємо. Ваша відповідь допомагає нам покращувати довідку.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Якщо ні, що було не так?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Причину не вказано</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Зберігається лише ваша відповідь, а не те, хто ви.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Це застаріло</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Це важко зрозуміти</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Чогось бракує</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Це неправильно</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Інша причина</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Цю тему не випущено; читачі її не бачать.</translation>
     </message>
 </context>
 <context>

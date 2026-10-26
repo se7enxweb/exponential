@@ -179,6 +179,16 @@ class expUserApproval
     }
 
     /**
+     * Forgets the configurations read in this request, keeping a test override: at the start of every request
+     * (expKernelServiceScope::DEFAULT_RESET_HOOKS, a persistent worker kept them from its first request on) and
+     * after an event's lists changed (expUserApproveType::cleanupAfterRemoving()).
+     */
+    public static function resetRequest()
+    {
+        self::$active = null;
+    }
+
+    /**
      * The path strings of every location of the given groups.
      *
      * @param int[] $groupIDs object ids

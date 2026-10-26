@@ -69,14 +69,15 @@ EmailSender=noreply@example.com
 | Schlüssel | Mitgeliefert | Bedeutung |
 |---|---|---|
 | `TransportServer`, `TransportPort` | leer, `25` | der SMTP-Server; sicheres SMTP ist meist 465 (`ssl`) oder 587 (`tls`) |
-| `TransportConnectionType` | leer | leer (keine Verschlüsselung), `ssl` oder `tls` |
+| `TransportConnectionType` | leer | leer (keine Verschlüsselung), `ssl` oder `tls`; eine ohne Verschlüsselung an einen anderen Host als `localhost` gesendete Anmeldung schreibt eine Warnung |
 | `TransportUser`, `TransportPassword` | leer | die SMTP-Anmeldung |
+| `TransportAuthMethod` | leer | das SMTP-Anmeldeverfahren: `PLAIN`, `LOGIN`, `CRAM-MD5`, `DIGEST-MD5`, `NTLM` oder `XOAUTH2`; leer versucht das stärkste, das der Server anbietet. Setzen Sie `LOGIN` oder `PLAIN` für einen Server, der `NTLM` anbietet, das die Erweiterung mcrypt braucht, die PHP nicht mehr hat ([Härtung des Mailversands](../../../bc/6.0/mail-transport-haertung.md)) |
 | `SenderHost` | `localhost` | der in `EHLO` genannte Name; setzen Sie ihn auf den Hostnamen der Website |
 | `AdminEmail` | ein Platzhalter | die Adresse des Administrators und der Rückfall-Absender; **ändern Sie sie** |
 | `EmailSender`, `EmailReplyTo` | leer | `From` und `Reply-To`, sofern ein Template sie nicht setzt |
 | `UserAgent` | leer | der Header `User-Agent` jeder Mail, nur ASCII |
 | `SendmailOptions[]` | leer | zusätzliche Optionen für sendmail, eine pro Zeile |
-| `SendmailEnvelopeSender` | `enabled` | `disabled` lässt `-f <sender>` weg, für msmtp mit `--read-envelope-from` |
+| `SendmailEnvelopeSender` | `enabled` | `disabled` lässt `-f <sender>` weg, für msmtp mit `--read-envelope-from`. `-f` wird nur für eine einfache Adresse gegeben (Buchstaben, Ziffern, `._%+=-`, ein `@`, ein Hostname); jeder andere Absender wird mit einer Warnung im Debug-Log weggelassen |
 | `ExcludeHeaders[]` | leer | Header, die vor dem Versand per SMTP entfernt werden; fügen Sie `bcc` hinzu, wenn Ihr Server sie nicht verbirgt |
 | `DebugSending`, `DebugReceiverEmail` | `disabled`, leer | jede Mail an eine Adresse statt an ihre Empfänger senden |
 

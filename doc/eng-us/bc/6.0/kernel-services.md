@@ -97,7 +97,8 @@ The constructor reset seven request states by hand. They are now the request sco
 `expKernelServiceScope::DEFAULT_RESET_HOOKS`, run by `expKernelServiceScope::resetRequest()` at the same place, in the
 same order, each only when its class exists, as before: `eZDBQueryCache::resetRequest`,
 `eZDBInterface::resetSQLProfile`, `expContentSecurityPolicy::reset`, `expAudit::resetRequest`,
-`expRenderStats::resetRequest`, `expRequestLog::reset`, `expRequestClassifier::reset`. Code adds its own with
+`expRenderStats::resetRequest`, `expRequestLog::reset`, `expRequestClassifier::reset`, and since 6.0.15
+`expUserApproval::resetRequest` (the "Approve user accounts" configurations, which a worker kept before). Code adds its own with
 `expKernelServiceScope::onRequestReset( 'name', $callable )` (registering a name again replaces it; kept with the
 worker, so it also runs at the start of the next request on Velocity).
 

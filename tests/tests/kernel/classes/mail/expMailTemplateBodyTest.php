@@ -7,6 +7,8 @@
  *  MB-02 - only content_type: that type, the output as the body
  *  MB-03 - neither: the output as the body, the content type left as it was
  *  MB-04 - an HTML content_type with an empty body_text is not multipart
+ *  MB-05 - the multipart part of the ezcMail object (SMTP) carries the random boundary of the raw body, not the
+ *          library's date + process id + counter
  *
  * DB-less: a template object with variables set by hand; nothing is sent. Fake addresses use the .invalid domain.
  *
@@ -66,6 +68,30 @@ class expMailTemplateBodyTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/--exp-alt-[0-9a-f]{24}--\n$/', $body, 'the closing boundary' );
         if ( class_exists( 'ezcMailMultipartAlternative' ) )
             $this->assertInstanceOf( 'ezcMailMultipartAlternative', $mail->Mail->body );
+    }
+
+    /** MB-05 */
+    public function testTheMultipartPartHasARandomBoundary()
+    {
+        if ( !class_exists( 'ezcMailMultipartAlternative' ) )
+            $this->markTestSkipped( 'ezcMail is not installed' );
+        $boundaries = array();
+        for ( $i = 0; $i < 2; $i++ )
+        {
+            $mail = self::mail();
+            expMailTemplateBody::setAlternative( $mail, "text\n", '<p>html</p>' );
+            $part = $mail->Mail->body;
+            $this->assertInstanceOf( 'ezcMailMultipartAlternative', $part );
+            $this->assertMatchesRegularExpression( '/^exp-alt-[0-9a-f]{24}$/', $part->boundary );
+            $this->assertDoesNotMatchRegularExpression( '/' . preg_quote( ':' . getmypid() . ':', '/' ) . '/', $part->boundary,
+                                                        'no process id in the boundary' );
+            $this->assertStringContainsString( 'boundary="' . $part->boundary . '"', $part->getHeader( 'Content-Type' ) );
+            $generated = $part->generate();
+            $this->assertStringContainsString( '--' . $part->boundary . ezcMailTools::lineBreak(), $generated );
+            $this->assertStringContainsString( '--' . $part->boundary . '--', $generated );
+            $boundaries[] = $part->boundary;
+        }
+        $this->assertNotSame( $boundaries[0], $boundaries[1] );
     }
 
     /** MB-02 */

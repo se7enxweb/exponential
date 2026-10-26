@@ -575,6 +575,10 @@
         "en": "A list of possible handlers for sending mails, use the setting Transport to specify which one to use",
         "de": "Eine Liste möglicher Handler zum Senden von Mails; mit der Einstellung Transport geben Sie an, welcher verwendet wird"
     },
+    "ini:settings/site.ini [MailSettings] TransportAuthMethod": {
+        "en": "SMTP authentication method: PLAIN, LOGIN, CRAM-MD5, DIGEST-MD5, NTLM or XOAUTH2.\nEmpty: the strongest method the server offers is tried (NTLM before LOGIN and\nPLAIN; NTLM needs the mcrypt extension, gone since PHP 7.2, and then fails).\nSet LOGIN or PLAIN for a server that offers NTLM. Credentials over an\nunencrypted connection to a host other than localhost log a warning: use\nTransportConnectionType=tls or ssl there.",
+        "de": "SMTP-Anmeldeverfahren: PLAIN, LOGIN, CRAM-MD5, DIGEST-MD5, NTLM oder XOAUTH2.\nLeer: Das stärkste Verfahren, das der Server anbietet, wird versucht (NTLM vor LOGIN und\nPLAIN; NTLM braucht die Erweiterung mcrypt, die es seit PHP 7.2 nicht mehr gibt, und scheitert dann).\nSetzen Sie LOGIN oder PLAIN für einen Server, der NTLM anbietet. Zugangsdaten über eine\nunverschlüsselte Verbindung zu einem anderen Host als localhost schreiben eine Warnung: Verwenden Sie\ndort TransportConnectionType=tls oder ssl."
+    },
     "ini:settings/site.ini [MailSettings] TransportConnectionType": {
         "en": "Connection type in SMTP: <empty>(no encryption)|ssl|sslv2|sslv3|tls",
         "de": "Verbindungstyp bei SMTP: <empty>(keine Verschlüsselung)|ssl|sslv2|sslv3|tls"
