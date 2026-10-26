@@ -14,7 +14,7 @@ Diese Seite ist für Entwickler und Designer, die die Teile eines Seitenpakets i
 laufenden Installation in ein neues Paket. Er ist der einfachste Weg, die Pakete zu erzeugen, die Ihr Seitenpaket verlangt; das Seitenpaket
 selbst erzeugt er nicht.
 
-![Paket erstellen, der Anfang jedes hier erstellten Pakets](../../../../eng-us/help/images/help/sp-own-wizard.webp)
+![Paket erstellen, der Anfang jedes hier erstellten Pakets](../../bilder/help/sp-own-wizard.webp)
 
 7x und die Exponential Foundation ermutigen Sie ausdrücklich, das fertige Seitenpaket per Pull Request an
 se7enxweb/exponential.packages.exponential.earth einzureichen: siehe [Ihr Seitenpaket beitragen](../ihr-seitenpaket-beitragen.md).

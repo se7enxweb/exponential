@@ -14,7 +14,7 @@ Aussteigen zu können ist es, was eine Beziehung zu einem Dienstleister fair hä
 Exponential machen den Ausstieg möglich; diese Checkliste hält ihn praktikabel. Die Exportwerkzeuge stammen aus
 [Von Exponential weg migrieren](../../../installation/migration/exponential-verlassen.md).
 
-![Datensicherungen: eine vollständige Sicherung der Website oder Datenbank und Dateien, die Grundlage eines Ausstiegsplans](../../../../eng-us/help/images/government/gov-backups.webp)
+![Datensicherungen: eine vollständige Sicherung der Website oder Datenbank und Dateien, die Grundlage eines Ausstiegsplans](../../bilder/government/gov-backups.webp)
 
 > **Hinweis** Diese Seite beschreibt Funktionen und gängige Praxis; sie ist keine Rechtsberatung. Prüfen Sie Ihren
 > Vertrag mit Ihrer Rechtsberatung.

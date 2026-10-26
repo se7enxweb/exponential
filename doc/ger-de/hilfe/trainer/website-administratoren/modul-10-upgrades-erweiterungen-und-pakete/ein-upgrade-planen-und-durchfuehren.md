@@ -129,7 +129,7 @@ probt die Schritte auf der Version, die Sie bereits verwenden; nichts wird aktua
 - Die Schritte 6 bis 8 laufen ohne Fehler; das Testelement erscheint auf der Website.
 - Der Trainer prüft, indem er eine Person bittet, die Schritte von Teil C aus dem Gedächtnis der Reihe nach zu nennen.
 
-![Aktualisierungen und Pakete: Pakete, die Aufmerksamkeit brauchen, und wann zuletzt nach Aktualisierungen gesucht wurde](../../../../../eng-us/help/images/trainers/sa-updates.webp)
+![Aktualisierungen und Pakete: Pakete, die Aufmerksamkeit brauchen, und wann zuletzt nach Aktualisierungen gesucht wurde](../../../bilder/trainers/sa-updates.webp)
 
 ## Quiz
 

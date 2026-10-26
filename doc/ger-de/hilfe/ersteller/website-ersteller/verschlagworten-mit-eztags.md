@@ -15,7 +15,7 @@ Klassen mit Autovervollständigung und eine Seite je Tag, die alles auflistet, w
 mehr als der Datentyp `ezkeyword` des Kernels: eine Hierarchie, Synonyme sowie geschlossene oder offene Vokabulare
 ([eztags](../../../funktionen/6.0/erweiterungen/eztags.md)).
 
-![Das Tags-Dashboard: der Tag-Baum und die neuesten Tags](../../../../eng-us/help/images/creators/tags-dashboard.webp)
+![Das Tags-Dashboard: der Tag-Baum und die neuesten Tags](../../bilder/creators/tags-dashboard.webp)
 
 ## Inhalt
 

@@ -15,7 +15,7 @@ Administration werden Inhalte veröffentlicht, Rollen vergeben und Einstellungen
 ([Sicherheitshärtung](../../sicherheitshaertung.md#brute-force-und-credential-stuffing-bei-der-anmeldung)). Die Referenz ist
 [13.5 Der Siteaccess der Administration](../../../installation/13-sicherheitshaertung.md#135-der-administrations-siteaccess).
 
-![Setup, Sitzungen: wer gerade angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../../../eng-us/help/images/hosting/sessions.webp)
+![Setup, Sitzungen: wer gerade angemeldet ist, mit den Schaltflächen zum Beenden von Sitzungen](../../bilder/hosting/sessions.webp)
 
 ## Inhalt
 

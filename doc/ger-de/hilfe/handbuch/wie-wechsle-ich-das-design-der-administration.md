@@ -25,7 +25,7 @@ angeboten werden.
    Die Seite lädt in diesem Design neu, auf derselben Seite.
 3. Um zurückzukehren, wählen Sie das erste Design der Liste: das Design, das der Siteaccess normalerweise verwendet.
 
-![Der Kasten Oberfläche der rechten Werkzeugleiste mit Sprache der Oberfläche und Administrationsdesign](../../../eng-us/help/manual/images/ui-switch.webp)
+![Der Kasten Oberfläche der rechten Werkzeugleiste mit Sprache der Oberfläche und Administrationsdesign](bilder/ui-switch.webp)
 
 ## Was schiefgehen kann
 

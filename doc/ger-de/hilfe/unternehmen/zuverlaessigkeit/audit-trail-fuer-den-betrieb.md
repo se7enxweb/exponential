@@ -17,7 +17,7 @@ es lesen und was Sie einmalig einrichten. Die vollständige Referenz finden Sie 
 Compliance behandelt eine eigene Seite:
 [Compliance-Nachweise aus dem Prüfprotokoll](../sicherheit/compliance-nachweise-aus-dem-audit-trail.md).
 
-![Das Audit-Dashboard](../../../../eng-us/help/images/help/bu-audit-ops.webp)
+![Das Audit-Dashboard](../../bilder/help/bu-audit-ops.webp)
 
 ## Inhalt
 

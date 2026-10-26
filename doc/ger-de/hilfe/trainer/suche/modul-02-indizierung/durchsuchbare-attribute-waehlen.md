@@ -109,7 +109,7 @@ Wurzelverzeichnis.
 - Nach Schritt 8 zeigt die Klasse für das Feld wieder *Ist durchsuchbar*, und `kumquat` wird wieder gefunden.
 - Der Trainer prüft am Ende die Klassenseite von zwei Teilnehmenden.
 
-![Die Klassen einer Gruppe; die Attribute jeder Klasse zeigen, ob sie durchsuchbar sind](../../../../../eng-us/help/images/trainers/se-class.webp)
+![Die Klassen einer Gruppe; die Attribute jeder Klasse zeigen, ob sie durchsuchbar sind](../../../bilder/trainers/se-class.webp)
 
 ## Quiz
 

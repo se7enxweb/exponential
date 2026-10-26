@@ -26,8 +26,8 @@ zusammen (Squash) und rebased ihn auf `main`, wie es die Prüfungen verlangen; s
 Historie von `main` nie umgeschrieben, und spätere Korrekturen kommen als neue Pull Requests
 ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst), [CI](../../bc/6.0/ci.md)).
 Beiträge werden unter derselben GPL-Lizenz veröffentlicht (CONTRIBUTING.md). Seit Dezember 2023 kommen Pull Requests
-von 7x, von Entwicklern wie ekked und fwoldt und von Unternehmen wie Netgen und Mugo Web; in der gesamten Historie
-erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential-in-zahlen.md)).
+von 7x, von einzelnen Entwicklern und von Unternehmen wie Netgen und Mugo Web; in der gesamten Historie
+erscheinen 1.042 übernommene Pull Requests (19. Oktober 2026) ([Exponential in Zahlen](exponential-in-zahlen.md)).
 
 ## Fakten, die Sie drucken können
 
@@ -38,7 +38,7 @@ erscheinen 1.039 übernommene Pull Requests ([Exponential in Zahlen](exponential
 | Die Testsuite läuft bei jedem Pull Request | [CI](../../bc/6.0/ci.md) |
 | Beiträge stehen unter der GPL v2 oder später | [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md) |
 | Code-Beiträge zum Kernel brauchen vor dem Merge eine unterzeichnete Contributor Licensing Agreement (CLA); mit Unterzeichnung und Einreichung übertragen Mitwirkende das Urheberrecht an 7x und geben die Kontrolle ab: 7x darf einen Beitrag auf jede Weise verwenden, ändern, neu lizenzieren und verbreiten, ohne sie zu fragen oder zu bezahlen, und sie können ihn nicht zurückziehen; die eigenen Erweiterungen der Anwender sind nicht betroffen | [Übertragung des Urheberrechts (CLA)](../../../../CONTRIBUTING.md#copyright-assignment-cla) |
-| 1.039 übernommene Pull Requests in der Historie (18. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
+| 1.042 übernommene Pull Requests in der Historie (19. Oktober 2026) | [Exponential in Zahlen](exponential-in-zahlen.md) |
 
 ## Was Sie nicht behaupten sollten
 

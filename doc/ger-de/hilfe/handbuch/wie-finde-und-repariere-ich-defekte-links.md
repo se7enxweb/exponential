@@ -33,7 +33,7 @@ brauchen `content/edit` für die Objekte.
 5. Wenn ein Link in Ordnung ist, die Prüfung aber fehlschlägt (eine Website, die Prüfungen ablehnt), markieren Sie ihn
    und klicken Sie auf **Ausgewählte als gültig markieren**.
 
-![Alle URLs mit der Übersicht, dem Suchformular und der Liste der Links mit Ansehen, Bearbeiten und Öffnen](../../../eng-us/help/manual/images/link-management.webp)
+![Alle URLs mit der Übersicht, dem Suchformular und der Liste der Links mit Ansehen, Bearbeiten und Öffnen](bilder/link-management.webp)
 
 ## Was schiefgehen kann
 

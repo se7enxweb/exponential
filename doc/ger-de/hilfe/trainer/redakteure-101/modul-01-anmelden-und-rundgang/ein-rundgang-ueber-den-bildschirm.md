@@ -126,9 +126,9 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto mit der Rolle Edi
 - Der Trainer prüft das, indem er zwei Teilnehmende bittet, auf dem Projektor auf den Kasten **Oberfläche** und den
   **Inhaltsfinder** zu zeigen.
 
-![Die Kopfzeile der Administration: das Logo, die Reiter, das Suchfeld und die Schaltflächen für Sprache, Farbmodus, Hilfe, Konto und Abmelden](../../../../../eng-us/help/images/trainers/e101-tour-header.webp)
+![Die Kopfzeile der Administration: das Logo, die Reiter, das Suchfeld und die Schaltflächen für Sprache, Farbmodus, Hilfe, Konto und Abmelden](../../../bilder/trainers/e101-tour-header.webp)
 
-![Der ganze Bildschirm: links der Inhaltsbaum, in der Mitte die Seite des Elements und rechts die Spalte mit Cache leeren, Lesezeichen und Oberfläche](../../../../../eng-us/help/images/trainers/e101-tour-columns.webp)
+![Der ganze Bildschirm: links der Inhaltsbaum, in der Mitte die Seite des Elements und rechts die Spalte mit Cache leeren, Lesezeichen und Oberfläche](../../../bilder/trainers/e101-tour-columns.webp)
 
 ## Quiz
 

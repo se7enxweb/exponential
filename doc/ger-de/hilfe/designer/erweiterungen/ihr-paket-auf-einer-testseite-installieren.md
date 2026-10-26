@@ -38,7 +38,7 @@ Inhalte, also verwenden Sie immer eine Wegwerf-Installation.
    Website sauber hinterlässt.
 7. Notieren Sie jede Überraschung und beheben Sie sie in der nächsten Version des Pakets.
 
-![Setup, Pakete: die Paket-Repositories, in denen ein importiertes Paket erscheint, bevor es installiert wird](../../../../eng-us/help/images/designers/packages-repositories.webp)
+![Setup, Pakete: die Paket-Repositories, in denen ein importiertes Paket erscheint, bevor es installiert wird](../../bilder/designers/packages-repositories.webp)
 
 ## Auf der Kommandozeile
 

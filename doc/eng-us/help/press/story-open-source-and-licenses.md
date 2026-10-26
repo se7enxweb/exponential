@@ -22,8 +22,8 @@ what allowed the code to outlive the product line of its original developer.
 ## The story in one paragraph
 
 The code base was published under the GNU General Public License. When its creator discontinued the eZ Publish line,
-the license allowed others to continue it, and 7x did so from December 2023. Today the software is "GNU General Public
-License, version 2 or any later version"; "Using Exponential under the terms of the GNU GPL is free of charge. The
+the license allowed others to continue it, and 7x did so from December 2023. Today the software is under the GNU General Public
+License, version 2 or any later version (LICENSE); "Using Exponential under the terms of the GNU GPL is free of charge. The
 Professional License is no longer available" (README). Contributions stay under the same license (CONTRIBUTING.md),
 the documentation is free under the GNU FDL, and Velocity is MIT licensed. "Everything we do is GPL-licensed and freely
 available" (se7enxweb GitHub profile) ([Open source licenses](../who-is-7x.md#open-source-licenses)).

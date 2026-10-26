@@ -33,7 +33,7 @@ nie geändert.
    konfigurieren**: Entfernen oder setzen Sie das Häkchen bei **Benutzerkonto aktivieren**, und klicken Sie für die
    fehlgeschlagenen Anmeldungen auf **Zurücksetzen**.
 
-![Benutzerkonten prüfen mit den Filtern und den Schaltflächen zum Deaktivieren, Aktivieren und Entsperren der angehakten Konten](../../../eng-us/help/manual/images/check-user-accounts.webp)
+![Benutzerkonten prüfen mit den Filtern und den Schaltflächen zum Deaktivieren, Aktivieren und Entsperren der angehakten Konten](bilder/check-user-accounts.webp)
 
 ## Was schiefgehen kann
 

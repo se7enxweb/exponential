@@ -37,7 +37,7 @@ Benutzer, deren Rolle `setup/managecache` hat.
    Schaltfläche eines einzelnen Caches. **Den kompletten Cache leeren** leert alles.
 5. Laden Sie die Seite zur Kontrolle in einem privaten Fenster neu.
 
-![Die Seite Caches mit den Gruppen von Caches und den Schaltflächen Den kompletten Cache leeren, Cache des Inhalts leeren, Template-Cache leeren und INI-Caches leeren](../../../eng-us/help/manual/images/cache-management.webp)
+![Die Seite Caches mit den Gruppen von Caches und den Schaltflächen Den kompletten Cache leeren, Cache des Inhalts leeren, Template-Cache leeren und INI-Caches leeren](bilder/cache-management.webp)
 
 ## Was schiefgehen kann
 

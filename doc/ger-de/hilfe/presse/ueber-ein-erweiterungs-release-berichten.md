@@ -26,7 +26,7 @@ Beitrag hält die Version der Erweiterung von der des Kernels getrennt und nennt
 Erweiterungen fügen dem Kernel Funktionen hinzu. "Every extension except the four kernel-shipped ones is a Composer
 package of type `ezpublish-legacy-extension`", installiert nach `extension/<name>`, und "Being on disk does not make an
 extension active" ([Den Code beschaffen](../../installation/03-den-code-beschaffen.md#35-extensions-sind-composer-pakete)). Die
-`composer.json` des Kernels verlangt 66 se7enxweb-Pakete ([Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen));
+`composer.json` des Kernels verlangte am 18. Oktober 2026 66 se7enxweb-Pakete ([Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen));
 der [Leitfaden zu Extensions](../../anleitungen/extensions.md) erklärt, wie sie gefunden, installiert und veröffentlicht werden.
 
 „Eine neue Version der Erweiterung X“ bedeutet also meist: Inhaber von Websites können dieses eine Paket aktualisieren;

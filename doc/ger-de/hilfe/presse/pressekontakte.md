@@ -77,8 +77,8 @@ Antwortzeit ist die erste Antwort auf eine Sicherheitsmeldung, „within one bus
 
 ## Sicherheitsmeldungen sind etwas anderes
 
-Wenn Sie, eine Quelle oder ein Leser eine Sicherheitslücke gefunden haben, geht sie vertraulich an security@se7enx.com
-oder über die vertrauliche Meldung von Sicherheitslücken auf GitHub, wie es [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)
+Wenn Sie, eine Quelle oder ein Leser eine Sicherheitslücke gefunden haben, geht sie vertraulich per E-Mail an security@se7enx.com,
+nicht in den öffentlichen Issue-Tracker oder die Diskussionen, wie es [SECURITY.md](https://github.com/se7enxweb/exponential/blob/main/SECURITY.md)
 beschreibt. Veröffentlichen Sie keine Einzelheiten, bevor eine Korrektur erschienen ist. Lesen Sie
 [Wenn Sie eine Sicherheitslücke finden](wenn-sie-eine-sicherheitsluecke-finden.md) und [Über Sicherheitskorrekturen berichten](ueber-sicherheitskorrekturen-berichten.md).
 

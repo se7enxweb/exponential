@@ -69,9 +69,9 @@ Der Speicher kann blockiert sein (private Fenster, Richtlinien); das `try` hält
 
 Ein echter Knopf, sein Zustand als Text, der Handler in Ihrer Haupt-Skriptdatei:
 
-![Der Theme-Umschalter im Kopfbereich der Administration, umrandet; er wechselt zwischen hell, dunkel und System](../../../../eng-us/help/images/designers/theme-toggle.webp)
+![Der Theme-Umschalter im Kopfbereich der Administration, umrandet; er wechselt zwischen hell, dunkel und System](../../bilder/designers/theme-toggle.webp)
 
-![Der Theme-Umschalter im dunklen Modus](../../../../eng-us/help/images/designers/theme-toggle-dark.webp)
+![Der Theme-Umschalter im dunklen Modus](../../bilder/designers/theme-toggle-dark.webp)
 
 ```tpl
 <button type="button" id="theme-toggle" class="theme-toggle">

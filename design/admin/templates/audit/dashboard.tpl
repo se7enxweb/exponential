@@ -25,11 +25,13 @@
     <h2 class="a4-audit-h" id="au-d-health">{'Health'|i18n( 'design/admin/audit' )} <a href={'audit/archives'|ezurl}>{'Archives'|i18n( 'design/admin/audit' )} &rarr;</a></h2>
     <div class="a4-audit-figures">
         <div class="a4-audit-figure"><strong><span class="a4-audit-result {cond( $audit_enabled, 'success', 'failed' )}">{cond( $audit_enabled, 'enabled'|i18n( 'design/admin/audit' ), 'disabled'|i18n( 'design/admin/audit' ) )}</span></strong><span>{'Audit'|i18n( 'design/admin/audit' )}</span></div>
-        <div class="a4-audit-figure"><strong><span class="a4-audit-result {$health.worst|wash}">{$health.worst|wash}</span></strong><span>{'Hash chains'|i18n( 'design/admin/audit' )}</span></div>
+{* the state of a hash chain, shown in the interface language (the class name keeps the raw value) *}
+{def $chain_labels = hash( 'intact', 'intact'|i18n( 'design/admin/audit' ), 'broken', 'broken'|i18n( 'design/admin/audit' ), 'unchecked', 'unchecked'|i18n( 'design/admin/audit' ), 'repaired', 'repaired'|i18n( 'design/admin/audit' ), 'empty', 'empty'|i18n( 'design/admin/audit' ) )}
+        <div class="a4-audit-figure"><strong><span class="a4-audit-result {$health.worst|wash}">{first_set( $chain_labels[$health.worst], $health.worst )|wash}</span></strong><span>{'Hash chains'|i18n( 'design/admin/audit' )}</span></div>
     </div>
     <ul class="a4-audit-list">
     {foreach $health.chains as $c}
-        <li><span><span class="a4-audit-result {$c.result|wash}">{$c.result|wash}</span> {$c.channel|wash}{if $c.first_break} <span class="a4-audit-sub">{$c.first_break|wash}</span>{/if}</span><span class="a4-audit-sub a4-audit-n">{if $c.verified_at}{'verified %time'|i18n( 'design/admin/audit',, hash( '%time', $c.verified_at ) )}{else}{'not verified yet'|i18n( 'design/admin/audit' )}{/if}</span></li>
+        <li><span><span class="a4-audit-result {$c.result|wash}">{first_set( $chain_labels[$c.result], $c.result )|wash}</span> {$c.channel|wash}{if $c.first_break} <span class="a4-audit-sub">{$c.first_break|wash}</span>{/if}</span><span class="a4-audit-sub a4-audit-n">{if $c.verified_at}{'verified %time'|i18n( 'design/admin/audit',, hash( '%time', $c.verified_at ) )}{else}{'not verified yet'|i18n( 'design/admin/audit' )}{/if}</span></li>
     {/foreach}
     </ul>
     {if $can_manage}

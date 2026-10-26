@@ -14,7 +14,7 @@ Installation brauchen, und an alle, die eine Support-Anfrage vorbereiten. **Setu
 (`/setup/info`, erfordert `setup/system_info`) liest und ändert nichts. Referenz:
 [Systeminformationen](../../../../anleitungen/systeminformationen.md).
 
-![Systeminformationen mit den Zustandsprüfungen: Fehler, Warnungen, Hinweise und Prüfungen in Ordnung](../../../../../eng-us/help/images/government/gov-health.webp)
+![Systeminformationen mit den Zustandsprüfungen: Fehler, Warnungen, Hinweise und Prüfungen in Ordnung](../../../bilder/government/gov-health.webp)
 
 ## Inhalt
 1. [Welcher Server geantwortet hat](#welcher-server-geantwortet-hat)

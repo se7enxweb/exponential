@@ -66,7 +66,7 @@ Text vor der Veröffentlichung mit der Liste ab.
 | „die KI schreibt und veröffentlicht“ | Schreibt nur Entwürfe | [Thema: ein Assistent, der nur Entwürfe schreibt](thema-ein-assistent-der-nur-entwuerfe-schreibt.md) |
 | „DXP enthält den Seitenbaukasten“ | Nexus liefert den Layout-Editor mit; DXP nicht | [Die Produktfamilie für Reporter](die-produktfamilie-fuer-reporter.md) |
 | „Velocity ist Pflicht“ | Velocity wird empfohlen; klassische Server und FrankenPHP bleiben Optionen | [Thema: Engines, Velocity, FrankenPHP und die klassischen Server](thema-engines-velocity-frankenphp-und-klassische-server.md) |
-| „alle Sprachen vollständig übersetzt“ | 33 Übersetzungen der Administration, 19 vollständig (19. Oktober 2026) | [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
+| „alle Sprachen vollständig übersetzt“ | 38 Übersetzungen der Administration, 23 vollständig (23. Oktober 2026) | [Thema: Sprachen und Schreibrichtung von rechts nach links](thema-sprachen-und-rechts-nach-links.md) |
 
 ## Zahlen und Vergleiche
 

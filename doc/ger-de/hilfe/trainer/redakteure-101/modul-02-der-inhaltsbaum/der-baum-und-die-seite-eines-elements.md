@@ -119,7 +119,7 @@ Inhalte.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, die Notizen vorzulesen, und dasselbe
   Element auf dem Projektor öffnet.
 
-![Die Seite eines Elements: oben der Pfad (umrandet) und die Titelzeile mit Typ und Sichtbarkeit, Version und Nummern](../../../../../eng-us/help/images/trainers/e101-item-page.webp)
+![Die Seite eines Elements: oben der Pfad (umrandet) und die Titelzeile mit Typ und Sichtbarkeit, Version und Nummern](../../../bilder/trainers/e101-item-page.webp)
 
 ## Quiz
 

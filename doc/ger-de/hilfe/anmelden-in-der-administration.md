@@ -31,7 +31,7 @@ Adresse auf, unter der die Installation antwortet.
 
 ## Anmelden
 
-![Die Anmeldeseite der Administration: Bei Exponential anmelden, Benutzername, Passwort und Anmelden](../../eng-us/help/images/login-admin-form.webp)
+![Die Anmeldeseite der Administration: Bei Exponential anmelden, Benutzername, Passwort und Anmelden](bilder/login-admin-form.webp)
 
 1. Geben Sie Ihren **Benutzernamen** oder die **E-Mail-Adresse** Ihres Kontos ein. Mit den ausgelieferten
    Einstellungen funktioniert beides (`site.ini [UserSettings] AuthenticateMatch=login;email`), weil die
@@ -42,7 +42,7 @@ Adresse auf, unter der die Installation antwortet.
 
 Unter dem Titel nennt *Administration von ...* den Siteaccess, in dem Sie sich anmelden. Wo die Site es zulässt,
 bietet die Seite außerdem **Passwort vergessen?** und **Neues Konto registrieren** an; ein Feld zum Angemeldetbleiben
-(**Erinnerung**) erscheint nur, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`).
+(**Angemeldet bleiben**) erscheint nur, wenn die Site dafür eine Dauer eingestellt hat (`[Session] RememberMeTimeout`).
 
 ### Zweistufige Anmeldung
 
@@ -61,7 +61,7 @@ Die Administration öffnet sich mit dem **Dashboard**. Welche Reiter oben ersche
 **Inhaltsstruktur**, **Medien**, **Benutzer**, **Layouts**, **Setup** und weitere), hängt von Ihrer Rolle und den
 installierten Erweiterungen ab.
 
-![Das Dashboard der Administration nach der Anmeldung, mit allen Reitern eines Administrators](../../eng-us/help/images/login-admin-dashboard.webp)
+![Das Dashboard der Administration nach der Anmeldung, mit allen Reitern eines Administrators](bilder/login-admin-dashboard.webp)
 
 [Ein Rundgang durch die Administration](rundgang-durch-die-administration.md) erklärt jeden Teil des Bildschirms.
 
@@ -96,7 +96,7 @@ Ein falscher Benutzername oder ein falsches Passwort führt zur Meldung *Das Sys
 Stellen Sie sicher, dass Benutzername und Password richtig sind.* Die Seite verrät nie, welche der beiden Angaben
 falsch war.
 
-![Die Meldung nach einem falschen Passwort](../../eng-us/help/images/login-wrong-password.webp)
+![Die Meldung nach einem falschen Passwort](bilder/login-wrong-password.webp)
 
 Eine Installation kann ein Konto nach einer bestimmten Zahl falscher Passwörter sperren (`site.ini [UserSettings]
 MaxNumberOfFailedLogin`; `0`, der ausgelieferte Wert, sperrt nie). Die Anmeldeseite nennt dann die Zahl der
@@ -110,7 +110,7 @@ Als einziger Administrator ausgesperrt? Siehe
 
 ## Passwort vergessen?
 
-![Die Seite Passwort vergessen, die nach der E-Mail-Adresse des Kontos fragt](../../eng-us/help/images/login-forgot-password.webp)
+![Die Seite Passwort vergessen, die nach der E-Mail-Adresse des Kontos fragt](bilder/login-forgot-password.webp)
 
 1. Wählen Sie auf der Anmeldeseite **Passwort vergessen?**.
 2. Geben Sie die E-Mail-Adresse des Kontos ein und klicken Sie auf **Neues Passwort erstellen**. Die Seite antwortet

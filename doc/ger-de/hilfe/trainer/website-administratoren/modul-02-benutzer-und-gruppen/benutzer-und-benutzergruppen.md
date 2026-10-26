@@ -104,7 +104,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Der Trainer prüft das, indem er auf dem Bildschirm einer Person **Benutzer** und den Reiter **Rollen** der neuen
   Gruppe öffnet.
 
-![Der Reiter Benutzer: Benutzergruppen als Ordner, mit den Konten darin](../../../../../eng-us/help/images/trainers/sa-users-groups.webp)
+![Der Reiter Benutzer: Benutzergruppen als Ordner, mit den Konten darin](../../../bilder/trainers/sa-users-groups.webp)
 
 ## Quiz
 

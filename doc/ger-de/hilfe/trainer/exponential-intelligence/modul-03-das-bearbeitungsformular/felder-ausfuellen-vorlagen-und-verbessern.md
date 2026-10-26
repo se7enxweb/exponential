@@ -96,7 +96,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
   poliert, von der Person gespeichert oder veröffentlicht.
 - Der Trainer prüft das, indem er den Artikel einer Person öffnet und fragt, welche Teile sie von Hand geändert hat.
 
-![Der Kasten Exponential Intelligence oben im Bearbeitungsformular mit den verwendeten Standardwerten](../../../../../eng-us/help/images/trainers/ei-edit-top.webp)
+![Der Kasten Exponential Intelligence oben im Bearbeitungsformular mit den verwendeten Standardwerten](../../../bilder/trainers/ei-edit-top.webp)
 
 ## Quiz
 

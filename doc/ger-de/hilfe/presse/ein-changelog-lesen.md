@@ -89,7 +89,7 @@ Faustregeln:
 
 Das [Changelog von 6.0.15](../../../changelogs/6.0/6.0.15.md) ist anders: Es beginnt mit „Not released yet“, ist nach
 Zeitabschnitten statt nach Arten gegliedert und ist lang („four months of work“, vier Monate Arbeit). Lesen Sie die
-Liste „How this page is organised“ am Anfang und wählen Sie einen Zeitabschnitt. Über alles darauf muss als „in
+Liste am Anfang, die den Aufbau der Seite erklärt, und wählen Sie einen Zeitabschnitt. Über alles darauf muss als „in
 Entwicklung“ berichtet werden ([Über 6.0.15 berichten, solange es in Entwicklung ist](ueber-6-0-15-in-entwicklung-berichten.md)).
 
 ## Verwandte Seiten

@@ -44,7 +44,7 @@ Zugangsdaten; wählen Sie danach, für wen das Programm handelt.
    `grant_type=refresh_token`. Ein Refresh-Token gilt `RefreshTokenTTL` (standardmäßig 30 Tage) ab der Erneuerung,
    die es ausgestellt hat ([Härtung der OAuth-Tokens](../../../bc/6.0/oauth-token-haertung.md)).
 
-![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../../../eng-us/help/images/creators/oauth-admin.webp)
+![oAuth-Verwaltung: die OAuth-Clients der Installation und ihr Zugriff](../../bilder/creators/oauth-admin.webp)
 
 Das Client-Geheimnis gehört auf einen Server. Eine App, die kein Geheimnis bewahren kann (eine mobile oder
 Browser-App), ist ein öffentlicher Client: Sie wird ohne Geheimnis gespeichert, sendet keines und muss PKCE mit

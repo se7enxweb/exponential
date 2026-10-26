@@ -102,7 +102,7 @@ Verwenden Sie die Schulungsinstallation und Ihren veröffentlichten Artikel aus 
 - Die Aufzeichnung hat Modell, Tokens und geschätzte Kosten der Anfrage gezeigt.
 - Der Trainer prüft das, indem er zwei Teilnehmende fragt, was die Zeile mit den Standardwerten gesagt hat.
 
-![Die Feldaktionen eines Textfelds: Write, Rewrite, Translate, Suggest und Improve](../../../../../eng-us/help/images/trainers/ei-edit-box.webp)
+![Die Feldaktionen eines Textfelds: Write, Rewrite, Translate, Suggest und Improve](../../../bilder/trainers/ei-edit-box.webp)
 
 ## Quiz
 

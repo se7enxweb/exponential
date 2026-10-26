@@ -15,7 +15,7 @@ Exponential von selbst tut, was Ihr Designteam bauen muss und was ein mutterspra
 muss. Die technischen Anleitungen sind [Websites mit Rechts-nach-links-Schrift](../../ersteller/website-ersteller/websites-von-rechts-nach-links.md)
 für Website-Ersteller und [Sprachen mit Rechts-nach-links-Schrift in der Administration](../../../funktionen/6.0/rechts-nach-links.md).
 
-![Oberflächensprachen der Administration](../../../../eng-us/help/images/help/bu-rtl.webp)
+![Oberflächensprachen der Administration](../../bilder/help/bu-rtl.webp)
 
 ## Inhalt
 

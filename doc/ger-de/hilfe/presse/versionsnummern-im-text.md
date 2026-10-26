@@ -61,13 +61,13 @@ as the next release, not as a corrected copy of the old one“ ([SECURITY.md](ht
 
 Velocity und die Erweiterungen haben eigene Nummern, unabhängig von denen des Kernels:
 
-- Velocity verwendet vier Stellen, zum Beispiel `0.0.4.50` (die Version, die das README am 18. Oktober 2026 vorschlägt).
+- Velocity verwendet vier Stellen, zum Beispiel `0.0.4.54` (die erste Version, die `composer.json` verlangte, am 20. Oktober 2026).
 - „After `0.1.9` the next release is `0.1.10`; only the last position counts up unless you decide otherwise“
   ([Erweiterungen, „Release it“](../../anleitungen/extensions.md#7-die-extension-veröffentlichen)).
 - Erweiterungen, die im Kernel mitgeliefert werden, tragen die Version des Kernels; eigenständige Erweiterungen ihre
   eigene.
 
-Schreiben Sie das Produkt mit seiner Nummer: „Velocity 0.0.4.50“, „die Erweiterung expai 0.0.1.12“. Vermischen Sie sie
+Schreiben Sie das Produkt mit seiner Nummer: „Velocity 0.0.4.54“, „die Erweiterung expai 0.0.1.12“. Vermischen Sie sie
 nicht mit der Nummer des Kernels.
 
 ## Versionen vergleichen und sortieren

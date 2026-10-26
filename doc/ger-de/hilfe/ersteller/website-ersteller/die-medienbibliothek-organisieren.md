@@ -38,7 +38,7 @@ einbettet, ist mit ihm verknüpft, und die Administration warnt, bevor Sie ein B
 | Nach Website (`Site A`, `Site B`) | Multisite-Installationen, mit pro Ordner eingeschränkten Rollen |
 | Ein Ordner `Shared` | Logos, Icons und Bilder, die überall verwendet werden |
 
-![Die Medienbibliothek mit ihren Ordnern Images, Files und Multimedia als Unterelemente](../../../../eng-us/help/images/creators/media-folders.webp)
+![Die Medienbibliothek mit ihren Ordnern Images, Files und Multimedia als Unterelemente](../../bilder/creators/media-folders.webp)
 
 Halten Sie sie höchstens drei Ebenen tief; der Upload-Dialog durchsucht höchstens `MaxDepth=3` Ebenen
 (`settings/upload.ini`).

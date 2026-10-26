@@ -100,7 +100,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Layouts-Schulungskonto. Es wird 
 - Die Antworten stimmen mit der Prüfung des Trainers überein.
 - Der Trainer prüft das, indem er Schritt 5 am Beamer durchgeht.
 
-![Layout-Zuordnungen mit ihrer Priorität, ihrem Ziel, ihrem Layout und Status](../../../../../eng-us/help/images/trainers/ly-rules.webp)
+![Layout-Zuordnungen mit ihrer Priorität, ihrem Ziel, ihrem Layout und Status](../../../bilder/trainers/ly-rules.webp)
 
 ## Quiz
 

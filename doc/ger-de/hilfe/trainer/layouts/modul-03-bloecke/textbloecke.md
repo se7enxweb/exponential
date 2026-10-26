@@ -117,7 +117,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Kurs-Layout.
 - Kein Block HTML snippet ist übrig.
 - Der Trainer prüft das, indem er den Entwurf einer Person am Beamer öffnet.
 
-![Der Template-Editor mit der Liste der Templates für Blockansichten](../../../../../eng-us/help/images/trainers/ly-templates.webp)
+![Der Template-Editor mit der Liste der Templates für Blockansichten](../../../bilder/trainers/ly-templates.webp)
 
 ## Quiz
 

@@ -31,7 +31,7 @@ Telefon bereit, etwa eine quelloffene oder die, die Ihre Organisation verwendet.
 6. Klicken Sie auf **Save settings**.
    Ab Ihrer nächsten Anmeldung wird der Code nach Ihrem Passwort abgefragt.
 
-![Die Seite Two-Factor Authentication Setup mit der Wahl der Methode und den zwei Schritten Scan the code und Enter the code the app shows](../../../eng-us/help/manual/images/two-step-sign-in-setup.webp)
+![Die Seite Two-Factor Authentication Setup mit der Wahl der Methode und den zwei Schritten Scan the code und Enter the code the app shows](bilder/two-step-sign-in-setup.webp)
 
 ## Was schiefgehen kann
 
