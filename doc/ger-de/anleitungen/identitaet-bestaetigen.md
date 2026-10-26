@@ -66,7 +66,11 @@ So, wie sie in `settings/site.ini` ausgeliefert werden:
 | `content`: Inhalte entfernen und veröffentlichen | nein | `content/removeobject ConfirmButton`, `content/removenode ConfirmButton`, `content/trash EmptyButton RemoveButton`, `content/edit PublishButton PublishNotNotifyButton`, `content/versionview PreviewPublishButton PreviewPublishNotNotifyButton`, `content/multiedit MultiPublishButton` |
 
 Die eigene E-Mail-Adresse zu ändern fragt also (sie ändert Zugangsdaten), den eigenen Namen zu ändern nicht; das Konto
-eines anderen Benutzers zu bearbeiten fragt immer.
+eines anderen Benutzers zu bearbeiten fragt immer. Ein Konto unter einer Benutzergruppe anzulegen gilt als Bearbeiten
+des Kontos eines anderen Benutzers: Es ist Benutzerverwaltung, denn Login, E-Mail-Adresse, Passwort und Gruppe eines
+Kontos entscheiden, wer sich mit welchen Rechten anmelden kann, gleich ob sich eines seiner Felder ändert. Die Frage
+kommt einmal, wenn das Formular veröffentlicht (oder gespeichert) wird, und die Antwort führt das Formular so aus, wie
+es gesendet wurde (siehe „Was mit der Anfrage geschieht“).
 
 **Freigeben** und **Ablehnen** eines neuen Benutzerkontos, das auf seine Freigabe wartet (ein Element des
 Workflow-Ereignisses *Approve user accounts*, siehe [Neue Redakteurskonten freigeben](neue-redakteurskonten-freigeben.md)),
@@ -134,6 +138,11 @@ Danach den INI-Cache leeren. Eine eigene Gruppe erscheint mit ihrem Namen auf `s
   weitergeleitet.
 - **Ein Datei-Upload** lässt sich vom Browser nicht zweimal senden: Nach der Antwort öffnet sich das Formular wieder,
   und die Dateien werden noch einmal gewählt. Deshalb fragt die Regel für `package/upload` schon beim Öffnen (`*`).
+  Nur eine tatsächlich gewählte Datei zählt: Ein Formular, das nur Dateifelder hat, die leer blieben, ist ein POST wie
+  jeder andere. Der übliche Fall ist das Anlegen oder Bearbeiten des Kontos eines anderen Benutzers: Das Formular eines
+  Benutzers hat das Bild des Kontos, und wer ein Mitglied anlegt, ohne ein Bild zu wählen, bestätigt einmal, und das
+  Konto wird so veröffentlicht, wie es ausgefüllt wurde, ohne das Formular noch einmal auszufüllen. Dass Dateien noch
+  einmal gewählt werden müssen, sagt die Seite nur, wenn eine Datei gewählt war.
 - **Ein Skript** (XMLHttpRequest oder `Accept: application/json` ohne HTML) erhält statt der Seite `403` mit
   `{"error": "reauth_required", "url": "..."}`.
 
