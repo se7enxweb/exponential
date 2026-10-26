@@ -1,7 +1,7 @@
 # Languages in Exponential
 
 The one place that says which languages Exponential supports, at which level, and how to add more. The figures
-were taken on 15 October 2026, those of the administration translations on 18 October 2026 (Exponential 6.0.15).
+were taken on 15 October 2026, those of the administration translations on 26 October 2026 (Exponential 6.0.15).
 
 In short: **268 locale files** (261 languages and countries, the test language Lorem Ipsum and 6 variations, in 32 scripts, 40 of them written
 right to left) can be chosen as content languages and siteaccess locales; **70 administration translations**
@@ -450,7 +450,7 @@ between ideographs. The Klingon script pIqaD is never used (see Klingon above).
 
 ## 4. Every administration translation
 
-Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day, Swahili, added on 23 October 2026, against the 18,404 strings of that day, the eighteen added or completed on 24 October 2026 against the 18,411 strings of that day), in two ways (both rounded down):
+Measured on 16 October 2026 (the ten translations added on 18 October 2026 against the 17,763 strings of that day, the three added on 19 October 2026 against the 17,834 strings of that day, Swahili, added on 23 October 2026, against the 18,404 strings of that day, the eighteen added or completed on 24 October 2026 against the 18,411 strings of that day), in two ways (both rounded down). On 26 October 2026 every translation was measured again against the 18,811 current strings: all 70 translate at least 99% of them, 35 every one; the other 35 lack only the 22 strings of the data table module (`kernel/datatable/module`), and `kal-GL` also leaves 25 longer sentences unfinished:
 
 - **Own file finished**: finished messages of the file divided by all its messages, obsolete ones left out, each
   context, source and comment counted once. `php bin/php/ezchecktranslation.php <code>` prints a similar "Percent
@@ -849,8 +849,8 @@ language joins the test's list of languages; every complete machine-assisted tra
 ezjscore's catalogues; the words German keeps from English (Cache, Layout, Login, Siteaccess, Extension ...) are in
 the allowlist's `ger-DE` list.
 
-Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the forty-one
-complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
+Translations of the strings added since 6.0 (about 10,000) are the most useful work for every language but the
+seventy complete ones, and a review of the machine-assisted translations (Spanish, French, Ukrainian, Hebrew, Arabic, Latin,
 Klingon, Turkish, Polish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish, Czech, Croatian, Persian, Pashto,
 Kurdish, Swahili, the eighteen languages added or completed on 24 October 2026 and the nine completed or added on
 25 October 2026) is the quickest win.

@@ -2,7 +2,7 @@
 
 Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, auf welcher Stufe, und wie Sie weitere
 hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzungen der Administrationsoberfläche am
-18. Oktober 2026 (Exponential 6.0.15).
+26. Oktober 2026 (Exponential 6.0.15).
 
 Kurz gefasst: **268 Locale-Dateien** (261 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, in 32 Schriften, 40 davon
 von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **70 Übersetzungen
@@ -462,7 +462,7 @@ klingonische Schrift pIqaD wird nie verwendet (siehe Klingonisch oben).
 
 ## 4. Alle Übersetzungen der Administrationsoberfläche
 
-Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet):
+Gemessen am 16. Oktober 2026 (die zehn am 18. Oktober 2026 hinzugekommenen Übersetzungen gegen die 17.763 Texte jenes Tages, die drei am 19. Oktober 2026 hinzugekommenen gegen die 17.834 Texte jenes Tages, Suaheli, am 23. Oktober 2026 hinzugekommen, gegen die 18.404 Texte jenes Tages), auf zwei Arten (beide abgerundet). Am 26. Oktober 2026 wurde jede Übersetzung erneut gegen die 18.811 aktuellen Texte gemessen: Alle 70 übersetzen mindestens 99 % davon, 35 jeden einzelnen; den übrigen 35 fehlen nur die 22 Texte des Moduls für Datentabellen (`kernel/datatable/module`), und `kal-GL` lässt zusätzlich 25 längere Sätze unfertig:
 
 - **Eigene Datei fertig**: fertige Meldungen der Datei geteilt durch alle ihre Meldungen, veraltete nicht
   mitgerechnet, jede Kombination aus Kontext, Quelle und Kommentar einmal gezählt.
@@ -860,7 +860,7 @@ Katalogen des Kernels, von ezoe und von ezjscore; die Wörter, die das Deutsche 
 Layout, Login, Siteaccess, Extension ...), stehen in der Liste `ger-DE` der Allowlist.
 
 Übersetzungen der seit 6.0 hinzugekommenen Texte (etwa 10.000) sind die nützlichste Arbeit für jede Sprache außer den
-dreiundzwanzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
+siebzig vollständigen, und eine Prüfung der maschinell unterstützten Übersetzungen (Spanisch, Französisch,
 Ukrainisch, Hebräisch, Arabisch, Latein, Klingonisch, Türkisch, Polnisch, Italienisch, Portugiesisch, Niederländisch,
 Schwedisch, Norwegisch, Dänisch, Tschechisch, Kroatisch, Persisch, Paschtu, Kurdisch und Suaheli) bringt am
 schnellsten etwas.

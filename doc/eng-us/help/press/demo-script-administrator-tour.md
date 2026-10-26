@@ -44,7 +44,7 @@ design of the 6.0.15 development line; say which version you show.
 2. Point at the policy that opens the help: "The help is readable for editors on a new installation through the policy
    `exphelp/read`." ([The help system](../../features/6.0/help-system.md#who-may-read-it))
 3. **Setup > Languages**: show the content languages. Say the documented numbers with their source: 268 locale files
-   can be used as content languages; 38 administration translations exist, twenty-three of them complete (23 October 2026)
+   can be used as content languages; 70 administration translations exist, all of them complete (26 October 2026)
    ([Languages in Exponential](../../languages.md)).
 
 ![Roles, shown in part 2](../images/help/pr-admin-roles.webp)

@@ -42,7 +42,7 @@ you are likely to hear.
 | 2 | Why I care | One photo or sentence about your use | Your own story, no customer names without consent | [Protecting people's privacy](protecting-peoples-privacy.md) |
 | 3 | What it is | "PHP framework + CMS + shop" | The README's definition | [Exponential 6](../who-is-the-exponential-foundation.md#exponential-6-the-kernel) |
 | 4 | Your content, your model | A content class with fields | Content types are defined in the administration | [Content model](../../guides/content-model-and-editing.md) |
-| 5 | Many sites, many languages | Siteaccesses, language badges | 268 locale files; 54 administration translations, 51 complete (25 October 2026) | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
+| 5 | Many sites, many languages | Siteaccesses, language badges | 268 locale files; 70 administration translations, all complete (26 October 2026) | [Languages and accessibility](../who-is-the-exponential-foundation.md#languages-and-accessibility) |
 | 6 | Runs where you want | PHP 8.0-8.5, six databases, OS tiers | Name SQLite as the default | [Talking points: hosting](talking-points-hosting-databases-and-freedom.md) |
 | 7 | A long story | Timeline 1999 to 2026 | The history, with the old name in the past tense | [Talking points: longevity](talking-points-longevity-and-history.md) |
 | 8 | Who is behind it | 7x and the Exponential Foundation side by side | Two organizations, one project | [7x and the Foundation](7x-and-the-foundation-for-advocates.md) |

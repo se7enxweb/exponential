@@ -40,7 +40,7 @@ die Bedürfnisse der Anwender aus der Community an die erste Stelle.
 | eZpedia seit 2006, unter der GNU FDL | [Die Community](../wer-ist-7x.md#die-community) |
 | Foren, Telegram, Discord, Slack, Tracker | [Offizielle Kanäle und Social-Media-Konten](offizielle-kanaele-und-social-media-konten.md) |
 | 194 Commit-Autoren vor 2016 | [Mitwirkende und Freunde des Projekts](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
-| 38 Übersetzungen der Administration, 23 davon vollständig (23. Oktober 2026) | [Sprachen in Exponential](../../sprachen.md) |
+| 70 Übersetzungen der Administration, alle vollständig (26. Oktober 2026) | [Sprachen in Exponential](../../sprachen.md) |
 | Jeder Pull Request wird übernommen | [Thema: jeder Pull Request wird übernommen](thema-jeder-pull-request-wird-uebernommen.md) |
 
 ## Was Sie nicht behaupten sollten

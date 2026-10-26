@@ -42,7 +42,7 @@ für eine fünfminütige Live-Demo und einen Katalog von Fragen, die Sie wahrsch
 | 2 | Warum es mir wichtig ist | Ein Foto oder ein Satz zu Ihrer Nutzung | Ihre eigene Geschichte, keine Kundennamen ohne Zustimmung | [Die Privatsphäre von Menschen schützen](privatsphaere-schuetzen.md) |
 | 3 | Was es ist | „PHP-Framework + CMS + Shop“ | Die Definition aus der README | [Exponential 6](../wer-ist-die-exponential-foundation.md#exponential-6-der-kernel) |
 | 4 | Ihre Inhalte, Ihr Modell | Eine Inhaltsklasse mit Feldern | Inhaltstypen werden in der Administration definiert | [Inhaltsmodell](../../anleitungen/inhaltsmodell-und-bearbeitung.md) |
-| 5 | Viele Websites, viele Sprachen | Siteaccesses, Sprachkennzeichen | 268 Locale-Dateien; 54 Übersetzungen der Administration, 51 vollständig (Stand 25. Oktober 2026) | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
+| 5 | Viele Websites, viele Sprachen | Siteaccesses, Sprachkennzeichen | 268 Locale-Dateien; 70 Übersetzungen der Administration, alle vollständig (Stand 26. Oktober 2026) | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | 6 | Läuft, wo Sie möchten | PHP 8.0-8.5, sechs Datenbanken, Stufen der Betriebssysteme | Nennen Sie SQLite als Standard | [Gesprächspunkte: Hosting](gespraechspunkte-hosting-datenbanken-freiheit.md) |
 | 7 | Eine lange Geschichte | Zeitleiste 1999 bis 2026 | Die Geschichte, mit dem alten Namen in der Vergangenheitsform | [Gesprächspunkte: Langlebigkeit](gespraechspunkte-langlebigkeit-und-geschichte.md) |
 | 8 | Wer dahintersteht | 7x und die Exponential Foundation nebeneinander | Zwei Organisationen, ein Projekt | [7x und die Foundation](7x-und-die-foundation.md) |

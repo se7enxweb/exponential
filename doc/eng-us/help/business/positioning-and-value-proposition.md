@@ -54,7 +54,7 @@ Sources: `README.md` ("What does Exponential provide", "License", "Requirements"
 | Six supported databases: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | `README.md`, [Database support](../database-support.md) |
 | "almost any" operating system "that runs PHP 8.0 or later" | [Operating system support](../os-support.md) |
 | PHP 8.0 to 8.5 supported | `README.md`, "What version of PHP is required" |
-| 268 locale files, 40 of them right to left; 54 administration translations, 51 complete (25 October 2026) | [Languages in Exponential](../../languages.md) |
+| 268 locale files, 40 of them right to left; 70 administration translations, all complete (26 October 2026) | [Languages in Exponential](../../languages.md) |
 | "The recommended way is to get the kernel and every se7enxweb extension as Git clones with their full history" | `README.md`, "Installation"; [Develop with Git](../develop-with-git.md) |
 | "A published tag is never changed" | `SECURITY.md` |
 | The documentation is free documentation under the GNU FDL 1.3 or later | [Free documentation](../free-documentation.md) |
@@ -145,8 +145,8 @@ Each sentence below can be backed by the source in brackets. Do not say the brac
 >    feature is a content model you define yourself. [README]
 > 2. News publishing, e-commerce and forums are built in, and it serves several sites and languages from one
 >    installation. [README]
-> 3. Content can be written in 268 locales, right-to-left languages included, and the administration speaks 37
->    languages, 51 of them completely (25 October 2026). [Languages in Exponential]
+> 3. Content can be written in 268 locales, right-to-left languages included, and the administration speaks 70
+>    languages, all of them completely (26 October 2026). [Languages in Exponential]
 > 4. Editors build pages themselves with Exponential Layouts, and Exponential Intelligence helps them write, but only
 >    ever as drafts that a person publishes. [README]
 > 5. It is free to use under the GNU General Public License, version 2 or later, and its documentation is free under
