@@ -33,13 +33,13 @@ unter [Wer ist 7x?, 7x in Zahlen](../wer-ist-7x.md#7x-in-zahlen).
 | Commits auf `main` | 27.727 | `git rev-list --count origin/main` |
 | Übernommene Pull Requests im Verlauf | 1.042 | `git log --grep="Merge pull request"` |
 | 6.0.x-Releases | 15 (6.0.0 am 1. Januar 2024 bis 6.0.14 am 7. Juni 2026); 6.0.15 in Entwicklung, kein Tag am 19. Oktober 2026 | `git tag -l 'v6.0.*'` |
-| Vom Kernel verlangte se7enxweb-Pakete | 66 | `composer.json` |
+| Vom Kernel verlangte se7enxweb-Pakete | 66 am 18. Oktober 2026, 69 am 25. Oktober 2026 (die Zahl wächst, wenn Erweiterungen hinzukommen) | `composer.json` |
 | Pakete des Vendors se7enxweb auf Packagist | 219 | <https://packagist.org/packages/list.json?vendor=se7enxweb> |
 | Öffentliche Repositorys des GitHub-Kontos se7enxweb | 1.025, davon 95 keine Forks | `gh repo list se7enxweb --limit 1100` |
 | Änderungen in der Geschichte seit Dezember 2023 | 6.556 in 53 Repositorys, 1.037 davon vom Team se7enxweb (18. Oktober 2026) | [Ökosystem](../../geschichte/oekosystem.md) |
 | Commit-Autoren vor 2016 | 194 verschiedene Namen | `git log --until=2016-01-01 --format=%an` |
 | Locale-Dateien (Inhaltssprachen und Länder) | 268, davon 40 von rechts nach links | [Sprachen](../../sprachen.md) |
-| Übersetzungen der Administration | 33, davon 19 vollständig (19. Oktober 2026) | [Sprachen](../../sprachen.md) |
+| Übersetzungen der Administration | 38, davon 23 vollständig (23. Oktober 2026) | [Sprachen](../../sprachen.md) |
 | Unterstützte Datenbanken | 6 | README, „Requirements“ |
 | Unterstützte PHP-Versionen | 8.0 bis 8.5 | README; [PHP-Versionen](../wer-ist-die-exponential-foundation.md#php-versionen) |
 
@@ -91,7 +91,7 @@ Ihre eigene Zählung mit Ihrem Datum ([Zahlen prüfen](zahlen-pruefen.md)).
 ```text
 Gut:     „Das Repository enthält mehr als 27.000 Commits, der älteste vom September 2002
          (Zählung vom 19. Oktober 2026).“
-Gut:     „Die composer.json des Kernels verlangt 66 Pakete, die von 7x veröffentlicht werden.“
+Gut:     „Am 25. Oktober 2026 verlangte die composer.json des Kernels 69 Pakete, die von 7x veröffentlicht werden.“
 Meiden:  „Tausende Unternehmen nutzen Exponential.“      (keine Quelle)
 Meiden:  „Exponential ist 10-mal schneller als ...“      (kein Vergleich veröffentlicht)
 ```

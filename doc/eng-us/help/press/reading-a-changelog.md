@@ -84,7 +84,7 @@ Rules of thumb:
 ## Reading the development line
 
 The [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md) is different: it begins "Not released yet", is organized by
-period instead of by kind, and is long ("four months of work"). Read the "How this page is organised" list at its top
+period instead of by kind, and is long ("four months of work"). Read the list at its top that explains how the page is organized
 and pick one period. Everything on it must be reported as "in development"
 ([Covering 6.0.15 while it is in development](covering-6-0-15-while-in-development.md)).
 

@@ -35,11 +35,11 @@ wie Sie fair über Menschen schreiben.
 
 ## Wer beiträgt
 
-- Seit Dezember 2023 kamen Pull Requests von se7enxweb, ekked, fwoldt, netgen, brookinsconsulting, mugoweb und anderen
+- Seit Dezember 2023 kamen Pull Requests von den Konten se7enxweb, netgen, brookinsconsulting, mugoweb, von einzelnen Mitwirkenden und anderen
   (`git log --grep="Merge pull request"`, zitiert auf [Wer ist 7x?](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - Vor 2016 erscheinen in der Geschichte 194 verschiedene Commit-Autoren.
 - Unternehmen, deren Open-Source-Arbeit verwendet wird, werden namentlich genannt ([Netgen, Mugo Web und CJW Network nennen](andere-projekte-nennen.md)).
-- Übersetzer pflegen 33 Übersetzungen der Administration, neunzehn davon vollständig (19. Oktober 2026)
+- Übersetzer pflegen 38 Übersetzungen der Administration, dreiundzwanzig davon vollständig (25. Oktober 2026)
   ([Sprachen in Exponential](../../sprachen.md)).
 
 ## Wie mit Beiträgen umgegangen wird
