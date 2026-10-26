@@ -37982,6 +37982,14 @@ Puoi continuare a modificare una delle tue bozze oppure creare una nuova bozza.<
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Commenti da &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Ti è stata consigliata una pagina</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Ricevi questa e-mail perché qualcuno ha inserito il tuo indirizzo su %site per condividere una pagina con te.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -45630,6 +45638,10 @@ Per farlo devi modificare i comandi %chown in Comandi della shell alternativi.</
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Tentativo: %attempt di %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Visualizza la ricevuta</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -46597,6 +46609,42 @@ per attivare il tuo account.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Il link funziona una sola volta e solo per %1 minuti.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Reimpostazione della password</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Qualcuno ha chiesto di reimpostare la password del tuo account su %site. Conferma con il pulsante e ti invieremo una nuova password in una seconda e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Reimposta la mia password</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Se non l'hai chiesto tu, puoi ignorare questa e-mail: la tua password resta invariata.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>La tua nuova password</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>La tua password su %site è stata reimpostata. Accedi con questa nuova password, poi cambiala con una tua.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Se non hai reimpostato tu la password, accedi con questa e cambiala subito.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Reimpostazione della password per %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>La tua nuova password per %site</translation>
     </message>
 </context>
 <context>
@@ -71435,6 +71483,14 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>Your devices</source>
         <translation>I tuoi dispositivi</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Qualcuno ha chiesto di usare %email per un account su %site. Conferma che questo indirizzo è tuo.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Tu (o qualcuno che ha digitato il tuo indirizzo) hai chiesto un link per gestire le e-mail che %site invia a %email. In quella pagina puoi attivare o disattivare ogni tipo di e-mail, oppure interrompere tutte le e-mail facoltative.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71791,6 +71847,10 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Se non hai fatto tu questa modifica, qualcun altro potrebbe conoscere la tua password: reimpostala subito con &quot;%forgot&quot; nella pagina di accesso e contattaci.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>La tua password è stata modificata</translation>
     </message>
 </context>
 <context>
@@ -78102,6 +78162,34 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The sessions of this user:</source>
         <translation>Le sessioni di questo utente:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nuovo accesso al tuo account</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Indirizzo approssimativo</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Se non sei stato tu, qualcuno potrebbe conoscere la tua password: disconnetti quella sessione nella pagina dei tuoi dispositivi, poi cambia la password.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Controlla i tuoi dispositivi</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Visualizza le sessioni di questo utente</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78628,6 +78716,17 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>La riga viene rimossa dalla tabella e non può essere recuperata.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Se il pulsante non funziona, copia questo indirizzo nel tuo browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Apri la pagina</translation>
     </message>
 </context>
 </TS>

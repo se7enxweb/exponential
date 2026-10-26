@@ -44882,6 +44882,14 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Commentarium ab &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Pagina tibi commendata est</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Hanc epistulam accipis, quia aliquis inscriptionem tuam in %site inscripsit ut paginam tecum communicaret.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52397,6 +52405,10 @@ Ad hoc iussa %chown sub Iussa testae alternativa mutare debes.</translation>
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Conatus: %attempt ex %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Apocham tuam inspicere</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53435,6 +53447,42 @@ rationem tuam activeres.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Nexus semel tantum et per %1 minuta valet.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Renovatio tesserae</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Aliquis petivit ut tessera rationis tuae in %site renovaretur. Puga confirma, et novam tesseram altera epistula tibi mittemus.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Tesseram meam renovare</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Si hoc non petivisti, hanc epistulam neglegere potes: tessera tua manet ut est.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Nova tessera tua</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Tessera tua in %site renovata est. Hac nova tessera ini, deinde eam in tuam propriam muta.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Si tesseram tuam non renovavisti, hac ini et statim eam muta.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Renovatio tesserae pro %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Nova tessera tua pro %site</translation>
     </message>
 </context>
 <context>
@@ -69981,6 +70029,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>Your devices</source>
         <translation>Instrumenta tua</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Aliquis petivit ut %email pro ratione in %site adhiberetur. Confirma, quaeso, hanc inscriptionem tuam esse.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Tu (aut aliquis qui inscriptionem tuam scripsit) nexum petivisti ad epistulas administrandas quas %site ad %email mittit. In illa pagina singula epistularum genera accendere aut exstinguere potes, aut omnes epistulas non necessarias sistere.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70337,6 +70393,10 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Si hanc mutationem non fecisti, fortasse alius tesseram tuam novit: eam statim per &quot;%forgot&quot; in pagina introitus restitue, et nos adi.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Tessera tua mutata est</translation>
     </message>
 </context>
 <context>
@@ -76696,6 +76756,34 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The sessions of this user:</source>
         <translation>Sessiones huius usoris:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Novus introitus in rationem tuam</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempus</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Inscriptio approximata</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Si tu non eras, fortasse aliquis tesseram tuam novit: illam sessionem in pagina instrumentorum tuorum fini, deinde tesseram muta.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Instrumenta tua inspicere</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Sessiones huius usoris inspicere</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77254,6 +77342,17 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Push to block</source>
         <translation>In segmentum mittere</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si puga non fungitur, hanc inscriptionem in navigatrum tuum exscribe: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Paginam aperire</translation>
     </message>
 </context>
 </TS>

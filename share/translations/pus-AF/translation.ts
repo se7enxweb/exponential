@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>د «%1 &lt;%2&gt;» تبصره</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>تاسو ته یوه پاڼه وړاندیز شوې ده</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>تاسو دا برېښنالیک ځکه ترلاسه کړ چې یو چا په %site کې ستاسو پته ولیکله ترڅو له تاسو سره یوه پاڼه شریکه کړي.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(بیا هڅه: %attempt له %max څخه).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>خپل رسید کتل</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>لینک یوازې یو ځل او یوازې %1 دقیقې کار کوي.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>د پټنوم بېرته تنظیمول</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>یو چا غوښتنه کړې چې په %site کې ستاسو د حساب پټنوم بېرته تنظیم شي. په تڼۍ یې تایید کړئ، او موږ به تاسو ته په دویم برېښنالیک کې نوی پټنوم درولېږو.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>زما پټنوم بېرته تنظیمول</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>که تاسو دا نه وي غوښتي، کولای شئ دغه برېښنالیک له پامه وغورځوئ: ستاسو پټنوم به همداسې پاتې شي.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>ستاسو نوی پټنوم</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>په %site کې ستاسو پټنوم بېرته تنظیم شو. په دې نوي پټنوم ننوځئ، بیا یې په خپل یو پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>که تاسو خپل پټنوم بېرته نه وي تنظیم کړی، په دې پټنوم ننوځئ او سمدلاسه یې بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>د %site لپاره د پټنوم بېرته تنظیمول</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>د %site لپاره ستاسو نوی پټنوم</translation>
     </message>
 </context>
 <context>
@@ -70033,6 +70081,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>ستاسو وسیلې</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>یو چا غوښتنه کړې چې %email په %site کې د یو حساب لپاره وکاروي. مهرباني وکړئ تایید کړئ چې دا پته ستاسو ده.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>تاسو (یا کوم چا چې ستاسو پته ولیکله) د هغو برېښنالیکونو د اداره کولو لپاره لینک غوښتی چې %site یې %email ته لېږي. په هغه پاڼه کې کولای شئ هر ډول برېښنالیک چالان یا بند کړئ، یا ټول اختیاري برېښنالیکونه ودروئ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70389,6 +70445,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>که تاسو دغه بدلون نه وي کړی، کېدای شي بل څوک ستاسو پټنوم پېژني: هغه سمدلاسه د ننوتو په پاڼه کې د «%forgot» له لارې بیا وټاکئ، او له موږ سره اړیکه ونیسئ.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>ستاسو پټنوم بدل شو</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>د دغه کارن ناستې:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ستاسو حساب ته نوی ننوتل</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>وسیله</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وخت</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>نږدې پته</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>که دا تاسو نه وئ، کېدای شي څوک ستاسو پټنوم پېژني: هغه ناسته د خپلو وسیلو په پاڼه کې وباسئ، بیا خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>د خپلو وسیلو کتنه</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>د دغه کارن ناستې کتل</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>قطار له جدول څخه لرې کېږي او بېرته نه شي راګرځول کېدای.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>که تڼۍ کار نه کوي، دا پته په خپل براوزر کې کاپي کړئ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>پاڼه پرانیستل</translation>
     </message>
 </context>
 </TS>

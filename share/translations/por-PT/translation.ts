@@ -44879,6 +44879,14 @@ Para enviar comentários ao aprovador ou ver o estado, utilize o URL abaixo.</tr
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Comentário de «%1 &lt;%2&gt;»</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Foi-lhe recomendada uma página</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Recebe esta mensagem porque alguém introduziu o seu endereço em %site para partilhar uma página consigo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Para tal, é necessário alterar os comandos %chown em Comandos shell alternativ
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Tentar novamente: %attempt de %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Ver o seu recibo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ a conta.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>A ligação só funciona uma vez e apenas durante %1 minutos.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Reposição da palavra-passe</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Foi pedida a reposição da palavra-passe da sua conta em %site. Confirme com o botão e enviaremos uma nova palavra-passe numa segunda mensagem.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Repor a minha palavra-passe</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Se não fez este pedido, pode ignorar esta mensagem: a palavra-passe mantém-se igual.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>A sua nova palavra-passe</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>A sua palavra-passe em %site foi reposta. Inicie sessão com esta nova palavra-passe e depois altere-a para uma à sua escolha.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Se não repôs a palavra-passe, inicie sessão com esta e altere-a imediatamente.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Repor a palavra-passe em %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>A sua nova palavra-passe em %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>Your devices</source>
         <translation>Os seus dispositivos</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Foi pedida a utilização de %email numa conta em %site. Confirme que este endereço é seu.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Foi pedida (por si ou por alguém que escreveu o seu endereço) uma ligação para gerir as mensagens que %site envia para %email. Nessa página pode ativar ou desativar cada tipo de mensagem, ou parar todas as mensagens opcionais.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Se esta alteração não foi efetuada por si, outra pessoa pode conhecer a palavra-passe: repor de imediato com «%forgot» na página de início de sessão e contactar-nos.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>A palavra-passe foi alterada</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
         <source>The sessions of this user:</source>
         <translation>As sessões deste utilizador:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Novo início de sessão na sua conta</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Endereço aproximado</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Se este início de sessão não foi seu, alguém pode conhecer a sua palavra-passe: termine essa sessão na página dos seus dispositivos e depois altere a palavra-passe.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Rever os seus dispositivos</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Ver as sessões deste utilizador</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Será necessário alterar a classe do nó utilizando a funcionalidade de troca.<
     <message>
         <source>Push to block</source>
         <translation>Enviar para bloco</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Se o botão não funcionar, copie este endereço para o navegador: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Abrir a página</translation>
     </message>
 </context>
 </TS>

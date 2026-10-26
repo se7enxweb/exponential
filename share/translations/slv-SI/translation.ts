@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentar osebe „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Priporočili so vam stran</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>To sporočilo ste prejeli, ker je nekdo na spletnem mestu %site vnesel vaš naslov, da bi z vami delil stran.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Za to morate spremeniti ukaze %chown v razdelku Nadomestni ukazi lupine.</transl
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Poskus %attempt od %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Prikaži potrdilo o naročilu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ da aktivirate svoj račun.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Povezava deluje samo enkrat in samo %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Ponastavitev gesla</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Nekdo je zahteval ponastavitev gesla vašega računa na spletnem mestu %site. Potrdite z gumbom in novo geslo vam bomo poslali v drugem sporočilu.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Ponastavi moje geslo</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Če tega niste zahtevali, lahko to sporočilo prezrete: vaše geslo ostane nespremenjeno.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Vaše novo geslo</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Vaše geslo na spletnem mestu %site je bilo ponastavljeno. Prijavite se s tem novim geslom, nato pa ga spremenite v svoje.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Če gesla niste ponastavili vi, se prijavite s tem geslom in ga takoj spremenite.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Ponastavitev gesla za %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Vaše novo geslo za %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>Your devices</source>
         <translation>Vaše naprave</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Nekdo je zahteval uporabo naslova %email za račun na spletnem mestu %site. Potrdite, da je ta naslov vaš.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Vi (ali nekdo, ki je vnesel vaš naslov) ste zahtevali povezavo za upravljanje e-pošte, ki jo spletno mesto %site pošilja na naslov %email. Na tej strani lahko vklopite ali izklopite vsako vrsto e-pošte ali ustavite vso izbirno e-pošto.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Če te spremembe niste naredili vi, morda vaše geslo pozna kdo drug: takoj ga ponastavite s povezavo „%forgot“ na strani za prijavo in nas kontaktirajte.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Vaše geslo je bilo spremenjeno</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>The sessions of this user:</source>
         <translation>Seje tega uporabnika:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nova prijava v vaš račun</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Naprava</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Približni naslov</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Če to niste bili vi, morda nekdo pozna vaše geslo: odjavite to sejo na strani z vašimi napravami, nato spremenite geslo.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Preglej svoje naprave</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Prikaži seje tega uporabnika</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Push to block</source>
         <translation>Potisni v blok</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Če gumb ne deluje, kopirajte ta naslov v brskalnik: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Odpri stran</translation>
     </message>
 </context>
 </TS>

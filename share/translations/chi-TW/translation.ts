@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>留言者：「%1 &lt;%2&gt;」</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>有人向您推薦了一個頁面</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>您收到此郵件，是因為有人在 %site 輸入了您的位址，與您分享一個頁面。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>（重試：第 %attempt 次，共 %max 次）。</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>檢視收據</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>此連結只能使用一次，且僅在 %1 分鐘內有效。</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>重設密碼</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>有人要求重設您在 %site 的帳號密碼。請使用按鈕確認，我們會以第二封郵件將新密碼傳送給您。</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>重設我的密碼</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>如果這不是您的要求，可以忽略此郵件：您的密碼不會變更。</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>您的新密碼</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>您在 %site 的密碼已重設。請使用此新密碼登入，然後將其變更為您自己的密碼。</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>如果您沒有重設密碼，請使用此密碼登入並立即變更。</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>重設您在 %site 的密碼</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>您在 %site 的新密碼</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>您的裝置</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>有人要求將 %email 用於 %site 上的帳號。請確認此位址屬於您。</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>您（或輸入了您位址的人）要求了一個連結，用來管理 %site 傳送到 %email 的電子郵件。在該頁面上，可以開啟或關閉每種電子郵件，或停止所有選擇性的電子郵件。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>如果此變更不是您所做，可能有其他人知道您的密碼：請立即在登入頁面使用「%forgot」重設密碼，並與我們聯絡。</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>您的密碼已變更</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>此使用者的工作階段：</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>您的帳號有新的登入</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>裝置</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>大約位址</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>如果不是您本人，可能有人知道您的密碼：請在裝置頁面登出該工作階段，然後變更密碼。</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>檢視您的裝置</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>檢視此使用者的工作階段</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>此列將從資料表中移除，且無法復原。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>如果按鈕無法使用，請將此位址複製到瀏覽器：%url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>開啟頁面</translation>
     </message>
 </context>
 </TS>

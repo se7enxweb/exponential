@@ -37843,6 +37843,14 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentarz od „%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Polecona strona</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Ta wiadomość została wysłana, ponieważ ktoś wpisał ten adres w witrynie %site, aby udostępnić stronę.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -45455,6 +45463,10 @@ W tym celu należy zmienić polecenia %chown w sekcji Alternatywne polecenia pow
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Próba: %attempt z %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Wyświetlić potwierdzenie zakupu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -46414,6 +46426,42 @@ ze wskazówkami zawartymi w tej wiadomości.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Link działa tylko jeden raz i tylko przez %1 minut.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Resetowanie hasła</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Zażądano zresetowania hasła konta w witrynie %site. Po potwierdzeniu przyciskiem nowe hasło zostanie wysłane w drugiej wiadomości.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Zresetować hasło</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jeśli to żądanie nie zostało złożone, można zignorować tę wiadomość: hasło pozostanie bez zmian.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Nowe hasło</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Hasło w witrynie %site zostało zresetowane. Należy zalogować się tym nowym hasłem, a następnie zmienić je na własne.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jeśli hasło nie zostało zresetowane przez właściciela konta, należy zalogować się tym hasłem i natychmiast je zmienić.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Resetowanie hasła w witrynie %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Nowe hasło w witrynie %site</translation>
     </message>
 </context>
 <context>
@@ -71240,6 +71288,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Your devices</source>
         <translation>Urządzenia</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Zażądano użycia adresu %email dla konta w witrynie %site. Proszę potwierdzić, że jest to własny adres.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Zażądano (być może przez osobę, która wpisała ten adres) linku do zarządzania wiadomościami e-mail, które witryna %site wysyła na adres %email. Na tej stronie można włączyć lub wyłączyć każdy rodzaj wiadomości albo zrezygnować ze wszystkich wiadomości opcjonalnych.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71596,6 +71652,10 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jeśli zmiana nie została dokonana przez właściciela konta, ktoś inny może znać hasło: należy natychmiast je zresetować za pomocą „%forgot” na stronie logowania i skontaktować się z nami.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Hasło zostało zmienione</translation>
     </message>
 </context>
 <context>
@@ -77907,6 +77967,34 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The sessions of this user:</source>
         <translation>Sesje tego użytkownika:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nowe logowanie na konto</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Urządzenie</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Czas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Przybliżony adres</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jeśli nie było to własne logowanie, ktoś może znać hasło: należy wylogować tę sesję na stronie urządzeń, a następnie zmienić hasło.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Sprawdzić urządzenia</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Wyświetlić sesje tego użytkownika</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78433,6 +78521,17 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Wiersz zostanie usunięty z tabeli i nie będzie można go przywrócić.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jeśli przycisk nie działa, należy skopiować ten adres do przeglądarki: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Otworzyć stronę</translation>
     </message>
 </context>
 </TS>

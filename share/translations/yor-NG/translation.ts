@@ -44934,6 +44934,14 @@ Bí ẹ bá fẹ́ fi àwọn àsọyé ránṣẹ́ sí olùfọwọ́sí tàb�
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Àsọyé láti ọwọ́ “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>A dámọ̀ràn ojú ìwé kan fún yín</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Ẹ ń gba ímeèlì yìí nítorí pé ẹnìkan tẹ àdírẹ́sì yín sí orí %site láti pín ojú ìwé kan pẹ̀lú yín.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ Láti ṣe èyí, ẹ nílò láti yí àwọn àṣẹ %chown padà lábẹ́ �
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Gbìyànjú lẹ́ẹ̀kan sí i: %attempt nínú %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Wo ìwé ẹ̀rí owó yín</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Ìjápọ̀ náà ń ṣiṣẹ́ lẹ́ẹ̀kan ṣoṣo àti fún ìṣẹ́jú %1 nìkan.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Títún ọ̀rọ̀ aṣínà ṣe</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Ẹnìkan béèrè láti tún ọ̀rọ̀ aṣínà àkáǹtì yín lórí %site ṣe. Ẹ fìdí rẹ̀ múlẹ̀ pẹ̀lú bọ́tìnnì náà, a ó sì fi ọ̀rọ̀ aṣínà tuntun ránṣẹ́ sí yín nínú ímeèlì kejì.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Tún ọ̀rọ̀ aṣínà mi ṣe</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Bí ẹ kò bá béèrè fún èyí, ẹ lè má fiyèsí ímeèlì yìí: ọ̀rọ̀ aṣínà yín yóò wà bí ó ti wà.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ọ̀rọ̀ aṣínà tuntun yín</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>A ti tún ọ̀rọ̀ aṣínà yín lórí %site ṣe. Ẹ wọlé pẹ̀lú ọ̀rọ̀ aṣínà tuntun yìí, lẹ́yìn náà ẹ yí i padà sí èyí tí ẹ yàn fúnra yín.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Bí kì í bá ṣe ẹ̀yin ni ẹ tún ọ̀rọ̀ aṣínà yín ṣe, ẹ wọlé pẹ̀lú èyí kí ẹ sì yí i padà lẹ́sẹ̀kẹsẹ̀.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Títún ọ̀rọ̀ aṣínà ṣe fún %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ọ̀rọ̀ aṣínà tuntun yín fún %site</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>Àwọn ẹ̀rọ yín</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Ẹnìkan béèrè láti lo %email fún àkáǹtì kan lórí %site. Ẹ jọ̀wọ́ ẹ fìdí rẹ̀ múlẹ̀ pé àdírẹ́sì yìí jẹ́ tiyín.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ẹ̀yin (tàbí ẹnìkan tí ó tẹ àdírẹ́sì yín) béèrè fún ìjápọ̀ láti ṣàkóso àwọn ímeèlì tí %site ń fi ránṣẹ́ sí %email. Lórí ojú ìwé náà ẹ lè tan tàbí pa irú ímeèlì kọ̀ọ̀kan, tàbí kí ẹ dá gbogbo ímeèlì àṣàyàn dúró.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Tí ẹ kò bá ṣe àyípadà yìí, ẹnìkan mìíràn lè mọ ọ̀rọ̀ aṣínà yín: ẹ tún un ṣe lẹsẹkẹsẹ pẹ̀lú “%forgot” lórí ojú ìwé ìwọlé, kí ẹ sì kàn sí wa.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>A ti yí ọ̀rọ̀ aṣínà yín padà</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>Àwọn ìgbà ìwọlé ti olùlò yìí:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ìwọlé tuntun sí àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ẹ̀rọ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Àdírẹ́sì ìfojúdíwọ̀n</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Bí kì í bá ṣe ẹ̀yin, ó ṣeé ṣe kí ẹnìkan mọ ọ̀rọ̀ aṣínà yín: ẹ mú ìgbà ìwọlé náà jáde lórí ojú ìwé àwọn ẹ̀rọ yín, lẹ́yìn náà ẹ yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Ṣàyẹ̀wò àwọn ẹ̀rọ yín</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Wo àwọn ìgbà ìwọlé ti olùlò yìí</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>A yọ ìlà náà kúrò nínú tábìlì, a kò sì lè dá a padà.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Bí bọ́tìnnì náà kò bá ṣiṣẹ́, ẹ ṣe ẹ̀dà àdírẹ́sì yìí sínú aṣàwárí wẹ́ẹ̀bù yín: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Ṣí ojú ìwé náà</translation>
     </message>
 </context>
 </TS>

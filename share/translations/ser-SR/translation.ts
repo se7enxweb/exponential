@@ -44879,6 +44879,14 @@ Ako želite da pošaljete komentare odobravaocu ili da pogledate status, koristi
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentar od „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Preporučena vam je stranica</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Dobili ste ovu e-poruku jer je neko uneo vašu adresu na sajtu %site da bi podelio stranicu sa vama.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Da biste to uradili, potrebno je da izmenite komande %chown u odeljku Alternativ
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Pokušaj ponovo: %attempt od %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Prikaži račun</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ vaš nalog.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Veza važi samo jednom i samo %1 minuta.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Resetovanje lozinke</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Neko je zatražio resetovanje lozinke vašeg naloga na sajtu %site. Potvrdite dugmetom i poslaćemo vam novu lozinku u drugoj e-poruci.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Resetuj moju lozinku</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ako ovo niste tražili, možete zanemariti ovu e-poruku: vaša lozinka ostaje nepromenjena.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Vaša nova lozinka</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Vaša lozinka na sajtu %site je resetovana. Prijavite se ovom novom lozinkom, a zatim je promenite u sopstvenu.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ako niste resetovali lozinku, prijavite se ovom lozinkom i odmah je promenite.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Resetovanje lozinke za %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Vaša nova lozinka za %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Your devices</source>
         <translation>Vaši uređaji</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Neko je zatražio da se %email koristi za nalog na sajtu %site. Potvrdite da je ova adresa vaša.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Vi (ili neko ko je uneo vašu adresu) ste zatražili vezu za upravljanje e-porukama koje sajt %site šalje na adresu %email. Na toj stranici možete da uključite ili isključite svaku vrstu e-poruka ili da zaustavite sve opcionalne e-poruke.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ako niste vi izvršili ovu promenu, neko drugi možda zna vašu lozinku: odmah je poništite pomoću „%forgot“ na stranici za prijavu i kontaktirajte nas.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Vaša lozinka je promenjena</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>The sessions of this user:</source>
         <translation>Sesije ovog korisnika:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nova prijava na vaš nalog</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Uređaj</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vreme</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Približna adresa</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ako to niste bili vi, neko možda zna vašu lozinku: odjavite tu sesiju na stranici sa vašim uređajima, a zatim promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Pregledaj uređaje</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Prikaži sesije ovog korisnika</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Push to block</source>
         <translation>Pošalji u blok</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ako dugme ne funkcioniše, kopirajte ovu adresu u svoj pregledač: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Otvori stranicu</translation>
     </message>
 </context>
 </TS>

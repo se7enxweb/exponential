@@ -46600,6 +46600,14 @@ Você pode continuar editando um de seus rascunhos ou pode criar um novo rascunh
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Comentado por &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Uma página foi recomendada para você</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Você recebeu este e-mail porque alguém digitou seu endereço em %site para compartilhar uma página com você.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -54324,6 +54332,10 @@ Para fazer isso, você pode usar o comando %chown embaixo dos comandos do shell 
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nova tentativa: %attempt de %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Visualizar seu recibo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -55381,6 +55393,42 @@ sua conta.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>O link funciona apenas uma vez e somente por %1 minutos.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Redefinição de senha</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Alguém pediu para redefinir a senha da sua conta em %site. Confirme com o botão e enviaremos uma nova senha em um segundo e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Redefinir minha senha</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Se você não pediu isso, pode ignorar este e-mail: sua senha continua a mesma.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Sua nova senha</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Sua senha em %site foi redefinida. Entre com esta nova senha e depois troque-a por uma de sua escolha.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Se você não redefiniu sua senha, entre com esta e altere-a imediatamente.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Redefinir sua senha em %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Sua nova senha em %site</translation>
     </message>
 </context>
 <context>
@@ -72020,6 +72068,14 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>Your devices</source>
         <translation>Seus dispositivos</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Alguém pediu para usar %email em uma conta em %site. Confirme que este endereço é seu.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Você (ou alguém que digitou seu endereço) pediu um link para gerenciar os e-mails que %site envia para %email. Nessa página você pode ativar ou desativar cada tipo de e-mail ou interromper todos os e-mails opcionais.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -72380,6 +72436,10 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with &quot;%forgot&quot; on the login page, and contact us.</source>
         <translation>Se não foi você quem fez esta alteração, outra pessoa pode conhecer sua senha: redefina-a imediatamente com &quot;%forgot&quot; na página de login e entre em contato conosco.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Sua senha foi alterada</translation>
     </message>
 </context>
 <context>
@@ -78691,6 +78751,34 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
         <source>The sessions of this user:</source>
         <translation>As sessões deste usuário:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Novo login na sua conta</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Horário</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Endereço aproximado</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Se não foi você, alguém pode saber sua senha: encerre essa sessão na página dos seus dispositivos e depois altere sua senha.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Verificar seus dispositivos</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Visualizar as sessões deste usuário</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -79217,6 +79305,17 @@ Você precisará alterar a classe do nó usando a função de troca.</translatio
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>A linha é removida da tabela e não pode ser recuperada.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Se o botão não funcionar, copie este endereço no seu navegador: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Abrir a página</translation>
     </message>
 </context>
 </TS>

@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” کی جانب سے تبصرہ</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>آپ کو ایک صفحہ تجویز کیا گیا ہے</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>آپ کو یہ ای میل اس لیے ملی ہے کیونکہ کسی نے آپ کے ساتھ ایک صفحہ شیئر کرنے کے لیے %site پر آپ کا پتہ درج کیا۔</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(دوبارہ کوشش: %max میں سے %attempt)۔</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>اپنی رسید دیکھیں</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>یہ لنک صرف ایک بار اور صرف %1 منٹ تک کام کرتا ہے۔</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>پاس ورڈ ری سیٹ</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>کسی نے %site پر آپ کے اکاؤنٹ کا پاس ورڈ ری سیٹ کرنے کی درخواست کی ہے۔ بٹن کے ذریعے تصدیق کریں، اور ہم آپ کو دوسری ای میل میں نیا پاس ورڈ بھیج دیں گے۔</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>میرا پاس ورڈ ری سیٹ کریں</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>اگر آپ نے یہ درخواست نہیں کی تھی تو آپ اس ای میل کو نظر انداز کر سکتے ہیں: آپ کا پاس ورڈ جوں کا توں رہے گا۔</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>آپ کا نیا پاس ورڈ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site پر آپ کا پاس ورڈ ری سیٹ کر دیا گیا ہے۔ اس نئے پاس ورڈ سے سائن ان کریں، پھر اسے اپنی پسند کے پاس ورڈ میں تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>اگر آپ نے اپنا پاس ورڈ ری سیٹ نہیں کیا تو اس سے سائن ان کریں اور اسے فوراً تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site کے لیے پاس ورڈ ری سیٹ</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site کے لیے آپ کا نیا پاس ورڈ</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>آپ کے آلات</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>کسی نے %site پر ایک اکاؤنٹ کے لیے %email استعمال کرنے کی درخواست کی ہے۔ براہ کرم تصدیق کریں کہ یہ پتہ آپ کا ہے۔</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>آپ نے (یا کسی ایسے شخص نے جس نے آپ کا پتہ ٹائپ کیا) ان ای میلز کے انتظام کے لیے لنک کی درخواست کی ہے جو %site آپ کو %email پر بھیجتی ہے۔ اس صفحے پر آپ ہر قسم کی ای میل آن یا آف کر سکتے ہیں، یا تمام اختیاری ای میلز بند کر سکتے ہیں۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>اگر آپ نے یہ تبدیلی نہیں کی تو ممکن ہے کوئی اور آپ کا پاس ورڈ جانتا ہو: لاگ اِن صفحے پر “%forgot” کے ذریعے اسے فوراً ری سیٹ کریں اور ہم سے رابطہ کریں۔</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>آپ کا پاس ورڈ تبدیل کر دیا گیا ہے</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>اس صارف کے سیشنز:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>آپ کے اکاؤنٹ میں نیا سائن ان</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>آلہ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>تخمینی پتہ</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>اگر یہ آپ نہیں تھے تو ہو سکتا ہے کسی کو آپ کا پاس ورڈ معلوم ہو: اپنے آلات کے صفحے پر وہ سیشن سائن آؤٹ کریں، پھر اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>اپنے آلات کا جائزہ لیں</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>اس صارف کے سیشنز دیکھیں</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>قطار ٹیبل سے ہٹا دی جاتی ہے اور واپس نہیں لائی جا سکتی۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>اگر بٹن کام نہ کرے تو اس پتے کو اپنے براؤزر میں کاپی کریں: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>صفحہ کھولیں</translation>
     </message>
 </context>
 </TS>

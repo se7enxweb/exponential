@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” এর মন্তব্য</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>আপনাকে একটি পৃষ্ঠা সুপারিশ করা হয়েছে</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>আপনি এই ইমেলটি পাচ্ছেন কারণ কেউ আপনার সাথে একটি পৃষ্ঠা শেয়ার করতে %site-এ আপনার ঠিকানা লিখেছেন।</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(আবার চেষ্টা করুন: %max-এর মধ্যে %attempt)।</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>আপনার রসিদ দেখুন</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>লিংকটি শুধু একবার এবং %1 মিনিট পর্যন্ত কাজ করে।</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>আপনার পাসওয়ার্ড রিসেট করুন</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>কেউ %site-এ আপনার অ্যাকাউন্টের পাসওয়ার্ড রিসেট করার অনুরোধ করেছেন। বাটনটি দিয়ে নিশ্চিত করুন, আমরা দ্বিতীয় একটি ইমেলে আপনাকে নতুন পাসওয়ার্ড পাঠাব।</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>আমার পাসওয়ার্ড রিসেট করুন</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>আপনি এটি না চেয়ে থাকলে এই ইমেলটি উপেক্ষা করতে পারেন: আপনার পাসওয়ার্ড যেমন আছে তেমনই থাকবে।</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>আপনার নতুন পাসওয়ার্ড</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site-এ আপনার পাসওয়ার্ড রিসেট করা হয়েছে। এই নতুন পাসওয়ার্ড দিয়ে সাইন ইন করুন, তারপর এটি আপনার নিজের একটি পাসওয়ার্ডে পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>আপনি পাসওয়ার্ড রিসেট না করে থাকলে, এটি দিয়ে সাইন ইন করুন এবং সঙ্গে সঙ্গে পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site-এর জন্য আপনার পাসওয়ার্ড রিসেট করুন</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site-এর জন্য আপনার নতুন পাসওয়ার্ড</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>আপনার ডিভাইস</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>কেউ %site-এ একটি অ্যাকাউন্টের জন্য %email ব্যবহার করতে চেয়েছেন। অনুগ্রহ করে নিশ্চিত করুন যে এই ঠিকানাটি আপনার।</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>আপনি (অথবা আপনার ঠিকানা টাইপ করেছেন এমন কেউ) %site থেকে %email ঠিকানায় পাঠানো ইমেল পরিচালনার একটি লিংক চেয়েছেন। সেই পৃষ্ঠায় আপনি প্রতিটি ধরনের ইমেল চালু বা বন্ধ করতে পারেন, অথবা সব ঐচ্ছিক ইমেল বন্ধ করতে পারেন।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>আপনি যদি এই পরিবর্তন না করে থাকেন, তাহলে অন্য কেউ আপনার পাসওয়ার্ড জানতে পারে: লগইন পৃষ্ঠায় “%forgot” ব্যবহার করে অবিলম্বে এটি রিসেট করুন এবং আমাদের সাথে যোগাযোগ করুন।</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>আপনার পাসওয়ার্ড পরিবর্তন করা হয়েছে</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>এই ব্যবহারকারীর সেশন:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>আপনার অ্যাকাউন্টে নতুন সাইন ইন</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ডিভাইস</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>সময়</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>আনুমানিক ঠিকানা</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>এটি আপনি না হয়ে থাকলে, কেউ হয়তো আপনার পাসওয়ার্ড জানে: আপনার ডিভাইস পৃষ্ঠায় সেই সেশনটি সাইন আউট করুন, তারপর আপনার পাসওয়ার্ড পরিবর্তন করুন।</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>আপনার ডিভাইস পর্যালোচনা করুন</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>এই ব্যবহারকারীর সেশন দেখুন</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>সারিটি টেবিল থেকে অপসারণ করা হয় এবং আর ফিরিয়ে আনা যায় না।</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>বাটনটি কাজ না করলে এই ঠিকানাটি আপনার ব্রাউজারে কপি করুন: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>পৃষ্ঠাটি খুলুন</translation>
     </message>
 </context>
 </TS>

@@ -44879,6 +44879,14 @@ Jolic cośo wósobje, kótaraž pśizwólijo, komentary pósłaś abo status wi�
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentar wót „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Bok jo se Wam dopórucył</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Dostawaśo toś ten e-mail, dokulaž jo něchten Wašu adresu na %site zapódał, aby z Wami bok źělił.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Aby to cynili, musyśo pśikaze %chown pód „Alternatiwne pśikaze konzole“ 
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nowy wopyt: %attempt z %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Kwitowanku pokazaś</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ Wašo konto aktiwěrowali.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Wótkaz funkcioněrujo jano jaden raz a jano %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Gronidło slědk stajiś</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Něchten jo pominał, gronidło Wašogo konta na %site slědk stajiś. Wobkšuśćo to z tłocaškom, a pósćelomy Wam nowe gronidło w drugem e-mailu.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Mójo gronidło slědk stajiś</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jolic njejsćo to pominali, móžośo toś ten e-mail ignorěrowaś: Wašo gronidło wóstanjo, ako jo.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Wašo nowe gronidło</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Wašo gronidło na %site jo se slědk stajiło. Pśizjawśo se z toś tym nowym gronidłom a změńśo jo pótom na swójske.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jolic njejsćo swójo gronidło slědk stajili, pśizjawśo se z toś tym a změńśo jo ned.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Gronidło za %site slědk stajiś</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Wašo nowe gronidło za %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>Your devices</source>
         <translation>Waše rědy</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Něchten co %email za konto na %site wužywaś. Pšosym wobkšuśćo, až toś ta adresa Wam słuša.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Wy (abo něchten, kenž jo Wašu adresu zapódał) sćo pominali wótkaz za zastojanje e-mailow, kótarež %site na %email sćelo. Na tom boku móžośo kuždu družynu e-mailow zašaltowaś abo wušaltowaś abo wšykne opcionalne e-maile zastajiś.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jolic njejsćo toś tu změnu cynili, znajo snaź něchten drugi Wašo gronidło: stajśo jo ned slědk z „%forgot“ na pśizjawjeńskem boku a stajśo se z nami do zwiska.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Wašo gronidło jo se změniło</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The sessions of this user:</source>
         <translation>Pósejźenja toś togo wužywarja:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nowe pśizjawjenje k Wašomu kontoju</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Rěd</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Cas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Pśibližna adresa</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jolic njejsćo to byli Wy, snaź něchten Wašo gronidło znajo: wótzjawśo to pósejźenje na boku Wašych rědow a změńśo pótom swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Swóje rědy pśeglědaś</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Pósejźenja togo wužywarja pokazaś</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Push to block</source>
         <translation>Do bloka pósłaś</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jolic tłocašk njefunkcioněrujo, kopěrujśo toś tu adresu do swójogo wobglědowaka: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Bok wócyniś</translation>
     </message>
 </context>
 </TS>

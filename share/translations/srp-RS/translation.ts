@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Коментар од „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Препоручена вам је страница</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Добили сте ову е-поруку јер је неко унео вашу адресу на сајту %site да би поделио страницу са вама.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Покушај поново: %attempt од %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Прикажи рачун</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Веза важи само једном и само %1 минута.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Ресетовање лозинке</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Неко је затражио ресетовање лозинке вашег налога на сајту %site. Потврдите дугметом и послаћемо вам нову лозинку у другој е-поруци.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Ресетуј моју лозинку</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ако ово нисте тражили, можете занемарити ову е-поруку: ваша лозинка остаје непромењена.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ваша нова лозинка</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Ваша лозинка на сајту %site је ресетована. Пријавите се овом новом лозинком, а затим је промените у сопствену.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ако нисте ресетовали лозинку, пријавите се овом лозинком и одмах је промените.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Ресетовање лозинке за %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ваша нова лозинка за %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>Ваши уређаји</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Неко је затражио да се %email користи за налог на сајту %site. Потврдите да је ова адреса ваша.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ви (или неко ко је унео вашу адресу) сте затражили везу за управљање е-порукама које сајт %site шаље на адресу %email. На тој страници можете да укључите или искључите сваку врсту е-порука или да зауставите све опционалне е-поруке.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ако нисте ви извршили ову промену, неко други можда зна вашу лозинку: одмах је поништите помоћу „%forgot“ на страници за пријаву и контактирајте нас.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Ваша лозинка је промењена</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>Сесије овог корисника:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Нова пријава на ваш налог</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Уређај</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Време</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Приближна адреса</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ако то нисте били ви, неко можда зна вашу лозинку: одјавите ту сесију на страници са вашим уређајима, а затим промените лозинку.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Прегледај уређаје</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Прикажи сесије овог корисника</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>Пошаљи у блок</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ако дугме не функционише, копирајте ову адресу у свој прегледач: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Отвори страницу</translation>
     </message>
 </context>
 </TS>

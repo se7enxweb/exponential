@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>&quot;%1 &lt;%2&gt;&quot;의 의견</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>추천된 페이지</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>누군가 페이지를 공유하려고 %site 사이트에서 이 주소를 입력했기 때문에 이 이메일을 받았습니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(다시 시도: %attempt/%max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>영수증 보기</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>이 링크는 %1분 동안 한 번만 사용할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>암호 재설정</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>누군가 %site 사이트에서 계정의 암호 재설정을 요청했습니다. 단추를 눌러 확인하시면 두 번째 이메일로 새 암호를 보내 드립니다.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>내 암호 재설정</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>요청하지 않았다면 이 이메일을 무시하셔도 됩니다. 암호는 그대로 유지됩니다.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>새 암호</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site 사이트의 암호가 재설정되었습니다. 이 새 암호로 로그인한 다음 직접 정한 암호로 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>암호를 재설정하지 않았다면 이 암호로 로그인하여 즉시 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site 사이트 암호 재설정</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site 사이트의 새 암호</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>내 장치</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>누군가 %site 사이트의 계정에 %email 주소를 사용하도록 요청했습니다. 이 주소가 본인의 주소인지 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>본인(또는 주소를 입력한 다른 사람)이 %site 사이트에서 %email 주소로 보내는 이메일을 관리하는 링크를 요청했습니다. 해당 페이지에서 이메일 종류별로 켜거나 끄거나, 선택 사항인 이메일을 모두 중지할 수 있습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>본인이 변경하지 않았다면 다른 사람이 암호를 알고 있을 수 있습니다. 즉시 로그인 페이지의 “%forgot”을(를) 사용하여 암호를 재설정하고 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>암호가 변경되었습니다</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>이 사용자의 세션:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>계정의 새 로그인</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>장치</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>대략적인 주소</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>본인이 아니라면 다른 사람이 암호를 알고 있을 수 있습니다. 장치 페이지에서 해당 세션을 로그아웃한 다음 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>내 장치 검토</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>이 사용자의 세션 보기</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>블록으로 보내기</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>단추가 작동하지 않으면 이 주소를 브라우저에 복사하십시오: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>페이지 열기</translation>
     </message>
 </context>
 </TS>

@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” அவர்களின் கருத்து</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>உங்களுக்கு ஒரு பக்கம் பரிந்துரைக்கப்பட்டுள்ளது</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>உங்களுடன் ஒரு பக்கத்தைப் பகிர்வதற்காக யாரோ %site தளத்தில் உங்கள் முகவரியை உள்ளிட்டதால் இந்த மின்னஞ்சலைப் பெறுகிறீர்கள்.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(மீண்டும் முயற்சி: %max இல் %attempt).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>உங்கள் ரசீதைக் காண்</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>இணைப்பு ஒரே ஒரு முறை மட்டுமே, %1 நிமிடங்களுக்கு மட்டுமே செயல்படும்.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>கடவுச்சொல் மீட்டமைப்பு</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>%site தளத்தில் உள்ள உங்கள் கணக்கின் கடவுச்சொல்லை மீட்டமைக்க யாரோ கோரியுள்ளனர். பொத்தானைக் கொண்டு உறுதிப்படுத்துங்கள், நாங்கள் இரண்டாவது மின்னஞ்சலில் உங்களுக்குப் புதிய கடவுச்சொல்லை அனுப்புவோம்.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>என் கடவுச்சொல்லை மீட்டமை</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>இதை நீங்கள் கோரவில்லை என்றால், இந்த மின்னஞ்சலைப் புறக்கணிக்கலாம்: உங்கள் கடவுச்சொல் அப்படியே இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>உங்கள் புதிய கடவுச்சொல்</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site தளத்தில் உங்கள் கடவுச்சொல் மீட்டமைக்கப்பட்டது. இந்தப் புதிய கடவுச்சொல்லுடன் உள்நுழைந்து, பின்னர் அதை உங்கள் சொந்தக் கடவுச்சொல்லாக மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>நீங்கள் கடவுச்சொல்லை மீட்டமைக்கவில்லை என்றால், இதைக் கொண்டு உள்நுழைந்து உடனடியாக அதை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site தளத்துக்கான கடவுச்சொல் மீட்டமைப்பு</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site தளத்துக்கான உங்கள் புதிய கடவுச்சொல்</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>உங்கள் சாதனங்கள்</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>%site தளத்தில் ஒரு கணக்கிற்கு %email முகவரியைப் பயன்படுத்த யாரோ கோரியுள்ளனர். இந்த முகவரி உங்களுடையது என்பதை உறுதிப்படுத்துங்கள்.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>%site தளம் %email முகவரிக்கு அனுப்பும் மின்னஞ்சல்களை நிர்வகிப்பதற்கான இணைப்பை நீங்கள் (அல்லது உங்கள் முகவரியைத் தட்டச்சு செய்த ஒருவர்) கோரியுள்ளீர்கள். அந்தப் பக்கத்தில் ஒவ்வொரு வகை மின்னஞ்சலையும் இயக்கலாம் அல்லது முடக்கலாம், அல்லது விருப்பத்தேர்வான அனைத்து மின்னஞ்சல்களையும் நிறுத்தலாம்.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>இந்த மாற்றத்தை நீங்கள் செய்யவில்லை எனில், வேறொருவருக்கு உங்கள் கடவுச்சொல் தெரிந்திருக்கலாம்: உள்நுழைவுப் பக்கத்தில் “%forgot” மூலம் உடனே அதை மீட்டமைத்து, எங்களைத் தொடர்புகொள்ளுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>உங்கள் கடவுச்சொல் மாற்றப்பட்டது</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>இந்தப் பயனரின் அமர்வுகள்:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>உங்கள் கணக்கில் புதிய உள்நுழைவு</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>சாதனம்</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>தோராயமான முகவரி</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>இது நீங்கள் இல்லையென்றால், யாரோ உங்கள் கடவுச்சொல்லை அறிந்திருக்கலாம்: உங்கள் சாதனங்கள் பக்கத்தில் அந்த அமர்வை வெளியேற்றி, பின்னர் உங்கள் கடவுச்சொல்லை மாற்றுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>உங்கள் சாதனங்களைச் சரிபார்</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>இந்தப் பயனரின் அமர்வுகளைக் காண்</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>கிடைவரிசை அட்டவணையிலிருந்து அகற்றப்படும், அதை மீண்டும் கொண்டுவர முடியாது.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>பொத்தான் செயல்படவில்லை எனில், இந்த முகவரியை உங்கள் உலாவியில் நகலெடுத்து ஒட்டுங்கள்: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>பக்கத்தைத் திற</translation>
     </message>
 </context>
 </TS>

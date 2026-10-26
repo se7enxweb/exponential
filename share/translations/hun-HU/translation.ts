@@ -44879,6 +44879,14 @@ Ha megjegyzést szeretne küldeni a jóváhagyónak, vagy meg szeretné tekinten
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Megjegyzés tőle: „%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Ajánlottak Önnek egy oldalt</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Azért kapja ezt az e-mailt, mert valaki megadta az Ön címét a(z) %site webhelyen, hogy megosszon Önnel egy oldalt.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Ehhez módosítania kell a(z) %chown parancsokat az Alternatív parancssori utas
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Újrapróbálkozás: %attempt / %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Nyugta megtekintése</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ a fiókja aktiválásához.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>A hivatkozás csak egyszer és csak %1 percig használható.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Jelszó visszaállítása</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Valaki kérte a(z) %site webhelyen lévő fiókja jelszavának visszaállítását. Erősítse meg a gombbal, és egy második e-mailben új jelszót küldünk Önnek.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Jelszavam visszaállítása</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ha nem Ön kérte, figyelmen kívül hagyhatja ezt az e-mailt: a jelszava változatlan marad.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Az új jelszava</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>A(z) %site webhelyen lévő jelszavát visszaállítottuk. Jelentkezzen be ezzel az új jelszóval, majd változtassa meg egy saját jelszóra.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ha nem Ön állította vissza a jelszavát, jelentkezzen be ezzel, és azonnal változtassa meg.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Jelszó visszaállítása: %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Az új jelszava: %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Your devices</source>
         <translation>Saját eszközök</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Valaki a(z) %email címet szeretné használni egy fiókhoz a(z) %site webhelyen. Erősítse meg, hogy ez a cím az Öné.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ön (vagy valaki, aki beírta az Ön címét) hivatkozást kért a(z) %site által a(z) %email címre küldött e-mailek kezeléséhez. Azon az oldalon minden e-mail-típust be- vagy kikapcsolhat, vagy leállíthatja az összes nem kötelező e-mailt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ha nem Ön végezte ezt a módosítást, lehet, hogy valaki más ismeri a jelszavát: azonnal állítsa vissza a bejelentkezési oldalon a(z) „%forgot” lehetőséggel, és lépjen kapcsolatba velünk.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>A jelszava módosult</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The sessions of this user:</source>
         <translation>A felhasználó munkamenetei:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Új bejelentkezés a fiókjába</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Eszköz</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Időpont</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Hozzávetőleges cím</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ha nem Ön volt, lehet, hogy valaki ismeri a jelszavát: jelentkeztesse ki azt a munkamenetet az eszközei oldalán, majd módosítsa a jelszavát.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Eszközök áttekintése</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>A felhasználó munkameneteinek megtekintése</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Push to block</source>
         <translation>Küldés blokkba</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ha a gomb nem működik, másolja be ezt a címet a böngészőjébe: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Oldal megnyitása</translation>
     </message>
 </context>
 </TS>

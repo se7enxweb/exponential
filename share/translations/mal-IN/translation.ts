@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” എഴുതിയ അഭിപ്രായം</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ഒരു പേജ് നിങ്ങൾക്കായി ശുപാർശ ചെയ്തിരിക്കുന്നു</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>നിങ്ങളുമായി ഒരു പേജ് പങ്കിടാൻ ആരോ %site എന്ന സൈറ്റിൽ നിങ്ങളുടെ വിലാസം നൽകിയതിനാലാണ് നിങ്ങൾക്ക് ഈ ഇ-മെയിൽ ലഭിക്കുന്നത്.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(വീണ്ടും ശ്രമിക്കുക: %max ൽ %attempt).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>നിങ്ങളുടെ രസീത് കാണുക</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ഈ ലിങ്ക് ഒരു തവണ മാത്രവും %1 മിനിറ്റ് നേരത്തേക്കും മാത്രമേ പ്രവർത്തിക്കൂ.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>പാസ്‌വേഡ് പുനഃസജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>%site എന്ന സൈറ്റിലെ നിങ്ങളുടെ അക്കൗണ്ടിന്റെ പാസ്‌വേഡ് പുനഃസജ്ജമാക്കാൻ ആരോ അഭ്യർത്ഥിച്ചു. ബട്ടൺ ഉപയോഗിച്ച് സ്ഥിരീകരിക്കുക, ഞങ്ങൾ രണ്ടാമതൊരു ഇ-മെയിലിൽ പുതിയ പാസ്‌വേഡ് അയയ്ക്കും.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>എന്റെ പാസ്‌വേഡ് പുനഃസജ്ജമാക്കുക</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>നിങ്ങൾ ഇത് ആവശ്യപ്പെട്ടിട്ടില്ലെങ്കിൽ, ഈ ഇ-മെയിൽ അവഗണിക്കാം: നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റമില്ലാതെ തുടരും.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>നിങ്ങളുടെ പുതിയ പാസ്‌വേഡ്</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site എന്ന സൈറ്റിലെ നിങ്ങളുടെ പാസ്‌വേഡ് പുനഃസജ്ജമാക്കി. ഈ പുതിയ പാസ്‌വേഡ് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക, തുടർന്ന് അത് നിങ്ങളുടേതായ ഒന്നിലേക്ക് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>നിങ്ങൾ പാസ്‌വേഡ് പുനഃസജ്ജമാക്കിയിട്ടില്ലെങ്കിൽ, ഇത് ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്ത് ഉടൻ തന്നെ അത് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site എന്ന സൈറ്റിനായുള്ള പാസ്‌വേഡ് പുനഃസജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site എന്ന സൈറ്റിനായുള്ള നിങ്ങളുടെ പുതിയ പാസ്‌വേഡ്</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>%site എന്ന സൈറ്റിലെ ഒരു അക്കൗണ്ടിനായി %email ഉപയോഗിക്കാൻ ആരോ അഭ്യർത്ഥിച്ചു. ഈ വിലാസം നിങ്ങളുടേതാണെന്ന് ദയവായി സ്ഥിരീകരിക്കുക.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>%site എന്ന സൈറ്റ് %email എന്ന വിലാസത്തിലേക്ക് അയയ്ക്കുന്ന ഇ-മെയിലുകൾ നിയന്ത്രിക്കാനുള്ള ലിങ്ക് നിങ്ങൾ (അല്ലെങ്കിൽ നിങ്ങളുടെ വിലാസം ടൈപ്പ് ചെയ്ത ആരെങ്കിലും) അഭ്യർത്ഥിച്ചു. ആ പേജിൽ ഓരോ തരം ഇ-മെയിലും ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യാം, അല്ലെങ്കിൽ ഓപ്ഷണലായ എല്ലാ ഇ-മെയിലുകളും നിർത്താം.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ഈ മാറ്റം നിങ്ങൾ വരുത്തിയതല്ലെങ്കിൽ, മറ്റാരെങ്കിലും നിങ്ങളുടെ പാസ്വേഡ് അറിഞ്ഞിരിക്കാം: ലോഗിൻ പേജിലെ “%forgot” ഉപയോഗിച്ച് ഉടൻ തന്നെ അത് റീസെറ്റ് ചെയ്യുക, ഞങ്ങളെ ബന്ധപ്പെടുക.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>നിങ്ങളുടെ പാസ്‌വേഡ് മാറ്റി</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ഈ ഉപയോക്താവിന്റെ സെഷനുകൾ:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് പുതിയ സൈൻ ഇൻ</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ഉപകരണം</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>സമയം</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ഏകദേശ വിലാസം</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>ഇത് നിങ്ങളല്ലെങ്കിൽ, ആർക്കെങ്കിലും നിങ്ങളുടെ പാസ്‌വേഡ് അറിയാമായിരിക്കും: നിങ്ങളുടെ ഉപകരണങ്ങളുടെ പേജിൽ ആ സെഷൻ സൈൻ ഔട്ട് ചെയ്യുക, തുടർന്ന് പാസ്‌വേഡ് മാറ്റുക.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>നിങ്ങളുടെ ഉപകരണങ്ങൾ പരിശോധിക്കുക</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ഈ ഉപയോക്താവിന്റെ സെഷനുകൾ കാണുക</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>വരി പട്ടികയിൽ നിന്ന് നീക്കം ചെയ്യപ്പെടും, അത് തിരികെ കൊണ്ടുവരാനാവില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ബട്ടൺ പ്രവർത്തിക്കുന്നില്ലെങ്കിൽ, ഈ വിലാസം നിങ്ങളുടെ ബ്രൗസറിലേക്ക് പകർത്തുക: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>പേജ് തുറക്കുക</translation>
     </message>
 </context>
 </TS>

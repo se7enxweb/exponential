@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;”的评论</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>有人向您推荐了一个页面</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>您收到此邮件，是因为有人在 %site 上输入了您的地址，与您分享一个页面。</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>（重试：第 %attempt 次，共 %max 次）。</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>查看收据</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>该链接仅在 %1 分钟内有效，且只能使用一次。</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>重置密码</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>有人请求重置您在 %site 上的帐户密码。请使用按钮确认，我们将通过第二封邮件向您发送新密码。</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>重置我的密码</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>如果这不是您的请求，可以忽略此邮件：您的密码保持不变。</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>您的新密码</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>您在 %site 上的密码已重置。请使用此新密码登录，然后将其更改为您自己的密码。</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>如果您没有重置密码，请使用此密码登录并立即更改。</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>重置您在 %site 上的密码</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>您在 %site 上的新密码</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>您的设备</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>有人请求将 %email 用于 %site 上的帐户。请确认此地址属于您。</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>您（或输入了您地址的人）请求了一个链接，用于管理 %site 发送到 %email 的电子邮件。在该页面上，可以开启或关闭每类电子邮件，或停止所有可选电子邮件。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>如果不是您本人进行的更改，则可能有他人知道您的密码：请立即通过登录页面上的“%forgot”重置密码，并联系我们。</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>您的密码已更改</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>此用户的会话：</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>您的帐户有新的登录</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>设备</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>时间</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>大致地址</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>如果不是您本人，可能有人知道您的密码：请在设备页面让该会话退出登录，然后更改密码。</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>查看您的设备</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>查看此用户的会话</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>该行将从数据表中移除，且无法恢复。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>如果按钮无法使用，请将此地址复制到浏览器中：%url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>打开页面</translation>
     </message>
 </context>
 </TS>

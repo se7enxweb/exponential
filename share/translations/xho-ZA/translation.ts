@@ -44934,6 +44934,14 @@ Ukuba ufuna ukuthumela iimpawu kumvumi okanye ukubona imeko sebenzisa i-URL enge
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Inkcazo ka-“%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Niphakanyiselwe iphepha</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Nifumana le imeyile kuba umntu othile efake idilesi yenu kwisayithi %site ukuze abelane nani ngephepha.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ Ukwenza oku kufuneka nitshintshe imiyalelo ye-%chown phantsi kweMiyalelo ye-shel
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Zama kwakhona: %attempt kwali-%max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Jonga irisithi yenu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ iakhawunti yenu isebenze.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Ikhonkco lisebenza kube kanye kuphela nakwimizuzu %1 kuphela.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Ukuseta kwakhona inombolo yokuvula</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Umntu othile ucele ukuseta kwakhona inombolo yokuvula yeakhawunti yenu kwisayithi %site. Qinisekisani ngeqhosha, size sinithumelele inombolo yokuvula entsha kwi-imeyile yesibini.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Seta kwakhona inombolo yam yokuvula</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Ukuba aniceli le nto, ningayityeshela le imeyile: inombolo yenu yokuvula iya kuhlala injalo.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Inombolo yenu entsha yokuvula</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Inombolo yenu yokuvula kwisayithi %site isetwe kwakhona. Ngenani ngale nombolo intsha yokuvula, emva koko niyitshintshe ibe yeyenu.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Ukuba aniyisetanga kwakhona inombolo yenu yokuvula, ngenani ngale nize niyitshintshe ngokukhawuleza.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Ukuseta kwakhona inombolo yokuvula kwisayithi %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Inombolo yenu entsha yokuvula kwisayithi %site</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Your devices</source>
         <translation>Izixhobo zenu</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Umntu othile ucele ukusebenzisa idilesi %email kwiakhawunti ekwisayithi %site. Nceda niqinisekise ukuba le dilesi yeyenu.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Nina (okanye umntu othile ochwetheze idilesi yenu) nicele ikhonkco lokulawula ii-imeyile ezithunyelwa yisayithi %site kwidilesi %email. Kwelo phepha ningavula okanye nicime uhlobo ngalunye lwe-imeyile, okanye ninqumamise zonke ii-imeyile ezinganyanzelekanga.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Ukuba aninguwo owenze olu tshintsho, omnye umntu usenokuyazi inombolo yenu yokuvula: yisetheni kwakhona kwangoko nge-“%forgot” kwiphepha lokungena, kwaye nonxibelelane nathi.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Inombolo yenu yokuvula iguquliwe</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>The sessions of this user:</source>
         <translation>Iiseshoni zalo msebenzisi:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ukungena okutsha kwiakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Isixhobo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ixesha</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Idilesi eqikelelweyo</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Ukuba ibingengabo nina, kusenokwenzeka ukuba umntu othile uyayazi inombolo yenu yokuvula: khuphani loo seshoni kwiphepha lezixhobo zenu, emva koko nitshintshe inombolo yenu yokuvula.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Hlola izixhobo zenu</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Jonga iiseshoni zalo msebenzisi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Umqolo uyasuswa kwitheyibhile kwaye awunakubuyiswa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ukuba iqhosha alisebenzi, kopani le dilesi niyifake kwisikhangeli senu: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Vula iphepha</translation>
     </message>
 </context>
 </TS>

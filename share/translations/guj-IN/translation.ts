@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” દ્વારા ટિપ્પણી</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>આપને એક પૃષ્ઠની ભલામણ કરવામાં આવી છે</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>આપને આ ઇમેઇલ મળ્યો છે કારણ કે કોઈએ આપની સાથે એક પૃષ્ઠ શેર કરવા માટે %site પર આપનું સરનામું દાખલ કર્યું છે.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ફરી પ્રયાસ કરો: %max માંથી %attempt).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>આપની રસીદ જુઓ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>આ લિંક માત્ર એક જ વાર અને માત્ર %1 મિનિટ માટે કામ કરે છે.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>આપનો પાસવર્ડ રીસેટ કરો</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>કોઈએ %site પર આપના ખાતાનો પાસવર્ડ રીસેટ કરવાની વિનંતી કરી છે. બટન વડે પુષ્ટિ કરો, અને અમે આપને બીજા ઇમેઇલમાં નવો પાસવર્ડ મોકલીશું.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>મારો પાસવર્ડ રીસેટ કરો</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>જો આપે આ વિનંતી ન કરી હોય, તો આપ આ ઇમેઇલને અવગણી શકો છો: આપનો પાસવર્ડ જેમ છે તેમ જ રહેશે.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>આપનો નવો પાસવર્ડ</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site પર આપનો પાસવર્ડ રીસેટ કરવામાં આવ્યો છે. આ નવા પાસવર્ડ વડે સાઇન ઇન કરો, પછી તેને આપના પોતાના પાસવર્ડમાં બદલો.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>જો આપે આપનો પાસવર્ડ રીસેટ ન કર્યો હોય, તો આ પાસવર્ડ વડે સાઇન ઇન કરો અને તેને તરત જ બદલો.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site માટે આપનો પાસવર્ડ રીસેટ કરો</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site માટે આપનો નવો પાસવર્ડ</translation>
     </message>
 </context>
 <context>
@@ -71483,6 +71531,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>તમારાં ઉપકરણો</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>કોઈએ %site પરના ખાતા માટે %email નો ઉપયોગ કરવાની વિનંતી કરી છે. કૃપા કરીને પુષ્ટિ કરો કે આ સરનામું આપનું છે.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>આપે (અથવા આપનું સરનામું લખનાર કોઈએ) %site દ્વારા %email પર મોકલાતા ઇમેઇલનું સંચાલન કરવા માટે લિંક માંગી છે. તે પૃષ્ઠ પર આપ દરેક પ્રકારના ઇમેઇલ ચાલુ કે બંધ કરી શકો છો, અથવા બધા વૈકલ્પિક ઇમેઇલ બંધ કરી શકો છો.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71895,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>જો આપે આ ફેરફાર કર્યો ન હોય, તો અન્ય કોઈ આપનો પાસવર્ડ જાણતું હોઈ શકે છે: લૉગિન પૃષ્ઠ પર “%forgot” વડે તરત જ તેને રીસેટ કરો અને અમારો સંપર્ક કરો.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>આપનો પાસવર્ડ બદલવામાં આવ્યો છે</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>આ વપરાશકર્તાનાં સત્રો:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>તમારા ખાતામાં નવું સાઇન ઇન</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ઉપકરણ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>સમય</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>અંદાજિત સરનામું</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>જો આ આપ ન હતા, તો કોઈ આપનો પાસવર્ડ જાણતું હોઈ શકે છે: આપનાં ઉપકરણોના પૃષ્ઠ પર તે સત્ર સાઇન આઉટ કરો, પછી આપનો પાસવર્ડ બદલો.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>આપનાં ઉપકરણો તપાસો</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>આ વપરાશકર્તાનાં સત્રો જુઓ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>પંક્તિ કોષ્ટકમાંથી દૂર કરવામાં આવે છે અને પાછી લાવી શકાતી નથી.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>જો બટન કામ ન કરે, તો આ સરનામું આપના બ્રાઉઝરમાં કૉપિ કરો: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>પૃષ્ઠ ખોલો</translation>
     </message>
 </context>
 </TS>

@@ -44882,6 +44882,14 @@ chaw&apos;wI&apos;vaD ja&apos;ghachmey DangeH DaneHchugh pagh Dotlh DaleghmeH, b
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>ja&apos;ghach, ghItlhwI&apos; &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>nav Duja'lu'ta'</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>SoHvaD nav ngeHmeH %site yoSDaq Daqlij ghItlhpu' vay'; vaj De'wI' QInvam DaHev.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52397,6 +52405,10 @@ jabwI&apos; lo&apos;wI&apos; ghom je DaSovchugh, labmeH ghItlh pa&apos; ghajghac
         <source>(Retry: %attempt out of %max).</source>
         <translation>(nIDqa&apos;ghach: %attempt / %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>DIlghach ghItlhlIj yIlegh</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53435,6 +53447,42 @@ yIlob.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>wa'logh neH je %1 tup neH Qap rar'eghwI'.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>pegh mu' chImmoHghach</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>%site yoSDaq lo'wI' De'lIj pegh mu' chImmoHlu' 'e' tlhob vay'. leQ yIlo'taHvIS yI'ol, ghIq cha'DIch De'wI' QInDaq pegh mu' chu' qangeH.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>pegh mu'wIj yIchImmoH</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Datlhobbe'pu'chugh, De'wI' QInvam DabuSHa'laH: choHbe' pegh mu'lIj.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>pegh mu'lIj chu'</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site yoSDaq pegh mu'lIj chImmoHlu'ta'. pegh mu' chu'vam yIlo'taHvIS yI'el, ghIq pegh mu' DawIvbogh Dalo'meH yIchoH.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>pegh mu'lIj DachImmoHbe'pu'chugh, pegh mu'vam yIlo'taHvIS yI'el 'ej SIbI' yIchoH.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site yoSvaD pegh mu' chImmoHghach</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site yoSvaD pegh mu'lIj chu'</translation>
     </message>
 </context>
 <context>
@@ -69981,6 +70029,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>Your devices</source>
         <translation>janmeylIj</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>%site yoSDaq lo'wI' De'vaD %email lo'lu' 'e' tlhob vay'. Daqvam Daghaj 'e' yI'ol.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>%email DaqDaq De'wI' QInmey ngeHbogh %site yoS DaSeHmeH rarwI' Datlhob (pagh Daqlij ghItlhpu'bogh vay' tlhob). navvetlhDaq De'wI' QIn Segh Hoch Dachu'laH pagh Dachu'Ha'laH, pagh De'wI' QInmey potlhbe'bogh Hoch DamevmoHlaH.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70337,6 +70393,10 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>choHghachvam Data&apos;be&apos;pu&apos;chugh, pegh mu&apos;lIj Sovlaw&apos; latlh: SIbI&apos; &apos;elmeH navDaq &quot;%forgot&quot; yIlo&apos; &apos;ej yItagh chu&apos;qa&apos;; maH yImuD je.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>pegh mu'lIj choHlu'ta'</translation>
     </message>
 </context>
 <context>
@@ -76696,6 +76756,34 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The sessions of this user:</source>
         <translation>lo'wI'vam poHmey:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>lo'wI' De'lIj 'elghach chu'</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>poH</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Daq naQbe'</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>SoHbe'chugh, chaq pegh mu'lIj Sov vay': janmeylIj navDaq poHvetlh yImejmoH, ghIq pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>janmeylIj tInuD</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>lo'wI'vam poHmey tIlegh</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77254,6 +77342,17 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Push to block</source>
         <translation>ngoghDaq yIlan</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Qapbe'chugh leQ, De' leghwI'lIjDaq Daqvam yIqonqa': %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>nav yIpoSmoH</translation>
     </message>
 </context>
 </TS>

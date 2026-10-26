@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>نظر از «%1 &lt;%2&gt;»</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>صفحه‌ای به شما توصیه شده است</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>این ایمیل را دریافت می‌کنید زیرا شخصی نشانی شما را در %site وارد کرده تا صفحه‌ای را با شما به اشتراک بگذارد.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(تلاش مجدد: %attempt از %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>مشاهدهٔ رسید</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>این پیوند فقط یک بار و فقط به مدت %1 دقیقه کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>بازنشانی گذرواژه</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>شخصی درخواست کرده است که گذرواژهٔ حساب شما در %site بازنشانی شود. با دکمه تأیید کنید تا گذرواژهٔ جدیدی را در ایمیل دوم برایتان بفرستیم.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>بازنشانی گذرواژهٔ من</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>اگر این را درخواست نکرده‌اید، می‌توانید این ایمیل را نادیده بگیرید: گذرواژهٔ شما تغییری نمی‌کند.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>گذرواژهٔ جدید شما</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>گذرواژهٔ شما در %site بازنشانی شد. با این گذرواژهٔ جدید وارد شوید و سپس آن را به گذرواژه‌ای از خودتان تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>اگر گذرواژهٔ خود را بازنشانی نکرده‌اید، با این گذرواژه وارد شوید و فوراً آن را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>بازنشانی گذرواژهٔ شما در %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>گذرواژهٔ جدید شما در %site</translation>
     </message>
 </context>
 <context>
@@ -70033,6 +70081,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>دستگاه‌های شما</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>شخصی درخواست کرده است که از %email برای حسابی در %site استفاده شود. لطفاً تأیید کنید که این نشانی متعلق به شماست.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>شما (یا کسی که نشانی شما را وارد کرده) پیوندی برای مدیریت ایمیل‌هایی که %site به %email می‌فرستد درخواست کرده‌اید. در آن صفحه می‌توانید هر نوع ایمیل را روشن یا خاموش کنید، یا همهٔ ایمیل‌های اختیاری را متوقف کنید.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70389,6 +70445,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>اگر این تغییر را انجام نداده‌اید، ممکن است شخص دیگری گذرواژهٔ شما را بداند: فوراً آن را با «%forgot» در صفحهٔ ورود بازنشانی کنید و با ما تماس بگیرید.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>گذرواژهٔ شما تغییر کرد</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>نشست‌های این کاربر:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ورود جدید به حساب شما</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>دستگاه</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>زمان</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>نشانی تقریبی</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>اگر شما نبودید، ممکن است شخصی گذرواژهٔ شما را بداند: آن نشست را در صفحهٔ دستگاه‌های خود خارج کنید و سپس گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>بررسی دستگاه‌های شما</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>مشاهدهٔ نشست‌های این کاربر</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77307,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>سطر از جدول برداشته می‌شود و قابل بازگرداندن نیست.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>اگر دکمه کار نمی‌کند، این نشانی را در مرورگر خود کپی کنید: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>باز کردن صفحه</translation>
     </message>
 </context>
 </TS>

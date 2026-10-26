@@ -47487,6 +47487,14 @@ Puedes editar uno de tus borradores o crear uno nuevo.</translation>
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Comentario de &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Te recomendaron una página</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Recibes este correo porque alguien ingresó tu dirección en %site para compartir una página contigo.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -55900,6 +55908,10 @@ Para hacer esto necesitas cambiar los comandos %chown en comandos de consola alt
         <source>Statisticsss</source>
         <translation type="obsolete">Estadisticas</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Ver tu recibo</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -56990,6 +57002,42 @@ tu cuenta.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>El enlace solo funciona una vez y durante %1 minutos.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Restablecimiento de contraseña</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Alguien solicitó restablecer la contraseña de tu cuenta en %site. Confírmalo con el botón y te enviaremos una contraseña nueva en un segundo correo.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Restablecer mi contraseña</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Si no lo solicitaste, puedes ignorar este correo: tu contraseña no cambia.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Tu nueva contraseña</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Se restableció tu contraseña en %site. Inicia sesión con esta contraseña nueva y luego cámbiala por una propia.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Si no restableciste tú la contraseña, inicia sesión con esta y cámbiala de inmediato.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Restablecimiento de tu contraseña de %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Tu nueva contraseña de %site</translation>
     </message>
 </context>
 <context>
@@ -73723,6 +73771,14 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
         <source>Your devices</source>
         <translation>Tus dispositivos</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Alguien solicitó usar %email para una cuenta en %site. Confirma que esta dirección es tuya.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Tú (o alguien que escribió tu dirección) solicitaste un enlace para administrar los correos que %site envía a %email. En esa página puedes activar o desactivar cada tipo de correo, o dejar de recibir todos los correos opcionales.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -74079,6 +74135,10 @@ Tendrás que cambiar la clase del nudo con la función de intercambio.</translat
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Si no hiciste este cambio, puede que alguien más conozca tu contraseña: restablécela de inmediato con &quot;%forgot&quot; en la página de inicio de sesión y contáctanos.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Se cambió tu contraseña</translation>
     </message>
 </context>
 <context>
@@ -80922,6 +80982,34 @@ Gracias por la retroalimentación</translation>
         <source>The sessions of this user:</source>
         <translation>Las sesiones de este usuario:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nuevo inicio de sesión en tu cuenta</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositivo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Dirección aproximada</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Si no fuiste tú, es posible que alguien conozca tu contraseña: cierra esa sesión en la página de tus dispositivos y luego cambia tu contraseña.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Revisar tus dispositivos</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Ver las sesiones de este usuario</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -81480,6 +81568,17 @@ Gracias por la retroalimentación</translation>
     <message>
         <source>Push to block</source>
         <translation>Enviar al bloque</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si el botón no funciona, copia esta dirección en tu navegador: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Abrir la página</translation>
     </message>
 </context>
 </TS>

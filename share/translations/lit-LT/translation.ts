@@ -44879,6 +44879,14 @@ Jei norite išsiųsti komentarus patvirtintojui arba peržiūrėti būseną, nau
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentaras nuo „%1 &lt;%2&gt;“</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Jums rekomenduotas puslapis</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Gavote šį el. laišką, nes kažkas svetainėje %site įvedė jūsų adresą, norėdamas pasidalinti su jumis puslapiu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Norėdami tai padaryti, turite pakeisti %chown komandas skiltyje „Alternatyvio
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Bandyti dar kartą: %attempt iš %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Rodyti kvitą</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ savo paskyrą.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Nuoroda veikia tik vieną kartą ir tik %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Slaptažodžio atstatymas</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Kažkas paprašė atstatyti jūsų paskyros svetainėje %site slaptažodį. Patvirtinkite mygtuku, ir mes atsiųsime jums naują slaptažodį antru el. laišku.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Atstatyti mano slaptažodį</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Jei šito neprašėte, galite nepaisyti šio el. laiško: jūsų slaptažodis lieka nepakeistas.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Jūsų naujas slaptažodis</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Jūsų slaptažodis svetainėje %site buvo atstatytas. Prisijunkite su šiuo nauju slaptažodžiu, tada pakeiskite jį savo slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Jei slaptažodžio neatstatėte, prisijunkite su šiuo slaptažodžiu ir nedelsdami jį pakeiskite.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Slaptažodžio atstatymas svetainėje %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Jūsų naujas slaptažodis svetainėje %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Your devices</source>
         <translation>Jūsų įrenginiai</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Kažkas paprašė naudoti adresą %email paskyrai svetainėje %site. Patvirtinkite, kad šis adresas priklauso jums.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Jūs (arba kažkas, kas įvedė jūsų adresą) paprašėte nuorodos el. laiškams, kuriuos svetainė %site siunčia adresu %email, tvarkyti. Tame puslapyje galite įjungti arba išjungti kiekvieną el. laiškų rūšį arba sustabdyti visus neprivalomus el. laiškus.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Jei šio pakeitimo nedarėte jūs, jūsų slaptažodį gali žinoti kitas asmuo: nedelsdami jį atkurkite naudodami „%forgot“ prisijungimo puslapyje ir susisiekite su mumis.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Jūsų slaptažodis buvo pakeistas</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The sessions of this user:</source>
         <translation>Šio naudotojo seansai:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Naujas prisijungimas prie jūsų paskyros</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Įrenginys</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laikas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Apytikslis adresas</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Jei tai buvote ne jūs, kažkas gali žinoti jūsų slaptažodį: atjunkite tą seansą savo įrenginių puslapyje, tada pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Peržiūrėti įrenginius</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Rodyti šio naudotojo seansus</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Push to block</source>
         <translation>Perkelti į bloką</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jei mygtukas neveikia, nukopijuokite šį adresą į naršyklę: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Atidaryti puslapį</translation>
     </message>
 </context>
 </TS>

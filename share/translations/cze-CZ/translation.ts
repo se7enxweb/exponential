@@ -37858,6 +37858,14 @@ Chcete-li schvalovateli poslat komentáře nebo zobrazit stav, použijte níže 
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Komentář od &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Byla vám doporučena stránka</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Tento e-mail dostáváte, protože někdo na webu %site zadal vaši adresu, aby s vámi sdílel stránku.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -45518,6 +45526,10 @@ K tomu je třeba změnit příkazy %chown v části Alternativní příkazy shel
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Pokus: %attempt z %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Zobrazit účtenku</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -46484,6 +46496,42 @@ a aktivujte svůj účet.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Odkaz funguje pouze jednou a pouze %1 minut.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Obnovení hesla</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Někdo požádal o obnovení hesla k vašemu účtu na webu %site. Potvrďte to tlačítkem a nové heslo vám pošleme v druhém e-mailu.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Obnovit moje heslo</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Pokud jste o to nežádali, můžete tento e-mail ignorovat: vaše heslo zůstane beze změny.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Vaše nové heslo</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Vaše heslo na webu %site bylo obnoveno. Přihlaste se tímto novým heslem a pak si ho změňte na vlastní.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Pokud jste heslo neobnovovali vy, přihlaste se tímto heslem a ihned si ho změňte.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Obnovení hesla pro %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Vaše nové heslo pro %site</translation>
     </message>
 </context>
 <context>
@@ -71310,6 +71358,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>Your devices</source>
         <translation>Vaše zařízení</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Někdo požádal o použití adresy %email pro účet na webu %site. Potvrďte prosím, že tato adresa patří vám.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Vy (nebo někdo, kdo zadal vaši adresu) jste požádali o odkaz ke správě e-mailů, které %site posílá na adresu %email. Na této stránce můžete jednotlivé druhy e-mailů zapnout nebo vypnout, případně zastavit všechny volitelné e-maily.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71670,6 +71726,10 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with &quot;%forgot&quot; on the login page, and contact us.</source>
         <translation>Pokud jste tuto změnu neprovedli vy, může vaše heslo znát někdo jiný: ihned jej obnovte pomocí &quot;%forgot&quot; na přihlašovací stránce a kontaktujte nás.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Vaše heslo bylo změněno</translation>
     </message>
 </context>
 <context>
@@ -77981,6 +78041,34 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The sessions of this user:</source>
         <translation>Relace tohoto uživatele:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nové přihlášení k vašemu účtu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Zařízení</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Přibližná adresa</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Pokud jste to nebyli vy, někdo možná zná vaše heslo: odhlaste tuto relaci na stránce svých zařízení a pak si změňte heslo.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Zkontrolovat svá zařízení</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Zobrazit relace tohoto uživatele</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -78507,6 +78595,17 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Řádek bude z tabulky odstraněn a nelze jej obnovit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Pokud tlačítko nefunguje, zkopírujte tuto adresu do prohlížeče: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Otevřít stránku</translation>
     </message>
 </context>
 </TS>

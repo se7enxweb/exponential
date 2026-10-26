@@ -44879,6 +44879,14 @@ Si vols enviar comentaris a l&apos;aprovador o veure&apos;n l&apos;estat, utilit
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Comentari de «%1 &lt;%2&gt;»</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>T'han recomanat una pàgina</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Reps aquest correu perquè algú ha introduït la teva adreça a %site per compartir una pàgina amb tu.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Per fer-ho cal que canviïs les ordres %chown que hi ha a Ordres alternatives de
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nou intent: %attempt de %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Mostra el rebut</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ el teu compte.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>L&apos;enllaç només funciona una vegada i només durant %1 minuts.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Restabliment de la contrasenya</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Algú ha demanat restablir la contrasenya del teu compte a %site. Confirma-ho amb el botó i t'enviarem una contrasenya nova en un segon correu.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Restableix la meva contrasenya</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Si no ho has demanat, pots ignorar aquest correu: la contrasenya es manté tal com és.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>La teva contrasenya nova</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>S'ha restablert la teva contrasenya a %site. Inicia la sessió amb aquesta contrasenya nova i després canvia-la per una de teva.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Si no has restablert tu la contrasenya, inicia la sessió amb aquesta i canvia-la immediatament.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Restabliment de la contrasenya de %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>La teva contrasenya nova per a %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Your devices</source>
         <translation>Els teus dispositius</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Algú ha demanat utilitzar %email per a un compte a %site. Confirma que aquesta adreça és teva.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Tu (o algú que ha escrit la teva adreça) has demanat un enllaç per gestionar el correu que %site envia a %email. En aquella pàgina pots activar o desactivar cada tipus de correu, o aturar tot el correu opcional.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Si no has fet tu aquest canvi, potser algú altre coneix la teva contrasenya: restableix-la immediatament amb «%forgot» a la pàgina d&apos;inici de sessió i posa&apos;t en contacte amb nosaltres.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>S'ha canviat la teva contrasenya</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The sessions of this user:</source>
         <translation>Les sessions d'aquest usuari:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Inici de sessió nou al teu compte</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositiu</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adreça aproximada</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Si no has estat tu, és possible que algú conegui la teva contrasenya: tanca aquella sessió a la pàgina dels teus dispositius i després canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Revisa els teus dispositius</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Mostra les sessions d'aquest usuari</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Push to block</source>
         <translation>Envia al bloc</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si el botó no funciona, copia aquesta adreça al navegador: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Obre la pàgina</translation>
     </message>
 </context>
 </TS>

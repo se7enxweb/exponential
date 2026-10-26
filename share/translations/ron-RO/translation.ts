@@ -44879,6 +44879,14 @@ Dacă doriți să trimiteți comentarii aprobatorului sau să vizualizați stare
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Comentariu de la „%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Vi s-a recomandat o pagină</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Primiți acest e-mail deoarece cineva v-a introdus adresa pe %site pentru a partaja o pagină cu dumneavoastră.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ Pentru aceasta, trebuie să modificați comenzile %chown de la Comenzi shell alt
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Reîncercarea %attempt din %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Vizualizare chitanță</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ activa contul.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Linkul funcționează o singură dată și doar %1 min.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Resetarea parolei</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Cineva a solicitat resetarea parolei contului dumneavoastră de pe %site. Confirmați cu butonul și vă vom trimite o parolă nouă într-un al doilea e-mail.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Resetare parolă</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Dacă nu ați solicitat acest lucru, puteți ignora acest e-mail: parola rămâne neschimbată.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Parola dumneavoastră nouă</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Parola dumneavoastră de pe %site a fost resetată. Conectați-vă cu această parolă nouă, apoi schimbați-o cu una proprie.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Dacă nu ați resetat parola, conectați-vă cu aceasta și modificați-o imediat.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Resetarea parolei pentru %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Parola dumneavoastră nouă pentru %site</translation>
     </message>
 </context>
 <context>
@@ -71428,6 +71476,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Your devices</source>
         <translation>Dispozitivele dumneavoastră</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Cineva a solicitat folosirea adresei %email pentru un cont pe %site. Confirmați că această adresă vă aparține.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Dumneavoastră (sau cineva care v-a introdus adresa) ați solicitat un link pentru gestionarea e-mailurilor pe care %site le trimite la %email. Pe pagina respectivă puteți activa sau dezactiva fiecare tip de e-mail ori puteți opri toate e-mailurile opționale.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71784,6 +71840,10 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Dacă nu ați făcut această modificare, este posibil ca altcineva să vă cunoască parola: resetați-o imediat cu „%forgot” pe pagina de conectare și contactați-ne.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Parola dumneavoastră a fost modificată</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76753,34 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The sessions of this user:</source>
         <translation>Sesiunile acestui utilizator:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Conectare nouă la contul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispozitiv</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Adresă aproximativă</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Dacă nu ați fost dumneavoastră, este posibil ca altcineva să vă cunoască parola: deconectați sesiunea respectivă din pagina dispozitivelor dumneavoastră, apoi modificați parola.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Verificare dispozitive</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Vizualizare sesiuni ale acestui utilizator</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77339,17 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Push to block</source>
         <translation>Trimitere în bloc</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Dacă butonul nu funcționează, copiați această adresă în browser: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Deschidere pagină</translation>
     </message>
 </context>
 </TS>
