@@ -57253,12 +57253,28 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <translation>Arsip ditolak: entri "%path" mengarah ke luar paket.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Arsip dikemas dalam format tar PAX, yang tidak dapat diimpor. Kemas paket dalam format tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arsip ditolak: entri "%path" memiliki nama berkas atau direktori yang lebih panjang dari %length bita, yang tidak disimpan oleh sistem berkas mana pun.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Arsip ditolak: entri "%path" memiliki tipe tar "%type", sedangkan paket hanya berisi berkas dan direktori.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Tautan "%path" mengarah ke luar paket (%target) dan tidak diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Tautan "%path" mengarah ke "%target", yang tidak ada di dalam paket, dan tidak diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Tautan "%path" mengarah ke direktori "%target" dan tidak diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Entri "%path" adalah perangkat atau pipa bernama (tipe tar "%type") dan tidak diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Entri "%path" memiliki tipe tar "%type", yang tidak dipakai oleh paket, dan tidak diimpor.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

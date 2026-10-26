@@ -57253,12 +57253,28 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Tệp nén bị từ chối: mục "%path" trỏ ra ngoài gói.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Tệp nén được đóng gói theo định dạng tar PAX, định dạng này không thể nhập. Hãy đóng gói theo định dạng tar GNU (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Tệp nén bị từ chối: mục "%path" có tên tệp hoặc thư mục dài hơn %length byte, không hệ thống tệp nào lưu được.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Tệp nén bị từ chối: mục "%path" có loại tar "%type", trong khi gói chỉ chứa tệp và thư mục.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Liên kết "%path" trỏ ra ngoài gói (%target) và không được nhập.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Liên kết "%path" trỏ tới "%target", không có trong gói, và không được nhập.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Liên kết "%path" trỏ tới thư mục "%target" và không được nhập.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Mục "%path" là thiết bị hoặc đường ống có tên (loại tar "%type") và không được nhập.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Mục "%path" có loại tar "%type", loại mà gói không dùng, và không được nhập.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>

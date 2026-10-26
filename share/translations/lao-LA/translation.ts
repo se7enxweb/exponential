@@ -57253,12 +57253,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ໄຟລ໌ບີບອັດຖືກປະຕິເສດ: ລາຍການ "%path" ຊີ້ໄປນອກແພັກເກດ.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>ໄຟລ໌ບີບອັດຖືກບັນຈຸໃນຮູບແບບ PAX tar ເຊິ່ງບໍ່ສາມາດນຳເຂົ້າໄດ້. ກະລຸນາບັນຈຸແພັກເກດໃນຮູບແບບ GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ໄຟລ໌ບີບອັດຖືກປະຕິເສດ: ລາຍການ "%path" ມີຊື່ໄຟລ໌ ຫຼື ໄດເຣັກທໍຣີທີ່ຍາວກວ່າ %length ໄບຕ໌, ເຊິ່ງບໍ່ມີລະບົບໄຟລ໌ໃດເກັບໄດ້.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>ໄຟລ໌ບີບອັດຖືກປະຕິເສດ: ລາຍການ "%path" ມີປະເພດ tar "%type" ແລະແພັກເກດມີໄດ້ສະເພາະໄຟລ໌ ແລະໄດເຣັກທໍຣີ.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>ລິ້ງ "%path" ຊີ້ໄປນອກແພັກເກດ (%target) ແລະບໍ່ໄດ້ຖືກນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>ລິ້ງ "%path" ຊີ້ໄປຫາ "%target", ເຊິ່ງບໍ່ມີໃນແພັກເກດ, ແລະບໍ່ໄດ້ຖືກນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>ລິ້ງ "%path" ຊີ້ໄປຫາໄດເຣັກທໍຣີ "%target" ແລະບໍ່ໄດ້ຖືກນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>ລາຍການ "%path" ເປັນອຸປະກອນ ຫຼື ທໍ່ທີ່ມີຊື່ (ປະເພດ tar "%type") ແລະບໍ່ໄດ້ຖືກນຳເຂົ້າ.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>ລາຍການ "%path" ມີປະເພດ tar "%type", ເຊິ່ງແພັກເກດບໍ່ໃຊ້, ແລະບໍ່ໄດ້ຖືກນຳເຂົ້າ.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
