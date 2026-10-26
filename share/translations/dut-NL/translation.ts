@@ -75226,6 +75226,146 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Build the help manuals from the Markdown help</source>
         <translation>De helphandleidingen bouwen uit de Markdown-help</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>Beoordeling en vrijgave</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Het onderwerp is nu in beoordeling.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Het onderwerp is vrijgegeven: lezers zien het nu.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Het onderwerp is weer een concept.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>U hebt de huidige versie geschreven, dus iemand anders met de vrijgaverol geeft die vrij.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>De status is niet gewijzigd: uw rol staat deze stap niet toe.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>Beoordelingsproces</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Concept</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Beoordeling</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>Terug naar beoordeling</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>Ter beoordeling sturen</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Vrijgeven</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Terug naar concept</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Controle volgens de stijlgids</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>De controle volgens de stijlgids vond niets.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors fouten, %warnings waarschuwingen, %notices opmerkingen. Een fout laat ./console exp:help:content check mislukken.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Niveau</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Regel</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Veld</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Bevinding</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Was dit nuttig?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Lezers antwoordden %yes keer ja en %no keer nee.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Opgegeven redenen voor nee:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Dank u. Uw antwoord helpt ons de help te verbeteren.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Zo niet, wat was er mis?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Geen reden opgegeven</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Alleen uw antwoord wordt bewaard, niet wie u bent.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Het is verouderd</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Het is moeilijk te begrijpen</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Er ontbreekt iets</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Het is onjuist</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Een andere reden</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Dit onderwerp is niet vrijgegeven; lezers zien het niet.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

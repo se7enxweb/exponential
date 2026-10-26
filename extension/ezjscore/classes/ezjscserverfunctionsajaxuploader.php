@@ -396,7 +396,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
             // because most browsers cannot upload
             // wit a json HTTP Accept header...
             // see JavaScript code in eZAjaxUploader::delegateWindowEvents();
-            return json_encode(
+            return ezjscAjaxContent::jsonEncode(
                 array(
                     'error_text' => $e->getMessage(),
                     'content' => ''
@@ -433,7 +433,7 @@ class ezjscServerFunctionsAjaxUploader extends ezjscServerFunctions
         $tpl->setVariable( 'alt_text_required', $altTextRequired === true );
         // json_encode and url encode the HTML to be able to get it in the
         // JavaScript code. see eZAjaxUploader::delegateWindowEvents()
-        return json_encode(
+        return ezjscAjaxContent::jsonEncode(
             array(
                 'meta_data' => false,
                 'html' => rawurlencode(

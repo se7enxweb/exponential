@@ -35,7 +35,8 @@ other pages were opened in another tab in between. A template of your own that r
 same line; without it, Cancel uses the page viewed last, which is usually the same.
 
 **The page viewed last** is the session's `LastAccessesURI`, which the kernel records after every page that is not an
-edit, administration, browse, authentication or ajax view.
+edit, administration, browse, authentication or ajax view. The front page is recorded as the site root `/` (before
+6.0.15 it was recorded as an empty page, which no target accepts; such a value in an older session is read as `/`).
 
 ## The rules
 

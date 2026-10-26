@@ -5,7 +5,7 @@
  * the clean install data and not by an update script. Read from the files; no database.
  *
  *  HP-01  module.php declares the views dashboard, viewer, search, asset, report, each with functions = read
- *  HP-02  FunctionList has read (and nothing that bypasses it)
+ *  HP-02  FunctionList has read, context and feedback (and nothing that bypasses them)
  *  HP-03  settings/module.ini ModuleList[] contains exphelp
  *  HP-04  settings/site.ini: exphelp is in neither AnonymousAccessList[] nor PolicyOmitList[]
  *  HP-05  the clean data and every update SQL: no policy of the Anonymous role (1) for exphelp or for every module
@@ -48,8 +48,9 @@ class expHelpModulePolicyTest extends PHPUnit\Framework\TestCase
         foreach ( $m['views'] as $name => $view )
         {
             $this->assertArrayHasKey( 'functions', $view, $name . ' must name its policy function' );
-            // the context help JSON of help maintained as content has its own function (doc/eng-us/features/6.0/help-content.md)
-            $expected = $name === 'context' ? array( 'context' ) : array( 'read' );
+            // the context help JSON of help maintained as content has its own function, and "Was this helpful?" takes
+            // read or feedback (a site's public help) (doc/eng-us/features/6.0/help-content.md)
+            $expected = $name === 'context' ? array( 'context' ) : ( $name === 'feedback' ? array( 'read or feedback' ) : array( 'read' ) );
             $this->assertSame( $expected, array_values( (array)$view['functions'] ), $name . ' needs exphelp/' . $expected[0] );
         }
     }
@@ -58,7 +59,7 @@ class expHelpModulePolicyTest extends PHPUnit\Framework\TestCase
     public function testFunctionList()
     {
         $m = self::module();
-        $this->assertSame( array( 'read', 'context' ), array_keys( $m['functions'] ) );
+        $this->assertSame( array( 'read', 'context', 'feedback' ), array_keys( $m['functions'] ) );
         $this->assertSame( 'read', expHelp::POLICY_FUNCTION );
     }
 

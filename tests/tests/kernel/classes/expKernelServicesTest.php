@@ -212,7 +212,7 @@ class expKernelServicesTest extends PHPUnit\Framework\TestCase
     /** KS-05 */
     public function testRequestResetHooks()
     {
-        $this->assertSame( array( 'querycache', 'sqlprofile', 'csp', 'audit', 'renderstats', 'requestlog', 'classifier' ),
+        $this->assertSame( array( 'querycache', 'sqlprofile', 'csp', 'audit', 'renderstats', 'requestlog', 'classifier', 'userapproval' ),
                            array_keys( expKernelServiceScope::DEFAULT_RESET_HOOKS ) );
         $this->assertSame( array( 'eZDBQueryCache', 'resetRequest' ), expKernelServiceScope::DEFAULT_RESET_HOOKS['querycache'] );
         $this->assertSame( array( 'expRequestClassifier', 'reset' ), expKernelServiceScope::DEFAULT_RESET_HOOKS['classifier'] );

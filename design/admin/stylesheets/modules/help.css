@@ -1652,6 +1652,18 @@
 .a4-help-foot { max-width: 80ch; margin: var(--a4-space-4) 0 0; }
 .a4-help-foot a { display: inline-flex; align-items: center; gap: var(--a4-space-1); }
 
+/* Help maintained as content: "Was this helpful?" and the review workflow under a topic (parts/topic_feedback.tpl,
+   parts/topic_workflow.tpl). Cards of the shared components; only their place in the column is set here. */
+.a4-help-feedback,
+.a4-help-workflow { max-width: 80ch; margin: var(--a4-space-5) 0 0; }
+.a4-help-feedback > * + *,
+.a4-help-workflow > * + *,
+.a4-help-feedback-form > * + * { margin-top: var(--a4-space-3); }
+.a4-help-feedback-form .a4-field { max-width: 40ch; }
+.a4-help-workflow .a4-steps { margin-bottom: 0; }
+/* a rule's code and a field's name stay whole; the finding wraps */
+.a4-help-workflow td code { white-space: nowrap; }
+
 /* The tree of all help pages: folders as <details>, open on the way to the current page */
 .a4-help-nav { font-size: var(--a4-text-s); }
 .a4-help-nav:focus { outline: 2px solid transparent; }

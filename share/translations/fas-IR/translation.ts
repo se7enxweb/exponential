@@ -73999,6 +73999,146 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Build the help manuals from the Markdown help</source>
         <translation>ساخت راهنماها از راهنمای Markdown</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>بازبینی و انتشار</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>موضوع اکنون در بازبینی است.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>موضوع منتشر شد: خوانندگان اکنون آن را می‌بینند.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>موضوع دوباره پیش‌نویس است.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>نسخهٔ کنونی را شما نوشته‌اید، پس کس دیگری با نقش انتشار آن را منتشر می‌کند.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>وضعیت تغییر نکرد: نقش شما اجازهٔ این گام را نمی‌دهد.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>روند بازبینی</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>پیش‌نویس</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>بازبینی</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>بازگشت به بازبینی</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>ارسال برای بازبینی</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>انتشار</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>بازگشت به پیش‌نویس</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>بررسی راهنمای سبک</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>بررسی راهنمای سبک چیزی پیدا نکرد.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors خطا، %warnings هشدار، %notices یادداشت. یک خطا باعث شکست ./console exp:help:content check می‌شود.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>سطح</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>قاعده</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>فیلد</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>یافته</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>آیا این مفید بود؟</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>خوانندگان %yes بار بله و %no بار نه پاسخ دادند.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>دلایل ذکرشده برای نه:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>سپاسگزاریم. پاسخ شما به ما در بهبود راهنما کمک می‌کند.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>بله</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>اگر نه، چه چیزی اشتباه بود؟</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>دلیلی ذکر نشده</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>فقط پاسخ شما نگه داشته می‌شود، نه هویت شما.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>قدیمی است</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>فهمیدنش دشوار است</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>چیزی کم است</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>نادرست است</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>دلیل دیگر</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>این موضوع منتشر نشده است؛ خوانندگان آن را نمی‌بینند.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

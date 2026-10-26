@@ -74006,6 +74006,146 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>Build the help manuals from the Markdown help</source>
         <translation>Yardım kılavuzlarını Markdown yardımından oluştur</translation>
     </message>
+    <message>
+        <source>Review and release</source>
+        <translation>İnceleme ve yayın</translation>
+    </message>
+    <message>
+        <source>The topic is in Review now.</source>
+        <translation>Konu şimdi incelemede.</translation>
+    </message>
+    <message>
+        <source>The topic is Released: readers see it now.</source>
+        <translation>Konu yayımlandı: okuyucular artık görüyor.</translation>
+    </message>
+    <message>
+        <source>The topic is a Draft again.</source>
+        <translation>Konu yeniden taslak.</translation>
+    </message>
+    <message>
+        <source>You wrote the current version, so someone else with the release role releases it.</source>
+        <translation>Geçerli sürümü siz yazdınız, bu yüzden onu yayın rolüne sahip başka biri yayımlar.</translation>
+    </message>
+    <message>
+        <source>The state was not changed: your role does not allow this step.</source>
+        <translation>Durum değiştirilmedi: rolünüz bu adıma izin vermiyor.</translation>
+    </message>
+    <message>
+        <source>Review workflow</source>
+        <translation>İnceleme akışı</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Taslak</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>İnceleme</translation>
+    </message>
+    <message>
+        <source>Back to Review</source>
+        <translation>İncelemeye geri al</translation>
+    </message>
+    <message>
+        <source>Send to Review</source>
+        <translation>İncelemeye gönder</translation>
+    </message>
+    <message>
+        <source>Release</source>
+        <translation>Yayımla</translation>
+    </message>
+    <message>
+        <source>Back to Draft</source>
+        <translation>Taslağa geri al</translation>
+    </message>
+    <message>
+        <source>Style guide check</source>
+        <translation>Stil kılavuzu denetimi</translation>
+    </message>
+    <message>
+        <source>The style guide check found nothing.</source>
+        <translation>Stil kılavuzu denetimi hiçbir şey bulmadı.</translation>
+    </message>
+    <message>
+        <source>%errors errors, %warnings warnings, %notices notices. An error keeps ./console exp:help:content check from passing.</source>
+        <translation>%errors hata, %warnings uyarı, %notices not. Bir hata ./console exp:help:content check komutunu başarısız kılar.</translation>
+    </message>
+    <message>
+        <source>Level</source>
+        <translation>Düzey</translation>
+    </message>
+    <message>
+        <source>Rule</source>
+        <translation>Kural</translation>
+    </message>
+    <message>
+        <source>Field</source>
+        <translation>Alan</translation>
+    </message>
+    <message>
+        <source>Finding</source>
+        <translation>Bulgu</translation>
+    </message>
+    <message>
+        <source>Was this helpful?</source>
+        <translation>Bu yararlı oldu mu?</translation>
+    </message>
+    <message>
+        <source>Readers answered yes %yes times and no %no times.</source>
+        <translation>Okuyucular %yes kez evet ve %no kez hayır yanıtını verdi.</translation>
+    </message>
+    <message>
+        <source>Reasons given for no:</source>
+        <translation>Hayır için verilen nedenler:</translation>
+    </message>
+    <message>
+        <source>Thank you. Your answer helps us improve the help.</source>
+        <translation>Teşekkürler. Yanıtınız yardımı iyileştirmemize yardımcı olur.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>If not, what was wrong?</source>
+        <translation>Olmadıysa, sorun neydi?</translation>
+    </message>
+    <message>
+        <source>No reason given</source>
+        <translation>Neden belirtilmedi</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Only your answer is kept, not who you are.</source>
+        <translation>Yalnızca yanıtınız saklanır, kim olduğunuz değil.</translation>
+    </message>
+    <message>
+        <source>It is out of date</source>
+        <translation>Güncel değil</translation>
+    </message>
+    <message>
+        <source>It is hard to understand</source>
+        <translation>Anlaşılması zor</translation>
+    </message>
+    <message>
+        <source>Something is missing</source>
+        <translation>Bir şey eksik</translation>
+    </message>
+    <message>
+        <source>It is wrong</source>
+        <translation>Yanlış</translation>
+    </message>
+    <message>
+        <source>Another reason</source>
+        <translation>Başka bir neden</translation>
+    </message>
+    <message>
+        <source>This topic is not Released; readers do not see it.</source>
+        <translation>Bu konu yayımlanmadı; okuyucular onu görmüyor.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>
