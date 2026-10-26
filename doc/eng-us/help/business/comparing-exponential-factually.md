@@ -187,7 +187,7 @@ Some buyers know the history. Use the tone of the history pages: factual, source
 | "We are better than X." | "Here is what Exponential does, and how you can check it." | No source can prove a ranking. |
 | "X locks you in." | "With Exponential you keep the code under the GPL and your content in a standard database." | Describe Exponential, not others. |
 | "It is the fastest CMS." | "The README documents 0.36 ms per cached page on a 12-core machine, reproducible with shipped scripts; let us measure on your hardware." | Figures need their context ([Benchmarking](../../guides/benchmarking.md)). |
-| "It supports every language." | "268 locale files for content; 37 administration translations, 24 complete (25 October 2026)." | Exact and sourced. |
+| "It supports every language." | "268 locale files for content; 54 administration translations, 51 complete (25 October 2026)." | Exact and sourced. |
 | "It is the new eZ Publish." | "Exponential continues the code base of eZ Publish, a product its creator discontinued after almost 18 years." | The product's name is Exponential. |
 | "We guarantee support." | "Security reports get a first answer within one business day (SECURITY.md); service terms come from your provider." | Only what is written down. |
 | "Hundreds of companies use it." | "The sources do not count users. The history shows hundreds of contributors over the years." | [Contributors](../who-is-7x.md#contributors-and-friends-of-the-project) |

@@ -299,7 +299,7 @@ publishing, media portals, intranets, e-commerce and extranets“ (<https://expo
 | Framework (CMF) | MVC-Architektur, Module und Views, eine Template-Engine, INI-Einstellungen, eine Datenbank-Abstraktionsschicht, CLI-Skripte, eine REST-API, eigenständige Bibliotheken | [Templates und Design](../anleitungen/templates-und-design.md), [REST API v1 und v2](../anleitungen/rest-api-v1-und-v2.md) |
 | E-Commerce | „Advanced e-Commerce Stores (Built in)“: Produkte, Warenkörbe, Bestellungen, Mehrwertsteuer, Währungen, PayPal | README, „Main Exponential features“; [Bestellbelege](../funktionen/6.0/bestellbelege.md), [Sortierung der Bestellliste](../funktionen/6.0/sortierung-der-bestellliste.md) |
 | Multisite | Mehrere Sites aus einer Installation, jede ein Siteaccess mit eigenem Host, Pfad, eigener Sprache und eigenem Design | [Zuordnung von Siteaccesses nach Host und Sprache](../funktionen/6.0/siteaccess-zuordnung-nach-host-und-sprache.md), [Multisite-Einstellungen](../funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md) |
-| Mehrsprachig | 268 Locale-Dateien (261 Sprachen und Länder) als Inhaltssprachen; 37 Übersetzungen der Administration in `share/translations`, 24 davon, Englisch eingeschlossen, vollständig (mindestens 98 % der aktuellen Texte, Stand 25. Oktober 2026) | [Sprachen in Exponential](../sprachen.md) |
+| Mehrsprachig | 268 Locale-Dateien (261 Sprachen und Länder) als Inhaltssprachen; 54 Übersetzungen der Administration in `share/translations`, 51 davon, Englisch eingeschlossen, vollständig (mindestens 98 % der aktuellen Texte, Stand 25. Oktober 2026) | [Sprachen in Exponential](../sprachen.md) |
 | Rechts nach links | `dir="rtl"` in Inhalten und in der Administration für Sprachen, die von rechts nach links geschrieben werden | [Rechts nach links](../funktionen/6.0/rechts-nach-links.md) |
 | Seitenaufbau | Exponential Layouts: Layouts, Zonen, Blöcke und Regeln, eine Portierung des Konzepts von Netgen Layouts | README, „Exponential Layouts“; [Der Layout-Editor](layout-editor.md) |
 | Schreibhilfe | Exponential Intelligence (`expai`): schreibt Entwürfe, veröffentlicht nie selbstständig, gehostete Anbieter in den USA oder der EU oder ein lokales Modell | [Exponential Intelligence](../funktionen/6.0/erweiterungen/expai.md) |
@@ -506,7 +506,7 @@ Wert.
   fragen Sie in den [Foren](https://share.exponential.earth/forums) oder auf [Telegram](https://t.me/exponentialcms).
 - **Wachsen Sie vom Benutzer zum Entwickler.** Installieren Sie mit Git, halten Sie Ihre Arbeit auf einem Branch und
   schicken Sie Pull-Requests: [Mit Git entwickeln](mit-git-entwickeln.md), [CONTRIBUTING.md](https://github.com/se7enxweb/exponential/blob/main/CONTRIBUTING.md).
-- **Übersetzen Sie.** Die Administration hat 37 Übersetzungen, 24 davon vollständig (Stand 25. Oktober 2026); [Sprachen](../sprachen.md)
+- **Übersetzen Sie.** Die Administration hat 54 Übersetzungen, 51 davon vollständig (Stand 25. Oktober 2026); [Sprachen](../sprachen.md)
   erklärt, wie Sie eine hinzufügen oder vervollständigen.
 - **Verbessern Sie diese Hilfe.** Jede Seite hat „Edit on GitHub“; die Seiten sind freie Dokumentation
   ([Freie Dokumentation](freie-dokumentation.md)).

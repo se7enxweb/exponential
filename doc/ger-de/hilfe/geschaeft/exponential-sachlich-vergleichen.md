@@ -190,7 +190,7 @@ Manche Käufer kennen die Geschichte. Wählen Sie den Ton der Seiten zur Geschic
 | „Wir sind besser als X.“ | „Das leistet Exponential, und so können Sie es prüfen.“ | Keine Quelle kann eine Rangfolge belegen. |
 | „X bindet Sie an sich.“ | „Mit Exponential behalten Sie den Code unter der GPL und Ihre Inhalte in einer Standarddatenbank.“ | Beschreiben Sie Exponential, nicht andere. |
 | „Es ist das schnellste CMS.“ | „Die README dokumentiert 0,36 ms je gecachter Seite auf einer Maschine mit 12 Kernen, reproduzierbar mit mitgelieferten Skripten; messen wir das auf Ihrer Hardware.“ | Zahlen brauchen ihren Kontext ([Benchmarks](../../anleitungen/benchmarking.md)). |
-| „Es unterstützt jede Sprache.“ | „268 Locale-Dateien für Inhalte; 37 Übersetzungen der Administration, davon 24 vollständig (Stand 25. Oktober 2026).“ | Genau und belegt. |
+| „Es unterstützt jede Sprache.“ | „268 Locale-Dateien für Inhalte; 54 Übersetzungen der Administration, davon 51 vollständig (Stand 25. Oktober 2026).“ | Genau und belegt. |
 | „Es ist das neue eZ Publish.“ | „Exponential führt die Codebasis von eZ Publish fort, einem Produkt, das sein Hersteller nach fast 18 Jahren eingestellt hat.“ | Das Produkt heißt Exponential. |
 | „Wir garantieren Support.“ | „Sicherheitsmeldungen erhalten innerhalb eines Werktags eine erste Antwort (SECURITY.md); die Bedingungen für Dienstleistungen legt Ihr Anbieter fest.“ | Nur was schriftlich festgehalten ist. |
 | „Hunderte Unternehmen setzen es ein.“ | „Die Quellen zählen keine Anwender. Die Historie zeigt über die Jahre Hunderte von Mitwirkenden.“ | [Mitwirkende](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |

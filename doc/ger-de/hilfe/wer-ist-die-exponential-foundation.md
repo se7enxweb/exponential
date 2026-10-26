@@ -365,7 +365,7 @@ jedem Push auf `main` und bei jedem Pull-Request ([CI](../bc/6.0/ci.md)).
 
 ### Sprachen und Barrierefreiheit
 
-- 268 Locale-Dateien, 40 davon von rechts nach links, und 37 Übersetzungen der Administration, 24 davon vollständig (Stand 25. Oktober 2026)
+- 268 Locale-Dateien, 40 davon von rechts nach links, und 54 Übersetzungen der Administration, 51 davon vollständig (Stand 25. Oktober 2026)
   ([Sprachen](../sprachen.md)); `dir="rtl"` in Inhalten und Administration ([Von rechts nach links](../funktionen/6.0/rechts-nach-links.md)).
 - Das Design admin4 folgt WCAG-Regeln, die Tests prüfen: ein Kontrasttest der Farb-Tokens im hellen und dunklen Modus
   und Zielgrößen von mindestens 24 mal 24 Pixeln ([Gestaltung der Administration](../bc/6.0/admin4-gestaltung.md)).

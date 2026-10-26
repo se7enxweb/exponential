@@ -196,7 +196,7 @@ Gute erste Dokumentationsbeiträge für ein Projektteam:
 - eine Korrektur, wo eine Seite nicht mit dem übereinstimmte, was Sie gesehen haben;
 - ein durchgespieltes Beispiel aus Ihrem Projekt, ohne die Angaben des Kunden.
 
-**Übersetzungen.** Die Administration hat 37 Übersetzungen, 24 davon vollständig (Stand 25. Oktober 2026), und es gibt 268 Locale-Dateien
+**Übersetzungen.** Die Administration hat 54 Übersetzungen, 51 davon vollständig (Stand 25. Oktober 2026), und es gibt 268 Locale-Dateien
 ([Sprachen](../../sprachen.md)). Wie Sie eine Übersetzung der Administration hinzufügen oder vervollständigen, steht
 in [Abschnitt 8 von „Sprachen“](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen). Ein Team,
 das eine Site in einer Sprache baut, deren Übersetzung der Administration unvollständig ist, kann sie für alle
