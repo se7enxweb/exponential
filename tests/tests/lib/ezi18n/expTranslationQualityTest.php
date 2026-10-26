@@ -24,7 +24,7 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
         'fre-FR', 'ger-DE', 'gle-IE', 'guj-IN', 'hau-NG', 'heb-IL', 'hin-IN', 'hun-HU', 'ibo-NG', 'ind-ID', 'isl-IS',
         'ita-IT', 'jpn-JP', 'kal-GL', 'kan-IN', 'kat-GE', 'kor-KR', 'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV', 'lit-LT', 'mal-IN', 'mar-IN',
         'mlt-MT', 'nor-NO', 'ori-IN', 'pan-IN', 'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR',
-        'slk-SK', 'slv-SI', 'som-SO', 'sqi-AL', 'srp-RS', 'swa-KE', 'swe-SE', 'tam-IN', 'tel-IN', 'tha-TH', 'tlh-QO', 'tur-TR',
+        'slk-SK', 'slv-SI', 'sna-ZW', 'som-SO', 'sqi-AL', 'srp-RS', 'swa-KE', 'swe-SE', 'tam-IN', 'tel-IN', 'tha-TH', 'tlh-QO', 'tur-TR',
         'ukr-UA', 'urd-PK', 'vie-VN', 'xho-ZA', 'yid-US', 'yor-NG', 'zul-ZA' );
 
     const TAG = '/<[ \t\n\r]*\/?[ \t\n\r]*[A-Za-z][A-Za-z0-9]*(?:[ \t\n\r][^<>]*)?\/?[ \t\n\r]*>/';
