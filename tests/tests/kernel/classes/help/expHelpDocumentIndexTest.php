@@ -272,12 +272,25 @@ class expHelpDocumentIndexTest extends PHPUnit\Framework\TestCase
             $this->markTestSkipped( 'not a git checkout' );
         $tracked = array_flip( $out );
         $allow = new expHelpAllowlist( array( 'root' => $repo ) );
-        foreach ( $allow->files() as $path )
+        // Collected and asserted once: an assertion per served file against the
+        // whole list of tracked files (some 18 000) made PHPUnit 10, which exports
+        // the value of every assertion for its events, take 12 to 21 minutes here
+        // under Xdebug, and the PHP 8.1 CI job ran into its timeout.
+        $served = $allow->files();
+        $this->assertNotEmpty( $served );
+        $untrackedServed = $outsideDoc = $doxygen = array();
+        foreach ( $served as $path )
         {
-            $this->assertArrayHasKey( $path, $tracked, $path . ' is served but not tracked' );
-            $this->assertStringStartsWith( 'doc/', $path );
-            $this->assertStringNotContainsString( 'doc/eng-us/doxygen/', $path );
+            if ( !isset( $tracked[$path] ) )
+                $untrackedServed[] = $path;
+            if ( strpos( $path, 'doc/' ) !== 0 )
+                $outsideDoc[] = $path;
+            if ( strpos( $path, 'doc/eng-us/doxygen/' ) !== false )
+                $doxygen[] = $path;
         }
+        $this->assertSame( array(), $untrackedServed, 'served but not tracked' );
+        $this->assertSame( array(), $outsideDoc, 'served from outside doc/' );
+        $this->assertSame( array(), $doxygen, 'the doxygen output is never served' );
         exec( 'git -C ' . escapeshellarg( $repo ) . ' ls-files --others --exclude-standard -- doc 2>/dev/null', $untracked );
         foreach ( array_merge( $untracked, array( 'doc/eng-us/features/6.0/quick-location-buttons.md' ) ) as $path )
         {

@@ -80,7 +80,9 @@ class expHelpContentTranslationsTest extends PHPUnit\Framework\TestCase
         {
             foreach ( self::STRINGS as $source )
             {
-                $this->assertArrayHasKey( $source, $messages, "$language: $source" );
+                // isset, not assertArrayHasKey(): PHPUnit 10 exports the value of every
+                // assertion for its events, and that was the whole catalogue each time
+                $this->assertTrue( isset( $messages[$source] ), "$language: $source" );
                 list( $translation, $unfinished ) = $messages[$source];
                 if ( $language === 'untranslated' )
                 {

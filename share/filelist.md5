@@ -26215,12 +26215,12 @@ d3242d9bfe2f82d0261d2e4c061aec4e  tests/tests/kernel/classes/help/expHelpContent
 e65692aa5c652521877848dfcbec2000  tests/tests/kernel/classes/help/expHelpContentPackageTest.php
 76c79716bf06b3eddb6dc7f5635c7870  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 321f570378477f6d95103cb485707cc9  tests/tests/kernel/classes/help/expHelpContentTest.php
-dac945a9f992111a0078fb7055ae4573  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
+ed18608ae675f08c5609cefc45933c44  tests/tests/kernel/classes/help/expHelpContentTranslationsTest.php
 7708d14efff93b6488808da256643428  tests/tests/kernel/classes/help/expHelpContentWorkflowTest.php
 1a6f8d25a51abc94dc6d40460b69c1e0  tests/tests/kernel/classes/help/expHelpContentsPageTest.php
 365becf2ae6ba9d054e9fa9db6199a7e  tests/tests/kernel/classes/help/expHelpContextRegistryTest.php
 3a627ccf5a875fdf097d073022a6f6fe  tests/tests/kernel/classes/help/expHelpDevelopWithGitTest.php
-985cf720ea21f49a1577289ddd974bbb  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
+de305c435d15620028c69094f1df344f  tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php
 a2e86a2b851afeb667709ff2f4303754  tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php
 95a5d76568a80713a3816488278d36bc  tests/tests/kernel/classes/help/expHelpExtensionDocsTest.php
 ba2166460a45a76fe3478f8edaaf33ac  tests/tests/kernel/classes/help/expHelpExternalImagesTest.php
