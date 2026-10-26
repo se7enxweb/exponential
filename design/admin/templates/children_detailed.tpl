@@ -203,6 +203,23 @@ var labelsObj = {ldelim}
                                                                                      'group_id', $group_id,
                                                                                      'group_by_class_group', true() ) )}
 
+    {* The class group of the tree the node is in comes first (Users under the users tree, Media under the media tree,
+       Content elsewhere), the others follow in their order: under Users, User and User group were the last of some
+       sixty classes of the other groups. *}
+    {def $create_lead_group = cond( $node.path_array|contains( ezini( 'NodeSettings', 'UserRootNode', 'content.ini' ) ), ezini( 'ClassGroupIDs', 'Users', 'content.ini' ),
+                                    $node.path_array|contains( ezini( 'NodeSettings', 'MediaRootNode', 'content.ini' ) ), ezini( 'ClassGroupIDs', 'Media', 'content.ini' ),
+                                    ezini( 'ClassGroupIDs', 'Content', 'content.ini' ) )
+         $create_ordered_groups = array()}
+    {foreach $can_create_classes as $create_group_id => $create_group}
+        {if eq( $create_group_id, $create_lead_group )}
+            {set $create_ordered_groups = $create_ordered_groups|prepend( $create_group )}
+        {else}
+            {set $create_ordered_groups = $create_ordered_groups|append( $create_group )}
+        {/if}
+    {/foreach}
+    {set $can_create_classes = $create_ordered_groups}
+    {undef $create_lead_group $create_ordered_groups}
+
     var createGroups = [
 
     {foreach $can_create_classes as $group}
