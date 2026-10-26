@@ -352,7 +352,7 @@ to `main` and every pull request ([CI](../bc/6.0/ci.md)).
 
 ### Languages and accessibility
 
-- 268 locale files, 40 of them right to left, and 71 administration translations, all of them complete (26 October 2026)
+- 268 locale files, 40 of them right to left, and 73 administration translations, all of them complete (26 October 2026)
   ([Languages](../languages.md)); `dir="rtl"` in content and administration ([Right to left](../features/6.0/right-to-left.md)).
 - The admin4 design follows WCAG rules that tests check: a contrast test of the color tokens in light and dark mode
   and target sizes of at least 24 by 24 pixels ([Styling the administration](../bc/6.0/admin4-styling.md)).

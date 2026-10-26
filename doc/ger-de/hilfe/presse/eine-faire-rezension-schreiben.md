@@ -72,7 +72,7 @@ Ihre Methode ([Benchmarking](../../anleitungen/benchmarking.md)).
 | Freiheit beim Hosting | Datenbanken, Betriebssysteme | [Unterstützte Datenbanken](../datenbankunterstuetzung.md), [Betriebssysteme](../betriebssystemunterstuetzung.md) |
 | Sicherheit | Zweistufige Anmeldung, Prüfprotokoll, Härtung | [Sicherheitshärtung](../sicherheitshaertung.md) |
 | Dokumentation | Antworten in der eingebauten Hilfe finden | [Das Hilfesystem](../../funktionen/6.0/hilfesystem.md) |
-| Lizenz | GPL für den Code, GNU FDL für die Dokumentation | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen) |
+| Lizenz | GPL für den Code, GNU FDL für die Dokumentation; was die Weitergabe verlangt | [Wer ist 7x?, Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen); [Lizenzverstöße](../projekt/lizenz-faq.md#lizenzverstöße) |
 | Support und Kontinuität | Was zugesagt ist, und von wem | [Die Zusage zur Unterstützung](../wer-ist-die-exponential-foundation.md#die-zusage-zur-unterstützung) |
 
 ## Grenzen und Lücken, die einen Bericht wert sind
@@ -81,7 +81,7 @@ Eine faire Rezension berichtet, was die Quellen selbst einräumen, mit der Quell
 
 - 6.0.15 ist in Entwicklung und hat kein Veröffentlichungsdatum; vieles von dem, was die Hilfe beschreibt, gehört dazu
   ([Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md)).
-- Alle 71 Übersetzungen der Administration sind vollständig (26. Oktober 2026); später hinzukommende Texte zeigen
+- Alle 73 Übersetzungen der Administration sind vollständig (26. Oktober 2026); später hinzukommende Texte zeigen
   sie Englisch, bis sie übersetzt sind ([Sprachen in Exponential](../../sprachen.md)).
 - Die mitgelieferte Standard-Engine von Velocity ist der eingebaute Server von PHP, nur für die Entwicklung; die
   empfohlene Engine muss ausgewählt werden ([Velocity](../../funktionen/6.0/velocity-server-mit-dauerhaften-workern.md)).

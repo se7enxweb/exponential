@@ -38,7 +38,7 @@ beantworten.
 |---|---|
 | „268 Locale-Dateien können als Inhaltssprachen genutzt werden.“ | [Sprachen in Exponential](../../sprachen.md), [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
 | „40 davon werden von rechts nach links geschrieben.“ | [Sprachen und Barrierefreiheit](../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit) |
-| „Es gibt 71 Übersetzungen der Administration, alle vollständig (Stand 26. Oktober 2026).“ | ebenda |
+| „Es gibt 73 Übersetzungen der Administration, alle vollständig (Stand 26. Oktober 2026).“ | ebenda |
 | „Jede Übersetzung eines Inhalts wird einzeln veröffentlicht, und Kennzeichen zeigen, was es gibt und was fehlt.“ | [Sprachen](../sprachen.md) |
 | „Jede redaktionelle Person wählt die Sprache ihrer eigenen Administration.“ | [Sprachen](../sprachen.md) |
 | „Ein Land ohne eigene Übersetzung fällt auf eine verwandte zurück, zum Beispiel jedes deutschsprachige Land auf Deutsch.“ | [Sprachen in Exponential, Unterstützungsstufen](../../sprachen.md#2-unterstützungsstufen) |
@@ -59,7 +59,7 @@ Fassung mit Zeitangaben: [Demo-Skripte, Teil 3: Sprachen und von rechts nach lin
 
 ## Sagen Sie nicht
 
-- „Exponential gibt es in 268 Sprachen.“ Sagen Sie: „268 Locale-Dateien als Inhaltssprachen; 71 Übersetzungen der
+- „Exponential gibt es in 268 Sprachen.“ Sagen Sie: „268 Locale-Dateien als Inhaltssprachen; 73 Übersetzungen der
   Administration, alle vollständig (Stand 26. Oktober 2026).“
 - „Alle Übersetzungen sind perfekt.“ Mehrere vollständige Übersetzungen wurden maschinell unterstützt erstellt; ein
   Gegenlesen ist „der schnellste Gewinn“ ([Sprachen in Exponential, Abschnitt 8](../../sprachen.md#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)).

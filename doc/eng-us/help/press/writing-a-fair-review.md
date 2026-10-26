@@ -69,7 +69,7 @@ come with their method; quote them as the README's, and if you measure, publish 
 | Hosting freedom | Databases, operating systems | [Database support](../database-support.md), [Operating systems](../os-support.md) |
 | Security | Two-step sign-in, audit trail, hardening | [Security hardening](../security-hardening.md) |
 | Documentation | Find answers in the built-in help | [The help system](../../features/6.0/help-system.md) |
-| License | GPL for the code, GNU FDL for the documentation | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses) |
+| License | GPL for the code, GNU FDL for the documentation; what passing it on requires | [Who is 7x?, Open source licenses](../who-is-7x.md#open-source-licenses); [License violations](../project/licensing-faq.md#license-violations) |
 | Support and continuity | What is committed, and by whom | [The support commitment](../who-is-the-exponential-foundation.md#the-support-commitment) |
 
 ## Limits and gaps worth reporting
@@ -78,7 +78,7 @@ A fair review reports what the sources themselves admit, with the source:
 
 - 6.0.15 is in development and has no release date; much of what the help describes belongs to it
   ([6.0.15 changelog](../../../changelogs/6.0/6.0.15.md)).
-- All 71 administration translations are complete (26 October 2026); texts added later show in English until they are translated
+- All 73 administration translations are complete (26 October 2026); texts added later show in English until they are translated
   ([Languages in Exponential](../../languages.md)).
 - Velocity's shipped default engine is PHP's built-in server, for development only; the recommended engine must be
   chosen ([Velocity](../../features/6.0/velocity-persistent-worker-server.md)).
