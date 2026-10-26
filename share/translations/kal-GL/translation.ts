@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Mappi ammaruk imaluunniit matuguk</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Qupperneq una nalunaaqutanniippoq. Aqqa mappialu allanngortinniarukkit nalunaaqutaq ammaruk.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Qupperneq una nalunaaqutannut ilaguk.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Nalunaaqutanniippoq</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Nalunaaqutanut ilaguk</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Nalunaaqutap quppernerup matuma najugaa parametriutaalu toqqortarpai: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Nalunaaqutaq toqqoruk</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Nalunaaqutaq ilaguk</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Nalunaaqutakka</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemip quppernera</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemip quppernerai</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Quppernermik uuminnga ammaanissamut akuersissuteqarunnaarputit.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ammaruk</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Quppernerup matuma najugaa amigaatigineqarpoq. Nalunaaqutaq piiaruk, qupperneq nalunaaqutanullu ilaqqiguk.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Quppernermik uuminnga ammaanissamut akuersissuteqarunnaarputit. Nalunaaqutaq piiaruk, imaluunniit aqutsisumut iserfigisinnaanissamik qinnuigit.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Najugaq</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Moduli takutitsinerlu</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Systemip quppernerai aamma nalunaaqutanut ilanngunneqarsinnaapput: qupperneq ammaruk (Aaqqissuussineq, misissuinermut malunnaatit, atuisut allattorsimaffiat ...) qulaanilu »Nalunaaqutanut ilaguk« toqqaruk. Nalunaaqutat taamaattut aaqqissuussinermut ikoneqartarput.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>atuisut kontoinik atorunnaarsitsineq atuisunullu atorunnaarsitanut eqimattamut nuussineq, utertitsinerlu</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>atuisut allat sumi isersimanersut takuuk, anitsikkillu</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ ilitsersuutit malikkit.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-mail-imut kissaatit ammakkit</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Isersimanerit</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kontuutit sumi isersimanersoq: browseri, systemi, sumiiffik nalunaaqutarlu. Atortoq ilisarinngisat anitsiguk.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Atuisoq una sumi isersimanersoq, atuisorlu sumiluunniit anitsinera.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Atortut aqukkit</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Isersimanerit takutikkit</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Isersimasut: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkey-it</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Passkey-it aqukkit</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Passkey ilaguk</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Passkey-it: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Suli peqanngilaq</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klassit attributillu ataqatigiissaarinerit (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Atuisut eqimattaat kontoi nutaat akuerineqartussat</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Kontoq eqimattani uku ilaanni, imaluunniit ataani, saqqummiunneqartoq utaqqisarpoq akuersisup akuerinissaata tungaanut. Taamaattoqartinnagu isersinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Atuisut kontonik akuersisut</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Eqimattat kontonik akuersisut</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Atuisut eqimattaat akuerineqarnissamik pisariaqartitsinngitsut (ilaasortaasa kontot taamaattut toqqaannartumik saqqummiuttarpaat; akuersisut pisariaqartinngisaannarpaat)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Paasissutissat amerlanerusut piumasaqaatinut quppernermi takukkit.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Avatangiisini allanngorartoq EXP_DEMO_MODE=1 installationi una tamanut demo-tut nalunaaqutsersortarpaa: aqutsisup isissutissaa tamanit ilisimaneqartoq akuerineqartarpoq, aqutsisullu isissutissai kingusinnerusukkut allanngortinneqarsinnaanatik aallaqqaataanulluunniit utertinneqarsinnaanatik. Nittartakkamut atuinermut ingerlasumut demo-tut atuineq atussanngilat.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-ip suliassai</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron-ip suliassai atuisup crontab-ianit ingerlanneqartarput (atuisoq: %user, ikkussinermik piginnittoq).</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Ikkussineq cron-ip suliassaata ilaanik pilersaarusiugassamik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab allanneqanngilaq (%reason). Titarnerit uku atuisup nittartakkamit atorneqartup crontab-ianut ilakkit, taamaanngippat utaqqiffik, isertitsinerit, nalunaarutit ujarlernermullu indeksi ingerlanngisaannassapput:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ ilitsersuutit malikkit.</translation>
         <source>ClassAttribute name</source>
         <translation>Klassip attributiata aqqa</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Kontot akuerineqartussat</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Akuersisunut e-mail</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Aap</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Naamik</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ ilitsersuutit malikkit.</translation>
         <source>Your comment was added.</source>
         <translation>Oqaaseqaatit ilanngunneqarpoq.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Kontoq »%1« akuerineqarpoq saqqummiunneqarlunilu: massakkut isersinnaavoq.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Kontoq »%1« itigartinneqarpoq. Saqqummiunneqanngilaq isersinnaananilu; pilersitsisuata missingiutigeqqilerpaa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ ilitsersuutit malikkit.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Nalunaaqutat ilanngunneqartut: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemip quppernera</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemip quppernerai suli nalunaaqutanut ilanngunneqarsinnaanngillat: versionip matuma paasissutissaateqarfiata nutarterneqarnera suli ingerlanneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Qupperneq una nalunaaqutanut ilanngunneqarsinnaanngilaq: modulip takutitsineranit quppernerunngilaq.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Qupperneq una nalunaaqutanut ilanngunneqarsinnaanngilaq: ammarnissaanut akuersissuteqanngilatit.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Qupperneq nalunaaqutanut ilanngunneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Qupperneq »%name« nalunaaqutanniippoq.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Nalunaaqutap aqqa allanngortinneqarsinnaanngilaq: ateqartariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Nalunaaqutap aqqa nutaaq: »%name«.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Mirror to data tables</source>
         <translation>Paasissutissanut tabelinut assilillugu</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Atuisut kontoinik akuersineq</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Atuisup kontoa nutaaq akuerinissaminik utaqqivoq</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Sent to the password change</source>
         <translation>Isissutissap allanngortinneranut ingerlateqqinneqarpoq</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Iserniarneq alloriarnerup aappaa ilanngunnagu itigartinneqarpoq</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>App-imut isissutissaq pilersinneqarpoq</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App-imut isissutissaq atorunnaarsinneqarpoq</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>App-imut isissutissaq atorneqarpoq</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The audit trail of this node</source>
         <translation>Inissisimaffiup matuma misissuinermut malunnaatai</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>ajoqusersimanngitsoq</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>kipiloqqasoq</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>misissorneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>iluarsineqarsimasoq</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>imaqanngitsoq</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>E-mail-imut najugaq nutaaq %email uppernarsarneqarnissaminik utaqqivoq: innersuussut taavunga nassiussarput ammaruk. Tamatuma tungaanut konto una %current-imik pigisaqaannassaaq.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Klassit ataavartut tabelii qinerukkit…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-ip suliassai</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Cron-ip suliassaata ilaanik suli ingerlatsisoqanngilaq: suliassat utaqqiffiat, isertitsinerit, nalunaarutit ujarlernermullu indeksi utaqqipput. php bin/php/installcrontab.php --add aallartiguk, imaluunniit --show-p titarnerii crontab-imut ilakkit.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Cron-ip suliassaata ilaa pilersaarutaata akuerisaanit sivisunerusumik ingerlanneqanngilaq: crontab (php bin/php/installcrontab.php --show) nalunaarsuiffiillu var/log/cronjob-*.log misissukkit.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Ilaa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Pilersaarut</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Kingullermik aallartinneqarfia</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Killiffik</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>taamaattoqarsimanngilaq</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>piffissaq naapertorlugu</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>kingusinaarpoq</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ingerlanneqarsimanngilaq</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Ikkussineq cron-ip suliassaata ilaanik cron-imit ingerlanneqartussamik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Aaqqissuussineq &gt; Cron-ip suliassai</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Atuisup kontoa nutaaq akuerinissaminik utaqqisoq: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Atuisup aqqa</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Eqimattaq</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Qinnutigisoq</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Akuerinninneq ammaruk</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Toortagaq sulinngippat najugaq una browserinnut assiliuk: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Atuisup kontoa nutaaq akuerinissaminik utaqqivoq</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Pilersitsisoq: %requester. Kontoq »%name« eqimattani %groups pilersinneqarpoq. Saqqummiunneqanngilaq, akuersisullu akuerinissaata tungaanut isersinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>E-mail una nittartakkamit %site nassiunneqarpoq, eqimattani uku kontoinik nutaanik akuersisuugavit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Qarasaasiaq</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Oqarasuaat</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tableti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programmi app-iluunniit</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klienti nammineq ingerlasoq</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Atortoq ilisimaneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Isissutissaq</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Isissutissaq marlunnillu alloriarluni kodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-imut atassut</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-imut atassut</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ataasiarluni iserneq</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Quppernermit matumannga anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Aqutsisumit anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>»Isersimanerit allat tamarmik« atorlugu anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Iserneq nutaaq taarsiutigineqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Isissutissap allanngortinneqarneratigut naammassisoq</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Atorunnaarsimasoq</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Isersimanerit, atuisoq: %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kontuutit massakkut sumi isersimanersoq. Atortoq ilisarinngikkukku anitsiguk isissutissallu allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kontoq una massakkut sumi isersimanersoq. Atuisoq anitsikkukku isersimanerit tamarmik qinnuteqarnerminni tullermi naammassisarput.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kontomut uterit</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Isersimaneq anitinneqarpoq. Atortoq iseqqittariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Isersimanerit allat anitinneqartut: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Isersimanernik allanik anitsissanik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Atuisup matuma isersimanerai anitinneqartut: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Atuisoq una isersimanernik anitsissanik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Isersimaneq una massakkut atukkat. Naammassiniarukku anigit.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Isersimaneq taanna naammassereersimavoq.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Kontuutit atortumit nutaamit iseraangat e-mail-imik tigusaqartassaatit.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Atortunit nutaanit isernernut tunngasunik e-mail-inik tigusaqartarunnaassaatit.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Quppernerup piffissaa qaangiuppoq. Allanngortitsisoqanngilaq; misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Nittartakkami matumani isersimanerit nalunaarsorneqartanngillat (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabeli expuser_session amigaatigineqarpoq</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Pilersinneqareerpat isersimanerit nalunaarsorneqartalissapput: php update/common/scripts/6.0/createusersessiontable.php, imaluunniit 6.0.15-ip paasissutissaateqarfiata nutarterneqarnera.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Massakkut isersimasoq</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Isersimanerit allat tamaasa anitsikkit</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Isersimanerit tamaasa anitsikkit</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Atortut tamarmik, una pinnagu, qinnuteqarnerminni tullermi anitinneqassapput, aamma »Eqqaamallanga« atorlugu isersimaannartut.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Atuisup matuma isersimanerai tamarmik qinnuteqarnerminni tullermi anitinneqassapput, aamma »Eqqaamallanga« atorlugu isersimaannartut.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Aap, isersimanerit allat anitsikkit</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Aap, isersimanerit tamaasa anitsikkit</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Atortoq una</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Atortoq</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Najugaq</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Networkia takutinneqarpoq; najugaq tamakkerlugu aqutsisunut toqqorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>isersimasoq, IP: %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Iliuuseq kingulleq</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Maanna</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Isersimaannartoq</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Eqqaamallanga, %date tikillugu</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Browseri matuneqarnissaata tungaanut</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Browserip ilisarnaataa</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Isersimaneq una naammassiniarukku anigit.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Anigit</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Isersimaneq una anitsiguk</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Isersimasoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Isernermut nalunaarutit</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Nassiunneqartarpoq uunga: %email. Atortoq, sumiiffik qanillisaarlugu nalunaaqutarlu nalunaarutigai, quppernermullu matumunnga innersuussuteqarpoq.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Nittartagaq una isernermut nalunaarutinik nassiussisanngilaq.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kingullertigut naammassisut</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Isersimanerit kingullertigut naammassisut (ullut: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Naammassiffia</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Qanoq</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Peqanngilaq.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Qarasaasiaq</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Oqarasuaat</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tableti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programmi app-iluunniit</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klienti nammineq ingerlasoq</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Atortoq ilisimaneqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Isissutissaq</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Isissutissaq marlunnillu alloriarluni kodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-imut atassut</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-imut atassut</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ataasiarluni iserneq</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Quppernermit matumannga anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Aqutsisumit anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>»Isersimanerit allat tamarmik« atorlugu anitinneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Iserneq nutaaq taarsiutigineqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Isissutissap allanngortinneqarneratigut naammassisoq</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Atorunnaarsimasoq</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Isersimanerit, atuisoq: %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kontuutit massakkut sumi isersimanersoq. Atortoq ilisarinngikkukku anitsiguk isissutissallu allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kontoq una massakkut sumi isersimanersoq. Atuisoq anitsikkukku isersimanerit tamarmik qinnuteqarnerminni tullermi naammassisarput.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Isersimaneq anitinneqarpoq. Atortoq iseqqittariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Isersimanerit allat anitinneqartut: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Isersimanernik allanik anitsissanik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Atuisup matuma isersimanerai anitinneqartut: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Atuisoq una isersimanernik anitsissanik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Isersimaneq una massakkut atukkat. Naammassiniarukku anigit.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Isersimaneq taanna naammassereersimavoq.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Kontuutit atortumit nutaamit iseraangat e-mail-imik tigusaqartassaatit.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Atortunit nutaanit isernernut tunngasunik e-mail-inik tigusaqartarunnaassaatit.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Quppernerup piffissaa qaangiuppoq. Allanngortitsisoqanngilaq; misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Nittartakkami matumani isersimanerit nalunaarsorneqartanngillat.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Isersimanerit suli nalunaarsorneqanngillat: nittartagaq paasissutissaateqarfiup nutarterneqarneranik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Massakkut isersimasoq</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Atortoq una</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Atortoq</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Najugaq</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Iserfia</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Iliuuseq kingulleq</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Maanna</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Isersimaannartoq</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Eqqaamallanga, %date tikillugu</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Browseri matuneqarnissaata tungaanut</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Isersimaneq una naammassiniarukku anigit.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Anigit</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Isersimaneq una anitsiguk</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Isersimanerit allat tamaasa anitsikkit</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Isersimanerit tamaasa anitsikkit</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Isernermut nalunaarutit</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Kingullertigut naammassisut</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Naammassiffia</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Qanoq</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Kingullertigut peqanngilaq (ullut: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Kontuutit sumi isersimanersoq takuuk, atortorlu ilisarinngisat anitsiguk.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Atortut aqukkit</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Kontuunnut iserneq nutaaq, nittartagaq: %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Inuugujoq,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Kontuutit %login nittartakkami %site atorneqaqqammerpoq atortumit browserimilluunniit kingullertigut atorneqanngitsumit iserfigineqarluni:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Atortoq:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Nalunaaqutaq:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Najugaq qanillisaarlugu:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Illit iseriarsimaguit iliuuseqartariaqanngilatit.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Illit iseriarsimanngikkuit allap isissutissat ilisimasinnaavaa. Isersimaneq taanna atortutinut quppernermi anitsiguk, taava isissutissat allanngortiguk:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>E-mail-it taakku quppernermi tassani atorunnaarsissinnaavatit.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Iserneq nutaaq, atuisoq: %login, nittartagaq: %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Kontoq %login atortumit browserimilluunniit kingullertigut atorneqanngitsumit iserpoq.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Atuisup matuma isersimanerai:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Kontuunnut iserneq nutaaq</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Kontuutit %login atortumit %device (%ip) iserfigineqarpoq, %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Illit iseriarsimaguit iliuuseqartariaqanngilatit. Taamaanngippat isersimaneq una quppernermi uani anitsiguk: %url, isissutissallu allanngortiguk.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Iserneq nutaaq, atuisoq: %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Kontoq %login atortumit nutaamit iserpoq: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Atortutit</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Isersimanerit, atuisoq: %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkey-it</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Nittartakkami matumani passkey-it atuutinngillat.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Nittartakkami matumani passkey-it suli atorneqarsinnaanngillat: aqutsisup siullermik paasissutissaateqarfiup nutarterneqarnera aallartissavaa.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Passkey »%name« piiarusuppiuk?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Kontomut matumunnga iserfiusinnaajunnaarpoq. Aamma atortunnit isissutissanulluunniit aqutsissutinnit piiaruk.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Passkey piiaruk</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Passkey-itit</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count, annerpaamik %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Suli passkey-qanngilatit. Ataani ilaguk: tulliani iserniaruit »Passkey atorlugu iserit« toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ilanngunneqarfia</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Kingullermik atorneqarfia</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suussusaa</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Iliuusissat</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Suli atorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Ataqatigiissarneqartoq</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Atortoq una matuersaalluunniit una</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Aqqa allanngortiguk</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Ateq nutaaq</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Ateq toqqoruk</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Piiaruk</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Passkey ilaguk</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Browserip atortulluunniit alloriarnerit malikkit.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Passkey-p igalaa matuneqarpoq. Allanngortitsisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Passkey pilersinneqarsinnaanngilaq. Misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Browseri una passkey-nik pilersitsisinnaanngilaq. Browseri nutaaq atoruk, imaluunniit isissutissat atorlugu iserit.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Kontoq una passkey-nik amerlanerpaanik akuerisanik (%max) pigisaqareerpoq. Allamik ilanngussiniaruit ataaseq piiaruk.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Passkey atorneqarsinnaanngilaq. Misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Kontoga</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Passkey-p igalaa matuneqarpoq. Taarsiullugu isissutissat atorlugu isersinnaavutit.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Passkey atorneqarsinnaanngilaq. Misileqqiguk, imaluunniit isissutissat atorlugu iserit.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Passkey atorlugu iserit</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Passkey atorlugu iserneq iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Passkey »%name« ilanngunneqarpoq. Maanna atorlugu isersinnaalerputit.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Passkey-p aqqa maanna: »%name«.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Passkey »%name« piiarneqarpoq. Kontomut matumunnga iserfiusinnaajunnaarpoq.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Passkey, %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Kontoq una passkey-nik amerlanerpaanik akuerisanik pigisaqareerpoq. Siullermik ataaseq piiaruk.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Paasissutissaateqarfik suliaqarpoq, toqqortoqanngilaq. Misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Passkey una nalunaarsorneqareerpoq.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Qinnut sivisuallaarpoq imaluunniit atorneqareersimavoq. Misileqqiguk.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Passkey nittartakkamut matumunnga pinnani najugamut allamut pilersinneqarsimavoq.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Passkey una maani kontomut nalunaarsorneqanngilaq. Isissutissat atorlugu iserit, ilannguguk uani: Kontoga, Passkey-it.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Kontoq una massakkut isersinnaanngilaq. Nittartakkap aqutsisua attavigiuk.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Passkey misissorneqarsinnaanngilaq. Misileqqiguk.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Iseriaatsit kontuutilluunniit isumannaassusaa allanngortissavat.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Atuisunik, atuuffinnik maleruagassanilluunniit aqutsissaatit.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Systemip aaqqissuussinerai allanngortissavatit imaluunniit aaqqissuussinermut iliuuseq aallartissavat.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Paasissutissanik anitsissaatit.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Imarisanik piiaassaatit saqqummiussissaatilluunniit.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Iliuuseq una kinaassutsit uppernarsarnissaanik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Kinaassutsit uppernarsaruk (isersimavutit: %login). Minutsini %minutes apeqqutigeqqinneqassanngilatit.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Isissutissaq taanna eqqunngilaq.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Kodi taanna eqqunngilaq, imaluunniit atorneqareersimavoq.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Periaatsit ataaniittut ilaat toqqaruk.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Passkey misissorneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Fiilit toqqakkatit nassiuteqqinneqarsinnaanngillat: uppernarsareerukku toqqaqqikkit.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Isissutissat atorlugu</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Passkey atorlugu</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Isissutissaq</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Uppernarsaruk</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Passkey atoruk</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Authenticator-ip app-ianit kodi atorlugu</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kode</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Kinaassutsit uppernarsaruk</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Authenticator-ip app-ianit kodi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Kontuutit nammineq</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Atuisut, atuuffiit maleruagassallu</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Atuisunik pilersitsineq aaqqissuinerlu, kontomut aaqqissuussinerit, atuuffinnik tunniussineq maleruagassanillu aaqqissuineq.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systemip aaqqissuussinerai aaqqissuussinermullu iliuusissat</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Paasissutissanik anitsineq</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Paasissutissanik katersukkanik, atuisunik, paasissutissiamut abonnementeqartunik misissuinermillu anitsinerit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Imarisanik piiaaneq saqqummiussinerlu</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Imarisanik piiaaneq (aamma eqqaavimmut), eqqaavimmik saliineq saqqummiussinerlu. Aallaavittut atuutinngitsoq.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Nalinginnaasut</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Uppernarsaanerup atuuffiata minutsii</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Qaqugu apeqquteqartoqassanersoq</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name]-imi malittarisassat: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php-mut toqqorneqarpoq. Toqqoraangavit kinaassutsit uppernarsassavat.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Kinaassutsit uppernarsaruk</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Aaqqissuussinerit toqqorneqarput.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Aaqqissuussinerit toqqorneqarsinnaanngillat: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
     </message>
 </context>
 </TS>

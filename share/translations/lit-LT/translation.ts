@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Atidaryti arba uždaryti aplanką</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Šis puslapis yra jūsų žymėse. Atidarykite, kad pakeistumėte jo pavadinimą ar aplanką.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Pridėti šį puslapį prie savo žymių.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Pažymėta</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Pažymėti šį puslapį</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Žymė išsaugo šio puslapio adresą su jo parametrais: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Įrašyti žymę</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Pridėti žymę</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mano žymės</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistemos puslapis</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Sistemos puslapiai</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Jūs nebegalite atidaryti šio puslapio.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atidaryti</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Trūksta šio puslapio adreso. Pašalinkite žymę ir pažymėkite puslapį iš naujo.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Jūs nebegalite atidaryti šio puslapio. Pašalinkite žymę arba paprašykite administratoriaus suteikti prieigą.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modulis ir rodinys</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Žymėti galima ir sistemos puslapius: atidarykite puslapį (Sąranka, audito seka, naudotojų sąrašas ...) ir virš jo pasirinkite „Pažymėti šį puslapį“. Tokios žymės turi krumpliaračio piktogramą.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Pastaba: paketai nebus pašalinti iš įdiegtų (neįdiegiami).</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktyvinti naudotojų paskyras ir perkelti jas į deaktyvintų naudotojų grupę bei perkelti atgal</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>matyti, kur prisijungę kiti naudotojai, ir juos atjungti</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ savo paskyrą.</translation>
         <source>Open e-mail preferences</source>
         <translation>Atidaryti el. pašto nuostatas</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seansai</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kur esate prisijungę: naršyklė, sistema, vieta ir laikas. Atjunkite įrenginį, kurio nepažįstate.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Kur šis naudotojas prisijungęs, ir naudotojo atjungimas visur.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Tvarkyti įrenginius</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Rodyti seansus</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Prisijungusių: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Prieigos raktai</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Prisijunkite pirštų atspaudu, veidu, ekrano užraktu ar saugos raktu vietoj slaptažodžio.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Tvarkyti prieigos raktus</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pridėti prieigos raktą</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Prieigos raktų: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Kol kas nėra</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -37789,7 +37913,7 @@ savo paskyrą.</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Prisiminimas</translation>
+        <translation>Prisiminti mane</translation>
     </message>
     <message>
         <source>&quot;%user_login&quot; is not allowed to log in because failed login attempts by this user exceeded allowable number of failed login attempts!</source>
@@ -39682,6 +39806,30 @@ savo paskyrą.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klasės ir atributų deriniai (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Naudotojų grupės, kurių naujoms paskyroms reikia patvirtinimo</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Paskyra, publikuota vienoje iš šių grupių arba po ja, laukia, kol tvirtintojas ją patvirtins. Iki tol ji negali prisijungti.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Naudotojai, kurie tvirtina paskyras</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupės, kurios tvirtina paskyras</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Naudotojų grupės, kurioms patvirtinimo nereikia (jų nariai tokias paskyras publikuoja tiesiogiai; tvirtintojams jo niekada nereikia)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Siųsti tvirtintojams el. laišką su nuoroda į patvirtinimą (jie prisijungia, kad patvirtintų arba atmestų)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Daugiau informacijos rasite reikalavimų puslapyje.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Aplinkos kintamasis EXP_DEMO_MODE=1 nurodo, kad ši instaliacija yra vieša demonstracinė: priimamas gerai žinomas administratoriaus slaptažodis, o administratorių slaptažodžių vėliau pakeisti ar atkurti negalima. Niekada nenaudokite demonstracinio režimo veikiančiai svetainei.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron užduotys</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron užduotys vykdomos iš naudotojo %user, kuriam priklauso diegtis, crontab.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Diegtyje nėra cron užduoties dalies, kurią reikėtų suplanuoti.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab nebuvo įrašytas (%reason). Įrašykite šias eilutes į naudotojo, kurio vardu veikia svetainė, crontab, kitaip eilė, importai, pranešimai ir paieškos indeksas niekada nebus vykdomi:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ savo paskyrą.</translation>
         <source>ClassAttribute name</source>
         <translation>Klasės atributo pavadinimas</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Paskyros, kurioms reikia patvirtinimo</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>El. laiškas tvirtintojams</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Taip</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ savo paskyrą.</translation>
         <source>Your comment was added.</source>
         <translation>Jūsų komentaras buvo pridėtas.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Paskyra „%1“ buvo patvirtinta ir publikuota: dabar ji gali prisijungti.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Paskyra „%1“ buvo atmesta. Ji nepublikuota ir negali prisijungti; ji vėl yra savo autoriaus juodraštis.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ savo paskyrą.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Pridėta žymių: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistemos puslapis</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Sistemos puslapių kol kas negalima žymėti: šios versijos duomenų bazės atnaujinimas dar neatliktas.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Šio puslapio negalima pažymėti: tai nėra modulio rodinio puslapis.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Šio puslapio negalima pažymėti: jūs negalite jo atidaryti.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Puslapio nepavyko pažymėti.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Puslapis „%name“ yra jūsų žymėse.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Žymės nepavyko pervadinti: jai reikia pavadinimo.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Žymė pervadinta į „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Atspindėti duomenų lentelėse</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Tvirtinti naudotojų paskyras</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nauja naudotojo paskyra laukia jūsų patvirtinimo</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Nukreipta į slaptažodžio keitimą</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Prisijungimas be antrojo žingsnio atmestas</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Programėlės slaptažodis sukurtas</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Programėlės slaptažodis atšauktas</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Programėlės slaptažodis panaudotas</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Šio mazgo audito seka</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>nepažeista</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>nutrūkusi</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>netikrinta</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>pataisyta</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tuščia</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Naujas el. pašto adresas %email laukia patvirtinimo: atidarykite ten išsiųstą nuorodą. Iki tol ši paskyra naudoja adresą %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>El. laiškas apie prisijungimą iš naujo įrenginio ar naršyklės yra paskyros saugumo dalis. Jį įjungiate arba išjungiate skiltyje „Jūsų įrenginiai“, kur taip pat matote savo paskyros seansus ir galite juos atjungti.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Naršyti pastovių klasių lenteles…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron užduotys</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Dar nė viena cron užduoties dalis nebuvo paleista: darbų eilė, importai, pranešimai ir paieškos indeksas laukia. Paleiskite php bin/php/installcrontab.php --add arba įrašykite --show eilutes į crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Cron užduoties dalis nebuvo paleista ilgiau, nei leidžia jos tvarkaraštis: patikrinkite crontab (php bin/php/installcrontab.php --show) ir žurnalus var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Dalis</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Tvarkaraštis</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Paskutinį kartą paleista</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niekada</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>laiku</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>vėluoja</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>niekada nepaleista</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Diegtyje nėra cron užduoties dalies, kurią cron užduotis galėtų vykdyti.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Sąranka &gt; Cron užduotys</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nauja naudotojo paskyra laukia patvirtinimo: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Paskyra</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Naudotojo vardas</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupė</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Prašė</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Atidaryti patvirtinimą</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jei mygtukas neveikia, nukopijuokite šį adresą į naršyklę: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nauja naudotojo paskyra laukia jūsų patvirtinimo</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester sukūrė paskyrą „%name“ grupėje %groups. Ji nepublikuota ir negali prisijungti, kol tvirtintojas jos nepatvirtins.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Prisijunkite prie administravimo sąsajos ir patvirtinkite arba atmeskite ją savo bendradarbiavimo sąraše. Ši nuoroda jūsų neprijungia ir pati nieko nesprendžia.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Šį laišką išsiuntė %site, nes jūs tvirtinate naujas šių grupių paskyras.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompiuteris</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefonas</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Planšetė</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programa arba programėlė</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatinis klientas</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nežinomas įrenginys</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Slaptažodis</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Slaptažodis ir dviejų žingsnių kodas</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST sąsaja</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP sąsaja</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vieningas prisijungimas</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Prisijungta prieš pradedant registruoti seansus</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Atjungta</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Atjungta šiame puslapyje</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Atjungė administratorius</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Atjungta su „visi kiti seansai“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Pakeista nauju prisijungimu</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Užbaigta pakeitus slaptažodį</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Baigė galioti</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name seansai</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kur jūsų paskyra prisijungusi šiuo metu. Jei neatpažįstate įrenginio, atjunkite jį ir pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kur ši paskyra prisijungusi šiuo metu. Atjungus naudotoją, kiekvienas seansas baigiamas per kitą jo užklausą.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Atgal į paskyrą</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seansas atjungtas. Įrenginys turi prisijungti iš naujo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Atjungta kitų seansų: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebuvo kitų seansų, kuriuos reikėtų atjungti.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Atjungta šio naudotojo seansų: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Šis naudotojas neturėjo seansų, kuriuos reikėtų atjungti.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tai seansas, kurį naudojate dabar. Norėdami jį užbaigti, atsijunkite.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tas seansas jau buvo baigtas.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Gausite el. laišką, kai jūsų paskyra prisijungs iš naujo įrenginio.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nebegausite el. laiškų apie prisijungimus iš naujų įrenginių.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Puslapio galiojimas baigėsi. Niekas nepakeista; bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Šioje svetainėje seansai neregistruojami (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Trūksta lentelės expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seansai registruojami, kai ji sukuriama: php update/common/scripts/6.0/createusersessiontable.php arba 6.0.15 versijos duomenų bazės atnaujinimas.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Prisijungęs dabar</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Atjungti visus kitus seansus</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Atjungti visur</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kiekvienas įrenginys, išskyrus šį, atjungiamas per kitą jo užklausą, taip pat ir tie, kurie lieka prisijungę su „Prisiminti mane“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kiekvienas šio naudotojo seansas atjungiamas per kitą jo užklausą, taip pat ir tie, kurie lieka prisijungę su „Prisiminti mane“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Taip, atjungti kitus seansus</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Taip, atjungti kiekvieną seansą</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šis įrenginys</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Įrenginys</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Rodomas kaip jo tinklas; visas adresas saugomas administratoriams.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>prisijungta iš %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Prisijungta</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Paskutinį kartą aktyvus</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Dabar</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Lieka prisijungęs</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>„Prisiminti mane“, iki %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kol bus uždaryta naršyklė</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Prisijungta per</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Naršyklės identifikacija</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Norėdami užbaigti šį seansą, atsijunkite.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Atjungti</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Atjungti šį seansą</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nėra prisijungusių seansų.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Įspėjimai apie prisijungimus</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Siųsti man el. laišką, kai mano paskyra prisijungia iš naujo įrenginio ar naršyklės</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Siunčiama adresu %email. Laiške nurodomas įrenginys, apytikslė vieta ir laikas bei pateikiama nuoroda į šį puslapį.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Ši svetainė nesiunčia įspėjimų apie prisijungimus.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Neseniai baigti</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Seansai, pasibaigę per paskutines %days d.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Baigta</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kaip</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Nėra.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompiuteris</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefonas</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Planšetė</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programa arba programėlė</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatinis klientas</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nežinomas įrenginys</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Slaptažodis</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Slaptažodis ir dviejų žingsnių kodas</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST sąsaja</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP sąsaja</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vieningas prisijungimas</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Prisijungta prieš pradedant registruoti seansus</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Atjungta</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Atjungta šiame puslapyje</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Atjungė administratorius</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Atjungta su „visi kiti seansai“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Pakeista nauju prisijungimu</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Užbaigta pakeitus slaptažodį</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Baigė galioti</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name seansai</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kur jūsų paskyra prisijungusi šiuo metu. Jei neatpažįstate įrenginio, atjunkite jį ir pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kur ši paskyra prisijungusi šiuo metu. Atjungus naudotoją, kiekvienas seansas baigiamas per kitą jo užklausą.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seansas atjungtas. Įrenginys turi prisijungti iš naujo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Atjungta kitų seansų: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebuvo kitų seansų, kuriuos reikėtų atjungti.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Atjungta šio naudotojo seansų: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Šis naudotojas neturėjo seansų, kuriuos reikėtų atjungti.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tai seansas, kurį naudojate dabar. Norėdami jį užbaigti, atsijunkite.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Tas seansas jau buvo baigtas.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Gausite el. laišką, kai jūsų paskyra prisijungs iš naujo įrenginio.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nebegausite el. laiškų apie prisijungimus iš naujų įrenginių.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Puslapio galiojimas baigėsi. Niekas nepakeista; bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Šioje svetainėje seansai neregistruojami.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Seansai dar neregistruojami: svetainei reikia duomenų bazės atnaujinimo.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Prisijungęs dabar</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šis įrenginys</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Įrenginys</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresas</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Prisijungta</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Paskutinį kartą aktyvus</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Dabar</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Lieka prisijungęs</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>„Prisiminti mane“, iki %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kol bus uždaryta naršyklė</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Norėdami užbaigti šį seansą, atsijunkite.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Atjungti</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Atjungti šį seansą</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Atjungti visus kitus seansus</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Atjungti visur</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Įspėjimai apie prisijungimus</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Siųsti man el. laišką, kai mano paskyra prisijungia iš naujo įrenginio ar naršyklės</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Neseniai baigti</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Baigta</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kaip</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Per paskutines %days d. nėra.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Matykite, kur prisijungusi jūsų paskyra, ir atjunkite įrenginį, kurio nepažįstate.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Tvarkyti įrenginius</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Naujas prisijungimas prie jūsų paskyros svetainėje %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Sveiki,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Jūsų paskyra %login svetainėje %site ką tik buvo panaudota prisijungti iš įrenginio ar naršyklės, kurių ji pastaruoju metu nenaudojo:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Įrenginys:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Laikas:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Apytikslis adresas:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Jei tai buvote jūs, nieko daryti nereikia.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Jei tai buvote ne jūs, kažkas gali žinoti jūsų slaptažodį. Atjunkite tą seansą savo įrenginių puslapyje, tada pakeiskite slaptažodį:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Šiuos el. laiškus galite išjungti tame pačiame puslapyje.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Naujas %login prisijungimas svetainėje %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Paskyra %login prisijungė iš įrenginio ar naršyklės, kurių pastaruoju metu nenaudojo.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Šio naudotojo seansai:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Naujas prisijungimas prie jūsų paskyros</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Jūsų paskyra %login buvo panaudota prisijungti iš %device (%ip) %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Jei tai buvote jūs, nieko daryti nereikia. Jei ne, atjunkite šį seansą adresu %url ir pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Naujas %login prisijungimas</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Paskyra %login prisijungė iš naujo įrenginio: %device (%ip) %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsų įrenginiai</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name seansai</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Prieigos raktai</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Prieigos raktas leidžia prisijungti pirštų atspaudu, veidu, ekrano užraktu ar saugos raktu vietoj slaptažodžio. Jis saugomas jūsų įrenginyje arba slaptažodžių tvarkyklėje; ši svetainė saugo tik jo viešąjį raktą, todėl nutekėjus duomenims čia jo atskleisti neįmanoma.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Prieigos raktai šioje svetainėje išjungti.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Prieigos raktų šioje svetainėje dar negalima naudoti: administratorius pirmiausia turi atlikti duomenų bazės atnaujinimą.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Pašalinti prieigos raktą „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Juo nebebus galima prisijungti prie šios paskyros. Pašalinkite jį ir iš savo įrenginio ar slaptažodžių tvarkyklės.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Pašalinti prieigos raktą</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Jūsų prieigos raktai</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count iš daugiausia %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Dar neturite prieigos rakto. Pridėkite jį toliau: kitą kartą jungdamiesi pasirinkite „Prisijungti su prieigos raktu“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pridėta</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Paskutinį kartą naudota</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Rūšis</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veiksmai</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Dar ne</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sinchronizuotas</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Šis įrenginys arba raktas</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Pervadinti</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Naujas pavadinimas</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Įrašyti pavadinimą</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Pašalinti</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pridėti prieigos raktą</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Vykdykite savo naršyklės ar įrenginio nurodymus.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Prieigos rakto dialogo langas uždarytas. Niekas nepakeista.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Nepavyko sukurti prieigos rakto. Bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ši naršyklė negali kurti prieigos raktų. Naudokite naujausią naršyklę arba prisijunkite slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Pavyzdžiui, įrenginys ar slaptažodžių tvarkyklė, kurioje jis saugomas, kad galėtumėte atskirti savo prieigos raktus.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Ši paskyra turi tiek prieigos raktų, kiek leidžiama (%max). Pašalinkite vieną, kad pridėtumėte kitą.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Nepavyko panaudoti prieigos rakto. Bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mano paskyra</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Prieigos rakto dialogo langas uždarytas. Vietoj to galite prisijungti slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Nepavyko panaudoti prieigos rakto. Bandykite dar kartą arba prisijunkite slaptažodžiu.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Prisijungti su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Nepavyko prisijungti su prieigos raktu</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>prisijunkite pirštų atspaudu, veidu, ekrano užraktu ar saugos raktu vietoj slaptažodžio.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Prieigos raktas „%name“ pridėtas. Nuo šiol galite juo prisijungti.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Prieigos raktas dabar vadinasi „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Prieigos raktas „%name“ pašalintas. Juo nebegalima prisijungti prie šios paskyros.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Prieigos raktas, %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Ši paskyra turi tiek prieigos raktų, kiek leidžiama. Pirmiausia pašalinkite vieną.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Duomenų bazė buvo užimta, niekas neįrašyta. Bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Šis prieigos raktas jau užregistruotas.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Užklausa truko per ilgai arba jau buvo panaudota. Bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Prieigos raktas nepatikrino, kas jūs esate (PIN, pirštų atspaudas ar veidas). Bandykite dar kartą ir patvirtinkite savo įrenginyje.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Šis autentifikatorius naudoja rakto rūšį, kurios ši svetainė nepriima.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Prieigos raktas buvo sukurtas kitam adresui, ne šiai svetainei.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Šis prieigos raktas čia neužregistruotas jokiai paskyrai. Prisijunkite slaptažodžiu ir pridėkite jį skiltyje Mano paskyra, Prieigos raktai.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Ši paskyra šiuo metu negali prisijungti. Kreipkitės į svetainės administratorių.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Nepavyko patikrinti prieigos rakto. Bandykite dar kartą.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Ketinate pakeisti prisijungimo būdą arba paskyros saugumą.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Ketinate tvarkyti naudotojus, vaidmenis arba politikas.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Ketinate pakeisti sistemos nustatymus arba atlikti sąrankos veiksmą.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Ketinate eksportuoti duomenis.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Ketinate pašalinti arba publikuoti turinį.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Šiam veiksmui turite patvirtinti savo tapatybę.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Patvirtinkite, kad tai jūs, prisijungęs kaip %login. %minutes min. daugiau nebus klausiama.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Slaptažodis neteisingas.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Kodas neteisingas arba jau buvo panaudotas.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Pasirinkite vieną iš toliau pateiktų būdų.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Nepavyko patikrinti prieigos rakto.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Liko bandymų, kol būsite atjungti: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Pasirinktų failų negalima išsiųsti dar kartą: patvirtinę pasirinkite juos iš naujo.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Slaptažodžiu</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Prieigos raktu</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Slaptažodis</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Patvirtinti</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Naudoti prieigos raktą</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Kodu iš autentifikavimo programėlės</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kodas</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Ši paskyra neturi būdo patvirtinti jūsų tapatybę (nėra slaptažodžio, prieigos rakto ar autentifikavimo programėlės). Atsijunkite ir vėl prisijunkite arba kreipkitės į administratorių.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atšaukti</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Patvirtinkite, kad tai jūs</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kodas iš autentifikavimo programėlės</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Savo paskyra</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Savo slaptažodžio, el. pašto adreso, prieigos raktų, dviejų žingsnių prisijungimo ar API raktų keitimas.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Naudotojai, vaidmenys ir politikos</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Naudotojų kūrimas ir redagavimas, paskyrų nustatymai, vaidmenų priskyrimas ir politikų redagavimas.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Sistemos nustatymai ir sąrankos veiksmai</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Nustatymų, plėtinių redagavimas, talpyklos ir priežiūra, paketai ir atnaujinimai, atsarginės kopijos ir git tvarkyklė.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Duomenų eksportas</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Surinktos informacijos, naudotojų, naujienlaiškio prenumeratorių ir audito eksportas.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Turinio šalinimas ir publikavimas</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Turinio šalinimas (taip pat į šiukšlinę), šiukšlinės išvalymas ir publikavimas. Pagal numatytuosius nustatymus išjungta.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Prieš jautrų veiksmą prisijungęs naudotojas dar kartą patvirtina savo tapatybę slaptažodžiu, prieigos raktu arba autentifikavimo programėlės kodu. Klausia tik tinklalapiai: REST sąsaja, SOAP, WebDAV, expservices prisijungimas ir komandinė eilutė niekada neklausia.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Bendra</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Kiek minučių galioja patvirtinimas</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kada klausti</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Taisyklių site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Įrašoma į settings/override/site.ini.append.php. Įrašant prašoma patvirtinti, kad tai jūs.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Įrašyti</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Patvirtinkite, kad tai jūs</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Prieš toliau įjungtų grupių veiksmus klausti „Patvirtinkite, kad tai jūs“</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Nustatymai įrašyti.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nustatymų nepavyko įrašyti: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sąranka</translation>
     </message>
 </context>
 </TS>

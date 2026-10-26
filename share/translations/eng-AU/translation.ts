@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Open or close the folder</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>This page is in your bookmarks. Open to change its name or folder.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Add this page to your bookmarks.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Bookmarked</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bookmark this page</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>The bookmark keeps the address of this page with its parameters: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Save bookmark</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Add bookmark</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>My bookmarks</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>System page</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>System pages</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>You may no longer open this page.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Open</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>The address of this page is missing. Remove the bookmark and bookmark the page again.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Module and view</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -14148,7 +14216,7 @@ Note: The packages will not be uninstalled.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Store</translation>
+        <translation>Shop</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deactivate user accounts and move them to the group of deactivated users, and move them back</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>see where other users are signed in, and sign them out</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</translation>
         <source>Open e-mail preferences</source>
         <translation>Open e-mail preferences</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Where this user is signed in, and signing the user out everywhere.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Manage devices</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Show sessions</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count signed in</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Sign in with your fingerprint, face, screen lock or security key instead of your password.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Manage passkeys</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Add a passkey</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count passkeys</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>None yet</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Class/attribute combinations (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>User groups whose new accounts need approval</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Users who approve the accounts</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Groups who approve the accounts</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>User groups that need no approval (their members publish such accounts directly; approvers never need it)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>The cronjobs run from the crontab of the user %user, which owns the installation.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>The installation has no cronjob part to schedule.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</translation>
         <source>ClassAttribute name</source>
         <translation>ClassAttribute name</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Accounts that need approval</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail to the approvers</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</translation>
         <source>Your comment was added.</source>
         <translation>Your comment was added.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>The account "%1" was approved and published: it can sign in now.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Added %count bookmark(s).</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>System page</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>System pages cannot be bookmarked yet: the database update of this version has not been run.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>This page cannot be bookmarked: it is not a page of a module view.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>This page cannot be bookmarked: you may not open it.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>The page could not be bookmarked.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>The page "%name" is in your bookmarks.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>The bookmark could not be renamed: it needs a name.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>The bookmark was renamed to "%name".</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Mirror to data tables</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Approve user accounts</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>A new user account waits for your approval</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>Sent to the password change</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Sign-in without the second step refused</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>App password made</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>App password revoked</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>App password used</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>The audit trail of this node</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>intact</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>broken</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>unchecked</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>repaired</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>empty</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Browse the tables of the persistent classes…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cronjobs</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Schedule</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Last started</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>State</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>never</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>on time</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>late</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>never ran</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>The installation has no cronjob part for the cron job to run.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Setup &gt; Cronjobs</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>New user account waiting for approval: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Account</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Username</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Group</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Requested by</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Open the approval</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>If the button does not work, copy this address into your browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>A new user account waits for your approval</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>This mail was sent by %site because you approve new accounts of these groups.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Phone</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program or app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automated client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unknown device</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Signed in before sessions were recorded</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Signed out from this page</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Signed out by an administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Signed out with "all other sessions"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Replaced by a new sign-in</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ended by a password change</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Where this account is signed in right now. Signing the user out ends every session at its next request.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Back to the account</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>The session was signed out. The device has to sign in again.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count other sessions were signed out.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>There were no other sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessions of this user were signed out.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>This user had no sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>This is the session you are using. To end it, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>That session had already ended.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>You will get an e-mail when your account signs in from a new device.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>You will no longer get an e-mail about sign-ins from new devices.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>The page had expired. Nothing was changed; please try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>The table expuser_session is missing</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sign out all other sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out everywhere</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Yes, sign out the other sessions</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Yes, sign out every session</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>This device</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Shown as its network; the full address is kept for the administrators.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>signed in from %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last active</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Now</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Stays signed in</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Remember me, until %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Until the browser is closed</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Signed in at</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Browser identification</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>To end this session, sign out.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sign out this session</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>No session is signed in.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sign-in alerts</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail me when my account signs in from a new device or browser</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>This site does not send sign-in alerts.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Recently ended</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessions that ended in the last %days days.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ended</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>None.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Phone</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program or app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automated client</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Unknown device</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password and two-step code</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST interface</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP interface</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Single sign-on</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Signed in before sessions were recorded</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Signed out</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Signed out from this page</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Signed out by an administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Signed out with "all other sessions"</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Replaced by a new sign-in</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Ended by a password change</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expired</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Where this account is signed in right now. Signing the user out ends every session at its next request.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>The session was signed out. The device has to sign in again.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count other sessions were signed out.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>There were no other sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>%count sessions of this user were signed out.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>This user had no sessions to sign out.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>This is the session you are using. To end it, sign out.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>That session had already ended.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>You will get an e-mail when your account signs in from a new device.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>You will no longer get an e-mail about sign-ins from new devices.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>The page had expired. Nothing was changed; please try again.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sessions are not recorded on this site.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessions are not recorded yet: the site needs its database update.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Signed in now</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>This device</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Signed in</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Last active</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Now</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Stays signed in</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Remember me, until %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Until the browser is closed</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>To end this session, sign out.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sign out</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sign out this session</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sign out all other sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sign out everywhere</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sign-in alerts</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail me when my account signs in from a new device or browser</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Recently ended</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ended</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>How</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>None in the last %days days.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>See where your account is signed in, and sign out a device you do not know.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Manage devices</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>New sign-in to your account on %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hello,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Device:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Time:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Approximate address:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>If this was you, you do not need to do anything.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>You can turn these e-mails off on the same page.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>New sign-in of %login on %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>The account %login signed in from a device or browser it has not used lately.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>The sessions of this user:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>New sign-in to your account</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Your account %login was used to sign in from %device (%ip) on %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>New sign-in of %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>The account %login signed in from a new device: %device (%ip) on %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Your devices</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions of %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Passkeys are switched off on this site.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Remove the passkey "%name"?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>It can no longer sign in to this account. Remove it from your device or password manager as well.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Remove the passkey</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Your passkeys</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count of at most %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Added</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Last used</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Kind</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actions</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Not yet</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synced</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>This device or key</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Rename</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>New name</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Save the name</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Add a passkey</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Follow the steps of your browser or device.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>The passkey dialog was closed. Nothing was changed.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>The passkey could not be made. Please try again.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>This browser cannot make passkeys. Use a current browser, or sign in with your password.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>For example the device or password manager it is on, so you can tell your passkeys apart.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>This account has as many passkeys as it may have (%max). Remove one to add another.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>The passkey could not be used. Please try again.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>My account</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>The passkey dialog was closed. You can sign in with your password instead.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>The passkey could not be used. Please try again, or sign in with your password.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Sign in with a passkey</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Could not sign in with the passkey</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>sign in with your fingerprint, face, screen lock or security key instead of your password.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>The passkey "%name" is added. You can sign in with it from now on.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>The passkey is now called "%name".</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>The passkey "%name" is removed. It cannot sign in to this account any more.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Passkey of %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>This account has as many passkeys as it may have. Remove one first.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>The database was busy and nothing was saved. Please try again.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>This passkey is registered already.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>The request took too long or was already used. Please try again.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>This authenticator uses a kind of key this site does not accept.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>The passkey was made for another address than this site.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>This account cannot sign in at the moment. Please contact the site administrator.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>The passkey could not be checked. Please try again.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>You are about to change how you sign in or the security of your account.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>You are about to manage users, roles or policies.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>You are about to change system settings or run a setup action.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>You are about to export data.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>You are about to remove or publish content.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>This action needs you to confirm who you are.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>That password is not right.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>That code is not right, or it was used already.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Choose one of the ways below.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>The passkey could not be checked.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>%count tries are left before you are signed out.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>The files you chose cannot be sent again: after confirming, choose them once more.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>With your password</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>With a passkey</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Use a passkey</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>With a code from your authenticator app</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Code</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verify it's you</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Code from your authenticator app</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Your own account</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Users, roles and policies</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Creating and editing users, account settings, assigning roles and editing policies.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>System settings and setup actions</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Exporting data</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exports of collected information, users, newsletter subscribers and the audit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Removing and publishing content</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Removing content (also to the trash), emptying the trash and publishing. Off by default.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>General</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minutes a confirmation counts</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>When to ask</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count rules in site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verify it's you</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Ask "Verify it's you" before the actions of the groups switched on below</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>The settings are saved.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>The settings could not be saved: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Setup</translation>
     </message>
 </context>
 </TS>

@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Atvērt vai aizvērt mapi</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Šī lapa ir jūsu grāmatzīmēs. Atveriet, lai mainītu tās nosaukumu vai mapi.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Pievienot šo lapu grāmatzīmēm.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Grāmatzīmēs</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Pievienot lapu grāmatzīmēm</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Grāmatzīme saglabā šīs lapas adresi ar tās parametriem: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Saglabāt grāmatzīmi</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Pievienot grāmatzīmi</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Manas grāmatzīmes</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistēmas lapa</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Sistēmas lapas</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Jums vairs nav atļauts atvērt šo lapu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atvērt</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Šīs lapas adrese trūkst. Noņemiet grāmatzīmi un vēlreiz pievienojiet lapu grāmatzīmēm.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Jums vairs nav atļauts atvērt šo lapu. Noņemiet grāmatzīmi vai lūdziet administratoram piekļuvi.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrese</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modulis un skats</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Grāmatzīmēm var pievienot arī sistēmas lapas: atveriet lapu (Iestatīšana, audita žurnāls, lietotāju saraksts ...) un virs tās izvēlieties „Pievienot lapu grāmatzīmēm“. Šādām grāmatzīmēm ir zobrata ikona.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktivizēt lietotāju kontus un pārvietot tos uz deaktivizēto lietotāju grupu, kā arī pārvietot tos atpakaļ</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>redzēt, kur citi lietotāji ir pierakstījušies, un izrakstīt viņus</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ tajā sniegtos norādījumus.</translation>
         <source>Open e-mail preferences</source>
         <translation>Atvērt e-pasta preferences</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesijas</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kur esat pierakstījies: pārlūkprogramma, sistēma, vieta un laiks. Izrakstiet ierīci, kuru nepazīstat.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Kur šis lietotājs ir pierakstījies, un lietotāja izrakstīšana visur.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Pārvaldīt ierīces</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Rādīt sesijas</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Pierakstītas sesijas: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Piekļuves atslēgas</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Pierakstieties ar pirksta nospiedumu, seju, ekrāna bloķēšanu vai drošības atslēgu paroles vietā.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Pārvaldīt piekļuves atslēgas</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pievienot piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Piekļuves atslēgas: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Vēl nav</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klašu/atribūtu kombinācijas (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Lietotāju grupas, kuru jaunajiem kontiem nepieciešams apstiprinājums</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Konts, kas publicēts kādā no šīm grupām vai zem tās, gaida, līdz apstiprinātājs to pieņem. Pirms tam tas nevar pierakstīties.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Lietotāji, kas apstiprina kontus</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupas, kas apstiprina kontus</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Lietotāju grupas, kurām apstiprinājums nav nepieciešams (to dalībnieki šādus kontus publicē tieši; apstiprinātājiem tas nekad nav vajadzīgs)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Nosūtīt apstiprinātājiem e-pastu ar saiti uz apstiprinājumu (viņi pierakstās, lai apstiprinātu vai noraidītu)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Plašāku informāciju skatiet prasību lapā.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Vides mainīgais EXP_DEMO_MODE=1 atzīmē šo instalāciju kā publisku demonstrāciju: tiek pieņemta plaši zināma administratora parole, un administratoru paroles vēlāk nevar mainīt vai atiestatīt. Nekad neizmantojiet demonstrācijas režīmu ražošanas vietnei.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron uzdevumi</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron uzdevumi tiek palaisti no lietotāja %user crontab; šim lietotājam pieder instalācija.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalācijā nav nevienas cron uzdevuma daļas, ko ieplānot.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab netika ierakstīts (%reason). Pievienojiet šīs rindas tā lietotāja crontab, ar kura tiesībām darbojas vietne, citādi rinda, importēšana, paziņojumi un meklēšanas indekss nekad netiks palaisti:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ tajā sniegtos norādījumus.</translation>
         <source>ClassAttribute name</source>
         <translation>Klases atribūta nosaukums</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konti, kuriem nepieciešams apstiprinājums</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-pasts apstiprinātājiem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jā</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nē</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ tajā sniegtos norādījumus.</translation>
         <source>Your comment was added.</source>
         <translation>Jūsu komentārs ir pievienots.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Konts „%1“ ir apstiprināts un publicēts: tagad tas var pierakstīties.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Konts „%1“ ir noraidīts. Tas nav publicēts un nevar pierakstīties; tas atkal ir tā autora melnraksts.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ tajā sniegtos norādījumus.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Pievienotās grāmatzīmes: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistēmas lapa</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Sistēmas lapas vēl nevar pievienot grāmatzīmēm: šīs versijas datu bāzes atjauninājums nav palaists.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Šo lapu nevar pievienot grāmatzīmēm: tā nav moduļa skata lapa.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Šo lapu nevar pievienot grāmatzīmēm: jums nav atļauts to atvērt.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Lapu neizdevās pievienot grāmatzīmēm.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Lapa „%name“ ir jūsu grāmatzīmēs.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Grāmatzīmi neizdevās pārdēvēt: tai nepieciešams nosaukums.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Grāmatzīme ir pārdēvēta par „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Spoguļot uz datu tabulām</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Apstiprināt lietotāju kontus</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Jauns lietotāja konts gaida jūsu apstiprinājumu</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Novirzīts uz paroles maiņu</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Pierakstīšanās bez otrā soļa noraidīta</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Izveidota lietotnes parole</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Atsaukta lietotnes parole</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Izmantota lietotnes parole</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Šī mezgla audita žurnāls</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>nebojāts</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>bojāts</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>nepārbaudīts</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>salabots</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tukšs</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Jaunā e-pasta adrese %email gaida apstiprinājumu: atveriet saiti, ko uz to nosūtījām. Līdz tam šim kontam paliek adrese %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-pasts par pierakstīšanos no jaunas ierīces vai pārlūkprogrammas ir daļa no konta drošības. To varat ieslēgt vai izslēgt lapā „Jūsu ierīces“, kur varat arī redzēt un izrakstīt sava konta sesijas.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Pārlūkot noturīgo klašu tabulas…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron uzdevumi</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Neviena cron uzdevuma daļa vēl nav palaista: darbu rinda, importēšana, paziņojumi un meklēšanas indekss gaida. Palaidiet php bin/php/installcrontab.php --add vai pievienojiet crontab rindas, ko parāda --show.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Kāda cron uzdevuma daļa nav palaista ilgāk, nekā atļauj tās grafiks: pārbaudiet crontab (php bin/php/installcrontab.php --show) un žurnālus var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Daļa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Grafiks</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Pēdējā palaišana</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>laikā</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>kavējas</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nekad nav palaista</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalācijā nav nevienas cron uzdevuma daļas, ko cron uzdevums varētu palaist.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Iestatīšana &gt; Cron uzdevumi</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Jauns lietotāja konts gaida apstiprinājumu: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konts</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Lietotājvārds</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupa</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Pieprasīja</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Atvērt apstiprinājumu</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ja poga nedarbojas, iekopējiet šo adresi pārlūkprogrammā: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Jauns lietotāja konts gaida jūsu apstiprinājumu</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Lietotājs %requester izveidoja kontu „%name“ grupās %groups. Tas nav publicēts un nevar pierakstīties, kamēr apstiprinātājs to nepieņem.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Pierakstieties administrēšanas saskarnē un apstipriniet vai noraidiet to savā sadarbības sarakstā. Šī saite jūs nepieraksta un pati neko neizlemj.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Šo e-pasta ziņojumu nosūtīja vietne %site, jo jūs apstiprināt šo grupu jaunos kontus.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Dators</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Tālrunis</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Planšetdators</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma vai lietotne</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizēts klients</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nezināma ierīce</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parole</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parole un divpakāpju pierakstīšanās kods</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST saskarne</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP saskarne</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vienotā pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Pierakstīta, pirms sesijas tika reģistrētas</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Izrakstīta</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Izrakstīta šajā lapā</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Izrakstīja administrators</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Izrakstīta ar „visas pārējās sesijas“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Aizstāta ar jaunu pierakstīšanos</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Beigta paroles maiņas dēļ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Beidzies termiņš</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Lietotāja %name sesijas</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kur jūsu konts ir pierakstīts pašlaik. Ja neatpazīstat kādu ierīci, izrakstiet to un nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kur šis konts ir pierakstīts pašlaik. Lietotāja izrakstīšana beidz katru sesiju tās nākamajā pieprasījumā.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Atpakaļ uz kontu</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesija ir izrakstīta. Ierīcei jāpierakstās vēlreiz.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Izrakstītas citas sesijas: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebija citu sesiju, ko izrakstīt.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Izrakstītas šī lietotāja sesijas: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Šim lietotājam nebija sesiju, ko izrakstīt.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Šī ir sesija, kuru pašlaik izmantojat. Lai to beigtu, izrakstieties.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Šī sesija jau bija beigusies.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Jūs saņemsiet e-pastu, kad jūsu konts pierakstīsies no jaunas ierīces.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Jūs vairs nesaņemsiet e-pastu par pierakstīšanos no jaunām ierīcēm.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lapas derīgums bija beidzies. Nekas netika mainīts; lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Šajā vietnē sesijas netiek reģistrētas (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Trūkst tabulas expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesijas tiek reģistrētas, tiklīdz tā ir izveidota: php update/common/scripts/6.0/createusersessiontable.php vai versijas 6.0.15 datu bāzes atjauninājums.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Pašlaik pierakstīts</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Izrakstīt visas pārējās sesijas</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Izrakstīt visur</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Katra ierīce, izņemot šo, tiek izrakstīta tās nākamajā pieprasījumā, arī tās, kas paliek pierakstītas ar „Atcerēties mani“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Katra šī lietotāja sesija tiek izrakstīta tās nākamajā pieprasījumā, arī tās, kas paliek pierakstītas ar „Atcerēties mani“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Jā, izrakstīt pārējās sesijas</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Jā, izrakstīt visas sesijas</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šī ierīce</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ierīce</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrese</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Tiek rādīts tās tīkls; pilnā adrese tiek glabāta administratoriem.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>pierakstījies no %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Pēdējā aktivitāte</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Tagad</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Paliek pierakstīts</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Atcerēties mani, līdz %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Līdz pārlūkprogrammas aizvēršanai</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Pierakstījies vietnē</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Pārlūkprogrammas identifikācija</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Lai beigtu šo sesiju, izrakstieties.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Izrakstīt</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Izrakstīt šo sesiju</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Neviena sesija nav pierakstīta.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Brīdinājumi par pierakstīšanos</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Sūtīt man e-pastu, kad mans konts pierakstās no jaunas ierīces vai pārlūkprogrammas</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Tiek nosūtīts uz %email. Tajā norādīta ierīce, aptuvenā atrašanās vieta un laiks, kā arī saite uz šo lapu.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Šī vietne nesūta brīdinājumus par pierakstīšanos.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nesen beigtās</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sesijas, kas beigušās pēdējo %days dienu laikā.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beigta</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kā</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Nav.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Dators</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Tālrunis</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Planšetdators</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma vai lietotne</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizēts klients</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Nezināma ierīce</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parole</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parole un divpakāpju pierakstīšanās kods</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST saskarne</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP saskarne</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Vienotā pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Pierakstīta, pirms sesijas tika reģistrētas</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Izrakstīta</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Izrakstīta šajā lapā</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Izrakstīja administrators</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Izrakstīta ar „visas pārējās sesijas“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Aizstāta ar jaunu pierakstīšanos</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Beigta paroles maiņas dēļ</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Beidzies termiņš</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Lietotāja %name sesijas</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kur jūsu konts ir pierakstīts pašlaik. Ja neatpazīstat kādu ierīci, izrakstiet to un nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kur šis konts ir pierakstīts pašlaik. Lietotāja izrakstīšana beidz katru sesiju tās nākamajā pieprasījumā.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesija ir izrakstīta. Ierīcei jāpierakstās vēlreiz.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Izrakstītas citas sesijas: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nebija citu sesiju, ko izrakstīt.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Izrakstītas šī lietotāja sesijas: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Šim lietotājam nebija sesiju, ko izrakstīt.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Šī ir sesija, kuru pašlaik izmantojat. Lai to beigtu, izrakstieties.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Šī sesija jau bija beigusies.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Jūs saņemsiet e-pastu, kad jūsu konts pierakstīsies no jaunas ierīces.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Jūs vairs nesaņemsiet e-pastu par pierakstīšanos no jaunām ierīcēm.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lapas derīgums bija beidzies. Nekas netika mainīts; lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Šajā vietnē sesijas netiek reģistrētas.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sesijas vēl netiek reģistrētas: vietnei nepieciešams datu bāzes atjauninājums.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Pašlaik pierakstīts</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Šī ierīce</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Ierīce</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adrese</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Pēdējā aktivitāte</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Tagad</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Paliek pierakstīts</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Atcerēties mani, līdz %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Līdz pārlūkprogrammas aizvēršanai</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Lai beigtu šo sesiju, izrakstieties.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Izrakstīt</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Izrakstīt šo sesiju</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Izrakstīt visas pārējās sesijas</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Izrakstīt visur</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Brīdinājumi par pierakstīšanos</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Sūtīt man e-pastu, kad mans konts pierakstās no jaunas ierīces vai pārlūkprogrammas</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nesen beigtās</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beigta</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kā</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Pēdējo %days dienu laikā nav.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Skatiet, kur jūsu konts ir pierakstīts, un izrakstiet ierīci, kuru nepazīstat.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Pārvaldīt ierīces</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Jauna pierakstīšanās jūsu kontā vietnē %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Labdien!</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Jūsu konts %login vietnē %site tikko tika izmantots, lai pierakstītos no ierīces vai pārlūkprogrammas, kas pēdējā laikā nav izmantota:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Ierīce:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Laiks:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Aptuvenā adrese:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Ja tas bijāt jūs, jums nekas nav jādara.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Ja tas nebijāt jūs, iespējams, kāds zina jūsu paroli. Izrakstiet šo sesiju savu ierīču lapā un pēc tam nomainiet paroli:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Šos e-pasta ziņojumus varat izslēgt tajā pašā lapā.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Jauna lietotāja %login pierakstīšanās vietnē %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Konts %login pierakstījās no ierīces vai pārlūkprogrammas, kas pēdējā laikā nav izmantota.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Šī lietotāja sesijas:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Jauna pierakstīšanās jūsu kontā</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Jūsu konts %login tika izmantots, lai pierakstītos no ierīces %device (%ip); laiks: %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Ja tas bijāt jūs, jums nekas nav jādara. Ja ne, izrakstiet šo sesiju lapā %url un nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Jauna lietotāja %login pierakstīšanās</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Konts %login pierakstījās no jaunas ierīces: %device (%ip); laiks: %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Jūsu ierīces</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Lietotāja %name sesijas</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Piekļuves atslēgas</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Piekļuves atslēga ļauj pierakstīties ar pirksta nospiedumu, seju, ekrāna bloķēšanu vai drošības atslēgu paroles vietā. Tā tiek glabāta jūsu ierīcē vai paroļu pārvaldniekā; šī vietne glabā tikai tās publisko atslēgu, tāpēc datu noplūde šeit to nevar atklāt.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Piekļuves atslēgas šajā vietnē ir izslēgtas.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Piekļuves atslēgas šajā vietnē vēl nevar izmantot: administratoram vispirms jāpalaiž datu bāzes atjauninājums.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Vai tiešām vēlaties noņemt piekļuves atslēgu „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ar to vairs nevarēs pierakstīties šajā kontā. Noņemiet to arī no savas ierīces vai paroļu pārvaldnieka.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Noņemt piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Jūsu piekļuves atslēgas</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count no maksimāli %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Jums vēl nav nevienas piekļuves atslēgas. Pievienojiet to zemāk: nākamreiz, pierakstoties, izvēlieties „Pierakstīties ar piekļuves atslēgu“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pievienota</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Pēdējoreiz izmantota</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Veids</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Darbības</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Vēl nav</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sinhronizēta</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Šī ierīce vai atslēga</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Pārdēvēt</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Jaunais nosaukums</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Saglabāt nosaukumu</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Noņemt</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pievienot piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Izpildiet pārlūkprogrammas vai ierīces norādītās darbības.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Piekļuves atslēgas dialoglodziņš tika aizvērts. Nekas netika mainīts.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Piekļuves atslēgu neizdevās izveidot. Lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Šī pārlūkprogramma nevar izveidot piekļuves atslēgas. Izmantojiet jaunāku pārlūkprogrammu vai pierakstieties ar paroli.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Piemēram, ierīce vai paroļu pārvaldnieks, kurā tā atrodas, lai jūs varētu atšķirt savas piekļuves atslēgas.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Šim kontam jau ir maksimālais atļautais piekļuves atslēgu skaits (%max). Noņemiet kādu, lai pievienotu citu.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Piekļuves atslēgu neizdevās izmantot. Lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mans konts</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Piekļuves atslēgas dialoglodziņš tika aizvērts. Tā vietā varat pierakstīties ar paroli.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Piekļuves atslēgu neizdevās izmantot. Lūdzu, mēģiniet vēlreiz vai pierakstieties ar paroli.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Pierakstīties ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Neizdevās pierakstīties ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>pierakstieties ar pirksta nospiedumu, seju, ekrāna bloķēšanu vai drošības atslēgu paroles vietā.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Piekļuves atslēga „%name“ ir pievienota. No šī brīža varat ar to pierakstīties.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Piekļuves atslēgas nosaukums tagad ir „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Piekļuves atslēga „%name“ ir noņemta. Ar to vairs nevar pierakstīties šajā kontā.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Piekļuves atslēga, %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Šim kontam jau ir maksimālais atļautais piekļuves atslēgu skaits. Vispirms noņemiet kādu.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Datu bāze bija aizņemta, un nekas netika saglabāts. Lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Šī piekļuves atslēga jau ir reģistrēta.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Pieprasījums ilga pārāk ilgi vai jau tika izmantots. Lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Piekļuves atslēga nepārbaudīja jūsu identitāti (PIN, pirksta nospiedums vai seja). Lūdzu, mēģiniet vēlreiz un apstipriniet to savā ierīcē.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Šis autentificētājs izmanto atslēgas veidu, ko šī vietne nepieņem.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Piekļuves atslēga tika izveidota citai adresei, nevis šai vietnei.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Šī piekļuves atslēga šeit nav reģistrēta nevienam kontam. Pierakstieties ar paroli un pievienojiet to lapā „Mans konts“, „Piekļuves atslēgas“.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Šis konts pašlaik nevar pierakstīties. Lūdzu, sazinieties ar vietnes administratoru.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Piekļuves atslēgu neizdevās pārbaudīt. Lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Jūs gatavojaties mainīt pierakstīšanās veidu vai sava konta drošību.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Jūs gatavojaties pārvaldīt lietotājus, lomas vai politikas.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Jūs gatavojaties mainīt sistēmas iestatījumus vai palaist iestatīšanas darbību.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Jūs gatavojaties eksportēt datus.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Jūs gatavojaties noņemt vai publicēt saturu.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Šai darbībai jums jāapstiprina sava identitāte.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Apstipriniet, ka tas esat jūs, pierakstījies kā %login. Nākamās %minutes minūtes jums to vairs nejautās.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Šī parole nav pareiza.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Šis kods nav pareizs vai jau ir izmantots.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Izvēlieties vienu no tālāk norādītajiem veidiem.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Piekļuves atslēgu neizdevās pārbaudīt.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Atlikušie mēģinājumi līdz izrakstīšanai: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Jūsu izvēlētos failus nevar nosūtīt vēlreiz: pēc apstiprināšanas izvēlieties tos atkārtoti.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Ar paroli</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Ar piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parole</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Apstiprināt</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Izmantot piekļuves atslēgu</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Ar kodu no autentificētāja lietotnes</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kods</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Šim kontam nav neviena veida, kā apstiprināt jūsu identitāti (nav paroles, piekļuves atslēgas vai autentificētāja lietotnes). Izrakstieties un pierakstieties vēlreiz vai vērsieties pie administratora.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Apstipriniet, ka tas esat jūs</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kods no autentificētāja lietotnes</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Paša konts</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Savas paroles, e-pasta adreses, piekļuves atslēgu, divpakāpju pierakstīšanās vai API atslēgu maiņa.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Lietotāji, lomas un politikas</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Lietotāju izveide un rediģēšana, kontu iestatījumi, lomu piešķiršana un politiku rediģēšana.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Sistēmas iestatījumi un iestatīšanas darbības</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Iestatījumu rediģēšana, paplašinājumi, kešatmiņas un apkope, pakotnes un atjauninājumi, dublējumi un Git pārvaldnieks.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Datu eksportēšana</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Savāktās informācijas, lietotāju, biļetena abonentu un audita eksportēšana.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Satura noņemšana un publicēšana</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Satura noņemšana (arī uz atkritni), atkritnes iztukšošana un publicēšana. Pēc noklusējuma izslēgts.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Pirms sensitīvas darbības pierakstījies lietotājs vēlreiz apstiprina savu identitāti ar paroli, piekļuves atslēgu vai autentificētāja lietotnes kodu. Jautā tikai tīmekļa lapas: REST saskarne, SOAP, WebDAV, expservices pierakstīšanās un komandrinda nekad nejautā.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Vispārīgi</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Apstiprinājuma derīgums minūtēs</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kad jautāt</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Kārtulas failā site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Saglabāts failā settings/override/site.ini.append.php. Saglabājot jums tiks lūgts apstiprināt, ka tas esat jūs.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Apstipriniet, ka tas esat jūs</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Jautāt „Apstipriniet, ka tas esat jūs“ pirms tālāk ieslēgto grupu darbībām</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Iestatījumi ir saglabāti.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Iestatījumus neizdevās saglabāt: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Iestatīšana</translation>
     </message>
 </context>
 </TS>

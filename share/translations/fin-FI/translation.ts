@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Avaa tai sulje kansio</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Tämä sivu on kirjanmerkeissäsi. Avaa se, jos haluat muuttaa sen nimeä tai kansiota.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Lisää tämä sivu kirjanmerkkeihisi.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Kirjanmerkitty</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Lisää sivu kirjanmerkkeihin</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Kirjanmerkki tallentaa tämän sivun osoitteen parametreineen: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Tallenna kirjanmerkki</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Lisää kirjanmerkki</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Omat kirjanmerkit</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Järjestelmäsivu</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Järjestelmäsivut</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Et voi enää avata tätä sivua.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Avaa</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Tämän sivun osoite puuttuu. Poista kirjanmerkki ja lisää sivu uudelleen kirjanmerkkeihin.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Et voi enää avata tätä sivua. Poista kirjanmerkki tai pyydä käyttöoikeutta järjestelmänvalvojalta.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Moduuli ja näkymä</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Myös järjestelmäsivuja voi lisätä kirjanmerkkeihin: avaa sivu (Asetukset, valvontaloki, käyttäjäluettelo ...) ja valitse sen yläpuolelta Lisää sivu kirjanmerkkeihin. Tällaisissa kirjanmerkeissä on rataskuvake.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>poistaa käyttäjätilejä käytöstä ja siirtää niitä käytöstä poistettujen käyttäjien ryhmään sekä siirtää niitä takaisin</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>nähdä, missä muut käyttäjät ovat kirjautuneina, ja kirjata heidät ulos</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ ohjeita.</translation>
         <source>Open e-mail preferences</source>
         <translation>Avaa sähköpostiasetukset</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Istunnot</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Missä olet kirjautuneena: selain, järjestelmä, paikka ja aika. Kirjaa ulos laite, jota et tunnista.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Missä tämä käyttäjä on kirjautuneena, ja käyttäjän kirjaaminen ulos kaikkialta.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Hallitse laitteita</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Näytä istunnot</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Kirjautuneena: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pääsyavaimet</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Kirjaudu sisään salasanan sijaan sormenjäljellä, kasvoilla, näytön lukituksella tai suojausavaimella.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Hallitse pääsyavaimia</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lisää pääsyavain</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Pääsyavaimia: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Ei vielä yhtään</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ ohjeita.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Luokan ja määritteen yhdistelmät (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Käyttäjäryhmät, joiden uudet tilit on hyväksyttävä</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Tili, joka julkaistaan johonkin näistä ryhmistä tai niiden alle, odottaa, kunnes hyväksyjä hyväksyy sen. Sitä ennen sillä ei voi kirjautua sisään.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Käyttäjät, jotka hyväksyvät tilit</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Ryhmät, jotka hyväksyvät tilit</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Käyttäjäryhmät, joilta ei vaadita hyväksyntää (niiden jäsenet julkaisevat tällaiset tilit suoraan; hyväksyjät eivät koskaan tarvitse sitä)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Lähetä hyväksyjille sähköposti, jossa on linkki hyväksyntään (he kirjautuvat sisään hyväksyäkseen tai estääkseen)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Lisätietoja on vaatimussivulla.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Ympäristömuuttuja EXP_DEMO_MODE=1 merkitsee tämän asennuksen julkiseksi esittelyversioksi: yleisesti tunnettu järjestelmänvalvojan salasana hyväksytään, eikä järjestelmänvalvojien salasanoja voi myöhemmin muuttaa tai palauttaa. Älä koskaan käytä esittelytilaa tuotantosivustolla.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-työt</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron-työt suoritetaan käyttäjän %user crontab-tiedostosta. Käyttäjä omistaa asennuksen.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Asennuksessa ei ole ajoitettavaa Cron-työn osaa.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab-tiedostoa ei kirjoitettu (%reason). Lisää nämä rivit sen käyttäjän crontab-tiedostoon, jonka oikeuksilla sivusto toimii, muuten jonoa, tuonteja, ilmoituksia ja hakuindeksiä ei koskaan suoriteta:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ ohjeita.</translation>
         <source>ClassAttribute name</source>
         <translation>Luokan määritteen nimi</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Hyväksyntää vaativat tilit</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Sähköposti hyväksyjille</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ ohjeita.</translation>
         <source>Your comment was added.</source>
         <translation>Kommenttisi lisättiin.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Tili ”%1” hyväksyttiin ja julkaistiin: sillä voi nyt kirjautua sisään.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Tili ”%1” estettiin. Sitä ei ole julkaistu eikä sillä voi kirjautua sisään; siitä tuli taas tekijänsä luonnos.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ ohjeita.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Lisättyjä kirjanmerkkejä: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Järjestelmäsivu</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Järjestelmäsivuja ei voi vielä lisätä kirjanmerkkeihin: tämän version tietokantapäivitystä ei ole suoritettu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Tätä sivua ei voi lisätä kirjanmerkkeihin: se ei ole moduulin näkymän sivu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Tätä sivua ei voi lisätä kirjanmerkkeihin: sinulla ei ole oikeutta avata sitä.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Sivua ei voitu lisätä kirjanmerkkeihin.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Sivu ”%name” on kirjanmerkeissäsi.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Kirjanmerkkiä ei voitu nimetä uudelleen: sillä on oltava nimi.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Kirjanmerkin uusi nimi on ”%name”.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Peilaa datatauluihin</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Hyväksy käyttäjätilit</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Uusi käyttäjätili odottaa hyväksyntääsi</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Ohjattu salasanan vaihtoon</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Kirjautuminen ilman toista vaihetta estettiin</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Sovellussalasana luotu</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Sovellussalasana mitätöity</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Sovellussalasanaa käytetty</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Tämän solmun valvontaloki</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>eheä</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>katkennut</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>tarkistamaton</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>korjattu</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tyhjä</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Uusi sähköpostiosoite %email odottaa vahvistusta: avaa linkki, jonka lähetimme sinne. Siihen asti tällä tilillä on osoite %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Sähköposti, joka lähetetään kirjautumisesta uudelta laitteelta tai selaimelta, kuuluu tilin suojaukseen. Voit ottaa sen käyttöön tai poistaa sen käytöstä laitteidesi sivulla, jossa näet myös tilisi istunnot ja voit kirjata ne ulos.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Selaa pysyvien luokkien tauluja…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-työt</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Mitään Cron-työn osaa ei ole vielä suoritettu: työjono, tuonnit, ilmoitukset ja hakuindeksi odottavat. Suorita php bin/php/installcrontab.php --add tai lisää valitsimen --show tulostamat rivit crontab-tiedostoon.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Jotakin Cron-työn osaa ei ole suoritettu pidempään kuin sen aikataulu sallii: tarkista crontab (php bin/php/installcrontab.php --show) ja lokit var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Osa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Aikataulu</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Viimeksi käynnistetty</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ei koskaan</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>ajallaan</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>myöhässä</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>ei koskaan suoritettu</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Asennuksessa ei ole Cron-työn osaa, jonka Cron-työ voisi suorittaa.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Asetukset &gt; Cron-työt</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Uusi käyttäjätili odottaa hyväksyntää: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Tili</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Käyttäjätunnus</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ryhmä</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Pyytäjä</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Avaa hyväksyntä</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jos painike ei toimi, kopioi tämä osoite selaimeesi: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Uusi käyttäjätili odottaa hyväksyntääsi</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester loi tilin ”%name” ryhmään %groups. Sitä ei ole julkaistu, eikä sillä voi kirjautua sisään ennen kuin hyväksyjä hyväksyy sen.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Kirjaudu hallintaliittymään ja hyväksy tai estä tili yhteistyöluettelossasi. Tämä linkki ei kirjaa sinua sisään eikä päätä mitään itse.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Tämän viestin lähetti %site, koska hyväksyt näiden ryhmien uudet tilit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Tietokone</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Puhelin</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabletti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ohjelma tai sovellus</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automaattinen asiakasohjelma</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Tuntematon laite</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Salasana</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Salasana ja kaksivaiheisen kirjautumisen koodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-rajapinta</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-rajapinta</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kertakirjautuminen</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Kirjautunut ennen istuntojen tallentamista</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Kirjattu ulos tältä sivulta</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Järjestelmänvalvojan kirjaama ulos</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Kirjattu ulos toiminnolla ”kaikki muut istunnot”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Korvattu uudella kirjautumisella</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Päättynyt salasanan vaihdon vuoksi</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Vanhentunut</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Käyttäjän %name istunnot</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Missä tilisi on juuri nyt kirjautuneena. Jos et tunnista laitetta, kirjaa se ulos ja vaihda salasanasi.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Missä tämä tili on juuri nyt kirjautuneena. Käyttäjän kirjaaminen ulos päättää jokaisen istunnon sen seuraavassa pyynnössä.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Takaisin tiliin</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Istunto kirjattiin ulos. Laitteen on kirjauduttava uudelleen sisään.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Muita istuntoja kirjattiin ulos: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Muita uloskirjattavia istuntoja ei ollut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Tämän käyttäjän istuntoja kirjattiin ulos: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Tällä käyttäjällä ei ollut uloskirjattavia istuntoja.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tämä on käyttämäsi istunto. Lopeta se kirjautumalla ulos.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Istunto oli jo päättynyt.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Saat sähköpostia, kun tililläsi kirjaudutaan sisään uudelta laitteelta.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Et saa enää sähköpostia kirjautumisista uusilta laitteilta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sivu oli vanhentunut. Mitään ei muutettu; yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Istuntoja ei tallenneta tällä sivustolla (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Taulu expuser_session puuttuu</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Istuntoja tallennetaan, kun taulu on luotu: php update/common/scripts/6.0/createusersessiontable.php tai version 6.0.15 tietokantapäivitys.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kirjautuneena nyt</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Kirjaa ulos kaikki muut istunnot</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kirjaa ulos kaikkialta</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kaikki laitteet tätä lukuun ottamatta kirjataan ulos niiden seuraavassa pyynnössä, myös ne, jotka pysyvät kirjautuneina Muista minut -valinnalla.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kaikki tämän käyttäjän istunnot kirjataan ulos niiden seuraavassa pyynnössä, myös ne, jotka pysyvät kirjautuneina Muista minut -valinnalla.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Kyllä, kirjaa muut istunnot ulos</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Kyllä, kirjaa kaikki istunnot ulos</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Tämä laite</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Laite</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Näytetään verkkona; koko osoite säilytetään järjestelmänvalvojia varten.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>kirjautunut osoitteesta %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimeksi aktiivinen</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nyt</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Pysyy kirjautuneena</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Muista minut, %date asti</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kunnes selain suljetaan</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Kirjautumiskohde</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Selaimen tunniste</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Lopeta tämä istunto kirjautumalla ulos.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kirjaudu ulos</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Kirjaa tämä istunto ulos</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Yhtään istuntoa ei ole kirjautuneena.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Kirjautumisilmoitukset</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Lähetä minulle sähköpostia, kun tililläni kirjaudutaan uudelta laitteelta tai selaimelta</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Lähetetään osoitteeseen %email. Viestissä kerrotaan laite, likimääräinen sijainti ja aika, ja siinä on linkki tälle sivulle.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Tämä sivusto ei lähetä kirjautumisilmoituksia.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Äskettäin päättyneet</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Istunnot, jotka päättyivät viimeisten %days päivän aikana.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Päättynyt</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Tapa</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Ei yhtään.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Tietokone</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Puhelin</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabletti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ohjelma tai sovellus</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automaattinen asiakasohjelma</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Tuntematon laite</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Salasana</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Salasana ja kaksivaiheisen kirjautumisen koodi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-rajapinta</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-rajapinta</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Kertakirjautuminen</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Kirjautunut ennen istuntojen tallentamista</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kirjattu ulos</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Kirjattu ulos tältä sivulta</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Järjestelmänvalvojan kirjaama ulos</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Kirjattu ulos toiminnolla ”kaikki muut istunnot”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Korvattu uudella kirjautumisella</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Päättynyt salasanan vaihdon vuoksi</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Vanhentunut</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Käyttäjän %name istunnot</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Missä tilisi on juuri nyt kirjautuneena. Jos et tunnista laitetta, kirjaa se ulos ja vaihda salasanasi.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Missä tämä tili on juuri nyt kirjautuneena. Käyttäjän kirjaaminen ulos päättää jokaisen istunnon sen seuraavassa pyynnössä.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Istunto kirjattiin ulos. Laitteen on kirjauduttava uudelleen sisään.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Muita istuntoja kirjattiin ulos: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Muita uloskirjattavia istuntoja ei ollut.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Tämän käyttäjän istuntoja kirjattiin ulos: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Tällä käyttäjällä ei ollut uloskirjattavia istuntoja.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Tämä on käyttämäsi istunto. Lopeta se kirjautumalla ulos.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Istunto oli jo päättynyt.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Saat sähköpostia, kun tililläsi kirjaudutaan sisään uudelta laitteelta.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Et saa enää sähköpostia kirjautumisista uusilta laitteilta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sivu oli vanhentunut. Mitään ei muutettu; yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Istuntoja ei tallenneta tällä sivustolla.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Istuntoja ei vielä tallenneta: sivusto tarvitsee tietokantapäivityksensä.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Kirjautuneena nyt</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Tämä laite</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Laite</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Osoite</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Kirjautunut</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimeksi aktiivinen</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nyt</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Pysyy kirjautuneena</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Muista minut, %date asti</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kunnes selain suljetaan</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Lopeta tämä istunto kirjautumalla ulos.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kirjaudu ulos</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Kirjaa tämä istunto ulos</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Kirjaa ulos kaikki muut istunnot</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kirjaa ulos kaikkialta</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Kirjautumisilmoitukset</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Lähetä minulle sähköpostia, kun tililläni kirjaudutaan uudelta laitteelta tai selaimelta</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Äskettäin päättyneet</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Päättynyt</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Tapa</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Ei yhtään viimeisten %days päivän aikana.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Katso, missä tilisi on kirjautuneena, ja kirjaa ulos laite, jota et tunnista.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Hallitse laitteita</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Uusi kirjautuminen tilillesi sivustolla %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hei,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Tililläsi %login sivustolla %site kirjauduttiin juuri sisään laitteelta tai selaimelta, jota se ei ole viime aikoina käyttänyt:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Laite:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Aika:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Likimääräinen osoite:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Jos tämä olit sinä, sinun ei tarvitse tehdä mitään.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Jos se et ollut sinä, joku saattaa tietää salasanasi. Kirjaa istunto ulos laitteidesi sivulla ja vaihda sitten salasanasi:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Voit poistaa nämä sähköpostit käytöstä samalla sivulla.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Uusi kirjautuminen: %login sivustolla %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Tili %login kirjautui sisään laitteelta tai selaimelta, jota se ei ole viime aikoina käyttänyt.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Tämän käyttäjän istunnot:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Uusi kirjautuminen tilillesi</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Tililläsi %login kirjauduttiin sisään laitteelta %device (%ip) %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Jos tämä olit sinä, sinun ei tarvitse tehdä mitään. Jos et, kirjaa istunto ulos osoitteessa %url ja vaihda salasanasi.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Uusi kirjautuminen: %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Tili %login kirjautui sisään uudelta laitteelta: %device (%ip) %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Laitteesi</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Käyttäjän %name istunnot</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pääsyavaimet</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Pääsyavaimella kirjaudut sisään salasanan sijaan sormenjäljellä, kasvoilla, näytön lukituksella tai suojausavaimella. Se tallennetaan laitteellesi tai salasanojen hallintaan; tämä sivusto säilyttää vain sen julkisen avaimen, joten tietovuoto täällä ei voi paljastaa sitä.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Pääsyavaimet eivät ole käytössä tällä sivustolla.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Pääsyavaimia ei voi vielä käyttää tällä sivustolla: järjestelmänvalvojan on ensin suoritettava tietokantapäivitys.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Poistetaanko pääsyavain ”%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Sillä ei voi enää kirjautua tälle tilille. Poista se myös laitteeltasi tai salasanojen hallinnasta.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Poista pääsyavain</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Pääsyavaimesi</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count / enintään %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Sinulla ei ole vielä pääsyavainta. Lisää se alla: valitse seuraavalla kirjautumiskerralla ”Kirjaudu pääsyavaimella”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lisätty</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Viimeksi käytetty</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Laji</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toiminnot</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ei vielä</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synkronoitu</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Tämä laite tai avain</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Nimeä uudelleen</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Uusi nimi</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Tallenna nimi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lisää pääsyavain</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Noudata selaimesi tai laitteesi ohjeita.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Pääsyavainikkuna suljettiin. Mitään ei muutettu.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Pääsyavainta ei voitu luoda. Yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Tämä selain ei pysty luomaan pääsyavaimia. Käytä ajantasaista selainta tai kirjaudu sisään salasanalla.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Esimerkiksi laite tai salasanojen hallinta, jossa se on, jotta erotat pääsyavaimesi toisistaan.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Tilillä on niin monta pääsyavainta kuin sillä voi olla (%max). Poista yksi, jotta voit lisätä uuden.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Pääsyavainta ei voitu käyttää. Yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Oma tili</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Pääsyavainikkuna suljettiin. Voit kirjautua sisään salasanalla.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Pääsyavainta ei voitu käyttää. Yritä uudelleen tai kirjaudu sisään salasanalla.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Kirjaudu pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Kirjautuminen pääsyavaimella epäonnistui</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>kirjaudu sisään salasanan sijaan sormenjäljellä, kasvoilla, näytön lukituksella tai suojausavaimella.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Pääsyavain ”%name” lisättiin. Voit kirjautua sillä tästä lähtien.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Pääsyavaimen nimi on nyt ”%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Pääsyavain ”%name” poistettiin. Sillä ei voi enää kirjautua tälle tilille.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Pääsyavain %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Tilillä on niin monta pääsyavainta kuin sillä voi olla. Poista ensin yksi.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Tietokanta oli varattu, eikä mitään tallennettu. Yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Tämä pääsyavain on jo rekisteröity.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Pyyntö kesti liian kauan tai se oli jo käytetty. Yritä uudelleen.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Pääsyavain ei tarkistanut henkilöllisyyttäsi (PIN-koodi, sormenjälki tai kasvot). Yritä uudelleen ja vahvista laitteellasi.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Tämä todennin käyttää avainlajia, jota tämä sivusto ei hyväksy.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Pääsyavain on luotu eri osoitteelle kuin tämä sivusto.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Tätä pääsyavainta ei ole rekisteröity millekään tilille täällä. Kirjaudu sisään salasanalla ja lisää se kohdassa Oma tili, Pääsyavaimet.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Tällä tilillä ei voi kirjautua sisään tällä hetkellä. Ota yhteyttä sivuston järjestelmänvalvojaan.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Pääsyavainta ei voitu tarkistaa. Yritä uudelleen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Olet muuttamassa kirjautumistapaasi tai tilisi suojausta.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Olet hallitsemassa käyttäjiä, rooleja tai käytäntöjä.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Olet muuttamassa järjestelmäasetuksia tai suorittamassa asetustoimintoa.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Olet viemässä tietoja.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Olet poistamassa tai julkaisemassa sisältöä.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Tämä toiminto edellyttää, että vahvistat henkilöllisyytesi.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Vahvista, että se olet sinä (kirjautuneena käyttäjänä %login). Sinulta ei kysytä uudelleen %minutes minuuttiin.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Salasana on väärä.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koodi on väärä tai se on jo käytetty.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Valitse jokin alla olevista tavoista.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Pääsyavainta ei voitu tarkistaa.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Yrityksiä jäljellä ennen uloskirjausta: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Valitsemiasi tiedostoja ei voi lähettää uudelleen: valitse ne vahvistuksen jälkeen vielä kerran.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Salasanalla</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Pääsyavaimella</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Salasana</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Vahvista</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Käytä pääsyavainta</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Todennussovelluksen koodilla</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Koodi</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Tällä tilillä ei ole tapaa vahvistaa henkilöllisyyttäsi (ei salasanaa, pääsyavainta eikä todennussovellusta). Kirjaudu ulos ja uudelleen sisään tai ota yhteyttä järjestelmänvalvojaan.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Vahvista henkilöllisyytesi</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Todennussovelluksen koodi</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Oma tili</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Oman salasanan, sähköpostiosoitteen, pääsyavainten, kaksivaiheisen kirjautumisen tai API-avainten muuttaminen.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Käyttäjät, roolit ja käytännöt</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Käyttäjien luominen ja muokkaaminen, tiliasetukset, roolien määrittäminen ja käytäntöjen muokkaaminen.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Järjestelmäasetukset ja asetustoiminnot</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Asetusten, laajennusten, välimuistien ja ylläpidon, pakettien ja päivitysten, varmuuskopioiden sekä Git-hallinnan muokkaaminen.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Tietojen vienti</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Kerättyjen tietojen, käyttäjien, uutiskirjeen tilaajien ja valvontalokin viennit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Sisällön poistaminen ja julkaiseminen</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Sisällön poistaminen (myös roskakoriin), roskakorin tyhjentäminen ja julkaiseminen. Oletuksena pois käytöstä.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ennen arkaluonteista toimintoa kirjautunut käyttäjä vahvistaa henkilöllisyytensä uudelleen salasanallaan, pääsyavaimella tai todennussovelluksensa koodilla. Vain verkkosivut kysyvät: REST-rajapinta, SOAP, WebDAV, expservices-kirjautuminen ja komentorivi eivät koskaan kysy.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Yleiset</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Vahvistuksen voimassaoloaika minuutteina</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Milloin kysytään</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Sääntöjä: %count (site.ini [ReauthGroup_%name]).</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Tallennetaan tiedostoon settings/override/site.ini.append.php. Tallennettaessa sinua pyydetään vahvistamaan henkilöllisyytesi.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Tallenna</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Vahvista henkilöllisyytesi</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Kysy ”Vahvista henkilöllisyytesi” ennen alla käyttöön otettujen ryhmien toimintoja</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Asetukset tallennettiin.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Asetuksia ei voitu tallentaa: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Asetukset</translation>
     </message>
 </context>
 </TS>

@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>フォルダーを開くまたは閉じる</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>このページはブックマークに登録されています。名前やフォルダーを変更するには、開いてください。</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>このページをブックマークに追加します。</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>ブックマーク済み</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>このページをブックマーク</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>ブックマークには、このページのアドレスがパラメーター付きで保存されます: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>ブックマークの保存</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>ブックマークの追加</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>マイブックマーク</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>システムページ</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>システムページ</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>このページを開く権限がなくなりました。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>開く</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>このページのアドレスがありません。ブックマークを削除して、もう一度ページをブックマークしてください。</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>このページを開く権限がなくなりました。ブックマークを削除するか、管理者にアクセス権を依頼してください。</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>アドレス</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>モジュールとビュー</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>システムページもブックマークできます。ページ（システム設定、監査証跡、ユーザーの一覧 ...）を開き、その上にある「このページをブックマーク」を選択してください。このようなブックマークには歯車アイコンが表示されます。</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>ユーザーアカウントの無効化と、無効化されたユーザーのグループへの移動、およびその復帰</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>他のユーザーがログインしている場所を表示し、ログアウトさせる</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>メールの設定を開く</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>セッション</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>ログインしている場所: ブラウザー、システム、場所、時刻。心当たりのないデバイスはログアウトさせてください。</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>このユーザーがログインしている場所と、すべての場所からのログアウト。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>デバイスの管理</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>セッションの表示</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>ログイン中: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>パスキー</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>パスワードの代わりに、指紋、顔、画面ロック、またはセキュリティキーでログインします。</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>パスキーの管理</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>パスキーの追加</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count 個のパスキー</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>まだありません</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>クラスと属性の組み合わせ (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>新しいアカウントに承認が必要なユーザーグループ</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>これらのグループのいずれか、またはその下に公開されたアカウントは、承認者が受け入れるまで待機します。それまではログインできません。</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>アカウントを承認するユーザー</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>アカウントを承認するグループ</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>承認が不要なユーザーグループ（メンバーはこのようなアカウントを直接公開します。承認者には承認は不要です）</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>承認へのリンクを記載したメールを承認者に送信する（承認者はログインして承認または拒否します）</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>環境変数 EXP_DEMO_MODE=1 は、このインストールを公開デモとして示します。広く知られた管理者パスワードが受け付けられ、後から管理者パスワードを変更またはリセットすることはできません。本番サイトでは決してデモモードを使用しないでください。</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron ジョブ</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>cron ジョブは、インストールを所有するユーザー %user の crontab から実行されます。</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>このインストールには、スケジュールする cron ジョブのパートがありません。</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab は書き込まれませんでした (%reason)。サイトを実行しているユーザーの crontab に次の行を追加してください。追加しないと、キュー、インポート、通知、検索インデックスが実行されません:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>クラス属性名</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>承認が必要なアカウント</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>承認者へのメール</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>はい</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>いいえ</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>コメントが追加されました。</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>アカウント「%1」は承認され、公開されました。これでログインできます。</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>アカウント「%1」は拒否されました。公開されておらず、ログインできません。作成者の下書きに戻りました。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count 件のブックマークを追加しました。</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>システムページ</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>システムページはまだブックマークできません。このバージョンのデータベース更新が実行されていません。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>このページはブックマークできません。モジュールビューのページではありません。</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>このページはブックマークできません。このページを開く権限がありません。</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>ページをブックマークできませんでした。</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>ページ「%name」はブックマークに登録されています。</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>ブックマークの名前を変更できませんでした。名前が必要です。</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>ブックマークの名前が「%name」に変更されました。</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>データテーブルへのミラー</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>ユーザーアカウントの承認</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>新しいユーザーアカウントが承認を待っています</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>パスワード変更画面へ転送</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>2 段階目のないログインを拒否</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>アプリパスワードを作成</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>アプリパスワードを取り消し</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>アプリパスワードを使用</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>このノードの監査証跡</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>正常</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>破損</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>未確認</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>修復済み</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>空</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>新しいメールアドレス %email は確認待ちです。そのアドレスに送信したリンクを開いてください。それまでは、このアカウントのアドレスは %current のままです。</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>新しいデバイスまたはブラウザーからのログインに関するメールは、アカウントのセキュリティの一部です。このメールのオンとオフは「お使いのデバイス」で切り替えます。そこでは、アカウントのセッションの確認とログアウトもできます。</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>永続オブジェクトクラスのテーブルを参照…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>cron ジョブ</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>cron ジョブのパートはまだ 1 つも実行されていません。ジョブキュー、インポート、通知、検索インデックスが待機しています。php bin/php/installcrontab.php --add を実行するか、--show の行を crontab に追加してください。</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>スケジュールで許容される時間を超えて実行されていない cron ジョブのパートがあります。crontab (php bin/php/installcrontab.php --show) とログ var/log/cronjob-*.log を確認してください。</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>パート</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>スケジュール</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>最終開始日時</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>予定どおり</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>遅延</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>未実行</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>このインストールには、cron ジョブが実行する cron ジョブのパートがありません。</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>システム設定 &gt; cron ジョブ</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>承認待ちの新しいユーザーアカウント: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>アカウント</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>ユーザー名</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>グループ</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>依頼者</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>承認を開く</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ボタンが機能しない場合は、このアドレスをブラウザーにコピーしてください: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>新しいユーザーアカウントが承認を待っています</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester がアカウント「%name」を %groups に作成しました。承認者が受け入れるまで、このアカウントは公開されず、ログインできません。</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>管理画面にログインし、コラボレーションの一覧で承認または拒否してください。このリンクではログインされず、リンク自体では何も決定されません。</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>このメールは、これらのグループの新しいアカウントの承認者に %site から送信されました。</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>コンピューター</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>スマートフォン</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>タブレット</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>プログラムまたはアプリ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自動クライアント</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>不明なデバイス</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>パスワード</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>パスワードと 2 段階認証のコード</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>RESTインターフェイス</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAPインターフェイス</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>シングルサインオン</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>セッションの記録開始前にログイン</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ログアウト済み</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>このページからログアウト</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>管理者によりログアウト</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>「他のすべてのセッション」でログアウト</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>新しいログインにより置き換え</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>パスワードの変更により終了</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>期限切れ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name のセッション</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>アカウントが現在ログインしている場所です。心当たりのないデバイスがある場合は、ログアウトさせてからパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>このアカウントが現在ログインしている場所です。ユーザーをログアウトさせると、各セッションは次のリクエスト時に終了します。</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>アカウントに戻る</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>セッションはログアウトされました。このデバイスでは再度ログインが必要です。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>他の %count 件のセッションがログアウトされました。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ログアウトする他のセッションはありませんでした。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>このユーザーの %count 件のセッションがログアウトされました。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>このユーザーにはログアウトするセッションがありませんでした。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>これは現在使用中のセッションです。終了するには、ログアウトしてください。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>そのセッションは既に終了していました。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>アカウントが新しいデバイスからログインすると、メールが届きます。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>新しいデバイスからのログインに関するメールは今後届きません。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ページの有効期限が切れていました。何も変更されていません。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>このサイトではセッションは記録されません (site.ini [UserSessionSettings] Tracking=disabled)。</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>テーブル expuser_session がありません</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>テーブルが作成されると、セッションが記録されます: php update/common/scripts/6.0/createusersessiontable.php、または 6.0.15 のデータベース更新。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>現在ログイン中</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>他のすべてのセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>すべての場所からログアウト</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>このデバイス以外のすべてのデバイスは、次のリクエスト時にログアウトされます。「ログイン状態を保持する」でログインを維持しているデバイスも含まれます。</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>このユーザーのすべてのセッションは、次のリクエスト時にログアウトされます。「ログイン状態を保持する」でログインを維持しているセッションも含まれます。</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>はい、他のセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>はい、すべてのセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>このデバイス</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>デバイス</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>アドレス</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>ネットワーク単位で表示されます。完全なアドレスは管理者向けに保持されます。</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip からログイン</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ログイン日時</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>最終アクティビティ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>現在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ログイン状態の保持</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ログイン状態を保持 (%date まで)</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ブラウザーを閉じるまで</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>ログイン先</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>ブラウザーの識別情報</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>このセッションを終了するには、ログアウトしてください。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>このセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>ログイン中のセッションはありません。</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ログイン通知</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>アカウントが新しいデバイスまたはブラウザーからログインしたときにメールで通知する</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email に送信されます。デバイス、おおよその場所、時刻が記載され、このページへのリンクが含まれます。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>このサイトではログイン通知は送信されません。</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近終了したセッション</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>過去 %days 日間に終了したセッションです。</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>終了日時</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>終了方法</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>なし。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>コンピューター</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>スマートフォン</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>タブレット</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>プログラムまたはアプリ</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>自動クライアント</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>不明なデバイス</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>パスワード</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>パスワードと 2 段階認証のコード</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>RESTインターフェイス</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAPインターフェイス</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>シングルサインオン</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>セッションの記録開始前にログイン</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>ログアウト済み</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>このページからログアウト</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>管理者によりログアウト</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>「他のすべてのセッション」でログアウト</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>新しいログインにより置き換え</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>パスワードの変更により終了</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>期限切れ</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name のセッション</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>アカウントが現在ログインしている場所です。心当たりのないデバイスがある場合は、ログアウトさせてからパスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>このアカウントが現在ログインしている場所です。ユーザーをログアウトさせると、各セッションは次のリクエスト時に終了します。</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>セッションはログアウトされました。このデバイスでは再度ログインが必要です。</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>他の %count 件のセッションがログアウトされました。</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>ログアウトする他のセッションはありませんでした。</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>このユーザーの %count 件のセッションがログアウトされました。</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>このユーザーにはログアウトするセッションがありませんでした。</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>これは現在使用中のセッションです。終了するには、ログアウトしてください。</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>そのセッションは既に終了していました。</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>アカウントが新しいデバイスからログインすると、メールが届きます。</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>新しいデバイスからのログインに関するメールは今後届きません。</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ページの有効期限が切れていました。何も変更されていません。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>このサイトではセッションは記録されません。</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>セッションはまだ記録されていません。サイトのデータベース更新が必要です。</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>現在ログイン中</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>このデバイス</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>デバイス</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>アドレス</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>ログイン日時</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>最終アクティビティ</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>現在</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>ログイン状態の保持</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>ログイン状態を保持 (%date まで)</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>ブラウザーを閉じるまで</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>このセッションを終了するには、ログアウトしてください。</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>ログアウト</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>このセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>他のすべてのセッションをログアウト</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>すべての場所からログアウト</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>ログイン通知</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>アカウントが新しいデバイスまたはブラウザーからログインしたときにメールで通知する</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>最近終了したセッション</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>終了日時</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>終了方法</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>過去 %days 日間にはありません。</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>アカウントがログインしている場所を確認し、心当たりのないデバイスをログアウトさせます。</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>デバイスの管理</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site のアカウントへの新しいログイン</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>こんにちは。</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site のアカウント %login が、最近使用されていないデバイスまたはブラウザーからのログインに使用されました:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>デバイス:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>時刻:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>おおよそのアドレス:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>ご本人による操作であれば、何もする必要はありません。</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>心当たりがない場合は、他の誰かがパスワードを知っている可能性があります。デバイスのページでそのセッションをログアウトさせてから、パスワードを変更してください:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>同じページで、これらのメールをオフにできます。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site での %login の新しいログイン</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>アカウント %login が、最近使用されていないデバイスまたはブラウザーからログインしました。</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>このユーザーのセッション:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>アカウントへの新しいログイン</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>アカウント %login が %date に %device (%ip) からのログインに使用されました。</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>ご本人による操作であれば、何もする必要はありません。心当たりがない場合は、%url でこのセッションをログアウトさせ、パスワードを変更してください。</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login の新しいログイン</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>アカウント %login が新しいデバイスからログインしました: %device (%ip)、%date。</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>お使いのデバイス</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name のセッション</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>パスキー</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>パスキーを使用すると、パスワードの代わりに指紋、顔、画面ロック、またはセキュリティキーでログインできます。パスキーはデバイスまたはパスワードマネージャーに保存されます。このサイトには公開鍵のみが保存されるため、ここで情報が漏えいしてもパスキーが明らかになることはありません。</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>このサイトではパスキーは無効になっています。</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>このサイトではまだパスキーを使用できません。先に管理者がデータベース更新を実行する必要があります。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>パスキー「%name」を削除してもよろしいですか？</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>このパスキーでは、このアカウントにログインできなくなります。デバイスまたはパスワードマネージャーからも削除してください。</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>パスキーの削除</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>パスキー</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count / 最大 %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>パスキーはまだありません。下で追加してください。次回ログインするときに「パスキーでログイン」を選択してください。</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>追加日時</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>最終使用日時</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>種類</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>操作</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>未使用</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>同期済み</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>このデバイスまたはキー</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>名前の変更</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>新しい名前</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>名前の保存</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>パスキーの追加</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>ブラウザーまたはデバイスの手順に従ってください。</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>パスキーのダイアログが閉じられました。何も変更されていません。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>パスキーを作成できませんでした。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>このブラウザーではパスキーを作成できません。最新のブラウザーを使用するか、パスワードでログインしてください。</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>例: 保存先のデバイスやパスワードマネージャー。パスキーを区別しやすくなります。</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>このアカウントのパスキーは上限 (%max) に達しています。追加するには、いずれかを削除してください。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>パスキーを使用できませんでした。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>マイアカウント</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>パスキーのダイアログが閉じられました。代わりにパスワードでログインできます。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>パスキーを使用できませんでした。もう一度試すか、パスワードでログインしてください。</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>パスキーでログイン</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>パスキーでログインできませんでした</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>パスワードの代わりに、指紋、顔、画面ロック、またはセキュリティキーでログインします。</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>パスキー「%name」が追加されました。今後はこのパスキーでログインできます。</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>パスキーの名前が「%name」に変更されました。</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>パスキー「%name」が削除されました。このパスキーでは、このアカウントにログインできなくなりました。</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date のパスキー</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>このアカウントのパスキーは上限に達しています。先にいずれかを削除してください。</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>データベースがビジー状態のため、何も保存されませんでした。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>このパスキーは既に登録されています。</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>リクエストに時間がかかりすぎたか、既に使用されています。もう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>パスキーで本人確認（PIN、指紋、または顔）が行われませんでした。もう一度試して、デバイスで確認してください。</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>この認証器は、このサイトが受け付けない種類のキーを使用しています。</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>このパスキーは、このサイトとは異なるアドレス用に作成されています。</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>このパスキーは、このサイトのどのアカウントにも登録されていません。パスワードでログインし、「マイアカウント」の「パスキー」で追加してください。</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>このアカウントは現在ログインできません。サイトの管理者に問い合わせてください。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>パスキーを確認できませんでした。もう一度お試しください。</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>ログイン方法またはアカウントのセキュリティを変更しようとしています。</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>ユーザー、ロール、またはポリシーを管理しようとしています。</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>システムの設定を変更するか、セットアップ操作を実行しようとしています。</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>データをエクスポートしようとしています。</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>コンテンツを削除または公開しようとしています。</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>この操作を行うには、本人確認が必要です。</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login としてログインしているご本人であることを確認してください。%minutes 分間は再度確認を求められません。</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>パスワードが正しくありません。</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>コードが正しくないか、既に使用されています。</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>以下のいずれかの方法を選択してください。</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>パスキーを確認できませんでした。</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>ログアウトされるまで、残り %count 回試行できます。</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>選択したファイルは再送信できません。確認後、もう一度選択してください。</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>パスワードで確認</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>パスキーで確認</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>パスワード</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>確認</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>パスキーを使用</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>認証アプリのコードで確認</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>コード</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>このアカウントには本人確認の方法（パスワード、パスキー、認証アプリ）がありません。ログアウトしてから再度ログインするか、管理者に問い合わせてください。</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>本人確認</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>認証アプリのコード</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>自分のアカウント</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>自分のパスワード、メールアドレス、パスキー、2 段階認証、またはAPIキーの変更。</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>ユーザー、ロール、ポリシー</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>ユーザーの作成と編集、アカウント設定、ロールの割り当て、ポリシーの編集。</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>システム設定とセットアップ操作</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>設定の編集、拡張機能、キャッシュとメンテナンス、パッケージと更新、バックアップ、git マネージャー。</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>データのエクスポート</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>収集された情報、ユーザー、ニュースレターの購読者、監査のエクスポート。</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>コンテンツの削除と公開</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>コンテンツの削除（ごみ箱への移動を含む）、ごみ箱を空にする操作、公開。既定ではオフです。</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>重要な操作の前に、ログイン中のユーザーはパスワード、パスキー、または認証アプリのコードで再度本人確認を行います。確認を求めるのは Webページのみです。RESTインターフェイス、SOAP、WebDAV、expservices のログイン、コマンドラインでは確認を求めません。</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>全般</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>確認の有効時間（分）</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>確認を求めるタイミング</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] の %count 件のルール。</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php に保存されます。保存時に本人確認が求められます。</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>本人確認</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>以下でオンにしたグループの操作の前に「本人確認」を求める</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>設定が保存されました。</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>設定を保存できませんでした: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>システム設定</translation>
     </message>
 </context>
 </TS>

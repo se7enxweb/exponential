@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Ava või sule kaust</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>See leht on teie järjehoidjates. Nime või kausta muutmiseks avage see.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Lisa see leht järjehoidjatesse.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Järjehoidjates</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Lisa leht järjehoidjatesse</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Järjehoidja säilitab selle lehe aadressi koos parameetritega: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Salvesta järjehoidja</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Lisa järjehoidja</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Minu järjehoidjad</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Süsteemileht</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Süsteemilehed</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Teil pole enam õigust seda lehte avada.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ava</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Selle lehe aadress puudub. Eemaldage järjehoidja ja lisage leht uuesti järjehoidjatesse.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Teil pole enam õigust seda lehte avada. Eemaldage järjehoidja või paluge administraatorilt juurdepääsu.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aadress</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Moodul ja vaade</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Järjehoidjatesse saab lisada ka süsteemilehti: avage leht (Häälestus, auditijälg, kasutajate loend ...) ja valige selle kohal „Lisa leht järjehoidjatesse“. Sellistel järjehoidjatel on hammasratta ikoon.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Märkus: pakette ei desinstallita.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>desaktiveerida kasutajakontosid ja teisaldada need desaktiveeritud kasutajate rühma ning teisaldada need tagasi</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>näha, kus teised kasutajad on sisse logitud, ja neid välja logida</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ juhiseid.</translation>
         <source>Open e-mail preferences</source>
         <translation>Ava e-posti eelistused</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seansid</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kus olete sisse logitud: brauser, süsteem, koht ja aeg. Logige välja seade, mida te ei tunne.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Kus see kasutaja on sisse logitud ja kasutaja väljalogimine kõikjalt.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Halda seadmeid</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Kuva seansid</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Sisse logitud: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pääsuvõtmed</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Logige parooli asemel sisse sõrmejälje, näo, ekraaniluku või turvavõtmega.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Halda pääsuvõtmeid</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lisa pääsuvõti</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Pääsuvõtmeid: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Veel pole</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ juhiseid.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Klassi ja atribuudi kombinatsioonid (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Kasutajarühmad, mille uued kontod vajavad kinnitamist</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Konto, mis avaldatakse mõnes neist rühmadest või nende all, ootab, kuni kinnitaja selle heaks kiidab. Enne seda ei saa see sisse logida.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Kasutajad, kes kontosid kinnitavad</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Rühmad, kes kontosid kinnitavad</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Kasutajarühmad, mis ei vaja kinnitamist (nende liikmed avaldavad sellised kontod otse; kinnitajad ei vaja seda kunagi)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Saada kinnitajatele meil kinnitamise lingiga (nad logivad sisse, et kinnitada või tagasi lükata)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Lisateavet leiate nõuete lehelt.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Keskkonnamuutuja EXP_DEMO_MODE=1 märgib selle installatsiooni avalikuks demoks: üldtuntud administraatori parool võetakse vastu ning administraatori paroole ei saa hiljem muuta ega lähtestada. Ärge kunagi kasutage demorežiimi tootmissaidi jaoks.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-tööd</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron-tööd käivitatakse installatsiooni omaniku, kasutaja %user crontabist.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Installatsioonis pole ühtegi cron-töö osa, mida ajastada.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontabi ei kirjutatud (%reason). Lisage need read selle kasutaja crontabi, kellena sait töötab, muidu ei käivitu järjekord, impordid, teatised ega otsinguindeks kunagi:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ juhiseid.</translation>
         <source>ClassAttribute name</source>
         <translation>Klassi atribuudi nimi</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Kinnitamist vajavad kontod</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Meil kinnitajatele</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jah</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ juhiseid.</translation>
         <source>Your comment was added.</source>
         <translation>Teie kommentaar on lisatud.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Konto „%1“ on kinnitatud ja avaldatud: see saab nüüd sisse logida.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Konto „%1“ lükati tagasi. See pole avaldatud ega saa sisse logida; see on taas oma autori mustand.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ juhiseid.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Lisatud järjehoidjaid: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Süsteemileht</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Süsteemilehti ei saa veel järjehoidjatesse lisada: selle versiooni andmebaasi uuendust pole käivitatud.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Seda lehte ei saa järjehoidjatesse lisada: see pole mooduli vaate leht.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Seda lehte ei saa järjehoidjatesse lisada: teil pole õigust seda avada.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Lehte ei saanud järjehoidjatesse lisada.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Leht „%name“ on teie järjehoidjates.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Järjehoidjat ei saanud ümber nimetada: sellel peab olema nimi.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Järjehoidja uus nimi on „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Peegelda andmetabelitesse</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Kasutajakontode kinnitamine</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Uus kasutajakonto ootab teie kinnitust</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Suunatud parooli muutmisele</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Sisselogimisest ilma teise astmeta keelduti</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Rakenduse parool loodud</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Rakenduse parool tühistatud</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Rakenduse parool kasutatud</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Selle sõlme auditijälg</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>terve</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>katkenud</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>kontrollimata</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>parandatud</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tühi</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Uus e-posti aadress %email ootab kinnitust: avage link, mille sinna saatsime. Seni säilitab see konto aadressi %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Meil sisselogimise kohta uuest seadmest või brauserist kuulub konto turvalisuse juurde. Selle lülitate sisse või välja oma seadmete lehel, kus näete ka oma konto seansse ja saate neid välja logida.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Sirvi püsiklasside tabeleid…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-tööd</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ükski cron-töö osa pole veel käivitunud: tööde järjekord, impordid, teatised ja otsinguindeks ootavad. Käivitage php bin/php/installcrontab.php --add või lisage crontabi käsu --show väljastatud read.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Mõni cron-töö osa pole käivitunud kauem, kui selle ajakava lubab: kontrollige crontabi (php bin/php/installcrontab.php --show) ja logisid var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Osa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ajakava</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Viimati käivitatud</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mitte kunagi</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>õigel ajal</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>hilinenud</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>pole kunagi käivitunud</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Installatsioonis pole ühtegi cron-töö osa, mida cron-töö saaks käivitada.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Häälestus &gt; Cron-tööd</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Uus kasutajakonto ootab kinnitamist: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Kasutajanimi</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Rühm</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Taotleja</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Ava kinnitamine</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Kui nupp ei tööta, kopeerige see aadress oma brauserisse: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Uus kasutajakonto ootab teie kinnitust</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester lõi konto „%name“ (rühmad: %groups). See pole avaldatud ega saa sisse logida, kuni kinnitaja selle heaks kiidab.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Logige haldusliidesesse sisse ning kinnitage see oma koostööloendis või lükake tagasi. See link ei logi teid sisse ega otsusta iseenesest midagi.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Selle meili saatis %site, sest te kinnitate nende rühmade uusi kontosid.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Arvuti</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tahvelarvuti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm või rakendus</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiseeritud klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Tundmatu seade</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parool</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parool ja kaheastmelise sisselogimise kood</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-liides</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-liides</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ühekordne sisselogimine</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sisse logitud enne seansside salvestamist</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Välja logitud</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sellelt lehelt välja logitud</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Administraator logis välja</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Välja logitud valikuga „kõik teised seansid“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Asendatud uue sisselogimisega</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Lõpetatud parooli muutmisega</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Aegunud</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Kasutaja %name seansid</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kus teie konto praegu sisse logitud on. Kui te mõnda seadet ei tunne, logige see välja ja muutke oma parooli.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kus see konto praegu sisse logitud on. Kasutaja väljalogimine lõpetab iga seansi selle järgmisel päringul.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Tagasi konto juurde</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanss logiti välja. Seade peab uuesti sisse logima.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Välja logitud teisi seansse: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Teisi seansse, mida välja logida, polnud.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Selle kasutaja välja logitud seansse: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Sellel kasutajal polnud seansse, mida välja logida.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>See on seanss, mida te kasutate. Selle lõpetamiseks logige välja.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>See seanss oli juba lõppenud.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Saate meili, kui teie kontoga logitakse sisse uuest seadmest.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Te ei saa enam meili sisselogimiste kohta uutest seadmetest.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Leht oli aegunud. Midagi ei muudetud; proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sellel saidil seansse ei salvestata (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabel expuser_session puudub</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seansse hakatakse salvestama, kui see on loodud: php update/common/scripts/6.0/createusersessiontable.php või versiooni 6.0.15 andmebaasi uuendus.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Praegu sisse logitud</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logi välja kõik teised seansid</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logi välja kõikjalt</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Iga seade peale selle logitakse välja selle järgmisel päringul, ka need, mis jäävad sisse logituks valikuga „Jäta mind meelde“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Selle kasutaja iga seanss logitakse välja selle järgmisel päringul, ka need, mis jäävad sisse logituks valikuga „Jäta mind meelde“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Jah, logi teised seansid välja</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Jah, logi iga seanss välja</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>See seade</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Seade</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aadress</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Kuvatakse võrguna; täielikku aadressi säilitatakse administraatorite jaoks.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>sisse logitud aadressilt %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sisse logitud</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimati aktiivne</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Praegu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Jääb sisse logituks</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Jäta mind meelde, kuni %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kuni brauser suletakse</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Sisselogimise koht</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Brauseri tunnus</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Selle seansi lõpetamiseks logige välja.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logi välja</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logi see seanss välja</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Ükski seanss pole sisse logitud.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Teavitused sisselogimistest</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Saada mulle meil, kui minu kontoga logitakse sisse uuest seadmest või brauserist</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Saadetakse aadressile %email. See näitab seadet, ligikaudset asukohta ja aega ning sisaldab linki sellele lehele.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>See sait ei saada teavitusi sisselogimistest.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Hiljuti lõppenud</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Viimase %days päeva jooksul lõppenud seansid.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lõppenud</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kuidas</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Puuduvad.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Arvuti</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tahvelarvuti</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm või rakendus</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatiseeritud klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Tundmatu seade</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parool</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parool ja kaheastmelise sisselogimise kood</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-liides</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-liides</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ühekordne sisselogimine</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sisse logitud enne seansside salvestamist</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Välja logitud</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sellelt lehelt välja logitud</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Administraator logis välja</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Välja logitud valikuga „kõik teised seansid“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Asendatud uue sisselogimisega</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Lõpetatud parooli muutmisega</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Aegunud</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Kasutaja %name seansid</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kus teie konto praegu sisse logitud on. Kui te mõnda seadet ei tunne, logige see välja ja muutke oma parooli.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kus see konto praegu sisse logitud on. Kasutaja väljalogimine lõpetab iga seansi selle järgmisel päringul.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanss logiti välja. Seade peab uuesti sisse logima.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Välja logitud teisi seansse: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Teisi seansse, mida välja logida, polnud.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Selle kasutaja välja logitud seansse: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Sellel kasutajal polnud seansse, mida välja logida.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>See on seanss, mida te kasutate. Selle lõpetamiseks logige välja.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>See seanss oli juba lõppenud.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Saate meili, kui teie kontoga logitakse sisse uuest seadmest.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Te ei saa enam meili sisselogimiste kohta uutest seadmetest.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Leht oli aegunud. Midagi ei muudetud; proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sellel saidil seansse ei salvestata.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Seansse ei salvestata veel: sait vajab andmebaasi uuendust.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Praegu sisse logitud</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>See seade</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Seade</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Aadress</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sisse logitud</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Viimati aktiivne</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Praegu</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Jääb sisse logituks</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Jäta mind meelde, kuni %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Kuni brauser suletakse</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Selle seansi lõpetamiseks logige välja.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Logi välja</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Logi see seanss välja</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Logi välja kõik teised seansid</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Logi välja kõikjalt</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Teavitused sisselogimistest</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Saada mulle meil, kui minu kontoga logitakse sisse uuest seadmest või brauserist</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Hiljuti lõppenud</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lõppenud</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kuidas</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Viimase %days päeva jooksul pole ühtegi.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Vaadake, kus teie konto on sisse logitud, ja logige välja seade, mida te ei tunne.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Halda seadmeid</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Uus sisselogimine teie kontole saidil %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Tere,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Teie kontoga %login saidil %site logiti just sisse seadmest või brauserist, mida see pole viimasel ajal kasutanud:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Seade:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Aeg:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Ligikaudne aadress:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Kui see olite teie, ei pea te midagi tegema.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Kui see polnud teie, võib keegi teie parooli teada. Logige see seanss oma seadmete lehel välja ja muutke seejärel oma parooli:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Need meilid saate välja lülitada samal lehel.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Kasutaja %login uus sisselogimine saidil %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Konto %login logis sisse seadmest või brauserist, mida see pole viimasel ajal kasutanud.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Selle kasutaja seansid:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Uus sisselogimine teie kontole</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Teie kontoga %login logiti %date sisse seadmest %device (%ip).</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Kui see olite teie, ei pea te midagi tegema. Kui ei, logige see seanss aadressil %url välja ja muutke oma parooli.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Kasutaja %login uus sisselogimine</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Konto %login logis sisse uuest seadmest: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Teie seadmed</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Kasutaja %name seansid</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pääsuvõtmed</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Pääsuvõti logib teid parooli asemel sisse sõrmejälje, näo, ekraaniluku või turvavõtmega. See on salvestatud teie seadmesse või paroolihaldurisse; see sait säilitab ainult selle avaliku võtme, nii et siinne leke ei saa seda paljastada.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Pääsuvõtmed on sellel saidil välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Pääsuvõtmeid ei saa sellel saidil veel kasutada: administraator peab esmalt käivitama andmebaasi uuenduse.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Kas eemaldada pääsuvõti „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Sellega ei saa enam sellesse kontosse sisse logida. Eemaldage see ka oma seadmest või paroolihaldurist.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Eemalda pääsuvõti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Teie pääsuvõtmed</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count (kõige rohkem %max)</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Teil pole veel pääsuvõtit. Lisage see allpool: järgmisel sisselogimisel valige „Logi sisse pääsuvõtmega“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Lisatud</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Viimati kasutatud</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Liik</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Toimingud</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Veel mitte</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sünkroonitud</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>See seade või võti</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Nimeta ümber</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Uus nimi</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Salvesta nimi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Lisa pääsuvõti</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Järgige oma brauseri või seadme juhiseid.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Pääsuvõtme dialoog suleti. Midagi ei muudetud.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Pääsuvõtit ei saanud luua. Proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>See brauser ei saa pääsuvõtmeid luua. Kasutage ajakohast brauserit või logige sisse parooliga.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Näiteks seade või paroolihaldur, milles see asub, et saaksite oma pääsuvõtmeid eristada.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Sellel kontol on juba lubatud arv pääsuvõtmeid (%max). Uue lisamiseks eemaldage üks.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Pääsuvõtit ei saanud kasutada. Proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Minu konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Pääsuvõtme dialoog suleti. Selle asemel saate sisse logida parooliga.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Pääsuvõtit ei saanud kasutada. Proovige uuesti või logige sisse parooliga.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Logi sisse pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Pääsuvõtmega ei saanud sisse logida</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>logige parooli asemel sisse sõrmejälje, näo, ekraaniluku või turvavõtmega.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Pääsuvõti „%name“ on lisatud. Nüüdsest saate sellega sisse logida.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Pääsuvõtme uus nimi on „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Pääsuvõti „%name“ on eemaldatud. Sellega ei saa enam sellesse kontosse sisse logida.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Pääsuvõti (%date)</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Sellel kontol on juba lubatud arv pääsuvõtmeid. Eemaldage kõigepealt üks.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Andmebaas oli hõivatud ja midagi ei salvestatud. Proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>See pääsuvõti on juba registreeritud.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Päring võttis liiga kaua aega või on juba kasutatud. Proovige uuesti.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Pääsuvõti ei kontrollinud teie isikut (PIN-kood, sõrmejälg või nägu). Proovige uuesti ja kinnitage oma seadmes.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>See autentija kasutab võtmeliiki, mida see sait ei aktsepteeri.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Pääsuvõti loodi teise aadressi jaoks kui see sait.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>See pääsuvõti pole siin ühegi konto jaoks registreeritud. Logige sisse parooliga ja lisage see jaotises Minu konto, Pääsuvõtmed.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>See konto ei saa praegu sisse logida. Pöörduge saidi administraatori poole.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Pääsuvõtit ei saanud kontrollida. Proovige uuesti.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Olete muutmas oma sisselogimisviisi või konto turvalisust.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Olete haldamas kasutajaid, rolle või poliitikaid.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Olete muutmas süsteemi sätteid või käivitamas häälestustoimingut.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Olete eksportimas andmeid.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Olete eemaldamas või avaldamas sisu.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>See toiming nõuab, et kinnitaksite oma isiku.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Kinnitage, et see olete teie, sisse logitud kasutajana %login. Teilt ei küsita seda uuesti %minutes minuti jooksul.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>See parool pole õige.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>See kood pole õige või on juba kasutatud.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Valige üks allolevatest viisidest.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Pääsuvõtit ei saanud kontrollida.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Katseid enne väljalogimist jäänud: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Valitud faile ei saa uuesti saata: pärast kinnitamist valige need veel kord.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Parooliga</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Pääsuvõtmega</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parool</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kinnita</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Kasuta pääsuvõtit</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Koodiga autentimisrakendusest</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kood</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Sellel kontol pole võimalust teie isikut kinnitada (pole parooli, pääsuvõtit ega autentimisrakendust). Logige välja ja uuesti sisse või pöörduge administraatori poole.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Loobu</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Kinnitage, et see olete teie</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kood autentimisrakendusest</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Oma konto</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Oma parooli, e-posti aadressi, pääsuvõtmete, kaheastmelise sisselogimise või API-võtmete muutmine.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Kasutajad, rollid ja poliitikad</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Kasutajate loomine ja redigeerimine, kontosätted, rollide määramine ja poliitikate redigeerimine.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Süsteemi sätted ja häälestustoimingud</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Sätete redigeerimine, laiendused, vahemälud ja hooldus, paketid ja uuendused, varukoopiad ning Git-haldur.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Andmete eksportimine</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Kogutud teabe, kasutajate, uudiskirja tellijate ja auditi eksport.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Sisu eemaldamine ja avaldamine</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Sisu eemaldamine (ka prügikasti), prügikasti tühjendamine ja avaldamine. Vaikimisi väljas.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Enne tundlikku toimingut kinnitab sisseloginud kasutaja uuesti oma isiku: parooli, pääsuvõtme või autentimisrakenduse koodiga. Küsivad ainult veebilehed: REST-liides, SOAP, WebDAV, sisselogimine teenuse expservices kaudu ja käsurida ei küsi kunagi.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Üldine</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Kinnituse kehtivus minutites</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Millal küsida</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Reegleid failis site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Salvestatakse faili settings/override/site.ini.append.php. Salvestamisel palutakse teil kinnitada, et see olete teie.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvesta</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Kinnitage, et see olete teie</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Küsi „Kinnitage, et see olete teie“ enne allpool sisse lülitatud rühmade toiminguid</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Sätted on salvestatud.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Sätteid ei saanud salvestada: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Häälestus</translation>
     </message>
 </context>
 </TS>

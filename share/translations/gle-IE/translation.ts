@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Oscail nó dún an fillteán</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Tá an leathanach seo i do leabharmharcanna. Oscail an leabharmharc chun a ainm nó a fhillteán a athrú.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Cuir an leathanach seo le do leabharmharcanna.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Leabharmharcáilte</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Leabharmharcáil an leathanach seo</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Coinníonn an leabharmharc seoladh an leathanaigh seo lena pharaiméadair: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Sábháil an leabharmharc</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Cuir leabharmharc leis</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Mo leabharmharcanna</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Leathanach córais</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Leathanaigh chórais</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Níl cead agat an leathanach seo a oscailt a thuilleadh.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oscail</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Tá seoladh an leathanaigh seo ar iarraidh. Bain an leabharmharc agus leabharmharcáil an leathanach arís.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Níl cead agat an leathanach seo a oscailt a thuilleadh. Bain an leabharmharc, nó iarr rochtain ar riarthóir.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Seoladh</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modúl agus amharc</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Is féidir leathanaigh chórais a leabharmharcáil freisin: oscail an leathanach (Socrú, an rian iniúchta, liosta úsáideoirí ...) agus roghnaigh “Leabharmharcáil an leathanach seo” os a chionn. Bíonn deilbhín giar ag na leabharmharcanna sin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Nóta: Ní dhíshuiteálfar na pacáistí.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>cuntais úsáideora a dhíghníomhachtú agus iad a bhogadh go grúpa na n-úsáideoirí díghníomhachtaithe, agus iad a bhogadh ar ais</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>féach cá bhfuil úsáideoirí eile sínithe isteach, agus sínigh amach iad</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ do chuntas a ghníomhachtú.</translation>
         <source>Open e-mail preferences</source>
         <translation>Oscail na roghanna ríomhphoist</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Do ghléasanna</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seisiúin</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Cá bhfuil tú sínithe isteach: brabhsálaí, córas, áit agus am. Sínigh amach gléas nach n-aithníonn tú.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Cá bhfuil an t-úsáideoir seo sínithe isteach, agus an t-úsáideoir a shíniú amach i ngach áit.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Bainistigh gléasanna</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Taispeáin seisiúin</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Sínithe isteach: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Eochracha rochtana</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Sínigh isteach le do mhéarlorg, le d’aghaidh, le glas an scáileáin nó le heochair slándála in ionad do phasfhocail.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Bainistigh eochracha rochtana</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Cuir eochair rochtana leis</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Eochracha rochtana: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Níl aon cheann fós</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ do chuntas a ghníomhachtú.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Teaglaim aicme/aitreabúide (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Grúpaí úsáideoirí ar gá a gcuntais nua a cheadú</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Fanann cuntas a fhoilsítear i gceann de na grúpaí seo, nó faoi cheann acu, go dtí go nglacann ceadaitheoir leis. Ní féidir leis síniú isteach roimhe sin.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Úsáideoirí a cheadaíonn na cuntais</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grúpaí a cheadaíonn na cuntais</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Grúpaí úsáideoirí nach gá ceadú dóibh (foilsíonn a mbaill cuntais den sórt sin go díreach; ní gá é riamh do cheadaitheoirí)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Seol ríomhphost chuig na ceadaitheoirí leis an nasc chuig an gceadú (síníonn siad isteach chun é a cheadú nó a dhiúltú)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Féach ar leathanach na riachtanas le haghaidh tuilleadh faisnéise.</translatio
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Marcálann an athróg timpeallachta EXP_DEMO_MODE=1 an tsuiteáil seo mar thaispeántas poiblí: glactar le pasfhocal riarthóra a bhfuil eolas coitianta air, agus ní féidir pasfhocail riarthóirí a athrú ná a athshocrú níos déanaí. Ná húsáid an mód taispeána choíche do shuíomh táirgthe.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Jabanna cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Ritheann na jabanna cron ó crontab an úsáideora %user, ar leis an tsuiteáil.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Níl aon chuid jab cron sa suiteáil le sceidealú.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Níor scríobhadh an crontab (%reason). Cuir na línte seo le crontab an úsáideora a ritheann an suíomh, nó ní rithfidh an scuaine, na hiompórtálacha, na fógraí ná an t-innéacs cuardaigh choíche:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ do chuntas a ghníomhachtú.</translation>
         <source>ClassAttribute name</source>
         <translation>Ainm aitreabúid na haicme</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Cuntais ar gá iad a cheadú</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Ríomhphost chuig na ceadaitheoirí</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tá</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Níl</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ do chuntas a ghníomhachtú.</translation>
         <source>Your comment was added.</source>
         <translation>Cuireadh do thrácht leis.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Ceadaíodh agus foilsíodh an cuntas “%1”: is féidir leis síniú isteach anois.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Diúltaíodh don chuntas “%1”. Níl sé foilsithe agus ní féidir leis síniú isteach; is dréacht dá údar é arís.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ do chuntas a ghníomhachtú.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Leabharmharcanna curtha leis: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Leathanach córais</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Ní féidir leathanaigh chórais a leabharmharcáil fós: níor ritheadh nuashonrú an bhunachair sonraí don leagan seo.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Ní féidir an leathanach seo a leabharmharcáil: ní leathanach d’amharc modúil é.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Ní féidir an leathanach seo a leabharmharcáil: níl cead agat é a oscailt.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Níorbh fhéidir an leathanach a leabharmharcáil.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Tá an leathanach “%name” i do leabharmharcanna.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Níorbh fhéidir an leabharmharc a athainmniú: teastaíonn ainm uaidh.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Athainmníodh an leabharmharc go “%name”.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Scáthánaigh chuig táblaí sonraí</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Ceadaigh cuntais úsáideora</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Tá cuntas úsáideora nua ag fanacht le do cheadú</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Seolta chuig athrú an phasfhocail</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Diúltaíodh do shíniú isteach gan an dara céim</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Pasfhocal aipe cruthaithe</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Pasfhocal aipe cúlghairthe</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Pasfhocal aipe úsáidte</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Rian iniúchta an nóid seo</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>slán</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>briste</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>gan seiceáil</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>deisithe</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>folamh</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Tá an seoladh ríomhphoist nua %email ag fanacht lena dhearbhú: oscail an nasc a sheolamar ansin. Go dtí sin coinníonn an cuntas seo %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Is cuid de shlándáil an chuntais é an ríomhphost faoi shíniú isteach ó ghléas nó ó bhrabhsálaí nua. Casann tú air nó as é le do ghléasanna, áit a bhfeiceann tú freisin seisiúin do chuntais agus ar féidir leat iad a shíniú amach.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Do ghléasanna</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Brabhsáil táblaí na n-aicmí buana…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Jabanna cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Níor rith aon chuid jab cron fós: tá scuaine na jabanna, na hiompórtálacha, na fógraí agus an t-innéacs cuardaigh ag fanacht. Rith php bin/php/installcrontab.php --add, nó cuir línte --show leis an crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Níor rith cuid jab cron le níos faide ná mar a cheadaíonn a sceideal: seiceáil an crontab (php bin/php/installcrontab.php --show) agus na logaí var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Cuid</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Sceideal</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Tosaithe go deireanach</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>riamh</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>in am</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>déanach</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>níor rith riamh</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Níl aon chuid jab cron sa suiteáil le rith ag an jab cron.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Socrú &gt; Jabanna cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Cuntas úsáideora nua ag fanacht le ceadú: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cuntas</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Ainm úsáideora</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grúpa</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Iarrtha ag</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Oscail an ceadú</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Mura n-oibríonn an cnaipe, cóipeáil an seoladh seo isteach i do bhrabhsálaí: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Tá cuntas úsáideora nua ag fanacht le do cheadú</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Chruthaigh %requester an cuntas “%name” in %groups. Níl sé foilsithe agus ní féidir leis síniú isteach go dtí go nglacann ceadaitheoir leis.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Sínigh isteach sa chomhéadan riaracháin agus ceadaigh nó diúltaigh é i do liosta comhoibrithe. Ní shíníonn an nasc seo isteach thú agus ní chinneann sé aon rud leis féin.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Sheol %site an ríomhphost seo toisc go gceadaíonn tú cuntais nua sna grúpaí seo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Ríomhaire</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Fón</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Táibléad</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ríomhchlár nó aip</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Cliant uathoibrithe</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Gléas anaithnid</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Pasfhocal</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pasfhocal agus cód dhá chéim</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Comhéadan REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Comhéadan SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Síniú isteach aonair</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sínithe isteach sular taifeadadh seisiúin</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sínithe amach</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sínithe amach ón leathanach seo</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Sínithe amach ag riarthóir</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Sínithe amach le “gach seisiún eile”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Síniú isteach nua tagtha ina áit</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Críochnaithe ag athrú pasfhocail</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>As feidhm</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Do ghléasanna</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seisiúin an úsáideora %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Cá bhfuil do chuntas sínithe isteach faoi láthair. Mura n-aithníonn tú gléas, sínigh amach é agus athraigh do phasfhocal.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Cá bhfuil an cuntas seo sínithe isteach faoi láthair. Má shínítear an t-úsáideoir amach, críochnaíonn gach seisiún ag a chéad iarratas eile.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ar ais chuig an gcuntas</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Síníodh an seisiún amach. Caithfidh an gléas síniú isteach arís.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Seisiúin eile a síníodh amach: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ní raibh aon seisiún eile le síniú amach.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Seisiúin an úsáideora seo a síníodh amach: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ní raibh aon seisiún ag an úsáideoir seo le síniú amach.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Seo é an seisiún atá in úsáid agat. Chun é a chríochnú, sínigh amach.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bhí deireadh leis an seisiún sin cheana.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Gheobhaidh tú ríomhphost nuair a shíníonn do chuntas isteach ó ghléas nua.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ní bhfaighidh tú ríomhphost a thuilleadh faoi shínithe isteach ó ghléasanna nua.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bhí an leathanach as feidhm. Níor athraíodh aon rud; bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ní thaifeadtar seisiúin ar an suíomh seo (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tá an tábla expuser_session ar iarraidh</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Taifeadtar seisiúin a luaithe a chruthaítear é: php update/common/scripts/6.0/createusersessiontable.php, nó nuashonrú bunachar sonraí 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sínithe isteach anois</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sínigh amach gach seisiún eile</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sínigh amach i ngach áit</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Síntear gach gléas seachas an ceann seo amach ag a chéad iarratas eile, fiú iad siúd a fhanann sínithe isteach le “Cuimhnigh orm”.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Síntear gach seisiún de chuid an úsáideora seo amach ag a chéad iarratas eile, fiú iad siúd a fhanann sínithe isteach le “Cuimhnigh orm”.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Sea, sínigh amach na seisiúin eile</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Sea, sínigh amach gach seisiún</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>An gléas seo</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gléas</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Seoladh</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Taispeántar é mar a líonra; coimeádtar an seoladh iomlán do na riarthóirí.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>sínithe isteach ó %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sínithe isteach</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Gníomhach go deireanach</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Anois</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Fanann sínithe isteach</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Cuimhnigh orm, go dtí %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Go dtí go ndúntar an brabhsálaí</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Am an tsínithe isteach</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Aitheantas an bhrabhsálaí</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Chun an seisiún seo a chríochnú, sínigh amach.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sínigh amach</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sínigh amach an seisiún seo</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Níl aon seisiún sínithe isteach.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Foláirimh síniú isteach</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Seol ríomhphost chugam nuair a shíníonn mo chuntas isteach ó ghléas nó ó bhrabhsálaí nua</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Seoltar chuig %email é. Insíonn sé an gléas, an áit go garbh agus an t-am, agus tá nasc ann chuig an leathanach seo.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sábháil</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Ní sheolann an suíomh seo foláirimh síniú isteach.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Críochnaithe le déanaí</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Seisiúin a chríochnaigh sna %days lá seo caite.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Críochnaithe</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Conas</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Níl aon cheann.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Ríomhaire</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Fón</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Táibléad</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Ríomhchlár nó aip</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Cliant uathoibrithe</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Gléas anaithnid</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Pasfhocal</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Pasfhocal agus cód dhá chéim</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Comhéadan REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Comhéadan SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Síniú isteach aonair</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sínithe isteach sular taifeadadh seisiúin</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sínithe amach</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sínithe amach ón leathanach seo</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Sínithe amach ag riarthóir</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Sínithe amach le “gach seisiún eile”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Síniú isteach nua tagtha ina áit</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Críochnaithe ag athrú pasfhocail</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>As feidhm</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Do ghléasanna</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seisiúin an úsáideora %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Cá bhfuil do chuntas sínithe isteach faoi láthair. Mura n-aithníonn tú gléas, sínigh amach é agus athraigh do phasfhocal.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Cá bhfuil an cuntas seo sínithe isteach faoi láthair. Má shínítear an t-úsáideoir amach, críochnaíonn gach seisiún ag a chéad iarratas eile.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Síníodh an seisiún amach. Caithfidh an gléas síniú isteach arís.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Seisiúin eile a síníodh amach: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ní raibh aon seisiún eile le síniú amach.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Seisiúin an úsáideora seo a síníodh amach: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ní raibh aon seisiún ag an úsáideoir seo le síniú amach.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Seo é an seisiún atá in úsáid agat. Chun é a chríochnú, sínigh amach.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Bhí deireadh leis an seisiún sin cheana.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Gheobhaidh tú ríomhphost nuair a shíníonn do chuntas isteach ó ghléas nua.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ní bhfaighidh tú ríomhphost a thuilleadh faoi shínithe isteach ó ghléasanna nua.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bhí an leathanach as feidhm. Níor athraíodh aon rud; bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Ní thaifeadtar seisiúin ar an suíomh seo.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Ní thaifeadtar seisiúin fós: teastaíonn nuashonrú a bhunachair sonraí ón suíomh.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sínithe isteach anois</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>An gléas seo</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Gléas</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Seoladh</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sínithe isteach</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Gníomhach go deireanach</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Anois</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Fanann sínithe isteach</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Cuimhnigh orm, go dtí %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Go dtí go ndúntar an brabhsálaí</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Chun an seisiún seo a chríochnú, sínigh amach.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Sínigh amach</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Sínigh amach an seisiún seo</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Sínigh amach gach seisiún eile</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Sínigh amach i ngach áit</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Foláirimh síniú isteach</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Seol ríomhphost chugam nuair a shíníonn mo chuntas isteach ó ghléas nó ó bhrabhsálaí nua</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sábháil</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Críochnaithe le déanaí</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Críochnaithe</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Conas</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Níl aon cheann sna %days lá seo caite.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Féach cá bhfuil do chuntas sínithe isteach, agus sínigh amach gléas nach n-aithníonn tú.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Bainistigh gléasanna</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Síniú isteach nua i do chuntas ar %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Dia duit,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Baineadh úsáid as do chuntas %login ar %site díreach anois chun síniú isteach ó ghléas nó ó bhrabhsálaí nár úsáid sé le déanaí:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Gléas:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Am:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Seoladh measta:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Más tusa a bhí ann, ní gá duit aon rud a dhéanamh.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Murab tusa a bhí ann, b’fhéidir go bhfuil do phasfhocal ag duine éigin. Sínigh amach an seisiún sin ar leathanach do ghléasanna, ansin athraigh do phasfhocal:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Is féidir leat na ríomhphoist seo a mhúchadh ar an leathanach céanna.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Síniú isteach nua ó %login ar %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Shínigh an cuntas %login isteach ó ghléas nó ó bhrabhsálaí nár úsáid sé le déanaí.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Seisiúin an úsáideora seo:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Síniú isteach nua i do chuntas</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Baineadh úsáid as do chuntas %login chun síniú isteach ó %device (%ip) ar %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Más tusa a bhí ann, ní gá duit aon rud a dhéanamh. Murab ea, sínigh amach an seisiún seo ag %url agus athraigh do phasfhocal.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Síniú isteach nua ó %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Shínigh an cuntas %login isteach ó ghléas nua: %device (%ip) ar %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Do ghléasanna</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seisiúin an úsáideora %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Eochracha rochtana</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Síníonn eochair rochtana isteach thú le do mhéarlorg, le d’aghaidh, le glas an scáileáin nó le heochair slándála in ionad do phasfhocail. Stóráiltear í ar do ghléas nó i do bhainisteoir pasfhocal; ní choinníonn an suíomh seo ach a heochair phoiblí, mar sin ní féidir le sceitheadh anseo í a nochtadh.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Tá eochracha rochtana múchta ar an suíomh seo.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Ní féidir eochracha rochtana a úsáid ar an suíomh seo fós: caithfidh an riarthóir nuashonrú an bhunachair sonraí a rith ar dtús.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Ar mhaith leat an eochair rochtana “%name” a bhaint?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ní féidir léi síniú isteach sa chuntas seo a thuilleadh. Bain de do ghléas nó de do bhainisteoir pasfhocal í freisin.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Bain an eochair rochtana</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>D’eochracha rochtana</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count as %max ar a mhéad</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Níl eochair rochtana agat fós. Cuir ceann leis thíos: an chéad uair eile a shíníonn tú isteach, roghnaigh “Sínigh isteach le heochair rochtana”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Curtha leis</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Úsáidte go deireanach</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Cineál</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gníomhartha</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Níl fós</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sioncronaithe</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>An gléas nó an eochair seo</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Athainmnigh</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Ainm nua</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Sábháil an t-ainm</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bain</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Cuir eochair rochtana leis</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Lean na céimeanna i do bhrabhsálaí nó ar do ghléas.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dúnadh dialóg na heochrach rochtana. Níor athraíodh aon rud.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Níorbh fhéidir an eochair rochtana a chruthú. Bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ní féidir leis an mbrabhsálaí seo eochracha rochtana a chruthú. Úsáid brabhsálaí reatha, nó sínigh isteach le do phasfhocal.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Mar shampla an gléas nó an bainisteoir pasfhocal ina bhfuil sí, ionas gur féidir leat d’eochracha rochtana a aithint óna chéile.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Tá an oiread eochracha rochtana ag an gcuntas seo agus is féidir leis a bheith aige (%max). Bain ceann chun ceann eile a chur leis.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Níorbh fhéidir an eochair rochtana a úsáid. Bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mo chuntas</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dúnadh dialóg na heochrach rochtana. Is féidir leat síniú isteach le do phasfhocal ina ionad sin.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Níorbh fhéidir an eochair rochtana a úsáid. Bain triail eile as, nó sínigh isteach le do phasfhocal.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Sínigh isteach le heochair rochtana</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Níorbh fhéidir síniú isteach leis an eochair rochtana</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>sínigh isteach le do mhéarlorg, le d’aghaidh, le glas an scáileáin nó le heochair slándála in ionad do phasfhocail.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Cuireadh an eochair rochtana “%name” leis. Is féidir leat síniú isteach léi feasta.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Is é “%name” ainm na heochrach rochtana anois.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Baineadh an eochair rochtana “%name”. Ní féidir léi síniú isteach sa chuntas seo a thuilleadh.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Eochair rochtana ó %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Tá an oiread eochracha rochtana ag an gcuntas seo agus is féidir. Bain ceann ar dtús.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Bhí an bunachar sonraí gnóthach agus níor sábháladh aon rud. Bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Tá an eochair rochtana seo cláraithe cheana.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Thóg an t-iarratas rófhada nó úsáideadh é cheana. Bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Níor sheiceáil an eochair rochtana cé thú féin (PIN, méarlorg nó aghaidh). Bain triail eile as agus deimhnigh ar do ghléas.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Úsáideann an fíordheimhneoir seo cineál eochrach nach nglacann an suíomh seo leis.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Cruthaíodh an eochair rochtana do sheoladh seachas an suíomh seo.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Níl an eochair rochtana seo cláraithe do chuntas anseo. Sínigh isteach le do phasfhocal agus cuir leis í ag Mo chuntas, Eochracha rochtana.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Ní féidir leis an gcuntas seo síniú isteach faoi láthair. Déan teagmháil le riarthóir an tsuímh.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Níorbh fhéidir an eochair rochtana a sheiceáil. Bain triail eile as.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Tá tú ar tí an bealach a shíníonn tú isteach nó slándáil do chuntais a athrú.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Tá tú ar tí úsáideoirí, róil nó polasaithe a bhainistiú.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Tá tú ar tí socruithe córais a athrú nó gníomh socraithe a rith.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Tá tú ar tí sonraí a easpórtáil.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Tá tú ar tí ábhar a bhaint nó a fhoilsiú.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Ní mór duit a dheimhniú cé thú féin don ghníomh seo.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Deimhnigh gur tusa atá ann, sínithe isteach mar %login. Ní iarrfar ort arís go ceann %minutes nóiméad.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Níl an pasfhocal sin ceart.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Níl an cód sin ceart, nó úsáideadh cheana é.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Roghnaigh ceann de na bealaí thíos.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Níorbh fhéidir an eochair rochtana a sheiceáil.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Iarrachtaí fágtha sula síntear amach thú: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Ní féidir na comhaid a roghnaigh tú a sheoladh arís: tar éis duit deimhniú, roghnaigh iad arís.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Le do phasfhocal</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Le heochair rochtana</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Pasfhocal</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Deimhnigh</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Úsáid eochair rochtana</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Le cód ó d’aip fíordheimhnitheora</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Cód</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Níl aon bhealach ag an gcuntas seo chun a dheimhniú cé thú féin (níl pasfhocal, eochair rochtana ná aip fíordheimhnitheora aige). Sínigh amach agus isteach arís, nó iarr ar riarthóir.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cealaigh</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Deimhnigh gur tusa atá ann</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Cód ó d’aip fíordheimhnitheora</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Do chuntas féin</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Do phasfhocal, do sheoladh ríomhphoist, d’eochracha rochtana, do shíniú isteach dhá chéim nó d’eochracha API féin a athrú.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Úsáideoirí, róil agus polasaithe</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Úsáideoirí a chruthú agus a chur in eagar, socruithe cuntais, róil a shannadh agus polasaithe a chur in eagar.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Socruithe córais agus gníomhartha socraithe</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Socruithe, eisínteachtaí, taiscí agus cothabháil, pacáistí agus nuashonruithe, cóipeanna cúltaca agus an bainisteoir git a chur in eagar.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Sonraí a easpórtáil</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Easpórtálacha d’fhaisnéis bhailithe, d’úsáideoirí, de shíntiúsóirí nuachtlitreacha agus den iniúchadh.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Ábhar a bhaint agus a fhoilsiú</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Ábhar a bhaint (chuig an mbruscar freisin), an bruscar a fholmhú agus foilsiú. Múchta de réir réamhshocraithe.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Roimh ghníomh íogair, deimhníonn úsáideoir atá sínithe isteach arís cé hé féin, lena phasfhocal, le heochair rochtana nó le cód óna aip fíordheimhnitheora. Na leathanaigh ghréasáin amháin a iarrann é: ní iarrann an comhéadan REST, SOAP, WebDAV, síniú isteach expservices ná líne na n-orduithe é riamh.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Ginearálta</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Nóiméid a mhaireann deimhniú</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Cathain a iarrfar</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Rialacha in site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Sábháilte i settings/override/site.ini.append.php. Iarrtar ort a dheimhniú gur tusa atá ann nuair a shábhálann tú.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Sábháil</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Deimhnigh gur tusa atá ann</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Iarr “Deimhnigh gur tusa atá ann” roimh ghníomhartha na ngrúpaí atá curtha ar siúl thíos</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Sábháladh na socruithe.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Níorbh fhéidir na socruithe a shábháil: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Socrú</translation>
     </message>
 </context>
 </TS>

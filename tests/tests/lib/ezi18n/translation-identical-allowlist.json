@@ -3787,7 +3787,8 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "same word in Bosnian (a tablet computer)"
     },
     "dsb-DE": {
         "#level1 - #level2": "format placeholders only",
@@ -3914,7 +3915,8 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "same word in Lower Sorbian (a tablet computer)"
     },
     "est-EE": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -4635,7 +4637,9 @@
         "top": "OPML attribute name, kept as code",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "same word in Maltese (a tablet computer)",
+        "Passkeys": "Maltese uses the loanword passkey (no Maltese term), like password"
     },
     "ron-RO": {
         "#level1 - #level2": "format placeholders only",
@@ -4808,7 +4812,9 @@
         "site": "spelled the same in Romanian",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "intact": "same word in Romanian (an intact audit chain)",
+        "Computer": "same word in Romanian (a desktop computer)"
     },
     "sqi-AL": {
         "#level1 - #level2": "format placeholders only",
@@ -4901,7 +4907,8 @@
         "url": "OPML attribute name, kept as code",
         "version": "spelled the same in Albanian",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "same word in Albanian (a tablet computer)"
     },
     "slk-SK": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -5020,7 +5027,8 @@
         "shell": "Slovak uses the international term",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "same word in Slovak (a tablet computer)"
     },
     "slv-SI": {
         "#levelIndex1:#levelIndex2": "format placeholders only",
@@ -5367,7 +5375,8 @@
         "settings/querycache.ini": "file path",
         "url": "OPML attribute name, kept as code",
         "vertScrollState": "OPML attribute name (code identifier)",
-        "xmlUrl": "OPML attribute name (code identifier)"
+        "xmlUrl": "OPML attribute name (code identifier)",
+        "Tablet": "the tablet computer is written in Latin letters in Greek interfaces"
     },
     "rus-RU": {
         "#levelIndex1:#levelIndex2": "placeholder pattern/code",
@@ -5915,7 +5924,8 @@
         "url": "technical identifier",
         "vertScrollState": "code identifier",
         "viewmode": "code identifier",
-        "xmlUrl": "code identifier"
+        "xmlUrl": "code identifier",
+        "Tablet": "same word in Serbian Latin (Таблет in srp-RS)"
     },
     "bul-BG": {
         "#level1 - #level2": "placeholders only",
@@ -6297,7 +6307,8 @@
         "shell": "technical term not translated",
         "url": "technical abbreviation",
         "vertScrollState": "code identifier",
-        "xmlUrl": "code identifier"
+        "xmlUrl": "code identifier",
+        "Tablet": "same word in European Portuguese (a tablet computer)"
     },
     "afr-ZA": {
         "#level1 - #level2": "placeholders only",
@@ -6467,6 +6478,7 @@
         "vertScrollState": "identifier",
         "viewmode": "identifier",
         "week": "same word in Afrikaans",
-        "xmlUrl": "identifier"
+        "xmlUrl": "identifier",
+        "Tablet": "same word in Afrikaans (a tablet computer)"
     }
 }

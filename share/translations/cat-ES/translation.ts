@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Obre o tanca la carpeta</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Aquesta pàgina és a les teves adreces d'interès. Obre-la per canviar-ne el nom o la carpeta.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Afegeix aquesta pàgina a les teves adreces d'interès.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>A les adreces d'interès</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Afegeix la pàgina a les adreces d'interès</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>L'adreça d'interès conserva l'adreça d'aquesta pàgina amb els seus paràmetres: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Desa l'adreça d'interès</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Afegeix una adreça d'interès</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Les meves adreces d'interès</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pàgina del sistema</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Pàgines del sistema</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Ja no pots obrir aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Obre</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Falta l'adreça d'aquesta pàgina. Treu l'adreça d'interès i torna a afegir la pàgina a les adreces d'interès.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ja no pots obrir aquesta pàgina. Treu l'adreça d'interès o demana accés a un administrador.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreça</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Mòdul i vista</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>També pots afegir pàgines del sistema a les adreces d'interès: obre la pàgina (Configuració, el registre d'auditoria, una llista d'usuaris ...) i tria «Afegeix la pàgina a les adreces d'interès» a sobre. Aquestes adreces d'interès tenen una icona d'engranatge.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Nota: els paquets no es desinstal·laran.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>desactivar comptes d&apos;usuari i moure&apos;ls al grup d&apos;usuaris desactivats, i tornar-los a moure</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>veure on tenen la sessió iniciada altres usuaris i tancar-los la sessió</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ el teu compte.</translation>
         <source>Open e-mail preferences</source>
         <translation>Obre les preferències de correu electrònic</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Els teus dispositius</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>On tens la sessió iniciada: navegador, sistema, lloc i hora. Tanca la sessió d'un dispositiu que no reconeguis.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>On té la sessió iniciada aquest usuari, i tancar-li la sessió a tot arreu.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Gestiona els dispositius</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Mostra les sessions</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count amb la sessió iniciada</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Claus d'accés</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Inicia la sessió amb l'empremta digital, la cara, el bloqueig de pantalla o una clau de seguretat en lloc de la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Gestiona les claus d'accés</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Afegeix una clau d'accés</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count claus d'accés</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Encara cap</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -37789,7 +37913,7 @@ el teu compte.</translation>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Recordatori</translation>
+        <translation>Recorda'm</translation>
     </message>
     <message>
         <source>&quot;%user_login&quot; is not allowed to log in because failed login attempts by this user exceeded allowable number of failed login attempts!</source>
@@ -39682,6 +39806,30 @@ el teu compte.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Combinacions classe/atribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Grups d'usuaris els comptes nous dels quals necessiten aprovació</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Un compte publicat en un d'aquests grups, o per sota d'un d'ells, espera fins que un aprovador l'accepti. Abans no pot iniciar la sessió.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Usuaris que aproven els comptes</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grups que aproven els comptes</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Grups d'usuaris que no necessiten aprovació (els seus membres publiquen aquests comptes directament; els aprovadors no la necessiten mai)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Envia als aprovadors un correu electrònic amb l'enllaç a l'aprovació (inicien la sessió per aprovar-lo o denegar-lo)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Consulta la pàgina de requisits per obtenir-ne més informació.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>La variable d&apos;entorn EXP_DEMO_MODE=1 marca aquesta instal·lació com a demostració pública: s&apos;accepta una contrasenya d&apos;administrador molt coneguda, i les contrasenyes d&apos;administrador no es poden canviar ni restablir més endavant. No facis servir mai el mode de demostració en un lloc de producció.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Tasques cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Les tasques cron s'executen des del crontab de l'usuari %user, que és el propietari de la instal·lació.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>La instal·lació no té cap part de tasca cron per planificar.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>No s'ha escrit el crontab (%reason). Afegeix aquestes línies al crontab de l'usuari amb què s'executa el lloc; si no, la cua, les importacions, les notificacions i l'índex de cerca no s'executaran mai:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ el teu compte.</translation>
         <source>ClassAttribute name</source>
         <translation>Nom de l&apos;atribut de classe</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Comptes que necessiten aprovació</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Correu electrònic als aprovadors</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ d&apos;aquest error. No tornis a enviar el pagament.</translation>
         <source>Your comment was added.</source>
         <translation>S&apos;ha afegit el teu comentari.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>S'ha aprovat i publicat el compte «%1»: ja pot iniciar la sessió.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>S'ha denegat el compte «%1». No està publicat i no pot iniciar la sessió; torna a ser un esborrany del seu autor.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ d&apos;aquest error. No tornis a enviar el pagament.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>S&apos;han afegit %count adreces d&apos;interès.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pàgina del sistema</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Encara no es poden afegir pàgines del sistema a les adreces d'interès: no s'ha executat l'actualització de la base de dades d'aquesta versió.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Aquesta pàgina no es pot afegir a les adreces d'interès: no és una pàgina d'una vista de mòdul.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Aquesta pàgina no es pot afegir a les adreces d'interès: no la pots obrir.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>No s'ha pogut afegir la pàgina a les adreces d'interès.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>La pàgina «%name» és a les teves adreces d'interès.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>No s'ha pogut canviar el nom de l'adreça d'interès: necessita un nom.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>S'ha canviat el nom de l'adreça d'interès a «%name».</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Mirror to data tables</source>
         <translation>Reflecteix a les taules de dades</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Aprovació de comptes d'usuari</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Un compte d'usuari nou espera la teva aprovació</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Sent to the password change</source>
         <translation>Enviat al canvi de contrasenya</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>S'ha rebutjat un inici de sessió sense el segon pas</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>S'ha creat una contrasenya d'aplicació</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>S'ha revocat una contrasenya d'aplicació</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>S'ha utilitzat una contrasenya d'aplicació</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>The audit trail of this node</source>
         <translation>El registre d&apos;auditoria d&apos;aquest node</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>intacta</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>trencada</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>sense comprovar</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>reparada</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>buida</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>La nova adreça de correu electrònic %email espera la confirmació: obre l&apos;enllaç que hi hem enviat. Fins aleshores aquest compte conserva %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>El correu electrònic sobre un inici de sessió des d'un dispositiu o navegador nou forma part de la seguretat del compte. L'actives o el desactives a «Els teus dispositius», on també veus les sessions del teu compte i les pots tancar.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Els teus dispositius</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Explora les taules de les classes persistents…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Tasques cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Encara no s'ha executat cap part de tasca cron: la cua de treballs, les importacions, les notificacions i l'índex de cerca esperen. Executa php bin/php/installcrontab.php --add o afegeix les línies de --show al crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Una part de tasca cron fa més temps que no s'executa del que permet la seva planificació: comprova el crontab (php bin/php/installcrontab.php --show) i els registres var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Part</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Planificació</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Darrer inici</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>puntual</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>amb retard</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>no s'ha executat mai</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>La instal·lació no té cap part de tasca cron perquè l'executi la tasca cron.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Configuració &gt; Tasques cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Compte d'usuari nou pendent d'aprovació: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Compte</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nom d'usuari</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Sol·licitat per</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Obre l'aprovació</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si el botó no funciona, copia aquesta adreça al navegador: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Un compte d'usuari nou espera la teva aprovació</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester ha creat el compte «%name» a %groups. No està publicat i no pot iniciar la sessió fins que un aprovador l'accepti.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Inicia la sessió a la interfície d'administració i aprova'l o denega'l a la teva llista de col·laboració. Aquest enllaç no t'inicia la sessió i no decideix res per si mateix.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Aquest correu l'ha enviat %site perquè aproves els comptes nous d'aquests grups.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Ordinador</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telèfon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tauleta</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programa o aplicació</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Client automatitzat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Dispositiu desconegut</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Contrasenya</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Contrasenya i codi de verificació en dos passos</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfície REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfície SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Inici de sessió únic</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sessió iniciada abans que es registressin les sessions</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sessió tancada</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sessió tancada des d'aquesta pàgina</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Sessió tancada per un administrador</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Sessió tancada amb «totes les altres sessions»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Substituïda per un inici de sessió nou</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Finalitzada per un canvi de contrasenya</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Caducada</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Els teus dispositius</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions de %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>On té la sessió iniciada el teu compte ara mateix. Si no reconeixes un dispositiu, tanca'n la sessió i canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>On té la sessió iniciada aquest compte ara mateix. Tancar la sessió de l'usuari finalitza cada sessió a la seva propera sol·licitud.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Torna al compte</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>S'ha tancat la sessió. El dispositiu ha de tornar a iniciar la sessió.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>S'han tancat %count altres sessions.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>No hi havia cap altra sessió per tancar.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>S'han tancat %count sessions d'aquest usuari.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Aquest usuari no tenia cap sessió per tancar.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Aquesta és la sessió que fas servir. Per finalitzar-la, tanca la sessió.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Aquella sessió ja havia finalitzat.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Rebràs un correu electrònic quan el teu compte iniciï la sessió des d'un dispositiu nou.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ja no rebràs cap correu electrònic sobre inicis de sessió des de dispositius nous.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pàgina havia caducat. No s'ha canviat res; torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>En aquest lloc no es registren les sessions (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Falta la taula expuser_session</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Les sessions es registren un cop s'ha creat: php update/common/scripts/6.0/createusersessiontable.php, o l'actualització de la base de dades de la 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sessió iniciada ara</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Tanca totes les altres sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Tanca la sessió a tot arreu</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Es tanca la sessió de tots els dispositius excepte aquest a la seva propera sol·licitud, també dels que mantenen la sessió iniciada amb «Recorda'm».</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Es tanquen totes les sessions d'aquest usuari a la seva propera sol·licitud, també les que es mantenen iniciades amb «Recorda'm».</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Sí, tanca les altres sessions</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Sí, tanca totes les sessions</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Aquest dispositiu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositiu</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreça</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Es mostra com a xarxa; l'adreça completa es conserva per als administradors.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>sessió iniciada des de %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sessió iniciada</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Darrera activitat</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Manté la sessió iniciada</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Recorda'm, fins al %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Fins que es tanqui el navegador</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Sessió iniciada a</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identificació del navegador</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Per finalitzar aquesta sessió, tanca la sessió.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Tanca la sessió</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Tanca aquesta sessió</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>No hi ha cap sessió iniciada.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Avisos d'inici de sessió</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Envia'm un correu electrònic quan el meu compte iniciï la sessió des d'un dispositiu o navegador nou</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>S'envia a %email. Indica el dispositiu, el lloc aproximat i l'hora, i enllaça amb aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Desa</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Aquest lloc no envia avisos d'inici de sessió.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Finalitzades recentment</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessions que han finalitzat en els darrers %days dies.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finalitzada</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Com</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Cap.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Ordinador</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telèfon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tauleta</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programa o aplicació</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Client automatitzat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Dispositiu desconegut</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Contrasenya</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Contrasenya i codi de verificació en dos passos</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfície REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfície SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Inici de sessió únic</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Sessió iniciada abans que es registressin les sessions</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Sessió tancada</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Sessió tancada des d'aquesta pàgina</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Sessió tancada per un administrador</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Sessió tancada amb «totes les altres sessions»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Substituïda per un inici de sessió nou</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Finalitzada per un canvi de contrasenya</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Caducada</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Els teus dispositius</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions de %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>On té la sessió iniciada el teu compte ara mateix. Si no reconeixes un dispositiu, tanca'n la sessió i canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>On té la sessió iniciada aquest compte ara mateix. Tancar la sessió de l'usuari finalitza cada sessió a la seva propera sol·licitud.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>S'ha tancat la sessió. El dispositiu ha de tornar a iniciar la sessió.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>S'han tancat %count altres sessions.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>No hi havia cap altra sessió per tancar.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>S'han tancat %count sessions d'aquest usuari.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Aquest usuari no tenia cap sessió per tancar.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Aquesta és la sessió que fas servir. Per finalitzar-la, tanca la sessió.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Aquella sessió ja havia finalitzat.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Rebràs un correu electrònic quan el teu compte iniciï la sessió des d'un dispositiu nou.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Ja no rebràs cap correu electrònic sobre inicis de sessió des de dispositius nous.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La pàgina havia caducat. No s'ha canviat res; torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>En aquest lloc no es registren les sessions.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Encara no es registren les sessions: el lloc necessita l'actualització de la base de dades.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Sessió iniciada ara</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Aquest dispositiu</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispositiu</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adreça</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Sessió iniciada</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Darrera activitat</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Ara</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Manté la sessió iniciada</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Recorda'm, fins al %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Fins que es tanqui el navegador</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Per finalitzar aquesta sessió, tanca la sessió.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Tanca la sessió</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Tanca aquesta sessió</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Tanca totes les altres sessions</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Tanca la sessió a tot arreu</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Avisos d'inici de sessió</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Envia'm un correu electrònic quan el meu compte iniciï la sessió des d'un dispositiu o navegador nou</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Desa</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Finalitzades recentment</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finalitzada</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Com</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Cap en els darrers %days dies.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Mira on té la sessió iniciada el teu compte i tanca la sessió d'un dispositiu que no reconeguis.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Gestiona els dispositius</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Inici de sessió nou al teu compte de %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Hola,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>El teu compte %login de %site s'acaba d'utilitzar per iniciar la sessió des d'un dispositiu o navegador que no ha fet servir últimament:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Dispositiu:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Hora:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Adreça aproximada:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Si has estat tu, no cal que facis res.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Si no has estat tu, potser algú sap la teva contrasenya. Tanca aquesta sessió a la pàgina dels teus dispositius i després canvia la contrasenya:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Pots desactivar aquests correus electrònics a la mateixa pàgina.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Inici de sessió nou de %login a %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>El compte %login ha iniciat la sessió des d'un dispositiu o navegador que no ha fet servir últimament.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Les sessions d'aquest usuari:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Inici de sessió nou al teu compte</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>El teu compte %login s'ha utilitzat per iniciar la sessió des de %device (%ip) el %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Si has estat tu, no cal que facis res. Si no, tanca aquesta sessió a %url i canvia la contrasenya.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Inici de sessió nou de %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>El compte %login ha iniciat la sessió des d'un dispositiu nou: %device (%ip) el %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Els teus dispositius</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessions de %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Claus d'accés</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Una clau d'accés t'inicia la sessió amb l'empremta digital, la cara, el bloqueig de pantalla o una clau de seguretat en lloc de la contrasenya. Es desa al teu dispositiu o al teu gestor de contrasenyes; aquest lloc només en conserva la clau pública, de manera que una filtració aquí no la pot revelar.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Les claus d'accés estan desactivades en aquest lloc.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Encara no es poden utilitzar claus d'accés en aquest lloc: primer l'administrador ha d'executar l'actualització de la base de dades.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Vols treure la clau d'accés «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ja no podrà iniciar la sessió en aquest compte. Treu-la també del dispositiu o del gestor de contrasenyes.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Treu la clau d'accés</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Les teves claus d'accés</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count d'un màxim de %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Encara no tens cap clau d'accés. Afegeix-ne una a sota: el pròxim cop que iniciïs la sessió, tria «Inicia la sessió amb una clau d'accés».</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Afegida</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Darrer ús</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipus</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Accions</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Encara no</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sincronitzada</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Aquest dispositiu o clau</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Canvia el nom</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nom nou</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Desa el nom</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Treu</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Afegeix una clau d'accés</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Segueix els passos del navegador o del dispositiu.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>S'ha tancat el diàleg de la clau d'accés. No s'ha canviat res.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>No s'ha pogut crear la clau d'accés. Torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Aquest navegador no pot crear claus d'accés. Utilitza un navegador actual o inicia la sessió amb la contrasenya.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Per exemple, el dispositiu o el gestor de contrasenyes on es troba, perquè puguis distingir les claus d'accés.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Aquest compte ja té el màxim de claus d'accés permeses (%max). Treu-ne una per afegir-ne una altra.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>No s'ha pogut utilitzar la clau d'accés. Torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>El meu compte</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>S'ha tancat el diàleg de la clau d'accés. Pots iniciar la sessió amb la contrasenya.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>No s'ha pogut utilitzar la clau d'accés. Torna-ho a provar o inicia la sessió amb la contrasenya.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Inicia la sessió amb una clau d'accés</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>No s'ha pogut iniciar la sessió amb la clau d'accés</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>inicia la sessió amb l'empremta digital, la cara, el bloqueig de pantalla o una clau de seguretat en lloc de la contrasenya.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>S'ha afegit la clau d'accés «%name». A partir d'ara pots iniciar la sessió amb ella.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Ara la clau d'accés es diu «%name».</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>S'ha tret la clau d'accés «%name». Ja no pot iniciar la sessió en aquest compte.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Clau d'accés del %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Aquest compte ja té el màxim de claus d'accés permeses. Primer treu-ne una.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>La base de dades estava ocupada i no s'ha desat res. Torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Aquesta clau d'accés ja està registrada.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>La sol·licitud ha trigat massa o ja s'havia utilitzat. Torna-ho a provar.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>La clau d'accés no ha comprovat qui ets (PIN, empremta digital o cara). Torna-ho a provar i confirma-ho al dispositiu.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Aquest autenticador utilitza un tipus de clau que aquest lloc no accepta.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>La clau d'accés es va crear per a una adreça diferent d'aquest lloc.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Aquesta clau d'accés no està registrada per a cap compte d'aquí. Inicia la sessió amb la contrasenya i afegeix-la a El meu compte, Claus d'accés.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Aquest compte no pot iniciar la sessió en aquest moment. Contacta amb l'administrador del lloc.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>No s'ha pogut comprovar la clau d'accés. Torna-ho a provar.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Estàs a punt de canviar com inicies la sessió o la seguretat del teu compte.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Estàs a punt de gestionar usuaris, rols o polítiques.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Estàs a punt de canviar paràmetres del sistema o d'executar una acció de configuració.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Estàs a punt d'exportar dades.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Estàs a punt de treure o publicar contingut.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Aquesta acció requereix que confirmis qui ets.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Confirma que ets tu, amb la sessió iniciada com a %login. No se't tornarà a demanar durant %minutes minuts.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Aquesta contrasenya no és correcta.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Aquest codi no és correcte o ja s'ha utilitzat.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Tria una de les opcions següents.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>No s'ha pogut comprovar la clau d'accés.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Et queden %count intents abans que es tanqui la sessió.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Els fitxers que has triat no es poden tornar a enviar: després de confirmar, torna'ls a triar.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Amb la contrasenya</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Amb una clau d'accés</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Contrasenya</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirma</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Utilitza una clau d'accés</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Amb un codi de l'aplicació d'autenticació</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Codi</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Aquest compte no té cap manera de confirmar qui ets (ni contrasenya, ni clau d'accés, ni aplicació d'autenticació). Tanca la sessió i torna-la a iniciar, o demana-ho a un administrador.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verifica que ets tu</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Codi de l'aplicació d'autenticació</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>El teu propi compte</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Canviar la pròpia contrasenya, l'adreça de correu electrònic, les claus d'accés, l'inici de sessió en dos passos o les claus d'API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Usuaris, rols i polítiques</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Crear i editar usuaris, paràmetres del compte, assignar rols i editar polítiques.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Paràmetres del sistema i accions de configuració</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Editar paràmetres, extensions, memòries cau i manteniment, paquets i actualitzacions, còpies de seguretat i el gestor de git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Exportar dades</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exportacions d'informació recollida, d'usuaris, de subscriptors del butlletí i de l'auditoria.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Treure i publicar contingut</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Treure contingut (també a la paperera), buidar la paperera i publicar. Desactivat per defecte.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Abans d'una acció delicada, un usuari amb la sessió iniciada torna a confirmar qui és, amb la contrasenya, una clau d'accés o el codi de l'aplicació d'autenticació. Només ho demanen les pàgines web: la interfície REST, SOAP, WebDAV, l'inici de sessió d'expservices i la línia d'ordres no ho fan mai.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>General</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuts que val una confirmació</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Quan s'ha de demanar</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>%count regles a site.ini [ReauthGroup_%name].</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Es desa a settings/override/site.ini.append.php. En desar, se't demana que confirmis que ets tu.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Desa</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Verifica que ets tu</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Demana «Verifica que ets tu» abans de les accions dels grups activats a sota</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>S'han desat els paràmetres.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>No s'han pogut desar els paràmetres: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuració</translation>
     </message>
 </context>
 </TS>

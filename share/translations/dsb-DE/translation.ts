@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Zarědnik wócyniś abo zacyniś</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Toś ten bok jo w Wašych cytańskich znamjenjach. Wócyńśo cytańske znamje, aby jogo mě abo zarědnik změnili.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Toś ten bok k Wašym cytańskim znamjenjam pśidaś.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Ako cytańske znamje składowany</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Bok ako cytańske znamje składowaś</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Cytańske znamje składujo adresu toś togo boka z jogo parametrami: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Cytańske znamje składowaś</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Cytańske znamje pśidaś</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Móje cytańske znamjenja</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemowy bok</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Systemowe boki</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Toś ten bok njesmějośo wěcej wócyniś.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wócyniś</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adresa toś togo boka feluje. Wótpórajśo cytańske znamje a składujśo bok znowego ako cytańske znamje.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Toś ten bok njesmějośo wěcej wócyniś. Wótpórajśo cytańske znamje abo pšosćo administratora wó pśistup.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul a naglěd</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Teke systemowe boki daju se ako cytańske znamjenja składowaś: wócyńśo bok (Zarědowanje, auditowy slěd, lisćina wužywarjow ...) a wubjeŕśo nad nim „Bok ako cytańske znamje składowaś“. Take cytańske znamjenja maju symbol zubatego kólaska.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Pokazka: pakety se njewótinstalěruju.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>wužywaŕske konta deaktiwěrowaś a do kupki deaktiwěrowanych wužywarjow pśesunuś a slědk pśesunuś</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>wiźeś, źo su druge wužywarje pśizjawjone, a je wótzjawiś</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ Wašo konto aktiwěrowali.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-mailowe nastajenja wócyniś</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše rědy</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Pósejźenja</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Źo sćo pśizjawjone: wobglědowak, system, městno a cas. Wótzjawśo rěd, kótaryž njeznajośo.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Źo jo toś ten wužywaŕ pśizjawjony a wótzjawjenje wužywarja wšuźi.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Rědy zastojaś</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Pósejźenja pokazaś</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Pśizjawjone: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pśistupne kluce</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Pśizjawśo se město z gronidłom z palcowym wótśišćom, woblicom, blokěrowanim wobrazowki abo wěstotnym klucom.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Pśistupne kluce zastojaś</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pśistupny kluc pśidaś</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Pśistupne kluce: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Hyšći žedne</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ Wašo konto aktiwěrowali.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinacije klasow a atributow (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Wužywaŕske kupki, kótarychž nowe konta trjebaju pśizwólenje</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Konto, kótarež se do jadneje z toś tych kupkow abo pód nju wózjawijo, caka, až wósoba, kótaraž pśizwólijo, jo akceptěrujo. Pjerwjej njamóžo se pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Wužywarje, kótarež konta pśizwólaju</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Kupki, kótarež konta pśizwólaju</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Wužywaŕske kupki bźez pśizwólenja (jich cłonki take konta direktnje wózjawijaju; wósoby, kótarež pśizwólaju, jo nigda njetrjebaju)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Wósobam, kótarež pśizwólaju, e-mail z wótkazom na pśizwólenje pósłaś (pśizjawiju se, aby pśizwólili abo wótpokazali)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Dalšne informacije namakajośo na boku z pominanjami.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Wariabla wokoliny EXP_DEMO_MODE=1 markěrujo toś tu instalaciju ako zjawnu demonstraciju: derje znate administratorowe gronidło se akceptěrujo, a administratorowe gronidła njedaju se pózdźej změniś abo slědk stajiś. Njewužywajśo nigda demonstraciski modus za produktiwne sedło.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Nadawki cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Nadawki cron běže z crontab wužywarja %user, kótaremuž instalacija słuša.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalacija njama žeden źěl nadawkow cron, kótaryž by se planował.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab njejo se pisał (%reason). Pśidajśo toś te smužki do crontab wužywarja, pód kótarymž sedło běžy, howac cakański rěd, importy, powěźeńki a pytański indeks nigda njeběže:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ Wašo konto aktiwěrowali.</translation>
         <source>ClassAttribute name</source>
         <translation>Mě atributa klase</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Konta, kótarež trjebaju pśizwólenje</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail wósobam, kótarež pśizwólaju</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jo</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ně</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ Wašo konto aktiwěrowali.</translation>
         <source>Your comment was added.</source>
         <translation>Waš komentar jo se pśidał.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Konto „%1“ jo se pśizwóliło a wózjawiło: něnto móžo se pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Konto „%1“ jo se wótpokazało. Njejo wózjawjone a njamóžo se pśizjawiś; jo zasej nacerjenje swójogo awtora.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ Wašo konto aktiwěrowali.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Pśidane cytańske znamjenja: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Systemowy bok</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Systemowe boki hyšći njedaju se ako cytańske znamjenja składowaś: aktualizacija datoweje banki toś teje wersije hyšći njejo se wuwjadła.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Toś ten bok njedajo se ako cytańske znamje składowaś: njejo bok naglěda modula.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Toś ten bok njedajo se ako cytańske znamje składowaś: njesmějośo jen wócyniś.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Bok njejo se dał ako cytańske znamje składowaś.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Bok „%name“ jo w Wašych cytańskich znamjenjach.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Cytańske znamje njejo se dało pśemjeniś: trjeba mě.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Cytańske znamje jo se pśemjeniło na „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Do datowych tabelow wótbłyšćowaś</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Wužywaŕske konta pśizwóliś</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nowe wužywaŕske konto caka na Wašo pśizwólenje</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>K změnje gronidła pósłany</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Pśizjawjenje bźez drugego kšaca wótpokazane</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Gronidło nałoženja napórane</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Gronidło nałoženja wótwołane</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Gronidło nałoženja wužyte</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Auditowy slěd toś togo suka</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>intaktny</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>pśetergnjony</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>njepśeglědany</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>pórěźony</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>prozny</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Nowa e-mailowa adresa %email caka na swójo wobkšuśenje: wócyńśo wótkaz, kótaryž smy tam pósłali. Do togo casa wobchowajo toś to konto adresu %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-mail wó pśizjawjenju z nowego rěda abo wobglědowaka słuša k wěstośe konta. Zašaltujośo abo wótšaltujośo jen pśi Wašych rědach, źož teke wiźiśo pósejźenja swójogo konta a móžośo je wótzjawiś.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše rědy</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Tabele trajnych klasow pśepytaś…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Nadawki cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Hyšći žeden źěl nadawkow cron njejo běžał: cakański rěd nadawkow, importy, powěźeńki a pytański indeks cakaju. Wuwjeźćo php bin/php/installcrontab.php --add abo pśidajśo smužki z --show do crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Jaden źěl nadawkow cron njejo běžał dlej, ako jogo casowy plan dowólujo: pśeglědajśo crontab (php bin/php/installcrontab.php --show) a protokole var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Źěl</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Casowy plan</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Slědny raz startowany</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nigda</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>pśawocasnje</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>zapóznjony</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>hyšći njejo běžał</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalacija njama žeden źěl nadawkow cron, kótaryž by nadawk cron mógał wuwjasć.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Zarědowanje &gt; Nadawki cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nowe wužywaŕske konto caka na pśizwólenje: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Wužywaŕske mě</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Kupka</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Pšosba wót</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Pśizwólenje wócyniś</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jolic tłocašk njefunkcioněrujo, kopěrujśo toś tu adresu do swójogo wobglědowaka: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nowe wužywaŕske konto caka na Wašo pśizwólenje</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Wužywaŕ %requester jo napórał konto „%name“ w kupkach %groups. Konto njejo wózjawjone a njamóžo se pśizjawiś, až jo wósoba, kótaraž pśizwólijo, akceptěrujo.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Pśizjawśo se w administraciskem pówjerchu a pśizwólśo abo wótpokažćo jo w swójej lisćinje zgromadnego źěła. Toś ten wótkaz Was njepśizjawijo a sam nic njerozsuźijo.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Toś tu mailku jo sedło %site pósłało, dokulaž pśizwólujośo nowe konta toś tych kupkow.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Licadło</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program abo nałoženje</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Awtomatiski klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Njeznaty rěd</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Gronidło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Gronidło a kod dwustopjeńskego pśizjawjenja</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interfejs</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interfejs</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jadnotne pśizjawjenje</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Pśizjawjone pśed zachopjeńkom zapisowanja pósejźenjow</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Na toś tom boku wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Wót administratora wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Z „wšykne druge pósejźenja“ wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Pśez nowe pśizjawjenje wuměnjone</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Pśez změnu gronidła skóńcone</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Pśepadnjone</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše rědy</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Pósejźenja wužywarja %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Źo jo Wašo konto rowno pśizjawjone. Jolic rěd njespóznawaśo, wótzjawśo jen a změńśo swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Źo jo toś to konto rowno pśizjawjone. Wótzjawjenje wužywarja skóńcyjo kužde pósejźenje pśi jogo pśiducem napšašowanju.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Slědk ku kontoju</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Pósejźenje jo se wótzjawiło. Rěd musy se znowego pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Wótzjawjone druge pósejźenja: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Njejo było žednych drugich pósejźenjow k wótzjawjenju.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Wótzjawjone pósejźenja toś togo wužywarja: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Toś ten wužywaŕ njejo měł žedne pósejźenja k wótzjawjenju.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To jo pósejźenje, kótarež wužywaśo. Aby jo skóńcyli, wótzjawśo se.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>To pósejźenje jo južo było skóńcone.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Dostanjośo e-mail, gaž se Wašo konto z nowego rěda pśizjawijo.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Njedostanjośo wěcej e-mailki wó pśizjawjenjach z nowych rědow.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bok jo był pśepadnjony. Nic njejo se změniło; pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Na toś tom sedle se pósejźenja njezapisuju (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabela expuser_session feluje</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Pósejźenja se zapisuju, gaž jo tabela napórana: php update/common/scripts/6.0/createusersessiontable.php abo aktualizacija datoweje banki wersije 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Rowno pśizjawjone</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Wšykne druge pósejźenja wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wšuźi wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kuždy rěd mimo toś togo se pśi swójom pśiducem napšašowanju wótzjawijo, teke te, kótarež z „Spomnjeś se na mnjo“ pśizjawjone wóstanu.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kužde pósejźenje toś togo wužywarja se pśi swójom pśiducem napšašowanju wótzjawijo, teke te, kótarež z „Spomnjeś se na mnjo“ pśizjawjone wóstanu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Jo, druge pósejźenja wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Jo, wšykne pósejźenja wótzjawiś</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Toś ten rěd</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Rěd</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Pokazana ako jeje seś; dopołna adresa se za administratorow wobchowajo.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>pśizjawjone z %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Pśizjawjone</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Slědna aktiwita</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Něnto</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Wóstawa pśizjawjone</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Spomnjeś se na mnjo, až do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Až se wobglědowak zacynijo</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Pśizjawjone pśi</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identifikacija wobglědowaka</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Aby toś to pósejźenje skóńcyli, wótzjawśo se.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Toś to pósejźenje wótzjawiś</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Žedne pósejźenje njejo pśizjawjone.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Warnowanja wó pśizjawjenjach</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail mě pósłaś, gaž se mójo konto z nowego rěda abo wobglědowaka pśizjawijo</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Pósćelo se na %email. Mjenujo rěd, pśibližne městno a cas a wótkazujo na toś ten bok.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Toś to sedło njepósćelo warnowanja wó pśizjawjenjach.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Njedawno skóńcone</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Pósejźenja skóńcone w slědnych dnjach (dny: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skóńcone</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kak</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Žedne.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Licadło</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program abo nałoženje</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Awtomatiski klient</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Njeznaty rěd</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Gronidło</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Gronidło a kod dwustopjeńskego pśizjawjenja</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-interfejs</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-interfejs</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Jadnotne pśizjawjenje</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Pśizjawjone pśed zachopjeńkom zapisowanja pósejźenjow</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Na toś tom boku wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Wót administratora wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Z „wšykne druge pósejźenja“ wótzjawjone</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Pśez nowe pśizjawjenje wuměnjone</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Pśez změnu gronidła skóńcone</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Pśepadnjone</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše rědy</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Pósejźenja wužywarja %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Źo jo Wašo konto rowno pśizjawjone. Jolic rěd njespóznawaśo, wótzjawśo jen a změńśo swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Źo jo toś to konto rowno pśizjawjone. Wótzjawjenje wužywarja skóńcyjo kužde pósejźenje pśi jogo pśiducem napšašowanju.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Pósejźenje jo se wótzjawiło. Rěd musy se znowego pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Wótzjawjone druge pósejźenja: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Njejo było žednych drugich pósejźenjow k wótzjawjenju.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Wótzjawjone pósejźenja toś togo wužywarja: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Toś ten wužywaŕ njejo měł žedne pósejźenja k wótzjawjenju.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To jo pósejźenje, kótarež wužywaśo. Aby jo skóńcyli, wótzjawśo se.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>To pósejźenje jo južo było skóńcone.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Dostanjośo e-mail, gaž se Wašo konto z nowego rěda pśizjawijo.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Njedostanjośo wěcej e-mailki wó pśizjawjenjach z nowych rědow.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bok jo był pśepadnjony. Nic njejo se změniło; pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Na toś tom sedle se pósejźenja njezapisuju.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Pósejźenja se hyšći njezapisuju: sedło trjeba swóju aktualizaciju datoweje banki.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Rowno pśizjawjone</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Toś ten rěd</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Rěd</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Pśizjawjone</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Slědna aktiwita</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Něnto</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Wóstawa pśizjawjone</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Spomnjeś se na mnjo, až do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Až se wobglědowak zacynijo</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Aby toś to pósejźenje skóńcyli, wótzjawśo se.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Toś to pósejźenje wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Wšykne druge pósejźenja wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Wšuźi wótzjawiś</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Warnowanja wó pśizjawjenjach</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail mě pósłaś, gaž se mójo konto z nowego rěda abo wobglědowaka pśizjawijo</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Njedawno skóńcone</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Skóńcone</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kak</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>W slědnych dnjach žedne (dny: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Glědajśo, źo jo Wašo konto pśizjawjone, a wótzjawśo rěd, kótaryž njeznajośo.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Rědy zastojaś</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nowe pśizjawjenje k Wašomu kontoju na sedle %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Dobry źeń,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Wašo konto %login na sedle %site jo se rowno pśizjawiło z rěda abo wobglědowaka, kótaryž w slědnem casu njejo wužywało:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Rěd:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Cas:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Pśibližna adresa:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Jolic sćo to byli Wy, njetrjebaśo nic cyniś.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Jolic to njejsćo byli Wy, snaź něchten Wašo gronidło znajo. Wótzjawśo to pósejźenje na boku Wašych rědow a změńśo pótom swójo gronidło:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Na tom samem boku móžośo toś te e-mailki wótšaltowaś.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nowe pśizjawjenje konta %login na sedle %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Konto %login jo se pśizjawiło z rěda abo wobglědowaka, kótaryž w slědnem casu njejo wužywało.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Pósejźenja toś togo wužywarja:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nowe pśizjawjenje k Wašomu kontoju</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Wašo konto %login jo se %date pśizjawiło z rěda %device (%ip).</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Jolic sćo to byli Wy, njetrjebaśo nic cyniś. Howac wótzjawśo toś to pósejźenje na %url a změńśo swójo gronidło.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nowe pśizjawjenje konta %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Konto %login jo se pśizjawiło z nowego rěda: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Waše rědy</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Pósejźenja wužywarja %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Pśistupne kluce</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Pśistupny kluc Was město z gronidłom pśizjawijo z palcowym wótśišćom, woblicom, blokěrowanim wobrazowki abo wěstotnym klucom. Jo na Wašom rěźe abo w Wašom zastojniku gronidłow składowany; toś to sedło składujo jano jogo zjawny kluc, togodla njamóžo jen nichten zgóniś, samo gaž by se daty how wukšadnuli.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Pśistupne kluce su na toś tom sedle wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Pśistupne kluce hyšći njedaju se na toś tom sedle wužywaś: administrator musy nejpjerwjej aktualizaciju datoweje banki wuwjasć.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Cośo pśistupny kluc „%name“ napšawdu wótpóraś?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Pótom njamóžo se wěcej pla toś togo konta pśizjawiś. Wótpórajśo jen teke ze swójogo rěda abo zastojnika gronidłow.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Pśistupny kluc wótpóraś</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Pśetergnuś</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Waše pśistupne kluce</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count z maksimalnje %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Hyšći njamaśo žeden pśistupny kluc. Pśidajśo dołojce jaden: pśi pśiducem pśizjawjenju wubjeŕśo „Z pśistupnym klucom pśizjawiś“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mě</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pśidane</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Slědny raz wužyte</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Družyna</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Akcije</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Hyšći nic</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synchronizěrowany</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Toś ten rěd abo kluc</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Pśemjeniś</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nowe mě</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Mě składowaś</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wótpóraś</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Pśistupny kluc pśidaś</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Slědujśo kšacam swójogo wobglědowaka abo rěda.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialog pśistupnego kluca jo se zacynił. Nic njejo se změniło.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Pśistupny kluc njejo se dał napóraś. Pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Toś ten wobglědowak njamóžo pśistupne kluce napóraś. Wužywajśo aktualny wobglědowak abo pśizjawśo se ze swójim gronidłom.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Na pśikład rěd abo zastojnik gronidłow, na kótaremž jo, aby swóje pśistupne kluce rozeznali.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Toś to konto ma tak wjele pśistupnych klucow, ako smějo měś (%max). Wótpórajśo jaden, aby dalšny pśidali.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Pśistupny kluc njejo se dał wužywaś. Pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Mójo konto</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialog pśistupnego kluca jo se zacynił. Móžośo se město togo ze swójim gronidłom pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Pśistupny kluc njejo se dał wužywaś. Pšosym wopytajśo hyšći raz abo pśizjawśo se ze swójim gronidłom.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Z pśistupnym klucom pśizjawiś</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Pśizjawjenje z pśistupnym klucom njejo móžno było</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>pśizjawśo se město z gronidłom z palcowym wótśišćom, woblicom, blokěrowanim wobrazowki abo wěstotnym klucom.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Pśistupny kluc „%name“ jo pśidany. Wót něnto móžośo se z nim pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Pśistupny kluc se něnto mjenujo „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Pśistupny kluc „%name“ jo wótpórany. Njamóžo se wěcej pla toś togo konta pśizjawiś.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Pśistupny kluc wót %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Toś to konto ma tak wjele pśistupnych klucow, ako smějo měś. Wótpórajśo nejpjerwjej jaden.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Datowa banka jo była pśeśěžona a nic njejo se składło. Pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Toś ten pśistupny kluc jo južo registrěrowany.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Napšašowanje jo pśedłujko trało abo jo se južo wužyło. Pšosym wopytajśo hyšći raz.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Pśistupny kluc njejo pśeglědał, chto sćo (PIN, palcowy wótśišć abo woblico). Pšosym wopytajśo hyšći raz a wobkšuśćo na swójom rěźe.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Toś ten awtentifikator wužywa družynu kluca, kótaruž toś to sedło njeakceptěrujo.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Pśistupny kluc jo se napórał za drugu adresu ako toś to sedło.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Toś ten pśistupny kluc njejo how za žedne konto registrěrowany. Pśizjawśo se ze swójim gronidłom a pśidajśo jen pód Mójo konto, Pśistupne kluce.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Toś to konto njamóžo se tuchylu pśizjawiś. Pšosym wobrośćo se na administratora sedła.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Pśistupny kluc njejo se dał pśeglědaś. Pšosym wopytajśo hyšći raz.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Cośo změniś, kak se pśizjawjaśo, abo wěstotu swójogo konta.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Cośo wužywarje, role abo zasady zastojaś.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Cośo systemowe nastajenja změniś abo akciju zarědowanja wuwjasć.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Cośo daty eksportěrowaś.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Cośo wopśimjeśe wótpóraś abo wózjawiś.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Za toś tu akciju musyśo wobkšuśiś, chto sćo.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Wobkšuśćo, až sćo to Wy, pśizjawjone ako %login. Pśiducych %minutes min njejo trjeba to znowego wobkšuśiś.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>To gronidło njejo pšawe.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ten kod njejo pšawy abo jo se južo wužył.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Wubjeŕśo jadnu z drogow dołojce.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Pśistupny kluc njejo se dał pśeglědaś.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Wopyty do wótzjawjenja: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Wubrane dataje njedaju se znowego pósłaś: wubjeŕśo je pó wobkšuśenju hyšći raz.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Z Wašym gronidłom</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Z pśistupnym klucom</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Gronidło</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Wobkšuśiś</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Pśistupny kluc wužywaś</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Z kodom z Wašogo awtentifikaciskego nałoženja</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kod</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Toś to konto njama žednu drogu wobkšuśiś, chto sćo (žedne gronidło, žeden pśistupny kluc, žedne awtentifikaciske nałoženje). Wótzjawśo se a pśizjawśo se znowego abo pšašajśo se administratora.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Pśetergnuś</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Wobkšuśćo, až sćo to Wy</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kod z Wašogo awtentifikaciskego nałoženja</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Swójske konto</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Swójske gronidło, e-mailowu adresu, pśistupne kluce, dwustopjeńske pśizjawjenje abo API-kluce změniś.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Wužywarje, role a zasady</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Wužywarjow napóraś a wobźěłaś, nastajenja kontow, role pśirědowaś a zasady wobźěłaś.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Systemowe nastajenja a akcije zarědowanja</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Nastajenja wobźěłaś, rozšyrjenja, pufrowaki a wótwardowanje, pakety a aktualizacije, zawěsćenja a git-zastojnik.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Daty eksportěrowaś</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Eksporty zezběranych informacijow, wužywarjow, abonentow powěsćowego lista a auditu.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Wopśimjeśe wótpóraś a wózjawiś</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Wopśimjeśe wótpóraś (teke do papjernika), papjernik wuprozniś a wózjawiś. Standardnje wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Pśed sensibelneju akciju pśizjawjony wužywaŕ znowego wobkšuśijo, chto jo: ze swójim gronidłom, pśistupnym klucom abo kodom swójogo awtentifikaciskego nałoženja. Jano webboki se pšašaju: REST-interfejs, SOAP, WebDAV, pśizjawjenje expservices a pśikazowa smužka se nigda njepšašaju.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Powšykne</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuty, kótarež wobkšuśenje płaśi</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kda se pšašaś</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Pšawidła w site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Do settings/override/site.ini.append.php składowane. Pśi składowanju dejśo wobkšuśiś, až sćo to Wy.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Składowaś</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Wobkšuśćo, až sćo to Wy</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Pśed akcijami dołojce zašaltowanych kupkow „Wobkšuśćo, až sćo to Wy“ pšašaś</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Nastajenja su składowane.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nastajenja njejsu se dali składowaś: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Zarědowanje</translation>
     </message>
 </context>
 </TS>

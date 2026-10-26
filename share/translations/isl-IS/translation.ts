@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Opna eða loka möppunni</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Þessi síða er í bókamerkjunum þínum. Opnaðu bókamerkið til að breyta heiti þess eða möppu.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Bæta þessari síðu við bókamerkin þín.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Í bókamerkjum</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Setja síðuna í bókamerki</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Bókamerkið geymir vistfang þessarar síðu ásamt færibreytum hennar: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Vista bókamerki</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Bæta við bókamerki</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Bókamerkin mín</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Kerfissíða</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Kerfissíður</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Þú mátt ekki lengur opna þessa síðu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Opna</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Vistfang þessarar síðu vantar. Fjarlægðu bókamerkið og settu síðuna aftur í bókamerki.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Þú mátt ekki lengur opna þessa síðu. Fjarlægðu bókamerkið eða biddu kerfisstjóra um aðgang.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Vistfang</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Eining og sýn</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Einnig má setja kerfissíður í bókamerki: opnaðu síðuna (Uppsetning, úttektarslóðin, listi yfir notendur ...) og veldu „Setja síðuna í bókamerki“ fyrir ofan hana. Slík bókamerki eru með tannhjólstákni.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Athugaðu: uppsetning pakkanna verður ekki fjarlægð.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>gera notandareikninga óvirka og færa þá í hóp óvirkra notenda, og færa þá til baka</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>sjá hvar aðrir notendur eru skráðir inn og skrá þá út</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ reikninginn þinn.</translation>
         <source>Open e-mail preferences</source>
         <translation>Opna tölvupóststillingar</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Setur</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Hvar reikningurinn þinn er skráður inn: vafri, kerfi, staður og tími. Skráðu út tæki sem þú þekkir ekki.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Hvar þessi notandi er skráður inn, og útskráning notandans alls staðar.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Stjórna tækjum</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Sýna setur</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Innskráð: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Aðgangslyklar</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Skráðu þig inn með fingrafari, andliti, skjálás eða öryggislykli í stað aðgangsorðsins.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Stjórna aðgangslyklum</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Bæta við aðgangslykli</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Aðgangslyklar: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Enginn enn</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ reikninginn þinn.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Samsetningar klasa og eigindar (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Notendahópar þar sem nýir reikningar þurfa samþykki</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Reikningur sem er birtur í einum þessara hópa, eða undir honum, bíður þar til samþykkjandi samþykkir hann. Fram að því getur hann ekki skráð sig inn.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Notendur sem samþykkja reikningana</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Hópar sem samþykkja reikningana</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Notendahópar sem þurfa ekki samþykki (meðlimir þeirra birta slíka reikninga beint; samþykkjendur þurfa það aldrei)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Senda samþykkjendum tölvupóst með tengli á samþykkisbeiðnina (þeir skrá sig inn til að samþykkja eða hafna)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Nánari upplýsingar eru á síðunni um kerfiskröfur.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Umhverfisbreytan EXP_DEMO_MODE=1 merkir þessa uppsetningu sem opna kynningarútgáfu: tekið er við vel þekktu aðgangsorði kerfisstjóra og ekki er hægt að breyta eða endurstilla aðgangsorð kerfisstjóra síðar. Notaðu aldrei kynningarham fyrir vefsvæði í raunkeyrslu.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-verk</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Cron-verkin keyra úr crontab notandans %user, sem á uppsetninguna.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Uppsetningin hefur engan cron-verkhluta til að setja á áætlun.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab var ekki skrifað (%reason). Bættu þessum línum við crontab notandans sem vefsvæðið keyrir sem, annars keyra biðröðin, innflutningarnir, tilkynningarnar og leitarskráin aldrei:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ reikninginn þinn.</translation>
         <source>ClassAttribute name</source>
         <translation>Heiti klasaeigindar</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Reikningar sem þurfa samþykki</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Tölvupóstur til samþykkjenda</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Já</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nei</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ reikninginn þinn.</translation>
         <source>Your comment was added.</source>
         <translation>Athugasemdinni þinni var bætt við.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Reikningurinn „%1“ var samþykktur og birtur: hann getur skráð sig inn núna.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Reikningnum „%1“ var hafnað. Hann er ekki birtur og getur ekki skráð sig inn; hann er aftur orðinn drög höfundar síns.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ reikninginn þinn.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Bókamerkjum bætt við: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Kerfissíða</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Enn er ekki hægt að setja kerfissíður í bókamerki: gagnagrunnsuppfærsla þessarar útgáfu hefur ekki verið keyrð.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Ekki er hægt að setja þessa síðu í bókamerki: hún er ekki síða í sýn einingar.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Ekki er hægt að setja þessa síðu í bókamerki: þú mátt ekki opna hana.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Ekki tókst að setja síðuna í bókamerki.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Síðan „%name“ er í bókamerkjunum þínum.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Ekki tókst að endurnefna bókamerkið: það þarf heiti.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Bókamerkið var endurnefnt í „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Spegla í gagnatöflur</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Samþykkja notandareikninga</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nýr notandareikningur bíður samþykkis þíns</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>Vísað á breytingu aðgangsorðs</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Innskráningu án seinna þreps hafnað</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Forritsaðgangsorð búið til</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Forritsaðgangsorð afturkallað</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Forritsaðgangsorð notað</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>Úttektarslóð þessa hnúts</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>óskert</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>rofið</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>óathugað</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>lagfært</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>tómt</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Nýja netfangið %email bíður staðfestingar: opnaðu tengilinn sem við sendum þangað. Þangað til heldur þessi reikningur netfanginu %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Tölvupósturinn um innskráningu úr nýju tæki eða vafra er hluti af öryggi reikningsins. Þú kveikir eða slekkur á honum undir tækjunum þínum, þar sem þú sérð líka setur reikningsins og getur skráð þær út.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Fletta í töflum varanlegu klasanna…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-verk</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Enginn cron-verkhluti hefur keyrt enn: verkbiðröðin, innflutningarnir, tilkynningarnar og leitarskráin bíða. Keyrðu php bin/php/installcrontab.php --add eða bættu línunum úr --show við crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Cron-verkhluti hefur ekki keyrt lengur en áætlun hans leyfir: athugaðu crontab (php bin/php/installcrontab.php --show) og annálana var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Verkhluti</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Áætlun</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Síðast ræst</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrei</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>á tíma</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>of seint</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>hefur aldrei keyrt</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Uppsetningin hefur engan cron-verkhluta sem cron-verkið getur keyrt.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Uppsetning &gt; Cron-verk</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nýr notandareikningur bíður samþykkis: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Reikningur</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Notandanafn</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Hópur</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Beiðni frá</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Opna samþykkisbeiðnina</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ef hnappurinn virkar ekki skaltu afrita þetta vistfang í vafrann þinn: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nýr notandareikningur bíður samþykkis þíns</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester stofnaði reikninginn „%name“ í %groups. Hann er ekki birtur og getur ekki skráð sig inn fyrr en samþykkjandi samþykkir hann.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Skráðu þig inn í stjórnborð kerfisins og samþykktu hann eða hafnaðu honum í samvinnulistanum þínum. Þessi tengill skráir þig ekki inn og ákveður ekkert sjálfur.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>%site sendi þennan póst vegna þess að þú samþykkir nýja reikninga þessara hópa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Tölva</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Sími</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Spjaldtölva</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Forrit eða smáforrit</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Sjálfvirkur biðlari</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Óþekkt tæki</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Aðgangsorð</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Aðgangsorð og tveggja þrepa kóði</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-viðmót</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-viðmót</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Einföld innskráning</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Innskráð áður en farið var að skrá setur</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Skráð út</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Skráð út á þessari síðu</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Skráð út af kerfisstjóra</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Skráð út með „öllum öðrum setum“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ný innskráning kom í staðinn</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Lokið vegna breytingar á aðgangsorði</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Rann út</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Setur notandans %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Hvar reikningurinn þinn er skráður inn núna. Ef þú þekkir ekki tæki skaltu skrá það út og breyta aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvar þessi reikningur er skráður inn núna. Útskráning notandans lýkur hverri setu við næstu beiðni hennar.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Aftur í reikninginn</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Setan var skráð út. Tækið þarf að skrá sig inn aftur.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Aðrar setur skráðar út: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Engar aðrar setur voru til að skrá út.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Setur þessa notanda skráðar út: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Þessi notandi hafði engar setur til að skrá út.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Þetta er setan sem þú ert að nota. Skráðu þig út til að ljúka henni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Þeirri setu var þegar lokið.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Þú færð tölvupóst þegar reikningurinn þinn er skráður inn úr nýju tæki.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Þú færð ekki lengur tölvupóst um innskráningar úr nýjum tækjum.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útrunnin. Engu var breytt; reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Setur eru ekki skráðar á þessu vefsvæði (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Töfluna expuser_session vantar</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Setur eru skráðar þegar hún hefur verið stofnuð: php update/common/scripts/6.0/createusersessiontable.php, eða gagnagrunnsuppfærsla 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Innskráð núna</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Skrá út allar aðrar setur</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Skrá út alls staðar</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Öll tæki nema þetta eru skráð út við næstu beiðni sína, einnig þau sem haldast innskráð með „Muna eftir mér“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Hver seta þessa notanda er skráð út við næstu beiðni sína, einnig þær sem haldast innskráðar með „Muna eftir mér“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Já, skrá út aðrar setur</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Já, skrá út allar setur</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Þetta tæki</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Tæki</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Vistfang</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Sýnt sem netið sem það tilheyrir; fulla vistfangið er geymt fyrir kerfisstjórana.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>innskráð frá %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Innskráð</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Síðast virkt</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Núna</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Helst innskráð</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Muna eftir mér, til %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Þar til vafranum er lokað</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Tími innskráningar</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Auðkenni vafra</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Skráðu þig út til að ljúka þessari setu.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Skrá út</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Skrá út þessa setu</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Engin seta er innskráð.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Tilkynningar um innskráningu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Senda mér tölvupóst þegar reikningurinn minn er skráður inn úr nýju tæki eða vafra</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Sent á %email. Þar kemur fram tækið, áætluð staðsetning og tími, ásamt tengli á þessa síðu.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Þetta vefsvæði sendir ekki tilkynningar um innskráningu.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nýlega lokið</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Setur sem lauk nýlega. Dagar: %days.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lokið</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvernig</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Engar.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Tölva</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Sími</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Spjaldtölva</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Forrit eða smáforrit</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Sjálfvirkur biðlari</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Óþekkt tæki</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Aðgangsorð</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Aðgangsorð og tveggja þrepa kóði</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-viðmót</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-viðmót</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Einföld innskráning</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Innskráð áður en farið var að skrá setur</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Skráð út</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Skráð út á þessari síðu</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Skráð út af kerfisstjóra</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Skráð út með „öllum öðrum setum“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Ný innskráning kom í staðinn</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Lokið vegna breytingar á aðgangsorði</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Rann út</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Setur notandans %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Hvar reikningurinn þinn er skráður inn núna. Ef þú þekkir ekki tæki skaltu skrá það út og breyta aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Hvar þessi reikningur er skráður inn núna. Útskráning notandans lýkur hverri setu við næstu beiðni hennar.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Setan var skráð út. Tækið þarf að skrá sig inn aftur.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Aðrar setur skráðar út: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Engar aðrar setur voru til að skrá út.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Setur þessa notanda skráðar út: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Þessi notandi hafði engar setur til að skrá út.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Þetta er setan sem þú ert að nota. Skráðu þig út til að ljúka henni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Þeirri setu var þegar lokið.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Þú færð tölvupóst þegar reikningurinn þinn er skráður inn úr nýju tæki.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Þú færð ekki lengur tölvupóst um innskráningar úr nýjum tækjum.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Síðan var útrunnin. Engu var breytt; reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Setur eru ekki skráðar á þessu vefsvæði.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Setur eru ekki skráðar enn: vefsvæðið þarf gagnagrunnsuppfærsluna sína.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Innskráð núna</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Þetta tæki</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Tæki</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Vistfang</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Innskráð</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Síðast virkt</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Núna</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Helst innskráð</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Muna eftir mér, til %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Þar til vafranum er lokað</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Skráðu þig út til að ljúka þessari setu.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Skrá út</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Skrá út þessa setu</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Skrá út allar aðrar setur</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Skrá út alls staðar</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Tilkynningar um innskráningu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Senda mér tölvupóst þegar reikningurinn minn er skráður inn úr nýju tæki eða vafra</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nýlega lokið</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Lokið</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Hvernig</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Engar á tímabilinu. Dagar: %days.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Sjáðu hvar reikningurinn þinn er skráður inn og skráðu út tæki sem þú þekkir ekki.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Stjórna tækjum</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Ný innskráning á reikninginn þinn á %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Halló,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Reikningurinn þinn %login á %site var rétt í þessu notaður til að skrá inn úr tæki eða vafra sem hann hefur ekki notað nýlega:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Tæki:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tími:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Áætlað vistfang:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Ef þetta varst þú þarftu ekki að gera neitt.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Ef þetta varst ekki þú gæti einhver vitað aðgangsorðið þitt. Skráðu þá setu út á síðunni með tækjunum þínum og breyttu síðan aðgangsorðinu þínu:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Þú getur slökkt á þessum tölvupóstum á sömu síðu.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Ný innskráning notandans %login á %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Reikningurinn %login skráði sig inn úr tæki eða vafra sem hann hefur ekki notað nýlega.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Setur þessa notanda:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Ný innskráning á reikninginn þinn</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Reikningurinn þinn %login var notaður til innskráningar úr tækinu %device (%ip), %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Ef þetta varst þú þarftu ekki að gera neitt. Ef ekki skaltu skrá þessa setu út á %url og breyta aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Ný innskráning notandans %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Reikningurinn %login skráði sig inn úr nýju tæki: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Tækin þín</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Setur notandans %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Aðgangslyklar</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Aðgangslykill skráir þig inn með fingrafari, andliti, skjálás eða öryggislykli í stað aðgangsorðsins. Hann er geymdur á tækinu þínu eða í aðgangsorðastjóranum þínum; þetta vefsvæði geymir aðeins opinbera lykilinn hans, svo leki hér getur ekki afhjúpað hann.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Slökkt er á aðgangslyklum á þessu vefsvæði.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Ekki er enn hægt að nota aðgangslykla á þessu vefsvæði: kerfisstjórinn þarf fyrst að keyra gagnagrunnsuppfærsluna.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Viltu örugglega fjarlægja aðgangslykilinn „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Hann getur ekki lengur skráð inn á þennan reikning. Fjarlægðu hann líka úr tækinu þínu eða aðgangsorðastjóranum.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Fjarlægja aðgangslykilinn</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Aðgangslyklarnir þínir</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count af að hámarki %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Þú ert ekki enn með aðgangslykil. Bættu einum við hér fyrir neðan: næst þegar þú skráir þig inn skaltu velja „Skrá inn með aðgangslykli“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Heiti</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Bætt við</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Síðast notaður</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tegund</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aðgerðir</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Ekki enn</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Samstilltur</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Þetta tæki eða lykill</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Endurnefna</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nýtt heiti</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Vista heitið</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjarlægja</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Bæta við aðgangslykli</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Fylgdu skrefunum í vafranum eða tækinu þínu.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Glugga aðgangslykilsins var lokað. Engu var breytt.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Ekki tókst að búa til aðgangslykilinn. Reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Þessi vafri getur ekki búið til aðgangslykla. Notaðu nýlegan vafra eða skráðu þig inn með aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Til dæmis tækið eða aðgangsorðastjórinn sem hann er geymdur í, svo þú getir greint aðgangslyklana þína í sundur.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Þessi reikningur er með eins marga aðgangslykla og leyfilegt er (%max). Fjarlægðu einn til að bæta öðrum við.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Ekki tókst að nota aðgangslykilinn. Reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Reikningurinn minn</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Glugga aðgangslykilsins var lokað. Þú getur skráð þig inn með aðgangsorðinu þínu í staðinn.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Ekki tókst að nota aðgangslykilinn. Reyndu aftur eða skráðu þig inn með aðgangsorðinu þínu.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Skrá inn með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Ekki tókst að skrá inn með aðgangslyklinum</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>skráðu þig inn með fingrafari, andliti, skjálás eða öryggislykli í stað aðgangsorðsins.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Aðgangslyklinum „%name“ var bætt við. Héðan í frá geturðu skráð þig inn með honum.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Aðgangslykillinn heitir nú „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Aðgangslykillinn „%name“ var fjarlægður. Hann getur ekki lengur skráð inn á þennan reikning.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Aðgangslykill frá %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Þessi reikningur er með eins marga aðgangslykla og leyfilegt er. Fjarlægðu einn fyrst.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Gagnagrunnurinn var upptekinn og ekkert var vistað. Reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Þessi aðgangslykill er þegar skráður.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Beiðnin tók of langan tíma eða hafði þegar verið notuð. Reyndu aftur.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Aðgangslykillinn staðfesti ekki hver þú ert (PIN-númer, fingrafar eða andlit). Reyndu aftur og staðfestu á tækinu þínu.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Þessi auðkenningarbúnaður notar lyklagerð sem þetta vefsvæði samþykkir ekki.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Aðgangslykillinn var búinn til fyrir annað vistfang en þetta vefsvæði.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Þessi aðgangslykill er ekki skráður fyrir neinn reikning hér. Skráðu þig inn með aðgangsorðinu þínu og bættu honum við undir Reikningurinn minn, Aðgangslyklar.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Ekki er hægt að skrá inn á þennan reikning eins og er. Hafðu samband við kerfisstjóra vefsvæðisins.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Ekki tókst að athuga aðgangslykilinn. Reyndu aftur.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Þú ert að fara að breyta því hvernig þú skráir þig inn eða öryggi reikningsins þíns.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Þú ert að fara að stjórna notendum, hlutverkum eða stefnum.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Þú ert að fara að breyta kerfisstillingum eða keyra uppsetningaraðgerð.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Þú ert að fara að flytja út gögn.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Þú ert að fara að fjarlægja eða birta efni.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Þessi aðgerð krefst þess að þú staðfestir hver þú ert.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Staðfestu að þetta sért þú (innskráður notandi: %login). Ekki verður spurt aftur næstu %minutes mín.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Þetta aðgangsorð er ekki rétt.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Þessi kóði er ekki réttur, eða hann hefur þegar verið notaður.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Veldu eina af leiðunum hér fyrir neðan.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Ekki tókst að athuga aðgangslykilinn.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Tilraunir eftir fram að útskráningu: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Ekki er hægt að senda skrárnar sem þú valdir aftur: veldu þær aftur eftir staðfestinguna.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Með aðgangsorðinu þínu</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Með aðgangslykli</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Aðgangsorð</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Staðfesta</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Nota aðgangslykil</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Með kóða úr auðkenningarforritinu þínu</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kóði</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Þessi reikningur hefur enga leið til að staðfesta hver þú ert (ekkert aðgangsorð, engan aðgangslykil og ekkert auðkenningarforrit). Skráðu þig út og aftur inn, eða leitaðu til kerfisstjóra.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hætta við</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Staðfestu að þetta sért þú</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kóði úr auðkenningarforritinu þínu</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Eigin reikningur</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Breyting á eigin aðgangsorði, netfangi, aðgangslyklum, tveggja þrepa innskráningu eða API-lyklum.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Notendur, hlutverk og stefnur</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Stofnun og breyting notenda, reikningsstillingar, úthlutun hlutverka og breyting stefna.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Kerfisstillingar og uppsetningaraðgerðir</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Breyting stillinga, viðbóta, skyndiminnis og viðhalds, pakka og uppfærslna, afrita og git-stjórans.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Útflutningur gagna</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Útflutningur safnaðra upplýsinga, notenda, áskrifenda fréttabréfa og úttektarinnar.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Fjarlæging og birting efnis</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Fjarlæging efnis (einnig í ruslafötuna), tæming ruslafötunnar og birting. Sjálfgefið óvirkt.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Fyrir viðkvæma aðgerð staðfestir innskráður notandi aftur hver hann er, með aðgangsorði sínu, aðgangslykli eða kóða úr auðkenningarforriti sínu. Aðeins vefsíðurnar spyrja: REST-viðmótið, SOAP, WebDAV, innskráning expservices og skipanalínan gera það aldrei.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Almennt</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Mínútur sem staðfesting gildir</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Hvenær á að spyrja</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Reglur í site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Vistað í settings/override/site.ini.append.php. Við vistun þarftu að staðfesta að þetta sért þú.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Vista</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Staðfestu að þetta sért þú</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Spyrja „Staðfestu að þetta sért þú“ á undan aðgerðum hópanna sem kveikt er á hér fyrir neðan</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Stillingarnar voru vistaðar.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Ekki tókst að vista stillingarnar: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppsetning</translation>
     </message>
 </context>
 </TS>

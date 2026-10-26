@@ -2250,6 +2250,74 @@
         <source>Open or close the folder</source>
         <translation>ghItlh pa&apos; yIpoSmoH qoj yISoQmoH</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>navvam qawmeH DaqmeylIjDaq tu'lu'. pongDaj ghItlh pa'Daj joq DachoHmeH qawmeH Daq yIpoSmoH.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>navvam qawmeH DaqmeylIjDaq yIchel.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>qawlu'ta'</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>navvam yIqaw</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>navvam Daq DuHmeyDaj je pol qawmeH Daq: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>qawmeH Daq yIpol</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>qawmeH Daq yIchel</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>qawmeH DaqmeywIj</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>pat nav</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>pat navmey</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>DaH navvam DapoSmoHlaHbe'.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>navvam Daq tu'lu'be'. qawmeH Daq yIteq 'ej navvam yIqawqa'.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>DaH navvam DapoSmoHlaHbe'. qawmeH Daq yIteq, qoj 'el chaw' DaSuqmeH loHwI' yItlhob.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>URL Daq</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>ngoq 'ay', leghghach je</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>pat navmey DaqawlaH je: nav yIpoSmoH (SeHlaw, 'olghach He, lo'wI'pu' tetlh ...) 'ej Dung "navvam yIqaw" yIwIv. qawmeH Daqmeyvetlh ghajlu' rutlh Degh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17641,6 +17709,10 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>lo&apos;wI&apos; De&apos;mey chu&apos;Ha&apos;ghach, chu&apos;Ha&apos;lu&apos;ta&apos;bogh lo&apos;wI&apos;pu&apos; ghomDaq vIHmoHghach, vIHmoHqa&apos;ghach je</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>latlh lo'wI'pu' 'eltaHbogh Daqmey legh, 'ej chaH mejmoH</translation>
     </message>
 </context>
 <context>
@@ -37746,6 +37818,58 @@ yIlob.</translation>
         <source>Open e-mail preferences</source>
         <translation>De&apos;wI&apos; QIn DuHmey tIpoSmoH</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>poHmey</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>bI'eltaHbogh Daq: De' leghwI', pat, Daq, poH je. DaSovbe'bogh jan yImejmoH.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>lo'wI'vam 'eltaHbogh Daqmey, Dat lo'wI' mejmoHghach je.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>janmey tIloH</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>poHmey tI'ang</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>%count 'eltaH</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>'elmeH ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>pegh mu'lIj yIlo'Qo'; nItlh ghItlhlIj, qablIj, jIH ngaQghach, Hung ngaQHa'moHwI' joq yIlo' 'ej yI'el.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>'elmeH ngaQHa'moHwI'mey tIloH</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' yIchel</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count 'elmeH ngaQHa'moHwI'</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>wej pagh</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39685,6 +39809,30 @@ yIlob.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>buv/buv tlhegh tay&apos;moHghachmey (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>lo'wI' De' chu'meychajvaD chaw'ghach poQbogh lo'wI' ghommey</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>ghommeyvam wa'Daq pagh bIngDaq HochvaD 'anglu'bogh lo'wI' De', chaw'wI' lajpa' loStaH. pa', 'ellaHbe'.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>lo'wI' De'mey chaw'bogh lo'wI'pu'</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>lo'wI' De'mey chaw'bogh ghommey</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>chaw'ghach poQbe'bogh lo'wI' ghommey (lo'wI' De'mey rur HochvaD 'ang ghom ghotpu'; chaw'wI'pu'vaD not poQlu')</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>chaw'wI'pu'vaD chaw'ghach rarwI' ghajbogh De'wI' QIn yIngeH (chaw'meH Qo'meH joq 'el chaH)</translation>
     </message>
 </context>
 <context>
@@ -50787,6 +50935,22 @@ latlh De&apos; DaneHchugh, poQghachmey nav yIlegh.</translation>
         <source>Cancel</source>
         <translation>yIqIl</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>poH Qu'mey</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>jomghach ghajbogh lo'wI' %user crontab ghItlhvo' Qap poH Qu'mey.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>poH mIwDaq lanmeH poH Qu' 'ay' ghajbe' jomghach.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab ghItlh ghItlhlu'pu'be' (%reason). yoS QapmoHbogh lo'wI' crontab ghItlhDaq tlheghmeyvam tIchel; ghobe'chugh, not Qap loSwI' tetlh, qemghachmey, ghuH QInmey, nejmeH tetlh je:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54303,6 +54467,22 @@ yIlob.</translation>
         <source>ClassAttribute name</source>
         <translation>buv tlhegh pong</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>chaw'ghach poQbogh lo'wI' De'mey</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>chaw'wI'pu'vaD De'wI' QIn</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>HISlaH</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ghobe'</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55713,6 +55893,14 @@ yIlob.</translation>
         <source>Your comment was added.</source>
         <translation>ja&apos;ghachlIj chellu&apos;ta&apos;.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>lo'wI' De' "%1" chaw'lu'pu' 'ej HochvaD 'anglu'pu': DaH 'ellaH.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>lo'wI' De' "%1" Qo'lu'pu'. HochvaD 'anglu'be' 'ej 'ellaHbe'; ghItlhwI'Daj nab 'oHqa'.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56011,6 +56199,38 @@ yIlob.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>%count qawmeH Daq chellu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>pat nav</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>wej pat navmey qawlu'laHbe': chovnatlhvam De' pa' chu'moHghach wej QapmoHlu'.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>navvam qawlu'laHbe': ngoq 'ay' leghghach nav 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>navvam qawlu'laHbe': DapoSmoHlaHbe'.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>nav qawlu'laHpu'be'.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>qawmeH DaqmeylIjDaq nav "%name" tu'lu'.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>qawmeH Daq pong choHlu'laHpu'be': pong poQ.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>qawmeH Daq pong chu': "%name".</translation>
     </message>
 </context>
 <context>
@@ -58073,6 +58293,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>De&apos; tetlhmeyDaq qonqa&apos;ghach</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>lo'wI' De'mey tIchaw'</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>chaw'ghachlIj loStaH lo'wI' De' chu'</translation>
     </message>
 </context>
 <context>
@@ -64217,6 +64445,26 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The audit trail of this node</source>
         <translation>Sor Daqvam &apos;olghach He</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>naQ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ghorlu'ta'</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>'ollu'be'</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>tI'lu'ta'</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>chIm</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -69712,6 +69960,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>&apos;olghachDaj loStaH De&apos;wI&apos; QIn Daq chu&apos; %email: pa&apos; wingeHpu&apos;bogh rarwI&apos; yIpoSmoH. &apos;olpa&apos;, %current pol lo&apos;wI&apos; De&apos;vam.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>jan chu' pagh De' leghwI' chu'vo' 'elghach De'wI' QIn: lo'wI' De' Hung 'ay' 'oH. janmeylIj navDaq yIchu' pagh yIchu'Ha'; pa' lo'wI' De'lIj poHmey Dalegh 'ej DamejmoHlaH je.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
     </message>
 </context>
 <context>
@@ -75600,6 +75856,1124 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>reH taHbogh buvmey tetlhmey tIleng…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>poH Qu'mey</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>wej Qappu' poH Qu' 'ay': loStaH Qu' loSwI' tetlh, qemghachmey, ghuH QInmey, nejmeH tetlh je. php bin/php/installcrontab.php --add yIQapmoH, qoj crontab ghItlhDaq --show tlheghmey tIchel.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>poH Qu' 'ay' Qapbe'taH, poH mIwDaj chaw'bogh poH law'. crontab ghItlh yI'ol (php bin/php/installcrontab.php --show), wanI' tetlhmey var/log/cronjob-*.log je tI'ol.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>'ay'</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>poH mIw</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Qav taghghach</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>not</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>mImbe'</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>mIm</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>not Qappu'</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>poH Qu' QapmoHmeH poH Qu' 'ay' ghajbe' jomghach.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>SeHlaw &gt; poH Qu'mey</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>chaw'ghach loStaH lo'wI' De' chu': %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>lo'wI' De'</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>lo'wI' pong</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>ghom</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>tlhobwI'</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>chaw'ghach yIpoSmoH</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>leQ Qapbe'chugh, De' leghwI'lIjDaq Daqvam yIqonqa': %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>chaw'ghachlIj loStaH lo'wI' De' chu'</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%groups ghommeyDaq lo'wI' De' "%name" chenmoH %requester. HochvaD 'anglu'be', 'ej chaw'wI' lajpa' 'ellaHbe'.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>loHmeH yoSDaq yI'el 'ej tay' Qu' tetlhlIjDaq yIchaw' pagh yIQo'. rarwI'vam Dalo'chugh, bI'elbe', 'ej pagh wuq rarwI'vam.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>ghommeyvam lo'wI' De'mey chu' Dachaw'mo', QInvam ngeH %site.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>De'wI'</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ghogh HablI'</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>jIHHom</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ngoq pagh ghun</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>nIteb Qapbogh De'wI'</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Sovlu'be'bogh jan</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>pegh mu'</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>pegh mu', cha' mIw 'elghach ngoq je</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST jIH</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP jIH</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>wa' 'elghach</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>poHmey qonlu'pa' 'ellu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>navvamvo' mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>loHwI' mejmoHta'</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>"Hoch poHmey latlh" lo'taHvIS mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>'elghach chu' tam</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>pegh mu' choHghach rInmoH</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Heghpu'</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name poHmey</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>DaH lo'wI' De'lIj 'eltaHbogh Daqmey. jan DaghovlaHbe'chugh, yImejmoH 'ej pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>DaH lo'wI' De'vam 'eltaHbogh Daqmey. lo'wI' DamejmoHchugh, tlhobghach vebDaq poH Hoch rInmoH.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>lo'wI' De'Daq yIchegh</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>poH mejmoHlu'pu'. 'elqa'nIS jan.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count poH latlh mejmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>mejmoHmeH poH latlh tu'lu'pu'be'.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>lo'wI'vam %count poH mejmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>mejmoHmeH poH ghajpu'be' lo'wI'vam.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dalo'taHbogh poH 'oH poHvam'e'. DarInmoHmeH, yImej.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>rInpu' poHvetlh.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>jan chu'vo' lo'wI' De'lIj 'ellu'DI', De'wI' QIn DaHev.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>jan chu'vo' 'elghachmey De'wI' QIn DaHevbe'choH.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>nav Heghpu'. pagh choHlu'pu'; yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>yoSvamDaq poHmey qonlu'be' (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session tetlh tu'lu'be'</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>chenmoHlu'DI' poHmey qonlu': php update/common/scripts/6.0/createusersessiontable.php, qoj 6.0.15 De' pa' chu'moHghach.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>DaH 'eltaH</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Hoch poHmey latlh tImejmoH</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dat yImejmoH</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>janvam Hutlh, Hoch jan mejmoHlu' tlhobghach vebDajDaq; HIqaw lo'mo' 'eltaHbogh janmey je.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>lo'wI'vam poH Hoch mejmoHlu' tlhobghach vebDajDaq; HIqaw lo'mo' 'eltaHbogh poHmey je.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>HISlaH, poHmey latlh tImejmoH</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>HISlaH, Hoch poH tImejmoH</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>janvam</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>De'wI' mIrDaj 'anglu'; loHwI'pu'vaD Daq naQ pollu'.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip Daqvo' 'ellu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>'ellu'ta'</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Qav vangghach</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>DaH</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>'eltaH</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>HIqaw, %date qaSpa'</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>De' leghwI' SoQmoHlu'pa'</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>'elmeH Daq</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>De' leghwI' ngu'wI'</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>poHvam DarInmoHmeH, yImej.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>yImej</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>poHvam yImejmoH</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>'eltaHbogh poH tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>'elghach ghuHmoHghachmey</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>jan chu' pagh De' leghwI' chu'vo' lo'wI' De'wIj 'ellu'DI', De'wI' QIn HIngeH</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email De'wI' QIn DaqDaq ngeHlu'. jan, Daq naQbe', poH je 'ang, 'ej navvamDaq rar.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>'elghach ghuHmoHghachmey ngeHbe' yoSvam.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>DaH rInpu'</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Qav %days jaj qaStaHvIS rInpu'bogh poHmey.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>rInpu'</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>chay'</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>pagh.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>De'wI'</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>ghogh HablI'</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>jIHHom</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>ngoq pagh ghun</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>nIteb Qapbogh De'wI'</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Sovlu'be'bogh jan</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>pegh mu'</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>pegh mu', cha' mIw 'elghach ngoq je</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST jIH</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP jIH</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>wa' 'elghach</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>poHmey qonlu'pa' 'ellu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>navvamvo' mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>loHwI' mejmoHta'</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>"Hoch poHmey latlh" lo'taHvIS mejmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>'elghach chu' tam</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>pegh mu' choHghach rInmoH</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Heghpu'</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name poHmey</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>DaH lo'wI' De'lIj 'eltaHbogh Daqmey. jan DaghovlaHbe'chugh, yImejmoH 'ej pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>DaH lo'wI' De'vam 'eltaHbogh Daqmey. lo'wI' DamejmoHchugh, tlhobghach vebDaq poH Hoch rInmoH.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>poH mejmoHlu'pu'. 'elqa'nIS jan.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>%count poH latlh mejmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>mejmoHmeH poH latlh tu'lu'pu'be'.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>lo'wI'vam %count poH mejmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>mejmoHmeH poH ghajpu'be' lo'wI'vam.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Dalo'taHbogh poH 'oH poHvam'e'. DarInmoHmeH, yImej.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>rInpu' poHvetlh.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>jan chu'vo' lo'wI' De'lIj 'ellu'DI', De'wI' QIn DaHev.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>jan chu'vo' 'elghachmey De'wI' QIn DaHevbe'choH.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>nav Heghpu'. pagh choHlu'pu'; yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>yoSvamDaq poHmey qonlu'be'.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>wej poHmey qonlu'be': De' pa' chu'moHghach poQ yoS.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>DaH 'eltaH</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>janvam</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>jan</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>'ellu'ta'</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Qav vangghach</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>DaH</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>'eltaH</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>HIqaw, %date qaSpa'</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>De' leghwI' SoQmoHlu'pa'</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>poHvam DarInmoHmeH, yImej.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>yImej</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>poHvam yImejmoH</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Hoch poHmey latlh tImejmoH</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dat yImejmoH</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>'elghach ghuHmoHghachmey</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>jan chu' pagh De' leghwI' chu'vo' lo'wI' De'wIj 'ellu'DI', De'wI' QIn HIngeH</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>DaH rInpu'</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>rInpu'</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>chay'</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Qav %days jaj qaStaHvIS pagh.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>lo'wI' De'lIj 'eltaHbogh Daqmey yIlegh, 'ej DaSovbe'bogh jan yImejmoH.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>janmey tIloH</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site yoSDaq lo'wI' De'lIj 'elghach chu'</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>nuqneH,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>DaH %site yoSDaq lo'wI' De'lIj %login lo'lu' 'elmeH, ret ngaj lo'be'pu'bogh jan pagh De' leghwI' lo'taHvIS:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>jan:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>poH:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Daq naQbe':</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>SoHchugh, vay' DaruchnISbe'.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>SoHbe'chugh, pegh mu'lIj Sov vay'. janmeylIj navDaq poHvetlh yImejmoH, ghIq pegh mu'lIj yIchoH:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>navvetlhDaq De'wI' QInmeyvam Dachu'Ha'laH.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site yoSDaq %login 'elghach chu'</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>ret ngaj lo'be'pu'bogh jan pagh De' leghwI' lo'taHvIS 'el lo'wI' De' %login.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>lo'wI'vam poHmey:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>lo'wI' De'lIj 'elghach chu'</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>%date poHDaq, %device (%ip) lo'taHvIS 'elmeH lo'wI' De'lIj %login lo'lu'.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>SoHchugh, vay' DaruchnISbe'. SoHbe'chugh, %url DaqDaq poHvam yImejmoH 'ej pegh mu'lIj yIchoH.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login 'elghach chu'</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>jan chu'vo' 'el lo'wI' De' %login: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>janmeylIj</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name poHmey</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>'elmeH ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>'elmeH ngaQHa'moHwI' Dalo'DI', pegh mu'lIj Dalo'be'; nItlh ghItlhlIj, qablIj, jIH ngaQghach, Hung ngaQHa'moHwI' joq Dalo' 'ej bI'el. janlIjDaq pegh mu' polwI'lIjDaq joq pollu'; HochvaD ngaQHa'moHwI'Daj neH pol yoSvam, vaj naDev De' nIHlu'chugh je, Sovlu'laHbe'.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>yoSvamDaq 'elmeH ngaQHa'moHwI'mey chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>wej yoSvamDaq 'elmeH ngaQHa'moHwI'mey lo'lu'laHbe': wa'DIch De' pa' chu'moHghach QapmoHnIS loHwI'.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>'elmeH ngaQHa'moHwI' "%name" Dateqqang'a'?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>lo'wI' De'vamDaq 'ellaHbe'choH. janlIjvo' pegh mu' polwI'lIjvo' joq yIteq je.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' yIteq</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>'elmeH ngaQHa'moHwI'meylIj</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count (veH: %max)</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>wej 'elmeH ngaQHa'moHwI' Daghaj. bIngDaq wa' yIchel: bI'elqa'DI', "'elmeH ngaQHa'moHwI' lo'taHvIS yI'el" yIwIv.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>chellu'ta'</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Qav lo'ghach</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Segh</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>vangghachmey</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>wej</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>rapmoHlu'ta'</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>janvam pagh ngaQHa'moHwI'vam</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>pong yIchoH</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>pong chu'</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>pong yIpol</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' yIchel</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>De' leghwI'lIj janlIj joq mIwmey tIpab.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>'elmeH ngaQHa'moHwI' Qorwagh SoQmoHlu'pu'. pagh choHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>'elmeH ngaQHa'moHwI' chenmoHlu'laHpu'be'. yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>'elmeH ngaQHa'moHwI'mey chenmoHlaHbe' De' leghwI'vam. De' leghwI' chu' yIlo', qoj pegh mu'lIj lo'taHvIS yI'el.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>ghu': ngaQHa'moHwI' ngaSbogh jan pagh pegh mu' polwI'; vaj 'elmeH ngaQHa'moHwI'meylIj Daghov.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>lo'wI' De'vam ghajlu'laHbogh 'elmeH ngaQHa'moHwI'mey Hoch ghaj (%max). latlh DachelmeH, wa' yIteq.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>'elmeH ngaQHa'moHwI' lo'lu'laHpu'be'. yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>lo'wI' De'wIj</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>'elmeH ngaQHa'moHwI' Qorwagh SoQmoHlu'pu'. pegh mu'lIj lo'taHvIS bI'ellaH.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>'elmeH ngaQHa'moHwI' lo'lu'laHpu'be'. yInIDqa', qoj pegh mu'lIj lo'taHvIS yI'el.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' lo'taHvIS yI'el</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' lo'taHvIS 'ellu'laHpu'be'</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>pegh mu'lIj yIlo'Qo'; nItlh ghItlhlIj, qablIj, jIH ngaQghach, Hung ngaQHa'moHwI' joq yIlo' 'ej yI'el.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>'elmeH ngaQHa'moHwI' "%name" chellu'pu'. DaH lo'taHvIS bI'ellaH.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>DaH "%name" 'oH 'elmeH ngaQHa'moHwI' pong'e'.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>'elmeH ngaQHa'moHwI' "%name" teqlu'pu'. lo'wI' De'vamDaq 'ellaHbe'choH.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date 'elmeH ngaQHa'moHwI'</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>lo'wI' De'vam ghajlu'laHbogh 'elmeH ngaQHa'moHwI'mey Hoch ghaj. wa'DIch wa' yIteq.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Qu' law' ghaj De' pa', 'ej pagh pollu'pu'. yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>'elmeH ngaQHa'moHwI'vam qonlu'pu'.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>tlhobghach nI'qu' pagh lo'lu'pu'. yInIDqa'.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>SoH 'Iv 'e' 'olpu'be' 'elmeH ngaQHa'moHwI' (PIN, nItlh ghItlh, qab joq). yInIDqa' 'ej janlIjDaq yI'ol.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>yoSvam lajbe'bogh ngaQHa'moHwI' Segh lo' 'olwI'vam.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>yoSvamvaD chenmoHlu'pu'be' 'elmeH ngaQHa'moHwI'; latlh DaqvaD chenmoHlu'pu'.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>naDev lo'wI' De'vaD 'elmeH ngaQHa'moHwI'vam qonlu'be'. pegh mu'lIj lo'taHvIS yI'el 'ej lo'wI' De'wIj, 'elmeH ngaQHa'moHwI'mey DaqDaq yIchel.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>DaH 'ellaHbe' lo'wI' De'vam. yoS loHwI' yIrI'.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>'elmeH ngaQHa'moHwI' 'ollu'laHpu'be'. yInIDqa'.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>chay' bI'el, lo'wI' De'lIj Hung joq DachoHrup.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>lo'wI'pu', patlhmey, chaw' chutmey joq DaloHrup.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>pat DuHmey DachoHrup, qoj SeHlaw vangghach DaQapmoHrup.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>De' Dalelrup.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>De' Dateqrup qoj HochvaD Da'angrup.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>vangghachvam DaQapmoHmeH, SoH 'Iv 'e' Da'olnIS.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>SoH 'e' yI'ol; %login bI'eltaH. %minutes tup qaStaHvIS, not Daghelqa'lu'.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>lughbe' pegh mu'vetlh.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>lughbe' ngoqvetlh, pagh lo'lu'pu'.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>bIngDaq mIwmey wa' yIwIv.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>'elmeH ngaQHa'moHwI' 'ollu'laHpu'be'.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Damejpa', %count nIDghach ratlh.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>DawIvpu'bogh ghItlhmey ngeHqa'lu'laHbe': Da'olDI', tIwIvqa'.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>pegh mu'lIj lo'taHvIS</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' lo'taHvIS</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>pegh mu'</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>yI'ol</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>'elmeH ngaQHa'moHwI' yIlo'</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>'olwI' ghunlIjvo' ngoq lo'taHvIS</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>ngoq</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>SoH 'Iv 'e' 'ollu'meH mIw ghajbe' lo'wI' De'vam (pegh mu', 'elmeH ngaQHa'moHwI', 'olwI' ghun joq ghajbe'). yImej 'ej yI'elqa', qoj loHwI' yItlhob.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>SoH 'e' yI'ol</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>'olwI' ghunlIjvo' ngoq</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>lo'wI' De'lIj</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>lo'wI' De' ngaSDaj choHghach: pegh mu', De'wI' QIn Daq, 'elmeH ngaQHa'moHwI'mey, cha' mIw 'elghach, API ngaQHa'moHwI'mey je.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>lo'wI'pu', patlhmey, chaw' chutmey je</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>lo'wI'pu' chenmoHghach choHghach je, lo'wI' De' DuHmey, patlhmey nobghach, chaw' chutmey choHghach je.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>pat DuHmey SeHlaw vangghachmey je</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>DuHmey choHghach, chelwI'mey, De' polwI'mey Qorghghach je, 'aplo'mey chu'moHghachmey je, De' qonqa'ghachmey, git loHwI' je.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>De' lelghach</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>boSlu'pu'bogh De', lo'wI'pu', QIn tetlh jeSwI'pu', 'olghach je lelghachmey.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>De' teqghach HochvaD 'angghach je</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>De' teqghach (veQDaq je), veQ chImmoHghach, HochvaD 'angghach je. motlh chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Qobbogh vangghach ret, 'ellu'ta'bogh lo'wI' 'Iv 'e' 'olqa': pegh mu'Daj, 'elmeH ngaQHa'moHwI', 'olwI' ghunDaj ngoq joq lo'. Qorwagh navmey neH tlhob: not tlhob REST jIH, SOAP, WebDAV, expservices 'elghach, ra'meH jIH je.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>'olghach poH (tup)</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>ghelmeH poH</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name] ghItlhDaq %count chut.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php ghItlhDaq pollu'. Dapolchugh, SoH 'e' Da'olnIS.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>yIpol</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>SoH 'e' yI'ol</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>bIngDaq chu'lu'ta'bogh ghommey vangghachmey ret, "SoH 'e' yI'ol" yIghel</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>DuHmey pollu'pu'.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>DuHmey pollu'laHpu'be': %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
     </message>
 </context>
 </TS>

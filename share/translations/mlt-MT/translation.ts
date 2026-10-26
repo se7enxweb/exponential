@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Iftaħ jew agħlaq il-folder</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Din il-paġna tinsab fil-favoriti tiegħek. Iftaħ il-favorit biex tibdel ismu jew il-folder tiegħu.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Żid din il-paġna mal-favoriti tiegħek.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Fil-favoriti</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Żid il-paġna mal-favoriti</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Il-favorit iżomm l-indirizz ta' din il-paġna bil-parametri tagħha: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Salva l-favorit</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Żid favorit</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Il-favoriti tiegħi</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Paġna tas-sistema</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Paġni tas-sistema</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>M'għadekx tista' tiftaħ din il-paġna.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Iftaħ</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>L-indirizz ta' din il-paġna nieqes. Neħħi l-favorit u erġa' żid il-paġna mal-favoriti.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>M'għadekx tista' tiftaħ din il-paġna. Neħħi l-favorit, jew itlob aċċess lil amministratur.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizz</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modulu u veduta</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Il-paġni tas-sistema jistgħu jiżdiedu mal-favoriti wkoll: iftaħ il-paġna (Konfigurazzjoni, it-traċċa tal-awditu, lista ta' utenti ...) u agħżel “Żid il-paġna mal-favoriti” fuqha. Dawn il-favoriti għandhom ikona ta' rota.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>jiddiżattivaw kontijiet tal-utenti u jmexxuhom għall-grupp tal-utenti diżattivati, u jerġgħu jmexxuhom lura</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>ara fejn huma dieħla utenti oħra, u agħlaq is-sessjonijiet tagħhom</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ il-kont tiegħek.</translation>
         <source>Open e-mail preferences</source>
         <translation>Iftaħ il-preferenzi tal-email</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Fejn il-kont tiegħek huwa dieħel: browser, sistema, post u ħin. Agħlaq is-sessjoni ta' apparat li ma tagħrfux.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Fejn dan l-utent huwa dieħel, u l-għeluq tas-sessjonijiet kollha tiegħu.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Immaniġġja l-apparati</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Uri s-sessjonijiet</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Sessjonijiet attivi: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Idħol bil-marka tas-saba', bil-wiċċ, bil-qfil tal-iskrin jew b'ċavetta tas-sigurtà minflok il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Immaniġġja l-passkeys</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Żid passkey</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Passkeys: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>L-ebda waħda s'issa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ il-kont tiegħek.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinazzjonijiet ta&apos; klassi/attribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Gruppi ta' utenti li l-kontijiet ġodda tagħhom jeħtieġu approvazzjoni</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Kont ippubblikat f'wieħed minn dawn il-gruppi, jew taħtu, jistenna sakemm approvatur jaċċettah. Sa dak iż-żmien ma jistax jidħol.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Utenti li japprovaw il-kontijiet</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Gruppi li japprovaw il-kontijiet</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Gruppi ta' utenti li ma jeħtiġux approvazzjoni (il-membri tagħhom jippubblikaw dawn il-kontijiet direttament; l-approvaturi qatt ma jeħtiġuha)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Ibgħat email lill-approvaturi bil-link għall-approvazzjoni (jidħlu biex japprovaw jew jiċħdu)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Ara l-paġna tar-rekwiżiti għal aktar informazzjoni.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Il-varjabbli tal-ambjent EXP_DEMO_MODE=1 timmarka din l-installazzjoni bħala demo pubblika: password tal-amministratur magħrufa sew tiġi aċċettata, u l-passwords tal-amministraturi ma jistgħux jinbidlu jew jiġu rrisettjati aktar tard. Il-modalità demo qatt m&apos;għandha tintuża għal sit tal-produzzjoni.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Kompiti cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Il-kompiti cron jaħdmu mill-crontab tal-utent %user, li huwa s-sid tal-installazzjoni.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>L-installazzjoni m'għandha l-ebda parti tal-kompiti cron x'tiskeda.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Il-crontab ma nkitebx (%reason). Żid dawn il-linji mal-crontab tal-utent li bih jaħdem is-sit, inkella l-kju, l-importazzjonijiet, in-notifiki u l-indiċi tat-tfittxija qatt ma jaħdmu:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ il-kont tiegħek.</translation>
         <source>ClassAttribute name</source>
         <translation>Isem tal-attribut tal-klassi</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Kontijiet li jeħtieġu approvazzjoni</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Email lill-approvaturi</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Iva</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Le</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ il-kont tiegħek.</translation>
         <source>Your comment was added.</source>
         <translation>Il-kumment tiegħek ġie miżjud.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Il-kont “%1” ġie approvat u ppubblikat: issa jista' jidħol.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Il-kont “%1” ġie miċħud. Mhuwiex ippubblikat u ma jistax jidħol; reġa' sar abbozz tal-awtur tiegħu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ il-kont tiegħek.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Favoriti miżjuda: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Paġna tas-sistema</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Il-paġni tas-sistema għadhom ma jistgħux jiżdiedu mal-favoriti: l-aġġornament tal-bażi tad-dejta ta' din il-verżjoni għadu ma tħaddimx.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Din il-paġna ma tistax tiżdied mal-favoriti: mhijiex paġna ta' veduta ta' modulu.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Din il-paġna ma tistax tiżdied mal-favoriti: m'għandekx permess tiftaħha.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Il-paġna ma setgħetx tiżdied mal-favoriti.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Il-paġna “%name” tinsab fil-favoriti tiegħek.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Il-favorit ma setax jingħata isem ġdid: jeħtieġ isem.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Il-favorit ingħata l-isem “%name”.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Irrifletti fit-tabelli tad-dejta</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Approva l-kontijiet tal-utenti</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Kont ġdid ta' utent qed jistenna l-approvazzjoni tiegħek</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Mibgħut għall-bidla tal-password</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Dħul mingħajr it-tieni pass miċħud</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Password tal-app maħluqa</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Password tal-app irrevokata</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Password tal-app użata</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>It-traċċa tal-awditu ta&apos; dan in-nodu</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>intatta</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>miksura</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>mhux iċċekkjata</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>imsewwija</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vojta</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>L-indirizz tal-email il-ġdid %email qed jistenna l-konferma tiegħu: iftaħ il-link li bgħatna hemm. Sa dakinhar dan il-kont iżomm %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>L-email dwar dħul minn apparat jew browser ġdid hija parti mis-sigurtà tal-kont. Tixgħelha jew titfiha mal-apparati tiegħek, fejn tara wkoll is-sessjonijiet tal-kont tiegħek u tista' tagħlaqhom.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Esplora t-tabelli tal-klassijiet persistenti…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Kompiti cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>L-ebda parti tal-kompiti cron għadha ma ħadmet: il-kju tal-kompiti, l-importazzjonijiet, in-notifiki u l-indiċi tat-tfittxija qed jistennew. Ħaddem php bin/php/installcrontab.php --add, jew żid il-linji ta' --show mal-crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Parti tal-kompiti cron ilha ma taħdem aktar milli tippermetti l-iskeda tagħha: iċċekkja l-crontab (php bin/php/installcrontab.php --show) u r-reġistri var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parti</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Skeda</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>L-aħħar bidu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>qatt</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>fil-ħin</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>tard</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>qatt ma ħadmet</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>L-installazzjoni m'għandha l-ebda parti tal-kompiti cron biex il-cron iħaddem.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Konfigurazzjoni &gt; Kompiti cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Kont ġdid ta' utent qed jistenna l-approvazzjoni: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Kont</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Isem tal-utent</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupp</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Mitlub minn</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Iftaħ l-approvazzjoni</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Jekk il-buttuna ma taħdimx, ikkopja dan l-indirizz fil-browser tiegħek: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Kont ġdid ta' utent qed jistenna l-approvazzjoni tiegħek</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester ħoloq il-kont “%name” f'%groups. Mhuwiex ippubblikat u ma jistax jidħol sakemm approvatur jaċċettah.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Idħol fl-amministrazzjoni u approvah jew iċħdu fil-lista tal-kollaborazzjoni tiegħek. Dan il-link ma jdaħħlekx u ma jiddeċiedi xejn waħdu.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Din l-email intbagħtet minn %site għax int tapprova l-kontijiet ġodda ta' dawn il-gruppi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompjuter</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm jew app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klijent awtomatizzat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Apparat mhux magħruf</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password u kodiċi f'żewġ passi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfaċċja REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfaċċja SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Dħul uniku</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Dħul qabel ma bdew jiġu rreġistrati s-sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ħruġ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Ħruġ minn din il-paġna</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Magħluqa minn amministratur</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Magħluqa b'“is-sessjonijiet l-oħra kollha”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Sostitwita b'dħul ġdid</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Intemmet b'bidla tal-password</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Skadiet</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Is-sessjonijiet ta' %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Fejn il-kont tiegħek huwa dieħel bħalissa. Jekk ma tagħrafx apparat, agħlaq is-sessjoni tiegħu u biddel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Fejn dan il-kont huwa dieħel bħalissa. Il-ħruġ tal-utent itemm kull sessjoni mat-talba li jmiss tagħha.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Lura għall-kont</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Is-sessjoni ngħalqet. L-apparat irid jidħol mill-ġdid.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Sessjonijiet oħra magħluqa: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ma kienx hemm sessjonijiet oħra x'jingħalqu.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sessjonijiet ta' dan l-utent magħluqa: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Dan l-utent ma kellux sessjonijiet x'jingħalqu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Din hija s-sessjoni li qed tuża. Biex ittemmha, oħroġ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dik is-sessjoni kienet diġà ntemmet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Se tirċievi email meta l-kont tiegħek jidħol minn apparat ġdid.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>M'għadekx se tirċievi email dwar dħul minn apparati ġodda.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Il-paġna kienet skadiet. Ma nbidel xejn; erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Is-sessjonijiet mhumiex irreġistrati f'dan is-sit (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>It-tabella expuser_session nieqsa</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Is-sessjonijiet jibdew jiġu rreġistrati hekk kif tinħoloq: php update/common/scripts/6.0/createusersessiontable.php, jew l-aġġornament tal-bażi tad-dejta ta' 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Attiva issa</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Agħlaq is-sessjonijiet l-oħra kollha</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Oħroġ minn kullimkien</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kull apparat ħlief dan joħroġ mat-talba li jmiss tiegħu, anke dawk li jibqgħu dieħla b'“Ftakar fija”.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Kull sessjoni ta' dan l-utent tingħalaq mat-talba li jmiss tagħha, anke dawk li jibqgħu dieħla b'“Ftakar fija”.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Iva, agħlaq is-sessjonijiet l-oħra</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Iva, agħlaq is-sessjonijiet kollha</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dan l-apparat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizz</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Jintwera bħala n-netwerk tiegħu; l-indirizz sħiħ jinżamm għall-amministraturi.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>dieħel minn %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Dħul</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>L-aħħar attività</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Issa</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Jibqa' dieħel</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Ftakar fija, sa %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Sakemm jingħalaq il-browser</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Ħin tad-dħul</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identifikazzjoni tal-browser</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Biex ittemm din is-sessjoni, oħroġ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oħroġ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Agħlaq din is-sessjoni</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>L-ebda sessjoni mhi attiva.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Twissijiet dwar id-dħul</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Ibgħatli email meta l-kont tiegħi jidħol minn apparat jew browser ġdid</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Tintbagħat lil %email. Tgħidlek l-apparat, il-post bejn wieħed u ieħor u l-ħin, u għandha link għal din il-paġna.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Dan is-sit ma jibgħatx twissijiet dwar id-dħul.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Mitmuma reċentement</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessjonijiet li ntemmu reċentement (jiem: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Mitmuma</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kif</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Xejn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompjuter</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programm jew app</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klijent awtomatizzat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Apparat mhux magħruf</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Password u kodiċi f'żewġ passi</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfaċċja REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfaċċja SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Dħul uniku</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Dħul qabel ma bdew jiġu rreġistrati s-sessjonijiet</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Ħruġ</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Ħruġ minn din il-paġna</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Magħluqa minn amministratur</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Magħluqa b'“is-sessjonijiet l-oħra kollha”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Sostitwita b'dħul ġdid</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Intemmet b'bidla tal-password</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Skadiet</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Is-sessjonijiet ta' %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Fejn il-kont tiegħek huwa dieħel bħalissa. Jekk ma tagħrafx apparat, agħlaq is-sessjoni tiegħu u biddel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Fejn dan il-kont huwa dieħel bħalissa. Il-ħruġ tal-utent itemm kull sessjoni mat-talba li jmiss tagħha.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Is-sessjoni ngħalqet. L-apparat irid jidħol mill-ġdid.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Sessjonijiet oħra magħluqa: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ma kienx hemm sessjonijiet oħra x'jingħalqu.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sessjonijiet ta' dan l-utent magħluqa: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Dan l-utent ma kellux sessjonijiet x'jingħalqu.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Din hija s-sessjoni li qed tuża. Biex ittemmha, oħroġ.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Dik is-sessjoni kienet diġà ntemmet.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Se tirċievi email meta l-kont tiegħek jidħol minn apparat ġdid.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>M'għadekx se tirċievi email dwar dħul minn apparati ġodda.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Il-paġna kienet skadiet. Ma nbidel xejn; erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Is-sessjonijiet mhumiex irreġistrati f'dan is-sit.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Is-sessjonijiet għadhom mhumiex irreġistrati: is-sit jeħtieġ l-aġġornament tal-bażi tad-dejta tiegħu.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Attiva issa</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Dan l-apparat</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Apparat</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Indirizz</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Dħul</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>L-aħħar attività</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Issa</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Jibqa' dieħel</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Ftakar fija, sa %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Sakemm jingħalaq il-browser</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Biex ittemm din is-sessjoni, oħroġ.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Oħroġ</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Agħlaq din is-sessjoni</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Agħlaq is-sessjonijiet l-oħra kollha</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Oħroġ minn kullimkien</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Twissijiet dwar id-dħul</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Ibgħatli email meta l-kont tiegħi jidħol minn apparat jew browser ġdid</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Mitmuma reċentement</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Mitmuma</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Kif</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Xejn reċentement (jiem: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Ara fejn il-kont tiegħek huwa dieħel, u agħlaq is-sessjoni ta' apparat li ma tagħrfux.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Immaniġġja l-apparati</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Dħul ġdid fil-kont tiegħek fuq %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Bonġu,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Il-kont tiegħek %login fuq %site għadu kif intuża biex jidħol minn apparat jew browser li ma ntużax dan l-aħħar:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Apparat:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Ħin:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Indirizz approssimattiv:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Jekk kont int, m'għandek bżonn tagħmel xejn.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Jekk ma kontx int, xi ħadd jista' jkun jaf il-password tiegħek. Agħlaq dik is-sessjoni fil-paġna tal-apparati tiegħek, imbagħad biddel il-password tiegħek:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Tista' titfi dawn l-emails fl-istess paġna.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Dħul ġdid ta' %login fuq %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Il-kont %login daħal minn apparat jew browser li ma użax dan l-aħħar.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Is-sessjonijiet ta' dan l-utent:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Dħul ġdid fil-kont tiegħek</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Il-kont tiegħek %login intuża biex jidħol minn %device (%ip) fid-data %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Jekk kont int, m'għandek bżonn tagħmel xejn. Jekk le, agħlaq din is-sessjoni fuq %url u biddel il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Dħul ġdid ta' %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Il-kont %login daħal minn apparat ġdid: %device (%ip), fid-data %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>L-apparati tiegħek</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Is-sessjonijiet ta' %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Passkeys</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Passkey idaħħlek bil-marka tas-saba', bil-wiċċ, bil-qfil tal-iskrin jew b'ċavetta tas-sigurtà minflok il-password tiegħek. Tinħażen fuq l-apparat tiegħek jew fil-maniġer tal-passwords tiegħek; dan is-sit iżomm biss iċ-ċavetta pubblika tagħha, għalhekk tnixxija hawn ma tistax tikxifha.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Il-passkeys huma mitfija f'dan is-sit.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Il-passkeys għadhom ma jistgħux jintużaw f'dan is-sit: l-amministratur irid l-ewwel iħaddem l-aġġornament tal-bażi tad-dejta.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Żgur li trid tneħħi l-passkey “%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ma tkunx tista' tidħol aktar f'dan il-kont. Neħħiha wkoll mill-apparat jew mill-maniġer tal-passwords tiegħek.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Neħħi l-passkey</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Il-passkeys tiegħek</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count minn massimu ta' %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Għad m'għandek l-ebda passkey. Żid waħda hawn taħt: id-darba li jmiss li tidħol, agħżel “Idħol b'passkey”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Miżjuda</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>L-aħħar użu</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Azzjonijiet</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Mhux s'issa</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sinkronizzata</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Dan l-apparat jew din iċ-ċavetta</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Biddel l-isem</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Isem ġdid</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Salva l-isem</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Żid passkey</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Segwi l-passi tal-browser jew tal-apparat tiegħek.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Id-djalogu tal-passkey ingħalaq. Ma nbidel xejn.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Il-passkey ma setgħetx tinħoloq. Erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Dan il-browser ma jistax joħloq passkeys. Uża browser aġġornat, jew idħol bil-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Pereżempju l-apparat jew il-maniġer tal-passwords fejn tinsab, biex tagħraf il-passkeys tiegħek minn xulxin.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Dan il-kont diġà għandu l-ikbar numru ta' passkeys permess (%max). Neħħi waħda biex iżżid oħra.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Il-passkey ma setgħetx tintuża. Erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Il-kont tiegħi</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Id-djalogu tal-passkey ingħalaq. Tista' tidħol bil-password tiegħek minflok.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Il-passkey ma setgħetx tintuża. Erġa' pprova, jew idħol bil-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Idħol b'passkey</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Id-dħul bil-passkey ma rnexxiex</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>idħol bil-marka tas-saba', bil-wiċċ, bil-qfil tal-iskrin jew b'ċavetta tas-sigurtà minflok il-password tiegħek.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Il-passkey “%name” ġiet miżjuda. Minn issa 'l quddiem tista' tidħol biha.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Il-passkey issa jisimha “%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Il-passkey “%name” tneħħiet. Ma tistax tidħol aktar f'dan il-kont.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Passkey ta' %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Dan il-kont diġà għandu l-ikbar numru ta' passkeys permess. L-ewwel neħħi waħda.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Il-bażi tad-dejta kienet okkupata u ma ġie ssalvat xejn. Erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Din il-passkey hija diġà rreġistrata.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>It-talba damet wisq jew kienet diġà ntużat. Erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Il-passkey ma vverifikatx min int (PIN, marka tas-saba' jew wiċċ). Erġa' pprova u kkonferma fuq l-apparat tiegħek.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Dan l-awtentikatur juża tip ta' ċavetta li dan is-sit ma jaċċettax.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Il-passkey inħolqot għal indirizz ieħor u mhux għal dan is-sit.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Din il-passkey mhijiex irreġistrata għal kont hawn. Idħol bil-password tiegħek u żidha f'Il-kont tiegħi, Passkeys.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Dan il-kont ma jistax jidħol bħalissa. Ikkuntattja lill-amministratur tas-sit, jekk jogħġbok.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Il-passkey ma setgħetx tiġi vverifikata. Erġa' pprova, jekk jogħġbok.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Se tibdel kif tidħol jew is-sigurtà tal-kont tiegħek.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Se timmaniġġja utenti, rwoli jew politiki.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Se tibdel l-issettjar tas-sistema jew tħaddem azzjoni tal-konfigurazzjoni.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Se tesporta dejta.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Se tneħħi jew tippubblika kontenut.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Din l-azzjoni teħtieġ li tikkonferma min int.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Ikkonferma li int, dieħel bħala %login. Mhux se terġa' tiġi mistoqsi għal %minutes min.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Dik il-password mhijiex korretta.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Dak il-kodiċi mhuwiex korrett, jew diġà ntuża.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Agħżel wieħed mill-modi hawn taħt.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Il-passkey ma setgħetx tiġi vverifikata.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Tentattivi li fadal qabel ma toħroġ: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Il-fajls li għażilt ma jistgħux jerġgħu jintbagħtu: wara li tikkonferma, erġa' agħżilhom.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Bil-password tiegħek</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>B'passkey</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Ikkonferma</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Uża passkey</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>B'kodiċi mill-app tal-awtentikazzjoni tiegħek</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kodiċi</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Dan il-kont m'għandu l-ebda mod biex tikkonferma min int (l-ebda password, passkey jew app tal-awtentikazzjoni). Oħroġ u erġa' idħol, jew staqsi lil amministratur.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Ivverifika li int</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kodiċi mill-app tal-awtentikazzjoni tiegħek</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Il-kont tiegħek stess</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Bidla tal-password, tal-indirizz tal-email, tal-passkeys, tad-dħul f'żewġ passi jew taċ-ċwievet tal-API tiegħek stess.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Utenti, rwoli u politiki</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Ħolqien u editjar ta' utenti, issettjar tal-kontijiet, assenjazzjoni ta' rwoli u editjar ta' politiki.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Issettjar tas-sistema u azzjonijiet tal-konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Editjar tal-issettjar, tal-estensjonijiet, tal-cache u tal-manutenzjoni, tal-pakketti u tal-aġġornamenti, tal-backups u tal-git manager.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Esportazzjoni tad-dejta</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Esportazzjonijiet ta' informazzjoni miġbura, ta' utenti, ta' abbonati tal-bullettini u tal-awditu.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Tneħħija u pubblikazzjoni tal-kontenut</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Tneħħija tal-kontenut (anke fil-barmil), tbattil tal-barmil u pubblikazzjoni. Mitfi b'mod predefinit.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Qabel azzjoni sensittiva, utent dieħel jikkonferma mill-ġdid min hu, bil-password tiegħu, b'passkey jew bil-kodiċi tal-app tal-awtentikazzjoni tiegħu. Il-paġni web biss jistaqsu: l-interfaċċja REST, SOAP, WebDAV, id-dħul ta' expservices u l-linja tal-kmand qatt ma jistaqsu.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Ġenerali</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuti li fihom konferma tibqa' valida</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Meta għandu jistaqsi</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Regoli f'site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Issalvat f'settings/override/site.ini.append.php. Meta tissalva tintalab tikkonferma li int.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Ivverifika li int</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Staqsi “Ivverifika li int” qabel l-azzjonijiet tal-gruppi mixgħula hawn taħt</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>L-issettjar ġie ssalvat.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>L-issettjar ma setax jiġi ssalvat: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
     </message>
 </context>
 </TS>

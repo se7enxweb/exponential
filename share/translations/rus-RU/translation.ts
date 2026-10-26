@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Открыть или закрыть папку</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Эта страница есть в ваших закладках. Откройте закладку, чтобы изменить ее название или папку.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Добавить эту страницу в закладки.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>В закладках</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Добавить страницу в закладки</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Закладка хранит адрес этой страницы вместе с ее параметрами: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Сохранить закладку</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Добавить закладку</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Мои закладки</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Системная страница</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Системные страницы</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>У вас больше нет доступа к этой странице.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Открыть</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Адрес этой страницы отсутствует. Удалите закладку и снова добавьте страницу в закладки.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>У вас больше нет доступа к этой странице. Удалите закладку или попросите администратора предоставить доступ.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Модуль и представление</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Системные страницы тоже можно добавлять в закладки: откройте страницу (Настройка, журнал аудита, список пользователей ...) и выберите над ней «Добавить страницу в закладки». У таких закладок значок шестеренки.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>деактивировать учетные записи пользователей, перемещать их в группу деактивированных пользователей и возвращать обратно</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>видеть, где выполнили вход другие пользователи, и завершать их сеансы</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>Открыть параметры электронной почты</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши устройства</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеансы</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Где выполнен вход: браузер, система, место и время. Завершите сеанс на устройстве, которое вам незнакомо.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Где выполнен вход этим пользователем; выход пользователя на всех устройствах.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Управление устройствами</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Показать сеансы</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Активных сеансов: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ключи доступа</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Входите с помощью отпечатка пальца, распознавания лица, блокировки экрана или ключа безопасности вместо пароля.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Управление ключами доступа</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Добавить ключ доступа</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Ключей доступа: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Пока нет</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -37789,7 +37913,7 @@ your account.</source>
     </message>
     <message>
         <source>Remember me</source>
-        <translation>Напоминание</translation>
+        <translation>Запомнить меня</translation>
     </message>
     <message>
         <source>&quot;%user_login&quot; is not allowed to log in because failed login attempts by this user exceeded allowable number of failed login attempts!</source>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Комбинации классов и атрибутов (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Группы пользователей, новые учетные записи в которых требуют утверждения</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Учетная запись, опубликованная в одной из этих групп или ниже, ожидает, пока ее не примет утверждающий. До этого она не может войти.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Пользователи, утверждающие учетные записи</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Группы, утверждающие учетные записи</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Группы пользователей, которым утверждение не требуется (их участники публикуют такие учетные записи сразу; утверждающим оно не требуется никогда)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Отправлять утверждающим письмо со ссылкой на утверждение (они входят в систему, чтобы утвердить или отклонить)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Переменная окружения EXP_DEMO_MODE=1 помечает эту установку как общедоступную демонстрацию: допускается общеизвестный пароль администратора, а пароли администраторов нельзя ни изменить, ни сбросить позже. Никогда не используйте демонстрационный режим на рабочем сайте.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Задания cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Задания cron запускаются из crontab пользователя %user, которому принадлежит установка.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>В установке нет частей заданий cron для планирования.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab не записан (%reason). Добавьте эти строки в crontab пользователя, от имени которого работает сайт, иначе очередь, импорт, уведомления и поисковый индекс никогда не будут запускаться:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>Название атрибута класса</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Учетные записи, требующие утверждения</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Письмо утверждающим</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Нет</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>Ваш комментарий добавлен.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Учетная запись «%1» утверждена и опубликована: теперь с ней можно войти.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Учетная запись «%1» отклонена. Она не опубликована, и с ней нельзя войти; она снова стала черновиком своего автора.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Добавлено закладок: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Системная страница</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Системные страницы пока нельзя добавлять в закладки: обновление базы данных этой версии еще не выполнено.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Эту страницу нельзя добавить в закладки: это не страница представления модуля.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Эту страницу нельзя добавить в закладки: у вас нет доступа к ней.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Не удалось добавить страницу в закладки.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Страница «%name» есть в ваших закладках.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Не удалось переименовать закладку: нужно указать название.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Закладка переименована в «%name».</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Зеркалирование в таблицы данных</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Утверждение учетных записей пользователей</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Новая учетная запись пользователя ожидает вашего утверждения</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>Переход к смене пароля</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Вход без второго шага отклонен</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Пароль приложения создан</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Пароль приложения отозван</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Пароль приложения использован</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>Журнал аудита этого узла</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>не нарушена</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>нарушена</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>не проверена</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>восстановлена</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>пуста</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Новый адрес электронной почты %email ожидает подтверждения: откройте ссылку, которую мы туда отправили. До тех пор в этой учетной записи остается адрес %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Письмо о входе с нового устройства или браузера относится к безопасности учетной записи. Его можно включить или отключить на странице ваших устройств, где также можно просмотреть и завершить сеансы вашей учетной записи.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши устройства</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Просмотреть таблицы постоянных классов…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Задания cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Ни одна часть заданий cron еще не запускалась: очередь заданий, импорт, уведомления и поисковый индекс ждут. Выполните php bin/php/installcrontab.php --add или добавьте строки из вывода --show в crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Одна из частей заданий cron не запускалась дольше, чем допускает ее расписание: проверьте crontab (php bin/php/installcrontab.php --show) и журналы var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Часть</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Расписание</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Последний запуск</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Состояние</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>никогда</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>вовремя</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>с опозданием</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>не запускалась</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>В установке нет ни одной части заданий cron, которую могло бы выполнить задание cron.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Настройка &gt; Задания cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Новая учетная запись пользователя ожидает утверждения: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Учетная запись</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Имя пользователя</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Группа</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Кем запрошено</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Открыть утверждение</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Если кнопка не работает, скопируйте этот адрес в браузер: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Новая учетная запись пользователя ожидает вашего утверждения</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Пользователь %requester создал учетную запись «%name» в %groups. Она не опубликована, и с ней нельзя войти, пока ее не примет утверждающий.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Войдите в интерфейс администратора и утвердите или отклоните ее в своем списке совместной работы. Эта ссылка не выполняет вход и сама ничего не решает.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Это письмо отправлено сайтом %site, так как вы утверждаете новые учетные записи этих групп.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Компьютер</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Телефон</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Планшет</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Программа или приложение</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Автоматизированный клиент</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Неизвестное устройство</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Пароль и код двухэтапного входа</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Интерфейс REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Интерфейс SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Единый вход</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Вход выполнен до начала записи сеансов</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Выход выполнен</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Завершен на этой странице</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Завершен администратором</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Завершен командой «все остальные сеансы»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Заменен новым входом</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Завершен из-за смены пароля</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Истек</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши устройства</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеансы пользователя %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Где сейчас выполнен вход в вашу учетную запись. Если вы не узнаете устройство, завершите его сеанс и смените пароль.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Где сейчас выполнен вход в эту учетную запись. Выход пользователя завершает каждый сеанс при его следующем запросе.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Назад к учетной записи</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс завершен. На устройстве нужно снова войти.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Завершено других сеансов: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Других сеансов для завершения не было.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Завершено сеансов этого пользователя: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>У этого пользователя не было сеансов для завершения.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Это ваш текущий сеанс. Чтобы завершить его, выйдите из системы.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Этот сеанс уже был завершен.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Вы будете получать письмо, когда в вашу учетную запись выполняется вход с нового устройства.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Вы больше не будете получать письма о входе с новых устройств.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Срок действия страницы истек. Ничего не изменено; повторите попытку.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>На этом сайте сеансы не записываются (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Таблица expuser_session отсутствует</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Сеансы начнут записываться после ее создания: php update/common/scripts/6.0/createusersessiontable.php или обновление базы данных 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Сейчас в системе</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Завершить все остальные сеансы</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Выйти на всех устройствах</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Каждое устройство, кроме этого, выйдет из системы при следующем запросе, в том числе те, на которых вход сохраняется с помощью «Запомнить меня».</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Каждый сеанс этого пользователя будет завершен при следующем запросе, в том числе сеансы, сохраняемые с помощью «Запомнить меня».</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Да, завершить остальные сеансы</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Да, завершить все сеансы</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Это устройство</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Устройство</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Показывается как сеть; полный адрес хранится для администраторов.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>вход с %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Вход выполнен</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Последняя активность</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Сейчас</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Вход сохраняется</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>«Запомнить меня» до %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>До закрытия браузера</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Место входа</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Идентификация браузера</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Чтобы завершить этот сеанс, выйдите из системы.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Выйти</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Завершить этот сеанс</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Нет активных сеансов.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Оповещения о входе</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Сообщать мне по электронной почте, когда в мою учетную запись выполняется вход с нового устройства или браузера</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Отправляется на %email. В письме указаны устройство, примерное место и время, а также ссылка на эту страницу.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Этот сайт не отправляет оповещения о входе.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Недавно завершенные</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Сеансы, завершенные за последние %days дн.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершен</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Как</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Нет.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Компьютер</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Телефон</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Планшет</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Программа или приложение</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Автоматизированный клиент</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Неизвестное устройство</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Пароль и код двухэтапного входа</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Интерфейс REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Интерфейс SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Единый вход</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Вход выполнен до начала записи сеансов</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Выход выполнен</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Завершен на этой странице</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Завершен администратором</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Завершен командой «все остальные сеансы»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Заменен новым входом</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Завершен из-за смены пароля</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Истек</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши устройства</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеансы пользователя %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Где сейчас выполнен вход в вашу учетную запись. Если вы не узнаете устройство, завершите его сеанс и смените пароль.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Где сейчас выполнен вход в эту учетную запись. Выход пользователя завершает каждый сеанс при его следующем запросе.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Сеанс завершен. На устройстве нужно снова войти.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Завершено других сеансов: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Других сеансов для завершения не было.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Завершено сеансов этого пользователя: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>У этого пользователя не было сеансов для завершения.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Это ваш текущий сеанс. Чтобы завершить его, выйдите из системы.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Этот сеанс уже был завершен.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Вы будете получать письмо, когда в вашу учетную запись выполняется вход с нового устройства.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Вы больше не будете получать письма о входе с новых устройств.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Срок действия страницы истек. Ничего не изменено; повторите попытку.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>На этом сайте сеансы не записываются.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Сеансы пока не записываются: сайту требуется обновление базы данных.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Сейчас в системе</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Это устройство</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Устройство</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Вход выполнен</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Последняя активность</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Сейчас</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Вход сохраняется</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>«Запомнить меня» до %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>До закрытия браузера</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Чтобы завершить этот сеанс, выйдите из системы.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Выйти</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Завершить этот сеанс</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Завершить все остальные сеансы</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Выйти на всех устройствах</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Оповещения о входе</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Сообщать мне по электронной почте, когда в мою учетную запись выполняется вход с нового устройства или браузера</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Недавно завершенные</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершен</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Как</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Нет за последние %days дн.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Посмотрите, где выполнен вход в вашу учетную запись, и завершите сеанс на устройстве, которое вам незнакомо.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Управление устройствами</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Новый вход в вашу учетную запись на %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Здравствуйте!</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>В вашу учетную запись %login на %site только что выполнен вход с устройства или браузера, которое в последнее время не использовалось:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Устройство:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Время:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Примерный адрес:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Если это были вы, ничего делать не нужно.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Если это были не вы, возможно, кто-то знает ваш пароль. Завершите этот сеанс на странице ваших устройств, а затем смените пароль:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>На той же странице можно отключить эти письма.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Новый вход пользователя %login на %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>В учетную запись %login выполнен вход с устройства или браузера, которое в последнее время не использовалось.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Сеансы этого пользователя:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Новый вход в вашу учетную запись</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>%date выполнен вход в вашу учетную запись %login с устройства %device (%ip).</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Если это были вы, ничего делать не нужно. Если нет, завершите этот сеанс на странице %url и смените пароль.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Новый вход пользователя %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>В учетную запись %login выполнен вход с нового устройства: %device (%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Ваши устройства</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Сеансы пользователя %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ключи доступа</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Ключ доступа позволяет входить с помощью отпечатка пальца, распознавания лица, блокировки экрана или ключа безопасности вместо пароля. Он хранится на вашем устройстве или в диспетчере паролей; этот сайт хранит только его открытый ключ, поэтому утечка данных здесь не может его раскрыть.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Ключи доступа отключены на этом сайте.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Ключи доступа пока нельзя использовать на этом сайте: администратор должен сначала выполнить обновление базы данных.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Удалить ключ доступа «%name»?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>С ним больше нельзя будет войти в эту учетную запись. Удалите его также с устройства или из диспетчера паролей.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Удалить ключ доступа</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Ваши ключи доступа</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count из %max возможных</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>У вас еще нет ключа доступа. Добавьте его ниже: при следующем входе выберите «Войти с ключом доступа».</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Добавлен</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Последнее использование</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Действия</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Еще нет</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Синхронизирован</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Это устройство или ключ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Переименовать</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Новое название</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Сохранить название</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Добавить ключ доступа</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Следуйте указаниям браузера или устройства.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Окно ключа доступа закрыто. Ничего не изменено.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Не удалось создать ключ доступа. Повторите попытку.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Этот браузер не может создавать ключи доступа. Используйте современный браузер или войдите с паролем.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Например, устройство или диспетчер паролей, где он хранится, чтобы различать ваши ключи доступа.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>У этой учетной записи уже максимальное число ключей доступа (%max). Удалите один, чтобы добавить другой.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Не удалось использовать ключ доступа. Повторите попытку.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Моя учетная запись</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Окно ключа доступа закрыто. Вместо этого можно войти с паролем.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Не удалось использовать ключ доступа. Повторите попытку или войдите с паролем.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Войти с ключом доступа</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Не удалось войти с ключом доступа</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>входите с помощью отпечатка пальца, распознавания лица, блокировки экрана или ключа безопасности вместо пароля.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Ключ доступа «%name» добавлен. Теперь с ним можно входить.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Ключ доступа теперь называется «%name».</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Ключ доступа «%name» удален. С ним больше нельзя войти в эту учетную запись.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Ключ доступа от %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>У этой учетной записи уже максимальное число ключей доступа. Сначала удалите один.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>База данных была занята, ничего не сохранено. Повторите попытку.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Этот ключ доступа уже зарегистрирован.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Запрос выполнялся слишком долго или уже был использован. Повторите попытку.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Ключ доступа не проверил вашу личность (PIN-код, отпечаток пальца или лицо). Повторите попытку и подтвердите на устройстве.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Этот аутентификатор использует тип ключа, который этот сайт не принимает.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Ключ доступа был создан для другого адреса, а не для этого сайта.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Этот ключ доступа не зарегистрирован здесь ни для одной учетной записи. Войдите с паролем и добавьте его в разделе «Моя учетная запись», «Ключи доступа».</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>С этой учетной записью сейчас нельзя войти. Обратитесь к администратору сайта.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Не удалось проверить ключ доступа. Повторите попытку.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Вы собираетесь изменить способ входа или параметры безопасности учетной записи.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Вы собираетесь управлять пользователями, ролями или правилами доступа.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Вы собираетесь изменить системные параметры или выполнить действие настройки.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Вы собираетесь экспортировать данные.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Вы собираетесь удалить или опубликовать содержимое.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Для этого действия нужно подтвердить вашу личность.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Подтвердите, что это вы (вход выполнен как %login). В течение %minutes мин повторный запрос не появится.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Неверный пароль.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Неверный код, или он уже был использован.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Выберите один из способов ниже.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Не удалось проверить ключ доступа.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Осталось попыток до выхода из системы: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Выбранные файлы нельзя отправить повторно: после подтверждения выберите их еще раз.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>С помощью пароля</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>С помощью ключа доступа</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Подтвердить</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Использовать ключ доступа</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>С помощью кода из приложения-аутентификатора</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Код</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>У этой учетной записи нет способа подтвердить вашу личность (нет пароля, ключа доступа или приложения-аутентификатора). Выйдите и войдите снова или обратитесь к администратору.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Подтвердите, что это вы</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Код из приложения-аутентификатора</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Собственная учетная запись</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Изменение собственного пароля, адреса электронной почты, ключей доступа, двухэтапного входа или ключей API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Пользователи, роли и правила доступа</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Создание и изменение пользователей, параметры учетных записей, назначение ролей и изменение правил доступа.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Системные параметры и действия настройки</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Изменение параметров, расширения, кэши и обслуживание, пакеты и обновления, резервные копии и диспетчер Git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Экспорт данных</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Экспорт собранной информации, пользователей, подписчиков рассылки и аудита.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Удаление и публикация содержимого</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Удаление содержимого (в том числе в корзину), очистка корзины и публикация. По умолчанию отключено.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Перед важным действием вошедший пользователь снова подтверждает свою личность — паролем, ключом доступа или кодом из приложения-аутентификатора. Спрашивают только веб-страницы: интерфейс REST, SOAP, WebDAV, вход expservices и командная строка не спрашивают никогда.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Общие</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Сколько минут действует подтверждение</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Когда спрашивать</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Правил в site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Сохраняется в settings/override/site.ini.append.php. При сохранении нужно подтвердить, что это вы.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Сохранить</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Подтвердите, что это вы</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Запрашивать «Подтвердите, что это вы» перед действиями групп, включенных ниже</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Параметры сохранены.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Не удалось сохранить параметры: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Настройка</translation>
     </message>
 </context>
 </TS>

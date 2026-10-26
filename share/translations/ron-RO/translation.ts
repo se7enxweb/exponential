@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Deschidere sau închidere folder</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Această pagină se află în marcajele dumneavoastră. Deschideți-o pentru a-i modifica numele sau folderul.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Adăugați această pagină la marcaje.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>În marcaje</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Adăugare pagină la marcaje</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Marcajul păstrează adresa acestei pagini împreună cu parametrii ei: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Salvare marcaj</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Adăugare marcaj</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Marcajele mele</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pagină de sistem</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Pagini de sistem</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Nu mai aveți permisiunea de a deschide această pagină.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Deschidere</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adresa acestei pagini lipsește. Eliminați marcajul și adăugați din nou pagina la marcaje.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Nu mai aveți permisiunea de a deschide această pagină. Eliminați marcajul sau cereți acces unui administrator.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresă</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul și vizualizare</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Și paginile de sistem pot fi adăugate la marcaje: deschideți pagina (Configurare, pista de audit, o listă de utilizatori ...) și alegeți „Adăugare pagină la marcaje” deasupra ei. Aceste marcaje au o pictogramă în formă de roată dințată.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>dezactiva conturi de utilizator, le muta în grupul de utilizatori dezactivați și le muta înapoi</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>vedea unde sunt conectați alți utilizatori și să-i deconecteze</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ activa contul.</translation>
         <source>Open e-mail preferences</source>
         <translation>Deschidere preferințe e-mail</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiuni</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Unde sunteți conectat: browser, sistem, loc și oră. Deconectați orice dispozitiv pe care nu îl recunoașteți.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Unde este conectat acest utilizator și deconectarea utilizatorului de peste tot.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Gestionare dispozitive</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Afișare sesiuni</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Conectate: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Chei de acces</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Conectați-vă cu amprenta, fața, blocarea ecranului sau o cheie de securitate în loc de parolă.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Gestionare chei de acces</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Adăugare cheie de acces</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Chei de acces: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Niciuna încă</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ activa contul.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Combinații clasă/atribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Grupuri de utilizatori ale căror conturi noi necesită aprobare</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Un cont publicat într-unul dintre aceste grupuri sau sub unul dintre ele așteaptă până când un aprobator îl acceptă. Până atunci nu se poate conecta.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Utilizatori care aprobă conturile</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupuri care aprobă conturile</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Grupuri de utilizatori care nu necesită aprobare (membrii lor publică direct astfel de conturi; aprobatorii nu au nevoie niciodată de ea)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Trimiterea unui e-mail către aprobatori cu linkul către aprobare (se conectează pentru a aproba sau a refuza)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Pentru mai multe informații, consultați pagina cu cerințe.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Variabila de mediu EXP_DEMO_MODE=1 marchează această instalare ca demonstrație publică: este acceptată o parolă de administrator cunoscută, iar parolele de administrator nu mai pot fi modificate sau resetate ulterior. Nu utilizați niciodată modul demonstrativ pentru un site de producție.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Activități cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Activitățile cron rulează din crontab-ul utilizatorului %user, care deține instalarea.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalarea nu are nicio parte a activităților cron de planificat.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab-ul nu a fost scris (%reason). Adăugați aceste linii în crontab-ul utilizatorului sub care rulează site-ul, altfel coada, importurile, notificările și indexul de căutare nu vor rula niciodată:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ activa contul.</translation>
         <source>ClassAttribute name</source>
         <translation>Numele atributului de clasă</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Conturi care necesită aprobare</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail către aprobatori</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ activa contul.</translation>
         <source>Your comment was added.</source>
         <translation>Comentariul a fost adăugat.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Contul „%1” a fost aprobat și publicat: se poate conecta acum.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Contul „%1” a fost refuzat. Nu este publicat și nu se poate conecta; este din nou o ciornă a autorului său.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ activa contul.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Marcaje adăugate: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pagină de sistem</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Paginile de sistem nu pot fi încă adăugate la marcaje: actualizarea bazei de date pentru această versiune nu a fost rulată.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Această pagină nu poate fi adăugată la marcaje: nu este o pagină a unei vizualizări de modul.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Această pagină nu poate fi adăugată la marcaje: nu aveți permisiunea de a o deschide.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Pagina nu a putut fi adăugată la marcaje.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Pagina „%name” se află în marcajele dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Marcajul nu a putut fi redenumit: are nevoie de un nume.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Marcajul a fost redenumit în „%name”.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Mirror to data tables</source>
         <translation>Oglindire în tabele de date</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Aprobare conturi de utilizator</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Un cont de utilizator nou așteaptă aprobarea dumneavoastră</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Sent to the password change</source>
         <translation>Redirecționat la modificarea parolei</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Conectare fără al doilea pas refuzată</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Parolă de aplicație creată</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Parolă de aplicație revocată</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Parolă de aplicație utilizată</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The audit trail of this node</source>
         <translation>Pista de audit a acestui nod</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>intact</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>întrerupt</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>neverificat</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>reparat</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>gol</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Noua adresă de e-mail %email așteaptă confirmarea: deschideți linkul pe care l-am trimis acolo. Până atunci, acest cont păstrează adresa %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-mailul despre o conectare de pe un dispozitiv sau browser nou face parte din securitatea contului. Îl activați sau îl dezactivați la dispozitivele dumneavoastră, unde vedeți și puteți deconecta sesiunile contului.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Răsfoire tabele ale claselor persistente…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Activități cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Nicio parte a activităților cron nu a rulat încă: coada de activități, importurile, notificările și indexul de căutare așteaptă. Rulați php bin/php/installcrontab.php --add sau adăugați liniile afișate de --show în crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>O parte a activităților cron nu a rulat de mai mult timp decât permite planificarea ei: verificați crontab (php bin/php/installcrontab.php --show) și jurnalele var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Parte</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Planificare</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Ultima pornire</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niciodată</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>la timp</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>întârziată</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nu a rulat niciodată</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalarea nu are nicio parte a activităților cron pe care activitatea cron să o ruleze.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Configurare &gt; Activități cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Cont de utilizator nou în așteptarea aprobării: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Cont</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nume de utilizator</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Solicitat de</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Deschidere aprobare</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Dacă butonul nu funcționează, copiați această adresă în browser: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Un cont de utilizator nou așteaptă aprobarea dumneavoastră</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester a creat contul „%name” în %groups. Nu este publicat și nu se poate conecta până când un aprobator nu îl acceptă.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Conectați-vă la interfața de administrare și aprobați-l sau refuzați-l în lista dumneavoastră de colaborare. Acest link nu vă conectează și nu decide nimic de unul singur.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Acest mesaj a fost trimis de %site deoarece aprobați conturile noi ale acestor grupuri.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabletă</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program sau aplicație</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Client automat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Dispozitiv necunoscut</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parolă</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parolă și cod de conectare în doi pași</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfață REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfață SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Autentificare unică (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Conectat înainte ca sesiunile să fie înregistrate</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconectat</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Deconectat din această pagină</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Deconectat de un administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Deconectat cu „toate celelalte sesiuni”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Înlocuit de o conectare nouă</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Încheiat de o schimbare a parolei</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expirat</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesiunile utilizatorului %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Unde este conectat contul dumneavoastră în acest moment. Dacă nu recunoașteți un dispozitiv, deconectați-l și schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Unde este conectat acest cont în acest moment. Deconectarea utilizatorului încheie fiecare sesiune la următoarea ei solicitare.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Înapoi la cont</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesiunea a fost deconectată. Dispozitivul trebuie să se conecteze din nou.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Alte sesiuni deconectate: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nu au existat alte sesiuni de deconectat.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sesiuni ale acestui utilizator deconectate: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Acest utilizator nu avea sesiuni de deconectat.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Aceasta este sesiunea pe care o folosiți. Pentru a o încheia, deconectați-vă.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesiunea respectivă se încheiase deja.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Veți primi un e-mail când contul dumneavoastră se conectează de pe un dispozitiv nou.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nu veți mai primi e-mailuri despre conectări de pe dispozitive noi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina expirase. Nu s-a modificat nimic; încercați din nou.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sesiunile nu sunt înregistrate pe acest site (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabelul expuser_session lipsește</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sesiunile sunt înregistrate după ce tabelul este creat: php update/common/scripts/6.0/createusersessiontable.php sau actualizarea bazei de date pentru 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Conectată acum</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Deconectarea tuturor celorlalte sesiuni</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Deconectare de peste tot</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Fiecare dispozitiv în afară de acesta este deconectat la următoarea sa solicitare, inclusiv cele care rămân conectate prin „Memorare date de conectare”.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Fiecare sesiune a acestui utilizator este deconectată la următoarea sa solicitare, inclusiv cele care rămân conectate prin „Memorare date de conectare”.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Da, deconectarea celorlalte sesiuni</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Da, deconectarea tuturor sesiunilor</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Acest dispozitiv</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispozitiv</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresă</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Afișată ca rețeaua sa; adresa completă este păstrată pentru administratori.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>conectat de la %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectare</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultima activitate</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Acum</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Rămâne conectată</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Memorare date de conectare, până la %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Până la închiderea browserului</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Conectat la</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identificarea browserului</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Pentru a încheia această sesiune, deconectați-vă.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Deconectare</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Deconectare sesiune</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nicio sesiune nu este conectată.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Alerte de conectare</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Trimiteți-mi un e-mail când contul meu se conectează de pe un dispozitiv sau browser nou</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Trimis la %email. Vă indică dispozitivul, locul aproximativ și ora și conține un link către această pagină.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Acest site nu trimite alerte de conectare.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Încheiate recent</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sesiuni încheiate în ultimele %days zile.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Încheiată</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Niciuna.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computer</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabletă</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program sau aplicație</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Client automat</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Dispozitiv necunoscut</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parolă</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Parolă și cod de conectare în doi pași</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfață REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfață SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Autentificare unică (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Conectat înainte ca sesiunile să fie înregistrate</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Deconectat</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Deconectat din această pagină</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Deconectat de un administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Deconectat cu „toate celelalte sesiuni”</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Înlocuit de o conectare nouă</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Încheiat de o schimbare a parolei</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Expirat</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesiunile utilizatorului %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Unde este conectat contul dumneavoastră în acest moment. Dacă nu recunoașteți un dispozitiv, deconectați-l și schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Unde este conectat acest cont în acest moment. Deconectarea utilizatorului încheie fiecare sesiune la următoarea ei solicitare.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sesiunea a fost deconectată. Dispozitivul trebuie să se conecteze din nou.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Alte sesiuni deconectate: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nu au existat alte sesiuni de deconectat.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sesiuni ale acestui utilizator deconectate: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Acest utilizator nu avea sesiuni de deconectat.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Aceasta este sesiunea pe care o folosiți. Pentru a o încheia, deconectați-vă.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Sesiunea respectivă se încheiase deja.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Veți primi un e-mail când contul dumneavoastră se conectează de pe un dispozitiv nou.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nu veți mai primi e-mailuri despre conectări de pe dispozitive noi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina expirase. Nu s-a modificat nimic; încercați din nou.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sesiunile nu sunt înregistrate pe acest site.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sesiunile nu sunt încă înregistrate: site-ul are nevoie de actualizarea bazei de date.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Conectată acum</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Acest dispozitiv</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Dispozitiv</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresă</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Conectare</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultima activitate</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Acum</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Rămâne conectată</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Memorare date de conectare, până la %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Până la închiderea browserului</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Pentru a încheia această sesiune, deconectați-vă.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Deconectare</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Deconectare sesiune</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Deconectarea tuturor celorlalte sesiuni</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Deconectare de peste tot</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Alerte de conectare</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Trimiteți-mi un e-mail când contul meu se conectează de pe un dispozitiv sau browser nou</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Încheiate recent</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Încheiată</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Mod</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Niciuna în ultimele %days zile.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Vedeți unde este conectat contul dumneavoastră și deconectați orice dispozitiv pe care nu îl recunoașteți.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Gestionare dispozitive</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Conectare nouă la contul dumneavoastră de pe %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Bună ziua,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Contul dumneavoastră %login de pe %site tocmai a fost folosit pentru conectarea de pe un dispozitiv sau browser pe care nu l-a mai folosit în ultima vreme:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Dispozitiv:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Ora:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Adresă aproximativă:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Dacă ați fost dumneavoastră, nu trebuie să faceți nimic.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Dacă nu ați fost dumneavoastră, este posibil ca altcineva să vă cunoască parola. Deconectați sesiunea respectivă pe pagina dispozitivelor dumneavoastră, apoi schimbați-vă parola:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Puteți dezactiva aceste e-mailuri pe aceeași pagină.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Conectare nouă a utilizatorului %login pe %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Contul %login s-a conectat de pe un dispozitiv sau browser pe care nu l-a mai folosit în ultima vreme.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Sesiunile acestui utilizator:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Conectare nouă la contul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Contul dumneavoastră %login a fost folosit pentru conectarea de pe %device (%ip) la data de %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Dacă ați fost dumneavoastră, nu trebuie să faceți nimic. Dacă nu, deconectați această sesiune la %url și schimbați-vă parola.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Conectare nouă a utilizatorului %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Contul %login s-a conectat de pe un dispozitiv nou: %device (%ip) la data de %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Dispozitivele dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sesiunile utilizatorului %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Chei de acces</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>O cheie de acces vă conectează cu amprenta, fața, blocarea ecranului sau o cheie de securitate în loc de parolă. Este stocată pe dispozitivul dumneavoastră sau în managerul de parole; acest site păstrează doar cheia ei publică, așa că o scurgere de date de aici nu o poate dezvălui.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Cheile de acces sunt dezactivate pe acest site.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Cheile de acces nu pot fi folosite încă pe acest site: administratorul trebuie să ruleze mai întâi actualizarea bazei de date.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Sigur doriți să eliminați cheia de acces „%name”?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Nu se va mai putea conecta la acest cont. Eliminați-o și de pe dispozitiv sau din managerul de parole.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Eliminare cheie de acces</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Cheile dumneavoastră de acces</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count din maximum %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Nu aveți încă nicio cheie de acces. Adăugați una mai jos: la următoarea conectare, alegeți „Conectare cu o cheie de acces”.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Adăugată</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultima utilizare</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Acțiuni</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Încă nu</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sincronizată</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Acest dispozitiv sau această cheie</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Redenumire</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Nume nou</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Salvare nume</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eliminare</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Adăugare cheie de acces</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Urmați pașii browserului sau ai dispozitivului.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialogul cheii de acces a fost închis. Nu s-a modificat nimic.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Cheia de acces nu a putut fi creată. Încercați din nou.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Acest browser nu poate crea chei de acces. Folosiți un browser actual sau conectați-vă cu parola.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>De exemplu, dispozitivul sau managerul de parole în care se află, ca să vă puteți deosebi cheile de acces.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Acest cont are deja numărul maxim permis de chei de acces (%max). Eliminați una pentru a adăuga alta.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Cheia de acces nu a putut fi folosită. Încercați din nou.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Contul meu</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialogul cheii de acces a fost închis. Vă puteți conecta în schimb cu parola.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Cheia de acces nu a putut fi folosită. Încercați din nou sau conectați-vă cu parola.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Conectare cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Conectarea cu cheia de acces nu a reușit</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>conectați-vă cu amprenta, fața, blocarea ecranului sau o cheie de securitate în loc de parolă.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Cheia de acces „%name” a fost adăugată. De acum vă puteți conecta cu ea.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Cheia de acces se numește acum „%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Cheia de acces „%name” a fost eliminată. Nu se mai poate conecta la acest cont.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Cheie de acces din %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Acest cont are deja numărul maxim permis de chei de acces. Eliminați mai întâi una.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Baza de date era ocupată și nu s-a salvat nimic. Încercați din nou.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Această cheie de acces este deja înregistrată.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Solicitarea a durat prea mult sau a fost deja folosită. Încercați din nou.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Cheia de acces nu a verificat identitatea dumneavoastră (PIN, amprentă sau față). Încercați din nou și confirmați pe dispozitiv.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Acest autentificator folosește un tip de cheie pe care acest site nu îl acceptă.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Cheia de acces a fost creată pentru altă adresă decât acest site.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Această cheie de acces nu este înregistrată pentru niciun cont de aici. Conectați-vă cu parola și adăugați-o în Contul meu, Chei de acces.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Acest cont nu se poate conecta momentan. Contactați administratorul site-ului.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Cheia de acces nu a putut fi verificată. Încercați din nou.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Urmează să modificați modul de conectare sau securitatea contului dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Urmează să gestionați utilizatori, roluri sau politici.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Urmează să modificați setări de sistem sau să rulați o acțiune de configurare.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Urmează să exportați date.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Urmează să eliminați sau să publicați conținut.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Această acțiune necesită confirmarea identității dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Confirmați că sunteți dumneavoastră, conectat ca %login. Nu veți mai fi întrebat timp de %minutes minute.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Parola nu este corectă.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Codul nu este corect sau a fost deja folosit.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Alegeți una dintre modalitățile de mai jos.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Cheia de acces nu a putut fi verificată.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Încercări rămase până la deconectare: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Fișierele alese nu pot fi trimise din nou: după confirmare, alegeți-le încă o dată.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Cu parola</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Cu o cheie de acces</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parolă</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Utilizare cheie de acces</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Cu un cod din aplicația de autentificare</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Cod</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Acest cont nu are nicio modalitate de confirmare a identității (nicio parolă, cheie de acces sau aplicație de autentificare). Deconectați-vă și conectați-vă din nou sau adresați-vă unui administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Confirmați că sunteți dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Cod din aplicația de autentificare</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Propriul cont</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Modificarea propriei parole, a adresei de e-mail, a cheilor de acces, a conectării în doi pași sau a cheilor API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Utilizatori, roluri și politici</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Crearea și editarea utilizatorilor, setările conturilor, atribuirea rolurilor și editarea politicilor.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Setări de sistem și acțiuni de configurare</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Editarea setărilor, extensii, memorii cache și întreținere, pachete și actualizări, copii de rezervă și managerul Git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Exportul datelor</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exporturi ale informațiilor colectate, ale utilizatorilor, ale abonaților la buletinul informativ și ale auditului.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Eliminarea și publicarea conținutului</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Eliminarea conținutului (inclusiv în coșul de reciclare), golirea coșului de reciclare și publicarea. Dezactivat implicit.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Înaintea unei acțiuni sensibile, un utilizator conectat își confirmă din nou identitatea cu parola, cu o cheie de acces sau cu codul din aplicația de autentificare. Doar paginile web solicită acest lucru: interfața REST, SOAP, WebDAV, conectarea expservices și linia de comandă nu o fac niciodată.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>General</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minute de valabilitate a unei confirmări</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Când se solicită</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Reguli în site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Salvat în settings/override/site.ini.append.php. La salvare vi se cere să confirmați că sunteți dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvare</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Confirmați că sunteți dumneavoastră</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Solicitare „Confirmați că sunteți dumneavoastră” înaintea acțiunilor grupurilor activate mai jos</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Setările au fost salvate.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Setările nu au putut fi salvate: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configurare</translation>
     </message>
 </context>
 </TS>

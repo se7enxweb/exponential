@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Άνοιγμα ή κλείσιμο του φακέλου</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Αυτή η σελίδα βρίσκεται στους σελιδοδείκτες σας. Ανοίξτε τη για να αλλάξετε το όνομα ή τον φάκελό της.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Προσθήκη αυτής της σελίδας στους σελιδοδείκτες σας.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Στους σελιδοδείκτες</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Προσθήκη σελίδας στους σελιδοδείκτες</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Ο σελιδοδείκτης κρατά τη διεύθυνση αυτής της σελίδας μαζί με τις παραμέτρους της: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Αποθήκευση σελιδοδείκτη</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Προσθήκη σελιδοδείκτη</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Οι σελιδοδείκτες μου</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Σελίδα συστήματος</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Σελίδες συστήματος</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Δεν έχετε πλέον δικαίωμα να ανοίξετε αυτή τη σελίδα.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Άνοιγμα</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Η διεύθυνση αυτής της σελίδας λείπει. Αφαιρέστε τον σελιδοδείκτη και προσθέστε ξανά τη σελίδα στους σελιδοδείκτες.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Δεν έχετε πλέον δικαίωμα να ανοίξετε αυτή τη σελίδα. Αφαιρέστε τον σελιδοδείκτη ή ζητήστε πρόσβαση από έναν διαχειριστή.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Λειτουργική μονάδα και προβολή</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Και οι σελίδες συστήματος μπορούν να προστεθούν στους σελιδοδείκτες: ανοίξτε τη σελίδα (Ρυθμίσεις συστήματος, το ίχνος ελέγχου, μια λίστα χρηστών ...) και επιλέξτε «Προσθήκη σελίδας στους σελιδοδείκτες» πάνω από αυτήν. Αυτοί οι σελιδοδείκτες έχουν εικονίδιο γραναζιού.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>απενεργοποίηση λογαριασμών χρηστών και μετακίνησή τους στην ομάδα των απενεργοποιημένων χρηστών, καθώς και επαναφορά τους</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>εμφάνιση του πού είναι συνδεδεμένοι άλλοι χρήστες και αποσύνδεσή τους</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>Άνοιγμα προτιμήσεων e-mail</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Πού είστε συνδεδεμένοι: πρόγραμμα περιήγησης, σύστημα, τοποθεσία και ώρα. Αποσυνδέστε μια συσκευή που δεν αναγνωρίζετε.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Πού είναι συνδεδεμένος αυτός ο χρήστης και αποσύνδεσή του από παντού.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Διαχείριση συσκευών</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Εμφάνιση περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Σε σύνδεση: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Κλειδιά πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Συνδεθείτε με το δακτυλικό σας αποτύπωμα, το πρόσωπό σας, το κλείδωμα οθόνης ή ένα κλειδί ασφαλείας αντί για τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Διαχείριση κλειδιών πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Προσθήκη κλειδιού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Κλειδιά πρόσβασης: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Κανένα ακόμη</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Συνδυασμοί κλάσης/χαρακτηριστικού (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Ομάδες χρηστών των οποίων οι νέοι λογαριασμοί χρειάζονται έγκριση</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Ένας λογαριασμός που δημοσιεύεται σε μία από αυτές τις ομάδες ή κάτω από αυτές αναμένει μέχρι να τον αποδεχθεί ένας υπεύθυνος έγκρισης. Πριν από αυτό δεν μπορεί να συνδεθεί.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Χρήστες που εγκρίνουν τους λογαριασμούς</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Ομάδες που εγκρίνουν τους λογαριασμούς</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Ομάδες χρηστών που δεν χρειάζονται έγκριση (τα μέλη τους δημοσιεύουν τέτοιους λογαριασμούς απευθείας· οι υπεύθυνοι έγκρισης δεν τη χρειάζονται ποτέ)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Αποστολή e-mail στους υπευθύνους έγκρισης με τη σύνδεση προς την έγκριση (συνδέονται για να εγκρίνουν ή να απορρίψουν)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Η μεταβλητή περιβάλλοντος EXP_DEMO_MODE=1 χαρακτηρίζει αυτή την εγκατάσταση ως δημόσια επίδειξη: γίνεται δεκτός ένας ευρέως γνωστός κωδικός πρόσβασης διαχειριστή και οι κωδικοί πρόσβασης διαχειριστών δεν μπορούν αργότερα να αλλάξουν ή να επαναφερθούν. Μη χρησιμοποιείτε ποτέ τη λειτουργία επίδειξης για ιστότοπο παραγωγής.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Εργασίες cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Οι εργασίες cron εκτελούνται από το crontab του χρήστη %user, στον οποίο ανήκει η εγκατάσταση.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Η εγκατάσταση δεν έχει κανένα τμήμα εργασιών cron για προγραμματισμό.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Το crontab δεν γράφτηκε (%reason). Προσθέστε αυτές τις γραμμές στο crontab του χρήστη με τον οποίο εκτελείται ο ιστότοπος, αλλιώς η ουρά, οι εισαγωγές, οι ειδοποιήσεις και το ευρετήριο αναζήτησης δεν θα εκτελεστούν ποτέ:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>Όνομα χαρακτηριστικού κλάσης</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Λογαριασμοί που χρειάζονται έγκριση</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail στους υπευθύνους έγκρισης</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ναι</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Όχι</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>Το σχόλιό σας προστέθηκε.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Ο λογαριασμός «%1» εγκρίθηκε και δημοσιεύτηκε: μπορεί πλέον να συνδεθεί.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Ο λογαριασμός «%1» δεν εγκρίθηκε. Δεν είναι δημοσιευμένος και δεν μπορεί να συνδεθεί· είναι ξανά προσχέδιο του δημιουργού του.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Σελιδοδείκτες που προστέθηκαν: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Σελίδα συστήματος</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Οι σελίδες συστήματος δεν μπορούν ακόμη να προστεθούν στους σελιδοδείκτες: η ενημέρωση της βάσης δεδομένων αυτής της έκδοσης δεν έχει εκτελεστεί.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Αυτή η σελίδα δεν μπορεί να προστεθεί στους σελιδοδείκτες: δεν είναι σελίδα προβολής λειτουργικής μονάδας.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Αυτή η σελίδα δεν μπορεί να προστεθεί στους σελιδοδείκτες: δεν έχετε δικαίωμα να την ανοίξετε.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Δεν ήταν δυνατή η προσθήκη της σελίδας στους σελιδοδείκτες.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Η σελίδα «%name» βρίσκεται στους σελιδοδείκτες σας.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Δεν ήταν δυνατή η μετονομασία του σελιδοδείκτη: χρειάζεται όνομα.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Ο σελιδοδείκτης μετονομάστηκε σε «%name».</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>Αντικατοπτρισμός σε πίνακες δεδομένων</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Έγκριση λογαριασμών χρηστών</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ένας νέος λογαριασμός χρήστη αναμένει την έγκρισή σας</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>Ανακατεύθυνση στην αλλαγή κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Απορρίφθηκε σύνδεση χωρίς το δεύτερο βήμα</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Δημιουργήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Ανακλήθηκε κωδικός πρόσβασης εφαρμογής</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Χρησιμοποιήθηκε κωδικός πρόσβασης εφαρμογής</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>Το ίχνος ελέγχου αυτού του κόμβου</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>ακέραιο</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>διακεκομμένο</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>μη ελεγμένο</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>επισκευασμένο</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>κενό</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Η νέα διεύθυνση e-mail %email αναμένει την επιβεβαίωσή της: ανοίξτε τη σύνδεση που στείλαμε εκεί. Μέχρι τότε αυτός ο λογαριασμός διατηρεί τη διεύθυνση %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Το e-mail για μια σύνδεση από νέα συσκευή ή νέο πρόγραμμα περιήγησης αποτελεί μέρος της ασφάλειας του λογαριασμού. Το ενεργοποιείτε ή το απενεργοποιείτε στις συσκευές σας, όπου βλέπετε επίσης και αποσυνδέετε τις περιόδους λειτουργίας του λογαριασμού σας.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Περιήγηση στους πίνακες των μόνιμων κλάσεων…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Εργασίες cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Δεν έχει εκτελεστεί ακόμη κανένα τμήμα εργασιών cron: η ουρά εργασιών, οι εισαγωγές, οι ειδοποιήσεις και το ευρετήριο αναζήτησης περιμένουν. Εκτελέστε php bin/php/installcrontab.php --add ή προσθέστε τις γραμμές του --show στο crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Ένα τμήμα εργασιών cron δεν έχει εκτελεστεί για περισσότερο χρόνο από όσο επιτρέπει το χρονοδιάγραμμά του: ελέγξτε το crontab (php bin/php/installcrontab.php --show) και τα αρχεία καταγραφής var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Τμήμα</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Χρονοδιάγραμμα</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Τελευταία έναρξη</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ποτέ</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>εγκαίρως</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>με καθυστέρηση</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>δεν εκτελέστηκε ποτέ</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Η εγκατάσταση δεν έχει κανένα τμήμα εργασιών cron που να μπορεί να εκτελέσει η εργασία cron.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Ρυθμίσεις συστήματος &gt; Εργασίες cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Νέος λογαριασμός χρήστη αναμένει έγκριση: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Λογαριασμός</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Όνομα χρήστη</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ομάδα</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Αίτηση από</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Άνοιγμα της έγκρισης</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Αν το κουμπί δεν λειτουργεί, αντιγράψτε αυτήν τη διεύθυνση στο πρόγραμμα περιήγησής σας: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Ένας νέος λογαριασμός χρήστη αναμένει την έγκρισή σας</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Ο χρήστης %requester δημιούργησε τον λογαριασμό «%name» στις ομάδες %groups. Δεν είναι δημοσιευμένος και δεν μπορεί να συνδεθεί μέχρι να τον αποδεχθεί ένας υπεύθυνος έγκρισης.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Συνδεθείτε στο περιβάλλον διαχείρισης και εγκρίνετε ή απορρίψτε τον στη λίστα συνεργασίας σας. Αυτή η σύνδεση δεν σας συνδέει στο σύστημα και δεν αποφασίζει τίποτα από μόνη της.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Αυτό το μήνυμα στάλθηκε από τον ιστότοπο %site επειδή εγκρίνετε νέους λογαριασμούς αυτών των ομάδων.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Υπολογιστής</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Τηλέφωνο</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Πρόγραμμα ή εφαρμογή</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Αυτοματοποιημένο πρόγραμμα-πελάτης</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Άγνωστη συσκευή</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Κωδικός πρόσβασης και κωδικός σύνδεσης σε δύο βήματα</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Διασύνδεση REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Διασύνδεση SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ενιαία σύνδεση (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Συνδέθηκε πριν από την καταγραφή των περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Αποσυνδέθηκε</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Αποσυνδέθηκε από αυτή τη σελίδα</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Αποσυνδέθηκε από διαχειριστή</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Αποσυνδέθηκε με «όλες τις άλλες περιόδους λειτουργίας»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Αντικαταστάθηκε από νέα σύνδεση</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Τερματίστηκε από αλλαγή κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Έληξε</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Περίοδοι λειτουργίας του χρήστη %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Πού είναι συνδεδεμένος ο λογαριασμός σας αυτή τη στιγμή. Αν δεν αναγνωρίζετε μια συσκευή, αποσυνδέστε την και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Πού είναι συνδεδεμένος αυτός ο λογαριασμός αυτή τη στιγμή. Η αποσύνδεση του χρήστη τερματίζει κάθε περίοδο λειτουργίας στην επόμενη αίτησή της.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Πίσω στον λογαριασμό</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Η περίοδος λειτουργίας αποσυνδέθηκε. Η συσκευή πρέπει να συνδεθεί ξανά.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Άλλες περίοδοι λειτουργίας που αποσυνδέθηκαν: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Δεν υπήρχαν άλλες περίοδοι λειτουργίας για αποσύνδεση.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Περίοδοι λειτουργίας αυτού του χρήστη που αποσυνδέθηκαν: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Αυτός ο χρήστης δεν είχε περιόδους λειτουργίας για αποσύνδεση.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Αυτή είναι η περίοδος λειτουργίας που χρησιμοποιείτε. Για να την τερματίσετε, αποσυνδεθείτε.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Αυτή η περίοδος λειτουργίας είχε ήδη τερματιστεί.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Θα λαμβάνετε e-mail όταν ο λογαριασμός σας συνδέεται από νέα συσκευή.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Δεν θα λαμβάνετε πλέον e-mail για συνδέσεις από νέες συσκευές.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Η σελίδα είχε λήξει. Δεν άλλαξε τίποτα· δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται σε αυτόν τον ιστότοπο (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Ο πίνακας expuser_session λείπει</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Οι περίοδοι λειτουργίας καταγράφονται μόλις δημιουργηθεί: php update/common/scripts/6.0/createusersessiontable.php ή η ενημέρωση της βάσης δεδομένων της έκδοσης 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Συνδεδεμένη τώρα</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Αποσύνδεση όλων των άλλων περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Αποσύνδεση παντού</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Κάθε συσκευή εκτός από αυτήν αποσυνδέεται στην επόμενη αίτησή της, ακόμη και όσες παραμένουν συνδεδεμένες με την «Απομνημόνευση στοιχείων».</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Κάθε περίοδος λειτουργίας αυτού του χρήστη αποσυνδέεται στην επόμενη αίτησή της, ακόμη και όσες παραμένουν συνδεδεμένες με την «Απομνημόνευση στοιχείων».</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ναι, αποσύνδεση των άλλων περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ναι, αποσύνδεση όλων των περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Αυτή η συσκευή</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Συσκευή</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Εμφανίζεται ως το δίκτυό της· η πλήρης διεύθυνση διατηρείται για τους διαχειριστές.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>συνδέθηκε από %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Τελευταία δραστηριότητα</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Τώρα</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Παραμένει συνδεδεμένη</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Απομνημόνευση στοιχείων, έως %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Μέχρι να κλείσει το πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Σύνδεση σε</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Αναγνωριστικό προγράμματος περιήγησης</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Για να τερματίσετε αυτή την περίοδο λειτουργίας, αποσυνδεθείτε.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Αποσύνδεση αυτής της περιόδου λειτουργίας</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Δεν υπάρχει καμία συνδεδεμένη περίοδος λειτουργίας.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Ειδοποιήσεις σύνδεσης</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Αποστολή e-mail σε εμένα όταν ο λογαριασμός μου συνδέεται από νέα συσκευή ή νέο πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Αποστέλλεται στη διεύθυνση %email. Αναφέρει τη συσκευή, την κατά προσέγγιση τοποθεσία και την ώρα και παραπέμπει σε αυτή τη σελίδα.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Αυτός ο ιστότοπος δεν στέλνει ειδοποιήσεις σύνδεσης.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Τερματίστηκαν πρόσφατα</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Περίοδοι λειτουργίας που τερματίστηκαν τις τελευταίες %days ημέρες.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Τερματισμός</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Τρόπος</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Καμία.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Υπολογιστής</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Τηλέφωνο</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Πρόγραμμα ή εφαρμογή</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Αυτοματοποιημένο πρόγραμμα-πελάτης</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Άγνωστη συσκευή</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Κωδικός πρόσβασης και κωδικός σύνδεσης σε δύο βήματα</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Διασύνδεση REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Διασύνδεση SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Ενιαία σύνδεση (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Συνδέθηκε πριν από την καταγραφή των περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Αποσυνδέθηκε</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Αποσυνδέθηκε από αυτή τη σελίδα</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Αποσυνδέθηκε από διαχειριστή</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Αποσυνδέθηκε με «όλες τις άλλες περιόδους λειτουργίας»</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Αντικαταστάθηκε από νέα σύνδεση</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Τερματίστηκε από αλλαγή κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Έληξε</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Περίοδοι λειτουργίας του χρήστη %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Πού είναι συνδεδεμένος ο λογαριασμός σας αυτή τη στιγμή. Αν δεν αναγνωρίζετε μια συσκευή, αποσυνδέστε την και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Πού είναι συνδεδεμένος αυτός ο λογαριασμός αυτή τη στιγμή. Η αποσύνδεση του χρήστη τερματίζει κάθε περίοδο λειτουργίας στην επόμενη αίτησή της.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Η περίοδος λειτουργίας αποσυνδέθηκε. Η συσκευή πρέπει να συνδεθεί ξανά.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Άλλες περίοδοι λειτουργίας που αποσυνδέθηκαν: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Δεν υπήρχαν άλλες περίοδοι λειτουργίας για αποσύνδεση.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Περίοδοι λειτουργίας αυτού του χρήστη που αποσυνδέθηκαν: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Αυτός ο χρήστης δεν είχε περιόδους λειτουργίας για αποσύνδεση.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Αυτή είναι η περίοδος λειτουργίας που χρησιμοποιείτε. Για να την τερματίσετε, αποσυνδεθείτε.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Αυτή η περίοδος λειτουργίας είχε ήδη τερματιστεί.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Θα λαμβάνετε e-mail όταν ο λογαριασμός σας συνδέεται από νέα συσκευή.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Δεν θα λαμβάνετε πλέον e-mail για συνδέσεις από νέες συσκευές.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Η σελίδα είχε λήξει. Δεν άλλαξε τίποτα· δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται σε αυτόν τον ιστότοπο.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται ακόμη: ο ιστότοπος χρειάζεται την ενημέρωση της βάσης δεδομένων του.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Συνδεδεμένη τώρα</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Αυτή η συσκευή</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Συσκευή</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Σύνδεση</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Τελευταία δραστηριότητα</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Τώρα</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Παραμένει συνδεδεμένη</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Απομνημόνευση στοιχείων, έως %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Μέχρι να κλείσει το πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Για να τερματίσετε αυτή την περίοδο λειτουργίας, αποσυνδεθείτε.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Αποσύνδεση</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Αποσύνδεση αυτής της περιόδου λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Αποσύνδεση όλων των άλλων περιόδων λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Αποσύνδεση παντού</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Ειδοποιήσεις σύνδεσης</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Αποστολή e-mail σε εμένα όταν ο λογαριασμός μου συνδέεται από νέα συσκευή ή νέο πρόγραμμα περιήγησης</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Τερματίστηκαν πρόσφατα</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Τερματισμός</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Τρόπος</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Καμία τις τελευταίες %days ημέρες.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Δείτε πού είναι συνδεδεμένος ο λογαριασμός σας και αποσυνδέστε μια συσκευή που δεν αναγνωρίζετε.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Διαχείριση συσκευών</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Νέα σύνδεση στον λογαριασμό σας στον ιστότοπο %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Γεια σας,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Ο λογαριασμός σας %login στον ιστότοπο %site χρησιμοποιήθηκε μόλις για σύνδεση από συσκευή ή πρόγραμμα περιήγησης που δεν έχει χρησιμοποιήσει πρόσφατα:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Συσκευή:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Ώρα:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Κατά προσέγγιση διεύθυνση:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Αν ήσασταν εσείς, δεν χρειάζεται να κάνετε τίποτα.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Αν δεν ήσασταν εσείς, ίσως κάποιος γνωρίζει τον κωδικό πρόσβασής σας. Αποσυνδέστε αυτή την περίοδο λειτουργίας στη σελίδα των συσκευών σας και στη συνέχεια αλλάξτε τον κωδικό πρόσβασής σας:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Μπορείτε να απενεργοποιήσετε αυτά τα μηνύματα e-mail στην ίδια σελίδα.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Νέα σύνδεση του χρήστη %login στον ιστότοπο %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Ο λογαριασμός %login συνδέθηκε από συσκευή ή πρόγραμμα περιήγησης που δεν έχει χρησιμοποιήσει πρόσφατα.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Οι περίοδοι λειτουργίας αυτού του χρήστη:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Νέα σύνδεση στον λογαριασμό σας</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Ο λογαριασμός σας %login χρησιμοποιήθηκε για σύνδεση από τη συσκευή %device (%ip) στις %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Αν ήσασταν εσείς, δεν χρειάζεται να κάνετε τίποτα. Αν όχι, αποσυνδέστε αυτή την περίοδο λειτουργίας στη διεύθυνση %url και αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Νέα σύνδεση του χρήστη %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Ο λογαριασμός %login συνδέθηκε από νέα συσκευή: %device (%ip) στις %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Οι συσκευές σας</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Περίοδοι λειτουργίας του χρήστη %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Κλειδιά πρόσβασης</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Ένα κλειδί πρόσβασης σας συνδέει με το δακτυλικό σας αποτύπωμα, το πρόσωπό σας, το κλείδωμα οθόνης ή ένα κλειδί ασφαλείας αντί για τον κωδικό πρόσβασής σας. Αποθηκεύεται στη συσκευή σας ή στη διαχείριση κωδικών πρόσβασης· αυτός ο ιστότοπος κρατά μόνο το δημόσιο κλειδί του, οπότε μια διαρροή εδώ δεν μπορεί να το αποκαλύψει.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Τα κλειδιά πρόσβασης είναι απενεργοποιημένα σε αυτόν τον ιστότοπο.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Τα κλειδιά πρόσβασης δεν μπορούν να χρησιμοποιηθούν ακόμη σε αυτόν τον ιστότοπο: ο διαχειριστής πρέπει πρώτα να εκτελέσει την ενημέρωση της βάσης δεδομένων.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Θέλετε σίγουρα να αφαιρέσετε το κλειδί πρόσβασης «%name»;</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Δεν θα μπορεί πλέον να συνδεθεί σε αυτόν τον λογαριασμό. Αφαιρέστε το επίσης από τη συσκευή σας ή από τη διαχείριση κωδικών πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Αφαίρεση κλειδιού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Τα κλειδιά πρόσβασής σας</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count από %max το πολύ</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Δεν έχετε ακόμη κλειδί πρόσβασης. Προσθέστε ένα παρακάτω: την επόμενη φορά που θα συνδεθείτε, επιλέξτε «Σύνδεση με κλειδί πρόσβασης».</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Προστέθηκε</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Τελευταία χρήση</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Είδος</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ενέργειες</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Όχι ακόμη</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Συγχρονισμένο</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Αυτή η συσκευή ή το κλειδί</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Μετονομασία</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Νέο όνομα</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Αποθήκευση ονόματος</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Προσθήκη κλειδιού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Ακολουθήστε τα βήματα του προγράμματος περιήγησης ή της συσκευής σας.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Το παράθυρο διαλόγου του κλειδιού πρόσβασης έκλεισε. Δεν άλλαξε τίποτα.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Δεν ήταν δυνατή η δημιουργία του κλειδιού πρόσβασης. Δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Αυτό το πρόγραμμα περιήγησης δεν μπορεί να δημιουργήσει κλειδιά πρόσβασης. Χρησιμοποιήστε ένα σύγχρονο πρόγραμμα περιήγησης ή συνδεθείτε με τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Για παράδειγμα, η συσκευή ή η διαχείριση κωδικών πρόσβασης όπου βρίσκεται, ώστε να ξεχωρίζετε τα κλειδιά πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Αυτός ο λογαριασμός έχει ήδη όσα κλειδιά πρόσβασης επιτρέπονται (%max). Αφαιρέστε ένα για να προσθέσετε άλλο.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Δεν ήταν δυνατή η χρήση του κλειδιού πρόσβασης. Δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Ο λογαριασμός μου</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Το παράθυρο διαλόγου του κλειδιού πρόσβασης έκλεισε. Μπορείτε να συνδεθείτε με τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Δεν ήταν δυνατή η χρήση του κλειδιού πρόσβασης. Δοκιμάστε ξανά ή συνδεθείτε με τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Σύνδεση με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Δεν ήταν δυνατή η σύνδεση με το κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>συνδεθείτε με το δακτυλικό σας αποτύπωμα, το πρόσωπό σας, το κλείδωμα οθόνης ή ένα κλειδί ασφαλείας αντί για τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Το κλειδί πρόσβασης «%name» προστέθηκε. Από τώρα μπορείτε να συνδέεστε με αυτό.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Το κλειδί πρόσβασης ονομάζεται πλέον «%name».</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Το κλειδί πρόσβασης «%name» αφαιρέθηκε. Δεν μπορεί πλέον να συνδεθεί σε αυτόν τον λογαριασμό.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Κλειδί πρόσβασης της %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Αυτός ο λογαριασμός έχει ήδη όσα κλειδιά πρόσβασης επιτρέπονται. Αφαιρέστε πρώτα ένα.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Η βάση δεδομένων ήταν απασχολημένη και δεν αποθηκεύτηκε τίποτα. Δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Αυτό το κλειδί πρόσβασης είναι ήδη καταχωρισμένο.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Η αίτηση διήρκεσε πολύ ή έχει ήδη χρησιμοποιηθεί. Δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Το κλειδί πρόσβασης δεν επαλήθευσε την ταυτότητά σας (PIN, δακτυλικό αποτύπωμα ή πρόσωπο). Δοκιμάστε ξανά και επιβεβαιώστε στη συσκευή σας.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Αυτό το πρόγραμμα ελέγχου ταυτότητας χρησιμοποιεί ένα είδος κλειδιού που αυτός ο ιστότοπος δεν δέχεται.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Το κλειδί πρόσβασης δημιουργήθηκε για άλλη διεύθυνση και όχι για αυτόν τον ιστότοπο.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Αυτό το κλειδί πρόσβασης δεν είναι καταχωρισμένο για κανέναν λογαριασμό εδώ. Συνδεθείτε με τον κωδικό πρόσβασής σας και προσθέστε το στη σελίδα «Ο λογαριασμός μου», «Κλειδιά πρόσβασης».</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Αυτός ο λογαριασμός δεν μπορεί να συνδεθεί αυτή τη στιγμή. Επικοινωνήστε με τον διαχειριστή του ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Δεν ήταν δυνατός ο έλεγχος του κλειδιού πρόσβασης. Δοκιμάστε ξανά.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Πρόκειται να αλλάξετε τον τρόπο σύνδεσής σας ή την ασφάλεια του λογαριασμού σας.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Πρόκειται να διαχειριστείτε χρήστες, ρόλους ή πολιτικές.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Πρόκειται να αλλάξετε ρυθμίσεις συστήματος ή να εκτελέσετε μια ενέργεια ρύθμισης συστήματος.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Πρόκειται να εξαγάγετε δεδομένα.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Πρόκειται να αφαιρέσετε ή να δημοσιεύσετε περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Για αυτή την ενέργεια πρέπει να επιβεβαιώσετε την ταυτότητά σας.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Επιβεβαιώστε ότι είστε εσείς, συνδεδεμένοι ως %login. Δεν θα σας ζητηθεί ξανά για %minutes λεπτά.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Ο κωδικός πρόσβασης δεν είναι σωστός.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ο κωδικός δεν είναι σωστός ή έχει ήδη χρησιμοποιηθεί.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Επιλέξτε έναν από τους παρακάτω τρόπους.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Δεν ήταν δυνατός ο έλεγχος του κλειδιού πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Υπόλοιπες προσπάθειες πριν από την αποσύνδεσή σας: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Τα αρχεία που επιλέξατε δεν μπορούν να σταλούν ξανά: μετά την επιβεβαίωση, επιλέξτε τα ξανά.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Με τον κωδικό πρόσβασής σας</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Με κλειδί πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Κωδικός πρόσβασης</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Επιβεβαίωση</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Χρήση κλειδιού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Με κωδικό από την εφαρμογή ελέγχου ταυτότητας</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Κωδικός</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Αυτός ο λογαριασμός δεν έχει κανέναν τρόπο να επιβεβαιώσει την ταυτότητά σας (κανέναν κωδικό πρόσβασης, κλειδί πρόσβασης ή εφαρμογή ελέγχου ταυτότητας). Αποσυνδεθείτε και συνδεθείτε ξανά ή απευθυνθείτε σε έναν διαχειριστή.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Επιβεβαίωση ταυτότητας</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Κωδικός από την εφαρμογή ελέγχου ταυτότητας</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Ο δικός σας λογαριασμός</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Αλλαγή του δικού σας κωδικού πρόσβασης, διεύθυνσης e-mail, κλειδιών πρόσβασης, σύνδεσης σε δύο βήματα ή κλειδιών API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Χρήστες, ρόλοι και πολιτικές</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Δημιουργία και επεξεργασία χρηστών, ρυθμίσεις λογαριασμών, ανάθεση ρόλων και επεξεργασία πολιτικών.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Ρυθμίσεις συστήματος και ενέργειες ρύθμισης</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Επεξεργασία ρυθμίσεων, επεκτάσεις, προσωρινή μνήμη και συντήρηση, πακέτα και ενημερώσεις, αντίγραφα ασφαλείας και η διαχείριση Git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Εξαγωγή δεδομένων</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Εξαγωγές συλλεγμένων πληροφοριών, χρηστών, συνδρομητών ενημερωτικού δελτίου και του ίχνους ελέγχου.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Αφαίρεση και δημοσίευση περιεχομένου</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Αφαίρεση περιεχομένου (και στον κάδο απορριμμάτων), άδειασμα του κάδου απορριμμάτων και δημοσίευση. Απενεργοποιημένο από προεπιλογή.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Πριν από μια ευαίσθητη ενέργεια, ένας συνδεδεμένος χρήστης επιβεβαιώνει ξανά την ταυτότητά του με τον κωδικό πρόσβασής του, ένα κλειδί πρόσβασης ή τον κωδικό της εφαρμογής ελέγχου ταυτότητας. Ρωτούν μόνο οι ιστοσελίδες: η διασύνδεση REST, το SOAP, το WebDAV, η σύνδεση expservices και η γραμμή εντολών δεν ρωτούν ποτέ.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Γενικά</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Λεπτά ισχύος μιας επιβεβαίωσης</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Πότε γίνεται η ερώτηση</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Κανόνες στο site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Αποθηκεύεται στο settings/override/site.ini.append.php. Κατά την αποθήκευση θα σας ζητηθεί να επιβεβαιώσετε την ταυτότητά σας.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Αποθήκευση</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Επιβεβαίωση ταυτότητας</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Ερώτηση «Επιβεβαίωση ταυτότητας» πριν από τις ενέργειες των ομάδων που είναι ενεργοποιημένες παρακάτω</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Οι ρυθμίσεις αποθηκεύτηκαν.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση των ρυθμίσεων: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
     </message>
 </context>
 </TS>

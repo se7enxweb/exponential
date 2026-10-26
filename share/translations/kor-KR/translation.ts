@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>폴더 열기 또는 닫기</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>이 페이지는 책갈피에 있습니다. 이름이나 폴더를 변경하려면 여십시오.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>이 페이지를 책갈피에 추가합니다.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>책갈피에 추가됨</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>이 페이지 책갈피 추가</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>책갈피에는 이 페이지의 주소가 매개 변수와 함께 저장됩니다: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>책갈피 저장</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>책갈피 추가</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>내 책갈피</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>시스템 페이지</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>시스템 페이지</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>이 페이지를 더 이상 열 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>열기</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>이 페이지의 주소가 없습니다. 책갈피를 제거한 후 페이지를 다시 책갈피에 추가하십시오.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>이 페이지를 더 이상 열 수 없습니다. 책갈피를 제거하거나 관리자에게 액세스 권한을 요청하십시오.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>모듈 및 보기</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>시스템 페이지도 책갈피에 추가할 수 있습니다. 페이지(설정, 감사 내역, 사용자 목록 ...)를 열고 그 위의 “이 페이지 책갈피 추가”를 선택하십시오. 이러한 책갈피에는 톱니바퀴 아이콘이 표시됩니다.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>사용자 계정을 비활성화하여 비활성화된 사용자 그룹으로 이동하고 다시 원래 위치로 이동</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>다른 사용자가 로그인한 위치 확인 및 로그아웃</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ your account.</source>
         <source>Open e-mail preferences</source>
         <translation>이메일 기본 설정 열기</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>세션</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>로그인한 위치: 브라우저, 시스템, 장소 및 시간. 알 수 없는 장치는 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>이 사용자가 로그인한 위치 및 모든 위치에서 사용자 로그아웃.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>장치 관리</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>세션 보기</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>로그인: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>패스키</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>암호 대신 지문, 얼굴, 화면 잠금 또는 보안 키로 로그인합니다.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>패스키 관리</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>패스키 추가</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>패스키 %count개</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>아직 없음</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ your account.</source>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>클래스/속성 조합(%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>새 계정에 승인이 필요한 사용자 그룹</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>이 그룹 중 하나 또는 그 하위에 게시된 계정은 승인자가 수락할 때까지 대기합니다. 그 전에는 로그인할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>계정을 승인하는 사용자</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>계정을 승인하는 그룹</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>승인이 필요 없는 사용자 그룹(구성원은 이러한 계정을 직접 게시하며, 승인자에게는 승인이 필요하지 않음)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>승인 링크가 포함된 이메일을 승인자에게 보내기(승인자는 로그인하여 승인하거나 거부함)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ See the requirements page for more information.</source>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>환경 변수 EXP_DEMO_MODE=1은 이 설치를 공개 데모로 표시합니다. 널리 알려진 관리자 암호가 허용되며, 나중에 관리자 암호를 변경하거나 재설정할 수 없습니다. 프로덕션 사이트에는 데모 모드를 사용하지 마십시오.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>크론 작업</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>크론 작업은 설치를 소유한 사용자 %user의 crontab에서 실행됩니다.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>이 설치에는 예약할 크론 작업 부분이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>crontab이 기록되지 않았습니다(%reason). 사이트를 실행하는 사용자의 crontab에 다음 줄을 추가하십시오. 그렇지 않으면 대기열, 가져오기, 알림, 검색 인덱스가 실행되지 않습니다:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ your account.</source>
         <source>ClassAttribute name</source>
         <translation>클래스 속성 이름</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>승인이 필요한 계정</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>승인자에게 이메일 보내기</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>예</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>아니요</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ your account.</source>
         <source>Your comment was added.</source>
         <translation>의견이 추가되었습니다.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>“%1” 계정이 승인되어 게시되었습니다. 이제 로그인할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>“%1” 계정이 거부되었습니다. 게시되지 않았으며 로그인할 수 없습니다. 다시 작성자의 초안이 되었습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ your account.</source>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>책갈피 %count개를 추가했습니다.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>시스템 페이지</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>시스템 페이지는 아직 책갈피에 추가할 수 없습니다. 이 버전의 데이터베이스 업데이트가 실행되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>이 페이지는 책갈피에 추가할 수 없습니다. 모듈 보기의 페이지가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>이 페이지는 책갈피에 추가할 수 없습니다. 이 페이지를 열 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>페이지를 책갈피에 추가할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>“%name” 페이지가 책갈피에 있습니다.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>책갈피 이름을 바꿀 수 없습니다. 이름이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>책갈피 이름이 “%name”(으)로 바뀌었습니다.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Mirror to data tables</source>
         <translation>데이터 테이블로 미러링</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>사용자 계정 승인</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>새 사용자 계정이 승인을 기다리고 있습니다</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Sent to the password change</source>
         <translation>암호 변경으로 이동됨</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>두 번째 단계 없는 로그인 거부됨</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>앱 암호 생성됨</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>앱 암호 해지됨</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>앱 암호 사용됨</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The audit trail of this node</source>
         <translation>이 노드의 감사 내역</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>정상</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>손상됨</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>확인 안 됨</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>복구됨</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>비어 있음</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>새 이메일 주소 %email이(가) 확인을 기다리고 있습니다. 해당 주소로 보낸 링크를 여십시오. 그때까지 이 계정은 %current 주소를 유지합니다.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>새 장치 또는 브라우저에서의 로그인에 대한 이메일은 계정 보안의 일부입니다. 이 이메일은 “내 장치”에서 켜거나 끌 수 있으며, 그곳에서 계정의 세션을 확인하고 로그아웃할 수도 있습니다.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>영구 클래스의 테이블 찾아보기…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>크론 작업</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>아직 실행된 크론 작업 부분이 없습니다. 작업 대기열, 가져오기, 알림, 검색 인덱스가 대기 중입니다. php bin/php/installcrontab.php --add 명령을 실행하거나 --show 출력의 줄을 crontab에 추가하십시오.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>일정에서 허용하는 시간보다 오래 실행되지 않은 크론 작업 부분이 있습니다. crontab(php bin/php/installcrontab.php --show)과 로그(var/log/cronjob-*.log)를 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>부분</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>일정</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>마지막 시작</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>정시</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>지연됨</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>실행된 적 없음</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>이 설치에는 크론 작업이 실행할 크론 작업 부분이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>설정 &gt; 크론 작업</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>승인 대기 중인 새 사용자 계정: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>계정</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>사용자 이름</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>그룹</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>요청자</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>승인 열기</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>단추가 작동하지 않으면 이 주소를 브라우저에 복사하십시오: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>새 사용자 계정이 승인을 기다리고 있습니다</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester 사용자가 %groups에 “%name” 계정을 만들었습니다. 승인자가 수락할 때까지 이 계정은 게시되지 않으며 로그인할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>관리 화면에 로그인한 후 공동 작업 목록에서 승인하거나 거부하십시오. 이 링크로는 로그인되지 않으며 링크 자체로는 아무것도 결정되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>이 그룹의 새 계정을 승인하는 사용자이므로 %site에서 이 메일을 보냈습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>컴퓨터</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>휴대폰</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>태블릿</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>프로그램 또는 앱</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>자동화된 클라이언트</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>알 수 없는 장치</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>암호</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>암호 및 2단계 로그인 코드</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 인터페이스</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 인터페이스</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>싱글 사인온</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>세션 기록 이전에 로그인함</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>이 페이지에서 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>관리자가 로그아웃함</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>“다른 모든 세션”으로 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>새 로그인으로 대체됨</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>암호 변경으로 종료됨</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>만료됨</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name의 세션</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>계정이 현재 로그인되어 있는 위치입니다. 알 수 없는 장치가 있으면 로그아웃하고 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>이 계정이 현재 로그인되어 있는 위치입니다. 사용자를 로그아웃하면 각 세션은 다음 요청 시 종료됩니다.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>계정으로 돌아가기</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>세션이 로그아웃되었습니다. 이 장치는 다시 로그인해야 합니다.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>다른 세션 %count개가 로그아웃되었습니다.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>로그아웃할 다른 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>이 사용자의 세션 %count개가 로그아웃되었습니다.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>이 사용자에게는 로그아웃할 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>현재 사용 중인 세션입니다. 종료하려면 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>해당 세션은 이미 종료되었습니다.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>계정이 새 장치에서 로그인하면 이메일을 받게 됩니다.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>더 이상 새 장치의 로그인에 대한 이메일을 받지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>페이지가 만료되었습니다. 변경된 내용이 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>이 사이트에서는 세션이 기록되지 않습니다(site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>expuser_session 테이블이 없습니다</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>테이블이 만들어지면 세션이 기록됩니다: php update/common/scripts/6.0/createusersessiontable.php 또는 6.0.15의 데이터베이스 업데이트.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>현재 로그인됨</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>다른 모든 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>모든 위치에서 로그아웃</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>이 장치를 제외한 모든 장치는 다음 요청 시 로그아웃되며, “로그인 상태 유지”로 로그인 상태를 유지하는 장치도 포함됩니다.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>이 사용자의 모든 세션은 다음 요청 시 로그아웃되며, “로그인 상태 유지”로 로그인 상태를 유지하는 세션도 포함됩니다.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>예, 다른 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>예, 모든 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>이 장치</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>장치</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>네트워크 단위로 표시되며, 전체 주소는 관리자를 위해 보관됩니다.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>%ip에서 로그인함</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>로그인 시간</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>마지막 활동</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>지금</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>로그인 상태 유지</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>로그인 상태 유지, %date까지</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>브라우저를 닫을 때까지</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>로그인한 곳</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>브라우저 식별 정보</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>이 세션을 종료하려면 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>이 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>로그인된 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>로그인 알림</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>내 계정이 새 장치 또는 브라우저에서 로그인하면 이메일 보내기</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>%email 주소로 보냅니다. 장치, 대략적인 위치와 시간이 표시되며 이 페이지 링크가 포함됩니다.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>이 사이트는 로그인 알림을 보내지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>최근 종료됨</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>지난 %days일 동안 종료된 세션입니다.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>종료 시간</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>방법</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>없음.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>컴퓨터</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>휴대폰</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>태블릿</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>프로그램 또는 앱</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>자동화된 클라이언트</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>알 수 없는 장치</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>암호</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>암호 및 2단계 로그인 코드</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST 인터페이스</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP 인터페이스</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>싱글 사인온</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>세션 기록 이전에 로그인함</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>이 페이지에서 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>관리자가 로그아웃함</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>“다른 모든 세션”으로 로그아웃됨</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>새 로그인으로 대체됨</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>암호 변경으로 종료됨</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>만료됨</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name의 세션</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>계정이 현재 로그인되어 있는 위치입니다. 알 수 없는 장치가 있으면 로그아웃하고 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>이 계정이 현재 로그인되어 있는 위치입니다. 사용자를 로그아웃하면 각 세션은 다음 요청 시 종료됩니다.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>세션이 로그아웃되었습니다. 이 장치는 다시 로그인해야 합니다.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>다른 세션 %count개가 로그아웃되었습니다.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>로그아웃할 다른 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>이 사용자의 세션 %count개가 로그아웃되었습니다.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>이 사용자에게는 로그아웃할 세션이 없습니다.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>현재 사용 중인 세션입니다. 종료하려면 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>해당 세션은 이미 종료되었습니다.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>계정이 새 장치에서 로그인하면 이메일을 받게 됩니다.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>더 이상 새 장치의 로그인에 대한 이메일을 받지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>페이지가 만료되었습니다. 변경된 내용이 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>이 사이트에서는 세션이 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>세션이 아직 기록되지 않습니다. 사이트의 데이터베이스 업데이트가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>현재 로그인됨</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>이 장치</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>장치</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>주소</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>로그인 시간</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>마지막 활동</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>지금</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>로그인 상태 유지</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>로그인 상태 유지, %date까지</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>브라우저를 닫을 때까지</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>이 세션을 종료하려면 로그아웃하십시오.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>이 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>다른 모든 세션 로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>모든 위치에서 로그아웃</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>로그인 알림</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>내 계정이 새 장치 또는 브라우저에서 로그인하면 이메일 보내기</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>최근 종료됨</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>종료 시간</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>방법</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>지난 %days일 동안 없음.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>계정이 로그인한 위치를 확인하고 알 수 없는 장치를 로그아웃합니다.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>장치 관리</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>%site 계정의 새 로그인</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>안녕하십니까,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>%site의 %login 계정으로 최근에 사용하지 않은 장치 또는 브라우저에서 방금 로그인했습니다:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>장치:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>시간:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>대략적인 주소:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>본인이 로그인한 경우에는 아무 조치도 필요하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>본인이 아니라면 누군가 암호를 알고 있을 수 있습니다. 장치 페이지에서 해당 세션을 로그아웃한 다음 암호를 변경하십시오:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>같은 페이지에서 이러한 이메일을 끌 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>%site에서 %login 계정의 새 로그인</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>%login 계정이 최근에 사용하지 않은 장치 또는 브라우저에서 로그인했습니다.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>이 사용자의 세션:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>계정의 새 로그인</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>%login 계정으로 %date에 %device(%ip)에서 로그인했습니다.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>본인이 로그인한 경우에는 아무 조치도 필요하지 않습니다. 본인이 아니라면 %url에서 이 세션을 로그아웃하고 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>%login 계정의 새 로그인</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>%login 계정이 새 장치에서 로그인했습니다: %device(%ip), %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>내 장치</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name의 세션</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>패스키</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>패스키를 사용하면 암호 대신 지문, 얼굴, 화면 잠금 또는 보안 키로 로그인할 수 있습니다. 패스키는 장치나 암호 관리자에 저장되며, 이 사이트에는 공개 키만 보관되므로 여기에서 데이터가 유출되어도 패스키가 노출되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>이 사이트에서는 패스키가 꺼져 있습니다.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>이 사이트에서는 아직 패스키를 사용할 수 없습니다. 관리자가 먼저 데이터베이스 업데이트를 실행해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>“%name” 패스키를 제거하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>이 패스키로 더 이상 이 계정에 로그인할 수 없습니다. 장치나 암호 관리자에서도 제거하십시오.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>패스키 제거</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>내 패스키</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count / 최대 %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>아직 패스키가 없습니다. 아래에서 추가하십시오. 다음에 로그인할 때 “패스키로 로그인”을 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>추가한 날짜</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>마지막 사용</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>종류</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>작업</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>아직 없음</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>동기화됨</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>이 장치 또는 키</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>이름 바꾸기</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>새 이름</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>이름 저장</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>제거</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>패스키 추가</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>브라우저 또는 장치의 안내를 따르십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>패스키 대화 상자가 닫혔습니다. 변경된 내용이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>패스키를 만들 수 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>이 브라우저에서는 패스키를 만들 수 없습니다. 최신 브라우저를 사용하거나 암호로 로그인하십시오.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>예를 들어 패스키가 저장된 장치나 암호 관리자의 이름을 입력하면 패스키를 구분할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>이 계정에는 허용된 최대 개수(%max)의 패스키가 있습니다. 다른 패스키를 추가하려면 하나를 제거하십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>패스키를 사용할 수 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>내 계정</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>패스키 대화 상자가 닫혔습니다. 대신 암호로 로그인할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>패스키를 사용할 수 없습니다. 다시 시도하거나 암호로 로그인하십시오.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>패스키로 로그인</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>패스키로 로그인할 수 없습니다</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>암호 대신 지문, 얼굴, 화면 잠금 또는 보안 키로 로그인합니다.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>“%name” 패스키가 추가되었습니다. 이제 이 패스키로 로그인할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>패스키 이름이 이제 “%name”입니다.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>“%name” 패스키가 제거되었습니다. 이 패스키로 더 이상 이 계정에 로그인할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>%date 패스키</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>이 계정에는 허용된 최대 개수의 패스키가 있습니다. 먼저 하나를 제거하십시오.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>데이터베이스가 사용 중이어서 아무것도 저장되지 않았습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>이 패스키는 이미 등록되어 있습니다.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>요청 시간이 너무 오래 걸렸거나 이미 사용된 요청입니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>패스키가 본인 확인(PIN, 지문 또는 얼굴)을 하지 않았습니다. 다시 시도하고 장치에서 확인하십시오.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>이 인증자는 이 사이트에서 허용하지 않는 종류의 키를 사용합니다.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>이 패스키는 이 사이트가 아닌 다른 주소용으로 만들어졌습니다.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>이 패스키는 이 사이트의 어떤 계정에도 등록되어 있지 않습니다. 암호로 로그인한 후 “내 계정” &gt; “패스키”에서 추가하십시오.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>이 계정은 현재 로그인할 수 없습니다. 사이트 관리자에게 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>패스키를 확인할 수 없습니다. 다시 시도하십시오.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>로그인 방법이나 계정 보안을 변경하려고 합니다.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>사용자, 역할 또는 정책을 관리하려고 합니다.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>시스템 설정을 변경하거나 설정 작업을 실행하려고 합니다.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>데이터를 내보내려고 합니다.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>콘텐츠를 제거하거나 게시하려고 합니다.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>이 작업을 수행하려면 본인 확인이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>%login 사용자로 로그인한 본인인지 확인하십시오. %minutes분 동안 다시 묻지 않습니다.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>암호가 올바르지 않습니다.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>코드가 올바르지 않거나 이미 사용되었습니다.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>아래 방법 중 하나를 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>패스키를 확인할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>로그아웃되기 전까지 %count번 더 시도할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>선택한 파일은 다시 보낼 수 없습니다. 확인한 후 파일을 다시 선택하십시오.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>암호로 확인</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>패스키로 확인</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>암호</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>확인</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>패스키 사용</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>인증 앱의 코드로 확인</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>코드</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>이 계정에는 본인을 확인할 방법(암호, 패스키 또는 인증 앱)이 없습니다. 로그아웃한 후 다시 로그인하거나 관리자에게 문의하십시오.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>취소</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>본인 확인</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>인증 앱의 코드</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>본인 계정</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>본인의 암호, 이메일 주소, 패스키, 2단계 로그인 또는 API 키 변경.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>사용자, 역할 및 정책</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>사용자 만들기 및 편집, 계정 설정, 역할 할당 및 정책 편집.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>시스템 설정 및 설정 작업</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>설정 편집, 확장, 캐시 및 유지 관리, 패키지 및 업데이트, 백업, git 관리자.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>데이터 내보내기</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>수집된 정보, 사용자, 뉴스레터 구독자 및 감사 내보내기.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>콘텐츠 제거 및 게시</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>콘텐츠 제거(휴지통으로 이동 포함), 휴지통 비우기 및 게시. 기본적으로 꺼져 있습니다.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>중요한 작업 전에 로그인한 사용자는 암호, 패스키 또는 인증 앱의 코드로 본인임을 다시 확인합니다. 웹 페이지에서만 묻습니다. REST 인터페이스, SOAP, WebDAV, expservices 로그인 및 명령줄에서는 묻지 않습니다.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>일반</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>확인 유효 시간(분)</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>확인 요청 시점</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>site.ini [ReauthGroup_%name]의 규칙 %count개.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>settings/override/site.ini.append.php에 저장됩니다. 저장할 때 본인 확인을 요청합니다.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>저장</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>본인 확인</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>아래에서 켠 그룹의 작업 전에 “본인 확인” 요청</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>설정이 저장되었습니다.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>설정을 저장할 수 없습니다: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>설정</translation>
     </message>
 </context>
 </TS>

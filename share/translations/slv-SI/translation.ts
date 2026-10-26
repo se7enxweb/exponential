@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Odpri ali zapri mapo</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ta stran je med vašimi zaznamki. Odprite ga, da spremenite njegovo ime ali mapo.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Dodaj to stran med zaznamke.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Med zaznamki</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Dodaj stran med zaznamke</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Zaznamek hrani naslov te strani z njenimi parametri: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Shrani zaznamek</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Dodaj zaznamek</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Moji zaznamki</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistemska stran</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Sistemske strani</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Te strani ne smete več odpreti.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Odpri</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Naslov te strani manjka. Odstranite zaznamek in stran znova dodajte med zaznamke.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Te strani ne smete več odpreti. Odstranite zaznamek ali prosite skrbnika za dostop.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul in pogled</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Med zaznamke lahko dodate tudi sistemske strani: odprite stran (Nastavitve, revizijska sled, seznam uporabnikov ...) in nad njo izberite „Dodaj stran med zaznamke“. Taki zaznamki imajo ikono zobnika.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17638,6 +17706,10 @@ Opomba: namestitev paketov ne bo odstranjena.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>deaktivirati uporabniške račune in jih premikati v skupino deaktiviranih uporabnikov ter jih premikati nazaj</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>videti, kje so prijavljeni drugi uporabniki, in jih odjaviti</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ da aktivirate svoj račun.</translation>
         <source>Open e-mail preferences</source>
         <translation>Odpri nastavitve e-pošte</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše naprave</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seje</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Kje ste prijavljeni: brskalnik, sistem, kraj in čas. Odjavite napravo, ki je ne poznate.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Kje je ta uporabnik prijavljen in odjava uporabnika povsod.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Upravljaj naprave</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Prikaži seje</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Prijavljeno: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ključi za dostop</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Namesto z geslom se prijavite s prstnim odtisom, obrazom, zaklepanjem zaslona ali varnostnim ključem.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Upravljaj ključe za dostop</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Dodaj ključ za dostop</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Ključi za dostop: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Še nobenega</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ da aktivirate svoj račun.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinacije razred/atribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Skupine uporabnikov, katerih novi računi potrebujejo odobritev</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Račun, objavljen v eni od teh skupin ali pod njo, čaka, dokler ga odobritelj ne sprejme. Prej se ne more prijaviti.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Uporabniki, ki odobrijo račune</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Skupine, ki odobrijo račune</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Skupine uporabnikov, ki ne potrebujejo odobritve (njihovi člani take račune objavijo neposredno; odobritelji je nikoli ne potrebujejo)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Odobriteljem pošlji e-poštno sporočilo s povezavo do odobritve (za odobritev ali zavrnitev se prijavijo)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Več informacij najdete na strani z zahtevami.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Okoljska spremenljivka EXP_DEMO_MODE=1 označi to namestitev kot javno predstavitev: sprejeto je splošno znano skrbniško geslo, skrbniških gesel pa pozneje ni mogoče spremeniti ali ponastaviti. Predstavitvenega načina nikoli ne uporabljajte za produkcijsko spletno mesto.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Opravila cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Opravila cron se izvajajo iz crontaba uporabnika %user, ki je lastnik namestitve.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Namestitev nima nobenega dela opravila cron za načrtovanje.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab ni bil zapisan (%reason). Dodajte te vrstice v crontab uporabnika, pod katerim deluje spletno mesto, sicer se čakalna vrsta, uvozi, obvestila in iskalni indeks ne bodo nikoli izvajali:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ da aktivirate svoj račun.</translation>
         <source>ClassAttribute name</source>
         <translation>Ime atributa razreda</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Računi, ki potrebujejo odobritev</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-pošta odobriteljem</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ da aktivirate svoj račun.</translation>
         <source>Your comment was added.</source>
         <translation>Vaš komentar je bil dodan.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Račun „%1“ je bil odobren in objavljen: zdaj se lahko prijavi.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Račun „%1“ je bil zavrnjen. Ni objavljen in se ne more prijaviti; znova je osnutek svojega avtorja.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ da aktivirate svoj račun.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Dodani zaznamki: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Sistemska stran</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Sistemskih strani še ni mogoče dodati med zaznamke: posodobitev zbirke podatkov za to različico še ni bila izvedena.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Te strani ni mogoče dodati med zaznamke: ni stran pogleda modula.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Te strani ni mogoče dodati med zaznamke: ne smete je odpreti.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Strani ni bilo mogoče dodati med zaznamke.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Stran „%name“ je med vašimi zaznamki.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Zaznamka ni bilo mogoče preimenovati: potrebuje ime.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Zaznamek je bil preimenovan v „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Zrcali v podatkovne tabele</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Odobritev uporabniških računov</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nov uporabniški račun čaka na vašo odobritev</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Preusmerjen na spremembo gesla</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Prijava brez drugega koraka zavrnjena</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Geslo za aplikacijo ustvarjeno</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Geslo za aplikacijo preklicano</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Geslo za aplikacijo uporabljeno</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>Revizijska sled tega vozlišča</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>nepoškodovano</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>prekinjeno</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>nepreverjeno</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>popravljeno</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>prazno</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Novi e-poštni naslov %email čaka na potrditev: odprite povezavo, ki smo jo poslali nanj. Do takrat ta račun obdrži naslov %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>E-poštno sporočilo o prijavi z nove naprave ali brskalnika je del varnosti računa. Vklopite ali izklopite ga pri svojih napravah, kjer tudi vidite seje svojega računa in jih lahko odjavite.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše naprave</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Prebrskaj tabele trajnih razredov …</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Opravila cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Noben del opravila cron se še ni zagnal: čakalna vrsta opravil, uvozi, obvestila in iskalni indeks čakajo. Zaženite php bin/php/installcrontab.php --add ali dodajte vrstice iz --show v crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Del opravila cron se ni zagnal dlje, kot dovoljuje njegov urnik: preverite crontab (php bin/php/installcrontab.php --show) in dnevnike var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Urnik</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Zadnji zagon</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikoli</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>pravočasno</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>zamuja</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>se še ni zagnal</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Namestitev nima nobenega dela opravila cron, ki bi ga opravilo cron lahko zagnalo.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Nastavitve &gt; Opravila cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nov uporabniški račun čaka na odobritev: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Račun</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Uporabniško ime</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Skupina</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Zahteval</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Odpri odobritev</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Če gumb ne deluje, kopirajte ta naslov v brskalnik: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nov uporabniški račun čaka na vašo odobritev</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>Uporabnik %requester je ustvaril račun „%name“ v skupinah %groups. Račun ni objavljen in se ne more prijaviti, dokler ga odobritelj ne sprejme.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Prijavite se v skrbniški vmesnik ter ga odobrite ali zavrnite na svojem seznamu sodelovanja. Ta povezava vas ne prijavi in sama ničesar ne odloči.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>To sporočilo je poslalo spletno mesto %site, ker odobravate nove račune teh skupin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Računalnik</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablični računalnik</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program ali aplikacija</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Samodejni odjemalec</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Neznana naprava</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Geslo</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Geslo in koda dvostopenjske prijave</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Vmesnik REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Vmesnik SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enotna prijava</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Prijava pred začetkom beleženja sej</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odjavljeno</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Odjavljeno na tej strani</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Odjavil skrbnik</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Odjavljeno z možnostjo „vse druge seje“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nadomeščeno z novo prijavo</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Končano zaradi spremembe gesla</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Poteklo</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše naprave</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seje uporabnika %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kje je vaš račun trenutno prijavljen. Če naprave ne prepoznate, jo odjavite in spremenite geslo.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kje je ta račun trenutno prijavljen. Odjava uporabnika konča vsako sejo ob njeni naslednji zahtevi.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Nazaj na račun</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seja je bila odjavljena. Naprava se mora znova prijaviti.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Odjavljene druge seje: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ni bilo drugih sej za odjavo.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Odjavljene seje tega uporabnika: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ta uporabnik ni imel sej za odjavo.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To je seja, ki jo uporabljate. Če jo želite končati, se odjavite.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ta seja je bila že končana.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ko se vaš račun prijavi z nove naprave, boste prejeli e-poštno sporočilo.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>E-poštnih sporočil o prijavah z novih naprav ne boste več prejemali.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Stran je potekla. Nič ni bilo spremenjeno; poskusite znova.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Na tem spletnem mestu se seje ne beležijo (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabela expuser_session manjka</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seje se začnejo beležiti, ko je tabela ustvarjena: php update/common/scripts/6.0/createusersessiontable.php ali posodobitev zbirke podatkov za 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Trenutno prijavljeno</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Odjavi vse druge seje</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Odjavi povsod</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Vsaka naprava razen te se odjavi ob svoji naslednji zahtevi, tudi tiste, ki ostanejo prijavljene z možnostjo „Zapomni si me“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Vsaka seja tega uporabnika se odjavi ob svoji naslednji zahtevi, tudi tiste, ki ostanejo prijavljene z možnostjo „Zapomni si me“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Da, odjavi druge seje</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Da, odjavi vse seje</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ta naprava</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Naprava</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Prikazano kot omrežje; celoten naslov se hrani za skrbnike.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>prijava z naslova %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Prijava</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zadnja dejavnost</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Zdaj</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Ostane prijavljeno</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapomni si me, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zaprtja brskalnika</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Prijavljeno na</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identifikacija brskalnika</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Če želite končati to sejo, se odjavite.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odjavi</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Odjavi to sejo</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nobena seja ni prijavljena.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Opozorila o prijavi</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Pošlji mi e-poštno sporočilo, ko se moj račun prijavi z nove naprave ali brskalnika</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Pošlje se na naslov %email. Navaja napravo, približni kraj in čas ter vsebuje povezavo do te strani.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>To spletno mesto ne pošilja opozoril o prijavi.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nedavno končane</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Seje, končane v zadnjem obdobju (dni: %days).</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Končano</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Način</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Nobena.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Računalnik</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablični računalnik</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program ali aplikacija</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Samodejni odjemalec</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Neznana naprava</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Geslo</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Geslo in koda dvostopenjske prijave</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Vmesnik REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Vmesnik SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Enotna prijava</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Prijava pred začetkom beleženja sej</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Odjavljeno</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Odjavljeno na tej strani</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Odjavil skrbnik</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Odjavljeno z možnostjo „vse druge seje“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Nadomeščeno z novo prijavo</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Končano zaradi spremembe gesla</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Poteklo</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše naprave</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seje uporabnika %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Kje je vaš račun trenutno prijavljen. Če naprave ne prepoznate, jo odjavite in spremenite geslo.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Kje je ta račun trenutno prijavljen. Odjava uporabnika konča vsako sejo ob njeni naslednji zahtevi.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seja je bila odjavljena. Naprava se mora znova prijaviti.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Odjavljene druge seje: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Ni bilo drugih sej za odjavo.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Odjavljene seje tega uporabnika: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ta uporabnik ni imel sej za odjavo.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>To je seja, ki jo uporabljate. Če jo želite končati, se odjavite.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ta seja je bila že končana.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Ko se vaš račun prijavi z nove naprave, boste prejeli e-poštno sporočilo.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>E-poštnih sporočil o prijavah z novih naprav ne boste več prejemali.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Stran je potekla. Nič ni bilo spremenjeno; poskusite znova.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Na tem spletnem mestu se seje ne beležijo.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Seje se še ne beležijo: spletno mesto potrebuje posodobitev zbirke podatkov.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Trenutno prijavljeno</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ta naprava</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Naprava</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Naslov</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Prijava</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Zadnja dejavnost</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Zdaj</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Ostane prijavljeno</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Zapomni si me, do %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Do zaprtja brskalnika</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Če želite končati to sejo, se odjavite.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Odjavi</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Odjavi to sejo</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Odjavi vse druge seje</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Odjavi povsod</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Opozorila o prijavi</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Pošlji mi e-poštno sporočilo, ko se moj račun prijavi z nove naprave ali brskalnika</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nedavno končane</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Končano</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Način</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>V zadnjem obdobju nobena (dni: %days).</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Oglejte si, kje je vaš račun prijavljen, in odjavite napravo, ki je ne poznate.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Upravljaj naprave</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Nova prijava v vaš račun na spletnem mestu %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Pozdravljeni,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Vaš račun %login na spletnem mestu %site je bil pravkar uporabljen za prijavo z naprave ali brskalnika, ki ga v zadnjem času ni uporabljal:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Naprava:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Čas:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Približni naslov:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Če ste bili to vi, vam ni treba storiti ničesar.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Če to niste bili vi, morda kdo pozna vaše geslo. Odjavite to sejo na strani svojih naprav, nato spremenite geslo:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Ta e-poštna sporočila lahko izklopite na isti strani.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Nova prijava računa %login na spletnem mestu %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Račun %login se je prijavil z naprave ali brskalnika, ki ga v zadnjem času ni uporabljal.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Seje tega uporabnika:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Nova prijava v vaš račun</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Vaš račun %login je bil uporabljen za prijavo z naprave %device (%ip) dne %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Če ste bili to vi, vam ni treba storiti ničesar. Če ne, odjavite to sejo na naslovu %url in spremenite geslo.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Nova prijava računa %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Račun %login se je prijavil z nove naprave: %device (%ip) dne %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Vaše naprave</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seje uporabnika %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Ključi za dostop</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Ključ za dostop vas namesto z geslom prijavi s prstnim odtisom, obrazom, zaklepanjem zaslona ali varnostnim ključem. Shranjen je v vaši napravi ali upravitelju gesel; to spletno mesto hrani samo njegov javni ključ, zato ga uhajanje podatkov tukaj ne more razkriti.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Ključi za dostop so na tem spletnem mestu izklopljeni.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Ključev za dostop na tem spletnem mestu še ni mogoče uporabljati: skrbnik mora najprej izvesti posodobitev zbirke podatkov.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Ali res želite odstraniti ključ za dostop „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Z njim se ne bo več mogoče prijaviti v ta račun. Odstranite ga tudi iz svoje naprave ali upravitelja gesel.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Odstrani ključ za dostop</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Vaši ključi za dostop</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count od največ %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Ključa za dostop še nimate. Dodajte ga spodaj: ob naslednji prijavi izberite „Prijava s ključem za dostop“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ime</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Dodano</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Zadnja uporaba</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Vrsta</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Dejanja</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Še ne</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Sinhronizirano</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Ta naprava ali ključ</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Preimenuj</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Novo ime</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Shrani ime</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrani</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Dodaj ključ za dostop</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Sledite korakom v brskalniku ali napravi.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Pogovorno okno ključa za dostop je bilo zaprto. Nič ni bilo spremenjeno.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Ključa za dostop ni bilo mogoče ustvariti. Poskusite znova.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ta brskalnik ne more ustvarjati ključev za dostop. Uporabite sodoben brskalnik ali se prijavite z geslom.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Na primer naprava ali upravitelj gesel, v katerem je shranjen, da boste lahko razlikovali svoje ključe za dostop.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Ta račun ima največje dovoljeno število ključev za dostop (%max). Če želite dodati novega, enega odstranite.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Ključa za dostop ni bilo mogoče uporabiti. Poskusite znova.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Moj račun</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Pogovorno okno ključa za dostop je bilo zaprto. Namesto tega se lahko prijavite z geslom.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Ključa za dostop ni bilo mogoče uporabiti. Poskusite znova ali se prijavite z geslom.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Prijava s ključem za dostop</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Prijava s ključem za dostop ni uspela</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>namesto z geslom se prijavite s prstnim odtisom, obrazom, zaklepanjem zaslona ali varnostnim ključem.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Ključ za dostop „%name“ je dodan. Od zdaj se lahko prijavljate z njim.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Ključ za dostop se zdaj imenuje „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Ključ za dostop „%name“ je odstranjen. Z njim se ni več mogoče prijaviti v ta račun.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Ključ za dostop z dne %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Ta račun ima največje dovoljeno število ključev za dostop. Najprej enega odstranite.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Zbirka podatkov je bila zasedena in nič ni bilo shranjeno. Poskusite znova.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Ta ključ za dostop je že registriran.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Zahteva je trajala predolgo ali je bila že uporabljena. Poskusite znova.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Ključ za dostop ni preveril vaše identitete (PIN, prstni odtis ali obraz). Poskusite znova in potrdite v napravi.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Ta preverjevalnik uporablja vrsto ključa, ki je to spletno mesto ne sprejema.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Ključ za dostop je bil ustvarjen za drug naslov, ne za to spletno mesto.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Ta ključ za dostop tukaj ni registriran za noben račun. Prijavite se z geslom in ga dodajte v razdelku Moj račun, Ključi za dostop.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Ta račun se trenutno ne more prijaviti. Obrnite se na skrbnika spletnega mesta.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Ključa za dostop ni bilo mogoče preveriti. Poskusite znova.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Spremeniti nameravate način prijave ali varnost svojega računa.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Upravljati nameravate uporabnike, vloge ali pravilnike.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Spremeniti nameravate sistemske nastavitve ali izvesti dejanje nastavitev.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Izvoziti nameravate podatke.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Odstraniti ali objaviti nameravate vsebino.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Za to dejanje morate potrditi svojo identiteto.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Potrdite, da ste to vi (prijavljeni kot %login). Naslednjih %minutes min vas ne bomo znova vprašali.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Geslo ni pravilno.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Koda ni pravilna ali je bila že uporabljena.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Izberite enega od spodnjih načinov.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Ključa za dostop ni bilo mogoče preveriti.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Preostali poskusi pred odjavo: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Izbranih datotek ni mogoče znova poslati: po potrditvi jih izberite še enkrat.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Z geslom</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>S ključem za dostop</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Geslo</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potrdi</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Uporabi ključ za dostop</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>S kodo iz aplikacije za preverjanje pristnosti</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Koda</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Ta račun nima nobenega načina za potrditev vaše identitete (ni gesla, ključa za dostop ali aplikacije za preverjanje pristnosti). Odjavite se in znova prijavite ali se obrnite na skrbnika.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Potrdite, da ste to vi</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Koda iz aplikacije za preverjanje pristnosti</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Lastni račun</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Spreminjanje lastnega gesla, e-poštnega naslova, ključev za dostop, dvostopenjske prijave ali ključev API.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Uporabniki, vloge in pravilniki</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Ustvarjanje in urejanje uporabnikov, nastavitve računov, dodeljevanje vlog in urejanje pravilnikov.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Sistemske nastavitve in dejanja nastavitev</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Urejanje nastavitev, razširitve, predpomnilniki in vzdrževanje, paketi in posodobitve, varnostne kopije in upravitelj gita.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Izvoz podatkov</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Izvozi zbranih informacij, uporabnikov, naročnikov na glasilo in revizije.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Odstranjevanje in objavljanje vsebine</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Odstranjevanje vsebine (tudi v koš), praznjenje koša in objavljanje. Privzeto izklopljeno.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Pred občutljivim dejanjem prijavljeni uporabnik znova potrdi svojo identiteto z geslom, ključem za dostop ali kodo iz aplikacije za preverjanje pristnosti. Sprašujejo samo spletne strani: vmesnik REST, SOAP, WebDAV, prijava expservices in ukazna vrstica nikoli.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Splošno</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Veljavnost potrditve v minutah</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kdaj vprašati</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Pravila v site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Shranjeno v settings/override/site.ini.append.php. Ob shranjevanju boste morali potrditi, da ste to vi.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Potrdite, da ste to vi</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Pred dejanji spodaj vklopljenih skupin vprašaj „Potrdite, da ste to vi“</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Nastavitve so shranjene.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nastavitev ni bilo mogoče shraniti: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavitve</translation>
     </message>
 </context>
 </TS>

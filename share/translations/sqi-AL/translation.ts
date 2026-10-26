@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>Hap ose mbyll dosjen</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Kjo faqe është te faqeshënuesit tuaj. Hapeni për t'i ndryshuar emrin ose dosjen.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Shtojeni këtë faqe te faqeshënuesit tuaj.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Në faqeshënues</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Shto faqen te faqeshënuesit</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Faqeshënuesi ruan adresën e kësaj faqeje bashkë me parametrat e saj: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Ruaj faqeshënuesin</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Shto faqeshënues</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Faqeshënuesit e mi</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Faqe sistemi</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Faqet e sistemit</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Nuk keni më leje ta hapni këtë faqe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Hap</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Adresa e kësaj faqeje mungon. Hiqni faqeshënuesin dhe shtojeni sërish faqen te faqeshënuesit.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Nuk keni më leje ta hapni këtë faqe. Hiqni faqeshënuesin ose kërkojini qasje një administratori.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Moduli dhe pamja</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Edhe faqet e sistemit mund të shtohen te faqeshënuesit: hapni faqen (Konfigurimi, gjurma e auditimit, një listë përdoruesish ...) dhe zgjidhni „Shto faqen te faqeshënuesit“ mbi të. Këta faqeshënues kanë një ikonë ingranazhi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -14148,7 +14216,7 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Dyqani</translation>
+        <translation>Dyqan</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -17638,6 +17706,10 @@ Shënim: paketat nuk do të çinstalohen.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>çaktivizojnë llogari përdoruesish dhe i zhvendosin në grupin e përdoruesve të çaktivizuar, si dhe i kthejnë prapa</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>shohin ku janë identifikuar përdoruesit e tjerë dhe t'i nxjerrin nga llogaria</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ llogarinë tuaj.</translation>
         <source>Open e-mail preferences</source>
         <translation>Hap preferencat e email-it</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seancat</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Ku jeni identifikuar: shfletuesi, sistemi, vendi dhe ora. Mbyllni seancën e një pajisjeje që nuk e njihni.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Ku është identifikuar ky përdorues dhe nxjerrja e tij nga llogaria kudo.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Menaxho pajisjet</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Shfaq seancat</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Të identifikuara: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Çelësat e kalimit</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Identifikohuni me shenjën e gishtit, fytyrën, kyçjen e ekranit ose një çelës sigurie në vend të fjalëkalimit.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Menaxho çelësat e kalimit</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Shto një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Çelësa kalimi: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Asnjë ende</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ llogarinë tuaj.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Kombinime klasë/atribut (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Grupet e përdoruesve, llogaritë e reja të të cilëve kanë nevojë për miratim</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Një llogari e publikuar në një nga këto grupe, ose nën to, pret derisa një miratues ta pranojë. Deri atëherë nuk mund të identifikohet.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Përdoruesit që miratojnë llogaritë</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Grupet që miratojnë llogaritë</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Grupet e përdoruesve që nuk kanë nevojë për miratim (anëtarët e tyre i publikojnë drejtpërdrejt këto llogari; miratuesit nuk kanë kurrë nevojë për të)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Dërgojuni miratuesve një email me lidhjen për te miratimi (ata identifikohen për të miratuar ose për të mohuar)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ Për më shumë informacion shihni faqen e kërkesave.</translation>
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Ndryshorja e mjedisit EXP_DEMO_MODE=1 e shënon këtë instalim si demo publike: pranohet një fjalëkalim administratori i njohur botërisht, dhe fjalëkalimet e administratorëve nuk mund të ndryshohen ose të rivendosen më vonë. Mos e përdorni kurrë modalitetin demo për një sajt prodhimi.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Punët cron</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Punët cron ekzekutohen nga crontab-i i përdoruesit %user, i cili është pronar i instalimit.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Instalimi nuk ka asnjë pjesë të punës cron për t'u planifikuar.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab-i nuk u shkrua (%reason). Shtojini këto rreshta në crontab-in e përdoruesit me të cilin ekzekutohet sajti, përndryshe radha, importet, njoftimet dhe indeksi i kërkimit nuk do të ekzekutohen kurrë:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ llogarinë tuaj.</translation>
         <source>ClassAttribute name</source>
         <translation>Emri i atributit të klasës</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Llogaritë që kanë nevojë për miratim</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Email për miratuesit</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Po</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Jo</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ llogarinë tuaj.</translation>
         <source>Your comment was added.</source>
         <translation>Komenti juaj u shtua.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Llogaria „%1“ u miratua dhe u publikua: tani mund të identifikohet.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Llogaria „%1“ u mohua. Nuk është e publikuar dhe nuk mund të identifikohet; është sërish skicë e autorit të saj.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ llogarinë tuaj.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Faqeshënues të shtuar: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Faqe sistemi</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Faqet e sistemit nuk mund të shtohen ende te faqeshënuesit: përditësimi i bazës së të dhënave për këtë version nuk është ekzekutuar.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Kjo faqe nuk mund të shtohet te faqeshënuesit: nuk është faqe e një pamjeje moduli.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Kjo faqe nuk mund të shtohet te faqeshënuesit: nuk keni leje ta hapni.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Faqja nuk mund të shtohej te faqeshënuesit.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Faqja „%name“ është te faqeshënuesit tuaj.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Faqeshënuesi nuk mund të riemërtohej: i duhet një emër.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Faqeshënuesi u riemërtua në „%name“.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Mirror to data tables</source>
         <translation>Pasqyro në tabelat e të dhënave</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Mirato llogaritë e përdoruesve</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Një llogari e re përdoruesi pret miratimin tuaj</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Sent to the password change</source>
         <translation>U dërgua te ndryshimi i fjalëkalimit</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>U refuzua identifikimi pa hapin e dytë</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>U krijua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>U revokua fjalëkalim aplikacioni</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>U përdor fjalëkalim aplikacioni</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>The audit trail of this node</source>
         <translation>Gjurma e auditimit e kësaj nyjeje</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>i paprekur</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>i prishur</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>i pakontrolluar</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>i riparuar</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>bosh</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Adresa e re e email-it %email pret konfirmimin: hapni lidhjen që dërguam atje. Deri atëherë kjo llogari e ruan adresën %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Email-i për një identifikim nga një pajisje ose shfletues i ri është pjesë e sigurisë së llogarisë. E aktivizoni ose e çaktivizoni te pajisjet tuaja, ku shihni dhe mbyllni edhe seancat e llogarisë suaj.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Shfleto tabelat e klasave të përhershme…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Punët cron</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Asnjë pjesë e punës cron nuk është ekzekutuar ende: radha e punëve, importet, njoftimet dhe indeksi i kërkimit presin. Ekzekutoni php bin/php/installcrontab.php --add ose shtoni rreshtat e --show në crontab.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Një pjesë e punës cron nuk është ekzekutuar për më gjatë se sa lejon orari i saj: kontrolloni crontab-in (php bin/php/installcrontab.php --show) dhe regjistrat var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Pjesa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Orari</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Nisur për herë të fundit</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>asnjëherë</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>në kohë</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>me vonesë</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>nuk është ekzekutuar asnjëherë</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Instalimi nuk ka asnjë pjesë të punës cron që puna cron të ekzekutojë.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Konfigurimi &gt; Punët cron</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Llogari e re përdoruesi në pritje të miratimit: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Llogaria</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Emri i përdoruesit</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupi</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Kërkuar nga</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Hap miratimin</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Nëse butoni nuk funksionon, kopjojeni këtë adresë në shfletuesin tuaj: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Një llogari e re përdoruesi pret miratimin tuaj</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester krijoi llogarinë „%name“ në grupet %groups. Nuk është e publikuar dhe nuk mund të identifikohet derisa një miratues ta pranojë.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Identifikohuni në ndërfaqen e administrimit dhe miratojeni ose mohojeni te lista juaj e bashkëpunimit. Kjo lidhje nuk ju identifikon dhe nuk vendos asgjë vetë.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Ky mesazh u dërgua nga sajti %site sepse ju miratoni llogaritë e reja të këtyre grupeve.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompjuter</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program ose aplikacion</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klient i automatizuar</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Pajisje e panjohur</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Fjalëkalim</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Fjalëkalim dhe kod identifikimi me dy hapa</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ndërfaqja REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ndërfaqja SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Identifikim i njëhershëm (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Identifikuar para se të regjistroheshin seancat</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Dalje</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Mbyllur nga kjo faqe</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Mbyllur nga një administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Mbyllur me „të gjitha seancat e tjera“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Zëvendësuar nga një identifikim i ri</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Përfunduar nga një ndryshim fjalëkalimi</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Skaduar</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seancat e përdoruesit %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ku është identifikuar llogaria juaj tani. Nëse nuk e njihni një pajisje, mbyllni seancën e saj dhe ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ku është identifikuar kjo llogari tani. Nxjerrja e përdoruesit nga llogaria e përfundon çdo seancë në kërkesën e saj të radhës.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Kthehu te llogaria</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanca u mbyll. Pajisja duhet të identifikohet sërish.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Seanca të tjera të mbyllura: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nuk kishte seanca të tjera për t'u mbyllur.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Seanca të mbyllura të këtij përdoruesi: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ky përdorues nuk kishte seanca për t'u mbyllur.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kjo është seanca që po përdorni. Për ta përfunduar, dilni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ajo seancë kishte përfunduar tashmë.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Do të merrni një email kur llogaria juaj identifikohet nga një pajisje e re.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nuk do të merrni më email për identifikime nga pajisje të reja.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Faqja kishte skaduar. Nuk u ndryshua asgjë; provoni sërish.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Seancat nuk regjistrohen në këtë sajt (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabela expuser_session mungon</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Seancat regjistrohen sapo të krijohet ajo: php update/common/scripts/6.0/createusersessiontable.php ose përditësimi i bazës së të dhënave i 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Identifikuar tani</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mbyll të gjitha seancat e tjera</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dil kudo</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Çdo pajisje përveç kësaj del nga llogaria në kërkesën e saj të radhës, edhe ato që mbeten të identifikuara me „Më mbaj mend“.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Çdo seancë e këtij përdoruesi mbyllet në kërkesën e saj të radhës, edhe ato që mbeten të identifikuara me „Më mbaj mend“.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Po, mbyll seancat e tjera</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Po, mbyll çdo seancë</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kjo pajisje</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pajisja</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Shfaqet si rrjeti i saj; adresa e plotë ruhet për administratorët.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>identifikuar nga %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Identifikuar</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Aktiv për herë të fundit</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Tani</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Mbetet i identifikuar</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Më mbaj mend, deri më %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Derisa të mbyllet shfletuesi</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Identifikuar në</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identifikimi i shfletuesit</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Për ta përfunduar këtë seancë, dilni.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mbyll këtë seancë</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Asnjë seancë nuk është e identifikuar.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sinjalizime identifikimi</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Më dërgo email kur llogaria ime identifikohet nga një pajisje ose shfletues i ri</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Dërgohet te %email. Ju tregon pajisjen, vendin e përafërt dhe orën, dhe përmban një lidhje për te kjo faqe.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Ky sajt nuk dërgon sinjalizime identifikimi.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Përfunduar së fundi</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Seancat që përfunduan në %days ditët e fundit.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Përfunduar</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Si</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Asnjë.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Kompjuter</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tablet</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program ose aplikacion</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Klient i automatizuar</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Pajisje e panjohur</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Fjalëkalim</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Fjalëkalim dhe kod identifikimi me dy hapa</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Ndërfaqja REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Ndërfaqja SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Identifikim i njëhershëm (SSO)</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Identifikuar para se të regjistroheshin seancat</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Dalje</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Mbyllur nga kjo faqe</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Mbyllur nga një administrator</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Mbyllur me „të gjitha seancat e tjera“</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Zëvendësuar nga një identifikim i ri</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Përfunduar nga një ndryshim fjalëkalimi</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Skaduar</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seancat e përdoruesit %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ku është identifikuar llogaria juaj tani. Nëse nuk e njihni një pajisje, mbyllni seancën e saj dhe ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ku është identifikuar kjo llogari tani. Nxjerrja e përdoruesit nga llogaria e përfundon çdo seancë në kërkesën e saj të radhës.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Seanca u mbyll. Pajisja duhet të identifikohet sërish.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Seanca të tjera të mbyllura: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nuk kishte seanca të tjera për t'u mbyllur.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Seanca të mbyllura të këtij përdoruesi: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ky përdorues nuk kishte seanca për t'u mbyllur.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Kjo është seanca që po përdorni. Për ta përfunduar, dilni.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ajo seancë kishte përfunduar tashmë.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Do të merrni një email kur llogaria juaj identifikohet nga një pajisje e re.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Nuk do të merrni më email për identifikime nga pajisje të reja.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Faqja kishte skaduar. Nuk u ndryshua asgjë; provoni sërish.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Seancat nuk regjistrohen në këtë sajt.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Seancat nuk regjistrohen ende: sajti ka nevojë për përditësimin e bazës së të dhënave.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Identifikuar tani</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Kjo pajisje</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Pajisja</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Adresa</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Identifikuar</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Aktiv për herë të fundit</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Tani</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Mbetet i identifikuar</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Më mbaj mend, deri më %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Derisa të mbyllet shfletuesi</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Për ta përfunduar këtë seancë, dilni.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Dil</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Mbyll këtë seancë</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Mbyll të gjitha seancat e tjera</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Dil kudo</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Sinjalizime identifikimi</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Më dërgo email kur llogaria ime identifikohet nga një pajisje ose shfletues i ri</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Përfunduar së fundi</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Përfunduar</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Si</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Asnjë në %days ditët e fundit.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Shihni ku është identifikuar llogaria juaj dhe mbyllni seancën e një pajisjeje që nuk e njihni.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Menaxho pajisjet</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Identifikim i ri në llogarinë tuaj në sajtin %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Përshëndetje,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Llogaria juaj %login në sajtin %site sapo u përdor për identifikim nga një pajisje ose shfletues që nuk e ka përdorur kohët e fundit:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Pajisja:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Ora:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Adresa e përafërt:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Nëse ishit ju, nuk keni nevojë të bëni asgjë.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Nëse nuk ishit ju, dikush mund ta dijë fjalëkalimin tuaj. Mbyllni atë seancë te faqja e pajisjeve tuaja, pastaj ndryshoni fjalëkalimin:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Këto email-e mund t'i çaktivizoni në të njëjtën faqe.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Identifikim i ri i përdoruesit %login në sajtin %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Llogaria %login u identifikua nga një pajisje ose shfletues që nuk e ka përdorur kohët e fundit.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Seancat e këtij përdoruesi:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Identifikim i ri në llogarinë tuaj</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Llogaria juaj %login u përdor për identifikim nga pajisja %device (%ip) më %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Nëse ishit ju, nuk keni nevojë të bëni asgjë. Përndryshe, mbyllni këtë seancë te %url dhe ndryshoni fjalëkalimin.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Identifikim i ri i përdoruesit %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Llogaria %login u identifikua nga një pajisje e re: %device (%ip) më %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Pajisjet tuaja</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Seancat e përdoruesit %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Çelësat e kalimit</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Një çelës kalimi ju identifikon me shenjën e gishtit, fytyrën, kyçjen e ekranit ose një çelës sigurie në vend të fjalëkalimit. Ruhet në pajisjen tuaj ose në menaxherin tuaj të fjalëkalimeve; ky sajt ruan vetëm çelësin e tij publik, prandaj një rrjedhje të dhënash këtu nuk mund ta zbulojë.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Çelësat e kalimit janë të çaktivizuar në këtë sajt.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Çelësat e kalimit nuk mund të përdoren ende në këtë sajt: administratori duhet të ekzekutojë së pari përditësimin e bazës së të dhënave.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Dëshironi vërtet ta hiqni çelësin e kalimit „%name“?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Nuk do të mund të identifikohet më në këtë llogari. Hiqeni edhe nga pajisja ose nga menaxheri i fjalëkalimeve.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Hiq çelësin e kalimit</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Çelësat tuaj të kalimit</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count nga maksimumi %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Nuk keni ende asnjë çelës kalimi. Shtoni një më poshtë: herën tjetër që identifikoheni, zgjidhni „Identifikohu me një çelës kalimi“.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Shtuar</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Përdorur për herë të fundit</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lloji</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Veprimet</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Jo ende</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>I sinkronizuar</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Kjo pajisje ose ky çelës</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Riemërto</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Emri i ri</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Ruaj emrin</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hiq</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Shto një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Ndiqni hapat e shfletuesit ose të pajisjes suaj.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Dialogu i çelësit të kalimit u mbyll. Nuk u ndryshua asgjë.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Çelësi i kalimit nuk mund të krijohej. Provoni sërish.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ky shfletues nuk mund të krijojë çelësa kalimi. Përdorni një shfletues të përditësuar ose identifikohuni me fjalëkalimin tuaj.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Për shembull pajisja ose menaxheri i fjalëkalimeve ku ndodhet, që t'i dalloni çelësat tuaj të kalimit.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Kjo llogari ka aq çelësa kalimi sa lejohen (%max). Hiqni një për të shtuar një tjetër.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Çelësi i kalimit nuk mund të përdorej. Provoni sërish.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Llogaria ime</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Dialogu i çelësit të kalimit u mbyll. Mund të identifikoheni me fjalëkalimin tuaj.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Çelësi i kalimit nuk mund të përdorej. Provoni sërish ose identifikohuni me fjalëkalimin tuaj.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Identifikohu me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Identifikimi me çelësin e kalimit nuk ishte i mundur</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>identifikohuni me shenjën e gishtit, fytyrën, kyçjen e ekranit ose një çelës sigurie në vend të fjalëkalimit.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Çelësi i kalimit „%name“ u shtua. Që tani mund të identifikoheni me të.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Çelësi i kalimit tani quhet „%name“.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Çelësi i kalimit „%name“ u hoq. Nuk mund të identifikohet më në këtë llogari.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Çelës kalimi i datës %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Kjo llogari ka aq çelësa kalimi sa lejohen. Hiqni së pari një.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Baza e të dhënave ishte e zënë dhe nuk u ruajt asgjë. Provoni sërish.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Ky çelës kalimi është regjistruar tashmë.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Kërkesa zgjati shumë ose është përdorur tashmë. Provoni sërish.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Çelësi i kalimit nuk e kontrolloi se kush jeni (PIN, shenjë gishti ose fytyrë). Provoni sërish dhe konfirmoni në pajisjen tuaj.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Ky vërtetues përdor një lloj çelësi që ky sajt nuk e pranon.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Çelësi i kalimit u krijua për një adresë tjetër dhe jo për këtë sajt.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Ky çelës kalimi nuk është regjistruar për asnjë llogari këtu. Identifikohuni me fjalëkalimin tuaj dhe shtojeni te Llogaria ime, Çelësat e kalimit.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Kjo llogari nuk mund të identifikohet për momentin. Kontaktoni administratorin e sajtit.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Çelësi i kalimit nuk mund të kontrollohej. Provoni sërish.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Jeni gati të ndryshoni mënyrën e identifikimit ose sigurinë e llogarisë suaj.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Jeni gati të menaxhoni përdorues, role ose politika.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Jeni gati të ndryshoni cilësime të sistemit ose të ekzekutoni një veprim konfigurimi.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Jeni gati të eksportoni të dhëna.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Jeni gati të hiqni ose të publikoni përmbajtje.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Ky veprim kërkon që të konfirmoni se kush jeni.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Konfirmoni se jeni ju, i identifikuar si %login. Nuk do t'ju pyesim sërish për %minutes minuta.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Ai fjalëkalim nuk është i saktë.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ai kod nuk është i saktë ose është përdorur tashmë.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Zgjidhni një nga mënyrat më poshtë.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Çelësi i kalimit nuk mund të kontrollohej.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Përpjekje të mbetura para se të nxirreni nga llogaria: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Skedarët që zgjodhët nuk mund të dërgohen sërish: pas konfirmimit, zgjidhini edhe një herë.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Me fjalëkalimin tuaj</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Me një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Fjalëkalim</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmo</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Përdor një çelës kalimi</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Me një kod nga aplikacioni juaj i vërtetimit</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kodi</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Kjo llogari nuk ka asnjë mënyrë për të konfirmuar se kush jeni (asnjë fjalëkalim, çelës kalimi ose aplikacion vërtetimi). Dilni dhe identifikohuni sërish ose pyesni një administrator.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Konfirmoni se jeni ju</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kodi nga aplikacioni juaj i vërtetimit</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Llogaria juaj</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Ndryshimi i fjalëkalimit, i adresës së email-it, i çelësave të kalimit, i identifikimit me dy hapa ose i çelësave API të vetë përdoruesit.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Përdoruesit, rolet dhe politikat</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Krijimi dhe redaktimi i përdoruesve, cilësimet e llogarive, caktimi i roleve dhe redaktimi i politikave.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Cilësimet e sistemit dhe veprimet e konfigurimit</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Redaktimi i cilësimeve, zgjerimet, memoria e përkohshme dhe mirëmbajtja, paketat dhe përditësimet, kopjet rezervë dhe menaxheri Git.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Eksportimi i të dhënave</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Eksportet e informacioneve të mbledhura, të përdoruesve, të abonentëve të buletinit dhe të auditimit.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Heqja dhe publikimi i përmbajtjes</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Heqja e përmbajtjes (edhe në kosh), zbrazja e koshit dhe publikimi. Joaktiv si parazgjedhje.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Para një veprimi të ndjeshëm, një përdorues i identifikuar konfirmon sërish se kush është, me fjalëkalimin e tij, një çelës kalimi ose kodin e aplikacionit të vërtetimit. Pyesin vetëm faqet web: ndërfaqja REST, SOAP, WebDAV, identifikimi expservices dhe rreshti i komandave nuk pyesin kurrë.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Të përgjithshme</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minutat e vlefshmërisë së një konfirmimi</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Kur të pyetet</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Rregulla në site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Ruhet te settings/override/site.ini.append.php. Gjatë ruajtjes do t'ju kërkohet të konfirmoni se jeni ju.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Ruaj</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Konfirmoni se jeni ju</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>Pyet „Konfirmoni se jeni ju“ para veprimeve të grupeve të aktivizuara më poshtë</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Cilësimet u ruajtën.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Cilësimet nuk mund të ruheshin: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
     </message>
 </context>
 </TS>

@@ -2250,6 +2250,74 @@
         <source>Open or close the folder</source>
         <translation>Capsam aperire aut claudere</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Haec pagina in signaculis tuis est. Aperi eam ut nomen aut capsam eius mutes.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Hanc paginam signaculis tuis addere.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Signata</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Hanc paginam signare</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>Signaculum inscriptionem huius paginae cum parametris eius servat: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Signaculum servare</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Signaculum addere</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Signacula mea</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pagina systematis</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Paginae systematis</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Hanc paginam aperire tibi iam non licet.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperire</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Inscriptio huius paginae deest. Signaculum remove et paginam iterum signa.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Hanc paginam aperire tibi iam non licet. Signaculum remove, aut ab administratore aditum pete.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Inscriptio</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modulus et visio</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Etiam paginae systematis signari possunt: paginam aperi (Configuratio, vestigia inspectionis, index usorum ...) et supra eam "Hanc paginam signare" elige. Talia signacula imaginem rotae dentatae habent.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -17641,6 +17709,10 @@ Nota: institutio sarcinarum non revocabitur.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>rationes usorum inactivare et in gregem usorum inactivatorum movere, et eas reducere</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>videre ubi alii usores inierint, eosque exire cogere</translation>
     </message>
 </context>
 <context>
@@ -37746,6 +37818,58 @@ rationem tuam activeres.</translation>
         <source>Open e-mail preferences</source>
         <translation>Optiones epistularum electronicarum aperire</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessiones</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Ubi inieris: navigatrum, systema, locus et tempus. Instrumentum quod non agnoscis exire coge.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Ubi hic usor inierit, et usorem ubique exire cogere.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Instrumenta administrare</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Sessiones ostendere</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Qui inierunt: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Claves accessus</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Impressione digitali, facie, clausura quadri visorii aut clave securitatis pro tessera tua ini.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Claves accessus administrare</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Clavem accessus addere</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>Claves accessus: %count</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Nullae adhuc</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39685,6 +39809,30 @@ rationem tuam activeres.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Combinationes classis/attributi (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Greges usorum quorum novae rationes approbatione egent</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Ratio in unum ex his gregibus, aut infra, publicata exspectat dum approbator eam accipiat. Antea inire non potest.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>Usores qui rationes approbant</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>Greges qui rationes approbant</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Greges usorum qui approbatione non egent (membra eorum tales rationes statim publicant; approbatores ea numquam egent)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>Approbatoribus epistulam electronicam cum nexu ad approbationem mittere (ineunt ut approbent aut recusent)</translation>
     </message>
 </context>
 <context>
@@ -50787,6 +50935,22 @@ Plura vide in pagina postulatorum.</translation>
         <source>Cancel</source>
         <translation>Abrogare</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Opera statuta</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>Opera statuta ex crontab usoris %user currunt, cuius est institutio.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>Institutio nullam partem operum statutorum habet quae statuatur.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>Crontab scriptum non est (%reason). Has lineas in crontab usoris sub quo situs currit adde, aliter ordo exspectationis, importationes, notificationes et index quaestionis numquam currunt:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54303,6 +54467,22 @@ rationem tuam activeres.</translation>
         <source>ClassAttribute name</source>
         <translation>Nomen attributi classis</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Rationes quae approbatione egent</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>Epistula electronica ad approbatores</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ita</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55713,6 +55893,14 @@ rationem tuam activeres.</translation>
         <source>Your comment was added.</source>
         <translation>Commentarium tuum additum est.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>Ratio "%1" approbata et publicata est: nunc inire potest.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>Ratio "%1" recusata est. Publicata non est nec inire potest; rursus adumbratio auctoris sui est.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56011,6 +56199,38 @@ rationem tuam activeres.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Signacula addita: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Pagina systematis</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>Paginae systematis nondum signari possunt: renovatio basis datorum huius versionis nondum acta est.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Haec pagina signari non potest: non est pagina visionis moduli.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Haec pagina signari non potest: eam aperire tibi non licet.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Pagina signari non potuit.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>Pagina "%name" in signaculis tuis est.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>Signaculum renominari non potuit: nomine eget.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>Signaculum renominatum est: "%name".</translation>
     </message>
 </context>
 <context>
@@ -58073,6 +58293,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>In tabulas datorum transcribere</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Rationes usorum approbare</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nova ratio usoris approbationem tuam exspectat</translation>
     </message>
 </context>
 <context>
@@ -64217,6 +64445,26 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The audit trail of this node</source>
         <translation>Vestigia inspectionis huius nodi</translation>
     </message>
+    <message>
+        <source>intact</source>
+        <translation>integra</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>rupta</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>non inspecta</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>refecta</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>vacua</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/preferences</name>
@@ -69712,6 +69960,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Nova inscriptio electronica %email confirmationem suam exspectat: nexum aperi quem illuc misimus. Interea haec ratio %current retinet.</translation>
+    </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Epistula electronica de introitu ex novo instrumento aut navigatro ad securitatem rationis pertinet. Eam apud instrumenta tua activas aut inactivas, ubi etiam sessiones rationis tuae vides et finire potes.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
     </message>
 </context>
 <context>
@@ -75600,6 +75856,1124 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>Tabulas classium perpetuarum perlustrare…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Opera statuta</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Nulla pars operum statutorum adhuc acta est: ordo exspectationis operum, importationes, notificationes et index quaestionis exspectant. Exsequere php bin/php/installcrontab.php --add, aut lineas ex --show in crontab adde.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Pars quaedam operum statutorum diutius non acta est quam horarium eius sinit: crontab inspice (php bin/php/installcrontab.php --show) et acta var/log/cronjob-*.log.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Pars</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Horarium</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Ultimo incepta</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>numquam</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>tempore suo</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>sero</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>numquam acta</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>Institutio nullam partem operum statutorum habet quam opus cron exsequatur.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Configuratio &gt; Opera statuta</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Nova ratio usoris approbationem exspectat: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Ratio</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nomen usoris</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grex</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Petita a</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Approbationem aperire</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Si puga non operatur, hanc inscriptionem in navigatrum tuum exscribe: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Nova ratio usoris approbationem tuam exspectat</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester rationem "%name" in %groups creavit. Publicata non est nec inire potest donec approbator eam accipiat.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>In administrationem ini et eam in indice collaborationis tuae approba aut recusa. Hic nexus te non introducit nec per se quicquam decernit.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Haec epistula a %site missa est quia novas rationes horum gregum approbas.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computatrum</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telephonum</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma aut applicatio</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Cliens automaticus</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Instrumentum ignotum</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Tessera</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Tessera et codex introitus duorum graduum</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfacies REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfacies SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Introitus unicus</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Initum antequam sessiones notarentur</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Finita</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Ex hac pagina finita</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Ab administratore finita</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Per "omnes alias sessiones" finita</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Novo introitu substituta</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Mutatione tesserae finita</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Exspirata</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessiones usoris %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ubi ratio tua nunc inierit. Si instrumentum non agnoscis, id exire coge et tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ubi haec ratio nunc inierit. Usore exire coacto, quaeque sessio in proxima petitione sua finitur.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Ad rationem redire</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessio finita est. Instrumentum iterum inire debet.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Aliae sessiones finitae: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nullae aliae sessiones finiendae erant.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sessiones huius usoris finitae: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Hic usor nullas sessiones finiendas habebat.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Haec est sessio qua uteris. Ut eam finias, exi.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Illa sessio iam finita erat.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Epistulam electronicam accipies cum ratio tua ex novo instrumento init.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Epistulas electronicas de introitibus ex novis instrumentis non iam accipies.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina exspiraverat. Nihil mutatum est; iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Sessiones in hoc situ non notantur (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Tabula expuser_session deest</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>Sessiones notantur simul ac creata est: php update/common/scripts/6.0/createusersessiontable.php, aut renovatio basis datorum versionis 6.0.15.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nunc initum</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Omnes alias sessiones finire</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ubique exire</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Omne instrumentum praeter hoc in proxima petitione sua exire cogitur, etiam ea quae per "Memento mei" inita manent.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Omnis sessio huius usoris in proxima petitione sua finitur, etiam eae quae per "Memento mei" initae manent.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Ita, alias sessiones finire</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Ita, omnes sessiones finire</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Hoc instrumentum</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Inscriptio</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>Ut rete eius ostenditur; inscriptio plena administratoribus servatur.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>initum ex %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultimo activum</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nunc</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Initum manet</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Memento mei, usque ad %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Donec navigatrum clauditur</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Initum apud</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Identificatio navigatri</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Ut hanc sessionem finias, exi.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Exire</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Hanc sessionem finire</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nulla sessio inita est.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Monitiones de introitu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Epistulam electronicam mihi mittere cum ratio mea ex novo instrumento aut navigatro init</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Ad %email mittitur. Instrumentum, locum approximatum et tempus tibi indicat, et ad hanc paginam ducit.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Hic situs monitiones de introitu non mittit.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nuper finitae</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Sessiones quae intra ultimos %days dies finitae sunt.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finita</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Quomodo</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Nullae.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Computatrum</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telephonum</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Programma aut applicatio</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Cliens automaticus</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Instrumentum ignotum</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Tessera</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Tessera et codex introitus duorum graduum</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>Interfacies REST</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>Interfacies SOAP</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Introitus unicus</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>Initum antequam sessiones notarentur</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Finita</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Ex hac pagina finita</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Ab administratore finita</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>Per "omnes alias sessiones" finita</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Novo introitu substituta</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Mutatione tesserae finita</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Exspirata</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessiones usoris %name</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ubi ratio tua nunc inierit. Si instrumentum non agnoscis, id exire coge et tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ubi haec ratio nunc inierit. Usore exire coacto, quaeque sessio in proxima petitione sua finitur.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>Sessio finita est. Instrumentum iterum inire debet.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Aliae sessiones finitae: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nullae aliae sessiones finiendae erant.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>Sessiones huius usoris finitae: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Hic usor nullas sessiones finiendas habebat.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Haec est sessio qua uteris. Ut eam finias, exi.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Illa sessio iam finita erat.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>Epistulam electronicam accipies cum ratio tua ex novo instrumento init.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>Epistulas electronicas de introitibus ex novis instrumentis non iam accipies.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Pagina exspiraverat. Nihil mutatum est; iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Sessiones in hoc situ non notantur.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>Sessiones nondum notantur: situs renovatione basis datorum eget.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Nunc initum</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Hoc instrumentum</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Instrumentum</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Inscriptio</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Introitus</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Ultimo activum</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Nunc</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Initum manet</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Memento mei, usque ad %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>Donec navigatrum clauditur</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>Ut hanc sessionem finias, exi.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Exire</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Hanc sessionem finire</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Omnes alias sessiones finire</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Ubique exire</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Monitiones de introitu</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>Epistulam electronicam mihi mittere cum ratio mea ex novo instrumento aut navigatro init</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nuper finitae</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finita</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Quomodo</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Nullae intra ultimos %days dies.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Vide ubi ratio tua inierit, et instrumentum quod non agnoscis exire coge.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Instrumenta administrare</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Novus introitus in rationem tuam in %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Salve,</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>Ratio tua %login in %site modo adhibita est ut ex instrumento aut navigatro iniretur quo nuper non usa est:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Instrumentum:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Tempus:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Inscriptio approximata:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Si tu eras, nihil tibi faciendum est.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Si tu non eras, fortasse aliquis tesseram tuam novit. Illam sessionem in pagina instrumentorum tuorum fini, deinde tesseram tuam muta:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Has epistulas in eadem pagina inactivare potes.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Novus introitus usoris %login in %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>Ratio %login ex instrumento aut navigatro iniit quo nuper non usa est.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>Sessiones huius usoris:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Novus introitus in rationem tuam</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>Ratio tua %login adhibita est ut ex %device (%ip) die %date iniretur.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Si tu eras, nihil tibi faciendum est. Si non, hanc sessionem apud %url fini et tesseram tuam muta.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Novus introitus usoris %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>Ratio %login ex novo instrumento iniit: %device (%ip) die %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Instrumenta tua</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>Sessiones usoris %name</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Claves accessus</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>Clavis accessus te impressione digitali, facie, clausura quadri visorii aut clave securitatis pro tessera tua introducit. In instrumento tuo aut in custode tesserarum tuo servatur; hic situs solam clavem publicam eius tenet, itaque effluvium hic eam prodere non potest.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>Claves accessus in hoc situ inactivae sunt.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>Claves accessus in hoc situ nondum adhiberi possunt: administrator prius renovationem basis datorum exsequi debet.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Visne clavem accessus "%name" removere?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>In hanc rationem iam inire non poterit. Eam etiam ex instrumento tuo aut custode tesserarum remove.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Clavem accessus removere</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Claves accessus tuae</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count ex %max ad summum</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Nullam clavem accessus adhuc habes. Infra unam adde: cum proxime inibis, "Clave accessus inire" elige.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Addita</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultimo adhibita</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Genus</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Actiones</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Nondum</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Synchronizata</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Hoc instrumentum aut haec clavis</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Renominare</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Novum nomen</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Nomen servare</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Removere</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Clavem accessus addere</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Gradus navigatri aut instrumenti tui sequere.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>Fenestra clavis accessus clausa est. Nihil mutatum est.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Clavis accessus fieri non potuit. Iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Hoc navigatrum claves accessus facere non potest. Navigatro recenti utere, aut tessera tua ini.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Exempli gratia instrumentum aut custos tesserarum in quo est, ut claves accessus tuas discernas.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Haec ratio tot claves accessus habet quot habere licet (%max). Unam remove ut aliam addas.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>Clavis accessus adhiberi non potuit. Iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Ratio mea</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>Fenestra clavis accessus clausa est. Tessera tua potius inire potes.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>Clavis accessus adhiberi non potuit. Iterum, quaeso, conare, aut tessera tua ini.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Clave accessus inire</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Clave accessus iniri non potuit</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>impressione digitali, facie, clausura quadri visorii aut clave securitatis pro tessera tua ini.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>Clavis accessus "%name" addita est. Ex hoc tempore ea inire potes.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>Clavis accessus nunc appellatur "%name".</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>Clavis accessus "%name" remota est. In hanc rationem iam inire non potest.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Clavis accessus diei %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Haec ratio tot claves accessus habet quot habere licet. Prius unam remove.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Basis datorum occupata erat et nihil servatum est. Iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Haec clavis accessus iam registrata est.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>Petitio nimis diu duravit aut iam adhibita erat. Iterum, quaeso, conare.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>Clavis accessus non probavit quis sis (PIN, impressio digitalis aut facies). Iterum, quaeso, conare et in instrumento tuo confirma.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Hic authenticator genus clavis adhibet quod hic situs non accipit.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>Clavis accessus pro alia inscriptione quam hoc situ facta est.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Haec clavis accessus hic pro nulla ratione registrata est. Tessera tua ini et eam sub Ratio mea, Claves accessus adde.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Haec ratio in praesenti inire non potest. Administratorem situs, quaeso, adi.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>Clavis accessus probari non potuit. Iterum, quaeso, conare.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>Modum introitus tui aut securitatem rationis tuae mutaturus es.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Usores, munera aut regulas administraturus es.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Optiones systematis mutaturus es aut actionem configurationis exsecuturus.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Data exportaturus es.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Contenta remoturus aut publicaturus es.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Haec actio postulat ut confirmes quis sis.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Confirma te esse, qui ut %login iniisti. Per %minutes minuta iterum non rogaberis.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Illa tessera recta non est.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ille codex rectus non est, aut iam adhibitus est.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Unam ex viis infra elige.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>Clavis accessus probari non potuit.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Conatus reliqui antequam exire cogaris: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>Fasciculi quos elegisti iterum mitti non possunt: post confirmationem eos denuo elige.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Tessera tua</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Clave accessus</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Tessera</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Clave accessus uti</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>Codice ex applicatione authenticationis tua</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Codex</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Haec ratio nullam viam habet ad confirmandum quis sis (nullam tesseram, clavem accessus aut applicationem authenticationis). Exi et iterum ini, aut administratorem roga.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abrogare</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Confirma te esse</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Codex ex applicatione authenticationis tua</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Ratio propria</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>Propriam tesseram, inscriptionem epistulae electronicae, claves accessus, introitum duorum graduum aut claves API mutare.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Usores, munera et regulae</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Usores creare et recensere, optiones rationum, munera assignare et regulas recensere.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Optiones systematis et actiones configurationis</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Optiones, extensiones, promptuaria et conservationem, sarcinas et renovationes, exemplaria tutelae et procuratorem git recensere.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Data exportare</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>Exportationes notitiae collectae, usorum, subscriptorum litterarum nuntiarum et inspectionis.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Contenta removere et publicare</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Contenta removere (etiam in corbem), corbem vacuefacere et publicare. Praedefinite inactivum.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Ante actionem gravem usor qui iniit iterum confirmat quis sit, tessera sua, clave accessus aut codice applicationis authenticationis suae. Solae paginae interretiales rogant: interfacies REST, SOAP, WebDAV, introitus expservices et linea mandatorum numquam rogant.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Generalia</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Minuta quibus confirmatio valet</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Quando rogandum</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Regulae in site.ini [ReauthGroup_%name]: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>In settings/override/site.ini.append.php servatur. Cum servas, rogaberis ut confirmes te esse.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Servare</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Confirma te esse</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>"Confirma te esse" rogare ante actiones gregum infra activatorum</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>Optiones servatae sunt.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Optiones servari non potuerunt: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuratio</translation>
     </message>
 </context>
 </TS>

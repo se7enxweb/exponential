@@ -2247,6 +2247,74 @@
         <source>Open or close the folder</source>
         <translation>A mappa megnyitása vagy bezárása</translation>
     </message>
+    <message>
+        <source>This page is in your bookmarks. Open to change its name or folder.</source>
+        <translation>Ez az oldal szerepel a könyvjelzői között. Nyissa meg a nevének vagy a mappájának módosításához.</translation>
+    </message>
+    <message>
+        <source>Add this page to your bookmarks.</source>
+        <translation>Az oldal hozzáadása a könyvjelzőkhöz.</translation>
+    </message>
+    <message>
+        <source>Bookmarked</source>
+        <translation>Könyvjelzők között</translation>
+    </message>
+    <message>
+        <source>Bookmark this page</source>
+        <translation>Oldal hozzáadása a könyvjelzőkhöz</translation>
+    </message>
+    <message>
+        <source>The bookmark keeps the address of this page with its parameters: /%uri</source>
+        <translation>A könyvjelző az oldal címét a paramétereivel együtt tárolja: /%uri</translation>
+    </message>
+    <message>
+        <source>Save bookmark</source>
+        <translation>Könyvjelző mentése</translation>
+    </message>
+    <message>
+        <source>Add bookmark</source>
+        <translation>Könyvjelző hozzáadása</translation>
+    </message>
+    <message>
+        <source>My bookmarks</source>
+        <translation>Saját könyvjelzők</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Rendszeroldal</translation>
+    </message>
+    <message>
+        <source>System pages</source>
+        <translation>Rendszeroldalak</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page.</source>
+        <translation>Ezt az oldalt már nem nyithatja meg.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Megnyitás</translation>
+    </message>
+    <message>
+        <source>The address of this page is missing. Remove the bookmark and bookmark the page again.</source>
+        <translation>Az oldal címe hiányzik. Távolítsa el a könyvjelzőt, és adja hozzá újra az oldalt a könyvjelzőkhöz.</translation>
+    </message>
+    <message>
+        <source>You may no longer open this page. Remove the bookmark, or ask an administrator for access.</source>
+        <translation>Ezt az oldalt már nem nyithatja meg. Távolítsa el a könyvjelzőt, vagy kérjen hozzáférést egy rendszergazdától.</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Module and view</source>
+        <translation>Modul és nézet</translation>
+    </message>
+    <message>
+        <source>System pages can be bookmarked too: open the page (Setup, the audit trail, a list of users ...) and choose Bookmark this page above it. Such bookmarks have a gear icon.</source>
+        <translation>Rendszeroldalakat is felvehet a könyvjelzők közé: nyissa meg az oldalt (Rendszer, az auditnapló, egy felhasználólista ...), és válassza felette az „Oldal hozzáadása a könyvjelzőkhöz” lehetőséget. Az ilyen könyvjelzőket fogaskerék ikon jelöli.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/content/browse</name>
@@ -14148,7 +14216,7 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     </message>
     <message>
         <source>Store</source>
-        <translation>Áruház</translation>
+        <translation>Webáruház</translation>
     </message>
     <message>
         <source>Advanced search</source>
@@ -17638,6 +17706,10 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     <message>
         <source>deactivate user accounts and move them to the group of deactivated users, and move them back</source>
         <translation>felhasználói fiókok inaktiválása és áthelyezése az inaktivált felhasználók csoportjába, valamint visszahelyezésük</translation>
+    </message>
+    <message>
+        <source>see where other users are signed in, and sign them out</source>
+        <translation>annak megtekintése, hol vannak bejelentkezve más felhasználók, és kijelentkeztetésük</translation>
     </message>
 </context>
 <context>
@@ -37743,6 +37815,58 @@ a fiókja aktiválásához.</translation>
         <source>Open e-mail preferences</source>
         <translation>E-mail-beállítások megnyitása</translation>
     </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Munkamenetek</translation>
+    </message>
+    <message>
+        <source>Where you are signed in: browser, system, place and time. Sign out a device you do not know.</source>
+        <translation>Ahol be van jelentkezve: böngésző, rendszer, hely és időpont. Jelentkeztesse ki az ismeretlen eszközöket.</translation>
+    </message>
+    <message>
+        <source>Where this user is signed in, and signing the user out everywhere.</source>
+        <translation>Ahol ez a felhasználó be van jelentkezve, valamint a felhasználó kijelentkeztetése mindenhol.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Eszközök kezelése</translation>
+    </message>
+    <message>
+        <source>Show sessions</source>
+        <translation>Munkamenetek megjelenítése</translation>
+    </message>
+    <message>
+        <source>%count signed in</source>
+        <translation>Bejelentkezve: %count</translation>
+    </message>
+    <message>
+        <source>Passkeys</source>
+        <translation>Hozzáférési kulcsok</translation>
+    </message>
+    <message>
+        <source>Sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>Jelszó helyett ujjlenyomattal, arccal, képernyőzárral vagy biztonsági kulccsal jelentkezhet be.</translation>
+    </message>
+    <message>
+        <source>Manage passkeys</source>
+        <translation>Hozzáférési kulcsok kezelése</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Hozzáférési kulcs hozzáadása</translation>
+    </message>
+    <message>
+        <source>%count passkeys</source>
+        <translation>%count hozzáférési kulcs</translation>
+    </message>
+    <message>
+        <source>None yet</source>
+        <translation>Még nincs</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/user/login</name>
@@ -39682,6 +39806,30 @@ a fiókja aktiválásához.</translation>
     <message>
         <source>Class/attribute combinations (%count)</source>
         <translation>Osztály/attribútum kombinációk (%count)</translation>
+    </message>
+    <message>
+        <source>User groups whose new accounts need approval</source>
+        <translation>Felhasználócsoportok, amelyekben az új fiókokat jóvá kell hagyni</translation>
+    </message>
+    <message>
+        <source>An account published into one of these groups, or below one, waits until an approver accepts it. It cannot sign in before.</source>
+        <translation>Az ezen csoportok valamelyikébe vagy alájuk közzétett fiók addig várakozik, amíg egy jóváhagyó el nem fogadja. Addig nem tud bejelentkezni.</translation>
+    </message>
+    <message>
+        <source>Users who approve the accounts</source>
+        <translation>A fiókokat jóváhagyó felhasználók</translation>
+    </message>
+    <message>
+        <source>Groups who approve the accounts</source>
+        <translation>A fiókokat jóváhagyó csoportok</translation>
+    </message>
+    <message>
+        <source>User groups that need no approval (their members publish such accounts directly; approvers never need it)</source>
+        <translation>Jóváhagyást nem igénylő felhasználócsoportok (tagjaik közvetlenül közzétehetik az ilyen fiókokat; a jóváhagyóknak soha nincs rá szükségük)</translation>
+    </message>
+    <message>
+        <source>Send the approvers an e-mail with the link to the approval (they sign in to approve or deny)</source>
+        <translation>E-mail küldése a jóváhagyóknak a jóváhagyásra mutató hivatkozással (a jóváhagyáshoz vagy az elutasításhoz be kell jelentkezniük)</translation>
     </message>
 </context>
 <context>
@@ -50784,6 +50932,22 @@ További információt a követelményeket ismertető oldalon talál.</translati
         <source>The environment variable EXP_DEMO_MODE=1 marks this installation as a public demo: a well-known administrator password is accepted, and administrator passwords cannot be changed or reset later. Never use demo mode for a production site.</source>
         <translation>Az EXP_DEMO_MODE=1 környezeti változó nyilvános bemutatóként jelöli meg ezt a telepítést: egy közismert rendszergazdai jelszó is elfogadott, és a rendszergazdai jelszavak később nem módosíthatók és nem állíthatók vissza. Éles webhelyen soha ne használja a bemutató módot.</translation>
     </message>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-feladatok</translation>
+    </message>
+    <message>
+        <source>The cronjobs run from the crontab of the user %user, which owns the installation.</source>
+        <translation>A cron-feladatok a(z) %user felhasználó crontab fájljából futnak, akinek a tulajdonában a telepítés van.</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part to schedule.</source>
+        <translation>A telepítésben nincs ütemezhető cron-feladatrész.</translation>
+    </message>
+    <message>
+        <source>The crontab was not written (%reason). Add these lines to the crontab of the user the site runs as, or the queue, the imports, the notifications and the search index never run:</source>
+        <translation>A crontab fájl nem lett megírva (%reason). Vegye fel ezeket a sorokat annak a felhasználónak a crontab fájljába, akinek a nevében a webhely fut, különben a várólista, az importálások, az értesítések és a keresési index soha nem fut le:</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/setup/operatorcode</name>
@@ -54300,6 +54464,22 @@ a fiókja aktiválásához.</translation>
         <source>ClassAttribute name</source>
         <translation>Osztályattribútum neve</translation>
     </message>
+    <message>
+        <source>Accounts that need approval</source>
+        <translation>Jóváhagyást igénylő fiókok</translation>
+    </message>
+    <message>
+        <source>E-mail to the approvers</source>
+        <translation>E-mail a jóváhagyóknak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
 </context>
 <context>
     <name>extension/oauth</name>
@@ -55710,6 +55890,14 @@ a fiókja aktiválásához.</translation>
         <source>Your comment was added.</source>
         <translation>A megjegyzése hozzáadva.</translation>
     </message>
+    <message>
+        <source>The account "%1" was approved and published: it can sign in now.</source>
+        <translation>A(z) „%1” fiók jóváhagyva és közzétéve: mostantól be tud jelentkezni.</translation>
+    </message>
+    <message>
+        <source>The account "%1" was denied. It is not published and cannot sign in; it is a draft of its author again.</source>
+        <translation>A(z) „%1” fiók jóváhagyása megtagadva. Nincs közzétéve, és nem tud bejelentkezni; ismét a szerzője piszkozata.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/content</name>
@@ -56008,6 +56196,38 @@ a fiókja aktiválásához.</translation>
     <message>
         <source>Added %count bookmark(s).</source>
         <translation>Hozzáadott könyvjelzők: %count.</translation>
+    </message>
+    <message>
+        <source>System page</source>
+        <translation>Rendszeroldal</translation>
+    </message>
+    <message>
+        <source>System pages cannot be bookmarked yet: the database update of this version has not been run.</source>
+        <translation>A rendszeroldalak még nem vehetők fel a könyvjelzők közé: ennek a verziónak az adatbázis-frissítése még nem futott le.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: it is not a page of a module view.</source>
+        <translation>Ez az oldal nem vehető fel a könyvjelzők közé: nem modulnézet oldala.</translation>
+    </message>
+    <message>
+        <source>This page cannot be bookmarked: you may not open it.</source>
+        <translation>Ez az oldal nem vehető fel a könyvjelzők közé: nem nyithatja meg.</translation>
+    </message>
+    <message>
+        <source>The page could not be bookmarked.</source>
+        <translation>Az oldalt nem sikerült felvenni a könyvjelzők közé.</translation>
+    </message>
+    <message>
+        <source>The page "%name" is in your bookmarks.</source>
+        <translation>A(z) „%name” oldal szerepel a könyvjelzői között.</translation>
+    </message>
+    <message>
+        <source>The bookmark could not be renamed: it needs a name.</source>
+        <translation>A könyvjelzőt nem sikerült átnevezni: meg kell adni egy nevet.</translation>
+    </message>
+    <message>
+        <source>The bookmark was renamed to "%name".</source>
+        <translation>A könyvjelző új neve: „%name”.</translation>
     </message>
 </context>
 <context>
@@ -58070,6 +58290,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Mirror to data tables</source>
         <translation>Tükrözés adattáblákba</translation>
+    </message>
+    <message>
+        <source>Approve user accounts</source>
+        <translation>Felhasználói fiókok jóváhagyása</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Egy új felhasználói fiók a jóváhagyására vár</translation>
     </message>
 </context>
 <context>
@@ -60735,6 +60963,22 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Sent to the password change</source>
         <translation>Átirányítva a jelszómódosításhoz</translation>
+    </message>
+    <message>
+        <source>Sign-in without the second step refused</source>
+        <translation>Második lépés nélküli bejelentkezés elutasítva</translation>
+    </message>
+    <message>
+        <source>App password made</source>
+        <translation>Alkalmazásjelszó létrehozva</translation>
+    </message>
+    <message>
+        <source>App password revoked</source>
+        <translation>Alkalmazásjelszó visszavonva</translation>
+    </message>
+    <message>
+        <source>App password used</source>
+        <translation>Alkalmazásjelszó használva</translation>
     </message>
 </context>
 <context>
@@ -64197,6 +64441,26 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The audit trail of this node</source>
         <translation>E csomópont auditnaplója</translation>
+    </message>
+    <message>
+        <source>intact</source>
+        <translation>sértetlen</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>megszakadt</translation>
+    </message>
+    <message>
+        <source>unchecked</source>
+        <translation>ellenőrizetlen</translation>
+    </message>
+    <message>
+        <source>repaired</source>
+        <translation>javítva</translation>
+    </message>
+    <message>
+        <source>empty</source>
+        <translation>üres</translation>
     </message>
 </context>
 <context>
@@ -71144,6 +71408,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The new e-mail address %email waits for its confirmation: open the link we sent there. Until then this account keeps %current.</source>
         <translation>Az új e-mail-cím (%email) megerősítésre vár: nyissa meg az oda küldött hivatkozást. Addig ez a fiók megtartja ezt a címet: %current.</translation>
     </message>
+    <message>
+        <source>The e-mail about a sign-in from a new device or browser is part of account security. You turn it off or on with your devices, where you also see and sign out the sessions of your account.</source>
+        <translation>Az új eszközről vagy böngészőből történő bejelentkezésről szóló e-mail a fiók biztonságához tartozik. Az eszközeinél kapcsolhatja ki vagy be, ahol a fiókja munkameneteit is láthatja és kijelentkeztetheti.</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -75581,6 +75853,1124 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Browse the tables of the persistent classes…</source>
         <translation>A perzisztens osztályok tábláinak tallózása…</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/cronjobs</name>
+    <message>
+        <source>Cronjobs</source>
+        <translation>Cron-feladatok</translation>
+    </message>
+    <message>
+        <source>No cronjob part has run yet: the job queue, the imports, the notifications and the search index wait. Run php bin/php/installcrontab.php --add, or add the lines of --show to the crontab.</source>
+        <translation>Még egyetlen cron-feladatrész sem futott le: a feladat-várólista, az importálások, az értesítések és a keresési index várakozik. Futtassa a php bin/php/installcrontab.php --add parancsot, vagy vegye fel a --show által kiírt sorokat a crontab fájlba.</translation>
+    </message>
+    <message>
+        <source>A cronjob part has not run for longer than its schedule allows: check the crontab (php bin/php/installcrontab.php --show) and the logs var/log/cronjob-*.log.</source>
+        <translation>Egy cron-feladatrész hosszabb ideje nem futott, mint amennyit az ütemezése megenged: ellenőrizze a crontab fájlt (php bin/php/installcrontab.php --show) és a var/log/cronjob-*.log naplófájlokat.</translation>
+    </message>
+    <message>
+        <source>Part</source>
+        <translation>Rész</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ütemezés</translation>
+    </message>
+    <message>
+        <source>Last started</source>
+        <translation>Utolsó indítás</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>soha</translation>
+    </message>
+    <message>
+        <source>on time</source>
+        <translation>időben</translation>
+    </message>
+    <message>
+        <source>late</source>
+        <translation>késésben</translation>
+    </message>
+    <message>
+        <source>never ran</source>
+        <translation>soha nem futott</translation>
+    </message>
+    <message>
+        <source>The installation has no cronjob part for the cron job to run.</source>
+        <translation>A telepítésben nincs olyan cron-feladatrész, amelyet a cron-feladat futtathatna.</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Cronjobs</source>
+        <translation>Rendszer &gt; Cron-feladatok</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/workflow/eventtype/expuserapprove</name>
+    <message>
+        <source>New user account waiting for approval: %name</source>
+        <translation>Jóváhagyásra váró új felhasználói fiók: %name</translation>
+    </message>
+    <message>
+        <source>Account</source>
+        <translation>Fiók</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Felhasználónév</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Csoport</translation>
+    </message>
+    <message>
+        <source>Requested by</source>
+        <translation>Kérelmező</translation>
+    </message>
+    <message>
+        <source>Open the approval</source>
+        <translation>Jóváhagyás megnyitása</translation>
+    </message>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Ha a gomb nem működik, másolja ezt a címet a böngészőjébe: %url</translation>
+    </message>
+    <message>
+        <source>A new user account waits for your approval</source>
+        <translation>Egy új felhasználói fiók a jóváhagyására vár</translation>
+    </message>
+    <message>
+        <source>%requester created the account "%name" in %groups. It is not published and cannot sign in until an approver accepts it.</source>
+        <translation>%requester létrehozta a(z) „%name” fiókot a következő csoportokban: %groups. A fiók nincs közzétéve, és nem tud bejelentkezni, amíg egy jóváhagyó el nem fogadja.</translation>
+    </message>
+    <message>
+        <source>Sign in to the administration and approve or deny it in your collaboration list. This link does not sign you in and decides nothing by itself.</source>
+        <translation>Jelentkezzen be az adminisztrációs felületre, és hagyja jóvá vagy utasítsa el az együttműködési listájában. Ez a hivatkozás nem jelentkezteti be, és önmagában semmiről sem dönt.</translation>
+    </message>
+    <message>
+        <source>This mail was sent by %site because you approve new accounts of these groups.</source>
+        <translation>Ezt a levelet a(z) %site webhely küldte, mert Ön hagyja jóvá ezeknek a csoportoknak az új fiókjait.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Számítógép</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Táblagép</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program vagy alkalmazás</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizált ügyfél</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ismeretlen eszköz</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Jelszó</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Jelszó és kétlépéses kód</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-felület</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-felület</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Egyszeri bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>A munkamenetek rögzítése előtt jelentkezett be</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kijelentkezett</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Erről az oldalról kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Rendszergazda által kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>„Az összes többi munkamenet” funkcióval kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Új bejelentkezés váltotta fel</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Jelszómódosítás miatt befejeződött</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Lejárt</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name munkamenetei</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ahol a fiókja jelenleg be van jelentkezve. Ha nem ismer fel egy eszközt, jelentkeztesse ki, és módosítsa a jelszavát.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ahol ez a fiók jelenleg be van jelentkezve. A felhasználó kijelentkeztetése minden munkamenetet a következő kérésénél befejez.</translation>
+    </message>
+    <message>
+        <source>Back to the account</source>
+        <translation>Vissza a fiókhoz</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A munkamenet kijelentkeztetve. Az eszköznek újra be kell jelentkeznie.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Kijelentkeztetett további munkamenetek: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nem volt más kijelentkeztethető munkamenet.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>A felhasználó kijelentkeztetett munkamenetei: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ennek a felhasználónak nem volt kijelentkeztethető munkamenete.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ezt a munkamenetet használja éppen. A befejezéséhez jelentkezzen ki.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ez a munkamenet már befejeződött.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>E-mailt kap, ha a fiókjával új eszközről jelentkeznek be.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>A továbbiakban nem kap e-mailt az új eszközökről történő bejelentkezésekről.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Az oldal lejárt. Semmi sem változott; próbálja újra.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site (site.ini [UserSessionSettings] Tracking=disabled).</source>
+        <translation>Ezen a webhelyen nincs munkamenet-rögzítés (site.ini [UserSessionSettings] Tracking=disabled).</translation>
+    </message>
+    <message>
+        <source>The table expuser_session is missing</source>
+        <translation>Hiányzik az expuser_session tábla</translation>
+    </message>
+    <message>
+        <source>Sessions are recorded once it is created: php update/common/scripts/6.0/createusersessiontable.php, or the database update of 6.0.15.</source>
+        <translation>A munkamenetek rögzítése a tábla létrehozása után kezdődik: php update/common/scripts/6.0/createusersessiontable.php, vagy a 6.0.15-ös verzió adatbázis-frissítése.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jelenleg bejelentkezve</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Az összes többi munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kijelentkezés mindenhol</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>Ezen az eszközön kívül minden eszköz kijelentkeztetésre kerül a következő kérésénél, azok is, amelyek az „Emlékezzen rám” beállítással bejelentkezve maradnak.</translation>
+    </message>
+    <message>
+        <source>Every session of this user is signed out at its next request, also those that stay signed in with Remember me.</source>
+        <translation>A felhasználó minden munkamenete kijelentkeztetésre kerül a következő kérésénél, azok is, amelyek az „Emlékezzen rám” beállítással bejelentkezve maradnak.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other sessions</source>
+        <translation>Igen, a többi munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Yes, sign out every session</source>
+        <translation>Igen, az összes munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ez az eszköz</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Eszköz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Shown as its network; the full address is kept for the administrators.</source>
+        <translation>A hálózata jelenik meg; a teljes címet a rendszergazdák számára megőrzi a rendszer.</translation>
+    </message>
+    <message>
+        <source>signed in from %ip</source>
+        <translation>bejelentkezés innen: %ip</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Utolsó tevékenység</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Most</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Bejelentkezve marad</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Emlékezzen rám, eddig: %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>A böngésző bezárásáig</translation>
+    </message>
+    <message>
+        <source>Signed in at</source>
+        <translation>Bejelentkezés helye</translation>
+    </message>
+    <message>
+        <source>Browser identification</source>
+        <translation>Böngészőazonosító</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>A munkamenet befejezéséhez jelentkezzen ki.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kijelentkezés</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>No session is signed in.</source>
+        <translation>Nincs bejelentkezett munkamenet.</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Bejelentkezési értesítések</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail küldése, ha a fiókommal új eszközről vagy böngészőből jelentkeznek be</translation>
+    </message>
+    <message>
+        <source>Sent to %email. It tells you the device, the approximate place and the time, and links to this page.</source>
+        <translation>Címzett: %email. Tartalmazza az eszközt, a hozzávetőleges helyet és az időpontot, valamint egy hivatkozást erre az oldalra.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>This site does not send sign-in alerts.</source>
+        <translation>Ez a webhely nem küld bejelentkezési értesítéseket.</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nemrég befejeződött</translation>
+    </message>
+    <message>
+        <source>Sessions that ended in the last %days days.</source>
+        <translation>Az elmúlt %days napban befejeződött munkamenetek.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Befejeződött</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Mód</translation>
+    </message>
+    <message>
+        <source>None.</source>
+        <translation>Nincs.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/sessions</name>
+    <message>
+        <source>Computer</source>
+        <translation>Számítógép</translation>
+    </message>
+    <message>
+        <source>Phone</source>
+        <translation>Telefon</translation>
+    </message>
+    <message>
+        <source>Tablet</source>
+        <translation>Táblagép</translation>
+    </message>
+    <message>
+        <source>Program or app</source>
+        <translation>Program vagy alkalmazás</translation>
+    </message>
+    <message>
+        <source>Automated client</source>
+        <translation>Automatizált ügyfél</translation>
+    </message>
+    <message>
+        <source>Unknown device</source>
+        <translation>Ismeretlen eszköz</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Jelszó</translation>
+    </message>
+    <message>
+        <source>Password and two-step code</source>
+        <translation>Jelszó és kétlépéses kód</translation>
+    </message>
+    <message>
+        <source>REST interface</source>
+        <translation>REST-felület</translation>
+    </message>
+    <message>
+        <source>SOAP interface</source>
+        <translation>SOAP-felület</translation>
+    </message>
+    <message>
+        <source>WebDAV</source>
+        <translation>WebDAV</translation>
+    </message>
+    <message>
+        <source>Single sign-on</source>
+        <translation>Egyszeri bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Signed in before sessions were recorded</source>
+        <translation>A munkamenetek rögzítése előtt jelentkezett be</translation>
+    </message>
+    <message>
+        <source>Signed out</source>
+        <translation>Kijelentkezett</translation>
+    </message>
+    <message>
+        <source>Signed out from this page</source>
+        <translation>Erről az oldalról kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Signed out by an administrator</source>
+        <translation>Rendszergazda által kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Signed out with "all other sessions"</source>
+        <translation>„Az összes többi munkamenet” funkcióval kijelentkeztetve</translation>
+    </message>
+    <message>
+        <source>Replaced by a new sign-in</source>
+        <translation>Új bejelentkezés váltotta fel</translation>
+    </message>
+    <message>
+        <source>Ended by a password change</source>
+        <translation>Jelszómódosítás miatt befejeződött</translation>
+    </message>
+    <message>
+        <source>Expired</source>
+        <translation>Lejárt</translation>
+    </message>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name munkamenetei</translation>
+    </message>
+    <message>
+        <source>Where your account is signed in right now. If you do not recognise a device, sign it out and change your password.</source>
+        <translation>Ahol a fiókja jelenleg be van jelentkezve. Ha nem ismer fel egy eszközt, jelentkeztesse ki, és módosítsa a jelszavát.</translation>
+    </message>
+    <message>
+        <source>Where this account is signed in right now. Signing the user out ends every session at its next request.</source>
+        <translation>Ahol ez a fiók jelenleg be van jelentkezve. A felhasználó kijelentkeztetése minden munkamenetet a következő kérésénél befejez.</translation>
+    </message>
+    <message>
+        <source>The session was signed out. The device has to sign in again.</source>
+        <translation>A munkamenet kijelentkeztetve. Az eszköznek újra be kell jelentkeznie.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out.</source>
+        <translation>Kijelentkeztetett további munkamenetek: %count.</translation>
+    </message>
+    <message>
+        <source>There were no other sessions to sign out.</source>
+        <translation>Nem volt más kijelentkeztethető munkamenet.</translation>
+    </message>
+    <message>
+        <source>%count sessions of this user were signed out.</source>
+        <translation>A felhasználó kijelentkeztetett munkamenetei: %count.</translation>
+    </message>
+    <message>
+        <source>This user had no sessions to sign out.</source>
+        <translation>Ennek a felhasználónak nem volt kijelentkeztethető munkamenete.</translation>
+    </message>
+    <message>
+        <source>This is the session you are using. To end it, sign out.</source>
+        <translation>Ezt a munkamenetet használja éppen. A befejezéséhez jelentkezzen ki.</translation>
+    </message>
+    <message>
+        <source>That session had already ended.</source>
+        <translation>Ez a munkamenet már befejeződött.</translation>
+    </message>
+    <message>
+        <source>You will get an e-mail when your account signs in from a new device.</source>
+        <translation>E-mailt kap, ha a fiókjával új eszközről jelentkeznek be.</translation>
+    </message>
+    <message>
+        <source>You will no longer get an e-mail about sign-ins from new devices.</source>
+        <translation>A továbbiakban nem kap e-mailt az új eszközökről történő bejelentkezésekről.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Az oldal lejárt. Semmi sem változott; próbálja újra.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site.</source>
+        <translation>Ezen a webhelyen nincs munkamenet-rögzítés.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded yet: the site needs its database update.</source>
+        <translation>A munkamenetek rögzítése még nem működik: a webhelyen le kell futtatni az adatbázis-frissítést.</translation>
+    </message>
+    <message>
+        <source>Signed in now</source>
+        <translation>Jelenleg bejelentkezve</translation>
+    </message>
+    <message>
+        <source>This device</source>
+        <translation>Ez az eszköz</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Eszköz</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Cím</translation>
+    </message>
+    <message>
+        <source>Signed in</source>
+        <translation>Bejelentkezés</translation>
+    </message>
+    <message>
+        <source>Last active</source>
+        <translation>Utolsó tevékenység</translation>
+    </message>
+    <message>
+        <source>Now</source>
+        <translation>Most</translation>
+    </message>
+    <message>
+        <source>Stays signed in</source>
+        <translation>Bejelentkezve marad</translation>
+    </message>
+    <message>
+        <source>Remember me, until %date</source>
+        <translation>Emlékezzen rám, eddig: %date</translation>
+    </message>
+    <message>
+        <source>Until the browser is closed</source>
+        <translation>A böngésző bezárásáig</translation>
+    </message>
+    <message>
+        <source>To end this session, sign out.</source>
+        <translation>A munkamenet befejezéséhez jelentkezzen ki.</translation>
+    </message>
+    <message>
+        <source>Sign out</source>
+        <translation>Kijelentkezés</translation>
+    </message>
+    <message>
+        <source>Sign out this session</source>
+        <translation>Munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Sign out all other sessions</source>
+        <translation>Az összes többi munkamenet kijelentkeztetése</translation>
+    </message>
+    <message>
+        <source>Sign out everywhere</source>
+        <translation>Kijelentkezés mindenhol</translation>
+    </message>
+    <message>
+        <source>Sign-in alerts</source>
+        <translation>Bejelentkezési értesítések</translation>
+    </message>
+    <message>
+        <source>E-mail me when my account signs in from a new device or browser</source>
+        <translation>E-mail küldése, ha a fiókommal új eszközről vagy böngészőből jelentkeznek be</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>Recently ended</source>
+        <translation>Nemrég befejeződött</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Befejeződött</translation>
+    </message>
+    <message>
+        <source>How</source>
+        <translation>Mód</translation>
+    </message>
+    <message>
+        <source>None in the last %days days.</source>
+        <translation>Nincs az elmúlt %days napban.</translation>
+    </message>
+    <message>
+        <source>See where your account is signed in, and sign out a device you do not know.</source>
+        <translation>Tekintse meg, hol van bejelentkezve a fiókja, és jelentkeztesse ki az ismeretlen eszközöket.</translation>
+    </message>
+    <message>
+        <source>Manage devices</source>
+        <translation>Eszközök kezelése</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/new_signin_mail</name>
+    <message>
+        <source>New sign-in to your account on %site</source>
+        <translation>Új bejelentkezés a fiókjába a következő webhelyen: %site</translation>
+    </message>
+    <message>
+        <source>Hello,</source>
+        <translation>Üdvözöljük!</translation>
+    </message>
+    <message>
+        <source>Your account %login on %site was just used to sign in from a device or browser it has not used lately:</source>
+        <translation>A(z) %site webhelyen lévő %login fiókjával az imént bejelentkeztek egy olyan eszközről vagy böngészőből, amelyet a fiók mostanában nem használt:</translation>
+    </message>
+    <message>
+        <source>Device:</source>
+        <translation>Eszköz:</translation>
+    </message>
+    <message>
+        <source>Time:</source>
+        <translation>Időpont:</translation>
+    </message>
+    <message>
+        <source>Approximate address:</source>
+        <translation>Hozzávetőleges cím:</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything.</source>
+        <translation>Ha Ön volt, nincs teendője.</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password. Sign that session out on the page of your devices, then change your password:</source>
+        <translation>Ha nem Ön volt, lehet, hogy valaki ismeri a jelszavát. Jelentkeztesse ki ezt a munkamenetet az eszközei oldalán, majd módosítsa a jelszavát:</translation>
+    </message>
+    <message>
+        <source>You can turn these e-mails off on the same page.</source>
+        <translation>Ugyanezen az oldalon kikapcsolhatja ezeket az e-maileket.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login on %site</source>
+        <translation>Új bejelentkezés (%login) a következő webhelyen: %site</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a device or browser it has not used lately.</source>
+        <translation>A(z) %login fiók olyan eszközről vagy böngészőből jelentkezett be, amelyet mostanában nem használt.</translation>
+    </message>
+    <message>
+        <source>The sessions of this user:</source>
+        <translation>A felhasználó munkamenetei:</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions/mail</name>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Új bejelentkezés a fiókjába</translation>
+    </message>
+    <message>
+        <source>Your account %login was used to sign in from %device (%ip) on %date.</source>
+        <translation>A(z) %login fiókjával bejelentkeztek a következő eszközről: %device (%ip), időpont: %date.</translation>
+    </message>
+    <message>
+        <source>If this was you, you do not need to do anything. If not, sign this session out at %url and change your password.</source>
+        <translation>Ha Ön volt, nincs teendője. Ha nem, jelentkeztesse ki ezt a munkamenetet itt: %url, és módosítsa a jelszavát.</translation>
+    </message>
+    <message>
+        <source>New sign-in of %login</source>
+        <translation>Új bejelentkezés: %login</translation>
+    </message>
+    <message>
+        <source>The account %login signed in from a new device: %device (%ip) on %date.</source>
+        <translation>A(z) %login fiók új eszközről jelentkezett be: %device (%ip), időpont: %date.</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/user/sessions</name>
+    <message>
+        <source>Your devices</source>
+        <translation>Saját eszközök</translation>
+    </message>
+    <message>
+        <source>Sessions of %name</source>
+        <translation>%name munkamenetei</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/passkeys</name>
+    <message>
+        <source>Passkeys</source>
+        <translation>Hozzáférési kulcsok</translation>
+    </message>
+    <message>
+        <source>A passkey signs you in with your fingerprint, face, screen lock or security key instead of your password. It is stored on your device or in your password manager; this site keeps only its public key, so a leak here cannot reveal it.</source>
+        <translation>A hozzáférési kulccsal jelszó helyett ujjlenyomattal, arccal, képernyőzárral vagy biztonsági kulccsal jelentkezhet be. A kulcs az eszközén vagy a jelszókezelőjében tárolódik; ez a webhely csak a nyilvános kulcsát őrzi meg, így egy itteni adatszivárgás sem fedheti fel.</translation>
+    </message>
+    <message>
+        <source>Passkeys are switched off on this site.</source>
+        <translation>A hozzáférési kulcsok ki vannak kapcsolva ezen a webhelyen.</translation>
+    </message>
+    <message>
+        <source>Passkeys cannot be used on this site yet: the administrator has to run the database update first.</source>
+        <translation>A hozzáférési kulcsok még nem használhatók ezen a webhelyen: a rendszergazdának előbb le kell futtatnia az adatbázis-frissítést.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey "%name"?</source>
+        <translation>Eltávolítja a(z) „%name” hozzáférési kulcsot?</translation>
+    </message>
+    <message>
+        <source>It can no longer sign in to this account. Remove it from your device or password manager as well.</source>
+        <translation>Ezután nem lehet vele bejelentkezni ebbe a fiókba. Távolítsa el az eszközéről vagy a jelszókezelőjéből is.</translation>
+    </message>
+    <message>
+        <source>Remove the passkey</source>
+        <translation>Hozzáférési kulcs eltávolítása</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>Your passkeys</source>
+        <translation>Saját hozzáférési kulcsok</translation>
+    </message>
+    <message>
+        <source>%count of at most %max</source>
+        <translation>%count / legfeljebb %max</translation>
+    </message>
+    <message>
+        <source>You have no passkey yet. Add one below: the next time you sign in, choose "Sign in with a passkey".</source>
+        <translation>Még nincs hozzáférési kulcsa. Adjon hozzá egyet alább: a következő bejelentkezéskor válassza a „Bejelentkezés hozzáférési kulccsal” lehetőséget.</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Hozzáadva</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Utoljára használva</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Fajta</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>Not yet</source>
+        <translation>Még nem</translation>
+    </message>
+    <message>
+        <source>Synced</source>
+        <translation>Szinkronizált</translation>
+    </message>
+    <message>
+        <source>This device or key</source>
+        <translation>Ez az eszköz vagy kulcs</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation>Átnevezés</translation>
+    </message>
+    <message>
+        <source>New name</source>
+        <translation>Új név</translation>
+    </message>
+    <message>
+        <source>Save the name</source>
+        <translation>Név mentése</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eltávolítás</translation>
+    </message>
+    <message>
+        <source>Add a passkey</source>
+        <translation>Hozzáférési kulcs hozzáadása</translation>
+    </message>
+    <message>
+        <source>Follow the steps of your browser or device.</source>
+        <translation>Kövesse a böngészője vagy az eszköze lépéseit.</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. Nothing was changed.</source>
+        <translation>A hozzáférési kulcs párbeszédpanelje bezárult. Semmi sem változott.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be made. Please try again.</source>
+        <translation>Nem sikerült létrehozni a hozzáférési kulcsot. Próbálja újra.</translation>
+    </message>
+    <message>
+        <source>This browser cannot make passkeys. Use a current browser, or sign in with your password.</source>
+        <translation>Ez a böngésző nem tud hozzáférési kulcsot létrehozni. Használjon egy naprakész böngészőt, vagy jelentkezzen be a jelszavával.</translation>
+    </message>
+    <message>
+        <source>For example the device or password manager it is on, so you can tell your passkeys apart.</source>
+        <translation>Például az eszköz vagy a jelszókezelő, amelyen található, hogy meg tudja különböztetni a hozzáférési kulcsait.</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have (%max). Remove one to add another.</source>
+        <translation>Ennek a fióknak már annyi hozzáférési kulcsa van, amennyi engedélyezett (%max). Egy újabb hozzáadásához távolítson el egyet.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again.</source>
+        <translation>A hozzáférési kulcsot nem sikerült használni. Próbálja újra.</translation>
+    </message>
+    <message>
+        <source>My account</source>
+        <translation>Saját fiók</translation>
+    </message>
+    <message>
+        <source>The passkey dialog was closed. You can sign in with your password instead.</source>
+        <translation>A hozzáférési kulcs párbeszédpanelje bezárult. Helyette bejelentkezhet a jelszavával.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be used. Please try again, or sign in with your password.</source>
+        <translation>A hozzáférési kulcsot nem sikerült használni. Próbálja újra, vagy jelentkezzen be a jelszavával.</translation>
+    </message>
+    <message>
+        <source>Sign in with a passkey</source>
+        <translation>Bejelentkezés hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Could not sign in with the passkey</source>
+        <translation>Nem sikerült bejelentkezni a hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>sign in with your fingerprint, face, screen lock or security key instead of your password.</source>
+        <translation>jelentkezzen be jelszó helyett ujjlenyomattal, arccal, képernyőzárral vagy biztonsági kulccsal.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is added. You can sign in with it from now on.</source>
+        <translation>A(z) „%name” hozzáférési kulcs hozzáadva. Mostantól bejelentkezhet vele.</translation>
+    </message>
+    <message>
+        <source>The passkey is now called "%name".</source>
+        <translation>A hozzáférési kulcs új neve: „%name”.</translation>
+    </message>
+    <message>
+        <source>The passkey "%name" is removed. It cannot sign in to this account any more.</source>
+        <translation>A(z) „%name” hozzáférési kulcs eltávolítva. Többé nem lehet vele bejelentkezni ebbe a fiókba.</translation>
+    </message>
+    <message>
+        <source>Passkey of %date</source>
+        <translation>Hozzáférési kulcs, létrehozva: %date</translation>
+    </message>
+    <message>
+        <source>This account has as many passkeys as it may have. Remove one first.</source>
+        <translation>Ennek a fióknak már annyi hozzáférési kulcsa van, amennyi engedélyezett. Előbb távolítson el egyet.</translation>
+    </message>
+    <message>
+        <source>The database was busy and nothing was saved. Please try again.</source>
+        <translation>Az adatbázis foglalt volt, semmi sem lett mentve. Próbálja újra.</translation>
+    </message>
+    <message>
+        <source>This passkey is registered already.</source>
+        <translation>Ez a hozzáférési kulcs már regisztrálva van.</translation>
+    </message>
+    <message>
+        <source>The request took too long or was already used. Please try again.</source>
+        <translation>A kérés túl sokáig tartott, vagy már fel lett használva. Próbálja újra.</translation>
+    </message>
+    <message>
+        <source>The passkey did not check who you are (PIN, fingerprint or face). Please try again and confirm on your device.</source>
+        <translation>A hozzáférési kulcs nem ellenőrizte a személyazonosságát (PIN-kód, ujjlenyomat vagy arc). Próbálja újra, és erősítse meg az eszközén.</translation>
+    </message>
+    <message>
+        <source>This authenticator uses a kind of key this site does not accept.</source>
+        <translation>Ez a hitelesítő olyan kulcstípust használ, amelyet ez a webhely nem fogad el.</translation>
+    </message>
+    <message>
+        <source>The passkey was made for another address than this site.</source>
+        <translation>A hozzáférési kulcs egy másik címhez készült, nem ehhez a webhelyhez.</translation>
+    </message>
+    <message>
+        <source>This passkey is not registered for an account here. Sign in with your password and add it on My account, Passkeys.</source>
+        <translation>Ez a hozzáférési kulcs itt egyetlen fiókhoz sincs regisztrálva. Jelentkezzen be a jelszavával, és adja hozzá a Saját fiók, Hozzáférési kulcsok oldalon.</translation>
+    </message>
+    <message>
+        <source>This account cannot sign in at the moment. Please contact the site administrator.</source>
+        <translation>Ez a fiók jelenleg nem tud bejelentkezni. Forduljon a webhely rendszergazdájához.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked. Please try again.</source>
+        <translation>A hozzáférési kulcsot nem sikerült ellenőrizni. Próbálja újra.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/user/reauth</name>
+    <message>
+        <source>You are about to change how you sign in or the security of your account.</source>
+        <translation>A bejelentkezés módját vagy a fiókja biztonságát készül módosítani.</translation>
+    </message>
+    <message>
+        <source>You are about to manage users, roles or policies.</source>
+        <translation>Felhasználókat, szerepköröket vagy házirendeket készül kezelni.</translation>
+    </message>
+    <message>
+        <source>You are about to change system settings or run a setup action.</source>
+        <translation>Rendszerbeállításokat készül módosítani, vagy rendszerműveletet készül futtatni.</translation>
+    </message>
+    <message>
+        <source>You are about to export data.</source>
+        <translation>Adatokat készül exportálni.</translation>
+    </message>
+    <message>
+        <source>You are about to remove or publish content.</source>
+        <translation>Tartalmat készül eltávolítani vagy közzétenni.</translation>
+    </message>
+    <message>
+        <source>This action needs you to confirm who you are.</source>
+        <translation>Ehhez a művelethez meg kell erősítenie a személyazonosságát.</translation>
+    </message>
+    <message>
+        <source>Confirm it is you, signed in as %login. You will not be asked again for %minutes minutes.</source>
+        <translation>Erősítse meg, hogy Ön az, %login néven bejelentkezve. %minutes percig nem kérdezzük újra.</translation>
+    </message>
+    <message>
+        <source>That password is not right.</source>
+        <translation>Ez a jelszó nem helyes.</translation>
+    </message>
+    <message>
+        <source>That code is not right, or it was used already.</source>
+        <translation>Ez a kód nem helyes, vagy már felhasználták.</translation>
+    </message>
+    <message>
+        <source>Choose one of the ways below.</source>
+        <translation>Válasszon az alábbi lehetőségek közül.</translation>
+    </message>
+    <message>
+        <source>The passkey could not be checked.</source>
+        <translation>A hozzáférési kulcsot nem sikerült ellenőrizni.</translation>
+    </message>
+    <message>
+        <source>%count tries are left before you are signed out.</source>
+        <translation>Hátralévő próbálkozások a kijelentkeztetésig: %count.</translation>
+    </message>
+    <message>
+        <source>The files you chose cannot be sent again: after confirming, choose them once more.</source>
+        <translation>A kiválasztott fájlokat nem lehet újra elküldeni: a megerősítés után válassza ki őket még egyszer.</translation>
+    </message>
+    <message>
+        <source>With your password</source>
+        <translation>Jelszóval</translation>
+    </message>
+    <message>
+        <source>With a passkey</source>
+        <translation>Hozzáférési kulccsal</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Jelszó</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Megerősítés</translation>
+    </message>
+    <message>
+        <source>Use a passkey</source>
+        <translation>Hozzáférési kulcs használata</translation>
+    </message>
+    <message>
+        <source>With a code from your authenticator app</source>
+        <translation>A hitelesítő alkalmazás kódjával</translation>
+    </message>
+    <message>
+        <source>Code</source>
+        <translation>Kód</translation>
+    </message>
+    <message>
+        <source>This account has no way to confirm who you are (no password, passkey or authenticator app). Sign out and in again, or ask an administrator.</source>
+        <translation>Ennek a fióknak nincs módja a személyazonosság megerősítésére (nincs jelszó, hozzáférési kulcs vagy hitelesítő alkalmazás). Jelentkezzen ki és újra be, vagy forduljon egy rendszergazdához.</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Személyazonosság megerősítése</translation>
+    </message>
+    <message>
+        <source>Code from your authenticator app</source>
+        <translation>Kód a hitelesítő alkalmazásból</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/setup/reauth</name>
+    <message>
+        <source>Your own account</source>
+        <translation>Saját fiók</translation>
+    </message>
+    <message>
+        <source>Changing one's own password, e-mail address, passkeys, two-step sign-in or API keys.</source>
+        <translation>A saját jelszó, e-mail-cím, hozzáférési kulcsok, kétlépéses bejelentkezés vagy API-kulcsok módosítása.</translation>
+    </message>
+    <message>
+        <source>Users, roles and policies</source>
+        <translation>Felhasználók, szerepkörök és házirendek</translation>
+    </message>
+    <message>
+        <source>Creating and editing users, account settings, assigning roles and editing policies.</source>
+        <translation>Felhasználók létrehozása és szerkesztése, fiókbeállítások, szerepkörök hozzárendelése és házirendek szerkesztése.</translation>
+    </message>
+    <message>
+        <source>System settings and setup actions</source>
+        <translation>Rendszerbeállítások és rendszerműveletek</translation>
+    </message>
+    <message>
+        <source>Editing settings, extensions, caches and maintenance, packages and updates, backups and the git manager.</source>
+        <translation>Beállítások szerkesztése, bővítmények, gyorsítótárak és karbantartás, csomagok és frissítések, biztonsági mentések és a Git-kezelő.</translation>
+    </message>
+    <message>
+        <source>Exporting data</source>
+        <translation>Adatok exportálása</translation>
+    </message>
+    <message>
+        <source>Exports of collected information, users, newsletter subscribers and the audit.</source>
+        <translation>A gyűjtött információk, a felhasználók, a hírlevél-feliratkozók és az auditnapló exportálása.</translation>
+    </message>
+    <message>
+        <source>Removing and publishing content</source>
+        <translation>Tartalom eltávolítása és közzététele</translation>
+    </message>
+    <message>
+        <source>Removing content (also to the trash), emptying the trash and publishing. Off by default.</source>
+        <translation>Tartalom eltávolítása (a Lomtárba is), a Lomtár ürítése és közzététel. Alapértelmezés szerint kikapcsolva.</translation>
+    </message>
+    <message>
+        <source>Before a sensitive action a signed-in user confirms who they are again, with their password, a passkey or the code of their authenticator app. Only the web pages ask: the REST interface, SOAP, WebDAV, the expservices login and the command line never do.</source>
+        <translation>Egy érzékeny művelet előtt a bejelentkezett felhasználó újra megerősíti a személyazonosságát a jelszavával, egy hozzáférési kulccsal vagy a hitelesítő alkalmazása kódjával. Csak a weboldalak kérdeznek rá: a REST-felület, a SOAP, a WebDAV, az expservices-bejelentkezés és a parancssor soha.</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Általános</translation>
+    </message>
+    <message>
+        <source>Minutes a confirmation counts</source>
+        <translation>Egy megerősítés érvényessége (perc)</translation>
+    </message>
+    <message>
+        <source>When to ask</source>
+        <translation>Mikor kérdezzen rá</translation>
+    </message>
+    <message>
+        <source>%count rules in site.ini [ReauthGroup_%name].</source>
+        <translation>Szabályok a site.ini [ReauthGroup_%name] blokkjában: %count.</translation>
+    </message>
+    <message>
+        <source>Saved to settings/override/site.ini.append.php. Saving asks you to confirm it is you.</source>
+        <translation>Mentés helye: settings/override/site.ini.append.php. Mentéskor meg kell erősítenie a személyazonosságát.</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>Verify it's you</source>
+        <translation>Személyazonosság megerősítése</translation>
+    </message>
+    <message>
+        <source>Ask "Verify it's you" before the actions of the groups switched on below</source>
+        <translation>„Személyazonosság megerősítése” kérése az alább bekapcsolt csoportok műveletei előtt</translation>
+    </message>
+    <message>
+        <source>The settings are saved.</source>
+        <translation>A beállítások mentése megtörtént.</translation>
+    </message>
+    <message>
+        <source>The settings could not be saved: %reason</source>
+        <translation>Nem sikerült menteni a beállításokat: %reason</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
     </message>
 </context>
 </TS>
