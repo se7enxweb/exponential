@@ -3088,7 +3088,7 @@ a7d5a01498353173b90582178467ae27  design/standard/templates/user/login.tpl
 b4a0b9c05c170a628114e22815b15ea6  design/standard/templates/user/new_signin_admin_mail.tpl
 13c0e028bc9ef649f002690b6f624d87  design/standard/templates/user/new_signin_mail.tpl
 b5f5e9f2f725ea02fff24e0e658ed4e2  design/standard/templates/user/parts/passkey_login.tpl
-f8fe91f379102cd8eb485cfc365bb809  design/standard/templates/user/parts/reauth_replay.tpl
+ed8892ee75e4f764574eb03a93531234  design/standard/templates/user/parts/reauth_replay.tpl
 0a5e090bdb4c215f40a934767f4834af  design/standard/templates/user/parts/sessions_account_link.tpl
 4d8bdfcabe2bf135a24379217860fe7b  design/standard/templates/user/passkeys.tpl
 2d736615acf9e2ed3393e4d9dac74e69  design/standard/templates/user/password.tpl
@@ -3286,7 +3286,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4be0718ef71710a97f34c96dced96c65  doc/changelogs/6.0/6.0.15.md
+ce31a0bd11fc45e9f860b634552f57f9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3479,7 +3479,7 @@ e5667e060274ef92f4b29dd702774e4c  doc/eng-us/bc/6.0/notification-ui-and-commands
 6d5afc9f15682d0a04fa6715ff862161  doc/eng-us/bc/6.0/package-install-keeps-newer-extensions.md
 c6a6cb258f60df9e7e88cb550f6c8be0  doc/eng-us/bc/6.0/package-json-format.md
 a7b92c2c51efeb0cb7d2766b2706b86c  doc/eng-us/bc/6.0/pagination-settings.md
-3ff3d5d84ddaec32eafd36135322e5ae  doc/eng-us/bc/6.0/passkeys-and-verify-its-you.md
+d561f0061d52b0ff0a6fb7323151a4ec  doc/eng-us/bc/6.0/passkeys-and-verify-its-you.md
 b3ddabe744f64d13e2ecce43ee3c732e  doc/eng-us/bc/6.0/password-change-at-next-sign-in.md
 773708cbd55dc9ce34e93900320b170e  doc/eng-us/bc/6.0/pdf-export.md
 bad6741175ace75f0d1180f2b5ef72e1  doc/eng-us/bc/6.0/phar.md
@@ -6619,7 +6619,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 70aa7fc3b92e519f91f2dd1a19c12ddb  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
-77b5a6795608be05dcbcd0665fa4852e  doc/eng-us/guides/verify-its-you.md
+bcfc7c492653c3477d0252e45ed1879c  doc/eng-us/guides/verify-its-you.md
 a70131f886f63cec37dacd9d6ec4a7aa  doc/eng-us/guides/workflows.md
 4cbebf2bd60b1f1a46332294a0844551  doc/eng-us/guides/your-devices-and-sessions.md
 f9f98d742660b857bad3717dc8539aed  doc/eng-us/help/README.md
@@ -12627,7 +12627,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 9826e0a53c279a9875a563ec8c6ca13f  doc/ger-de/anleitungen/fehlende-dateien.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
-5621e0fda88c2c730e3f1b0289788719  doc/ger-de/anleitungen/identitaet-bestaetigen.md
+082afea4c80754b897263d58e0a291ee  doc/ger-de/anleitungen/identitaet-bestaetigen.md
 e6ca3f7504b9e3f26e732979a4f53092  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 4b4a46f8ae9a91c52163809cda939c5c  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
 9c5433e8c63c63c0e0fabc41db46b29e  doc/ger-de/anleitungen/inhaltssprachen.md
@@ -12730,7 +12730,7 @@ cb44c3fa0a4efd14dafd0a022f422ef5  doc/ger-de/bc/6.0/mongodb-kernel-unterstuetzun
 b561173941e1bd7cf5e7da6de12c3eb9  doc/ger-de/bc/6.0/opml.md
 e64015b83ef1461c77168bd9f4938cf3  doc/ger-de/bc/6.0/package-json-format.md
 fa6582156c1ac5cda7f7f9673bf80b0a  doc/ger-de/bc/6.0/papierkorb.md
-acdcf7d43c447cb18d9cbb1b18d405c8  doc/ger-de/bc/6.0/passkeys-und-identitaet-bestaetigen.md
+6c91ddd5913285b05123df33b5652cd8  doc/ger-de/bc/6.0/passkeys-und-identitaet-bestaetigen.md
 9216ae625e43af5a926b4fd211996ac3  doc/ger-de/bc/6.0/passwort-bei-naechster-anmeldung-aendern.md
 86582353c74aa63f9f38f860ad39c1ac  doc/ger-de/bc/6.0/pdf-export.md
 f669cfd172aca1540ec027dd7131f804  doc/ger-de/bc/6.0/phar.md
@@ -22890,7 +22890,7 @@ aa09f022b74459a414678e90c8269f9b  kernel/classes/pdfexport/exppdfexportfile.php
 920886acb9f7d977ad659830ea7b6768  kernel/classes/pdfexport/exppdfexportform.php
 87a226885083db2cd6e271751f78d51f  kernel/classes/pdfexport/exppdfexportgenerator.php
 548985a9262bf7a561b129457e88f367  kernel/classes/pdfexport/exppdfexportinfo.php
-a37be5b81ac659c525b48a555d64e631  kernel/classes/reauth/expreauth.php
+5e3b4e590dc1c3db5d566da82bafb04e  kernel/classes/reauth/expreauth.php
 13c838a5288e289edb9923b15f349737  kernel/classes/reauth/expreauthcodehandler.php
 14320828f186481ec32703f32b8d2199  kernel/classes/reauth/expreauthrules.php
 b906808c148420c8098064603852cdc3  kernel/classes/reauth/expreauthsettings.php
@@ -26197,7 +26197,7 @@ e709c9fd48714bf8671939837b81cb81  tests/tests/kernel/classes/radwizards/expRadWi
 e414caf421b6c9adec37d5cae73c38c0  tests/tests/kernel/classes/radwizards/expRadWizardPaymentGatewayIsFoundTest.php
 439fb99a6b841e5fe4b26659fb14b01b  tests/tests/kernel/classes/radwizards/expRadWizardTestHelper.php
 74e872122daba48572e05606bca781cc  tests/tests/kernel/classes/radwizards/expRadWizardsGeneratedFilesTest.php
-44bbc161c27dbe7f14b57be2335270de  tests/tests/kernel/classes/reauth/expReauthRulesTest.php
+ae63f6f76828ec9391d96e7c9805ca86  tests/tests/kernel/classes/reauth/expReauthRulesTest.php
 7083b8e7ffc52109d89f3ddd560c0568  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 109e3d2ff709b1176a1c828322cfb192  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
 ab47780f670ed2e74e5a7167326c415c  tests/tests/kernel/classes/rest/ezpRestHttpRequestParserTest.php

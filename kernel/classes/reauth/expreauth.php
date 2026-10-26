@@ -25,7 +25,9 @@
  * How: instead of the view, the page "Verify it's you" is shown. It posts to the same address with the original POST
  * fields as hidden fields, so after a correct answer the view runs with exactly what the user sent; a GET (a download)
  * is redirected to again. A form with a file upload is opened again instead (a browser cannot send a file twice), so
- * groups put the GET of such a view under a "*" rule. A request made with XMLHttpRequest gets 403 with a JSON body
+ * groups put the GET of such a view under a "*" rule. Only a file actually chosen counts as an upload (hasUploads()):
+ * a form that merely has file inputs, left empty (the edit form of a user with its image), is replayed like any other
+ * POST. A request made with XMLHttpRequest gets 403 with a JSON body
  * {"error": "reauth_required", "url": ...}.
  *
  * Kept in the session: the user id and the time until which a confirmation counts, and the count of wrong answers;
@@ -46,6 +48,8 @@ class expReauth
     const FIELD_CONFIRM = 'ExpReauthConfirmButton';
     const FIELD_CANCEL = 'ExpReauthCancelButton';
     const FIELD_GET = 'ExpReauthReplayGet';
+    /** The first request carried an upload: after the answer the form opens again to choose the files once more */
+    const FIELD_FILES = 'ExpReauthReplayFiles';
 
     const METHOD_PASSWORD = 'password';
     const METHOD_PASSKEY = 'passkey';
@@ -348,8 +352,10 @@ class expReauth
                 self::markFresh( $user, $result['method'], $settings['minutes'] );
                 self::audit( 'access.session.reauth', $user, array( 'method' => $result['method'], 'group' => $match['group'],
                                                                     'view' => $where, 'minutes' => $settings['minutes'] ) );
-                // a GET (or a POST whose files are gone) is asked for again; a POST runs with what the user sent
-                if ( isset( $post[self::FIELD_GET] ) || !empty( $_FILES ) )
+                // a GET (or a POST whose files are gone: the first request carried an upload) is asked for again; a
+                // POST runs with what the user sent. The answer itself never carries the files (its form is not
+                // multipart), so the mark of the first request decides, not the answer's $_FILES
+                if ( isset( $post[self::FIELD_GET] ) || isset( $post[self::FIELD_FILES] ) || self::hasUploads() )
                 {
                     $module->redirectTo( self::currentURI() );
                     return array( 'content' => '' );
@@ -460,12 +466,48 @@ class expReauth
     {
         // the passkey fields belong to the form only in an answer of it; elsewhere they are the view's own (user/passkeys)
         $answer = array_key_exists( self::FIELD_CONFIRM, $post );
-        foreach ( array( self::FIELD_METHOD, self::FIELD_PASSWORD, self::FIELD_CODE, self::FIELD_CONFIRM, self::FIELD_CANCEL, self::FIELD_GET ) as $f )
+        foreach ( array( self::FIELD_METHOD, self::FIELD_PASSWORD, self::FIELD_CODE, self::FIELD_CONFIRM, self::FIELD_CANCEL, self::FIELD_GET,
+                         self::FIELD_FILES ) as $f )
             unset( $post[$f] );
         if ( $answer )
             foreach ( array( 'PasskeyCredentialID', 'PasskeyClientData', 'PasskeyAuthenticatorData', 'PasskeySignature', 'PasskeyUserHandle' ) as $f )
                 unset( $post[$f] );
         return $post;
+    }
+
+    /**
+     * Whether a request carries a real upload: a file chosen in at least one file input. A multipart form with file
+     * inputs left empty still fills $_FILES, with UPLOAD_ERR_NO_FILE for each of them; those are no upload. Inputs
+     * named as arrays (name[] or name[key][...]) give nested arrays below 'error', and every level is looked at. A file
+     * that was chosen but did not arrive (too big, a partial upload) counts: it has to be chosen again as well.
+     *
+     * @param array|null $files $_FILES when null
+     * @return bool
+     */
+    public static function hasUploads( $files = null )
+    {
+        if ( $files === null )
+            $files = $_FILES;
+        foreach ( (array)$files as $entry )
+            if ( is_array( $entry ) && array_key_exists( 'error', $entry ) && self::chosen( $entry['error'] ) )
+                return true;
+        return false;
+    }
+
+    /**
+     * @param mixed $error the 'error' of one $_FILES entry, an array for inputs named as arrays
+     * @return bool a file was chosen in at least one of the inputs
+     */
+    protected static function chosen( $error )
+    {
+        if ( is_array( $error ) )
+        {
+            foreach ( $error as $e )
+                if ( self::chosen( $e ) )
+                    return true;
+            return false;
+        }
+        return is_numeric( $error ) && (int)$error !== UPLOAD_ERR_NO_FILE;
     }
 
     /** Takes the form's fields out of the request, so the view sees exactly what the user sent first. */
@@ -519,7 +561,8 @@ class expReauth
         $tpl->setVariable( 'failures_left', max( 0, $settings['max_failures'] - (int)$failures ) );
         $tpl->setVariable( 'replay', $isGet ? array() : self::flatten( $post ) );
         $tpl->setVariable( 'replay_get', (bool)$isGet );
-        $tpl->setVariable( 'had_files', !empty( $_FILES ) );
+        // only a file actually chosen: a form whose file inputs were left empty is replayed whole and needs no notice
+        $tpl->setVariable( 'had_files', !$isGet && self::hasUploads() );
         $tpl->setVariable( 'passkey_options', $passkeyOptions ? json_encode( $passkeyOptions, JSON_UNESCAPED_SLASHES ) : '' );
         $tpl->setVariable( 'login', (string)$user->attribute( 'login' ) );
         $tpl->setVariable( 'action_uri', self::currentURI() );
