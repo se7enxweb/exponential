@@ -124,6 +124,7 @@ Then follow [Your first week as an advocate](your-first-week-as-an-advocate.md).
 | [Answering objections as an advocate](answering-objections-as-an-advocate.md) | A method for any doubt, in public or in private |
 | ["Is it still alive?"](objection-is-it-still-alive.md), ["PHP and modern technology"](objection-php-and-modern-technology.md), ["Can we find people?"](objection-can-we-find-people.md) | The three most common doubts |
 | ["Why not another CMS?"](objection-why-not-another-cms.md), ["Is open source secure?"](objection-open-source-security.md), ["What about the AI features?"](objection-ai-features.md) | Comparisons, security and AI, answered fairly |
+| [Our goals](../../goals.md) | Answer doubts about intentions ("What's the catch?", "Will it stay free?", "Who owns the code?", "What happens if 7x stops?") with the project's own answers and their sources |
 | [Handling hostile threads](handling-hostile-threads.md) | Stay calm and factual when a discussion turns sour |
 
 ### Demos and presentations

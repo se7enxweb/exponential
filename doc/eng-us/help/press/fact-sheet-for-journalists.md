@@ -48,7 +48,7 @@ NEW IN 6.0.15* Exponential Velocity (PHP web server), Exponential Layouts (page 
                Intelligence (writes drafts only), admin4 design, audit trail, help system.
 SECURITY       Private reports to security@se7enx.com; "a first answer within one business day";
                fixes ship in the next 6.0.x release; published versions are never changed.
-LANGUAGES *    268 locale files (40 right to left); 71 administration translations, all complete (26 Oct).
+LANGUAGES *    268 locale files (40 right to left); 73 administration translations, all complete (26 Oct).
 NOT            Not associated with eZ Systems or Ibexa.
 CODE           github.com/se7enxweb/exponential        Packages: Composer / Packagist, vendor se7enxweb
 WEB            exponential.earth   foundation.exponential.earth   se7enx.com   doc.exponential.earth
@@ -92,6 +92,7 @@ PRESS          info@se7enx.com   press kit: exponential.earth/about/press-kit
 
 ## Related pages
 
+- [Our goals](../../goals.md): the why behind the facts, why the project exists and how 7x earns a living
 - [Exponential in brief](exponential-in-brief.md)
 - [Exponential by the numbers](exponential-by-the-numbers.md)
 - [Fact-checking guide](fact-checking-guide.md)

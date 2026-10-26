@@ -375,6 +375,10 @@ class ezpHttpCacheListener
             return 'status ' . $code;
         if ( !is_string( $html ) || $html === '' )
             return 'empty';
+        // In maintenance, a page is rendered only for a visitor let through (the setup wizard's browser, an
+        // allowed address or path), from a database that may be half built: kept, it went to everybody after
+        if ( class_exists( 'expMaintenance' ) && expMaintenance::state( eZSys::rootDir() ) !== false )
+            return 'maintenance';
         // The page carries the debug report of this request (the Exp Debug bar or the classic report): its
         // timings, queries and messages, and the viewer's own settings such as the panel height, belong to this
         // request and this viewer. Stored, every later request of the same context got the old report and the

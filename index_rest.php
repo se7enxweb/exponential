@@ -9,15 +9,16 @@
  * @package kernel
  */
 
-// Maintenance mode (var/maintenance.json): answered here, before the settings
-// and the database, so a site being installed or taken offline never serves
-// a half-built page. See kernel/classes/expmaintenance.php.
-if ( is_file( __DIR__ . '/var/maintenance.json' ) )
-{
+// Maintenance mode (var/maintenance.json): answered here, before the settings,
+// the database and every cache, so a site being installed or taken offline never
+// serves a half-built page. Asked for every request: a persistent worker
+// (Velocity, FrankenPHP) remembers what it learnt about files, so a plain
+// is_file() here kept serving the site to the workers that had looked before
+// the installation began. See kernel/classes/expmaintenance.php.
+if ( !class_exists( 'expMaintenance', false ) )
     require_once __DIR__ . '/kernel/classes/expmaintenance.php';
-    if ( expMaintenance::check( __DIR__ ) )
-        return;
-}
+if ( expMaintenance::check( __DIR__ ) )
+    return;
 
 require __DIR__ . '/autoload.php';
 
