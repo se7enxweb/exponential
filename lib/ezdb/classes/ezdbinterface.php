@@ -807,6 +807,21 @@ class eZDBInterface
     }
 
     /**
+     * Executes a write that may be left out when the database is busy: a last-seen time, a visit stamp, which the
+     * next request writes again. A driver whose database has one writer at a time (SQLite) waits only briefly for
+     * the lock and answers false instead of failing; the others run it as query() does.
+     *
+     * Never for a write that matters: those wait for the lock as long as query() does.
+     *
+     * @param string $sql
+     * @return bool true when it was written
+     */
+    function queryUnlessBusy( $sql )
+    {
+        return (bool)$this->query( $sql );
+    }
+
+    /**
      * Executes an SQL query and returns the result as an array of accociative arrays.
      *
      * Example:

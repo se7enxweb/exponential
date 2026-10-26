@@ -2007,17 +2007,24 @@ WHERE user_id = '" . $userID . "' AND
         }
         else
         {
+            // The visit stamp alone is left out while another write holds the database (SQLite: one writer at a
+            // time), so a page view does not wait for a publish; the next request writes it. A sign-in, which
+            // counts the login, waits as every other write does.
             $userVisitArray = $db->arrayQuery( "SELECT 1 FROM ezuservisit WHERE user_id=$userID" );
             if ( isset( $userVisitArray[0] ) )
             {
                 $loginCountSQL = $updateLoginCount ? ', login_count=login_count+1' : '';
-                $db->query( "UPDATE ezuservisit SET last_visit_timestamp=ABS(current_visit_timestamp), current_visit_timestamp=$time$loginCountSQL WHERE user_id=$userID" );
+                $sql = "UPDATE ezuservisit SET last_visit_timestamp=ABS(current_visit_timestamp), current_visit_timestamp=$time$loginCountSQL WHERE user_id=$userID";
             }
             else
             {
                 $intialLoginCount = $updateLoginCount ? 1 : 0;
-                $db->query( "INSERT INTO ezuservisit ( current_visit_timestamp, last_visit_timestamp, user_id, login_count ) VALUES ( $time, $time, $userID, $intialLoginCount )" );
+                $sql = "INSERT INTO ezuservisit ( current_visit_timestamp, last_visit_timestamp, user_id, login_count ) VALUES ( $time, $time, $userID, $intialLoginCount )";
             }
+            if ( $updateLoginCount )
+                $db->query( $sql );
+            else
+                $db->queryUnlessBusy( $sql );
         }
         $GLOBALS['eZUserUpdatedLastVisit'] = true;
     }

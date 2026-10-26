@@ -427,6 +427,48 @@ class eZSQLite3DB extends eZDBInterface
         return false;
     }
 
+    /**
+     * \reimp
+     * A write that may be left out (a last-seen time, a visit stamp) waits for the write lock only
+     * SKIPPABLE_WRITE_WAIT_MS instead of busy_timeout, and is left out with a notice when another write holds it.
+     * With busy_timeout a page view of a signed-in user stood still 5 s behind every longer write (a publish, a
+     * content job holds the lock for many seconds), and then failed with "database is locked" in error.log, for
+     * a time the next request writes again. Inside a transaction, which holds the lock from its start (BEGIN
+     * IMMEDIATE), it is an ordinary statement; any other error is reported as query() reports it.
+     *
+     * @param string $sql
+     * @return bool true when it was written, false when it was left out or failed
+     */
+    function queryUnlessBusy( $sql )
+    {
+        if ( !$this->IsConnected || $this->InSQLTransaction || $this->TransactionCounter > 0 )
+            return (bool)$this->query( $sql );
+
+        $this->DBConnection->busyTimeout( self::SKIPPABLE_WRITE_WAIT_MS );
+        $result = @$this->DBConnection->exec( $this->rewriteJoinedUpdate( $sql ) );
+        $code = $this->DBConnection->lastErrorCode();
+        if ( !$result )
+            $this->setError();
+        $this->DBConnection->busyTimeout( $this->StatementWaitMs );
+
+        if ( $result )
+        {
+            eZDBQueryCache::noteWrite( $this, $sql );
+            return true;
+        }
+        if ( ( $code & 0xff ) == 5 || ( $code & 0xff ) == 6 )   // SQLITE_BUSY, SQLITE_LOCKED (and their extended codes)
+        {
+            eZDebug::writeNotice( 'Left out, another write holds the database: ' . $sql, __METHOD__ );
+            return false;
+        }
+        eZDebug::writeError( self::failedQueryMessage( $this->ErrorMessage, $sql ), "eZSQLite3DB" );
+        $this->reportError();
+        return false;
+    }
+
+    /// How long a write that may be left out waits for the write lock, in ms (queryUnlessBusy())
+    const SKIPPABLE_WRITE_WAIT_MS = 200;
+
     /*!
      \reimp
     */

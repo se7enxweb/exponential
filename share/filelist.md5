@@ -22586,7 +22586,7 @@ ab95b25629ede0ba7aaf6fa166250fcb  kernel/classes/datatypes/ezurl/ezurltype.php
 502c16d973bd9cd475cb5f5803d414a2  kernel/classes/datatypes/ezuser/ezforgotpassword.php
 303b9b3fcd92348310a194e3e48da982  kernel/classes/datatypes/ezuser/ezldapuser.php
 ddb7ea2df70d86d759cbb9f485513a82  kernel/classes/datatypes/ezuser/eztextfileuser.php
-2d277f972b8ea98b63e35abf42464455  kernel/classes/datatypes/ezuser/ezuser.php
+9a8efd7eb62e0fee01b90a9ac941756b  kernel/classes/datatypes/ezuser/ezuser.php
 190e03d3acc89794d927758dfc31c7cf  kernel/classes/datatypes/ezuser/ezuseraccountkey.php
 c4c838b8f66a7fe34e990363d767d756  kernel/classes/datatypes/ezuser/ezuserloginhandler.php
 5ad5426c40ee23249cfeaeaf7ebfc422  kernel/classes/datatypes/ezuser/ezusersetting.php
@@ -23100,7 +23100,7 @@ bc8d1f4ffb19f111bd4276f0bb08afc9  kernel/classes/user/expuserapproval.php
 885251530a15938c095c306fd0ce6715  kernel/classes/user/expuserdeactivation.php
 f7d5e67a5a8b9c66319850dd0e178252  kernel/classes/user/expuserhygiene.php
 87d8847635396f1f4e351881b8e3bf89  kernel/classes/user/expusersession.php
-ad5598f1d462f590a311361ca8209029  kernel/classes/user/expusersessiontracker.php
+64739d386a380795acb053da081ce609  kernel/classes/user/expusersessiontracker.php
 194684543d849fdaf2e36ecb0e670180  kernel/classes/user/expusersettingrepair.php
 6063228c4bd6801070ca311387227290  kernel/classes/vathandlers/ezdefaultvathandler.php
 00603cb976aa7f1079309ce30c35d19a  kernel/classes/webauthn/expwebauthn.php
@@ -24221,14 +24221,14 @@ c7a43052aedb258efa97ec02a0d630f0  kernel/workflow/workflowlist.php
 9ba91d57d77c458fd031b4a0751ce000  lib/ezdb/classes/expmongodb.php
 8ecdb06b33b43f1967a0e0924eb8205e  lib/ezdb/classes/exppdodb.php
 226416065566fd96df9cfca57d5a3c99  lib/ezdb/classes/ezdb.php
-e3a1ffc6a2c9f262f92f520cc63b13ae  lib/ezdb/classes/ezdbinterface.php
+b5764f86b1889259ed91e64ea4eb1b85  lib/ezdb/classes/ezdbinterface.php
 ef13807c34f7f869c16504e03beb456b  lib/ezdb/classes/ezdbquerycache.php
 cba91a38a19dd20520328d582d9d9228  lib/ezdb/classes/ezdbtool.php
 c8b7cb50e53522cc1d45078b3a28979b  lib/ezdb/classes/ezmysqlcharset.php
 184ec92d24404cebb876e3ee05cff51f  lib/ezdb/classes/ezmysqlidb.php
 31faf16a40f407c32b6c7b0b2102b5ec  lib/ezdb/classes/eznulldb.php
 1a6057447c813267a1ca86be58c9e6ba  lib/ezdb/classes/ezpostgresqldb.php
-ed78efab43ba7061137ed156533ee151  lib/ezdb/classes/ezsqlite3db.php
+420b37a2ce9857c45113adff6b73152a  lib/ezdb/classes/ezsqlite3db.php
 86b2f701aa81e8db34267630e6ce5acf  lib/ezdbschema/classes/expmongoschema.php
 8e9010beaa4d355d60448ef5c507ea6c  lib/ezdbschema/classes/ezdbschema.php
 c7c6f99535283f00d9ff4266c494aead  lib/ezdbschema/classes/ezdbschemachecker.php
@@ -26461,6 +26461,7 @@ bfd5243f3cecb3a2a1bd784cfa3398f7  tests/tests/kernel/classes/urlaliasml_regressi
 b960f0cb6775954a66e51c42bd80c882  tests/tests/kernel/classes/urlaliasml_test.php
 57f51350ebeed6595fdf7dc68bf7d310  tests/tests/kernel/classes/user/eZForgotPasswordExpiryTest.php
 e2291de73280bd41607650559cf969bc  tests/tests/kernel/classes/user/expDemoModeTest.php
+cd40ea30567dd7782c94647b71f0d2bd  tests/tests/kernel/classes/user/expLastSeenWhileDatabaseBusyTest.php
 edf9f20d427dfc090c269f8a3f7bf188  tests/tests/kernel/classes/user/expPasswordChangeRequiredTest.php
 ce0dccf22b28774e6e7caacfac27098c  tests/tests/kernel/classes/user/expPasswordPolicyTest.php
 c7a5edf71b5db67fed879faef8e98286  tests/tests/kernel/classes/user/expPasswordSessionStampTest.php
