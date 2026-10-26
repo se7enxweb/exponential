@@ -85,7 +85,7 @@ Jeder Block im Editor hat einen Kopf wie `GRID List` oder `SECTION_CENTERED Titl
 dann den **Namen des Blocktyps**. Diese beiden ergeben direkt den Template-Pfad: List in der Ansicht `grid` ist
 `explayouts/block/list/grid.tpl`.
 
-![Der Prefooter im Editor: Die Köpfe lauten COLUMN Column, SECTION_CENTERED Title und GRID List](../../../eng-us/help/build-two-ways/images/pf-02-prefooter-editor.webp)
+![Der Prefooter im Editor: Die Köpfe lauten COLUMN Column, SECTION_CENTERED Title und GRID List](bilder/pf-02-prefooter-editor.webp)
 
 ## Verwandte Seiten
 

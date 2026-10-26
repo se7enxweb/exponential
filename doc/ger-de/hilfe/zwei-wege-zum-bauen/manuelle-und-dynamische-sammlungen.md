@@ -28,7 +28,7 @@ Wählen Sie den Block aus und klicken Sie dann im Reiter **Inhalt** neben **Samm
 *Beim Ändern des Sammlungstyps werden vorhandene manuelle Elemente entfernt.* Wählen Sie **Dynamische Sammlung**, dann den
 **Abfragetyp**, und klicken Sie auf **Anwenden**.
 
-![Das Feld Sammlungstyp: Manuelle Sammlung ausgewählt, die Warnung zu manuellen Elementen, Abbrechen und Anwenden](../../../eng-us/help/build-two-ways/images/mc-01-change-collection-type.webp)
+![Das Feld Sammlungstyp: Manuelle Sammlung ausgewählt, die Warnung zu manuellen Elementen, Abbrechen und Anwenden](bilder/mc-01-change-collection-type.webp)
 
 Die auf dieser Installation angebotenen Abfragetypen sind **Exponential** (`exponential_content_search`, eine Suche unterhalb
 eines übergeordneten Orts) und **Themen** (`content_by_topic`, Inhalte mit einem Tag).
@@ -46,7 +46,7 @@ Für **Exponential** zeigt das Feld:
 | Erweiterte Optionen | Filter (Inhaltstypen, Sektionen, Objektzustände) |
 | Versatz & Anzahl der Elemente | die ersten Einträge überspringen, die Anzahl begrenzen |
 
-![Eine dynamische Sammlung mit dem übergeordneten Ort Websites, nach Veröffentlichungsdatum absteigend sortiert; die Blockvorschau listet die Kinder](../../../eng-us/help/build-two-ways/images/mc-03-dynamic-parameters.webp)
+![Eine dynamische Sammlung mit dem übergeordneten Ort Websites, nach Veröffentlichungsdatum absteigend sortiert; die Blockvorschau listet die Kinder](bilder/mc-03-dynamic-parameters.webp)
 
 Die Mitte des Editors zeigt das Ergebnis sofort. Auf der Testkopie blieben die drei handverlesenen Einträge nach dem
 Umschalten oben in der Liste, gefolgt vom Ergebnis der Abfrage. Der Entwurf wurde danach mit **Verwerfen** verworfen.

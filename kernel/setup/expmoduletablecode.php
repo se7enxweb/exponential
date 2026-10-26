@@ -21,6 +21,10 @@ if ( !class_exists( 'expModuleTableCode', false ) ) {
  */
 class expModuleTableCode
 {
+    /** The translation context of the texts every generated module shares; titles and field labels keep
+        extension/<name> */
+    const CONTEXT = 'kernel/datatable/module';
+
     /**
      * The persistent class's definition() for the fields (also what the wizard shows and the schema is made from).
      *
@@ -285,7 +289,7 @@ class expModuleTableCode
              . "\$tpl->setVariable( 'saved', isset( \$Params['UserParameters']['saved'] ) );\n"
              . "\$tpl->setVariable( 'page_uri', '{$s['module']}/list' . ( \$q !== '' ? '/(q)/' . rawurlencode( \$q ) : '' ) );\n"
              . "\$Result = array();\n\$Result['content'] = \$tpl->fetch( 'design:{$s['module']}/list.tpl' );\n"
-             . "\$Result['path'] = array( array( 'url' => 'setup/menu', 'text' => ezpI18n::tr( 'extension/{$s['name']}', 'Setup' ) ),\n"
+             . "\$Result['path'] = array( array( 'url' => 'setup/menu', 'text' => ezpI18n::tr( '" . self::CONTEXT . "', 'Setup' ) ),\n"
              . "                         array( 'url' => false, 'text' => ezpI18n::tr( 'extension/{$s['name']}', '" . self::php( $s['title'] ) . "' ) ) );\n";
     }
 
@@ -313,7 +317,7 @@ class expModuleTableCode
              . "\$tpl->setVariable( 'is_new', \$id === 'new' );\n\$tpl->setVariable( 'problems', \$problems );\n"
              . "\$Result = array();\n\$Result['content'] = \$tpl->fetch( 'design:{$s['module']}/edit.tpl' );\n"
              . "\$Result['path'] = array( array( 'url' => '{$s['module']}/list', 'text' => ezpI18n::tr( 'extension/{$s['name']}', '" . self::php( $s['title'] ) . "' ) ),\n"
-             . "                         array( 'url' => false, 'text' => \$id === 'new' ? ezpI18n::tr( 'extension/{$s['name']}', 'New' ) : '#' . (int)\$id ) );\n";
+             . "                         array( 'url' => false, 'text' => \$id === 'new' ? ezpI18n::tr( '" . self::CONTEXT . "', 'New' ) : '#' . (int)\$id ) );\n";
     }
 
     /** @return string remove.php */
@@ -329,7 +333,7 @@ class expModuleTableCode
              . "\$tpl = eZTemplate::factory();\n\$tpl->setVariable( 'row', \$row );\n\$tpl->setVariable( 'fields', $c::fields() );\n"
              . "\$Result = array();\n\$Result['content'] = \$tpl->fetch( 'design:{$s['module']}/remove.tpl' );\n"
              . "\$Result['path'] = array( array( 'url' => '{$s['module']}/list', 'text' => ezpI18n::tr( 'extension/{$s['name']}', '" . self::php( $s['title'] ) . "' ) ),\n"
-             . "                         array( 'url' => false, 'text' => ezpI18n::tr( 'extension/{$s['name']}', 'Remove' ) ) );\n";
+             . "                         array( 'url' => false, 'text' => ezpI18n::tr( '" . self::CONTEXT . "', 'Remove' ) ) );\n";
     }
 
     /** @return string json.php */
@@ -424,6 +428,7 @@ class expModuleTableCode
     public static function listTemplate( array $s, array $fields )
     {
         $ctx = 'extension/' . $s['name'];
+        $k = self::CONTEXT;
         $m = $s['module'];
         $shown = array_slice( $fields, 0, 6 );
         $heads = '';
@@ -434,7 +439,7 @@ class expModuleTableCode
             if ( in_array( $f['type'], array( 'object', 'node', 'user' ), true ) )
                 $cells .= "            <td>{def \$t = \$row.{$f['name']}_target}{if \$t}{if is_set( \$t.main_node_id )}<a href={concat( 'content/view/full/', \$t.main_node_id )|ezurl}>{\$t.name|wash}</a>{elseif is_set( \$t.node_id )}<a href={concat( 'content/view/full/', \$t.node_id )|ezurl}>{\$t.name|wash}</a>{else}{\$t.login|wash}{/if}{else}<span class=\"a4-muted\">{\$row.{$f['name']}|wash}</span>{/if}{undef \$t}</td>\n";
             elseif ( $f['type'] === 'boolean' )
-                $cells .= "            <td>{if \$row.{$f['name']}}{'yes'|i18n( '$ctx' )}{else}<span class=\"a4-muted\">{'no'|i18n( '$ctx' )}</span>{/if}</td>\n";
+                $cells .= "            <td>{if \$row.{$f['name']}}{'yes'|i18n( '$k' )}{else}<span class=\"a4-muted\">{'no'|i18n( '$k' )}</span>{/if}</td>\n";
             elseif ( in_array( $f['type'], array( 'date', 'datetime' ), true ) )
                 $cells .= "            <td>{if \$row.{$f['name']}}{\$row.{$f['name']}|l10n( '" . ( $f['type'] === 'date' ? 'shortdate' : 'shortdatetime' ) . "' )}{/if}</td>\n";
             else
@@ -443,28 +448,29 @@ class expModuleTableCode
         return "{* {$m}/list: the rows of {$s['table']}. Made by the module table wizard. No inline CSS: admin4 components only. *}\n"
              . "<div class=\"a4-page\" id=\"{$m}-list\">\n\n<div class=\"a4-pagehead\">\n    <div class=\"a4-pagehead-main\">\n"
              . "        <h1 class=\"a4-pagehead-title context-title\">{'" . self::tpl( $s['title'] ) . "'|i18n( '$ctx' )}</h1>\n"
-             . "        <p class=\"a4-pagehead-sub\">{'%count rows'|i18n( '$ctx',, hash( '%count', \$count ) )|wash}</p>\n    </div>\n"
-             . "    {if \$can_edit}<div class=\"a4-pagehead-actions a4-actions\"><a class=\"a4-btn a4-btn-primary\" href={'{$m}/edit/new'|ezurl}>{'New row'|i18n( '$ctx' )}</a></div>{/if}\n</div>\n\n"
-             . "{if \$saved}<div class=\"a4-notice is-ok\" role=\"status\"><p>{'The row was saved.'|i18n( '$ctx' )}</p></div>{/if}\n\n"
+             . "        <p class=\"a4-pagehead-sub\">{'%count rows'|i18n( '$k',, hash( '%count', \$count ) )|wash}</p>\n    </div>\n"
+             . "    {if \$can_edit}<div class=\"a4-pagehead-actions a4-actions\"><a class=\"a4-btn a4-btn-primary\" href={'{$m}/edit/new'|ezurl}>{'New row'|i18n( '$k' )}</a></div>{/if}\n</div>\n\n"
+             . "{if \$saved}<div class=\"a4-notice is-ok\" role=\"status\"><p>{'The row was saved.'|i18n( '$k' )}</p></div>{/if}\n\n"
              . "<form method=\"post\" action={'{$m}/list'|ezurl} class=\"a4-filterbar\" role=\"search\">\n"
-             . "    <div class=\"a4-field\"><label class=\"a4-label\" for=\"{$m}-q\">{'Search'|i18n( '$ctx' )}</label><input class=\"a4-input\" type=\"search\" id=\"{$m}-q\" name=\"q\" value=\"{\$q|wash}\" /></div>\n"
-             . "    <div class=\"a4-field\"><span class=\"a4-label\">&nbsp;</span><button type=\"submit\" class=\"a4-btn\" name=\"SearchButton\" value=\"1\">{'Search'|i18n( '$ctx' )}</button></div>\n</form>\n\n"
+             . "    <div class=\"a4-field\"><label class=\"a4-label\" for=\"{$m}-q\">{'Search'|i18n( '$k' )}</label><input class=\"a4-input\" type=\"search\" id=\"{$m}-q\" name=\"q\" value=\"{\$q|wash}\" /></div>\n"
+             . "    <div class=\"a4-field\"><span class=\"a4-label\">&nbsp;</span><button type=\"submit\" class=\"a4-btn\" name=\"SearchButton\" value=\"1\">{'Search'|i18n( '$k' )}</button></div>\n</form>\n\n"
              . "{if \$rows|count}\n<div class=\"a4-card is-flush a4-section\">\n"
              . "<div class=\"a4-table-wrap\" role=\"region\" aria-label=\"{'" . self::tpl( $s['title'] ) . "'|i18n( '$ctx' )|wash}\" tabindex=\"0\">\n<table class=\"a4-table\">\n"
              . "    <thead><tr>\n            <th scope=\"col\">#</th>\n" . $heads
-             . "            <th scope=\"col\"><span class=\"a4-sr-only\">{'Actions'|i18n( '$ctx' )}</span></th>\n    </tr></thead>\n    <tbody>\n"
+             . "            <th scope=\"col\"><span class=\"a4-sr-only\">{'Actions'|i18n( '$k' )}</span></th>\n    </tr></thead>\n    <tbody>\n"
              . "    {foreach \$rows as \$row}\n        <tr>\n            <td>{\$row.id}</td>\n" . $cells
-             . "            <td class=\"a4-nowrap\">{if \$can_edit}<a class=\"a4-btn a4-btn-small\" href={concat( '{$m}/edit/', \$row.id )|ezurl}>{'Edit'|i18n( '$ctx' )}</a> <a class=\"a4-btn a4-btn-small a4-btn-outline-danger\" href={concat( '{$m}/remove/', \$row.id )|ezurl}>{'Remove'|i18n( '$ctx' )}</a>{/if}</td>\n"
+             . "            <td class=\"a4-nowrap\">{if \$can_edit}<a class=\"a4-btn a4-btn-small\" href={concat( '{$m}/edit/', \$row.id )|ezurl}>{'Edit'|i18n( '$k' )}</a> <a class=\"a4-btn a4-btn-small a4-btn-outline-danger\" href={concat( '{$m}/remove/', \$row.id )|ezurl}>{'Remove'|i18n( '$k' )}</a>{/if}</td>\n"
              . "        </tr>\n    {/foreach}\n    </tbody>\n</table>\n</div>\n</div>\n"
              . "{include name=navigator uri='design:navigator/google.tpl' page_uri=\$page_uri item_count=\$count view_parameters=hash( 'offset', \$offset ) item_limit=\$limit}\n"
-             . "{else}\n<p class=\"a4-empty\">{'No rows yet.'|i18n( '$ctx' )}</p>\n{/if}\n\n"
-             . "<p class=\"a4-meta\">{'JSON: %url'|i18n( '$ctx',, hash( '%url', '{$m}/json'|ezurl( 'no', 'full' ) ) )|wash}</p>\n</div>\n";
+             . "{else}\n<p class=\"a4-empty\">{'No rows yet.'|i18n( '$k' )}</p>\n{/if}\n\n"
+             . "<p class=\"a4-meta\">{'JSON: %url'|i18n( '$k',, hash( '%url', '{$m}/json'|ezurl( 'no', 'full' ) ) )|wash}</p>\n</div>\n";
     }
 
     /** @return string edit.tpl */
     public static function editTemplate( array $s, array $fields )
     {
         $ctx = 'extension/' . $s['name'];
+        $k = self::CONTEXT;
         $m = $s['module'];
         $inputs = '';
         foreach ( $fields as $f )
@@ -492,7 +498,7 @@ class expModuleTableCode
                     $control = "<input class=\"a4-input is-auto\" type=\"number\" step=\"1\" id=\"$id\" name=\"$name\" value=\"{\$row.{$f['name']}|wash}\"$required />";
                     if ( $f['type'] !== 'integer' )
                         $control .= "\n        {def \$t = \$row.{$f['name']}_target}{if \$t}<p class=\"a4-help\">{\$t.name|wash}</p>{/if}{undef \$t}"
-                                  . "\n        <p class=\"a4-help\">{'" . ( $f['type'] === 'node' ? 'A node id' : ( $f['type'] === 'user' ? 'The object id of a user' : 'A content object id' ) ) . "'|i18n( '$ctx' )}</p>";
+                                  . "\n        <p class=\"a4-help\">{'" . ( $f['type'] === 'node' ? 'A node id' : ( $f['type'] === 'user' ? 'The object id of a user' : 'A content object id' ) ) . "'|i18n( '$k' )}</p>";
                     $wide = '';
                     break;
                 case 'float':
@@ -515,30 +521,30 @@ class expModuleTableCode
         }
         return "{* {$m}/edit: a new row or a change of one. Made by the module table wizard. *}\n"
              . "<div class=\"a4-page\" id=\"{$m}-edit\">\n\n<div class=\"a4-pagehead\"><div class=\"a4-pagehead-main\">\n"
-             . "    <h1 class=\"a4-pagehead-title context-title\">{if \$is_new}{'New row'|i18n( '$ctx' )}{else}{'Row %id'|i18n( '$ctx',, hash( '%id', \$row.id ) )|wash}{/if}</h1>\n</div></div>\n\n"
-             . "{if \$problems|count}\n<div class=\"a4-error-summary a4-notice is-bad\" role=\"alert\"><p class=\"a4-notice-title\">{'The row was not saved'|i18n( '$ctx' )}</p>\n"
+             . "    <h1 class=\"a4-pagehead-title context-title\">{if \$is_new}{'New row'|i18n( '$k' )}{else}{'Row %id'|i18n( '$k',, hash( '%id', \$row.id ) )|wash}{/if}</h1>\n</div></div>\n\n"
+             . "{if \$problems|count}\n<div class=\"a4-error-summary a4-notice is-bad\" role=\"alert\"><p class=\"a4-notice-title\">{'The row was not saved'|i18n( '$k' )}</p>\n"
              . "    <ul>{foreach \$problems as \$p}<li>{\$p|wash}</li>{/foreach}</ul></div>\n{/if}\n\n"
              . "<form method=\"post\" action={concat( '{$m}/edit/', cond( \$is_new, 'new', \$row.id ) )|ezurl} class=\"a4-form\">\n"
              . "<div class=\"a4-card a4-section\">\n<div class=\"a4-card-body a4-grid\">\n" . $inputs . "</div>\n"
              . "<div class=\"a4-card-foot a4-actions\">\n"
-             . "    <button type=\"submit\" class=\"a4-btn a4-btn-primary\" name=\"StoreButton\" value=\"1\">{'Save'|i18n( '$ctx' )}</button>\n"
-             . "    <button type=\"submit\" class=\"a4-btn a4-btn-ghost\" name=\"CancelButton\" value=\"1\" formnovalidate=\"formnovalidate\">{'Cancel'|i18n( '$ctx' )}</button>\n"
+             . "    <button type=\"submit\" class=\"a4-btn a4-btn-primary\" name=\"StoreButton\" value=\"1\">{'Save'|i18n( '$k' )}</button>\n"
+             . "    <button type=\"submit\" class=\"a4-btn a4-btn-ghost\" name=\"CancelButton\" value=\"1\" formnovalidate=\"formnovalidate\">{'Cancel'|i18n( '$k' )}</button>\n"
              . "</div>\n</div>\n</form>\n</div>\n";
     }
 
     /** @return string remove.tpl */
     public static function removeTemplate( array $s )
     {
-        $ctx = 'extension/' . $s['name'];
+        $k = self::CONTEXT;
         $m = $s['module'];
         return "{* {$m}/remove: the confirmation of a removal. Made by the module table wizard. *}\n"
              . "<div class=\"a4-page\" id=\"{$m}-remove\">\n<div class=\"a4-pagehead\"><div class=\"a4-pagehead-main\">\n"
-             . "    <h1 class=\"a4-pagehead-title context-title\">{'Remove row %id?'|i18n( '$ctx',, hash( '%id', \$row.id ) )|wash}</h1>\n</div></div>\n"
+             . "    <h1 class=\"a4-pagehead-title context-title\">{'Remove row %id?'|i18n( '$k',, hash( '%id', \$row.id ) )|wash}</h1>\n</div></div>\n"
              . "<form method=\"post\" action={concat( '{$m}/remove/', \$row.id )|ezurl}>\n"
-             . "<div class=\"a4-notice is-warn\" role=\"status\"><p>{'The row is removed from the table and cannot be brought back.'|i18n( '$ctx' )}</p></div>\n"
+             . "<div class=\"a4-notice is-warn\" role=\"status\"><p>{'The row is removed from the table and cannot be brought back.'|i18n( '$k' )}</p></div>\n"
              . "<div class=\"a4-actions\">\n"
-             . "    <button type=\"submit\" class=\"a4-btn a4-btn-danger\" name=\"ConfirmButton\" value=\"1\">{'Remove'|i18n( '$ctx' )}</button>\n"
-             . "    <button type=\"submit\" class=\"a4-btn a4-btn-ghost\" name=\"CancelButton\" value=\"1\">{'Cancel'|i18n( '$ctx' )}</button>\n"
+             . "    <button type=\"submit\" class=\"a4-btn a4-btn-danger\" name=\"ConfirmButton\" value=\"1\">{'Remove'|i18n( '$k' )}</button>\n"
+             . "    <button type=\"submit\" class=\"a4-btn a4-btn-ghost\" name=\"CancelButton\" value=\"1\">{'Cancel'|i18n( '$k' )}</button>\n"
              . "</div>\n</form>\n</div>\n";
     }
 

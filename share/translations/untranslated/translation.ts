@@ -76977,4 +76977,95 @@ You will need to change the class of the node by using the swap functionality.</
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>kernel/datatable/module</name>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The row was saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No rows yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>JSON: %url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A node id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The object id of a user</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A content object id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Row %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The row was not saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove row %id?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The row is removed from the table and cannot be brought back.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

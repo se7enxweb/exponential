@@ -48,10 +48,10 @@ Der Name darf Kleinbuchstaben, Ziffern und `_` enthalten. Leeren Sie nach dem Hi
 ## 2. Es in einem Layout platzieren
 
 Öffnen Sie das Layout im Editor, öffnen Sie die Blockpalette, scrollen Sie zu **Placeholders** und ziehen Sie
-**Template block** in eine Zone. Wählen Sie ihn aus, öffnen Sie den Reiter **Design** und tippen Sie den Namen in
-**Template name** ein: `latest_fitness`. Der Block lautet dann „Template block: **latest_fitness**“. **Layout veröffentlichen**.
+**Template block** in eine Zone. Wählen Sie ihn aus und tippen Sie im Reiter **Inhalt** den Namen in
+**Template-Name** ein: `latest_fitness`. Der Block lautet dann „Template block: **latest_fitness**“. **Layout veröffentlichen**.
 
-![Ein Template-Block im Layout Prefooter mit dem Template name latest_fitness im Reiter Design](../../../eng-us/help/build-two-ways/images/tb-02-template-block-latest-fitness.webp)
+![Ein Template-Block im Layout Prefooter mit dem Template-Namen latest_fitness im Reiter Inhalt](bilder/tb-02-template-block-latest-fitness.webp)
 
 ## 3. Das Ergebnis
 

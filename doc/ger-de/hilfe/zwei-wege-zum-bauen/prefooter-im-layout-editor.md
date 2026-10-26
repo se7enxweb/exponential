@@ -27,7 +27,7 @@ Seite fügt ihm einen vierten Artikel hinzu.
 **Layouts > Gemeinsame Layouts**, dann der Name **Prefooter** (er zeigt „2 Verweise“: Full / Article und Full / Recipe
 verknüpfen ihre Zone `pre_footer` damit). Der Editor öffnet das Layout in einem Entwurf.
 
-![Das Layout Prefooter im Editor: eine Column mit dem Title Most popular articles und einer List mit drei Artikeln](../../../eng-us/help/build-two-ways/images/pf-02-prefooter-editor.webp)
+![Das Layout Prefooter im Editor: eine Column mit dem Title Most popular articles und einer List mit drei Artikeln](bilder/pf-02-prefooter-editor.webp)
 
 Seine Zone `main` enthält eine **Column** (Hintergrundfarbe `secondary`) und darin einen **Title** (Ansicht `section_centered`,
 „Most popular articles“) und eine **List** (Ansicht `grid`, 3 Spalten).
@@ -37,7 +37,7 @@ Seine Zone `main` enthält eine **Column** (Hintergrundfarbe `secondary`) und da
 Klicken Sie auf die Liste. Das Eigenschaftenfeld rechts zeigt im Reiter **Inhalt** den **Sammlungstyp** (Manuelle Sammlung)
 und die **Elemente** in ihrer Reihenfolge.
 
-![Der List-Block ausgewählt; das Feld zeigt Sammlungstyp Manuelle Sammlung, die Schaltfläche Elemente hinzufügen und die drei Einträge mit den Nummern 1 bis 3](../../../eng-us/help/build-two-ways/images/pf-03-list-selected.webp)
+![Der List-Block ausgewählt; das Feld zeigt Sammlungstyp Manuelle Sammlung, die Schaltfläche Elemente hinzufügen und die drei Einträge mit den Nummern 1 bis 3](bilder/pf-03-list-selected.webp)
 
 ## 3. Einen Eintrag hinzufügen
 
@@ -45,7 +45,7 @@ Klicken Sie auf **+ Elemente hinzufügen**. Das Fenster **Inhalt zur Sammlung hi
 **Öffnen** Sie einen Zweig, um hinabzusteigen (hier Fit & Healthy, dann Fitness), haken Sie den Artikel an (hier
 *Why Should You Choose Strength Training?*) und klicken Sie auf **Auswahl hinzufügen**.
 
-![Das Fenster Inhalt zur Sammlung hinzufügen mit Suchfeld, dem Inhaltsbaum, Links zum Öffnen und der Schaltfläche Auswahl hinzufügen](../../../eng-us/help/build-two-ways/images/pf-04-content-browser.webp)
+![Das Fenster Inhalt zur Sammlung hinzufügen mit Suchfeld, dem Inhaltsbaum, Links zum Öffnen und der Schaltfläche Auswahl hinzufügen](bilder/pf-04-content-browser.webp)
 
 Auf der Testkopie lieferte das Suchfeld des Fensters für das ausprobierte Wort „Kein Inhalt gefunden.“; das Durchblättern
 des Baums funktioniert immer.
@@ -55,7 +55,7 @@ des Baums funktioniert immer.
 Der neue Eintrag erscheint mit seiner Nummer in der Liste der Einträge. Ziehen Sie die Einträge an ihrem Griff, um die
 Reihenfolge zu ändern. Die Mitte des Editors zeigt den Block so, wie die Site ihn zeigen wird.
 
-![Der List-Block mit vier Einträgen im Feld: Der neue Artikel ist Nummer 2](../../../eng-us/help/build-two-ways/images/pf-06-four-items-in-draft.webp)
+![Der List-Block mit vier Einträgen im Feld: Der neue Artikel ist Nummer 2](bilder/pf-06-four-items-in-draft.webp)
 
 ## 5. Veröffentlichen und prüfen
 
