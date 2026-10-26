@@ -154,7 +154,7 @@ Inhaltstyp oder ein Siteaccess.“ ([Welche Seiten ein Layout verwenden](../layo
    rechts.“ ([Von rechts nach links](../../funktionen/6.0/rechts-nach-links.md))
 5. Wechseln Sie zurück zu Englisch.
 
-Gesprächsleitfaden: „268 Locale-Dateien lassen sich als Inhaltssprachen verwenden; es gibt 70 Übersetzungen der
+Gesprächsleitfaden: „268 Locale-Dateien lassen sich als Inhaltssprachen verwenden; es gibt 71 Übersetzungen der
 Administration, alle vollständig (Stand 26. Oktober 2026).“ ([Sprachen in Exponential](../../sprachen.md))
 
 ### Teil 4: Hilfe und Nachweis (4 Minuten)

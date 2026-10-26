@@ -76,7 +76,7 @@ Mention approval only as documented: "If a site uses an approval, the version wa
    ([Right to left](../../features/6.0/right-to-left.md))
 4. Switch back to English.
 
-If you give numbers, use the documented ones with their source: 268 locale files usable as content languages, 70
+If you give numbers, use the documented ones with their source: 268 locale files usable as content languages, 71
 administration translations, all of them complete (26 October 2026) ([Languages in Exponential](../../languages.md)).
 
 ![Part 4: the translations of an item](../images/help/pr-editor-translations.webp)

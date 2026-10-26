@@ -80,7 +80,7 @@ See [Mobile and headless](mobile-and-headless/README.md).
 
 **How many languages?**
 268 locale files can be chosen as content languages and siteaccess locales, 40 of them written right to left; the
-administration has 70 translations, all complete (26 October 2026) ([Languages in Exponential](../../languages.md)).
+administration has 71 translations, all complete (26 October 2026) ([Languages in Exponential](../../languages.md)).
 See [Multilingual businesses](multilingual/README.md).
 
 **Can we run several brands from one installation?**
