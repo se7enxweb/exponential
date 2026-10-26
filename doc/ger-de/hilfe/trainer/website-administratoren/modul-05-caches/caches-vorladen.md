@@ -105,7 +105,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet, mit einem Termina
 - Die Liste der letzten Läufe zeigt beide Läufe, einen von der Seite und einen aus der Shell.
 - Der Trainer prüft die Liste der letzten Läufe auf der Seite einer Teilnehmerin oder eines Teilnehmers.
 
-![Seiten vorladen: die Seiten einer Website abfragen, damit sich ihre Caches nach dem Leeren wieder füllen](../../../../../eng-us/help/images/trainers/sa-preload.webp)
+![Seiten vorladen: die Seiten einer Website abfragen, damit sich ihre Caches nach dem Leeren wieder füllen](../../../bilder/trainers/sa-preload.webp)
 
 ## Quiz
 

@@ -98,7 +98,7 @@ Verwenden Sie die Schulungsinstallation und Ihr Schulungskonto.
 - Jede Karte nennt drei Gewohnheiten.
 - Der Trainer prüft zwei Karten.
 
-![Budgets: das Monatsbudget und was in diesem Monat ausgegeben wurde](../../../../../eng-us/help/images/trainers/ei-budgets.webp)
+![Budgets: das Monatsbudget und was in diesem Monat ausgegeben wurde](../../../bilder/trainers/ei-budgets.webp)
 
 ## Quiz
 

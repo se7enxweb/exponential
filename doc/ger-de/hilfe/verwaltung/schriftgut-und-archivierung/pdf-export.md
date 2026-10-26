@@ -13,7 +13,7 @@ Diese Seite richtet sich an Administratoren und Zuständige für Schriftgut. **S
 Richtlinie `pdf/edit`) erzeugt ein PDF-Dokument aus einem **Quellknoten** oder aus einem Baum von Knoten ausgewählter
 Klassen ([PDF-Exporte](../../../anleitungen/pdf-exporte.md), [PDF-Export](../../../funktionen/6.0/pdf-export.md)).
 
-![PDF-Exporte: Exporte von Teilen des Inhaltsbaums, gespeichert oder für jeden Download erzeugt](../../../../eng-us/help/images/government/gov-pdf.webp)
+![PDF-Exporte: Exporte von Teilen des Inhaltsbaums, gespeichert oder für jeden Download erzeugt](../../bilder/government/gov-pdf.webp)
 
 ## Inhalt
 

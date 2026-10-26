@@ -39,7 +39,7 @@ der Erweiterung (Benutzerhandbuch, Konfiguration, Kommandozeile, Sicherheit) lie
 | **Laufende Ausführungen** | Updates und Installationen laufen im Hintergrund, eine nach der anderen, mit einer Sperre; die Seite folgt der Ausgabe von Composer |
 | **Kommandozeile** | dasselbe aus `php extension/ezupdate/bin/php/ezupdate.php` |
 
-![Updates and packages: eine Übersicht über die installierten Pakete, die mit einem neueren Release und die Paketserver](../../../../eng-us/help/images/hosting/update-dashboard.webp)
+![Updates and packages: eine Übersicht über die installierten Pakete, die mit einem neueren Release und die Paketserver](../../bilder/hosting/update-dashboard.webp)
 
 > **Hinweis**
 > „Automatisch“ heißt hier: die Prüfungen, die Probeläufe und die Berichte. `ezupdate` hat keinen eigenen Zeitplan, der eine
@@ -67,7 +67,7 @@ Konto gehört.
 
 **Aktualisieren und Installieren sind aus, bis Sie sie einschalten**, in `settings/override/ezupdate.ini.append.php`:
 
-![Updates and packages, Paketserver: die Server, die Composer liest, etwa packagist.org](../../../../eng-us/help/images/hosting/update-package-servers.webp)
+![Updates and packages, Paketserver: die Server, die Composer liest, etwa packagist.org](../../bilder/hosting/update-package-servers.webp)
 
 ```ini
 [UpdateSettings]
@@ -97,7 +97,7 @@ erhalten oder ob Updates ein Dienst sind, den der Hoster ausführt.
 5. Die Seite zeigt das Ergebnis: aktuell, eine Zusammenfassung der Änderungen oder den Exit-Code einer gescheiterten
    Ausführung.
 
-![Die installierten Pakete mit ihrer Version und dem neuesten verfügbaren Release](../../../../eng-us/help/images/hosting/update-installed.webp)
+![Die installierten Pakete mit ihrer Version und dem neuesten verfügbaren Release](../../bilder/hosting/update-installed.webp)
 
 Auf einer Website, die von PHP-FPM oder Velocity ausgeliefert wird, halten die laufenden Prozesse die alten Klassen im Speicher,
 bis sie neu geladen werden. Schließen Sie ein Update mit einem Ausrollen ab, das PHP-FPM neu lädt oder darauf wartet, Velocity
@@ -136,7 +136,7 @@ Kommandozeile dokumentiert ihre Exit-Codes für die Nutzung in Skripten.
 
 Alle in `ezupdate.ini`, überschrieben in `settings/override/ezupdate.ini.append.php`:
 
-![Updates and packages, Pakete finden: die Paketserver nach einer hinzuzufügenden Erweiterung durchsuchen](../../../../eng-us/help/images/hosting/update-find-packages.webp)
+![Updates and packages, Pakete finden: die Paketserver nach einer hinzuzufügenden Erweiterung durchsuchen](../../bilder/hosting/update-find-packages.webp)
 
 | Schlüssel | Mitgeliefert | Warum es einen Hoster betrifft |
 |---|---|---|

@@ -104,7 +104,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - Schritt 7 lässt den Cache der Bildvarianten übrig (`imagealias`).
 - Der Trainer prüft die Tabelle aus Schritt 9 bei zwei Teilnehmenden.
 
-![Die Liste der Caches mit dem, was jeder enthält, seiner Größe und Ausgewähltes leeren](../../../../../eng-us/help/images/trainers/sa-cache-list.webp)
+![Die Liste der Caches mit dem, was jeder enthält, seiner Größe und Ausgewähltes leeren](../../../bilder/trainers/sa-cache-list.webp)
 
 ## Quiz
 

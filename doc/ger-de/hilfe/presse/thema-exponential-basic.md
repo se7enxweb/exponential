@@ -23,8 +23,8 @@ ist das kleinste Mitglied der Familie und hat den längsten Faden Geschichte hin
 
 „Exponential Basic is the simple to us to use CMS Framework that is for everyone, educational purposes, personal use
 and worldwide general“ (Beschreibung des Repositorys, so zitiert, wie sie veröffentlicht ist). Es stammt von der zweiten
-Generation der Codebasis ab: Sein Repository ist ein Fork von `brookinsconsulting/ezcommunity2`, der Linie eZ Publish
-2.2, die Brookins Consulting mit Unterstützung für PHP 5 noch lange nach dem Ende dieser Generation am Leben hielt
+Generation der Codebasis ab: Sein Repository ist ein Fork von `brookinsconsulting/ezcommunity2`, dem Repository eZCommunity2,
+das Brookins Consulting für eZ Publish 2.2 angelegt hat
 ([Exponential Basic](../wer-ist-die-exponential-foundation.md#exponential-basic),
 [Wer ist 7x?, Exponential Basic](../wer-ist-7x.md#exponential-basic)).
 

@@ -31,7 +31,7 @@ Klartext) braucht `setup/unmasklogs`; **Logs verwalten** (rotieren, entfernen) b
 5. Für einen Überblick klicken Sie auf **Fehlerübersicht** (die Fehler nach Art gruppiert) oder **Zustand der Logs**
    (Größen und Wachstum).
 
-![Der Log-Viewer mit den Schaltflächen Logs, Fehlerübersicht, Zustand der Logs und Logs verwalten, der Auswahl der Datei, dem Permalink und den Steuerelementen Anhalten und Neueste](../../../eng-us/help/manual/images/log-viewer.webp)
+![Der Log-Viewer mit den Schaltflächen Logs, Fehlerübersicht, Zustand der Logs und Logs verwalten, der Auswahl der Datei, dem Permalink und den Steuerelementen Anhalten und Neueste](bilder/log-viewer.webp)
 
 ## Was schiefgehen kann
 

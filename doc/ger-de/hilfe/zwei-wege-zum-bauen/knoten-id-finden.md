@@ -23,7 +23,7 @@ Eine Seite mit einem Ort hat von jeder eine, und sie unterscheiden sich: **Showc
 Öffnen Sie die Seite in der **Inhaltsstruktur** (oder unter **Medien**). Die Zeile unter den Schaltflächen lautet
 `Geändert ... · Veröffentlicht ... · Version ... · <Sektion> · Knoten 192 · Objekt 190 · Remote-ID`.
 
-![Die Ansicht von Showcase in der Administration; die Zeile unter den Schaltflächen zeigt Knoten 192 und Objekt 190](../../../eng-us/help/build-two-ways/images/hm-02-find-node-id.webp)
+![Die Ansicht von Showcase in der Administration; die Zeile unter den Schaltflächen zeigt Knoten 192 und Objekt 190](bilder/hm-02-find-node-id.webp)
 
 Außerdem:
 

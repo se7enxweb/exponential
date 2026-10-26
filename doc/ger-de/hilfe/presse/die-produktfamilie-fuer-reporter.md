@@ -36,7 +36,7 @@ Beschreibungen stehen unter [Die Produkte im Einzelnen](../wer-ist-die-exponenti
 | **Exponential Layouts** | Ein visueller Seitenbaukasten: Layouts, Zonen, Blöcke und Regeln | (Pakete `explayouts*`) |
 | **AdminUI** | Eine alternative Administration, eine Portierung der Netgen AdminUI | (Paket `exp_adminui`) |
 | **Das Hilfesystem** | Die Dokumentation in der Administration | GFDL 1.3 für die Seiten |
-| **Die Erweiterungen** | 66 Pakete von se7enxweb, die der Kernel verlangt | jeweils eigene |
+| **Die Erweiterungen** | 66 Pakete von se7enxweb, die der Kernel am 18. Oktober 2026 verlangte, 69 am 25. Oktober 2026 | jeweils eigene |
 
 Quellen: [Die Produktfamilie im Überblick](../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick),
 [Open-Source-Lizenzen](../wer-ist-7x.md#open-source-lizenzen). Wo eine Zelle statt einer Lizenz ein Paket nennt, prüfen
@@ -63,7 +63,7 @@ Die Nexus-Linie 1.3.0.x für Platform v5 und der v5-Starter haben keinen Legacy-
 |---|---|---|
 | Exponential 6 | 6.0.14 veröffentlicht am 7. Juni 2026; 6.0.15 in Entwicklung | [Release-Übersicht](../../../eng-us/release-overview) |
 | Exponential Basic | v2.4.0.3 | Beschreibung des Repositorys |
-| Velocity | Teil von Exponential seit dem 22. September 2026; das README nennt es als erforderlich in `~0.0.4.54` | [Chronik von Velocity](../../geschichte/velocity/README.md) |
+| Velocity | Am 22. September 2026 als empfohlene Engine in Exponential angekommen; Teil von Exponential, von `composer.json` in `~0.0.4.54` verlangt, ab 6.0.15 (20. Oktober 2026) | [Chronik von Velocity](../../geschichte/velocity/README.md), [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#20-october-2026-exponential-velocity-is-part-of-exponential) |
 | Intelligence, Layouts, AdminUI | Vom Kernel verlangt seit der Linie 6.0.15 | composer.json |
 | Platform DXP | „Stable; Open Source“ | seine composer.json |
 | Nexus-Starter | „Currently In Public Beta“ | die Beschreibung seines Repositorys |

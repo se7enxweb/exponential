@@ -14,7 +14,7 @@ und bearbeiten darf. Sie erklärt die drei Bausteine, die Exponential verwendet 
 zeigt das Muster für Abteilungen, die jeweils ihre eigenen Seiten pflegen, und verlinkt die Anleitungen mit jedem
 Klick.
 
-![Rollen, eine pro Abteilung, nach Sektion eingeschränkt](../../../../eng-us/help/images/help/bu-dept-sections.webp)
+![Rollen, eine pro Abteilung, nach Sektion eingeschränkt](../../bilder/help/bu-dept-sections.webp)
 
 ## Inhalt
 

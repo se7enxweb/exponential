@@ -106,7 +106,7 @@ Auf Ihrer Schulungsinstallation, als Administrator angemeldet:
 - `sam.sample` existiert noch; nur die Zuweisung wurde entfernt.
 - Der Trainer prüft die Rollenseite einer Person und den Satz aus Schritt 10.
 
-![Die Benutzer und Gruppen, denen eine Rolle zugewiesen ist, mit Zuweisen und Mit Einschränkungen zuordnen](../../../../../eng-us/help/images/trainers/sa-assign-role.webp)
+![Die Benutzer und Gruppen, denen eine Rolle zugewiesen ist, mit Zuweisen und Mit Einschränkungen zuordnen](../../../bilder/trainers/sa-assign-role.webp)
 
 ## Quiz
 

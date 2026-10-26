@@ -13,7 +13,7 @@ Dieser Abschnitt ist für Administratoren, die sich im Browser um die Pakete ein
 Hoster, die wissen wollen, was diese Seiten tun, bevor sie Redakteure daran lassen. Er beantwortet: wo die Paketseiten sind, was jede
 ändert und welche Richtlinie sie öffnet.
 
-![Setup, Pakete: die Repositorys und ihre Pakete](../../../../eng-us/help/images/help/sp-gui-list.webp)
+![Setup, Pakete: die Repositorys und ihre Pakete](../../bilder/help/sp-gui-list.webp)
 
 Seitenpakete selbst werden vom Setup-Assistenten, dem Kickstarter oder `exp:install` installiert, nicht von diesen Seiten
 ([Wie der Setup-Assistent Pakete nutzt](../grundlagen/wie-der-setup-assistent-pakete-nutzt.md)). Was Sie hier danach sehen, ist das, was diese

@@ -27,7 +27,7 @@ Jeder Benutzer mit `content/read`. Sie finden nur, was Ihre Rolle lesen darf.
    `275`, `/news/summer` oder die Adresse von der Website, und klicken Sie auf **Finden**.
 4. Klicken Sie auf ein Ergebnis, um es zu öffnen.
 
-![Das Formular der Erweiterten Suche mit den Filtern für Klasse, Attribut, Sektion und Datum](../../../eng-us/help/manual/images/advanced-search.webp)
+![Das Formular der Erweiterten Suche mit den Filtern für Klasse, Attribut, Sektion und Datum](bilder/advanced-search.webp)
 
 ## Was schiefgehen kann
 

@@ -117,7 +117,7 @@ Verwenden Sie Ihre Schulungsinstallation mit *Site B* (Lektion 1.3) und Ihrem Ad
   Organisation beide Websites betreibt.
 - Der Trainer prüft Schritt 8 auf dem Bildschirm einer Person.
 
-![Eine Administration für mehrere Websites: Jede Website ist ein Ordner unterhalb der Wurzel des Baums](../../../../../eng-us/help/images/trainers/ms-tree.webp)
+![Eine Administration für mehrere Websites: Jede Website ist ein Ordner unterhalb der Wurzel des Baums](../../../bilder/trainers/ms-tree.webp)
 
 ## Quiz
 

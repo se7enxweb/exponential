@@ -14,11 +14,11 @@ veröffentlicht werden, nachdem sich ein Benutzer registriert hat, an der Kasse.
 **Workflows** (von Administratoren konfiguriert, aus Ereignistypen aufgebaut) und **Kernel-Event-Listener** (Code). Die
 Anleitung für Administratoren ist [Workflows](../../../anleitungen/workflows.md).
 
-![Setup, Workflows: die Workflow-Gruppen der Installation](../../../../eng-us/help/images/creators/workflows.webp)
+![Setup, Workflows: die Workflow-Gruppen der Installation](../../bilder/creators/workflows.webp)
 
-![Setup, Trigger: welcher Workflow vor oder nach jeder Operation läuft](../../../../eng-us/help/images/creators/triggers.webp)
+![Setup, Trigger: welcher Workflow vor oder nach jeder Operation läuft](../../bilder/creators/triggers.webp)
 
-![Setup, Workflow-Prozesse: die Workflow-Läufe, die warten, zum Beispiel auf eine Freigabe](../../../../eng-us/help/images/creators/workflow-processes.webp)
+![Setup, Workflow-Prozesse: die Workflow-Läufe, die warten, zum Beispiel auf eine Freigabe](../../bilder/creators/workflow-processes.webp)
 
 ## Inhalt
 

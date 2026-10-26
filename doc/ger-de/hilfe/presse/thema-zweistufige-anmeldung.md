@@ -30,7 +30,8 @@ und einen Punkt, in dem sich zwei Quellen widersprechen.
 useless to anyone else“ ([Zweistufige Anmeldung](../../anleitungen/zwei-faktor-anmeldung.md)). Die Funktion stammt aus der
 Erweiterung `sevenx_authentication_2fa`, die die `composer.json` des Kernels verlangt und die Installationsprogramme
 aktivieren. Die Anleitung benennt den Aufwand ganz nüchtern: „15 minutes to turn it on, 2 minutes per user to set it
-up.“ Für Benutzer ist sie freiwillig, sofern der Betreiber der Website sie nicht vorschreibt.
+up.“ Eine neue Installation schreibt sie für Administratoren und Redakteure vor; Mitglieder anderer Gruppen
+entscheiden selbst, und der Betreiber der Website legt fest, für wen sie gilt.
 
 ## Was neu ist, und seit wann
 
@@ -38,6 +39,7 @@ up.“ Für Benutzer ist sie freiwillig, sofern der Betreiber der Website sie ni
 |---|---|---|
 | Die Erweiterung übernommen (Version 1.0.0) | 21. Juli 2026 | [sevenx_authentication_2fa](../../funktionen/6.0/erweiterungen/sevenx_authentication_2fa.md) |
 | Die Anleitung, Social-Login-Schaltflächen auf der Anmeldeseite von admin4, Codes, die nur einmal gelten und als fehlgeschlagene Anmeldungen gezählt werden, Geheimnisse, die im Ruhezustand verschlüsselt werden können | 6. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#6-october-2026-two-step-sign-in) |
+| Jede neue Installation schreibt die zweistufige Anmeldung für Administratoren und Redakteure vor | 23. Oktober 2026 | [Changelog 6.0.15](../../../changelogs/6.0/6.0.15.md#2026-10-23-every-new-installation-requires-two-step-sign-in-of-administrators-and-editors-and-has-imports) |
 
 Die Änderungen am Kernel sind Teil der Entwicklungslinie 6.0.15, die nicht veröffentlicht ist; die Erweiterung wird
 eigenständig veröffentlicht.
@@ -66,7 +68,8 @@ E-Mail-Links nicht, ohne 7x zu fragen, was aktuell gilt.
 
 ## Was Sie nicht behaupten sollten
 
-- „Die zweistufige Anmeldung ist Pflicht.“ Sie ist freiwillig, sofern der Betreiber der Website sie nicht vorschreibt.
+- „Die zweistufige Anmeldung ist für alle Pflicht.“ Eine neue Installation schreibt sie nur für Administratoren und
+  Redakteure vor; andere Benutzer entscheiden selbst, und der Betreiber der Website legt fest, für wen sie gilt.
 - „Social Login funktioniert mit jedem Anbieter sofort.“ Die Handler werden als Gerüste beschrieben, die angepasst
   werden müssen.
 - „Konten können nicht übernommen werden.“ Sagen Sie, wovor der zweite Schritt schützt, und belassen Sie es dabei.

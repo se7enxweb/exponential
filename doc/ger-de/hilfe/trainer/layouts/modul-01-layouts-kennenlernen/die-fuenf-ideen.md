@@ -105,7 +105,7 @@ Verwenden Sie Papier und die öffentliche Website der Schulungsinstallation.
   Regelsatz.
 - Der Trainer zeigt das echte Layout der Startseite im Editor am Beamer (Modul 2) und vergleicht es mit zwei Skizzen.
 
-![Layout-Typen, Zonen und Blockdefinitionen](../../../../../eng-us/help/images/trainers/ly-components.webp)
+![Layout-Typen, Zonen und Blockdefinitionen](../../../bilder/trainers/ly-components.webp)
 
 ## Quiz
 

@@ -14,7 +14,7 @@ Website planen: eine Aktualisierung, eine Datenbankmigration, einen großen Impo
 beantwortet jeden Besucher mit einer Seite 503 und einem Header `Retry-After`, während Sie arbeiten. Das Werkzeug ist
 unter [Wartungsmodus](../../../../anleitungen/wartungsmodus.md) beschrieben; diese Seite behandelt Planung und Kommunikation.
 
-![Setup, Wartung: ein Wartungsfenster planen und die Seite, die Besucher sehen werden, in der Vorschau ansehen](../../../../../eng-us/help/images/government/gov-maintenance.webp)
+![Setup, Wartung: ein Wartungsfenster planen und die Seite, die Besucher sehen werden, in der Vorschau ansehen](../../../bilder/government/gov-maintenance.webp)
 
 ## Inhalt
 1. [Vor dem Wartungsfenster](#vor-dem-wartungsfenster)

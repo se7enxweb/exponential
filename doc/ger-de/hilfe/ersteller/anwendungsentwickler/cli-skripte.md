@@ -13,7 +13,7 @@ Diese Seite ist für Anwendungsentwickler, die Kommandozeilenwerkzeuge schreiben
 startet den Kernel mit `eZScript`, liest Optionen, erledigt seine Arbeit und endet mit einem Status. Neue Skripte sind
 Klassen, die `Exponential\Runnable\Command` erweitern; die Konsole führt sie als `ext:<ext>:<name>` aus.
 
-![Setup, MCP-Server: die schreibgeschützten Werkzeuge, mit denen ein Assistent die Installation untersuchen kann](../../../../eng-us/help/images/creators/mcp-dashboard.webp)
+![Setup, MCP-Server: die schreibgeschützten Werkzeuge, mit denen ein Assistent die Installation untersuchen kann](../../bilder/creators/mcp-dashboard.webp)
 
 ## Inhalt
 

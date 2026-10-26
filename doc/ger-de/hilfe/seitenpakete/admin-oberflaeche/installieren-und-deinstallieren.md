@@ -13,7 +13,7 @@ Diese Seite ist für Administratoren, die ein Paket installieren, das bereits im
 erstellt), oder eines wieder entfernen. Installieren führt die Installationselemente des Pakets auf dieser Website aus; Deinstallieren führt
 seine Deinstallationselemente aus. Beides ändert die Website.
 
-![Die Paketliste, aus der ein Paket installiert wird](../../../../eng-us/help/images/help/sp-install.webp)
+![Die Paketliste, aus der ein Paket installiert wird](../../bilder/help/sp-install.webp)
 
 ## Inhalt
 

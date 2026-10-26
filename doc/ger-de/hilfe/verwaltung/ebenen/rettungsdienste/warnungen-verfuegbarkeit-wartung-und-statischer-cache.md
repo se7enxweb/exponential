@@ -15,7 +15,7 @@ ankommt. Sie erklärt die Werkzeuge, die Exponential für Last und Ausfälle hat
 dringenden Meldung zusammenwirken und was das Produkt nicht tut. Jedes unten beschriebene Verhalten ist auf den
 verlinkten Seiten dokumentiert; testen Sie jedes auf Ihrer eigenen Installation, bevor ein Einsatz es für Sie testet.
 
-![Das Wartungsfenster zeigt Besuchern eine Seite, während die Administration erreichbar bleibt](../../../../../eng-us/help/images/government/gov-maint-alerts.webp)
+![Das Wartungsfenster zeigt Besuchern eine Seite, während die Administration erreichbar bleibt](../../../bilder/government/gov-maint-alerts.webp)
 
 ## Inhalt
 

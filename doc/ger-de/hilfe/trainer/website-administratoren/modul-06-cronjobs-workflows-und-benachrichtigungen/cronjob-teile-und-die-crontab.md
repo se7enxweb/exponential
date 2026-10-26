@@ -142,7 +142,7 @@ in einem Terminal im Wurzelverzeichnis der Installation.
 - Der Trainer prüft das, indem er zwei Teilnehmende ihre Zeile laut vorlesen und auf `cd`, den Siteaccess und den
   Teilnamen zeigen lässt.
 
-![Die Cronjob-Teile und ob die Crontab sie ausführt](../../../../../eng-us/help/images/trainers/sa-cron-parts.webp)
+![Die Cronjob-Teile und ob die Crontab sie ausführt](../../../bilder/trainers/sa-cron-parts.webp)
 
 ## Quiz
 

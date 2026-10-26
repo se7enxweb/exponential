@@ -133,7 +133,7 @@ Exponential gebaute Website, die der Trainer nennt). Ein Konto ist nicht nötig.
   dass Lektion 2.1 den echten Baum zeigt.
 - Der Trainer sammelt zwei oder drei Skizzen ein und vergleicht sie in Lektion 2.1 an der Tafel mit dem echten Baum.
 
-![Die Unterelemente der Startseite einer Website: ihre Bereiche, jeder ein Ordner mit den Artikeln darunter](../../../../../eng-us/help/images/trainers/e101-site-tree.webp)
+![Die Unterelemente der Startseite einer Website: ihre Bereiche, jeder ein Ordner mit den Artikeln darunter](../../../bilder/trainers/e101-site-tree.webp)
 
 ## Quiz
 

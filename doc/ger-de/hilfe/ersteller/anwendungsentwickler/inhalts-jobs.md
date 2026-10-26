@@ -13,7 +13,7 @@ Diese Seite ist für Anwendungsentwickler, die mit großen Teilbäumen arbeiten.
 Inhaltsoperationen **Inhalts-Jobs**, die im Hintergrund in Stapeln laufen, mit einer Fortschrittsseite, statt in einer
 einzigen langen Anfrage ([Inhalts-Jobs](../../../bc/6.0/inhaltsjobs.md)).
 
-![Das Dashboard der Job-Warteschlange, das die Inhalts-Jobs und ihren Zustand auflistet](../../../../eng-us/help/images/creators/job-queue-dashboard.webp)
+![Das Dashboard der Job-Warteschlange, das die Inhalts-Jobs und ihren Zustand auflistet](../../bilder/creators/job-queue-dashboard.webp)
 
 ## Inhalt
 

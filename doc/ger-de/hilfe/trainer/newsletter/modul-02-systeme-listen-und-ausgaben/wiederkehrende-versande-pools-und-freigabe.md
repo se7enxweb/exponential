@@ -119,7 +119,7 @@ Arbeiten Sie in Paaren, A und B.
 - Jedes Paar kann den Ablauf der Freigabe und die zwei Modi des Zeitplans erklären.
 - Der Trainer prüft die Liste **Wiederkehrende Versände** auf Zeitpläne, die nicht pausiert sind, und pausiert sie.
 
-![Der Artikel-Pool: Artikel, die auf die nächste wiederkehrende Ausgabe warten](../../../../../eng-us/help/images/trainers/nl-pool.webp)
+![Der Artikel-Pool: Artikel, die auf die nächste wiederkehrende Ausgabe warten](../../../bilder/trainers/nl-pool.webp)
 
 ## Quiz
 

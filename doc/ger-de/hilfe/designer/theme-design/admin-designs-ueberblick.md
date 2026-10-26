@@ -38,7 +38,7 @@ gelten, das Sie ihnen hinzufügen.
 
 Auf der Demonstrationsinstallation:
 
-![Der Kasten Oberfläche in der rechten Spalte mit der Liste Administrationsdesign unten, in der ein Benutzer das Admin-Design wählt](../../../../eng-us/help/images/designers/admin-design-switch.webp)
+![Der Kasten Oberfläche in der rechten Spalte mit der Liste Administrationsdesign unten, in der ein Benutzer das Admin-Design wählt](../../bilder/designers/admin-design-switch.webp)
 
 ```
 admin    siteaccess: admin4l > admin4 > admin3 > admin2 > admin > standard

@@ -125,7 +125,7 @@ Schulungsinstallation.
 - In keinem geteilten Dokument steht ein Passwort oder ein echter Servername der Organisation einer Person.
 - Die Transporte der Schulungsinstallation sind unverändert (der Trainer prüft am Ende die Einstellungsansicht).
 
-![Der Bereich Zustellbarkeit des Dashboards: Versandrate, Bounces und Unterdrückung, Testversände](../../../../../eng-us/help/images/trainers/nl-deliverability.webp)
+![Der Bereich Zustellbarkeit des Dashboards: Versandrate, Bounces und Unterdrückung, Testversände](../../../bilder/trainers/nl-deliverability.webp)
 
 ## Quiz
 

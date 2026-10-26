@@ -13,7 +13,7 @@ Diese Checkliste richtet sich an die Leitung der Kommunikation, die Website-Admi
 öffentlichen Stelle, die möglicherweise dringende Informationen veröffentlichen muss: eine Unwetterwarnung, einen
 Hinweis zum Trinkwasser, eine Schließung. Sie verwendet Funktionen, die Exponential hat.
 
-![Die Seite Cronjobs: Teile, Skripte, letzte Läufe und Jetzt ausführen](../../../../eng-us/help/images/government/gov-cron.webp)
+![Die Seite Cronjobs: Teile, Skripte, letzte Läufe und Jetzt ausführen](../../bilder/government/gov-cron.webp)
 
 Exponential hat **keine eigene Funktion für Notfallwarnungen**: keinen Bannertyp für Warnungen, keine Push-Nachrichten
 auf Telefone, keine Anbindung an öffentliche Warnsysteme. Es bietet schnelles Veröffentlichen, Kontrolle über die

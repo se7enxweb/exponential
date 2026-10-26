@@ -104,7 +104,7 @@ Verwenden Sie die Schulungsinstallation und Ihren Kursordner.
 - Der Trainer prüft das, indem er eine Teilnehmerin oder einen Teilnehmer bittet, den Ordner **Course** auf dem
   Projektor zu zeigen.
 
-![Meine Lesezeichen mit seinen Ordnern, Lesezeichen finden und den Schaltflächen für die Reihenfolge](../../../../../eng-us/help/images/trainers/e101-bookmarks.webp)
+![Meine Lesezeichen mit seinen Ordnern, Lesezeichen finden und den Schaltflächen für die Reihenfolge](../../../bilder/trainers/e101-bookmarks.webp)
 
 ## Quiz
 

@@ -34,7 +34,7 @@ an Inhalten; Rollen und Richtlinien geben ihnen Bedeutung.
 | Richtlinien schränken ein über | `Section` | `StateGroup_<group identifier>` |
 | Override-Bedingung | `Match[section_identifier]` | `Match[state_identifier]` |
 
-![Der Reiter Details eines Elements mit seiner Sektion und seinen Objektzuständen und den Schaltflächen zum Ändern](../../../../eng-us/help/images/creators/details-tab-section.webp)
+![Der Reiter Details eines Elements mit seiner Sektion und seinen Objektzuständen und den Schaltflächen zum Ändern](../../bilder/creators/details-tab-section.webp)
 
 Keines von beiden ist ein Ort im Baum oder ein Siteaccess: Ein Bereich des Baums wird einer Sektion zugewiesen, und
 Objekte behalten die Sektion beim Verschieben, sofern sie nicht neu zugewiesen werden.
@@ -49,7 +49,7 @@ Objekte behalten die Sektion beim Verschieben, sofern sie nicht neu zugewiesen w
 | 4 | Setup | `setup` | Einrichtungsobjekte |
 | 5 | Design | `design` | Designobjekte |
 
-![Setup, Sektionen: die Sektionen der Installation mit Bezeichner und Navigationsbereich](../../../../eng-us/help/images/creators/sections-list.webp)
+![Setup, Sektionen: die Sektionen der Installation mit Bezeichner und Navigationsbereich](../../bilder/creators/sections-list.webp)
 
 Die Rolle Anonymous liest nur die Sektion Standard. Diese eine Einschränkung hält alles andere von Besuchern fern
 ([2. Die Sektionen einer neuen Installation](../../../anleitungen/sektionen.md#2-die-sektionen-einer-neuen-installation)).
@@ -84,7 +84,7 @@ die Freigabe ist ein einziges **Inhalt zuweisen** an Standard.
 4. Autoren veröffentlichen und setzen In review; Prüfer kontrollieren und setzen Approved; erst dann sehen Besucher
    die Seite.
 
-![Setup, Zustände: die Objektzustandsgruppen und ihre Zustände](../../../../eng-us/help/images/creators/state-groups.webp)
+![Setup, Zustände: die Objektzustandsgruppen und ihre Zustände](../../bilder/creators/state-groups.webp)
 
 Das vollständige Beispiel steht unter
 [9. Ein durchgearbeitetes Beispiel: ein Prüf-Workflow](../../../anleitungen/objektzustaende.md#9-ein-durchgearbeitetes-beispiel-ein-prüf-workflow).

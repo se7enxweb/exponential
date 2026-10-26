@@ -24,7 +24,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 - [ ] `color-scheme: dark` im dunklen Block (Formularelemente und Bildlaufleisten folgen).
 - [ ] Bei Admin-Designs: Der Test der Admin-Gestaltungsregeln läuft durch ([Der Test der Admin-Gestaltungsregeln](der-test-der-admin-gestaltungsregeln.md)).
 
-![Eine Listenseite im dunklen Modus: Karten, Zähler, Badges und Knöpfe übernehmen alle ihre dunklen Token-Werte](../../../../eng-us/help/images/designers/sections-dark.webp)
+![Eine Listenseite im dunklen Modus: Karten, Zähler, Badges und Knöpfe übernehmen alle ihre dunklen Token-Werte](../../bilder/designers/sections-dark.webp)
 
 ## Aussehen
 
@@ -36,7 +36,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 - [ ] Fokusring auf dunklen Flächen sichtbar.
 - [ ] Bei 1440 px und 960 px mit Skalierung 2 geprüft.
 
-![Die Seite eines Eintrags im dunklen Modus: Badges, Knöpfe, Reiter und der Inhalt behalten ihren Kontrast](../../../../eng-us/help/images/designers/item-page-dark.webp)
+![Die Seite eines Eintrags im dunklen Modus: Badges, Knöpfe, Reiter und der Inhalt behalten ihren Kontrast](../../bilder/designers/item-page-dark.webp)
 
 ## Verhalten
 
@@ -46,7 +46,7 @@ Diese Seite ist für Designer, die einen dunklen Modus prüfen. Hintergrund: [Du
 - [ ] Die Auswahl übersteht Neuladen und Navigation.
 - [ ] Drucken ergibt eine helle Seite.
 
-![Das Bearbeitungsformular im dunklen Modus: Felder, die Feldleiste und der Rich-Text-Editor folgen dem Theme](../../../../eng-us/help/images/designers/edit-form-dark.webp)
+![Das Bearbeitungsformular im dunklen Modus: Felder, die Feldleiste und der Rich-Text-Editor folgen dem Theme](../../bilder/designers/edit-form-dark.webp)
 
 ## Verwandte Seiten
 

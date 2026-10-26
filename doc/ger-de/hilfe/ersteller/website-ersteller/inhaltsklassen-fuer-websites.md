@@ -13,7 +13,7 @@ Diese Seite richtet sich an Website-Ersteller, die die Inhaltsklassen einer Webs
 anpassen. Sie behandelt den Klasseneditor, die Einstellungen einer Klasse und jedes Attributs und welche Änderungen
 gefahrlos sind, sobald die Website Inhalte enthält.
 
-![Setup, Klassen: die Klassengruppen mit der Anzahl der Klassen in jeder](../../../../eng-us/help/images/creators/classes-groups.webp)
+![Setup, Klassen: die Klassengruppen mit der Anzahl der Klassen in jeder](../../bilder/creators/classes-groups.webp)
 
 ## Inhalt
 

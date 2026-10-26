@@ -14,7 +14,7 @@ einsetzen können: beim Veröffentlichen ein externes System benachrichtigen, vo
 eine Freigabe von außen warten. **Setup > RAD > Workflow-Ereignis-Erweiterung** (`/setup/workflowevent`) schreibt ein
 funktionierendes Gerüst ([RAD-Werkzeuge](rad-werkzeuge.md)).
 
-![Setup, RAD, der Assistent für Workflow-Ereignisse, der das Gerüst eines Ereignistyps schreibt](../../../../eng-us/help/images/creators/workflow-event-wizard.webp)
+![Setup, RAD, der Assistent für Workflow-Ereignisse, der das Gerüst eines Ereignistyps schreibt](../../bilder/creators/workflow-event-wizard.webp)
 
 ## Inhalt
 

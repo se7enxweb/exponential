@@ -15,7 +15,7 @@ der Datenbank: Erzeuger reihen einen Job mit einem einzigen Aufruf ein; Worker f
 ([expqueue](../../../funktionen/6.0/erweiterungen/expqueue.md)). Die vollständige Dokumentation steht in
 `extension/expqueue/doc/` (`api.md`, `scheduling.md`, `workers-cron-systemd.md`).
 
-![Die Job-Warteschlange in der Administration: wartende, laufende, erledigte und fehlgeschlagene Jobs je Warteschlange](../../../../eng-us/help/images/creators/job-queue-dashboard.webp)
+![Die Job-Warteschlange in der Administration: wartende, laufende, erledigte und fehlgeschlagene Jobs je Warteschlange](../../bilder/creators/job-queue-dashboard.webp)
 
 ## Inhalt
 

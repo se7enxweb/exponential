@@ -114,7 +114,7 @@ Verwenden Sie Ihre eigene Schulungsinstallation, ausgeliefert von Velocity.
   verwendeten Server.
 - Der Trainer prüft die Schritte 6 und 7 einer Person nebeneinander.
 
-![Cache-Verwaltung, wo die Caches innerhalb der Installation geleert werden](../../../../../eng-us/help/images/trainers/ho-cache.webp)
+![Cache-Verwaltung, wo die Caches innerhalb der Installation geleert werden](../../../bilder/trainers/ho-cache.webp)
 
 ## Quiz
 

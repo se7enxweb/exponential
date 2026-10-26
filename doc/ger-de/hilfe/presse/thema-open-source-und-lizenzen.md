@@ -23,7 +23,7 @@ Sie hat es dem Code ermöglicht, die Produktlinie seines ursprünglichen Entwick
 
 Die Codebasis wurde unter der GNU General Public License veröffentlicht. Als ihr Schöpfer die Linie eZ Publish
 einstellte, erlaubte die Lizenz anderen, sie fortzuführen, und 7x tat das ab Dezember 2023. Heute steht die Software
-unter der „GNU General Public License, version 2 or any later version“; „Using Exponential under the terms of the GNU
+unter der GNU General Public License, Version 2 oder jeder späteren Version (LICENSE); „Using Exponential under the terms of the GNU
 GPL is free of charge. The Professional License is no longer available“ (README). Beiträge bleiben unter derselben
 Lizenz (CONTRIBUTING.md), die Dokumentation ist unter der GNU FDL frei, und Velocity steht unter der MIT-Lizenz.
 „Everything we do is GPL-licensed and freely available“ (GitHub-Profil von se7enxweb)
@@ -59,11 +59,3 @@ Lizenz (CONTRIBUTING.md), die Dokumentation ist unter der GNU FDL frei, und Velo
 - [Thema: eine lebendig gehaltene Codebasis](thema-eine-lebendig-gehaltene-codebasis.md)
 - [Gesprächspunkte: Open Source und Lizenzierung](../fuersprecher/gespraechspunkte-open-source-und-lizenzierung.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
-
-<!-- exp-partner-block:start -->
-**Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
-und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte
-2027 geplant: Werden Sie noch heute Partner, damit wir schneller wachsen und neue Funktionen früher liefern. Beginnen
-Sie mit [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und
-[Wie Sie sich bewerben](../partner/wie-sie-sich-bewerben.md).
-<!-- exp-partner-block:end -->
