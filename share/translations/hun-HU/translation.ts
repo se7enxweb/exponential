@@ -76727,6 +76727,11 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Sessions of %name</source>
         <translation>%name munkamenetei</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser, %os rendszeren</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

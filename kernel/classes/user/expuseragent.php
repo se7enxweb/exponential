@@ -169,7 +169,8 @@ class expUserAgent
     }
 
     /**
-     * One line for a person: "Firefox 131 on Windows 10/11".
+     * One line for a person: "Firefox 131 on Windows 10/11", in the interface language ("Firefox 131 unter
+     * Windows 10/11"). The names of the browser and the system are not translated.
      *
      * @param array $parsed what parse() answered
      * @return string
@@ -180,7 +181,8 @@ class expUserAgent
         $os = trim( $parsed['os'] . ' ' . $parsed['os_version'] );
         if ( $parsed['os'] === 'Unknown' )
             return $browser;
-        return $browser . ' on ' . $os;
+        return ezpI18n::tr( 'kernel/user/sessions', '%browser on %os', 'a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"',
+            array( '%browser' => $browser, '%os' => $os ) );
     }
 
     /**

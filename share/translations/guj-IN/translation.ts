@@ -76727,6 +76727,11 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Sessions of %name</source>
         <translation>%name નાં સત્રો</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%os પર %browser</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>

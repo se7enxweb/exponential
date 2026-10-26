@@ -77954,6 +77954,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>Sessions of %name</source>
         <translation>Sessies van %name</translation>
     </message>
+    <message>
+        <source>%browser on %os</source>
+        <comment>a browser and the operating system it runs on, e.g. "Firefox 131 on Windows 10/11"</comment>
+        <translation>%browser op %os</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/passkeys</name>
