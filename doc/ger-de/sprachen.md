@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **75**, davon 75 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **76**, davon 76 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **72** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **76** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **73** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **75** |
 | Länder und Gebiete der Locales | **158** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **136** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **138** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
 
-![Weltkarte: 136 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 138 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 136 Länder und Gebiete in Grün</summary>
+<details><summary>Die 138 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -45,6 +45,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Bolivien | BO | `esl-BO` → `esl-ES` |
 | Bosnien und Herzegowina | BA | `bos-BA` |
 | Brasilien | BR | `por-BR` |
+| Brunei | BN | `msa-BN` → `msa-MY` |
 | Bulgarien | BG | `bul-BG` |
 | Burkina Faso | BF | `fre-BF` → `fre-FR` |
 | Burundi | BI | `fre-BI` → `fre-FR`, `run-BI` (nicht übersetzt) |
@@ -101,6 +102,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Litauen | LT | `lit-LT` |
 | Luxemburg | LU | `fre-LU` → `fre-FR`, `ger-LU` → `ger-DE`, `ltz-LU` (nicht übersetzt) |
 | Madagaskar | MG | `fre-MG` → `fre-FR`, `mlg-MG` (nicht übersetzt) |
+| Malaysien | MY | `msa-MY` |
 | Mali | ML | `bam-ML` (nicht übersetzt), `fre-ML` → `fre-FR` |
 | Malta | MT | `mlt-MT` |
 | Marokko | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (nicht übersetzt) |
@@ -136,7 +138,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Senegal | SN | `fre-SN` → `fre-FR`, `ful-SN` (nicht übersetzt), `wol-SN` (nicht übersetzt) |
 | Serbien | RS | `ser-SR`, `srp-RS` |
 | Seychellen | SC | `fre-SC` → `fre-FR` |
-| Singapur | SG | `chi-SG` → `chi-CN`, `eng-SG` (Quelltexte), `msa-SG` (nicht übersetzt), `tam-SG` → `tam-IN` |
+| Singapur | SG | `chi-SG` → `chi-CN`, `eng-SG` (Quelltexte), `msa-SG` → `msa-MY`, `tam-SG` → `tam-IN` |
 | Slowakei (Slowakische Republik) | SK | `slk-SK` |
 | Slowenien | SI | `slv-SI` |
 | Somalia | SO | `ara-SO` → `ara-SA`, `som-SO` |
@@ -168,7 +170,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 </details>
 
-<details><summary>Die 22 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 20 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
@@ -177,14 +179,12 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Belarus | BY | `bel-BY` |
 | Bhutan | BT | `dzo-BT` |
 | Birma (Myanmar) | MM | `mya-MM` |
-| Brunei | BN | `msa-BN` |
 | Ehemalige jugoslawische Republik Mazedonien | MK | `mkd-MK` |
 | Färöer-Inseln | FO | `fao-FO` |
 | Georgien | GE | `kat-GE` |
 | Kambodscha | KH | `khm-KH` |
 | Kasachstan | KZ | `kaz-KZ` |
 | Kirgistan | KG | `kir-KG` |
-| Malaysien | MY | `msa-MY` |
 | Malediven | MV | `div-MV` |
 | Mongolei | MN | `mon-MN` |
 | Nepal | NP | `nep-NP` |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **72** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **73** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **76** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **75** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 76 nicht übersetzten Sprachen</summary>
+<details><summary>Die 75 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -287,7 +287,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Macedonian | Македонски | `mkd` | `mkd-MK` (Ehemalige jugoslawische Republik Mazedonien) |
 | Maithili | मैथिली | `mai` | `mai-IN` (Indien) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagaskar) |
-| Malay | Melayu | `msa` | `msa-BN` (Brunei), `msa-MY` (Malaysien), `msa-SG` (Singapur) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (Indien) |
 | Māori | Māori | `mri` | `mri-NZ` (Neuseeland) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolei) |

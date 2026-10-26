@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **75**, 75 of them complete |
+| Languages of the administration: translations in `share/translations` | **76**, 76 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **72** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **76** |
+| of them shown translated by the administration (own translation, fallback or English) | **73** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **75** |
 | Countries and territories of the locales | **158** |
-| of them with the administration in their language (green on the map) | **136** |
+| of them with the administration in their language (green on the map) | **138** |
 | Locales written right to left | **40** |
 
-![World map: 136 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 138 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 136 countries and territories in green</summary>
+<details><summary>The 138 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -43,6 +43,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Bolivia | BO | `esl-BO` → `esl-ES` |
 | Bosnia and Herzegovina | BA | `bos-BA` |
 | Brazil | BR | `por-BR` |
+| Brunei Darussalam | BN | `msa-BN` → `msa-MY` |
 | Bulgaria | BG | `bul-BG` |
 | Burkina Faso | BF | `fre-BF` → `fre-FR` |
 | Burundi | BI | `fre-BI` → `fre-FR`, `run-BI` (untranslated) |
@@ -107,6 +108,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Lithuania | LT | `lit-LT` |
 | Luxembourg | LU | `fre-LU` → `fre-FR`, `ger-LU` → `ger-DE`, `ltz-LU` (untranslated) |
 | Madagascar | MG | `fre-MG` → `fre-FR`, `mlg-MG` (untranslated) |
+| Malaysia | MY | `msa-MY` |
 | Mali | ML | `bam-ML` (untranslated), `fre-ML` → `fre-FR` |
 | Malta | MT | `mlt-MT` |
 | Mauritania | MR | `ara-MR` → `ara-SA`, `fre-MR` → `fre-FR` |
@@ -139,7 +141,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Senegal | SN | `fre-SN` → `fre-FR`, `ful-SN` (untranslated), `wol-SN` (untranslated) |
 | Serbia | RS | `ser-SR`, `srp-RS` |
 | Seychelles | SC | `fre-SC` → `fre-FR` |
-| Singapore | SG | `chi-SG` → `chi-CN`, `eng-SG` (source texts), `msa-SG` (untranslated), `tam-SG` → `tam-IN` |
+| Singapore | SG | `chi-SG` → `chi-CN`, `eng-SG` (source texts), `msa-SG` → `msa-MY`, `tam-SG` → `tam-IN` |
 | Slovakia | SK | `slk-SK` |
 | Slovenia | SI | `slv-SI` |
 | Somalia | SO | `ara-SO` → `ara-SA`, `som-SO` |
@@ -168,7 +170,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 22 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 20 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -176,13 +178,11 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Azerbaijan | AZ | `aze-AZ` |
 | Belarus | BY | `bel-BY` |
 | Bhutan | BT | `dzo-BT` |
-| Brunei Darussalam | BN | `msa-BN` |
 | Cambodia | KH | `khm-KH` |
 | Faroe Islands | FO | `fao-FO` |
 | Georgia | GE | `kat-GE` |
 | Kazakhstan | KZ | `kaz-KZ` |
 | Kyrgyzstan | KG | `kir-KG` |
-| Malaysia | MY | `msa-MY` |
 | Maldives | MV | `div-MV` |
 | Mongolia | MN | `mon-MN` |
 | Myanmar | MM | `mya-MM` |
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **72** of them translated: at least one of their locales has a translation of its
+administration shows **73** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **76** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **75** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 76 languages not translated</summary>
+<details><summary>The 75 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -285,7 +285,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Macedonian | Македонски | `mkd` | `mkd-MK` (North Macedonia) |
 | Maithili | मैथिली | `mai` | `mai-IN` (India) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagascar) |
-| Malay | Melayu | `msa` | `msa-BN` (Brunei Darussalam), `msa-MY` (Malaysia), `msa-SG` (Singapore) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
 | Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolia) |
