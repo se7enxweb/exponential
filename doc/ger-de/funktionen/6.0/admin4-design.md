@@ -563,23 +563,26 @@ klassischen Designs behalten ihre Tabs.
 verschobenen Tabs fehlen oder wenn ein Tab standardmäßig verborgen ist, und zeichnet `parts/a4_navigation_part.tpl`
 mit angezeigten und verborgenen Tabs.
 
-### Mega-Menü (Prototyp, Opt-in)
+### Mega-Menü
 
 Eine kleine Schaltfläche neben einem oberen Tab öffnet unter der Kopfzeile einen Bereich mit den meistgenutzten
 Funktionen des Tabs in ihren Gruppen: jede mit ihrem Symbol, ihrem Namen und ihrer Beschreibung darunter, bis zu drei
 Gruppen nebeneinander, und am Ende „Weiter zu
-<tab>“ (die eigene Seite des Tabs, bei Setup die Übersicht) für den Rest. Setup, Benutzer und Dashboard haben eines.
-Standardmäßig aus; um sie einzuschalten, in einer `menu.ini.append.php` eines Siteaccess oder in override:
+<tab>“ (die eigene Seite des Tabs, bei Setup die Übersicht) für den Rest. Setup, Benutzer und Dashboard haben eines, und
+alle drei sind standardmäßig eingeschaltet (seit dem 26. Oktober 2026; davor war die Einstellung leer, und jede
+Installation schaltete sie selbst ein). Um sie auszuschalten, in einer `menu.ini.append.php` eines Siteaccess oder in
+override:
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 
 [TopAdminMenu]
-MegaMenuTabs[]=setup
-MegaMenuTabs[]=users
-MegaMenuTabs[]=dashboard
+MegaMenuTabs[]
 */ ?>
 ```
+
+Um nur einige zu behalten, nennen Sie sie nach der leeren Zeile, z. B. `MegaMenuTabs[]` gefolgt von
+`MegaMenuTabs[]=setup`.
 
 Leeren Sie danach die Caches (den INI-Cache und die Template-Caches: Die Kopfzeile liest die Einstellung, wenn ihr
 Template kompiliert wird). Mit leerem `MegaMenuTabs[]` zeichnet die Kopfzeile keine Schaltfläche, und die Seite lädt
@@ -1271,12 +1274,12 @@ Datentabellen gestreift
 | `settings/menu.ini` | `MenuAccessSettings` | `NoAccessLinks` | `hidden` | Siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `HiddenTabs[]` | leer | Siteaccess |
 | `settings/menu.ini` | `TopAdminMenu` | `SetupTabs[]` | leer (siehe [Einen Tab nach Setup verschieben](#einen-tab-nach-setup-verschieben)) | Siteaccess |
-| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | leer; `setup`, `users` und `dashboard` haben ein Template (siehe [Mega-Menü](#mega-menü-prototyp-opt-in)) | Siteaccess |
+| `settings/menu.ini` | `TopAdminMenu` | `MegaMenuTabs[]` | `setup`, `users` und `dashboard` (jeder hat ein Template) (siehe [Mega-Menü](#mega-menü)) | Siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuTemplate` | `design:parts/setup/mega_menu.tpl` (setup), `design:parts/user/mega_menu.tpl` (users), `design:parts/my/mega_menu.tpl` (dashboard) | Siteaccess |
-| `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | acht Links des Tabs Benutzer (siehe [Mega-Menü](#mega-menü-prototyp-opt-in)) | Siteaccess |
+| `settings/menu.ini` | `Leftmenu_user_mega` | `MegaMenuLinks[]` | acht Links des Tabs Benutzer (siehe [Mega-Menü](#mega-menü)) | Siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `MegaMenuLayout` | nicht gesetzt (bis zu drei Gruppen nebeneinander); `wide` für dashboard (bis zu vier ausgeglichene Spalten) | Siteaccess |
-| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | siebzehn Links des Tabs Dashboard, darunter jeder Link von Exponential Intelligence (siehe [Mega-Menü](#mega-menü-prototyp-opt-in)) | Siteaccess |
-| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | neunzehn häufige Links, höchstens 19 angezeigt (siehe [Mega-Menü](#mega-menü-prototyp-opt-in)) | Siteaccess |
+| `settings/menu.ini` | `Leftmenu_my_mega` | `MegaMenuLinks[]` | siebzehn Links des Tabs Dashboard, darunter jeder Link von Exponential Intelligence (siehe [Mega-Menü](#mega-menü)) | Siteaccess |
+| `settings/menu.ini` | `Leftmenu_setup` | `MegaMenuLinks[]` | neunzehn häufige Links, höchstens 19 angezeigt (siehe [Mega-Menü](#mega-menü)) | Siteaccess |
 | `settings/menu.ini` | `Topmenu_<tab>` | `Name`, `Tooltip`, `TranslationContext` | die Standardnamen der Tabs, Kontext `design/admin/pagelayout` | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `Groups[]`, `GroupNames[<group>]`, `GroupLinks_<group>[]` | die neun Gruppen von `Leftmenu_setup` (Design und Audit für verschobene Tabs, KI und Updates für Links von Extensions) | Siteaccess |
 | `settings/menu.ini` | `Leftmenu_<menu>` | `LeadLinks[]` | `overview` in `Leftmenu_setup` | Siteaccess |
