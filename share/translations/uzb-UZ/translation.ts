@@ -26100,7 +26100,7 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Operatorni tozalash uchun PHP funksiyasini bajaradi va \\a $operatorValue ni oʻzgartiradi.</translation>
+        <translation>Operatorni tozalash uchun PHP funksiyasini bajaradi va \a $operatorValue ni oʻzgartiradi.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
+        <translation>\\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
+        <translation>\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
     </message>
 </context>
 <context>
@@ -27770,7 +27770,7 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>oʻrnini egallayotgan sinfni kengaytiradi: asosida Exponential\\Runnable\\Command, CronjobPart yoki ModuleView</translation>
+        <translation>oʻrnini egallayotgan sinfni kengaytiradi: asosida Exponential\Runnable\Command, CronjobPart yoki ModuleView</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ Batafsil maʼlumot uchun talablar sahifasiga qarang.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Operatorni tozalash uchun PHP funksiyasini bajaradi va \\a $operatorValue ni oʻzgartiradi.</translation>
+        <translation>Operatorni tozalash uchun PHP funksiyasini bajaradi va \a $operatorValue ni oʻzgartiradi.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ Batafsil maʼlumot uchun talablar sahifasiga qarang.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
+        <translation>\\return shablon operatorining nomini oʻz ichiga olgan massiv.</translation>
     </message>
 </context>
 <context>
