@@ -1,6 +1,8 @@
 {
     "INSTALL.md": "INSTALL.md",
     "README-LIZENZ.md": "README-LICENSE.md",
+    "UNINSTALL.md": "UNINSTALL.md",
+    "UPDATE.md": "UPDATE.md",
     "anleitungen/README.md": "guides/README.md",
     "anleitungen/aktualisieren.md": "guides/upgrading.md",
     "anleitungen/api-schluessel.md": "guides/api-keys.md",

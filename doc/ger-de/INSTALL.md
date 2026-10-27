@@ -792,7 +792,9 @@ Fahren Sie dann mit den Anleitungen fort:
 
 Führen Sie den Installer nicht über einer bestehenden Website aus. Folgen Sie [Aktualisieren](anleitungen/aktualisieren.md): von
 4.x, 5.x oder einer früheren 6.0.x auf die aktuelle Linie, mit der Datenbankaktualisierung und den Checklisten pro
-Release.
+Release. Eine Installation von 6.0 bringen Sie mit dem kurzen Vorgehen von
+[Exponential 6.0 aktualisieren](UPDATE.md) auf den aktuellen Stand; um eine Website umzuziehen oder zu entfernen,
+exportieren Sie zuerst alles mit [Exponential 6.0 deinstallieren](UNINSTALL.md).
 
 Das Online-Handbuch enthält weitere Hinweise zur Installation:
 https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html
