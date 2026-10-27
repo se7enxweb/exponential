@@ -9,11 +9,11 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **118**, 118 of them complete |
+| Languages of the administration: translations in `share/translations` | **119**, 119 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **115** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **35** |
+| of them shown translated by the administration (own translation, fallback or English) | **116** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **34** |
 | Countries and territories of the locales | **175** |
 | of them with the administration in their language (green on the map) | **168** |
 | Locales written right to left | **43** |
@@ -222,16 +222,16 @@ were taken on 15 October 2026, those of the administration translations on 26 Oc
 
 <!-- generated: exp:i18n coverage translations (start) -->
 In short: **289 locale files** (282 languages and countries, the test language Lorem Ipsum and 6 variations, 43 of
-them written right to left) can be chosen as content languages and siteaccess locales; **118 administration
+them written right to left) can be chosen as content languages and siteaccess locales; **119 administration
 translations** exist, all of them complete: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian (`sqi-AL`), Amharic
 (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`), Azerbaijani (`aze-AZ`),
 Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`), Bhojpuri (`bho-IN`), Bosnian (`bos-BA`), Bulgarian (`bul-BG`),
 Burmese (`mya-MM`), Catalan (`cat-ES`), Cebuano (`ceb-PH`), Central Kurdish (`ckb-IQ`), Chechen (`che-RU`), Croatian
 (`cro-HR`), Czech (`cze-CZ`), Danish (`dan-DK`), Dutch (Netherlands) (`dut-NL`), English (Australia) (`eng-AU`),
 English (United States) (`eng-US`), Estonian (`est-EE`), Filipino (`fil-PH`), Finnish (`fin-FI`), French (France)
-(`fre-FR`), Fula (`ful-SN`), Georgian (`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`),
-Greenlandic (`kal-GL`), Gujarati (`guj-IN`), Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`), Hindi
-(`hin-IN`), Hulaulá (`huy-IL`), Hungarian (`hun-HU`), Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic
+(`fre-FR`), Fula (`ful-SN`), Galician (`glg-ES`), Georgian (`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic)
+(`ell-GR`), Greenlandic (`kal-GL`), Gujarati (`guj-IN`), Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`),
+Hindi (`hin-IN`), Hulaulá (`huy-IL`), Hungarian (`hun-HU`), Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic
 (`arc-IQ`), Indonesian (`ind-ID`), Irish (`gle-IE`), Italian (Italy) (`ita-IT`), Japanese (`jpn-JP`), Javanese
 (`jav-ID`), Kannada (`kan-IN`), Kazakh (`kaz-KZ`), Khmer (`khm-KH`), Kikuyu (`kik-KE`), Kinyarwanda (`kin-RW`),
 Kirundi (`run-BI`), Klingon (`tlh-QO`), Korean (`kor-KR`), Kurdish (`kur-TR`), Lao (`lao-LA`), Latin (`lat-VA`),
@@ -272,12 +272,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **115** of them translated: at least one of their locales has a translation of its
+administration shows **116** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **35** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **34** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 35 languages not translated</summary>
+<details><summary>The 34 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -292,7 +292,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Esperanto | Esperanto | `epo` | `epo-EO` |
 | Ewe | Eʋegbe | `ewe` | `ewe-GH` (Ghana) |
 | Faroese | Føroyskt | `fao` | `fao-FO` (Faroe Islands) |
-| Galician | Galego | `glg` | `glg-ES` (Spain) |
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
@@ -559,7 +558,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ger-LU` | German (Luxembourg) | Deutsch (Luxemburg) | Europe | LTR | Latin (`Latn`) | CLDR 48 | 100% (falls back to `ger-DE`) |
 | `gla-GB` | Scottish Gaelic | Gàidhlig | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `gle-IE` | Irish | Gaeilge | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
-| `glg-ES` | Galician | Galego | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `glg-ES` | Galician | Galego | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `guj-IN` | Gujarati | ગુજરાતી | South Asia | LTR | Gujarati (`Gujr`) | CLDR 44 | 100% |
 | `hau-NG` | Hausa | Hausa | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `haw-US` | Hawaiian | ʻŌlelo Hawaiʻi | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
