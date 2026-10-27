@@ -21801,6 +21801,7 @@ aa7287391cde0c672622731ef10ecd17  extension/ezjscore/translations/ser-SR/transla
 4574f6e22df9b95efcb780ac3512c56b  extension/ezjscore/translations/srp-RS/translation.ts
 9a5caa161bb8f63a8206e7dd2f751c64  extension/ezjscore/translations/swa-KE/translation.ts
 931dffb9a78d33abf1ce156ecfbbc373  extension/ezjscore/translations/swe-SE/translation.ts
+b21086cd45c705c607b99c605ea6ccdb  extension/ezjscore/translations/syr-IQ/translation.ts
 7973b36cf060ebc439ba8c2785952b5e  extension/ezjscore/translations/tam-IN/translation.ts
 6c2d99b3e8530793ed49c49ef88fe955  extension/ezjscore/translations/tel-IN/translation.ts
 19374138f0e79446e92c3434a0531167  extension/ezjscore/translations/tha-TH/translation.ts
@@ -24496,7 +24497,7 @@ e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini
 cb0b16d6478138ba8429920d17189ded  settings/file.ini
 d67b9d8070da89d40e422a18fd8d5142  settings/httpcache.ini
-4a999e68c4639475c42947437caaa1c7  settings/i18n.ini
+60ef305ea2559a6382f5a8c4c9be10d0  settings/i18n.ini
 23933bf2a339997bfa0b5571b5bcc123  settings/icon.ini
 e326aed79745d89221b015223d699b99  settings/image.ini
 4a4a4433b13da984646838763e782bad  settings/ini.ini
@@ -25484,6 +25485,8 @@ efccf26713a02fb6c67174b4af1a46c9  share/translations/swa-KE/GUIDE.md
 4ff85b3c0e1a939abca4e7157ad3db36  share/translations/swa-KE/translation.ts
 74bbff05bb742fb0964c57bd631b33ef  share/translations/swe-SE/GUIDE.md
 d1de324dfe05b9256bbf9bad1c3d1652  share/translations/swe-SE/translation.ts
+d8485f26504807ba94ee08d5c63ab47a  share/translations/syr-IQ/GUIDE.md
+a89cf45a70253c664fdced1ea9764103  share/translations/syr-IQ/translation.ts
 3be48b8fb17435a20d54e4b0693e9e24  share/translations/tam-IN/GUIDE.md
 df3f55c5379f98a8086578334ecf4aee  share/translations/tam-IN/translation.ts
 d0029e68f06955d50b9b3f2b4073f9ff  share/translations/tel-IN/GUIDE.md
@@ -26964,13 +26967,13 @@ cb0fed15dd1df5bc335d598439aec099  tests/tests/lib/ezfile/eZDirDeletionGuardTest.
 cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackChainTest.php
 70a5cdcff19c3d25379d38bdf6522d47  tests/tests/lib/ezi18n/eZTSTranslatorTest.php
 86f580b3e8cfbaaf79c8cf442dbd2418  tests/tests/lib/ezi18n/eZTranslatorHandlersTest.php
-9633837aa1f600315dfe9fecc14a0900  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
+8d1437e7cc30f483e7344a1ceb782c1b  tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
 98e1f0b2248c3a8c16e298ecc9e0b8f7  tests/tests/lib/ezi18n/expChineseHongKongFallbackTest.php
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
-5971579387a90b3c4ef828dca89b3cf9  tests/tests/lib/ezi18n/expTranslationQualityTest.php
-ffdbdd8f1a935d3a8523fce4bcae03ce  tests/tests/lib/ezi18n/translation-identical-allowlist.json
+dcf701e908628d2f53a27ef8f68b1325  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+874ee9001e83167430cac30cec818905  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
 b8c98ff2af8dc8e9def7bfe094faeb8b  tests/tests/lib/ezimage/data/svg/chart.svg
