@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **85**, 76 of them complete |
+| Languages of the administration: translations in `share/translations` | **88**, 79 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **82** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **68** |
+| of them shown translated by the administration (own translation, fallback or English) | **85** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **65** |
 | Countries and territories of the locales | **175** |
-| of them with the administration in their language (green on the map) | **158** |
+| of them with the administration in their language (green on the map) | **160** |
 | Locales written right to left | **43** |
 
-![World map: 158 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 160 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 158 countries and territories in green</summary>
+<details><summary>The 160 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -80,6 +80,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | France | FR | `bre-FR` (untranslated), `fre-FR`, `oci-FR` (untranslated) |
 | Gabon | GA | `fre-GA` → `fre-FR` |
 | Gambia | GM | `eng-GM` (source texts) |
+| Georgia | GE | `kat-GE` |
 | Germany | DE | `dsb-DE`, `ger-DE`, `hsb-DE` (untranslated) |
 | Ghana | GH | `aka-GH` (untranslated), `eng-GH` (source texts), `ewe-GH` (untranslated) |
 | Greece | GR | `ell-GR` |
@@ -103,6 +104,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Italy | IT | `ita-IT` |
 | Japan | JP | `jpn-JP` |
 | Jordan | JO | `ara-JO` → `ara-SA` |
+| Kazakhstan | KZ | `kaz-KZ` |
 | Kenya | KE | `eng-KE` (source texts), `kik-KE` (untranslated), `swa-KE` |
 | Korea, Republic of | KR | `kor-KR` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
@@ -186,11 +188,11 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Western Sahara | EH | `ara-EH` → `ara-SA` |
 | Yemen | YE | `ara-YE` → `ara-SA` |
 | Zambia | ZM | `eng-ZM` (source texts) |
-| Zimbabwe | ZW | `eng-ZW` (source texts), `sna-ZW` (untranslated) |
+| Zimbabwe | ZW | `eng-ZW` (source texts), `sna-ZW` |
 
 </details>
 
-<details><summary>The 17 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 15 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -200,8 +202,6 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Bhutan | BT | `dzo-BT` |
 | Cambodia | KH | `khm-KH` |
 | Faroe Islands | FO | `fao-FO` |
-| Georgia | GE | `kat-GE` |
-| Kazakhstan | KZ | `kaz-KZ` |
 | Kyrgyzstan | KG | `kir-KG` |
 | Maldives | MV | `div-MV` |
 | Mongolia | MN | `mon-MN` |
@@ -251,12 +251,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **82** of them translated: at least one of their locales has a translation of its
+administration shows **85** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **68** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **65** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 68 languages not translated</summary>
+<details><summary>The 65 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -284,11 +284,9 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Fula | Pulaar | `ful` | `ful-SN` (Senegal) |
 | Galician | Galego | `glg` | `glg-ES` (Spain) |
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
-| Georgian | ქართული | `kat` | `kat-GE` (Georgia) |
 | Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (United States of America) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
-| Kazakh | Қазақ тілі | `kaz` | `kaz-KZ` (Kazakhstan) |
 | Khmer | ខ្មែរ | `khm` | `khm-KH` (Cambodia) |
 | Kikuyu | Gikuyu | `kik` | `kik-KE` (Kenya) |
 | Kinyarwanda | Kinyarwanda | `kin` | `kin-RW` (Rwanda) |
@@ -311,7 +309,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (India) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (India) |
 | Scottish Gaelic | Gàidhlig | `gla` | `gla-GB` (United Kingdom) |
-| Shona | ChiShona | `sna` | `sna-ZW` (Zimbabwe) |
 | Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
