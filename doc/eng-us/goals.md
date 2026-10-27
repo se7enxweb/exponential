@@ -97,7 +97,7 @@ work today, each with the page that describes it:
 | Getting a working site | `./console exp:install` installs a multisite package on SQLite and prints the addresses and the login: "a working Exponential site in a few minutes, without writing a `kickstart.ini` and without a database server" | [Installing Exponential in one command](features/6.0/install-in-one-command.md) |
 | Choosing a database | Six supported databases, in order of preference: SQLite 3 (the default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL; documented tools move a site between them | [Database support](help/database-support.md) |
 | Choosing a machine | Operating systems in documented tiers, Apache, Nginx and others, or the bundled Velocity server | [Operating system support](help/os-support.md) |
-| Many languages | 268 locale files, 40 of them right to left, and 71 administration translations, all of them complete | [Languages in Exponential](languages.md) |
+| Many languages | Locale files for content, many of them right to left, and administration translations; the totals are at the top of the languages page | [Languages in Exponential](languages.md) |
 | Help for the people who use it | The documentation inside the administration: searchable, by audience, with context help on the pages | [The help system](features/6.0/help-system.md) |
 | Approvals before publishing | Workflows, events and triggers, an approval step with the collaboration inbox | [Workflows](guides/workflows.md) |
 | Safer sign-in | Two-step sign-in (TOTP and e-mail codes), passkeys, and "Verify it's you" before sensitive actions | [Two-step sign-in](guides/two-factor-login.md), [Passkeys](guides/passkeys.md) |
