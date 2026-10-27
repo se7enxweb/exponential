@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **96**, davon 96 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **98**, davon 98 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **289**: 282 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **93** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **57** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **95** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **55** |
 | Länder und Gebiete der Locales | **175** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **162** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **163** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 162 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 163 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 162 Länder und Gebiete in Grün</summary>
+<details><summary>Die 163 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -36,6 +36,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Angola | AO | `por-AO` → `por-PT` |
 | Äquatorialguinea | GQ | `esl-GQ` → `esl-ES`, `fre-GQ` → `fre-FR` |
 | Argentinien | AR | `esl-AR` → `esl-ES` |
+| Armenien | AM | `hye-AM` |
 | Äthiopien | ET | `amh-ET`, `orm-ET` (nicht übersetzt), `tir-ET` (nicht übersetzt) |
 | Australien | AU | `eng-AU` |
 | Bahrain | BH | `ara-BH` → `ara-SA` |
@@ -181,7 +182,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Ukraine | UA | `ukr-UA` |
 | Ungarn | HU | `hun-HU` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
-| USA | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (nicht übersetzt), `yid-US` |
+| USA | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US`, `yid-US` |
 | Usbekistan | UZ | `uzb-UZ` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
 | Venezuela | VE | `esl-VE` → `esl-ES` |
@@ -194,11 +195,10 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 </details>
 
-<details><summary>Die 13 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 12 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
-| Armenien | AM | `hye-AM` |
 | Aserbaidschan | AZ | `aze-AZ` |
 | Belarus | BY | `bel-BY` |
 | Bhutan | BT | `dzo-BT` |
@@ -252,18 +252,17 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **93** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **95** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **57** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **55** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 57 nicht übersetzten Sprachen</summary>
+<details><summary>Die 55 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
 | Akan | Akan | `aka` | `aka-GH` (Ghana) |
-| Armenian | Հայերեն | `hye` | `hye-AM` (Armenien) |
 | Assamese | অসমীয়া | `asm` | `asm-IN` (Indien) |
 | Asturian | Asturianu | `ast` | `ast-ES` (Spanien) |
 | Azerbaijani | Azərbaycan | `aze` | `aze-AZ` (Aserbaidschan) |
@@ -573,7 +572,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `hun-HU` | Hungarian | Magyar | Europa | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | — |
 | `huy-IL` | Hulaulá | הולאולא | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
-| `hye-AM` | Armenian | Հայերեն | Zentralasien und Kaukasus | LTR | Armenisch (`Armn`) | CLDR 44 | — |
+| `hye-AM` | Armenian | Հայերեն | Zentralasien und Kaukasus | LTR | Armenisch (`Armn`) | CLDR 44 | 100 % |
 | `ibo-NG` | Igbo | Igbo | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `ind-ID` | Indonesian | Indonesian | Südostasien | LTR | Lateinisch (`Latn`) | älter, von Hand erstellt | 100 % |
 | `isl-IS` | Icelandic | Íslenska | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -882,6 +881,10 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 
 Hinweise:
 
+- **Armenisch** (`hye-AM`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in Ostarmenisch mit der
+  höflichen Anrede (Դուք), Infinitiven auf Schaltflächen, dem armenischen Punkt ։ und Fragezeichen ՞, Guillemets und
+  frei stehenden Platzhaltern, mit einem Glossar (`share/translations/hye-AM/GUIDE.md`); die Kataloge des Kernels,
+  von ezoe und ezjscore sind vollständig. Eine Durchsicht durch Muttersprachler ist willkommen.
 - **Kasachisch** (`kaz-KZ`) ist am 26. Oktober 2026 hinzugekommen, maschinell unterstützt, in kyrillischer Schrift
   (der Schrift des Locales und heutiger kasachischer Software; der 2017 beschlossene Wechsel zum lateinischen
   Alphabet ist bis etwa 2031 geplant) mit der höflichen Anrede (Сіз), Verbalnomen auf Schaltflächen und frei

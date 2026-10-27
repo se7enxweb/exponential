@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **96**, 96 of them complete |
+| Languages of the administration: translations in `share/translations` | **98**, 98 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **93** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **57** |
+| of them shown translated by the administration (own translation, fallback or English) | **95** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **55** |
 | Countries and territories of the locales | **175** |
-| of them with the administration in their language (green on the map) | **162** |
+| of them with the administration in their language (green on the map) | **163** |
 | Locales written right to left | **43** |
 
-![World map: 162 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 163 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 162 countries and territories in green</summary>
+<details><summary>The 163 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -34,6 +34,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Algeria | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` (untranslated) |
 | Angola | AO | `por-AO` → `por-PT` |
 | Argentina | AR | `esl-AR` → `esl-ES` |
+| Armenia | AM | `hye-AM` |
 | Australia | AU | `eng-AU` |
 | Austria | AT | `ger-AT` → `ger-DE` |
 | Bahrain | BH | `ara-BH` → `ara-SA` |
@@ -181,7 +182,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
 | United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` |
-| United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` |
+| United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US`, `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Uzbekistan | UZ | `uzb-UZ` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
@@ -194,11 +195,10 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 13 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 12 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
-| Armenia | AM | `hye-AM` |
 | Azerbaijan | AZ | `aze-AZ` |
 | Belarus | BY | `bel-BY` |
 | Bhutan | BT | `dzo-BT` |
@@ -251,17 +251,16 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **93** of them translated: at least one of their locales has a translation of its
+administration shows **95** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **57** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **55** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 57 languages not translated</summary>
+<details><summary>The 55 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
 | Akan | Akan | `aka` | `aka-GH` (Ghana) |
-| Armenian | Հայերեն | `hye` | `hye-AM` (Armenia) |
 | Assamese | অসমীয়া | `asm` | `asm-IN` (India) |
 | Asturian | Asturianu | `ast` | `ast-ES` (Spain) |
 | Azerbaijani | Azərbaycan | `aze` | `aze-AZ` (Azerbaijan) |
@@ -568,7 +567,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `hsb-DE` | Upper Sorbian | Hornjoserbšćina | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `hun-HU` | Hungarian | Magyar | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `huy-IL` | Hulaulá | הולאולא | Middle East | RTL | Hebrew (`Hebr`) | hand-made names, CLDR 44 conventions | 100% |
-| `hye-AM` | Armenian | Հայերեն | Central Asia and Caucasus | LTR | Armenian (`Armn`) | CLDR 44 | — |
+| `hye-AM` | Armenian | Հայերեն | Central Asia and Caucasus | LTR | Armenian (`Armn`) | CLDR 44 | 100% |
 | `ibo-NG` | Igbo | Igbo | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `ind-ID` | Indonesian | Indonesian | Southeast Asia | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `isl-IS` | Icelandic | Íslenska | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
@@ -886,6 +885,10 @@ source text, and the interface language choice counts English as 100%.
 
 Notes:
 
+- **Armenian** (`hye-AM`) was added on 26 October 2026, machine-assisted, in Eastern Armenian with the formal address
+  (Դուք), infinitives on buttons, the Armenian full stop ։ and question mark ՞, guillemets and placeholders standing
+  free, with a glossary (`share/translations/hye-AM/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are
+  complete. A review by a native speaker is welcome.
 - **Kazakh** (`kaz-KZ`) was added on 26 October 2026, machine-assisted, in Cyrillic script (the script of the
   locale and of Kazakh software today; the move to the Latin alphabet decided in 2017 is planned up to about 2031)
   with the polite address (Сіз), verbal nouns on buttons and placeholders standing free, with a glossary
