@@ -4,7 +4,7 @@
 {if $collaboration_item}
 - {$collaboration_item.title}
   {"The item can be viewed by using the URL below."|i18n('design/standard/notification')}
-  http://{ezini("SiteSettings","SiteURL")}{concat("collaboration/item/full/",$collaboration_item.id)|ezurl(no)}
+  https://{ezini("SiteSettings","SiteURL")}{concat("collaboration/item/full/",$collaboration_item.id)|ezurl(no)}
 
 {/if}
 {undef $collaboration_item}

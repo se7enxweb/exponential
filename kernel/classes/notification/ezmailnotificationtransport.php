@@ -70,7 +70,17 @@ class eZMailNotificationTransport extends eZNotificationTransport
         }
         $mail->setSender( $emailSender );
         $mail->setSubject( $subject );
-        $mail->setBody( $body );
+        if ( !isset( $parameters['content_type'] ) && self::htmlLayout( $notificationINI ) )
+        {
+            // the notification templates write text (it is stored, and the digests join it): the mail gets that text
+            // as its text part and the same text in design:mail/layout.tpl as its HTML part, with the first address
+            // on a line of its own (the item) as the button
+            expMailTemplateBody::fromText( $mail, $body, array(
+                'title' => $subject,
+                'button' => ezpI18n::tr( 'design/standard/mail', 'Open the page' ) ) );
+        }
+        else
+            $mail->setBody( $body );
         if ( isset( $parameters['message_id'] ) )
             $mail->addExtraHeader( 'Message-ID', $parameters['message_id'] );
         if ( isset( $parameters['references'] ) )
@@ -123,6 +133,21 @@ class eZMailNotificationTransport extends eZNotificationTransport
             }
         }
         return false;
+    }
+
+    /**
+     * notification.ini [MailSettings] HTMLLayout (default enabled): a text notification is also sent as HTML in the
+     * mail layout.
+     *
+     * @param eZINI $notificationINI
+     * @return bool
+     */
+    protected static function htmlLayout( $notificationINI )
+    {
+        if ( !class_exists( 'expMailTemplateBody' ) )
+            return false;
+        return !$notificationINI->hasVariable( 'MailSettings', 'HTMLLayout' ) ||
+               $notificationINI->variable( 'MailSettings', 'HTMLLayout' ) !== 'disabled';
     }
 }
 

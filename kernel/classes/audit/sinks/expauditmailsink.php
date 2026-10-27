@@ -197,6 +197,40 @@ class expAuditMailSink extends expAuditSinkBase
         }
     }
 
+    /**
+     * The HTML part of an alert: the text of format() in design:mail/layout.tpl, its "Label: value" lines as a table
+     * and the console link as the button. '' when the layout cannot be rendered (the mail is then text only). The
+     * texts stay in English, as in the text part.
+     *
+     * @param string $subject
+     * @param string $text the body of format()
+     * @return string
+     */
+    public static function htmlBody( $subject, $text )
+    {
+        if ( !class_exists( 'expMailTemplateBody' ) )
+            return '';
+        $rows = array();
+        $outro = array();
+        $buttons = array();
+        foreach ( explode( "\n", (string)$text ) as $line )
+        {
+            if ( trim( $line ) === '' )
+                continue;
+            if ( preg_match( '/^([A-Z][A-Za-z ]*):\s+(.*)$/', $line, $m ) )
+            {
+                if ( $m[1] === 'Console' && preg_match( '#^https?://\S+$#', trim( $m[2] ) ) )
+                    $buttons[] = array( 'label' => 'Open in the audit console', 'url' => trim( $m[2] ), 'kind' => 'primary' );
+                else
+                    $rows[] = array( 'label' => trim( $m[1] ), 'value' => trim( $m[2] ) );
+            }
+            else
+                $outro[] = trim( $line );
+        }
+        return expMailTemplateBody::renderLayout( array( 'mail_title' => (string)$subject, 'mail_rows' => $rows,
+                                                         'mail_buttons' => $buttons, 'mail_outro' => $outro ) );
+    }
+
     /** Sends one mail through the configured transport. */
     protected function send( array $receivers, $subject, $body )
     {
@@ -219,7 +253,11 @@ class expAuditMailSink extends expAuditSinkBase
             if ( $sender !== '' )
                 $mail->setSender( $sender );
             $mail->setSubject( $subject );
-            $mail->setBody( $body );
+            $html = class_exists( 'eZINI' ) && !expAuditConfig::isOverridden() ? self::htmlBody( $subject, $body ) : '';
+            if ( $html !== '' )
+                expMailTemplateBody::setAlternative( $mail, $body, $html );
+            else
+                $mail->setBody( $body );
             $mail->setCategory( 'admin' );
             $transport = trim( (string)$this->setting( 'Transport' ) );
             if ( $transport !== '' )

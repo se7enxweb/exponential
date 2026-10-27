@@ -44934,6 +44934,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>“%1 &lt;%2&gt;” ಅವರ ಕಾಮೆಂಟ್</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>ನಿಮಗೆ ಒಂದು ಪುಟವನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>ನಿಮ್ಮೊಂದಿಗೆ ಪುಟವನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಯಾರೋ %site ನಲ್ಲಿ ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿದ್ದರಿಂದ ನೀವು ಈ ಇಮೇಲ್ ಪಡೆಯುತ್ತಿದ್ದೀರಿ.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(ಮರುಪ್ರಯತ್ನ: %max ರಲ್ಲಿ %attempt).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>ನಿಮ್ಮ ರಸೀದಿಯನ್ನು ವೀಕ್ಷಿಸು</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>ಲಿಂಕ್ ಒಂದು ಬಾರಿ ಮಾತ್ರ ಮತ್ತು %1 ನಿಮಿಷಗಳವರೆಗೆ ಮಾತ್ರ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>ಯಾರೋ %site ನಲ್ಲಿನ ನಿಮ್ಮ ಖಾತೆಯ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸಲು ಕೇಳಿದ್ದಾರೆ. ಬಟನ್ ಮೂಲಕ ಖಚಿತಪಡಿಸಿ, ನಾವು ಎರಡನೇ ಇಮೇಲ್‌ನಲ್ಲಿ ನಿಮಗೆ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಕಳುಹಿಸುತ್ತೇವೆ.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>ನನ್ನ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸು</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>ನೀವು ಇದನ್ನು ಕೇಳದಿದ್ದರೆ, ಈ ಇಮೇಲ್ ಅನ್ನು ನಿರ್ಲಕ್ಷಿಸಬಹುದು: ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಹಾಗೆಯೇ ಉಳಿಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>ನಿಮ್ಮ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>%site ನಲ್ಲಿನ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸಲಾಗಿದೆ. ಈ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ, ನಂತರ ಅದನ್ನು ನಿಮ್ಮದೇ ಆದ ಪಾಸ್‌ವರ್ಡ್‌ಗೆ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>ನೀವು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಹೊಂದಿಸದಿದ್ದರೆ, ಇದರೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ ಮತ್ತು ತಕ್ಷಣ ಅದನ್ನು ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>%site ಗಾಗಿ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಮರುಹೊಂದಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>%site ಗಾಗಿ ನಿಮ್ಮ ಹೊಸ ಪಾಸ್‌ವರ್ಡ್</translation>
     </message>
 </context>
 <context>
@@ -57355,12 +57403,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ಪ್ಯಾಕೇಜ್</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>ಆರ್ಕೈವ್ ಅನ್ನು PAX tar ಸ್ವರೂಪದಲ್ಲಿ ಪ್ಯಾಕ್ ಮಾಡಲಾಗಿದೆ, ಅದನ್ನು ಆಮದು ಮಾಡಲಾಗುವುದಿಲ್ಲ. ಪ್ಯಾಕೇಜ್ ಅನ್ನು GNU tar ಸ್ವರೂಪದಲ್ಲಿ ಪ್ಯಾಕ್ ಮಾಡಿ (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>ಆರ್ಕೈವ್ ತಿರಸ್ಕರಿಸಲಾಗಿದೆ: ನಮೂದು “%path” ನಲ್ಲಿ %length ಬೈಟ್‌ಗಿಂತ ಉದ್ದವಾದ ಫೈಲ್ ಅಥವಾ ಡೈರೆಕ್ಟರಿ ಹೆಸರು ಇದೆ, ಅದನ್ನು ಯಾವುದೇ ಫೈಲ್ ವ್ಯವಸ್ಥೆ ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>ಆರ್ಕೈವ್ ಅನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ: “%path” ಎಂಟ್ರಿಯ tar ಪ್ರಕಾರ “%type”, ಮತ್ತು ಪ್ಯಾಕೇಜ್‌ನಲ್ಲಿ ಫೈಲ್‌ಗಳು ಮತ್ತು ಡೈರೆಕ್ಟರಿಗಳು ಮಾತ್ರ ಇರುತ್ತವೆ.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>ಲಿಂಕ್ “%path” ಪ್ಯಾಕೇಜ್‌ನ ಹೊರಗೆ ಸೂಚಿಸುತ್ತದೆ (%target) ಮತ್ತು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>ಲಿಂಕ್ “%path” ಪ್ಯಾಕೇಜ್‌ನಲ್ಲಿ ಇಲ್ಲದ “%target” ಕಡೆಗೆ ಸೂಚಿಸುತ್ತದೆ ಮತ್ತು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>ಲಿಂಕ್ “%path” ಡೈರೆಕ್ಟರಿ “%target” ಕಡೆಗೆ ಸೂಚಿಸುತ್ತದೆ ಮತ್ತು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>ನಮೂದು “%path” ಒಂದು ಸಾಧನ ಅಥವಾ ಹೆಸರಿಸಿದ ಪೈಪ್ ಆಗಿದೆ (tar ಪ್ರಕಾರ “%type”) ಮತ್ತು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>ನಮೂದು “%path” ನ tar ಪ್ರಕಾರ “%type”, ಇದನ್ನು ಪ್ಯಾಕೇಜ್ ಬಳಸುವುದಿಲ್ಲ, ಮತ್ತು ಆಮದು ಮಾಡಲಾಗಿಲ್ಲ.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71483,6 +71547,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>ನಿಮ್ಮ ಸಾಧನಗಳು</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>ಯಾರೋ %site ನಲ್ಲಿನ ಖಾತೆಗಾಗಿ %email ಅನ್ನು ಬಳಸಲು ಕೇಳಿದ್ದಾರೆ. ದಯವಿಟ್ಟು ಈ ವಿಳಾಸ ನಿಮ್ಮದೇ ಎಂದು ಖಚಿತಪಡಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>ನೀವು (ಅಥವಾ ನಿಮ್ಮ ವಿಳಾಸವನ್ನು ಟೈಪ್ ಮಾಡಿದ ಯಾರೋ) %site ನಿಂದ %email ಗೆ ಕಳುಹಿಸಲಾಗುವ ಇಮೇಲ್ ಅನ್ನು ನಿರ್ವಹಿಸಲು ಲಿಂಕ್ ಕೇಳಿದ್ದೀರಿ. ಆ ಪುಟದಲ್ಲಿ ನೀವು ಪ್ರತಿಯೊಂದು ಬಗೆಯ ಇಮೇಲ್ ಅನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಬಹುದು, ಅಥವಾ ಎಲ್ಲಾ ಐಚ್ಛಿಕ ಇಮೇಲ್ ಅನ್ನು ನಿಲ್ಲಿಸಬಹುದು.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71911,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>ಈ ಬದಲಾವಣೆಯನ್ನು ನೀವು ಮಾಡದಿದ್ದರೆ, ಬೇರೆ ಯಾರಿಗಾದರೂ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ತಿಳಿದಿರಬಹುದು: ಲಾಗಿನ್ ಪುಟದಲ್ಲಿ “%forgot” ಬಳಸಿ ತಕ್ಷಣ ಅದನ್ನು ಮರುಹೊಂದಿಸಿ ಮತ್ತು ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಬದಲಾಯಿಸಲಾಗಿದೆ</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>ಈ ಬಳಕೆದಾರರ ಸೆಷನ್‌ಗಳು:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>ನಿಮ್ಮ ಖಾತೆಗೆ ಹೊಸ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>ಸಾಧನ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>ಅಂದಾಜು ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>ಅದು ನೀವಲ್ಲದಿದ್ದರೆ, ಯಾರಿಗಾದರೂ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ತಿಳಿದಿರಬಹುದು: ನಿಮ್ಮ ಸಾಧನಗಳ ಪುಟದಲ್ಲಿ ಆ ಸೆಷನ್ ಅನ್ನು ಸೈನ್ ಔಟ್ ಮಾಡಿ, ನಂತರ ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಬದಲಾಯಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>ನಿಮ್ಮ ಸಾಧನಗಳನ್ನು ಪರಿಶೀಲಿಸು</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>ಈ ಬಳಕೆದಾರರ ಸೆಷನ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸು</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77323,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>ಸಾಲನ್ನು ಟೇಬಲ್‌ನಿಂದ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ ಮತ್ತು ಅದನ್ನು ಮರಳಿ ತರಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>ಬಟನ್ ಕೆಲಸ ಮಾಡದಿದ್ದರೆ, ಈ ವಿಳಾಸವನ್ನು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ಗೆ ನಕಲಿಸಿ: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>ಪುಟವನ್ನು ತೆರೆ</translation>
     </message>
 </context>
 </TS>

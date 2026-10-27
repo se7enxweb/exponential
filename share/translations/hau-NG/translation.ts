@@ -44934,6 +44934,14 @@ Idan ana son aika sharhi ga mai amincewa ko duba matsayi, a yi amfani da URL da 
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Sharhi daga “%1 &lt;%2&gt;”</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>An ba ku shawarar wani shafi</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Kuna samun wannan imel ne saboda wani ya shigar da adireshinku a %site don raba wani shafi tare da ku.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52449,6 +52457,10 @@ Domin yin haka, ana buƙatar a canza umarnin %chown a ƙarƙashin Madadin umarni
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Sake gwadawa: %attempt daga cikin %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Duba rasidinku</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53487,6 +53499,42 @@ asusunka.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Hanyar haɗin tana aiki sau ɗaya kawai kuma na mintuna %1 kawai.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Sake saita kalmar sirrinku</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Wani ya nemi a sake saita kalmar sirrin asusunku a %site. Ku tabbatar da maɓallin, kuma za mu aiko muku da sabuwar kalmar sirri a cikin imel na biyu.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Sake saita kalmar sirrina</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Idan ba ku nemi wannan ba, kuna iya watsi da wannan imel: kalmar sirrinku za ta kasance yadda take.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Sabuwar kalmar sirrinku</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>An sake saita kalmar sirrinku a %site. Ku shiga da wannan sabuwar kalmar sirri, sannan ku canza ta zuwa taku.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Idan ba ku ne kuka sake saita kalmar sirrinku ba, ku shiga da wannan kuma ku canza ta nan take.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Sake saita kalmar sirrinku don %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Sabuwar kalmar sirrinku don %site</translation>
     </message>
 </context>
 <context>
@@ -57355,12 +57403,28 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Fakiti</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>An haɗa ajiyar a tsarin PAX tar, wanda ba za a iya shigo da shi ba. Haɗa fakitin a tsarin GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry &quot;%path&quot; has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>An ƙi rumbun: shigarwa “%path” tana da sunan fayil ko babban fayil da ya fi baiti %length tsawo, wanda babu tsarin fayil da ke adana shi.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry &quot;%path&quot; has the tar type &quot;%type&quot;, and a package holds only files and directories.</source>
-        <translation>An ƙi ajiyar: shigarwar “%path” tana da nau&apos;in tar “%type”, kuma fakiti yana ƙunshe da fayiloli da kundin adireshi kawai.</translation>
+        <source>The link &quot;%path&quot; points outside the package (%target) and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna wajen fakitin (%target) kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to &quot;%target&quot;, which the package does not hold, and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna “%target”, wanda ba ya cikin fakitin, kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The link &quot;%path&quot; points to the directory &quot;%target&quot; and was not imported.</source>
+        <translation>Mahaɗin “%path” yana nuna babban fayil “%target” kuma ba a shigo da shi ba.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; is a device or a named pipe (tar type &quot;%type&quot;) and was not imported.</source>
+        <translation>Shigarwa “%path” na’ura ce ko bututu mai suna (nau’in tar “%type”) kuma ba a shigo da ita ba.</translation>
+    </message>
+    <message>
+        <source>The entry &quot;%path&quot; has the tar type &quot;%type&quot;, which a package does not use, and was not imported.</source>
+        <translation>Shigarwa “%path” tana da nau’in tar “%type”, wanda fakiti ba ya amfani da shi, kuma ba a shigo da ita ba.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -71483,6 +71547,14 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>Your devices</source>
         <translation>Na&apos;urorinku</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Wani ya nemi amfani da %email don asusu a %site. Don Allah ku tabbatar cewa wannan adireshin naku ne.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ku (ko wani wanda ya rubuta adireshinku) kun nemi hanyar haɗi don sarrafa imel ɗin da %site ke aikawa zuwa %email. A wannan shafin kuna iya kunna ko kashe kowane irin imel, ko dakatar da duk imel na zaɓi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71839,6 +71911,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Idan ba ku ne kuka yi wannan canji ba, wani yana iya sanin kalmar sirrinku: a sake saita ta nan take ta amfani da “%forgot” a shafin shiga, sannan a tuntuɓe mu.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>An canja kalmar sirrinka</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The sessions of this user:</source>
         <translation>Zaman aikin wannan mai amfani:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Sabon shiga a asusunku</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Na'ura</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Kimanin adireshi</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Idan ba ku ba ne, wani yana iya sanin kalmar sirrinku: ku fitar da wannan zaman aiki a shafin na'urorinku, sannan ku canza kalmar sirrinku.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Duba na'urorinku</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Duba zaman aikin wannan mai amfani</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77219,6 +77323,17 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>An cire layin daga teburin kuma ba za a iya maido shi ba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Idan maɓallin bai yi aiki ba, kwafi wannan adireshin zuwa mai bincikenka: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Buɗe shafin</translation>
     </message>
 </context>
 </TS>

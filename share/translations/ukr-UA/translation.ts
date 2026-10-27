@@ -44879,6 +44879,14 @@ If you want to send comments to the approver or view the status use the URL belo
         <source>Comment by &quot;%1 &lt;%2&gt;&quot;</source>
         <translation>Коментар від &quot;%1 &lt;%2&gt;&quot;</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Вам порадили сторінку</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Ви отримали цей лист, тому що хтось ввів вашу адресу на сайті %site, щоб поділитися з вами сторінкою.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52394,6 +52402,10 @@ To do this you need to change the %chown commands under Alternative shell comman
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Повторна спроба: %attempt з %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Переглянути квитанцію</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53432,6 +53444,42 @@ your account.</source>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Посилання діє лише один раз і лише %1 хвилин.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Скидання пароля</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Хтось запросив скидання пароля вашого облікового запису на сайті %site. Підтвердьте це кнопкою, і ми надішлемо вам новий пароль другим листом.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Скинути пароль</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Якщо ви цього не запитували, можете проігнорувати цей лист: ваш пароль залишиться без змін.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Ваш новий пароль</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Ваш пароль на сайті %site скинуто. Увійдіть із цим новим паролем, а потім змініть його на власний.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Якщо ви не скидали пароль, увійдіть із цим паролем і негайно змініть його.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Скидання пароля на сайті %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Ваш новий пароль на сайті %site</translation>
     </message>
 </context>
 <context>
@@ -57196,12 +57244,28 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Архів відхилено: запис «%path» вказує за межі пакета.</translation>
     </message>
     <message>
-        <source>The archive was packed in the PAX tar format, which cannot be imported. Pack the package in the GNU tar format (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</source>
-        <translation>Архів запаковано у форматі PAX tar, який не можна імпортувати. Запакуйте пакет у форматі GNU tar (GNU tar: tar --format=gnu, bsdtar/macOS: tar --format=gnutar).</translation>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Архів відхилено: запис «%path» має назву файлу чи каталогу, довшу за %length байтів, якої не зберігає жодна файлова система.</translation>
     </message>
     <message>
-        <source>The archive was refused: the entry "%path" has the tar type "%type", and a package holds only files and directories.</source>
-        <translation>Архів відхилено: запис «%path» має тип tar «%type», а пакет містить лише файли й каталоги.</translation>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Посилання «%path» вказує за межі пакета (%target) і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Посилання «%path» вказує на «%target», якого немає в пакеті, і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Посилання «%path» вказує на каталог «%target» і не було імпортоване.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Запис «%path» є пристроєм або іменованим каналом (тип tar «%type») і не був імпортований.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Запис «%path» має тип tar «%type», якого пакет не використовує, і не був імпортований.</translation>
     </message>
     <message>
         <source>The archive was refused: it names an entry longer than %length bytes.</source>
@@ -69978,6 +70042,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your devices</source>
         <translation>Ваші пристрої</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Хтось хоче використовувати %email для облікового запису на сайті %site. Підтвердьте, що ця адреса належить вам.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Ви (або хтось, хто ввів вашу адресу) запросили посилання для керування листами, які сайт %site надсилає на адресу %email. На цій сторінці можна ввімкнути або вимкнути кожен вид листів чи відмовитися від усіх необов'язкових листів.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -70334,6 +70406,10 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Якщо ви цієї зміни не робили, хтось інший може знати ваш пароль: негайно скиньте його через &quot;%forgot&quot; на сторінці входу й зв&apos;яжіться з нами.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Ваш пароль змінено</translation>
     </message>
 </context>
 <context>
@@ -76693,6 +76769,34 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The sessions of this user:</source>
         <translation>Сеанси цього користувача:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Новий вхід у ваш обліковий запис</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Пристрій</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Час</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Приблизна адреса</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Якщо це були не ви, хтось може знати ваш пароль: завершіть цей сеанс на сторінці ваших пристроїв, а потім змініть пароль.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Переглянути пристрої</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Переглянути сеанси цього користувача</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77251,6 +77355,17 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Push to block</source>
         <translation>Надіслати в блок</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Якщо кнопка не працює, скопіюйте цю адресу в браузер: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Відкрити сторінку</translation>
     </message>
 </context>
 </TS>
