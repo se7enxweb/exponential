@@ -152,7 +152,7 @@ Quellen: [Fragen zur Lizenz](hilfe/projekt/lizenz-faq.md), [Exponential sachlich
   übernehmen, übersetzen und verbessern ([Freie Dokumentation](hilfe/freie-dokumentation.md)).
 - **Übersetzer**: Eine Übersetzung erreicht alle, die eine Sprache sprechen, oft Menschen, die nie ein englisches
   Handbuch lesen würden ([Übersetzungen beitragen](hilfe/gemeinschaft/mitwirken/uebersetzungen-beitragen.md)). Die
-  71 vollständigen Übersetzungen der Administration sind ein greifbares Beispiel für „für andere“: Jede wurde einmal
+  vollständigen Übersetzungen der Administration sind ein greifbares Beispiel für „für andere“: Jede wurde einmal
   gemacht und ist jetzt für jede Installation da ([Sprachen in Exponential](sprachen.md)).
 - **Entwickler**: Der ganze Stack besteht aus öffentlichen Git-Repositories; eine Korrektur ist einen Pull-Request
   entfernt, und der Code, den Sie hier lernen, ist schlichtes PHP ([Mit Git entwickeln](hilfe/mit-git-entwickeln.md)).

@@ -46,7 +46,7 @@ From [Languages in Exponential](../../../languages.md), the reference page for e
 | Locale files that can be chosen as content languages and site locales | 268 (261 languages and countries, the test language Lorem Ipsum and 6 variations) |
 | Writing systems (scripts) covered by those locales | 32 |
 | Locales written right to left | 40 |
-| Administration translations | 71, all of them complete (26 October 2026) |
+| Administration translations | see the totals at the top of the languages page |
 | Content languages one installation can hold at the same time | at most 62 on 64-bit PHP, 30 on 32-bit PHP |
 
 > **Note**

@@ -48,8 +48,7 @@ muss außerdem ein gespiegeltes Layout beherrschen
 
 ## Können Mitarbeitende die Administration in ihrer Sprache nutzen?
 
-Ja, wo es eine Übersetzung gibt. Die Seite der Foundation zählt 73 Übersetzungen der Administration, alle
-vollständig ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit));
+Ja, wo es eine Übersetzung gibt. Die Seite der Foundation zählt Übersetzungen der Administration (die aktuellen Gesamtzahlen stehen am Anfang der Seite [Sprachen in Exponential](../../../sprachen.md)) ([Wer ist die Exponential Foundation?](../../wer-ist-die-exponential-foundation.md#sprachen-und-barrierefreiheit));
 andere Seiten nennen leicht abweichende Zahlen, prüfen Sie deshalb den aktuellen Stand in der Sprachenliste, die zeigt,
 wie vollständig jede Übersetzung ist ([Sprachen](../../sprachen.md)). Mitarbeitende wählen ihre Oberflächensprache
 selbst ([Einstellungen zum Umschalten der Oberfläche](../../../anleitungen/ui-umschalter-einstellungen.md)).
