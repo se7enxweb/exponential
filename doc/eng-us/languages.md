@@ -697,8 +697,7 @@ Notes on single locales:
   "Greek (Hellenic)"), `ukr-UA` (`Українська` instead of "Ukrainian"; month names in the form used inside a date,
   `15 жовтня` instead of `15 Жовтень`, with the stand-alone form beside them). `kat-GE` lost a capital its
   generator had given it (Georgian has none in running text: `ქართული`).
-- **Still to improve** in older files: `ind-ID` has only its English name ("Indonesian"; CLDR: Indonesia),
-  `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names),
+- **Still to improve** in older files: `ser-SR` and `srp-RS` mix English and native ("Serbian (Српски)", and `srp-RS` capitalizes its day names),
   `chi-CN` and `chi-TW` keep their old date patterns (`2025年 十月 15日`, readable but not CLDR's `2025年10月15日`).
   The short month names of `rus-RU` (`Янв`, `Май`) are neither of CLDR's forms, and `som-SO` names the months in
   the traditional way (`Bisha Tobnaad`); these files have no stand-alone group for them yet.
