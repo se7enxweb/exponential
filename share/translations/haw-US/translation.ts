@@ -26100,7 +26100,7 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Hoʻokō i ka hana PHP no ka hoʻomaʻemaʻe o ka mea hana a hoʻololi i \\a $operatorValue.</translation>
+        <translation>Hoʻokō i ka hana PHP no ka hoʻomaʻemaʻe o ka mea hana a hoʻololi i \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
+        <translation>\\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
+        <translation>\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>He papa ka kauoha a pau ma bin/, ka ʻāpana cronjob ma cronjobs/ a me ka hiʻona mōkule; holo kekahi papa lalo i kapa ʻia ma site.ini ma kona wahi, a hiki i nā mea hoʻolohe ke hana ma mua a ma hope o kēlā me kēia. No ka laʻana, hoʻokō ke pani kahua me Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView i content/history e holo i myHistoryView, e hoʻonui ana i ka papa kernel a hoʻololi i ka mea wale nō āna e pani ai.</translation>
+        <translation>He papa ka kauoha a pau ma bin/, ka ʻāpana cronjob ma cronjobs/ a me ka hiʻona mōkule; holo kekahi papa lalo i kapa ʻia ma site.ini ma kona wahi, a hiki i nā mea hoʻolohe ke hana ma mua a ma hope o kēlā me kēia. No ka laʻana, hoʻokō ke pani kahua me Implementation[Exponential\View\Kernel\Content\History]=myHistoryView i content/history e holo i myHistoryView, e hoʻonui ana i ka papa kernel a hoʻololi i ka mea wale nō āna e pani ai.</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>hoʻonui i ka papa āna e pani ai: Exponential\\Runnable\\Command, CronjobPart a i ʻole ModuleView ma lalo</translation>
+        <translation>hoʻonui i ka papa āna e pani ai: Exponential\Runnable\Command, CronjobPart a i ʻole ModuleView ma lalo</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ E nānā i ka ʻaoʻao koi no ka ʻike hou aku.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Hoʻokō i ka hana PHP no ka hoʻomaʻemaʻe o ka mea hana a hoʻololi i \\a $operatorValue.</translation>
+        <translation>Hoʻokō i ka hana PHP no ka hoʻomaʻemaʻe o ka mea hana a hoʻololi i \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ E nānā i ka ʻaoʻao koi no ka ʻike hou aku.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
+        <translation>\\return i kekahi papa me ka inoa o ka mea hana anakuhi.</translation>
     </message>
 </context>
 <context>

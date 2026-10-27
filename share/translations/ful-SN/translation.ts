@@ -26100,7 +26100,7 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Dogina golle PHP ngam laɓɓingol operator e wayla \\a $operatorValue.</translation>
+        <translation>Dogina golle PHP ngam laɓɓingol operator e wayla \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tableau e innde operator modèle.</translation>
+        <translation>\\return tableau e innde operator modèle.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return tableau e innde operator modèle.</translation>
+        <translation>\return tableau e innde operator modèle.</translation>
     </message>
 </context>
 <context>
@@ -27730,7 +27730,7 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>Jamirol fof e bin/, feccere cronjob fof e cronjobs/ e yiyannde module fof ko sifaa; sifaa les gooto, innaaɗo e site.ini, ina dogi e nokku mum, e dawroowo ina waawi waɗde adii e caggal ɗum fof. Misaalu lomtoowo lowre e Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView ina waɗa content/history dogina myHistoryView, ndi ɓeydi sifaa ɓernde e waylata tan ko ndi lomti.</translation>
+        <translation>Jamirol fof e bin/, feccere cronjob fof e cronjobs/ e yiyannde module fof ko sifaa; sifaa les gooto, innaaɗo e site.ini, ina dogi e nokku mum, e dawroowo ina waawi waɗde adii e caggal ɗum fof. Misaalu lomtoowo lowre e Implementation[Exponential\View\Kernel\Content\History]=myHistoryView ina waɗa content/history dogina myHistoryView, ndi ɓeydi sifaa ɓernde e waylata tan ko ndi lomti.</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>ina ɓeyda sifaa ndi lomtata: Exponential\\Runnable\\Command, CronjobPart walla ModuleView les</translation>
+        <translation>ina ɓeyda sifaa ndi lomtata: Exponential\Runnable\Command, CronjobPart walla ModuleView les</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>
@@ -51026,7 +51026,7 @@ Yiy hello ko haani ngam anndude ɓuri.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Dogina golle PHP ngam laɓɓingol operator e wayla \\a $operatorValue.</translation>
+        <translation>Dogina golle PHP ngam laɓɓingol operator e wayla \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ Yiy hello ko haani ngam anndude ɓuri.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tableau e innde operator modèle.</translation>
+        <translation>\\return tableau e innde operator modèle.</translation>
     </message>
 </context>
 <context>

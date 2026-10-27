@@ -29813,7 +29813,7 @@ Nota: els paquets no es desinstal·laran.</translation>
     </message>
     <message>
         <source>The alias is the first part of the path: a provider registered as &quot;shop&quot; answers under /api/shop/. Routes are matched in the order the provider returns them, so put the specific ones first.</source>
-        <translation>L&apos;àlies és la primera part del camí: un proveïdor registrat com a \«shop» respon sota /api/shop/. Les rutes es comparen en l&apos;ordre en què les retorna el proveïdor, així que posa primer les específiques.</translation>
+        <translation>L&apos;àlies és la primera part del camí: un proveïdor registrat com a «shop» respon sota /api/shop/. Les rutes es comparen en l&apos;ordre en què les retorna el proveïdor, així que posa primer les específiques.</translation>
     </message>
     <message>
         <source>The request object is shared. Changing it here changes what the controller is given, which is the point - and also why two filters that both rewrite the same thing are worth thinking about.</source>

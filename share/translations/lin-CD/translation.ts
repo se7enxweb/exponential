@@ -26100,7 +26100,7 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Esalisi fonction PHP mpo na kopɛtɔla operator mpe ebongoli \\a $operatorValue.</translation>
+        <translation>Esalisi fonction PHP mpo na kopɛtɔla operator mpe ebongoli \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tableau na nkómbó ya operator ya modèle.</translation>
+        <translation>\\return tableau na nkómbó ya operator ya modèle.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return tableau na nkómbó ya operator ya modèle.</translation>
+        <translation>\return tableau na nkómbó ya operator ya modèle.</translation>
     </message>
 </context>
 <context>
@@ -51026,7 +51026,7 @@ Talá lokasa ya bosɛnga mpo na maloba mingi.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>Esalisi fonction PHP mpo na kopɛtɔla operator mpe ebongoli \\a $operatorValue.</translation>
+        <translation>Esalisi fonction PHP mpo na kopɛtɔla operator mpe ebongoli \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ Talá lokasa ya bosɛnga mpo na maloba mingi.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return tableau na nkómbó ya operator ya modèle.</translation>
+        <translation>\\return tableau na nkómbó ya operator ya modèle.</translation>
     </message>
 </context>
 <context>

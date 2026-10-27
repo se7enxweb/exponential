@@ -26100,7 +26100,7 @@ Note: Dem no go uninstall di packages.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>E dey run di PHP function for di operator cleanup and e dey change \\a $operatorValue.</translation>
+        <translation>E dey run di PHP function for di operator cleanup and e dey change \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -26108,11 +26108,11 @@ Note: Dem no go uninstall di packages.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return array wit di template operator name.</translation>
+        <translation>\\return array wit di template operator name.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
-        <translation>\\return array wit di template operator name.</translation>
+        <translation>\return array wit di template operator name.</translation>
     </message>
 </context>
 <context>
@@ -51026,7 +51026,7 @@ Check di requirements page for more information.</translation>
     </message>
     <message>
         <source>Executes the PHP function for the operator cleanup and modifies \a $operatorValue.</source>
-        <translation>E dey run di PHP function for di operator cleanup and e dey change \\a $operatorValue.</translation>
+        <translation>E dey run di PHP function for di operator cleanup and e dey change \a $operatorValue.</translation>
     </message>
     <message>
         <source>Example code. This code must be modified to do what the operator should do. Currently it only trims text.</source>
@@ -51034,7 +51034,7 @@ Check di requirements page for more information.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\\\\return array wit di template operator name.</translation>
+        <translation>\\return array wit di template operator name.</translation>
     </message>
 </context>
 <context>
