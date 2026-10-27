@@ -3,17 +3,17 @@ summary: The one place that says which languages Exponential supports, at which 
 ---
 # Languages in Exponential
 
-<!-- generated: exp:i18n coverage 2026-10-26 (start) -->
-**At a glance, on 26 October 2026.** A default installation (the shipped `share/locale`, `share/translations`
+<!-- generated: exp:i18n coverage 2026-10-27 (start) -->
+**At a glance, on 27 October 2026.** A default installation (the shipped `share/locale`, `share/translations`
 and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **76**, 76 of them complete |
+| Languages of the administration: translations in `share/translations` | **77**, 77 of them complete |
 | Locales: `share/locale/*.ini` files | **268**: 261 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **73** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **75** |
+| of them shown translated by the administration (own translation, fallback or English) | **74** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **74** |
 | Countries and territories of the locales | **158** |
 | of them with the administration in their language (green on the map) | **138** |
 | Locales written right to left | **40** |
@@ -160,7 +160,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Türkiye | TR | `kur-TR`, `tur-TR` |
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
-| United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` (untranslated) |
+| United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` |
 | United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
@@ -234,12 +234,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **148 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **73** of them translated: at least one of their locales has a translation of its
+administration shows **74** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **75** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **74** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 75 languages not translated</summary>
+<details><summary>The 74 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -298,7 +298,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Romansh | Rumantsch | `roh` | `roh-CH` (Switzerland) |
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (India) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (India) |
-| Scottish Gaelic | Gàidhlig | `gla` | `gla-GB` (United Kingdom) |
 | Shona | ChiShona | `sna` | `sna-ZW` (Zimbabwe) |
 | Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
