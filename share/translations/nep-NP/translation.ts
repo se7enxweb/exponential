@@ -27730,7 +27730,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>Every command in bin/, cronjob part in cronjobs/ and module view is a class; a subclass of one, named in site.ini, runs in its place, and listeners can act before and after any of them. For example a site override with Implementation[Exponential\View\Kernel\Content\History]=myHistoryView makes content/history run myHistoryView, which extends the kernel class and changes only what it overrides.</source>
-        <translation>bin/ को प्रत्येक कमान्ड, cronjobs/ को क्रोन कामको भाग र मोड्युल दृश्य एउटा क्लास हो; site.ini मा नाम राखिएको तिनको उपक्लासले आफ्नो ठाउँमा चल्छ, र श्रोताहरूले तिनमध्ये जुनसुकैअघि र पछि कार्य गर्न सक्छन्। उदाहरणका लागि Implementation[Exponential\\View\\Kernel\\Content\\History]=myHistoryView सहितको साइट ओभरराइडले content/history ले myHistoryView चलाउन लगाउँछ, जसले कर्नेल क्लासको विस्तार गर्छ र आफूले ओभरराइड गरेको कुरा मात्र परिवर्तन गर्छ।</translation>
+        <translation>bin/ को प्रत्येक कमान्ड, cronjobs/ को क्रोन कामको भाग र मोड्युल दृश्य एउटा क्लास हो; site.ini मा नाम राखिएको तिनको उपक्लासले आफ्नो ठाउँमा चल्छ, र श्रोताहरूले तिनमध्ये जुनसुकैअघि र पछि कार्य गर्न सक्छन्। उदाहरणका लागि Implementation[Exponential\View\Kernel\Content\History]=myHistoryView सहितको साइट ओभरराइडले content/history ले myHistoryView चलाउन लगाउँछ, जसले कर्नेल क्लासको विस्तार गर्छ र आफूले ओभरराइड गरेको कुरा मात्र परिवर्तन गर्छ।</translation>
     </message>
     <message>
         <source>Server functions of ezjscore</source>
@@ -27770,7 +27770,7 @@ Note: The packages will not be uninstalled.</source>
     </message>
     <message>
         <source>extends the class it replaces: Exponential\Runnable\Command, CronjobPart or ModuleView underneath</source>
-        <translation>प्रतिस्थापन गर्ने क्लासको विस्तार गर्छ: मुनि Exponential\\Runnable\\Command, CronjobPart वा ModuleView</translation>
+        <translation>प्रतिस्थापन गर्ने क्लासको विस्तार गर्छ: मुनि Exponential\Runnable\Command, CronjobPart वा ModuleView</translation>
     </message>
     <message>
         <source>ini.ini [IniCommandSettings] Actions[&lt;name&gt;]=&lt;class&gt;, ActionAliases[&lt;alias&gt;]=&lt;name&gt;, ScopeProviders[]=&lt;class&gt; in extension/&lt;name&gt;/settings/ini.ini.append.php</source>

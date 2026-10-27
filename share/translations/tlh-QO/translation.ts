@@ -39661,7 +39661,7 @@ yIlob.</translation>
     </message>
     <message>
         <source>Error : Could not load workflow event &quot;%eventtype&quot; (event type not available)</source>
-        <translation>Qagh : Qu&apos; mIw wanI&apos; \&quot;%eventtype\&quot; lI&apos;lu&apos;be&apos; (wanI&apos; Segh tu&apos;lu&apos;be&apos;)</translation>
+        <translation>Qagh : Qu&apos; mIw wanI&apos; &quot;%eventtype&quot; lI&apos;lu&apos;be&apos; (wanI&apos; Segh tu&apos;lu&apos;be&apos;)</translation>
     </message>
     <message>
         <source>Hint : This can happen when a workflow extension has been disabled</source>

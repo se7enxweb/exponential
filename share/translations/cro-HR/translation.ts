@@ -24829,7 +24829,7 @@ Napomena: paketi neće biti deinstalirani.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\return polje s nazivom operatora predloška.</translation>
+        <translation>\\return polje s nazivom operatora predloška.</translation>
     </message>
     <message>
         <source>\return an array with the template operator name.</source>
@@ -43901,7 +43901,7 @@ Više podataka potražite na stranici sa zahtjevima.</translation>
     </message>
     <message>
         <source>\\return an array with the template operator name.</source>
-        <translation>\return polje s nazivom operatora predloška.</translation>
+        <translation>\\return polje s nazivom operatora predloška.</translation>
     </message>
 </context>
 <context>
