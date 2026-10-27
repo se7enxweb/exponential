@@ -9,23 +9,23 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **119**, davon 119 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **120**, davon 120 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **289**: 282 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **116** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **34** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **117** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **33** |
 | Länder und Gebiete der Locales | **175** |
-| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **168** |
+| davon mit der Administration in ihrer Sprache (grün auf der Karte) | **169** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
 
-![Weltkarte: 168 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
+![Weltkarte: 169 Länder und Gebiete in Grün, für die eine mitgelieferte Locale die Administration in ihrer Sprache zeigt; die übrigen in Grau](bilder/sprachen/abdeckungskarte.webp)
 
 Ein Land ist grün, wenn für es eine Locale mitgeliefert wird, deren Sprache die Administration übersetzt zeigt:
 mit einer eigenen Übersetzung oder der ersten Übersetzung ihrer Fallback-Kette (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, siehe [Abschnitt 13](#13-übersetzungs-fallbacks)). Englisch zählt als übersetzt: Es ist die
 Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/abdeckungskarte.svg`; Umrisse: Natural Earth, gemeinfrei.
 
-<details><summary>Die 168 Länder und Gebiete in Grün</summary>
+<details><summary>Die 169 Länder und Gebiete in Grün</summary>
 
 | Land oder Gebiet | Code | Locales und die Übersetzung, die sie zeigen |
 |---|---|---|
@@ -100,6 +100,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Kasachstan | KZ | `kaz-KZ` |
 | Katar | QA | `ara-QA` → `ara-SA` |
 | Kenia | KE | `eng-KE` (Quelltexte), `kik-KE`, `swa-KE` |
+| Kirgistan | KG | `kir-KG` |
 | Kolumbien | CO | `esl-CO` → `esl-ES` |
 | Komoren | KM | `ara-KM` → `ara-SA`, `fre-KM` → `fre-FR` |
 | Kongo (Republik Kongo) | CG | `fre-CG` → `fre-FR` |
@@ -200,14 +201,13 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 
 </details>
 
-<details><summary>Die 7 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
+<details><summary>Die 6 Länder und Gebiete mit einer Locale, aber der Administration auf Englisch</summary>
 
 | Land oder Gebiet | Code | Locales |
 |---|---|---|
 | Bhutan | BT | `dzo-BT` |
 | Ehemalige jugoslawische Republik Mazedonien | MK | `mkd-MK` |
 | Färöer-Inseln | FO | `fao-FO` |
-| Kirgistan | KG | `kir-KG` |
 | Malediven | MV | `div-MV` |
 | Tonga | TO | `ton-TO` |
 | Turkmenistan | TM | `tuk-TM` |
@@ -223,7 +223,7 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 
 <!-- generated: exp:i18n coverage translations (start) -->
 Kurz gefasst: **289 Locale-Dateien** (282 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **119
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **120
 Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
 (`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`),
 Azerbaijani (`aze-AZ`), Belarusian (`bel-BY`), Bengali (Bangladesh) (`ben-BD`), Bhojpuri (`bho-IN`), Bosnian
@@ -236,19 +236,19 @@ German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`), Greenlandic (`kal-GL`)
 Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic (`arc-IQ`), Indonesian (`ind-ID`), Irish (`gle-IE`), Italian
 (Italy) (`ita-IT`), Japanese (`jpn-JP`), Javanese (`jav-ID`), Kannada (`kan-IN`), Kazakh (`kaz-KZ`), Khmer (`khm-KH`),
 Kikuyu (`kik-KE`), Kinyarwanda (`kin-RW`), Kirundi (`run-BI`), Klingon (`tlh-QO`), Korean (`kor-KR`), Kurdish
-(`kur-TR`), Lao (`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian (`lit-LT`), Lower
-Sorbian (`dsb-DE`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay (Malaysia) (`msa-MY`), Malayalam (`mal-IN`),
-Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian (`mon-MN`), Nepali (`nep-NP`), Nigerian Pidgin
-(`pcm-NG`), Norwegian Bokmål (`nor-NO`), Odia (`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`),
-Polish (`pol-PL`), Portuguese (Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian
-(`ron-RO`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски)
-(`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`),
-Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`), Sundanese
-(`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tajik (`tgk-TJ`), Tamil (India)
-(`tam-IN`), Telugu (`tel-IN`), Thai (`tha-TH`), Tibetan (`bod-CN`), Tigrinya (`tir-ET`), Traditional Chinese (Taiwan)
-(`chi-TW`), Turkish (`tur-TR`), Ukrainian (`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`), Uzbek (`uzb-UZ`),
-Vietnamese (`vie-VN`), Western Punjabi (Shahmukhi) (`pnb-PK`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba
-(`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
+(`kur-TR`), Kyrgyz (`kir-KG`), Lao (`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian
+(`lit-LT`), Lower Sorbian (`dsb-DE`), Maithili (`mai-IN`), Malagasy (`mlg-MG`), Malay (Malaysia) (`msa-MY`), Malayalam
+(`mal-IN`), Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Mongolian (`mon-MN`), Nepali (`nep-NP`),
+Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Odia (`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`),
+Persian (`fas-IR`), Polish (`pol-PL`), Portuguese (Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi
+(`pan-IN`), Romanian (`ron-RO`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian
+(Српски) (`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`),
+Slovak (`slk-SK`), Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`),
+Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tajik (`tgk-TJ`),
+Tamil (India) (`tam-IN`), Telugu (`tel-IN`), Thai (`tha-TH`), Tibetan (`bod-CN`), Tigrinya (`tir-ET`), Traditional
+Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Ukrainian (`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uyghur (`uig-CN`),
+Uzbek (`uzb-UZ`), Vietnamese (`vie-VN`), Western Punjabi (Shahmukhi) (`pnb-PK`), Xhosa (`xho-ZA`), Yiddish (`yid-US`),
+Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
 <!-- generated: exp:i18n coverage translations (end) -->
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
@@ -272,13 +272,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **116** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **117** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **34** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **33** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 34 nicht übersetzten Sprachen</summary>
+<details><summary>Die 33 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -297,7 +297,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algerien) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (Indien) |
 | Konkani | कोंकणी | `kok` | `kok-IN` (Indien) |
-| Kyrgyz | Кыргызча | `kir` | `kir-KG` (Kirgistan) |
 | Luxembourgish | Lëtzebuergesch | `ltz` | `ltz-LU` (Luxemburg) |
 | Macedonian | Македонски | `mkd` | `mkd-MK` (Ehemalige jugoslawische Republik Mazedonien) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (Indien) |
@@ -589,7 +588,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `khm-KH` | Khmer | ខ្មែរ | Südostasien | LTR | Khmer (`Khmr`) | CLDR 44 | 100 % |
 | `kik-KE` | Kikuyu | Gikuyu | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `kin-RW` | Kinyarwanda | Kinyarwanda | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `kir-KG` | Kyrgyz | Кыргызча | Zentralasien und Kaukasus | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | — |
+| `kir-KG` | Kyrgyz | Кыргызча | Zentralasien und Kaukasus | LTR | Kyrillisch (`Cyrl`) | CLDR 44 | 100 % |
 | `kok-IN` | Konkani | कोंकणी | Südasien | LTR | Devanagari (`Deva`) | CLDR 44 | — |
 | `kor-KR` | Korean | 한국어 | Ostasien | LTR | Koreanisch (Hangul, Han) (`Kore`) | älter, neu erzeugt aus CLDR 44 | 100 % |
 | `kur-TR` | Kurdish | Kurdî (kurmancî) | Naher Osten | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
