@@ -58,6 +58,10 @@ class expI18nCoverageMap
     const LANGUAGES_START = '<!-- generated: exp:i18n coverage languages (start) -->';
     const LANGUAGES_END = '<!-- generated: exp:i18n coverage languages (end) -->';
 
+    /** The markers of the generated "In short" paragraph, with the list of the complete translations; a page without them keeps its own text */
+    const TRANSLATIONS_START = '<!-- generated: exp:i18n coverage translations (start) -->';
+    const TRANSLATIONS_END = '<!-- generated: exp:i18n coverage translations (end) -->';
+
     /** The colors: covered land, other land, borders; legible on a light and on a dark page */
     const COVERED = '#2e8b57';
     const OTHER = '#b8bec6';
@@ -74,6 +78,9 @@ class expI18nCoverageMap
 
     /** @var array|null see data() */
     protected $data;
+
+    /** @var array|null the interface switch catalogue of the shipped files, see data() */
+    protected $entries;
 
     /**
      * @param string $root the installation root
@@ -182,7 +189,7 @@ class expI18nCoverageMap
             return $this->data;
         $resolver = $this->resolver();
         $catalogue = new expUISwitchLanguageCatalogue( $this->root, '', null, $resolver );
-        $entries = $catalogue->build();
+        $entries = $this->entries = $catalogue->build();
 
         $files = array();
         foreach ( (array)glob( $this->root . '/share/locale/*.ini' ) as $file )
@@ -685,6 +692,145 @@ class expI18nCoverageMap
     }
 
     /**
+     * The complete administration translations (the share/translations codes whose interface switch coverage is 100%)
+     * with the English name of their locale, sorted by name: list of hash( code, name ).
+     *
+     * @return array
+     */
+    public function completeTranslations()
+    {
+        $data = $this->data();
+        $list = array();
+        foreach ( $data['translations']['codes'] as $code )
+        {
+            if ( isset( $this->entries[$code] ) && $this->entries[$code]['coverage'] !== null && $this->entries[$code]['coverage'] >= 100 )
+                $list[] = array( 'code' => $code, 'name' => self::cell( (string)$this->entries[$code]['english'] !== '' ? $this->entries[$code]['english'] : $code ) );
+        }
+        usort( $list, function ( $a, $b )
+        {
+            $order = strcmp( expUISwitchLanguageCatalogue::foldForSorting( $a['name'] ), expUISwitchLanguageCatalogue::foldForSorting( $b['name'] ) );
+            return $order !== 0 ? $order : strcmp( $a['code'], $b['code'] );
+        } );
+        return $list;
+    }
+
+    /**
+     * The generated "In short" paragraph with the counts and the complete translations, with its markers.
+     *
+     * @param string $language the documentation language
+     * @return string
+     */
+    public function translationsBlock( $language )
+    {
+        $data = $this->data();
+        $german = $language === 'ger-de';
+        $locales = $data['locales'];
+        $names = array();
+        foreach ( $this->completeTranslations() as $item )
+            $names[] = $item['name'] . ' (`' . $item['code'] . '`)';
+        $total = $data['translations']['total'];
+        $complete = $data['translations']['complete'];
+        $real = $locales['base'] - $locales['test'];
+        if ( $german )
+        {
+            $test = $locales['test'] === 1 ? 'die Testsprache Lorem Ipsum' : $locales['test'] . ' Testsprachen';
+            $text = 'Kurz gefasst: **' . $locales['files'] . ' Locale-Dateien** (' . $real . ' Sprachen und Länder, ' . $test . ' und ' . $locales['variants']
+                . ( $locales['variants'] === 1 ? ' Variante, ' : ' Varianten, ' ) . $locales['rtl'] . ' davon von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **'
+                . $total . ' Übersetzungen der Administrationsoberfläche**, ' . ( $complete === $total ? 'alle' : $complete . ' davon' ) . ' vollständig: '
+                . implode( ', ', $names ) . '. Die Namen sind die englischen der Locale-Dateien.';
+        }
+        else
+        {
+            $test = $locales['test'] === 1 ? 'the test language Lorem Ipsum' : $locales['test'] . ' test languages';
+            $text = 'In short: **' . $locales['files'] . ' locale files** (' . $real . ' languages and countries, ' . $test . ' and ' . $locales['variants']
+                . ( $locales['variants'] === 1 ? ' variation, ' : ' variations, ' ) . $locales['rtl'] . ' of them written right to left) can be chosen as content languages and siteaccess locales; **'
+                . $total . ' administration translations** exist, ' . ( $complete === $total ? 'all of them' : $complete . ' of them' ) . ' complete: '
+                . implode( ', ', $names ) . '. The names are the English ones of the locale files.';
+        }
+        return self::TRANSLATIONS_START . "\n" . wordwrap( $text, 118, "\n", false ) . "\n" . self::TRANSLATIONS_END;
+    }
+
+    /**
+     * The page with its generated "In short" paragraph replaced; a page without the markers is returned as it is.
+     *
+     * @param string $page
+     * @param string $block translationsBlock()
+     * @return string
+     */
+    public static function replaceTranslationsBlock( $page, $block )
+    {
+        $start = strpos( $page, self::TRANSLATIONS_START );
+        $end = strpos( $page, self::TRANSLATIONS_END );
+        if ( $start !== false && $end !== false && $end > $start )
+            return substr( $page, 0, $start ) . $block . substr( $page, $end + strlen( self::TRANSLATIONS_END ) );
+        return $page;
+    }
+
+    /**
+     * The "Translation coverage" cell of a locale in the locale table: `100%`, `100% (falls back to `ara-SA`)` or `—` for a
+     * locale without a translation; the German page writes `100 %` and "fällt auf ... zurück". Null for a code without a locale file.
+     *
+     * @param string $code
+     * @param bool $german
+     * @return string|null
+     */
+    public function coverageCell( $code, $german )
+    {
+        $this->data();
+        if ( !isset( $this->entries[$code] ) )
+            return null;
+        $entry = $this->entries[$code];
+        if ( $entry['coverage'] === null )
+            return '—';
+        $fallback = (string)$entry['fallback'];
+        if ( $fallback === '' && strpos( $code, 'eng-' ) === 0 )
+        {
+            // English is the source language (100%), but a translation of its chain (eng-NZ to eng-AU) is named
+            $resolver = $this->resolver();
+            foreach ( (array)$entry['chain'] as $candidate )
+            {
+                if ( $resolver->hasTranslation( $candidate ) )
+                {
+                    $fallback = $candidate;
+                    break;
+                }
+            }
+        }
+        $cell = (int)$entry['coverage'] . ( $german ? ' %' : '%' );
+        if ( $fallback !== '' )
+            $cell .= $german ? ' (fällt auf `' . $fallback . '` zurück)' : ' (falls back to `' . $fallback . '`)';
+        return $cell;
+    }
+
+    /**
+     * The page with the last column of its locale table (the rows under "| Code |" in section 3) made from the
+     * catalogue; a page without that table is returned as it is.
+     *
+     * @param string $page
+     * @param bool $german
+     * @return string
+     */
+    public function replaceLocaleCoverage( $page, $german )
+    {
+        $lines = explode( "\n", $page );
+        $inTable = false;
+        foreach ( $lines as $i => $line )
+        {
+            if ( strpos( $line, '| Code | ' ) === 0 )
+                $inTable = true;
+            elseif ( $inTable && strpos( $line, '|' ) !== 0 )
+                $inTable = false;
+            elseif ( $inTable && preg_match( '/^\| `([a-z]{3}-[A-Z]{2}(?:@\w+)?)` \|/', $line, $m ) )
+            {
+                $cell = $this->coverageCell( $m[1], $german );
+                if ( $cell !== null )
+                    $lines[$i] = preg_replace( '/\| [^|]* \|$/', '| ' . str_replace( '\\', '\\\\', $cell ) . ' |', $line, 1 );
+            }
+        }
+        return implode( "\n", $lines );
+    }
+
+    /**
      * The page with its generated part replaced, or put right below the first heading when it has none yet.
      *
      * @param string $page the page's text
@@ -732,6 +878,8 @@ class expI18nCoverageMap
             $files[$paths['svg']] = $this->svg( $language );
             $page = (string)@file_get_contents( $this->root . '/' . $paths['page'] );
             $page = self::replaceLanguagesBlock( $page, $this->languagesBlock( $language ) );
+            $page = self::replaceTranslationsBlock( $page, $this->translationsBlock( $language ) );
+            $page = $this->replaceLocaleCoverage( $page, $language === 'ger-de' );
             $marked = self::markerDate( $page );
             $content = self::replaceBlock( $page, $this->block( $language, $date ) );
             if ( $marked !== null && self::replaceBlock( $page, $this->block( $language, $marked ) ) === $page )

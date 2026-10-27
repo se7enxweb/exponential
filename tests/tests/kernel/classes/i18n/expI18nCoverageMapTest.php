@@ -264,6 +264,53 @@ class expI18nCoverageMapTest extends PHPUnit\Framework\TestCase
         $this->assertContains( 'doc/ger-de/bilder/sprachen/abdeckungskarte.webp is missing: run ./console exp:i18n coverage', $map->check( '2026-11-30' ) );
     }
 
+    /** CM-06 */
+    public function testTheCoverageColumnAndTheCompleteTranslationsOfAPageAreMadeFromTheFiles()
+    {
+        $map = new expI18nCoverageMap( $this->dir );
+        $table = "| Code | English name | Source | Translation coverage |\n|---|---|---|---:|\n"
+               . "| `ara-EG` | Arabic (Egypt) | CLDR 44 | 7% |\n| `bre-FR` | Breton | CLDR 44 | 100% |\n| `eng-CA` | English (Canada) | CLDR 44 | — |\n"
+               . "| `fre-CA` | French (Canada) | CLDR 44 | — |\n| `ger-DE` | German | CLDR 44 | 99% |\n| `ger-DE@euro` | German (euro) | CLDR 44 | — |\n"
+               . "| `xxx-XX` | No locale | CLDR 44 | 12% |\n\n| `ger-DE` | not in the locale table |\n";
+        $english = "# T\n\n" . expI18nCoverageMap::TRANSLATIONS_START . "\nold text\n" . expI18nCoverageMap::TRANSLATIONS_END . "\n\n## 3. Every locale\n\n$table";
+        $this->write( 'doc/eng-us/languages.md', $english );
+        $this->write( 'doc/ger-de/sprachen.md', str_replace( array( '| Code | English name', 'Translation coverage' ), array( '| Code | Englischer Name', 'Übersetzungsabdeckung' ), $english ) );
+        $files = $map->build( '2026-10-26' );
+        $page = $files['doc/eng-us/languages.md'];
+        $flat = str_replace( "\n", ' ', $page );
+        // ara-SA is 1 of 2 messages finished: its own row and its fallbacks show 50%
+        $this->assertStringContainsString( '| `ara-EG` | Arabic (Egypt) | CLDR 44 | 50% (falls back to `ara-SA`) |', $page );
+        $this->assertStringContainsString( '| `bre-FR` | Breton | CLDR 44 | — |', $page, 'no translation' );
+        $this->assertStringContainsString( '| `eng-CA` | English (Canada) | CLDR 44 | 100% |', $page, 'English is the source language' );
+        $this->assertStringContainsString( '| `fre-CA` | French (Canada) | CLDR 44 | 100% (falls back to `fre-FR`) |', $page );
+        $this->assertStringContainsString( '| `ger-DE` | German | CLDR 44 | 100% |', $page );
+        $this->assertStringContainsString( '| `ger-DE@euro` | German (euro) | CLDR 44 | 100% (falls back to `ger-DE`) |', $page, 'a variant takes its locale' );
+        $this->assertStringContainsString( '| `xxx-XX` | No locale | CLDR 44 | 12% |', $page, 'a code without a locale file is left alone' );
+        $this->assertStringContainsString( "| `ger-DE` | not in the locale table |\n", $page, 'only the rows of the table' );
+        $this->assertStringContainsString( 'In short: **15 locale files** (13 languages and countries, the test language Lorem Ipsum and 1 variation, 2 of them written right to left)', $flat );
+        $this->assertStringContainsString( '**5 administration translations** exist, 4 of them complete: fre-FR (`fre-FR`), German', $flat );
+        $this->assertStringContainsString( 'German (`ger-DE`), ser-SR (`ser-SR`), tlh-QO (`tlh-QO`). The names are', $flat );
+        $this->assertStringNotContainsString( 'ara-SA (`ara-SA`)', $flat, 'a translation that is not complete is not listed' );
+        $this->assertStringNotContainsString( 'old text', $page );
+        $german = str_replace( "\n", ' ', $files['doc/ger-de/sprachen.md'] );
+        $this->assertStringContainsString( '| `ara-EG` | Arabic (Egypt) | CLDR 44 | 50 % (fällt auf `ara-SA` zurück) |', $files['doc/ger-de/sprachen.md'] );
+        $this->assertStringContainsString( 'es gibt **5 Übersetzungen der Administrationsoberfläche**, 4 davon vollständig: ', $german );
+
+        // written, then current; a new translation changes the figures
+        $map->write( '2026-10-26' );
+        $this->assertSame( array(), array_values( array_filter( $map->check( '2026-10-26', false ), function ( $p ) { return strpos( $p, '.webp' ) === false; } ) ) );
+        $this->ts( 'share/translations/swa-KE', array( 'A' => 'a', 'B' => 'b' ) );
+        expUISwitchLanguageCatalogue::resetMemory();
+        $page = ( new expI18nCoverageMap( $this->dir ) )->build( '2026-10-27' )['doc/eng-us/languages.md'];
+        $this->assertStringContainsString( '**6 administration translations** exist, 5 of them complete: ', str_replace( "\n", ' ', $page ) );
+        $this->assertStringContainsString( 'swa-KE (`swa-KE`)', str_replace( "\n", ' ', $page ) );
+        $this->assertStringContainsString( '| `bre-FR` | Breton | CLDR 44 | — |', $page );
+
+        // a page without the markers and the table is kept
+        $this->assertSame( 'Text', expI18nCoverageMap::replaceTranslationsBlock( 'Text', 'BLOCK' ) );
+        $this->assertSame( "| `ger-DE` | x |", $map->replaceLocaleCoverage( '| `ger-DE` | x |', false ) );
+    }
+
     /** CM-05 */
     public function testTheGeneratedPartRendersInTheHelpViewer()
     {
