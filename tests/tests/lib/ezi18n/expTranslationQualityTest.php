@@ -147,6 +147,8 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
             $out[] = 'trailing whitespace';
         if ( substr_count( $source, "\n" ) !== substr_count( $translation, "\n" ) )
             $out[] = 'line breaks';
+        if ( substr_count( $source, '\\' ) !== substr_count( $translation, '\\' ) )
+            $out[] = 'backslashes';
         if ( $translation === $source && !self::mayStayIdentical( $source, $language ) )
             $out[] = 'identical to the English source';
         return $out;
@@ -241,6 +243,8 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
             'lost entity' => array( 'a&nbsp;b', 'a b', array( 'entities' ) ),
             'lost trailing space' => array( 'Name: ', 'Nombre:', array( 'trailing whitespace' ) ),
             'lost line break' => array( "One\nTwo", 'Uno dos', array( 'line breaks' ) ),
+            'doubled backslash' => array( 'Use \\Foo\\Bar', 'Usa \\\\Foo\\\\Bar', array( 'backslashes' ) ),
+            'backslashes kept' => array( 'Use \\Foo', 'Usa \\Foo', array() ),
             'empty' => array( 'Edit', ' ', array( 'empty' ) ),
             'identical' => array( 'Edit', 'Edit', array( 'identical to the English source' ) ),
             'identical product name' => array( 'Exponential', 'Exponential', array() ),

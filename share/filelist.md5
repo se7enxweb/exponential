@@ -25423,7 +25423,7 @@ f4dedb91b5a4947a924f83af7d6d02bc  share/translations/ara-SA/GUIDE.md
 32a0a3e9fe2b4d83ec6b3336a5de5eb2  share/translations/arc-IQ/GUIDE.md
 9d576088e74e1ba0adfc3a44ccefd424  share/translations/arc-IQ/translation.ts
 98db3ac67522be71fa7680d77028f10a  share/translations/asm-IN/GUIDE.md
-dd21e8df8b7dac96d7d79e2c85530550  share/translations/asm-IN/translation.ts
+f7c5d24926d7b18e01f8fcb5c9a457c5  share/translations/asm-IN/translation.ts
 285ad8c0923824136865dd4ffc16aa76  share/translations/aze-AZ/GUIDE.md
 ec0d2aa292a08e2fa49547416d451ff3  share/translations/aze-AZ/translation.ts
 cc179a62e015e113b323d82ad9f8604d  share/translations/ben-BD/GUIDE.md
@@ -25435,7 +25435,7 @@ d8451103e07a111eefaa17525b2eb8e4  share/translations/bos-BA/GUIDE.md
 553b09e587afd18cd5cad60d1f094ca3  share/translations/bul-BG/GUIDE.md
 c4a35dbae17b780ccdcbd9af8c0cce87  share/translations/bul-BG/translation.ts
 0bf0b442683dfc6d5a3bea03d607e630  share/translations/cat-ES/GUIDE.md
-5ad4795c85026e3bc6c555c7619ecfa2  share/translations/cat-ES/translation.ts
+da216b16e0ff0f423df70a2eb1f3bf2b  share/translations/cat-ES/translation.ts
 b62c57dae8e8d30fa4f64a0f217a409e  share/translations/che-RU/GUIDE.md
 d5cec8271fd84d9cc7bbe265c83cc6e9  share/translations/che-RU/translation.ts
 581dc12ebd173ba58e107682c0deb23f  share/translations/chi-CN/GUIDE.md
@@ -25443,7 +25443,7 @@ d5cec8271fd84d9cc7bbe265c83cc6e9  share/translations/che-RU/translation.ts
 2cb5980e3f7f96b11987f08d7332fa8b  share/translations/chi-TW/GUIDE.md
 a7240639d9eb974ae7368296512f36ac  share/translations/chi-TW/translation.ts
 88af612789cbcccf1de7f498da1a99eb  share/translations/cro-HR/GUIDE.md
-4a0a9d26197da55a2abdf486bb675949  share/translations/cro-HR/translation.ts
+849da3dfccfecc7499b2cb7003405a1f  share/translations/cro-HR/translation.ts
 d03c1a747553b8951ecfdda1c6a71938  share/translations/cze-CZ/GUIDE.md
 261ea80645c7c69749c81e27402e13eb  share/translations/cze-CZ/translation.ts
 8d769290938810faef758356c145dacf  share/translations/dan-DK/GUIDE.md
@@ -25471,7 +25471,7 @@ d57b2e64d8b0f2169d8ff29295a66144  share/translations/fin-FI/translation.ts
 dbb7dfec95cf245248c9ac4be9d891b1  share/translations/fre-FR/GUIDE.md
 1671a4bb8bfc6101a93e45f5eefd1275  share/translations/fre-FR/translation.ts
 509cfd28e6d7f98c30dfb3c79aa1edf9  share/translations/ful-SN/GUIDE.md
-c90c79ed2de487d3a7daed1283b1d46f  share/translations/ful-SN/translation.ts
+8bfbd38f71dc0ad64b2272896bab5171  share/translations/ful-SN/translation.ts
 ccf8758ef6ea0b6f639323dd1573c204  share/translations/ger-DE/GUIDE.md
 109960e8e1491b81891da3dcce66c170  share/translations/ger-DE/phrasebook.qph
 f5931abbf601f1654073a3de6f2bbc0d  share/translations/ger-DE/readme.txt
@@ -25485,7 +25485,7 @@ b69c0d6d7d6a6085ace886220eb90302  share/translations/guj-IN/translation.ts
 ba822caad5c7bee70de2e947a7892621  share/translations/hau-NG/GUIDE.md
 9c9bed8cb64c9e437e726b4ed6ca3366  share/translations/hau-NG/translation.ts
 2c061cf76a1da8db35e1c244f70ef8d5  share/translations/haw-US/GUIDE.md
-05b290e62bf316322ec4cde3b545796f  share/translations/haw-US/translation.ts
+867a095acabdc672fbbe4700c7e59720  share/translations/haw-US/translation.ts
 87b4a180361f777494fa3264688096e5  share/translations/heb-IL/GUIDE.md
 d9676b11c7105f9f7e1149f01865e0e3  share/translations/heb-IL/translation.ts
 e1dc3ec4e9f2f3ebe311a4009798f587  share/translations/hin-IN/GUIDE.md
@@ -25527,7 +25527,7 @@ d816ca75f3f4c4afcad048d4aaee7244  share/translations/lat-VA/GUIDE.md
 7ee72d57ddd9eb952cbf84526782d864  share/translations/lav-LV/GUIDE.md
 4b1b2349f9d4a14caab957be5076871a  share/translations/lav-LV/translation.ts
 2dd5e86e51d4a4fe845476125854c5fc  share/translations/lin-CD/GUIDE.md
-4f83b27de61a35364a2d555a32e2ee36  share/translations/lin-CD/translation.ts
+875b5af7d554cfe3b8af68425264050c  share/translations/lin-CD/translation.ts
 2850d59019d75570e1bebc67cbc25ec6  share/translations/lit-LT/GUIDE.md
 7cf5857a2f3363ba2ba8b4d1e7b3d9bd  share/translations/lit-LT/translation.ts
 a1e4e21417ec3c9792cc6cf9e2b99a6a  share/translations/mai-IN/GUIDE.md
@@ -25545,18 +25545,18 @@ cfa9a28bbe82d971e11a0e3d1f9cbc89  share/translations/mri-NZ/GUIDE.md
 128d5b6341347b6fbdbe9305377824bb  share/translations/mya-MM/GUIDE.md
 f95640826bcea34e48dbc4d24e1dd025  share/translations/mya-MM/translation.ts
 3228035d3aa18cc50fbb5f806c107ee8  share/translations/nep-NP/GUIDE.md
-d1f8b117b18dd82885ede8a254d64621  share/translations/nep-NP/translation.ts
+9113cb801d6e5af0da56375fb486f8d7  share/translations/nep-NP/translation.ts
 bfeaee8dbc2f0b6e5099de1897be5306  share/translations/nor-NO/GUIDE.md
 8bbbf764eeb595adc4615cdca139f3ad  share/translations/nor-NO/readme.txt
 451fa1cbd3888af481e32e4074cc3255  share/translations/nor-NO/translation.ts
 f5d476983f908b30b929a6714cfb6d5f  share/translations/ori-IN/GUIDE.md
 fceb1407cc9aff55bd4bf4537f398aeb  share/translations/ori-IN/translation.ts
 c89a2ee39137df31caa90773f3844ec5  share/translations/orm-ET/GUIDE.md
-9c5f0377c7bd89e75d65f34facbd1278  share/translations/orm-ET/translation.ts
+74a0f7a8fca30fe5d24766c75d73f232  share/translations/orm-ET/translation.ts
 26867a6032e744df9605eb5d1a081c84  share/translations/pan-IN/GUIDE.md
 3417724f635c7bb43804ffb5bcbb09be  share/translations/pan-IN/translation.ts
 3ae6dd158772b659d45b6da1da8c83f2  share/translations/pcm-NG/GUIDE.md
-c72548c0f6352e377944f8dd2296044e  share/translations/pcm-NG/translation.ts
+8364a741114f2c25f9a899e651724388  share/translations/pcm-NG/translation.ts
 2473b2c49ae8889186f8abca9e6ad043  share/translations/pnb-PK/GUIDE.md
 bbbfe53b44b8525c08ca9800f6199986  share/translations/pnb-PK/translation.ts
 225599684aa7710cda5a49538102f164  share/translations/pol-PL/GUIDE.md
@@ -25604,7 +25604,7 @@ b582840e94338c55ff2bd12d2279be24  share/translations/tel-IN/translation.ts
 07acea7d00887fad370466f3555b95ac  share/translations/tha-TH/GUIDE.md
 35735a3f353d3b04568a52c0fab1040f  share/translations/tha-TH/translation.ts
 88e29d29b132900edbb1c7eca3d72360  share/translations/tlh-QO/GUIDE.md
-c3a93c40e540d0a4c44f683f9b5eba07  share/translations/tlh-QO/translation.ts
+af4b1ca32139bfd4479377bab340f210  share/translations/tlh-QO/translation.ts
 0a1bfbe969ccf384196950416c92a71e  share/translations/tur-TR/GUIDE.md
 5dde73910edcdf4096fc63fb43f2e041  share/translations/tur-TR/translation.ts
 8b26a8d47d928d0b0bd5c6885bd87f3f  share/translations/ukr-UA/GUIDE.md
@@ -25614,7 +25614,7 @@ deed757764355809b30ba231235d96e8  share/translations/ukr-UA/translation.ts
 50c0423066d265dc70107a85555ec431  share/translations/urd-PK/GUIDE.md
 ba65fb9624c279e49f3c509135eec2e8  share/translations/urd-PK/translation.ts
 9e9e7eefce4bcdac8cdf37ea44206f6e  share/translations/uzb-UZ/GUIDE.md
-31bf5d88400b61c93972ae9ee211f0c3  share/translations/uzb-UZ/translation.ts
+a89daef8c8f6d84174ada16d2d96180c  share/translations/uzb-UZ/translation.ts
 5b0c50481744b3b95fc8751f105dca49  share/translations/vie-VN/GUIDE.md
 4ee4a303980a33a361b0f8db76d8e8b3  share/translations/vie-VN/translation.ts
 cd5abb3113842abfea8acce6ea5f239a  share/translations/xho-ZA/GUIDE.md
@@ -27100,7 +27100,7 @@ cc257dca00808ffe07d4164621875303  tests/tests/lib/ezi18n/eZTSTranslatorFallbackC
 1e9f33d25a257cf93a944f7a154855bd  tests/tests/lib/ezi18n/expI18nFallbackResolverTest.php
 b0715963de3bd65a0ef5404825df4b8e  tests/tests/lib/ezi18n/expSpanishTuFormTest.php
 9d100c37c28b005fb55aa5877fcbbd2a  tests/tests/lib/ezi18n/expTranslationMeaningTest.php
-113f55a52857ed3e437841fb37c7a415  tests/tests/lib/ezi18n/expTranslationQualityTest.php
+cb997587154e2c9cfa9e7a9b368772a7  tests/tests/lib/ezi18n/expTranslationQualityTest.php
 be0cc72db4e9d8d7cfd64d202876ab07  tests/tests/lib/ezi18n/translation-identical-allowlist.json
 99d562ea5691945a73f1649c6b7cc76b  tests/tests/lib/ezimage/data/andernach.jpg
 e20e34d1b6a2efc798e50ebbabee680d  tests/tests/lib/ezimage/data/svg/badge.svg
