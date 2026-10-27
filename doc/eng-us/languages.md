@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **77**, 76 of them complete |
-| Locales: `share/locale/*.ini` files | **287**: 280 languages and countries, 1 test language, 6 variants |
-| Known languages: the language codes of the locales (variants and the test language left out) | **148** |
-| of them shown translated by the administration (own translation, fallback or English) | **74** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **74** |
+| Languages of the administration: translations in `share/translations` | **84**, 76 of them complete |
+| Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
+| Known languages: the language codes of the locales (variants and the test language left out) | **150** |
+| of them shown translated by the administration (own translation, fallback or English) | **81** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **69** |
 | Countries and territories of the locales | **175** |
-| of them with the administration in their language (green on the map) | **157** |
-| Locales written right to left | **41** |
+| of them with the administration in their language (green on the map) | **158** |
+| Locales written right to left | **43** |
 
-![World map: 157 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 158 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 157 countries and territories in green</summary>
+<details><summary>The 158 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -127,6 +127,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (untranslated) |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
 | Namibia | NA | `eng-NA` (source texts) |
+| Nepal | NP | `nep-NP` |
 | Netherlands | NL | `dut-NL`, `fry-NL` (untranslated) |
 | New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
 | Nicaragua | NI | `esl-NI` → `esl-ES` |
@@ -189,7 +190,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 18 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 17 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -250,12 +251,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **77** of them translated: at least one of their locales has a translation of its
+administration shows **81** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **71** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **69** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 71 languages not translated</summary>
+<details><summary>The 69 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -297,7 +298,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Lingala | Lingála | `lin` | `lin-CD` (Congo, The Democratic Republic Of The) |
 | Luxembourgish | Lëtzebuergesch | `ltz` | `ltz-LU` (Luxembourg) |
 | Macedonian | Македонски | `mkd` | `mkd-MK` (North Macedonia) |
-| Maithili | मैथिली | `mai` | `mai-IN` (India) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagascar) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
 | Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
@@ -316,7 +316,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
-| Syriac | ܣܘܪܝܝܐ | `syr` | `syr-IQ` (Iraq), `syr-SY` (Syrian Arab Republic) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
 | Tatar | Татар | `tat` | `tat-RU` (Russian Federation) |
 | Tibetan | བོད་སྐད་ | `bod` | `bod-CN` (China) |
@@ -363,13 +362,8 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-<<<<<<< HEAD
 | **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 237 added in 6.0.15 |
-=======
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
-| **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 170 added in 6.0.15 |
->>>>>>> 24499bb9d8
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
 names, at the same level: every German-, French- and Spanish-speaking country falls back to `ger-DE`, `fre-FR` and
