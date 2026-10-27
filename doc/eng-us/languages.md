@@ -3,29 +3,29 @@ summary: The one place that says which languages Exponential supports, at which 
 ---
 # Languages in Exponential
 
-<!-- generated: exp:i18n coverage 2026-10-26 (start) -->
-**At a glance, on 26 October 2026.** A default installation (the shipped `share/locale`, `share/translations`
+<!-- generated: exp:i18n coverage 2026-10-27 (start) -->
+**At a glance, on 27 October 2026.** A default installation (the shipped `share/locale`, `share/translations`
 and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **88**, 88 of them complete |
+| Languages of the administration: translations in `share/translations` | **89**, 89 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **85** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **65** |
+| of them shown translated by the administration (own translation, fallback or English) | **86** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **64** |
 | Countries and territories of the locales | **175** |
-| of them with the administration in their language (green on the map) | **160** |
+| of them with the administration in their language (green on the map) | **161** |
 | Locales written right to left | **43** |
 
-![World map: 160 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 161 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 160 countries and territories in green</summary>
+<details><summary>The 161 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -34,6 +34,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Algeria | DZ | `ara-DZ` → `ara-SA`, `fre-DZ` → `fre-FR`, `kab-DZ` (untranslated) |
 | Angola | AO | `por-AO` → `por-PT` |
 | Argentina | AR | `esl-AR` → `esl-ES` |
+| Armenia | AM | `hye-AM` |
 | Australia | AU | `eng-AU` |
 | Austria | AT | `ger-AT` → `ger-DE` |
 | Bahrain | BH | `ara-BH` → `ara-SA` |
@@ -192,11 +193,10 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 
 </details>
 
-<details><summary>The 15 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 14 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
-| Armenia | AM | `hye-AM` |
 | Azerbaijan | AZ | `aze-AZ` |
 | Belarus | BY | `bel-BY` |
 | Bhutan | BT | `dzo-BT` |
@@ -251,17 +251,16 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **85** of them translated: at least one of their locales has a translation of its
+administration shows **86** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **65** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **64** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 65 languages not translated</summary>
+<details><summary>The 64 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
 | Akan | Akan | `aka` | `aka-GH` (Ghana) |
-| Armenian | Հայերեն | `hye` | `hye-AM` (Armenia) |
 | Assamese | অসমীয়া | `asm` | `asm-IN` (India) |
 | Asturian | Asturianu | `ast` | `ast-ES` (Spain) |
 | Azerbaijani | Azərbaycan | `aze` | `aze-AZ` (Azerbaijan) |
