@@ -45223,11 +45223,11 @@ Ikiwa unataka kutuma maoni kwa mwidhinishaji au kutazama hali, tumia URL iliyo h
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Hivi ni vitu ulivyoviwekea alamisho. Bofya kitu ili kukitazama au, ikiwa una ruhusa, unaweza kuhariri kitu kwa kubofya kitufe cha kuhariri.
-      Ikiwa unataka kuongeza vitu zaidi kwenye orodha hii bofya kitufe %emphasize_startOngeza alamisho%emphasize_stop.
+      Ikiwa unataka kuongeza vitu zaidi kwenye orodha hii bofya kitufe %emphasize_start Ongeza alamisho %emphasize_stop.
 
       Kuondoa vitu kutaviondoa tu kutoka kwenye orodha hii.</translation>
     </message>

@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>यी तपाईंले पुस्तकचिनो लगाएका वस्तुहरू हुन्। वस्तु हेर्न त्यसमा थिच्नुहोस्, वा अनुमति भए सम्पादन बटन थिचेर वस्तु सम्पादन गर्न सक्नुहुन्छ।
-      यो सूचीमा थप वस्तुहरू थप्न चाहनुहुन्छ भने %emphasize_startपुस्तकचिनो थप्नुहोस्%emphasize_stop बटन थिच्नुहोस्।
+      यो सूचीमा थप वस्तुहरू थप्न चाहनुहुन्छ भने %emphasize_start पुस्तकचिनो थप्नुहोस् %emphasize_stop बटन थिच्नुहोस्।
 
       वस्तुहरू हटाउँदा तिनीहरू यस सूचीबाट मात्र हटिन्छन्।</translation>
     </message>

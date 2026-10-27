@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>നിങ്ങൾ ബുക്ക്മാർക്ക് ചെയ്ത ഒബ്ജക്റ്റുകളാണ് ഇവ. ഒരു ഒബ്ജക്റ്റ് കാണാൻ അതിൽ ക്ലിക്ക് ചെയ്യുക, അല്ലെങ്കിൽ അനുമതിയുണ്ടെങ്കിൽ എഡിറ്റ് ബട്ടൺ ക്ലിക്ക് ചെയ്ത് ഒബ്ജക്റ്റ് എഡിറ്റ് ചെയ്യാം.
-      ഈ ലിസ്റ്റിലേക്ക് കൂടുതൽ ഒബ്ജക്റ്റുകൾ ചേർക്കാൻ %emphasize_startAddബുക്ക്മാർക്കുകൾ%emphasize_stop ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.
+      ഈ ലിസ്റ്റിലേക്ക് കൂടുതൽ ഒബ്ജക്റ്റുകൾ ചേർക്കാൻ %emphasize_start Addബുക്ക്മാർക്കുകൾ %emphasize_stop ബട്ടൺ ക്ലിക്ക് ചെയ്യുക.
 
       ഒബ്ജക്റ്റുകൾ നീക്കം ചെയ്യുന്നത് അവയെ ഈ ലിസ്റ്റിൽ നിന്ന് മാത്രമേ നീക്കം ചെയ്യുകയുള്ളൂ.</translation>
     </message>

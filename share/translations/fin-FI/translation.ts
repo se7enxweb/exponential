@@ -45168,11 +45168,11 @@ Jos haluat lähettää kommentteja hyväksyjälle tai tarkastella tilaa, käytä
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Nämä ovat objektit, jotka olet lisännyt kirjanmerkkeihin. Voit tarkastella objektia napsauttamalla sitä tai, jos sinulla on oikeus, muokata sitä napsauttamalla muokkauspainiketta.
-      Jos haluat lisätä tähän luetteloon objekteja, napsauta painiketta %emphasize_start Lisää kirjanmerkkejä%emphasize_stop.
+      Jos haluat lisätä tähän luetteloon objekteja, napsauta painiketta %emphasize_start Lisää kirjanmerkkejä %emphasize_stop.
 
       Objektien poistaminen poistaa ne vain tästä luettelosta.</translation>
     </message>

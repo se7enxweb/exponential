@@ -45171,11 +45171,11 @@ Si commentaria approbatori mittere aut statum inspicere vis, URL infra adhibe.</
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Hae sunt res quas signaculis notavisti. Rem preme ut eam inspicias, aut, si tibi licet, rem recensere potes premendo pugam recensendi.
-      Si plures res huic indici addere vis, preme pugam %emphasize_startSignacula addere%emphasize_stop.
+      Si plures res huic indici addere vis, preme pugam %emphasize_start Signacula addere %emphasize_stop.
 
       Res removendo eas solum ex hoc indice removes.</translation>
     </message>

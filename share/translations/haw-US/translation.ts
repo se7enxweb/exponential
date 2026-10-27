@@ -45225,11 +45225,11 @@ INā makemake ʻoe e hoʻouna i nā manaʻo i ka mea hoʻāpono a nānā paha i 
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>ʻO nā mea kēia āu i kaha hoʻomanaʻo ai. E kaomi i kekahi mea e nānā iā ia, a inā he ʻae kāu, hiki iā ʻoe ke hoʻoponopono i ka mea ma ke kaomi ʻana i ka pihi hoʻoponopono.
-      Inā makemake ʻoe e hoʻohui i nā mea hou i kēia papa helu, e kaomi i ka pihi %emphasize_startAdd bookmarks%emphasize_stop.
+      Inā makemake ʻoe e hoʻohui i nā mea hou i kēia papa helu, e kaomi i ka pihi %emphasize_start Add bookmarks %emphasize_stop.
 
       Ma ka wehe ʻana i nā mea, e wehe ʻia lākou mai kēia papa helu wale nō.</translation>
     </message>

@@ -38345,11 +38345,11 @@ Puoi continuare a modificare una delle tue bozze oppure creare una nuova bozza.<
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Questi sono gli oggetti che hai aggiunto ai preferiti. Fai clic su un oggetto per visualizzarlo oppure, se hai il permesso, puoi modificarlo facendo clic sul pulsante Modifica.
-      Se vuoi aggiungere altri oggetti a questo elenco, fai clic sul pulsante %emphasize_startAggiungi ai preferiti%emphasize_stop.
+      Se vuoi aggiungere altri oggetti a questo elenco, fai clic sul pulsante %emphasize_start Aggiungi ai preferiti %emphasize_stop.
 
       Rimuovere gli oggetti li toglie solo da questo elenco.</translation>
     </message>

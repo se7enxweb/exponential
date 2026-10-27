@@ -45168,11 +45168,11 @@ Ha megjegyzést szeretne küldeni a jóváhagyónak, vagy meg szeretné tekinten
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ezek a könyvjelzővel ellátott objektumai. Kattintson egy objektumra a megtekintéséhez, vagy ha van jogosultsága, a szerkesztés gombra kattintva szerkesztheti.
-      Ha további objektumokat szeretne felvenni a listára, kattintson a(z) %emphasize_startKönyvjelzők hozzáadása%emphasize_stop gombra.
+      Ha további objektumokat szeretne felvenni a listára, kattintson a(z) %emphasize_start Könyvjelzők hozzáadása %emphasize_stop gombra.
 
       Az objektumok eltávolítása csak erről a listáról távolítja el őket.</translation>
     </message>

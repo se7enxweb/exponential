@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Սրանք այն օբյեկտներն են, որոնք Դուք ավելացրել եք էջանիշերում։ Սեղմեք օբյեկտի վրա՝ այն դիտելու համար, կամ, եթե թույլտվություն ունեք, խմբագրեք օբյեկտը՝ սեղմելով խմբագրման կոճակը։
-      Եթե ցանկանում եք այս ցուցակում ավելի շատ օբյեկտներ ավելացնել, սեղմեք %emphasize_startԱվելացնել էջանիշեր%emphasize_stop կոճակը։
+      Եթե ցանկանում եք այս ցուցակում ավելի շատ օբյեկտներ ավելացնել, սեղմեք %emphasize_start Ավելացնել էջանիշեր %emphasize_stop կոճակը։
 
       Օբյեկտների հեռացումը դրանք հեռացնում է միայն այս ցուցակից։</translation>
     </message>

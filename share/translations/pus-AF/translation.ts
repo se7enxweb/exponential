@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>دا هغه څیزونه دي چې تاسو نښه کړي. د کتلو لپاره پر یو څیز کېکاږئ، یا که اجازه لرئ، د سمولو تڼۍ په کېکاږلو سره څیز سم کړئ.
-      که غواړئ دغه لېست کې نور څیزونه زیات کړئ، د %emphasize_startنښې زیاتول%emphasize_stop تڼۍ کېکاږئ.
+      که غواړئ دغه لېست کې نور څیزونه زیات کړئ، د %emphasize_start نښې زیاتول %emphasize_stop تڼۍ کېکاږئ.
 
       د څیزونو لرې کول به یوازې له دغه لېست څخه لرې کړي.</translation>
     </message>

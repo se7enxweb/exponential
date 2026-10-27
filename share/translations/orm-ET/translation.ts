@@ -45225,11 +45225,11 @@ Yaada nama mirkaneessuuf ergu yookiin sadarkaa ilaaluu yoo barbaaddan URL armaan
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Kunneen wantoota mallatteessitan dha. Wanta ilaaluuf tuqaa, yookiin yoo hayyama qabaattan tuqaa gulaali tuquun wanta sana gulaaluu dandeessu.
-      Wantoota dabalataa tarree kanatti ida'uu yoo barbaaddan tuqaa %emphasize_start Mallattoo ida'i%emphasize_stop tuqaa.
+      Wantoota dabalataa tarree kanatti ida'uu yoo barbaaddan tuqaa %emphasize_start Mallattoo ida'i %emphasize_stop tuqaa.
 
       Wantoota baasuun tarree kana keessaa qofa isaan baasa.</translation>
     </message>

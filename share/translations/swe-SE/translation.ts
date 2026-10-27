@@ -38240,11 +38240,11 @@ Om du vill skicka kommentarer till personen som godkänner eller visa statusen, 
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Detta är objekten som du har valt som bokmärken. Klicka på ett objekt för att visa eller, om du har behörighet, klicka på redigera för att redigera objektet.
-      Om du vill lägga till fler objekt till listan klickar du på knappen %emphasize_startLägg till bokmärken%emphasize_stop.
+      Om du vill lägga till fler objekt till listan klickar du på knappen %emphasize_start Lägg till bokmärken %emphasize_stop.
 
       Om du tar bort objekt tas de bara bort från denna lista.</translation>
     </message>

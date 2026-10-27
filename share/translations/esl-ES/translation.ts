@@ -46122,11 +46122,11 @@ Puedes editar uno de tus borradores o crear uno nuevo.</translation>
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Estos son los objetos que tu has marcado. Haz clic en el objeto para verlo o si tienes permiso, puedes editarlo pulsando el botón de edición.
-      Si quieres añadir más objetos a esta lista, haz clic en el botón %emphasize_startAñade favorito%emphasize_stop.
+      Si quieres añadir más objetos a esta lista, haz clic en el botón %emphasize_start Añade favorito %emphasize_stop.
 
       Si borras algún objeto, sólo lo borrarás de la lista.</translation>
     </message>

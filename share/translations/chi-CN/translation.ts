@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>这些是您已添加书签的对象。单击对象可查看；如果您有权限，也可以单击编辑按钮来编辑该对象。
-如果要向此列表添加更多对象，请单击 %emphasize_start添加书签%emphasize_stop 按钮。
+如果要向此列表添加更多对象，请单击 %emphasize_start 添加书签 %emphasize_stop 按钮。
 
 移除对象只会将其从此列表中移除。</translation>
     </message>

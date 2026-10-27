@@ -45225,11 +45225,11 @@ Ma tha sibh airson beachdan a chur chun an neach-aontachaidh no an staid fhaicin
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Seo na h-oibseactan a chuir sibh comharra-lìn riutha. Briogaibh air oibseact gus a shealltainn no, ma tha cead agaibh, deasaichibh an t-oibseact le briogadh air a' phutan deasachaidh.
-      Ma tha sibh airson barrachd oibseactan a chur ris an liosta seo briogaibh air a' phutan %emphasize_startAdd comharran-lìn ris%emphasize_stop.
+      Ma tha sibh airson barrachd oibseactan a chur ris an liosta seo briogaibh air a' phutan %emphasize_start Add comharran-lìn ris %emphasize_stop.
 
       Cha toir toirt air falbh oibseactan air falbh ach iad on liosta seo.</translation>
     </message>

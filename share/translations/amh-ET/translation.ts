@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>እነዚህ ዕልባት ያደረጓቸው ነገሮች ናቸው። ነገሩን ለማየት ጠቅ ያድርጉ፤ ፈቃድ ካለዎት አርትዕ አዝራሩን ጠቅ በማድረግ ነገሩን ማርትዕ ይችላሉ።
-      ወደዚህ ዝርዝር ተጨማሪ ነገሮችን ለመጨመር %emphasize_startAddዕልባቶች%emphasize_stop አዝራሩን ጠቅ ያድርጉ።
+      ወደዚህ ዝርዝር ተጨማሪ ነገሮችን ለመጨመር %emphasize_start Addዕልባቶች %emphasize_stop አዝራሩን ጠቅ ያድርጉ።
 
       ነገሮችን ማስወገድ ከዚህ ዝርዝር ብቻ ያስወግዳቸዋል።</translation>
     </message>

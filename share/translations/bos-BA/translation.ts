@@ -45168,11 +45168,11 @@ Ako želite poslati komentare odobravatelju ili vidjeti status, koristite URL ad
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ovo su objekti koje ste dodali u favorite. Kliknite objekat da biste ga prikazali ili ga, ako imate dozvolu, uredite klikom na dugme za uređivanje.
-      Ako želite dodati još objekata na ovu listu, kliknite dugme %emphasize_startDodaj favorite%emphasize_stop.
+      Ako želite dodati još objekata na ovu listu, kliknite dugme %emphasize_start Dodaj favorite %emphasize_stop.
 
       Uklanjanjem objekata oni se uklanjaju samo s ove liste.</translation>
     </message>

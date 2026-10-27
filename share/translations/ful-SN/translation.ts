@@ -45225,11 +45225,11 @@ So a yiɗi neldude tinndinooje e jaɓoowo walla yiyde ngonka, huutoy URL les.</t
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ɗum ko geɗe ɗe a maandi. Ñoƴƴu e huunde ngam yiyde ndee walla so a alaa jamirol, waylu ndee e ñoƴƴude e ɓutoŋ waylugol.
-      So a yiɗi ɓeydude geɗe e doggol ndii, ñoƴƴu e ɓutoŋ %emphasize_startƁeydu maande%emphasize_stop.
+      So a yiɗi ɓeydude geɗe e doggol ndii, ñoƴƴu e ɓutoŋ %emphasize_start Ɓeydu maande %emphasize_stop.
 
       Ittugol geɗe ittata ɗe e doggol ndii tan.</translation>
     </message>

@@ -45168,11 +45168,11 @@ Nëse dëshironi t&apos;i dërgoni komente miratuesit ose të shihni statusin, p
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Këto janë objektet që keni ruajtur si faqeshënues. Klikoni një objekt për ta parë ose, nëse keni leje, mund ta redaktoni duke klikuar butonin e redaktimit.
-      Nëse dëshironi të shtoni më shumë objekte në këtë listë, klikoni butonin %emphasize_startShto faqeshënues%emphasize_stop.
+      Nëse dëshironi të shtoni më shumë objekte në këtë listë, klikoni butonin %emphasize_start Shto faqeshënues %emphasize_stop.
 
       Heqja e objekteve i heq ato vetëm nga kjo listë.</translation>
     </message>

@@ -45225,11 +45225,11 @@ Agar tasdiqlovchiga izoh yubormoqchi yoki maqomni koʻrmoqchi boʻlsangiz, quyid
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Bular Siz xatchoʻpga qoʻshgan obyektlar. Obyektni koʻrish uchun uni bosing yoki ruxsatingiz boʻlsa, tahrirlash tugmasini bosib uni tahrirlashingiz mumkin.
-      Bu roʻyxatga yana obyektlar qoʻshmoqchi boʻlsangiz, %emphasize_startXatchoʻplar qoʻshish%emphasize_stop tugmasini bosing.
+      Bu roʻyxatga yana obyektlar qoʻshmoqchi boʻlsangiz, %emphasize_start Xatchoʻplar qoʻshish %emphasize_stop tugmasini bosing.
 
       Obyektlarni olib tashlash ularni faqat shu roʻyxatdan olib tashlaydi.</translation>
     </message>

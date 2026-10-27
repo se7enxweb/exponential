@@ -45168,11 +45168,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Это объекты, которые вы добавили в закладки. Щелкните объект, чтобы просмотреть его; если у вас есть разрешение, можно изменить объект кнопкой изменения.
-      Чтобы добавить в этот список другие объекты, нажмите кнопку %emphasize_startAdd bookmarks%emphasize_stop.
+      Чтобы добавить в этот список другие объекты, нажмите кнопку %emphasize_start Add bookmarks %emphasize_stop.
 
       Если убрать объекты, они будут убраны только из этого списка.</translation>
     </message>

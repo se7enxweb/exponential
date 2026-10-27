@@ -46963,7 +46963,7 @@ Você pode editar estes rascunhos ou removê-los se não precisar mais deles.</t
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Estes são os objetos que você possui nos seus favoritos. Clique em um destes objetos para vê-lo ou se você tiver permissão, você pode editar o objeto, clicando no botão &quot;editar&quot;.

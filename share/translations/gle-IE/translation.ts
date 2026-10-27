@@ -45168,11 +45168,11 @@ Más mian leat nótaí tráchta a sheoladh chuig an gceadaitheoir nó an stádas
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Seo iad na hoibiachtaí a bhfuil leabharmharc agat orthu. Cliceáil ar oibiacht chun féachaint uirthi nó, má tá cead agat, is féidir leat an oibiacht a chur in eagar trí chliceáil an cnaipe eagarthóireachta.
-      Más mian leat tuilleadh oibiachtaí a chur leis an liosta seo, cliceáil an cnaipe %emphasize_start“Cuir leabharmharcanna leis”%emphasize_stop.
+      Más mian leat tuilleadh oibiachtaí a chur leis an liosta seo, cliceáil an cnaipe %emphasize_start “Cuir leabharmharcanna leis” %emphasize_stop.
 
       Má bhaintear oibiachtaí, ní bhaintear iad ach den liosta seo.</translation>
     </message>

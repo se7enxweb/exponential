@@ -38256,11 +38256,11 @@ Si vous voulez laisser un commentaire au responsable de l&apos;approbation ou en
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Voici les objets que vous avez ajoutés à vos signets. Cliquez sur un objet pour l&apos;afficher ou, si vous en avez l&apos;autorisation, modifiez-le en cliquant sur le bouton Modifier.
-      Pour ajouter d&apos;autres objets à cette liste, cliquez sur le bouton %emphasize_startAjouter aux signets%emphasize_stop.
+      Pour ajouter d&apos;autres objets à cette liste, cliquez sur le bouton %emphasize_start Ajouter aux signets %emphasize_stop.
 
       Supprimer des objets les retire uniquement de cette liste.</translation>
     </message>

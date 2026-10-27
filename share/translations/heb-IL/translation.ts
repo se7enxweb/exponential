@@ -45170,11 +45170,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>אלה האובייקטים שבסימניות שלך. לחיצה על אובייקט מציגה אותו, ואם יש לך הרשאה, ניתן לערוך אותו בלחיצה על כפתור העריכה.
-      כדי להוסיף אובייקטים נוספים לרשימה זו, יש ללחוץ על הכפתור %emphasize_startהוספת סימניות%emphasize_stop.
+      כדי להוסיף אובייקטים נוספים לרשימה זו, יש ללחוץ על הכפתור %emphasize_start הוספת סימניות %emphasize_stop.
 
       הסרת אובייקטים תסיר אותם מרשימה זו בלבד.</translation>
     </message>

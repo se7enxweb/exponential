@@ -45168,11 +45168,11 @@ Jolic cośo wósobje, kótaraž pśizwólijo, komentary pósłaś abo status wi�
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>To su objekty, kótarež sćo ako cytańske znamjenja składowali. Klikniśo na objekt, aby jen pokazali, abo – jolic maśo pšawo – móžośo objekt z kliknjenim na tłocašk za wobźěłowanje wobźěłaś.
-      Jolic cośo toś tej lisćinje dalšne objekty pśidaś, klikniśo na tłocašk %emphasize_startCytańske znamjenja pśidaś%emphasize_stop.
+      Jolic cośo toś tej lisćinje dalšne objekty pśidaś, klikniśo na tłocašk %emphasize_start Cytańske znamjenja pśidaś %emphasize_stop.
 
       Wótpóranje objektow je jano z toś teje lisćiny wótpórajo.</translation>
     </message>

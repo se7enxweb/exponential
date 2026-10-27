@@ -45223,11 +45223,11 @@ Haddii aad rabto inaad faallooyin u dirto ansaxiyaha ama aad aragto xaaladda, is
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Kuwani waa shayada aad calaamadisay. Riix shay si aad u aragto, ama haddii aad haysato ogolaansho waxaad Tafatiri kartaa shayga adigoo riixaya badhanka tafatir.
-      Haddii aad rabto inaad shay dheeraad ah ku darto liiskan riix badhanka %emphasize_startAdd calaamadaha%emphasize_stop.
+      Haddii aad rabto inaad shay dheeraad ah ku darto liiskan riix badhanka %emphasize_start Add calaamadaha %emphasize_stop.
 
       Ka saarista shayada waxay ka saaraysaa liiskan oo kaliya.</translation>
     </message>

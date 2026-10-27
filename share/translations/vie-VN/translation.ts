@@ -45225,11 +45225,11 @@ Nếu bạn muốn gửi bình luận cho người phê duyệt hoặc xem tình
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Đây là các đối tượng bạn đã đánh dấu trang. Nhấn vào một đối tượng để xem, hoặc nếu có quyền, bạn có thể chỉnh sửa đối tượng bằng cách nhấn nút chỉnh sửa.
-      Nếu bạn muốn thêm đối tượng vào danh sách này, hãy nhấn nút %emphasize_startThêm dấu trang%emphasize_stop.
+      Nếu bạn muốn thêm đối tượng vào danh sách này, hãy nhấn nút %emphasize_start Thêm dấu trang %emphasize_stop.
 
       Gỡ bỏ đối tượng chỉ gỡ bỏ chúng khỏi danh sách này.</translation>
     </message>

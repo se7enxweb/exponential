@@ -38156,11 +38156,11 @@ Als je opmerkingen naar de goedkeurder wilt sturen of de status wilt bekijken, g
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dit zijn de objecten die je aan je favorieten hebt toegevoegd. Klik op een object om het te bekijken, of bewerk het object met de knop Bewerken als je de rechten hebt.
-      Als je meer objecten aan deze lijst wilt toevoegen, klik dan op de knop %emphasize_startFavorieten toevoegen%emphasize_stop.
+      Als je meer objecten aan deze lijst wilt toevoegen, klik dan op de knop %emphasize_start Favorieten toevoegen %emphasize_stop.
 
       Als je objecten verwijdert, worden ze alleen uit deze lijst verwijderd.</translation>
     </message>

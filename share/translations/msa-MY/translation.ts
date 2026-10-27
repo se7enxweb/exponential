@@ -45225,11 +45225,11 @@ Jika anda mahu menghantar komen kepada pelulus atau melihat status, gunakan URL 
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ini ialah objek yang telah anda tanda buku. Klik objek untuk melihatnya, atau jika anda mempunyai kebenaran, anda boleh mengedit objek dengan mengklik butang edit.
-      Jika anda mahu menambah lebih banyak objek ke senarai ini, klik butang %emphasize_startTambah penanda buku%emphasize_stop.
+      Jika anda mahu menambah lebih banyak objek ke senarai ini, klik butang %emphasize_start Tambah penanda buku %emphasize_stop.
 
       Mengalih keluar objek hanya akan mengalih keluarnya daripada senarai ini.</translation>
     </message>

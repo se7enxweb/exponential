@@ -45168,11 +45168,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Αυτά είναι τα αντικείμενα που έχετε προσθέσει στους σελιδοδείκτες. Κάντε κλικ σε ένα αντικείμενο για να το δείτε ή, αν έχετε δικαίωμα, κάντε κλικ στο κουμπί επεξεργασίας για να επεξεργαστείτε το αντικείμενο.
-      Αν θέλετε να προσθέσετε περισσότερα αντικείμενα σε αυτή τη λίστα, κάντε κλικ στο κουμπί %emphasize_startΠροσθήκη σελιδοδεικτών%emphasize_stop.
+      Αν θέλετε να προσθέσετε περισσότερα αντικείμενα σε αυτή τη λίστα, κάντε κλικ στο κουμπί %emphasize_start Προσθήκη σελιδοδεικτών %emphasize_stop.
 
       Η αφαίρεση αντικειμένων τα αφαιρεί μόνο από αυτή τη λίστα.</translation>
     </message>

@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>דאָס זענען די אָביעקטן וואָס איר האָט באַצייכנט מיט בוכצייכנס. דריקט אויף אַן אָביעקט כּדי אים אָנצוקוקן, אָדער, אויב איר האָט די דערלויבעניש, קענט איר רעדאַגירן דעם אָביעקט דורכן דריקן אויפֿן קנעפּל פֿון רעדאַגירן.
-      אויב איר ווילט צוגעבן מער אָביעקטן צו דער דאָזיקער רשימה, דריקט אויפֿן קנעפּל „%emphasize_startצוגעבן בוכצייכנס%emphasize_stop“.
+      אויב איר ווילט צוגעבן מער אָביעקטן צו דער דאָזיקער רשימה, דריקט אויפֿן קנעפּל „%emphasize_start צוגעבן בוכצייכנס %emphasize_stop“.
 
       אַוועקנעמען אָביעקטן וועט זיי נאָר אַוועקנעמען פֿון דער דאָזיקער רשימה.</translation>
     </message>

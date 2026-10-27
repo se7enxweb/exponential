@@ -45225,11 +45225,11 @@ Kung gusto mong magpadala ng mga komento sa tagapag-apruba o tingnan ang status,
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ito ang mga object na na-bookmark mo. I-click ang isang object para tingnan ito o, kung may pahintulot ka, i-edit ang object sa pag-click sa button na i-edit.
-      Kung gusto mong magdagdag ng higit pang object sa listahang ito, i-click ang button na %emphasize_startAdd bookmarks%emphasize_stop.
+      Kung gusto mong magdagdag ng higit pang object sa listahang ito, i-click ang button na %emphasize_start Add bookmarks %emphasize_stop.
 
       Ang pag-alis ng mga object ay aalisin lamang ang mga ito sa listahang ito.</translation>
     </message>

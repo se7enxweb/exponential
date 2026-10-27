@@ -45225,11 +45225,11 @@ Kana muchida kutumira mhinduro kumunhu anobvumira kana kutarisa chimiro shandisa
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ichi ndicho chinhu chamakaisa mabhukumaki. Dzvanyai chinhu kuti muchitarise kana, kana muine mvumo, mugadzirise chinhu nekudzvanya bhatani rekugadzirisa.
-      Kana muchida kuwedzera zvimwe zvinhu murondedzero iyi dzvanyai bhatani rekuti %emphasize_startWedzera mabhukumaki%emphasize_stop.
+      Kana muchida kuwedzera zvimwe zvinhu murondedzero iyi dzvanyai bhatani rekuti %emphasize_start Wedzera mabhukumaki %emphasize_stop.
 
       Kubvisa zvinhu kuchazvibvisa murondedzero iyi bedzi.</translation>
     </message>

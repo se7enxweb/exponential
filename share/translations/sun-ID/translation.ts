@@ -45225,11 +45225,11 @@ Upami anjeun hoyong ngirim koméntar ka nu masihan persetujuan atanapi ningali s
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ieu objék-objék nu parantos anjeun markahan. Klik hiji objék pikeun ningalina atanapi upami anjeun gaduh idin anjeun tiasa ngédit objék ku ngaklik tombol édit.
-      Upami anjeun hoyong nambahkeun objék séjén kana daptar ieu klik tombol %emphasize_startTambahkeun markah%emphasize_stop.
+      Upami anjeun hoyong nambahkeun objék séjén kana daptar ieu klik tombol %emphasize_start Tambahkeun markah %emphasize_stop.
 
       Ngahapus objék ngan bakal ngaluarkeunana tina daptar ieu.</translation>
     </message>

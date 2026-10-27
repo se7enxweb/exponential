@@ -45168,11 +45168,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>هذه هي الكائنات التي أضفتها إلى إشاراتك المرجعية. انقر على كائن لعرضه، أو إذا كان لديك إذن يمكنك تحرير الكائن بالنقر على زر التحرير.
-      إذا أردت إضافة مزيد من الكائنات إلى هذه القائمة، انقر زر %emphasize_startإضافة إشارات مرجعية%emphasize_stop.
+      إذا أردت إضافة مزيد من الكائنات إلى هذه القائمة، انقر زر %emphasize_start إضافة إشارات مرجعية %emphasize_stop.
 
       إزالة الكائنات تزيلها من هذه القائمة فقط.</translation>
     </message>

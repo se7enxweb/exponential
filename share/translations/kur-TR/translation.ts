@@ -45223,11 +45223,11 @@ Heke hûn dixwazin şîroveyan ji pejirîner re bişînin an rewşê bibînin, U
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ev heyberên ku we nîşankirine ne. Li heyberekê bitikînin da ku wê bibînin, an heke destûra we hebe, bi bişkoka sererastkirinê wê sererast bikin.
-      Heke hûn dixwazin heyberên zêdetir li vê lîsteyê zêde bikin, li bişkoka %emphasize_startNîşanker lêzêdekirin%emphasize_stop bitikînin.
+      Heke hûn dixwazin heyberên zêdetir li vê lîsteyê zêde bikin, li bişkoka %emphasize_start Nîşanker lêzêdekirin %emphasize_stop bitikînin.
 
       Rakirina heyberan wan tenê ji vê lîsteyê radike.</translation>
     </message>

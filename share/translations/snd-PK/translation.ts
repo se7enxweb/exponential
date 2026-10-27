@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>هي اهي شيون آهن جن کي توهان بُڪ مارڪ ڪيو آهي. ڪنهن شيءِ کي ڏسڻ لاءِ ان تي ڪلڪ ڪريو، يا جيڪڏهن توهان وٽ اجازت هجي ته تبديلي واري بٽڻ تي ڪلڪ ڪري شيءِ ۾ ترميم ڪري سگهو ٿا.
-      جيڪڏهن توهان هن فهرست ۾ وڌيڪ شيون شامل ڪرڻ چاهيو ٿا ته %emphasize_startبُڪ مارڪ شامل ڪريو%emphasize_stop بٽڻ تي ڪلڪ ڪريو.
+      جيڪڏهن توهان هن فهرست ۾ وڌيڪ شيون شامل ڪرڻ چاهيو ٿا ته %emphasize_start بُڪ مارڪ شامل ڪريو %emphasize_stop بٽڻ تي ڪلڪ ڪريو.
 
       شيون هٽائڻ سان اهي رڳو هن فهرست مان هٽنديون.</translation>
     </message>

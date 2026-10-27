@@ -45168,11 +45168,11 @@ Jei norite išsiųsti komentarus patvirtintojui arba peržiūrėti būseną, nau
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Tai yra objektai, kuriuos įtraukėte į žymes. Spustelėkite objektą, kad jį peržiūrėtumėte, o jei turite leidimą, objektą galite redaguoti spustelėję mygtuką „Redaguoti“.
-      Jei norite pridėti daugiau objektų į šį sąrašą, spustelėkite mygtuką %emphasize_startAdd žymės%emphasize_stop.
+      Jei norite pridėti daugiau objektų į šį sąrašą, spustelėkite mygtuką %emphasize_start Add žymės %emphasize_stop.
 
       Pašalinus objektus, jie bus pašalinti tik iš šio sąrašo.</translation>
     </message>

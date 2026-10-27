@@ -47780,11 +47780,11 @@ Puedes editar uno de tus borradores o crear uno nuevo.</translation>
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Estos son los objetos marcados. Pulsar en el objeto para verlo o si se cuenta con permiso, se puede editar al pulsar el botón de edición.
-      Si se desea añadir más objetos a esta lista pulsar en el botón %emphasize_startAñade favorito%emphasize_stop.
+      Si se desea añadir más objetos a esta lista pulsar en el botón %emphasize_start Añade favorito %emphasize_stop.
 
       Si se elimina algún objeto, sólo se borrará de la lista.</translation>
     </message>
@@ -47967,11 +47967,11 @@ Clica en los nombres de los objetos para cambiar la lista de navegación.</trans
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have sufficient permission you can to edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation type="obsolete">Estos son los objetos que tu has marcado. Haz clic en el objeto para verlo; si tienes los suficientes privilegios, puedes editarlo haciendo clic en el botón de edición.
-Si queires añadir más objetos a esta lista, haz clic en el botón %emphasize_startAñade favorito%emphasize_stop.
+Si queires añadir más objetos a esta lista, haz clic en el botón %emphasize_start Añade favorito %emphasize_stop.
 
 Si borras algún objeto, sólo lo borrarás de la lista.</translation>
     </message>
@@ -48065,11 +48065,11 @@ Pulsa en los nombres de ubicación para cambiar la lista de navegación. </trans
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can to edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation type="obsolete">Estos son los objetos que tu has marcado. Haz clic en el objeto para verlo o si tienes permiso, puedes editarlo haciendo clic en el botón de edición.
-      Si quieres añadir más objetos a esta lista, haz clic en el botón %emphasize_startAñade favorito%emphasize_stop.
+      Si quieres añadir más objetos a esta lista, haz clic en el botón %emphasize_start Añade favorito %emphasize_stop.
 
       Si borras algún objeto, sólo lo borrarás de la lista.</translation>
     </message>

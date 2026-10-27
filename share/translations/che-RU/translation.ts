@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Уьш шуьн билгалонашкахь долу объекташ ю. Объектана хьажархьама цунна таӀа, йа шуна бакъо делахь, нисдан клавише таӀаш иза нисдан мега.
-      Кху могӀаме кхин объекташ тӀетоха лууш делахь, билгалонаш тӀетохаран клавише таӀа (%emphasize_startAdd bookmarks%emphasize_stop).
+      Кху могӀаме кхин объекташ тӀетоха лууш делахь, билгалонаш тӀетохаран клавише таӀа (%emphasize_start Add bookmarks %emphasize_stop).
 
       Объекташ дӀадаккхаро церан кху могӀамера бен дӀадоккхур дац.</translation>
     </message>

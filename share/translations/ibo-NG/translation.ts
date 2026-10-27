@@ -45223,11 +45223,11 @@ O ji chọọ izipụ nkọwa nye onye na-ekwenye ma ọ bụ lee ọnọdụ ya
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ndị a bụ Ihe ndị i kere Akara ibe. Pịa Ihe iji lee ya, ma ọ bụ ọ bụrụ na i nwere Ikike, ị nwere ike ịdezi Ihe ahụ site n&apos;ịpị bọtịnụ Dezie.
-      Ọ bụrụ na ịchọrọ itinye Ihe ndị ọzọ na ndepụta a, pịa bọtịnụ %emphasize_startAdd akara ibe%emphasize_stop.
+      Ọ bụrụ na ịchọrọ itinye Ihe ndị ọzọ na ndepụta a, pịa bọtịnụ %emphasize_start Add akara ibe %emphasize_stop.
 
       Ịwepụ Ihe ga-ewepụ ha naanị na ndepụta a.</translation>
     </message>

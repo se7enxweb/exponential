@@ -45225,7 +45225,7 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>นี่คือออบเจ็กต์ที่คุณบุ๊กมาร์กไว้. คลิกออบเจ็กต์เพื่อดู หรือหากคุณมีสิทธิ์ คุณสามารถแก้ไขออบเจ็กต์ได้โดยคลิกปุ่มแก้ไข.

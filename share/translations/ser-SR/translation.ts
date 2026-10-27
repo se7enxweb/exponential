@@ -45168,11 +45168,11 @@ Ako želite da pošaljete komentare odobravaocu ili da pogledate status, koristi
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ovo su objekti koje ste dodali u obeleživače. Kliknite na objekat da biste ga videli, a ako imate dozvolu, možete ga izmeniti klikom na dugme za izmenu.
-      Ako želite da dodate još objekata na ovu listu, kliknite na dugme %emphasize_startAdd obeleživači%emphasize_stop.
+      Ako želite da dodate još objekata na ovu listu, kliknite na dugme %emphasize_start Add obeleživači %emphasize_stop.
 
       Uklanjanjem objekata oni se uklanjaju samo sa ove liste.</translation>
     </message>

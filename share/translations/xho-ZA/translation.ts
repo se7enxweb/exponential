@@ -45223,11 +45223,11 @@ Ukuba ufuna ukuthumela iimpawu kumvumi okanye ukubona imeko sebenzisa i-URL enge
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ezi zizinto zomxholo enizibeke kwiibhukhmakhi. Cofani kwinto ukuyibona okanye, ukuba nineemvume, ninokuyihlela ngokucofa iqhosha lokuhlela.
-      Ukuba nifuna ukongeza ezinye izinto kolu luhlu cofani iqhosha %emphasize_startAdd iibhukhmakhi%emphasize_stop.
+      Ukuba nifuna ukongeza ezinye izinto kolu luhlu cofani iqhosha %emphasize_start Add iibhukhmakhi %emphasize_stop.
 
       Ukusuka kwezinto kuya kuzisusa kolu luhlu kuphela.</translation>
     </message>

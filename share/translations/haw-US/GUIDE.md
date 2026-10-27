@@ -194,7 +194,7 @@ Further terms fixed while translating (all coined or chosen for this translation
 - The setup text whose source holds a Qt `<byte/>` element keeps its source whole; its translation is the full text.
 - Where the English source quotes a word with straight single quotes, the translation uses straight double quotes,
   so that no apostrophe can be mistaken for an ʻokina.
-- The help text with the glued placeholder `%emphasize_startAdd bookmarks%emphasize_stop` keeps the English
-  button name inside it, as every other language does, because the placeholder includes it.
+- The help text with the placeholders `%emphasize_start Add bookmarks %emphasize_stop` is separated from the button
+  name, so the button name is translated like any other text.
 - Product names, codes, acronyms, file and setting names and placeholder-only messages that stay as they are
   carry their reason in `tests/tests/lib/ezi18n/translation-identical-allowlist.json`.

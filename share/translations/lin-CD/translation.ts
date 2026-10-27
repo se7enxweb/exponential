@@ -45225,11 +45225,11 @@ Soki olingi kotinda makanisi epai ya mondimisi to komona ezalela salelá URL oyo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Oyo ezali biloko oyo obombi na bilembo. Finá na eloko mpo na komona yango, to soki ozali na ndingisa okoki kobongisa eloko na kofina libɛlɛ ya kobongisa.
-      Soki olingi kobakisa biloko mosusu na liste oyo finá libɛlɛ %emphasize_startBakisá bilembo%emphasize_stop.
+      Soki olingi kobakisa biloko mosusu na liste oyo finá libɛlɛ %emphasize_start Bakisá bilembo %emphasize_stop.
 
       Kolongola biloko ekolongola yango kaka na liste oyo.</translation>
     </message>

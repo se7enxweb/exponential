@@ -46378,11 +46378,11 @@ Klikk navnene til objektene for å gå igjennom treet.</translation>
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dette er objektene du har laget bokmerker for. Klikk et objekt for å vise det. Hvis du har rettigheter til det, kan du redigere objektet ved å klikke på knappen for redigering.
-Hvis du vil legge til flere objekter i denne listen, klikk %emphasize_startLegg til bokmerker%emphasize_stop-knappen.
+Hvis du vil legge til flere objekter i denne listen, klikk %emphasize_start Legg til bokmerker %emphasize_stop-knappen.
 
 Hvis du fjerner bokmerker blir ikke objektene de refererer til fjernet.</translation>
     </message>

@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Бұл Сіз бетбелгіге қосқан нысандар. Нысанды қарау үшін оны басыңыз, ал рұқсатыңыз болса, өңдеу түймесін басып нысанды өңдей аласыз.
-      Осы тізімге тағы нысандар қосқыңыз келсе, %emphasize_startБетбелгілерді қосу%emphasize_stop түймесін басыңыз.
+      Осы тізімге тағы нысандар қосқыңыз келсе, %emphasize_start Бетбелгілерді қосу %emphasize_stop түймесін басыңыз.
 
       Нысандарды алып тастау оларды тек осы тізімнен алып тастайды.</translation>
     </message>

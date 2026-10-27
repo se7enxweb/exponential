@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>ఇవి మీరు బుక్‌మార్క్ చేసిన ఆబ్జెక్ట్‌లు. ఆబ్జెక్ట్‌ను చూడటానికి దానిపై క్లిక్ చేయండి, లేదా మీకు అనుమతి ఉంటే సవరించు బటన్‌ను క్లిక్ చేసి ఆబ్జెక్ట్‌ను సవరించవచ్చు.
-      ఈ జాబితాకు మరిన్ని ఆబ్జెక్ట్‌లను జోడించాలనుకుంటే %emphasize_startAdd బుక్‌మార్క్‌లు%emphasize_stop బటన్‌ను క్లిక్ చేయండి.
+      ఈ జాబితాకు మరిన్ని ఆబ్జెక్ట్‌లను జోడించాలనుకుంటే %emphasize_start Add బుక్‌మార్క్‌లు %emphasize_stop బటన్‌ను క్లిక్ చేయండి.
 
       ఆబ్జెక్ట్‌లను తీసివేస్తే అవి ఈ జాబితా నుండి మాత్రమే తీసివేయబడతాయి.</translation>
     </message>

@@ -45168,11 +45168,11 @@ Si vols enviar comentaris a l&apos;aprovador o veure&apos;n l&apos;estat, utilit
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Aquests són els objectes que has afegit a les adreces d&apos;interès. Fes clic en un objecte per veure&apos;l o, si tens permís, edita&apos;l amb el botó d&apos;edició.
-      Si vols afegir més objectes a aquesta llista, fes clic al botó %emphasize_startAfegeix adreces d&apos;interès%emphasize_stop.
+      Si vols afegir més objectes a aquesta llista, fes clic al botó %emphasize_start Afegeix adreces d&apos;interès %emphasize_stop.
 
       Si treus objectes, només se&apos;t trauran d&apos;aquesta llista.</translation>
     </message>

@@ -45168,11 +45168,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>책갈피에 추가한 개체입니다. 개체를 클릭하면 볼 수 있으며, 권한이 있으면 편집 단추를 클릭하여 개체를 편집할 수 있습니다.
-      이 목록에 개체를 더 추가하려면 %emphasize_start책갈피 추가%emphasize_stop 단추를 클릭하십시오.
+      이 목록에 개체를 더 추가하려면 %emphasize_start 책갈피 추가 %emphasize_stop 단추를 클릭하십시오.
 
       개체를 제거하면 이 목록에서만 제거됩니다.</translation>
     </message>

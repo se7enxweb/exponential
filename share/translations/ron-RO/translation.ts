@@ -45168,11 +45168,11 @@ Dacă doriți să trimiteți comentarii aprobatorului sau să vizualizați stare
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Acestea sunt obiectele pe care le-ați marcat. Faceți clic pe un obiect pentru a-l vizualiza sau, dacă aveți permisiunea, îl puteți edita făcând clic pe butonul de editare.
-      Dacă doriți să adăugați mai multe obiecte în această listă, faceți clic pe butonul %emphasize_startAdăugare marcaje%emphasize_stop.
+      Dacă doriți să adăugați mai multe obiecte în această listă, faceți clic pe butonul %emphasize_start Adăugare marcaje %emphasize_stop.
 
       Eliminarea obiectelor le va elimina doar din această listă.</translation>
     </message>

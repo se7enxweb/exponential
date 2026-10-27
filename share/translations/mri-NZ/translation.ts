@@ -45225,11 +45225,11 @@ Mēnā e hiahia ana koe ki te tuku kōrero ki te kaiwhakamana, ki te tiro rānei
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ko ēnei ngā ahanoa kua tohua e koe hei tohuwāhi. Pāwhiria tētahi ahanoa hei tiro i a ia, mēnā rānei he whakaaetanga tōu ka taea e koe te whakatika i te ahanoa mā te pāwhiri i te pātene whakatika.
-      Mēnā e hiahia ana koe ki te tāpiri atu ahanoa ki tēnei rārangi pāwhiria te pātene %emphasize_startAdd tohuwāhi%emphasize_stop.
+      Mēnā e hiahia ana koe ki te tāpiri atu ahanoa ki tēnei rārangi pāwhiria te pātene %emphasize_start Add tohuwāhi %emphasize_stop.
 
       Mā te tango i ngā ahanoa ka tangohia anake i tēnei rārangi.</translation>
     </message>

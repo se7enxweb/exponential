@@ -45223,11 +45223,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>یہ وہ آبجیکٹ ہیں جنہیں آپ نے بک مارک کیا ہے۔ کسی آبجیکٹ کو دیکھنے کے لیے اس پر کلک کریں، یا اگر آپ کے پاس اجازت ہو تو ترمیم کے بٹن پر کلک کر کے آبجیکٹ میں ترمیم کر سکتے ہیں۔
-      اگر آپ اس فہرست میں مزید آبجیکٹ شامل کرنا چاہتے ہیں تو %emphasize_startAdd بک مارکس%emphasize_stop بٹن پر کلک کریں۔
+      اگر آپ اس فہرست میں مزید آبجیکٹ شامل کرنا چاہتے ہیں تو %emphasize_start Add بک مارکس %emphasize_stop بٹن پر کلک کریں۔
 
       آبجیکٹ ہٹانے سے وہ صرف اس فہرست سے ہٹائے جائیں گے۔</translation>
     </message>

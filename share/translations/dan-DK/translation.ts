@@ -45465,11 +45465,11 @@ Hvis du vil sende kommentarer til godkenderen eller se status, kan du bruge URL'
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dette er de objekter, du har bogmærket. Klik på et objekt for at se det, eller rediger objektet ved at klikke på knappen Rediger, hvis du har tilladelse.
-      Hvis du vil føje flere objekter til listen, skal du klikke på knappen %emphasize_startTilføj bogmærker%emphasize_stop.
+      Hvis du vil føje flere objekter til listen, skal du klikke på knappen %emphasize_start Tilføj bogmærker %emphasize_stop.
 
       Fjernelse af objekter fjerner dem kun fra denne liste.</translation>
     </message>

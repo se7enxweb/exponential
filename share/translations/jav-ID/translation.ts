@@ -45225,11 +45225,11 @@ Yen panjenengan arep ngirim komentar marang panyetuju utawa ndeleng statuse, gun
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Iki objek-objek sing wis panjenengan tetengeri. Klik objek kanggo ndeleng utawa, yen panjenengan duwe idin, panjenengan bisa nyunting objek kanthi ngeklik tombol sunting.
-      Yen panjenengan arep nambah objek liyane menyang dhaptar iki, klik tombol %emphasize_startTambah tetenger%emphasize_stop.
+      Yen panjenengan arep nambah objek liyane menyang dhaptar iki, klik tombol %emphasize_start Tambah tetenger %emphasize_stop.
 
       Mbusak objek mung bakal nyopot saka dhaptar iki.</translation>
     </message>

@@ -45168,11 +45168,11 @@ Ef þú vilt senda samþykkjandanum athugasemdir eða skoða stöðuna skaltu no
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Þetta eru hlutirnir sem þú hefur sett bókamerki á. Smelltu á hlut til að skoða hann, eða ef þú hefur heimild geturðu breytt hlutnum með því að smella á breytingarhnappinn.
-      Ef þú vilt bæta fleiri hlutum á þennan lista skaltu smella á hnappinn %emphasize_startBæta við bókamerkjum%emphasize_stop.
+      Ef þú vilt bæta fleiri hlutum á þennan lista skaltu smella á hnappinn %emphasize_start Bæta við bókamerkjum %emphasize_stop.
 
       Ef hlutir eru fjarlægðir eru þeir aðeins fjarlægðir af þessum lista.</translation>
     </message>

@@ -45223,11 +45223,11 @@ Bí ẹ bá fẹ́ fi àwọn àsọyé ránṣẹ́ sí olùfọwọ́sí tàb�
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Àwọn Ohun tí ẹ ti fi àmì ojú ìwé sí nìwọ̀nyí. Ẹ tẹ̀ Ohun kan láti wò ó, tàbí tí ẹ bá ní àṣẹ, ẹ lè ṣàtúnṣe Ohun náà nípa títẹ̀ bọ́tìnnì ṣàtúnṣe.
-      Tí ẹ bá fẹ́ fi Ohun kún àtòjọ yìí, ẹ tẹ̀ bọ́tìnnì %emphasize_startAdd àmì ojú ìwé%emphasize_stop.
+      Tí ẹ bá fẹ́ fi Ohun kún àtòjọ yìí, ẹ tẹ̀ bọ́tìnnì %emphasize_start Add àmì ojú ìwé %emphasize_stop.
 
       Yíyọ àwọn Ohun kúrò yóò yọ wọ́n kúrò nínú àtòjọ yìí nìkan.</translation>
     </message>

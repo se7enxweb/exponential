@@ -45168,11 +45168,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>ブックマークしたオブジェクトです。オブジェクトをクリックすると表示されます。権限がある場合は、編集ボタンをクリックしてオブジェクトを編集できます。
-      この一覧にオブジェクトを追加するには、%emphasize_startブックマークの追加%emphasize_stop ボタンをクリックしてください。
+      この一覧にオブジェクトを追加するには、%emphasize_start ブックマークの追加 %emphasize_stop ボタンをクリックしてください。
 
       オブジェクトを削除しても、この一覧から削除されるだけです。</translation>
     </message>

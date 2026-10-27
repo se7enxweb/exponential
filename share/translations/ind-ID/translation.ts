@@ -45225,11 +45225,11 @@ Jika Anda ingin mengirim komentar kepada pemberi persetujuan atau melihat status
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Ini adalah objek yang telah Anda tandai. Klik objek untuk melihatnya atau, jika Anda memiliki izin, Anda dapat menyunting objek dengan mengklik tombol sunting.
-      Jika Anda ingin menambahkan objek lain ke daftar ini, klik tombol %emphasize_startTambah penanda%emphasize_stop.
+      Jika Anda ingin menambahkan objek lain ke daftar ini, klik tombol %emphasize_start Tambah penanda %emphasize_stop.
 
       Menghapus objek hanya akan mengeluarkannya dari daftar ini.</translation>
     </message>

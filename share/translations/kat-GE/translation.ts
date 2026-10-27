@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>ეს არის ობიექტები, რომლებიც სანიშნეებში დაამატეთ. ობიექტის სანახავად დააწკაპუნეთ მასზე, ან, თუ ნებართვა გაქვთ, შეგიძლიათ ობიექტის რედაქტირება რედაქტირების ღილაკზე დაწკაპუნებით.
-      თუ ამ სიაში მეტი ობიექტის დამატება გსურთ, დააწკაპუნეთ ღილაკზე „%emphasize_startსანიშნეების დამატება%emphasize_stop“.
+      თუ ამ სიაში მეტი ობიექტის დამატება გსურთ, დააწკაპუნეთ ღილაკზე „%emphasize_start სანიშნეების დამატება %emphasize_stop“.
 
       ობიექტების მოცილება მათ მხოლოდ ამ სიიდან მოაცილებს.</translation>
     </message>

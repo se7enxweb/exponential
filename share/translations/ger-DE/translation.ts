@@ -50877,10 +50877,10 @@ Wählen Sie diese aus und klicken Sie dann auf &quot;%buttonname&quot;. Wenn Sie
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have sufficient permission you can to edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
-        <translation type="obsolete">Dies sind die Objekte asu Ihren Favoriten. Klicken Sie auf ein Objekt, um es anzusehen oder wenn die entsprechende Berechtigung haben, können Sie das Objekt bearbeiten durch klick des bearbeiten Buttons. Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startAdd Favoriten %emphasize_stop button.
+        <translation type="obsolete">Dies sind die Objekte asu Ihren Favoriten. Klicken Sie auf ein Objekt, um es anzusehen oder wenn die entsprechende Berechtigung haben, können Sie das Objekt bearbeiten durch klick des bearbeiten Buttons. Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_start Add Favoriten %emphasize_stop button.
 
 Das Entfernen der Objekte wird Sie nur aus dieser Liste entfernen. </translation>
     </message>
@@ -51018,10 +51018,10 @@ Wählen Sie den Ort und klicken Sie dann auf &quot;%buttonname&quot;. Wenn Sie a
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can to edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
-        <translation type="obsolete">Dies sind die Objekte asu Ihren Favoriten. Klicken Sie auf ein Objekt, um es anzusehen oder wenn die entsprechende Berechtigung haben, können Sie das Objekt bearbeiten durch klickes der &quot;Bearbeiten&quot;-Schaltfläche. Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startAdd Favoriten %emphasize_stop button.Das Entfernen der Objekte wird Sie nur aus dieser Liste entfernen. </translation>
+        <translation type="obsolete">Dies sind die Objekte asu Ihren Favoriten. Klicken Sie auf ein Objekt, um es anzusehen oder wenn die entsprechende Berechtigung haben, können Sie das Objekt bearbeiten durch klickes der &quot;Bearbeiten&quot;-Schaltfläche. Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_start Add Favoriten %emphasize_stop button.Das Entfernen der Objekte wird Sie nur aus dieser Liste entfernen. </translation>
     </message>
     <message>
         <source>These are the current objects you are working on. The drafts are owned by you and can only be seen by you.
@@ -51055,11 +51055,11 @@ Wählen Sie den Ort und klicken Sie dann auf &quot;%buttonname&quot;. Wenn Sie a
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dies sind die Objekte aus Ihren Lesezeichen. Klicken Sie auf ein Objekt, um es anzusehen oder wenn die entsprechende Berechtigung haben, können Sie das Objekt durch Klick der &quot;Bearbeiten&quot;-Schaltfläche bearbeiten.
-Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_startLesezeichen hinzufügen %emphasize_stop button.
+Wenn Sie noch mehr Objekte hinzufügen wollen, klicken Sie die %emphasize_start Lesezeichen hinzufügen %emphasize_stop button.
 
    Wenn Sie Objekte hier aus der Liste löschen, wird nicht das Objekt selbst gelöscht.</translation>
     </message>

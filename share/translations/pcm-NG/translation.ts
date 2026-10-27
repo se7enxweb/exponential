@@ -45225,11 +45225,11 @@ If you wan send comments to di approver or see di status, use di URL wey dey bel
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dis na di objects wey you don bookmark. Click object to see am or if you get permission, you fit edit di object by clicking di edit button.
-      If you wan add more objects to dis list, click di %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you wan add more objects to dis list, click di %emphasize_start Add bookmarks %emphasize_stop button.
 
       If you comot objects, e go comot dem from dis list only.</translation>
     </message>

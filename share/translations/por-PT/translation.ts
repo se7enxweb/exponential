@@ -45168,11 +45168,11 @@ Para enviar comentários ao aprovador ou ver o estado, utilize o URL abaixo.</tr
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Estes são os objetos que adicionou aos marcadores. Clique num objeto para o ver ou, se tiver permissão, edite-o clicando no botão Editar.
-      Para adicionar mais objetos a esta lista, clique no botão %emphasize_startAdd marcadores%emphasize_stop.
+      Para adicionar mais objetos a esta lista, clique no botão %emphasize_start Add marcadores %emphasize_stop.
 
       Remover objetos apenas os remove desta lista.</translation>
     </message>

@@ -38184,11 +38184,11 @@ Aby wysłać komentarze do osoby zatwierdzającej lub sprawdzić status, należy
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>To obiekty dodane do zakładek. Kliknięcie obiektu wyświetla go, a przy odpowiednich uprawnieniach obiekt można edytować, klikając przycisk edycji.
-      Aby dodać więcej obiektów do tej listy, należy kliknąć przycisk %emphasize_startDodać zakładki%emphasize_stop.
+      Aby dodać więcej obiektów do tej listy, należy kliknąć przycisk %emphasize_start Dodać zakładki %emphasize_stop.
 
       Usunięcie obiektów usuwa je tylko z tej listy.</translation>
     </message>

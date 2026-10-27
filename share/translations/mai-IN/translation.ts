@@ -45225,11 +45225,11 @@ If you want to send comments to the approver or view the status use the URL belo
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>ई ओ ऑब्जेक्ट अछि जकरा अहाँ बुकमार्क कएने छी। कोनो ऑब्जेक्ट केँ देखबाक लेल ओकरा पर क्लिक करू, वा जँ अहाँ लग अनुमति अछि तँ सम्पादन बटन पर क्लिक क' कए ऑब्जेक्ट केँ सम्पादित क' सकैत छी।
-      जँ अहाँ एहि सूची मे आर ऑब्जेक्ट जोड़य चाहैत छी, तँ %emphasize_startबुकमार्क जोड़ू%emphasize_stop बटन पर क्लिक करू।
+      जँ अहाँ एहि सूची मे आर ऑब्जेक्ट जोड़य चाहैत छी, तँ %emphasize_start बुकमार्क जोड़ू %emphasize_stop बटन पर क्लिक करू।
 
       ऑब्जेक्ट हटौला सँ ओ मात्र एहि सूची सँ हटैत अछि।</translation>
     </message>

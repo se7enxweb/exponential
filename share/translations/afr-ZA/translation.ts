@@ -45168,11 +45168,11 @@ Gebruik die URL hieronder as u opmerkings aan die goedkeurder wil stuur of die s
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Dit is die objekte wat gemerk is met boekmerke. Klik op &apos;n objek om dit te besigtig, of, indien toestemming verleen is, wysig die objek deur op die wysigknoppie te klik.
-      Om meer objekte by hierdie lys te voeg, klik op die %emphasize_startAdd boekmerke%emphasize_stop-knoppie.
+      Om meer objekte by hierdie lys te voeg, klik op die %emphasize_start Add boekmerke %emphasize_stop-knoppie.
 
       Die verwydering van objekte verwyder dit slegs van hierdie lys.</translation>
     </message>

@@ -38215,11 +38215,11 @@ Chcete-li schvalovateli poslat komentáře nebo zobrazit stav, použijte níže 
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>Toto jsou objekty, které máte v záložkách. Kliknutím na objekt ho zobrazíte, nebo ho, máte-li oprávnění, upravíte kliknutím na tlačítko úprav.
-      Chcete-li do tohoto seznamu přidat další objekty, klikněte na tlačítko %emphasize_startPřidat záložky%emphasize_stop.
+      Chcete-li do tohoto seznamu přidat další objekty, klikněte na tlačítko %emphasize_start Přidat záložky %emphasize_stop.
 
       Odstraněním se objekty odeberou jen z tohoto seznamu.</translation>
     </message>

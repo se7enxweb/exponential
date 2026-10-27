@@ -45171,11 +45171,11 @@ chaw&apos;wI&apos;vaD ja&apos;ghachmey DangeH DaneHchugh pagh Dotlh DaleghmeH, b
     </message>
     <message>
         <source>These are the objects you have bookmarked. Click on an object to view it or if you have permission you can edit the object by clicking the edit button.
-      If you want to add more objects to this list click the %emphasize_startAdd bookmarks%emphasize_stop button.
+      If you want to add more objects to this list click the %emphasize_start Add bookmarks %emphasize_stop button.
 
       Removing objects will only remove them from this list.</source>
         <translation>qawmeH Daqmey Dalanpu&apos;bogh Dochmey. DaleghmeH Doch yIchu&apos;, pagh chaw&apos; Daghajchugh, Doch DachoHmeH &quot;yIchoH&quot; leQ yIchu&apos;.
-      tetlhvamDaq Dochmey latlh DachelmeH, %emphasize_start&quot;qawmeH Daqmey tIchel&quot;%emphasize_stop leQ yIchu&apos;.
+      tetlhvamDaq Dochmey latlh DachelmeH, %emphasize_start &quot;qawmeH Daqmey tIchel&quot; %emphasize_stop leQ yIchu&apos;.
 
       Dochmey Dateqchugh, tetlhvamvo&apos; neH teqlu&apos;.</translation>
     </message>
