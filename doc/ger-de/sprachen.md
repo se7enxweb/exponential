@@ -3,13 +3,13 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 ---
 # Sprachen in Exponential
 
-<!-- generated: exp:i18n coverage 2026-10-27 (start) -->
-**Auf einen Blick, Stand 27. Oktober 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
+<!-- generated: exp:i18n coverage 2026-10-26 (start) -->
+**Auf einen Blick, Stand 26. Oktober 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
 `share/translations` und `settings/i18n.ini`, ohne Erweiterungen) hat:
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **88**, davon 79 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **88**, davon 88 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **289**: 282 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
 | davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **85** |

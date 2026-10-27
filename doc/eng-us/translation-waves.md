@@ -29,8 +29,8 @@ wave is done and checked. The languages, their locales and their administration 
 
 ## The plan, measured
 
-<!-- generated: exp:i18n waves 2026-10-27 (start) -->
-**Measured on 27 October 2026** by `./console exp:i18n waves` from the files of this release (no database):
+<!-- generated: exp:i18n waves 2026-10-26 (start) -->
+**Measured on 26 October 2026** by `./console exp:i18n waves` from the files of this release (no database):
 
 | What | Size |
 |---|---:|
@@ -38,10 +38,10 @@ wave is done and checked. The languages, their locales and their administration 
 | Shipped extensions (`expimageeditor`, `ezjscore`, `ezoe`) | **567** strings |
 | Help: pages below `doc/eng-us/` (the generated example pages left out) | **5,730** pages, 4,960,635 words |
 | Help: tables of the generated example pages (`.examples/`) | **2,694** entries, 80,458 words |
-| Administration translations, complete of them | **88**, 79 |
+| Administration translations, complete of them | **88**, 88 |
 | of them in daily use (administration, extensions and daily-use help ≥ 97 %) | **2** |
 | Languages without an administration translation ([list](#languages-without-a-translation)), being translated on a branch | **89**, 5 |
-| Waves to 100 % in every language | **17,981** |
+| Waves to 100 % in every language | **17,936** |
 
 ### Where each language stands
 
@@ -49,94 +49,94 @@ Percent of the strings (administration, extensions) and of the words (help), rou
 
 | Language | Code | Speakers (millions) | Difficulty | Administration | Extensions | Daily-use help | All help | Waves left | Next wave |
 |---|---|---:|:-:|---:|---:|---:|---:|---:|---|
-| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 200 | #1104 `S` |
-| Albanian | `sqi-AL` | 8 | 2 | 100 | **80** | **0** | **0** | 201 | #1031 `E` |
-| Amharic | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 200 | #1096 `S` |
+| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 200 | #1059 `S` |
+| Albanian | `sqi-AL` | 8 | 2 | 100 | **80** | **0** | **0** | 201 | #1001 `E` |
+| Amharic | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 200 | #1051 `S` |
 | Arabic | `ara-SA` | 400 | 4 | 100 | **80** | **0** | **0** | 201 | #2 `E` |
-| Aramaic | `arc-IQ` | < 1 | 5 | 99 | **80** | **0** | **0** | 206 | #1045 `A06` |
-| Bengali | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 200 | #1075 `S` |
-| Bhojpuri | `bho-IN` | 52 | 5 | 99 | **80** | **0** | **0** | 206 | #1005 `A06` |
-| Bosnian | `bos-BA` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1036 `E` |
-| Bulgarian | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 200 | #1118 `S` |
-| Catalan | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 200 | #1103 `S` |
-| Chinese (Simplified) | `chi-CN` | 1,100 | 2 | 100 | 100 | **0** | **0** | 200 | #1067 `S` |
-| Chinese (Traditional) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 200 | #1092 `S` |
-| Croatian | `cro-HR` | 5 | 2 | 100 | **80** | **0** | **0** | 201 | #1034 `E` |
-| Czech | `cze-CZ` | 11 | 2 | 100 | **80** | **0** | **0** | 201 | #1026 `E` |
-| Danish | `dan-DK` | 6 | 1 | 100 | **80** | **0** | **0** | 201 | #1024 `E` |
-| Dutch | `dut-NL` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #988 `E` |
+| Aramaic | `arc-IQ` | < 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1015 `E` |
+| Bengali | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 200 | #1030 `S` |
+| Bhojpuri | `bho-IN` | 52 | 5 | 100 | **80** | **0** | **0** | 201 | #990 `E` |
+| Bosnian | `bos-BA` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1006 `E` |
+| Bulgarian | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 200 | #1073 `S` |
+| Catalan | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 200 | #1058 `S` |
+| Chinese (Simplified) | `chi-CN` | 1,100 | 2 | 100 | 100 | **0** | **0** | 200 | #1022 `S` |
+| Chinese (Traditional) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 200 | #1047 `S` |
+| Croatian | `cro-HR` | 5 | 2 | 100 | **80** | **0** | **0** | 201 | #1004 `E` |
+| Czech | `cze-CZ` | 11 | 2 | 100 | **80** | **0** | **0** | 201 | #996 `E` |
+| Danish | `dan-DK` | 6 | 1 | 100 | **80** | **0** | **0** | 201 | #994 `E` |
+| Dutch | `dut-NL` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #983 `E` |
 | English (Australia) | `eng-AU` | 1,500 | 1 | 100 | 100 | 100 | 100 | 0 | source texts |
 | English (United States) | `eng-US` | 1,500 | 1 | 100 | 100 | 100 | 100 | 0 | source texts |
-| Estonian | `est-EE` | 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1041 `E` |
-| Finnish | `fin-FI` | 6 | 2 | 100 | **80** | **0** | **0** | 201 | #1033 `E` |
+| Estonian | `est-EE` | 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1011 `E` |
+| Finnish | `fin-FI` | 6 | 2 | 100 | **80** | **0** | **0** | 201 | #1003 `E` |
 | French | `fre-FR` | 310 | 1 | 100 | **80** | **0** | **0** | 201 | #971 `E` |
-| Georgian | `kat-GE` | 4 | 4 | 100 | **80** | **0** | **0** | 201 | #1037 `E` |
+| Georgian | `kat-GE` | 4 | 4 | 100 | **80** | **0** | **0** | 201 | #1007 `E` |
 | German | `ger-DE` | 135 | 2 | 100 | **76** | 100 | 99 | 14 | #1 `E` |
-| Greek | `ell-GR` | 13 | 3 | 100 | **80** | **0** | **0** | 201 | #1028 `E` |
-| Greenlandic | `kal-GL` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1057 `E` |
-| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 200 | #1093 `S` |
-| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 200 | #1082 `S` |
-| Hebrew | `heb-IL` | 9 | 4 | 100 | **80** | **0** | **0** | 201 | #1035 `E` |
+| Greek | `ell-GR` | 13 | 3 | 100 | **80** | **0** | **0** | 201 | #998 `E` |
+| Greenlandic | `kal-GL` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1017 `E` |
+| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 200 | #1048 `S` |
+| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 200 | #1037 `S` |
+| Hebrew | `heb-IL` | 9 | 4 | 100 | **80** | **0** | **0** | 201 | #1005 `E` |
 | Hindi | `hin-IN` | 610 | 4 | 100 | **80** | **0** | **0** | 201 | #974 `E` |
-| Hulaulá (Jewish Neo-Aramaic) | `huy-IL` | < 1 | 5 | 99 | **80** | **0** | **0** | 206 | #1059 `A06` |
-| Hungarian | `hun-HU` | 13 | 2 | 100 | **80** | **0** | **0** | 201 | #1023 `E` |
-| Icelandic | `isl-IS` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1044 `E` |
-| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 200 | #1102 `S` |
+| Hulaulá (Jewish Neo-Aramaic) | `huy-IL` | < 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1019 `E` |
+| Hungarian | `hun-HU` | 13 | 2 | 100 | **80** | **0** | **0** | 201 | #993 `E` |
+| Icelandic | `isl-IS` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1014 `E` |
+| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 200 | #1057 `S` |
 | Indonesian | `ind-ID` | 252 | 1 | 100 | **80** | **0** | **0** | 201 | #972 `E` |
-| Irish | `gle-IE` | 2 | 4 | 100 | **80** | **0** | **0** | 201 | #1040 `E` |
-| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 200 | #1116 `S` |
-| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 200 | #1109 `S` |
+| Irish | `gle-IE` | 2 | 4 | 100 | **80** | **0** | **0** | 201 | #1010 `E` |
+| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 200 | #1071 `S` |
+| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 200 | #1064 `S` |
 | Italian | `ita-IT` | 68 | 1 | 100 | **80** | **0** | **0** | 201 | #977 `E` |
 | Japanese | `jpn-JP` | 123 | 3 | 100 | **80** | **0** | **0** | 201 | #979 `E` |
-| Javanese | `jav-ID` | 68 | 3 | 99 | **80** | **0** | **0** | 206 | #990 `A06` |
-| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 200 | #1099 `S` |
-| Kazakh | `kaz-KZ` | 16 | 4 | 100 | **80** | **0** | **0** | 201 | #1029 `E` |
-| Klingon | `tlh-QO` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1066 `E` |
-| Korean | `kor-KR` | 82 | 3 | 100 | **80** | **0** | **0** | 201 | #986 `E` |
+| Javanese | `jav-ID` | 68 | 3 | 100 | **80** | **0** | **0** | 201 | #985 `E` |
+| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 200 | #1054 `S` |
+| Kazakh | `kaz-KZ` | 16 | 4 | 100 | **80** | **0** | **0** | 201 | #999 `E` |
+| Klingon | `tlh-QO` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1021 `E` |
+| Korean | `kor-KR` | 82 | 3 | 100 | **80** | **0** | **0** | 201 | #981 `E` |
 | Kurdish (Kurmanji) | `kur-TR` | 16 | 3 | 100 | **80** | **0** | **0** | 201 | #7 `E` |
-| Lao | `lao-LA` | 30 | 5 | 100 | **80** | **0** | **0** | 201 | #1025 `E` |
-| Latin | `lat-VA` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1065 `E` |
-| Latvian | `lav-LV` | 2 | 3 | 100 | **80** | **0** | **0** | 201 | #1039 `E` |
-| Lithuanian | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 200 | #1129 `S` |
-| Lower Sorbian | `dsb-DE` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1058 `E` |
-| Maithili | `mai-IN` | 34 | 5 | 99 | **80** | **0** | **0** | 206 | #1017 `A06` |
+| Lao | `lao-LA` | 30 | 5 | 100 | **80** | **0** | **0** | 201 | #995 `E` |
+| Latin | `lat-VA` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1020 `E` |
+| Latvian | `lav-LV` | 2 | 3 | 100 | **80** | **0** | **0** | 201 | #1009 `E` |
+| Lithuanian | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 200 | #1084 `S` |
+| Lower Sorbian | `dsb-DE` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1018 `E` |
+| Maithili | `mai-IN` | 34 | 5 | 100 | **80** | **0** | **0** | 201 | #992 `E` |
 | Malay | `msa-MY` | 60 | 1 | 100 | **80** | **0** | **0** | 201 | #978 `E` |
-| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 200 | #1108 `S` |
-| Maltese | `mlt-MT` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1043 `E` |
-| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 200 | #1087 `S` |
-| Nepali | `nep-NP` | 32 | 4 | 99 | **80** | **0** | **0** | 206 | #1011 `A06` |
-| Nigerian Pidgin | `pcm-NG` | 120 | 3 | 99 | **80** | **0** | **0** | 206 | #980 `A06` |
-| Norwegian | `nor-NO` | 5 | 1 | 100 | **80** | **0** | **0** | 201 | #1027 `E` |
-| Odia | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 200 | #1106 `S` |
+| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 200 | #1063 `S` |
+| Maltese | `mlt-MT` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1013 `E` |
+| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 200 | #1042 `S` |
+| Nepali | `nep-NP` | 32 | 4 | 100 | **80** | **0** | **0** | 201 | #991 `E` |
+| Nigerian Pidgin | `pcm-NG` | 120 | 3 | 100 | **80** | **0** | **0** | 201 | #980 `E` |
+| Norwegian | `nor-NO` | 5 | 1 | 100 | **80** | **0** | **0** | 201 | #997 `E` |
+| Odia | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 200 | #1061 `S` |
 | Pashto | `pus-AF` | 60 | 5 | 100 | **80** | **0** | **0** | 201 | #6 `E` |
 | Persian | `fas-IR` | 83 | 4 | 100 | **80** | **0** | **0** | 201 | #5 `E` |
-| Polish | `pol-PL` | 40 | 2 | 100 | **80** | **0** | **0** | 201 | #996 `E` |
+| Polish | `pol-PL` | 40 | 2 | 100 | **80** | **0** | **0** | 201 | #986 `E` |
 | Portuguese (Brazil) | `por-BR` | 215 | 1 | 100 | **80** | **0** | **0** | 201 | #973 `E` |
-| Portuguese (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 200 | #1079 `S` |
-| Punjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 200 | #1098 `S` |
-| Romanian | `ron-RO` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #989 `E` |
+| Portuguese (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 200 | #1034 `S` |
+| Punjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 200 | #1053 `S` |
+| Romanian | `ron-RO` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #984 `E` |
 | Russian | `rus-RU` | 255 | 3 | 100 | 100 | **0** | **0** | 200 | #12 `S` |
-| Serbian (Cyrillic) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 200 | #1126 `S` |
-| Serbian (Latin) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 200 | #1123 `S` |
-| Shona | `sna-ZW` | 15 | 4 | 100 | **80** | **0** | **0** | 201 | #1030 `E` |
-| Slovak | `slk-SK` | 7 | 2 | 100 | **80** | **0** | **0** | 201 | #1032 `E` |
-| Slovenian | `slv-SI` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1038 `E` |
-| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 200 | #1107 `S` |
+| Serbian (Cyrillic) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 200 | #1081 `S` |
+| Serbian (Latin) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 200 | #1078 `S` |
+| Shona | `sna-ZW` | 15 | 4 | 100 | **80** | **0** | **0** | 201 | #1000 `E` |
+| Slovak | `slk-SK` | 7 | 2 | 100 | **80** | **0** | **0** | 201 | #1002 `E` |
+| Slovenian | `slv-SI` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1008 `E` |
+| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 200 | #1062 `S` |
 | Spanish (Mexico) | `esl-MX` | 130 | 1 | 100 | **80** | **0** | **0** | 201 | #975 `E` |
 | Spanish (Spain) | `esl-ES` | 430 | 1 | 100 | **80** | **0** | **0** | 201 | #970 `E` |
-| Sundanese | `sun-ID` | 32 | 3 | 99 | **80** | **0** | **0** | 206 | #999 `A06` |
-| Swahili | `swa-KE` | 80 | 3 | 100 | **80** | **0** | **0** | 201 | #987 `E` |
-| Swedish | `swe-SE` | 13 | 1 | 100 | **80** | **0** | **0** | 201 | #998 `E` |
-| Syriac | `syr-IQ` | < 1 | 5 | 99 | **80** | **0** | **0** | 206 | #1051 `A06` |
-| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 200 | #1091 `S` |
-| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 200 | #1090 `S` |
-| Thai | `tha-TH` | 61 | 4 | 100 | **80** | **0** | **0** | 201 | #997 `E` |
+| Sundanese | `sun-ID` | 32 | 3 | 100 | **80** | **0** | **0** | 201 | #989 `E` |
+| Swahili | `swa-KE` | 80 | 3 | 100 | **80** | **0** | **0** | 201 | #982 `E` |
+| Swedish | `swe-SE` | 13 | 1 | 100 | **80** | **0** | **0** | 201 | #988 `E` |
+| Syriac | `syr-IQ` | < 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1016 `E` |
+| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 200 | #1046 `S` |
+| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 200 | #1045 `S` |
+| Thai | `tha-TH` | 61 | 4 | 100 | **80** | **0** | **0** | 201 | #987 `E` |
 | Turkish | `tur-TR` | 90 | 2 | 100 | **80** | **0** | **0** | 201 | #3 `E` |
 | Ukrainian | `ukr-UA` | 39 | 3 | 100 | **80** | **0** | **0** | 201 | #4 `E` |
-| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 200 | #1078 `S` |
+| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 200 | #1033 `S` |
 | Vietnamese | `vie-VN` | 86 | 1 | 100 | **80** | **0** | **0** | 201 | #976 `E` |
-| Yiddish | `yid-US` | 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1042 `E` |
-| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 200 | #1094 `S` |
+| Yiddish | `yid-US` | 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1012 `E` |
+| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 200 | #1049 `S` |
 
 ### The help in tiers
 
@@ -474,7 +474,7 @@ The languages of the shipped locales that the administration shows in English, t
 | 2. German: daily-use help | 0 |
 | 3. Daily-use help of the priority group | 98 |
 | 4. New translations | 863 |
-| 5. Extensions of the other languages | 97 |
+| 5. Extensions of the other languages | 52 |
 | 6. Daily-use help of the other languages | 1,092 |
 | 7. Rest of the help of the priority group | 1,315 |
 | 8. Rest of the help of the other languages | 14,508 |
@@ -545,7 +545,7 @@ The languages of the shipped locales that the administration shows in English, t
 The whole queue and the pages of a wave: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<wave>`.
 
 Made by `./console exp:i18n waves`; `./console exp:i18n waves --check` and the test `expI18nTranslationWavesTest` fail when a percentage changed or a size is more than 3 % off.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,80,0,0],"arc-IQ":[99,80,0,0],"ben-BD":[100,100,0,0],"bho-IN":[99,80,0,0],"bos-BA":[100,80,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"cro-HR":[100,80,0,0],"cze-CZ":[100,80,0,0],"dan-DK":[100,80,0,0],"dsb-DE":[100,80,0,0],"dut-NL":[100,80,0,0],"ell-GR":[100,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"esl-ES":[100,80,0,0],"esl-MX":[100,80,0,0],"est-EE":[100,80,0,0],"fas-IR":[100,80,0,0],"fin-FI":[100,80,0,0],"fre-FR":[100,80,0,0],"ger-DE":[100,76,100,99],"gle-IE":[100,80,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"heb-IL":[100,80,0,0],"hin-IN":[100,80,0,0],"hun-HU":[100,80,0,0],"huy-IL":[99,80,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,80,0,0],"isl-IS":[100,80,0,0],"ita-IT":[100,80,0,0],"jav-ID":[99,80,0,0],"jpn-JP":[100,80,0,0],"kal-GL":[100,80,0,0],"kan-IN":[100,100,0,0],"kat-GE":[100,80,0,0],"kaz-KZ":[100,80,0,0],"kor-KR":[100,80,0,0],"kur-TR":[100,80,0,0],"lao-LA":[100,80,0,0],"lat-VA":[100,80,0,0],"lav-LV":[100,80,0,0],"lit-LT":[100,100,0,0],"mai-IN":[99,80,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mlt-MT":[100,80,0,0],"msa-MY":[100,80,0,0],"nep-NP":[99,80,0,0],"nor-NO":[100,80,0,0],"ori-IN":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[99,80,0,0],"pol-PL":[100,80,0,0],"por-BR":[100,80,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,80,0,0],"ron-RO":[100,80,0,0],"rus-RU":[100,100,0,0],"ser-SR":[100,100,0,0],"slk-SK":[100,80,0,0],"slv-SI":[100,80,0,0],"sna-ZW":[100,80,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,80,0,0],"srp-RS":[100,100,0,0],"sun-ID":[99,80,0,0],"swa-KE":[100,80,0,0],"swe-SE":[100,80,0,0],"syr-IQ":[99,80,0,0],"tam-IN":[100,100,0,0],"tel-IN":[100,100,0,0],"tha-TH":[100,80,0,0],"tlh-QO":[100,80,0,0],"tur-TR":[100,80,0,0],"ukr-UA":[100,80,0,0],"urd-PK":[100,100,0,0],"vie-VN":[100,80,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,80,0,0],"yor-NG":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":18839,"extensions":567,"parts":199,"daily_pages":261,"daily_words":292492,"guides_pages":3679,"guides_words":2864452,"reference_pages":1790,"reference_words":1803691,"tables_pages":0,"tables_words":80458},"waves":17981,"untranslated":["fil-PH","pnb-PK","uzb-UZ","orm-ET","lin-CD","ceb-PH","ful-SN","fas-AF","kor-KP","mya-MM","mlg-MG","wol-SN","snd-PK","hat-HT","skr-PK","bam-ML","tsn-ZA","khm-KH","sin-LK","dyu-CI","kin-RW","nya-MW","aka-GH","nso-ZA","sot-ZA","aze-AZ","mos-BF","asm-IN","azb-IR","run-BI","zgh-MA","lug-UG","kau-NG","tgk-TJ","vmw-MZ","uig-CN","kik-KE","que-PE","tir-ET","kon-CD","luy-KE","tso-ZA","tuk-TM","umb-AO","ewe-GH","luo-KE","sag-CF","grn-PY","bal-PK","sat-IN","kln-KE","lua-CD","ckb-IQ","kas-IN","suk-TZ","hye-AM","bel-BY","kab-DZ","bod-CN","glg-ES","mon-MN","kir-KG","tat-RU","mkd-MK","doi-IN","kok-IN","che-RU","mni-IN","brx-IN","cym-GB","eus-ES","ltz-LU","fry-NL","oci-FR","dzo-BT","ast-ES","div-MV","mri-NZ","ton-TO","bre-FR","epo-EO","gla-GB","roh-CH","fao-FO","sme-NO","haw-US","san-IN","hsb-DE","nqo-GN"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,80,0,0],"arc-IQ":[100,80,0,0],"ben-BD":[100,100,0,0],"bho-IN":[100,80,0,0],"bos-BA":[100,80,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"cro-HR":[100,80,0,0],"cze-CZ":[100,80,0,0],"dan-DK":[100,80,0,0],"dsb-DE":[100,80,0,0],"dut-NL":[100,80,0,0],"ell-GR":[100,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"esl-ES":[100,80,0,0],"esl-MX":[100,80,0,0],"est-EE":[100,80,0,0],"fas-IR":[100,80,0,0],"fin-FI":[100,80,0,0],"fre-FR":[100,80,0,0],"ger-DE":[100,76,100,99],"gle-IE":[100,80,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"heb-IL":[100,80,0,0],"hin-IN":[100,80,0,0],"hun-HU":[100,80,0,0],"huy-IL":[100,80,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,80,0,0],"isl-IS":[100,80,0,0],"ita-IT":[100,80,0,0],"jav-ID":[100,80,0,0],"jpn-JP":[100,80,0,0],"kal-GL":[100,80,0,0],"kan-IN":[100,100,0,0],"kat-GE":[100,80,0,0],"kaz-KZ":[100,80,0,0],"kor-KR":[100,80,0,0],"kur-TR":[100,80,0,0],"lao-LA":[100,80,0,0],"lat-VA":[100,80,0,0],"lav-LV":[100,80,0,0],"lit-LT":[100,100,0,0],"mai-IN":[100,80,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mlt-MT":[100,80,0,0],"msa-MY":[100,80,0,0],"nep-NP":[100,80,0,0],"nor-NO":[100,80,0,0],"ori-IN":[100,100,0,0],"pan-IN":[100,100,0,0],"pcm-NG":[100,80,0,0],"pol-PL":[100,80,0,0],"por-BR":[100,80,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,80,0,0],"ron-RO":[100,80,0,0],"rus-RU":[100,100,0,0],"ser-SR":[100,100,0,0],"slk-SK":[100,80,0,0],"slv-SI":[100,80,0,0],"sna-ZW":[100,80,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,80,0,0],"srp-RS":[100,100,0,0],"sun-ID":[100,80,0,0],"swa-KE":[100,80,0,0],"swe-SE":[100,80,0,0],"syr-IQ":[100,80,0,0],"tam-IN":[100,100,0,0],"tel-IN":[100,100,0,0],"tha-TH":[100,80,0,0],"tlh-QO":[100,80,0,0],"tur-TR":[100,80,0,0],"ukr-UA":[100,80,0,0],"urd-PK":[100,100,0,0],"vie-VN":[100,80,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,80,0,0],"yor-NG":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":18839,"extensions":567,"parts":199,"daily_pages":261,"daily_words":292492,"guides_pages":3679,"guides_words":2864452,"reference_pages":1790,"reference_words":1803691,"tables_pages":0,"tables_words":80458},"waves":17936,"untranslated":["fil-PH","pnb-PK","uzb-UZ","orm-ET","lin-CD","ceb-PH","ful-SN","fas-AF","kor-KP","mya-MM","mlg-MG","wol-SN","snd-PK","hat-HT","skr-PK","bam-ML","tsn-ZA","khm-KH","sin-LK","dyu-CI","kin-RW","nya-MW","aka-GH","nso-ZA","sot-ZA","aze-AZ","mos-BF","asm-IN","azb-IR","run-BI","zgh-MA","lug-UG","kau-NG","tgk-TJ","vmw-MZ","uig-CN","kik-KE","que-PE","tir-ET","kon-CD","luy-KE","tso-ZA","tuk-TM","umb-AO","ewe-GH","luo-KE","sag-CF","grn-PY","bal-PK","sat-IN","kln-KE","lua-CD","ckb-IQ","kas-IN","suk-TZ","hye-AM","bel-BY","kab-DZ","bod-CN","glg-ES","mon-MN","kir-KG","tat-RU","mkd-MK","doi-IN","kok-IN","che-RU","mni-IN","brx-IN","cym-GB","eus-ES","ltz-LU","fry-NL","oci-FR","dzo-BT","ast-ES","div-MV","mri-NZ","ton-TO","bre-FR","epo-EO","gla-GB","roh-CH","fao-FO","sme-NO","haw-US","san-IN","hsb-DE","nqo-GN"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## What the waves are
