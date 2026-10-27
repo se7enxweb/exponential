@@ -3,17 +3,17 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 ---
 # Sprachen in Exponential
 
-<!-- generated: exp:i18n coverage 2026-10-26 (start) -->
-**Auf einen Blick, Stand 26. Oktober 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
+<!-- generated: exp:i18n coverage 2026-10-27 (start) -->
+**Auf einen Blick, Stand 27. Oktober 2026.** Eine Standardinstallation (die mitgelieferten `share/locale`,
 `share/translations` und `settings/i18n.ini`, ohne Erweiterungen) hat:
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **79**, davon 76 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **80**, davon 76 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **268**: 261 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **148** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **76** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **72** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **77** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **71** |
 | Länder und Gebiete der Locales | **158** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **139** |
 | Locales, die von rechts nach links geschrieben werden | **40** |
@@ -235,13 +235,13 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **148 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **76** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **77** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **72** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **71** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 72 nicht übersetzten Sprachen</summary>
+<details><summary>Die 71 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
@@ -253,7 +253,6 @@ zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eige
 | Bambara | Bamanakan | `bam` | `bam-ML` (Mali) |
 | Basque | Euskara | `eus` | `eus-ES` (Spanien) |
 | Belarusian | Беларуская | `bel` | `bel-BY` (Belarus) |
-| Bhojpuri | भोजपुरी | `bho` | `bho-IN` (Indien) |
 | Bodo | बर’ | `brx` | `brx-IN` (Indien) |
 | Breton | Brezhoneg | `bre` | `bre-FR` (Frankreich) |
 | Burmese | မြန်မာ | `mya` | `mya-MM` (Birma (Myanmar)) |

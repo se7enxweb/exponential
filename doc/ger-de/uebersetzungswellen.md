@@ -30,19 +30,19 @@ eine Welle gemacht und geprüft wird. Die Sprachen, ihre Locales und ihre Übers
 
 ## Der Plan, gemessen
 
-<!-- generated: exp:i18n waves 2026-10-26 (start) -->
-**Gemessen am 26. Oktober 2026** mit `./console exp:i18n waves` aus den Dateien dieser Version (ohne Datenbank):
+<!-- generated: exp:i18n waves 2026-10-27 (start) -->
+**Gemessen am 27. Oktober 2026** mit `./console exp:i18n waves` aus den Dateien dieser Version (ohne Datenbank):
 
 | Was | Umfang |
 |---|---:|
 | Administration: Texte in `share/translations/untranslated/translation.ts`, in 10 Teilen | **18.839** (127.865 Wörter) |
 | Mitgelieferte Erweiterungen (`expimageeditor`, `ezjscore`, `ezoe`) | **567** Texte |
-| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.730** Seiten, 4.959.718 Wörter |
+| Hilfe: Seiten unter `doc/eng-us/` (ohne die erzeugten Beispielseiten) | **5.730** Seiten, 4.959.729 Wörter |
 | Hilfe: Tabellen der erzeugten Beispielseiten (`.examples/`) | **2.694** Einträge, 80.458 Wörter |
-| Übersetzungen der Administration, davon vollständig | **79**, 76 |
+| Übersetzungen der Administration, davon vollständig | **80**, 76 |
 | davon im täglichen Gebrauch (Administration, Erweiterungen und Hilfe des Alltags ≥ 97 %) | **2** |
-| Sprachen ohne Übersetzung der Administration ([Liste](#sprachen-ohne-übersetzung)), davon auf einem Branch in Arbeit | **98**, 11 |
-| Wellen bis 100 % in jeder Sprache | **16.172** |
+| Sprachen ohne Übersetzung der Administration ([Liste](#sprachen-ohne-übersetzung)), davon auf einem Branch in Arbeit | **97**, 11 |
+| Wellen bis 100 % in jeder Sprache | **16.368** |
 
 ### Wo jede Sprache steht
 
@@ -50,92 +50,93 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 
 | Sprache | Code | Sprecher (Mio.) | Schwierigkeit | Administration | Erweiterungen | Hilfe des Alltags | Hilfe gesamt | Wellen offen | Nächste Welle |
 |---|---|---:|:-:|---:|---:|---:|---:|---:|---|
-| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 200 | #1093 `S` |
-| Albanisch | `sqi-AL` | 8 | 2 | 100 | **80** | **0** | **0** | 201 | #1041 `E` |
-| Amharisch | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 200 | #1086 `S` |
+| Afrikaans | `afr-ZA` | 17 | 2 | 100 | 100 | **0** | **0** | 200 | #1090 `S` |
+| Albanisch | `sqi-AL` | 8 | 2 | 100 | **80** | **0** | **0** | 201 | #1037 `E` |
+| Amharisch | `amh-ET` | 60 | 4 | 100 | 100 | **0** | **0** | 200 | #1082 `S` |
 | Arabisch | `ara-SA` | 400 | 4 | 100 | **80** | **0** | **0** | 201 | #2 `E` |
-| Bengalisch | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 200 | #1066 `S` |
-| Bosnisch | `bos-BA` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1046 `E` |
-| Bulgarisch | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 200 | #1106 `S` |
-| Chinesisch (traditionell) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 200 | #1082 `S` |
-| Chinesisch (vereinfacht) | `chi-CN` | 1.100 | 2 | 100 | 100 | **0** | **0** | 200 | #1058 `S` |
-| Dänisch | `dan-DK` | 6 | 1 | 100 | **80** | **0** | **0** | 201 | #1036 `E` |
+| Bengalisch | `ben-BD` | 285 | 4 | 100 | 100 | **0** | **0** | 200 | #1062 `S` |
+| Bhojpuri | `bho-IN` | 52 | 5 | 99 | **80** | **0** | **0** | 206 | #1019 `A06` |
+| Bosnisch | `bos-BA` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1042 `E` |
+| Bulgarisch | `bul-BG` | 8 | 2 | 100 | 100 | **0** | **0** | 200 | #1103 `S` |
+| Chinesisch (traditionell) | `chi-TW` | 31 | 2 | 100 | 100 | **0** | **0** | 200 | #1078 `S` |
+| Chinesisch (vereinfacht) | `chi-CN` | 1.100 | 2 | 100 | 100 | **0** | **0** | 200 | #1054 `S` |
+| Dänisch | `dan-DK` | 6 | 1 | 100 | **80** | **0** | **0** | 201 | #1032 `E` |
 | Deutsch | `ger-DE` | 135 | 2 | 100 | **76** | 100 | 99 | 14 | #1 `E` |
 | Englisch (Australien) | `eng-AU` | 1.500 | 1 | 100 | 100 | 100 | 100 | 0 | Quelltexte |
 | Englisch (USA) | `eng-US` | 1.500 | 1 | 100 | 100 | 100 | 100 | 0 | Quelltexte |
-| Estnisch | `est-EE` | 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1050 `E` |
-| Finnisch | `fin-FI` | 6 | 2 | 100 | **80** | **0** | **0** | 201 | #1043 `E` |
-| Französisch | `fre-FR` | 310 | 1 | 100 | **80** | **0** | **0** | 201 | #1001 `E` |
-| Griechisch | `ell-GR` | 13 | 3 | 100 | **80** | **0** | **0** | 201 | #1040 `E` |
-| Grönländisch | `kal-GL` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1054 `E` |
-| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 200 | #1083 `S` |
-| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 200 | #1072 `S` |
-| Hebräisch | `heb-IL` | 9 | 4 | 100 | **80** | **0** | **0** | 201 | #1045 `E` |
-| Hindi | `hin-IN` | 610 | 4 | 100 | **80** | **0** | **0** | 201 | #1004 `E` |
-| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 200 | #1091 `S` |
-| Indonesisch | `ind-ID` | 252 | 1 | 100 | **80** | **0** | **0** | 201 | #1002 `E` |
-| Irisch | `gle-IE` | 2 | 4 | 100 | **80** | **0** | **0** | 201 | #1049 `E` |
-| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 200 | #1104 `S` |
-| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 200 | #1098 `S` |
-| Isländisch | `isl-IS` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1053 `E` |
-| Italienisch | `ita-IT` | 68 | 1 | 100 | **80** | **0** | **0** | 201 | #1007 `E` |
-| Japanisch | `jpn-JP` | 123 | 3 | 100 | **80** | **0** | **0** | 201 | #1009 `E` |
-| Javanisch | `jav-ID` | 68 | 3 | 99 | **80** | **0** | **0** | 206 | #1014 `A06` |
-| Jiddisch | `yid-US` | 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1051 `E` |
-| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 200 | #1089 `S` |
-| Katalanisch | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 200 | #1092 `S` |
-| Klingonisch | `tlh-QO` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1057 `E` |
-| Koreanisch | `kor-KR` | 82 | 3 | 100 | **80** | **0** | **0** | 201 | #1010 `E` |
-| Kroatisch | `cro-HR` | 5 | 2 | 100 | **80** | **0** | **0** | 201 | #1044 `E` |
+| Estnisch | `est-EE` | 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1046 `E` |
+| Finnisch | `fin-FI` | 6 | 2 | 100 | **80** | **0** | **0** | 201 | #1039 `E` |
+| Französisch | `fre-FR` | 310 | 1 | 100 | **80** | **0** | **0** | 201 | #991 `E` |
+| Griechisch | `ell-GR` | 13 | 3 | 100 | **80** | **0** | **0** | 201 | #1036 `E` |
+| Grönländisch | `kal-GL` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1050 `E` |
+| Gujarati | `guj-IN` | 62 | 4 | 100 | 100 | **0** | **0** | 200 | #1079 `S` |
+| Hausa | `hau-NG` | 94 | 3 | 100 | 100 | **0** | **0** | 200 | #1068 `S` |
+| Hebräisch | `heb-IL` | 9 | 4 | 100 | **80** | **0** | **0** | 201 | #1041 `E` |
+| Hindi | `hin-IN` | 610 | 4 | 100 | **80** | **0** | **0** | 201 | #994 `E` |
+| Igbo | `ibo-NG` | 31 | 3 | 100 | 100 | **0** | **0** | 200 | #1088 `S` |
+| Indonesisch | `ind-ID` | 252 | 1 | 100 | **80** | **0** | **0** | 201 | #992 `E` |
+| Irisch | `gle-IE` | 2 | 4 | 100 | **80** | **0** | **0** | 201 | #1045 `E` |
+| isiXhosa | `xho-ZA` | 19 | 4 | 100 | 100 | **0** | **0** | 200 | #1101 `S` |
+| isiZulu | `zul-ZA` | 28 | 4 | 100 | 100 | **0** | **0** | 200 | #1095 `S` |
+| Isländisch | `isl-IS` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1049 `E` |
+| Italienisch | `ita-IT` | 68 | 1 | 100 | **80** | **0** | **0** | 201 | #997 `E` |
+| Japanisch | `jpn-JP` | 123 | 3 | 100 | **80** | **0** | **0** | 201 | #999 `E` |
+| Javanisch | `jav-ID` | 68 | 3 | 99 | **80** | **0** | **0** | 206 | #1004 `A06` |
+| Jiddisch | `yid-US` | 1 | 5 | 100 | **80** | **0** | **0** | 201 | #1047 `E` |
+| Kannada | `kan-IN` | 59 | 5 | 100 | 100 | **0** | **0** | 200 | #1085 `S` |
+| Katalanisch | `cat-ES` | 10 | 1 | 100 | 100 | **0** | **0** | 200 | #1089 `S` |
+| Klingonisch | `tlh-QO` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1053 `E` |
+| Koreanisch | `kor-KR` | 82 | 3 | 100 | **80** | **0** | **0** | 201 | #1000 `E` |
+| Kroatisch | `cro-HR` | 5 | 2 | 100 | **80** | **0** | **0** | 201 | #1040 `E` |
 | Kurdisch (Kurmandschi) | `kur-TR` | 16 | 3 | 100 | **80** | **0** | **0** | 201 | #7 `E` |
-| Laotisch | `lao-LA` | 30 | 5 | 100 | **80** | **0** | **0** | 201 | #1037 `E` |
-| Latein | `lat-VA` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1056 `E` |
-| Lettisch | `lav-LV` | 2 | 3 | 100 | **80** | **0** | **0** | 201 | #1048 `E` |
-| Litauisch | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 200 | #1115 `S` |
-| Malaiisch | `msa-MY` | 60 | 1 | 100 | **80** | **0** | **0** | 201 | #1008 `E` |
-| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 200 | #1097 `S` |
-| Maltesisch | `mlt-MT` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1052 `E` |
-| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 200 | #1077 `S` |
-| Nepali | `nep-NP` | 32 | 4 | 99 | **80** | **0** | **0** | 206 | #1029 `A06` |
-| Niederländisch | `dut-NL` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #1012 `E` |
-| Niedersorbisch | `dsb-DE` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1055 `E` |
-| Norwegisch | `nor-NO` | 5 | 1 | 100 | **80** | **0** | **0** | 201 | #1039 `E` |
-| Oriya | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 200 | #1095 `S` |
-| Panjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 200 | #1088 `S` |
+| Laotisch | `lao-LA` | 30 | 5 | 100 | **80** | **0** | **0** | 201 | #1033 `E` |
+| Latein | `lat-VA` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1052 `E` |
+| Lettisch | `lav-LV` | 2 | 3 | 100 | **80** | **0** | **0** | 201 | #1044 `E` |
+| Litauisch | `lit-LT` | 3 | 3 | 100 | 100 | **0** | **0** | 200 | #1112 `S` |
+| Malaiisch | `msa-MY` | 60 | 1 | 100 | **80** | **0** | **0** | 201 | #998 `E` |
+| Malayalam | `mal-IN` | 37 | 5 | 100 | 100 | **0** | **0** | 200 | #1094 `S` |
+| Maltesisch | `mlt-MT` | < 1 | 3 | 100 | **80** | **0** | **0** | 201 | #1048 `E` |
+| Marathi | `mar-IN` | 99 | 4 | 100 | 100 | **0** | **0** | 200 | #1073 `S` |
+| Nepali | `nep-NP` | 32 | 4 | 99 | **80** | **0** | **0** | 206 | #1025 `A06` |
+| Niederländisch | `dut-NL` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #1002 `E` |
+| Niedersorbisch | `dsb-DE` | < 1 | 4 | 100 | **80** | **0** | **0** | 201 | #1051 `E` |
+| Norwegisch | `nor-NO` | 5 | 1 | 100 | **80** | **0** | **0** | 201 | #1035 `E` |
+| Oriya | `ori-IN` | 40 | 5 | 100 | 100 | **0** | **0** | 200 | #1092 `S` |
+| Panjabi | `pan-IN` | 48 | 4 | 100 | 100 | **0** | **0** | 200 | #1084 `S` |
 | Paschtu | `pus-AF` | 60 | 5 | 100 | **80** | **0** | **0** | 201 | #6 `E` |
 | Persisch | `fas-IR` | 83 | 4 | 100 | **80** | **0** | **0** | 201 | #5 `E` |
-| Polnisch | `pol-PL` | 40 | 2 | 100 | **80** | **0** | **0** | 201 | #1020 `E` |
-| Portugiesisch (Brasilien) | `por-BR` | 215 | 1 | 100 | **80** | **0** | **0** | 201 | #1003 `E` |
-| Portugiesisch (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 200 | #1070 `S` |
-| Rumänisch | `ron-RO` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #1013 `E` |
+| Polnisch | `pol-PL` | 40 | 2 | 100 | **80** | **0** | **0** | 201 | #1010 `E` |
+| Portugiesisch (Brasilien) | `por-BR` | 215 | 1 | 100 | **80** | **0** | **0** | 201 | #993 `E` |
+| Portugiesisch (Portugal) | `por-PT` | 50 | 1 | 100 | 100 | **0** | **0** | 200 | #1066 `S` |
+| Rumänisch | `ron-RO` | 25 | 1 | 100 | **80** | **0** | **0** | 201 | #1003 `E` |
 | Russisch | `rus-RU` | 255 | 3 | 100 | 100 | **0** | **0** | 200 | #12 `S` |
-| Schwedisch | `swe-SE` | 13 | 1 | 100 | **80** | **0** | **0** | 201 | #1022 `E` |
-| Serbisch (kyrillisch) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 200 | #1112 `S` |
-| Serbisch (lateinisch) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 200 | #1109 `S` |
-| Slowakisch | `slk-SK` | 7 | 2 | 100 | **80** | **0** | **0** | 201 | #1042 `E` |
-| Slowenisch | `slv-SI` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1047 `E` |
-| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 200 | #1096 `S` |
-| Spanisch (Mexiko) | `esl-MX` | 130 | 1 | 100 | **80** | **0** | **0** | 201 | #1005 `E` |
-| Spanisch (Spanien) | `esl-ES` | 430 | 1 | 100 | **80** | **0** | **0** | 201 | #1000 `E` |
-| Sundanesisch | `sun-ID` | 32 | 3 | 99 | **80** | **0** | **0** | 206 | #1023 `A06` |
-| Swahili | `swa-KE` | 80 | 3 | 100 | **80** | **0** | **0** | 201 | #1011 `E` |
-| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 200 | #1081 `S` |
-| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 200 | #1080 `S` |
-| Thai | `tha-TH` | 61 | 4 | 100 | **80** | **0** | **0** | 201 | #1021 `E` |
-| Tschechisch | `cze-CZ` | 11 | 2 | 100 | **80** | **0** | **0** | 201 | #1038 `E` |
+| Schwedisch | `swe-SE` | 13 | 1 | 100 | **80** | **0** | **0** | 201 | #1012 `E` |
+| Serbisch (kyrillisch) | `srp-RS` | 10 | 4 | 100 | 100 | **0** | **0** | 200 | #1109 `S` |
+| Serbisch (lateinisch) | `ser-SR` | 10 | 3 | 100 | 100 | **0** | **0** | 200 | #1106 `S` |
+| Slowakisch | `slk-SK` | 7 | 2 | 100 | **80** | **0** | **0** | 201 | #1038 `E` |
+| Slowenisch | `slv-SI` | 3 | 3 | 100 | **80** | **0** | **0** | 201 | #1043 `E` |
+| Somali | `som-SO` | 24 | 3 | 100 | 100 | **0** | **0** | 200 | #1093 `S` |
+| Spanisch (Mexiko) | `esl-MX` | 130 | 1 | 100 | **80** | **0** | **0** | 201 | #995 `E` |
+| Spanisch (Spanien) | `esl-ES` | 430 | 1 | 100 | **80** | **0** | **0** | 201 | #990 `E` |
+| Sundanesisch | `sun-ID` | 32 | 3 | 99 | **80** | **0** | **0** | 206 | #1013 `A06` |
+| Swahili | `swa-KE` | 80 | 3 | 100 | **80** | **0** | **0** | 201 | #1001 `E` |
+| Tamil | `tam-IN` | 87 | 5 | 100 | 100 | **0** | **0** | 200 | #1077 `S` |
+| Telugu | `tel-IN` | 96 | 5 | 100 | 100 | **0** | **0** | 200 | #1076 `S` |
+| Thai | `tha-TH` | 61 | 4 | 100 | **80** | **0** | **0** | 201 | #1011 `E` |
+| Tschechisch | `cze-CZ` | 11 | 2 | 100 | **80** | **0** | **0** | 201 | #1034 `E` |
 | Türkisch | `tur-TR` | 90 | 2 | 100 | **80** | **0** | **0** | 201 | #3 `E` |
 | Ukrainisch | `ukr-UA` | 39 | 3 | 100 | **80** | **0** | **0** | 201 | #4 `E` |
-| Ungarisch | `hun-HU` | 13 | 2 | 100 | **80** | **0** | **0** | 201 | #1035 `E` |
-| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 200 | #1069 `S` |
-| Vietnamesisch | `vie-VN` | 86 | 1 | 100 | **80** | **0** | **0** | 201 | #1006 `E` |
-| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 200 | #1084 `S` |
+| Ungarisch | `hun-HU` | 13 | 2 | 100 | **80** | **0** | **0** | 201 | #1031 `E` |
+| Urdu | `urd-PK` | 232 | 4 | 100 | 100 | **0** | **0** | 200 | #1065 `S` |
+| Vietnamesisch | `vie-VN` | 86 | 1 | 100 | **80** | **0** | **0** | 201 | #996 `E` |
+| Yoruba | `yor-NG` | 46 | 3 | 100 | 100 | **0** | **0** | 200 | #1080 `S` |
 
 ### Die Hilfe in Stufen
 
 | Stufe | Abschnitte | Seiten | Wörter | Teile |
 |---|---|---:|---:|---:|
 | Alltag: Redakteure, Benutzer, Anleitungen für Administratoren | `help`, `help/manual`, `help/non-technical-people`, `guides`, `help/book-learning`, `help/book-building-a-site` | 261 | 292.492 | 13 |
-| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 22 weitere | 3.679 | 2.863.535 | 112 |
+| Produkt- und Zielgruppen-Leitfäden | `install`, `features`, `help/adopters`, `help/advocates`, `help/business`, `help/businesses`, `help/community`, `help/creators` und 22 weitere | 3.679 | 2.863.546 | 112 |
 | Entwicklerreferenz | `help/extension-development`, `help/template-language`, `help/template-operators`, `help/build-two-ways`, `help/php-developers`, `help/cms-developers`, `help/dxp-developers`, `help/software-engineers` und 12 weitere | 1.790 | 1.803.691 | 70 |
 | Tabellen der erzeugten Beispiele | `examples` | 2.694 Einträge | 80.458 | 4 |
 
@@ -267,7 +268,7 @@ Prozent der Texte (Administration, Erweiterungen) und der Wörter (Hilfe), abger
 | `H-help-trainers-17` | guides | 31 | 21.442 | `help/trainers/train-the-trainer/module-02-building-the-lab/README.md` … `help/trainers/train-the-trainer/module-06-assessment-and-follow-up/certificates-of-attendance.md` |
 | `H-help-trainers-18` | guides | 32 | 19.506 | `help/trainers/train-the-trainer/module-06-assessment-and-follow-up/checking-understanding-during-class.md` … `help/trainers/workshops/module-05-capstone-projects/multilingual-event-site.md` |
 | `H-root-01` | guides | 3 | 9.070 | `INSTALL.md` … `branch-overview.md` |
-| `H-root-02` | guides | 3 | 23.459 | `glossary.md` … `languages.md` |
+| `H-root-02` | guides | 3 | 23.470 | `glossary.md` … `languages.md` |
 | `H-help-extension-development-01` | reference | 43 | 36.332 | `help/extension-development/README.md` … `help/extension-development/part-2-builder/the-exp-ini-command.md` |
 | `H-help-extension-development-02` | reference | 43 | 25.019 | `help/extension-development/part-2-builder/view-modes-for-builders.md` … `help/extension-development/part-3-extension-developer/tutorials/by-hand-custom-tag.md` |
 | `H-help-extension-development-03` | reference | 43 | 28.639 | `help/extension-development/part-3-extension-developer/tutorials/by-hand-datatype.md` … `help/extension-development/part-4-upgrading/old-jquery-to-jquery-4.md` |
@@ -373,99 +374,98 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | Westpanjabi | `pnb-PK` | 90 | Arab | RTL | 5 | Welle #138 |
 | Usbekisch | `uzb-UZ` | 35 | Latn | LTR | 3 | Welle #148 |
 | Oromo | `orm-ET` | 45 | Latn | LTR | 4 | Welle #158 |
-| Bhojpuri | `bho-IN` | 52 | Deva | LTR | 5 | Welle #168 |
-| Lingala | `lin-CD` | 40 | Latn | LTR | 4 | Welle #178 |
-| Cebuano | `ceb-PH` | 28 | Latn | LTR | 3 | Welle #188 |
-| Fulfulde | `ful-SN` | 37 | Latn | LTR | 4 | Welle #198 |
+| Lingala | `lin-CD` | 40 | Latn | LTR | 4 | Welle #168 |
+| Cebuano | `ceb-PH` | 28 | Latn | LTR | 3 | Welle #178 |
+| Fulfulde | `ful-SN` | 37 | Latn | LTR | 4 | Welle #188 |
 | Dari (Persisch in Afghanistan) | `fas-AF` | 35 | Arab | RTL | 4 | abgeleitet aus `fas-IR`, Welle #8 |
 | Koreanisch (Nordkorea, Munhwaŏ) | `kor-KP` | 26 | Kore | LTR | 3 | abgeleitet aus `kor-KR`, Welle #117 |
-| Birmanisch | `mya-MM` | 43 | Mymr | LTR | 5 | Welle #208 |
-| Malagasy | `mlg-MG` | 25 | Latn | LTR | 3 | Welle #218 |
-| Wolof | `wol-SN` | 22 | Latn | LTR | 3 | Welle #228 |
-| Maithili | `mai-IN` | 34 | Deva | LTR | 5 | Welle #238 |
-| Sindhi | `snd-PK` | 34 | Arab | RTL | 5 | Welle #248 |
-| Haitianisch | `hat-HT` | 13 | Latn | LTR | 2 | neue Locale, Welle #258 |
-| Saraiki | `skr-PK` | 26 | Arab | RTL | 5 | neue Locale, Welle #269 |
-| Bambara | `bam-ML` | 14 | Latn | LTR | 3 | Welle #280 |
-| Setswana | `tsn-ZA` | 14 | Latn | LTR | 3 | neue Locale, Welle #290 |
-| Khmer | `khm-KH` | 18 | Khmr | LTR | 4 | Welle #301 |
-| Singhalesisch | `sin-LK` | 18 | Sinh | LTR | 4 | Welle #311 |
-| Dioula | `dyu-CI` | 12 | Latn | LTR | 3 | neue Locale, Welle #321 |
+| Birmanisch | `mya-MM` | 43 | Mymr | LTR | 5 | Welle #198 |
+| Malagasy | `mlg-MG` | 25 | Latn | LTR | 3 | Welle #208 |
+| Wolof | `wol-SN` | 22 | Latn | LTR | 3 | Welle #218 |
+| Maithili | `mai-IN` | 34 | Deva | LTR | 5 | Welle #228 |
+| Sindhi | `snd-PK` | 34 | Arab | RTL | 5 | Welle #238 |
+| Haitianisch | `hat-HT` | 13 | Latn | LTR | 2 | neue Locale, Welle #248 |
+| Saraiki | `skr-PK` | 26 | Arab | RTL | 5 | neue Locale, Welle #259 |
+| Bambara | `bam-ML` | 14 | Latn | LTR | 3 | Welle #270 |
+| Setswana | `tsn-ZA` | 14 | Latn | LTR | 3 | neue Locale, Welle #280 |
+| Khmer | `khm-KH` | 18 | Khmr | LTR | 4 | Welle #291 |
+| Singhalesisch | `sin-LK` | 18 | Sinh | LTR | 4 | Welle #301 |
+| Dioula | `dyu-CI` | 12 | Latn | LTR | 3 | neue Locale, Welle #311 |
 | Kasachisch | `kaz-KZ` | 16 | Cyrl | LTR | 4 | in Arbeit (Branch) |
-| Kinyarwanda | `kin-RW` | 15 | Latn | LTR | 4 | Welle #332 |
-| Chichewa | `nya-MW` | 15 | Latn | LTR | 4 | neue Locale, Welle #342 |
+| Kinyarwanda | `kin-RW` | 15 | Latn | LTR | 4 | Welle #322 |
+| Chichewa | `nya-MW` | 15 | Latn | LTR | 4 | neue Locale, Welle #332 |
 | Shona | `sna-ZW` | 15 | Latn | LTR | 4 | in Arbeit (Branch) |
-| Akan | `aka-GH` | 11 | Latn | LTR | 3 | Welle #353 |
-| Nord-Sotho | `nso-ZA` | 14 | Latn | LTR | 4 | neue Locale, Welle #363 |
-| Sesotho | `sot-ZA` | 14 | Latn | LTR | 4 | neue Locale, Welle #374 |
-| Aserbaidschanisch | `aze-AZ` | 10 | Latn | LTR | 3 | Welle #385 |
-| Mòoré | `mos-BF` | 10 | Latn | LTR | 3 | neue Locale, Welle #395 |
-| Assamesisch | `asm-IN` | 15 | Beng | LTR | 5 | Welle #406 |
-| Südaserbaidschanisch | `azb-IR` | 15 | Arab | RTL | 5 | neue Locale, Welle #416 |
-| Kirundi | `run-BI` | 12 | Latn | LTR | 4 | Welle #427 |
-| Marokkanisches Standard-Tamazight | `zgh-MA` | 14 | Tfng | LTR | 5 | Welle #437 |
-| Luganda | `lug-UG` | 11 | Latn | LTR | 4 | Welle #447 |
-| Kanuri | `kau-NG` | 10 | Latn | LTR | 4 | neue Locale, Welle #457 |
-| Tadschikisch | `tgk-TJ` | 9 | Cyrl | LTR | 4 | Welle #468 |
-| Makua | `vmw-MZ` | 9 | Latn | LTR | 4 | neue Locale, Welle #478 |
-| Uigurisch | `uig-CN` | 11 | Arab | RTL | 5 | Welle #489 |
-| Kikuyu | `kik-KE` | 8 | Latn | LTR | 4 | Welle #499 |
-| Quechua | `que-PE` | 8 | Latn | LTR | 4 | Welle #509 |
-| Tigrinya | `tir-ET` | 10 | Ethi | LTR | 5 | Welle #519 |
-| Kikongo | `kon-CD` | 7 | Latn | LTR | 4 | neue Locale, Welle #529 |
-| Luhya | `luy-KE` | 7 | Latn | LTR | 4 | neue Locale, Welle #540 |
-| Xitsonga | `tso-ZA` | 7 | Latn | LTR | 4 | neue Locale, Welle #551 |
-| Turkmenisch | `tuk-TM` | 7 | Latn | LTR | 4 | Welle #562 |
-| Umbundu | `umb-AO` | 7 | Latn | LTR | 4 | neue Locale, Welle #572 |
-| Ewe | `ewe-GH` | 5 | Latn | LTR | 3 | Welle #583 |
-| Luo | `luo-KE` | 5 | Latn | LTR | 3 | neue Locale, Welle #593 |
-| Sango | `sag-CF` | 5 | Latn | LTR | 3 | neue Locale, Welle #604 |
-| Guaraní | `grn-PY` | 7 | Latn | LTR | 4 | neue Locale, Welle #615 |
-| Belutschisch | `bal-PK` | 8 | Arab | RTL | 5 | neue Locale, Welle #626 |
-| Santali | `sat-IN` | 8 | Olck | LTR | 5 | Welle #637 |
-| Kalenjin | `kln-KE` | 6 | Latn | LTR | 4 | neue Locale, Welle #647 |
-| Tshiluba | `lua-CD` | 6 | Latn | LTR | 4 | neue Locale, Welle #658 |
-| Zentralkurdisch (Sorani) | `ckb-IQ` | 7 | Arab | RTL | 5 | Welle #669 |
-| Kaschmiri | `kas-IN` | 7 | Arab | RTL | 5 | Welle #679 |
-| Sukuma | `suk-TZ` | 5 | Latn | LTR | 4 | neue Locale, Welle #689 |
+| Akan | `aka-GH` | 11 | Latn | LTR | 3 | Welle #343 |
+| Nord-Sotho | `nso-ZA` | 14 | Latn | LTR | 4 | neue Locale, Welle #353 |
+| Sesotho | `sot-ZA` | 14 | Latn | LTR | 4 | neue Locale, Welle #364 |
+| Aserbaidschanisch | `aze-AZ` | 10 | Latn | LTR | 3 | Welle #375 |
+| Mòoré | `mos-BF` | 10 | Latn | LTR | 3 | neue Locale, Welle #385 |
+| Assamesisch | `asm-IN` | 15 | Beng | LTR | 5 | Welle #396 |
+| Südaserbaidschanisch | `azb-IR` | 15 | Arab | RTL | 5 | neue Locale, Welle #406 |
+| Kirundi | `run-BI` | 12 | Latn | LTR | 4 | Welle #417 |
+| Marokkanisches Standard-Tamazight | `zgh-MA` | 14 | Tfng | LTR | 5 | Welle #427 |
+| Luganda | `lug-UG` | 11 | Latn | LTR | 4 | Welle #437 |
+| Kanuri | `kau-NG` | 10 | Latn | LTR | 4 | neue Locale, Welle #447 |
+| Tadschikisch | `tgk-TJ` | 9 | Cyrl | LTR | 4 | Welle #458 |
+| Makua | `vmw-MZ` | 9 | Latn | LTR | 4 | neue Locale, Welle #468 |
+| Uigurisch | `uig-CN` | 11 | Arab | RTL | 5 | Welle #479 |
+| Kikuyu | `kik-KE` | 8 | Latn | LTR | 4 | Welle #489 |
+| Quechua | `que-PE` | 8 | Latn | LTR | 4 | Welle #499 |
+| Tigrinya | `tir-ET` | 10 | Ethi | LTR | 5 | Welle #509 |
+| Kikongo | `kon-CD` | 7 | Latn | LTR | 4 | neue Locale, Welle #519 |
+| Luhya | `luy-KE` | 7 | Latn | LTR | 4 | neue Locale, Welle #530 |
+| Xitsonga | `tso-ZA` | 7 | Latn | LTR | 4 | neue Locale, Welle #541 |
+| Turkmenisch | `tuk-TM` | 7 | Latn | LTR | 4 | Welle #552 |
+| Umbundu | `umb-AO` | 7 | Latn | LTR | 4 | neue Locale, Welle #562 |
+| Ewe | `ewe-GH` | 5 | Latn | LTR | 3 | Welle #573 |
+| Luo | `luo-KE` | 5 | Latn | LTR | 3 | neue Locale, Welle #583 |
+| Sango | `sag-CF` | 5 | Latn | LTR | 3 | neue Locale, Welle #594 |
+| Guaraní | `grn-PY` | 7 | Latn | LTR | 4 | neue Locale, Welle #605 |
+| Belutschisch | `bal-PK` | 8 | Arab | RTL | 5 | neue Locale, Welle #616 |
+| Santali | `sat-IN` | 8 | Olck | LTR | 5 | Welle #627 |
+| Kalenjin | `kln-KE` | 6 | Latn | LTR | 4 | neue Locale, Welle #637 |
+| Tshiluba | `lua-CD` | 6 | Latn | LTR | 4 | neue Locale, Welle #648 |
+| Zentralkurdisch (Sorani) | `ckb-IQ` | 7 | Arab | RTL | 5 | Welle #659 |
+| Kaschmiri | `kas-IN` | 7 | Arab | RTL | 5 | Welle #669 |
+| Sukuma | `suk-TZ` | 5 | Latn | LTR | 4 | neue Locale, Welle #679 |
 | Armenisch | `hye-AM` | 5 | Armn | LTR | 4 | in Arbeit (Branch) |
-| Belarussisch | `bel-BY` | 5 | Cyrl | LTR | 4 | Welle #700 |
-| Kabylisch | `kab-DZ` | 5 | Latn | LTR | 4 | Welle #710 |
-| Tibetisch | `bod-CN` | 6 | Tibt | LTR | 5 | Welle #720 |
-| Galicisch | `glg-ES` | 2 | Latn | LTR | 2 | Welle #730 |
-| Mongolisch | `mon-MN` | 6 | Cyrl | LTR | 5 | Welle #740 |
-| Kirgisisch | `kir-KG` | 5 | Cyrl | LTR | 5 | Welle #750 |
-| Tatarisch | `tat-RU` | 5 | Cyrl | LTR | 5 | Welle #760 |
+| Belarussisch | `bel-BY` | 5 | Cyrl | LTR | 4 | Welle #690 |
+| Kabylisch | `kab-DZ` | 5 | Latn | LTR | 4 | Welle #700 |
+| Tibetisch | `bod-CN` | 6 | Tibt | LTR | 5 | Welle #710 |
+| Galicisch | `glg-ES` | 2 | Latn | LTR | 2 | Welle #720 |
+| Mongolisch | `mon-MN` | 6 | Cyrl | LTR | 5 | Welle #730 |
+| Kirgisisch | `kir-KG` | 5 | Cyrl | LTR | 5 | Welle #740 |
+| Tatarisch | `tat-RU` | 5 | Cyrl | LTR | 5 | Welle #750 |
 | Georgisch | `kat-GE` | 4 | Geor | LTR | 4 | in Arbeit (Branch) |
-| Mazedonisch | `mkd-MK` | 2 | Cyrl | LTR | 3 | Welle #770 |
-| Dogri | `doi-IN` | 3 | Deva | LTR | 5 | Welle #780 |
-| Konkani | `kok-IN` | 2 | Deva | LTR | 5 | Welle #790 |
+| Mazedonisch | `mkd-MK` | 2 | Cyrl | LTR | 3 | Welle #760 |
+| Dogri | `doi-IN` | 3 | Deva | LTR | 5 | Welle #770 |
+| Konkani | `kok-IN` | 2 | Deva | LTR | 5 | Welle #780 |
 | Tschetschenisch | `che-RU` | 2 | Cyrl | LTR | 5 | in Arbeit (Branch) |
-| Meitei | `mni-IN` | 2 | Beng | LTR | 5 | Welle #800 |
-| Bodo | `brx-IN` | 2 | Deva | LTR | 5 | Welle #810 |
-| Walisisch | `cym-GB` | < 1 | Latn | LTR | 3 | Welle #820 |
-| Baskisch | `eus-ES` | < 1 | Latn | LTR | 3 | Welle #830 |
-| Luxemburgisch | `ltz-LU` | < 1 | Latn | LTR | 2 | Welle #840 |
-| Westfriesisch | `fry-NL` | < 1 | Latn | LTR | 3 | Welle #850 |
-| Okzitanisch | `oci-FR` | < 1 | Latn | LTR | 3 | Welle #860 |
-| Dzongkha | `dzo-BT` | < 1 | Tibt | LTR | 5 | Welle #870 |
-| Asturisch | `ast-ES` | < 1 | Latn | LTR | 3 | Welle #880 |
+| Meitei | `mni-IN` | 2 | Beng | LTR | 5 | Welle #790 |
+| Bodo | `brx-IN` | 2 | Deva | LTR | 5 | Welle #800 |
+| Walisisch | `cym-GB` | < 1 | Latn | LTR | 3 | Welle #810 |
+| Baskisch | `eus-ES` | < 1 | Latn | LTR | 3 | Welle #820 |
+| Luxemburgisch | `ltz-LU` | < 1 | Latn | LTR | 2 | Welle #830 |
+| Westfriesisch | `fry-NL` | < 1 | Latn | LTR | 3 | Welle #840 |
+| Okzitanisch | `oci-FR` | < 1 | Latn | LTR | 3 | Welle #850 |
+| Dzongkha | `dzo-BT` | < 1 | Tibt | LTR | 5 | Welle #860 |
+| Asturisch | `ast-ES` | < 1 | Latn | LTR | 3 | Welle #870 |
 | Aramäisch | `arc-IQ` | < 1 | Syrc | RTL | 5 | in Arbeit (Branch) |
 | Syrisch (Aramäisch) | `syr-IQ` | < 1 | Syrc | RTL | 5 | in Arbeit (Branch) |
-| Dhivehi | `div-MV` | < 1 | Thaa | RTL | 5 | Welle #890 |
+| Dhivehi | `div-MV` | < 1 | Thaa | RTL | 5 | Welle #880 |
 | Maori | `mri-NZ` | < 1 | Latn | LTR | 3 | in Arbeit (Branch) |
-| Tongaisch | `ton-TO` | < 1 | Latn | LTR | 3 | Welle #900 |
-| Bretonisch | `bre-FR` | < 1 | Latn | LTR | 4 | Welle #910 |
-| Esperanto | `epo-EO` | < 1 | Latn | LTR | 2 | Welle #920 |
+| Tongaisch | `ton-TO` | < 1 | Latn | LTR | 3 | Welle #890 |
+| Bretonisch | `bre-FR` | < 1 | Latn | LTR | 4 | Welle #900 |
+| Esperanto | `epo-EO` | < 1 | Latn | LTR | 2 | Welle #910 |
 | Schottisch-Gälisch | `gla-GB` | < 1 | Latn | LTR | 4 | in Arbeit (Branch) |
-| Rätoromanisch | `roh-CH` | < 1 | Latn | LTR | 3 | Welle #930 |
-| Färöisch | `fao-FO` | < 1 | Latn | LTR | 4 | Welle #940 |
-| Nordsamisch | `sme-NO` | < 1 | Latn | LTR | 4 | Welle #950 |
-| Hawaiisch | `haw-US` | < 1 | Latn | LTR | 3 | Welle #960 |
-| Sanskrit | `san-IN` | < 1 | Deva | LTR | 5 | Welle #970 |
-| Obersorbisch | `hsb-DE` | < 1 | Latn | LTR | 4 | Welle #980 |
+| Rätoromanisch | `roh-CH` | < 1 | Latn | LTR | 3 | Welle #920 |
+| Färöisch | `fao-FO` | < 1 | Latn | LTR | 4 | Welle #930 |
+| Nordsamisch | `sme-NO` | < 1 | Latn | LTR | 4 | Welle #940 |
+| Hawaiisch | `haw-US` | < 1 | Latn | LTR | 3 | Welle #950 |
+| Sanskrit | `san-IN` | < 1 | Deva | LTR | 5 | Welle #960 |
+| Obersorbisch | `hsb-DE` | < 1 | Latn | LTR | 4 | Welle #970 |
 | Hulaulá (jüdisches Neuaramäisch) | `huy-IL` | < 1 | Hebr | RTL | 5 | in Arbeit (Branch) |
-| N’Ko | `nqo-GN` | – | Nkoo | RTL | 5 | Welle #990 |
+| N’Ko | `nqo-GN` | – | Nkoo | RTL | 5 | Welle #980 |
 
 ### Die Warteschlange: die ersten 60 Wellen
 
@@ -474,11 +474,11 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 | 1. Kataloge der Prioritätsgruppe | 8 |
 | 2. Deutsch: Hilfe des Alltags | 0 |
 | 3. Hilfe des Alltags der Prioritätsgruppe | 98 |
-| 4. Neue Übersetzungen | 893 |
-| 5. Erweiterungen der übrigen Sprachen | 58 |
-| 6. Hilfe des Alltags der übrigen Sprachen | 966 |
+| 4. Neue Übersetzungen | 883 |
+| 5. Erweiterungen der übrigen Sprachen | 64 |
+| 6. Hilfe des Alltags der übrigen Sprachen | 980 |
 | 7. Übrige Hilfe der Prioritätsgruppe | 1.315 |
-| 8. Übrige Hilfe der übrigen Sprachen | 12.834 |
+| 8. Übrige Hilfe der übrigen Sprachen | 13.020 |
 
 | # | Welle | Sprache | Arbeitspaket | Umfang (offen) | Schwierigkeit | Voraussetzungen |
 |---:|---|---|---|---|:-:|---|
@@ -546,7 +546,7 @@ Die Sprachen der mitgelieferten Locales, die die Administration auf Englisch zei
 Die ganze Warteschlange und die Seiten einer Welle: `./console exp:i18n waves --list`, `./console exp:i18n waves --wave=<Welle>`.
 
 Erzeugt mit `./console exp:i18n waves`; `./console exp:i18n waves --check` und der Test `expI18nTranslationWavesTest` schlagen fehl, sobald ein Prozentwert nicht mehr stimmt oder ein Umfang um mehr als 3 % abweicht.
-<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,80,0,0],"ben-BD":[100,100,0,0],"bos-BA":[100,80,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"cro-HR":[100,80,0,0],"cze-CZ":[100,80,0,0],"dan-DK":[100,80,0,0],"dsb-DE":[100,80,0,0],"dut-NL":[100,80,0,0],"ell-GR":[100,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"esl-ES":[100,80,0,0],"esl-MX":[100,80,0,0],"est-EE":[100,80,0,0],"fas-IR":[100,80,0,0],"fin-FI":[100,80,0,0],"fre-FR":[100,80,0,0],"ger-DE":[100,76,100,99],"gle-IE":[100,80,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"heb-IL":[100,80,0,0],"hin-IN":[100,80,0,0],"hun-HU":[100,80,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,80,0,0],"isl-IS":[100,80,0,0],"ita-IT":[100,80,0,0],"jav-ID":[99,80,0,0],"jpn-JP":[100,80,0,0],"kal-GL":[100,80,0,0],"kan-IN":[100,100,0,0],"kor-KR":[100,80,0,0],"kur-TR":[100,80,0,0],"lao-LA":[100,80,0,0],"lat-VA":[100,80,0,0],"lav-LV":[100,80,0,0],"lit-LT":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mlt-MT":[100,80,0,0],"msa-MY":[100,80,0,0],"nep-NP":[99,80,0,0],"nor-NO":[100,80,0,0],"ori-IN":[100,100,0,0],"pan-IN":[100,100,0,0],"pol-PL":[100,80,0,0],"por-BR":[100,80,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,80,0,0],"ron-RO":[100,80,0,0],"rus-RU":[100,100,0,0],"ser-SR":[100,100,0,0],"slk-SK":[100,80,0,0],"slv-SI":[100,80,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,80,0,0],"srp-RS":[100,100,0,0],"sun-ID":[99,80,0,0],"swa-KE":[100,80,0,0],"swe-SE":[100,80,0,0],"tam-IN":[100,100,0,0],"tel-IN":[100,100,0,0],"tha-TH":[100,80,0,0],"tlh-QO":[100,80,0,0],"tur-TR":[100,80,0,0],"ukr-UA":[100,80,0,0],"urd-PK":[100,100,0,0],"vie-VN":[100,80,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,80,0,0],"yor-NG":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":18839,"extensions":567,"parts":199,"daily_pages":261,"daily_words":292492,"guides_pages":3679,"guides_words":2863535,"reference_pages":1790,"reference_words":1803691,"tables_pages":0,"tables_words":80458},"waves":16172,"untranslated":["fil-PH","pcm-NG","pnb-PK","uzb-UZ","orm-ET","bho-IN","lin-CD","ceb-PH","ful-SN","fas-AF","kor-KP","mya-MM","mlg-MG","wol-SN","mai-IN","snd-PK","hat-HT","skr-PK","bam-ML","tsn-ZA","khm-KH","sin-LK","dyu-CI","kaz-KZ","kin-RW","nya-MW","sna-ZW","aka-GH","nso-ZA","sot-ZA","aze-AZ","mos-BF","asm-IN","azb-IR","run-BI","zgh-MA","lug-UG","kau-NG","tgk-TJ","vmw-MZ","uig-CN","kik-KE","que-PE","tir-ET","kon-CD","luy-KE","tso-ZA","tuk-TM","umb-AO","ewe-GH","luo-KE","sag-CF","grn-PY","bal-PK","sat-IN","kln-KE","lua-CD","ckb-IQ","kas-IN","suk-TZ","hye-AM","bel-BY","kab-DZ","bod-CN","glg-ES","mon-MN","kir-KG","tat-RU","kat-GE","mkd-MK","doi-IN","kok-IN","che-RU","mni-IN","brx-IN","cym-GB","eus-ES","ltz-LU","fry-NL","oci-FR","dzo-BT","ast-ES","arc-IQ","syr-IQ","div-MV","mri-NZ","ton-TO","bre-FR","epo-EO","gla-GB","roh-CH","fao-FO","sme-NO","haw-US","san-IN","hsb-DE","huy-IL","nqo-GN"]} -->
+<!-- exp:i18n waves data {"status":{"afr-ZA":[100,100,0,0],"amh-ET":[100,100,0,0],"ara-SA":[100,80,0,0],"ben-BD":[100,100,0,0],"bho-IN":[99,80,0,0],"bos-BA":[100,80,0,0],"bul-BG":[100,100,0,0],"cat-ES":[100,100,0,0],"chi-CN":[100,100,0,0],"chi-TW":[100,100,0,0],"cro-HR":[100,80,0,0],"cze-CZ":[100,80,0,0],"dan-DK":[100,80,0,0],"dsb-DE":[100,80,0,0],"dut-NL":[100,80,0,0],"ell-GR":[100,80,0,0],"eng-AU":[100,100,100,100],"eng-US":[100,100,100,100],"esl-ES":[100,80,0,0],"esl-MX":[100,80,0,0],"est-EE":[100,80,0,0],"fas-IR":[100,80,0,0],"fin-FI":[100,80,0,0],"fre-FR":[100,80,0,0],"ger-DE":[100,76,100,99],"gle-IE":[100,80,0,0],"guj-IN":[100,100,0,0],"hau-NG":[100,100,0,0],"heb-IL":[100,80,0,0],"hin-IN":[100,80,0,0],"hun-HU":[100,80,0,0],"ibo-NG":[100,100,0,0],"ind-ID":[100,80,0,0],"isl-IS":[100,80,0,0],"ita-IT":[100,80,0,0],"jav-ID":[99,80,0,0],"jpn-JP":[100,80,0,0],"kal-GL":[100,80,0,0],"kan-IN":[100,100,0,0],"kor-KR":[100,80,0,0],"kur-TR":[100,80,0,0],"lao-LA":[100,80,0,0],"lat-VA":[100,80,0,0],"lav-LV":[100,80,0,0],"lit-LT":[100,100,0,0],"mal-IN":[100,100,0,0],"mar-IN":[100,100,0,0],"mlt-MT":[100,80,0,0],"msa-MY":[100,80,0,0],"nep-NP":[99,80,0,0],"nor-NO":[100,80,0,0],"ori-IN":[100,100,0,0],"pan-IN":[100,100,0,0],"pol-PL":[100,80,0,0],"por-BR":[100,80,0,0],"por-PT":[100,100,0,0],"pus-AF":[100,80,0,0],"ron-RO":[100,80,0,0],"rus-RU":[100,100,0,0],"ser-SR":[100,100,0,0],"slk-SK":[100,80,0,0],"slv-SI":[100,80,0,0],"som-SO":[100,100,0,0],"sqi-AL":[100,80,0,0],"srp-RS":[100,100,0,0],"sun-ID":[99,80,0,0],"swa-KE":[100,80,0,0],"swe-SE":[100,80,0,0],"tam-IN":[100,100,0,0],"tel-IN":[100,100,0,0],"tha-TH":[100,80,0,0],"tlh-QO":[100,80,0,0],"tur-TR":[100,80,0,0],"ukr-UA":[100,80,0,0],"urd-PK":[100,100,0,0],"vie-VN":[100,80,0,0],"xho-ZA":[100,100,0,0],"yid-US":[100,80,0,0],"yor-NG":[100,100,0,0],"zul-ZA":[100,100,0,0]},"sizes":{"messages":18839,"extensions":567,"parts":199,"daily_pages":261,"daily_words":292492,"guides_pages":3679,"guides_words":2863546,"reference_pages":1790,"reference_words":1803691,"tables_pages":0,"tables_words":80458},"waves":16368,"untranslated":["fil-PH","pcm-NG","pnb-PK","uzb-UZ","orm-ET","lin-CD","ceb-PH","ful-SN","fas-AF","kor-KP","mya-MM","mlg-MG","wol-SN","mai-IN","snd-PK","hat-HT","skr-PK","bam-ML","tsn-ZA","khm-KH","sin-LK","dyu-CI","kaz-KZ","kin-RW","nya-MW","sna-ZW","aka-GH","nso-ZA","sot-ZA","aze-AZ","mos-BF","asm-IN","azb-IR","run-BI","zgh-MA","lug-UG","kau-NG","tgk-TJ","vmw-MZ","uig-CN","kik-KE","que-PE","tir-ET","kon-CD","luy-KE","tso-ZA","tuk-TM","umb-AO","ewe-GH","luo-KE","sag-CF","grn-PY","bal-PK","sat-IN","kln-KE","lua-CD","ckb-IQ","kas-IN","suk-TZ","hye-AM","bel-BY","kab-DZ","bod-CN","glg-ES","mon-MN","kir-KG","tat-RU","kat-GE","mkd-MK","doi-IN","kok-IN","che-RU","mni-IN","brx-IN","cym-GB","eus-ES","ltz-LU","fry-NL","oci-FR","dzo-BT","ast-ES","arc-IQ","syr-IQ","div-MV","mri-NZ","ton-TO","bre-FR","epo-EO","gla-GB","roh-CH","fao-FO","sme-NO","haw-US","san-IN","hsb-DE","huy-IL","nqo-GN"]} -->
 <!-- generated: exp:i18n waves (end) -->
 
 ## Was die Wellen sind
