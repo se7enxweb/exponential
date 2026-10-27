@@ -4,8 +4,8 @@
  * share/locale whose HTTP code matches the catalogue's language, the catalogue itself (complete against the source
  * texts, as the interface language switch measures it), the switch's ranked groups in settings/uiswitch.ini, the
  * catalogues of the bundled ezoe and ezjscore extensions, and the table of doc/eng-us/languages.md. Ukrainian additionally
- * checks its Cyrillic names, its left-to-right direction and its fallback in settings/i18n.ini; Arabic, Hebrew and Yiddish
- * their right-to-left locale, their script in every catalogue and the user-name sense of "Login". Without a database.
+ * checks its Cyrillic names, its left-to-right direction and its fallback in settings/i18n.ini; Arabic, Hebrew, Yiddish and
+ * Sindhi their right-to-left locale, their script in every catalogue and the user-name sense of "Login". Without a database.
  *
  * Run: php vendor/bin/phpunit tests/tests/lib/ezi18n/expAdminTranslationsRegisteredTest.php
  *
@@ -25,14 +25,14 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
         'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN',
         'hun-HU', 'isl-IS', 'jpn-JP', 'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU',
         'ser-SR', 'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY',
-        'jav-ID', 'sun-ID', 'nep-NP', 'bho-IN', 'mai-IN', 'pcm-NG' );
+        'jav-ID', 'sun-ID', 'nep-NP', 'bho-IN', 'mai-IN', 'pcm-NG', 'snd-PK' );
 
     /** Those whose ezoe and ezjscore catalogues are complete too. */
     const WITH_EXTENSION_CATALOGUES = array( 'fre-FR', 'ukr-UA', 'ara-SA', 'heb-IL', 'afr-ZA', 'bos-BA', 'bul-BG',
         'cat-ES', 'dsb-DE', 'ell-GR', 'eng-AU', 'est-EE', 'fin-FI', 'gle-IE', 'hin-IN', 'hun-HU', 'isl-IS', 'jpn-JP',
         'kal-GL', 'kor-KR', 'lav-LV', 'lit-LT', 'mlt-MT', 'por-PT', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK', 'slv-SI',
         'sqi-AL', 'srp-RS', 'yid-US', 'vie-VN', 'ind-ID', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID', 'sun-ID', 'nep-NP',
-        'bho-IN', 'mai-IN', 'pcm-NG' );
+        'bho-IN', 'mai-IN', 'pcm-NG', 'snd-PK' );
 
     /**
      * Complete translations that no ranked group of settings/uiswitch.ini names: the switch offers them in its A-Z
@@ -41,7 +41,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
     const ALL_LANGUAGES_ONLY = array( 'lat-VA', 'tlh-QO', 'afr-ZA', 'bos-BA', 'bul-BG', 'cat-ES', 'dsb-DE', 'ell-GR',
         'est-EE', 'fin-FI', 'gle-IE', 'hun-HU', 'isl-IS', 'kal-GL', 'lav-LV', 'lit-LT', 'mlt-MT', 'ron-RO', 'ser-SR',
         'slk-SK', 'slv-SI', 'sqi-AL', 'srp-RS', 'yid-US', 'tha-TH', 'lao-LA', 'msa-MY', 'jav-ID', 'sun-ID', 'nep-NP',
-        'bho-IN', 'mai-IN', 'pcm-NG' );
+        'bho-IN', 'mai-IN', 'pcm-NG', 'snd-PK' );
 
     /** @var string the repository */
     protected $root;
@@ -218,6 +218,7 @@ class expAdminTranslationsRegisteredTest extends PHPUnit\Framework\TestCase
             'Arabic' => array( 'ara-SA', 'ar-SA', 'Arabic', '\p{Arabic}' ),
             'Hebrew' => array( 'heb-IL', 'he-IL', 'Hebrew', '\p{Hebrew}' ),
             'Yiddish' => array( 'yid-US', 'yi-US', 'Yiddish', '\p{Hebrew}' ),
+            'Sindhi' => array( 'snd-PK', 'sd-PK', 'Sindhi', '\p{Arabic}' ),
         );
     }
 
