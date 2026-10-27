@@ -44936,6 +44936,14 @@ Yen panjenengan arep ngirim komentar marang panyetuju utawa ndeleng statuse, gun
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Komentar saka "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Ana kaca sing disaranake kanggo panjenengan</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Panjenengan nampa email iki amarga ana wong sing ngetokake alamat panjenengan ing %site kanggo nuduhake sawijining kaca marang panjenengan.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Kanggo iku, panjenengan kudu ngowahi prentah %chown ing ngisor Prentah shell alt
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Nyoba maneh: %attempt saka %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Deleng kuitansi panjenengan</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ akun panjenengan.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Pranala mung kena dienggo sepisan lan mung sajrone %1 menit.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Setel ulang tembung sandhi panjenengan</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Ana wong sing nyuwun supaya tembung sandhi akun panjenengan ing %site disetel ulang. Konfirmasi nganggo tombol iki, banjur kita bakal ngirim tembung sandhi anyar ing email kapindho.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Setel ulang tembung sandhi</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Yen panjenengan ora nyuwun iki, email iki bisa diabaikan: tembung sandhi panjenengan tetep kaya sadurunge.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Tembung sandhi anyar panjenengan</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Tembung sandhi panjenengan ing %site wis disetel ulang. Mangga mlebu nganggo tembung sandhi anyar iki, banjur gantinen dadi tembung sandhi panjenengan dhewe.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Yen panjenengan ora nyetel ulang tembung sandhi, mangga mlebu nganggo tembung sandhi iki lan gantinen saiki uga.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Setel ulang tembung sandhi panjenengan kanggo %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Tembung sandhi anyar panjenengan kanggo %site</translation>
     </message>
 </context>
 <context>
@@ -57367,6 +57415,30 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>Package</source>
         <translation>Paket</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arsip ditolak: entri "%path" nduweni jeneng berkas utawa direktori sing luwih dawa tinimbang %length bita, sing ora bisa disimpen dening sistem berkas apa wae.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Pranala "%path" nuding metu saka paket (%target) lan ora diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Pranala "%path" nuding menyang "%target", sing ora ana ing paket, lan ora diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Pranala "%path" nuding menyang direktori "%target" lan ora diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Entri "%path" kuwi piranti utawa pipa kanthi jeneng (jinis tar "%type") lan ora diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Entri "%path" nduweni jinis tar "%type", sing ora dienggo ing paket, lan ora diimpor.</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71557,14 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>Your devices</source>
         <translation>Piranti panjenengan</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Ana wong sing nyuwun nganggo %email kanggo akun ing %site. Mangga konfirmasi yen alamat iki kagungan panjenengan.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Panjenengan (utawa wong sing ngetik alamat panjenengan) nyuwun pranala kanggo ngatur email sing dikirim %site menyang %email. Ing kaca kuwi panjenengan bisa mateni utawa nguripake saben jinis email, utawa mungkasi kabeh email pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71921,10 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Yen panjenengan ora nggawe owah-owahan iki, bisa uga wong liya ngerti tembung sandhi panjenengan: enggal reset nganggo "%forgot" ing kaca mlebu, lan hubungi kita.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Tembung sandhi panjenengan wis diganti</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76779,34 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>The sessions of this user:</source>
         <translation>Sesi panganggo iki:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Mlebu anyar menyang akun panjenengan</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Piranti</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wektu</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Alamat kira-kira</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Yen kuwi dudu panjenengan, bisa wae ana wong sing ngerti tembung sandhi panjenengan: metokna sesi kuwi ing kaca piranti panjenengan, banjur ganti tembung sandhi panjenengan.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Tinjau piranti panjenengan</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Deleng sesi pangguna iki</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77333,17 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Baris dibusak saka tabel lan ora bisa dibalekake.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Yen tombol ora bisa digunakake, salinen alamat iki menyang panjlajah panjenengan: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Bukak kaca</translation>
     </message>
 </context>
 </TS>

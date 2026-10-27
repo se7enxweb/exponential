@@ -9,23 +9,23 @@ and `settings/i18n.ini`, no extension) has:
 
 | What | How many |
 |---|---:|
-| Languages of the administration: translations in `share/translations` | **85**, 76 of them complete |
+| Languages of the administration: translations in `share/translations` | **96**, 96 of them complete |
 | Locales: `share/locale/*.ini` files | **289**: 282 languages and countries, 1 test language, 6 variants |
 | Known languages: the language codes of the locales (variants and the test language left out) | **150** |
-| of them shown translated by the administration (own translation, fallback or English) | **82** |
-| of them not translated ([list](#the-languages-not-translated-yet)) | **68** |
+| of them shown translated by the administration (own translation, fallback or English) | **93** |
+| of them not translated ([list](#the-languages-not-translated-yet)) | **57** |
 | Countries and territories of the locales | **175** |
-| of them with the administration in their language (green on the map) | **158** |
+| of them with the administration in their language (green on the map) | **162** |
 | Locales written right to left | **43** |
 
-![World map: 158 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
+![World map: 162 countries and territories in green, where a shipped locale shows the administration in its language; the others in grey](images/languages/coverage-map.webp)
 
 A country is green when a locale ships for it whose language the administration shows translated: with a
 translation of its own or the first translation of its fallback chain (`i18n.ini [TranslationSettings]`,
 `FallbackMode=first`, see [section 13](#13-translation-fallbacks)). English counts as translated: it is the
 language of the source texts. The map as a vector image: `doc/eng-us/images/languages/coverage-map.svg`; outlines: Natural Earth, public domain.
 
-<details><summary>The 158 countries and territories in green</summary>
+<details><summary>The 162 countries and territories in green</summary>
 
 | Country or territory | Code | Locales and the translation they show |
 |---|---|---|
@@ -80,6 +80,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | France | FR | `bre-FR` (untranslated), `fre-FR`, `oci-FR` (untranslated) |
 | Gabon | GA | `fre-GA` → `fre-FR` |
 | Gambia | GM | `eng-GM` (source texts) |
+| Georgia | GE | `kat-GE` |
 | Germany | DE | `dsb-DE`, `ger-DE`, `hsb-DE` (untranslated) |
 | Ghana | GH | `aka-GH` (untranslated), `eng-GH` (source texts), `ewe-GH` (untranslated) |
 | Greece | GR | `ell-GR` |
@@ -103,6 +104,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Italy | IT | `ita-IT` |
 | Japan | JP | `jpn-JP` |
 | Jordan | JO | `ara-JO` → `ara-SA` |
+| Kazakhstan | KZ | `kaz-KZ` |
 | Kenya | KE | `eng-KE` (source texts), `kik-KE` (untranslated), `swa-KE` |
 | Korea, Republic of | KR | `kor-KR` |
 | Kuwait | KW | `ara-KW` → `ara-SA` |
@@ -126,10 +128,11 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Monaco | MC | `fre-MC` → `fre-FR` |
 | Morocco | MA | `ara-MA` → `ara-SA`, `fre-MA` → `fre-FR`, `zgh-MA` (untranslated) |
 | Mozambique | MZ | `por-MZ` → `por-PT` |
+| Myanmar | MM | `mya-MM` |
 | Namibia | NA | `eng-NA` (source texts) |
 | Nepal | NP | `nep-NP` |
 | Netherlands | NL | `dut-NL`, `fry-NL` (untranslated) |
-| New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
+| New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` |
 | Nicaragua | NI | `esl-NI` → `esl-ES` |
 | Niger | NE | `fre-NE` → `fre-FR` |
 | Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
@@ -140,13 +143,13 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Panama | PA | `esl-PA` → `esl-ES` |
 | Paraguay | PY | `esl-PY` → `esl-ES` |
 | Peru | PE | `esl-PE` → `esl-ES`, `que-PE` (untranslated) |
-| Philippines | PH | `ceb-PH` (untranslated), `eng-PH` (source texts), `fil-PH` (untranslated) |
+| Philippines | PH | `ceb-PH` (untranslated), `eng-PH` (source texts), `fil-PH` |
 | Poland | PL | `pol-PL` |
 | Portugal | PT | `por-PT` |
 | Puerto Rico | PR | `esl-PR` → `esl-ES` |
 | Qatar | QA | `ara-QA` → `ara-SA` |
 | Romania | RO | `ron-RO` |
-| Russian Federation | RU | `che-RU` (untranslated), `rus-RU`, `tat-RU` (untranslated) |
+| Russian Federation | RU | `che-RU`, `rus-RU`, `tat-RU` (untranslated) |
 | Rwanda | RW | `fre-RW` → `fre-FR`, `kin-RW` (untranslated) |
 | Saint Helena | SH | `eng-SH` (source texts) |
 | Sao Tome and Principe | ST | `por-ST` → `por-PT` |
@@ -177,20 +180,21 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Uganda | UG | `eng-UG` (source texts), `lug-UG` (untranslated) |
 | Ukraine | UA | `ukr-UA` |
 | United Arab Emirates | AE | `ara-AE` → `ara-SA` |
-| United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` (untranslated) |
+| United Kingdom | GB | `cym-GB` (untranslated), `eng-GB` (source texts), `gla-GB` |
 | United States of America | US | `eng-US`, `esl-US` → `esl-ES`, `haw-US` (untranslated), `yid-US` |
 | Uruguay | UY | `esl-UY` → `esl-ES` |
+| Uzbekistan | UZ | `uzb-UZ` |
 | Vanuatu | VU | `fre-VU` → `fre-FR` |
 | Venezuela | VE | `esl-VE` → `esl-ES` |
 | Viet Nam | VN | `vie-VN` |
 | Western Sahara | EH | `ara-EH` → `ara-SA` |
 | Yemen | YE | `ara-YE` → `ara-SA` |
 | Zambia | ZM | `eng-ZM` (source texts) |
-| Zimbabwe | ZW | `eng-ZW` (source texts), `sna-ZW` (untranslated) |
+| Zimbabwe | ZW | `eng-ZW` (source texts), `sna-ZW` |
 
 </details>
 
-<details><summary>The 17 countries and territories with a locale but the administration in English</summary>
+<details><summary>The 13 countries and territories with a locale but the administration in English</summary>
 
 | Country or territory | Code | Locales |
 |---|---|---|
@@ -200,17 +204,13 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | Bhutan | BT | `dzo-BT` |
 | Cambodia | KH | `khm-KH` |
 | Faroe Islands | FO | `fao-FO` |
-| Georgia | GE | `kat-GE` |
-| Kazakhstan | KZ | `kaz-KZ` |
 | Kyrgyzstan | KG | `kir-KG` |
 | Maldives | MV | `div-MV` |
 | Mongolia | MN | `mon-MN` |
-| Myanmar | MM | `mya-MM` |
 | North Macedonia | MK | `mkd-MK` |
 | Tajikistan | TJ | `tgk-TJ` |
 | Tonga | TO | `ton-TO` |
 | Turkmenistan | TM | `tuk-TM` |
-| Uzbekistan | UZ | `uzb-UZ` |
 
 </details>
 
@@ -251,12 +251,12 @@ Every locale is plain INI: nothing here needs a PHP extension at run time.
 
 Exponential knows **150 languages**: that many different language codes (the three letters before the
 dash) are found in the shipped locales `share/locale/*.ini`, variants and the test language left out. The
-administration shows **82** of them translated: at least one of their locales has a translation of its
+administration shows **93** of them translated: at least one of their locales has a translation of its
 own, falls back to the first translation of its chain (`FallbackMode=first`) or is English, the language of the
-source texts. For the other **68** it shows the source texts in English; each is a candidate for a new
+source texts. For the other **57** it shows the source texts in English; each is a candidate for a new
 translation (see [section 8](#8-adding-or-completing-an-administration-translation)).
 
-<details><summary>The 68 languages not translated</summary>
+<details><summary>The 57 languages not translated</summary>
 
 | Language | Own name | Code | Locales (countries) |
 |---|---|---|---|
@@ -270,25 +270,20 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Belarusian | Беларуская | `bel` | `bel-BY` (Belarus) |
 | Bodo | बर’ | `brx` | `brx-IN` (India) |
 | Breton | Brezhoneg | `bre` | `bre-FR` (France) |
-| Burmese | မြန်မာ | `mya` | `mya-MM` (Myanmar) |
 | Cebuano | Cebuano | `ceb` | `ceb-PH` (Philippines) |
 | Central Kurdish | کوردیی ناوەندی | `ckb` | `ckb-IQ` (Iraq) |
-| Chechen | Нохчийн | `che` | `che-RU` (Russian Federation) |
 | Dhivehi | ދިވެހި | `div` | `div-MV` (Maldives) |
 | Dogri | डोगरी | `doi` | `doi-IN` (India) |
 | Dzongkha | རྫོང་ཁ | `dzo` | `dzo-BT` (Bhutan) |
 | Esperanto | Esperanto | `epo` | `epo-EO` |
 | Ewe | Eʋegbe | `ewe` | `ewe-GH` (Ghana) |
 | Faroese | Føroyskt | `fao` | `fao-FO` (Faroe Islands) |
-| Filipino | Filipino | `fil` | `fil-PH` (Philippines) |
 | Fula | Pulaar | `ful` | `ful-SN` (Senegal) |
 | Galician | Galego | `glg` | `glg-ES` (Spain) |
 | Ganda | Luganda | `lug` | `lug-UG` (Uganda) |
-| Georgian | ქართული | `kat` | `kat-GE` (Georgia) |
 | Hawaiian | ʻŌlelo Hawaiʻi | `haw` | `haw-US` (United States of America) |
 | Kabyle | Taqbaylit | `kab` | `kab-DZ` (Algeria) |
 | Kashmiri | کٲشُر | `kas` | `kas-IN` (India) |
-| Kazakh | Қазақ тілі | `kaz` | `kaz-KZ` (Kazakhstan) |
 | Khmer | ខ្មែរ | `khm` | `khm-KH` (Cambodia) |
 | Kikuyu | Gikuyu | `kik` | `kik-KE` (Kenya) |
 | Kinyarwanda | Kinyarwanda | `kin` | `kin-RW` (Rwanda) |
@@ -300,7 +295,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Macedonian | Македонски | `mkd` | `mkd-MK` (North Macedonia) |
 | Malagasy | Malagasy | `mlg` | `mlg-MG` (Madagascar) |
 | Manipuri | মৈতৈলোন্ | `mni` | `mni-IN` (India) |
-| Māori | Māori | `mri` | `mri-NZ` (New Zealand) |
 | Mongolian | Монгол | `mon` | `mon-MN` (Mongolia) |
 | Northern Sami | Davvisámegiella | `sme` | `sme-NO` (Norway) |
 | N’Ko | ߒߞߏ | `nqo` | `nqo-GN` (Guinea) |
@@ -310,9 +304,6 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Romansh | Rumantsch | `roh` | `roh-CH` (Switzerland) |
 | Sanskrit | संस्कृत भाषा | `san` | `san-IN` (India) |
 | Santali | ᱥᱟᱱᱛᱟᱲᱤ | `sat` | `sat-IN` (India) |
-| Scottish Gaelic | Gàidhlig | `gla` | `gla-GB` (United Kingdom) |
-| Shona | ChiShona | `sna` | `sna-ZW` (Zimbabwe) |
-| Sindhi | سنڌي | `snd` | `snd-PK` (Pakistan) |
 | Sinhala | සිංහල | `sin` | `sin-LK` (Sri Lanka) |
 | Standard Moroccan Tamazight | ⵜⴰⵎⴰⵣⵉⵖⵜ | `zgh` | `zgh-MA` (Morocco) |
 | Tajik | Тоҷикӣ | `tgk` | `tgk-TJ` (Tajikistan) |
@@ -323,10 +314,8 @@ translation (see [section 8](#8-adding-or-completing-an-administration-translati
 | Turkmen | Türkmen dili | `tuk` | `tuk-TM` (Turkmenistan) |
 | Upper Sorbian | Hornjoserbšćina | `hsb` | `hsb-DE` (Germany) |
 | Uyghur | ئۇيغۇرچە | `uig` | `uig-CN` (China) |
-| Uzbek | O‘zbek | `uzb` | `uzb-UZ` (Uzbekistan) |
 | Welsh | Cymraeg | `cym` | `cym-GB` (United Kingdom) |
 | Western Frisian | Frysk | `fry` | `fry-NL` (Netherlands) |
-| Western Punjabi | پنجابی | `pnb` | `pnb-PK` (Pakistan) |
 | Wolof | Wolof | `wol` | `wol-SN` (Senegal) |
 
 </details>
@@ -361,7 +350,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `snd-PK`, `pnb-PK`, `uzb-UZ`, `mya-MM`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 237 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -447,7 +436,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `bul-BG` | Bulgarian | Български | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `cat-ES` | Catalan | Català | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `ceb-PH` | Cebuano | Cebuano | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `che-RU` | Chechen | Нохчийн | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
+| `che-RU` | Chechen | Нохчийн | Europe | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `chi-CN` | Simplified Chinese | 简体中文 | East Asia | LTR | Han (Simplified) (`Hans`) | older, hand-made, fixed in 6.0.15 | 100% |
 | `chi-HK` | Traditional Chinese (HongKong) | 繁體中文 (香港) | East Asia | LTR | Han (Traditional) (`Hant`) | older, hand-made, fixed in 6.0.15 | 100% (falls back to `chi-TW`) |
 | `chi-SG` | Simplified Chinese (Singapore) | 简体中文 (新加坡) | Southeast Asia | LTR | Han (Simplified) (`Hans`) | CLDR 44 | 100% (falls back to `chi-CN`) |
@@ -524,7 +513,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `fao-FO` | Faroese | Føroyskt | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `fas-AF` | Dari (Afghanistan) | دری (افغانستان) | Central Asia and Caucasus | RTL | Arabic (`Arab`) | CLDR 44 | 100% (falls back to `fas-IR`) |
 | `fas-IR` | Persian | فارسی | Middle East | RTL | Arabic (`Arab`) | CLDR 44 | 100% |
-| `fil-PH` | Filipino | Filipino | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `fil-PH` | Filipino | Filipino | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `fin-FI` | Finnish | Suomi | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `fre-BE` | French (Belgium) | Français (Belgique) | Europe | LTR | Latin (`Latn`) | older, hand-made | — |
 | `fre-BF` | French (Burkina Faso) | Français (Burkina Faso) | Africa | LTR | Latin (`Latn`) | CLDR 48 | — |
@@ -569,7 +558,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ger-DE@euro` | Variant of `ger-DE`: Euro support |  | Europe | LTR | Latin (`Latn`) | older variation, hand-made | — |
 | `ger-LI` | German (Liechtenstein) | Deutsch (Liechtenstein) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
 | `ger-LU` | German (Luxembourg) | Deutsch (Luxemburg) | Europe | LTR | Latin (`Latn`) | CLDR 48 | — |
-| `gla-GB` | Scottish Gaelic | Gàidhlig | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `gla-GB` | Scottish Gaelic | Gàidhlig | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `gle-IE` | Irish | Gaeilge | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `glg-ES` | Galician | Galego | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `guj-IN` | Gujarati | ગુજરાતી | South Asia | LTR | Gujarati (`Gujr`) | CLDR 44 | 100% |
@@ -593,8 +582,8 @@ The table is generated from the locale files; do not edit it by hand.
 | `kal-GL` | Greenlandic | Kalaallisut | Americas | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `kan-IN` | Kannada | ಕನ್ನಡ | South Asia | LTR | Kannada (`Knda`) | CLDR 44 | 100% |
 | `kas-IN` | Kashmiri | کٲشُر | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
-| `kat-GE` | Georgian | ქართული | Central Asia and Caucasus | LTR | Georgian (`Geor`) | CLDR 44 | — |
-| `kaz-KZ` | Kazakh | Қазақ тілі | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
+| `kat-GE` | Georgian | ქართული | Central Asia and Caucasus | LTR | Georgian (`Geor`) | CLDR 44 | 100% |
+| `kaz-KZ` | Kazakh | Қазақ тілі | Central Asia and Caucasus | LTR | Cyrillic (`Cyrl`) | CLDR 44 | 100% |
 | `khm-KH` | Khmer | ខ្មែរ | Southeast Asia | LTR | Khmer (`Khmr`) | CLDR 44 | — |
 | `kik-KE` | Kikuyu | Gikuyu | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `kin-RW` | Kinyarwanda | Kinyarwanda | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -617,7 +606,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `mlt-MT` | Maltese | Malti | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `mni-IN` | Manipuri | মৈতৈলোন্ | South Asia | LTR | Bengali (`Beng`) | CLDR 44 | — |
 | `mon-MN` | Mongolian | Монгол | East Asia | LTR | Cyrillic (`Cyrl`) | CLDR 44 | — |
-| `mri-NZ` | Māori | Māori | Oceania | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `mri-NZ` | Māori | Māori | Oceania | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `msa-BN` | Malay (Brunei) | Melayu (Brunei) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `msa-MY`) |
 | `msa-MY` | Malay (Malaysia) | Melayu (Malaysia) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `msa-SG` | Malay (Singapore) | Melayu (Singapura) | Southeast Asia | LTR | Latin (`Latn`) | CLDR 44 | 100% (falls back to `msa-MY`) |
@@ -657,8 +646,8 @@ The table is generated from the locale files; do not edit it by hand.
 | `slk-SK` | Slovak | Slovenčina | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `slv-SI` | Slovenian | Slovenščina | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `sme-NO` | Northern Sami | Davvisámegiella | Europe | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `sna-ZW` | Shona | ChiShona | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
-| `snd-PK` | Sindhi | سنڌي | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | 100% |
+| `sna-ZW` | Shona | ChiShona | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
+| `snd-PK` | Sindhi | سنڌي | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `som-SO` | Somali | Soomaali | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `sqi-AL` | Albanian | Shqip | Europe | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `srp-RS` | Serbian (Српски) | Serbian (Српски) | Europe | LTR | Cyrillic (`Cyrl`) | older, hand-made | 100% |
@@ -888,13 +877,29 @@ source text, and the interface language choice counts English as 100%.
 | `bho-IN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `mai-IN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `pcm-NG` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
-| `snd-PK` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
-| `pnb-PK` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
-| `uzb-UZ` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
-| `mya-MM` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `kat-GE` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `sna-ZW` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `kaz-KZ` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `gla-GB` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `mri-NZ` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `fil-PH` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
+| `che-RU` | 100% (18,839 of 18,839) | 100% (18,839 of 18,839) |
 
 Notes:
 
+- **Kazakh** (`kaz-KZ`) was added on 26 October 2026, machine-assisted, in Cyrillic script (the script of the
+  locale and of Kazakh software today; the move to the Latin alphabet decided in 2017 is planned up to about 2031)
+  with the polite address (Сіз), verbal nouns on buttons and placeholders standing free, with a glossary
+  (`share/translations/kaz-KZ/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by a
+  native speaker is welcome.
+- **Shona** (`sna-ZW`) was added on 26 October 2026, machine-assisted, in standard Shona with the respectful plural
+  address (imi), verb stems on buttons, Shona loanwords for technical terms and placeholders standing free, with a
+  glossary (`share/translations/sna-ZW/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review
+  by a native speaker is especially welcome.
+- **Georgian** (`kat-GE`) was added on 26 October 2026, machine-assisted, in Mkhedruli script with the formal
+  address (თქვენ), verbal nouns on buttons and placeholders standing free, with a glossary
+  (`share/translations/kat-GE/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by a native
+  speaker is welcome.
 - **Malay** (`msa-MY`) was added on 26 October 2026, machine-assisted, in standard Malaysian Malay (Rumi script) with
   the polite address *anda*, the computing terms of Dewan Bahasa dan Pustaka and a glossary that marks where Malaysian
   usage differs from Indonesian (`share/translations/msa-MY/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are
@@ -917,6 +922,20 @@ Notes:
   Vietnamese in a neutral register with "bạn" where a pronoun is needed, Indonesian in standard spelling (EYD)
   with the formal "Anda". The kernel, ezoe and ezjscore catalogues are complete; `ind-ID` no longer falls back
   to the source texts. A review by native speakers is welcome.
+- **Scottish Gaelic** (`gla-GB`) was added on 26 October 2026, machine-assisted, in the Gaelic Orthographic
+  Conventions (grave accents only) with the formal "sibh" and a glossary in the Akerbeltz terminology
+  (`share/translations/gla-GB/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by a
+  native speaker is welcome.
+- **Māori** (`mri-NZ`) was added on 26 October 2026, machine-assisted, in te reo Māori with macrons in the
+  conventions of Te Taura Whiri i te Reo Māori and the register of New Zealand government software, with a glossary
+  (`share/translations/mri-NZ/GUIDE.md`); the kernel, ezoe and ezjscore catalogues are complete. A review by a native
+  speaker is welcome.
+- **Filipino** (`fil-PH`) was added on 26 October 2026, machine-assisted, in the KWF spelling with the address "mo"
+  and the English loanwords Filipino software uses, with a glossary (`share/translations/fil-PH/GUIDE.md`); the
+  kernel, ezoe and ezjscore catalogues are complete. A review by a native speaker is welcome.
+- **Chechen** (`che-RU`) was added on 26 October 2026, machine-assisted, in Cyrillic with the palochka (Ӏ, U+04C0)
+  and the formal "шу", with a glossary (`share/translations/che-RU/GUIDE.md`); the kernel, ezoe and ezjscore
+  catalogues are complete. A review by a native speaker is welcome.
 - **Chinese** (`chi-CN`, `chi-TW`) is complete since 24 October 2026, machine-assisted with a style guide and glossary per
   language (mainland: 帐户, 单击; Taiwan: 帳戶, 按一下, 垃圾桶). `chi-HK` has no catalogue of its own any more and falls back to
   `chi-TW`, `chi-SG` to `chi-CN`. A review by native speakers is welcome.

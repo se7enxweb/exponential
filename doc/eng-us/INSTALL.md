@@ -763,7 +763,9 @@ Then continue with the guides:
 *Full chapter: [11-upgrading](install/11-upgrading.md)*
 
 Do not run the installer over an existing site. Follow [Upgrading](guides/upgrading.md): from 4.x, 5.x or an
-earlier 6.0.x to the current line, with the database update and the checklists per release.
+earlier 6.0.x to the current line, with the database update and the checklists per release. A 6.0 installation is
+brought up to date with the short procedure of [Updating Exponential 6.0](UPDATE.md); to move a site elsewhere or
+remove it, export everything first with [Uninstalling Exponential 6.0](UNINSTALL.md).
 
 The online manual has further installation notes:
 https://exponential.doc.exponential.earth/Exponential/Technical-manual/6.x/Installation.html

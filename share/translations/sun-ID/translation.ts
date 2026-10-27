@@ -44936,6 +44936,14 @@ Upami anjeun hoyong ngirim koméntar ka nu masihan persetujuan atanapi ningali s
         <source>Comment by "%1 &lt;%2&gt;"</source>
         <translation>Koméntar ti "%1 &lt;%2&gt;"</translation>
     </message>
+    <message>
+        <source>A page was recommended to you</source>
+        <translation>Aya kaca anu dianggo pikeun anjeun</translation>
+    </message>
+    <message>
+        <source>You get this mail because someone entered your address on %site to share a page with you.</source>
+        <translation>Anjeun nampi surélék ieu kusabab aya anu ngasupkeun alamat anjeun di %site pikeun ngabagikeun hiji kaca ka anjeun.</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/content/trash</name>
@@ -52451,6 +52459,10 @@ Pikeun ngalakukeunana anjeun kedah ngarobih paréntah %chown di handapeun Parén
         <source>(Retry: %attempt out of %max).</source>
         <translation>(Usaha deui: %attempt tina %max).</translation>
     </message>
+    <message>
+        <source>View your receipt</source>
+        <translation>Tingali kwitansi anjeun</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/shop/currencynames</name>
@@ -53489,6 +53501,42 @@ akun anjeun.</translation>
     <message>
         <source>The link works only once and only for %1 minutes.</source>
         <translation>Tumbu ngan berlaku sakali sareng ngan salila %1 menit.</translation>
+    </message>
+    <message>
+        <source>Reset your password</source>
+        <translation>Setel ulang sandi anjeun</translation>
+    </message>
+    <message>
+        <source>Someone asked to reset the password of your account on %site. Confirm with the button, and we will send you a new password in a second mail.</source>
+        <translation>Aya anu nyuhunkeun nyetel ulang sandi akun anjeun di %site. Pastikeun ku tombol, tuluy kami bakal ngirim sandi énggal dina surélék kadua.</translation>
+    </message>
+    <message>
+        <source>Reset my password</source>
+        <translation>Setel ulang sandi kuring</translation>
+    </message>
+    <message>
+        <source>If you did not ask for this, you can ignore this mail: your password stays as it is.</source>
+        <translation>Upami anjeun henteu nyuhunkeun ieu, surélék ieu tiasa dilirwakeun: sandi anjeun tetep sapertos baheula.</translation>
+    </message>
+    <message>
+        <source>Your new password</source>
+        <translation>Sandi énggal anjeun</translation>
+    </message>
+    <message>
+        <source>Your password on %site was reset. Sign in with this new password, then change it to one of your own.</source>
+        <translation>Sandi anjeun di %site parantos disetel ulang. Mangga asup ku sandi énggal ieu, tuluy ganti ku sandi anjeun nyalira.</translation>
+    </message>
+    <message>
+        <source>If you did not reset your password, sign in with this one and change it at once.</source>
+        <translation>Upami anjeun henteu nyetel ulang sandi, mangga asup ku sandi ieu tuluy gantos ayeuna keneh.</translation>
+    </message>
+    <message>
+        <source>Reset your password for %site</source>
+        <translation>Setel ulang sandi anjeun pikeun %site</translation>
+    </message>
+    <message>
+        <source>Your new password for %site</source>
+        <translation>Sandi énggal anjeun pikeun %site</translation>
     </message>
 </context>
 <context>
@@ -57367,6 +57415,30 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Package</source>
         <translation>Pakét</translation>
+    </message>
+    <message>
+        <source>The archive was refused: the entry "%path" has a file or directory name longer than %length bytes, which no file system stores.</source>
+        <translation>Arsip ditolak: éntri "%path" gaduh ngaran berkas atanapi diréktori anu langkung panjang tibatan %length bait, anu teu tiasa disimpen ku sistem berkas mana waé.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points outside the package (%target) and was not imported.</source>
+        <translation>Tumbu "%path" nunjuk ka luar pakét (%target) sarta henteu diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to "%target", which the package does not hold, and was not imported.</source>
+        <translation>Tumbu "%path" nunjuk ka "%target", anu teu aya dina pakét, sarta henteu diimpor.</translation>
+    </message>
+    <message>
+        <source>The link "%path" points to the directory "%target" and was not imported.</source>
+        <translation>Tumbu "%path" nunjuk ka diréktori "%target" sarta henteu diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" is a device or a named pipe (tar type "%type") and was not imported.</source>
+        <translation>Éntri "%path" nyaéta alat atanapi pipa bernami (jinis tar "%type") sarta henteu diimpor.</translation>
+    </message>
+    <message>
+        <source>The entry "%path" has the tar type "%type", which a package does not use, and was not imported.</source>
+        <translation>Éntri "%path" gaduh jinis tar "%type", anu teu dianggo ku pakét, sarta henteu diimpor.</translation>
     </message>
 </context>
 <context>
@@ -71485,6 +71557,14 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Your devices</source>
         <translation>Alat anjeun</translation>
     </message>
+    <message>
+        <source>Someone asked to use %email for an account on %site. Please confirm that this address is yours.</source>
+        <translation>Aya anu nyuhunkeun ngagunakeun %email pikeun akun di %site. Mangga pastikeun yén alamat ieu milik anjeun.</translation>
+    </message>
+    <message>
+        <source>You (or someone who typed your address) asked for a link to manage the e-mail %site sends to %email. On that page you can turn each kind of e-mail on or off, or stop all optional e-mail.</source>
+        <translation>Anjeun (atanapi jalma anu ngetik alamat anjeun) nyuhunkeun tumbu pikeun ngatur surélék anu dikirim ku %site ka %email. Dina kaca éta anjeun tiasa mareuman atanapi ngahurungkeun unggal jinis surélék, atanapi ngeureunkeun sakabéh surélék pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/mailpreferences</name>
@@ -71841,6 +71921,10 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>If you did not make this change, someone else may know your password: reset it at once with "%forgot" on the login page, and contact us.</source>
         <translation>Upami lain anjeun nu ngarobihna, aya jalma séjén nu meureun terang sandi anjeun: langsung setél deui ku "%forgot" dina kaca asup, sareng hubungi kami.</translation>
+    </message>
+    <message>
+        <source>Your password was changed</source>
+        <translation>Sandi anjeun parantos dirobih</translation>
     </message>
 </context>
 <context>
@@ -76695,6 +76779,34 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>The sessions of this user:</source>
         <translation>Sési pamaké ieu:</translation>
     </message>
+    <message>
+        <source>New sign-in to your account</source>
+        <translation>Asup anyar ka akun anjeun</translation>
+    </message>
+    <message>
+        <source>Device</source>
+        <translation>Alat</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktos</translation>
+    </message>
+    <message>
+        <source>Approximate address</source>
+        <translation>Alamat kira-kira</translation>
+    </message>
+    <message>
+        <source>If it was not you, someone may know your password: sign that session out on your devices page, then change your password.</source>
+        <translation>Upami éta lain anjeun, meureun aya anu terang sandi anjeun: kaluarkeun sési éta dina kaca alat anjeun, tuluy ganti sandi anjeun.</translation>
+    </message>
+    <message>
+        <source>Review your devices</source>
+        <translation>Parios alat anjeun</translation>
+    </message>
+    <message>
+        <source>View the sessions of this user</source>
+        <translation>Tingali sési pamaké ieu</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/sessions/mail</name>
@@ -77221,6 +77333,17 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>The row is removed from the table and cannot be brought back.</source>
         <translation>Barisna dikaluarkeun tina tabel sareng teu tiasa dipulangkeun.</translation>
+    </message>
+</context>
+<context>
+    <name>design/standard/mail</name>
+    <message>
+        <source>If the button does not work, copy this address into your browser: %url</source>
+        <translation>Upami tombolna henteu tiasa dianggo, salin alamat ieu ka panyungsi anjeun: %url</translation>
+    </message>
+    <message>
+        <source>Open the page</source>
+        <translation>Buka kaca</translation>
     </message>
 </context>
 </TS>
