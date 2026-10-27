@@ -9,11 +9,11 @@ summary: Die eine Stelle, die angibt, welche Sprachen Exponential unterstützt, 
 
 | Was | Anzahl |
 |---|---:|
-| Sprachen der Administration: Übersetzungen in `share/translations` | **103**, davon 103 vollständig |
+| Sprachen der Administration: Übersetzungen in `share/translations` | **105**, davon 105 vollständig |
 | Locales: Dateien `share/locale/*.ini` | **289**: 282 Sprachen und Länder, 1 Testsprache, 6 Varianten |
 | Bekannte Sprachen: die Sprachcodes der Locales (ohne Varianten und Testsprache) | **150** |
-| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **100** |
-| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **50** |
+| davon von der Administration übersetzt gezeigt (eigene Übersetzung, Fallback oder Englisch) | **102** |
+| davon nicht übersetzt ([Liste](#die-noch-nicht-übersetzten-sprachen)) | **48** |
 | Länder und Gebiete der Locales | **175** |
 | davon mit der Administration in ihrer Sprache (grün auf der Karte) | **164** |
 | Locales, die von rechts nach links geschrieben werden | **43** |
@@ -71,7 +71,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Gabun | GA | `fre-GA` → `fre-FR` |
 | Gambia | GM | `eng-GM` (Quelltexte) |
 | Georgien | GE | `kat-GE` |
-| Ghana | GH | `aka-GH` (nicht übersetzt), `eng-GH` (Quelltexte), `ewe-GH` (nicht übersetzt) |
+| Ghana | GH | `aka-GH`, `eng-GH` (Quelltexte), `ewe-GH` (nicht übersetzt) |
 | Griechenland | GR | `ell-GR` |
 | Grönland | GL | `kal-GL` |
 | Guatemala | GT | `esl-GT` → `esl-ES` |
@@ -81,7 +81,7 @@ Sprache der Quelltexte. Die Karte als Vektorgrafik: `doc/ger-de/bilder/sprachen/
 | Haiti | HT | `fre-HT` → `fre-FR` |
 | Honduras | HN | `esl-HN` → `esl-ES` |
 | Hongkong | HK | `chi-HK` → `chi-TW` |
-| Indien | IN | `asm-IN` (nicht übersetzt), `ben-IN` → `ben-BD`, `bho-IN`, `brx-IN` (nicht übersetzt), `doi-IN` (nicht übersetzt), `eng-IN` (Quelltexte), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (nicht übersetzt), `kok-IN` (nicht übersetzt), `mai-IN`, `mal-IN`, `mar-IN`, `mni-IN` (nicht übersetzt), `ori-IN`, `pan-IN`, `san-IN` (nicht übersetzt), `sat-IN` (nicht übersetzt), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
+| Indien | IN | `asm-IN`, `ben-IN` → `ben-BD`, `bho-IN`, `brx-IN` (nicht übersetzt), `doi-IN` (nicht übersetzt), `eng-IN` (Quelltexte), `guj-IN`, `hin-IN`, `kan-IN`, `kas-IN` (nicht übersetzt), `kok-IN` (nicht übersetzt), `mai-IN`, `mal-IN`, `mar-IN`, `mni-IN` (nicht übersetzt), `ori-IN`, `pan-IN`, `san-IN` (nicht übersetzt), `sat-IN` (nicht übersetzt), `tam-IN`, `tel-IN`, `urd-IN` → `urd-PK` |
 | Indonesien | ID | `ind-ID`, `jav-ID`, `sun-ID` |
 | Irak | IQ | `ara-IQ` → `ara-SA`, `arc-IQ`, `ckb-IQ` (nicht übersetzt), `syr-IQ` |
 | Iran (Islamische Republik) | IR | `fas-IR` |
@@ -223,29 +223,29 @@ hinzufügen. Die Zahlen wurden am 15. Oktober 2026 erhoben, die der Übersetzung
 
 <!-- generated: exp:i18n coverage translations (start) -->
 Kurz gefasst: **289 Locale-Dateien** (282 Sprachen und Länder, die Testsprache Lorem Ipsum und 6 Varianten, 43 davon
-von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **103
-Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Albanian (`sqi-AL`), Amharic
-(`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Azerbaijani (`aze-AZ`), Bengali (Bangladesh)
-(`ben-BD`), Bhojpuri (`bho-IN`), Bosnian (`bos-BA`), Bulgarian (`bul-BG`), Burmese (`mya-MM`), Catalan (`cat-ES`),
-Chechen (`che-RU`), Croatian (`cro-HR`), Czech (`cze-CZ`), Danish (`dan-DK`), Dutch (Netherlands) (`dut-NL`), English
-(Australia) (`eng-AU`), English (United States) (`eng-US`), Estonian (`est-EE`), Filipino (`fil-PH`), Finnish
-(`fin-FI`), French (France) (`fre-FR`), Fula (`ful-SN`), Georgian (`kat-GE`), German (Germany) (`ger-DE`), Greek
-(Hellenic) (`ell-GR`), Greenlandic (`kal-GL`), Gujarati (`guj-IN`), Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew
-(`heb-IL`), Hindi (`hin-IN`), Hulaulá (`huy-IL`), Hungarian (`hun-HU`), Icelandic (`isl-IS`), Igbo (`ibo-NG`),
-Imperial Aramaic (`arc-IQ`), Indonesian (`ind-ID`), Irish (`gle-IE`), Italian (Italy) (`ita-IT`), Japanese (`jpn-JP`),
-Javanese (`jav-ID`), Kannada (`kan-IN`), Kazakh (`kaz-KZ`), Klingon (`tlh-QO`), Korean (`kor-KR`), Kurdish (`kur-TR`),
-Lao (`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala (`lin-CD`), Lithuanian (`lit-LT`), Lower Sorbian
-(`dsb-DE`), Maithili (`mai-IN`), Malay (Malaysia) (`msa-MY`), Malayalam (`mal-IN`), Maltese (`mlt-MT`), Māori
-(`mri-NZ`), Marathi (`mar-IN`), Nepali (`nep-NP`), Nigerian Pidgin (`pcm-NG`), Norwegian Bokmål (`nor-NO`), Odia
-(`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`), Polish (`pol-PL`), Portuguese (Brazil)
-(`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian (`ron-RO`), Russian (`rus-RU`), Scottish
-Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски) (`srp-RS`), Shona (`sna-ZW`), Simplified
-Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`), Slovenian (`slv-SI`), Somali (`som-SO`),
-Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`), Sundanese (`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish
-(`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tamil (India) (`tam-IN`), Telugu (`tel-IN`), Thai (`tha-TH`), Traditional
-Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Ukrainian (`ukr-UA`), Urdu (Pakistan) (`urd-PK`), Uzbek (`uzb-UZ`),
-Vietnamese (`vie-VN`), Western Punjabi (Shahmukhi) (`pnb-PK`), Xhosa (`xho-ZA`), Yiddish (`yid-US`), Yoruba
-(`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
+von rechts nach links geschrieben) lassen sich als Inhaltssprachen und Siteaccess-Locales wählen; es gibt **105
+Übersetzungen der Administrationsoberfläche**, alle vollständig: Afrikaans (`afr-ZA`), Akan (`aka-GH`), Albanian
+(`sqi-AL`), Amharic (`amh-ET`), Arabic (Saudi Arabia) (`ara-SA`), Armenian (`hye-AM`), Assamese (`asm-IN`),
+Azerbaijani (`aze-AZ`), Bengali (Bangladesh) (`ben-BD`), Bhojpuri (`bho-IN`), Bosnian (`bos-BA`), Bulgarian
+(`bul-BG`), Burmese (`mya-MM`), Catalan (`cat-ES`), Chechen (`che-RU`), Croatian (`cro-HR`), Czech (`cze-CZ`), Danish
+(`dan-DK`), Dutch (Netherlands) (`dut-NL`), English (Australia) (`eng-AU`), English (United States) (`eng-US`),
+Estonian (`est-EE`), Filipino (`fil-PH`), Finnish (`fin-FI`), French (France) (`fre-FR`), Fula (`ful-SN`), Georgian
+(`kat-GE`), German (Germany) (`ger-DE`), Greek (Hellenic) (`ell-GR`), Greenlandic (`kal-GL`), Gujarati (`guj-IN`),
+Hausa (`hau-NG`), Hawaiian (`haw-US`), Hebrew (`heb-IL`), Hindi (`hin-IN`), Hulaulá (`huy-IL`), Hungarian (`hun-HU`),
+Icelandic (`isl-IS`), Igbo (`ibo-NG`), Imperial Aramaic (`arc-IQ`), Indonesian (`ind-ID`), Irish (`gle-IE`), Italian
+(Italy) (`ita-IT`), Japanese (`jpn-JP`), Javanese (`jav-ID`), Kannada (`kan-IN`), Kazakh (`kaz-KZ`), Klingon
+(`tlh-QO`), Korean (`kor-KR`), Kurdish (`kur-TR`), Lao (`lao-LA`), Latin (`lat-VA`), Latvian (`lav-LV`), Lingala
+(`lin-CD`), Lithuanian (`lit-LT`), Lower Sorbian (`dsb-DE`), Maithili (`mai-IN`), Malay (Malaysia) (`msa-MY`),
+Malayalam (`mal-IN`), Maltese (`mlt-MT`), Māori (`mri-NZ`), Marathi (`mar-IN`), Nepali (`nep-NP`), Nigerian Pidgin
+(`pcm-NG`), Norwegian Bokmål (`nor-NO`), Odia (`ori-IN`), Oromo (`orm-ET`), Pashto (`pus-AF`), Persian (`fas-IR`),
+Polish (`pol-PL`), Portuguese (Brazil) (`por-BR`), Portuguese (Portugal) (`por-PT`), Punjabi (`pan-IN`), Romanian
+(`ron-RO`), Russian (`rus-RU`), Scottish Gaelic (`gla-GB`), Serbian (Srpski) (`ser-SR`), Serbian (Српски)
+(`srp-RS`), Shona (`sna-ZW`), Simplified Chinese (`chi-CN`), Sindhi (`snd-PK`), Sinhala (`sin-LK`), Slovak (`slk-SK`),
+Slovenian (`slv-SI`), Somali (`som-SO`), Spanish (Mexico) (`esl-MX`), Spanish (Spain) (`esl-ES`), Sundanese
+(`sun-ID`), Swahili (Kenya) (`swa-KE`), Swedish (`swe-SE`), Syriac (Iraq) (`syr-IQ`), Tamil (India) (`tam-IN`), Telugu
+(`tel-IN`), Thai (`tha-TH`), Traditional Chinese (Taiwan) (`chi-TW`), Turkish (`tur-TR`), Ukrainian (`ukr-UA`), Urdu
+(Pakistan) (`urd-PK`), Uzbek (`uzb-UZ`), Vietnamese (`vie-VN`), Western Punjabi (Shahmukhi) (`pnb-PK`), Xhosa
+(`xho-ZA`), Yiddish (`yid-US`), Yoruba (`yor-NG`), Zulu (`zul-ZA`). Die Namen sind die englischen der Locale-Dateien.
 <!-- generated: exp:i18n coverage translations (end) -->
 Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extension.
 
@@ -269,18 +269,16 @@ Jede Locale ist reines INI: Nichts davon benötigt zur Laufzeit eine PHP-Extensi
 ## Die noch nicht übersetzten Sprachen
 
 Exponential kennt **150 Sprachen**: so viele verschiedene Sprachcodes (die drei Buchstaben vor dem
-Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **100** davon
+Bindestrich) haben die mitgelieferten Locales `share/locale/*.ini`, ohne Varianten und Testsprache. **102** davon
 zeigt die Administration übersetzt: mindestens eine ihrer Locales hat eine eigene Übersetzung, fällt auf die erste
 Übersetzung ihrer Kette zurück (`FallbackMode=first`) oder ist Englisch, die Sprache der Quelltexte. Für die
-übrigen **50** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
+übrigen **48** zeigt sie die Quelltexte auf Englisch; jede ist ein Kandidat für eine neue Übersetzung
 (siehe [Abschnitt 8](#8-eine-übersetzung-der-administrationsoberfläche-hinzufügen-oder-vervollständigen)). Die Namen sind die englischen der Locale-Dateien.
 
-<details><summary>Die 50 nicht übersetzten Sprachen</summary>
+<details><summary>Die 48 nicht übersetzten Sprachen</summary>
 
 | Sprache | Eigener Name | Code | Locales (Länder) |
 |---|---|---|---|
-| Akan | Akan | `aka` | `aka-GH` (Ghana) |
-| Assamese | অসমীয়া | `asm` | `asm-IN` (Indien) |
 | Asturian | Asturianu | `ast` | `ast-ES` (Spanien) |
 | Bambara | Bamanakan | `bam` | `bam-ML` (Mali) |
 | Basque | Euskara | `eus` | `eus-ES` (Spanien) |
@@ -362,7 +360,7 @@ Die Einzelheiten stehen an anderer Stelle und werden hier nicht wiederholt:
 
 | Stufe | Was funktioniert | Sprachen |
 |---|---|---|
-| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (und `eng-NZ`, das darauf zurückfällt), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `sin-LK`, `khm-KH`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
+| **Vollständig: Oberfläche und Inhalt** | Die Administrationsoberfläche spricht die Sprache vollständig (mindestens 99 % der aktuellen Texte); Inhalte, Datumsangaben, Zahlen und Währung folgen der Locale. | `eng-US` (und jede `eng-*`-Locale, da Englisch die Sprache der Quelltexte ist), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (und `fas-AF`, Dari, das darauf zurückfällt), `pus-AF`, `kur-TR`, `swa-KE` (und `swa-TZ`, das darauf zurückfällt), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (und `por-AO`, `por-CV`, `por-MZ`, die darauf zurückfallen), `chi-CN` (und `chi-SG`, das darauf zurückfällt), `chi-TW` (und `chi-HK`, das darauf zurückfällt), `afr-ZA`, `ben-BD` (und `ben-IN`), `urd-PK` (und `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (und `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (und `msa-SG`, `msa-BN`, die darauf zurückfallen), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (und `syr-SY`, das darauf zurückfällt), `arc-IQ`, `huy-IL`, `kat-GE`, `sna-ZW`, `kaz-KZ`, `gla-GB`, `mri-NZ`, `fil-PH`, `che-RU`, `lin-CD`, `ful-SN`, `orm-ET`, `eng-AU` (und `eng-NZ`, das darauf zurückfällt), `hye-AM`, `uzb-UZ`, `snd-PK`, `pnb-PK`, `mya-MM`, `haw-US`, `aze-AZ`, `aka-GH`, `sin-LK`, `asm-IN`, `khm-KH`, `nno-NO` (fällt auf `nor-NO` zurück) (alle außer `eng-US` und `ger-DE` zumindest teilweise maschinell unterstützt, siehe [Abschnitt 4](#4-alle-übersetzungen-der-administrationsoberfläche)) |
 | **Nur Inhalt** | Keine Übersetzung der Administrationsoberfläche: Die Oberfläche bleibt englisch. Inhalte lassen sich in der Sprache schreiben, und ein Siteaccess mit der Locale formatiert Datumsangaben, Zahlen und Währung für sie. | jede andere Locale, darunter fast alle 237, die in 6.0.15 hinzukamen |
 
 Ein Land ohne eigene Übersetzung spricht die Sprache, die `i18n.ini [TranslationSettings] FallbackLanguages[]` nennt,
@@ -408,7 +406,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | Code | Englischer Name | Eigenname | Region | Richtung | Schrift | Quelle | Übersetzungsabdeckung |
 |---|---|---|---|---|---|---|---:|
 | `afr-ZA` | Afrikaans | Afrikaans | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
-| `aka-GH` | Akan | Akan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
+| `aka-GH` | Akan | Akan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `amh-ET` | Amharic | አማርኛ | Afrika | LTR | Äthiopisch (`Ethi`) | CLDR 44 | 100 % |
 | `ara-AE` | Arabic (United Arab Emirates) | العربية (الإمارات العربية المتحدة) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % (fällt auf `ara-SA` zurück) |
 | `ara-BH` | Arabic (Bahrain) | العربية (البحرين) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 48 | 100 % (fällt auf `ara-SA` zurück) |
@@ -436,7 +434,7 @@ Die Tabelle wird aus den Locale-Dateien erzeugt; bearbeiten Sie sie nicht von Ha
 | `ara-TN` | Arabic (Tunisia) | العربية (تونس) | Afrika | RTL | Arabisch (`Arab`) | CLDR 44 | 100 % (fällt auf `ara-SA` zurück) |
 | `ara-YE` | Arabic (Yemen) | العربية (اليمن) | Naher Osten | RTL | Arabisch (`Arab`) | CLDR 48 | 100 % (fällt auf `ara-SA` zurück) |
 | `arc-IQ` | Imperial Aramaic | ארמית | Naher Osten | RTL | Hebräisch (`Hebr`) | Namen von Hand, Konventionen aus CLDR 44 | 100 % |
-| `asm-IN` | Assamese | অসমীয়া | Südasien | LTR | Bengalisch (`Beng`) | CLDR 44 | — |
+| `asm-IN` | Assamese | অসমীয়া | Südasien | LTR | Bengalisch (`Beng`) | CLDR 44 | 100 % |
 | `ast-ES` | Asturian | Asturianu | Europa | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
 | `aze-AZ` | Azerbaijani | Azərbaycan | Zentralasien und Kaukasus | LTR | Lateinisch (`Latn`) | CLDR 44 | 100 % |
 | `bam-ML` | Bambara | Bamanakan | Afrika | LTR | Lateinisch (`Latn`) | CLDR 44 | — |
@@ -909,7 +907,9 @@ zeigen ihren englischen Quelltext, und die Wahl der Oberflächensprache zählt E
 | `ful-SN` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `orm-ET` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `aze-AZ` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
+| `aka-GH` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `sin-LK` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
+| `asm-IN` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 | `khm-KH` | 100 % (18.839 von 18.839) | 100 % (18.839 von 18.839) |
 
 Hinweise:
