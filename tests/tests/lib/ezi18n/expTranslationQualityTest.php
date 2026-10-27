@@ -21,7 +21,7 @@ class expTranslationQualityTest extends PHPUnit\Framework\TestCase
 {
     const LANGUAGES = array( 'afr-ZA', 'amh-ET', 'ara-SA', 'arc-IQ', 'ben-BD', 'bho-IN', 'bos-BA', 'bul-BG', 'cat-ES', 'chi-CN',
         'chi-TW', 'cro-HR', 'cze-CZ', 'dan-DK', 'dsb-DE', 'dut-NL', 'ell-GR', 'esl-ES', 'esl-MX', 'est-EE', 'fas-IR',
-        'fin-FI', 'fre-FR', 'ger-DE', 'gle-IE', 'guj-IN', 'hau-NG', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'ibo-NG', 'ind-ID',
+        'fin-FI', 'fre-FR', 'ger-DE', 'gle-IE', 'guj-IN', 'hau-NG', 'haw-US', 'heb-IL', 'hin-IN', 'hun-HU', 'huy-IL', 'ibo-NG', 'ind-ID',
         'isl-IS', 'ita-IT', 'jav-ID', 'jpn-JP', 'kal-GL', 'kan-IN', 'kat-GE', 'kaz-KZ', 'kor-KR', 'kur-TR', 'lao-LA', 'lat-VA', 'lav-LV',
         'lit-LT', 'mai-IN', 'mal-IN', 'mar-IN', 'mlt-MT', 'msa-MY', 'nep-NP', 'nor-NO', 'ori-IN', 'pan-IN', 'pcm-NG',
         'pol-PL', 'por-BR', 'por-PT', 'pus-AF', 'ron-RO', 'rus-RU', 'ser-SR', 'slk-SK', 'slv-SI', 'sna-ZW', 'som-SO', 'sqi-AL',
