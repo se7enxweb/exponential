@@ -28,7 +28,7 @@ class expLocaleFilesTest extends PHPUnit\Framework\TestCase
      * Punjabi, Sindhi, Uyghur, Yiddish, Central Kurdish, Syriac, Kashmiri, N'Ko, Dhivehi, Imperial Aramaic, Hulaulá). */
     const RTL_LOCALES = array( 'ara-SA', 'ara-AE', 'ara-EG', 'ara-MA', 'ara-DZ', 'ara-TN', 'ara-IQ', 'ara-JO', 'ara-LB',
         'ara-SY', 'ara-KW', 'ara-QA', 'ara-BH', 'ara-OM', 'ara-LY', 'ara-PS', 'ara-YE', 'ara-SD', 'ara-MR', 'ara-DJ',
-        'ara-KM', 'ara-SO', 'ara-TD', 'ara-ER', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
+        'ara-KM', 'ara-SO', 'ara-TD', 'ara-ER', 'ara-EH', 'heb-IL', 'fas-IR', 'fas-AF', 'urd-PK', 'urd-IN', 'pus-AF', 'pnb-PK', 'snd-PK',
         'uig-CN', 'yid-US', 'ckb-IQ', 'syr-IQ', 'syr-SY', 'kas-IN', 'nqo-GN', 'div-MV',
         'arc-IQ', 'huy-IL' );
 
