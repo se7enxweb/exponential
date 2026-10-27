@@ -132,7 +132,7 @@ language of the source texts. The map as a vector image: `doc/eng-us/images/lang
 | New Zealand | NZ | `eng-NZ` → `eng-AU`, `mri-NZ` (untranslated) |
 | Nicaragua | NI | `esl-NI` → `esl-ES` |
 | Niger | NE | `fre-NE` → `fre-FR` |
-| Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG` (untranslated), `yor-NG` |
+| Nigeria | NG | `eng-NG` (source texts), `hau-NG`, `ibo-NG`, `pcm-NG`, `yor-NG` |
 | Norway | NO | `nno-NO` → `nor-NO`, `nor-NO`, `sme-NO` (untranslated) |
 | Oman | OM | `ara-OM` → `ara-SA` |
 | Pakistan | PK | `eng-PK` (source texts), `pnb-PK` (untranslated), `snd-PK` (untranslated), `urd-PK` |
@@ -226,7 +226,7 @@ exist, all of them complete (`eng-US`, `ger-DE`, Spanish for Spain and Mexico, F
 Turkish, Polish, Italian, Portuguese (Brazil), Dutch, Swedish, Norwegian Bokmål, Danish, Czech, Croatian, Persian,
 Pashto, Kurdish (Kurmanji), Swahili, Hindi, Korean, Japanese, Greek, Finnish, Hungarian, Romanian, Slovak, Slovenian,
 Bosnian, Albanian, Estonian, Latvian, Icelandic, Irish, Maltese, Lower Sorbian, Greenlandic, Chinese (Simplified and Traditional), Russian, Catalan, Serbian
-(Cyrillic and Latin), Bulgarian, Lithuanian, Portuguese (Portugal), Afrikaans, English (Australia), Bengali, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharic, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Yiddish, Vietnamese, Indonesian, Javanese, Sundanese, Nepali, Bhojpuri, Maithili, Latin and, for fun,
+(Cyrillic and Latin), Bulgarian, Lithuanian, Portuguese (Portugal), Afrikaans, English (Australia), Bengali, Urdu, Marathi, Telugu, Tamil, Hausa, Gujarati, Kannada, Amharic, Yoruba, Malayalam, Punjabi (Gurmukhi), Odia, Igbo, isiZulu, Somali, isiXhosa, Yiddish, Vietnamese, Indonesian, Javanese, Sundanese, Nepali, Bhojpuri, Maithili, Nigerian Pidgin, Latin and, for fun,
 Klingon).
 Every locale is plain INI: nothing here needs a PHP extension at run time.
 
@@ -362,7 +362,7 @@ The details are elsewhere and not repeated here:
 
 | Level | What works | Languages |
 |---|---|---|
-| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
+| **Full: interface and content** | The administration speaks the language completely (at least 99% of the current strings); content, dates, numbers and currency follow the locale. | `eng-US` (and every `eng-*` locale, English being the language of the source texts), `ger-DE`, `esl-ES`, `esl-MX`, `fre-FR`, `heb-IL`, `ara-SA`, `lat-VA`, `tlh-QO`, `ukr-UA`, `tur-TR`, `pol-PL`, `ita-IT`, `por-BR`, `dut-NL`, `swe-SE`, `nor-NO`, `dan-DK`, `cze-CZ`, `cro-HR`, `fas-IR` (and `fas-AF`, Dari, which falls back to it), `pus-AF`, `kur-TR`, `swa-KE` (and `swa-TZ`, which falls back to it), `hin-IN`, `kor-KR`, `jpn-JP`, `ell-GR`, `fin-FI`, `hun-HU`, `ron-RO`, `slk-SK`, `slv-SI`, `bos-BA`, `sqi-AL`, `est-EE`, `lav-LV`, `isl-IS`, `gle-IE`, `mlt-MT`, `dsb-DE`, `kal-GL`, `rus-RU`, `cat-ES`, `srp-RS`, `ser-SR`, `bul-BG`, `lit-LT`, `por-PT` (and `por-AO`, `por-CV`, `por-MZ`, which fall back to it), `chi-CN` (and `chi-SG`, which falls back to it), `chi-TW` (and `chi-HK`, which falls back to it), `afr-ZA`, `ben-BD` (and `ben-IN`), `urd-PK` (and `urd-IN`), `mar-IN`, `tel-IN`, `tam-IN` (and `tam-LK`, `tam-SG`), `hau-NG`, `guj-IN`, `kan-IN`, `amh-ET`, `yor-NG`, `mal-IN`, `pan-IN`, `ori-IN`, `ibo-NG`, `zul-ZA`, `som-SO`, `xho-ZA`, `yid-US`, `vie-VN`, `ind-ID`, `tha-TH`, `lao-LA`, `msa-MY` (and `msa-SG`, `msa-BN`, which fall back to it), `jav-ID`, `sun-ID`, `nep-NP`, `bho-IN`, `mai-IN`, `pcm-NG`, `syr-IQ` (and `syr-SY`, which falls back to it), `arc-IQ`, `huy-IL`, `nno-NO` (falls back to `nor-NO`) (all but `eng-US` and `ger-DE` machine-assisted, at least in part, see [section 4](#4-every-administration-translation)) |
 | **Content only** | No administration translation: the interface stays English. Content can be written in the language, and a siteaccess with the locale formats dates, numbers and currency for it. | every other locale, among them nearly all 237 added in 6.0.15 |
 
 A country without a translation of its own speaks the one `i18n.ini [TranslationSettings] FallbackLanguages[]`
@@ -633,7 +633,7 @@ The table is generated from the locale files; do not edit it by hand.
 | `ori-IN` | Odia | ଓଡ଼ିଆ | South Asia | LTR | Oriya (Odia) (`Orya`) | CLDR 44 | 100% |
 | `orm-ET` | Oromo | Oromoo | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
 | `pan-IN` | Punjabi | ਪੰਜਾਬੀ | South Asia | LTR | Gurmukhi (`Guru`) | CLDR 44 | 100% |
-| `pcm-NG` | Nigerian Pidgin | Naijíriá Píjin | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
+| `pcm-NG` | Nigerian Pidgin | Naijíriá Píjin | Africa | LTR | Latin (`Latn`) | CLDR 44 | 100% |
 | `pnb-PK` | Western Punjabi (Shahmukhi) | پنجابی | South Asia | RTL | Arabic (`Arab`) | CLDR 44 | — |
 | `pol-PL` | Polish | Polski | Europe | LTR | Latin (`Latn`) | older, hand-made | 100% |
 | `por-AO` | Portuguese (Angola) | Português (Angola) | Africa | LTR | Latin (`Latn`) | CLDR 44 | — |
@@ -888,6 +888,7 @@ source text, and the interface language choice counts English as 100%.
 | `nep-NP` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `bho-IN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 | `mai-IN` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
+| `pcm-NG` | 100% (18,812 of 18,812) | 100% (18,812 of 18,812) |
 
 Notes:
 
@@ -1014,7 +1015,7 @@ which takes its figures from Ethnologue (2026 edition); read on 15 October 2026.
 | 11 | Russian | 210 | `rus-RU` | `rus-RU` complete |
 | 12 | German | 133 | `ger-DE`, `ger-AT`, `ger-CH`, `ger-LU`, `ger-LI`, `ger-BE` | `ger-DE` full |
 | 13 | Japanese | 126 | `jpn-JP` | `jpn-JP` complete |
-| 14 | Nigerian Pidgin | 121 | `pcm-NG` | none |
+| 14 | Nigerian Pidgin | 121 | `pcm-NG` | `pcm-NG` complete |
 | 15 | Egyptian Arabic | 118 | `ara-EG` (written Arabic) | none |
 | 16 | Marathi | 99 | `mar-IN` | `mar-IN` complete |
 | 17 | Vietnamese | 97 | `vie-VN` | `vie-VN` complete |
